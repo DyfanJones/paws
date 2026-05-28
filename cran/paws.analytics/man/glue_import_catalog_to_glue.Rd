@@ -7,8 +7,7 @@
 glue_import_catalog_to_glue(CatalogId = NULL)
 }
 \arguments{
-\item{CatalogId}{The ID of the catalog to import. Currently, this should be the Amazon
-Web Services account ID.}
+\item{CatalogId}{The ID of the catalog to import. Currently, this should be the Amazon Web Services account ID.}
 }
 \description{
 Imports an existing Amazon Athena Data Catalog to Glue.

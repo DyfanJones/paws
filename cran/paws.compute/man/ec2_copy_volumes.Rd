@@ -20,11 +20,7 @@ ec2_copy_volumes(
 \arguments{
 \item{SourceVolumeId}{[required] The ID of the source EBS volume to copy.}
 
-\item{Iops}{The number of I/O operations per second (IOPS) to provision for the
-volume copy. Required for \code{io1} and \code{io2} volumes. Optional for \code{gp3}
-volumes. Omit for all other volume types. Full provisioned IOPS
-performance can be achieved only once the volume copy is fully
-initialized.
+\item{Iops}{The number of I/O operations per second (IOPS) to provision for the volume copy. Required for \code{io1} and \code{io2} volumes. Optional for \code{gp3} volumes. Omit for all other volume types. Full provisioned IOPS performance can be achieved only once the volume copy is fully initialized.
 
 Valid ranges:
 \itemize{
@@ -33,13 +29,9 @@ Valid ranges:
 \item io2: \verb{100 - 256,000} IOPS
 }
 
-\href{https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html}{Instances built on the Nitro System}
-can support up to 256,000 IOPS. Other instances can support up to 32,000
-IOPS.}
+\href{https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-nitro-instances.html}{Instances built on the Nitro System} can support up to 256,000 IOPS. Other instances can support up to 32,000 IOPS.}
 
-\item{Size}{The size of the volume copy, in GiBs. The size must be equal to or
-greater than the size of the source volume. If not specified, the size
-defaults to the size of the source volume.
+\item{Size}{The size of the volume copy, in GiBs. The size must be equal to or greater than the size of the source volume. If not specified, the size defaults to the size of the source volume.
 
 Maximum supported sizes:
 \itemize{
@@ -51,30 +43,19 @@ Maximum supported sizes:
 \item standard: \code{1024} GiB
 }}
 
-\item{VolumeType}{The volume type for the volume copy. If not specified, the volume type
-defaults to \code{gp2}.}
+\item{VolumeType}{The volume type for the volume copy. If not specified, the volume type defaults to \code{gp2}.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{TagSpecifications}{The tags to apply to the volume copy during creation.}
 
-\item{MultiAttachEnabled}{Indicates whether to enable Amazon EBS Multi-Attach for the volume copy.
-If you enable Multi-Attach, you can attach the volume to up to 16 Nitro
-instances in the same Availability Zone simultaneously. Supported with
-\code{io1} and \code{io2} volumes only. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html}{Amazon EBS Multi-Attach}.}
+\item{MultiAttachEnabled}{Indicates whether to enable Amazon EBS Multi-Attach for the volume copy. If you enable Multi-Attach, you can attach the volume to up to 16 Nitro instances in the same Availability Zone simultaneously. Supported with \code{io1} and \code{io2} volumes only. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-volumes-multi.html}{Amazon EBS Multi-Attach}.}
 
-\item{Throughput}{The throughput to provision for the volume copy, in MiB/s. Supported for
-\code{gp3} volumes only. Omit for all other volume types. Full provisioned
-throughput performance can be achieved only once the volume copy is
-fully initialized.
+\item{Throughput}{The throughput to provision for the volume copy, in MiB/s. Supported for \code{gp3} volumes only. Omit for all other volume types. Full provisioned throughput performance can be achieved only once the volume copy is fully initialized.
 
 Valid Range: \code{125 - 2000} MiB/s}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensure Idempotency}.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensure Idempotency}.}
 }
 \description{
 Creates a crash-consistent, point-in-time copy of an existing Amazon EBS volume within the same Availability Zone. The volume copy can be attached to an Amazon EC2 instance once it reaches the \code{available} state. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copying-volume.html}{Copy an Amazon EBS volume}.

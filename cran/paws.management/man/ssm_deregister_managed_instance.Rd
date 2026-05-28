@@ -8,8 +8,7 @@ servers}
 ssm_deregister_managed_instance(InstanceId)
 }
 \arguments{
-\item{InstanceId}{[required] The ID assigned to the managed node when you registered it using the
-activation process.}
+\item{InstanceId}{[required] The ID assigned to the managed node when you registered it using the activation process.}
 }
 \description{
 Removes the server or virtual machine from the list of registered servers.

@@ -16,8 +16,7 @@ connect_update_workspace_page(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{WorkspaceId}{[required] The identifier of the workspace.}
 

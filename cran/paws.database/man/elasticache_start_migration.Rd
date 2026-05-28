@@ -9,9 +9,7 @@ elasticache_start_migration(ReplicationGroupId, CustomerNodeEndpointList)
 \arguments{
 \item{ReplicationGroupId}{[required] The ID of the replication group to which data should be migrated.}
 
-\item{CustomerNodeEndpointList}{[required] List of endpoints from which data should be migrated. For Valkey or
-Redis OSS (cluster mode disabled), the list should have only one
-element.}
+\item{CustomerNodeEndpointList}{[required] List of endpoints from which data should be migrated. For Valkey or Redis OSS (cluster mode disabled), the list should have only one element.}
 }
 \description{
 Start the migration of data.

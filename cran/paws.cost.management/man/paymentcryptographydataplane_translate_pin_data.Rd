@@ -18,40 +18,29 @@ paymentcryptographydataplane_translate_pin_data(
 )
 }
 \arguments{
-\item{IncomingKeyIdentifier}{[required] The \code{keyARN} of the encryption key under which incoming PIN block data
-is encrypted. This key type can be PEK or BDK.
+\item{IncomingKeyIdentifier}{[required] The \code{keyARN} of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.
 
-For dynamic keys, it is the \code{keyARN} of KEK of the TR-31 wrapped PEK.
-For ECDH, it is the \code{keyARN} of the asymmetric ECC key.}
+For dynamic keys, it is the \code{keyARN} of KEK of the TR-31 wrapped PEK. For ECDH, it is the \code{keyARN} of the asymmetric ECC key.}
 
-\item{OutgoingKeyIdentifier}{[required] The \code{keyARN} of the encryption key for encrypting outgoing PIN block
-data. This key type can be PEK or BDK.
+\item{OutgoingKeyIdentifier}{[required] The \code{keyARN} of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.
 
 For ECDH, it is the \code{keyARN} of the asymmetric ECC key.}
 
-\item{IncomingTranslationAttributes}{[required] The format of the incoming PIN block data for translation within Amazon
-Web Services Payment Cryptography.}
+\item{IncomingTranslationAttributes}{[required] The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.}
 
-\item{OutgoingTranslationAttributes}{[required] The format of the outgoing PIN block data after translation by Amazon
-Web Services Payment Cryptography.}
+\item{OutgoingTranslationAttributes}{[required] The format of the outgoing PIN block data after translation by Amazon Web Services Payment Cryptography.}
 
-\item{EncryptedPinBlock}{[required] The encrypted PIN block data that Amazon Web Services Payment
-Cryptography translates.}
+\item{EncryptedPinBlock}{[required] The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.}
 
-\item{IncomingDukptAttributes}{The attributes and values to use for incoming DUKPT encryption key for
-PIN block translation.}
+\item{IncomingDukptAttributes}{The attributes and values to use for incoming DUKPT encryption key for PIN block translation.}
 
-\item{OutgoingDukptAttributes}{The attributes and values to use for outgoing DUKPT encryption key after
-PIN block translation.}
+\item{OutgoingDukptAttributes}{The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.}
 
-\item{IncomingWrappedKey}{The WrappedKeyBlock containing the encryption key under which incoming
-PIN block data is encrypted.}
+\item{IncomingWrappedKey}{The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.}
 
-\item{OutgoingWrappedKey}{The WrappedKeyBlock containing the encryption key for encrypting
-outgoing PIN block data.}
+\item{OutgoingWrappedKey}{The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.}
 
-\item{IncomingAs2805Attributes}{The attributes and values to use for incoming AS2805 encryption key for
-PIN block translation.}
+\item{IncomingAs2805Attributes}{The attributes and values to use for incoming AS2805 encryption key for PIN block translation.}
 }
 \description{
 Translates encrypted PIN block from and to ISO 9564 formats 0,1,3,4. For more information, see \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/translate-pin-data.html}{Translate PIN data} in the \emph{Amazon Web Services Payment Cryptography User Guide}.

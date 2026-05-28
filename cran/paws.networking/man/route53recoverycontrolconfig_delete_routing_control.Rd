@@ -7,8 +7,7 @@
 route53recoverycontrolconfig_delete_routing_control(RoutingControlArn)
 }
 \arguments{
-\item{RoutingControlArn}{[required] The Amazon Resource Name (ARN) of the routing control that you're
-deleting.}
+\item{RoutingControlArn}{[required] The Amazon Resource Name (ARN) of the routing control that you're deleting.}
 }
 \description{
 Deletes a routing control.

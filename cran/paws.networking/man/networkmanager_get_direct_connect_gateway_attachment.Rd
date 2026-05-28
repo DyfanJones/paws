@@ -8,8 +8,7 @@ gateway attachment}
 networkmanager_get_direct_connect_gateway_attachment(AttachmentId)
 }
 \arguments{
-\item{AttachmentId}{[required] The ID of the Direct Connect gateway attachment that you want to see
-details about.}
+\item{AttachmentId}{[required] The ID of the Direct Connect gateway attachment that you want to see details about.}
 }
 \description{
 Returns information about a specific Amazon Web Services Direct Connect gateway attachment.

@@ -12,20 +12,13 @@ quicksight_describe_template(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template
-that you're describing.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template that you're describing.}
 
 \item{TemplateId}{[required] The ID for the template.}
 
-\item{VersionNumber}{(Optional) The number for the version to describe. If a \code{VersionNumber}
-parameter value isn't provided, the latest version of the template is
-described.}
+\item{VersionNumber}{(Optional) The number for the version to describe. If a \code{VersionNumber} parameter value isn't provided, the latest version of the template is described.}
 
-\item{AliasName}{The alias of the template that you want to describe. If you name a
-specific alias, you describe the version that the alias points to. You
-can specify the latest version of the template by providing the keyword
-\verb{$LATEST} in the \code{AliasName} parameter. The keyword \verb{$PUBLISHED} doesn't
-apply to templates.}
+\item{AliasName}{The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword \verb{$LATEST} in the \code{AliasName} parameter. The keyword \verb{$PUBLISHED} doesn't apply to templates.}
 }
 \description{
 Describes a template's metadata.

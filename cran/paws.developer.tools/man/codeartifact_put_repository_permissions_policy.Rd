@@ -14,21 +14,15 @@ codeartifact_put_repository_permissions_policy(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain containing the repository to set the resource
-policy on.}
+\item{domain}{[required] The name of the domain containing the repository to set the resource policy on.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository to set the resource policy on.}
 
-\item{policyRevision}{Sets the revision of the resource policy that specifies permissions to
-access the repository. This revision is used for optimistic locking,
-which prevents others from overwriting your changes to the repository's
-resource policy.}
+\item{policyRevision}{Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.}
 
-\item{policyDocument}{[required] A valid displayable JSON Aspen policy string to be set as the access
-control resource policy on the provided repository.}
+\item{policyDocument}{[required] A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.}
 }
 \description{
 Sets the resource policy on a repository that specifies permissions to access it.

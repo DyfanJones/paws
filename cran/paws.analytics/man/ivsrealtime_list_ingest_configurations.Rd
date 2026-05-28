@@ -13,14 +13,11 @@ ivsrealtime_list_ingest_configurations(
 )
 }
 \arguments{
-\item{filterByStageArn}{Filters the response list to match the specified stage ARN. Only one
-filter (by stage ARN or by state) can be used at a time.}
+\item{filterByStageArn}{Filters the response list to match the specified stage ARN. Only one filter (by stage ARN or by state) can be used at a time.}
 
-\item{filterByState}{Filters the response list to match the specified state. Only one filter
-(by stage ARN or by state) can be used at a time.}
+\item{filterByState}{Filters the response list to match the specified state. Only one filter (by stage ARN or by state) can be used at a time.}
 
-\item{nextToken}{The first IngestConfiguration to retrieve. This is used for pagination;
-see the \code{nextToken} response field.}
+\item{nextToken}{The first IngestConfiguration to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of results to return. Default: 50.}
 }

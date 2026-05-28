@@ -7,58 +7,39 @@ NULL
 #' @description
 #' Cloud9
 #' 
-#' Cloud9 is a collection of tools that you can use to code, build, run,
-#' test, debug, and release software in the cloud.
+#' Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud.
 #' 
-#' For more information about Cloud9, see the [Cloud9 User
-#' Guide](https://docs.aws.amazon.com/cloud9/latest/user-guide/).
+#' For more information about Cloud9, see the [Cloud9 User Guide](https://docs.aws.amazon.com/cloud9/latest/user-guide/).
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #' 
 #' Cloud9 supports these operations:
 #' 
-#' -   [`create_environment_ec2`][cloud9_create_environment_ec2]: Creates
-#'     an Cloud9 development environment, launches an Amazon EC2 instance,
-#'     and then connects from the instance to the environment.
+#' -   [`create_environment_ec2`][cloud9_create_environment_ec2]: Creates an Cloud9 development environment, launches an Amazon EC2 instance, and then connects from the instance to the environment.
 #' 
-#' -   [`create_environment_membership`][cloud9_create_environment_membership]:
-#'     Adds an environment member to an environment.
+#' -   [`create_environment_membership`][cloud9_create_environment_membership]: Adds an environment member to an environment.
 #' 
-#' -   [`delete_environment`][cloud9_delete_environment]: Deletes an
-#'     environment. If an Amazon EC2 instance is connected to the
-#'     environment, also terminates the instance.
+#' -   [`delete_environment`][cloud9_delete_environment]: Deletes an environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.
 #' 
-#' -   [`delete_environment_membership`][cloud9_delete_environment_membership]:
-#'     Deletes an environment member from an environment.
+#' -   [`delete_environment_membership`][cloud9_delete_environment_membership]: Deletes an environment member from an environment.
 #' 
-#' -   [`describe_environment_memberships`][cloud9_describe_environment_memberships]:
-#'     Gets information about environment members for an environment.
+#' -   [`describe_environment_memberships`][cloud9_describe_environment_memberships]: Gets information about environment members for an environment.
 #' 
-#' -   [`describe_environments`][cloud9_describe_environments]: Gets
-#'     information about environments.
+#' -   [`describe_environments`][cloud9_describe_environments]: Gets information about environments.
 #' 
-#' -   [`describe_environment_status`][cloud9_describe_environment_status]:
-#'     Gets status information for an environment.
+#' -   [`describe_environment_status`][cloud9_describe_environment_status]: Gets status information for an environment.
 #' 
-#' -   [`list_environments`][cloud9_list_environments]: Gets a list of
-#'     environment identifiers.
+#' -   [`list_environments`][cloud9_list_environments]: Gets a list of environment identifiers.
 #' 
-#' -   [`list_tags_for_resource`][cloud9_list_tags_for_resource]: Gets the
-#'     tags for an environment.
+#' -   [`list_tags_for_resource`][cloud9_list_tags_for_resource]: Gets the tags for an environment.
 #' 
 #' -   [`tag_resource`][cloud9_tag_resource]: Adds tags to an environment.
 #' 
-#' -   [`untag_resource`][cloud9_untag_resource]: Removes tags from an
-#'     environment.
+#' -   [`untag_resource`][cloud9_untag_resource]: Removes tags from an environment.
 #' 
-#' -   [`update_environment`][cloud9_update_environment]: Changes the
-#'     settings of an existing environment.
+#' -   [`update_environment`][cloud9_update_environment]: Changes the settings of an existing environment.
 #' 
-#' -   [`update_environment_membership`][cloud9_update_environment_membership]:
-#'     Changes the settings of an existing environment member for an
-#'     environment.
+#' -   [`update_environment_membership`][cloud9_update_environment_membership]: Changes the settings of an existing environment member for an environment.
 #'
 #' @param
 #' config

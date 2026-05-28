@@ -16,14 +16,11 @@ sagemaker_render_ui_template(
 
 \item{Task}{[required] A \code{RenderableTask} object containing a representative task to render.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) that has access to the S3 objects that
-are used by the template.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) that has access to the S3 objects that are used by the template.}
 
-\item{HumanTaskUiArn}{The \code{HumanTaskUiArn} of the worker UI that you want to render. Do not
-provide a \code{HumanTaskUiArn} if you use the \code{UiTemplate} parameter.
+\item{HumanTaskUiArn}{The \code{HumanTaskUiArn} of the worker UI that you want to render. Do not provide a \code{HumanTaskUiArn} if you use the \code{UiTemplate} parameter.
 
-See a list of available Human Ui Amazon Resource Names (ARNs) in
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html}{UiConfig}.}
+See a list of available Human Ui Amazon Resource Names (ARNs) in \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html}{UiConfig}.}
 }
 \description{
 Renders the UI template so that you can preview the worker's experience.

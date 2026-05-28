@@ -14,12 +14,9 @@ codestarnotifications_list_event_types(
 \arguments{
 \item{Filters}{The filters to use to return information by service or resource type.}
 
-\item{NextToken}{An enumeration token that, when provided in a request, returns the next
-batch of the results.}
+\item{NextToken}{An enumeration token that, when provided in a request, returns the next batch of the results.}
 
-\item{MaxResults}{A non-negative integer used to limit the number of returned results. The
-default number is 50. The maximum number of results that can be returned
-is 100.}
+\item{MaxResults}{A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.}
 }
 \description{
 Returns information about the event types available for configuring notifications.

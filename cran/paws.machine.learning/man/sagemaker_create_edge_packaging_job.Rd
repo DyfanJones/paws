@@ -18,21 +18,17 @@ sagemaker_create_edge_packaging_job(
 \arguments{
 \item{EdgePackagingJobName}{[required] The name of the edge packaging job.}
 
-\item{CompilationJobName}{[required] The name of the SageMaker Neo compilation job that will be used to
-locate model artifacts for packaging.}
+\item{CompilationJobName}{[required] The name of the SageMaker Neo compilation job that will be used to locate model artifacts for packaging.}
 
 \item{ModelName}{[required] The name of the model.}
 
 \item{ModelVersion}{[required] The version of the model.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that enables Amazon
-SageMaker to download and upload the model, and to contact SageMaker
-Neo.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that enables Amazon SageMaker to download and upload the model, and to contact SageMaker Neo.}
 
 \item{OutputConfig}{[required] Provides information about the output location for the packaged model.}
 
-\item{ResourceKey}{The Amazon Web Services KMS key to use when encrypting the EBS volume
-the edge packaging job runs on.}
+\item{ResourceKey}{The Amazon Web Services KMS key to use when encrypting the EBS volume the edge packaging job runs on.}
 
 \item{Tags}{Creates tags for the packaging job.}
 }

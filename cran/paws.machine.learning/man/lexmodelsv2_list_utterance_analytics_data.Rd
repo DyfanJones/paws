@@ -17,33 +17,21 @@ lexmodelsv2_list_utterance_analytics_data(
 )
 }
 \arguments{
-\item{botId}{[required] The identifier for the bot for which you want to retrieve utterance
-analytics.}
+\item{botId}{[required] The identifier for the bot for which you want to retrieve utterance analytics.}
 
-\item{startDateTime}{[required] The date and time that marks the beginning of the range of time for
-which you want to see utterance analytics.}
+\item{startDateTime}{[required] The date and time that marks the beginning of the range of time for which you want to see utterance analytics.}
 
-\item{endDateTime}{[required] The date and time that marks the end of the range of time for which you
-want to see utterance analytics.}
+\item{endDateTime}{[required] The date and time that marks the end of the range of time for which you want to see utterance analytics.}
 
-\item{sortBy}{An object specifying the measure and method by which to sort the
-utterance analytics data.}
+\item{sortBy}{An object specifying the measure and method by which to sort the utterance analytics data.}
 
-\item{filters}{A list of objects, each of which describes a condition by which you want
-to filter the results.}
+\item{filters}{A list of objects, each of which describes a condition by which you want to filter the results.}
 
-\item{maxResults}{The maximum number of results to return in each page of results. If
-there are fewer results than the maximum page size, only the actual
-number of results are returned.}
+\item{maxResults}{The maximum number of results to return in each page of results. If there are fewer results than the maximum page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response from the ListUtteranceAnalyticsData operation contains
-more results than specified in the maxResults parameter, a token is
-returned in the response.
+\item{nextToken}{If the response from the ListUtteranceAnalyticsData operation contains more results than specified in the maxResults parameter, a token is returned in the response.
 
-Use the returned token in the nextToken parameter of a
-ListUtteranceAnalyticsData request to return the next page of results.
-For a complete set of results, call the ListUtteranceAnalyticsData
-operation until the nextToken returned in the response is null.}
+Use the returned token in the nextToken parameter of a ListUtteranceAnalyticsData request to return the next page of results. For a complete set of results, call the ListUtteranceAnalyticsData operation until the nextToken returned in the response is null.}
 }
 \description{
 To use this API operation, your IAM role must have permissions to perform the \code{\link[=lexmodelsv2_list_aggregated_utterances]{list_aggregated_utterances}} operation, which provides access to utterance-related analytics. See \href{https://docs.aws.amazon.com/lexv2/latest/dg/}{Viewing utterance statistics} for the IAM policy to apply to the IAM role.

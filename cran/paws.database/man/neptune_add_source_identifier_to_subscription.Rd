@@ -10,21 +10,16 @@ neptune_add_source_identifier_to_subscription(
 )
 }
 \arguments{
-\item{SubscriptionName}{[required] The name of the event notification subscription you want to add a source
-identifier to.}
+\item{SubscriptionName}{[required] The name of the event notification subscription you want to add a source identifier to.}
 
 \item{SourceIdentifier}{[required] The identifier of the event source to be added.
 
 Constraints:
 \itemize{
-\item If the source type is a DB instance, then a \code{DBInstanceIdentifier}
-must be supplied.
-\item If the source type is a DB security group, a \code{DBSecurityGroupName}
-must be supplied.
-\item If the source type is a DB parameter group, a \code{DBParameterGroupName}
-must be supplied.
-\item If the source type is a DB snapshot, a \code{DBSnapshotIdentifier} must
-be supplied.
+\item If the source type is a DB instance, then a \code{DBInstanceIdentifier} must be supplied.
+\item If the source type is a DB security group, a \code{DBSecurityGroupName} must be supplied.
+\item If the source type is a DB parameter group, a \code{DBParameterGroupName} must be supplied.
+\item If the source type is a DB snapshot, a \code{DBSnapshotIdentifier} must be supplied.
 }}
 }
 \description{

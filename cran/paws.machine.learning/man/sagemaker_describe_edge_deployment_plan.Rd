@@ -13,8 +13,7 @@ sagemaker_describe_edge_deployment_plan(
 \arguments{
 \item{EdgeDeploymentPlanName}{[required] The name of the deployment plan to describe.}
 
-\item{NextToken}{If the edge deployment plan has enough stages to require tokening, then
-this is the response from the last list of stages returned.}
+\item{NextToken}{If the edge deployment plan has enough stages to require tokening, then this is the response from the last list of stages returned.}
 
 \item{MaxResults}{The maximum number of results to select (50 by default).}
 }

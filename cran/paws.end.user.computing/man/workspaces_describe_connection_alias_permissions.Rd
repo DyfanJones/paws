@@ -15,8 +15,7 @@ workspaces_describe_connection_alias_permissions(
 \arguments{
 \item{AliasId}{[required] The identifier of the connection alias.}
 
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return.}
 }

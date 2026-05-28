@@ -18,23 +18,13 @@ ivsrealtime_start_participant_replication(
 
 \item{destinationStageArn}{[required] ARN of the stage to which the participant will be replicated.}
 
-\item{participantId}{[required] Participant ID of the publisher that will be replicated. This is
-assigned by IVS and returned by
-\code{\link[=ivsrealtime_create_participant_token]{create_participant_token}} or
-the \code{jti} (JWT ID) used to \href{https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed}{create a self signed token}.}
+\item{participantId}{[required] Participant ID of the publisher that will be replicated. This is assigned by IVS and returned by \code{\link[=ivsrealtime_create_participant_token]{create_participant_token}} or the \code{jti} (JWT ID) used to \href{https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started-distribute-tokens.html#getting-started-distribute-tokens-self-signed}{create a self signed token}.}
 
-\item{reconnectWindowSeconds}{If the participant disconnects and then reconnects within the specified
-interval, replication will continue to be \code{ACTIVE}. Default: 0.}
+\item{reconnectWindowSeconds}{If the participant disconnects and then reconnects within the specified interval, replication will continue to be \code{ACTIVE}. Default: 0.}
 
-\item{attributes}{Application-provided attributes to set on the replicated participant in
-the destination stage. Map keys and values can contain UTF-8 encoded
-text. The maximum length of this field is 1 KB total. \emph{This field is
-exposed to all stage participants and should not be used for personally
-identifying, confidential, or sensitive information.}
+\item{attributes}{Application-provided attributes to set on the replicated participant in the destination stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. \emph{This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.}
 
-These attributes are merged with any attributes set for this participant
-when creating the token. If there is overlap in keys, the values in
-these attributes are replaced.}
+These attributes are merged with any attributes set for this participant when creating the token. If there is overlap in keys, the values in these attributes are replaced.}
 }
 \description{
 Starts replicating a publishing participant from a source stage to a destination stage.

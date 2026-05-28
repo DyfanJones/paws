@@ -13,10 +13,17 @@ codebuild_update_project_visibility(
 \arguments{
 \item{projectArn}{[required] The Amazon Resource Name (ARN) of the build project.}
 
-\item{projectVisibility}{[required]}
+\item{projectVisibility}{[required] Specifies the visibility of the project's builds. Possible values are:
 
-\item{resourceAccessRole}{The ARN of the IAM role that enables CodeBuild to access the CloudWatch
-Logs and Amazon S3 artifacts for the project's builds.}
+\strong{PUBLIC_READ}
+
+The project builds are visible to the public.
+
+\strong{PRIVATE}
+
+The project builds are not visible to the public.}
+
+\item{resourceAccessRole}{The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for the project's builds.}
 }
 \description{
 Changes the public visibility for a project. The project's build results, logs, and artifacts are available to the general public. For more information, see \href{https://docs.aws.amazon.com/codebuild/latest/userguide/public-builds.html}{Public build projects} in the \emph{CodeBuild User Guide}.

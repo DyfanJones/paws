@@ -7,8 +7,7 @@
 cognitoidentityprovider_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the user pool that the tags are
-assigned to.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.}
 
 \item{TagKeys}{[required] An array of tag keys that you want to remove from the user pool.}
 }

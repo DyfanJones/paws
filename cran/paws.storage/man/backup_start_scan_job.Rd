@@ -6,6 +6,7 @@
 \usage{
 backup_start_scan_job(
   BackupVaultName,
+  ContinuousScanEndTime = NULL,
   IamRoleArn,
   IdempotencyToken = NULL,
   MalwareScanner,
@@ -16,38 +17,28 @@ backup_start_scan_job(
 )
 }
 \arguments{
-\item{BackupVaultName}{[required] The name of a logical container where backups are stored. Backup vaults
-are identified by names that are unique to the account used to create
-them and the Amazon Web Services Region where they are created.
+\item{BackupVaultName}{[required] The name of a logical container where backups are stored. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.
 
 Pattern: \verb{^[a-zA-Z0-9\\-_]\{2,50\}$}}
 
-\item{IamRoleArn}{[required] Specifies the IAM role ARN used to create the target recovery point; for
-example, \verb{arn:aws:iam::123456789012:role/S3Access}.}
+\item{ContinuousScanEndTime}{The point in time the scan job will scan up to for a continuous backup.}
 
-\item{IdempotencyToken}{A customer-chosen string that you can use to distinguish between
-otherwise identical calls to \code{\link[=backup_start_scan_job]{start_scan_job}}.
-Retrying a successful request with the same idempotency token results in
-a success message with no action taken.}
+\item{IamRoleArn}{[required] Specifies the IAM role ARN used to create the target recovery point; for example, \verb{arn:aws:iam::123456789012:role/S3Access}.}
 
-\item{MalwareScanner}{[required] Specifies the malware scanner used during the scan job. Currently only
-supports \code{GUARDDUTY}.}
+\item{IdempotencyToken}{A customer-chosen string that you can use to distinguish between otherwise identical calls to \code{\link[=backup_start_scan_job]{start_scan_job}}. Retrying a successful request with the same idempotency token results in a success message with no action taken.}
 
-\item{RecoveryPointArn}{[required] An Amazon Resource Name (ARN) that uniquely identifies a recovery point.
-This is your target recovery point for a full scan. If you are running
-an incremental scan, this will be your a recovery point which has been
-created after your base recovery point selection.}
+\item{MalwareScanner}{[required] Specifies the malware scanner used during the scan job. Currently only supports \code{GUARDDUTY}.}
 
-\item{ScanBaseRecoveryPointArn}{An ARN that uniquely identifies the base recovery point to be used for
-incremental scanning.}
+\item{RecoveryPointArn}{[required] An Amazon Resource Name (ARN) that uniquely identifies a recovery point. This is your target recovery point for a full scan. If you are running an incremental scan, this will be your a recovery point which has been created after your base recovery point selection.}
+
+\item{ScanBaseRecoveryPointArn}{An ARN that uniquely identifies the base recovery point to be used for incremental scanning.}
 
 \item{ScanMode}{[required] Specifies the scan type use for the scan job.
 
 Includes:
 \itemize{
 \item \code{FULL_SCAN} will scan the entire data lineage within the backup.
-\item \code{INCREMENTAL_SCAN} will scan the data difference between the target
-recovery point and base recovery point ARN.
+\item \code{INCREMENTAL_SCAN} will scan the data difference between the target recovery point and base recovery point ARN.
 }}
 
 \item{ScannerRoleArn}{[required] Specified the IAM scanner role ARN.}

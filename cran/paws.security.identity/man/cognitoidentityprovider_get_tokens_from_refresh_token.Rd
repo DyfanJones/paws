@@ -14,54 +14,27 @@ cognitoidentityprovider_get_tokens_from_refresh_token(
 )
 }
 \arguments{
-\item{RefreshToken}{[required] A valid refresh token that can authorize the request for new tokens.
-When refresh token rotation is active in the requested app client, this
-token is invalidated after the request is complete and after an optional
-grace period.}
+\item{RefreshToken}{[required] A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete and after an optional grace period.}
 
-\item{ClientId}{[required] The app client that issued the refresh token to the user who wants to
-request new tokens.}
+\item{ClientId}{[required] The app client that issued the refresh token to the user who wants to request new tokens.}
 
-\item{ClientSecret}{The client secret of the requested app client, if the client has a
-secret.}
+\item{ClientSecret}{The client secret of the requested app client, if the client has a secret.}
 
-\item{DeviceKey}{When you enable device remembering, Amazon Cognito issues a device key
-that you can use for device authentication that bypasses multi-factor
-authentication (MFA). To implement
-\code{\link[=cognitoidentityprovider_get_tokens_from_refresh_token]{get_tokens_from_refresh_token}}
-in a user pool with device remembering, you must capture the device key
-from the initial authentication request. If your application doesn't
-provide the key of a registered device, Amazon Cognito issues a new one.
-You must provide the confirmed device key in this request if device
-remembering is enabled in your user pool.
+\item{DeviceKey}{When you enable device remembering, Amazon Cognito issues a device key that you can use for device authentication that bypasses multi-factor authentication (MFA). To implement \code{\link[=cognitoidentityprovider_get_tokens_from_refresh_token]{get_tokens_from_refresh_token}} in a user pool with device remembering, you must capture the device key from the initial authentication request. If your application doesn't provide the key of a registered device, Amazon Cognito issues a new one. You must provide the confirmed device key in this request if device remembering is enabled in your user pool.
 
 For more information about device remembering, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html}{Working with devices}.}
 
-\item{ClientMetadata}{A map of custom key-value pairs that you can provide as input for any
-custom workflows that this action triggers. You create custom workflows
-by assigning Lambda functions to user pool triggers.
+\item{ClientMetadata}{A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 
-When Amazon Cognito invokes any of these functions, it passes a JSON
-payload, which the function receives as input. This payload contains a
-\code{clientMetadata} attribute that provides the data that you assigned to
-the ClientMetadata parameter in your request. In your function code, you
-can process the \code{clientMetadata} value to enhance your workflow for your
-specific needs.
+When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a \code{clientMetadata} attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the \code{clientMetadata} value to enhance your workflow for your specific needs.
 
-To review the Lambda trigger types that Amazon Cognito invokes at
-runtime with API requests, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event}{Connecting API actions to Lambda triggers}
-in the \emph{Amazon Cognito Developer Guide}.
+To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event}{Connecting API actions to Lambda triggers} in the \emph{Amazon Cognito Developer Guide}.
 
-When you use the \code{ClientMetadata} parameter, note that Amazon Cognito
-won't do the following:
+When you use the \code{ClientMetadata} parameter, note that Amazon Cognito won't do the following:
 \itemize{
-\item Store the \code{ClientMetadata} value. This data is available only to
-Lambda triggers that are assigned to a user pool to support custom
-workflows. If your user pool configuration doesn't include triggers,
-the \code{ClientMetadata} parameter serves no purpose.
+\item Store the \code{ClientMetadata} value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the \code{ClientMetadata} parameter serves no purpose.
 \item Validate the \code{ClientMetadata} value.
-\item Encrypt the \code{ClientMetadata} value. Don't send sensitive information
-in this parameter.
+\item Encrypt the \code{ClientMetadata} value. Don't send sensitive information in this parameter.
 }}
 }
 \description{

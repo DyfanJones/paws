@@ -7,8 +7,7 @@
 codeartifact_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to add or
-update tags for.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.}
 
 \item{tags}{[required] The tags you want to modify or add to the resource.}
 }

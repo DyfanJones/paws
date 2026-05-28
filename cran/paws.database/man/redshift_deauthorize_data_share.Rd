@@ -8,12 +8,9 @@ specified datashare}
 redshift_deauthorize_data_share(DataShareArn, ConsumerIdentifier)
 }
 \arguments{
-\item{DataShareArn}{[required] The namespace Amazon Resource Name (ARN) of the datashare to remove
-authorization from.}
+\item{DataShareArn}{[required] The namespace Amazon Resource Name (ARN) of the datashare to remove authorization from.}
 
-\item{ConsumerIdentifier}{[required] The identifier of the data consumer that is to have authorization
-removed from the datashare. This identifier is an Amazon Web Services
-account ID or a keyword, such as ADX.}
+\item{ConsumerIdentifier}{[required] The identifier of the data consumer that is to have authorization removed from the datashare. This identifier is an Amazon Web Services account ID or a keyword, such as ADX.}
 }
 \description{
 From a datashare producer account, removes authorization from the specified datashare.

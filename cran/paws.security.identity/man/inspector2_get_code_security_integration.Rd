@@ -7,8 +7,7 @@
 inspector2_get_code_security_integration(integrationArn, tags = NULL)
 }
 \arguments{
-\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the code security integration to
-retrieve.}
+\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the code security integration to retrieve.}
 
 \item{tags}{The tags associated with the code security integration.}
 }

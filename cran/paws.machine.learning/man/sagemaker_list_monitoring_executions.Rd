@@ -27,17 +27,13 @@ sagemaker_list_monitoring_executions(
 
 \item{EndpointName}{Name of a specific endpoint to fetch jobs for.}
 
-\item{SortBy}{Whether to sort the results by the \code{Status}, \code{CreationTime}, or
-\code{ScheduledTime} field. The default is \code{CreationTime}.}
+\item{SortBy}{Whether to sort the results by the \code{Status}, \code{CreationTime}, or \code{ScheduledTime} field. The default is \code{CreationTime}.}
 
-\item{SortOrder}{Whether to sort the results in \code{Ascending} or \code{Descending} order. The
-default is \code{Descending}.}
+\item{SortOrder}{Whether to sort the results in \code{Ascending} or \code{Descending} order. The default is \code{Descending}.}
 
-\item{NextToken}{The token returned if the response is truncated. To retrieve the next
-set of job executions, use it in the next request.}
+\item{NextToken}{The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.}
 
-\item{MaxResults}{The maximum number of jobs to return in the response. The default value
-is 10.}
+\item{MaxResults}{The maximum number of jobs to return in the response. The default value is 10.}
 
 \item{ScheduledTimeBefore}{Filter for jobs scheduled before a specified time.}
 
@@ -53,11 +49,9 @@ is 10.}
 
 \item{StatusEquals}{A filter that retrieves only jobs with a specific status.}
 
-\item{MonitoringJobDefinitionName}{Gets a list of the monitoring job runs of the specified monitoring job
-definitions.}
+\item{MonitoringJobDefinitionName}{Gets a list of the monitoring job runs of the specified monitoring job definitions.}
 
-\item{MonitoringTypeEquals}{A filter that returns only the monitoring job runs of the specified
-monitoring type.}
+\item{MonitoringTypeEquals}{A filter that returns only the monitoring job runs of the specified monitoring type.}
 }
 \description{
 Returns list of all monitoring job executions.

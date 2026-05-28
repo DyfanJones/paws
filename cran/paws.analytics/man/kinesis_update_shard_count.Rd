@@ -16,17 +16,12 @@ kinesis_update_shard_count(
 \arguments{
 \item{StreamName}{The name of the stream.}
 
-\item{TargetShardCount}{[required] The new number of shards. This value has the following default limits.
-By default, you cannot do the following:
+\item{TargetShardCount}{[required] The new number of shards. This value has the following default limits. By default, you cannot do the following:
 \itemize{
-\item Set this value to more than double your current shard count for a
-stream.
+\item Set this value to more than double your current shard count for a stream.
 \item Set this value below half your current shard count for a stream.
-\item Set this value to more than 10000 shards in a stream (the default
-limit for shard count per stream is 10000 per account per region),
-unless you request a limit increase.
-\item Scale a stream with more than 10000 shards down unless you set this
-value to less than 10000 shards.
+\item Set this value to more than 10000 shards in a stream (the default limit for shard count per stream is 10000 per account per region), unless you request a limit increase.
+\item Scale a stream with more than 10000 shards down unless you set this value to less than 10000 shards.
 }}
 
 \item{ScalingType}{[required] The scaling type. Uniform scaling creates shards of equal size.}

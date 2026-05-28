@@ -17,8 +17,7 @@ inspector2_update_cis_scan_configuration(
 
 \item{scanName}{The scan name for the CIS scan configuration.}
 
-\item{securityLevel}{The security level for the CIS scan configuration. Security level refers
-to the Benchmark levels that CIS assigns to a profile.}
+\item{securityLevel}{The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile.}
 
 \item{schedule}{The schedule for the CIS scan configuration.}
 

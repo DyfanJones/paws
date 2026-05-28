@@ -13,7 +13,15 @@ bedrockdataautomation_create_data_automation_library(
 )
 }
 \arguments{
-\item{libraryName}{[required]}
+\item{libraryName}{[required] Name of the DataAutomationLibrary}
+
+\item{libraryDescription}{Description of the DataAutomationLibrary}
+
+\item{clientToken}{Client specified token used for idempotency checks}
+
+\item{encryptionConfiguration}{KMS Encryption Configuration}
+
+\item{tags}{List of tags}
 }
 \description{
 Creates an Amazon Bedrock Data Automation Library

@@ -7,8 +7,7 @@
 appfabric_delete_app_bundle(appBundleIdentifier)
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The ID or Amazon Resource Name (ARN) of the app bundle that needs to be
-deleted.}
+\item{appBundleIdentifier}{[required] The ID or Amazon Resource Name (ARN) of the app bundle that needs to be deleted.}
 }
 \description{
 Deletes an app bundle. You must delete all associated app authorizations before you can delete an app bundle.

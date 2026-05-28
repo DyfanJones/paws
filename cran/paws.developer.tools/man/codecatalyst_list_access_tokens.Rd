@@ -8,13 +8,9 @@ calls the API}
 codecatalyst_list_access_tokens(maxResults = NULL, nextToken = NULL)
 }
 \arguments{
-\item{maxResults}{The maximum number of results to show in a single call to this API. If
-the number of results is larger than the number you specified, the
-response will include a \code{NextToken} element, which you can use to obtain
-additional results.}
+\item{maxResults}{The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a \code{NextToken} element, which you can use to obtain additional results.}
 
-\item{nextToken}{A token returned from a call to this API to indicate the next batch of
-results to return, if any.}
+\item{nextToken}{A token returned from a call to this API to indicate the next batch of results to return, if any.}
 }
 \description{
 Lists all personal access tokens (PATs) associated with the user who calls the API. You can only list PATs associated with your Amazon Web Services Builder ID.

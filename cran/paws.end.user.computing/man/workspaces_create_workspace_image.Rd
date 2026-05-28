@@ -13,9 +13,7 @@ workspaces_create_workspace_image(Name, Description, WorkspaceId, Tags = NULL)
 
 \item{WorkspaceId}{[required] The identifier of the source WorkSpace}
 
-\item{Tags}{The tags that you want to add to the new WorkSpace image. To add tags
-when you're creating the image, you must create an IAM policy that
-grants your IAM user permission to use \code{workspaces:CreateTags}.}
+\item{Tags}{The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use \code{workspaces:CreateTags}.}
 }
 \description{
 Creates a new WorkSpace image from an existing WorkSpace.

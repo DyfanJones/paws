@@ -17,21 +17,17 @@ redshift_create_hsm_configuration(
 )
 }
 \arguments{
-\item{HsmConfigurationIdentifier}{[required] The identifier to be assigned to the new Amazon Redshift HSM
-configuration.}
+\item{HsmConfigurationIdentifier}{[required] The identifier to be assigned to the new Amazon Redshift HSM configuration.}
 
 \item{Description}{[required] A text description of the HSM configuration to be created.}
 
-\item{HsmIpAddress}{[required] The IP address that the Amazon Redshift cluster must use to access the
-HSM.}
+\item{HsmIpAddress}{[required] The IP address that the Amazon Redshift cluster must use to access the HSM.}
 
-\item{HsmPartitionName}{[required] The name of the partition in the HSM where the Amazon Redshift clusters
-will store their database encryption keys.}
+\item{HsmPartitionName}{[required] The name of the partition in the HSM where the Amazon Redshift clusters will store their database encryption keys.}
 
 \item{HsmPartitionPassword}{[required] The password required to access the HSM partition.}
 
-\item{HsmServerPublicCertificate}{[required] The HSMs public certificate file. When using Cloud HSM, the file name is
-server.pem.}
+\item{HsmServerPublicCertificate}{[required] The HSMs public certificate file. When using Cloud HSM, the file name is server.pem.}
 
 \item{Tags}{A list of tag instances.}
 }

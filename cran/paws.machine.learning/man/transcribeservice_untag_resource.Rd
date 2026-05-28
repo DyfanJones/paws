@@ -7,19 +7,13 @@
 transcribeservice_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon Transcribe resource you
-want to remove tags from. ARNs have the format
-\code{arn:partition:service:region:account-id:resource-type/resource-id}.
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon Transcribe resource you want to remove tags from. ARNs have the format \code{arn:partition:service:region:account-id:resource-type/resource-id}.
 
-For example,
-\code{arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name}.
+For example, \code{arn:aws:transcribe:us-west-2:111122223333:transcription-job/transcription-job-name}.
 
-Valid values for \code{resource-type} are: \code{transcription-job},
-\code{medical-transcription-job}, \code{vocabulary}, \code{medical-vocabulary},
-\code{vocabulary-filter}, and \code{language-model}.}
+Valid values for \code{resource-type} are: \code{transcription-job}, \code{medical-transcription-job}, \code{vocabulary}, \code{medical-vocabulary}, \code{vocabulary-filter}, and \code{language-model}.}
 
-\item{TagKeys}{[required] Removes the specified tag keys from the specified Amazon Transcribe
-resource.}
+\item{TagKeys}{[required] Removes the specified tag keys from the specified Amazon Transcribe resource.}
 }
 \description{
 Removes the specified tags from the specified Amazon Transcribe resource.

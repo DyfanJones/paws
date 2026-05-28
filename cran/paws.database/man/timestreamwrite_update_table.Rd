@@ -20,8 +20,7 @@ timestreamwrite_update_table(
 
 \item{RetentionProperties}{The retention duration of the memory store and the magnetic store.}
 
-\item{MagneticStoreWriteProperties}{Contains properties to set on the table when enabling magnetic store
-writes.}
+\item{MagneticStoreWriteProperties}{Contains properties to set on the table when enabling magnetic store writes.}
 
 \item{Schema}{The schema of the table.}
 }

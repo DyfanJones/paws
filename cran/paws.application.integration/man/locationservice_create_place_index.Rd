@@ -18,60 +18,43 @@ locationservice_create_place_index(
 
 Requirements:
 \itemize{
-\item Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-),
-periods (.), and underscores (_).
+\item Contain only alphanumeric characters (A–Z, a–z, 0–9), hyphens (-), periods (.), and underscores (_).
 \item Must be a unique place index resource name.
 \item No spaces allowed. For example, \code{ExamplePlaceIndex}.
 }}
 
 \item{DataSource}{[required] Specifies the geospatial data provider for the new place index.
 
-This field is case-sensitive. Enter the valid values as shown. For
-example, entering \code{HERE} returns an error.
+This field is case-sensitive. Enter the valid values as shown. For example, entering \code{HERE} returns an error.
 
 Valid values include:
 \itemize{
-\item \code{Esri} – For additional information about
-\href{https://docs.aws.amazon.com/location/previous/developerguide/esri.html}{Esri}'s
-coverage in your region of interest, see \href{https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm}{Esri details on geocoding coverage}.
-\item \code{Grab} – Grab provides place index functionality for Southeast Asia.
-For additional information about
-\href{https://docs.aws.amazon.com/location/previous/developerguide/grab.html}{GrabMaps}'
-coverage, see \href{https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area}{GrabMaps countries and areas covered}.
-\item \code{Here} – For additional information about \href{https://docs.aws.amazon.com/location/previous/developerguide/HERE.html}{HERE Technologies}'
-coverage in your region of interest, see \href{https://docs.here.com/}{HERE details on goecoding coverage}.
+\item \code{Esri} – For additional information about \href{https://docs.aws.amazon.com/location/previous/developerguide/esri.html}{Esri}'s coverage in your region of interest, see \href{https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm}{Esri details on geocoding coverage}.
+\item \code{Grab} – Grab provides place index functionality for Southeast Asia. For additional information about \href{https://docs.aws.amazon.com/location/previous/developerguide/grab.html}{GrabMaps}' coverage, see \href{https://docs.aws.amazon.com/location/previous/developerguide/grab.html#grab-coverage-area}{GrabMaps countries and areas covered}.
+\item \code{Here} – For additional information about \href{https://docs.aws.amazon.com/location/previous/developerguide/HERE.html}{HERE Technologies}' coverage in your region of interest, see \href{https://docs.here.com/}{HERE details on goecoding coverage}.
 
-If you specify HERE Technologies (\code{Here}) as the data provider, you
-may not \href{https://docs.aws.amazon.com/location/latest/APIReference/}{store results}
-for locations in Japan. For more information, see the \href{https://aws.amazon.com/service-terms/}{Amazon Web Services service terms} for
-Amazon Location Service.
+If you specify HERE Technologies (\code{Here}) as the data provider, you may not \href{https://docs.aws.amazon.com/location/latest/APIReference/}{store results} for locations in Japan. For more information, see the \href{https://aws.amazon.com/service-terms/}{Amazon Web Services service terms} for Amazon Location Service.
 }
 
-For additional information , see \href{https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html}{Data providers}
-on the \emph{Amazon Location Service developer guide}.}
+For additional information , see \href{https://docs.aws.amazon.com/location/previous/developerguide/what-is-data-provider.html}{Data providers} on the \emph{Amazon Location Service developer guide}.}
 
-\item{PricingPlan}{No longer used. If included, the only allowed value is
-\code{RequestBasedUsage}.}
+\item{PricingPlan}{No longer used. If included, the only allowed value is \code{RequestBasedUsage}.}
 
 \item{Description}{The optional description for the place index resource.}
 
 \item{DataSourceConfiguration}{Specifies the data storage option requesting Places.}
 
-\item{Tags}{Applies one or more tags to the place index resource. A tag is a
-key-value pair that helps you manage, identify, search, and filter your
-resources.
+\item{Tags}{Applies one or more tags to the place index resource. A tag is a key-value pair that helps you manage, identify, search, and filter your resources.
 
 Format: \code{"key" : "value"}
 
 Restrictions:
 \itemize{
 \item Maximum 50 tags per resource.
-\item Each tag key must be unique and must have exactly one associated
-value.
+\item Each tag key must be unique and must have exactly one associated value.
 \item Maximum key length: 128 Unicode characters in UTF-8.
 \item Maximum value length: 256 Unicode characters in UTF-8.
-\item Can use alphanumeric characters (A–Z, a–z, 0–9), and the following
-characters: + - = . _ : / @
+\item Can use alphanumeric characters (A–Z, a–z, 0–9), and the following characters: + - = . _ : / @
 \item Cannot use "aws:" as a prefix for a key.
 }}
 }

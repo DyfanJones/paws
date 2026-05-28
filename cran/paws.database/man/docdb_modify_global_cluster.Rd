@@ -11,16 +11,14 @@ docdb_modify_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The identifier for the global cluster being modified. This parameter
-isn't case-sensitive.
+\item{GlobalClusterIdentifier}{[required] The identifier for the global cluster being modified. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
 \item Must match the identifier of an existing global cluster.
 }}
 
-\item{NewGlobalClusterIdentifier}{The new identifier for a global cluster when you modify a global
-cluster. This value is stored as a lowercase string.
+\item{NewGlobalClusterIdentifier}{The new identifier for a global cluster when you modify a global cluster. This value is stored as a lowercase string.
 \itemize{
 \item Must contain from 1 to 63 letters, numbers, or hyphens
 
@@ -31,8 +29,7 @@ Can't end with a hyphen or contain two consecutive hyphens
 
 Example: \code{my-cluster2}}
 
-\item{DeletionProtection}{Indicates if the global cluster has deletion protection enabled. The
-global cluster can't be deleted when deletion protection is enabled.}
+\item{DeletionProtection}{Indicates if the global cluster has deletion protection enabled. The global cluster can't be deleted when deletion protection is enabled.}
 }
 \description{
 Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new values in the request.

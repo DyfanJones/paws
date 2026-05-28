@@ -14,9 +14,7 @@ neptune_copy_db_cluster_snapshot(
 )
 }
 \arguments{
-\item{SourceDBClusterSnapshotIdentifier}{[required] The identifier of the DB cluster snapshot to copy. This parameter is not
-case-sensitive. If the source DB cluster snapshot is in a different
-region or owned by another account, specify the snapshot ARN.
+\item{SourceDBClusterSnapshotIdentifier}{[required] The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive. If the source DB cluster snapshot is in a different region or owned by another account, specify the snapshot ARN.
 
 Constraints:
 \itemize{
@@ -26,8 +24,7 @@ Constraints:
 
 Example: \code{my-cluster-snapshot1}}
 
-\item{TargetDBClusterSnapshotIdentifier}{[required] The identifier of the new DB cluster snapshot to create from the source
-DB cluster snapshot. This parameter is not case-sensitive.
+\item{TargetDBClusterSnapshotIdentifier}{[required] The identifier of the new DB cluster snapshot to create from the source DB cluster snapshot. This parameter is not case-sensitive.
 
 Constraints:
 \itemize{
@@ -38,31 +35,19 @@ Constraints:
 
 Example: \code{my-cluster-snapshot2}}
 
-\item{KmsKeyId}{The Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key
-ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
-alias for the KMS encryption key.
+\item{KmsKeyId}{The Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
 
-If you copy an encrypted DB cluster snapshot from your Amazon account,
-you can specify a value for \code{KmsKeyId} to encrypt the copy with a new
-KMS encryption key. If you don't specify a value for \code{KmsKeyId}, then
-the copy of the DB cluster snapshot is encrypted with the same KMS key
-as the source DB cluster snapshot.
+If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for \code{KmsKeyId} to encrypt the copy with a new KMS encryption key. If you don't specify a value for \code{KmsKeyId}, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source DB cluster snapshot.
 
-If you copy an encrypted DB cluster snapshot that is shared from another
-Amazon account, then you must specify a value for \code{KmsKeyId}.
+If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a value for \code{KmsKeyId}.
 
-KMS encryption keys are specific to the Amazon Region that they are
-created in, and you can't use encryption keys from one Amazon Region in
-another Amazon Region.
+KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys from one Amazon Region in another Amazon Region.
 
-You cannot encrypt an unencrypted DB cluster snapshot when you copy it.
-If you try to copy an unencrypted DB cluster snapshot and specify a
-value for the KmsKeyId parameter, an error is returned.}
+You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.}
 
 \item{PreSignedUrl}{Not currently supported.}
 
-\item{CopyTags}{True to copy all tags from the source DB cluster snapshot to the target
-DB cluster snapshot, and otherwise false. The default is false.}
+\item{CopyTags}{True to copy all tags from the source DB cluster snapshot to the target DB cluster snapshot, and otherwise false. The default is false.}
 
 \item{Tags}{The tags to assign to the new DB cluster snapshot copy.}
 }

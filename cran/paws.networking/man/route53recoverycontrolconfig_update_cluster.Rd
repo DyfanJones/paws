@@ -9,8 +9,7 @@ route53recoverycontrolconfig_update_cluster(ClusterArn, NetworkType)
 \arguments{
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) of the cluster.}
 
-\item{NetworkType}{[required] The network type of the cluster. NetworkType can be one of the
-following: IPV4, DUALSTACK.}
+\item{NetworkType}{[required] The network type of the cluster. NetworkType can be one of the following: IPV4, DUALSTACK.}
 }
 \description{
 Updates an existing cluster. You can only update the network type of a cluster.

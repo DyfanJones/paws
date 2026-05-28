@@ -16,21 +16,15 @@ cognitoidentityprovider_create_managed_login_branding(
 \arguments{
 \item{UserPoolId}{[required] The ID of the user pool where you want to create a new branding style.}
 
-\item{ClientId}{[required] The app client that you want to create the branding style for. Each
-style is linked to an app client until you delete it.}
+\item{ClientId}{[required] The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.}
 
-\item{UseCognitoProvidedValues}{When true, applies the default branding style options. These default
-options are managed by Amazon Cognito. You can modify them later in the
-branding editor.
+\item{UseCognitoProvidedValues}{When true, applies the default branding style options. These default options are managed by Amazon Cognito. You can modify them later in the branding editor.
 
-When you specify \code{true} for this option, you must also omit values for
-\code{Settings} and \code{Assets} in the request.}
+When you specify \code{true} for this option, you must also omit values for \code{Settings} and \code{Assets} in the request.}
 
-\item{Settings}{A JSON file, encoded as a \code{Document} type, with the the settings that
-you want to apply to your style.
+\item{Settings}{A JSON file, encoded as a \code{Document} type, with the the settings that you want to apply to your style.
 
-The following components are not currently implemented and reserved for
-future use:
+The following components are not currently implemented and reserved for future use:
 \itemize{
 \item \code{signUp}
 \item \code{instructions}
@@ -38,12 +32,9 @@ future use:
 \item \code{languageSelector} (for localization, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization}{Managed login localization)}
 }
 
-[Managed login
-localization)]: R:Managed\%20login\%0A\%20\%20\%20\%20localization)}
+[Managed login localization)]: R:Managed\%20login\%20localization)}
 
-\item{Assets}{An array of image files that you want to apply to functions like
-backgrounds, logos, and icons. Each object must also indicate whether it
-is for dark mode, light mode, or browser-adaptive mode.}
+\item{Assets}{An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.}
 }
 \description{
 Creates a new set of branding settings for a user pool style and associates it with an app client. This operation is the programmatic option for the creation of a new style in the branding editor.

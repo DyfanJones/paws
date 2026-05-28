@@ -18,21 +18,15 @@ lambda_create_capacity_provider(
 \arguments{
 \item{CapacityProviderName}{[required] The name of the capacity provider.}
 
-\item{VpcConfig}{[required] The VPC configuration for the capacity provider, including subnet IDs
-and security group IDs where compute instances will be launched.}
+\item{VpcConfig}{[required] The VPC configuration for the capacity provider, including subnet IDs and security group IDs where compute instances will be launched.}
 
-\item{PermissionsConfig}{[required] The permissions configuration that specifies the IAM role ARN used by
-the capacity provider to manage compute resources.}
+\item{PermissionsConfig}{[required] The permissions configuration that specifies the IAM role ARN used by the capacity provider to manage compute resources.}
 
-\item{InstanceRequirements}{The instance requirements that specify the compute instance
-characteristics, including architectures and allowed or excluded
-instance types.}
+\item{InstanceRequirements}{The instance requirements that specify the compute instance characteristics, including architectures and allowed or excluded instance types.}
 
-\item{CapacityProviderScalingConfig}{The scaling configuration that defines how the capacity provider scales
-compute instances, including maximum vCPU count and scaling policies.}
+\item{CapacityProviderScalingConfig}{The scaling configuration that defines how the capacity provider scales compute instances, including maximum vCPU count and scaling policies.}
 
-\item{KmsKeyArn}{The ARN of the KMS key used to encrypt data associated with the capacity
-provider.}
+\item{KmsKeyArn}{The ARN of the KMS key used to encrypt data associated with the capacity provider.}
 
 \item{Tags}{A list of tags to associate with the capacity provider.}
 }

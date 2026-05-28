@@ -11,13 +11,9 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/controltower_create_landing_zone/](https://www.paws-r-sdk.com/docs/controltower_create_landing_zone/) for full documentation.
 #'
 #' @param version &#91;required&#93; The landing zone version, for example, 3.0.
-#' @param remediationTypes Specifies the types of remediation actions to apply when creating the
-#' landing zone, such as automatic drift correction or compliance
-#' enforcement.
+#' @param remediationTypes Specifies the types of remediation actions to apply when creating the landing zone, such as automatic drift correction or compliance enforcement.
 #' @param tags Tags to be applied to the landing zone.
-#' @param manifest The manifest JSON file is a text file that describes your Amazon Web
-#' Services resources. For examples, review [Launch your landing
-#' zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html).
+#' @param manifest The manifest JSON file is a text file that describes your Amazon Web Services resources. For examples, review [Launch your landing zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html).
 #'
 #' @keywords internal
 #'
@@ -79,8 +75,7 @@ controltower_delete_landing_zone <- function(landingZoneIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_disable_baseline/](https://www.paws-r-sdk.com/docs/controltower_disable_baseline/) for full documentation.
 #'
-#' @param enabledBaselineIdentifier &#91;required&#93; Identifier of the `EnabledBaseline` resource to be deactivated, in ARN
-#' format.
+#' @param enabledBaselineIdentifier &#91;required&#93; Identifier of the `EnabledBaseline` resource to be deactivated, in ARN format.
 #'
 #' @keywords internal
 #'
@@ -111,16 +106,9 @@ controltower_disable_baseline <- function(enabledBaselineIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_disable_control/](https://www.paws-r-sdk.com/docs/controltower_disable_control/) for full documentation.
 #'
-#' @param controlIdentifier The ARN of the control. Only **Strongly recommended** and **Elective**
-#' controls are permitted, with the exception of the **Region deny**
-#' control. For information on how to find the `controlIdentifier`, see
-#' [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
-#' @param targetIdentifier The ARN of the organizational unit. For information on how to find the
-#' `targetIdentifier`, see [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
-#' @param enabledControlIdentifier The ARN of the enabled control to be disabled, which uniquely identifies
-#' the control instance on the target organizational unit.
+#' @param controlIdentifier The ARN of the control. Only **Strongly recommended** and **Elective** controls are permitted, with the exception of the **Region deny** control. For information on how to find the `controlIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param targetIdentifier The ARN of the organizational unit. For information on how to find the `targetIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param enabledControlIdentifier The ARN of the enabled control to be disabled, which uniquely identifies the control instance on the target organizational unit.
 #'
 #' @keywords internal
 #'
@@ -152,13 +140,10 @@ controltower_disable_control <- function(controlIdentifier = NULL, targetIdentif
 #' See [https://www.paws-r-sdk.com/docs/controltower_enable_baseline/](https://www.paws-r-sdk.com/docs/controltower_enable_baseline/) for full documentation.
 #'
 #' @param baselineVersion &#91;required&#93; The specific version to be enabled of the specified baseline.
-#' @param parameters A list of `key-value` objects that specify enablement parameters, where
-#' `key` is a string and `value` is a document of any type.
+#' @param parameters A list of `key-value` objects that specify enablement parameters, where `key` is a string and `value` is a document of any type.
 #' @param baselineIdentifier &#91;required&#93; The ARN of the baseline to be enabled.
-#' @param targetIdentifier &#91;required&#93; The ARN of the target on which the baseline will be enabled. Only OUs
-#' are supported as targets.
-#' @param tags Tags associated with input to
-#' [`enable_baseline`][controltower_enable_baseline].
+#' @param targetIdentifier &#91;required&#93; The ARN of the target on which the baseline will be enabled. Only OUs are supported as targets.
+#' @param tags Tags associated with input to [`enable_baseline`][controltower_enable_baseline].
 #'
 #' @keywords internal
 #'
@@ -189,17 +174,10 @@ controltower_enable_baseline <- function(baselineVersion, parameters = NULL, bas
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_enable_control/](https://www.paws-r-sdk.com/docs/controltower_enable_control/) for full documentation.
 #'
-#' @param controlIdentifier &#91;required&#93; The ARN of the control. Only **Strongly recommended** and **Elective**
-#' controls are permitted, with the exception of the **Region deny**
-#' control. For information on how to find the `controlIdentifier`, see
-#' [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
-#' @param targetIdentifier &#91;required&#93; The ARN of the organizational unit. For information on how to find the
-#' `targetIdentifier`, see [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param controlIdentifier &#91;required&#93; The ARN of the control. Only **Strongly recommended** and **Elective** controls are permitted, with the exception of the **Region deny** control. For information on how to find the `controlIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param targetIdentifier &#91;required&#93; The ARN of the organizational unit. For information on how to find the `targetIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
 #' @param tags Tags to be applied to the `EnabledControl` resource.
-#' @param parameters A list of input parameter values, which are specified to configure the
-#' control when you enable it.
+#' @param parameters A list of input parameter values, which are specified to configure the control when you enable it.
 #'
 #' @keywords internal
 #'
@@ -264,8 +242,7 @@ controltower_get_baseline <- function(baselineIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_get_baseline_operation/](https://www.paws-r-sdk.com/docs/controltower_get_baseline_operation/) for full documentation.
 #'
-#' @param operationIdentifier &#91;required&#93; The operation ID returned from mutating asynchronous APIs (Enable,
-#' Disable, Update, Reset).
+#' @param operationIdentifier &#91;required&#93; The operation ID returned from mutating asynchronous APIs (Enable, Disable, Update, Reset).
 #'
 #' @keywords internal
 #'
@@ -297,8 +274,7 @@ controltower_get_baseline_operation <- function(operationIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_get_control_operation/](https://www.paws-r-sdk.com/docs/controltower_get_control_operation/) for full documentation.
 #'
-#' @param operationIdentifier &#91;required&#93; The ID of the asynchronous operation, which is used to track status. The
-#' operation is available for 90 days.
+#' @param operationIdentifier &#91;required&#93; The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.
 #'
 #' @keywords internal
 #'
@@ -330,8 +306,7 @@ controltower_get_control_operation <- function(operationIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_get_enabled_baseline/](https://www.paws-r-sdk.com/docs/controltower_get_enabled_baseline/) for full documentation.
 #'
-#' @param enabledBaselineIdentifier &#91;required&#93; Identifier of the `EnabledBaseline` resource to be retrieved, in ARN
-#' format.
+#' @param enabledBaselineIdentifier &#91;required&#93; Identifier of the `EnabledBaseline` resource to be retrieved, in ARN format.
 #'
 #' @keywords internal
 #'
@@ -487,9 +462,7 @@ controltower_list_baselines <- function(nextToken = NULL, maxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_list_control_operations/](https://www.paws-r-sdk.com/docs/controltower_list_control_operations/) for full documentation.
 #'
-#' @param filter An input filter for the
-#' [`list_control_operations`][controltower_list_control_operations] API
-#' that lets you select the types of control operations to view.
+#' @param filter An input filter for the [`list_control_operations`][controltower_list_control_operations] API that lets you select the types of control operations to view.
 #' @param nextToken A pagination token.
 #' @param maxResults The maximum number of results to be shown.
 #'
@@ -522,13 +495,10 @@ controltower_list_control_operations <- function(filter = NULL, nextToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_list_enabled_baselines/](https://www.paws-r-sdk.com/docs/controltower_list_enabled_baselines/) for full documentation.
 #'
-#' @param filter A filter applied on the `ListEnabledBaseline` operation. Allowed filters
-#' are `baselineIdentifiers` and `targetIdentifiers`. The filter can be
-#' applied for either, or both.
+#' @param filter A filter applied on the `ListEnabledBaseline` operation. Allowed filters are `baselineIdentifiers` and `targetIdentifiers`. The filter can be applied for either, or both.
 #' @param nextToken A pagination token.
 #' @param maxResults The maximum number of results to be shown.
-#' @param includeChildren A value that can be set to include the child enabled baselines in
-#' responses. The default value is false.
+#' @param includeChildren A value that can be set to include the child enabled baselines in responses. The default value is false.
 #'
 #' @keywords internal
 #'
@@ -560,17 +530,11 @@ controltower_list_enabled_baselines <- function(filter = NULL, nextToken = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_list_enabled_controls/](https://www.paws-r-sdk.com/docs/controltower_list_enabled_controls/) for full documentation.
 #'
-#' @param targetIdentifier The ARN of the organizational unit. For information on how to find the
-#' `targetIdentifier`, see [the overview
-#' page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
-#' @param nextToken The token to continue the list from a previous API call with the same
-#' parameters.
+#' @param targetIdentifier The ARN of the organizational unit. For information on how to find the `targetIdentifier`, see [the overview page](https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html).
+#' @param nextToken The token to continue the list from a previous API call with the same parameters.
 #' @param maxResults How many results to return per API call.
-#' @param filter An input filter for the
-#' [`list_enabled_controls`][controltower_list_enabled_controls] API that
-#' lets you select the types of control operations to view.
-#' @param includeChildren A boolean value that determines whether to include enabled controls from
-#' child organizational units in the response.
+#' @param filter An input filter for the [`list_enabled_controls`][controltower_list_enabled_controls] API that lets you select the types of control operations to view.
+#' @param includeChildren A boolean value that determines whether to include enabled controls from child organizational units in the response.
 #'
 #' @keywords internal
 #'
@@ -601,11 +565,8 @@ controltower_list_enabled_controls <- function(targetIdentifier = NULL, nextToke
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_list_landing_zone_operations/](https://www.paws-r-sdk.com/docs/controltower_list_landing_zone_operations/) for full documentation.
 #'
-#' @param filter An input filter for the
-#' [`list_landing_zone_operations`][controltower_list_landing_zone_operations]
-#' API that lets you select the types of landing zone operations to view.
-#' @param nextToken The token to continue the list from a previous API call with the same
-#' parameters.
+#' @param filter An input filter for the [`list_landing_zone_operations`][controltower_list_landing_zone_operations] API that lets you select the types of landing zone operations to view.
+#' @param nextToken The token to continue the list from a previous API call with the same parameters.
 #' @param maxResults How many results to return per API call.
 #'
 #' @keywords internal
@@ -638,8 +599,7 @@ controltower_list_landing_zone_operations <- function(filter = NULL, nextToken =
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_list_landing_zones/](https://www.paws-r-sdk.com/docs/controltower_list_landing_zones/) for full documentation.
 #'
-#' @param nextToken The token to continue the list from a previous API call with the same
-#' parameters.
+#' @param nextToken The token to continue the list from a previous API call with the same parameters.
 #' @param maxResults The maximum number of returned landing zone ARNs, which is one.
 #'
 #' @keywords internal
@@ -702,8 +662,7 @@ controltower_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_reset_enabled_baseline/](https://www.paws-r-sdk.com/docs/controltower_reset_enabled_baseline/) for full documentation.
 #'
-#' @param enabledBaselineIdentifier &#91;required&#93; Specifies the ID of the `EnabledBaseline` resource to be re-enabled, in
-#' ARN format.
+#' @param enabledBaselineIdentifier &#91;required&#93; Specifies the ID of the `EnabledBaseline` resource to be re-enabled, in ARN format.
 #'
 #' @keywords internal
 #'
@@ -860,8 +819,7 @@ controltower_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_update_enabled_baseline/](https://www.paws-r-sdk.com/docs/controltower_update_enabled_baseline/) for full documentation.
 #'
-#' @param baselineVersion &#91;required&#93; Specifies the new `Baseline` version, to which the `EnabledBaseline`
-#' should be updated.
+#' @param baselineVersion &#91;required&#93; Specifies the new `Baseline` version, to which the `EnabledBaseline` should be updated.
 #' @param parameters Parameters to apply when making an update.
 #' @param enabledBaselineIdentifier &#91;required&#93; Specifies the `EnabledBaseline` resource to be updated.
 #'
@@ -894,8 +852,7 @@ controltower_update_enabled_baseline <- function(baselineVersion, parameters = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/controltower_update_enabled_control/](https://www.paws-r-sdk.com/docs/controltower_update_enabled_control/) for full documentation.
 #'
-#' @param parameters &#91;required&#93; A key/value pair, where `Key` is of type `String` and `Value` is of type
-#' `Document`.
+#' @param parameters &#91;required&#93; A key/value pair, where `Key` is of type `String` and `Value` is of type `Document`.
 #' @param enabledControlIdentifier &#91;required&#93; The ARN of the enabled control that will be updated.
 #'
 #' @keywords internal
@@ -928,15 +885,9 @@ controltower_update_enabled_control <- function(parameters, enabledControlIdenti
 #' See [https://www.paws-r-sdk.com/docs/controltower_update_landing_zone/](https://www.paws-r-sdk.com/docs/controltower_update_landing_zone/) for full documentation.
 #'
 #' @param version &#91;required&#93; The landing zone version, for example, 3.2.
-#' @param remediationTypes Specifies the types of remediation actions to apply when updating the
-#' landing zone configuration.
+#' @param remediationTypes Specifies the types of remediation actions to apply when updating the landing zone configuration.
 #' @param landingZoneIdentifier &#91;required&#93; The unique identifier of the landing zone.
-#' @param manifest The manifest file (JSON) is a text file that describes your Amazon Web
-#' Services resources. For an example, review [Launch your landing
-#' zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html).
-#' The example manifest file contains each of the available parameters. The
-#' schema for the landing zone's JSON manifest file is not published, by
-#' design.
+#' @param manifest The manifest file (JSON) is a text file that describes your Amazon Web Services resources. For an example, review [Launch your landing zone](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html). The example manifest file contains each of the available parameters. The schema for the landing zone's JSON manifest file is not published, by design.
 #'
 #' @keywords internal
 #'

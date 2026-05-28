@@ -15,11 +15,9 @@ omics_list_read_set_activation_jobs(
 \arguments{
 \item{sequenceStoreId}{[required] The read set's sequence store ID.}
 
-\item{maxResults}{The maximum number of read set activation jobs to return in one page of
-results.}
+\item{maxResults}{The maximum number of read set activation jobs to return in one page of results.}
 
-\item{nextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{filter}{A filter to apply to the list.}
 }

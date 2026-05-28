@@ -11,10 +11,7 @@ ec2_enable_route_server_propagation(RouteServerId, RouteTableId, DryRun = NULL)
 
 \item{RouteTableId}{[required] The ID of the route table to which route server will propagate routes.}
 
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Defines which route tables the route server can update with routes.

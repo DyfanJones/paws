@@ -10,10 +10,7 @@ ivsrealtime_delete_ingest_configuration(arn, force = NULL)
 \arguments{
 \item{arn}{[required] ARN of the IngestConfiguration.}
 
-\item{force}{Optional field to force deletion of the IngestConfiguration. If this is
-set to \code{true} when a participant is actively publishing, the participant
-is disconnected from the stage, followed by deletion of the
-IngestConfiguration. Default: \code{false}.}
+\item{force}{Optional field to force deletion of the IngestConfiguration. If this is set to \code{true} when a participant is actively publishing, the participant is disconnected from the stage, followed by deletion of the IngestConfiguration. Default: \code{false}.}
 }
 \description{
 Deletes a specified IngestConfiguration, so it can no longer be used to broadcast. An IngestConfiguration cannot be deleted if the publisher is actively streaming to a stage, unless \code{force} is set to \code{true}.

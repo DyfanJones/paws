@@ -17,12 +17,9 @@ rekognition_search_faces(
 
 \item{FaceId}{[required] ID of a face to find matches for in the collection.}
 
-\item{MaxFaces}{Maximum number of faces to return. The operation returns the maximum
-number of faces with the highest confidence in the match.}
+\item{MaxFaces}{Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.}
 
-\item{FaceMatchThreshold}{Optional value specifying the minimum confidence in the face match to
-return. For example, don't return any matches where confidence in
-matches is less than 70\%. The default value is 80\%.}
+\item{FaceMatchThreshold}{Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70\%. The default value is 80\%.}
 }
 \description{
 For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the \code{\link[=rekognition_index_faces]{index_faces}} operation. The operation compares the features of the input face with faces in the specified collection.

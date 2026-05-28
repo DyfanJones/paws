@@ -14,22 +14,15 @@ billingconductor_create_pricing_plan(
 )
 }
 \arguments{
-\item{ClientToken}{A unique, case-sensitive identifier that you specify to ensure
-idempotency of the request. Idempotency ensures that an API request
-completes no more than one time. With an idempotent request, if the
-original request completes successfully, any subsequent retries complete
-successfully without performing any further actions.}
+\item{ClientToken}{A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.}
 
-\item{Name}{[required] The name of the pricing plan. The names must be unique to each pricing
-plan.}
+\item{Name}{[required] The name of the pricing plan. The names must be unique to each pricing plan.}
 
 \item{Description}{The description of the pricing plan.}
 
-\item{PricingRuleArns}{A list of Amazon Resource Names (ARNs) that define the pricing plan
-parameters.}
+\item{PricingRuleArns}{A list of Amazon Resource Names (ARNs) that define the pricing plan parameters.}
 
-\item{Tags}{A map that contains tag keys and tag values that are attached to a
-pricing plan.}
+\item{Tags}{A map that contains tag keys and tag values that are attached to a pricing plan.}
 }
 \description{
 Creates a pricing plan that is used for computing Amazon Web Services charges for billing groups.

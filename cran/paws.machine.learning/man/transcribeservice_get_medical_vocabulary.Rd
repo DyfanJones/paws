@@ -7,8 +7,7 @@
 transcribeservice_get_medical_vocabulary(VocabularyName)
 }
 \arguments{
-\item{VocabularyName}{[required] The name of the custom medical vocabulary you want information about.
-Custom medical vocabulary names are case sensitive.}
+\item{VocabularyName}{[required] The name of the custom medical vocabulary you want information about. Custom medical vocabulary names are case sensitive.}
 }
 \description{
 Provides information about the specified custom medical vocabulary.

@@ -8,8 +8,7 @@ reasons}
 rds_reboot_db_instance(DBInstanceIdentifier, ForceFailover = NULL)
 }
 \arguments{
-\item{DBInstanceIdentifier}{[required] The DB instance identifier. This parameter is stored as a lowercase
-string.
+\item{DBInstanceIdentifier}{[required] The DB instance identifier. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -18,8 +17,7 @@ Constraints:
 
 \item{ForceFailover}{Specifies whether the reboot is conducted through a Multi-AZ failover.
 
-Constraint: You can't enable force failover if the instance isn't
-configured for Multi-AZ.}
+Constraint: You can't enable force failover if the instance isn't configured for Multi-AZ.}
 }
 \description{
 You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain modifications, or if you change the DB parameter group associated with the DB instance, you must reboot the instance for the changes to take effect.

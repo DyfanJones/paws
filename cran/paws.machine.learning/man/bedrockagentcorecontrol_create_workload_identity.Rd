@@ -11,15 +11,11 @@ bedrockagentcorecontrol_create_workload_identity(
 )
 }
 \arguments{
-\item{name}{[required] The name of the workload identity. The name must be unique within your
-account.}
+\item{name}{[required] The name of the workload identity. The name must be unique within your account.}
 
-\item{allowedResourceOauth2ReturnUrls}{The list of allowed OAuth2 return URLs for resources associated with
-this workload identity.}
+\item{allowedResourceOauth2ReturnUrls}{The list of allowed OAuth2 return URLs for resources associated with this workload identity.}
 
-\item{tags}{A map of tag keys and values to assign to the workload identity. Tags
-enable you to categorize your resources in different ways, for example,
-by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the workload identity. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a new workload identity.

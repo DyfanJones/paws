@@ -18,8 +18,7 @@ elbv2_modify_trust_store(
 
 \item{CaCertificatesBundleS3Key}{[required] The Amazon S3 path for the ca certificates bundle.}
 
-\item{CaCertificatesBundleS3ObjectVersion}{The Amazon S3 object version for the ca certificates bundle. If
-undefined the current version is used.}
+\item{CaCertificatesBundleS3ObjectVersion}{The Amazon S3 object version for the ca certificates bundle. If undefined the current version is used.}
 }
 \description{
 Update the ca certificate bundle for the specified trust store.

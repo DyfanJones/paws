@@ -14,14 +14,11 @@ glue_describe_integrations(
 \arguments{
 \item{IntegrationIdentifier}{The Amazon Resource Name (ARN) for the integration.}
 
-\item{Marker}{A value that indicates the starting point for the next set of response
-records in a subsequent request.}
+\item{Marker}{A value that indicates the starting point for the next set of response records in a subsequent request.}
 
 \item{MaxRecords}{The total number of items to return in the output.}
 
-\item{Filters}{A list of key and values, to filter down the results. Supported keys are
-"Status", "IntegrationName", and "SourceArn". IntegrationName is limited
-to only one value.}
+\item{Filters}{A list of key and values, to filter down the results. Supported keys are "Status", "IntegrationName", and "SourceArn". IntegrationName is limited to only one value.}
 }
 \description{
 The API is used to retrieve a list of integrations.

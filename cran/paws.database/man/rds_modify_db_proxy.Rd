@@ -19,36 +19,19 @@ rds_modify_db_proxy(
 \arguments{
 \item{DBProxyName}{[required] The identifier for the \code{DBProxy} to modify.}
 
-\item{NewDBProxyName}{The new identifier for the \code{DBProxy}. An identifier must begin with a
-letter and must contain only ASCII letters, digits, and hyphens; it
-can't end with a hyphen or contain two consecutive hyphens.}
+\item{NewDBProxyName}{The new identifier for the \code{DBProxy}. An identifier must begin with a letter and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen or contain two consecutive hyphens.}
 
-\item{DefaultAuthScheme}{The default authentication scheme that the proxy uses for client
-connections to the proxy and connections from the proxy to the
-underlying database. Valid values are \code{NONE} and \code{IAM_AUTH}. When set to
-\code{IAM_AUTH}, the proxy uses end-to-end IAM authentication to connect to
-the database.}
+\item{DefaultAuthScheme}{The default authentication scheme that the proxy uses for client connections to the proxy and connections from the proxy to the underlying database. Valid values are \code{NONE} and \code{IAM_AUTH}. When set to \code{IAM_AUTH}, the proxy uses end-to-end IAM authentication to connect to the database.}
 
 \item{Auth}{The new authentication settings for the \code{DBProxy}.}
 
-\item{RequireTLS}{Whether Transport Layer Security (TLS) encryption is required for
-connections to the proxy. By enabling this setting, you can enforce
-encrypted TLS connections to the proxy, even if the associated database
-doesn't use TLS.}
+\item{RequireTLS}{Whether Transport Layer Security (TLS) encryption is required for connections to the proxy. By enabling this setting, you can enforce encrypted TLS connections to the proxy, even if the associated database doesn't use TLS.}
 
-\item{IdleClientTimeout}{The number of seconds that a connection to the proxy can be inactive
-before the proxy disconnects it. You can set this value higher or lower
-than the connection timeout limit for the associated database.}
+\item{IdleClientTimeout}{The number of seconds that a connection to the proxy can be inactive before the proxy disconnects it. You can set this value higher or lower than the connection timeout limit for the associated database.}
 
-\item{DebugLogging}{Specifies whether the proxy logs detailed connection and query
-information. When you enable \code{DebugLogging}, the proxy captures
-connection details and connection pool behavior from your queries. Debug
-logging increases CloudWatch costs and can impact proxy performance.
-Enable this option only when you need to troubleshoot connection or
-performance issues.}
+\item{DebugLogging}{Specifies whether the proxy logs detailed connection and query information. When you enable \code{DebugLogging}, the proxy captures connection details and connection pool behavior from your queries. Debug logging increases CloudWatch costs and can impact proxy performance. Enable this option only when you need to troubleshoot connection or performance issues.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM role that the proxy uses to
-access secrets in Amazon Web Services Secrets Manager.}
+\item{RoleArn}{The Amazon Resource Name (ARN) of the IAM role that the proxy uses to access secrets in Amazon Web Services Secrets Manager.}
 
 \item{SecurityGroups}{The new list of security groups for the \code{DBProxy}.}
 }

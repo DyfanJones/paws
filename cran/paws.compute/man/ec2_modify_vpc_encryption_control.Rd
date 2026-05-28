@@ -19,38 +19,27 @@ ec2_modify_vpc_encryption_control(
 )
 }
 \arguments{
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{VpcEncryptionControlId}{[required] The ID of the VPC Encryption Control resource to modify.}
 
 \item{Mode}{The encryption mode for the VPC Encryption Control configuration.}
 
-\item{InternetGatewayExclusion}{Specifies whether to exclude internet gateway traffic from encryption
-enforcement.}
+\item{InternetGatewayExclusion}{Specifies whether to exclude internet gateway traffic from encryption enforcement.}
 
-\item{EgressOnlyInternetGatewayExclusion}{Specifies whether to exclude egress-only internet gateway traffic from
-encryption enforcement.}
+\item{EgressOnlyInternetGatewayExclusion}{Specifies whether to exclude egress-only internet gateway traffic from encryption enforcement.}
 
-\item{NatGatewayExclusion}{Specifies whether to exclude NAT gateway traffic from encryption
-enforcement.}
+\item{NatGatewayExclusion}{Specifies whether to exclude NAT gateway traffic from encryption enforcement.}
 
-\item{VirtualPrivateGatewayExclusion}{Specifies whether to exclude virtual private gateway traffic from
-encryption enforcement.}
+\item{VirtualPrivateGatewayExclusion}{Specifies whether to exclude virtual private gateway traffic from encryption enforcement.}
 
-\item{VpcPeeringExclusion}{Specifies whether to exclude VPC peering connection traffic from
-encryption enforcement.}
+\item{VpcPeeringExclusion}{Specifies whether to exclude VPC peering connection traffic from encryption enforcement.}
 
-\item{LambdaExclusion}{Specifies whether to exclude Lambda function traffic from encryption
-enforcement.}
+\item{LambdaExclusion}{Specifies whether to exclude Lambda function traffic from encryption enforcement.}
 
-\item{VpcLatticeExclusion}{Specifies whether to exclude VPC Lattice traffic from encryption
-enforcement.}
+\item{VpcLatticeExclusion}{Specifies whether to exclude VPC Lattice traffic from encryption enforcement.}
 
-\item{ElasticFileSystemExclusion}{Specifies whether to exclude Elastic File System traffic from encryption
-enforcement.}
+\item{ElasticFileSystemExclusion}{Specifies whether to exclude Elastic File System traffic from encryption enforcement.}
 }
 \description{
 Modifies the encryption control configuration for a VPC. You can update the encryption mode and exclusion settings for various gateway types and peering connections.

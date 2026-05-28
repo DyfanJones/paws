@@ -9,8 +9,7 @@ codeguruprofiler_add_notification_channels(channels, profilingGroupName)
 \arguments{
 \item{channels}{[required] One or 2 channels to report to when anomalies are detected.}
 
-\item{profilingGroupName}{[required] The name of the profiling group that we are setting up notifications
-for.}
+\item{profilingGroupName}{[required] The name of the profiling group that we are setting up notifications for.}
 }
 \description{
 Add up to 2 anomaly notifications channels for a profiling group.

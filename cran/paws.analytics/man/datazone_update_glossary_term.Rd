@@ -16,28 +16,21 @@ datazone_update_glossary_term(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a business
-glossary term is to be updated.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a business glossary term is to be updated.}
 
-\item{glossaryIdentifier}{The identifier of the business glossary in which a term is to be
-updated.}
+\item{glossaryIdentifier}{The identifier of the business glossary in which a term is to be updated.}
 
 \item{identifier}{[required] The identifier of the business glossary term that is to be updated.}
 
-\item{name}{The name to be updated as part of the
-\code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
+\item{name}{The name to be updated as part of the \code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
 
-\item{shortDescription}{The short description to be updated as part of the
-\code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
+\item{shortDescription}{The short description to be updated as part of the \code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
 
-\item{longDescription}{The long description to be updated as part of the
-\code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
+\item{longDescription}{The long description to be updated as part of the \code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
 
-\item{termRelations}{The term relations to be updated as part of the
-\code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
+\item{termRelations}{The term relations to be updated as part of the \code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
 
-\item{status}{The status to be updated as part of the
-\code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
+\item{status}{The status to be updated as part of the \code{\link[=datazone_update_glossary_term]{update_glossary_term}} action.}
 }
 \description{
 Updates a business glossary term in Amazon DataZone.

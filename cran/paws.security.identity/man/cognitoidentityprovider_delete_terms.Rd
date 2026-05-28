@@ -9,8 +9,7 @@ cognitoidentityprovider_delete_terms(TermsId, UserPoolId)
 \arguments{
 \item{TermsId}{[required] The ID of the terms documents that you want to delete.}
 
-\item{UserPoolId}{[required] The ID of the user pool that contains the terms documents that you want
-to delete.}
+\item{UserPoolId}{[required] The ID of the user pool that contains the terms documents that you want to delete.}
 }
 \description{
 Deletes the terms documents with the requested ID from your app client.

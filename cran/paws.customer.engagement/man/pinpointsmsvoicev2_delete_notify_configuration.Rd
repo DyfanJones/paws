@@ -7,10 +7,7 @@
 pinpointsmsvoicev2_delete_notify_configuration(NotifyConfigurationId)
 }
 \arguments{
-\item{NotifyConfigurationId}{[required] The identifier of the notify configuration to delete. The
-NotifyConfigurationId can be found using the
-\code{\link[=pinpointsmsvoicev2_describe_notify_configurations]{describe_notify_configurations}}
-operation.}
+\item{NotifyConfigurationId}{[required] The identifier of the notify configuration to delete. The NotifyConfigurationId can be found using the \code{\link[=pinpointsmsvoicev2_describe_notify_configurations]{describe_notify_configurations}} operation.}
 }
 \description{
 Deletes an existing notify configuration.

@@ -10,8 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_create_namespace/](https://www.paws-r-sdk.com/docs/s3tables_create_namespace/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket to create the
-#' namespace in.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket to create the namespace in.
 #' @param namespace &#91;required&#93; A name for the namespace.
 #'
 #' @keywords internal
@@ -44,33 +43,18 @@ s3tables_create_namespace <- function(tableBucketARN, namespace) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_create_table/](https://www.paws-r-sdk.com/docs/s3tables_create_table/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket to create the table
-#' in.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket to create the table in.
 #' @param namespace &#91;required&#93; The namespace to associated with the table.
 #' @param name &#91;required&#93; The name for the table.
 #' @param format &#91;required&#93; The format for the table.
 #' @param metadata The metadata for the table.
-#' @param encryptionConfiguration The encryption configuration to use for the table. This configuration
-#' specifies the encryption algorithm and, if using SSE-KMS, the KMS key to
-#' use for encrypting the table.
+#' @param encryptionConfiguration The encryption configuration to use for the table. This configuration specifies the encryption algorithm and, if using SSE-KMS, the KMS key to use for encrypting the table.
 #' 
-#' If you choose SSE-KMS encryption you must grant the S3 Tables
-#' maintenance principal access to your KMS key. For more information, see
-#' [Permissions requirements for S3 Tables SSE-KMS
-#' encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html).
-#' @param storageClassConfiguration The storage class configuration for the table. If not specified, the
-#' table inherits the storage class configuration from its table bucket.
-#' Specify this parameter to override the bucket's default storage class
-#' for this table.
-#' @param tags A map of user-defined tags that you would like to apply to the table
-#' that you are creating. A tag is a key-value pair that you apply to your
-#' resources. Tags can help you organize, track costs for, and control
-#' access to resources. For more information, see [Tagging for cost
-#' allocation or attribute-based access control
-#' (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
+#' If you choose SSE-KMS encryption you must grant the S3 Tables maintenance principal access to your KMS key. For more information, see [Permissions requirements for S3 Tables SSE-KMS encryption](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-kms-permissions.html).
+#' @param storageClassConfiguration The storage class configuration for the table. If not specified, the table inherits the storage class configuration from its table bucket. Specify this parameter to override the bucket's default storage class for this table.
+#' @param tags A map of user-defined tags that you would like to apply to the table that you are creating. A tag is a key-value pair that you apply to your resources. Tags can help you organize, track costs for, and control access to resources. For more information, see [Tagging for cost allocation or attribute-based access control (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
 #' 
-#' You must have the `s3tables:TagResource` permission in addition to
-#' `s3tables:CreateTable` permission to create a table with tags.
+#' You must have the `s3tables:TagResource` permission in addition to `s3tables:CreateTable` permission to create a table with tags.
 #'
 #' @keywords internal
 #'
@@ -102,25 +86,11 @@ s3tables_create_table <- function(tableBucketARN, namespace, name, format, metad
 #' See [https://www.paws-r-sdk.com/docs/s3tables_create_table_bucket/](https://www.paws-r-sdk.com/docs/s3tables_create_table_bucket/) for full documentation.
 #'
 #' @param name &#91;required&#93; The name for the table bucket.
-#' @param encryptionConfiguration The encryption configuration to use for the table bucket. This
-#' configuration specifies the default encryption settings that will be
-#' applied to all tables created in this bucket unless overridden at the
-#' table level. The configuration includes the encryption algorithm and, if
-#' using SSE-KMS, the KMS key to use.
-#' @param storageClassConfiguration The default storage class configuration for the table bucket. This
-#' configuration will be applied to all new tables created in this bucket
-#' unless overridden at the table level. If not specified, the service
-#' default storage class will be used.
-#' @param tags A map of user-defined tags that you would like to apply to the table
-#' bucket that you are creating. A tag is a key-value pair that you apply
-#' to your resources. Tags can help you organize and control access to
-#' resources. For more information, see [Tagging for cost allocation or
-#' attribute-based access control
-#' (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
+#' @param encryptionConfiguration The encryption configuration to use for the table bucket. This configuration specifies the default encryption settings that will be applied to all tables created in this bucket unless overridden at the table level. The configuration includes the encryption algorithm and, if using SSE-KMS, the KMS key to use.
+#' @param storageClassConfiguration The default storage class configuration for the table bucket. This configuration will be applied to all new tables created in this bucket unless overridden at the table level. If not specified, the service default storage class will be used.
+#' @param tags A map of user-defined tags that you would like to apply to the table bucket that you are creating. A tag is a key-value pair that you apply to your resources. Tags can help you organize and control access to resources. For more information, see [Tagging for cost allocation or attribute-based access control (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
 #' 
-#' You must have the `s3tables:TagResource` permission in addition to
-#' `s3tables:CreateTableBucket` permisson to create a table bucket with
-#' tags.
+#' You must have the `s3tables:TagResource` permission in addition to `s3tables:CreateTableBucket` permisson to create a table bucket with tags.
 #'
 #' @keywords internal
 #'
@@ -151,8 +121,7 @@ s3tables_create_table_bucket <- function(name, encryptionConfiguration = NULL, s
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_delete_namespace/](https://www.paws-r-sdk.com/docs/s3tables_delete_namespace/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the
-#' namespace.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the namespace.
 #' @param namespace &#91;required&#93; The name of the namespace.
 #'
 #' @keywords internal
@@ -184,8 +153,7 @@ s3tables_delete_namespace <- function(tableBucketARN, namespace) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_delete_table/](https://www.paws-r-sdk.com/docs/s3tables_delete_table/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The name of the table.
 #' @param versionToken The version token of the table.
@@ -344,9 +312,7 @@ s3tables_delete_table_bucket_policy <- function(tableBucketARN) {
 #' See [https://www.paws-r-sdk.com/docs/s3tables_delete_table_bucket_replication/](https://www.paws-r-sdk.com/docs/s3tables_delete_table_bucket_replication/) for full documentation.
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket.
-#' @param versionToken A version token from a previous GetTableBucketReplication call. Use this
-#' token to ensure you're deleting the expected version of the
-#' configuration.
+#' @param versionToken A version token from a previous GetTableBucketReplication call. Use this token to ensure you're deleting the expected version of the configuration.
 #'
 #' @keywords internal
 #'
@@ -377,8 +343,7 @@ s3tables_delete_table_bucket_replication <- function(tableBucketARN, versionToke
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_delete_table_policy/](https://www.paws-r-sdk.com/docs/s3tables_delete_table_policy/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The table name.
 #'
@@ -412,8 +377,7 @@ s3tables_delete_table_policy <- function(tableBucketARN, namespace, name) {
 #' See [https://www.paws-r-sdk.com/docs/s3tables_delete_table_replication/](https://www.paws-r-sdk.com/docs/s3tables_delete_table_replication/) for full documentation.
 #'
 #' @param tableArn &#91;required&#93; The Amazon Resource Name (ARN) of the table.
-#' @param versionToken &#91;required&#93; A version token from a previous GetTableReplication call. Use this token
-#' to ensure you're deleting the expected version of the configuration.
+#' @param versionToken &#91;required&#93; A version token from a previous GetTableReplication call. Use this token to ensure you're deleting the expected version of the configuration.
 #'
 #' @keywords internal
 #'
@@ -476,8 +440,7 @@ s3tables_get_namespace <- function(tableBucketARN, namespace) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_get_table/](https://www.paws-r-sdk.com/docs/s3tables_get_table/) for full documentation.
 #'
-#' @param tableBucketARN The Amazon Resource Name (ARN) of the table bucket associated with the
-#' table.
+#' @param tableBucketARN The Amazon Resource Name (ARN) of the table bucket associated with the table.
 #' @param namespace The name of the namespace the table is associated with.
 #' @param name The name of the table.
 #' @param tableArn The Amazon Resource Name (ARN) of the table.
@@ -573,8 +536,7 @@ s3tables_get_table_bucket_encryption <- function(tableBucketARN) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_get_table_bucket_maintenance_configuration/](https://www.paws-r-sdk.com/docs/s3tables_get_table_bucket_maintenance_configuration/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the
-#' maintenance configuration.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the maintenance configuration.
 #'
 #' @keywords internal
 #'
@@ -797,8 +759,7 @@ s3tables_get_table_maintenance_configuration <- function(tableBucketARN, namespa
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket.
 #' @param namespace &#91;required&#93; The name of the namespace the table is associated with.
-#' @param name &#91;required&#93; The name of the table containing the maintenance job status you want to
-#' check.
+#' @param name &#91;required&#93; The name of the table containing the maintenance job status you want to check.
 #'
 #' @keywords internal
 #'
@@ -862,8 +823,7 @@ s3tables_get_table_metadata_location <- function(tableBucketARN, namespace, name
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_get_table_policy/](https://www.paws-r-sdk.com/docs/s3tables_get_table_policy/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The name of the table.
 #'
@@ -1023,8 +983,7 @@ s3tables_get_table_replication_status <- function(tableArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_get_table_storage_class/](https://www.paws-r-sdk.com/docs/s3tables_get_table_storage_class/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The name of the table.
 #'
@@ -1059,10 +1018,7 @@ s3tables_get_table_storage_class <- function(tableBucketARN, namespace, name) {
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket.
 #' @param prefix The prefix of the namespaces.
-#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being
-#' continued on this bucket with a token. `ContinuationToken` is obfuscated
-#' and is not a real key. You can use this `ContinuationToken` for
-#' pagination of the list results.
+#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being continued on this bucket with a token. `ContinuationToken` is obfuscated and is not a real key. You can use this `ContinuationToken` for pagination of the list results.
 #' @param maxNamespaces The maximum number of namespaces to return in the list.
 #'
 #' @keywords internal
@@ -1095,10 +1051,7 @@ s3tables_list_namespaces <- function(tableBucketARN, prefix = NULL, continuation
 #' See [https://www.paws-r-sdk.com/docs/s3tables_list_table_buckets/](https://www.paws-r-sdk.com/docs/s3tables_list_table_buckets/) for full documentation.
 #'
 #' @param prefix The prefix of the table buckets.
-#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being
-#' continued on this bucket with a token. `ContinuationToken` is obfuscated
-#' and is not a real key. You can use this `ContinuationToken` for
-#' pagination of the list results.
+#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being continued on this bucket with a token. `ContinuationToken` is obfuscated and is not a real key. You can use this `ContinuationToken` for pagination of the list results.
 #' @param maxBuckets The maximum number of table buckets to return in the list.
 #' @param type The type of table buckets to filter by in the list.
 #'
@@ -1134,10 +1087,7 @@ s3tables_list_table_buckets <- function(prefix = NULL, continuationToken = NULL,
 #' @param tableBucketARN &#91;required&#93; The Amazon resource Name (ARN) of the table bucket.
 #' @param namespace The namespace of the tables.
 #' @param prefix The prefix of the tables.
-#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being
-#' continued on this bucket with a token. `ContinuationToken` is obfuscated
-#' and is not a real key. You can use this `ContinuationToken` for
-#' pagination of the list results.
+#' @param continuationToken `ContinuationToken` indicates to Amazon S3 that the list is being continued on this bucket with a token. `ContinuationToken` is obfuscated and is not a real key. You can use this `ContinuationToken` for pagination of the list results.
 #' @param maxTables The maximum number of tables to return.
 #'
 #' @keywords internal
@@ -1169,11 +1119,7 @@ s3tables_list_tables <- function(tableBucketARN, namespace = NULL, prefix = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/s3tables_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you
-#' want to list tags for. The tagged resource can be a table bucket or a
-#' table. For a list of all S3 resources that support tagging, see
-#' [Managing tags for Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you want to list tags for. The tagged resource can be a table bucket or a table. For a list of all S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
 #'
 #' @keywords internal
 #'
@@ -1237,11 +1183,9 @@ s3tables_put_table_bucket_encryption <- function(tableBucketARN, encryptionConfi
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_put_table_bucket_maintenance_configuration/](https://www.paws-r-sdk.com/docs/s3tables_put_table_bucket_maintenance_configuration/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the
-#' maintenance configuration.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket associated with the maintenance configuration.
 #' @param type &#91;required&#93; The type of the maintenance configuration.
-#' @param value &#91;required&#93; Defines the values of the maintenance configuration for the table
-#' bucket.
+#' @param value &#91;required&#93; Defines the values of the maintenance configuration for the table bucket.
 #'
 #' @keywords internal
 #'
@@ -1337,11 +1281,8 @@ s3tables_put_table_bucket_policy <- function(tableBucketARN, resourcePolicy) {
 #' See [https://www.paws-r-sdk.com/docs/s3tables_put_table_bucket_replication/](https://www.paws-r-sdk.com/docs/s3tables_put_table_bucket_replication/) for full documentation.
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the source table bucket.
-#' @param versionToken A version token from a previous GetTableBucketReplication call. Use this
-#' token to ensure you're updating the expected version of the
-#' configuration.
-#' @param configuration &#91;required&#93; The replication configuration to apply, including the IAM role and
-#' replication rules.
+#' @param versionToken A version token from a previous GetTableBucketReplication call. Use this token to ensure you're updating the expected version of the configuration.
+#' @param configuration &#91;required&#93; The replication configuration to apply, including the IAM role and replication rules.
 #'
 #' @keywords internal
 #'
@@ -1373,9 +1314,7 @@ s3tables_put_table_bucket_replication <- function(tableBucketARN, versionToken =
 #' See [https://www.paws-r-sdk.com/docs/s3tables_put_table_bucket_storage_class/](https://www.paws-r-sdk.com/docs/s3tables_put_table_bucket_storage_class/) for full documentation.
 #'
 #' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket.
-#' @param storageClassConfiguration &#91;required&#93; The storage class configuration to apply to the table bucket. This
-#' configuration will serve as the default for new tables created in this
-#' bucket.
+#' @param storageClassConfiguration &#91;required&#93; The storage class configuration to apply to the table bucket. This configuration will serve as the default for new tables created in this bucket.
 #'
 #' @keywords internal
 #'
@@ -1407,8 +1346,7 @@ s3tables_put_table_bucket_storage_class <- function(tableBucketARN, storageClass
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_put_table_maintenance_configuration/](https://www.paws-r-sdk.com/docs/s3tables_put_table_maintenance_configuration/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table associated with the
-#' maintenance configuration.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table associated with the maintenance configuration.
 #' @param namespace &#91;required&#93; The namespace of the table.
 #' @param name &#91;required&#93; The name of the table.
 #' @param type &#91;required&#93; The type of the maintenance configuration.
@@ -1444,8 +1382,7 @@ s3tables_put_table_maintenance_configuration <- function(tableBucketARN, namespa
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_put_table_policy/](https://www.paws-r-sdk.com/docs/s3tables_put_table_policy/) for full documentation.
 #'
-#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the
-#' table.
+#' @param tableBucketARN &#91;required&#93; The Amazon Resource Name (ARN) of the table bucket that contains the table.
 #' @param namespace &#91;required&#93; The namespace associated with the table.
 #' @param name &#91;required&#93; The name of the table.
 #' @param resourcePolicy &#91;required&#93; The `JSON` that defines the policy.
@@ -1481,8 +1418,7 @@ s3tables_put_table_policy <- function(tableBucketARN, namespace, name, resourceP
 #' See [https://www.paws-r-sdk.com/docs/s3tables_put_table_record_expiration_configuration/](https://www.paws-r-sdk.com/docs/s3tables_put_table_record_expiration_configuration/) for full documentation.
 #'
 #' @param tableArn &#91;required&#93; The Amazon Resource Name (ARN) of the table.
-#' @param value &#91;required&#93; The record expiration configuration to apply to the table, including the
-#' status (`enabled` or `disabled`) and retention period in days.
+#' @param value &#91;required&#93; The record expiration configuration to apply to the table, including the status (`enabled` or `disabled`) and retention period in days.
 #'
 #' @keywords internal
 #'
@@ -1514,10 +1450,8 @@ s3tables_put_table_record_expiration_configuration <- function(tableArn, value) 
 #' See [https://www.paws-r-sdk.com/docs/s3tables_put_table_replication/](https://www.paws-r-sdk.com/docs/s3tables_put_table_replication/) for full documentation.
 #'
 #' @param tableArn &#91;required&#93; The Amazon Resource Name (ARN) of the source table.
-#' @param versionToken A version token from a previous GetTableReplication call. Use this token
-#' to ensure you're updating the expected version of the configuration.
-#' @param configuration &#91;required&#93; The replication configuration to apply to the table, including the IAM
-#' role and replication rules.
+#' @param versionToken A version token from a previous GetTableReplication call. Use this token to ensure you're updating the expected version of the configuration.
+#' @param configuration &#91;required&#93; The replication configuration to apply to the table, including the IAM role and replication rules.
 #'
 #' @keywords internal
 #'
@@ -1585,15 +1519,8 @@ s3tables_rename_table <- function(tableBucketARN, namespace, name, newNamespaceN
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_tag_resource/](https://www.paws-r-sdk.com/docs/s3tables_tag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that
-#' you're applying tags to. The tagged resource can be a table bucket or a
-#' table. For a list of all S3 resources that support tagging, see
-#' [Managing tags for Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
-#' @param tags &#91;required&#93; The user-defined tag that you want to add to the specified S3 Tables
-#' resource. For more information, see [Tagging for cost allocation or
-#' attribute-based access control
-#' (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you're applying tags to. The tagged resource can be a table bucket or a table. For a list of all S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' @param tags &#91;required&#93; The user-defined tag that you want to add to the specified S3 Tables resource. For more information, see [Tagging for cost allocation or attribute-based access control (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
 #'
 #' @keywords internal
 #'
@@ -1625,15 +1552,8 @@ s3tables_tag_resource <- function(resourceArn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/s3tables_untag_resource/](https://www.paws-r-sdk.com/docs/s3tables_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that
-#' you're removing tags from. The tagged resource can be a table bucket or
-#' a table. For a list of all S3 resources that support tagging, see
-#' [Managing tags for Amazon S3
-#' resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
-#' @param tagKeys &#91;required&#93; The array of tag keys that you're removing from the S3 Tables resource.
-#' For more information, see [Tagging for cost allocation or
-#' attribute-based access control
-#' (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you're removing tags from. The tagged resource can be a table bucket or a table. For a list of all S3 resources that support tagging, see [Managing tags for Amazon S3 resources](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags).
+#' @param tagKeys &#91;required&#93; The array of tag keys that you're removing from the S3 Tables resource. For more information, see [Tagging for cost allocation or attribute-based access control (ABAC)](https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html).
 #'
 #' @keywords internal
 #'

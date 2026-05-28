@@ -7,8 +7,7 @@
 quicksight_update_brand_assignment(AwsAccountId, BrandArn)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that owns the brand
-assignment.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that owns the brand assignment.}
 
 \item{BrandArn}{[required] The Amazon Resource Name (ARN) of the brand.}
 }

@@ -12,16 +12,13 @@ kinesis_register_stream_consumer(
 )
 }
 \arguments{
-\item{StreamARN}{[required] The ARN of the Kinesis data stream that you want to register the
-consumer with. For more info, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#arn-syntax-kinesis-streams}{Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces}.}
+\item{StreamARN}{[required] The ARN of the Kinesis data stream that you want to register the consumer with. For more info, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#arn-syntax-kinesis-streams}{Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces}.}
 
-\item{ConsumerName}{[required] For a given Kinesis data stream, each consumer must have a unique name.
-However, consumer names don't have to be unique across data streams.}
+\item{ConsumerName}{[required] For a given Kinesis data stream, each consumer must have a unique name. However, consumer names don't have to be unique across data streams.}
 
 \item{StreamId}{Not Implemented. Reserved for future use.}
 
-\item{Tags}{A set of up to 50 key-value pairs. A tag consists of a required key and
-an optional value.}
+\item{Tags}{A set of up to 50 key-value pairs. A tag consists of a required key and an optional value.}
 }
 \description{
 Registers a consumer with a Kinesis data stream. When you use this operation, the consumer you register can then call \code{\link[=kinesis_subscribe_to_shard]{subscribe_to_shard}} to receive data from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for every shard you subscribe to. This rate is unaffected by the total number of consumers that read from the same stream.

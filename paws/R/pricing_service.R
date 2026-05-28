@@ -5,13 +5,7 @@ NULL
 #' AWS Price List Service
 #'
 #' @description
-#' The Amazon Web Services Price List API is a centralized and convenient
-#' way to programmatically query Amazon Web Services for services,
-#' products, and pricing information. The Amazon Web Services Price List
-#' uses standardized product attributes such as `Location`,
-#' `Storage Class`, and `Operating System`, and provides prices at the SKU
-#' level. You can use the Amazon Web Services Price List to do the
-#' following:
+#' The Amazon Web Services Price List API is a centralized and convenient way to programmatically query Amazon Web Services for services, products, and pricing information. The Amazon Web Services Price List uses standardized product attributes such as `Location`, `Storage Class`, and `Operating System`, and provides prices at the SKU level. You can use the Amazon Web Services Price List to do the following:
 #' 
 #' -   Build cost control and scenario planning tools
 #' 
@@ -19,23 +13,11 @@ NULL
 #' 
 #' -   Forecast future spend for budgeting purposes
 #' 
-#' -   Provide cost benefit analysis that compare your internal workloads
-#'     with Amazon Web Services
+#' -   Provide cost benefit analysis that compare your internal workloads with Amazon Web Services
 #' 
-#' Use `GetServices` without a service code to retrieve the service codes
-#' for all Amazon Web Services services, then `GetServices` with a service
-#' code to retrieve the attribute names for that service. After you have
-#' the service code and attribute names, you can use
-#' [`get_attribute_values`][pricing_get_attribute_values] to see what
-#' values are available for an attribute. With the service code and an
-#' attribute name and value, you can use
-#' [`get_products`][pricing_get_products] to find specific products that
-#' you're interested in, such as an `AmazonEC2` instance, with a
-#' `Provisioned IOPS` `volumeType`.
+#' Use `GetServices` without a service code to retrieve the service codes for all Amazon Web Services services, then `GetServices` with a service code to retrieve the attribute names for that service. After you have the service code and attribute names, you can use [`get_attribute_values`][pricing_get_attribute_values] to see what values are available for an attribute. With the service code and an attribute name and value, you can use [`get_products`][pricing_get_products] to find specific products that you're interested in, such as an `AmazonEC2` instance, with a `Provisioned IOPS` `volumeType`.
 #' 
-#' For more information, see [Using the Amazon Web Services Price List
-#' API](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html)
-#' in the *Billing User Guide*.
+#' For more information, see [Using the Amazon Web Services Price List API](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html) in the *Billing User Guide*.
 #'
 #' @param
 #' config

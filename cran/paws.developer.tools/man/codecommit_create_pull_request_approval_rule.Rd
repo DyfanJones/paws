@@ -11,44 +11,25 @@ codecommit_create_pull_request_approval_rule(
 )
 }
 \arguments{
-\item{pullRequestId}{[required] The system-generated ID of the pull request for which you want to create
-the approval rule.}
+\item{pullRequestId}{[required] The system-generated ID of the pull request for which you want to create the approval rule.}
 
 \item{approvalRuleName}{[required] The name for the approval rule.}
 
-\item{approvalRuleContent}{[required] The content of the approval rule, including the number of approvals
-needed and the structure of an approval pool defined for approvals, if
-any. For more information about approval pools, see the CodeCommit User
-Guide.
+\item{approvalRuleContent}{[required] The content of the approval rule, including the number of approvals needed and the structure of an approval pool defined for approvals, if any. For more information about approval pools, see the CodeCommit User Guide.
 
-When you create the content of the approval rule, you can specify
-approvers in an approval pool in one of two ways:
+When you create the content of the approval rule, you can specify approvers in an approval pool in one of two ways:
 \itemize{
-\item \strong{CodeCommitApprovers}: This option only requires an Amazon Web
-Services account and a resource. It can be used for both IAM users
-and federated access users whose name matches the provided resource
-name. This is a very powerful option that offers a great deal of
-flexibility. For example, if you specify the Amazon Web Services
-account \emph{123456789012} and \emph{Mary_Major}, all of the following would
-be counted as approvals coming from that user:
+\item \strong{CodeCommitApprovers}: This option only requires an Amazon Web Services account and a resource. It can be used for both IAM users and federated access users whose name matches the provided resource name. This is a very powerful option that offers a great deal of flexibility. For example, if you specify the Amazon Web Services account \emph{123456789012} and \emph{Mary_Major}, all of the following would be counted as approvals coming from that user:
 \itemize{
-\item An IAM user in the account
-(arn:aws:iam::\emph{123456789012}:user/\emph{Mary_Major})
-\item A federated user identified in IAM as Mary_Major
-(arn:aws:sts::\emph{123456789012}:federated-user/\emph{Mary_Major})
+\item An IAM user in the account (arn:aws:iam::\emph{123456789012}:user/\emph{Mary_Major})
+\item A federated user identified in IAM as Mary_Major (arn:aws:sts::\emph{123456789012}:federated-user/\emph{Mary_Major})
 }
 
-This option does not recognize an active session of someone assuming
-the role of CodeCommitReview with a role session name of
-\emph{Mary_Major}
-(arn:aws:sts::\emph{123456789012}:assumed-role/CodeCommitReview/\emph{Mary_Major})
-unless you include a wildcard (*Mary_Major).
-\item \strong{Fully qualified ARN}: This option allows you to specify the fully
-qualified Amazon Resource Name (ARN) of the IAM user or role.
+This option does not recognize an active session of someone assuming the role of CodeCommitReview with a role session name of \emph{Mary_Major} (arn:aws:sts::\emph{123456789012}:assumed-role/CodeCommitReview/\emph{Mary_Major}) unless you include a wildcard (*Mary_Major).
+\item \strong{Fully qualified ARN}: This option allows you to specify the fully qualified Amazon Resource Name (ARN) of the IAM user or role.
 }
 
-For more information about IAM ARNs, wildcards, and formats, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html}{IAM Identifiers}
-in the \emph{IAM User Guide}.}
+For more information about IAM ARNs, wildcards, and formats, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html}{IAM Identifiers} in the \emph{IAM User Guide}.}
 }
 \description{
 Creates an approval rule for a pull request.

@@ -16,18 +16,13 @@ codecatalyst_list_workflow_runs(
 \arguments{
 \item{spaceName}{[required] The name of the space.}
 
-\item{workflowId}{The ID of the workflow. To retrieve a list of workflow IDs, use
-\code{\link[=codecatalyst_list_workflows]{list_workflows}}.}
+\item{workflowId}{The ID of the workflow. To retrieve a list of workflow IDs, use \code{\link[=codecatalyst_list_workflows]{list_workflows}}.}
 
 \item{projectName}{[required] The name of the project in the space.}
 
-\item{nextToken}{A token returned from a call to this API to indicate the next batch of
-results to return, if any.}
+\item{nextToken}{A token returned from a call to this API to indicate the next batch of results to return, if any.}
 
-\item{maxResults}{The maximum number of results to show in a single call to this API. If
-the number of results is larger than the number you specified, the
-response will include a \code{NextToken} element, which you can use to obtain
-additional results.}
+\item{maxResults}{The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a \code{NextToken} element, which you can use to obtain additional results.}
 
 \item{sortBy}{Information used to sort the items in the returned list.}
 }

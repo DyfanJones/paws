@@ -15,10 +15,7 @@ route53resolver_create_resolver_query_log_config(
 \arguments{
 \item{Name}{[required] The name that you want to give the query logging configuration.}
 
-\item{DestinationArn}{[required] The ARN of the resource that you want Resolver to send query logs. You
-can send query logs to an S3 bucket, a CloudWatch Logs log group, or a
-Kinesis Data Firehose delivery stream. Examples of valid values include
-the following:
+\item{DestinationArn}{[required] The ARN of the resource that you want Resolver to send query logs. You can send query logs to an S3 bucket, a CloudWatch Logs log group, or a Kinesis Data Firehose delivery stream. Examples of valid values include the following:
 \itemize{
 \item \strong{S3 bucket}:
 
@@ -35,13 +32,9 @@ You can optionally append a file prefix to the end of the ARN.
 \code{arn:aws:kinesis:us-east-2:0123456789:stream/my_stream_name}
 }}
 
-\item{CreatorRequestId}{[required] A unique string that identifies the request and that allows failed
-requests to be retried without the risk of running the operation twice.
-\code{CreatorRequestId} can be any unique string, for example, a date/time
-stamp.}
+\item{CreatorRequestId}{[required] A unique string that identifies the request and that allows failed requests to be retried without the risk of running the operation twice. \code{CreatorRequestId} can be any unique string, for example, a date/time stamp.}
 
-\item{Tags}{A list of the tag keys and values that you want to associate with the
-query logging configuration.}
+\item{Tags}{A list of the tag keys and values that you want to associate with the query logging configuration.}
 }
 \description{
 Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs. Resolver can log queries only for VPCs that are in the same Region as the query logging configuration.

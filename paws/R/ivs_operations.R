@@ -6,8 +6,7 @@ NULL
 #' Performs GetChannel on multiple ARNs simultaneously
 #'
 #' @description
-#' Performs [`get_channel`][ivs_get_channel] on multiple ARNs
-#' simultaneously.
+#' Performs [`get_channel`][ivs_get_channel] on multiple ARNs simultaneously.
 #'
 #' @usage
 #' ivs_batch_get_channel(arns)
@@ -100,8 +99,7 @@ ivs_batch_get_channel <- function(arns) {
 #' Performs GetStreamKey on multiple ARNs simultaneously
 #'
 #' @description
-#' Performs [`get_stream_key`][ivs_get_stream_key] on multiple ARNs
-#' simultaneously.
+#' Performs [`get_stream_key`][ivs_get_stream_key] on multiple ARNs simultaneously.
 #'
 #' @usage
 #' ivs_batch_get_stream_key(arns)
@@ -176,9 +174,7 @@ ivs_batch_get_stream_key <- function(arns) {
 #' ID pairs simultaneously
 #'
 #' @description
-#' Performs
-#' [`start_viewer_session_revocation`][ivs_start_viewer_session_revocation]
-#' on multiple channel ARN and viewer ID pairs simultaneously.
+#' Performs [`start_viewer_session_revocation`][ivs_start_viewer_session_revocation] on multiple channel ARN and viewer ID pairs simultaneously.
 #'
 #' @usage
 #' ivs_batch_start_viewer_session_revocation(viewerSessions)
@@ -255,13 +251,7 @@ ivs_batch_start_viewer_session_revocation <- function(viewerSessions) {
 #'
 #' @param name Ad configuration name. Defaults to “”.
 #' @param mediaTailorPlaybackConfigurations &#91;required&#93; List of integration configurations with media tailor resources.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -333,42 +323,16 @@ ivs_create_ad_configuration <- function(name = NULL, mediaTailorPlaybackConfigur
 #'   containerFormat, adConfigurationArn)
 #'
 #' @param name Channel name.
-#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video
-#' up to Full HD. Use `LOW` for near-real-time interaction with viewers.
-#' Default: `LOW`.
-#' @param type Channel type, which determines the allowable resolution and bitrate. *If
-#' you exceed the allowable input resolution or bitrate, the stream
-#' probably will disconnect immediately.* Default: `STANDARD`. For details,
-#' see [Channel
-#' Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
-#' @param authorized Whether the channel is private (enabled for playback authorization).
-#' Default: `false`.
-#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the
-#' ARN and enables recording. Default: "" (empty string, recording is
-#' disabled).
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
-#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default:
-#' `false`.
-#' @param preset Optional transcode preset for the channel. This is selectable only for
-#' `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types,
-#' the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel
-#' types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
-#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies
-#' the ARN and enables playback restriction. Default: "" (empty string, no
-#' playback restriction policy is applied).
-#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack
-#' input configuration is specified.
-#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If
-#' `multitrackInputConfiguration` is specified and `enabled` is `true`,
-#' then `containerFormat` is required and must be set to `FRAGMENTED_MP4`.
-#' Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`.
-#' Default: `TS`.
+#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video up to Full HD. Use `LOW` for near-real-time interaction with viewers. Default: `LOW`.
+#' @param type Channel type, which determines the allowable resolution and bitrate. *If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.* Default: `STANDARD`. For details, see [Channel Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
+#' @param authorized Whether the channel is private (enabled for playback authorization). Default: `false`.
+#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. Default: "" (empty string, recording is disabled).
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default: `false`.
+#' @param preset Optional transcode preset for the channel. This is selectable only for `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types, the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
+#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. Default: "" (empty string, no playback restriction policy is applied).
+#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.
+#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If `multitrackInputConfiguration` is specified and `enabled` is `true`, then `containerFormat` is required and must be set to `FRAGMENTED_MP4`. Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`. Default: `TS`.
 #' @param adConfigurationArn ARN of the ad configuration associated with the channel.
 #'
 #' @return
@@ -465,31 +429,17 @@ ivs_create_channel <- function(name = NULL, latencyMode = NULL, type = NULL, aut
 #' countries and/or origins
 #'
 #' @description
-#' Creates a new playback restriction policy, for constraining playback by
-#' countries and/or origins.
+#' Creates a new playback restriction policy, for constraining playback by countries and/or origins.
 #'
 #' @usage
 #' ivs_create_playback_restriction_policy(allowedCountries, allowedOrigins,
 #'   enableStrictOriginEnforcement, name, tags)
 #'
-#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed
-#' values are the officially assigned [ISO 3166-1
-#' alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
-#' Default: All countries (an empty array).
-#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are
-#' the same as valid values of the Origin header defined at
-#' [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin).
-#' Default: All origins (an empty array).
-#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default:
-#' `false`.
+#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed values are the officially assigned [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes. Default: All countries (an empty array).
+#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin). Default: All origins (an empty array).
+#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default: `false`.
 #' @param name Playback-restriction-policy name. The value does not need to be unique.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -557,20 +507,11 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #' Amazon S3
 #'
 #' @description
-#' Creates a new recording configuration, used to enable recording to
-#' Amazon S3.
+#' Creates a new recording configuration, used to enable recording to Amazon S3.
 #' 
-#' **Known issue:** In the us-east-1 region, if you use the Amazon Web
-#' Services CLI to create a recording configuration, it returns success
-#' even if the S3 bucket is in a different region. In this case, the
-#' `state` of the recording configuration is `CREATE_FAILED` (instead of
-#' `ACTIVE`). (In other regions, the CLI correctly returns failure if the
-#' bucket is in a different region.)
+#' **Known issue:** In the us-east-1 region, if you use the Amazon Web Services CLI to create a recording configuration, it returns success even if the S3 bucket is in a different region. In this case, the `state` of the recording configuration is `CREATE_FAILED` (instead of `ACTIVE`). (In other regions, the CLI correctly returns failure if the bucket is in a different region.)
 #' 
-#' **Workaround:** Ensure that your S3 bucket is in the same region as the
-#' recording configuration. If you create a recording configuration in a
-#' different region as your S3 bucket, delete that recording configuration
-#' and create a new one with an S3 bucket from the correct region.
+#' **Workaround:** Ensure that your S3 bucket is in the same region as the recording configuration. If you create a recording configuration in a different region as your S3 bucket, delete that recording configuration and create a new one with an S3 bucket from the correct region.
 #'
 #' @usage
 #' ivs_create_recording_configuration(name, destinationConfiguration, tags,
@@ -578,21 +519,10 @@ ivs_create_playback_restriction_policy <- function(allowedCountries = NULL, allo
 #'   renditionConfiguration)
 #'
 #' @param name Recording-configuration name. The value does not need to be unique.
-#' @param destinationConfiguration &#91;required&#93; A complex type that contains a destination configuration for where
-#' recorded video will be stored.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
-#' @param thumbnailConfiguration A complex type that allows you to enable/disable the recording of
-#' thumbnails for a live session and modify the interval at which
-#' thumbnails are generated for the live session.
-#' @param recordingReconnectWindowSeconds If a broadcast disconnects and then reconnects within the specified
-#' interval, the multiple streams will be considered a single broadcast and
-#' merged together. Default: 0.
+#' @param destinationConfiguration &#91;required&#93; A complex type that contains a destination configuration for where recorded video will be stored.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
+#' @param thumbnailConfiguration A complex type that allows you to enable/disable the recording of thumbnails for a live session and modify the interval at which thumbnails are generated for the live session.
+#' @param recordingReconnectWindowSeconds If a broadcast disconnects and then reconnects within the specified interval, the multiple streams will be considered a single broadcast and merged together. Default: 0.
 #' @param renditionConfiguration Object that describes which renditions should be recorded for a stream.
 #'
 #' @return
@@ -688,26 +618,15 @@ ivs_create_recording_configuration <- function(name = NULL, destinationConfigura
 #' channel ARN
 #'
 #' @description
-#' Creates a stream key, used to initiate a stream, for the specified
-#' channel ARN.
+#' Creates a stream key, used to initiate a stream, for the specified channel ARN.
 #' 
-#' Note that [`create_channel`][ivs_create_channel] creates a stream key.
-#' If you subsequently use CreateStreamKey on the same channel, it will
-#' fail because a stream key already exists and there is a limit of 1
-#' stream key per channel. To reset the stream key on a channel, use
-#' [`delete_stream_key`][ivs_delete_stream_key] and then CreateStreamKey.
+#' Note that [`create_channel`][ivs_create_channel] creates a stream key. If you subsequently use CreateStreamKey on the same channel, it will fail because a stream key already exists and there is a limit of 1 stream key per channel. To reset the stream key on a channel, use [`delete_stream_key`][ivs_delete_stream_key] and then CreateStreamKey.
 #'
 #' @usage
 #' ivs_create_stream_key(channelArn, tags)
 #'
 #' @param channelArn &#91;required&#93; ARN of the channel for which to create the stream key.
-#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Array of 1-50 maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -807,12 +726,7 @@ ivs_delete_ad_configuration <- function(arn) {
 #' @description
 #' Deletes the specified channel and its associated stream keys.
 #' 
-#' If you try to delete a live channel, you will get an error (409
-#' ConflictException). To delete a channel that is live, call
-#' [`stop_stream`][ivs_stop_stream], wait for the Amazon EventBridge
-#' "Stream End" event (to verify that the stream's state is no longer
-#' Live), then call DeleteChannel. (See [Using EventBridge with Amazon
-#' IVS](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/eventbridge.html).)
+#' If you try to delete a live channel, you will get an error (409 ConflictException). To delete a channel that is live, call [`stop_stream`][ivs_stop_stream], wait for the Amazon EventBridge "Stream End" event (to verify that the stream's state is no longer Live), then call DeleteChannel. (See [Using EventBridge with Amazon IVS](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/eventbridge.html).)
 #'
 #' @usage
 #' ivs_delete_channel(arn)
@@ -856,11 +770,7 @@ ivs_delete_channel <- function(arn) {
 #' Deletes a specified authorization key pair
 #'
 #' @description
-#' Deletes a specified authorization key pair. This invalidates future
-#' viewer tokens generated using the key pair’s `privateKey`. For more
-#' information, see [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html)
-#' in the *Amazon IVS User Guide*.
+#' Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s `privateKey`. For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
 #' ivs_delete_playback_key_pair(arn)
@@ -950,12 +860,7 @@ ivs_delete_playback_restriction_policy <- function(arn) {
 #' @description
 #' Deletes the recording configuration for the specified ARN.
 #' 
-#' If you try to delete a recording configuration that is associated with a
-#' channel, you will get an error (409 ConflictException). To avoid this,
-#' for all channels that reference the recording configuration, first use
-#' [`update_channel`][ivs_update_channel] to set the
-#' `recordingConfigurationArn` field to an empty string, then use
-#' DeleteRecordingConfiguration.
+#' If you try to delete a recording configuration that is associated with a channel, you will get an error (409 ConflictException). To avoid this, for all channels that reference the recording configuration, first use [`update_channel`][ivs_update_channel] to set the `recordingConfigurationArn` field to an empty string, then use DeleteRecordingConfiguration.
 #'
 #' @usage
 #' ivs_delete_recording_configuration(arn)
@@ -1000,8 +905,7 @@ ivs_delete_recording_configuration <- function(arn) {
 #' used to stream
 #'
 #' @description
-#' Deletes the stream key for the specified ARN, so it can no longer be
-#' used to stream.
+#' Deletes the stream key for the specified ARN, so it can no longer be used to stream.
 #'
 #' @usage
 #' ivs_delete_stream_key(arn)
@@ -1105,8 +1009,7 @@ ivs_get_ad_configuration <- function(arn) {
 #' Gets the channel configuration for the specified channel ARN
 #'
 #' @description
-#' Gets the channel configuration for the specified channel ARN. See also
-#' [`batch_get_channel`][ivs_batch_get_channel].
+#' Gets the channel configuration for the specified channel ARN. See also [`batch_get_channel`][ivs_batch_get_channel].
 #'
 #' @usage
 #' ivs_get_channel(arn)
@@ -1182,12 +1085,7 @@ ivs_get_channel <- function(arn) {
 #' fingerprint
 #'
 #' @description
-#' Gets a specified playback authorization key pair and returns the `arn`
-#' and `fingerprint`. The `privateKey` held by the caller can be used to
-#' generate viewer authorization tokens, to grant viewers access to private
-#' channels. For more information, see [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html)
-#' in the *Amazon IVS User Guide*.
+#' Gets a specified playback authorization key pair and returns the `arn` and `fingerprint`. The `privateKey` held by the caller can be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
 #' ivs_get_playback_key_pair(arn)
@@ -1502,9 +1400,7 @@ ivs_get_stream_key <- function(arn) {
 #' ivs_get_stream_session(channelArn, streamId)
 #'
 #' @param channelArn &#91;required&#93; ARN of the channel resource
-#' @param streamId Unique identifier for a live or previously live stream in the specified
-#' channel. If no `streamId` is provided, this returns the most recent
-#' stream session for the channel, if it exists.
+#' @param streamId Unique identifier for a live or previously live stream in the specified channel. If no `streamId` is provided, this returns the most recent stream session for the channel, if it exists.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1671,25 +1567,14 @@ ivs_get_stream_session <- function(channelArn, streamId = NULL) {
 #' fingerprint
 #'
 #' @description
-#' Imports the public portion of a new key pair and returns its `arn` and
-#' `fingerprint`. The `privateKey` can then be used to generate viewer
-#' authorization tokens, to grant viewers access to private channels. For
-#' more information, see [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html)
-#' in the *Amazon IVS User Guide*.
+#' Imports the public portion of a new key pair and returns its `arn` and `fingerprint`. The `privateKey` can then be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
 #' ivs_import_playback_key_pair(publicKeyMaterial, name, tags)
 #'
 #' @param publicKeyMaterial &#91;required&#93; The public portion of a customer-generated key pair.
 #' @param name Playback-key-pair name. The value does not need to be unique.
-#' @param tags Any tags provided with the request are added to the playback key pair
-#' tags. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param tags Any tags provided with the request are added to the playback key pair tags. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1745,16 +1630,9 @@ ivs_import_playback_key_pair <- function(publicKeyMaterial, name = NULL, tags = 
 #' duration using the ad configuration associated with the channel
 #'
 #' @description
-#' Inserts an ad marker in the playlist for the specified channel and
-#' duration using the ad configuration associated with the channel.
+#' Inserts an ad marker in the playlist for the specified channel and duration using the ad configuration associated with the channel.
 #' 
-#' **Note:** AWS Elemental MediaTailor (EMT), the service that handles ad
-#' requests, provides CloudWatch metrics to help you monitor the success or
-#' failure of each InsertAdBreak operation. See [Monitoring AWS Elemental
-#' MediaTailor with Amazon
-#' CloudWatch](https://docs.aws.amazon.com/mediatailor/latest/ug/monitoring-cloudwatch-metrics.html)
-#' metrics in the *AWS Elemental MediaTailor User Guide* for details on
-#' available metrics.
+#' **Note:** AWS Elemental MediaTailor (EMT), the service that handles ad requests, provides CloudWatch metrics to help you monitor the success or failure of each InsertAdBreak operation. See [Monitoring AWS Elemental MediaTailor with Amazon CloudWatch](https://docs.aws.amazon.com/mediatailor/latest/ug/monitoring-cloudwatch-metrics.html) metrics in the *AWS Elemental MediaTailor User Guide* for details on available metrics.
 #'
 #' @usage
 #' ivs_insert_ad_break(channelArn, durationSeconds)
@@ -1806,16 +1684,13 @@ ivs_insert_ad_break <- function(channelArn, durationSeconds) {
 #' the AWS region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all ad configurations in your account, in
-#' the AWS region where the API request is processed.
+#' Gets summary information about all ad configurations in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivs_list_ad_configurations(nextToken, maxResults)
 #'
-#' @param nextToken The first ad configuration to retrieve. This is used for pagination; see
-#' the `nextToken` response field.
-#' @param maxResults Maximum number of ad configurations to return. Default: your service
-#' quota or 100, whichever is smaller.
+#' @param nextToken The first ad configuration to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of ad configurations to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1875,11 +1750,7 @@ ivs_list_ad_configurations <- function(nextToken = NULL, maxResults = NULL) {
 #' Amazon Web Services region where the API request is processed
 #'
 #' @description
-#' Gets summary information about all channels in your account, in the
-#' Amazon Web Services region where the API request is processed. This list
-#' can be filtered to match a specified name or recording-configuration
-#' ARN. Filters are mutually exclusive and cannot be used together. If you
-#' try to use both filters, you will get an error (409 ConflictException).
+#' Gets summary information about all channels in your account, in the Amazon Web Services region where the API request is processed. This list can be filtered to match a specified name or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If you try to use both filters, you will get an error (409 ConflictException).
 #'
 #' @usage
 #' ivs_list_channels(filterByName, filterByRecordingConfigurationArn,
@@ -1887,12 +1758,10 @@ ivs_list_ad_configurations <- function(nextToken = NULL, maxResults = NULL) {
 #'   nextToken, maxResults)
 #'
 #' @param filterByName Filters the channel list to match the specified name.
-#' @param filterByRecordingConfigurationArn Filters the channel list to match the specified recording-configuration
-#' ARN.
+#' @param filterByRecordingConfigurationArn Filters the channel list to match the specified recording-configuration ARN.
 #' @param filterByPlaybackRestrictionPolicyArn Filters the channel list to match the specified policy.
 #' @param filterByAdConfigurationArn Filters the channel list to match the specified ad configuration ARN.
-#' @param nextToken The first channel to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first channel to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of channels to return. Default: 100.
 #'
 #' @return
@@ -1959,18 +1828,13 @@ ivs_list_channels <- function(filterByName = NULL, filterByRecordingConfiguratio
 #' Gets summary information about playback key pairs
 #'
 #' @description
-#' Gets summary information about playback key pairs. For more information,
-#' see [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html)
-#' in the *Amazon IVS User Guide*.
+#' Gets summary information about playback key pairs. For more information, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
 #' ivs_list_playback_key_pairs(nextToken, maxResults)
 #'
-#' @param nextToken The first key pair to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
-#' @param maxResults Maximum number of key pairs to return. Default: your service quota or
-#' 100, whichever is smaller.
+#' @param nextToken The first key pair to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of key pairs to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2029,8 +1893,7 @@ ivs_list_playback_key_pairs <- function(nextToken = NULL, maxResults = NULL) {
 #' @usage
 #' ivs_list_playback_restriction_policies(nextToken, maxResults)
 #'
-#' @param nextToken The first policy to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first policy to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of policies to return. Default: 1.
 #'
 #' @return
@@ -2094,17 +1957,13 @@ ivs_list_playback_restriction_policies <- function(nextToken = NULL, maxResults 
 #' processed
 #'
 #' @description
-#' Gets summary information about all recording configurations in your
-#' account, in the Amazon Web Services region where the API request is
-#' processed.
+#' Gets summary information about all recording configurations in your account, in the Amazon Web Services region where the API request is processed.
 #'
 #' @usage
 #' ivs_list_recording_configurations(nextToken, maxResults)
 #'
-#' @param nextToken The first recording configuration to retrieve. This is used for
-#' pagination; see the `nextToken` response field.
-#' @param maxResults Maximum number of recording configurations to return. Default: your
-#' service quota or 100, whichever is smaller.
+#' @param nextToken The first recording configuration to retrieve. This is used for pagination; see the `nextToken` response field.
+#' @param maxResults Maximum number of recording configurations to return. Default: your service quota or 100, whichever is smaller.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2170,8 +2029,7 @@ ivs_list_recording_configurations <- function(nextToken = NULL, maxResults = NUL
 #' ivs_list_stream_keys(channelArn, nextToken, maxResults)
 #'
 #' @param channelArn &#91;required&#93; Channel ARN used to filter the list.
-#' @param nextToken The first stream key to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first stream key to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streamKeys to return. Default: 1.
 #'
 #' @return
@@ -2228,15 +2086,13 @@ ivs_list_stream_keys <- function(channelArn, nextToken = NULL, maxResults = NULL
 #' in your account, in the AWS region where the API request is processed
 #'
 #' @description
-#' Gets a summary of current and previous streams for a specified channel
-#' in your account, in the AWS region where the API request is processed.
+#' Gets a summary of current and previous streams for a specified channel in your account, in the AWS region where the API request is processed.
 #'
 #' @usage
 #' ivs_list_stream_sessions(channelArn, nextToken, maxResults)
 #'
 #' @param channelArn &#91;required&#93; Channel ARN used to filter the list.
-#' @param nextToken The first stream to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first stream to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streams to return. Default: 100.
 #'
 #' @return
@@ -2296,15 +2152,13 @@ ivs_list_stream_sessions <- function(channelArn, nextToken = NULL, maxResults = 
 #' Amazon Web Services region where the API request is processed
 #'
 #' @description
-#' Gets summary information about live streams in your account, in the
-#' Amazon Web Services region where the API request is processed.
+#' Gets summary information about live streams in your account, in the Amazon Web Services region where the API request is processed.
 #'
 #' @usage
 #' ivs_list_streams(filterBy, nextToken, maxResults)
 #'
 #' @param filterBy Filters the stream list to match the specified criterion.
-#' @param nextToken The first stream to retrieve. This is used for pagination; see the
-#' `nextToken` response field.
+#' @param nextToken The first stream to retrieve. This is used for pagination; see the `nextToken` response field.
 #' @param maxResults Maximum number of streams to return. Default: 100.
 #'
 #' @return
@@ -2416,20 +2270,12 @@ ivs_list_tags_for_resource <- function(resourceArn) {
 #' Inserts metadata into the active stream of the specified channel
 #'
 #' @description
-#' Inserts metadata into the active stream of the specified channel. At
-#' most 5 requests per second per channel are allowed, each with a maximum
-#' 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend
-#' batching your data into a single PutMetadata call.) At most 155 requests
-#' per second per account are allowed. Also see [Embedding Metadata within
-#' a Video
-#' Stream](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/metadata.html)
-#' in the *Amazon IVS User Guide*.
+#' Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed. Also see [Embedding Metadata within a Video Stream](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/metadata.html) in the *Amazon IVS User Guide*.
 #'
 #' @usage
 #' ivs_put_metadata(channelArn, metadata)
 #'
-#' @param channelArn &#91;required&#93; ARN of the channel into which metadata is inserted. This channel must
-#' have an active stream.
+#' @param channelArn &#91;required&#93; ARN of the channel into which metadata is inserted. This channel must have an active stream.
 #' @param metadata &#91;required&#93; Metadata to insert into the stream. Maximum: 1 KB per request.
 #'
 #' @return
@@ -2471,24 +2317,15 @@ ivs_put_metadata <- function(channelArn, metadata) {
 #' specified channel ARN and viewer ID
 #'
 #' @description
-#' Starts the process of revoking the viewer session associated with a
-#' specified channel ARN and viewer ID. Optionally, you can provide a
-#' version to revoke viewer sessions less than and including that version.
-#' For instructions on associating a viewer ID with a viewer session, see
-#' [Setting Up Private
-#' Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html).
+#' Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including that version. For instructions on associating a viewer ID with a viewer session, see [Setting Up Private Channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html).
 #'
 #' @usage
 #' ivs_start_viewer_session_revocation(channelArn, viewerId,
 #'   viewerSessionVersionsLessThanOrEqualTo)
 #'
 #' @param channelArn &#91;required&#93; The ARN of the channel associated with the viewer session to revoke.
-#' @param viewerId &#91;required&#93; The ID of the viewer associated with the viewer session to revoke. Do
-#' not use this field for personally identifying, confidential, or
-#' sensitive information.
-#' @param viewerSessionVersionsLessThanOrEqualTo An optional filter on which versions of the viewer session to revoke.
-#' All versions less than or equal to the specified version will be
-#' revoked. Default: 0.
+#' @param viewerId &#91;required&#93; The ID of the viewer associated with the viewer session to revoke. Do not use this field for personally identifying, confidential, or sensitive information.
+#' @param viewerSessionVersionsLessThanOrEqualTo An optional filter on which versions of the viewer session to revoke. All versions less than or equal to the specified version will be revoked. Default: 0.
 #'
 #' @return
 #' An empty list.
@@ -2529,13 +2366,9 @@ ivs_start_viewer_session_revocation <- function(channelArn, viewerId, viewerSess
 #' Disconnects the incoming RTMPS stream for the specified channel
 #'
 #' @description
-#' Disconnects the incoming RTMPS stream for the specified channel. Can be
-#' used in conjunction with [`delete_stream_key`][ivs_delete_stream_key] to
-#' prevent further streaming to a channel.
+#' Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with [`delete_stream_key`][ivs_delete_stream_key] to prevent further streaming to a channel.
 #' 
-#' Many streaming client-software libraries automatically reconnect a
-#' dropped RTMPS session, so to stop the stream permanently, you may want
-#' to first revoke the `streamKey` attached to the channel.
+#' Many streaming client-software libraries automatically reconnect a dropped RTMPS session, so to stop the stream permanently, you may want to first revoke the `streamKey` attached to the channel.
 #'
 #' @usage
 #' ivs_stop_stream(channelArn)
@@ -2580,21 +2413,13 @@ ivs_stop_stream <- function(channelArn) {
 #' specified ARN
 #'
 #' @description
-#' Adds or updates tags for the Amazon Web Services resource with the
-#' specified ARN.
+#' Adds or updates tags for the Amazon Web Services resource with the specified ARN.
 #'
 #' @usage
 #' ivs_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be added or updated. The ARN
-#' must be URL-encoded.
-#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form
-#' `string:string (key:value)`. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be added or updated. The ARN must be URL-encoded.
+#' @param tags &#91;required&#93; Array of tags to be added or updated. Array of maps, each of the form `string:string (key:value)`. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' An empty list.
@@ -2641,15 +2466,8 @@ ivs_tag_resource <- function(resourceArn, tags) {
 #' @usage
 #' ivs_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be removed. The ARN must be
-#' URL-encoded.
-#' @param tagKeys &#91;required&#93; Array of tag keys (strings) for the tags to be removed. See [Best
-#' practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' @param resourceArn &#91;required&#93; ARN of the resource for which tags are to be removed. The ARN must be URL-encoded.
+#' @param tagKeys &#91;required&#93; Array of tag keys (strings) for the tags to be removed. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #'
 #' @return
 #' An empty list.
@@ -2691,9 +2509,7 @@ ivs_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates a channel's configuration
 #'
 #' @description
-#' Updates a channel's configuration. Live channels cannot be updated. You
-#' must stop the ongoing stream, update the channel, and restart the stream
-#' for the changes to take effect.
+#' Updates a channel's configuration. Live channels cannot be updated. You must stop the ongoing stream, update the channel, and restart the stream for the changes to take effect.
 #'
 #' @usage
 #' ivs_update_channel(arn, name, latencyMode, type, authorized,
@@ -2703,33 +2519,15 @@ ivs_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param arn &#91;required&#93; ARN of the channel to be updated.
 #' @param name Channel name.
-#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video
-#' up to Full HD. Use `LOW` for near-real-time interaction with viewers.
-#' @param type Channel type, which determines the allowable resolution and bitrate. *If
-#' you exceed the allowable input resolution or bitrate, the stream
-#' probably will disconnect immediately.* Default: `STANDARD`. For details,
-#' see [Channel
-#' Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
+#' @param latencyMode Channel latency mode. Use `NORMAL` to broadcast and deliver live video up to Full HD. Use `LOW` for near-real-time interaction with viewers.
+#' @param type Channel type, which determines the allowable resolution and bitrate. *If you exceed the allowable input resolution or bitrate, the stream probably will disconnect immediately.* Default: `STANDARD`. For details, see [Channel Types](https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/).
 #' @param authorized Whether the channel is private (enabled for playback authorization).
-#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the
-#' ARN and enables recording. If this is set to an empty string, recording
-#' is disabled.
-#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default:
-#' `false`.
-#' @param preset Optional transcode preset for the channel. This is selectable only for
-#' `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types,
-#' the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel
-#' types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
-#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies
-#' the ARN and enables playback restriction. If this is set to an empty
-#' string, playback restriction policy is disabled.
-#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack
-#' input configuration is specified.
-#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If
-#' `multitrackInputConfiguration` is specified and `enabled` is `true`,
-#' then `containerFormat` is required and must be set to `FRAGMENTED_MP4`.
-#' Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`.
-#' Default: `TS`.
+#' @param recordingConfigurationArn Recording-configuration ARN. A valid ARN value here both specifies the ARN and enables recording. If this is set to an empty string, recording is disabled.
+#' @param insecureIngest Whether the channel allows insecure RTMP and SRT ingest. Default: `false`.
+#' @param preset Optional transcode preset for the channel. This is selectable only for `ADVANCED_HD` and `ADVANCED_SD` channel types. For those channel types, the default `preset` is `HIGHER_BANDWIDTH_DELIVERY`. For other channel types (`BASIC` and `STANDARD`), `preset` is the empty string (`""`).
+#' @param playbackRestrictionPolicyArn Playback-restriction-policy ARN. A valid ARN value here both specifies the ARN and enables playback restriction. If this is set to an empty string, playback restriction policy is disabled.
+#' @param multitrackInputConfiguration Object specifying multitrack input configuration. Default: no multitrack input configuration is specified.
+#' @param containerFormat Indicates which content-packaging format is used (MPEG-TS or fMP4). If `multitrackInputConfiguration` is specified and `enabled` is `true`, then `containerFormat` is required and must be set to `FRAGMENTED_MP4`. Otherwise, `containerFormat` may be set to `TS` or `FRAGMENTED_MP4`. Default: `TS`.
 #' @param adConfigurationArn ARN of the ad configuration associated with the channel.
 #'
 #' @return
@@ -2822,16 +2620,9 @@ ivs_update_channel <- function(arn, name = NULL, latencyMode = NULL, type = NULL
 #'   allowedOrigins, enableStrictOriginEnforcement, name)
 #'
 #' @param arn &#91;required&#93; ARN of the playback-restriction-policy to be updated.
-#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed
-#' values are the officially assigned [ISO 3166-1
-#' alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes.
-#' Default: All countries (an empty array).
-#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are
-#' the same as valid values of the Origin header defined at
-#' [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin).
-#' Default: All origins (an empty array).
-#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default:
-#' `false`.
+#' @param allowedCountries A list of country codes that control geoblocking restriction. Allowed values are the officially assigned [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) codes. Default: All countries (an empty array).
+#' @param allowedOrigins A list of origin sites that control CORS restriction. Allowed values are the same as valid values of the Origin header defined at [https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin). Default: All origins (an empty array).
+#' @param enableStrictOriginEnforcement Whether channel playback is constrained by origin site. Default: `false`.
 #' @param name Playback-restriction-policy name. The value does not need to be unique.
 #'
 #' @return

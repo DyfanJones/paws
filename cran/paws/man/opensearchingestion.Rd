@@ -53,10 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Use the Amazon OpenSearch Ingestion API to create and manage ingestion
-pipelines. OpenSearch Ingestion is a fully managed data collector that
-delivers real-time log and trace data to OpenSearch Service domains. For
-more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ingestion.html}{Getting data into your cluster using OpenSearch Ingestion}.
+Use the Amazon OpenSearch Ingestion API to create and manage ingestion pipelines. OpenSearch Ingestion is a fully managed data collector that delivers real-time log and trace data to OpenSearch Service domains. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ingestion.html}{Getting data into your cluster using OpenSearch Ingestion}.
 }
 \section{Service syntax}{
 

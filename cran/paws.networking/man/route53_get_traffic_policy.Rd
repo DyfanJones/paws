@@ -9,8 +9,7 @@ route53_get_traffic_policy(Id, Version)
 \arguments{
 \item{Id}{[required] The ID of the traffic policy that you want to get information about.}
 
-\item{Version}{[required] The version number of the traffic policy that you want to get
-information about.}
+\item{Version}{[required] The version number of the traffic policy that you want to get information about.}
 }
 \description{
 Gets information about a specific traffic policy version.

@@ -17,8 +17,7 @@ bedrockagentcorecontrol_create_registry_record(
 )
 }
 \arguments{
-\item{registryId}{[required] The identifier of the registry where the record will be created. You can
-specify either the Amazon Resource Name (ARN) or the ID of the registry.}
+\item{registryId}{[required] The identifier of the registry where the record will be created. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 
 \item{name}{[required] The name of the registry record.}
 
@@ -26,34 +25,21 @@ specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 
 \item{descriptorType}{[required] The descriptor type of the registry record.
 \itemize{
-\item \code{MCP} - Model Context Protocol descriptor for MCP-compatible servers
-and tools.
+\item \code{MCP} - Model Context Protocol descriptor for MCP-compatible servers and tools.
 \item \code{A2A} - Agent-to-Agent protocol descriptor.
-\item \code{CUSTOM} - Custom descriptor type for resources such as APIs, Lambda
-functions, or servers not conforming to a standard protocol.
-\item \code{AGENT_SKILLS} - Agent skills descriptor for defining agent skill
-definitions.
+\item \code{CUSTOM} - Custom descriptor type for resources such as APIs, Lambda functions, or servers not conforming to a standard protocol.
+\item \code{AGENT_SKILLS} - Agent skills descriptor for defining agent skill definitions.
 }}
 
-\item{descriptors}{The descriptor-type-specific configuration containing the resource
-schema and metadata. The structure of this field depends on the
-\code{descriptorType} you specify.}
+\item{descriptors}{The descriptor-type-specific configuration containing the resource schema and metadata. The structure of this field depends on the \code{descriptorType} you specify.}
 
-\item{recordVersion}{The version of the registry record. Use this to track different versions
-of the record's content.}
+\item{recordVersion}{The version of the registry record. Use this to track different versions of the record's content.}
 
-\item{synchronizationType}{The type of synchronization to use for keeping the record metadata up to
-date from an external source. Possible values include \code{FROM_URL} and
-\code{NONE}.}
+\item{synchronizationType}{The type of synchronization to use for keeping the record metadata up to date from an external source. Possible values include \code{FROM_URL} and \code{NONE}.}
 
-\item{synchronizationConfiguration}{The configuration for synchronizing registry record metadata from an
-external source, such as a URL-based MCP server.}
+\item{synchronizationConfiguration}{The configuration for synchronizing registry record metadata from an external source, such as a URL-based MCP server.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 }
 \description{
 Creates a new registry record within the specified registry. A registry record represents an individual AI resource's metadata in the registry. This could be an MCP server (and associated tools), A2A agent, agent skill, or a custom resource with a custom schema.

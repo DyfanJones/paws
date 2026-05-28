@@ -9,8 +9,7 @@ apigateway_update_deployment(restApiId, deploymentId, patchOperations = NULL)
 \arguments{
 \item{restApiId}{[required] The string identifier of the associated RestApi.}
 
-\item{deploymentId}{[required] The replacement identifier for the Deployment resource to change
-information about.}
+\item{deploymentId}{[required] The replacement identifier for the Deployment resource to change information about.}
 
 \item{patchOperations}{For more information about supported patch operations, see \href{https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html}{Patch Operations}.}
 }

@@ -17,8 +17,7 @@ datazone_list_data_sources(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which to list the data
-sources.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which to list the data sources.}
 
 \item{projectIdentifier}{[required] The identifier of the project in which to list data sources.}
 
@@ -32,20 +31,9 @@ sources.}
 
 \item{name}{The name of the data source.}
 
-\item{nextToken}{When the number of data sources is greater than the default value for
-the \code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of data sources, the response
-includes a pagination token named \code{NextToken}. You can specify this
-\code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_data_sources]{list_data_sources}} to list the next set
-of data sources.}
+\item{nextToken}{When the number of data sources is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of data sources, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_data_sources]{list_data_sources}} to list the next set of data sources.}
 
-\item{maxResults}{The maximum number of data sources to return in a single call to
-\code{\link[=datazone_list_data_sources]{list_data_sources}}. When the number of
-data sources to be listed is greater than the value of \code{MaxResults}, the
-response contains a \code{NextToken} value that you can use in a subsequent
-call to \code{\link[=datazone_list_data_sources]{list_data_sources}} to list the
-next set of data sources.}
+\item{maxResults}{The maximum number of data sources to return in a single call to \code{\link[=datazone_list_data_sources]{list_data_sources}}. When the number of data sources to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_data_sources]{list_data_sources}} to list the next set of data sources.}
 }
 \description{
 Lists data sources in Amazon DataZone.

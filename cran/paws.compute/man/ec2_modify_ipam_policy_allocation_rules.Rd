@@ -13,10 +13,7 @@ ec2_modify_ipam_policy_allocation_rules(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{IpamPolicyId}{[required] The ID of the IPAM policy whose allocation rules you want to modify.}
 
@@ -24,19 +21,14 @@ you have the required permissions, the error response is
 
 \item{ResourceType}{[required] The resource type for which to modify the allocation rules.
 
-The Amazon Web Services service or resource type that can use IP
-addresses through IPAM policies. Supported services and resource types
-include:
+The Amazon Web Services service or resource type that can use IP addresses through IPAM policies. Supported services and resource types include:
 \itemize{
 \item Elastic IP addresses
 }}
 
 \item{AllocationRules}{The new allocation rules to apply to the IPAM policy.
 
-Allocation rules are optional configurations within an IPAM policy that
-map Amazon Web Services resource types to specific IPAM pools. If no
-rules are defined, the resource types default to using Amazon-provided
-IP addresses.}
+Allocation rules are optional configurations within an IPAM policy that map Amazon Web Services resource types to specific IPAM pools. If no rules are defined, the resource types default to using Amazon-provided IP addresses.}
 }
 \description{
 Modifies the allocation rules in an IPAM policy.

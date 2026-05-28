@@ -17,15 +17,11 @@ glue_update_job_from_source_control(
 )
 }
 \arguments{
-\item{JobName}{The name of the Glue job to be synchronized to or from the remote
-repository.}
+\item{JobName}{The name of the Glue job to be synchronized to or from the remote repository.}
 
-\item{Provider}{The provider for the remote repository. Possible values: GITHUB,
-AWS_CODE_COMMIT, GITLAB, BITBUCKET.}
+\item{Provider}{The provider for the remote repository. Possible values: GITHUB, AWS_CODE_COMMIT, GITLAB, BITBUCKET.}
 
-\item{RepositoryName}{The name of the remote repository that contains the job artifacts. For
-BitBucket providers, \code{RepositoryName} should include \code{WorkspaceName}.
-Use the format \verb{<WorkspaceName>/<RepositoryName>}.}
+\item{RepositoryName}{The name of the remote repository that contains the job artifacts. For BitBucket providers, \code{RepositoryName} should include \code{WorkspaceName}. Use the format \verb{<WorkspaceName>/<RepositoryName>}.}
 
 \item{RepositoryOwner}{The owner of the remote repository that contains the job artifacts.}
 
@@ -35,8 +31,7 @@ Use the format \verb{<WorkspaceName>/<RepositoryName>}.}
 
 \item{CommitId}{A commit ID for a commit in the remote repository.}
 
-\item{AuthStrategy}{The type of authentication, which can be an authentication token stored
-in Amazon Web Services Secrets Manager, or a personal access token.}
+\item{AuthStrategy}{The type of authentication, which can be an authentication token stored in Amazon Web Services Secrets Manager, or a personal access token.}
 
 \item{AuthToken}{The value of the authorization token.}
 }

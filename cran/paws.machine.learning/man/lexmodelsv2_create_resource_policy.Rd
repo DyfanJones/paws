@@ -7,14 +7,9 @@
 lexmodelsv2_create_resource_policy(resourceArn, policy)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the bot or bot alias that the resource
-policy is attached to.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.}
 
-\item{policy}{[required] A resource policy to add to the resource. The policy is a JSON structure
-that contains one or more statements that define the policy. The policy
-must follow the IAM syntax. For more information about the contents of a
-JSON policy document, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html}{IAM JSON policy reference}
-.
+\item{policy}{[required] A resource policy to add to the resource. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html}{IAM JSON policy reference} .
 
 If the policy isn't valid, Amazon Lex returns a validation exception.}
 }

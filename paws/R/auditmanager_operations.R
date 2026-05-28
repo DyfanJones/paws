@@ -7,8 +7,7 @@ NULL
 #' Manager assessment
 #'
 #' @description
-#' Associates an evidence folder to an assessment report in an Audit
-#' Manager assessment.
+#' Associates an evidence folder to an assessment report in an Audit Manager assessment.
 #'
 #' @usage
 #' auditmanager_associate_assessment_report_evidence_folder(assessmentId,
@@ -56,8 +55,7 @@ auditmanager_associate_assessment_report_evidence_folder <- function(assessmentI
 #' Manager assessment
 #'
 #' @description
-#' Associates a list of evidence to an assessment report in an Audit
-#' Manager assessment.
+#' Associates a list of evidence to an assessment report in an Audit Manager assessment.
 #'
 #' @usage
 #' auditmanager_batch_associate_assessment_report_evidence(assessmentId,
@@ -272,8 +270,7 @@ auditmanager_batch_delete_delegation_by_assessment <- function(delegationIds, as
 #' Manager
 #'
 #' @description
-#' Disassociates a list of evidence from an assessment report in Audit
-#' Manager.
+#' Disassociates a list of evidence from an assessment report in Audit Manager.
 #'
 #' @usage
 #' auditmanager_batch_disassociate_assessment_report_evidence(assessmentId,
@@ -339,29 +336,21 @@ auditmanager_batch_disassociate_assessment_report_evidence <- function(assessmen
 #' assessment
 #'
 #' @description
-#' Adds one or more pieces of evidence to a control in an Audit Manager
-#' assessment.
+#' Adds one or more pieces of evidence to a control in an Audit Manager assessment.
 #' 
-#' You can import manual evidence from any S3 bucket by specifying the S3
-#' URI of the object. You can also upload a file from your browser, or
-#' enter plain text in response to a risk assessment question.
+#' You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a file from your browser, or enter plain text in response to a risk assessment question.
 #' 
 #' The following restrictions apply to this action:
 #' 
-#' -   `manualEvidence` can be only one of the following:
-#'     `evidenceFileName`, `s3ResourcePath`, or `textResponse`
+#' -   `manualEvidence` can be only one of the following: `evidenceFileName`, `s3ResourcePath`, or `textResponse`
 #' 
 #' -   Maximum size of an individual evidence file: 100 MB
 #' 
 #' -   Number of daily manual evidence uploads per control: 100
 #' 
-#' -   Supported file formats: See [Supported file types for manual
-#'     evidence](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files)
-#'     in the *Audit Manager User Guide*
+#' -   Supported file formats: See [Supported file types for manual evidence](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files) in the *Audit Manager User Guide*
 #' 
-#' For more information about Audit Manager service restrictions, see
-#' [Quotas and restrictions for Audit
-#' Manager](https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html).
+#' For more information about Audit Manager service restrictions, see [Quotas and restrictions for Audit Manager](https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html).
 #'
 #' @usage
 #' auditmanager_batch_import_evidence_to_assessment_control(assessmentId,
@@ -441,12 +430,14 @@ auditmanager_batch_import_evidence_to_assessment_control <- function(assessmentI
 #'
 #' @param name &#91;required&#93; The name of the assessment to be created.
 #' @param description The optional description of the assessment to be created.
-#' @param assessmentReportsDestination &#91;required&#93; The assessment report storage destination for the assessment that's
-#' being created.
-#' @param scope &#91;required&#93; 
+#' @param assessmentReportsDestination &#91;required&#93; The assessment report storage destination for the assessment that's being created.
+#' @param scope &#91;required&#93; The wrapper that contains the Amazon Web Services accounts that are in scope for the assessment.
+#' 
+#' You no longer need to specify which Amazon Web Services services are in scope when you create or update an assessment. Audit Manager infers the services in scope by examining your assessment controls and their data sources, and then mapping this information to the relevant Amazon Web Services services.
+#' 
+#' If an underlying data source changes for your assessment, we automatically update the services scope as needed to reflect the correct Amazon Web Services services. This ensures that your assessment collects accurate and comprehensive evidence about all of the relevant services in your AWS environment.
 #' @param roles &#91;required&#93; The list of roles for the assessment.
-#' @param frameworkId &#91;required&#93; The identifier for the framework that the assessment will be created
-#' from.
+#' @param frameworkId &#91;required&#93; The identifier for the framework that the assessment will be created from.
 #' @param tags The tags that are associated with the assessment.
 #'
 #' @return
@@ -661,13 +652,10 @@ auditmanager_create_assessment <- function(name, description = NULL, assessmentR
 #'
 #' @param name &#91;required&#93; The name of the new custom framework.
 #' @param description An optional description for the new custom framework.
-#' @param complianceType The compliance type that the new custom framework supports, such as CIS
-#' or HIPAA.
+#' @param complianceType The compliance type that the new custom framework supports, such as CIS or HIPAA.
 #' @param controlSets &#91;required&#93; The control sets that are associated with the framework.
 #' 
-#' The `Controls` object returns a partial response when called through
-#' Framework APIs. For a complete `Controls` object, use
-#' [`get_control`][auditmanager_get_control].
+#' The `Controls` object returns a partial response when called through Framework APIs. For a complete `Controls` object, use [`get_control`][auditmanager_get_control].
 #' @param tags The tags that are associated with the framework.
 #'
 #' @return
@@ -804,23 +792,11 @@ auditmanager_create_assessment_framework <- function(name, description = NULL, c
 #' @param assessmentId &#91;required&#93; The identifier for the assessment.
 #' @param queryStatement A SQL statement that represents an evidence finder query.
 #' 
-#' Provide this parameter when you want to generate an assessment report
-#' from the results of an evidence finder search query. When you use this
-#' parameter, Audit Manager generates a one-time report using only the
-#' evidence from the query output. This report does not include any
-#' assessment evidence that was manually [added to a report using the
-#' console](https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence),
-#' or [associated with a report using the
-#' API](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html).
+#' Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually [added to a report using the console](https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence), or [associated with a report using the API](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html).
 #' 
-#' To use this parameter, the
-#' [enablementStatus](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus)
-#' of evidence finder must be `ENABLED`.
+#' To use this parameter, the [enablementStatus](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus) of evidence finder must be `ENABLED`.
 #' 
-#' For examples and help resolving `queryStatement` validation exceptions,
-#' see [Troubleshooting evidence finder
-#' issues](https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions)
-#' in the *Audit Manager User Guide.*
+#' For examples and help resolving `queryStatement` validation exceptions, see [Troubleshooting evidence finder issues](https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions) in the *Audit Manager User Guide.*
 #'
 #' @return
 #' A list with the following syntax:
@@ -1087,8 +1063,7 @@ auditmanager_delete_assessment_framework <- function(frameworkId) {
 #' auditmanager_delete_assessment_framework_share(requestId, requestType)
 #'
 #' @param requestId &#91;required&#93; The unique identifier for the share request to be deleted.
-#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received
-#' request.
+#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received request.
 #'
 #' @return
 #' An empty list.
@@ -1130,33 +1105,15 @@ auditmanager_delete_assessment_framework_share <- function(requestId, requestTyp
 #' @description
 #' Deletes an assessment report in Audit Manager.
 #' 
-#' When you run the
-#' [`delete_assessment_report`][auditmanager_delete_assessment_report]
-#' operation, Audit Manager attempts to delete the following data:
+#' When you run the [`delete_assessment_report`][auditmanager_delete_assessment_report] operation, Audit Manager attempts to delete the following data:
 #' 
 #' 1.  The specified assessment report that’s stored in your S3 bucket
 #' 
 #' 2.  The associated metadata that’s stored in Audit Manager
 #' 
-#' If Audit Manager can’t access the assessment report in your S3 bucket,
-#' the report isn’t deleted. In this event, the
-#' [`delete_assessment_report`][auditmanager_delete_assessment_report]
-#' operation doesn’t fail. Instead, it proceeds to delete the associated
-#' metadata only. You must then delete the assessment report from the S3
-#' bucket yourself.
+#' If Audit Manager can’t access the assessment report in your S3 bucket, the report isn’t deleted. In this event, the [`delete_assessment_report`][auditmanager_delete_assessment_report] operation doesn’t fail. Instead, it proceeds to delete the associated metadata only. You must then delete the assessment report from the S3 bucket yourself.
 #' 
-#' This scenario happens when Audit Manager receives a `403 (Forbidden)` or
-#' `404 (Not Found)` error from Amazon S3. To avoid this, make sure that
-#' your S3 bucket is available, and that you configured the correct
-#' permissions for Audit Manager to delete resources in your S3 bucket. For
-#' an example permissions policy that you can use, see [Assessment report
-#' destination
-#' permissions](https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination)
-#' in the *Audit Manager User Guide*. For information about the issues that
-#' could cause a `403 (Forbidden)` or `404 (Not Found`) error from Amazon
-#' S3, see [List of Error
-#' Codes](https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList)
-#' in the *Amazon Simple Storage Service API Reference*.
+#' This scenario happens when Audit Manager receives a `403 (Forbidden)` or `404 (Not Found)` error from Amazon S3. To avoid this, make sure that your S3 bucket is available, and that you configured the correct permissions for Audit Manager to delete resources in your S3 bucket. For an example permissions policy that you can use, see [Assessment report destination permissions](https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination) in the *Audit Manager User Guide*. For information about the issues that could cause a `403 (Forbidden)` or `404 (Not Found`) error from Amazon S3, see [List of Error Codes](https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList) in the *Amazon Simple Storage Service API Reference*.
 #'
 #' @usage
 #' auditmanager_delete_assessment_report(assessmentId, assessmentReportId)
@@ -1204,11 +1161,7 @@ auditmanager_delete_assessment_report <- function(assessmentId, assessmentReport
 #' @description
 #' Deletes a custom control in Audit Manager.
 #' 
-#' When you invoke this operation, the custom control is deleted from any
-#' frameworks or assessments that it’s currently part of. As a result,
-#' Audit Manager will stop collecting evidence for that custom control in
-#' all of your assessments. This includes assessments that you previously
-#' created before you deleted the custom control.
+#' When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of your assessments. This includes assessments that you previously created before you deleted the custom control.
 #'
 #' @usage
 #' auditmanager_delete_control(controlId)
@@ -1254,15 +1207,9 @@ auditmanager_delete_control <- function(controlId) {
 #' @description
 #' Deregisters an account in Audit Manager.
 #' 
-#' Before you deregister, you can use the
-#' [`update_settings`][auditmanager_update_settings] API operation to set
-#' your preferred data retention policy. By default, Audit Manager retains
-#' your data. If you want to delete your data, you can use the
-#' `DeregistrationPolicy` attribute to request the deletion of your data.
+#' Before you deregister, you can use the [`update_settings`][auditmanager_update_settings] API operation to set your preferred data retention policy. By default, Audit Manager retains your data. If you want to delete your data, you can use the `DeregistrationPolicy` attribute to request the deletion of your data.
 #' 
-#' For more information about data retention, see [Data
-#' Protection](https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html)
-#' in the *Audit Manager User Guide*.
+#' For more information about data retention, see [Data Protection](https://docs.aws.amazon.com/audit-manager/latest/userguide/data-protection.html) in the *Audit Manager User Guide*.
 #'
 #' @usage
 #' auditmanager_deregister_account()
@@ -1310,74 +1257,31 @@ auditmanager_deregister_account <- function() {
 #' administrator for Audit Manager
 #'
 #' @description
-#' Removes the specified Amazon Web Services account as a delegated
-#' administrator for Audit Manager.
+#' Removes the specified Amazon Web Services account as a delegated administrator for Audit Manager.
 #' 
-#' When you remove a delegated administrator from your Audit Manager
-#' settings, you continue to have access to the evidence that you
-#' previously collected under that account. This is also the case when you
-#' deregister a delegated administrator from Organizations. However, Audit
-#' Manager stops collecting and attaching evidence to that delegated
-#' administrator account moving forward.
+#' When you remove a delegated administrator from your Audit Manager settings, you continue to have access to the evidence that you previously collected under that account. This is also the case when you deregister a delegated administrator from Organizations. However, Audit Manager stops collecting and attaching evidence to that delegated administrator account moving forward.
 #' 
 #' Keep in mind the following cleanup task if you use evidence finder:
 #' 
-#' Before you use your management account to remove a delegated
-#' administrator, make sure that the current delegated administrator
-#' account signs in to Audit Manager and disables evidence finder first.
-#' Disabling evidence finder automatically deletes the event data store
-#' that was created in their account when they enabled evidence finder. If
-#' this task isn’t completed, the event data store remains in their
-#' account. In this case, we recommend that the original delegated
-#' administrator goes to CloudTrail Lake and manually [deletes the event
-#' data
-#' store](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-eds-disable-termination.html).
+#' Before you use your management account to remove a delegated administrator, make sure that the current delegated administrator account signs in to Audit Manager and disables evidence finder first. Disabling evidence finder automatically deletes the event data store that was created in their account when they enabled evidence finder. If this task isn’t completed, the event data store remains in their account. In this case, we recommend that the original delegated administrator goes to CloudTrail Lake and manually [deletes the event data store](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-eds-disable-termination.html).
 #' 
-#' This cleanup task is necessary to ensure that you don't end up with
-#' multiple event data stores. Audit Manager ignores an unused event data
-#' store after you remove or change a delegated administrator account.
-#' However, the unused event data store continues to incur storage costs
-#' from CloudTrail Lake if you don't delete it.
+#' This cleanup task is necessary to ensure that you don't end up with multiple event data stores. Audit Manager ignores an unused event data store after you remove or change a delegated administrator account. However, the unused event data store continues to incur storage costs from CloudTrail Lake if you don't delete it.
 #' 
-#' When you deregister a delegated administrator account for Audit Manager,
-#' the data for that account isn’t deleted. If you want to delete resource
-#' data for a delegated administrator account, you must perform that task
-#' separately before you deregister the account. Either, you can do this in
-#' the Audit Manager console. Or, you can use one of the delete API
-#' operations that are provided by Audit Manager.
+#' When you deregister a delegated administrator account for Audit Manager, the data for that account isn’t deleted. If you want to delete resource data for a delegated administrator account, you must perform that task separately before you deregister the account. Either, you can do this in the Audit Manager console. Or, you can use one of the delete API operations that are provided by Audit Manager.
 #' 
-#' To delete your Audit Manager resource data, see the following
-#' instructions:
+#' To delete your Audit Manager resource data, see the following instructions:
 #' 
-#' -   [`delete_assessment`][auditmanager_delete_assessment] (see also:
-#'     [Deleting an
-#'     assessment](https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html)
-#'     in the *Audit Manager User Guide*)
+#' -   [`delete_assessment`][auditmanager_delete_assessment] (see also: [Deleting an assessment](https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-assessment.html) in the *Audit Manager User Guide*)
 #' 
-#' -   [`delete_assessment_framework`][auditmanager_delete_assessment_framework]
-#'     (see also: [Deleting a custom
-#'     framework](https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html)
-#'     in the *Audit Manager User Guide*)
+#' -   [`delete_assessment_framework`][auditmanager_delete_assessment_framework] (see also: [Deleting a custom framework](https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-custom-framework.html) in the *Audit Manager User Guide*)
 #' 
-#' -   [`delete_assessment_framework_share`][auditmanager_delete_assessment_framework_share]
-#'     (see also: [Deleting a share
-#'     request](https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html)
-#'     in the *Audit Manager User Guide*)
+#' -   [`delete_assessment_framework_share`][auditmanager_delete_assessment_framework_share] (see also: [Deleting a share request](https://docs.aws.amazon.com/audit-manager/latest/userguide/deleting-shared-framework-requests.html) in the *Audit Manager User Guide*)
 #' 
-#' -   [`delete_assessment_report`][auditmanager_delete_assessment_report]
-#'     (see also: [Deleting an assessment
-#'     report](https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps)
-#'     in the *Audit Manager User Guide*)
+#' -   [`delete_assessment_report`][auditmanager_delete_assessment_report] (see also: [Deleting an assessment report](https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#delete-assessment-report-steps) in the *Audit Manager User Guide*)
 #' 
-#' -   [`delete_control`][auditmanager_delete_control] (see also: [Deleting
-#'     a custom
-#'     control](https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html)
-#'     in the *Audit Manager User Guide*)
+#' -   [`delete_control`][auditmanager_delete_control] (see also: [Deleting a custom control](https://docs.aws.amazon.com/audit-manager/latest/userguide/delete-controls.html) in the *Audit Manager User Guide*)
 #' 
-#' At this time, Audit Manager doesn't provide an option to delete evidence
-#' for a specific delegated administrator. Instead, when your management
-#' account deregisters Audit Manager, we perform a cleanup for the current
-#' delegated administrator account at the time of deregistration.
+#' At this time, Audit Manager doesn't provide an option to delete evidence for a specific delegated administrator. Instead, when your management account deregisters Audit Manager, we perform a cleanup for the current delegated administrator account at the time of deregistration.
 #'
 #' @usage
 #' auditmanager_deregister_organization_admin_account(adminAccountId)
@@ -1422,8 +1326,7 @@ auditmanager_deregister_organization_admin_account <- function(adminAccountId = 
 #' Audit Manager
 #'
 #' @description
-#' Disassociates an evidence folder from the specified assessment report in
-#' Audit Manager.
+#' Disassociates an evidence folder from the specified assessment report in Audit Manager.
 #'
 #' @usage
 #' auditmanager_disassociate_assessment_report_evidence_folder(
@@ -1882,8 +1785,7 @@ auditmanager_get_assessment_report_url <- function(assessmentReportId, assessmen
 #' @param controlSetId The unique identifier for the control set.
 #' @param controlId The unique identifier for the control.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2034,8 +1936,7 @@ auditmanager_get_control <- function(controlId) {
 #' auditmanager_get_delegations(nextToken, maxResults)
 #'
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2185,8 +2086,7 @@ auditmanager_get_evidence <- function(assessmentId, controlSetId, evidenceFolder
 #' @param controlSetId &#91;required&#93; The identifier for the control set.
 #' @param evidenceFolderId &#91;required&#93; The unique identifier for the folder that the evidence is stored in.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2264,11 +2164,7 @@ auditmanager_get_evidence_by_evidence_folder <- function(assessmentId, controlSe
 #' manual evidence
 #'
 #' @description
-#' Creates a presigned Amazon S3 URL that can be used to upload a file as
-#' manual evidence. For instructions on how to use this operation, see
-#' [Upload a file from your
-#' browser](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files)
-#' in the *Audit Manager User Guide*.
+#' Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how to use this operation, see [Upload a file from your browser](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files) in the *Audit Manager User Guide*.
 #' 
 #' The following restrictions apply to this operation:
 #' 
@@ -2276,21 +2172,14 @@ auditmanager_get_evidence_by_evidence_folder <- function(assessmentId, controlSe
 #' 
 #' -   Number of daily manual evidence uploads per control: 100
 #' 
-#' -   Supported file formats: See [Supported file types for manual
-#'     evidence](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files)
-#'     in the *Audit Manager User Guide*
+#' -   Supported file formats: See [Supported file types for manual evidence](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files) in the *Audit Manager User Guide*
 #' 
-#' For more information about Audit Manager service restrictions, see
-#' [Quotas and restrictions for Audit
-#' Manager](https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html).
+#' For more information about Audit Manager service restrictions, see [Quotas and restrictions for Audit Manager](https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html).
 #'
 #' @usage
 #' auditmanager_get_evidence_file_upload_url(fileName)
 #'
-#' @param fileName &#91;required&#93; The file that you want to upload. For a list of supported file formats,
-#' see [Supported file types for manual
-#' evidence](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files)
-#' in the *Audit Manager User Guide*.
+#' @param fileName &#91;required&#93; The file that you want to upload. For a list of supported file formats, see [Supported file types for manual evidence](https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files) in the *Audit Manager User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2418,8 +2307,7 @@ auditmanager_get_evidence_folder <- function(assessmentId, controlSetId, evidenc
 #'
 #' @param assessmentId &#91;required&#93; The unique identifier for the assessment.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2490,8 +2378,7 @@ auditmanager_get_evidence_folders_by_assessment <- function(assessmentId, nextTo
 #' control in an Audit Manager assessment
 #'
 #' @description
-#' Gets a list of evidence folders that are associated with a specified
-#' control in an Audit Manager assessment.
+#' Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
 #'
 #' @usage
 #' auditmanager_get_evidence_folders_by_assessment_control(assessmentId,
@@ -2501,8 +2388,7 @@ auditmanager_get_evidence_folders_by_assessment <- function(assessmentId, nextTo
 #' @param controlSetId &#91;required&#93; The identifier for the control set.
 #' @param controlId &#91;required&#93; The identifier for the control.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2690,8 +2576,7 @@ auditmanager_get_insights_by_assessment <- function(assessmentId) {
 #' for a specified organization
 #'
 #' @description
-#' Gets the name of the delegated Amazon Web Services administrator account
-#' for a specified organization.
+#' Gets the name of the delegated Amazon Web Services administrator account for a specified organization.
 #'
 #' @usage
 #' auditmanager_get_organization_admin_account()
@@ -2740,19 +2625,11 @@ auditmanager_get_organization_admin_account <- function() {
 #' can collect evidence
 #'
 #' @description
-#' Gets a list of the Amazon Web Services services from which Audit Manager
-#' can collect evidence.
+#' Gets a list of the Amazon Web Services services from which Audit Manager can collect evidence.
 #' 
-#' Audit Manager defines which Amazon Web Services services are in scope
-#' for an assessment. Audit Manager infers this scope by examining the
-#' assessment’s controls and their data sources, and then mapping this
-#' information to one or more of the corresponding Amazon Web Services
-#' services that are in this list.
+#' Audit Manager defines which Amazon Web Services services are in scope for an assessment. Audit Manager infers this scope by examining the assessment’s controls and their data sources, and then mapping this information to one or more of the corresponding Amazon Web Services services that are in this list.
 #' 
-#' For information about why it's no longer possible to specify services in
-#' scope manually, see [I can't edit the services in scope for my
-#' assessment](https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-collection-issues.html#unable-to-edit-services)
-#' in the *Troubleshooting* section of the Audit Manager user guide.
+#' For information about why it's no longer possible to specify services in scope manually, see [I can't edit the services in scope for my assessment](https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-collection-issues.html#unable-to-edit-services) in the *Troubleshooting* section of the Audit Manager user guide.
 #'
 #' @usage
 #' auditmanager_get_services_in_scope()
@@ -2883,14 +2760,9 @@ auditmanager_get_settings <- function(attribute) {
 #' domain and a specific active assessment
 #'
 #' @description
-#' Lists the latest analytics data for controls within a specific control
-#' domain and a specific active assessment.
+#' Lists the latest analytics data for controls within a specific control domain and a specific active assessment.
 #' 
-#' Control insights are listed only if the control belongs to the control
-#' domain and assessment that was specified. Moreover, the control must
-#' have collected evidence on the `lastUpdated` date of
-#' `controlInsightsByAssessment`. If neither of these conditions are met,
-#' no data is listed for that control.
+#' Control insights are listed only if the control belongs to the control domain and assessment that was specified. Moreover, the control must have collected evidence on the `lastUpdated` date of `controlInsightsByAssessment`. If neither of these conditions are met, no data is listed for that control.
 #'
 #' @usage
 #' auditmanager_list_assessment_control_insights_by_control_domain(
@@ -2898,15 +2770,10 @@ auditmanager_get_settings <- function(attribute) {
 #'
 #' @param controlDomainId &#91;required&#93; The unique identifier for the control domain.
 #' 
-#' Audit Manager supports the control domains that are provided by Amazon
-#' Web Services Control Catalog. For information about how to find a list
-#' of available control domains, see
-#' [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html)
-#' in the Amazon Web Services Control Catalog API Reference.
+#' Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html) in the Amazon Web Services Control Catalog API Reference.
 #' @param assessmentId &#91;required&#93; The unique identifier for the active assessment.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2969,18 +2836,15 @@ auditmanager_list_assessment_control_insights_by_control_domain <- function(cont
 #' in Audit Manager
 #'
 #' @description
-#' Returns a list of sent or received share requests for custom frameworks
-#' in Audit Manager.
+#' Returns a list of sent or received share requests for custom frameworks in Audit Manager.
 #'
 #' @usage
 #' auditmanager_list_assessment_framework_share_requests(requestType,
 #'   nextToken, maxResults)
 #'
-#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received
-#' request.
+#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received request.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3052,18 +2916,15 @@ auditmanager_list_assessment_framework_share_requests <- function(requestType, n
 #' framework library
 #'
 #' @description
-#' Returns a list of the frameworks that are available in the Audit Manager
-#' framework library.
+#' Returns a list of the frameworks that are available in the Audit Manager framework library.
 #'
 #' @usage
 #' auditmanager_list_assessment_frameworks(frameworkType, nextToken,
 #'   maxResults)
 #'
-#' @param frameworkType &#91;required&#93; The type of framework, such as a standard framework or a custom
-#' framework.
+#' @param frameworkType &#91;required&#93; The type of framework, such as a standard framework or a custom framework.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3134,8 +2995,7 @@ auditmanager_list_assessment_frameworks <- function(frameworkType, nextToken = N
 #' auditmanager_list_assessment_reports(nextToken, maxResults)
 #'
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3201,8 +3061,7 @@ auditmanager_list_assessment_reports <- function(nextToken = NULL, maxResults = 
 #'
 #' @param status The current status of the assessment.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3288,26 +3147,17 @@ auditmanager_list_assessments <- function(status = NULL, nextToken = NULL, maxRe
 #' active assessments
 #'
 #' @description
-#' Lists the latest analytics data for control domains across all of your
-#' active assessments.
+#' Lists the latest analytics data for control domains across all of your active assessments.
 #' 
-#' Audit Manager supports the control domains that are provided by Amazon
-#' Web Services Control Catalog. For information about how to find a list
-#' of available control domains, see
-#' [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html)
-#' in the Amazon Web Services Control Catalog API Reference.
+#' Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html) in the Amazon Web Services Control Catalog API Reference.
 #' 
-#' A control domain is listed only if at least one of the controls within
-#' that domain collected evidence on the `lastUpdated` date of
-#' `controlDomainInsights`. If this condition isn’t met, no data is listed
-#' for that control domain.
+#' A control domain is listed only if at least one of the controls within that domain collected evidence on the `lastUpdated` date of `controlDomainInsights`. If this condition isn’t met, no data is listed for that control domain.
 #'
 #' @usage
 #' auditmanager_list_control_domain_insights(nextToken, maxResults)
 #'
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3369,19 +3219,11 @@ auditmanager_list_control_domain_insights <- function(nextToken = NULL, maxResul
 #' assessment
 #'
 #' @description
-#' Lists analytics data for control domains within a specified active
-#' assessment.
+#' Lists analytics data for control domains within a specified active assessment.
 #' 
-#' Audit Manager supports the control domains that are provided by Amazon
-#' Web Services Control Catalog. For information about how to find a list
-#' of available control domains, see
-#' [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html)
-#' in the Amazon Web Services Control Catalog API Reference.
+#' Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html) in the Amazon Web Services Control Catalog API Reference.
 #' 
-#' A control domain is listed only if at least one of the controls within
-#' that domain collected evidence on the `lastUpdated` date of
-#' `controlDomainInsights`. If this condition isn’t met, no data is listed
-#' for that domain.
+#' A control domain is listed only if at least one of the controls within that domain collected evidence on the `lastUpdated` date of `controlDomainInsights`. If this condition isn’t met, no data is listed for that domain.
 #'
 #' @usage
 #' auditmanager_list_control_domain_insights_by_assessment(assessmentId,
@@ -3389,8 +3231,7 @@ auditmanager_list_control_domain_insights <- function(nextToken = NULL, maxResul
 #'
 #' @param assessmentId &#91;required&#93; The unique identifier for the active assessment.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3453,13 +3294,9 @@ auditmanager_list_control_domain_insights_by_assessment <- function(assessmentId
 #' domain across all active assessments
 #'
 #' @description
-#' Lists the latest analytics data for controls within a specific control
-#' domain across all active assessments.
+#' Lists the latest analytics data for controls within a specific control domain across all active assessments.
 #' 
-#' Control insights are listed only if the control belongs to the control
-#' domain that was specified and the control collected evidence on the
-#' `lastUpdated` date of `controlInsightsMetadata`. If neither of these
-#' conditions are met, no data is listed for that control.
+#' Control insights are listed only if the control belongs to the control domain that was specified and the control collected evidence on the `lastUpdated` date of `controlInsightsMetadata`. If neither of these conditions are met, no data is listed for that control.
 #'
 #' @usage
 #' auditmanager_list_control_insights_by_control_domain(controlDomainId,
@@ -3467,14 +3304,9 @@ auditmanager_list_control_domain_insights_by_assessment <- function(assessmentId
 #'
 #' @param controlDomainId &#91;required&#93; The unique identifier for the control domain.
 #' 
-#' Audit Manager supports the control domains that are provided by Amazon
-#' Web Services Control Catalog. For information about how to find a list
-#' of available control domains, see
-#' [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html)
-#' in the Amazon Web Services Control Catalog API Reference.
+#' Audit Manager supports the control domains that are provided by Amazon Web Services Control Catalog. For information about how to find a list of available control domains, see [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html) in the Amazon Web Services Control Catalog API Reference.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3543,30 +3375,13 @@ auditmanager_list_control_insights_by_control_domain <- function(controlDomainId
 #' @param controlType &#91;required&#93; A filter that narrows the list of controls to a specific type.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
 #' @param maxResults The maximum number of results on a page or for an API request call.
-#' @param controlCatalogId A filter that narrows the list of controls to a specific resource from
-#' the Amazon Web Services Control Catalog.
+#' @param controlCatalogId A filter that narrows the list of controls to a specific resource from the Amazon Web Services Control Catalog.
 #' 
-#' To use this parameter, specify the ARN of the Control Catalog resource.
-#' You can specify either a control domain, a control objective, or a
-#' common control. For information about how to find the ARNs for these
-#' resources, see
-#' [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html)
-#' ,
-#' [`ListObjectives`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListObjectives.html)
-#' , and
-#' [`ListCommonControls`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListCommonControls.html)
-#' .
+#' To use this parameter, specify the ARN of the Control Catalog resource. You can specify either a control domain, a control objective, or a common control. For information about how to find the ARNs for these resources, see [`ListDomains`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListDomains.html) , [`ListObjectives`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListObjectives.html) , and [`ListCommonControls`](https://docs.aws.amazon.com/controlcatalog/latest/APIReference/API_ListCommonControls.html) .
 #' 
-#' You can only filter by one Control Catalog resource at a time.
-#' Specifying multiple resource ARNs isn’t currently supported. If you want
-#' to filter by more than one ARN, we recommend that you run the
-#' [`list_controls`][auditmanager_list_controls] operation separately for
-#' each ARN.
+#' You can only filter by one Control Catalog resource at a time. Specifying multiple resource ARNs isn’t currently supported. If you want to filter by more than one ARN, we recommend that you run the [`list_controls`][auditmanager_list_controls] operation separately for each ARN.
 #' 
-#' Alternatively, specify `UNCATEGORIZED` to list controls that aren't
-#' mapped to a Control Catalog resource. For example, this operation might
-#' return a list of custom controls that don't belong to any control domain
-#' or control objective.
+#' Alternatively, specify `UNCATEGORIZED` to list controls that aren't mapped to a Control Catalog resource. For example, this operation might return a list of custom controls that don't belong to any control domain or control objective.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3628,8 +3443,7 @@ auditmanager_list_controls <- function(controlType, nextToken = NULL, maxResults
 #' data source
 #'
 #' @description
-#' Returns a list of keywords that are pre-mapped to the specified control
-#' data source.
+#' Returns a list of keywords that are pre-mapped to the specified control data source.
 #'
 #' @usage
 #' auditmanager_list_keywords_for_data_source(source, nextToken,
@@ -3637,8 +3451,7 @@ auditmanager_list_controls <- function(controlType, nextToken = NULL, maxResults
 #'
 #' @param source &#91;required&#93; The control mapping data source that the keywords apply to.
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3693,8 +3506,7 @@ auditmanager_list_keywords_for_data_source <- function(source, nextToken = NULL,
 #' auditmanager_list_notifications(nextToken, maxResults)
 #'
 #' @param nextToken The pagination token that's used to fetch the next set of results.
-#' @param maxResults Represents the maximum number of results on a page or for an API request
-#' call.
+#' @param maxResults Represents the maximum number of results on a page or for an API request call.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3856,8 +3668,7 @@ auditmanager_register_account <- function(kmsKey = NULL, delegatedAdminAccount =
 #' delegated administrator for Audit Manager
 #'
 #' @description
-#' Enables an Amazon Web Services account within the organization as the
-#' delegated administrator for Audit Manager.
+#' Enables an Amazon Web Services account within the organization as the delegated administrator for Audit Manager.
 #'
 #' @usage
 #' auditmanager_register_organization_admin_account(adminAccountId)
@@ -3909,48 +3720,25 @@ auditmanager_register_organization_admin_account <- function(adminAccountId) {
 #' @description
 #' Creates a share request for a custom framework in Audit Manager.
 #' 
-#' The share request specifies a recipient and notifies them that a custom
-#' framework is available. Recipients have 120 days to accept or decline
-#' the request. If no action is taken, the share request expires.
+#' The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.
 #' 
-#' When you create a share request, Audit Manager stores a snapshot of your
-#' custom framework in the US East (N. Virginia) Amazon Web Services
-#' Region. Audit Manager also stores a backup of the same snapshot in the
-#' US West (Oregon) Amazon Web Services Region.
+#' When you create a share request, Audit Manager stores a snapshot of your custom framework in the US East (N. Virginia) Amazon Web Services Region. Audit Manager also stores a backup of the same snapshot in the US West (Oregon) Amazon Web Services Region.
 #' 
-#' Audit Manager deletes the snapshot and the backup snapshot when one of
-#' the following events occurs:
+#' Audit Manager deletes the snapshot and the backup snapshot when one of the following events occurs:
 #' 
 #' -   The sender revokes the share request.
 #' 
 #' -   The recipient declines the share request.
 #' 
-#' -   The recipient encounters an error and doesn't successfully accept
-#'     the share request.
+#' -   The recipient encounters an error and doesn't successfully accept the share request.
 #' 
-#' -   The share request expires before the recipient responds to the
-#'     request.
+#' -   The share request expires before the recipient responds to the request.
 #' 
-#' When a sender [resends a share
-#' request](https://docs.aws.amazon.com/audit-manager/latest/userguide/framework-sharing.html#framework-sharing-resend),
-#' the snapshot is replaced with an updated version that corresponds with
-#' the latest version of the custom framework.
+#' When a sender [resends a share request](https://docs.aws.amazon.com/audit-manager/latest/userguide/framework-sharing.html#framework-sharing-resend), the snapshot is replaced with an updated version that corresponds with the latest version of the custom framework.
 #' 
-#' When a recipient accepts a share request, the snapshot is replicated
-#' into their Amazon Web Services account under the Amazon Web Services
-#' Region that was specified in the share request.
+#' When a recipient accepts a share request, the snapshot is replicated into their Amazon Web Services account under the Amazon Web Services Region that was specified in the share request.
 #' 
-#' When you invoke the
-#' [`start_assessment_framework_share`][auditmanager_start_assessment_framework_share]
-#' API, you are about to share a custom framework with another Amazon Web
-#' Services account. You may not share a custom framework that is derived
-#' from a standard framework if the standard framework is designated as not
-#' eligible for sharing by Amazon Web Services, unless you have obtained
-#' permission to do so from the owner of the standard framework. To learn
-#' more about which standard frameworks are eligible for sharing, see
-#' [Framework sharing
-#' eligibility](https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility)
-#' in the *Audit Manager User Guide*.
+#' When you invoke the [`start_assessment_framework_share`][auditmanager_start_assessment_framework_share] API, you are about to share a custom framework with another Amazon Web Services account. You may not share a custom framework that is derived from a standard framework if the standard framework is designated as not eligible for sharing by Amazon Web Services, unless you have obtained permission to do so from the owner of the standard framework. To learn more about which standard frameworks are eligible for sharing, see [Framework sharing eligibility](https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility) in the *Audit Manager User Guide*.
 #'
 #' @usage
 #' auditmanager_start_assessment_framework_share(frameworkId,
@@ -4134,8 +3922,7 @@ auditmanager_untag_resource <- function(resourceArn, tagKeys) {
 #' @param assessmentName The name of the assessment to be updated.
 #' @param assessmentDescription The description of the assessment.
 #' @param scope &#91;required&#93; The scope of the assessment.
-#' @param assessmentReportsDestination The assessment report storage destination for the assessment that's
-#' being updated.
+#' @param assessmentReportsDestination The assessment report storage destination for the assessment that's being updated.
 #' @param roles The list of roles for the assessment.
 #'
 #' @return
@@ -4536,13 +4323,10 @@ auditmanager_update_assessment_control_set_status <- function(assessmentId, cont
 #' @param frameworkId &#91;required&#93; The unique identifier for the framework.
 #' @param name &#91;required&#93; The name of the framework to be updated.
 #' @param description The description of the updated framework.
-#' @param complianceType The compliance type that the new custom framework supports, such as CIS
-#' or HIPAA.
+#' @param complianceType The compliance type that the new custom framework supports, such as CIS or HIPAA.
 #' @param controlSets &#91;required&#93; The control sets that are associated with the framework.
 #' 
-#' The `Controls` object returns a partial response when called through
-#' Framework APIs. For a complete `Controls` object, use
-#' [`get_control`][auditmanager_get_control].
+#' The `Controls` object returns a partial response when called through Framework APIs. For a complete `Controls` object, use [`get_control`][auditmanager_get_control].
 #'
 #' @return
 #' A list with the following syntax:
@@ -4673,8 +4457,7 @@ auditmanager_update_assessment_framework <- function(frameworkId, name, descript
 #'   action)
 #'
 #' @param requestId &#91;required&#93; The unique identifier for the share request.
-#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received
-#' request.
+#' @param requestType &#91;required&#93; Specifies whether the share request is a sent request or a received request.
 #' @param action &#91;required&#93; Specifies the update action for the share request.
 #'
 #' @return
@@ -5048,25 +4831,14 @@ auditmanager_update_control <- function(controlId, name, description = NULL, tes
 #'   defaultAssessmentReportsDestination, defaultProcessOwners, kmsKey,
 #'   evidenceFinderEnabled, deregistrationPolicy, defaultExportDestination)
 #'
-#' @param snsTopic The Amazon Simple Notification Service (Amazon SNS) topic that Audit
-#' Manager sends notifications to.
+#' @param snsTopic The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.
 #' @param defaultAssessmentReportsDestination The default S3 destination bucket for storing assessment reports.
 #' @param defaultProcessOwners A list of the default audit owners.
 #' @param kmsKey The KMS key details.
-#' @param evidenceFinderEnabled Specifies whether the evidence finder feature is enabled. Change this
-#' attribute to enable or disable evidence finder.
+#' @param evidenceFinderEnabled Specifies whether the evidence finder feature is enabled. Change this attribute to enable or disable evidence finder.
 #' 
-#' When you use this attribute to disable evidence finder, Audit Manager
-#' deletes the event data store that’s used to query your evidence data. As
-#' a result, you can’t re-enable evidence finder and use the feature again.
-#' Your only alternative is to
-#' [deregister](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html)
-#' and then
-#' [re-register](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html)
-#' Audit Manager.
-#' @param deregistrationPolicy The deregistration policy for your Audit Manager data. You can use this
-#' attribute to determine how your data is handled when you deregister
-#' Audit Manager.
+#' When you use this attribute to disable evidence finder, Audit Manager deletes the event data store that’s used to query your evidence data. As a result, you can’t re-enable evidence finder and use the feature again. Your only alternative is to [deregister](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_DeregisterAccount.html) and then [re-register](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_RegisterAccount.html) Audit Manager.
+#' @param deregistrationPolicy The deregistration policy for your Audit Manager data. You can use this attribute to determine how your data is handled when you deregister Audit Manager.
 #' @param defaultExportDestination The default S3 destination bucket for storing evidence finder exports.
 #'
 #' @return
@@ -5162,8 +4934,7 @@ auditmanager_update_settings <- function(snsTopic = NULL, defaultAssessmentRepor
 #' @usage
 #' auditmanager_validate_assessment_report_integrity(s3RelativePath)
 #'
-#' @param s3RelativePath &#91;required&#93; The relative path of the Amazon S3 bucket that the assessment report is
-#' stored in.
+#' @param s3RelativePath &#91;required&#93; The relative path of the Amazon S3 bucket that the assessment report is stored in.
 #'
 #' @return
 #' A list with the following syntax:

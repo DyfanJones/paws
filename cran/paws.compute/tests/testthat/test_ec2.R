@@ -416,6 +416,14 @@ test_that("describe_ipam_policies", {
   expect_error(svc$describe_ipam_policies(MaxResults = 20), NA)
 })
 
+test_that("describe_ipam_pool_allocations", {
+  expect_error(svc$describe_ipam_pool_allocations(), NA)
+})
+
+test_that("describe_ipam_pool_allocations", {
+  expect_error(svc$describe_ipam_pool_allocations(MaxResults = 20), NA)
+})
+
 test_that("describe_ipam_pools", {
   expect_error(svc$describe_ipam_pools(), NA)
 })

@@ -13,11 +13,7 @@ servicediscovery_update_public_dns_namespace(
 \arguments{
 \item{Id}{[required] The ID or Amazon Resource Name (ARN) of the namespace being updated.}
 
-\item{UpdaterRequestId}{A unique string that identifies the request and that allows failed
-\code{\link[=servicediscovery_update_public_dns_namespace]{update_public_dns_namespace}}
-requests to be retried without the risk of running the operation twice.
-\code{UpdaterRequestId} can be any unique string (for example, a
-date/timestamp).}
+\item{UpdaterRequestId}{A unique string that identifies the request and that allows failed \code{\link[=servicediscovery_update_public_dns_namespace]{update_public_dns_namespace}} requests to be retried without the risk of running the operation twice. \code{UpdaterRequestId} can be any unique string (for example, a date/timestamp).}
 
 \item{Namespace}{[required] Updated properties for the public DNS namespace.}
 }

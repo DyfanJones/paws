@@ -6,34 +6,23 @@ NULL
 #' Creates an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Creates an OpenSearch Ingestion pipeline. For more information, see
-#' [Creating Amazon OpenSearch Ingestion
-#' pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html).
+#' Creates an OpenSearch Ingestion pipeline. For more information, see [Creating Amazon OpenSearch Ingestion pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html).
 #'
 #' @usage
 #' opensearchingestion_create_pipeline(PipelineName, MinUnits, MaxUnits,
 #'   PipelineConfigurationBody, LogPublishingOptions, VpcOptions,
 #'   BufferOptions, EncryptionAtRestOptions, Tags, PipelineRoleArn)
 #'
-#' @param PipelineName &#91;required&#93; The name of the OpenSearch Ingestion pipeline to create. Pipeline names
-#' are unique across the pipelines owned by an account within an Amazon Web
-#' Services Region.
+#' @param PipelineName &#91;required&#93; The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.
 #' @param MinUnits &#91;required&#93; The minimum pipeline capacity, in Ingestion Compute Units (ICUs).
 #' @param MaxUnits &#91;required&#93; The maximum pipeline capacity, in Ingestion Compute Units (ICUs).
-#' @param PipelineConfigurationBody &#91;required&#93; The pipeline configuration in YAML format. The command accepts the
-#' pipeline configuration as a string or within a .yaml file. If you
-#' provide the configuration as a string, each new line must be escaped
-#' with `\\n`.
+#' @param PipelineConfigurationBody &#91;required&#93; The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with `\\n`.
 #' @param LogPublishingOptions Key-value pairs to configure log publishing.
-#' @param VpcOptions Container for the values required to configure VPC access for the
-#' pipeline. If you don't specify these values, OpenSearch Ingestion
-#' creates the pipeline with a public endpoint.
+#' @param VpcOptions Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.
 #' @param BufferOptions Key-value pairs to configure persistent buffering for the pipeline.
-#' @param EncryptionAtRestOptions Key-value pairs to configure encryption for data that is written to a
-#' persistent buffer.
+#' @param EncryptionAtRestOptions Key-value pairs to configure encryption for data that is written to a persistent buffer.
 #' @param Tags List of tags to add to the pipeline upon creation.
-#' @param PipelineRoleArn The Amazon Resource Name (ARN) of the IAM role that grants the pipeline
-#' permission to access Amazon Web Services resources.
+#' @param PipelineRoleArn The Amazon Resource Name (ARN) of the IAM role that grants the pipeline permission to access Amazon Web Services resources.
 #'
 #' @return
 #' A list with the following syntax:
@@ -182,17 +171,13 @@ opensearchingestion_create_pipeline <- function(PipelineName, MinUnits, MaxUnits
 #' Creates a VPC endpoint for an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Creates a VPC endpoint for an OpenSearch Ingestion pipeline. Pipeline
-#' endpoints allow you to ingest data from your VPC into pipelines that you
-#' have access to.
+#' Creates a VPC endpoint for an OpenSearch Ingestion pipeline. Pipeline endpoints allow you to ingest data from your VPC into pipelines that you have access to.
 #'
 #' @usage
 #' opensearchingestion_create_pipeline_endpoint(PipelineArn, VpcOptions)
 #'
-#' @param PipelineArn &#91;required&#93; The Amazon Resource Name (ARN) of the pipeline to create the endpoint
-#' for.
-#' @param VpcOptions &#91;required&#93; Container for the VPC configuration for the pipeline endpoint, including
-#' subnet IDs and security group IDs.
+#' @param PipelineArn &#91;required&#93; The Amazon Resource Name (ARN) of the pipeline to create the endpoint for.
+#' @param VpcOptions &#91;required&#93; Container for the VPC configuration for the pipeline endpoint, including subnet IDs and security group IDs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -247,9 +232,7 @@ opensearchingestion_create_pipeline_endpoint <- function(PipelineArn, VpcOptions
 #' Deletes an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Deletes an OpenSearch Ingestion pipeline. For more information, see
-#' [Deleting Amazon OpenSearch Ingestion
-#' pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/delete-pipeline.html).
+#' Deletes an OpenSearch Ingestion pipeline. For more information, see [Deleting Amazon OpenSearch Ingestion pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/delete-pipeline.html).
 #'
 #' @usage
 #' opensearchingestion_delete_pipeline(PipelineName)
@@ -342,8 +325,7 @@ opensearchingestion_delete_pipeline_endpoint <- function(EndpointId) {
 #' @usage
 #' opensearchingestion_delete_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to delete the
-#' policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to delete the policy.
 #'
 #' @return
 #' An empty list.
@@ -502,11 +484,7 @@ opensearchingestion_get_pipeline <- function(PipelineName) {
 #' Ingestion
 #'
 #' @description
-#' Retrieves information about a specific blueprint for OpenSearch
-#' Ingestion. Blueprints are templates for the configuration needed for a
-#' [`create_pipeline`][opensearchingestion_create_pipeline] request. For
-#' more information, see [Using blueprints to create a
-#' pipeline](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint).
+#' Retrieves information about a specific blueprint for OpenSearch Ingestion. Blueprints are templates for the configuration needed for a [`create_pipeline`][opensearchingestion_create_pipeline] request. For more information, see [Using blueprints to create a pipeline](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint).
 #'
 #' @usage
 #' opensearchingestion_get_pipeline_blueprint(BlueprintName, Format)
@@ -566,12 +544,9 @@ opensearchingestion_get_pipeline_blueprint <- function(BlueprintName, Format = N
 #' OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Returns progress information for the current change happening on an
-#' OpenSearch Ingestion pipeline. Currently, this operation only returns
-#' information when a pipeline is being created.
+#' Returns progress information for the current change happening on an OpenSearch Ingestion pipeline. Currently, this operation only returns information when a pipeline is being created.
 #' 
-#' For more information, see [Tracking the status of pipeline
-#' creation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#get-pipeline-progress).
+#' For more information, see [Tracking the status of pipeline creation](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#get-pipeline-progress).
 #'
 #' @usage
 #' opensearchingestion_get_pipeline_change_progress(PipelineName)
@@ -639,14 +614,12 @@ opensearchingestion_get_pipeline_change_progress <- function(PipelineName) {
 #' resource
 #'
 #' @description
-#' Retrieves the resource-based policy attached to an OpenSearch Ingestion
-#' resource.
+#' Retrieves the resource-based policy attached to an OpenSearch Ingestion resource.
 #'
 #' @usage
 #' opensearchingestion_get_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to retrieve the
-#' policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to retrieve the policy.
 #'
 #' @return
 #' A list with the following syntax:
@@ -691,9 +664,7 @@ opensearchingestion_get_resource_policy <- function(ResourceArn) {
 #' Retrieves a list of all available blueprints for Data Prepper
 #'
 #' @description
-#' Retrieves a list of all available blueprints for Data Prepper. For more
-#' information, see [Using blueprints to create a
-#' pipeline](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint).
+#' Retrieves a list of all available blueprints for Data Prepper. For more information, see [Using blueprints to create a pipeline](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint).
 #'
 #' @usage
 #' opensearchingestion_list_pipeline_blueprints()
@@ -754,14 +725,8 @@ opensearchingestion_list_pipeline_blueprints <- function() {
 #' opensearchingestion_list_pipeline_endpoint_connections(MaxResults,
 #'   NextToken)
 #'
-#' @param MaxResults The maximum number of pipeline endpoint connections to return in the
-#' response.
-#' @param NextToken If your initial
-#' [`list_pipeline_endpoint_connections`][opensearchingestion_list_pipeline_endpoint_connections]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_pipeline_endpoint_connections`][opensearchingestion_list_pipeline_endpoint_connections]
-#' operations, which returns results in the next page.
+#' @param MaxResults The maximum number of pipeline endpoint connections to return in the response.
+#' @param NextToken If your initial [`list_pipeline_endpoint_connections`][opensearchingestion_list_pipeline_endpoint_connections] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_pipeline_endpoint_connections`][opensearchingestion_list_pipeline_endpoint_connections] operations, which returns results in the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -820,12 +785,7 @@ opensearchingestion_list_pipeline_endpoint_connections <- function(MaxResults = 
 #' opensearchingestion_list_pipeline_endpoints(MaxResults, NextToken)
 #'
 #' @param MaxResults The maximum number of pipeline endpoints to return in the response.
-#' @param NextToken If your initial
-#' [`list_pipeline_endpoints`][opensearchingestion_list_pipeline_endpoints]
-#' operation returns a `NextToken`, you can include the returned
-#' `NextToken` in subsequent
-#' [`list_pipeline_endpoints`][opensearchingestion_list_pipeline_endpoints]
-#' operations, which returns results in the next page.
+#' @param NextToken If your initial [`list_pipeline_endpoints`][opensearchingestion_list_pipeline_endpoints] operation returns a `NextToken`, you can include the returned `NextToken` in subsequent [`list_pipeline_endpoints`][opensearchingestion_list_pipeline_endpoints] operations, which returns results in the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -888,21 +848,13 @@ opensearchingestion_list_pipeline_endpoints <- function(MaxResults = NULL, NextT
 #' Services account and Region
 #'
 #' @description
-#' Lists all OpenSearch Ingestion pipelines in the current Amazon Web
-#' Services account and Region. For more information, see [Viewing Amazon
-#' OpenSearch Ingestion
-#' pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/list-pipeline.html).
+#' Lists all OpenSearch Ingestion pipelines in the current Amazon Web Services account and Region. For more information, see [Viewing Amazon OpenSearch Ingestion pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/list-pipeline.html).
 #'
 #' @usage
 #' opensearchingestion_list_pipelines(MaxResults, NextToken)
 #'
-#' @param MaxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to get the next page of results.
-#' @param NextToken If your initial [`list_pipelines`][opensearchingestion_list_pipelines]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_pipelines`][opensearchingestion_list_pipelines] operations, which
-#' returns results in the next page.
+#' @param MaxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to get the next page of results.
+#' @param NextToken If your initial [`list_pipelines`][opensearchingestion_list_pipelines] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_pipelines`][opensearchingestion_list_pipelines] operations, which returns results in the next page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -977,9 +929,7 @@ opensearchingestion_list_pipelines <- function(MaxResults = NULL, NextToken = NU
 #' Lists all resource tags associated with an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Lists all resource tags associated with an OpenSearch Ingestion
-#' pipeline. For more information, see [Tagging Amazon OpenSearch Ingestion
-#' pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html).
+#' Lists all resource tags associated with an OpenSearch Ingestion pipeline. For more information, see [Tagging Amazon OpenSearch Ingestion pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html).
 #'
 #' @usage
 #' opensearchingestion_list_tags_for_resource(Arn)
@@ -1033,9 +983,7 @@ opensearchingestion_list_tags_for_resource <- function(Arn) {
 #' Attaches a resource-based policy to an OpenSearch Ingestion resource
 #'
 #' @description
-#' Attaches a resource-based policy to an OpenSearch Ingestion resource.
-#' Resource-based policies grant permissions to principals to perform
-#' actions on the resource.
+#' Attaches a resource-based policy to an OpenSearch Ingestion resource. Resource-based policies grant permissions to principals to perform actions on the resource.
 #'
 #' @usage
 #' opensearchingestion_put_resource_policy(ResourceArn, Policy)
@@ -1093,8 +1041,7 @@ opensearchingestion_put_resource_policy <- function(ResourceArn, Policy) {
 #' opensearchingestion_revoke_pipeline_endpoint_connections(PipelineArn,
 #'   EndpointIds)
 #'
-#' @param PipelineArn &#91;required&#93; The Amazon Resource Name (ARN) of the pipeline from which to revoke
-#' endpoint connections.
+#' @param PipelineArn &#91;required&#93; The Amazon Resource Name (ARN) of the pipeline from which to revoke endpoint connections.
 #' @param EndpointIds &#91;required&#93; A list of endpoint IDs for which to revoke access to the pipeline.
 #'
 #' @return
@@ -1142,9 +1089,7 @@ opensearchingestion_revoke_pipeline_endpoint_connections <- function(PipelineArn
 #' Starts an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Starts an OpenSearch Ingestion pipeline. For more information, see
-#' [Starting an OpenSearch Ingestion
-#' pipeline](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--start).
+#' Starts an OpenSearch Ingestion pipeline. For more information, see [Starting an OpenSearch Ingestion pipeline](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--start).
 #'
 #' @usage
 #' opensearchingestion_start_pipeline(PipelineName)
@@ -1263,9 +1208,7 @@ opensearchingestion_start_pipeline <- function(PipelineName) {
 #' Stops an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Stops an OpenSearch Ingestion pipeline. For more information, see
-#' [Stopping an OpenSearch Ingestion
-#' pipeline](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--stop).
+#' Stops an OpenSearch Ingestion pipeline. For more information, see [Stopping an OpenSearch Ingestion pipeline](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--stop).
 #'
 #' @usage
 #' opensearchingestion_stop_pipeline(PipelineName)
@@ -1384,9 +1327,7 @@ opensearchingestion_stop_pipeline <- function(PipelineName) {
 #' Tags an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Tags an OpenSearch Ingestion pipeline. For more information, see
-#' [Tagging Amazon OpenSearch Ingestion
-#' pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html).
+#' Tags an OpenSearch Ingestion pipeline. For more information, see [Tagging Amazon OpenSearch Ingestion pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html).
 #'
 #' @usage
 #' opensearchingestion_tag_resource(Arn, Tags)
@@ -1437,9 +1378,7 @@ opensearchingestion_tag_resource <- function(Arn, Tags) {
 #' Removes one or more tags from an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Removes one or more tags from an OpenSearch Ingestion pipeline. For more
-#' information, see [Tagging Amazon OpenSearch Ingestion
-#' pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html).
+#' Removes one or more tags from an OpenSearch Ingestion pipeline. For more information, see [Tagging Amazon OpenSearch Ingestion pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html).
 #'
 #' @usage
 #' opensearchingestion_untag_resource(Arn, TagKeys)
@@ -1487,9 +1426,7 @@ opensearchingestion_untag_resource <- function(Arn, TagKeys) {
 #' Updates an OpenSearch Ingestion pipeline
 #'
 #' @description
-#' Updates an OpenSearch Ingestion pipeline. For more information, see
-#' [Updating Amazon OpenSearch Ingestion
-#' pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/update-pipeline.html).
+#' Updates an OpenSearch Ingestion pipeline. For more information, see [Updating Amazon OpenSearch Ingestion pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/update-pipeline.html).
 #'
 #' @usage
 #' opensearchingestion_update_pipeline(PipelineName, MinUnits, MaxUnits,
@@ -1499,16 +1436,11 @@ opensearchingestion_untag_resource <- function(Arn, TagKeys) {
 #' @param PipelineName &#91;required&#93; The name of the pipeline to update.
 #' @param MinUnits The minimum pipeline capacity, in Ingestion Compute Units (ICUs).
 #' @param MaxUnits The maximum pipeline capacity, in Ingestion Compute Units (ICUs)
-#' @param PipelineConfigurationBody The pipeline configuration in YAML format. The command accepts the
-#' pipeline configuration as a string or within a .yaml file. If you
-#' provide the configuration as a string, each new line must be escaped
-#' with `\\n`.
+#' @param PipelineConfigurationBody The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with `\\n`.
 #' @param LogPublishingOptions Key-value pairs to configure log publishing.
 #' @param BufferOptions Key-value pairs to configure persistent buffering for the pipeline.
-#' @param EncryptionAtRestOptions Key-value pairs to configure encryption for data that is written to a
-#' persistent buffer.
-#' @param PipelineRoleArn The Amazon Resource Name (ARN) of the IAM role that grants the pipeline
-#' permission to access Amazon Web Services resources.
+#' @param EncryptionAtRestOptions Key-value pairs to configure encryption for data that is written to a persistent buffer.
+#' @param PipelineRoleArn The Amazon Resource Name (ARN) of the IAM role that grants the pipeline permission to access Amazon Web Services resources.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1639,18 +1571,12 @@ opensearchingestion_update_pipeline <- function(PipelineName, MinUnits = NULL, M
 #' prior to creation
 #'
 #' @description
-#' Checks whether an OpenSearch Ingestion pipeline configuration is valid
-#' prior to creation. For more information, see [Creating Amazon OpenSearch
-#' Ingestion
-#' pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html).
+#' Checks whether an OpenSearch Ingestion pipeline configuration is valid prior to creation. For more information, see [Creating Amazon OpenSearch Ingestion pipelines](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html).
 #'
 #' @usage
 #' opensearchingestion_validate_pipeline(PipelineConfigurationBody)
 #'
-#' @param PipelineConfigurationBody &#91;required&#93; The pipeline configuration in YAML format. The command accepts the
-#' pipeline configuration as a string or within a .yaml file. If you
-#' provide the configuration as a string, each new line must be escaped
-#' with `\\n`.
+#' @param PipelineConfigurationBody &#91;required&#93; The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with `\\n`.
 #'
 #' @return
 #' A list with the following syntax:

@@ -12,10 +12,7 @@ quicksight_describe_asset_bundle_export_job(
 \arguments{
 \item{AwsAccountId}{[required] The ID of the Amazon Web Services account the export job is executed in.}
 
-\item{AssetBundleExportJobId}{[required] The ID of the job that you want described. The job ID is set when you
-start a new job with a
-\code{\link[=quicksight_start_asset_bundle_export_job]{start_asset_bundle_export_job}}
-API call.}
+\item{AssetBundleExportJobId}{[required] The ID of the job that you want described. The job ID is set when you start a new job with a \code{\link[=quicksight_start_asset_bundle_export_job]{start_asset_bundle_export_job}} API call.}
 }
 \description{
 Describes an existing export job.

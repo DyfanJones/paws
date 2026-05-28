@@ -19,8 +19,7 @@ networkmanager_create_core_network_prefix_list_association(
 
 \item{PrefixListAlias}{[required] An optional alias for the prefix list association.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Creates an association between a core network and a prefix list for routing control.

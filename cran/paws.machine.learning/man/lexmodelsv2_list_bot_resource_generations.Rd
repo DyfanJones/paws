@@ -14,22 +14,17 @@ lexmodelsv2_list_bot_resource_generations(
 )
 }
 \arguments{
-\item{botId}{[required] The unique identifier of the bot whose generation requests you want to
-view.}
+\item{botId}{[required] The unique identifier of the bot whose generation requests you want to view.}
 
 \item{botVersion}{[required] The version of the bot whose generation requests you want to view.}
 
 \item{localeId}{[required] The locale of the bot whose generation requests you want to view.}
 
-\item{sortBy}{An object containing information about the attribute and the method by
-which to sort the results}
+\item{sortBy}{An object containing information about the attribute and the method by which to sort the results}
 
 \item{maxResults}{The maximum number of results to return in the response.}
 
-\item{nextToken}{If the total number of results is greater than the number specified in
-the \code{maxResults}, the response returns a token in the \code{nextToken} field.
-Use this token when making a request to return the next batch of
-results.}
+\item{nextToken}{If the total number of results is greater than the number specified in the \code{maxResults}, the response returns a token in the \code{nextToken} field. Use this token when making a request to return the next batch of results.}
 }
 \description{
 Lists the generation requests made for a bot locale.

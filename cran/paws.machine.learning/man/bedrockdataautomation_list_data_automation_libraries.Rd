@@ -10,6 +10,13 @@ bedrockdataautomation_list_data_automation_libraries(
   projectFilter = NULL
 )
 }
+\arguments{
+\item{maxResults}{Max Results}
+
+\item{nextToken}{Pagination token}
+
+\item{projectFilter}{Data Automation Project Filter}
+}
 \description{
 Lists all existing Amazon Bedrock Data Automation Libraries
 

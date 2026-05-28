@@ -5,15 +5,9 @@ NULL
 #' Firewall Management Service
 #'
 #' @description
-#' This is the *Firewall Manager API Reference*. This guide is for
-#' developers who need detailed information about the Firewall Manager API
-#' actions, data types, and errors. For detailed information about Firewall
-#' Manager features, see the [Firewall Manager Developer
-#' Guide](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html).
+#' This is the *Firewall Manager API Reference*. This guide is for developers who need detailed information about the Firewall Manager API actions, data types, and errors. For detailed information about Firewall Manager features, see the [Firewall Manager Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html).
 #' 
-#' Some API actions require explicit resource permissions. For information,
-#' see the developer guide topic [Service roles for Firewall
-#' Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service).
+#' Some API actions require explicit resource permissions. For information, see the developer guide topic [Service roles for Firewall Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service).
 #'
 #' @param
 #' config

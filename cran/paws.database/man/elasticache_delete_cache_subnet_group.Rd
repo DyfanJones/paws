@@ -9,8 +9,7 @@ elasticache_delete_cache_subnet_group(CacheSubnetGroupName)
 \arguments{
 \item{CacheSubnetGroupName}{[required] The name of the cache subnet group to delete.
 
-Constraints: Must contain no more than 255 alphanumeric characters or
-hyphens.}
+Constraints: Must contain no more than 255 alphanumeric characters or hyphens.}
 }
 \description{
 Deletes a cache subnet group.

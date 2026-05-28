@@ -12,14 +12,11 @@ pricing_get_attribute_values(
 )
 }
 \arguments{
-\item{ServiceCode}{[required] The service code for the service whose attributes you want to retrieve.
-For example, if you want the retrieve an EC2 attribute, use \code{AmazonEC2}.}
+\item{ServiceCode}{[required] The service code for the service whose attributes you want to retrieve. For example, if you want the retrieve an EC2 attribute, use \code{AmazonEC2}.}
 
-\item{AttributeName}{[required] The name of the attribute that you want to retrieve the values for, such
-as \code{volumeType}.}
+\item{AttributeName}{[required] The name of the attribute that you want to retrieve the values for, such as \code{volumeType}.}
 
-\item{NextToken}{The pagination token that indicates the next set of results that you
-want to retrieve.}
+\item{NextToken}{The pagination token that indicates the next set of results that you want to retrieve.}
 
 \item{MaxResults}{The maximum number of results to return in response.}
 }

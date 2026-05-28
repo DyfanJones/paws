@@ -7,10 +7,7 @@
 lookoutequipment_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource (such as the dataset or
-model) that is the focus of the
-\code{\link[=lookoutequipment_list_tags_for_resource]{list_tags_for_resource}}
-operation.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that is the focus of the \code{\link[=lookoutequipment_list_tags_for_resource]{list_tags_for_resource}} operation.}
 }
 \description{
 Lists all the tags for a specified resource, including key and value.

@@ -8,13 +8,11 @@ environment, making it the new primary database}
 rds_switchover_read_replica(DBInstanceIdentifier)
 }
 \arguments{
-\item{DBInstanceIdentifier}{[required] The DB instance identifier of the current standby database. This value
-is stored as a lowercase string.
+\item{DBInstanceIdentifier}{[required] The DB instance identifier of the current standby database. This value is stored as a lowercase string.
 
 Constraints:
 \itemize{
-\item Must match the identifier of an existing Oracle read replica DB
-instance.
+\item Must match the identifier of an existing Oracle read replica DB instance.
 }}
 }
 \description{

@@ -9,8 +9,7 @@ entityresolution_delete_policy_statement(arn, statementId)
 \arguments{
 \item{arn}{[required] The ARN of the resource for which the policy need to be deleted.}
 
-\item{statementId}{[required] A statement identifier that differentiates the statement from others in
-the same policy.}
+\item{statementId}{[required] A statement identifier that differentiates the statement from others in the same policy.}
 }
 \description{
 Deletes the policy statement.

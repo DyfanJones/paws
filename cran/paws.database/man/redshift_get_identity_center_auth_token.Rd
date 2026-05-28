@@ -9,9 +9,7 @@ clusters}
 redshift_get_identity_center_auth_token(ClusterIds)
 }
 \arguments{
-\item{ClusterIds}{[required] A list of cluster identifiers that the generated token can be used with.
-The token will be scoped to only allow authentication to the specified
-clusters.
+\item{ClusterIds}{[required] A list of cluster identifiers that the generated token can be used with. The token will be scoped to only allow authentication to the specified clusters.
 
 Constraints:
 \itemize{
@@ -24,8 +22,7 @@ Constraints:
 \item Hyphens
 }
 \item Cluster identifiers must start with a letter.
-\item Cluster identifiers can't end with a hyphen or contain two
-consecutive hyphens.
+\item Cluster identifiers can't end with a hyphen or contain two consecutive hyphens.
 }}
 }
 \description{

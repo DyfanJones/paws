@@ -30,61 +30,43 @@ quicksight_create_data_set(
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID.}
 
-\item{DataSetId}{[required] An ID for the dataset that you want to create. This ID is unique per
-Amazon Web Services Region for each Amazon Web Services account.}
+\item{DataSetId}{[required] An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
 \item{Name}{[required] The display name for the dataset.}
 
-\item{PhysicalTableMap}{[required] Declares the physical tables that are available in the underlying data
-sources.}
+\item{PhysicalTableMap}{[required] Declares the physical tables that are available in the underlying data sources.}
 
-\item{LogicalTableMap}{Configures the combination and transformation of the data from the
-physical tables. This parameter is used with the legacy data preparation
-experience.}
+\item{LogicalTableMap}{Configures the combination and transformation of the data from the physical tables. This parameter is used with the legacy data preparation experience.}
 
 \item{ImportMode}{[required] Indicates whether you want to import the data into SPICE.}
 
-\item{ColumnGroups}{Groupings of columns that work together in certain Amazon Quick Sight
-features. Currently, only geospatial hierarchy is supported.}
+\item{ColumnGroups}{Groupings of columns that work together in certain Amazon Quick Sight features. Currently, only geospatial hierarchy is supported.}
 
 \item{FieldFolders}{The folder that contains fields and nested subfolders for your dataset.}
 
 \item{Permissions}{A list of resource permissions on the dataset.}
 
-\item{RowLevelPermissionDataSet}{The row-level security configuration for the data that you want to
-create. This parameter is used with the legacy data preparation
-experience.}
+\item{RowLevelPermissionDataSet}{The row-level security configuration for the data that you want to create. This parameter is used with the legacy data preparation experience.}
 
-\item{RowLevelPermissionTagConfiguration}{The configuration of tags on a dataset to set row-level security.
-Row-level security tags are currently supported for anonymous embedding
-only. This parameter is used with the legacy data preparation
-experience.}
+\item{RowLevelPermissionTagConfiguration}{The configuration of tags on a dataset to set row-level security. Row-level security tags are currently supported for anonymous embedding only. This parameter is used with the legacy data preparation experience.}
 
 \item{ColumnLevelPermissionRules}{A set of one or more definitions of a \code{ColumnLevelPermissionRule}.}
 
-\item{Tags}{Contains a map of the key-value pairs for the resource tag or tags
-assigned to the dataset.}
+\item{Tags}{Contains a map of the key-value pairs for the resource tag or tags assigned to the dataset.}
+
+\item{DataSetUsageConfiguration}{The usage configuration to apply to child datasets that reference this dataset as a source.}
 
 \item{DatasetParameters}{The parameter declarations of the dataset.}
 
-\item{FolderArns}{When you create the dataset, Amazon Quick Sight adds the dataset to
-these folders.}
+\item{FolderArns}{When you create the dataset, Amazon Quick Sight adds the dataset to these folders.}
 
-\item{PerformanceConfiguration}{The configuration for the performance optimization of the dataset that
-contains a \code{UniqueKey} configuration.}
+\item{PerformanceConfiguration}{The configuration for the performance optimization of the dataset that contains a \code{UniqueKey} configuration.}
 
-\item{UseAs}{The usage of the dataset. \code{RLS_RULES} must be specified for RLS
-permission datasets.}
+\item{UseAs}{The usage of the dataset. \code{RLS_RULES} must be specified for RLS permission datasets.}
 
-\item{DataPrepConfiguration}{The data preparation configuration for the dataset. This configuration
-defines the source tables, transformation steps, and destination tables
-used to prepare the data. Required when using the new data preparation
-experience.}
+\item{DataPrepConfiguration}{The data preparation configuration for the dataset. This configuration defines the source tables, transformation steps, and destination tables used to prepare the data. Required when using the new data preparation experience.}
 
-\item{SemanticModelConfiguration}{The semantic model configuration for the dataset. This configuration
-defines how the prepared data is structured for an analysis, including
-table mappings and row-level security configurations. Required when
-using the new data preparation experience.}
+\item{SemanticModelConfiguration}{The semantic model configuration for the dataset. This configuration defines how the prepared data is structured for an analysis, including table mappings and row-level security configurations. Required when using the new data preparation experience.}
 }
 \description{
 Creates a dataset. This operation doesn't support datasets that include uploaded files as a source.

@@ -9,9 +9,7 @@ sagemaker_stop_pipeline_execution(PipelineExecutionArn, ClientRequestToken)
 \arguments{
 \item{PipelineExecutionArn}{[required] The Amazon Resource Name (ARN) of the pipeline execution.}
 
-\item{ClientRequestToken}{[required] A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the operation. An idempotent operation completes no more
-than once.}
+\item{ClientRequestToken}{[required] A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than once.}
 }
 \description{
 Stops a pipeline execution.

@@ -19,10 +19,7 @@ sagemaker_list_hyper_parameter_tuning_jobs(
 )
 }
 \arguments{
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_hyper_parameter_tuning_jobs]{list_hyper_parameter_tuning_jobs}}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of tuning jobs, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_hyper_parameter_tuning_jobs]{list_hyper_parameter_tuning_jobs}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of tuning jobs, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of tuning jobs to return. The default value is 10.}
 
@@ -30,20 +27,15 @@ the next set of tuning jobs, use the token in the next request.}
 
 \item{SortOrder}{The sort order for results. The default is \code{Ascending}.}
 
-\item{NameContains}{A string in the tuning job name. This filter returns only tuning jobs
-whose name contains the specified string.}
+\item{NameContains}{A string in the tuning job name. This filter returns only tuning jobs whose name contains the specified string.}
 
-\item{CreationTimeAfter}{A filter that returns only tuning jobs that were created after the
-specified time.}
+\item{CreationTimeAfter}{A filter that returns only tuning jobs that were created after the specified time.}
 
-\item{CreationTimeBefore}{A filter that returns only tuning jobs that were created before the
-specified time.}
+\item{CreationTimeBefore}{A filter that returns only tuning jobs that were created before the specified time.}
 
-\item{LastModifiedTimeAfter}{A filter that returns only tuning jobs that were modified after the
-specified time.}
+\item{LastModifiedTimeAfter}{A filter that returns only tuning jobs that were modified after the specified time.}
 
-\item{LastModifiedTimeBefore}{A filter that returns only tuning jobs that were modified before the
-specified time.}
+\item{LastModifiedTimeBefore}{A filter that returns only tuning jobs that were modified before the specified time.}
 
 \item{StatusEquals}{A filter that returns only tuning jobs with the specified status.}
 }

@@ -14,8 +14,7 @@ quicksight_list_ingestions(
 \arguments{
 \item{DataSetId}{[required] The ID of the dataset used in the ingestion.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{AwsAccountId}{[required] The Amazon Web Services account ID.}
 

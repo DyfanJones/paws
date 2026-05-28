@@ -9,16 +9,12 @@ timestreamwrite_update_database(DatabaseName, KmsKeyId)
 \arguments{
 \item{DatabaseName}{[required] The name of the database.}
 
-\item{KmsKeyId}{[required] The identifier of the new KMS key (\code{KmsKeyId}) to be used to encrypt the
-data stored in the database. If the \code{KmsKeyId} currently registered with
-the database is the same as the \code{KmsKeyId} in the request, there will
-not be any update.
+\item{KmsKeyId}{[required] The identifier of the new KMS key (\code{KmsKeyId}) to be used to encrypt the data stored in the database. If the \code{KmsKeyId} currently registered with the database is the same as the \code{KmsKeyId} in the request, there will not be any update.
 
 You can specify the \code{KmsKeyId} using any of the following:
 \itemize{
 \item Key ID: \verb{1234abcd-12ab-34cd-56ef-1234567890ab}
-\item Key ARN:
-\verb{arn:aws:kms:us-east-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}
+\item Key ARN: \verb{arn:aws:kms:us-east-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}
 \item Alias name: \code{alias/ExampleAlias}
 \item Alias ARN: \code{arn:aws:kms:us-east-1:111122223333:alias/ExampleAlias}
 }}

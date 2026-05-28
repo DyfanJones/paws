@@ -12,11 +12,9 @@ directconnect_allocate_transit_virtual_interface(
 )
 }
 \arguments{
-\item{connectionId}{[required] The ID of the connection on which the transit virtual interface is
-provisioned.}
+\item{connectionId}{[required] The ID of the connection on which the transit virtual interface is provisioned.}
 
-\item{ownerAccount}{[required] The ID of the Amazon Web Services account that owns the transit virtual
-interface.}
+\item{ownerAccount}{[required] The ID of the Amazon Web Services account that owns the transit virtual interface.}
 
 \item{newTransitVirtualInterfaceAllocation}{[required] Information about the transit virtual interface.}
 }

@@ -14,28 +14,17 @@ kendra_create_access_control_configuration(
 )
 }
 \arguments{
-\item{IndexId}{[required] The identifier of the index to create an access control configuration
-for your documents.}
+\item{IndexId}{[required] The identifier of the index to create an access control configuration for your documents.}
 
 \item{Name}{[required] A name for the access control configuration.}
 
 \item{Description}{A description for the access control configuration.}
 
-\item{AccessControlList}{Information on principals (users and/or groups) and which documents they
-should have access to. This is useful for user context filtering, where
-search results are filtered based on the user or their group access to
-documents.}
+\item{AccessControlList}{Information on principals (users and/or groups) and which documents they should have access to. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.}
 
-\item{HierarchicalAccessControlList}{The list of
-\href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_Principal.html}{principal}
-lists that define the hierarchy for which documents users should have
-access to.}
+\item{HierarchicalAccessControlList}{The list of \href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_Principal.html}{principal} lists that define the hierarchy for which documents users should have access to.}
 
-\item{ClientToken}{A token that you provide to identify the request to create an access
-control configuration. Multiple calls to the
-\code{\link[=kendra_create_access_control_configuration]{create_access_control_configuration}}
-API with the same client token will create only one access control
-configuration.}
+\item{ClientToken}{A token that you provide to identify the request to create an access control configuration. Multiple calls to the \code{\link[=kendra_create_access_control_configuration]{create_access_control_configuration}} API with the same client token will create only one access control configuration.}
 }
 \description{
 Creates an access configuration for your documents. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.

@@ -7,11 +7,9 @@ NULL
 #' activity
 #'
 #' @description
-#' Retrieves batches of metric data collected based on your sending
-#' activity.
+#' Retrieves batches of metric data collected based on your sending activity.
 #' 
-#' You can execute this operation no more than 16 times per second, and
-#' with at most 160 queries from the batches per second (cumulative).
+#' You can execute this operation no more than 16 times per second, and with at most 160 queries from the batches per second (cumulative).
 #'
 #' @usage
 #' sesv2_batch_get_metric_data(Queries)
@@ -138,36 +136,22 @@ sesv2_cancel_export_job <- function(JobId) {
 #' Create a configuration set
 #'
 #' @description
-#' Create a configuration set. *Configuration sets* are groups of rules
-#' that you can apply to the emails that you send. You apply a
-#' configuration set to an email by specifying the name of the
-#' configuration set when you call the Amazon SES API v2. When you apply a
-#' configuration set to an email, all of the rules in that configuration
-#' set are applied to the email.
+#' Create a configuration set. *Configuration sets* are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 #'
 #' @usage
 #' sesv2_create_configuration_set(ConfigurationSetName, TrackingOptions,
 #'   DeliveryOptions, ReputationOptions, SendingOptions, Tags,
 #'   SuppressionOptions, VdmOptions, ArchivingOptions)
 #'
-#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set. The name can contain up to 64
-#' alphanumeric characters, including letters, numbers, hyphens (-) and
-#' underscores (_) only.
-#' @param TrackingOptions An object that defines the open and click tracking options for emails
-#' that you send using the configuration set.
-#' @param DeliveryOptions An object that defines the dedicated IP pool that is used to send emails
-#' that you send using the configuration set.
-#' @param ReputationOptions An object that defines whether or not Amazon SES collects reputation
-#' metrics for the emails that you send that use the configuration set.
-#' @param SendingOptions An object that defines whether or not Amazon SES can send email that you
-#' send using the configuration set.
-#' @param Tags An array of objects that define the tags (keys and values) to associate
-#' with the configuration set.
-#' @param SuppressionOptions 
-#' @param VdmOptions An object that defines the VDM options for emails that you send using
-#' the configuration set.
-#' @param ArchivingOptions An object that defines the MailManager archiving options for emails that
-#' you send using the configuration set.
+#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.
+#' @param TrackingOptions An object that defines the open and click tracking options for emails that you send using the configuration set.
+#' @param DeliveryOptions An object that defines the dedicated IP pool that is used to send emails that you send using the configuration set.
+#' @param ReputationOptions An object that defines whether or not Amazon SES collects reputation metrics for the emails that you send that use the configuration set.
+#' @param SendingOptions An object that defines whether or not Amazon SES can send email that you send using the configuration set.
+#' @param Tags An array of objects that define the tags (keys and values) to associate with the configuration set.
+#' @param SuppressionOptions An object that contains information about the suppression list preferences for your account.
+#' @param VdmOptions An object that defines the VDM options for emails that you send using the configuration set.
+#' @param ArchivingOptions An object that defines the MailManager archiving options for emails that you send using the configuration set.
 #'
 #' @return
 #' An empty list.
@@ -254,11 +238,7 @@ sesv2_create_configuration_set <- function(ConfigurationSetName, TrackingOptions
 #' Create an event destination
 #'
 #' @description
-#' Create an event destination. *Events* include message sends, deliveries,
-#' opens, clicks, bounces, and complaints. *Event destinations* are places
-#' that you can send information about these events to. For example, you
-#' can send event data to Amazon EventBridge and associate a rule to send
-#' the event to the specified target.
+#' Create an event destination. *Events* include message sends, deliveries, opens, clicks, bounces, and complaints. *Event destinations* are places that you can send information about these events to. For example, you can send event data to Amazon EventBridge and associate a rule to send the event to the specified target.
 #' 
 #' A single configuration set can include more than one event destination.
 #'
@@ -267,8 +247,7 @@ sesv2_create_configuration_set <- function(ConfigurationSetName, TrackingOptions
 #'   EventDestinationName, EventDestination)
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set .
-#' @param EventDestinationName &#91;required&#93; A name that identifies the event destination within the configuration
-#' set.
+#' @param EventDestinationName &#91;required&#93; A name that identifies the event destination within the configuration set.
 #' @param EventDestination &#91;required&#93; An object that defines the event destination.
 #'
 #' @return
@@ -338,8 +317,7 @@ sesv2_create_configuration_set_event_destination <- function(ConfigurationSetNam
 #' adds them to a contact list
 #'
 #' @description
-#' Creates a contact, which is an end-user who is receiving the email, and
-#' adds them to a contact list.
+#' Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.
 #'
 #' @usage
 #' sesv2_create_contact(ContactListName, EmailAddress, TopicPreferences,
@@ -348,8 +326,7 @@ sesv2_create_configuration_set_event_destination <- function(ConfigurationSetNam
 #' @param ContactListName &#91;required&#93; The name of the contact list to which the contact should be added.
 #' @param EmailAddress &#91;required&#93; The contact's email address.
 #' @param TopicPreferences The contact's preferences for being opted-in to or opted-out of topics.
-#' @param UnsubscribeAll A boolean value status noting if the contact is unsubscribed from all
-#' contact list topics.
+#' @param UnsubscribeAll A boolean value status noting if the contact is unsubscribed from all contact list topics.
 #' @param AttributesData The attribute data attached to a contact.
 #'
 #' @return
@@ -404,8 +381,7 @@ sesv2_create_contact <- function(ContactListName, EmailAddress, TopicPreferences
 #' sesv2_create_contact_list(ContactListName, Topics, Description, Tags)
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
-#' @param Topics An interest group, theme, or label within a list. A contact list can
-#' have multiple topics.
+#' @param Topics An interest group, theme, or label within a list. A contact list can have multiple topics.
 #' @param Description A description of what the contact list is about.
 #' @param Tags The tags associated with a contact list.
 #'
@@ -463,10 +439,7 @@ sesv2_create_contact_list <- function(ContactListName, Topics = NULL, Descriptio
 #' @description
 #' Creates a new custom verification email template.
 #' 
-#' For more information about custom verification email templates, see
-#' [Using custom verification email
-#' templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom)
-#' in the *Amazon SES Developer Guide*.
+#' For more information about custom verification email templates, see [Using custom verification email templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom) in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -478,18 +451,10 @@ sesv2_create_contact_list <- function(ContactListName, Topics = NULL, Descriptio
 #' @param TemplateName &#91;required&#93; The name of the custom verification email template.
 #' @param FromEmailAddress &#91;required&#93; The email address that the custom verification email is sent from.
 #' @param TemplateSubject &#91;required&#93; The subject line of the custom verification email.
-#' @param TemplateContent &#91;required&#93; The content of the custom verification email. The total size of the
-#' email must be less than 10 MB. The message body may contain HTML, with
-#' some limitations. For more information, see [Custom verification email
-#' frequently asked
-#' questions](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq)
-#' in the *Amazon SES Developer Guide*.
-#' @param Tags An array of objects that define the tags (keys and values) to associate
-#' with the custom verification email template.
-#' @param SuccessRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his
-#' or her address is successfully verified.
-#' @param FailureRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his
-#' or her address is not successfully verified.
+#' @param TemplateContent &#91;required&#93; The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see [Custom verification email frequently asked questions](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq) in the *Amazon SES Developer Guide*.
+#' @param Tags An array of objects that define the tags (keys and values) to associate with the custom verification email template.
+#' @param SuccessRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his or her address is successfully verified.
+#' @param FailureRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.
 #'
 #' @return
 #' An empty list.
@@ -539,18 +504,13 @@ sesv2_create_custom_verification_email_template <- function(TemplateName, FromEm
 #' Create a new pool of dedicated IP addresses
 #'
 #' @description
-#' Create a new pool of dedicated IP addresses. A pool can include one or
-#' more dedicated IP addresses that are associated with your Amazon Web
-#' Services account. You can associate a pool with a configuration set.
-#' When you send an email that uses that configuration set, the message is
-#' sent from one of the addresses in the associated pool.
+#' Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are associated with your Amazon Web Services account. You can associate a pool with a configuration set. When you send an email that uses that configuration set, the message is sent from one of the addresses in the associated pool.
 #'
 #' @usage
 #' sesv2_create_dedicated_ip_pool(PoolName, Tags, ScalingMode)
 #'
 #' @param PoolName &#91;required&#93; The name of the dedicated IP pool.
-#' @param Tags An object that defines the tags (keys and values) that you want to
-#' associate with the pool.
+#' @param Tags An object that defines the tags (keys and values) that you want to associate with the pool.
 #' @param ScalingMode The type of scaling mode.
 #'
 #' @return
@@ -597,29 +557,16 @@ sesv2_create_dedicated_ip_pool <- function(PoolName, Tags = NULL, ScalingMode = 
 #' Create a new predictive inbox placement test
 #'
 #' @description
-#' Create a new predictive inbox placement test. Predictive inbox placement
-#' tests can help you predict how your messages will be handled by various
-#' email providers around the world. When you perform a predictive inbox
-#' placement test, you provide a sample message that contains the content
-#' that you plan to send to your customers. Amazon SES then sends that
-#' message to special email addresses spread across several major email
-#' providers. After about 24 hours, the test is complete, and you can use
-#' the
-#' [`get_deliverability_test_report`][sesv2_get_deliverability_test_report]
-#' operation to view the results of the test.
+#' Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon SES then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the [`get_deliverability_test_report`][sesv2_get_deliverability_test_report] operation to view the results of the test.
 #'
 #' @usage
 #' sesv2_create_deliverability_test_report(ReportName, FromEmailAddress,
 #'   Content, Tags)
 #'
-#' @param ReportName A unique name that helps you to identify the predictive inbox placement
-#' test when you retrieve the results.
-#' @param FromEmailAddress &#91;required&#93; The email address that the predictive inbox placement test email was
-#' sent from.
-#' @param Content &#91;required&#93; The HTML body of the message that you sent when you performed the
-#' predictive inbox placement test.
-#' @param Tags An array of objects that define the tags (keys and values) that you want
-#' to associate with the predictive inbox placement test.
+#' @param ReportName A unique name that helps you to identify the predictive inbox placement test when you retrieve the results.
+#' @param FromEmailAddress &#91;required&#93; The email address that the predictive inbox placement test email was sent from.
+#' @param Content &#91;required&#93; The HTML body of the message that you sent when you performed the predictive inbox placement test.
+#' @param Tags An array of objects that define the tags (keys and values) that you want to associate with the predictive inbox placement test.
 #'
 #' @return
 #' A list with the following syntax:
@@ -736,61 +683,28 @@ sesv2_create_deliverability_test_report <- function(ReportName = NULL, FromEmail
 #' Starts the process of verifying an email identity
 #'
 #' @description
-#' Starts the process of verifying an email identity. An *identity* is an
-#' email address or domain that you use when you send email. Before you can
-#' use an identity to send email, you first have to verify it. By verifying
-#' an identity, you demonstrate that you're the owner of the identity, and
-#' that you've given Amazon SES API v2 permission to send email from the
-#' identity.
+#' Starts the process of verifying an email identity. An *identity* is an email address or domain that you use when you send email. Before you can use an identity to send email, you first have to verify it. By verifying an identity, you demonstrate that you're the owner of the identity, and that you've given Amazon SES API v2 permission to send email from the identity.
 #' 
-#' When you verify an email address, Amazon SES sends an email to the
-#' address. Your email address is verified as soon as you follow the link
-#' in the verification email.
+#' When you verify an email address, Amazon SES sends an email to the address. Your email address is verified as soon as you follow the link in the verification email.
 #' 
-#' When you verify a domain without specifying the `DkimSigningAttributes`
-#' object, this operation provides a set of DKIM tokens. You can convert
-#' these tokens into CNAME records, which you then add to the DNS
-#' configuration for your domain. Your domain is verified when Amazon SES
-#' detects these records in the DNS configuration for your domain. This
-#' verification method is known as [Easy
-#' DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html).
+#' When you verify a domain without specifying the `DkimSigningAttributes` object, this operation provides a set of DKIM tokens. You can convert these tokens into CNAME records, which you then add to the DNS configuration for your domain. Your domain is verified when Amazon SES detects these records in the DNS configuration for your domain. This verification method is known as [Easy DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html).
 #' 
-#' Alternatively, you can perform the verification process by providing
-#' your own public-private key pair. This verification method is known as
-#' Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the
-#' [`create_email_identity`][sesv2_create_email_identity] operation has to
-#' include the `DkimSigningAttributes` object. When you specify this
-#' object, you provide a selector (a component of the DNS record name that
-#' identifies the public key to use for DKIM authentication) and a private
-#' key.
+#' Alternatively, you can perform the verification process by providing your own public-private key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use BYODKIM, your call to the [`create_email_identity`][sesv2_create_email_identity] operation has to include the `DkimSigningAttributes` object. When you specify this object, you provide a selector (a component of the DNS record name that identifies the public key to use for DKIM authentication) and a private key.
 #' 
-#' When you verify a domain, this operation provides a set of DKIM tokens,
-#' which you can convert into CNAME tokens. You add these CNAME tokens to
-#' the DNS configuration for your domain. Your domain is verified when
-#' Amazon SES detects these records in the DNS configuration for your
-#' domain. For some DNS providers, it can take 72 hours or more to complete
-#' the domain verification process.
+#' When you verify a domain, this operation provides a set of DKIM tokens, which you can convert into CNAME tokens. You add these CNAME tokens to the DNS configuration for your domain. Your domain is verified when Amazon SES detects these records in the DNS configuration for your domain. For some DNS providers, it can take 72 hours or more to complete the domain verification process.
 #' 
-#' Additionally, you can associate an existing configuration set with the
-#' email identity that you're verifying.
+#' Additionally, you can associate an existing configuration set with the email identity that you're verifying.
 #'
 #' @usage
 #' sesv2_create_email_identity(EmailIdentity, Tags, DkimSigningAttributes,
 #'   ConfigurationSetName)
 #'
 #' @param EmailIdentity &#91;required&#93; The email address or domain to verify.
-#' @param Tags An array of objects that define the tags (keys and values) to associate
-#' with the email identity.
-#' @param DkimSigningAttributes If your request includes this object, Amazon SES configures the identity
-#' to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes,
-#' or, configures the key length to be used for [Easy
-#' DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html).
+#' @param Tags An array of objects that define the tags (keys and values) to associate with the email identity.
+#' @param DkimSigningAttributes If your request includes this object, Amazon SES configures the identity to use Bring Your Own DKIM (BYODKIM) for DKIM authentication purposes, or, configures the key length to be used for [Easy DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html).
 #' 
-#' You can only specify this object if the email identity is a domain, as
-#' opposed to an address.
-#' @param ConfigurationSetName The configuration set to use by default when sending from this identity.
-#' Note that any configuration set defined in the email sending request
-#' takes precedence.
+#' You can only specify this object if the email identity is a domain, as opposed to an address.
+#' @param ConfigurationSetName The configuration set to use by default when sending from this identity. Note that any configuration set defined in the email sending request takes precedence.
 #'
 #' @return
 #' A list with the following syntax:
@@ -863,16 +777,11 @@ sesv2_create_email_identity <- function(EmailIdentity, Tags = NULL, DkimSigningA
 #' identity (an email address or a domain)
 #'
 #' @description
-#' Creates the specified sending authorization policy for the given
-#' identity (an email address or a domain).
+#' Creates the specified sending authorization policy for the given identity (an email address or a domain).
 #' 
-#' This API is for the identity owner only. If you have not verified the
-#' identity, this API will return an error.
+#' This API is for the identity owner only. If you have not verified the identity, this API will return an error.
 #' 
-#' Sending authorization is a feature that enables an identity owner to
-#' authorize other senders to use its identities. For information about
-#' using sending authorization, see the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
+#' Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -882,13 +791,10 @@ sesv2_create_email_identity <- function(EmailIdentity, Tags = NULL, DkimSigningA
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param PolicyName &#91;required&#93; The name of the policy.
 #' 
-#' The policy name cannot exceed 64 characters and can only include
-#' alphanumeric characters, dashes, and underscores.
+#' The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.
 #' @param Policy &#91;required&#93; The text of the policy in JSON format. The policy cannot exceed 4 KB.
 #' 
-#' For information about the syntax of sending authorization policies, see
-#' the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/).
+#' For information about the syntax of sending authorization policies, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/).
 #'
 #' @return
 #' An empty list.
@@ -929,10 +835,7 @@ sesv2_create_email_identity_policy <- function(EmailIdentity, PolicyName, Policy
 #' Creates an email template
 #'
 #' @description
-#' Creates an email template. Email templates enable you to send
-#' personalized email to one or more destinations in a single API
-#' operation. For more information, see the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html).
+#' Creates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html).
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -940,10 +843,8 @@ sesv2_create_email_identity_policy <- function(EmailIdentity, PolicyName, Policy
 #' sesv2_create_email_template(TemplateName, TemplateContent, Tags)
 #'
 #' @param TemplateName &#91;required&#93; The name of the template.
-#' @param TemplateContent &#91;required&#93; The content of the email template, composed of a subject line, an HTML
-#' part, and a text-only part.
-#' @param Tags An array of objects that define the tags (keys and values) to associate
-#' with the email template.
+#' @param TemplateContent &#91;required&#93; The content of the email template, composed of a subject line, an HTML part, and a text-only part.
+#' @param Tags An array of objects that define the tags (keys and values) to associate with the email template.
 #'
 #' @return
 #' An empty list.
@@ -1183,21 +1084,14 @@ sesv2_create_import_job <- function(ImportDestination, ImportDataSource) {
 #' @description
 #' Creates a multi-region endpoint (global-endpoint).
 #' 
-#' The primary region is going to be the AWS-Region where the operation is
-#' executed. The secondary region has to be provided in request's
-#' parameters. From the data flow standpoint there is no difference between
-#' primary and secondary regions - sending traffic will be split equally
-#' between the two. The primary region is the region where the resource has
-#' been created and where it can be managed.
+#' The primary region is going to be the AWS-Region where the operation is executed. The secondary region has to be provided in request's parameters. From the data flow standpoint there is no difference between primary and secondary regions - sending traffic will be split equally between the two. The primary region is the region where the resource has been created and where it can be managed.
 #'
 #' @usage
 #' sesv2_create_multi_region_endpoint(EndpointName, Details, Tags)
 #'
 #' @param EndpointName &#91;required&#93; The name of the multi-region endpoint (global-endpoint).
-#' @param Details &#91;required&#93; Contains details of a multi-region endpoint (global-endpoint) being
-#' created.
-#' @param Tags An array of objects that define the tags (keys and values) to associate
-#' with the multi-region endpoint (global-endpoint).
+#' @param Details &#91;required&#93; Contains details of a multi-region endpoint (global-endpoint) being created.
+#' @param Tags An array of objects that define the tags (keys and values) to associate with the multi-region endpoint (global-endpoint).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1257,21 +1151,13 @@ sesv2_create_multi_region_endpoint <- function(EndpointName, Details, Tags = NUL
 #' @description
 #' Create a tenant.
 #' 
-#' *Tenants* are logical containers that group related SES resources
-#' together. Each tenant can have its own set of resources like email
-#' identities, configuration sets, and templates, along with reputation
-#' metrics and sending status. This helps isolate and manage email sending
-#' for different customers or business units within your Amazon SES API v2
-#' account.
+#' *Tenants* are logical containers that group related SES resources together. Each tenant can have its own set of resources like email identities, configuration sets, and templates, along with reputation metrics and sending status. This helps isolate and manage email sending for different customers or business units within your Amazon SES API v2 account.
 #'
 #' @usage
 #' sesv2_create_tenant(TenantName, Tags)
 #'
-#' @param TenantName &#91;required&#93; The name of the tenant to create. The name can contain up to 64
-#' alphanumeric characters, including letters, numbers, hyphens (-) and
-#' underscores (_) only.
-#' @param Tags An array of objects that define the tags (keys and values) to associate
-#' with the tenant
+#' @param TenantName &#91;required&#93; The name of the tenant to create. The name can contain up to 64 alphanumeric characters, including letters, numbers, hyphens (-) and underscores (_) only.
+#' @param Tags An array of objects that define the tags (keys and values) to associate with the tenant
 #'
 #' @return
 #' A list with the following syntax:
@@ -1335,20 +1221,15 @@ sesv2_create_tenant <- function(TenantName, Tags = NULL) {
 #' @description
 #' Associate a resource with a tenant.
 #' 
-#' *Resources* can be email identities, configuration sets, or email
-#' templates. When you associate a resource with a tenant, you can use that
-#' resource when sending emails on behalf of that tenant.
+#' *Resources* can be email identities, configuration sets, or email templates. When you associate a resource with a tenant, you can use that resource when sending emails on behalf of that tenant.
 #' 
-#' A single resource can be associated with multiple tenants, allowing for
-#' resource sharing across different tenants while maintaining isolation in
-#' email sending operations.
+#' A single resource can be associated with multiple tenants, allowing for resource sharing across different tenants while maintaining isolation in email sending operations.
 #'
 #' @usage
 #' sesv2_create_tenant_resource_association(TenantName, ResourceArn)
 #'
 #' @param TenantName &#91;required&#93; The name of the tenant to associate the resource with.
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to associate with the
-#' tenant.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to associate with the tenant.
 #'
 #' @return
 #' An empty list.
@@ -1390,11 +1271,7 @@ sesv2_create_tenant_resource_association <- function(TenantName, ResourceArn) {
 #' @description
 #' Delete an existing configuration set.
 #' 
-#' *Configuration sets* are groups of rules that you can apply to the
-#' emails you send. You apply a configuration set to an email by including
-#' a reference to the configuration set in the headers of the email. When
-#' you apply a configuration set to an email, all of the rules in that
-#' configuration set are applied to the email.
+#' *Configuration sets* are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 #'
 #' @usage
 #' sesv2_delete_configuration_set(ConfigurationSetName)
@@ -1440,18 +1317,13 @@ sesv2_delete_configuration_set <- function(ConfigurationSetName) {
 #' @description
 #' Delete an event destination.
 #' 
-#' *Events* include message sends, deliveries, opens, clicks, bounces, and
-#' complaints. *Event destinations* are places that you can send
-#' information about these events to. For example, you can send event data
-#' to Amazon EventBridge and associate a rule to send the event to the
-#' specified target.
+#' *Events* include message sends, deliveries, opens, clicks, bounces, and complaints. *Event destinations* are places that you can send information about these events to. For example, you can send event data to Amazon EventBridge and associate a rule to send the event to the specified target.
 #'
 #' @usage
 #' sesv2_delete_configuration_set_event_destination(ConfigurationSetName,
 #'   EventDestinationName)
 #'
-#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set that contains the event destination to
-#' delete.
+#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set that contains the event destination to delete.
 #' @param EventDestinationName &#91;required&#93; The name of the event destination to delete.
 #'
 #' @return
@@ -1584,18 +1456,14 @@ sesv2_delete_contact_list <- function(ContactListName) {
 #' @description
 #' Deletes an existing custom verification email template.
 #' 
-#' For more information about custom verification email templates, see
-#' [Using custom verification email
-#' templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom)
-#' in the *Amazon SES Developer Guide*.
+#' For more information about custom verification email templates, see [Using custom verification email templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom) in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
 #'
 #' @usage
 #' sesv2_delete_custom_verification_email_template(TemplateName)
 #'
-#' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to
-#' delete.
+#' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -1678,8 +1546,7 @@ sesv2_delete_dedicated_ip_pool <- function(PoolName) {
 #' Deletes an email identity
 #'
 #' @description
-#' Deletes an email identity. An identity can be either an email address or
-#' a domain name.
+#' Deletes an email identity. An identity can be either an email address or a domain name.
 #'
 #' @usage
 #' sesv2_delete_email_identity(EmailIdentity)
@@ -1724,17 +1591,11 @@ sesv2_delete_email_identity <- function(EmailIdentity) {
 #' identity (an email address or a domain)
 #'
 #' @description
-#' Deletes the specified sending authorization policy for the given
-#' identity (an email address or a domain). This API returns successfully
-#' even if a policy with the specified name does not exist.
+#' Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.
 #' 
-#' This API is for the identity owner only. If you have not verified the
-#' identity, this API will return an error.
+#' This API is for the identity owner only. If you have not verified the identity, this API will return an error.
 #' 
-#' Sending authorization is a feature that enables an identity owner to
-#' authorize other senders to use its identities. For information about
-#' using sending authorization, see the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
+#' Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -1744,8 +1605,7 @@ sesv2_delete_email_identity <- function(EmailIdentity) {
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param PolicyName &#91;required&#93; The name of the policy.
 #' 
-#' The policy name cannot exceed 64 characters and can only include
-#' alphanumeric characters, dashes, and underscores.
+#' The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.
 #'
 #' @return
 #' An empty list.
@@ -1833,8 +1693,7 @@ sesv2_delete_email_template <- function(TemplateName) {
 #' @description
 #' Deletes a multi-region endpoint (global-endpoint).
 #' 
-#' Only multi-region endpoints (global-endpoints) whose primary region is
-#' the AWS-Region where operation is executed can be deleted.
+#' Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region where operation is executed can be deleted.
 #'
 #' @usage
 #' sesv2_delete_multi_region_endpoint(EndpointName)
@@ -1888,8 +1747,7 @@ sesv2_delete_multi_region_endpoint <- function(EndpointName) {
 #' @usage
 #' sesv2_delete_suppressed_destination(EmailAddress)
 #'
-#' @param EmailAddress &#91;required&#93; The suppressed email destination to remove from the account suppression
-#' list.
+#' @param EmailAddress &#91;required&#93; The suppressed email destination to remove from the account suppression list.
 #'
 #' @return
 #' An empty list.
@@ -1930,8 +1788,7 @@ sesv2_delete_suppressed_destination <- function(EmailAddress) {
 #' @description
 #' Delete an existing tenant.
 #' 
-#' When you delete a tenant, its associations with resources are removed,
-#' but the resources themselves are not deleted.
+#' When you delete a tenant, its associations with resources are removed, but the resources themselves are not deleted.
 #'
 #' @usage
 #' sesv2_delete_tenant(TenantName)
@@ -1977,17 +1834,13 @@ sesv2_delete_tenant <- function(TenantName) {
 #' @description
 #' Delete an association between a tenant and a resource.
 #' 
-#' When you delete a tenant-resource association, the resource itself is
-#' not deleted, only its association with the specific tenant is removed.
-#' After removal, the resource will no longer be available for use with
-#' that tenant's email sending operations.
+#' When you delete a tenant-resource association, the resource itself is not deleted, only its association with the specific tenant is removed. After removal, the resource will no longer be available for use with that tenant's email sending operations.
 #'
 #' @usage
 #' sesv2_delete_tenant_resource_association(TenantName, ResourceArn)
 #'
 #' @param TenantName &#91;required&#93; The name of the tenant to remove the resource association from.
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to remove from the tenant
-#' association.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to remove from the tenant association.
 #'
 #' @return
 #' An empty list.
@@ -2028,8 +1881,7 @@ sesv2_delete_tenant_resource_association <- function(TenantName, ResourceArn) {
 #' your Amazon SES account in the current Amazon Web Services Region
 #'
 #' @description
-#' Obtain information about the email-sending status and capabilities of
-#' your Amazon SES account in the current Amazon Web Services Region.
+#' Obtain information about the email-sending status and capabilities of your Amazon SES account in the current Amazon Web Services Region.
 #'
 #' @usage
 #' sesv2_get_account()
@@ -2120,15 +1972,12 @@ sesv2_get_account <- function() {
 #' appear on
 #'
 #' @description
-#' Retrieve a list of the blacklists that your dedicated IP addresses
-#' appear on.
+#' Retrieve a list of the blacklists that your dedicated IP addresses appear on.
 #'
 #' @usage
 #' sesv2_get_blacklist_reports(BlacklistItemNames)
 #'
-#' @param BlacklistItemNames &#91;required&#93; A list of IP addresses that you want to retrieve blacklist information
-#' about. You can only specify the dedicated IP addresses that you use to
-#' send email using Amazon SES or Amazon Pinpoint.
+#' @param BlacklistItemNames &#91;required&#93; A list of IP addresses that you want to retrieve blacklist information about. You can only specify the dedicated IP addresses that you use to send email using Amazon SES or Amazon Pinpoint.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2186,15 +2035,9 @@ sesv2_get_blacklist_reports <- function(BlacklistItemNames) {
 #' for sending email, and more
 #'
 #' @description
-#' Get information about an existing configuration set, including the
-#' dedicated IP pool that it's associated with, whether or not it's enabled
-#' for sending email, and more.
+#' Get information about an existing configuration set, including the dedicated IP pool that it's associated with, whether or not it's enabled for sending email, and more.
 #' 
-#' *Configuration sets* are groups of rules that you can apply to the
-#' emails you send. You apply a configuration set to an email by including
-#' a reference to the configuration set in the headers of the email. When
-#' you apply a configuration set to an email, all of the rules in that
-#' configuration set are applied to the email.
+#' *Configuration sets* are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 #'
 #' @usage
 #' sesv2_get_configuration_set(ConfigurationSetName)
@@ -2292,14 +2135,9 @@ sesv2_get_configuration_set <- function(ConfigurationSetName) {
 #' configuration set
 #'
 #' @description
-#' Retrieve a list of event destinations that are associated with a
-#' configuration set.
+#' Retrieve a list of event destinations that are associated with a configuration set.
 #' 
-#' *Events* include message sends, deliveries, opens, clicks, bounces, and
-#' complaints. *Event destinations* are places that you can send
-#' information about these events to. For example, you can send event data
-#' to Amazon EventBridge and associate a rule to send the event to the
-#' specified target.
+#' *Events* include message sends, deliveries, opens, clicks, bounces, and complaints. *Event destinations* are places that you can send information about these events to. For example, you can send event data to Amazon EventBridge and associate a rule to send the event to the specified target.
 #'
 #' @usage
 #' sesv2_get_configuration_set_event_destinations(ConfigurationSetName)
@@ -2450,8 +2288,7 @@ sesv2_get_contact <- function(ContactListName, EmailAddress) {
 #' Returns contact list metadata
 #'
 #' @description
-#' Returns contact list metadata. It does not return any information about
-#' the contacts present in the list.
+#' Returns contact list metadata. It does not return any information about the contacts present in the list.
 #'
 #' @usage
 #' sesv2_get_contact_list(ContactListName)
@@ -2522,21 +2359,16 @@ sesv2_get_contact_list <- function(ContactListName) {
 #' specify
 #'
 #' @description
-#' Returns the custom email verification template for the template name you
-#' specify.
+#' Returns the custom email verification template for the template name you specify.
 #' 
-#' For more information about custom verification email templates, see
-#' [Using custom verification email
-#' templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom)
-#' in the *Amazon SES Developer Guide*.
+#' For more information about custom verification email templates, see [Using custom verification email templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom) in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
 #'
 #' @usage
 #' sesv2_get_custom_verification_email_template(TemplateName)
 #'
-#' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to
-#' retrieve.
+#' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to retrieve.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2593,16 +2425,12 @@ sesv2_get_custom_verification_email_template <- function(TemplateName) {
 #' the automatic warm-up process for the address
 #'
 #' @description
-#' Get information about a dedicated IP address, including the name of the
-#' dedicated IP pool that it's associated with, as well information about
-#' the automatic warm-up process for the address.
+#' Get information about a dedicated IP address, including the name of the dedicated IP pool that it's associated with, as well information about the automatic warm-up process for the address.
 #'
 #' @usage
 #' sesv2_get_dedicated_ip(Ip)
 #'
-#' @param Ip &#91;required&#93; The IP address that you want to obtain more information about. The value
-#' you specify has to be a dedicated IP address that's assocaited with your
-#' Amazon Web Services account.
+#' @param Ip &#91;required&#93; The IP address that you want to obtain more information about. The value you specify has to be a dedicated IP address that's assocaited with your Amazon Web Services account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2704,21 +2532,14 @@ sesv2_get_dedicated_ip_pool <- function(PoolName) {
 #' Services account
 #'
 #' @description
-#' List the dedicated IP addresses that are associated with your Amazon Web
-#' Services account.
+#' List the dedicated IP addresses that are associated with your Amazon Web Services account.
 #'
 #' @usage
 #' sesv2_get_dedicated_ips(PoolName, NextToken, PageSize)
 #'
-#' @param PoolName The name of the IP pool that the dedicated IP address is associated
-#' with.
-#' @param NextToken A token returned from a previous call to
-#' [`get_dedicated_ips`][sesv2_get_dedicated_ips] to indicate the position
-#' of the dedicated IP pool in the list of IP pools.
-#' @param PageSize The number of results to show in a single call to
-#' `GetDedicatedIpsRequest`. If the number of results is larger than the
-#' number you specified in this parameter, then the response includes a
-#' `NextToken` element, which you can use to obtain additional results.
+#' @param PoolName The name of the IP pool that the dedicated IP address is associated with.
+#' @param NextToken A token returned from a previous call to [`get_dedicated_ips`][sesv2_get_dedicated_ips] to indicate the position of the dedicated IP pool in the list of IP pools.
+#' @param PageSize The number of results to show in a single call to `GetDedicatedIpsRequest`. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2773,18 +2594,9 @@ sesv2_get_dedicated_ips <- function(PoolName = NULL, NextToken = NULL, PageSize 
 #' for your account
 #'
 #' @description
-#' Retrieve information about the status of the Deliverability dashboard
-#' for your account. When the Deliverability dashboard is enabled, you gain
-#' access to reputation, deliverability, and other metrics for the domains
-#' that you use to send email. You also gain the ability to perform
-#' predictive inbox placement tests.
+#' Retrieve information about the status of the Deliverability dashboard for your account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests.
 #' 
-#' When you use the Deliverability dashboard, you pay a monthly
-#' subscription charge, in addition to any other fees that you accrue by
-#' using Amazon SES and other Amazon Web Services services. For more
-#' information about the features and cost of a Deliverability dashboard
-#' subscription, see [Amazon SES
-#' Pricing](https://aws.amazon.com/ses/pricing/).
+#' When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see [Amazon SES Pricing](https://aws.amazon.com/ses/pricing/).
 #'
 #' @usage
 #' sesv2_get_deliverability_dashboard_options()
@@ -2947,15 +2759,12 @@ sesv2_get_deliverability_test_report <- function(ReportId) {
 #' Retrieve all the deliverability data for a specific campaign
 #'
 #' @description
-#' Retrieve all the deliverability data for a specific campaign. This data
-#' is available for a campaign only if the campaign sent email by using a
-#' domain that the Deliverability dashboard is enabled for.
+#' Retrieve all the deliverability data for a specific campaign. This data is available for a campaign only if the campaign sent email by using a domain that the Deliverability dashboard is enabled for.
 #'
 #' @usage
 #' sesv2_get_domain_deliverability_campaign(CampaignId)
 #'
-#' @param CampaignId &#91;required&#93; The unique identifier for the campaign. The Deliverability dashboard
-#' automatically generates and assigns this identifier to a campaign.
+#' @param CampaignId &#91;required&#93; The unique identifier for the campaign. The Deliverability dashboard automatically generates and assigns this identifier to a campaign.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3023,18 +2832,14 @@ sesv2_get_domain_deliverability_campaign <- function(CampaignId) {
 #' use to send email
 #'
 #' @description
-#' Retrieve inbox placement and engagement rates for the domains that you
-#' use to send email.
+#' Retrieve inbox placement and engagement rates for the domains that you use to send email.
 #'
 #' @usage
 #' sesv2_get_domain_statistics_report(Domain, StartDate, EndDate)
 #'
 #' @param Domain &#91;required&#93; The domain that you want to obtain deliverability metrics for.
-#' @param StartDate &#91;required&#93; The first day (in Unix time) that you want to obtain domain
-#' deliverability metrics for.
-#' @param EndDate &#91;required&#93; The last day (in Unix time) that you want to obtain domain
-#' deliverability metrics for. The `EndDate` that you specify has to be
-#' less than or equal to 30 days after the `StartDate`.
+#' @param StartDate &#91;required&#93; The first day (in Unix time) that you want to obtain domain deliverability metrics for.
+#' @param EndDate &#91;required&#93; The last day (in Unix time) that you want to obtain domain deliverability metrics for. The `EndDate` that you specify has to be less than or equal to 30 days after the `StartDate`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3125,9 +2930,7 @@ sesv2_get_domain_statistics_report <- function(Domain, StartDate, EndDate) {
 #' deliverability factors
 #'
 #' @description
-#' Provides validation insights about a specific email address, including
-#' syntax validation, DNS record checks, mailbox existence, and other
-#' deliverability factors.
+#' Provides validation insights about a specific email address, including syntax validation, DNS record checks, mailbox existence, and other deliverability factors.
 #'
 #' @usage
 #' sesv2_get_email_address_insights(EmailAddress)
@@ -3202,9 +3005,7 @@ sesv2_get_email_address_insights <- function(EmailAddress) {
 #' authentication status, and its custom Mail-From settings
 #'
 #' @description
-#' Provides information about a specific identity, including the identity's
-#' verification status, sending authorization policies, its DKIM
-#' authentication status, and its custom Mail-From settings.
+#' Provides information about a specific identity, including the identity's verification status, sending authorization policies, its DKIM authentication status, and its custom Mail-From settings.
 #'
 #' @usage
 #' sesv2_get_email_identity(EmailIdentity)
@@ -3300,18 +3101,11 @@ sesv2_get_email_identity <- function(EmailIdentity) {
 #' identity (an email address or a domain)
 #'
 #' @description
-#' Returns the requested sending authorization policies for the given
-#' identity (an email address or a domain). The policies are returned as a
-#' map of policy names to policy contents. You can retrieve a maximum of 20
-#' policies at a time.
+#' Returns the requested sending authorization policies for the given identity (an email address or a domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.
 #' 
-#' This API is for the identity owner only. If you have not verified the
-#' identity, this API will return an error.
+#' This API is for the identity owner only. If you have not verified the identity, this API will return an error.
 #' 
-#' Sending authorization is a feature that enables an identity owner to
-#' authorize other senders to use its identities. For information about
-#' using sending authorization, see the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
+#' Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -3365,8 +3159,7 @@ sesv2_get_email_identity_policies <- function(EmailIdentity) {
 #' and text part) for the template you specify
 #'
 #' @description
-#' Displays the template object (which includes the subject line, HTML part
-#' and text part) for the template you specify.
+#' Displays the template object (which includes the subject line, HTML part and text part) for the template you specify.
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -3645,17 +3438,14 @@ sesv2_get_import_job <- function(JobId) {
 #' events associated with the message
 #'
 #' @description
-#' Provides information about a specific message, including the from
-#' address, the subject, the recipient address, email tags, as well as
-#' events associated with the message.
+#' Provides information about a specific message, including the from address, the subject, the recipient address, email tags, as well as events associated with the message.
 #' 
 #' You can execute this operation no more than once per second.
 #'
 #' @usage
 #' sesv2_get_message_insights(MessageId)
 #'
-#' @param MessageId &#91;required&#93; A `MessageId` is a unique identifier for a message, and is returned when
-#' sending emails through Amazon SES.
+#' @param MessageId &#91;required&#93; A `MessageId` is a unique identifier for a message, and is returned when sending emails through Amazon SES.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3734,8 +3524,7 @@ sesv2_get_message_insights <- function(MessageId) {
 #' @description
 #' Displays the multi-region endpoint (global-endpoint) configuration.
 #' 
-#' Only multi-region endpoints (global-endpoints) whose primary region is
-#' the AWS-Region where operation is executed can be displayed.
+#' Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region where operation is executed can be displayed.
 #'
 #' @usage
 #' sesv2_get_multi_region_endpoint(EndpointName)
@@ -3799,24 +3588,16 @@ sesv2_get_multi_region_endpoint <- function(EndpointName) {
 #' Services Amazon SES-managed status, and aggregate sending status
 #'
 #' @description
-#' Retrieve information about a specific reputation entity, including its
-#' reputation management policy, customer-managed status, Amazon Web
-#' Services Amazon SES-managed status, and aggregate sending status.
+#' Retrieve information about a specific reputation entity, including its reputation management policy, customer-managed status, Amazon Web Services Amazon SES-managed status, and aggregate sending status.
 #' 
-#' *Reputation entities* represent resources in your Amazon SES account
-#' that have reputation tracking and management capabilities. The
-#' reputation impact reflects the highest impact reputation finding for the
-#' entity. Reputation findings can be retrieved using the
-#' [`list_recommendations`][sesv2_list_recommendations] operation.
+#' *Reputation entities* represent resources in your Amazon SES account that have reputation tracking and management capabilities. The reputation impact reflects the highest impact reputation finding for the entity. Reputation findings can be retrieved using the [`list_recommendations`][sesv2_list_recommendations] operation.
 #'
 #' @usage
 #' sesv2_get_reputation_entity(ReputationEntityReference,
 #'   ReputationEntityType)
 #'
-#' @param ReputationEntityReference &#91;required&#93; The unique identifier for the reputation entity. For resource-type
-#' entities, this is the Amazon Resource Name (ARN) of the resource.
-#' @param ReputationEntityType &#91;required&#93; The type of reputation entity. Currently, only `RESOURCE` type entities
-#' are supported.
+#' @param ReputationEntityReference &#91;required&#93; The unique identifier for the reputation entity. For resource-type entities, this is the Amazon Resource Name (ARN) of the resource.
+#' @param ReputationEntityType &#91;required&#93; The type of reputation entity. Currently, only `RESOURCE` type entities are supported.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3882,8 +3663,7 @@ sesv2_get_reputation_entity <- function(ReputationEntityReference, ReputationEnt
 #' suppression list for your account
 #'
 #' @description
-#' Retrieves information about a specific email address that's on the
-#' suppression list for your account.
+#' Retrieves information about a specific email address that's on the suppression list for your account.
 #'
 #' @usage
 #' sesv2_get_suppressed_destination(EmailAddress)
@@ -3943,8 +3723,7 @@ sesv2_get_suppressed_destination <- function(EmailAddress) {
 #' ID, ARN, creation timestamp, tags, and sending status
 #'
 #' @description
-#' Get information about a specific tenant, including the tenant's name,
-#' ID, ARN, creation timestamp, tags, and sending status.
+#' Get information about a specific tenant, including the tenant's name, ID, ARN, creation timestamp, tags, and sending status.
 #'
 #' @usage
 #' sesv2_get_tenant(TenantName)
@@ -4008,26 +3787,15 @@ sesv2_get_tenant <- function(TenantName) {
 #' current region
 #'
 #' @description
-#' List all of the configuration sets associated with your account in the
-#' current region.
+#' List all of the configuration sets associated with your account in the current region.
 #' 
-#' *Configuration sets* are groups of rules that you can apply to the
-#' emails you send. You apply a configuration set to an email by including
-#' a reference to the configuration set in the headers of the email. When
-#' you apply a configuration set to an email, all of the rules in that
-#' configuration set are applied to the email.
+#' *Configuration sets* are groups of rules that you can apply to the emails you send. You apply a configuration set to an email by including a reference to the configuration set in the headers of the email. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email.
 #'
 #' @usage
 #' sesv2_list_configuration_sets(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to
-#' [`list_configuration_sets`][sesv2_list_configuration_sets] to indicate
-#' the position in the list of configuration sets.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_configuration_sets`][sesv2_list_configuration_sets]. If the
-#' number of results is larger than the number you specified in this
-#' parameter, then the response includes a `NextToken` element, which you
-#' can use to obtain additional results.
+#' @param NextToken A token returned from a previous call to [`list_configuration_sets`][sesv2_list_configuration_sets] to indicate the position in the list of configuration sets.
+#' @param PageSize The number of results to show in a single call to [`list_configuration_sets`][sesv2_list_configuration_sets]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4077,21 +3845,13 @@ sesv2_list_configuration_sets <- function(NextToken = NULL, PageSize = NULL) {
 #' @description
 #' Lists all of the contact lists available.
 #' 
-#' If your output includes a "NextToken" field with a string value, this
-#' indicates there may be additional contacts on the filtered list -
-#' regardless of the number of contacts returned.
+#' If your output includes a "NextToken" field with a string value, this indicates there may be additional contacts on the filtered list - regardless of the number of contacts returned.
 #'
 #' @usage
 #' sesv2_list_contact_lists(PageSize, NextToken)
 #'
-#' @param PageSize Maximum number of contact lists to return at once. Use this parameter to
-#' paginate results. If additional contact lists exist beyond the specified
-#' limit, the `NextToken` element is sent in the response. Use the
-#' `NextToken` value in subsequent requests to retrieve additional lists.
-#' @param NextToken A string token indicating that there might be additional contact lists
-#' available to be listed. Use the token provided in the Response to use in
-#' the subsequent call to ListContactLists with the same parameters to
-#' retrieve the next page of contact lists.
+#' @param PageSize Maximum number of contact lists to return at once. Use this parameter to paginate results. If additional contact lists exist beyond the specified limit, the `NextToken` element is sent in the response. Use the `NextToken` value in subsequent requests to retrieve additional lists.
+#' @param NextToken A string token indicating that there might be additional contact lists available to be listed. Use the token provided in the Response to use in the subsequent call to ListContactLists with the same parameters to retrieve the next page of contact lists.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4151,16 +3911,8 @@ sesv2_list_contact_lists <- function(PageSize = NULL, NextToken = NULL) {
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
 #' @param Filter A filter that can be applied to a list of contacts.
-#' @param PageSize The number of contacts that may be returned at once, which is dependent
-#' on if there are more or less contacts than the value of the PageSize.
-#' Use this parameter to paginate results. If additional contacts exist
-#' beyond the specified limit, the `NextToken` element is sent in the
-#' response. Use the `NextToken` value in subsequent requests to retrieve
-#' additional contacts.
-#' @param NextToken A string token indicating that there might be additional contacts
-#' available to be listed. Use the token provided in the Response to use in
-#' the subsequent call to ListContacts with the same parameters to retrieve
-#' the next page of contacts.
+#' @param PageSize The number of contacts that may be returned at once, which is dependent on if there are more or less contacts than the value of the PageSize. Use this parameter to paginate results. If additional contacts exist beyond the specified limit, the `NextToken` element is sent in the response. Use the `NextToken` value in subsequent requests to retrieve additional contacts.
+#' @param NextToken A string token indicating that there might be additional contacts available to be listed. Use the token provided in the Response to use in the subsequent call to ListContacts with the same parameters to retrieve the next page of contacts.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4235,28 +3987,17 @@ sesv2_list_contacts <- function(ContactListName, Filter = NULL, PageSize = NULL,
 #' in the current Amazon Web Services Region
 #'
 #' @description
-#' Lists the existing custom verification email templates for your account
-#' in the current Amazon Web Services Region.
+#' Lists the existing custom verification email templates for your account in the current Amazon Web Services Region.
 #' 
-#' For more information about custom verification email templates, see
-#' [Using custom verification email
-#' templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom)
-#' in the *Amazon SES Developer Guide*.
+#' For more information about custom verification email templates, see [Using custom verification email templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom) in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
 #'
 #' @usage
 #' sesv2_list_custom_verification_email_templates(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to
-#' [`list_custom_verification_email_templates`][sesv2_list_custom_verification_email_templates]
-#' to indicate the position in the list of custom verification email
-#' templates.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_custom_verification_email_templates`][sesv2_list_custom_verification_email_templates].
-#' If the number of results is larger than the number you specified in this
-#' parameter, then the response includes a `NextToken` element, which you
-#' can use to obtain additional results.
+#' @param NextToken A token returned from a previous call to [`list_custom_verification_email_templates`][sesv2_list_custom_verification_email_templates] to indicate the position in the list of custom verification email templates.
+#' @param PageSize The number of results to show in a single call to [`list_custom_verification_email_templates`][sesv2_list_custom_verification_email_templates]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #' 
 #' The value you specify has to be at least 1, and can be no more than 50.
 #'
@@ -4313,20 +4054,13 @@ sesv2_list_custom_verification_email_templates <- function(NextToken = NULL, Pag
 #' Services account in the current Region
 #'
 #' @description
-#' List all of the dedicated IP pools that exist in your Amazon Web
-#' Services account in the current Region.
+#' List all of the dedicated IP pools that exist in your Amazon Web Services account in the current Region.
 #'
 #' @usage
 #' sesv2_list_dedicated_ip_pools(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to
-#' [`list_dedicated_ip_pools`][sesv2_list_dedicated_ip_pools] to indicate
-#' the position in the list of dedicated IP pools.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_dedicated_ip_pools`][sesv2_list_dedicated_ip_pools]. If the
-#' number of results is larger than the number you specified in this
-#' parameter, then the response includes a `NextToken` element, which you
-#' can use to obtain additional results.
+#' @param NextToken A token returned from a previous call to [`list_dedicated_ip_pools`][sesv2_list_dedicated_ip_pools] to indicate the position in the list of dedicated IP pools.
+#' @param PageSize The number of results to show in a single call to [`list_dedicated_ip_pools`][sesv2_list_dedicated_ip_pools]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4375,27 +4109,15 @@ sesv2_list_dedicated_ip_pools <- function(NextToken = NULL, PageSize = NULL) {
 #' performed, regardless of their statuses
 #'
 #' @description
-#' Show a list of the predictive inbox placement tests that you've
-#' performed, regardless of their statuses. For predictive inbox placement
-#' tests that are complete, you can use the
-#' [`get_deliverability_test_report`][sesv2_get_deliverability_test_report]
-#' operation to view the results.
+#' Show a list of the predictive inbox placement tests that you've performed, regardless of their statuses. For predictive inbox placement tests that are complete, you can use the [`get_deliverability_test_report`][sesv2_get_deliverability_test_report] operation to view the results.
 #'
 #' @usage
 #' sesv2_list_deliverability_test_reports(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to
-#' [`list_deliverability_test_reports`][sesv2_list_deliverability_test_reports]
-#' to indicate the position in the list of predictive inbox placement
-#' tests.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_deliverability_test_reports`][sesv2_list_deliverability_test_reports].
-#' If the number of results is larger than the number you specified in this
-#' parameter, then the response includes a `NextToken` element, which you
-#' can use to obtain additional results.
+#' @param NextToken A token returned from a previous call to [`list_deliverability_test_reports`][sesv2_list_deliverability_test_reports] to indicate the position in the list of predictive inbox placement tests.
+#' @param PageSize The number of results to show in a single call to [`list_deliverability_test_reports`][sesv2_list_deliverability_test_reports]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #' 
-#' The value you specify has to be at least 0, and can be no more than
-#' 1000.
+#' The value you specify has to be at least 0, and can be no more than 1000.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4453,30 +4175,17 @@ sesv2_list_deliverability_test_reports <- function(NextToken = NULL, PageSize = 
 #' domain to send email during a specified time range
 #'
 #' @description
-#' Retrieve deliverability data for all the campaigns that used a specific
-#' domain to send email during a specified time range. This data is
-#' available for a domain only if you enabled the Deliverability dashboard
-#' for the domain.
+#' Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.
 #'
 #' @usage
 #' sesv2_list_domain_deliverability_campaigns(StartDate, EndDate,
 #'   SubscribedDomain, NextToken, PageSize)
 #'
 #' @param StartDate &#91;required&#93; The first day that you want to obtain deliverability data for.
-#' @param EndDate &#91;required&#93; The last day that you want to obtain deliverability data for. This value
-#' has to be less than or equal to 30 days after the value of the
-#' `StartDate` parameter.
+#' @param EndDate &#91;required&#93; The last day that you want to obtain deliverability data for. This value has to be less than or equal to 30 days after the value of the `StartDate` parameter.
 #' @param SubscribedDomain &#91;required&#93; The domain to obtain deliverability data for.
-#' @param NextToken A token that’s returned from a previous call to the
-#' [`list_domain_deliverability_campaigns`][sesv2_list_domain_deliverability_campaigns]
-#' operation. This token indicates the position of a campaign in the list
-#' of campaigns.
-#' @param PageSize The maximum number of results to include in response to a single call to
-#' the
-#' [`list_domain_deliverability_campaigns`][sesv2_list_domain_deliverability_campaigns]
-#' operation. If the number of results is larger than the number that you
-#' specify in this parameter, the response includes a `NextToken` element,
-#' which you can use to obtain additional results.
+#' @param NextToken A token that’s returned from a previous call to the [`list_domain_deliverability_campaigns`][sesv2_list_domain_deliverability_campaigns] operation. This token indicates the position of a campaign in the list of campaigns.
+#' @param PageSize The maximum number of results to include in response to a single call to the [`list_domain_deliverability_campaigns`][sesv2_list_domain_deliverability_campaigns] operation. If the number of results is larger than the number that you specify in this parameter, the response includes a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4555,26 +4264,15 @@ sesv2_list_domain_deliverability_campaigns <- function(StartDate, EndDate, Subsc
 #' your Amazon Web Services account
 #'
 #' @description
-#' Returns a list of all of the email identities that are associated with
-#' your Amazon Web Services account. An identity can be either an email
-#' address or a domain. This operation returns identities that are verified
-#' as well as those that aren't. This operation returns identities that are
-#' associated with Amazon SES and Amazon Pinpoint.
+#' Returns a list of all of the email identities that are associated with your Amazon Web Services account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't. This operation returns identities that are associated with Amazon SES and Amazon Pinpoint.
 #'
 #' @usage
 #' sesv2_list_email_identities(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to
-#' [`list_email_identities`][sesv2_list_email_identities] to indicate the
-#' position in the list of identities.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_email_identities`][sesv2_list_email_identities]. If the number of
-#' results is larger than the number you specified in this parameter, then
-#' the response includes a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param NextToken A token returned from a previous call to [`list_email_identities`][sesv2_list_email_identities] to indicate the position in the list of identities.
+#' @param PageSize The number of results to show in a single call to [`list_email_identities`][sesv2_list_email_identities]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #' 
-#' The value you specify has to be at least 0, and can be no more than
-#' 1000.
+#' The value you specify has to be at least 0, and can be no more than 1000.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4628,22 +4326,15 @@ sesv2_list_email_identities <- function(NextToken = NULL, PageSize = NULL) {
 #' current Amazon Web Services Region
 #'
 #' @description
-#' Lists the email templates present in your Amazon SES account in the
-#' current Amazon Web Services Region.
+#' Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region.
 #' 
 #' You can execute this operation no more than once per second.
 #'
 #' @usage
 #' sesv2_list_email_templates(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to
-#' [`list_email_templates`][sesv2_list_email_templates] to indicate the
-#' position in the list of email templates.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_email_templates`][sesv2_list_email_templates]. If the number of
-#' results is larger than the number you specified in this parameter, then
-#' the response includes a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param NextToken A token returned from a previous call to [`list_email_templates`][sesv2_list_email_templates] to indicate the position in the list of email templates.
+#' @param PageSize The number of results to show in a single call to [`list_email_templates`][sesv2_list_email_templates]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #' 
 #' The value you specify has to be at least 1, and can be no more than 100.
 #'
@@ -4703,15 +4394,8 @@ sesv2_list_email_templates <- function(NextToken = NULL, PageSize = NULL) {
 #' @usage
 #' sesv2_list_export_jobs(NextToken, PageSize, ExportSourceType, JobStatus)
 #'
-#' @param NextToken The pagination token returned from a previous call to
-#' [`list_export_jobs`][sesv2_list_export_jobs] to indicate the position in
-#' the list of export jobs.
-#' @param PageSize Maximum number of export jobs to return at once. Use this parameter to
-#' paginate results. If additional export jobs exist beyond the specified
-#' limit, the `NextToken` element is sent in the response. Use the
-#' `NextToken` value in subsequent calls to
-#' [`list_export_jobs`][sesv2_list_export_jobs] to retrieve additional
-#' export jobs.
+#' @param NextToken The pagination token returned from a previous call to [`list_export_jobs`][sesv2_list_export_jobs] to indicate the position in the list of export jobs.
+#' @param PageSize Maximum number of export jobs to return at once. Use this parameter to paginate results. If additional export jobs exist beyond the specified limit, the `NextToken` element is sent in the response. Use the `NextToken` value in subsequent calls to [`list_export_jobs`][sesv2_list_export_jobs] to retrieve additional export jobs.
 #' @param ExportSourceType A value used to list export jobs that have a certain `ExportSourceType`.
 #' @param JobStatus A value used to list export jobs that have a certain `JobStatus`.
 #'
@@ -4778,17 +4462,9 @@ sesv2_list_export_jobs <- function(NextToken = NULL, PageSize = NULL, ExportSour
 #' @usage
 #' sesv2_list_import_jobs(ImportDestinationType, NextToken, PageSize)
 #'
-#' @param ImportDestinationType The destination of the import job, which can be used to list import jobs
-#' that have a certain `ImportDestinationType`.
-#' @param NextToken A string token indicating that there might be additional import jobs
-#' available to be listed. Copy this token to a subsequent call to
-#' [`list_import_jobs`][sesv2_list_import_jobs] with the same parameters to
-#' retrieve the next page of import jobs.
-#' @param PageSize Maximum number of import jobs to return at once. Use this parameter to
-#' paginate results. If additional import jobs exist beyond the specified
-#' limit, the `NextToken` element is sent in the response. Use the
-#' `NextToken` value in subsequent requests to retrieve additional
-#' addresses.
+#' @param ImportDestinationType The destination of the import job, which can be used to list import jobs that have a certain `ImportDestinationType`.
+#' @param NextToken A string token indicating that there might be additional import jobs available to be listed. Copy this token to a subsequent call to [`list_import_jobs`][sesv2_list_import_jobs] with the same parameters to retrieve the next page of import jobs.
+#' @param PageSize Maximum number of import jobs to return at once. Use this parameter to paginate results. If additional import jobs exist beyond the specified limit, the `NextToken` element is sent in the response. Use the `NextToken` value in subsequent requests to retrieve additional addresses.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4856,21 +4532,13 @@ sesv2_list_import_jobs <- function(ImportDestinationType = NULL, NextToken = NUL
 #' @description
 #' List the multi-region endpoints (global-endpoints).
 #' 
-#' Only multi-region endpoints (global-endpoints) whose primary region is
-#' the AWS-Region where operation is executed will be listed.
+#' Only multi-region endpoints (global-endpoints) whose primary region is the AWS-Region where operation is executed will be listed.
 #'
 #' @usage
 #' sesv2_list_multi_region_endpoints(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to
-#' [`list_multi_region_endpoints`][sesv2_list_multi_region_endpoints] to
-#' indicate the position in the list of multi-region endpoints
-#' (global-endpoints).
-#' @param PageSize The number of results to show in a single call to
-#' [`list_multi_region_endpoints`][sesv2_list_multi_region_endpoints]. If
-#' the number of results is larger than the number you specified in this
-#' parameter, the response includes a `NextToken` element that you can use
-#' to retrieve the next page of results.
+#' @param NextToken A token returned from a previous call to [`list_multi_region_endpoints`][sesv2_list_multi_region_endpoints] to indicate the position in the list of multi-region endpoints (global-endpoints).
+#' @param PageSize The number of results to show in a single call to [`list_multi_region_endpoints`][sesv2_list_multi_region_endpoints]. If the number of results is larger than the number you specified in this parameter, the response includes a `NextToken` element that you can use to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4932,25 +4600,16 @@ sesv2_list_multi_region_endpoints <- function(NextToken = NULL, PageSize = NULL)
 #' current Amazon Web Services Region
 #'
 #' @description
-#' Lists the recommendations present in your Amazon SES account in the
-#' current Amazon Web Services Region.
+#' Lists the recommendations present in your Amazon SES account in the current Amazon Web Services Region.
 #' 
 #' You can execute this operation no more than once per second.
 #'
 #' @usage
 #' sesv2_list_recommendations(Filter, NextToken, PageSize)
 #'
-#' @param Filter Filters applied when retrieving recommendations. Can eiter be an
-#' individual filter, or combinations of `STATUS` and `IMPACT` or `STATUS`
-#' and `TYPE`
-#' @param NextToken A token returned from a previous call to
-#' [`list_recommendations`][sesv2_list_recommendations] to indicate the
-#' position in the list of recommendations.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_recommendations`][sesv2_list_recommendations]. If the number of
-#' results is larger than the number you specified in this parameter, then
-#' the response includes a `NextToken` element, which you can use to obtain
-#' additional results.
+#' @param Filter Filters applied when retrieving recommendations. Can eiter be an individual filter, or combinations of `STATUS` and `IMPACT` or `STATUS` and `TYPE`
+#' @param NextToken A token returned from a previous call to [`list_recommendations`][sesv2_list_recommendations] to indicate the position in the list of recommendations.
+#' @param PageSize The number of results to show in a single call to [`list_recommendations`][sesv2_list_recommendations]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #' 
 #' The value you specify has to be at least 1, and can be no more than 100.
 #'
@@ -5016,28 +4675,16 @@ sesv2_list_recommendations <- function(Filter = NULL, NextToken = NULL, PageSize
 #' Amazon Web Services Region
 #'
 #' @description
-#' List reputation entities in your Amazon SES account in the current
-#' Amazon Web Services Region. You can filter the results by entity type,
-#' reputation impact, sending status, or entity reference prefix.
+#' List reputation entities in your Amazon SES account in the current Amazon Web Services Region. You can filter the results by entity type, reputation impact, sending status, or entity reference prefix.
 #' 
-#' *Reputation entities* represent resources in your account that have
-#' reputation tracking and management capabilities. Use this operation to
-#' get an overview of all entities and their current reputation status.
+#' *Reputation entities* represent resources in your account that have reputation tracking and management capabilities. Use this operation to get an overview of all entities and their current reputation status.
 #'
 #' @usage
 #' sesv2_list_reputation_entities(Filter, NextToken, PageSize)
 #'
-#' @param Filter An object that contains filters to apply when listing reputation
-#' entities. You can filter by entity type, reputation impact, sending
-#' status, or entity reference prefix.
-#' @param NextToken A token returned from a previous call to
-#' [`list_reputation_entities`][sesv2_list_reputation_entities] to indicate
-#' the position in the list of reputation entities.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_reputation_entities`][sesv2_list_reputation_entities]. If the
-#' number of results is larger than the number you specified in this
-#' parameter, then the response includes a `NextToken` element, which you
-#' can use to obtain additional results.
+#' @param Filter An object that contains filters to apply when listing reputation entities. You can filter by entity type, reputation impact, sending status, or entity reference prefix.
+#' @param NextToken A token returned from a previous call to [`list_reputation_entities`][sesv2_list_reputation_entities] to indicate the position in the list of reputation entities.
+#' @param PageSize The number of results to show in a single call to [`list_reputation_entities`][sesv2_list_reputation_entities]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5110,24 +4757,14 @@ sesv2_list_reputation_entities <- function(Filter = NULL, NextToken = NULL, Page
 #' @description
 #' List all tenants associated with a specific resource.
 #' 
-#' This operation returns a list of tenants that are associated with the
-#' specified resource. This is useful for understanding which tenants are
-#' currently using a particular resource such as an email identity,
-#' configuration set, or email template.
+#' This operation returns a list of tenants that are associated with the specified resource. This is useful for understanding which tenants are currently using a particular resource such as an email identity, configuration set, or email template.
 #'
 #' @usage
 #' sesv2_list_resource_tenants(ResourceArn, PageSize, NextToken)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to list associated
-#' tenants for.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_resource_tenants`][sesv2_list_resource_tenants]. If the number of
-#' results is larger than the number you specified in this parameter, then
-#' the response includes a `NextToken` element, which you can use to obtain
-#' additional results.
-#' @param NextToken A token returned from a previous call to
-#' [`list_resource_tenants`][sesv2_list_resource_tenants] to indicate the
-#' position in the list of resource tenants.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to list associated tenants for.
+#' @param PageSize The number of results to show in a single call to [`list_resource_tenants`][sesv2_list_resource_tenants]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
+#' @param NextToken A token returned from a previous call to [`list_resource_tenants`][sesv2_list_resource_tenants] to indicate the position in the list of resource tenants.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5184,26 +4821,17 @@ sesv2_list_resource_tenants <- function(ResourceArn, PageSize = NULL, NextToken 
 #' your account
 #'
 #' @description
-#' Retrieves a list of email addresses that are on the suppression list for
-#' your account.
+#' Retrieves a list of email addresses that are on the suppression list for your account.
 #'
 #' @usage
 #' sesv2_list_suppressed_destinations(Reasons, StartDate, EndDate,
 #'   NextToken, PageSize)
 #'
 #' @param Reasons The factors that caused the email address to be added to .
-#' @param StartDate Used to filter the list of suppressed email destinations so that it only
-#' includes addresses that were added to the list after a specific date.
-#' @param EndDate Used to filter the list of suppressed email destinations so that it only
-#' includes addresses that were added to the list before a specific date.
-#' @param NextToken A token returned from a previous call to
-#' [`list_suppressed_destinations`][sesv2_list_suppressed_destinations] to
-#' indicate the position in the list of suppressed email addresses.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_suppressed_destinations`][sesv2_list_suppressed_destinations]. If
-#' the number of results is larger than the number you specified in this
-#' parameter, then the response includes a `NextToken` element, which you
-#' can use to obtain additional results.
+#' @param StartDate Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list after a specific date.
+#' @param EndDate Used to filter the list of suppressed email destinations so that it only includes addresses that were added to the list before a specific date.
+#' @param NextToken A token returned from a previous call to [`list_suppressed_destinations`][sesv2_list_suppressed_destinations] to indicate the position in the list of suppressed email addresses.
+#' @param PageSize The number of results to show in a single call to [`list_suppressed_destinations`][sesv2_list_suppressed_destinations]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5267,18 +4895,12 @@ sesv2_list_suppressed_destinations <- function(Reasons = NULL, StartDate = NULL,
 #' specified resource
 #'
 #' @description
-#' Retrieve a list of the tags (keys and values) that are associated with a
-#' specified resource. A *tag* is a label that you optionally define and
-#' associate with a resource. Each tag consists of a required *tag key* and
-#' an optional associated *tag value*. A tag key is a general label that
-#' acts as a category for more specific tag values. A tag value acts as a
-#' descriptor within a tag key.
+#' Retrieve a list of the tags (keys and values) that are associated with a specified resource. A *tag* is a label that you optionally define and associate with a resource. Each tag consists of a required *tag key* and an optional associated *tag value*. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.
 #'
 #' @usage
 #' sesv2_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve
-#' tag information for.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve tag information for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5329,25 +4951,15 @@ sesv2_list_tags_for_resource <- function(ResourceArn) {
 #' @description
 #' List all resources associated with a specific tenant.
 #' 
-#' This operation returns a list of resources (email identities,
-#' configuration sets, or email templates) that are associated with the
-#' specified tenant. You can optionally filter the results by resource
-#' type.
+#' This operation returns a list of resources (email identities, configuration sets, or email templates) that are associated with the specified tenant. You can optionally filter the results by resource type.
 #'
 #' @usage
 #' sesv2_list_tenant_resources(TenantName, Filter, PageSize, NextToken)
 #'
 #' @param TenantName &#91;required&#93; The name of the tenant to list resources for.
-#' @param Filter A map of filter keys and values for filtering the list of tenant
-#' resources. Currently, the only supported filter key is `RESOURCE_TYPE`.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_tenant_resources`][sesv2_list_tenant_resources]. If the number of
-#' results is larger than the number you specified in this parameter, then
-#' the response includes a `NextToken` element, which you can use to obtain
-#' additional results.
-#' @param NextToken A token returned from a previous call to
-#' [`list_tenant_resources`][sesv2_list_tenant_resources] to indicate the
-#' position in the list of tenant resources.
+#' @param Filter A map of filter keys and values for filtering the list of tenant resources. Currently, the only supported filter key is `RESOURCE_TYPE`.
+#' @param PageSize The number of results to show in a single call to [`list_tenant_resources`][sesv2_list_tenant_resources]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
+#' @param NextToken A token returned from a previous call to [`list_tenant_resources`][sesv2_list_tenant_resources] to indicate the position in the list of tenant resources.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5403,23 +5015,15 @@ sesv2_list_tenant_resources <- function(TenantName, Filter = NULL, PageSize = NU
 #' Services Region
 #'
 #' @description
-#' List all tenants associated with your account in the current Amazon Web
-#' Services Region.
+#' List all tenants associated with your account in the current Amazon Web Services Region.
 #' 
-#' This operation returns basic information about each tenant, such as
-#' tenant name, ID, ARN, and creation timestamp.
+#' This operation returns basic information about each tenant, such as tenant name, ID, ARN, and creation timestamp.
 #'
 #' @usage
 #' sesv2_list_tenants(NextToken, PageSize)
 #'
-#' @param NextToken A token returned from a previous call to
-#' [`list_tenants`][sesv2_list_tenants] to indicate the position in the
-#' list of tenants.
-#' @param PageSize The number of results to show in a single call to
-#' [`list_tenants`][sesv2_list_tenants]. If the number of results is larger
-#' than the number you specified in this parameter, then the response
-#' includes a `NextToken` element, which you can use to obtain additional
-#' results.
+#' @param NextToken A token returned from a previous call to [`list_tenants`][sesv2_list_tenants] to indicate the position in the list of tenants.
+#' @param PageSize The number of results to show in a single call to [`list_tenants`][sesv2_list_tenants]. If the number of results is larger than the number you specified in this parameter, then the response includes a `NextToken` element, which you can use to obtain additional results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5475,16 +5079,12 @@ sesv2_list_tenants <- function(NextToken = NULL, PageSize = NULL) {
 #' addresses
 #'
 #' @description
-#' Enable or disable the automatic warm-up feature for dedicated IP
-#' addresses.
+#' Enable or disable the automatic warm-up feature for dedicated IP addresses.
 #'
 #' @usage
 #' sesv2_put_account_dedicated_ip_warmup_attributes(AutoWarmupEnabled)
 #'
-#' @param AutoWarmupEnabled Enables or disables the automatic warm-up feature for dedicated IP
-#' addresses that are associated with your Amazon SES account in the
-#' current Amazon Web Services Region. Set to `true` to enable the
-#' automatic warm-up feature, or set to `false` to disable it.
+#' @param AutoWarmupEnabled Enables or disables the automatic warm-up feature for dedicated IP addresses that are associated with your Amazon SES account in the current Amazon Web Services Region. Set to `true` to enable the automatic warm-up feature, or set to `false` to disable it.
 #'
 #' @return
 #' An empty list.
@@ -5531,23 +5131,15 @@ sesv2_put_account_dedicated_ip_warmup_attributes <- function(AutoWarmupEnabled =
 #'   ProductionAccessEnabled)
 #'
 #' @param MailType &#91;required&#93; The type of email your account will send.
-#' @param WebsiteURL &#91;required&#93; The URL of your website. This information helps us better understand the
-#' type of content that you plan to send.
+#' @param WebsiteURL &#91;required&#93; The URL of your website. This information helps us better understand the type of content that you plan to send.
 #' @param ContactLanguage The language you would prefer to be contacted with.
 #' @param UseCaseDescription A description of the types of email that you plan to send.
-#' @param AdditionalContactEmailAddresses Additional email addresses that you would like to be notified regarding
-#' Amazon SES matters.
-#' @param ProductionAccessEnabled Indicates whether or not your account should have production access in
-#' the current Amazon Web Services Region.
+#' @param AdditionalContactEmailAddresses Additional email addresses that you would like to be notified regarding Amazon SES matters.
+#' @param ProductionAccessEnabled Indicates whether or not your account should have production access in the current Amazon Web Services Region.
 #' 
-#' If the value is `false`, then your account is in the *sandbox*. When
-#' your account is in the sandbox, you can only send email to verified
-#' identities.
+#' If the value is `false`, then your account is in the *sandbox*. When your account is in the sandbox, you can only send email to verified identities.
 #' 
-#' If the value is `true`, then your account has production access. When
-#' your account has production access, you can send email to any address.
-#' The sending quota and maximum sending rate for your account vary based
-#' on your specific use case.
+#' If the value is `true`, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.
 #'
 #' @return
 #' An empty list.
@@ -5598,11 +5190,9 @@ sesv2_put_account_details <- function(MailType, WebsiteURL, ContactLanguage = NU
 #' @usage
 #' sesv2_put_account_sending_attributes(SendingEnabled)
 #'
-#' @param SendingEnabled Enables or disables your account's ability to send email. Set to `true`
-#' to enable email sending, or set to `false` to disable email sending.
+#' @param SendingEnabled Enables or disables your account's ability to send email. Set to `true` to enable email sending, or set to `false` to disable email sending.
 #' 
-#' If Amazon Web Services paused your account's ability to send email, you
-#' can't use this operation to resume your account's ability to send email.
+#' If Amazon Web Services paused your account's ability to send email, you can't use this operation to resume your account's ability to send email.
 #'
 #' @return
 #' An empty list.
@@ -5647,19 +5237,12 @@ sesv2_put_account_sending_attributes <- function(SendingEnabled = NULL) {
 #' sesv2_put_account_suppression_attributes(SuppressedReasons,
 #'   ValidationAttributes)
 #'
-#' @param SuppressedReasons A list that contains the reasons that email addresses will be
-#' automatically added to the suppression list for your account. This list
-#' can contain any or all of the following:
+#' @param SuppressedReasons A list that contains the reasons that email addresses will be automatically added to the suppression list for your account. This list can contain any or all of the following:
 #' 
-#' -   `COMPLAINT` – Amazon SES adds an email address to the suppression
-#'     list for your account when a message sent to that address results in
-#'     a complaint.
+#' -   `COMPLAINT` – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.
 #' 
-#' -   `BOUNCE` – Amazon SES adds an email address to the suppression list
-#'     for your account when a message sent to that address results in a
-#'     hard bounce.
-#' @param ValidationAttributes An object that contains additional suppression attributes for your
-#' account.
+#' -   `BOUNCE` – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.
+#' @param ValidationAttributes An object that contains additional suppression attributes for your account.
 #'
 #' @return
 #' An empty list.
@@ -5762,20 +5345,14 @@ sesv2_put_account_vdm_attributes <- function(VdmAttributes) {
 #' Associate the configuration set with a MailManager archive
 #'
 #' @description
-#' Associate the configuration set with a MailManager archive. When you
-#' send email using the [`send_email`][sesv2_send_email] or
-#' [`send_bulk_email`][sesv2_send_bulk_email] operations the message as it
-#' will be given to the receiving SMTP server will be archived, along with
-#' the recipient information.
+#' Associate the configuration set with a MailManager archive. When you send email using the [`send_email`][sesv2_send_email] or [`send_bulk_email`][sesv2_send_bulk_email] operations the message as it will be given to the receiving SMTP server will be archived, along with the recipient information.
 #'
 #' @usage
 #' sesv2_put_configuration_set_archiving_options(ConfigurationSetName,
 #'   ArchiveArn)
 #'
-#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to associate with a MailManager
-#' archive.
-#' @param ArchiveArn The Amazon Resource Name (ARN) of the MailManager archive that the
-#' Amazon SES API v2 sends email to.
+#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to associate with a MailManager archive.
+#' @param ArchiveArn The Amazon Resource Name (ARN) of the MailManager archive that the Amazon SES API v2 sends email to.
 #'
 #' @return
 #' An empty list.
@@ -5815,26 +5392,16 @@ sesv2_put_configuration_set_archiving_options <- function(ConfigurationSetName, 
 #' Associate a configuration set with a dedicated IP pool
 #'
 #' @description
-#' Associate a configuration set with a dedicated IP pool. You can use
-#' dedicated IP pools to create groups of dedicated IP addresses for
-#' sending specific types of email.
+#' Associate a configuration set with a dedicated IP pool. You can use dedicated IP pools to create groups of dedicated IP addresses for sending specific types of email.
 #'
 #' @usage
 #' sesv2_put_configuration_set_delivery_options(ConfigurationSetName,
 #'   TlsPolicy, SendingPoolName, MaxDeliverySeconds)
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to associate with a dedicated IP pool.
-#' @param TlsPolicy Specifies whether messages that use the configuration set are required
-#' to use Transport Layer Security (TLS). If the value is `Require`,
-#' messages are only delivered if a TLS connection can be established. If
-#' the value is `Optional`, messages can be delivered in plain text if a
-#' TLS connection can't be established.
-#' @param SendingPoolName The name of the dedicated IP pool to associate with the configuration
-#' set.
-#' @param MaxDeliverySeconds The maximum amount of time, in seconds, that Amazon SES API v2 will
-#' attempt delivery of email. If specified, the value must greater than or
-#' equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds
-#' (840 minutes).
+#' @param TlsPolicy Specifies whether messages that use the configuration set are required to use Transport Layer Security (TLS). If the value is `Require`, messages are only delivered if a TLS connection can be established. If the value is `Optional`, messages can be delivered in plain text if a TLS connection can't be established.
+#' @param SendingPoolName The name of the dedicated IP pool to associate with the configuration set.
+#' @param MaxDeliverySeconds The maximum amount of time, in seconds, that Amazon SES API v2 will attempt delivery of email. If specified, the value must greater than or equal to 300 seconds (5 minutes) and less than or equal to 50400 seconds (840 minutes).
 #'
 #' @return
 #' An empty list.
@@ -5878,18 +5445,14 @@ sesv2_put_configuration_set_delivery_options <- function(ConfigurationSetName, T
 #' Services Region
 #'
 #' @description
-#' Enable or disable collection of reputation metrics for emails that you
-#' send using a particular configuration set in a specific Amazon Web
-#' Services Region.
+#' Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific Amazon Web Services Region.
 #'
 #' @usage
 #' sesv2_put_configuration_set_reputation_options(ConfigurationSetName,
 #'   ReputationMetricsEnabled)
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set.
-#' @param ReputationMetricsEnabled If `true`, tracking of reputation metrics is enabled for the
-#' configuration set. If `false`, tracking of reputation metrics is
-#' disabled for the configuration set.
+#' @param ReputationMetricsEnabled If `true`, tracking of reputation metrics is enabled for the configuration set. If `false`, tracking of reputation metrics is disabled for the configuration set.
 #'
 #' @return
 #' An empty list.
@@ -5930,17 +5493,14 @@ sesv2_put_configuration_set_reputation_options <- function(ConfigurationSetName,
 #' configuration set in a specific Amazon Web Services Region
 #'
 #' @description
-#' Enable or disable email sending for messages that use a particular
-#' configuration set in a specific Amazon Web Services Region.
+#' Enable or disable email sending for messages that use a particular configuration set in a specific Amazon Web Services Region.
 #'
 #' @usage
 #' sesv2_put_configuration_set_sending_options(ConfigurationSetName,
 #'   SendingEnabled)
 #'
-#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to enable or disable email sending
-#' for.
-#' @param SendingEnabled If `true`, email sending is enabled for the configuration set. If
-#' `false`, email sending is disabled for the configuration set.
+#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to enable or disable email sending for.
+#' @param SendingEnabled If `true`, email sending is enabled for the configuration set. If `false`, email sending is disabled for the configuration set.
 #'
 #' @return
 #' An empty list.
@@ -5980,29 +5540,19 @@ sesv2_put_configuration_set_sending_options <- function(ConfigurationSetName, Se
 #' Specify the account suppression list preferences for a configuration set
 #'
 #' @description
-#' Specify the account suppression list preferences for a configuration
-#' set.
+#' Specify the account suppression list preferences for a configuration set.
 #'
 #' @usage
 #' sesv2_put_configuration_set_suppression_options(ConfigurationSetName,
 #'   SuppressedReasons, ValidationOptions)
 #'
-#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to change the suppression list
-#' preferences for.
-#' @param SuppressedReasons A list that contains the reasons that email addresses are automatically
-#' added to the suppression list for your account. This list can contain
-#' any or all of the following:
+#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set to change the suppression list preferences for.
+#' @param SuppressedReasons A list that contains the reasons that email addresses are automatically added to the suppression list for your account. This list can contain any or all of the following:
 #' 
-#' -   `COMPLAINT` – Amazon SES adds an email address to the suppression
-#'     list for your account when a message sent to that address results in
-#'     a complaint.
+#' -   `COMPLAINT` – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a complaint.
 #' 
-#' -   `BOUNCE` – Amazon SES adds an email address to the suppression list
-#'     for your account when a message sent to that address results in a
-#'     hard bounce.
-#' @param ValidationOptions An object that contains information about the email address suppression
-#' preferences for the configuration set in the current Amazon Web Services
-#' Region.
+#' -   `BOUNCE` – Amazon SES adds an email address to the suppression list for your account when a message sent to that address results in a hard bounce.
+#' @param ValidationOptions An object that contains information about the email address suppression preferences for the configuration set in the current Amazon Web Services Region.
 #'
 #' @return
 #' An empty list.
@@ -6053,8 +5603,7 @@ sesv2_put_configuration_set_suppression_options <- function(ConfigurationSetName
 #' email that you send
 #'
 #' @description
-#' Specify a custom domain to use for open and click tracking elements in
-#' email that you send.
+#' Specify a custom domain to use for open and click tracking elements in email that you send.
 #'
 #' @usage
 #' sesv2_put_configuration_set_tracking_options(ConfigurationSetName,
@@ -6062,7 +5611,7 @@ sesv2_put_configuration_set_suppression_options <- function(ConfigurationSetName
 #'
 #' @param ConfigurationSetName &#91;required&#93; The name of the configuration set.
 #' @param CustomRedirectDomain The domain to use to track open and click events.
-#' @param HttpsPolicy 
+#' @param HttpsPolicy The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.
 #'
 #' @return
 #' An empty list.
@@ -6104,8 +5653,7 @@ sesv2_put_configuration_set_tracking_options <- function(ConfigurationSetName, C
 #' set
 #'
 #' @description
-#' Specify VDM preferences for email that you send using the configuration
-#' set.
+#' Specify VDM preferences for email that you send using the configuration set.
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -6163,21 +5711,15 @@ sesv2_put_configuration_set_vdm_options <- function(ConfigurationSetName, VdmOpt
 #' @description
 #' Move a dedicated IP address to an existing dedicated IP pool.
 #' 
-#' The dedicated IP address that you specify must already exist, and must
-#' be associated with your Amazon Web Services account.
+#' The dedicated IP address that you specify must already exist, and must be associated with your Amazon Web Services account.
 #' 
-#' The dedicated IP pool you specify must already exist. You can create a
-#' new pool by using the
-#' [`create_dedicated_ip_pool`][sesv2_create_dedicated_ip_pool] operation.
+#' The dedicated IP pool you specify must already exist. You can create a new pool by using the [`create_dedicated_ip_pool`][sesv2_create_dedicated_ip_pool] operation.
 #'
 #' @usage
 #' sesv2_put_dedicated_ip_in_pool(Ip, DestinationPoolName)
 #'
-#' @param Ip &#91;required&#93; The IP address that you want to move to the dedicated IP pool. The value
-#' you specify has to be a dedicated IP address that's associated with your
-#' Amazon Web Services account.
-#' @param DestinationPoolName &#91;required&#93; The name of the IP pool that you want to add the dedicated IP address
-#' to. You have to specify an IP pool that already exists.
+#' @param Ip &#91;required&#93; The IP address that you want to move to the dedicated IP pool. The value you specify has to be a dedicated IP address that's associated with your Amazon Web Services account.
+#' @param DestinationPoolName &#91;required&#93; The name of the IP pool that you want to add the dedicated IP address to. You have to specify an IP pool that already exists.
 #'
 #' @return
 #' An empty list.
@@ -6272,10 +5814,8 @@ sesv2_put_dedicated_ip_pool_scaling_attributes <- function(PoolName, ScalingMode
 #' @usage
 #' sesv2_put_dedicated_ip_warmup_attributes(Ip, WarmupPercentage)
 #'
-#' @param Ip &#91;required&#93; The dedicated IP address that you want to update the warm-up attributes
-#' for.
-#' @param WarmupPercentage &#91;required&#93; The warm-up percentage that you want to associate with the dedicated IP
-#' address.
+#' @param Ip &#91;required&#93; The dedicated IP address that you want to update the warm-up attributes for.
+#' @param WarmupPercentage &#91;required&#93; The warm-up percentage that you want to associate with the dedicated IP address.
 #'
 #' @return
 #' An empty list.
@@ -6315,26 +5855,16 @@ sesv2_put_dedicated_ip_warmup_attributes <- function(Ip, WarmupPercentage) {
 #' Enable or disable the Deliverability dashboard
 #'
 #' @description
-#' Enable or disable the Deliverability dashboard. When you enable the
-#' Deliverability dashboard, you gain access to reputation, deliverability,
-#' and other metrics for the domains that you use to send email. You also
-#' gain the ability to perform predictive inbox placement tests.
+#' Enable or disable the Deliverability dashboard. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests.
 #' 
-#' When you use the Deliverability dashboard, you pay a monthly
-#' subscription charge, in addition to any other fees that you accrue by
-#' using Amazon SES and other Amazon Web Services services. For more
-#' information about the features and cost of a Deliverability dashboard
-#' subscription, see [Amazon SES
-#' Pricing](https://aws.amazon.com/ses/pricing/).
+#' When you use the Deliverability dashboard, you pay a monthly subscription charge, in addition to any other fees that you accrue by using Amazon SES and other Amazon Web Services services. For more information about the features and cost of a Deliverability dashboard subscription, see [Amazon SES Pricing](https://aws.amazon.com/ses/pricing/).
 #'
 #' @usage
 #' sesv2_put_deliverability_dashboard_option(DashboardEnabled,
 #'   SubscribedDomains)
 #'
-#' @param DashboardEnabled &#91;required&#93; Specifies whether to enable the Deliverability dashboard. To enable the
-#' dashboard, set this value to `true`.
-#' @param SubscribedDomains An array of objects, one for each verified domain that you use to send
-#' email and enabled the Deliverability dashboard for.
+#' @param DashboardEnabled &#91;required&#93; Specifies whether to enable the Deliverability dashboard. To enable the dashboard, set this value to `true`.
+#' @param SubscribedDomains An array of objects, one for each verified domain that you use to send email and enabled the Deliverability dashboard for.
 #'
 #' @return
 #' An empty list.
@@ -6442,9 +5972,7 @@ sesv2_put_email_identity_configuration_set_attributes <- function(EmailIdentity,
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param SigningEnabled Sets the DKIM signing configuration for the identity.
 #' 
-#' When you set this value `true`, then the messages that are sent from the
-#' identity are signed using DKIM. If you set this value to `false`, your
-#' messages are sent without DKIM signing.
+#' When you set this value `true`, then the messages that are sent from the identity are signed using DKIM. If you set this value to `false`, your messages are sent without DKIM signing.
 #'
 #' @return
 #' An empty list.
@@ -6485,12 +6013,9 @@ sesv2_put_email_identity_dkim_attributes <- function(EmailIdentity, SigningEnabl
 #' email domain identity
 #'
 #' @description
-#' Used to configure or change the DKIM authentication settings for an
-#' email domain identity. You can use this operation to do any of the
-#' following:
+#' Used to configure or change the DKIM authentication settings for an email domain identity. You can use this operation to do any of the following:
 #' 
-#' -   Update the signing attributes for an identity that uses Bring Your
-#'     Own DKIM (BYODKIM).
+#' -   Update the signing attributes for an identity that uses Bring Your Own DKIM (BYODKIM).
 #' 
 #' -   Update the key length that should be used for Easy DKIM.
 #' 
@@ -6507,19 +6032,12 @@ sesv2_put_email_identity_dkim_attributes <- function(EmailIdentity, SigningEnabl
 #'   SigningAttributesOrigin, SigningAttributes)
 #'
 #' @param EmailIdentity &#91;required&#93; The email identity.
-#' @param SigningAttributesOrigin &#91;required&#93; The method to use to configure DKIM for the identity. There are the
-#' following possible values:
+#' @param SigningAttributesOrigin &#91;required&#93; The method to use to configure DKIM for the identity. There are the following possible values:
 #' 
-#' -   `AWS_SES` – Configure DKIM for the identity by using [Easy
-#'     DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html).
+#' -   `AWS_SES` – Configure DKIM for the identity by using [Easy DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html).
 #' 
-#' -   `EXTERNAL` – Configure DKIM for the identity by using Bring Your Own
-#'     DKIM (BYODKIM).
-#' @param SigningAttributes An object that contains information about the private key and selector
-#' that you want to use to configure DKIM for the identity for Bring Your
-#' Own DKIM (BYODKIM) for the identity, or, configures the key length to be
-#' used for [Easy
-#' DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html).
+#' -   `EXTERNAL` – Configure DKIM for the identity by using Bring Your Own DKIM (BYODKIM).
+#' @param SigningAttributes An object that contains information about the private key and selector that you want to use to configure DKIM for the identity for Bring Your Own DKIM (BYODKIM) for the identity, or, configures the key length to be used for [Easy DKIM](https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -6574,19 +6092,11 @@ sesv2_put_email_identity_dkim_signing_attributes <- function(EmailIdentity, Sign
 #' Used to enable or disable feedback forwarding for an identity
 #'
 #' @description
-#' Used to enable or disable feedback forwarding for an identity. This
-#' setting determines what happens when an identity is used to send an
-#' email that results in a bounce or complaint event.
+#' Used to enable or disable feedback forwarding for an identity. This setting determines what happens when an identity is used to send an email that results in a bounce or complaint event.
 #' 
-#' If the value is `true`, you receive email notifications when bounce or
-#' complaint events occur. These notifications are sent to the address that
-#' you specified in the `Return-Path` header of the original email.
+#' If the value is `true`, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the `Return-Path` header of the original email.
 #' 
-#' You're required to have a method of tracking bounces and complaints. If
-#' you haven't set up another mechanism for receiving bounce or complaint
-#' notifications (for example, by setting up an event destination), you
-#' receive an email notification when these events occur (even if this
-#' setting is disabled).
+#' You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).
 #'
 #' @usage
 #' sesv2_put_email_identity_feedback_attributes(EmailIdentity,
@@ -6595,15 +6105,9 @@ sesv2_put_email_identity_dkim_signing_attributes <- function(EmailIdentity, Sign
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param EmailForwardingEnabled Sets the feedback forwarding configuration for the identity.
 #' 
-#' If the value is `true`, you receive email notifications when bounce or
-#' complaint events occur. These notifications are sent to the address that
-#' you specified in the `Return-Path` header of the original email.
+#' If the value is `true`, you receive email notifications when bounce or complaint events occur. These notifications are sent to the address that you specified in the `Return-Path` header of the original email.
 #' 
-#' You're required to have a method of tracking bounces and complaints. If
-#' you haven't set up another mechanism for receiving bounce or complaint
-#' notifications (for example, by setting up an event destination), you
-#' receive an email notification when these events occur (even if this
-#' setting is disabled).
+#' You're required to have a method of tracking bounces and complaints. If you haven't set up another mechanism for receiving bounce or complaint notifications (for example, by setting up an event destination), you receive an email notification when these events occur (even if this setting is disabled).
 #'
 #' @return
 #' An empty list.
@@ -6644,32 +6148,23 @@ sesv2_put_email_identity_feedback_attributes <- function(EmailIdentity, EmailFor
 #' an email identity
 #'
 #' @description
-#' Used to enable or disable the custom Mail-From domain configuration for
-#' an email identity.
+#' Used to enable or disable the custom Mail-From domain configuration for an email identity.
 #'
 #' @usage
 #' sesv2_put_email_identity_mail_from_attributes(EmailIdentity,
 #'   MailFromDomain, BehaviorOnMxFailure)
 #'
 #' @param EmailIdentity &#91;required&#93; The verified email identity.
-#' @param MailFromDomain The custom MAIL FROM domain that you want the verified identity to use.
-#' The MAIL FROM domain must meet the following criteria:
+#' @param MailFromDomain The custom MAIL FROM domain that you want the verified identity to use. The MAIL FROM domain must meet the following criteria:
 #' 
 #' -   It has to be a subdomain of the verified identity.
 #' 
 #' -   It can't be used to receive email.
 #' 
-#' -   It can't be used in a "From" address if the MAIL FROM domain is a
-#'     destination for feedback forwarding emails.
-#' @param BehaviorOnMxFailure The action to take if the required MX record isn't found when you send
-#' an email. When you set this value to `UseDefaultValue`, the mail is sent
-#' using *amazonses.com* as the MAIL FROM domain. When you set this value
-#' to `RejectMessage`, the Amazon SES API v2 returns a
-#' `MailFromDomainNotVerified` error, and doesn't attempt to deliver the
-#' email.
+#' -   It can't be used in a "From" address if the MAIL FROM domain is a destination for feedback forwarding emails.
+#' @param BehaviorOnMxFailure The action to take if the required MX record isn't found when you send an email. When you set this value to `UseDefaultValue`, the mail is sent using *amazonses.com* as the MAIL FROM domain. When you set this value to `RejectMessage`, the Amazon SES API v2 returns a `MailFromDomainNotVerified` error, and doesn't attempt to deliver the email.
 #' 
-#' These behaviors are taken when the custom MAIL FROM domain configuration
-#' is in the `Pending`, `Failed`, and `TemporaryFailure` states.
+#' These behaviors are taken when the custom MAIL FROM domain configuration is in the `Pending`, `Failed`, and `TemporaryFailure` states.
 #'
 #' @return
 #' An empty list.
@@ -6715,10 +6210,8 @@ sesv2_put_email_identity_mail_from_attributes <- function(EmailIdentity, MailFro
 #' @usage
 #' sesv2_put_suppressed_destination(EmailAddress, Reason)
 #'
-#' @param EmailAddress &#91;required&#93; The email address that should be added to the suppression list for your
-#' account.
-#' @param Reason &#91;required&#93; The factors that should cause the email address to be added to the
-#' suppression list for your account.
+#' @param EmailAddress &#91;required&#93; The email address that should be added to the suppression list for your account.
+#' @param Reason &#91;required&#93; The factors that should cause the email address to be added to the suppression list for your account.
 #'
 #' @return
 #' An empty list.
@@ -6767,56 +6260,27 @@ sesv2_put_suppressed_destination <- function(EmailAddress, Reason) {
 #'   DefaultContent, BulkEmailEntries, ConfigurationSetName, EndpointId,
 #'   TenantName)
 #'
-#' @param FromEmailAddress The email address to use as the "From" address for the email. The
-#' address that you specify has to be verified.
-#' @param FromEmailAddressIdentityArn This parameter is used only for sending authorization. It is the ARN of
-#' the identity that is associated with the sending authorization policy
-#' that permits you to use the email address specified in the
-#' `FromEmailAddress` parameter.
+#' @param FromEmailAddress The email address to use as the "From" address for the email. The address that you specify has to be verified.
+#' @param FromEmailAddressIdentityArn This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the `FromEmailAddress` parameter.
 #' 
-#' For example, if the owner of example.com (which has ARN
-#' arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a
-#' policy to it that authorizes you to use sender@@example.com, then you
-#' would specify the `FromEmailAddressIdentityArn` to be
-#' arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-#' `FromEmailAddress` to be sender@@example.com.
+#' For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@@example.com, then you would specify the `FromEmailAddressIdentityArn` to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the `FromEmailAddress` to be sender@@example.com.
 #' 
-#' For more information about sending authorization, see the [Amazon SES
-#' Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
-#' @param ReplyToAddresses The "Reply-to" email addresses for the message. When the recipient
-#' replies to the message, each Reply-to address receives the reply.
-#' @param FeedbackForwardingEmailAddress The address that you want bounce and complaint notifications to be sent
-#' to.
-#' @param FeedbackForwardingEmailAddressIdentityArn This parameter is used only for sending authorization. It is the ARN of
-#' the identity that is associated with the sending authorization policy
-#' that permits you to use the email address specified in the
-#' `FeedbackForwardingEmailAddress` parameter.
+#' For more information about sending authorization, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
+#' @param ReplyToAddresses The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.
+#' @param FeedbackForwardingEmailAddress The address that you want bounce and complaint notifications to be sent to.
+#' @param FeedbackForwardingEmailAddressIdentityArn This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the `FeedbackForwardingEmailAddress` parameter.
 #' 
-#' For example, if the owner of example.com (which has ARN
-#' arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a
-#' policy to it that authorizes you to use feedback@@example.com, then you
-#' would specify the `FeedbackForwardingEmailAddressIdentityArn` to be
-#' arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-#' `FeedbackForwardingEmailAddress` to be feedback@@example.com.
+#' For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@@example.com, then you would specify the `FeedbackForwardingEmailAddressIdentityArn` to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the `FeedbackForwardingEmailAddress` to be feedback@@example.com.
 #' 
-#' For more information about sending authorization, see the [Amazon SES
-#' Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
-#' @param DefaultEmailTags A list of tags, in the form of name/value pairs, to apply to an email
-#' that you send using the [`send_email`][sesv2_send_email] operation. Tags
-#' correspond to characteristics of the email that you define, so that you
-#' can publish email sending events.
-#' @param DefaultContent &#91;required&#93; An object that contains the body of the message. You can specify a
-#' template message.
+#' For more information about sending authorization, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
+#' @param DefaultEmailTags A list of tags, in the form of name/value pairs, to apply to an email that you send using the [`send_email`][sesv2_send_email] operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.
+#' @param DefaultContent &#91;required&#93; An object that contains the body of the message. You can specify a template message.
 #' @param BulkEmailEntries &#91;required&#93; The list of bulk email entry objects.
 #' @param ConfigurationSetName The name of the configuration set to use when sending the email.
 #' @param EndpointId The ID of the multi-region endpoint (global-endpoint).
 #' @param TenantName The name of the tenant through which this bulk email will be sent.
 #' 
-#' The email sending operation will only succeed if all referenced
-#' resources (identities, configuration sets, and templates) are associated
-#' with this tenant.
+#' The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6944,16 +6408,9 @@ sesv2_send_bulk_email <- function(FromEmailAddress = NULL, FromEmailAddressIdent
 #' it
 #'
 #' @description
-#' Adds an email address to the list of identities for your Amazon SES
-#' account in the current Amazon Web Services Region and attempts to verify
-#' it. As a result of executing this operation, a customized verification
-#' email is sent to the specified address.
+#' Adds an email address to the list of identities for your Amazon SES account in the current Amazon Web Services Region and attempts to verify it. As a result of executing this operation, a customized verification email is sent to the specified address.
 #' 
-#' To use this operation, you must first create a custom verification email
-#' template. For more information about creating and using custom
-#' verification email templates, see [Using custom verification email
-#' templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom)
-#' in the *Amazon SES Developer Guide*.
+#' To use this operation, you must first create a custom verification email template. For more information about creating and using custom verification email templates, see [Using custom verification email templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom) in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -6962,8 +6419,7 @@ sesv2_send_bulk_email <- function(FromEmailAddress = NULL, FromEmailAddressIdent
 #'   ConfigurationSetName)
 #'
 #' @param EmailAddress &#91;required&#93; The email address to verify.
-#' @param TemplateName &#91;required&#93; The name of the custom verification email template to use when sending
-#' the verification email.
+#' @param TemplateName &#91;required&#93; The name of the custom verification email template to use when sending the verification email.
 #' @param ConfigurationSetName Name of a configuration set to use when sending the verification email.
 #'
 #' @return
@@ -7010,22 +6466,13 @@ sesv2_send_custom_verification_email <- function(EmailAddress, TemplateName, Con
 #' Sends an email message
 #'
 #' @description
-#' Sends an email message. You can use the Amazon SES API v2 to send the
-#' following types of messages:
+#' Sends an email message. You can use the Amazon SES API v2 to send the following types of messages:
 #' 
-#' -   **Simple** – A standard email message. When you create this type of
-#'     message, you specify the sender, the recipient, and the message
-#'     body, and Amazon SES assembles the message for you.
+#' -   **Simple** – A standard email message. When you create this type of message, you specify the sender, the recipient, and the message body, and Amazon SES assembles the message for you.
 #' 
-#' -   **Raw** – A raw, MIME-formatted email message. When you send this
-#'     type of email, you have to specify all of the message headers, as
-#'     well as the message body. You can use this message type to send
-#'     messages that contain attachments. The message that you specify has
-#'     to be a valid MIME message.
+#' -   **Raw** – A raw, MIME-formatted email message. When you send this type of email, you have to specify all of the message headers, as well as the message body. You can use this message type to send messages that contain attachments. The message that you specify has to be a valid MIME message.
 #' 
-#' -   **Templated** – A message that contains personalization tags. When
-#'     you send this type of email, Amazon SES API v2 automatically
-#'     replaces the tags with values that you specify.
+#' -   **Templated** – A message that contains personalization tags. When you send this type of email, Amazon SES API v2 automatically replaces the tags with values that you specify.
 #'
 #' @usage
 #' sesv2_send_email(FromEmailAddress, FromEmailAddressIdentityArn,
@@ -7033,62 +6480,30 @@ sesv2_send_custom_verification_email <- function(EmailAddress, TemplateName, Con
 #'   FeedbackForwardingEmailAddressIdentityArn, Content, EmailTags,
 #'   ConfigurationSetName, EndpointId, TenantName, ListManagementOptions)
 #'
-#' @param FromEmailAddress The email address to use as the "From" address for the email. The
-#' address that you specify has to be verified.
-#' @param FromEmailAddressIdentityArn This parameter is used only for sending authorization. It is the ARN of
-#' the identity that is associated with the sending authorization policy
-#' that permits you to use the email address specified in the
-#' `FromEmailAddress` parameter.
+#' @param FromEmailAddress The email address to use as the "From" address for the email. The address that you specify has to be verified.
+#' @param FromEmailAddressIdentityArn This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the `FromEmailAddress` parameter.
 #' 
-#' For example, if the owner of example.com (which has ARN
-#' arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a
-#' policy to it that authorizes you to use sender@@example.com, then you
-#' would specify the `FromEmailAddressIdentityArn` to be
-#' arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-#' `FromEmailAddress` to be sender@@example.com.
+#' For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use sender@@example.com, then you would specify the `FromEmailAddressIdentityArn` to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the `FromEmailAddress` to be sender@@example.com.
 #' 
-#' For more information about sending authorization, see the [Amazon SES
-#' Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
+#' For more information about sending authorization, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
 #' 
-#' For Raw emails, the `FromEmailAddressIdentityArn` value overrides the
-#' X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email
-#' message content.
+#' For Raw emails, the `FromEmailAddressIdentityArn` value overrides the X-SES-SOURCE-ARN and X-SES-FROM-ARN headers specified in raw email message content.
 #' @param Destination An object that contains the recipients of the email message.
-#' @param ReplyToAddresses The "Reply-to" email addresses for the message. When the recipient
-#' replies to the message, each Reply-to address receives the reply.
-#' @param FeedbackForwardingEmailAddress The address that you want bounce and complaint notifications to be sent
-#' to.
-#' @param FeedbackForwardingEmailAddressIdentityArn This parameter is used only for sending authorization. It is the ARN of
-#' the identity that is associated with the sending authorization policy
-#' that permits you to use the email address specified in the
-#' `FeedbackForwardingEmailAddress` parameter.
+#' @param ReplyToAddresses The "Reply-to" email addresses for the message. When the recipient replies to the message, each Reply-to address receives the reply.
+#' @param FeedbackForwardingEmailAddress The address that you want bounce and complaint notifications to be sent to.
+#' @param FeedbackForwardingEmailAddressIdentityArn This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the sending authorization policy that permits you to use the email address specified in the `FeedbackForwardingEmailAddress` parameter.
 #' 
-#' For example, if the owner of example.com (which has ARN
-#' arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a
-#' policy to it that authorizes you to use feedback@@example.com, then you
-#' would specify the `FeedbackForwardingEmailAddressIdentityArn` to be
-#' arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
-#' `FeedbackForwardingEmailAddress` to be feedback@@example.com.
+#' For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to use feedback@@example.com, then you would specify the `FeedbackForwardingEmailAddressIdentityArn` to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the `FeedbackForwardingEmailAddress` to be feedback@@example.com.
 #' 
-#' For more information about sending authorization, see the [Amazon SES
-#' Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
-#' @param Content &#91;required&#93; An object that contains the body of the message. You can send either a
-#' Simple message, Raw message, or a Templated message.
-#' @param EmailTags A list of tags, in the form of name/value pairs, to apply to an email
-#' that you send using the [`send_email`][sesv2_send_email] operation. Tags
-#' correspond to characteristics of the email that you define, so that you
-#' can publish email sending events.
+#' For more information about sending authorization, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
+#' @param Content &#91;required&#93; An object that contains the body of the message. You can send either a Simple message, Raw message, or a Templated message.
+#' @param EmailTags A list of tags, in the form of name/value pairs, to apply to an email that you send using the [`send_email`][sesv2_send_email] operation. Tags correspond to characteristics of the email that you define, so that you can publish email sending events.
 #' @param ConfigurationSetName The name of the configuration set to use when sending the email.
 #' @param EndpointId The ID of the multi-region endpoint (global-endpoint).
 #' @param TenantName The name of the tenant through which this email will be sent.
 #' 
-#' The email sending operation will only succeed if all referenced
-#' resources (identities, configuration sets, and templates) are associated
-#' with this tenant.
-#' @param ListManagementOptions An object used to specify a list or topic to which an email belongs,
-#' which will be used when a contact chooses to unsubscribe.
+#' The email sending operation will only succeed if all referenced resources (identities, configuration sets, and templates) are associated with this tenant.
+#' @param ListManagementOptions An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to unsubscribe.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7227,26 +6642,15 @@ sesv2_send_email <- function(FromEmailAddress = NULL, FromEmailAddressIdentityAr
 #' Add one or more tags (keys and values) to a specified resource
 #'
 #' @description
-#' Add one or more tags (keys and values) to a specified resource. A
-#' *tag* is a label that you optionally define and associate with a
-#' resource. Tags can help you categorize and manage resources in different
-#' ways, such as by purpose, owner, environment, or other criteria. A
-#' resource can have as many as 50 tags.
+#' Add one or more tags (keys and values) to a specified resource. A *tag* is a label that you optionally define and associate with a resource. Tags can help you categorize and manage resources in different ways, such as by purpose, owner, environment, or other criteria. A resource can have as many as 50 tags.
 #' 
-#' Each tag consists of a required *tag key* and an associated *tag value*,
-#' both of which you define. A tag key is a general label that acts as a
-#' category for more specific tag values. A tag value acts as a descriptor
-#' within a tag key.
+#' Each tag consists of a required *tag key* and an associated *tag value*, both of which you define. A tag key is a general label that acts as a category for more specific tag values. A tag value acts as a descriptor within a tag key.
 #'
 #' @usage
 #' sesv2_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to add one
-#' or more tags to.
-#' @param Tags &#91;required&#93; A list of the tags that you want to add to the resource. A tag consists
-#' of a required tag key (`Key`) and an associated tag value (`Value`). The
-#' maximum length of a tag key is 128 characters. The maximum length of a
-#' tag value is 256 characters.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to add one or more tags to.
+#' @param Tags &#91;required&#93; A list of the tags that you want to add to the resource. A tag consists of a required tag key (`Key`) and an associated tag value (`Value`). The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
 #'
 #' @return
 #' An empty list.
@@ -7292,8 +6696,7 @@ sesv2_tag_resource <- function(ResourceArn, Tags) {
 #' template and a set of replacement data
 #'
 #' @description
-#' Creates a preview of the MIME content of an email when provided with a
-#' template and a set of replacement data.
+#' Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -7301,9 +6704,7 @@ sesv2_tag_resource <- function(ResourceArn, Tags) {
 #' sesv2_test_render_email_template(TemplateName, TemplateData)
 #'
 #' @param TemplateName &#91;required&#93; The name of the template.
-#' @param TemplateData &#91;required&#93; A list of replacement values to apply to the template. This parameter is
-#' a JSON object, typically consisting of key-value pairs in which the keys
-#' correspond to replacement tags in the email template.
+#' @param TemplateData &#91;required&#93; A list of replacement values to apply to the template. This parameter is a JSON object, typically consisting of key-value pairs in which the keys correspond to replacement tags in the email template.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7353,16 +6754,10 @@ sesv2_test_render_email_template <- function(TemplateName, TemplateData) {
 #' @usage
 #' sesv2_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove
-#' one or more tags from.
-#' @param TagKeys &#91;required&#93; The tags (tag keys) that you want to remove from the resource. When you
-#' specify a tag key, the action removes both that key and its associated
-#' tag value.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove one or more tags from.
+#' @param TagKeys &#91;required&#93; The tags (tag keys) that you want to remove from the resource. When you specify a tag key, the action removes both that key and its associated tag value.
 #' 
-#' To remove more than one tag from the resource, append the `TagKeys`
-#' parameter and argument for each additional tag to remove, separated by
-#' an ampersand. For example:
-#' `/v2/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2`
+#' To remove more than one tag from the resource, append the `TagKeys` parameter and argument for each additional tag to remove, separated by an ampersand. For example: `/v2/email/tags?ResourceArn=ResourceArn&TagKeys=Key1&TagKeys=Key2`
 #'
 #' @return
 #' An empty list.
@@ -7404,21 +6799,15 @@ sesv2_untag_resource <- function(ResourceArn, TagKeys) {
 #' Update the configuration of an event destination for a configuration set
 #'
 #' @description
-#' Update the configuration of an event destination for a configuration
-#' set.
+#' Update the configuration of an event destination for a configuration set.
 #' 
-#' *Events* include message sends, deliveries, opens, clicks, bounces, and
-#' complaints. *Event destinations* are places that you can send
-#' information about these events to. For example, you can send event data
-#' to Amazon EventBridge and associate a rule to send the event to the
-#' specified target.
+#' *Events* include message sends, deliveries, opens, clicks, bounces, and complaints. *Event destinations* are places that you can send information about these events to. For example, you can send event data to Amazon EventBridge and associate a rule to send the event to the specified target.
 #'
 #' @usage
 #' sesv2_update_configuration_set_event_destination(ConfigurationSetName,
 #'   EventDestinationName, EventDestination)
 #'
-#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set that contains the event destination to
-#' modify.
+#' @param ConfigurationSetName &#91;required&#93; The name of the configuration set that contains the event destination to modify.
 #' @param EventDestinationName &#91;required&#93; The name of the event destination.
 #' @param EventDestination &#91;required&#93; An object that defines the event destination.
 #'
@@ -7490,9 +6879,7 @@ sesv2_update_configuration_set_event_destination <- function(ConfigurationSetNam
 #' @description
 #' Updates a contact's preferences for a list.
 #' 
-#' You must specify all existing topic preferences in the
-#' `TopicPreferences` object, not just the ones that need updating;
-#' otherwise, all your existing preferences will be removed.
+#' You must specify all existing topic preferences in the `TopicPreferences` object, not just the ones that need updating; otherwise, all your existing preferences will be removed.
 #'
 #' @usage
 #' sesv2_update_contact(ContactListName, EmailAddress, TopicPreferences,
@@ -7501,8 +6888,7 @@ sesv2_update_configuration_set_event_destination <- function(ConfigurationSetNam
 #' @param ContactListName &#91;required&#93; The name of the contact list.
 #' @param EmailAddress &#91;required&#93; The contact's email address.
 #' @param TopicPreferences The contact's preference for being opted-in to or opted-out of a topic.
-#' @param UnsubscribeAll A boolean value status noting if the contact is unsubscribed from all
-#' contact list topics.
+#' @param UnsubscribeAll A boolean value status noting if the contact is unsubscribed from all contact list topics.
 #' @param AttributesData The attribute data attached to a contact.
 #'
 #' @return
@@ -7551,15 +6937,13 @@ sesv2_update_contact <- function(ContactListName, EmailAddress, TopicPreferences
 #' Updates contact list metadata
 #'
 #' @description
-#' Updates contact list metadata. This operation does a complete
-#' replacement.
+#' Updates contact list metadata. This operation does a complete replacement.
 #'
 #' @usage
 #' sesv2_update_contact_list(ContactListName, Topics, Description)
 #'
 #' @param ContactListName &#91;required&#93; The name of the contact list.
-#' @param Topics An interest group, theme, or label within a list. A contact list can
-#' have multiple topics.
+#' @param Topics An interest group, theme, or label within a list. A contact list can have multiple topics.
 #' @param Description A description of what the contact list is about.
 #'
 #' @return
@@ -7610,10 +6994,7 @@ sesv2_update_contact_list <- function(ContactListName, Topics = NULL, Descriptio
 #' @description
 #' Updates an existing custom verification email template.
 #' 
-#' For more information about custom verification email templates, see
-#' [Using custom verification email
-#' templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom)
-#' in the *Amazon SES Developer Guide*.
+#' For more information about custom verification email templates, see [Using custom verification email templates](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom) in the *Amazon SES Developer Guide*.
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -7622,20 +7003,12 @@ sesv2_update_contact_list <- function(ContactListName, Topics = NULL, Descriptio
 #'   FromEmailAddress, TemplateSubject, TemplateContent,
 #'   SuccessRedirectionURL, FailureRedirectionURL)
 #'
-#' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to
-#' update.
+#' @param TemplateName &#91;required&#93; The name of the custom verification email template that you want to update.
 #' @param FromEmailAddress &#91;required&#93; The email address that the custom verification email is sent from.
 #' @param TemplateSubject &#91;required&#93; The subject line of the custom verification email.
-#' @param TemplateContent &#91;required&#93; The content of the custom verification email. The total size of the
-#' email must be less than 10 MB. The message body may contain HTML, with
-#' some limitations. For more information, see [Custom verification email
-#' frequently asked
-#' questions](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq)
-#' in the *Amazon SES Developer Guide*.
-#' @param SuccessRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his
-#' or her address is successfully verified.
-#' @param FailureRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his
-#' or her address is not successfully verified.
+#' @param TemplateContent &#91;required&#93; The content of the custom verification email. The total size of the email must be less than 10 MB. The message body may contain HTML, with some limitations. For more information, see [Custom verification email frequently asked questions](https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#send-email-verify-address-custom-faq) in the *Amazon SES Developer Guide*.
+#' @param SuccessRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his or her address is successfully verified.
+#' @param FailureRedirectionURL &#91;required&#93; The URL that the recipient of the verification email is sent to if his or her address is not successfully verified.
 #'
 #' @return
 #' An empty list.
@@ -7680,17 +7053,11 @@ sesv2_update_custom_verification_email_template <- function(TemplateName, FromEm
 #' identity (an email address or a domain)
 #'
 #' @description
-#' Updates the specified sending authorization policy for the given
-#' identity (an email address or a domain). This API returns successfully
-#' even if a policy with the specified name does not exist.
+#' Updates the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.
 #' 
-#' This API is for the identity owner only. If you have not verified the
-#' identity, this API will return an error.
+#' This API is for the identity owner only. If you have not verified the identity, this API will return an error.
 #' 
-#' Sending authorization is a feature that enables an identity owner to
-#' authorize other senders to use its identities. For information about
-#' using sending authorization, see the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
+#' Sending authorization is a feature that enables an identity owner to authorize other senders to use its identities. For information about using sending authorization, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/sending-authorization.html).
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -7700,13 +7067,10 @@ sesv2_update_custom_verification_email_template <- function(TemplateName, FromEm
 #' @param EmailIdentity &#91;required&#93; The email identity.
 #' @param PolicyName &#91;required&#93; The name of the policy.
 #' 
-#' The policy name cannot exceed 64 characters and can only include
-#' alphanumeric characters, dashes, and underscores.
+#' The policy name cannot exceed 64 characters and can only include alphanumeric characters, dashes, and underscores.
 #' @param Policy &#91;required&#93; The text of the policy in JSON format. The policy cannot exceed 4 KB.
 #' 
-#' For information about the syntax of sending authorization policies, see
-#' the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/).
+#' For information about the syntax of sending authorization policies, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/).
 #'
 #' @return
 #' An empty list.
@@ -7747,10 +7111,7 @@ sesv2_update_email_identity_policy <- function(EmailIdentity, PolicyName, Policy
 #' Updates an email template
 #'
 #' @description
-#' Updates an email template. Email templates enable you to send
-#' personalized email to one or more destinations in a single API
-#' operation. For more information, see the [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html).
+#' Updates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/send-personalized-email-api.html).
 #' 
 #' You can execute this operation no more than once per second.
 #'
@@ -7758,8 +7119,7 @@ sesv2_update_email_identity_policy <- function(EmailIdentity, PolicyName, Policy
 #' sesv2_update_email_template(TemplateName, TemplateContent)
 #'
 #' @param TemplateName &#91;required&#93; The name of the template.
-#' @param TemplateContent &#91;required&#93; The content of the email template, composed of a subject line, an HTML
-#' part, and a text-only part.
+#' @param TemplateContent &#91;required&#93; The content of the email template, composed of a subject line, an HTML part, and a text-only part.
 #'
 #' @return
 #' An empty list.
@@ -7803,37 +7163,23 @@ sesv2_update_email_template <- function(TemplateName, TemplateContent) {
 #' Update the customer-managed sending status for a reputation entity
 #'
 #' @description
-#' Update the customer-managed sending status for a reputation entity. This
-#' allows you to enable, disable, or reinstate sending for the entity.
+#' Update the customer-managed sending status for a reputation entity. This allows you to enable, disable, or reinstate sending for the entity.
 #' 
-#' The customer-managed status works in conjunction with the Amazon Web
-#' Services Amazon SES-managed status to determine the overall sending
-#' capability. When you update the customer-managed status, the Amazon Web
-#' Services Amazon SES-managed status remains unchanged. If Amazon Web
-#' Services Amazon SES has disabled the entity, it will not be allowed to
-#' send regardless of the customer-managed status setting. When you
-#' reinstate an entity through the customer-managed status, it can continue
-#' sending only if the Amazon Web Services Amazon SES-managed status also
-#' permits sending, even if there are active reputation findings, until the
-#' findings are resolved or new violations occur.
+#' The customer-managed status works in conjunction with the Amazon Web Services Amazon SES-managed status to determine the overall sending capability. When you update the customer-managed status, the Amazon Web Services Amazon SES-managed status remains unchanged. If Amazon Web Services Amazon SES has disabled the entity, it will not be allowed to send regardless of the customer-managed status setting. When you reinstate an entity through the customer-managed status, it can continue sending only if the Amazon Web Services Amazon SES-managed status also permits sending, even if there are active reputation findings, until the findings are resolved or new violations occur.
 #'
 #' @usage
 #' sesv2_update_reputation_entity_customer_managed_status(
 #'   ReputationEntityType, ReputationEntityReference, SendingStatus)
 #'
-#' @param ReputationEntityType &#91;required&#93; The type of reputation entity. Currently, only `RESOURCE` type entities
-#' are supported.
-#' @param ReputationEntityReference &#91;required&#93; The unique identifier for the reputation entity. For resource-type
-#' entities, this is the Amazon Resource Name (ARN) of the resource.
-#' @param SendingStatus &#91;required&#93; The new customer-managed sending status for the reputation entity. This
-#' can be one of the following:
+#' @param ReputationEntityType &#91;required&#93; The type of reputation entity. Currently, only `RESOURCE` type entities are supported.
+#' @param ReputationEntityReference &#91;required&#93; The unique identifier for the reputation entity. For resource-type entities, this is the Amazon Resource Name (ARN) of the resource.
+#' @param SendingStatus &#91;required&#93; The new customer-managed sending status for the reputation entity. This can be one of the following:
 #' 
 #' -   `ENABLED` – Allow sending for this entity.
 #' 
 #' -   `DISABLED` – Prevent sending for this entity.
 #' 
-#' -   `REINSTATED` – Allow sending even if there are active reputation
-#'     findings.
+#' -   `REINSTATED` – Allow sending even if there are active reputation findings.
 #'
 #' @return
 #' An empty list.
@@ -7874,25 +7220,17 @@ sesv2_update_reputation_entity_customer_managed_status <- function(ReputationEnt
 #' Update the reputation management policy for a reputation entity
 #'
 #' @description
-#' Update the reputation management policy for a reputation entity. The
-#' policy determines how the entity responds to reputation findings, such
-#' as automatically pausing sending when certain thresholds are exceeded.
+#' Update the reputation management policy for a reputation entity. The policy determines how the entity responds to reputation findings, such as automatically pausing sending when certain thresholds are exceeded.
 #' 
-#' Reputation management policies are Amazon Web Services Amazon
-#' SES-managed (predefined policies). You can select from none, standard,
-#' and strict policies.
+#' Reputation management policies are Amazon Web Services Amazon SES-managed (predefined policies). You can select from none, standard, and strict policies.
 #'
 #' @usage
 #' sesv2_update_reputation_entity_policy(ReputationEntityType,
 #'   ReputationEntityReference, ReputationEntityPolicy)
 #'
-#' @param ReputationEntityType &#91;required&#93; The type of reputation entity. Currently, only `RESOURCE` type entities
-#' are supported.
-#' @param ReputationEntityReference &#91;required&#93; The unique identifier for the reputation entity. For resource-type
-#' entities, this is the Amazon Resource Name (ARN) of the resource.
-#' @param ReputationEntityPolicy &#91;required&#93; The Amazon Resource Name (ARN) of the reputation management policy to
-#' apply to this entity. This is an Amazon Web Services Amazon SES-managed
-#' policy.
+#' @param ReputationEntityType &#91;required&#93; The type of reputation entity. Currently, only `RESOURCE` type entities are supported.
+#' @param ReputationEntityReference &#91;required&#93; The unique identifier for the reputation entity. For resource-type entities, this is the Amazon Resource Name (ARN) of the resource.
+#' @param ReputationEntityPolicy &#91;required&#93; The Amazon Resource Name (ARN) of the reputation management policy to apply to this entity. This is an Amazon Web Services Amazon SES-managed policy.
 #'
 #' @return
 #' An empty list.

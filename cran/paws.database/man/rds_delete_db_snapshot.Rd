@@ -9,8 +9,7 @@ rds_delete_db_snapshot(DBSnapshotIdentifier)
 \arguments{
 \item{DBSnapshotIdentifier}{[required] The DB snapshot identifier.
 
-Constraints: Must be the name of an existing DB snapshot in the
-\code{available} state.}
+Constraints: Must be the name of an existing DB snapshot in the \code{available} state.}
 }
 \description{
 Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.

@@ -11,9 +11,7 @@ codecatalyst_delete_dev_environment(spaceName, projectName, id)
 
 \item{projectName}{[required] The name of the project in the space.}
 
-\item{id}{[required] The system-generated unique ID of the Dev Environment you want to
-delete. To retrieve a list of Dev Environment IDs, use
-\code{\link[=codecatalyst_list_dev_environments]{list_dev_environments}}.}
+\item{id}{[required] The system-generated unique ID of the Dev Environment you want to delete. To retrieve a list of Dev Environment IDs, use \code{\link[=codecatalyst_list_dev_environments]{list_dev_environments}}.}
 }
 \description{
 Deletes a Dev Environment.

@@ -15,8 +15,7 @@ panorama_list_devices_jobs(
 
 \item{MaxResults}{The maximum number of device jobs to return in one page of results.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 }
 \description{
 Returns a list of jobs.

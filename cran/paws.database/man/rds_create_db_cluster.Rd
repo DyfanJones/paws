@@ -67,21 +67,11 @@ rds_create_db_cluster(
 )
 }
 \arguments{
-\item{AvailabilityZones}{A list of Availability Zones (AZs) where you specifically want to create
-DB instances in the DB cluster.
+\item{AvailabilityZones}{A list of Availability Zones (AZs) where you specifically want to create DB instances in the DB cluster.
 
-For the first three DB instances that you create, RDS distributes each
-DB instance to a different AZ that you specify. For additional DB
-instances that you create, RDS randomly distributes them to the AZs that
-you specified. For example, if you create a DB cluster with one writer
-instance and three reader instances, RDS might distribute the writer
-instance to AZ 1, the first reader instance to AZ 2, the second reader
-instance to AZ 3, and the third reader instance to either AZ 1, AZ 2, or
-AZ 3.
+For the first three DB instances that you create, RDS distributes each DB instance to a different AZ that you specify. For additional DB instances that you create, RDS randomly distributes them to the AZs that you specified. For example, if you create a DB cluster with one writer instance and three reader instances, RDS might distribute the writer instance to AZ 1, the first reader instance to AZ 2, the second reader instance to AZ 3, and the third reader instance to either AZ 1, AZ 2, or AZ 3.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones}{Availability Zones}
-and \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Concepts.AuroraHighAvailability.Instances}{High availability for Aurora DB instances}
-in the \emph{Amazon Aurora User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.RegionsAndAvailabilityZones.html#Concepts.RegionsAndAvailabilityZones.AvailabilityZones}{Availability Zones} and \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.AuroraHighAvailability.html#Concepts.AuroraHighAvailability.Instances}{High availability for Aurora DB instances} in the \emph{Amazon Aurora User Guide}.
 
 Valid for Cluster Type: Aurora DB clusters only
 
@@ -101,42 +91,34 @@ Constraints:
 \item Must be a value from 1 to 35.
 }}
 
-\item{CharacterSetName}{The name of the character set (\code{CharacterSet}) to associate the DB
-cluster with.
+\item{CharacterSetName}{The name of the character set (\code{CharacterSet}) to associate the DB cluster with.
 
 Valid for Cluster Type: Aurora DB clusters only}
 
-\item{DatabaseName}{The name for your database of up to 64 alphanumeric characters. A
-database named \code{postgres} is always created. If this parameter is
-specified, an additional database with this name is created.
+\item{DatabaseName}{The name for your database of up to 64 alphanumeric characters. A database named \code{postgres} is always created. If this parameter is specified, an additional database with this name is created.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
-\item{DBClusterIdentifier}{[required] The identifier for this DB cluster. This parameter is stored as a
-lowercase string.
+\item{DBClusterIdentifier}{[required] The identifier for this DB cluster. This parameter is stored as a lowercase string.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
 Constraints:
 \itemize{
-\item Must contain from 1 to 63 (for Aurora DB clusters) or 1 to 52 (for
-Multi-AZ DB clusters) letters, numbers, or hyphens.
+\item Must contain from 1 to 63 (for Aurora DB clusters) or 1 to 52 (for Multi-AZ DB clusters) letters, numbers, or hyphens.
 \item First character must be a letter.
 \item Can't end with a hyphen or contain two consecutive hyphens.
 }
 
 Example: \code{my-cluster1}}
 
-\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with this DB
-cluster. If you don't specify a value, then the default DB cluster
-parameter group for the specified DB engine and version is used.
+\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with this DB cluster. If you don't specify a value, then the default DB cluster parameter group for the specified DB engine and version is used.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
 Constraints:
 \itemize{
-\item If supplied, must match the name of an existing DB cluster parameter
-group.
+\item If supplied, must match the name of an existing DB cluster parameter group.
 }}
 
 \item{VpcSecurityGroupIds}{A list of EC2 VPC security groups to associate with this DB cluster.
@@ -166,53 +148,40 @@ Valid Values:
 \item \code{aurora-postgresql}
 \item \code{mysql}
 \item \code{postgres}
-\item \code{neptune} - For information about using Amazon Neptune, see the
-\href{https://docs.aws.amazon.com/neptune/latest/userguide/intro.html}{\emph{Amazon Neptune User Guide}}
-.
+\item \code{neptune} - For information about using Amazon Neptune, see the \href{https://docs.aws.amazon.com/neptune/latest/userguide/intro.html}{\emph{Amazon Neptune User Guide}} .
 }}
 
 \item{EngineVersion}{The version number of the database engine to use.
 
-To list all of the available engine versions for Aurora MySQL version 2
-(5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-command:
+To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following command:
 
 \verb{aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"}
 
-You can supply either \code{5.7} or \code{8.0} to use the default engine version
-for Aurora MySQL version 2 or version 3, respectively.
+You can supply either \code{5.7} or \code{8.0} to use the default engine version for Aurora MySQL version 2 or version 3, respectively.
 
-To list all of the available engine versions for Aurora PostgreSQL, use
-the following command:
+To list all of the available engine versions for Aurora PostgreSQL, use the following command:
 
 \verb{aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"}
 
-To list all of the available engine versions for RDS for MySQL, use the
-following command:
+To list all of the available engine versions for RDS for MySQL, use the following command:
 
 \verb{aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"}
 
-To list all of the available engine versions for RDS for PostgreSQL, use
-the following command:
+To list all of the available engine versions for RDS for PostgreSQL, use the following command:
 
 \verb{aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"}
 
 For information about a specific engine, see the following topics:
 \itemize{
-\item Aurora MySQL - see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html}{Database engine updates for Amazon Aurora MySQL}
-in the \emph{Amazon Aurora User Guide}.
-\item Aurora PostgreSQL - see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html}{Amazon Aurora PostgreSQL releases and engine versions}
-in the \emph{Amazon Aurora User Guide}.
-\item RDS for MySQL - see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt}{Amazon RDS for MySQL}
-in the \emph{Amazon RDS User Guide}.
-\item RDS for PostgreSQL - see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts}{Amazon RDS for PostgreSQL}
-in the \emph{Amazon RDS User Guide}.
+\item Aurora MySQL - see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html}{Database engine updates for Amazon Aurora MySQL} in the \emph{Amazon Aurora User Guide}.
+\item Aurora PostgreSQL - see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraPostgreSQL.Updates.20180305.html}{Amazon Aurora PostgreSQL releases and engine versions} in the \emph{Amazon Aurora User Guide}.
+\item RDS for MySQL - see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt}{Amazon RDS for MySQL} in the \emph{Amazon RDS User Guide}.
+\item RDS for PostgreSQL - see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts}{Amazon RDS for PostgreSQL} in the \emph{Amazon RDS User Guide}.
 }
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
-\item{Port}{The port number on which the instances in the DB cluster accept
-connections.
+\item{Port}{The port number on which the instances in the DB cluster accept connections.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
@@ -248,19 +217,13 @@ Constraints:
 
 \item{OptionGroupName}{The option group to associate the DB cluster with.
 
-DB clusters are associated with a default option group that can't be
-modified.}
+DB clusters are associated with a default option group that can't be modified.}
 
-\item{PreferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled using the \code{BackupRetentionPeriod}
-parameter.
+\item{PreferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled using the \code{BackupRetentionPeriod} parameter.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Web Services Region. To view the time
-blocks available, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow}{Backup window}
-in the \emph{Amazon Aurora User Guide}.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. To view the time blocks available, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow}{Backup window} in the \emph{Amazon Aurora User Guide}.
 
 Constraints:
 \itemize{
@@ -274,10 +237,7 @@ Constraints:
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Web Services Region, occurring on a random
-day of the week. To see the time blocks available, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora}{Adjusting the Preferred DB Cluster Maintenance Window}
-in the \emph{Amazon Aurora User Guide}.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week. To see the time blocks available, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora}{Adjusting the Preferred DB Cluster Maintenance Window} in the \emph{Amazon Aurora User Guide}.
 
 Constraints:
 \itemize{
@@ -287,8 +247,7 @@ Constraints:
 \item Must be at least 30 minutes.
 }}
 
-\item{ReplicationSourceIdentifier}{The Amazon Resource Name (ARN) of the source DB instance or DB cluster
-if this DB cluster is created as a read replica.
+\item{ReplicationSourceIdentifier}{The Amazon Resource Name (ARN) of the source DB instance or DB cluster if this DB cluster is created as a read replica.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
@@ -302,88 +261,44 @@ Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
 \item{KmsKeyId}{The Amazon Web Services KMS key identifier for an encrypted DB cluster.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key. To use a KMS key in a different
-Amazon Web Services account, specify the key ARN or alias ARN.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
 
 When a KMS key isn't specified in \code{KmsKeyId}:
 \itemize{
-\item If \code{ReplicationSourceIdentifier} identifies an encrypted source,
-then Amazon RDS uses the KMS key used to encrypt the source.
-Otherwise, Amazon RDS uses your default KMS key.
-\item If the \code{StorageEncrypted} parameter is enabled and
-\code{ReplicationSourceIdentifier} isn't specified, then Amazon RDS uses
-your default KMS key.
+\item If \code{ReplicationSourceIdentifier} identifies an encrypted source, then Amazon RDS uses the KMS key used to encrypt the source. Otherwise, Amazon RDS uses your default KMS key.
+\item If the \code{StorageEncrypted} parameter is enabled and \code{ReplicationSourceIdentifier} isn't specified, then Amazon RDS uses your default KMS key.
 }
 
-There is a default KMS key for your Amazon Web Services account. Your
-Amazon Web Services account has a different default KMS key for each
-Amazon Web Services Region.
+There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.
 
-If you create a read replica of an encrypted DB cluster in another
-Amazon Web Services Region, make sure to set \code{KmsKeyId} to a KMS key
-identifier that is valid in the destination Amazon Web Services Region.
-This KMS key is used to encrypt the read replica in that Amazon Web
-Services Region.
+If you create a read replica of an encrypted DB cluster in another Amazon Web Services Region, make sure to set \code{KmsKeyId} to a KMS key identifier that is valid in the destination Amazon Web Services Region. This KMS key is used to encrypt the read replica in that Amazon Web Services Region.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
-\item{PreSignedUrl}{When you are replicating a DB cluster from one Amazon Web Services
-GovCloud (US) Region to another, an URL that contains a Signature
-Version 4 signed request for the
-\code{\link[=rds_create_db_cluster]{create_db_cluster}} operation to be called in
-the source Amazon Web Services Region where the DB cluster is replicated
-from. Specify \code{PreSignedUrl} only when you are performing cross-Region
-replication from an encrypted DB cluster.
+\item{PreSignedUrl}{When you are replicating a DB cluster from one Amazon Web Services GovCloud (US) Region to another, an URL that contains a Signature Version 4 signed request for the \code{\link[=rds_create_db_cluster]{create_db_cluster}} operation to be called in the source Amazon Web Services Region where the DB cluster is replicated from. Specify \code{PreSignedUrl} only when you are performing cross-Region replication from an encrypted DB cluster.
 
-The presigned URL must be a valid request for the
-\code{\link[=rds_create_db_cluster]{create_db_cluster}} API operation that can run
-in the source Amazon Web Services Region that contains the encrypted DB
-cluster to copy.
+The presigned URL must be a valid request for the \code{\link[=rds_create_db_cluster]{create_db_cluster}} API operation that can run in the source Amazon Web Services Region that contains the encrypted DB cluster to copy.
 
 The presigned URL request must contain the following parameter values:
 \itemize{
-\item \code{KmsKeyId} - The KMS key identifier for the KMS key to use to
-encrypt the copy of the DB cluster in the destination Amazon Web
-Services Region. This should refer to the same KMS key for both the
-\code{\link[=rds_create_db_cluster]{create_db_cluster}} operation that is
-called in the destination Amazon Web Services Region, and the
-operation contained in the presigned URL.
-\item \code{DestinationRegion} - The name of the Amazon Web Services Region
-that Aurora read replica will be created in.
-\item \code{ReplicationSourceIdentifier} - The DB cluster identifier for the
-encrypted DB cluster to be copied. This identifier must be in the
-Amazon Resource Name (ARN) format for the source Amazon Web Services
-Region. For example, if you are copying an encrypted DB cluster from
-the us-west-2 Amazon Web Services Region, then your
-\code{ReplicationSourceIdentifier} would look like Example:
-\code{arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1}.
+\item \code{KmsKeyId} - The KMS key identifier for the KMS key to use to encrypt the copy of the DB cluster in the destination Amazon Web Services Region. This should refer to the same KMS key for both the \code{\link[=rds_create_db_cluster]{create_db_cluster}} operation that is called in the destination Amazon Web Services Region, and the operation contained in the presigned URL.
+\item \code{DestinationRegion} - The name of the Amazon Web Services Region that Aurora read replica will be created in.
+\item \code{ReplicationSourceIdentifier} - The DB cluster identifier for the encrypted DB cluster to be copied. This identifier must be in the Amazon Resource Name (ARN) format for the source Amazon Web Services Region. For example, if you are copying an encrypted DB cluster from the us-west-2 Amazon Web Services Region, then your \code{ReplicationSourceIdentifier} would look like Example: \code{arn:aws:rds:us-west-2:123456789012:cluster:aurora-cluster1}.
 }
 
-To learn how to generate a Signature Version 4 signed request, see
-\href{https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html}{Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)}
-and \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html}{Signature Version 4 Signing Process}.
+To learn how to generate a Signature Version 4 signed request, see \href{https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html}{Authenticating Requests: Using Query Parameters (Amazon Web Services Signature Version 4)} and \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html}{Signature Version 4 Signing Process}.
 
-If you are using an Amazon Web Services SDK tool or the CLI, you can
-specify \code{SourceRegion} (or \code{--source-region} for the CLI) instead of
-specifying \code{PreSignedUrl} manually. Specifying \code{SourceRegion}
-autogenerates a presigned URL that is a valid request for the operation
-that can run in the source Amazon Web Services Region.
+If you are using an Amazon Web Services SDK tool or the CLI, you can specify \code{SourceRegion} (or \code{--source-region} for the CLI) instead of specifying \code{PreSignedUrl} manually. Specifying \code{SourceRegion} autogenerates a presigned URL that is a valid request for the operation that can run in the source Amazon Web Services Region.
 
 Valid for Cluster Type: Aurora DB clusters only}
 
-\item{EnableIAMDatabaseAuthentication}{Specifies whether to enable mapping of Amazon Web Services Identity and
-Access Management (IAM) accounts to database accounts. By default,
-mapping isn't enabled.
+\item{EnableIAMDatabaseAuthentication}{Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html}{IAM Database Authentication}
-in the \emph{Amazon Aurora User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html}{IAM database authentication for MariaDB, MySQL, and PostgreSQL}
-in the \emph{Amazon RDS User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html}{IAM Database Authentication} in the \emph{Amazon Aurora User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html}{IAM database authentication for MariaDB, MySQL, and PostgreSQL} in the \emph{Amazon RDS User Guide}.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
-\item{BacktrackWindow}{The target backtrack window, in seconds. To disable backtracking, set
-this value to \code{0}.
+\item{BacktrackWindow}{The target backtrack window, in seconds. To disable backtracking, set this value to \code{0}.
 
 Valid for Cluster Type: Aurora MySQL DB clusters only
 
@@ -391,41 +306,30 @@ Default: \code{0}
 
 Constraints:
 \itemize{
-\item If specified, this value must be set to a number from 0 to 259,200
-(72 hours).
+\item If specified, this value must be set to a number from 0 to 259,200 (72 hours).
 }}
 
-\item{EnableCloudwatchLogsExports}{The list of log types that need to be enabled for exporting to
-CloudWatch Logs.
+\item{EnableCloudwatchLogsExports}{The list of log types that need to be enabled for exporting to CloudWatch Logs.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
 The following values are valid for each DB engine:
 \itemize{
-\item Aurora MySQL -
-\code{audit | error | general | instance | slowquery | iam-db-auth-error}
+\item Aurora MySQL - \code{audit | error | general | instance | slowquery | iam-db-auth-error}
 \item Aurora PostgreSQL - \code{instance | postgresql | iam-db-auth-error}
 \item RDS for MySQL - \code{error | general | slowquery | iam-db-auth-error}
 \item RDS for PostgreSQL - \code{postgresql | upgrade | iam-db-auth-error}
 }
 
-For more information about exporting CloudWatch Logs for Amazon RDS, see
-\href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch}{Publishing Database Logs to Amazon CloudWatch Logs}
-in the \emph{Amazon RDS User Guide}.
+For more information about exporting CloudWatch Logs for Amazon RDS, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch}{Publishing Database Logs to Amazon CloudWatch Logs} in the \emph{Amazon RDS User Guide}.
 
-For more information about exporting CloudWatch Logs for Amazon Aurora,
-see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch}{Publishing Database Logs to Amazon CloudWatch Logs}
-in the \emph{Amazon Aurora User Guide}.}
+For more information about exporting CloudWatch Logs for Amazon Aurora, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch}{Publishing Database Logs to Amazon CloudWatch Logs} in the \emph{Amazon Aurora User Guide}.}
 
-\item{EngineMode}{The DB engine mode of the DB cluster, either \code{provisioned} or
-\code{serverless}.
+\item{EngineMode}{The DB engine mode of the DB cluster, either \code{provisioned} or \code{serverless}.
 
-The \code{serverless} engine mode only applies for Aurora Serverless v1 DB
-clusters. Aurora Serverless v2 DB clusters use the \code{provisioned} engine
-mode.
+The \code{serverless} engine mode only applies for Aurora Serverless v1 DB clusters. Aurora Serverless v2 DB clusters use the \code{provisioned} engine mode.
 
-For information about limitations and requirements for Serverless DB
-clusters, see the following sections in the \emph{Amazon Aurora User Guide}:
+For information about limitations and requirements for Serverless DB clusters, see the following sections in the \emph{Amazon Aurora User Guide}:
 \itemize{
 \item \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/#aurora-serverless.limitations}{Limitations of Aurora Serverless v1}
 \item \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html}{Requirements for Aurora Serverless v2}
@@ -433,28 +337,21 @@ clusters, see the following sections in the \emph{Amazon Aurora User Guide}:
 
 Valid for Cluster Type: Aurora DB clusters only}
 
-\item{ScalingConfiguration}{For DB clusters in \code{serverless} DB engine mode, the scaling properties
-of the DB cluster.
+\item{ScalingConfiguration}{For DB clusters in \code{serverless} DB engine mode, the scaling properties of the DB cluster.
 
 Valid for Cluster Type: Aurora DB clusters only}
 
 \item{RdsCustomClusterConfiguration}{Reserved for future use.}
 
-\item{DBClusterInstanceClass}{The compute and memory capacity of each DB instance in the Multi-AZ DB
-cluster, for example \code{db.m6gd.xlarge}. Not all DB instance classes are
-available in all Amazon Web Services Regions, or for all database
-engines.
+\item{DBClusterInstanceClass}{The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for example \code{db.m6gd.xlarge}. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines.
 
-For the full list of DB instance classes and availability for your
-engine, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html}{DB instance class}
-in the \emph{Amazon RDS User Guide}.
+For the full list of DB instance classes and availability for your engine, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html}{DB instance class} in the \emph{Amazon RDS User Guide}.
 
 This setting is required to create a Multi-AZ DB cluster.
 
 Valid for Cluster Type: Multi-AZ DB clusters only}
 
-\item{AllocatedStorage}{The amount of storage in gibibytes (GiB) to allocate to each DB instance
-in the Multi-AZ DB cluster.
+\item{AllocatedStorage}{The amount of storage in gibibytes (GiB) to allocate to each DB instance in the Multi-AZ DB cluster.
 
 Valid for Cluster Type: Multi-AZ DB clusters only
 
@@ -462,13 +359,11 @@ This setting is required to create a Multi-AZ DB cluster.}
 
 \item{StorageType}{The storage type to associate with the DB cluster.
 
-For information on storage types for Aurora DB clusters, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type}{Storage configurations for Amazon Aurora DB clusters}.
-For information on storage types for Multi-AZ DB clusters, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings}{Settings for creating Multi-AZ DB clusters}.
+For information on storage types for Aurora DB clusters, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type}{Storage configurations for Amazon Aurora DB clusters}. For information on storage types for Multi-AZ DB clusters, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings}{Settings for creating Multi-AZ DB clusters}.
 
 This setting is required to create a Multi-AZ DB cluster.
 
-When specified for a Multi-AZ DB cluster, a value for the \code{Iops}
-parameter is required.
+When specified for a Multi-AZ DB cluster, a value for the \code{Iops} parameter is required.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
@@ -484,15 +379,11 @@ Default:
 \item Multi-AZ DB clusters - \code{io1}
 }
 
-When you create an Aurora DB cluster with the storage type set to
-\code{aurora-iopt1}, the storage type is returned in the response. The
-storage type isn't returned when you set it to \code{aurora}.}
+When you create an Aurora DB cluster with the storage type set to \code{aurora-iopt1}, the storage type is returned in the response. The storage type isn't returned when you set it to \code{aurora}.}
 
-\item{Iops}{The amount of Provisioned IOPS (input/output operations per second) to
-be initially allocated for each DB instance in the Multi-AZ DB cluster.
+\item{Iops}{The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for each DB instance in the Multi-AZ DB cluster.
 
-For information about valid IOPS values, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS}{Provisioned IOPS storage}
-in the \emph{Amazon RDS User Guide}.
+For information about valid IOPS values, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS}{Provisioned IOPS storage} in the \emph{Amazon RDS User Guide}.
 
 This setting is required to create a Multi-AZ DB cluster.
 
@@ -500,125 +391,86 @@ Valid for Cluster Type: Multi-AZ DB clusters only
 
 Constraints:
 \itemize{
-\item Must be a multiple between .5 and 50 of the storage amount for the
-DB cluster.
+\item Must be a multiple between .5 and 50 of the storage amount for the DB cluster.
 }}
 
 \item{PubliclyAccessible}{Specifies whether the DB cluster is publicly accessible.
 
 Valid for Cluster Type: Multi-AZ DB clusters only
 
-When the DB cluster is publicly accessible and you connect from outside
-of the DB cluster's virtual private cloud (VPC), its domain name system
-(DNS) endpoint resolves to the public IP address. When you connect from
-within the same VPC as the DB cluster, the endpoint resolves to the
-private IP address. Access to the DB cluster is controlled by its
-security group settings.
+When the DB cluster is publicly accessible and you connect from outside of the DB cluster's virtual private cloud (VPC), its domain name system (DNS) endpoint resolves to the public IP address. When you connect from within the same VPC as the DB cluster, the endpoint resolves to the private IP address. Access to the DB cluster is controlled by its security group settings.
 
-When the DB cluster isn't publicly accessible, it is an internal DB
-cluster with a DNS name that resolves to a private IP address.
+When the DB cluster isn't publicly accessible, it is an internal DB cluster with a DNS name that resolves to a private IP address.
 
-The default behavior when \code{PubliclyAccessible} is not specified depends
-on whether a \code{DBSubnetGroup} is specified.
+The default behavior when \code{PubliclyAccessible} is not specified depends on whether a \code{DBSubnetGroup} is specified.
 
-If \code{DBSubnetGroup} isn't specified, \code{PubliclyAccessible} defaults to
-\code{true}.
+If \code{DBSubnetGroup} isn't specified, \code{PubliclyAccessible} defaults to \code{true}.
 
-If \code{DBSubnetGroup} is specified, \code{PubliclyAccessible} defaults to
-\code{false} unless the value of \code{DBSubnetGroup} is \code{default}, in which case
-\code{PubliclyAccessible} defaults to \code{true}.
+If \code{DBSubnetGroup} is specified, \code{PubliclyAccessible} defaults to \code{false} unless the value of \code{DBSubnetGroup} is \code{default}, in which case \code{PubliclyAccessible} defaults to \code{true}.
 
-If \code{PubliclyAccessible} is true and the VPC that the \code{DBSubnetGroup} is
-in doesn't have an internet gateway attached to it, Amazon RDS returns
-an error.}
+If \code{PubliclyAccessible} is true and the VPC that the \code{DBSubnetGroup} is in doesn't have an internet gateway attached to it, Amazon RDS returns an error.}
 
-\item{AutoMinorVersionUpgrade}{Specifies whether minor engine upgrades are applied automatically to the
-DB cluster during the maintenance window. By default, minor engine
-upgrades are applied automatically.
+\item{AutoMinorVersionUpgrade}{Specifies whether minor engine upgrades are applied automatically to the DB cluster during the maintenance window. By default, minor engine upgrades are applied automatically.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB cluster.
 
-For more information about automatic minor version upgrades, see
-\href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades}{Automatically upgrading the minor engine version}.}
+For more information about automatic minor version upgrades, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades}{Automatically upgrading the minor engine version}.}
 
-\item{DeletionProtection}{Specifies whether the DB cluster has deletion protection enabled. The
-database can't be deleted when deletion protection is enabled. By
-default, deletion protection isn't enabled.
+\item{DeletionProtection}{Specifies whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
-\item{GlobalClusterIdentifier}{The global cluster ID of an Aurora cluster that becomes the primary
-cluster in the new global database cluster.
+\item{GlobalClusterIdentifier}{The global cluster ID of an Aurora cluster that becomes the primary cluster in the new global database cluster.
 
 Valid for Cluster Type: Aurora DB clusters only}
 
-\item{EnableHttpEndpoint}{Specifies whether to enable the HTTP endpoint for the DB cluster. By
-default, the HTTP endpoint isn't enabled.
+\item{EnableHttpEndpoint}{Specifies whether to enable the HTTP endpoint for the DB cluster. By default, the HTTP endpoint isn't enabled.
 
-When enabled, the HTTP endpoint provides a connectionless web service
-API (RDS Data API) for running SQL queries on the DB cluster. You can
-also query your database from inside the RDS console with the RDS query
-editor.
+When enabled, the HTTP endpoint provides a connectionless web service API (RDS Data API) for running SQL queries on the DB cluster. You can also query your database from inside the RDS console with the RDS query editor.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html}{Using RDS Data API}
-in the \emph{Amazon Aurora User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html}{Using RDS Data API} in the \emph{Amazon Aurora User Guide}.
 
 Valid for Cluster Type: Aurora DB clusters only}
 
-\item{CopyTagsToSnapshot}{Specifies whether to copy all tags from the DB cluster to snapshots of
-the DB cluster. The default is not to copy them.
+\item{CopyTagsToSnapshot}{Specifies whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default is not to copy them.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
 \item{Domain}{The Active Directory directory ID to create the DB cluster in.
 
-For Amazon Aurora DB clusters, Amazon RDS can use Kerberos
-authentication to authenticate users that connect to the DB cluster.
+For Amazon Aurora DB clusters, Amazon RDS can use Kerberos authentication to authenticate users that connect to the DB cluster.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/database-authentication.html}{Kerberos authentication}
-in the \emph{Amazon Aurora User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/database-authentication.html}{Kerberos authentication} in the \emph{Amazon Aurora User Guide}.
 
 Valid for Cluster Type: Aurora DB clusters only}
 
-\item{DomainIAMRoleName}{The name of the IAM role to use when making API calls to the Directory
-Service.
+\item{DomainIAMRoleName}{The name of the IAM role to use when making API calls to the Directory Service.
 
 Valid for Cluster Type: Aurora DB clusters only}
 
-\item{EnableGlobalWriteForwarding}{Specifies whether to enable this DB cluster to forward write operations
-to the primary cluster of a global cluster (Aurora global database). By
-default, write operations are not allowed on Aurora DB clusters that are
-secondary clusters in an Aurora global database.
+\item{EnableGlobalWriteForwarding}{Specifies whether to enable this DB cluster to forward write operations to the primary cluster of a global cluster (Aurora global database). By default, write operations are not allowed on Aurora DB clusters that are secondary clusters in an Aurora global database.
 
-You can set this value only on Aurora DB clusters that are members of an
-Aurora global database. With this parameter enabled, a secondary cluster
-can forward writes to the current primary cluster, and the resulting
-changes are replicated back to this cluster. For the primary DB cluster
-of an Aurora global database, this value is used immediately if the
-primary is demoted by a global cluster API operation, but it does
-nothing until then.
+You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this parameter enabled, a secondary cluster can forward writes to the current primary cluster, and the resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value is used immediately if the primary is demoted by a global cluster API operation, but it does nothing until then.
 
 Valid for Cluster Type: Aurora DB clusters only}
 
 \item{NetworkType}{The network type of the DB cluster.
 
-The network type is determined by the \code{DBSubnetGroup} specified for the
-DB cluster. A \code{DBSubnetGroup} can support only the IPv4 protocol or the
-IPv4 and the IPv6 protocols (\code{DUAL}).
+The network type is determined by the \code{DBSubnetGroup} specified for the DB cluster. A \code{DBSubnetGroup} can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (\code{DUAL}).
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html}{Working with a DB instance in a VPC}
-in the \emph{Amazon Aurora User Guide.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html}{Working with a DB instance in a VPC} in the \emph{Amazon Aurora User Guide.}
 
 Valid for Cluster Type: Aurora DB clusters only
 
 Valid Values: \code{IPV4 | DUAL}}
 
-\item{MonitoringInterval}{The interval, in seconds, between points when Enhanced Monitoring
-metrics are collected for the DB cluster. To turn off collecting
-Enhanced Monitoring metrics, specify \code{0}.
+\item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of an Aurora Serverless v2 DB cluster.
 
-If \code{MonitoringRoleArn} is specified, also set \code{MonitoringInterval} to a
-value other than \code{0}.
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.html}{Using Amazon Aurora Serverless v2} in the \emph{Amazon Aurora User Guide}.}
+
+\item{MonitoringInterval}{The interval, in seconds, between points when Enhanced Monitoring metrics are collected for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify \code{0}.
+
+If \code{MonitoringRoleArn} is specified, also set \code{MonitoringInterval} to a value other than \code{0}.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
@@ -626,42 +478,29 @@ Valid Values: \code{0 | 1 | 5 | 10 | 15 | 30 | 60}
 
 Default: \code{0}}
 
-\item{MonitoringRoleArn}{The Amazon Resource Name (ARN) for the IAM role that permits RDS to send
-Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is
-\code{arn:aws:iam:123456789012:role/emaccess}. For information on creating a
-monitoring role, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling}{Setting up and enabling Enhanced Monitoring}
-in the \emph{Amazon RDS User Guide}.
+\item{MonitoringRoleArn}{The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced Monitoring metrics to Amazon CloudWatch Logs. An example is \code{arn:aws:iam:123456789012:role/emaccess}. For information on creating a monitoring role, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling}{Setting up and enabling Enhanced Monitoring} in the \emph{Amazon RDS User Guide}.
 
-If \code{MonitoringInterval} is set to a value other than \code{0}, supply a
-\code{MonitoringRoleArn} value.
+If \code{MonitoringInterval} is set to a value other than \code{0}, supply a \code{MonitoringRoleArn} value.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
 \item{DatabaseInsightsMode}{The mode of Database Insights to enable for the DB cluster.
 
-If you set this value to \code{advanced}, you must also set the
-\code{PerformanceInsightsEnabled} parameter to \code{true} and the
-\code{PerformanceInsightsRetentionPeriod} parameter to 465.
+If you set this value to \code{advanced}, you must also set the \code{PerformanceInsightsEnabled} parameter to \code{true} and the \code{PerformanceInsightsRetentionPeriod} parameter to 465.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
 \item{EnablePerformanceInsights}{Specifies whether to turn on Performance Insights for the DB cluster.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html}{Using Amazon Performance Insights}
-in the \emph{Amazon RDS User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html}{Using Amazon Performance Insights} in the \emph{Amazon RDS User Guide}.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
-\item{PerformanceInsightsKMSKeyId}{The Amazon Web Services KMS key identifier for encryption of Performance
-Insights data.
+\item{PerformanceInsightsKMSKeyId}{The Amazon Web Services KMS key identifier for encryption of Performance Insights data.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key.
 
-If you don't specify a value for \code{PerformanceInsightsKMSKeyId}, then
-Amazon RDS uses your default KMS key. There is a default KMS key for
-your Amazon Web Services account. Your Amazon Web Services account has a
-different default KMS key for each Amazon Web Services Region.
+If you don't specify a value for \code{PerformanceInsightsKMSKeyId}, then Amazon RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
@@ -672,29 +511,21 @@ Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 Valid Values:
 \itemize{
 \item \code{7}
-\item \emph{month} * 31, where \emph{month} is a number of months from 1-23.
-Examples: \code{93} (3 months * 31), \code{341} (11 months * 31), \code{589} (19
-months * 31)
+\item \emph{month} * 31, where \emph{month} is a number of months from 1-23. Examples: \code{93} (3 months * 31), \code{341} (11 months * 31), \code{589} (19 months * 31)
 \item \code{731}
 }
 
 Default: \code{7} days
 
-If you specify a retention period that isn't valid, such as \code{94}, Amazon
-RDS issues an error.}
+If you specify a retention period that isn't valid, such as \code{94}, Amazon RDS issues an error.}
 
-\item{EnableLimitlessDatabase}{Specifies whether to enable Aurora Limitless Database. You must enable
-Aurora Limitless Database to create a DB shard group.
+\item{EnableLimitlessDatabase}{Specifies whether to enable Aurora Limitless Database. You must enable Aurora Limitless Database to create a DB shard group.
 
 Valid for: Aurora DB clusters only
 
-This setting is no longer used. Instead use the \code{ClusterScalabilityType}
-setting.}
+This setting is no longer used. Instead use the \code{ClusterScalabilityType} setting.}
 
-\item{ClusterScalabilityType}{Specifies the scalability mode of the Aurora DB cluster. When set to
-\code{limitless}, the cluster operates as an Aurora Limitless Database. When
-set to \code{standard} (the default), the cluster uses normal DB instance
-creation.
+\item{ClusterScalabilityType}{Specifies the scalability mode of the Aurora DB cluster. When set to \code{limitless}, the cluster operates as an Aurora Limitless Database. When set to \code{standard} (the default), the cluster uses normal DB instance creation.
 
 Valid for: Aurora DB clusters only
 
@@ -702,83 +533,52 @@ You can't modify this setting after you create the DB cluster.}
 
 \item{DBSystemId}{Reserved for future use.}
 
-\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web
-Services Secrets Manager.
+\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web Services Secrets Manager.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager}
-in the \emph{Amazon RDS User Guide} and \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager}
-in the \emph{Amazon Aurora User Guide.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager} in the \emph{Amazon RDS User Guide} and \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager} in the \emph{Amazon Aurora User Guide.}
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
 Constraints:
 \itemize{
-\item Can't manage the master user password with Amazon Web Services
-Secrets Manager if \code{MasterUserPassword} is specified.
+\item Can't manage the master user password with Amazon Web Services Secrets Manager if \code{MasterUserPassword} is specified.
 }}
 
-\item{EnableLocalWriteForwarding}{Specifies whether read replicas can forward write operations to the
-writer DB instance in the DB cluster. By default, write operations
-aren't allowed on reader DB instances.
+\item{EnableLocalWriteForwarding}{Specifies whether read replicas can forward write operations to the writer DB instance in the DB cluster. By default, write operations aren't allowed on reader DB instances.
 
 Valid for: Aurora DB clusters only}
 
-\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is
-automatically generated and managed in Amazon Web Services Secrets
-Manager.
+\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.
 
-This setting is valid only if the master user password is managed by RDS
-in Amazon Web Services Secrets Manager for the DB cluster.
+This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB cluster.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key. To use a KMS key in a different
-Amazon Web Services account, specify the key ARN or alias ARN.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
 
-If you don't specify \code{MasterUserSecretKmsKeyId}, then the
-\code{aws/secretsmanager} KMS key is used to encrypt the secret. If the
-secret is in a different Amazon Web Services account, then you can't use
-the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use
-a customer managed KMS key.
+If you don't specify \code{MasterUserSecretKmsKeyId}, then the \code{aws/secretsmanager} KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use a customer managed KMS key.
 
-There is a default KMS key for your Amazon Web Services account. Your
-Amazon Web Services account has a different default KMS key for each
-Amazon Web Services Region.
+There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters}
 
-\item{CACertificateIdentifier}{The CA certificate identifier to use for the DB cluster's server
-certificate.
+\item{CACertificateIdentifier}{The CA certificate identifier to use for the DB cluster's server certificate.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB instance}
-in the \emph{Amazon RDS User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB instance} in the \emph{Amazon RDS User Guide}.
 
 Valid for Cluster Type: Multi-AZ DB clusters}
 
 \item{EngineLifecycleSupport}{The life cycle type for this DB cluster.
 
-By default, this value is set to \code{open-source-rds-extended-support},
-which enrolls your DB cluster into Amazon RDS Extended Support. At the
-end of standard support, you can avoid charges for Extended Support by
-setting the value to \code{open-source-rds-extended-support-disabled}. In
-this case, creating the DB cluster will fail if the DB major version is
-past its end of standard support date.
+By default, this value is set to \code{open-source-rds-extended-support}, which enrolls your DB cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to \code{open-source-rds-extended-support-disabled}. In this case, creating the DB cluster will fail if the DB major version is past its end of standard support date.
 
-You can use this setting to enroll your DB cluster into Amazon RDS
-Extended Support. With RDS Extended Support, you can run the selected
-major engine version on your DB cluster past the end of standard support
-for that engine version. For more information, see the following
-sections:
+You can use this setting to enroll your DB cluster into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your DB cluster past the end of standard support for that engine version. For more information, see the following sections:
 \itemize{
-\item Amazon Aurora - \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html}{Amazon RDS Extended Support with Amazon Aurora}
-in the \emph{Amazon Aurora User Guide}
-\item Amazon RDS - \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html}{Amazon RDS Extended Support with Amazon RDS}
-in the \emph{Amazon RDS User Guide}
+\item Amazon Aurora - \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html}{Amazon RDS Extended Support with Amazon Aurora} in the \emph{Amazon Aurora User Guide}
+\item Amazon RDS - \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html}{Amazon RDS Extended Support with Amazon RDS} in the \emph{Amazon RDS User Guide}
 }
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
-Valid Values:
-\code{open-source-rds-extended-support | open-source-rds-extended-support-disabled}
+Valid Values: \code{open-source-rds-extended-support | open-source-rds-extended-support-disabled}
 
 Default: \code{open-source-rds-extended-support}}
 
@@ -789,9 +589,7 @@ Valid Values:
 \item \code{cluster-auto-backup} - The DB cluster's automated backup.
 }}
 
-\item{MasterUserAuthenticationType}{Specifies the authentication type for the master user. With IAM master
-user authentication, you can configure the master DB user with IAM
-database authentication when you create a DB cluster.
+\item{MasterUserAuthenticationType}{Specifies the authentication type for the master user. With IAM master user authentication, you can configure the master DB user with IAM database authentication when you create a DB cluster.
 
 You can specify one of the following values:
 \itemize{
@@ -801,13 +599,9 @@ You can specify one of the following values:
 
 Valid for Cluster Type: Aurora DB clusters and Multi-AZ DB clusters
 
-This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL
-engines.}
+This option is only valid for RDS for PostgreSQL and Aurora PostgreSQL engines.}
 
-\item{WithExpressConfiguration}{Specifies to create an Aurora DB Cluster with express configuration in
-seconds. Express configuration provides a cluster with a writer instance
-and feature specific values set to all other input parameters of this
-API.
+\item{WithExpressConfiguration}{Specifies to create an Aurora DB Cluster with express configuration in seconds. Express configuration provides a cluster with a writer instance and feature specific values set to all other input parameters of this API.
 
 Valid for Cluster Type: Aurora DB clusters}
 }

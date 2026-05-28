@@ -8,21 +8,19 @@ NULL
 #' @description
 #' Associate a lens to a workload.
 #' 
-#' Up to 10 lenses can be associated with a workload in a single API
-#' operation. A maximum of 20 lenses can be associated with a workload.
+#' Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.
 #' 
 #' **Disclaimer**
 #' 
-#' By accessing and/or applying custom lenses created by another Amazon Web
-#' Services user or account, you acknowledge that custom lenses created by
-#' other users and shared with you are Third Party Content as defined in
-#' the Amazon Web Services Customer Agreement.
+#' By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement.
 #'
 #' @usage
 #' wellarchitected_associate_lenses(WorkloadId, LensAliases)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAliases &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAliases &#91;required&#93; List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.
+#' 
+#' Identify a lens using its LensSummary$LensAlias.
 #'
 #' @return
 #' An empty list.
@@ -69,7 +67,7 @@ wellarchitected_associate_lenses <- function(WorkloadId, LensAliases) {
 #' @usage
 #' wellarchitected_associate_profiles(WorkloadId, ProfileArns)
 #'
-#' @param WorkloadId &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
 #' @param ProfileArns &#91;required&#93; The list of profile ARNs to associate with the workload.
 #'
 #' @return
@@ -114,37 +112,35 @@ wellarchitected_associate_profiles <- function(WorkloadId, ProfileArns) {
 #' @description
 #' Create a lens share.
 #' 
-#' The owner of a lens can share it with other Amazon Web Services
-#' accounts, users, an organization, and organizational units (OUs) in the
-#' same Amazon Web Services Region. Lenses provided by Amazon Web Services
-#' (Amazon Web Services Official Content) cannot be shared.
+#' The owner of a lens can share it with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be shared.
 #' 
-#' Shared access to a lens is not removed until the lens invitation is
-#' deleted.
+#' Shared access to a lens is not removed until the lens invitation is deleted.
 #' 
-#' If you share a lens with an organization or OU, all accounts in the
-#' organization or OU are granted access to the lens.
+#' If you share a lens with an organization or OU, all accounts in the organization or OU are granted access to the lens.
 #' 
-#' For more information, see [Sharing a custom
-#' lens](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-sharing.html)
-#' in the *Well-Architected Tool User Guide*.
+#' For more information, see [Sharing a custom lens](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-sharing.html) in the *Well-Architected Tool User Guide*.
 #' 
 #' **Disclaimer**
 #' 
-#' By sharing your custom lenses with other Amazon Web Services accounts,
-#' you acknowledge that Amazon Web Services will make your custom lenses
-#' available to those other accounts. Those other accounts may continue to
-#' access and use your shared custom lenses even if you delete the custom
-#' lenses from your own Amazon Web Services account or terminate your
-#' Amazon Web Services account.
+#' By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.
 #'
 #' @usage
 #' wellarchitected_create_lens_share(LensAlias, SharedWith,
 #'   ClientRequestToken)
 #'
-#' @param LensAlias &#91;required&#93; 
-#' @param SharedWith &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param SharedWith &#91;required&#93; The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' A list with the following syntax:
@@ -194,20 +190,26 @@ wellarchitected_create_lens_share <- function(LensAlias, SharedWith, ClientReque
 #' 
 #' A lens can have up to 100 versions.
 #' 
-#' Use this operation to publish a new lens version after you have imported
-#' a lens. The `LensAlias` is used to identify the lens to be published.
-#' The owner of a lens can share the lens with other Amazon Web Services
-#' accounts and users in the same Amazon Web Services Region. Only the
-#' owner of a lens can delete it.
+#' Use this operation to publish a new lens version after you have imported a lens. The `LensAlias` is used to identify the lens to be published. The owner of a lens can share the lens with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Only the owner of a lens can delete it.
 #'
 #' @usage
 #' wellarchitected_create_lens_version(LensAlias, LensVersion,
 #'   IsMajorVersion, ClientRequestToken)
 #'
-#' @param LensAlias &#91;required&#93; 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
 #' @param LensVersion &#91;required&#93; The version of the lens being created.
 #' @param IsMajorVersion Set to true if this new major lens version.
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' A list with the following syntax:
@@ -261,9 +263,15 @@ wellarchitected_create_lens_version <- function(LensAlias, LensVersion, IsMajorV
 #' wellarchitected_create_milestone(WorkloadId, MilestoneName,
 #'   ClientRequestToken)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param MilestoneName &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param MilestoneName &#91;required&#93; The name of the milestone in a workload.
+#' 
+#' Milestone names must be unique within a workload.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' A list with the following syntax:
@@ -319,7 +327,11 @@ wellarchitected_create_milestone <- function(WorkloadId, MilestoneName, ClientRe
 #' @param ProfileName &#91;required&#93; Name of the profile.
 #' @param ProfileDescription &#91;required&#93; The profile description.
 #' @param ProfileQuestions &#91;required&#93; The profile questions.
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #' @param Tags The tags assigned to the profile.
 #'
 #' @return
@@ -385,8 +397,12 @@ wellarchitected_create_profile <- function(ProfileName, ProfileDescription, Prof
 #'   ClientRequestToken)
 #'
 #' @param ProfileArn &#91;required&#93; The profile ARN.
-#' @param SharedWith &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param SharedWith &#91;required&#93; The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' A list with the following syntax:
@@ -437,13 +453,7 @@ wellarchitected_create_profile_share <- function(ProfileArn, SharedWith, ClientR
 #' 
 #' **Disclaimer**
 #' 
-#' Do not include or gather personal identifiable information (PII) of end
-#' users or other identifiable individuals in or via your review templates.
-#' If your review template or those shared with you and used in your
-#' account do include or collect PII you are responsible for: ensuring that
-#' the included PII is processed in accordance with applicable law,
-#' providing adequate privacy notices, and obtaining necessary consents for
-#' processing such data.
+#' Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your review templates. If your review template or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.
 #'
 #' @usage
 #' wellarchitected_create_review_template(TemplateName, Description,
@@ -452,9 +462,15 @@ wellarchitected_create_profile_share <- function(ProfileArn, SharedWith, ClientR
 #' @param TemplateName &#91;required&#93; Name of the review template.
 #' @param Description &#91;required&#93; The review template description.
 #' @param Lenses &#91;required&#93; Lenses applied to the review template.
-#' @param Notes 
+#' @param Notes The notes associated with the workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
 #' @param Tags The tags assigned to the review template.
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' A list with the following syntax:
@@ -509,29 +525,27 @@ wellarchitected_create_review_template <- function(TemplateName, Description, Le
 #' @description
 #' Create a review template share.
 #' 
-#' The owner of a review template can share it with other Amazon Web
-#' Services accounts, users, an organization, and organizational units
-#' (OUs) in the same Amazon Web Services Region.
+#' The owner of a review template can share it with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region.
 #' 
-#' Shared access to a review template is not removed until the review
-#' template share invitation is deleted.
+#' Shared access to a review template is not removed until the review template share invitation is deleted.
 #' 
-#' If you share a review template with an organization or OU, all accounts
-#' in the organization or OU are granted access to the review template.
+#' If you share a review template with an organization or OU, all accounts in the organization or OU are granted access to the review template.
 #' 
 #' **Disclaimer**
 #' 
-#' By sharing your review template with other Amazon Web Services accounts,
-#' you acknowledge that Amazon Web Services will make your review template
-#' available to those other accounts.
+#' By sharing your review template with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your review template available to those other accounts.
 #'
 #' @usage
 #' wellarchitected_create_template_share(TemplateArn, SharedWith,
 #'   ClientRequestToken)
 #'
 #' @param TemplateArn &#91;required&#93; The review template ARN.
-#' @param SharedWith &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param SharedWith &#91;required&#93; The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' A list with the following syntax:
@@ -580,23 +594,15 @@ wellarchitected_create_template_share <- function(TemplateArn, SharedWith, Clien
 #' @description
 #' Create a new workload.
 #' 
-#' The owner of a workload can share the workload with other Amazon Web
-#' Services accounts, users, an organization, and organizational units
-#' (OUs) in the same Amazon Web Services Region. Only the owner of a
-#' workload can delete it.
+#' The owner of a workload can share the workload with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Only the owner of a workload can delete it.
 #' 
-#' For more information, see [Defining a
-#' Workload](https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html)
-#' in the *Well-Architected Tool User Guide*.
+#' For more information, see [Defining a Workload](https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html) in the *Well-Architected Tool User Guide*.
 #' 
-#' Either `AwsRegions`, `NonAwsRegions`, or both must be specified when
-#' creating a workload.
+#' Either `AwsRegions`, `NonAwsRegions`, or both must be specified when creating a workload.
 #' 
-#' You also must specify `ReviewOwner`, even though the parameter is listed
-#' as not being required in the following section.
+#' You also must specify `ReviewOwner`, even though the parameter is listed as not being required in the following section.
 #' 
-#' When creating a workload using a review template, you must have the
-#' following IAM permissions:
+#' When creating a workload using a review template, you must have the following IAM permissions:
 #' 
 #' -   `wellarchitected:GetReviewTemplate`
 #' 
@@ -613,23 +619,88 @@ wellarchitected_create_template_share <- function(TemplateArn, SharedWith, Clien
 #'   ClientRequestToken, Tags, DiscoveryConfig, Applications, ProfileArns,
 #'   ReviewTemplateArns, JiraConfiguration)
 #'
-#' @param WorkloadName &#91;required&#93; 
-#' @param Description &#91;required&#93; 
-#' @param Environment &#91;required&#93; 
-#' @param AccountIds 
-#' @param AwsRegions 
-#' @param NonAwsRegions 
-#' @param PillarPriorities 
-#' @param ArchitecturalDesign 
-#' @param ReviewOwner 
-#' @param IndustryType 
-#' @param Industry 
-#' @param Lenses &#91;required&#93; 
-#' @param Notes 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param WorkloadName &#91;required&#93; The name of the workload.
+#' 
+#' The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.
+#' @param Description &#91;required&#93; The description for the workload.
+#' @param Environment &#91;required&#93; The environment for the workload.
+#' @param AccountIds The list of Amazon Web Services account IDs associated with the workload.
+#' @param AwsRegions The list of Amazon Web Services Regions associated with the workload, for example, `us-east-2`, or `ca-central-1`.
+#' @param NonAwsRegions The list of non-Amazon Web Services Regions associated with the workload.
+#' @param PillarPriorities The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its PillarReviewSummary$PillarId.
+#' @param ArchitecturalDesign The URL of the architectural design for the workload.
+#' @param ReviewOwner The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
+#' @param IndustryType The industry type for the workload.
+#' 
+#' If specified, must be one of the following:
+#' 
+#' -   `Agriculture`
+#' 
+#' -   `Automobile`
+#' 
+#' -   `Defense`
+#' 
+#' -   `Design and Engineering`
+#' 
+#' -   `Digital Advertising`
+#' 
+#' -   `Education`
+#' 
+#' -   `Environmental Protection`
+#' 
+#' -   `Financial Services`
+#' 
+#' -   `Gaming`
+#' 
+#' -   `General Public Services`
+#' 
+#' -   `Healthcare`
+#' 
+#' -   `Hospitality`
+#' 
+#' -   `InfoTech`
+#' 
+#' -   `Justice and Public Safety`
+#' 
+#' -   `Life Sciences`
+#' 
+#' -   `Manufacturing`
+#' 
+#' -   `Media & Entertainment`
+#' 
+#' -   `Mining & Resources`
+#' 
+#' -   `Oil & Gas`
+#' 
+#' -   `Power & Utilities`
+#' 
+#' -   `Professional Services`
+#' 
+#' -   `Real Estate & Construction`
+#' 
+#' -   `Retail & Wholesale`
+#' 
+#' -   `Social Protection`
+#' 
+#' -   `Telecommunications`
+#' 
+#' -   `Travel, Transportation & Logistics`
+#' 
+#' -   `Other`
+#' @param Industry The industry for the workload.
+#' @param Lenses &#91;required&#93; The list of lenses associated with the workload. Each lens is identified by its LensSummary$LensAlias.
+#' 
+#' If a review template that specifies lenses is applied to the workload, those lenses are applied to the workload in addition to these lenses.
+#' @param Notes The notes associated with the workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #' @param Tags The tags to be associated with the workload.
-#' @param DiscoveryConfig Well-Architected discovery configuration settings associated to the
-#' workload.
+#' @param DiscoveryConfig Well-Architected discovery configuration settings associated to the workload.
 #' @param Applications List of AppRegistry application ARNs associated to the workload.
 #' @param ProfileArns The list of profile ARNs associated with the workload.
 #' @param ReviewTemplateArns The list of review template ARNs to associate with the workload.
@@ -726,25 +797,24 @@ wellarchitected_create_workload <- function(WorkloadName, Description, Environme
 #' @description
 #' Create a workload share.
 #' 
-#' The owner of a workload can share it with other Amazon Web Services
-#' accounts and users in the same Amazon Web Services Region. Shared access
-#' to a workload is not removed until the workload invitation is deleted.
+#' The owner of a workload can share it with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.
 #' 
-#' If you share a workload with an organization or OU, all accounts in the
-#' organization or OU are granted access to the workload.
+#' If you share a workload with an organization or OU, all accounts in the organization or OU are granted access to the workload.
 #' 
-#' For more information, see [Sharing a
-#' workload](https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html)
-#' in the *Well-Architected Tool User Guide*.
+#' For more information, see [Sharing a workload](https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html) in the *Well-Architected Tool User Guide*.
 #'
 #' @usage
 #' wellarchitected_create_workload_share(WorkloadId, SharedWith,
 #'   PermissionType, ClientRequestToken)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param SharedWith &#91;required&#93; 
-#' @param PermissionType &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param SharedWith &#91;required&#93; The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload, lens, profile, or review template is shared.
+#' @param PermissionType &#91;required&#93; Permission granted on a share request.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' A list with the following syntax:
@@ -794,25 +864,27 @@ wellarchitected_create_workload_share <- function(WorkloadId, SharedWith, Permis
 #' @description
 #' Delete an existing lens.
 #' 
-#' Only the owner of a lens can delete it. After the lens is deleted,
-#' Amazon Web Services accounts and users that you shared the lens with can
-#' continue to use it, but they will no longer be able to apply it to new
-#' workloads.
+#' Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services accounts and users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.
 #' 
 #' **Disclaimer**
 #' 
-#' By sharing your custom lenses with other Amazon Web Services accounts,
-#' you acknowledge that Amazon Web Services will make your custom lenses
-#' available to those other accounts. Those other accounts may continue to
-#' access and use your shared custom lenses even if you delete the custom
-#' lenses from your own Amazon Web Services account or terminate your
-#' Amazon Web Services account.
+#' By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.
 #'
 #' @usage
 #' wellarchitected_delete_lens(LensAlias, ClientRequestToken, LensStatus)
 #'
-#' @param LensAlias &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #' @param LensStatus &#91;required&#93; The status of the lens to be deleted.
 #'
 #' @return
@@ -856,27 +928,29 @@ wellarchitected_delete_lens <- function(LensAlias, ClientRequestToken, LensStatu
 #' @description
 #' Delete a lens share.
 #' 
-#' After the lens share is deleted, Amazon Web Services accounts, users,
-#' organizations, and organizational units (OUs) that you shared the lens
-#' with can continue to use it, but they will no longer be able to apply it
-#' to new workloads.
+#' After the lens share is deleted, Amazon Web Services accounts, users, organizations, and organizational units (OUs) that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.
 #' 
 #' **Disclaimer**
 #' 
-#' By sharing your custom lenses with other Amazon Web Services accounts,
-#' you acknowledge that Amazon Web Services will make your custom lenses
-#' available to those other accounts. Those other accounts may continue to
-#' access and use your shared custom lenses even if you delete the custom
-#' lenses from your own Amazon Web Services account or terminate your
-#' Amazon Web Services account.
+#' By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.
 #'
 #' @usage
 #' wellarchitected_delete_lens_share(ShareId, LensAlias,
 #'   ClientRequestToken)
 #'
-#' @param ShareId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ShareId &#91;required&#93; The ID associated with the share.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -921,18 +995,17 @@ wellarchitected_delete_lens_share <- function(ShareId, LensAlias, ClientRequestT
 #' 
 #' **Disclaimer**
 #' 
-#' By sharing your profile with other Amazon Web Services accounts, you
-#' acknowledge that Amazon Web Services will make your profile available to
-#' those other accounts. Those other accounts may continue to access and
-#' use your shared profile even if you delete the profile from your own
-#' Amazon Web Services account or terminate your Amazon Web Services
-#' account.
+#' By sharing your profile with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your profile available to those other accounts. Those other accounts may continue to access and use your shared profile even if you delete the profile from your own Amazon Web Services account or terminate your Amazon Web Services account.
 #'
 #' @usage
 #' wellarchitected_delete_profile(ProfileArn, ClientRequestToken)
 #'
 #' @param ProfileArn &#91;required&#93; The profile ARN.
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -978,9 +1051,13 @@ wellarchitected_delete_profile <- function(ProfileArn, ClientRequestToken) {
 #' wellarchitected_delete_profile_share(ShareId, ProfileArn,
 #'   ClientRequestToken)
 #'
-#' @param ShareId &#91;required&#93; 
+#' @param ShareId &#91;required&#93; The ID associated with the share.
 #' @param ProfileArn &#91;required&#93; The profile ARN.
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -1025,16 +1102,17 @@ wellarchitected_delete_profile_share <- function(ShareId, ProfileArn, ClientRequ
 #' 
 #' Only the owner of a review template can delete it.
 #' 
-#' After the review template is deleted, Amazon Web Services accounts,
-#' users, organizations, and organizational units (OUs) that you shared the
-#' review template with will no longer be able to apply it to new
-#' workloads.
+#' After the review template is deleted, Amazon Web Services accounts, users, organizations, and organizational units (OUs) that you shared the review template with will no longer be able to apply it to new workloads.
 #'
 #' @usage
 #' wellarchitected_delete_review_template(TemplateArn, ClientRequestToken)
 #'
 #' @param TemplateArn &#91;required&#93; The review template ARN.
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -1076,18 +1154,19 @@ wellarchitected_delete_review_template <- function(TemplateArn, ClientRequestTok
 #' @description
 #' Delete a review template share.
 #' 
-#' After the review template share is deleted, Amazon Web Services
-#' accounts, users, organizations, and organizational units (OUs) that you
-#' shared the review template with will no longer be able to apply it to
-#' new workloads.
+#' After the review template share is deleted, Amazon Web Services accounts, users, organizations, and organizational units (OUs) that you shared the review template with will no longer be able to apply it to new workloads.
 #'
 #' @usage
 #' wellarchitected_delete_template_share(ShareId, TemplateArn,
 #'   ClientRequestToken)
 #'
-#' @param ShareId &#91;required&#93; 
+#' @param ShareId &#91;required&#93; The ID associated with the share.
 #' @param TemplateArn &#91;required&#93; The review template ARN.
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -1133,8 +1212,12 @@ wellarchitected_delete_template_share <- function(ShareId, TemplateArn, ClientRe
 #' @usage
 #' wellarchitected_delete_workload(WorkloadId, ClientRequestToken)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -1180,9 +1263,13 @@ wellarchitected_delete_workload <- function(WorkloadId, ClientRequestToken) {
 #' wellarchitected_delete_workload_share(ShareId, WorkloadId,
 #'   ClientRequestToken)
 #'
-#' @param ShareId &#91;required&#93; 
-#' @param WorkloadId &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ShareId &#91;required&#93; The ID associated with the share.
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -1225,17 +1312,17 @@ wellarchitected_delete_workload_share <- function(ShareId, WorkloadId, ClientReq
 #' @description
 #' Disassociate a lens from a workload.
 #' 
-#' Up to 10 lenses can be disassociated from a workload in a single API
-#' operation.
+#' Up to 10 lenses can be disassociated from a workload in a single API operation.
 #' 
-#' The Amazon Web Services Well-Architected Framework lens
-#' (`wellarchitected`) cannot be removed from a workload.
+#' The Amazon Web Services Well-Architected Framework lens (`wellarchitected`) cannot be removed from a workload.
 #'
 #' @usage
 #' wellarchitected_disassociate_lenses(WorkloadId, LensAliases)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAliases &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAliases &#91;required&#93; List of lens aliases to associate or disassociate with a workload. Up to 10 lenses can be specified.
+#' 
+#' Identify a lens using its LensSummary$LensAlias.
 #'
 #' @return
 #' An empty list.
@@ -1282,7 +1369,7 @@ wellarchitected_disassociate_lenses <- function(WorkloadId, LensAliases) {
 #' @usage
 #' wellarchitected_disassociate_profiles(WorkloadId, ProfileArns)
 #'
-#' @param WorkloadId &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
 #' @param ProfileArns &#91;required&#93; The list of profile ARNs to disassociate from the workload.
 #'
 #' @return
@@ -1327,27 +1414,24 @@ wellarchitected_disassociate_profiles <- function(WorkloadId, ProfileArns) {
 #' @description
 #' Export an existing lens.
 #' 
-#' Only the owner of a lens can export it. Lenses provided by Amazon Web
-#' Services (Amazon Web Services Official Content) cannot be exported.
+#' Only the owner of a lens can export it. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be exported.
 #' 
-#' Lenses are defined in JSON. For more information, see [JSON format
-#' specification](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html)
-#' in the *Well-Architected Tool User Guide*.
+#' Lenses are defined in JSON. For more information, see [JSON format specification](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html) in the *Well-Architected Tool User Guide*.
 #' 
 #' **Disclaimer**
 #' 
-#' Do not include or gather personal identifiable information (PII) of end
-#' users or other identifiable individuals in or via your custom lenses. If
-#' your custom lens or those shared with you and used in your account do
-#' include or collect PII you are responsible for: ensuring that the
-#' included PII is processed in accordance with applicable law, providing
-#' adequate privacy notices, and obtaining necessary consents for
-#' processing such data.
+#' Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.
 #'
 #' @usage
 #' wellarchitected_export_lens(LensAlias, LensVersion)
 #'
-#' @param LensAlias &#91;required&#93; 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
 #' @param LensVersion The lens version to be exported.
 #'
 #' @return
@@ -1399,10 +1483,18 @@ wellarchitected_export_lens <- function(LensAlias, LensVersion = NULL) {
 #' wellarchitected_get_answer(WorkloadId, LensAlias, QuestionId,
 #'   MilestoneNumber)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param QuestionId &#91;required&#93; 
-#' @param MilestoneNumber 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param QuestionId &#91;required&#93; The ID of the question.
+#' @param MilestoneNumber The milestone number.
+#' 
+#' A workload can have a maximum of 100 milestones.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1510,8 +1602,7 @@ wellarchitected_get_answer <- function(WorkloadId, LensAlias, QuestionId, Milest
 #' @description
 #' Get a consolidated report of your workloads.
 #' 
-#' You can optionally choose to include workloads that have been shared
-#' with you.
+#' You can optionally choose to include workloads that have been shared with you.
 #'
 #' @usage
 #' wellarchitected_get_consolidated_report(Format, IncludeSharedResources,
@@ -1519,10 +1610,9 @@ wellarchitected_get_answer <- function(WorkloadId, LensAlias, QuestionId, Milest
 #'
 #' @param Format &#91;required&#93; The format of the consolidated report.
 #' 
-#' For `PDF`, `Base64String` is returned. For `JSON`, `Metrics` is
-#' returned.
+#' For `PDF`, `Base64String` is returned. For `JSON`, `Metrics` is returned.
 #' @param IncludeSharedResources Set to `true` to have shared resources included in the report.
-#' @param NextToken 
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
 #'
 #' @return
@@ -1672,7 +1762,13 @@ wellarchitected_get_global_settings <- function() {
 #' @usage
 #' wellarchitected_get_lens(LensAlias, LensVersion)
 #'
-#' @param LensAlias &#91;required&#93; 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
 #' @param LensVersion The lens version to be retrieved.
 #'
 #' @return
@@ -1733,9 +1829,17 @@ wellarchitected_get_lens <- function(LensAlias, LensVersion = NULL) {
 #' @usage
 #' wellarchitected_get_lens_review(WorkloadId, LensAlias, MilestoneNumber)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param MilestoneNumber 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param MilestoneNumber The milestone number.
+#' 
+#' A workload can have a maximum of 100 milestones.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1835,9 +1939,17 @@ wellarchitected_get_lens_review <- function(WorkloadId, LensAlias, MilestoneNumb
 #' wellarchitected_get_lens_review_report(WorkloadId, LensAlias,
 #'   MilestoneNumber)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param MilestoneNumber 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param MilestoneNumber The milestone number.
+#' 
+#' A workload can have a maximum of 100 milestones.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1895,7 +2007,13 @@ wellarchitected_get_lens_review_report <- function(WorkloadId, LensAlias, Milest
 #' wellarchitected_get_lens_version_difference(LensAlias, BaseLensVersion,
 #'   TargetLensVersion)
 #'
-#' @param LensAlias &#91;required&#93; 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
 #' @param BaseLensVersion The base version of the lens.
 #' @param TargetLensVersion The lens version to target a difference for.
 #'
@@ -1968,8 +2086,10 @@ wellarchitected_get_lens_version_difference <- function(LensAlias, BaseLensVersi
 #' @usage
 #' wellarchitected_get_milestone(WorkloadId, MilestoneNumber)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param MilestoneNumber &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param MilestoneNumber &#91;required&#93; The milestone number.
+#' 
+#' A workload can have a maximum of 100 milestones.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2321,8 +2441,14 @@ wellarchitected_get_review_template <- function(TemplateArn) {
 #'   QuestionId)
 #'
 #' @param TemplateArn &#91;required&#93; The review template ARN.
-#' @param LensAlias &#91;required&#93; 
-#' @param QuestionId &#91;required&#93; 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param QuestionId &#91;required&#93; The ID of the question.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2425,7 +2551,13 @@ wellarchitected_get_review_template_answer <- function(TemplateArn, LensAlias, Q
 #' wellarchitected_get_review_template_lens_review(TemplateArn, LensAlias)
 #'
 #' @param TemplateArn &#91;required&#93; The review template ARN.
-#' @param LensAlias &#91;required&#93; 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2500,7 +2632,7 @@ wellarchitected_get_review_template_lens_review <- function(TemplateArn, LensAli
 #' @usage
 #' wellarchitected_get_workload(WorkloadId)
 #'
-#' @param WorkloadId &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2612,37 +2744,35 @@ wellarchitected_get_workload <- function(WorkloadId) {
 #' @description
 #' Import a new custom lens or update an existing custom lens.
 #' 
-#' To update an existing custom lens, specify its ARN as the `LensAlias`.
-#' If no ARN is specified, a new custom lens is created.
+#' To update an existing custom lens, specify its ARN as the `LensAlias`. If no ARN is specified, a new custom lens is created.
 #' 
-#' The new or updated lens will have a status of `DRAFT`. The lens cannot
-#' be applied to workloads or shared with other Amazon Web Services
-#' accounts until it's published with
-#' [`create_lens_version`][wellarchitected_create_lens_version].
+#' The new or updated lens will have a status of `DRAFT`. The lens cannot be applied to workloads or shared with other Amazon Web Services accounts until it's published with [`create_lens_version`][wellarchitected_create_lens_version].
 #' 
-#' Lenses are defined in JSON. For more information, see [JSON format
-#' specification](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html)
-#' in the *Well-Architected Tool User Guide*.
+#' Lenses are defined in JSON. For more information, see [JSON format specification](https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html) in the *Well-Architected Tool User Guide*.
 #' 
 #' A custom lens cannot exceed 500 KB in size.
 #' 
 #' **Disclaimer**
 #' 
-#' Do not include or gather personal identifiable information (PII) of end
-#' users or other identifiable individuals in or via your custom lenses. If
-#' your custom lens or those shared with you and used in your account do
-#' include or collect PII you are responsible for: ensuring that the
-#' included PII is processed in accordance with applicable law, providing
-#' adequate privacy notices, and obtaining necessary consents for
-#' processing such data.
+#' Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.
 #'
 #' @usage
 #' wellarchitected_import_lens(LensAlias, JSONString, ClientRequestToken,
 #'   Tags)
 #'
-#' @param LensAlias 
+#' @param LensAlias The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
 #' @param JSONString &#91;required&#93; The JSON representation of a lens.
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #' @param Tags Tags to associate to a lens.
 #'
 #' @return
@@ -2699,11 +2829,21 @@ wellarchitected_import_lens <- function(LensAlias = NULL, JSONString, ClientRequ
 #' wellarchitected_list_answers(WorkloadId, LensAlias, PillarId,
 #'   MilestoneNumber, NextToken, MaxResults, QuestionPriority)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param PillarId 
-#' @param MilestoneNumber 
-#' @param NextToken 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param PillarId The ID used to identify a pillar, for example, `security`.
+#' 
+#' A pillar is identified by its PillarReviewSummary$PillarId.
+#' @param MilestoneNumber The milestone number.
+#' 
+#' A workload can have a maximum of 100 milestones.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
 #' @param QuestionPriority The priority of the question.
 #'
@@ -2812,20 +2952,21 @@ wellarchitected_list_answers <- function(WorkloadId, LensAlias, PillarId = NULL,
 #' List of Trusted Advisor check details by account related to the workload
 #'
 #' @description
-#' List of Trusted Advisor check details by account related to the
-#' workload.
+#' List of Trusted Advisor check details by account related to the workload.
 #'
 #' @usage
 #' wellarchitected_list_check_details(WorkloadId, NextToken, MaxResults,
 #'   LensArn, PillarId, QuestionId, ChoiceId)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param NextToken 
-#' @param MaxResults 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param NextToken The token to use to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return for this request.
 #' @param LensArn &#91;required&#93; Well-Architected Lens ARN.
-#' @param PillarId &#91;required&#93; 
-#' @param QuestionId &#91;required&#93; 
-#' @param ChoiceId &#91;required&#93; 
+#' @param PillarId &#91;required&#93; The ID used to identify a pillar, for example, `security`.
+#' 
+#' A pillar is identified by its PillarReviewSummary$PillarId.
+#' @param QuestionId &#91;required&#93; The ID of the question.
+#' @param ChoiceId &#91;required&#93; The ID of a choice.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2895,20 +3036,21 @@ wellarchitected_list_check_details <- function(WorkloadId, NextToken = NULL, Max
 #' the workload
 #'
 #' @description
-#' List of Trusted Advisor checks summarized for all accounts related to
-#' the workload.
+#' List of Trusted Advisor checks summarized for all accounts related to the workload.
 #'
 #' @usage
 #' wellarchitected_list_check_summaries(WorkloadId, NextToken, MaxResults,
 #'   LensArn, PillarId, QuestionId, ChoiceId)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param NextToken 
-#' @param MaxResults 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param NextToken The token to use to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return for this request.
 #' @param LensArn &#91;required&#93; Well-Architected Lens ARN.
-#' @param PillarId &#91;required&#93; 
-#' @param QuestionId &#91;required&#93; 
-#' @param ChoiceId &#91;required&#93; 
+#' @param PillarId &#91;required&#93; The ID used to identify a pillar, for example, `security`.
+#' 
+#' A pillar is identified by its PillarReviewSummary$PillarId.
+#' @param QuestionId &#91;required&#93; The ID of the question.
+#' @param ChoiceId &#91;required&#93; The ID of a choice.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2983,11 +3125,21 @@ wellarchitected_list_check_summaries <- function(WorkloadId, NextToken = NULL, M
 #' wellarchitected_list_lens_review_improvements(WorkloadId, LensAlias,
 #'   PillarId, MilestoneNumber, NextToken, MaxResults, QuestionPriority)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param PillarId 
-#' @param MilestoneNumber 
-#' @param NextToken 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param PillarId The ID used to identify a pillar, for example, `security`.
+#' 
+#' A pillar is identified by its PillarReviewSummary$PillarId.
+#' @param MilestoneNumber The milestone number.
+#' 
+#' A workload can have a maximum of 100 milestones.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
 #' @param QuestionPriority The priority of the question.
 #'
@@ -3071,10 +3223,12 @@ wellarchitected_list_lens_review_improvements <- function(WorkloadId, LensAlias,
 #' wellarchitected_list_lens_reviews(WorkloadId, MilestoneNumber,
 #'   NextToken, MaxResults)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param MilestoneNumber 
-#' @param NextToken 
-#' @param MaxResults 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param MilestoneNumber The milestone number.
+#' 
+#' A workload can have a maximum of 100 milestones.
+#' @param NextToken The token to use to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return for this request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3153,12 +3307,17 @@ wellarchitected_list_lens_reviews <- function(WorkloadId, MilestoneNumber = NULL
 #' wellarchitected_list_lens_shares(LensAlias, SharedWithPrefix, NextToken,
 #'   MaxResults, Status)
 #'
-#' @param LensAlias &#91;required&#93; 
-#' @param SharedWithPrefix The Amazon Web Services account ID, organization ID, or organizational
-#' unit (OU) ID with which the lens is shared.
-#' @param NextToken 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param SharedWithPrefix The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the lens is shared.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
-#' @param Status 
+#' @param Status The status of the share request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3220,11 +3379,11 @@ wellarchitected_list_lens_shares <- function(LensAlias, SharedWithPrefix = NULL,
 #' wellarchitected_list_lenses(NextToken, MaxResults, LensType, LensStatus,
 #'   LensName)
 #'
-#' @param NextToken 
-#' @param MaxResults 
+#' @param NextToken The token to use to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return for this request.
 #' @param LensType The type of lenses to be returned.
 #' @param LensStatus The status of lenses to be returned.
-#' @param LensName 
+#' @param LensName The full name of the lens.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3295,9 +3454,9 @@ wellarchitected_list_lenses <- function(NextToken = NULL, MaxResults = NULL, Len
 #' @usage
 #' wellarchitected_list_milestones(WorkloadId, NextToken, MaxResults)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param NextToken 
-#' @param MaxResults 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param NextToken The token to use to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return for this request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3384,8 +3543,8 @@ wellarchitected_list_milestones <- function(WorkloadId, NextToken = NULL, MaxRes
 #' wellarchitected_list_notifications(WorkloadId, NextToken, MaxResults,
 #'   ResourceArn)
 #'
-#' @param WorkloadId 
-#' @param NextToken 
+#' @param WorkloadId The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
 #' @param ResourceArn The ARN for the related resource for the notification.
 #' 
@@ -3457,9 +3616,9 @@ wellarchitected_list_notifications <- function(WorkloadId = NULL, NextToken = NU
 #' wellarchitected_list_profile_notifications(WorkloadId, NextToken,
 #'   MaxResults)
 #'
-#' @param WorkloadId 
-#' @param NextToken 
-#' @param MaxResults 
+#' @param WorkloadId The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param NextToken The token to use to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return for this request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3523,11 +3682,10 @@ wellarchitected_list_profile_notifications <- function(WorkloadId = NULL, NextTo
 #'   NextToken, MaxResults, Status)
 #'
 #' @param ProfileArn &#91;required&#93; The profile ARN.
-#' @param SharedWithPrefix The Amazon Web Services account ID, organization ID, or organizational
-#' unit (OU) ID with which the profile is shared.
-#' @param NextToken 
+#' @param SharedWithPrefix The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
-#' @param Status 
+#' @param Status The status of the share request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3589,11 +3747,10 @@ wellarchitected_list_profile_shares <- function(ProfileArn, SharedWithPrefix = N
 #' wellarchitected_list_profiles(ProfileNamePrefix, ProfileOwnerType,
 #'   NextToken, MaxResults)
 #'
-#' @param ProfileNamePrefix An optional string added to the beginning of each profile name returned
-#' in the results.
+#' @param ProfileNamePrefix An optional string added to the beginning of each profile name returned in the results.
 #' @param ProfileOwnerType Profile owner type.
-#' @param NextToken 
-#' @param MaxResults 
+#' @param NextToken The token to use to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return for this request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3662,9 +3819,17 @@ wellarchitected_list_profiles <- function(ProfileNamePrefix = NULL, ProfileOwner
 #'   PillarId, NextToken, MaxResults)
 #'
 #' @param TemplateArn &#91;required&#93; The ARN of the review template.
-#' @param LensAlias &#91;required&#93; 
-#' @param PillarId 
-#' @param NextToken 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param PillarId The ID used to identify a pillar, for example, `security`.
+#' 
+#' A pillar is identified by its PillarReviewSummary$PillarId.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
 #'
 #' @return
@@ -3767,8 +3932,8 @@ wellarchitected_list_review_template_answers <- function(TemplateArn, LensAlias,
 #' @usage
 #' wellarchitected_list_review_templates(NextToken, MaxResults)
 #'
-#' @param NextToken 
-#' @param MaxResults 
+#' @param NextToken The token to use to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return for this request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3830,25 +3995,20 @@ wellarchitected_list_review_templates <- function(NextToken = NULL, MaxResults =
 #' @description
 #' List the share invitations.
 #' 
-#' `WorkloadNamePrefix`, `LensNamePrefix`, `ProfileNamePrefix`, and
-#' `TemplateNamePrefix` are mutually exclusive. Use the parameter that
-#' matches your `ShareResourceType`.
+#' `WorkloadNamePrefix`, `LensNamePrefix`, `ProfileNamePrefix`, and `TemplateNamePrefix` are mutually exclusive. Use the parameter that matches your `ShareResourceType`.
 #'
 #' @usage
 #' wellarchitected_list_share_invitations(WorkloadNamePrefix,
 #'   LensNamePrefix, ShareResourceType, NextToken, MaxResults,
 #'   ProfileNamePrefix, TemplateNamePrefix)
 #'
-#' @param WorkloadNamePrefix 
-#' @param LensNamePrefix An optional string added to the beginning of each lens name returned in
-#' the results.
+#' @param WorkloadNamePrefix An optional string added to the beginning of each workload name returned in the results.
+#' @param LensNamePrefix An optional string added to the beginning of each lens name returned in the results.
 #' @param ShareResourceType The type of share invitations to be returned.
-#' @param NextToken 
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
-#' @param ProfileNamePrefix An optional string added to the beginning of each profile name returned
-#' in the results.
-#' @param TemplateNamePrefix An optional string added to the beginning of each review template name
-#' returned in the results.
+#' @param ProfileNamePrefix An optional string added to the beginning of each profile name returned in the results.
+#' @param TemplateNamePrefix An optional string added to the beginning of each review template name returned in the results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3917,13 +4077,12 @@ wellarchitected_list_share_invitations <- function(WorkloadNamePrefix = NULL, Le
 #' @description
 #' List the tags for a resource.
 #' 
-#' The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a
-#' profile ARN, or review template ARN.
+#' The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
 #'
 #' @usage
 #' wellarchitected_list_tags_for_resource(WorkloadArn)
 #'
-#' @param WorkloadArn &#91;required&#93; 
+#' @param WorkloadArn &#91;required&#93; The ARN for the workload.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3976,11 +4135,10 @@ wellarchitected_list_tags_for_resource <- function(WorkloadArn) {
 #'   NextToken, MaxResults, Status)
 #'
 #' @param TemplateArn &#91;required&#93; The review template ARN.
-#' @param SharedWithPrefix The Amazon Web Services account ID, organization ID, or organizational
-#' unit (OU) ID with which the profile is shared.
-#' @param NextToken 
+#' @param SharedWithPrefix The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
-#' @param Status 
+#' @param Status The status of the share request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4043,12 +4201,11 @@ wellarchitected_list_template_shares <- function(TemplateArn, SharedWithPrefix =
 #' wellarchitected_list_workload_shares(WorkloadId, SharedWithPrefix,
 #'   NextToken, MaxResults, Status)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param SharedWithPrefix The Amazon Web Services account ID, organization ID, or organizational
-#' unit (OU) ID with which the workload is shared.
-#' @param NextToken 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param SharedWithPrefix The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the workload is shared.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
-#' @param Status 
+#' @param Status The status of the share request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4112,8 +4269,8 @@ wellarchitected_list_workload_shares <- function(WorkloadId, SharedWithPrefix = 
 #' wellarchitected_list_workloads(WorkloadNamePrefix, NextToken,
 #'   MaxResults)
 #'
-#' @param WorkloadNamePrefix 
-#' @param NextToken 
+#' @param WorkloadNamePrefix An optional string added to the beginning of each workload name returned in the results.
+#' @param NextToken The token to use to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return for this request.
 #'
 #' @return
@@ -4189,13 +4346,12 @@ wellarchitected_list_workloads <- function(WorkloadNamePrefix = NULL, NextToken 
 #' @description
 #' Adds one or more tags to the specified resource.
 #' 
-#' The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a
-#' profile ARN, or review template ARN.
+#' The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
 #'
 #' @usage
 #' wellarchitected_tag_resource(WorkloadArn, Tags)
 #'
-#' @param WorkloadArn &#91;required&#93; 
+#' @param WorkloadArn &#91;required&#93; The ARN for the workload.
 #' @param Tags &#91;required&#93; The tags for the resource.
 #'
 #' @return
@@ -4240,20 +4396,17 @@ wellarchitected_tag_resource <- function(WorkloadArn, Tags) {
 #' @description
 #' Deletes specified tags from a resource.
 #' 
-#' The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a
-#' profile ARN, or review template ARN.
+#' The WorkloadArn parameter can be a workload ARN, a custom lens ARN, a profile ARN, or review template ARN.
 #' 
-#' To specify multiple tags, use separate **tagKeys** parameters, for
-#' example:
+#' To specify multiple tags, use separate **tagKeys** parameters, for example:
 #' 
 #' `DELETE /tags/WorkloadArn?tagKeys=key1&tagKeys=key2`
 #'
 #' @usage
 #' wellarchitected_untag_resource(WorkloadArn, TagKeys)
 #'
-#' @param WorkloadArn &#91;required&#93; 
-#' @param TagKeys &#91;required&#93; A list of tag keys. Existing tags of the resource whose keys are members
-#' of this list are removed from the resource.
+#' @param WorkloadArn &#91;required&#93; The ARN for the workload.
+#' @param TagKeys &#91;required&#93; A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.
 #'
 #' @return
 #' An empty list.
@@ -4301,14 +4454,23 @@ wellarchitected_untag_resource <- function(WorkloadArn, TagKeys) {
 #' wellarchitected_update_answer(WorkloadId, LensAlias, QuestionId,
 #'   SelectedChoices, ChoiceUpdates, Notes, IsApplicable, Reason)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param QuestionId &#91;required&#93; 
-#' @param SelectedChoices 
-#' @param ChoiceUpdates A list of choices to update on a question in your workload. The String
-#' key corresponds to the choice ID to be updated.
-#' @param Notes 
-#' @param IsApplicable 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param QuestionId &#91;required&#93; The ID of the question.
+#' @param SelectedChoices List of selected choice IDs in a question answer.
+#' 
+#' The values entered replace the previously selected choices.
+#' @param ChoiceUpdates A list of choices to update on a question in your workload. The String key corresponds to the choice ID to be updated.
+#' @param Notes The notes associated with the workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
+#' @param IsApplicable Defines whether this question is applicable to a lens review.
 #' @param Reason The reason why a question is not applicable to your workload.
 #'
 #' @return
@@ -4427,8 +4589,7 @@ wellarchitected_update_answer <- function(WorkloadId, LensAlias, QuestionId, Sel
 #' organization sharing and discovery integration features
 #'
 #' @description
-#' Update whether the Amazon Web Services account is opted into
-#' organization sharing and discovery integration features.
+#' Update whether the Amazon Web Services account is opted into organization sharing and discovery integration features.
 #'
 #' @usage
 #' wellarchitected_update_global_settings(OrganizationSharingStatus,
@@ -4488,8 +4649,12 @@ wellarchitected_update_global_settings <- function(OrganizationSharingStatus = N
 #' wellarchitected_update_integration(WorkloadId, ClientRequestToken,
 #'   IntegratingService)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param ClientRequestToken &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param ClientRequestToken &#91;required&#93; A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #' @param IntegratingService &#91;required&#93; Which integrated service to update.
 #'
 #' @return
@@ -4537,10 +4702,20 @@ wellarchitected_update_integration <- function(WorkloadId, ClientRequestToken, I
 #' wellarchitected_update_lens_review(WorkloadId, LensAlias, LensNotes,
 #'   PillarNotes, JiraConfiguration)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param LensNotes 
-#' @param PillarNotes 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param LensNotes The notes associated with the workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
+#' @param PillarNotes List of pillar notes of a lens review in a workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
 #' @param JiraConfiguration Configuration of the Jira integration.
 #'
 #' @return
@@ -4752,10 +4927,11 @@ wellarchitected_update_profile <- function(ProfileArn, ProfileDescription = NULL
 #' @param TemplateArn &#91;required&#93; The review template ARN.
 #' @param TemplateName The review template name.
 #' @param Description The review template description.
-#' @param Notes 
+#' @param Notes The notes associated with the workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
 #' @param LensesToAssociate A list of lens aliases or ARNs to apply to the review template.
-#' @param LensesToDisassociate A list of lens aliases or ARNs to unapply to the review template. The
-#' `wellarchitected` lens cannot be unapplied.
+#' @param LensesToDisassociate A list of lens aliases or ARNs to unapply to the review template. The `wellarchitected` lens cannot be unapplied.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4835,12 +5011,22 @@ wellarchitected_update_review_template <- function(TemplateArn, TemplateName = N
 #'   QuestionId, SelectedChoices, ChoiceUpdates, Notes, IsApplicable, Reason)
 #'
 #' @param TemplateArn &#91;required&#93; The review template ARN.
-#' @param LensAlias &#91;required&#93; 
-#' @param QuestionId &#91;required&#93; 
-#' @param SelectedChoices 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param QuestionId &#91;required&#93; The ID of the question.
+#' @param SelectedChoices List of selected choice IDs in a question answer.
+#' 
+#' The values entered replace the previously selected choices.
 #' @param ChoiceUpdates A list of choices to be updated.
-#' @param Notes 
-#' @param IsApplicable 
+#' @param Notes The notes associated with the workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
+#' @param IsApplicable Defines whether this question is applicable to a lens review.
 #' @param Reason The update reason.
 #'
 #' @return
@@ -4958,9 +5144,19 @@ wellarchitected_update_review_template_answer <- function(TemplateArn, LensAlias
 #'   LensAlias, LensNotes, PillarNotes)
 #'
 #' @param TemplateArn &#91;required&#93; The review template ARN.
-#' @param LensAlias &#91;required&#93; 
-#' @param LensNotes 
-#' @param PillarNotes 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param LensNotes The notes associated with the workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
+#' @param PillarNotes List of pillar notes of a lens review in a workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5036,15 +5232,14 @@ wellarchitected_update_review_template_lens_review <- function(TemplateArn, Lens
 #' @description
 #' Update a workload or custom lens share invitation.
 #' 
-#' This API operation can be called independently of any resource. Previous
-#' documentation implied that a workload ARN must be specified.
+#' This API operation can be called independently of any resource. Previous documentation implied that a workload ARN must be specified.
 #'
 #' @usage
 #' wellarchitected_update_share_invitation(ShareInvitationId,
 #'   ShareInvitationAction)
 #'
 #' @param ShareInvitationId &#91;required&#93; The ID assigned to the share invitation.
-#' @param ShareInvitationAction &#91;required&#93; 
+#' @param ShareInvitationAction &#91;required&#93; Share invitation action taken by contributor.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5106,28 +5301,84 @@ wellarchitected_update_share_invitation <- function(ShareInvitationId, ShareInvi
 #'   IndustryType, Industry, Notes, ImprovementStatus, DiscoveryConfig,
 #'   Applications, JiraConfiguration)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param WorkloadName 
-#' @param Description 
-#' @param Environment 
-#' @param AccountIds 
-#' @param AwsRegions 
-#' @param NonAwsRegions 
-#' @param PillarPriorities 
-#' @param ArchitecturalDesign 
-#' @param ReviewOwner 
-#' @param IsReviewOwnerUpdateAcknowledged Flag indicating whether the workload owner has acknowledged that the
-#' *Review owner* field is required.
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param WorkloadName The name of the workload.
 #' 
-#' If a **Review owner** is not added to the workload within 60 days of
-#' acknowledgement, access to the workload is restricted until an owner is
-#' added.
-#' @param IndustryType 
-#' @param Industry 
-#' @param Notes 
-#' @param ImprovementStatus 
-#' @param DiscoveryConfig Well-Architected discovery configuration settings to associate to the
-#' workload.
+#' The name must be unique within an account within an Amazon Web Services Region. Spaces and capitalization are ignored when checking for uniqueness.
+#' @param Description The description for the workload.
+#' @param Environment The environment for the workload.
+#' @param AccountIds The list of Amazon Web Services account IDs associated with the workload.
+#' @param AwsRegions The list of Amazon Web Services Regions associated with the workload, for example, `us-east-2`, or `ca-central-1`.
+#' @param NonAwsRegions The list of non-Amazon Web Services Regions associated with the workload.
+#' @param PillarPriorities The priorities of the pillars, which are used to order items in the improvement plan. Each pillar is represented by its PillarReviewSummary$PillarId.
+#' @param ArchitecturalDesign The URL of the architectural design for the workload.
+#' @param ReviewOwner The review owner of the workload. The name, email address, or identifier for the primary group or individual that owns the workload review process.
+#' @param IsReviewOwnerUpdateAcknowledged Flag indicating whether the workload owner has acknowledged that the *Review owner* field is required.
+#' 
+#' If a **Review owner** is not added to the workload within 60 days of acknowledgement, access to the workload is restricted until an owner is added.
+#' @param IndustryType The industry type for the workload.
+#' 
+#' If specified, must be one of the following:
+#' 
+#' -   `Agriculture`
+#' 
+#' -   `Automobile`
+#' 
+#' -   `Defense`
+#' 
+#' -   `Design and Engineering`
+#' 
+#' -   `Digital Advertising`
+#' 
+#' -   `Education`
+#' 
+#' -   `Environmental Protection`
+#' 
+#' -   `Financial Services`
+#' 
+#' -   `Gaming`
+#' 
+#' -   `General Public Services`
+#' 
+#' -   `Healthcare`
+#' 
+#' -   `Hospitality`
+#' 
+#' -   `InfoTech`
+#' 
+#' -   `Justice and Public Safety`
+#' 
+#' -   `Life Sciences`
+#' 
+#' -   `Manufacturing`
+#' 
+#' -   `Media & Entertainment`
+#' 
+#' -   `Mining & Resources`
+#' 
+#' -   `Oil & Gas`
+#' 
+#' -   `Power & Utilities`
+#' 
+#' -   `Professional Services`
+#' 
+#' -   `Real Estate & Construction`
+#' 
+#' -   `Retail & Wholesale`
+#' 
+#' -   `Social Protection`
+#' 
+#' -   `Telecommunications`
+#' 
+#' -   `Travel, Transportation & Logistics`
+#' 
+#' -   `Other`
+#' @param Industry The industry for the workload.
+#' @param Notes The notes associated with the workload.
+#' 
+#' For a review template, these are the notes that will be associated with the workload when the template is applied.
+#' @param ImprovementStatus The improvement status for a workload.
+#' @param DiscoveryConfig Well-Architected discovery configuration settings to associate to the workload.
 #' @param Applications List of AppRegistry application ARNs to associate to the workload.
 #' @param JiraConfiguration Configuration of the Jira integration.
 #'
@@ -5281,9 +5532,9 @@ wellarchitected_update_workload <- function(WorkloadId, WorkloadName = NULL, Des
 #' wellarchitected_update_workload_share(ShareId, WorkloadId,
 #'   PermissionType)
 #'
-#' @param ShareId &#91;required&#93; 
-#' @param WorkloadId &#91;required&#93; 
-#' @param PermissionType &#91;required&#93; 
+#' @param ShareId &#91;required&#93; The ID associated with the share.
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param PermissionType &#91;required&#93; Permission granted on a share request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5344,10 +5595,22 @@ wellarchitected_update_workload_share <- function(ShareId, WorkloadId, Permissio
 #' wellarchitected_upgrade_lens_review(WorkloadId, LensAlias,
 #'   MilestoneName, ClientRequestToken)
 #'
-#' @param WorkloadId &#91;required&#93; 
-#' @param LensAlias &#91;required&#93; 
-#' @param MilestoneName &#91;required&#93; 
-#' @param ClientRequestToken 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param MilestoneName &#91;required&#93; The name of the milestone in a workload.
+#' 
+#' Milestone names must be unique within a workload.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -5395,10 +5658,16 @@ wellarchitected_upgrade_lens_review <- function(WorkloadId, LensAlias, Milestone
 #' wellarchitected_upgrade_profile_version(WorkloadId, ProfileArn,
 #'   MilestoneName, ClientRequestToken)
 #'
-#' @param WorkloadId &#91;required&#93; 
+#' @param WorkloadId &#91;required&#93; The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.
 #' @param ProfileArn &#91;required&#93; The profile ARN.
-#' @param MilestoneName 
-#' @param ClientRequestToken 
+#' @param MilestoneName The name of the milestone in a workload.
+#' 
+#' Milestone names must be unique within a workload.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.
@@ -5447,8 +5716,18 @@ wellarchitected_upgrade_profile_version <- function(WorkloadId, ProfileArn, Mile
 #'   LensAlias, ClientRequestToken)
 #'
 #' @param TemplateArn &#91;required&#93; The ARN of the review template.
-#' @param LensAlias &#91;required&#93; 
-#' @param ClientRequestToken 
+#' @param LensAlias &#91;required&#93; The alias of the lens.
+#' 
+#' For Amazon Web Services official lenses, this is either the lens alias, such as `serverless`, or the lens ARN, such as `arn:aws:wellarchitected:us-east-1::lens/serverless`. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+#' 
+#' For custom lenses, this is the lens ARN, such as `arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef`.
+#' 
+#' Each lens is identified by its LensSummary$LensAlias.
+#' @param ClientRequestToken A unique case-sensitive string used to ensure that this request is idempotent (executes only once).
+#' 
+#' You should not reuse the same token for other requests. If you retry a request with the same client request token and the same parameters after the original request has completed successfully, the result of the original request is returned.
+#' 
+#' This token is listed as required, however, if you do not specify it, the Amazon Web Services SDKs automatically generate one for you. If you are not using the Amazon Web Services SDK or the CLI, you must provide this token or the request will fail.
 #'
 #' @return
 #' An empty list.

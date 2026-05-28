@@ -9,9 +9,7 @@ cloudfront_delete_function(Name, IfMatch)
 \arguments{
 \item{Name}{[required] The name of the function that you are deleting.}
 
-\item{IfMatch}{[required] The current version (\code{ETag} value) of the function that you are
-deleting, which you can get using
-\code{\link[=cloudfront_describe_function]{describe_function}}.}
+\item{IfMatch}{[required] The current version (\code{ETag} value) of the function that you are deleting, which you can get using \code{\link[=cloudfront_describe_function]{describe_function}}.}
 }
 \description{
 Deletes a CloudFront function.

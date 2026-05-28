@@ -13,18 +13,13 @@ redshift_batch_modify_cluster_snapshots(
 \arguments{
 \item{SnapshotIdentifierList}{[required] A list of snapshot identifiers you want to modify.}
 
-\item{ManualSnapshotRetentionPeriod}{The number of days that a manual snapshot is retained. If you specify
-the value -1, the manual snapshot is retained indefinitely.
+\item{ManualSnapshotRetentionPeriod}{The number of days that a manual snapshot is retained. If you specify the value -1, the manual snapshot is retained indefinitely.
 
 The number must be either -1 or an integer between 1 and 3,653.
 
-If you decrease the manual snapshot retention period from its current
-value, existing manual snapshots that fall outside of the new retention
-period will return an error. If you want to suppress the errors and
-delete the snapshots, use the force option.}
+If you decrease the manual snapshot retention period from its current value, existing manual snapshots that fall outside of the new retention period will return an error. If you want to suppress the errors and delete the snapshots, use the force option.}
 
-\item{Force}{A boolean value indicating whether to override an exception if the
-retention period has passed.}
+\item{Force}{A boolean value indicating whether to override an exception if the retention period has passed.}
 }
 \description{
 Modifies the settings for a set of cluster snapshots.

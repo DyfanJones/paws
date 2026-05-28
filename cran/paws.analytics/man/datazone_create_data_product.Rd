@@ -30,8 +30,7 @@ datazone_create_data_product(
 
 \item{items}{The data assets of the data product.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates a data product.

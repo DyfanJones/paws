@@ -20,9 +20,7 @@ bedrockagentcore_update_ab_test(
 \arguments{
 \item{abTestId}{[required] The unique identifier of the A/B test to update.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, the service ignores the request, but does not return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.}
 
 \item{name}{The updated name of the A/B test.}
 

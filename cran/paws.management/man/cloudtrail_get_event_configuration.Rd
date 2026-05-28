@@ -8,11 +8,9 @@ event data store or trail}
 cloudtrail_get_event_configuration(TrailName = NULL, EventDataStore = NULL)
 }
 \arguments{
-\item{TrailName}{The name of the trail for which you want to retrieve event configuration
-settings.}
+\item{TrailName}{The name of the trail for which you want to retrieve event configuration settings.}
 
-\item{EventDataStore}{The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data
-store for which you want to retrieve event configuration settings.}
+\item{EventDataStore}{The Amazon Resource Name (ARN) or ID suffix of the ARN of the event data store for which you want to retrieve event configuration settings.}
 }
 \description{
 Retrieves the current event configuration settings for the specified event data store or trail. The response includes maximum event size configuration, the context key selectors configured for the event data store, and any aggregation settings configured for the trail.

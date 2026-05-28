@@ -15,15 +15,13 @@ billingconductor_list_resources_associated_to_custom_line_item(
 \arguments{
 \item{BillingPeriod}{The billing period for which the resource associations will be listed.}
 
-\item{Arn}{[required] The ARN of the custom line item for which the resource associations will
-be listed.}
+\item{Arn}{[required] The ARN of the custom line item for which the resource associations will be listed.}
 
 \item{MaxResults}{(Optional) The maximum number of resource associations to be retrieved.}
 
 \item{NextToken}{(Optional) The pagination token that's returned by a previous request.}
 
-\item{Filters}{(Optional) A \code{ListResourcesAssociatedToCustomLineItemFilter} that can
-specify the types of resources that should be retrieved.}
+\item{Filters}{(Optional) A \code{ListResourcesAssociatedToCustomLineItemFilter} that can specify the types of resources that should be retrieved.}
 }
 \description{
 List the resources that are associated to a custom line item.

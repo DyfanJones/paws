@@ -7,8 +7,7 @@
 workmail_assume_impersonation_role(OrganizationId, ImpersonationRoleId)
 }
 \arguments{
-\item{OrganizationId}{[required] The WorkMail organization under which the impersonation role will be
-assumed.}
+\item{OrganizationId}{[required] The WorkMail organization under which the impersonation role will be assumed.}
 
 \item{ImpersonationRoleId}{[required] The impersonation role ID to assume.}
 }

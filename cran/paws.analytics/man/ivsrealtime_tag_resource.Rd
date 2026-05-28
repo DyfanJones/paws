@@ -9,12 +9,7 @@ ivsrealtime_tag_resource(resourceArn, tags)
 \arguments{
 \item{resourceArn}{[required] The ARN of the resource to be tagged. The ARN must be URL-encoded.}
 
-\item{tags}{[required] Array of tags to be added or updated. Array of maps, each of the form
-\code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging AWS Resources and Tag Editor} for details, including
-restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no constraints on tags beyond what is
-documented there.}
+\item{tags}{[required] Array of tags to be added or updated. Array of maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging AWS Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.}
 }
 \description{
 Adds or updates tags for the AWS resource with the specified ARN.

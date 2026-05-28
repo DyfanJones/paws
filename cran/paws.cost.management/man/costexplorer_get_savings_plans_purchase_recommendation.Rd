@@ -18,38 +18,21 @@ costexplorer_get_savings_plans_purchase_recommendation(
 \arguments{
 \item{SavingsPlansType}{[required] The Savings Plans recommendation type that's requested.}
 
-\item{TermInYears}{[required] The savings plan recommendation term that's used to generate these
-recommendations.}
+\item{TermInYears}{[required] The savings plan recommendation term that's used to generate these recommendations.}
 
 \item{PaymentOption}{[required] The payment option that's used to generate these recommendations.}
 
-\item{AccountScope}{The account scope that you want your recommendations for. Amazon Web
-Services calculates recommendations including the management account and
-member accounts if the value is set to \code{PAYER}. If the value is
-\code{LINKED}, recommendations are calculated for individual member accounts
-only.}
+\item{AccountScope}{The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to \code{PAYER}. If the value is \code{LINKED}, recommendations are calculated for individual member accounts only.}
 
-\item{NextPageToken}{The token to retrieve the next set of results. Amazon Web Services
-provides the token when the response from a previous call has more
-results than the maximum page size.}
+\item{NextPageToken}{The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.}
 
-\item{PageSize}{The number of recommendations that you want returned in a single
-response object.}
+\item{PageSize}{The number of recommendations that you want returned in a single response object.}
 
 \item{LookbackPeriodInDays}{[required] The lookback period that's used to generate the recommendation.}
 
-\item{Filter}{You can filter your recommendations by Account ID with the
-\code{LINKED_ACCOUNT} dimension. To filter your recommendations by Account
-ID, specify \code{Key} as \code{LINKED_ACCOUNT} and \code{Value} as the comma-separated
-Acount ID(s) that you want to see Savings Plans purchase recommendations
-for.
+\item{Filter}{You can filter your recommendations by Account ID with the \code{LINKED_ACCOUNT} dimension. To filter your recommendations by Account ID, specify \code{Key} as \code{LINKED_ACCOUNT} and \code{Value} as the comma-separated Acount ID(s) that you want to see Savings Plans purchase recommendations for.
 
-For GetSavingsPlansPurchaseRecommendation, the \code{Filter} doesn't include
-\code{CostCategories} or \code{Tags}. It only includes \code{Dimensions}. With
-\code{Dimensions}, \code{Key} must be \code{LINKED_ACCOUNT} and \code{Value} can be a single
-Account ID or multiple comma-separated Account IDs that you want to see
-Savings Plans Purchase Recommendations for. \code{AND} and \code{OR} operators are
-not supported.}
+For GetSavingsPlansPurchaseRecommendation, the \code{Filter} doesn't include \code{CostCategories} or \code{Tags}. It only includes \code{Dimensions}. With \code{Dimensions}, \code{Key} must be \code{LINKED_ACCOUNT} and \code{Value} can be a single Account ID or multiple comma-separated Account IDs that you want to see Savings Plans Purchase Recommendations for. \code{AND} and \code{OR} operators are not supported.}
 }
 \description{
 Retrieves the Savings Plans recommendations for your account. First use \code{\link[=costexplorer_start_savings_plans_purchase_recommendation_generation]{start_savings_plans_purchase_recommendation_generation}} to generate a new set of recommendations, and then use \code{\link[=costexplorer_get_savings_plans_purchase_recommendation]{get_savings_plans_purchase_recommendation}} to retrieve them.

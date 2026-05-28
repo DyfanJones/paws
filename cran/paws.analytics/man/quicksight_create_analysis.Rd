@@ -19,54 +19,35 @@ quicksight_create_analysis(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account where you are creating an
-analysis.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account where you are creating an analysis.}
 
-\item{AnalysisId}{[required] The ID for the analysis that you're creating. This ID displays in the
-URL of the analysis.}
+\item{AnalysisId}{[required] The ID for the analysis that you're creating. This ID displays in the URL of the analysis.}
 
-\item{Name}{[required] A descriptive name for the analysis that you're creating. This name
-displays for the analysis in the Amazon Quick Sight console.}
+\item{Name}{[required] A descriptive name for the analysis that you're creating. This name displays for the analysis in the Amazon Quick Sight console.}
 
-\item{Parameters}{The parameter names and override values that you want to use. An
-analysis can have any parameter type, and some parameters might accept
-multiple values.}
+\item{Parameters}{The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.}
 
-\item{Permissions}{A structure that describes the principals and the resource-level
-permissions on an analysis. You can use the \code{Permissions} structure to
-grant permissions by providing a list of Identity and Access Management
-(IAM) action information for each principal listed by Amazon Resource
-Name (ARN).
+\item{Permissions}{A structure that describes the principals and the resource-level permissions on an analysis. You can use the \code{Permissions} structure to grant permissions by providing a list of Identity and Access Management (IAM) action information for each principal listed by Amazon Resource Name (ARN).
 
 To specify no permissions, omit \code{Permissions}.}
 
-\item{SourceEntity}{A source entity to use for the analysis that you're creating. This
-metadata structure contains details that describe a source template and
-one or more datasets.
+\item{SourceEntity}{A source entity to use for the analysis that you're creating. This metadata structure contains details that describe a source template and one or more datasets.
 
-Either a \code{SourceEntity} or a \code{Definition} must be provided in order for
-the request to be valid.}
+Either a \code{SourceEntity} or a \code{Definition} must be provided in order for the request to be valid.}
 
-\item{ThemeArn}{The ARN for the theme to apply to the analysis that you're creating. To
-see the theme in the Amazon Quick Sight console, make sure that you have
-access to it.}
+\item{ThemeArn}{The ARN for the theme to apply to the analysis that you're creating. To see the theme in the Amazon Quick Sight console, make sure that you have access to it.}
 
-\item{Tags}{Contains a map of the key-value pairs for the resource tag or tags
-assigned to the analysis.}
+\item{Tags}{Contains a map of the key-value pairs for the resource tag or tags assigned to the analysis.}
 
 \item{Definition}{The definition of an analysis.
 
-A definition is the data model of all features in a Dashboard, Template,
-or Analysis.
+A definition is the data model of all features in a Dashboard, Template, or Analysis.
 
-Either a \code{SourceEntity} or a \code{Definition} must be provided in order for
-the request to be valid.}
+Either a \code{SourceEntity} or a \code{Definition} must be provided in order for the request to be valid.}
 
-\item{ValidationStrategy}{The option to relax the validation needed to create an analysis with
-definition objects. This skips the validation step for specific errors.}
+\item{ValidationStrategy}{The option to relax the validation needed to create an analysis with definition objects. This skips the validation step for specific errors.}
 
-\item{FolderArns}{When you create the analysis, Amazon Quick Sight adds the analysis to
-these folders.}
+\item{FolderArns}{When you create the analysis, Amazon Quick Sight adds the analysis to these folders.}
 }
 \description{
 Creates an analysis in Amazon Quick Sight. Analyses can be created either from a template or from an \code{AnalysisDefinition}.

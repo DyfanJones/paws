@@ -7,8 +7,7 @@
 personalize_get_solution_metrics(solutionVersionArn)
 }
 \arguments{
-\item{solutionVersionArn}{[required] The Amazon Resource Name (ARN) of the solution version for which to get
-metrics.}
+\item{solutionVersionArn}{[required] The Amazon Resource Name (ARN) of the solution version for which to get metrics.}
 }
 \description{
 Gets the metrics for the specified solution version.

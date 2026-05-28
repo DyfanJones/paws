@@ -8,14 +8,11 @@ traffic in a VPC}
 route53resolver_create_firewall_rule_group(CreatorRequestId, Name, Tags = NULL)
 }
 \arguments{
-\item{CreatorRequestId}{[required] A unique string defined by you to identify the request. This allows you
-to retry failed requests without the risk of running the operation
-twice. This can be any unique string, for example, a timestamp.}
+\item{CreatorRequestId}{[required] A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp.}
 
 \item{Name}{[required] A name that lets you identify the rule group, to manage and use it.}
 
-\item{Tags}{A list of the tag keys and values that you want to associate with the
-rule group.}
+\item{Tags}{A list of the tag keys and values that you want to associate with the rule group.}
 }
 \description{
 Creates an empty DNS Firewall rule group for filtering DNS network traffic in a VPC. You can add rules to the new rule group by calling \code{\link[=route53resolver_create_firewall_rule]{create_firewall_rule}}.

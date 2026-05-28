@@ -8,8 +8,7 @@ its content, priority, recipients, and metadata}
 connect_describe_notification(InstanceId, NotificationId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{NotificationId}{[required] The unique identifier for the notification.}
 }

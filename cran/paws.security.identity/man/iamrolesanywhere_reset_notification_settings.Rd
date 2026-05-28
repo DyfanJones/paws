@@ -13,8 +13,7 @@ iamrolesanywhere_reset_notification_settings(
 \arguments{
 \item{trustAnchorId}{[required] The unique identifier of the trust anchor.}
 
-\item{notificationSettingKeys}{[required] A list of notification setting keys to reset. A notification setting key
-includes the event and the channel.}
+\item{notificationSettingKeys}{[required] A list of notification setting keys to reset. A notification setting key includes the event and the channel.}
 }
 \description{
 Resets the \emph{custom notification setting} to IAM Roles Anywhere default setting.

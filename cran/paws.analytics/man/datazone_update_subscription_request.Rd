@@ -11,14 +11,11 @@ datazone_update_subscription_request(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a subscription
-request is to be updated.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a subscription request is to be updated.}
 
 \item{identifier}{[required] The identifier of the subscription request that is to be updated.}
 
-\item{requestReason}{[required] The reason for the
-\code{\link[=datazone_update_subscription_request]{update_subscription_request}}
-action.}
+\item{requestReason}{[required] The reason for the \code{\link[=datazone_update_subscription_request]{update_subscription_request}} action.}
 }
 \description{
 Updates a specified subscription request in Amazon DataZone.

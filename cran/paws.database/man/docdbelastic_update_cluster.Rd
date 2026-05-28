@@ -20,15 +20,11 @@ docdbelastic_update_cluster(
 )
 }
 \arguments{
-\item{adminUserPassword}{The password associated with the elastic cluster administrator. This
-password can contain any printable ASCII character except forward slash
-(/), double quote ("), or the "at" symbol (@).
+\item{adminUserPassword}{The password associated with the elastic cluster administrator. This password can contain any printable ASCII character except forward slash (/), double quote ("), or the "at" symbol (@).
 
 \emph{Constraints}: Must contain from 8 to 100 characters.}
 
-\item{authType}{The authentication type used to determine where to fetch the password
-used for accessing the elastic cluster. Valid types are \code{PLAIN_TEXT} or
-\code{SECRET_ARN}.}
+\item{authType}{The authentication type used to determine where to fetch the password used for accessing the elastic cluster. Valid types are \code{PLAIN_TEXT} or \code{SECRET_ARN}.}
 
 \item{backupRetentionPeriod}{The number of days for which automatic snapshots are retained.}
 
@@ -36,32 +32,23 @@ used for accessing the elastic cluster. Valid types are \code{PLAIN_TEXT} or
 
 \item{clusterArn}{[required] The ARN identifier of the elastic cluster.}
 
-\item{preferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled, as determined by the
-\code{backupRetentionPeriod}.}
+\item{preferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled, as determined by the \code{backupRetentionPeriod}.}
 
-\item{preferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in
-Universal Coordinated Time (UTC).
+\item{preferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 
 \emph{Format}: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-\emph{Default}: a 30-minute window selected at random from an 8-hour block of
-time for each Amazon Web Services Region, occurring on a random day of
-the week.
+\emph{Default}: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.
 
 \emph{Valid days}: Mon, Tue, Wed, Thu, Fri, Sat, Sun
 
 \emph{Constraints}: Minimum 30-minute window.}
 
-\item{shardCapacity}{The number of vCPUs assigned to each elastic cluster shard. Maximum is
-64. Allowed values are 2, 4, 8, 16, 32, 64.}
+\item{shardCapacity}{The number of vCPUs assigned to each elastic cluster shard. Maximum is 64. Allowed values are 2, 4, 8, 16, 32, 64.}
 
 \item{shardCount}{The number of shards assigned to the elastic cluster. Maximum is 32.}
 
-\item{shardInstanceCount}{The number of replica instances applying to all shards in the elastic
-cluster. A \code{shardInstanceCount} value of 1 means there is one writer
-instance, and any additional instances are replicas that can be used for
-reads and to improve availability.}
+\item{shardInstanceCount}{The number of replica instances applying to all shards in the elastic cluster. A \code{shardInstanceCount} value of 1 means there is one writer instance, and any additional instances are replicas that can be used for reads and to improve availability.}
 
 \item{subnetIds}{The Amazon EC2 subnet IDs for the elastic cluster.}
 

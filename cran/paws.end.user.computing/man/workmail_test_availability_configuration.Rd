@@ -13,12 +13,13 @@ workmail_test_availability_configuration(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The WorkMail organization where the availability provider will be
-tested.}
+\item{OrganizationId}{[required] The WorkMail organization where the availability provider will be tested.}
 
-\item{DomainName}{The domain to which the provider applies. If this field is provided, a
-stored availability provider associated to this domain name will be
-tested.}
+\item{DomainName}{The domain to which the provider applies. If this field is provided, a stored availability provider associated to this domain name will be tested.}
+
+\item{EwsProvider}{Describes an EWS based availability provider. This is only used as input to the service.}
+
+\item{LambdaProvider}{Describes a Lambda based availability provider.}
 }
 \description{
 Performs a test on an availability provider to ensure that access is allowed. For EWS, it verifies the provided credentials can be used to successfully log in. For Lambda, it verifies that the Lambda function can be invoked and that the resource access policy was configured to deny anonymous access. An anonymous invocation is one done without providing either a \code{SourceArn} or \code{SourceAccount} header.

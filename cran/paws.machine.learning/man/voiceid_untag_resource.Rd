@@ -7,8 +7,7 @@
 voiceid_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the Voice ID resource you want to
-remove tags from.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the Voice ID resource you want to remove tags from.}
 
 \item{TagKeys}{[required] The list of tag keys you want to remove from the specified resource.}
 }

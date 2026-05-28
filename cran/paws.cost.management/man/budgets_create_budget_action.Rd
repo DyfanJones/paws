@@ -18,30 +18,27 @@ budgets_create_budget_action(
 )
 }
 \arguments{
-\item{AccountId}{[required]}
+\item{AccountId}{[required] The account ID of the user. It's a 12-digit number.}
 
-\item{BudgetName}{[required]}
+\item{BudgetName}{[required] A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
 
-\item{NotificationType}{[required]}
+Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.}
 
-\item{ActionType}{[required] The type of action. This defines the type of tasks that can be carried
-out by this action. This field also determines the format for
-definition.}
+\item{NotificationType}{[required] The type of a notification. It must be ACTUAL or FORECASTED.}
 
-\item{ActionThreshold}{[required]}
+\item{ActionType}{[required] The type of action. This defines the type of tasks that can be carried out by this action. This field also determines the format for definition.}
 
-\item{Definition}{[required]}
+\item{ActionThreshold}{[required] The trigger threshold of the action.}
 
-\item{ExecutionRoleArn}{[required] The role passed for action execution and reversion. Roles and actions
-must be in the same account.}
+\item{Definition}{[required] Specifies all of the type-specific parameters.}
+
+\item{ExecutionRoleArn}{[required] The role passed for action execution and reversion. Roles and actions must be in the same account.}
 
 \item{ApprovalModel}{[required] This specifies if the action needs manual or automatic approval.}
 
-\item{Subscribers}{[required]}
+\item{Subscribers}{[required] A list of subscribers.}
 
-\item{ResourceTags}{An optional list of tags to associate with the specified budget action.
-Each tag consists of a key and a value, and each key must be unique for
-the resource.}
+\item{ResourceTags}{An optional list of tags to associate with the specified budget action. Each tag consists of a key and a value, and each key must be unique for the resource.}
 }
 \description{
 Creates a budget action.

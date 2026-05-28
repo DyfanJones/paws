@@ -16,8 +16,7 @@ directconnect_update_direct_connect_gateway_association(
 
 \item{addAllowedPrefixesToDirectConnectGateway}{The Amazon VPC prefixes to advertise to the Direct Connect gateway.}
 
-\item{removeAllowedPrefixesToDirectConnectGateway}{The Amazon VPC prefixes to no longer advertise to the Direct Connect
-gateway.}
+\item{removeAllowedPrefixesToDirectConnectGateway}{The Amazon VPC prefixes to no longer advertise to the Direct Connect gateway.}
 }
 \description{
 Updates the specified attributes of the Direct Connect gateway association.

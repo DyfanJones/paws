@@ -7,7 +7,8 @@
 sagemaker_create_model_package_group(
   ModelPackageGroupName,
   ModelPackageGroupDescription = NULL,
-  Tags = NULL
+  Tags = NULL,
+  ManagedConfiguration = NULL
 )
 }
 \arguments{
@@ -15,9 +16,9 @@ sagemaker_create_model_package_group(
 
 \item{ModelPackageGroupDescription}{A description for the model group.}
 
-\item{Tags}{A list of key value pairs associated with the model group. For more
-information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources}
-in the \emph{Amazon Web Services General Reference Guide}.}
+\item{Tags}{A list of key value pairs associated with the model group. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources} in the \emph{Amazon Web Services General Reference Guide}.}
+
+\item{ManagedConfiguration}{The managed configuration of the model package group.}
 }
 \description{
 Creates a model group. A model group contains a group of model versions.

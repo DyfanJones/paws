@@ -7,8 +7,7 @@
 kafkaconnect_untag_resource(resourceArn, tagKeys)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource from which you want to
-remove tags.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource from which you want to remove tags.}
 
 \item{tagKeys}{[required] The keys of the tags that you want to remove from the resource.}
 }

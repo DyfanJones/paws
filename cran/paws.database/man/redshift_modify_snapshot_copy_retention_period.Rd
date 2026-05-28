@@ -13,40 +13,25 @@ redshift_modify_snapshot_copy_retention_period(
 )
 }
 \arguments{
-\item{ClusterIdentifier}{[required] The unique identifier of the cluster for which you want to change the
-retention period for either automated or manual snapshots that are
-copied to a destination Amazon Web Services Region.
+\item{ClusterIdentifier}{[required] The unique identifier of the cluster for which you want to change the retention period for either automated or manual snapshots that are copied to a destination Amazon Web Services Region.
 
-Constraints: Must be the valid name of an existing cluster that has
-cross-region snapshot copy enabled.}
+Constraints: Must be the valid name of an existing cluster that has cross-region snapshot copy enabled.}
 
-\item{RetentionPeriod}{[required] The number of days to retain automated snapshots in the destination
-Amazon Web Services Region after they are copied from the source Amazon
-Web Services Region.
+\item{RetentionPeriod}{[required] The number of days to retain automated snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region.
 
-By default, this only changes the retention period of copied automated
-snapshots.
+By default, this only changes the retention period of copied automated snapshots.
 
-If you decrease the retention period for automated snapshots that are
-copied to a destination Amazon Web Services Region, Amazon Redshift
-deletes any existing automated snapshots that were copied to the
-destination Amazon Web Services Region and that fall outside of the new
-retention period.
+If you decrease the retention period for automated snapshots that are copied to a destination Amazon Web Services Region, Amazon Redshift deletes any existing automated snapshots that were copied to the destination Amazon Web Services Region and that fall outside of the new retention period.
 
-Constraints: Must be at least 1 and no more than 35 for automated
-snapshots.
+Constraints: Must be at least 1 and no more than 35 for automated snapshots.
 
-If you specify the \code{manual} option, only newly copied manual snapshots
-will have the new retention period.
+If you specify the \code{manual} option, only newly copied manual snapshots will have the new retention period.
 
-If you specify the value of -1 newly copied manual snapshots are
-retained indefinitely.
+If you specify the value of -1 newly copied manual snapshots are retained indefinitely.
 
-Constraints: The number of days must be either -1 or an integer between
-1 and 3,653 for manual snapshots.}
+Constraints: The number of days must be either -1 or an integer between 1 and 3,653 for manual snapshots.}
 
-\item{Manual}{Indicates whether to apply the snapshot retention period to newly copied
-manual snapshots instead of automated snapshots.}
+\item{Manual}{Indicates whether to apply the snapshot retention period to newly copied manual snapshots instead of automated snapshots.}
 }
 \description{
 Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. By default, this operation only changes the retention period of copied automated snapshots. The retention periods for both new and existing copied automated snapshots are updated with the new retention period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set this option, only newly copied manual snapshots have the new retention period.

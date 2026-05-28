@@ -12,18 +12,13 @@ lakeformation_search_databases_by_lf_tags(
 )
 }
 \arguments{
-\item{NextToken}{A continuation token, if this is not the first call to retrieve this
-list.}
+\item{NextToken}{A continuation token, if this is not the first call to retrieve this list.}
 
 \item{MaxResults}{The maximum number of results to return.}
 
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, and other control information to manage
-your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.}
 
-\item{Expression}{[required] A list of conditions (\code{LFTag} structures) to search for in database
-resources.}
+\item{Expression}{[required] A list of conditions (\code{LFTag} structures) to search for in database resources.}
 }
 \description{
 This operation allows a search on \code{DATABASE} resources by \code{TagCondition}. This operation is used by admins who want to grant user permissions on certain \code{TagConditions}. Before making a grant, the admin can use \code{SearchDatabasesByTags} to find all resources where the given \code{TagConditions} are valid to verify whether the returned resources can be shared.

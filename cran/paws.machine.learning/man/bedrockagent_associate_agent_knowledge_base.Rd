@@ -13,19 +13,15 @@ bedrockagent_associate_agent_knowledge_base(
 )
 }
 \arguments{
-\item{agentId}{[required] The unique identifier of the agent with which you want to associate the
-knowledge base.}
+\item{agentId}{[required] The unique identifier of the agent with which you want to associate the knowledge base.}
 
-\item{agentVersion}{[required] The version of the agent with which you want to associate the knowledge
-base.}
+\item{agentVersion}{[required] The version of the agent with which you want to associate the knowledge base.}
 
 \item{knowledgeBaseId}{[required] The unique identifier of the knowledge base to associate with the agent.}
 
 \item{description}{[required] A description of what the agent should use the knowledge base for.}
 
-\item{knowledgeBaseState}{Specifies whether to use the knowledge base or not when sending an
-\href{https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html}{InvokeAgent}
-request.}
+\item{knowledgeBaseState}{Specifies whether to use the knowledge base or not when sending an \href{https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html}{InvokeAgent} request.}
 }
 \description{
 Associates a knowledge base with an agent. If a knowledge base is associated and its \code{indexState} is set to \code{Enabled}, the agent queries the knowledge base for information to augment its response to the user.

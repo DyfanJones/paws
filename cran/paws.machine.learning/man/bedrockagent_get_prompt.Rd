@@ -11,9 +11,7 @@ bedrockagent_get_prompt(promptIdentifier, promptVersion = NULL)
 \arguments{
 \item{promptIdentifier}{[required] The unique identifier of the prompt.}
 
-\item{promptVersion}{The version of the prompt about which you want to retrieve information.
-Omit this field to return information about the working draft of the
-prompt.}
+\item{promptVersion}{The version of the prompt about which you want to retrieve information. Omit this field to return information about the working draft of the prompt.}
 }
 \description{
 Retrieves information about the working draft (\code{DRAFT} version) of a prompt or a version of it, depending on whether you include the \code{promptVersion} field or not. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-view.html}{View information about prompts using Prompt management} and \href{https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-deploy.html#prompt-management-versions-view.html}{View information about a version of your prompt} in the Amazon Bedrock User Guide.

@@ -17,23 +17,15 @@ emrserverless_start_session(
 \arguments{
 \item{applicationId}{[required] The ID of the application on which to start the session.}
 
-\item{clientToken}{[required] A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request that completed
-successfully using the same client token, the server returns the
-successful response without performing the operation again.}
+\item{clientToken}{[required] A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token, the server returns the successful response without performing the operation again.}
 
-\item{executionRoleArn}{[required] The execution role ARN for the session. Amazon EMR Serverless uses this
-role to access Amazon Web Services resources on your behalf during
-session execution.}
+\item{executionRoleArn}{[required] The execution role ARN for the session. Amazon EMR Serverless uses this role to access Amazon Web Services resources on your behalf during session execution.}
 
-\item{configurationOverrides}{The configuration overrides for the session. Only runtime configuration
-overrides are supported.}
+\item{configurationOverrides}{The configuration overrides for the session. Only runtime configuration overrides are supported.}
 
 \item{tags}{The tags to assign to the session.}
 
-\item{idleTimeoutMinutes}{The idle timeout in minutes for the session. After the session remains
-idle for this duration, Amazon EMR Serverless automatically terminates
-it.}
+\item{idleTimeoutMinutes}{The idle timeout in minutes for the session. After the session remains idle for this duration, Amazon EMR Serverless automatically terminates it.}
 
 \item{name}{The optional name for the session.}
 }

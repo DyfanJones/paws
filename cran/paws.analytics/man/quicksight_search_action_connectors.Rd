@@ -13,17 +13,13 @@ quicksight_search_action_connectors(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID in which to search for action
-connectors.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID in which to search for action connectors.}
 
-\item{MaxResults}{The maximum number of action connectors to return in a single response.
-Valid range is 1 to 100.}
+\item{MaxResults}{The maximum number of action connectors to return in a single response. Valid range is 1 to 100.}
 
-\item{NextToken}{A pagination token to retrieve the next set of results. Use the token
-returned from a previous call to continue searching.}
+\item{NextToken}{A pagination token to retrieve the next set of results. Use the token returned from a previous call to continue searching.}
 
-\item{Filters}{[required] The search filters to apply. You can filter by connector name, type, or
-user permissions. Maximum of one filter is supported.}
+\item{Filters}{[required] The search filters to apply. You can filter by connector name, type, or user permissions. Maximum of one filter is supported.}
 }
 \description{
 Searches for action connectors in the specified Amazon Web Services account using filters. You can search by connector name, type, or user permissions.

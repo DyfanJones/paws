@@ -10,8 +10,7 @@ apigateway_update_usage(usagePlanId, keyId, patchOperations = NULL)
 \arguments{
 \item{usagePlanId}{[required] The Id of the usage plan associated with the usage data.}
 
-\item{keyId}{[required] The identifier of the API key associated with the usage plan in which a
-temporary extension is granted to the remaining quota.}
+\item{keyId}{[required] The identifier of the API key associated with the usage plan in which a temporary extension is granted to the remaining quota.}
 
 \item{patchOperations}{For more information about supported patch operations, see \href{https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html}{Patch Operations}.}
 }

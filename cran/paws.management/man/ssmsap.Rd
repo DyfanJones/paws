@@ -48,10 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-This API reference provides descriptions, syntax, and other details
-about each of the actions and data types for AWS Systems Manager for
-SAP. The topic for each action shows the API request parameters and
-responses.
+This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS Systems Manager for SAP. The topic for each action shows the API request parameters and responses.
 }
 \section{Service syntax}{
 

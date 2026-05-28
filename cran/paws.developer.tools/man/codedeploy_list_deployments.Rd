@@ -15,38 +15,29 @@ codedeploy_list_deployments(
 )
 }
 \arguments{
-\item{applicationName}{The name of an CodeDeploy application associated with the user or Amazon
-Web Services account.
+\item{applicationName}{The name of an CodeDeploy application associated with the user or Amazon Web Services account.
 
-If \code{applicationName} is specified, then \code{deploymentGroupName} must be
-specified. If it is not specified, then \code{deploymentGroupName} must not
-be specified.}
+If \code{applicationName} is specified, then \code{deploymentGroupName} must be specified. If it is not specified, then \code{deploymentGroupName} must not be specified.}
 
 \item{deploymentGroupName}{The name of a deployment group for the specified application.
 
-If \code{deploymentGroupName} is specified, then \code{applicationName} must be
-specified. If it is not specified, then \code{applicationName} must not be
-specified.}
+If \code{deploymentGroupName} is specified, then \code{applicationName} must be specified. If it is not specified, then \code{applicationName} must not be specified.}
 
-\item{externalId}{The unique ID of an external resource for returning deployments linked
-to the external resource.}
+\item{externalId}{The unique ID of an external resource for returning deployments linked to the external resource.}
 
 \item{includeOnlyStatuses}{A subset of deployments to list by status:
 \itemize{
 \item \code{Created}: Include created deployments in the resulting list.
 \item \code{Queued}: Include queued deployments in the resulting list.
-\item \verb{In Progress}: Include in-progress deployments in the resulting
-list.
+\item \verb{In Progress}: Include in-progress deployments in the resulting list.
 \item \code{Succeeded}: Include successful deployments in the resulting list.
 \item \code{Failed}: Include failed deployments in the resulting list.
 \item \code{Stopped}: Include stopped deployments in the resulting list.
 }}
 
-\item{createTimeRange}{A time range (start and end) for returning a subset of the list of
-deployments.}
+\item{createTimeRange}{A time range (start and end) for returning a subset of the list of deployments.}
 
-\item{nextToken}{An identifier returned from the previous list deployments call. It can
-be used to return the next set of deployments in the list.}
+\item{nextToken}{An identifier returned from the previous list deployments call. It can be used to return the next set of deployments in the list.}
 }
 \description{
 Lists the deployments in a deployment group for an application registered with the user or Amazon Web Services account.

@@ -7,8 +7,7 @@
 healthlake_untag_resource(ResourceARN, TagKeys)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the data store from which tags are
-being removed.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the data store from which tags are being removed.}
 
 \item{TagKeys}{[required] The keys for the tags to be removed from the data store.}
 }

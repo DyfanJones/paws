@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-SageMaker Edge Manager dataplane service for communicating with active
-agents.
+SageMaker Edge Manager dataplane service for communicating with active agents.
 }
 \section{Service syntax}{
 

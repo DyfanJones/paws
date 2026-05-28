@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Recovery Control Configuration API Reference for Amazon Route 53
-Application Recovery Controller
+Recovery Control Configuration API Reference for Amazon Route 53 Application Recovery Controller
 }
 \section{Service syntax}{
 

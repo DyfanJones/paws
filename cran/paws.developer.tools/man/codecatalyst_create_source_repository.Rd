@@ -16,8 +16,7 @@ codecatalyst_create_source_repository(
 
 \item{projectName}{[required] The name of the project in the space.}
 
-\item{name}{[required] The name of the source repository. For more information about name
-requirements, see \href{https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html}{Quotas for source repositories}.}
+\item{name}{[required] The name of the source repository. For more information about name requirements, see \href{https://docs.aws.amazon.com/codecatalyst/latest/userguide/source-quotas.html}{Quotas for source repositories}.}
 
 \item{description}{The description of the source repository.}
 }

@@ -15,13 +15,9 @@ costexplorer_get_savings_plans_utilization_details(
 )
 }
 \arguments{
-\item{TimePeriod}{[required] The time period that you want the usage and costs for. The \code{Start} date
-must be within 13 months. The \code{End} date must be after the \code{Start} date,
-and before the current date. Future dates can't be used as an \code{End}
-date.}
+\item{TimePeriod}{[required] The time period that you want the usage and costs for. The \code{Start} date must be within 13 months. The \code{End} date must be after the \code{Start} date, and before the current date. Future dates can't be used as an \code{End} date.}
 
-\item{Filter}{Filters Savings Plans utilization coverage data for active Savings Plans
-dimensions. You can filter data with the following dimensions:
+\item{Filter}{Filters Savings Plans utilization coverage data for active Savings Plans dimensions. You can filter data with the following dimensions:
 \itemize{
 \item \code{LINKED_ACCOUNT}
 \item \code{SAVINGS_PLAN_ARN}
@@ -30,20 +26,13 @@ dimensions. You can filter data with the following dimensions:
 \item \code{INSTANCE_TYPE_FAMILY}
 }
 
-\code{\link[=costexplorer_get_savings_plans_utilization_details]{get_savings_plans_utilization_details}}
-uses the same
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html}{Expression}
-object as the other operations, but only \code{AND} is supported among each
-dimension.}
+\code{\link[=costexplorer_get_savings_plans_utilization_details]{get_savings_plans_utilization_details}} uses the same \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html}{Expression} object as the other operations, but only \code{AND} is supported among each dimension.}
 
 \item{DataType}{The data type.}
 
-\item{NextToken}{The token to retrieve the next set of results. Amazon Web Services
-provides the token when the response from a previous call has more
-results than the maximum page size.}
+\item{NextToken}{The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.}
 
-\item{MaxResults}{The number of items to be returned in a response. The default is \code{20},
-with a minimum value of \code{1}.}
+\item{MaxResults}{The number of items to be returned in a response. The default is \code{20}, with a minimum value of \code{1}.}
 
 \item{SortBy}{The value that you want to sort the data by.
 

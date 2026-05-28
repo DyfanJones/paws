@@ -12,8 +12,7 @@ workmail_create_group(OrganizationId, Name, HiddenFromGlobalAddressList = NULL)
 
 \item{Name}{[required] The name of the group.}
 
-\item{HiddenFromGlobalAddressList}{If this parameter is enabled, the group will be hidden from the address
-book.}
+\item{HiddenFromGlobalAddressList}{If this parameter is enabled, the group will be hidden from the address book.}
 }
 \description{
 Creates a group that can be used in WorkMail by calling the \code{\link[=workmail_register_to_work_mail]{register_to_work_mail}} operation.

@@ -12,13 +12,11 @@ workmail_list_availability_configurations(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The WorkMail organization for which the \code{AvailabilityConfiguration}'s
-will be listed.}
+\item{OrganizationId}{[required] The WorkMail organization for which the \code{AvailabilityConfiguration}'s will be listed.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 
-\item{NextToken}{The token to use to retrieve the next page of results. The first call
-does not require a token.}
+\item{NextToken}{The token to use to retrieve the next page of results. The first call does not require a token.}
 }
 \description{
 List all the \code{AvailabilityConfiguration}'s for the given WorkMail organization.

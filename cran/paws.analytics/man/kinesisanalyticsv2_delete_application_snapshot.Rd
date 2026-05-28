@@ -15,8 +15,7 @@ kinesisanalyticsv2_delete_application_snapshot(
 
 \item{SnapshotName}{[required] The identifier for the snapshot delete.}
 
-\item{SnapshotCreationTimestamp}{[required] The creation timestamp of the application snapshot to delete. You can
-retrieve this value using or .}
+\item{SnapshotCreationTimestamp}{[required] The creation timestamp of the application snapshot to delete. You can retrieve this value using or .}
 }
 \description{
 Deletes a snapshot of application state.

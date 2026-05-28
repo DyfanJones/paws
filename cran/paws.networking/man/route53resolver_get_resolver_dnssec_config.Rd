@@ -7,8 +7,7 @@
 route53resolver_get_resolver_dnssec_config(ResourceId)
 }
 \arguments{
-\item{ResourceId}{[required] The ID of the virtual private cloud (VPC) for the DNSSEC validation
-status.}
+\item{ResourceId}{[required] The ID of the virtual private cloud (VPC) for the DNSSEC validation status.}
 }
 \description{
 Gets DNSSEC validation information for a specified resource.

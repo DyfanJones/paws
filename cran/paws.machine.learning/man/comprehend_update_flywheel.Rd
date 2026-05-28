@@ -16,8 +16,7 @@ comprehend_update_flywheel(
 
 \item{ActiveModelArn}{The Amazon Resource Number (ARN) of the active model version.}
 
-\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants Amazon
-Comprehend permission to access the flywheel data.}
+\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend permission to access the flywheel data.}
 
 \item{DataSecurityConfig}{Flywheel data security configuration.}
 }

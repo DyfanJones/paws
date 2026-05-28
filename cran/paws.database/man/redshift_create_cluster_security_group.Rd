@@ -11,15 +11,13 @@ redshift_create_cluster_security_group(
 )
 }
 \arguments{
-\item{ClusterSecurityGroupName}{[required] The name for the security group. Amazon Redshift stores the value as a
-lowercase string.
+\item{ClusterSecurityGroupName}{[required] The name for the security group. Amazon Redshift stores the value as a lowercase string.
 
 Constraints:
 \itemize{
 \item Must contain no more than 255 alphanumeric characters or hyphens.
 \item Must not be "Default".
-\item Must be unique for all security groups that are created by your
-Amazon Web Services account.
+\item Must be unique for all security groups that are created by your Amazon Web Services account.
 }
 
 Example: \code{examplesecuritygroup}}

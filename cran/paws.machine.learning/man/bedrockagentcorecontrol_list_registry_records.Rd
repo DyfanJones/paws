@@ -14,26 +14,17 @@ bedrockagentcorecontrol_list_registry_records(
 )
 }
 \arguments{
-\item{registryId}{[required] The identifier of the registry to list records from. You can specify
-either the Amazon Resource Name (ARN) or the ID of the registry.}
+\item{registryId}{[required] The identifier of the registry to list records from. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 
 \item{name}{Filter registry records by name.}
 
-\item{status}{Filter registry records by their current status. Possible values include
-\code{CREATING}, \code{DRAFT}, \code{APPROVED}, \code{PENDING_APPROVAL}, \code{REJECTED},
-\code{DEPRECATED}, \code{UPDATING}, \code{CREATE_FAILED}, and \code{UPDATE_FAILED}.}
+\item{status}{Filter registry records by their current status. Possible values include \code{CREATING}, \code{DRAFT}, \code{APPROVED}, \code{PENDING_APPROVAL}, \code{REJECTED}, \code{DEPRECATED}, \code{UPDATING}, \code{CREATE_FAILED}, and \code{UPDATE_FAILED}.}
 
-\item{descriptorType}{Filter registry records by their descriptor type. Possible values are
-\code{MCP}, \code{A2A}, \code{CUSTOM}, and \code{AGENT_SKILLS}.}
+\item{descriptorType}{Filter registry records by their descriptor type. Possible values are \code{MCP}, \code{A2A}, \code{CUSTOM}, and \code{AGENT_SKILLS}.}
 }
 \description{
 Lists registry records within a registry. You can optionally filter results using the \code{name}, \code{status}, and \code{descriptorType} parameters. When multiple filters are specified, they are combined using AND logic.

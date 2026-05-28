@@ -16,8 +16,7 @@ datazone_create_glossary_term(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this business glossary
-term is created.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this business glossary term is created.}
 
 \item{glossaryIdentifier}{[required] The ID of the business glossary in which this term is created.}
 
@@ -31,8 +30,7 @@ term is created.}
 
 \item{termRelations}{The term relations of this business glossary term.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates a business glossary term.

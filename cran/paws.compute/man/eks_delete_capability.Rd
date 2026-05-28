@@ -7,8 +7,7 @@
 eks_delete_capability(clusterName, capabilityName)
 }
 \arguments{
-\item{clusterName}{[required] The name of the Amazon EKS cluster that contains the capability you want
-to delete.}
+\item{clusterName}{[required] The name of the Amazon EKS cluster that contains the capability you want to delete.}
 
 \item{capabilityName}{[required] The name of the capability to delete.}
 }

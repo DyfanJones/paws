@@ -7,8 +7,7 @@
 route53resolver_delete_firewall_rule_group(FirewallRuleGroupId)
 }
 \arguments{
-\item{FirewallRuleGroupId}{[required] The unique identifier of the firewall rule group that you want to
-delete.}
+\item{FirewallRuleGroupId}{[required] The unique identifier of the firewall rule group that you want to delete.}
 }
 \description{
 Deletes the specified firewall rule group.

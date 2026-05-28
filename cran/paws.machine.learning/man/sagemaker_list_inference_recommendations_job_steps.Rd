@@ -15,19 +15,15 @@ sagemaker_list_inference_recommendations_job_steps(
 \arguments{
 \item{JobName}{[required] The name for the Inference Recommender job.}
 
-\item{Status}{A filter to return benchmarks of a specified status. If this field is
-left empty, then all benchmarks are returned.}
+\item{Status}{A filter to return benchmarks of a specified status. If this field is left empty, then all benchmarks are returned.}
 
 \item{StepType}{A filter to return details about the specified type of subtask.
 
-\code{BENCHMARK}: Evaluate the performance of your model on different
-instance types.}
+\code{BENCHMARK}: Evaluate the performance of your model on different instance types.}
 
 \item{MaxResults}{The maximum number of results to return.}
 
-\item{NextToken}{A token that you can specify to return more results from the list.
-Specify this field if you have a token that was returned from a previous
-request.}
+\item{NextToken}{A token that you can specify to return more results from the list. Specify this field if you have a token that was returned from a previous request.}
 }
 \description{
 Returns a list of the subtasks for an Inference Recommender job.

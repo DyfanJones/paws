@@ -10,9 +10,7 @@ ssoadmin_describe_region(InstanceArn, RegionName)
 \arguments{
 \item{InstanceArn}{[required] The Amazon Resource Name (ARN) of the IAM Identity Center instance.}
 
-\item{RegionName}{[required] The name of the Amazon Web Services Region to retrieve information
-about. The Region name must be 1-32 characters long and follow the
-pattern of Amazon Web Services Region names (for example, us-east-1).}
+\item{RegionName}{[required] The name of the Amazon Web Services Region to retrieve information about. The Region name must be 1-32 characters long and follow the pattern of Amazon Web Services Region names (for example, us-east-1).}
 }
 \description{
 Retrieves details about a specific Region enabled in an IAM Identity Center instance. Details include the Region name, current status (ACTIVE, ADDING, or REMOVING), the date when the Region was added, and whether it is the primary Region. The request must be made from one of the enabled Regions of the IAM Identity Center instance.

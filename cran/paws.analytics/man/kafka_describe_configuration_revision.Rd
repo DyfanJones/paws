@@ -7,8 +7,7 @@
 kafka_describe_configuration_revision(Arn, Revision)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) that uniquely identifies an MSK
-configuration and all of its revisions.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.}
 
 \item{Revision}{[required] A string that uniquely identifies a revision of an MSK configuration.}
 }

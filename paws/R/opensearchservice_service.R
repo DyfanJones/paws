@@ -5,13 +5,7 @@ NULL
 #' Amazon OpenSearch Service
 #'
 #' @description
-#' Use the Amazon OpenSearch Service configuration API to create,
-#' configure, and manage OpenSearch Service domains. The endpoint for
-#' configuration service requests is Region specific:
-#' es.*region*.amazonaws.com. For example, es.us-east-1.amazonaws.com. For
-#' a current list of supported Regions and endpoints, see [Amazon Web
-#' Services service
-#' endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions).
+#' Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains. The endpoint for configuration service requests is Region specific: es.*region*.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and endpoints, see [Amazon Web Services service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions).
 #'
 #' @param
 #' config

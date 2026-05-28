@@ -12,10 +12,7 @@ rds_copy_db_cluster_parameter_group(
 )
 }
 \arguments{
-\item{SourceDBClusterParameterGroupIdentifier}{[required] The identifier or Amazon Resource Name (ARN) for the source DB cluster
-parameter group. For information about creating an ARN, see
-\href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing}{Constructing an ARN for Amazon RDS}
-in the \emph{Amazon Aurora User Guide}.
+\item{SourceDBClusterParameterGroupIdentifier}{[required] The identifier or Amazon Resource Name (ARN) for the source DB cluster parameter group. For information about creating an ARN, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing}{Constructing an ARN for Amazon RDS} in the \emph{Amazon Aurora User Guide}.
 
 Constraints:
 \itemize{
@@ -35,6 +32,10 @@ Constraints:
 Example: \code{my-cluster-param-group1}}
 
 \item{TargetDBClusterParameterGroupDescription}{[required] A description for the copied DB cluster parameter group.}
+
+\item{Tags}{A list of tags.
+
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
 }
 \description{
 Copies the specified DB cluster parameter group.

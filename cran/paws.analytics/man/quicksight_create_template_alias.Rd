@@ -12,14 +12,11 @@ quicksight_create_template_alias(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template
-that you creating an alias for.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template that you creating an alias for.}
 
 \item{TemplateId}{[required] An ID for the template.}
 
-\item{AliasName}{[required] The name that you want to give to the template alias that you're
-creating. Don't start the alias name with the \code{$} character. Alias names
-that start with \code{$} are reserved by Quick Sight.}
+\item{AliasName}{[required] The name that you want to give to the template alias that you're creating. Don't start the alias name with the \code{$} character. Alias names that start with \code{$} are reserved by Quick Sight.}
 
 \item{TemplateVersionNumber}{[required] The version number of the template.}
 }

@@ -7,11 +7,9 @@
 globalaccelerator_list_accelerators(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{The number of Global Accelerator objects that you want to return with
-this call. The default value is 10.}
+\item{MaxResults}{The number of Global Accelerator objects that you want to return with this call. The default value is 10.}
 
-\item{NextToken}{The token for the next set of results. You receive this token from a
-previous call.}
+\item{NextToken}{The token for the next set of results. You receive this token from a previous call.}
 }
 \description{
 List the accelerators for an Amazon Web Services account.

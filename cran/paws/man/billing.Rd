@@ -48,9 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-You can use the Billing API to programatically list the billing views
-available to you for a given time period. A billing view represents a
-set of billing data.
+You can use the Billing API to programatically list the billing views available to you for a given time period. A billing view represents a set of billing data.
 
 The Billing API provides the following endpoint:
 

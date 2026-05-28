@@ -14,30 +14,19 @@ redshiftserverless_update_lakehouse_configuration(
 )
 }
 \arguments{
-\item{catalogName}{The name of the Glue Data Catalog that will be associated with the
-namespace enabled with Amazon Redshift federated permissions.
+\item{catalogName}{The name of the Glue Data Catalog that will be associated with the namespace enabled with Amazon Redshift federated permissions.
 
 Pattern: \verb{^[a-z0-9_-]*[a-z]+[a-z0-9_-]*$}}
 
-\item{dryRun}{A boolean value that, if \code{true}, validates the request without actually
-updating the lakehouse configuration. Use this to check for errors
-before making changes.}
+\item{dryRun}{A boolean value that, if \code{true}, validates the request without actually updating the lakehouse configuration. Use this to check for errors before making changes.}
 
-\item{lakehouseIdcApplicationArn}{The Amazon Resource Name (ARN) of the IAM Identity Center application
-used for enabling Amazon Web Services IAM Identity Center trusted
-identity propagation on a namespace enabled with Amazon Redshift
-federated permissions.}
+\item{lakehouseIdcApplicationArn}{The Amazon Resource Name (ARN) of the IAM Identity Center application used for enabling Amazon Web Services IAM Identity Center trusted identity propagation on a namespace enabled with Amazon Redshift federated permissions.}
 
-\item{lakehouseIdcRegistration}{Modifies the Amazon Web Services IAM Identity Center trusted identity
-propagation on a namespace enabled with Amazon Redshift federated
-permissions. Valid values are \code{Associate} or \code{Disassociate}.}
+\item{lakehouseIdcRegistration}{Modifies the Amazon Web Services IAM Identity Center trusted identity propagation on a namespace enabled with Amazon Redshift federated permissions. Valid values are \code{Associate} or \code{Disassociate}.}
 
-\item{lakehouseRegistration}{Specifies whether to register or deregister the namespace with Amazon
-Redshift federated permissions. Valid values are \code{Register} or
-\code{Deregister}.}
+\item{lakehouseRegistration}{Specifies whether to register or deregister the namespace with Amazon Redshift federated permissions. Valid values are \code{Register} or \code{Deregister}.}
 
-\item{namespaceName}{[required] The name of the namespace whose lakehouse configuration you want to
-modify.}
+\item{namespaceName}{[required] The name of the namespace whose lakehouse configuration you want to modify.}
 }
 \description{
 Modifies the lakehouse configuration for a namespace. This operation allows you to manage Amazon Redshift federated permissions and Amazon Web Services IAM Identity Center trusted identity propagation.

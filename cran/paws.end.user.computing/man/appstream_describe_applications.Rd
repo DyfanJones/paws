@@ -13,8 +13,7 @@ appstream_describe_applications(
 \arguments{
 \item{Arns}{The ARNs for the applications.}
 
-\item{NextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{NextToken}{The pagination token used to retrieve the next page of results for this operation.}
 
 \item{MaxResults}{The maximum size of each page of results.}
 }

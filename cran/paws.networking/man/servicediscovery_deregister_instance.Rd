@@ -8,14 +8,9 @@ Cloud Map created for the specified instance}
 servicediscovery_deregister_instance(ServiceId, InstanceId)
 }
 \arguments{
-\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that the instance is
-associated with. If the namespace associated with the service is shared
-with your account, specify the service ARN. For more information about
-shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing}
-in the \emph{Cloud Map Developer Guide}.}
+\item{ServiceId}{[required] The ID or Amazon Resource Name (ARN) of the service that the instance is associated with. If the namespace associated with the service is shared with your account, specify the service ARN. For more information about shared namespaces, see \href{https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html}{Cross-account Cloud Map namespace sharing} in the \emph{Cloud Map Developer Guide}.}
 
-\item{InstanceId}{[required] The value that you specified for \code{Id} in the
-\code{\link[=servicediscovery_register_instance]{register_instance}} request.}
+\item{InstanceId}{[required] The value that you specified for \code{Id} in the \code{\link[=servicediscovery_register_instance]{register_instance}} request.}
 }
 \description{
 Deletes the Amazon Route 53 DNS records and health check, if any, that Cloud Map created for the specified instance.

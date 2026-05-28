@@ -13,14 +13,11 @@ ec2_get_active_vpn_tunnel_status(
 )
 }
 \arguments{
-\item{VpnConnectionId}{[required] The ID of the VPN connection for which to retrieve the active tunnel
-status.}
+\item{VpnConnectionId}{[required] The ID of the VPN connection for which to retrieve the active tunnel status.}
 
-\item{VpnTunnelOutsideIpAddress}{[required] The external IP address of the VPN tunnel for which to retrieve the
-active status.}
+\item{VpnTunnelOutsideIpAddress}{[required] The external IP address of the VPN tunnel for which to retrieve the active status.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request.}
 }
 \description{
 Returns the currently negotiated security parameters for an active VPN tunnel, including IKE version, DH groups, encryption algorithms, and integrity algorithms.

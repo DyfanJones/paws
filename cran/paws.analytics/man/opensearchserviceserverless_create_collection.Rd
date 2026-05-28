@@ -23,8 +23,7 @@ opensearchserviceserverless_create_collection(
 
 \item{description}{Description of the collection.}
 
-\item{tags}{An arbitrary set of tags (key–value pairs) to associate with the
-OpenSearch Serverless collection.}
+\item{tags}{An arbitrary set of tags (key–value pairs) to associate with the OpenSearch Serverless collection.}
 
 \item{standbyReplicas}{Indicates whether standby replicas should be used for a collection.}
 

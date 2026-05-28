@@ -8,8 +8,7 @@ from the specified Recovery Instance}
 drs_start_failback_launch(recoveryInstanceIDs, tags = NULL)
 }
 \arguments{
-\item{recoveryInstanceIDs}{[required] The IDs of the Recovery Instance whose failback launch we want to
-request.}
+\item{recoveryInstanceIDs}{[required] The IDs of the Recovery Instance whose failback launch we want to request.}
 
 \item{tags}{The tags to be associated with the failback launch Job.}
 }

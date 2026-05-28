@@ -7,11 +7,9 @@
 s3_get_bucket_metadata_configuration(Bucket, ExpectedBucketOwner = NULL)
 }
 \arguments{
-\item{Bucket}{[required] The general purpose bucket that corresponds to the metadata
-configuration that you want to retrieve.}
+\item{Bucket}{[required] The general purpose bucket that corresponds to the metadata configuration that you want to retrieve.}
 
-\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that you want to
-retrieve the metadata table configuration for.}
+\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that you want to retrieve the metadata table configuration for.}
 }
 \description{
 Retrieves the S3 Metadata configuration for a general purpose bucket. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html}{Accelerating data discovery with S3 Metadata} in the \emph{Amazon S3 User Guide}.

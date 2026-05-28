@@ -9,13 +9,9 @@ apigateway_get_base_path_mapping(domainName, domainNameId = NULL, basePath)
 \arguments{
 \item{domainName}{[required] The domain name of the BasePathMapping resource to be described.}
 
-\item{domainNameId}{The identifier for the domain name resource. Supported only for private
-custom domain names.}
+\item{domainNameId}{The identifier for the domain name resource. Supported only for private custom domain names.}
 
-\item{basePath}{[required] The base path name that callers of the API must provide as part of the
-URL after the domain name. This value must be unique for all of the
-mappings across a single API. Specify '(none)' if you do not want
-callers to specify any base path name after the domain name.}
+\item{basePath}{[required] The base path name that callers of the API must provide as part of the URL after the domain name. This value must be unique for all of the mappings across a single API. Specify '(none)' if you do not want callers to specify any base path name after the domain name.}
 }
 \description{
 Describe a BasePathMapping resource.

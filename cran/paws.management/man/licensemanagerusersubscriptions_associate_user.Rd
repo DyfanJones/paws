@@ -20,8 +20,7 @@ licensemanagerusersubscriptions_associate_user(
 
 \item{IdentityProvider}{[required] The identity provider for the user.}
 
-\item{Domain}{The domain name of the Active Directory that contains information for
-the user to associate.}
+\item{Domain}{The domain name of the Active Directory that contains information for the user to associate.}
 
 \item{Tags}{The tags that apply for the user association.}
 }

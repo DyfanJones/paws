@@ -18,35 +18,27 @@ comprehend_start_targeted_sentiment_detection_job(
 )
 }
 \arguments{
-\item{InputDataConfig}{[required]}
+\item{InputDataConfig}{[required] The input properties for an inference job. The document reader config field applies only to non-text inputs for custom analysis.}
 
 \item{OutputDataConfig}{[required] Specifies where to send the output files.}
 
-\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that grants Amazon
-Comprehend read access to your input data. For more information, see
-\href{https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions}{Role-based permissions}.}
+\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read access to your input data. For more information, see \href{https://docs.aws.amazon.com/comprehend/latest/dg/security_iam_id-based-policy-examples.html#auth-role-permissions}{Role-based permissions}.}
 
 \item{JobName}{The identifier of the job.}
 
-\item{LanguageCode}{[required] The language of the input documents. Currently, English is the only
-supported language.}
+\item{LanguageCode}{[required] The language of the input documents. Currently, English is the only supported language.}
 
-\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request
-token, Amazon Comprehend generates one.}
+\item{ClientRequestToken}{A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.}
 
-\item{VolumeKmsKeyId}{ID for the KMS key that Amazon Comprehend uses to encrypt data on the
-storage volume attached to the ML compute instance(s) that process the
-analysis job. The VolumeKmsKeyId can be either of the following formats:
+\item{VolumeKmsKeyId}{ID for the KMS key that Amazon Comprehend uses to encrypt data on the storage volume attached to the ML compute instance(s) that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
 \itemize{
 \item KMS Key ID: \code{"1234abcd-12ab-34cd-56ef-1234567890ab"}
-\item Amazon Resource Name (ARN) of a KMS Key:
-\code{"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"}
+\item Amazon Resource Name (ARN) of a KMS Key: \code{"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"}
 }}
 
-\item{Tags}{Tags to associate with the targeted sentiment detection job. A tag is a
-key-value pair that adds metadata to a resource used by Amazon
-Comprehend. For example, a tag with "Sales" as the key might be added to
-a resource to indicate its use by the sales department.}
+\item{VpcConfig}{Configuration parameters for an optional private Virtual Private Cloud (VPC) containing the resources you are using for the job. For more information, see \href{https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html}{Amazon VPC}.}
+
+\item{Tags}{Tags to associate with the targeted sentiment detection job. A tag is a key-value pair that adds metadata to a resource used by Amazon Comprehend. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department.}
 }
 \description{
 Starts an asynchronous targeted sentiment detection job for a collection of documents. Use the \code{\link[=comprehend_describe_targeted_sentiment_detection_job]{describe_targeted_sentiment_detection_job}} operation to track the status of a job.

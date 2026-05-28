@@ -16,15 +16,13 @@ billingconductor_update_pricing_rule(
 \arguments{
 \item{Arn}{[required] The Amazon Resource Name (ARN) of the pricing rule to update.}
 
-\item{Name}{The new name of the pricing rule. The name must be unique to each
-pricing rule.}
+\item{Name}{The new name of the pricing rule. The name must be unique to each pricing rule.}
 
 \item{Description}{The new description for the pricing rule.}
 
 \item{Type}{The new pricing rule type.}
 
-\item{ModifierPercentage}{The new modifier to show pricing plan rates as a percentage. Your entry
-will be rounded to the nearest 2 decimal places.}
+\item{ModifierPercentage}{The new modifier to show pricing plan rates as a percentage. Your entry will be rounded to the nearest 2 decimal places.}
 
 \item{Tiering}{The set of tiering configurations for the pricing rule.}
 }

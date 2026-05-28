@@ -44,8 +44,7 @@ drs_associate_source_network_stack <- function(sourceNetworkID, cfnStackName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_create_extended_source_server/](https://www.paws-r-sdk.com/docs/drs_create_extended_source_server/) for full documentation.
 #'
-#' @param sourceServerArn &#91;required&#93; This defines the ARN of the source server in staging Account based on
-#' which you want to create an extended source server.
+#' @param sourceServerArn &#91;required&#93; This defines the ARN of the source server in staging Account based on which you want to create an extended source server.
 #' @param tags A list of tags associated with the extended source server.
 #'
 #' @keywords internal
@@ -77,8 +76,7 @@ drs_create_extended_source_server <- function(sourceServerArn, tags = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_create_launch_configuration_template/](https://www.paws-r-sdk.com/docs/drs_create_launch_configuration_template/) for full documentation.
 #'
-#' @param tags Request to associate tags during creation of a Launch Configuration
-#' Template.
+#' @param tags Request to associate tags during creation of a Launch Configuration Template.
 #' @param launchDisposition Launch disposition.
 #' @param targetInstanceTypeRightSizingMethod Target instance type right-sizing method.
 #' @param copyPrivateIp Copy private IP.
@@ -86,9 +84,7 @@ drs_create_extended_source_server <- function(sourceServerArn, tags = NULL) {
 #' @param licensing Licensing.
 #' @param exportBucketArn S3 bucket ARN to export Source Network templates.
 #' @param postLaunchEnabled Whether we want to activate post-launch actions.
-#' @param launchIntoSourceInstance DRS will set the 'launch into instance ID' of any source server when
-#' performing a drill, recovery or failback to the previous region or
-#' availability zone, using the instance ID of the source instance.
+#' @param launchIntoSourceInstance DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.
 #'
 #' @keywords internal
 #'
@@ -120,30 +116,21 @@ drs_create_launch_configuration_template <- function(tags = NULL, launchDisposit
 #' See [https://www.paws-r-sdk.com/docs/drs_create_replication_configuration_template/](https://www.paws-r-sdk.com/docs/drs_create_replication_configuration_template/) for full documentation.
 #'
 #' @param stagingAreaSubnetId &#91;required&#93; The subnet to be used by the replication staging area.
-#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security
-#' group with the Replication Configuration Template.
+#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.
 #' @param replicationServersSecurityGroupsIDs &#91;required&#93; The security group IDs that will be used by the replication server.
 #' @param replicationServerInstanceType The instance type to be used for the replication server.
-#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging
-#' area.
+#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging area.
 #' @param defaultLargeStagingDiskType The Staging Disk EBS volume type to be used during replication.
 #' @param ebsEncryption &#91;required&#93; The type of EBS encryption to be used during replication.
 #' @param ebsEncryptionKeyArn The ARN of the EBS encryption key to be used during replication.
-#' @param bandwidthThrottling &#91;required&#93; Configure bandwidth throttling for the outbound data transfer rate of
-#' the Source Server in Mbps.
+#' @param bandwidthThrottling &#91;required&#93; Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.
 #' @param dataPlaneRouting The data plane routing mechanism that will be used for replication.
 #' @param createPublicIP Whether to create a Public IP for the Recovery Instance by default.
-#' @param stagingAreaTags &#91;required&#93; A set of tags to be associated with all resources created in the
-#' replication staging area: EC2 replication server, EBS volumes, EBS
-#' snapshots, etc.
-#' @param pitPolicy &#91;required&#93; The Point in time (PIT) policy to manage snapshots taken during
-#' replication.
-#' @param tags A set of tags to be associated with the Replication Configuration
-#' Template resource.
-#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate
-#' newly added disks.
-#' @param internetProtocol Which version of the Internet Protocol to use for replication of data.
-#' (IPv4 or IPv6)
+#' @param stagingAreaTags &#91;required&#93; A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
+#' @param pitPolicy &#91;required&#93; The Point in time (PIT) policy to manage snapshots taken during replication.
+#' @param tags A set of tags to be associated with the Replication Configuration Template resource.
+#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate newly added disks.
+#' @param internetProtocol Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
 #'
 #' @keywords internal
 #'
@@ -239,8 +226,8 @@ drs_delete_job <- function(jobID) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_delete_launch_action/](https://www.paws-r-sdk.com/docs/drs_delete_launch_action/) for full documentation.
 #'
-#' @param resourceId &#91;required&#93; 
-#' @param actionId &#91;required&#93; 
+#' @param resourceId &#91;required&#93; Launch configuration template Id or Source Server Id
+#' @param actionId &#91;required&#93; Launch action Id.
 #'
 #' @keywords internal
 #'
@@ -493,8 +480,7 @@ drs_describe_jobs <- function(filters = NULL, maxResults = NULL, nextToken = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_describe_launch_configuration_templates/](https://www.paws-r-sdk.com/docs/drs_describe_launch_configuration_templates/) for full documentation.
 #'
-#' @param launchConfigurationTemplateIDs Request to filter Launch Configuration Templates list by Launch
-#' Configuration Template ID.
+#' @param launchConfigurationTemplateIDs Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
 #' @param maxResults Maximum results to be returned in DescribeLaunchConfigurationTemplates.
 #' @param nextToken The token of the next Launch Configuration Template to retrieve.
 #'
@@ -596,8 +582,7 @@ drs_describe_recovery_snapshots <- function(sourceServerID, filters = NULL, orde
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_describe_replication_configuration_templates/](https://www.paws-r-sdk.com/docs/drs_describe_replication_configuration_templates/) for full documentation.
 #'
-#' @param replicationConfigurationTemplateIDs The IDs of the Replication Configuration Templates to retrieve. An empty
-#' list means all Replication Configuration Templates.
+#' @param replicationConfigurationTemplateIDs The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.
 #' @param maxResults Maximum number of Replication Configuration Templates to retrieve.
 #' @param nextToken The token of the next Replication Configuration Template to retrieve.
 #'
@@ -758,8 +743,7 @@ drs_disconnect_source_server <- function(sourceServerID) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_export_source_network_cfn_template/](https://www.paws-r-sdk.com/docs/drs_export_source_network_cfn_template/) for full documentation.
 #'
-#' @param sourceNetworkID &#91;required&#93; The Source Network ID to export its CloudFormation template to an S3
-#' bucket.
+#' @param sourceNetworkID &#91;required&#93; The Source Network ID to export its CloudFormation template to an S3 bucket.
 #'
 #' @keywords internal
 #'
@@ -791,8 +775,7 @@ drs_export_source_network_cfn_template <- function(sourceNetworkID) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_get_failback_replication_configuration/](https://www.paws-r-sdk.com/docs/drs_get_failback_replication_configuration/) for full documentation.
 #'
-#' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance whose failback replication configuration
-#' should be returned.
+#' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance whose failback replication configuration should be returned.
 #'
 #' @keywords internal
 #'
@@ -823,8 +806,7 @@ drs_get_failback_replication_configuration <- function(recoveryInstanceID) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_get_launch_configuration/](https://www.paws-r-sdk.com/docs/drs_get_launch_configuration/) for full documentation.
 #'
-#' @param sourceServerID &#91;required&#93; The ID of the Source Server that we want to retrieve a Launch
-#' Configuration for.
+#' @param sourceServerID &#91;required&#93; The ID of the Source Server that we want to retrieve a Launch Configuration for.
 #'
 #' @keywords internal
 #'
@@ -918,8 +900,7 @@ drs_initialize_service <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_list_extensible_source_servers/](https://www.paws-r-sdk.com/docs/drs_list_extensible_source_servers/) for full documentation.
 #'
-#' @param stagingAccountID &#91;required&#93; The Id of the staging Account to retrieve extensible source servers
-#' from.
+#' @param stagingAccountID &#91;required&#93; The Id of the staging Account to retrieve extensible source servers from.
 #' @param maxResults The maximum number of extensible source servers to retrieve.
 #' @param nextToken The token of the next extensible source server to retrieve.
 #'
@@ -952,7 +933,7 @@ drs_list_extensible_source_servers <- function(stagingAccountID, maxResults = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_list_launch_actions/](https://www.paws-r-sdk.com/docs/drs_list_launch_actions/) for full documentation.
 #'
-#' @param resourceId &#91;required&#93; 
+#' @param resourceId &#91;required&#93; Launch configuration template Id or Source Server Id
 #' @param filters Filters to apply when listing resource launch actions.
 #' @param maxResults Maximum amount of items to return when listing resource launch actions.
 #' @param nextToken Next token to use when listing resource launch actions.
@@ -1050,17 +1031,17 @@ drs_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_put_launch_action/](https://www.paws-r-sdk.com/docs/drs_put_launch_action/) for full documentation.
 #'
-#' @param resourceId &#91;required&#93; 
+#' @param resourceId &#91;required&#93; Launch configuration template Id or Source Server Id
 #' @param actionCode &#91;required&#93; Launch action code.
-#' @param order &#91;required&#93; 
-#' @param actionId &#91;required&#93; 
+#' @param order &#91;required&#93; Launch action order.
+#' @param actionId &#91;required&#93; Launch action Id.
 #' @param optional &#91;required&#93; Whether the launch will not be marked as failed if this action fails.
 #' @param active &#91;required&#93; Whether the launch action is active.
-#' @param name &#91;required&#93; 
-#' @param actionVersion &#91;required&#93; 
-#' @param category &#91;required&#93; 
-#' @param parameters 
-#' @param description &#91;required&#93; 
+#' @param name &#91;required&#93; Launch action name.
+#' @param actionVersion &#91;required&#93; Launch action version.
+#' @param category &#91;required&#93; Launch action category.
+#' @param parameters Launch action parameters.
+#' @param description &#91;required&#93; Launch action description.
 #'
 #' @keywords internal
 #'
@@ -1123,8 +1104,7 @@ drs_retry_data_replication <- function(sourceServerID) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_reverse_replication/](https://www.paws-r-sdk.com/docs/drs_reverse_replication/) for full documentation.
 #'
-#' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance that we want to reverse the replication
-#' for.
+#' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance that we want to reverse the replication for.
 #'
 #' @keywords internal
 #'
@@ -1156,8 +1136,7 @@ drs_reverse_replication <- function(recoveryInstanceID) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_start_failback_launch/](https://www.paws-r-sdk.com/docs/drs_start_failback_launch/) for full documentation.
 #'
-#' @param recoveryInstanceIDs &#91;required&#93; The IDs of the Recovery Instance whose failback launch we want to
-#' request.
+#' @param recoveryInstanceIDs &#91;required&#93; The IDs of the Recovery Instance whose failback launch we want to request.
 #' @param tags The tags to be associated with the failback launch Job.
 #'
 #' @keywords internal
@@ -1255,8 +1234,7 @@ drs_start_replication <- function(sourceServerID) {
 #' See [https://www.paws-r-sdk.com/docs/drs_start_source_network_recovery/](https://www.paws-r-sdk.com/docs/drs_start_source_network_recovery/) for full documentation.
 #'
 #' @param sourceNetworks &#91;required&#93; The Source Networks that we want to start a Recovery Job for.
-#' @param deployAsNew Don't update existing CloudFormation Stack, recover the network using a
-#' new stack.
+#' @param deployAsNew Don't update existing CloudFormation Stack, recover the network using a new stack.
 #' @param tags The tags to be associated with the Source Network recovery Job.
 #'
 #' @keywords internal
@@ -1514,12 +1492,9 @@ drs_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance.
 #' @param name The name of the Failback Replication Configuration.
-#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of
-#' the Recovery Instance in Mbps.
-#' @param usePrivateIP Whether to use Private IP for the failback replication of the Recovery
-#' Instance.
-#' @param internetProtocol Which version of the Internet Protocol to use for replication of data.
-#' (IPv4 or IPv6)
+#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.
+#' @param usePrivateIP Whether to use Private IP for the failback replication of the Recovery Instance.
+#' @param internetProtocol Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
 #'
 #' @keywords internal
 #'
@@ -1550,17 +1525,12 @@ drs_update_failback_replication_configuration <- function(recoveryInstanceID, na
 #'
 #' See [https://www.paws-r-sdk.com/docs/drs_update_launch_configuration/](https://www.paws-r-sdk.com/docs/drs_update_launch_configuration/) for full documentation.
 #'
-#' @param sourceServerID &#91;required&#93; The ID of the Source Server that we want to retrieve a Launch
-#' Configuration for.
+#' @param sourceServerID &#91;required&#93; The ID of the Source Server that we want to retrieve a Launch Configuration for.
 #' @param name The name of the launch configuration.
 #' @param launchDisposition The state of the Recovery Instance in EC2 after the recovery operation.
-#' @param targetInstanceTypeRightSizingMethod Whether Elastic Disaster Recovery should try to automatically choose the
-#' instance type that best matches the OS, CPU, and RAM of your Source
-#' Server.
-#' @param copyPrivateIp Whether we should copy the Private IP of the Source Server to the
-#' Recovery Instance.
-#' @param copyTags Whether we want to copy the tags of the Source Server to the EC2 machine
-#' of the Recovery Instance.
+#' @param targetInstanceTypeRightSizingMethod Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.
+#' @param copyPrivateIp Whether we should copy the Private IP of the Source Server to the Recovery Instance.
+#' @param copyTags Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.
 #' @param licensing The licensing configuration to be used for this launch configuration.
 #' @param postLaunchEnabled Whether we want to enable post-launch actions for the Source Server.
 #' @param launchIntoInstanceProperties Launch into existing instance properties.
@@ -1602,9 +1572,7 @@ drs_update_launch_configuration <- function(sourceServerID, name = NULL, launchD
 #' @param licensing Licensing.
 #' @param exportBucketArn S3 bucket ARN to export Source Network templates.
 #' @param postLaunchEnabled Whether we want to activate post-launch actions.
-#' @param launchIntoSourceInstance DRS will set the 'launch into instance ID' of any source server when
-#' performing a drill, recovery or failback to the previous region or
-#' availability zone, using the instance ID of the source instance.
+#' @param launchIntoSourceInstance DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.
 #'
 #' @keywords internal
 #'
@@ -1638,29 +1606,21 @@ drs_update_launch_configuration_template <- function(launchConfigurationTemplate
 #' @param sourceServerID &#91;required&#93; The ID of the Source Server for this Replication Configuration.
 #' @param name The name of the Replication Configuration.
 #' @param stagingAreaSubnetId The subnet to be used by the replication staging area.
-#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security
-#' group with the Replication Configuration.
+#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.
 #' @param replicationServersSecurityGroupsIDs The security group IDs that will be used by the replication server.
 #' @param replicationServerInstanceType The instance type to be used for the replication server.
-#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging
-#' area.
+#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging area.
 #' @param defaultLargeStagingDiskType The Staging Disk EBS volume type to be used during replication.
 #' @param replicatedDisks The configuration of the disks of the Source Server to be replicated.
 #' @param ebsEncryption The type of EBS encryption to be used during replication.
 #' @param ebsEncryptionKeyArn The ARN of the EBS encryption key to be used during replication.
-#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of
-#' the Source Server in Mbps.
+#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.
 #' @param dataPlaneRouting The data plane routing mechanism that will be used for replication.
 #' @param createPublicIP Whether to create a Public IP for the Recovery Instance by default.
-#' @param stagingAreaTags A set of tags to be associated with all resources created in the
-#' replication staging area: EC2 replication server, EBS volumes, EBS
-#' snapshots, etc.
-#' @param pitPolicy The Point in time (PIT) policy to manage snapshots taken during
-#' replication.
-#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate
-#' newly added disks.
-#' @param internetProtocol Which version of the Internet Protocol to use for replication of data.
-#' (IPv4 or IPv6)
+#' @param stagingAreaTags A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
+#' @param pitPolicy The Point in time (PIT) policy to manage snapshots taken during replication.
+#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate newly added disks.
+#' @param internetProtocol Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
 #'
 #' @keywords internal
 #'
@@ -1694,28 +1654,20 @@ drs_update_replication_configuration <- function(sourceServerID, name = NULL, st
 #' @param replicationConfigurationTemplateID &#91;required&#93; The Replication Configuration Template ID.
 #' @param arn The Replication Configuration Template ARN.
 #' @param stagingAreaSubnetId The subnet to be used by the replication staging area.
-#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security
-#' group with the Replication Configuration Template.
+#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.
 #' @param replicationServersSecurityGroupsIDs The security group IDs that will be used by the replication server.
 #' @param replicationServerInstanceType The instance type to be used for the replication server.
-#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging
-#' area.
+#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging area.
 #' @param defaultLargeStagingDiskType The Staging Disk EBS volume type to be used during replication.
 #' @param ebsEncryption The type of EBS encryption to be used during replication.
 #' @param ebsEncryptionKeyArn The ARN of the EBS encryption key to be used during replication.
-#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of
-#' the Source Server in Mbps.
+#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.
 #' @param dataPlaneRouting The data plane routing mechanism that will be used for replication.
 #' @param createPublicIP Whether to create a Public IP for the Recovery Instance by default.
-#' @param stagingAreaTags A set of tags to be associated with all resources created in the
-#' replication staging area: EC2 replication server, EBS volumes, EBS
-#' snapshots, etc.
-#' @param pitPolicy The Point in time (PIT) policy to manage snapshots taken during
-#' replication.
-#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate
-#' newly added disks.
-#' @param internetProtocol Which version of the Internet Protocol to use for replication of data.
-#' (IPv4 or IPv6)
+#' @param stagingAreaTags A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
+#' @param pitPolicy The Point in time (PIT) policy to manage snapshots taken during replication.
+#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate newly added disks.
+#' @param internetProtocol Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
 #'
 #' @keywords internal
 #'

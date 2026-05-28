@@ -12,8 +12,7 @@ bedrockagentcorecontrol_delete_code_interpreter(
 \arguments{
 \item{codeInterpreterId}{[required] The unique identifier of the code interpreter to delete.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Deletes a custom code interpreter.

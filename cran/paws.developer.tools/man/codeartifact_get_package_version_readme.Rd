@@ -15,23 +15,17 @@ codeartifact_get_package_version_readme(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the repository that contains the
-package version with the requested readme file.}
+\item{domain}{[required] The name of the domain that contains the repository that contains the package version with the requested readme file.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The repository that contains the package with the requested readme file.}
 
-\item{format}{[required] A format that specifies the type of the package version with the
-requested readme file.}
+\item{format}{[required] A format that specifies the type of the package version with the requested readme file.}
 
-\item{namespace}{The namespace of the package version with the requested readme file. The
-package component that specifies its namespace depends on its type. For
-example:
+\item{namespace}{The namespace of the package version with the requested readme file. The package component that specifies its namespace depends on its type. For example:
 
-The namespace is required when requesting the readme from package
-versions of the following formats:
+The namespace is required when requesting the readme from package versions of the following formats:
 \itemize{
 \item Maven
 \item Swift
@@ -39,9 +33,7 @@ versions of the following formats:
 \item The namespace of a Maven package version is its \code{groupId}.
 \item The namespace of an npm or Swift package version is its \code{scope}.
 \item The namespace of a generic package is its \code{namespace}.
-\item Python, NuGet, Ruby, and Cargo package versions do not contain a
-corresponding component, package versions of those formats do not
-have a namespace.
+\item Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 }}
 
 \item{package}{[required] The name of the package version that contains the requested readme file.}

@@ -13,11 +13,9 @@ customerprofiles_list_recommenders(
 \arguments{
 \item{DomainName}{[required] The unique name of the domain.}
 
-\item{MaxResults}{The maximum number of recommenders to return in the response. The
-default value is 100.}
+\item{MaxResults}{The maximum number of recommenders to return in the response. The default value is 100.}
 
-\item{NextToken}{A token received from a previous ListRecommenders call to retrieve the
-next page of results.}
+\item{NextToken}{A token received from a previous ListRecommenders call to retrieve the next page of results.}
 }
 \description{
 Returns a list of recommenders in the specified domain.

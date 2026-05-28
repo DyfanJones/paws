@@ -8,11 +8,7 @@ NULL
 #' @description
 #' Creates an Amazon Forecast predictor.
 #' 
-#' Amazon Forecast creates predictors with AutoPredictor, which involves
-#' applying the optimal combination of algorithms to each time series in
-#' your datasets. You can use
-#' [`create_auto_predictor`][forecastservice_create_auto_predictor] to
-#' create new predictors or upgrade/retrain existing predictors.
+#' Amazon Forecast creates predictors with AutoPredictor, which involves applying the optimal combination of algorithms to each time series in your datasets. You can use [`create_auto_predictor`][forecastservice_create_auto_predictor] to create new predictors or upgrade/retrain existing predictors.
 #' 
 #' **Creating new predictors**
 #' 
@@ -20,30 +16,23 @@ NULL
 #' 
 #' -   `PredictorName` - A unique name for the predictor.
 #' 
-#' -   `DatasetGroupArn` - The ARN of the dataset group used to train the
-#'     predictor.
+#' -   `DatasetGroupArn` - The ARN of the dataset group used to train the predictor.
 #' 
-#' -   `ForecastFrequency` - The granularity of your forecasts (hourly,
-#'     daily, weekly, etc).
+#' -   `ForecastFrequency` - The granularity of your forecasts (hourly, daily, weekly, etc).
 #' 
-#' -   `ForecastHorizon` - The number of time-steps that the model
-#'     predicts. The forecast horizon is also called the prediction length.
+#' -   `ForecastHorizon` - The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.
 #' 
-#' When creating a new predictor, do not specify a value for
-#' `ReferencePredictorArn`.
+#' When creating a new predictor, do not specify a value for `ReferencePredictorArn`.
 #' 
 #' **Upgrading and retraining predictors**
 #' 
-#' The following parameters are required when retraining or upgrading a
-#' predictor:
+#' The following parameters are required when retraining or upgrading a predictor:
 #' 
 #' -   `PredictorName` - A unique name for the predictor.
 #' 
-#' -   `ReferencePredictorArn` - The ARN of the predictor to retrain or
-#'     upgrade.
+#' -   `ReferencePredictorArn` - The ARN of the predictor to retrain or upgrade.
 #' 
-#' When upgrading or retraining a predictor, only specify values for the
-#' `ReferencePredictorArn` and `PredictorName`.
+#' When upgrading or retraining a predictor, only specify values for the `ReferencePredictorArn` and `PredictorName`.
 #'
 #' @usage
 #' forecastservice_create_auto_predictor(PredictorName, ForecastHorizon,
@@ -52,37 +41,18 @@ NULL
 #'   ExplainPredictor, Tags, MonitorConfig, TimeAlignmentBoundary)
 #'
 #' @param PredictorName &#91;required&#93; A unique name for the predictor
-#' @param ForecastHorizon The number of time-steps that the model predicts. The forecast horizon
-#' is also called the prediction length.
+#' @param ForecastHorizon The number of time-steps that the model predicts. The forecast horizon is also called the prediction length.
 #' 
-#' The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of
-#' the TARGET_TIME_SERIES dataset length. If you are retraining an existing
-#' AutoPredictor, then the maximum forecast horizon is the lesser of 500
-#' time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+#' The maximum forecast horizon is the lesser of 500 time-steps or 1/4 of the TARGET_TIME_SERIES dataset length. If you are retraining an existing AutoPredictor, then the maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
 #' 
-#' If you are upgrading to an AutoPredictor or retraining an existing
-#' AutoPredictor, you cannot update the forecast horizon parameter. You can
-#' meet this requirement by providing longer time-series in the dataset.
-#' @param ForecastTypes The forecast types used to train a predictor. You can specify up to five
-#' forecast types. Forecast types can be quantiles from 0.01 to 0.99, by
-#' increments of 0.01 or higher. You can also specify the mean forecast
-#' with `mean`.
-#' @param ForecastDimensions An array of dimension (field) names that specify how to group the
-#' generated forecast.
+#' If you are upgrading to an AutoPredictor or retraining an existing AutoPredictor, you cannot update the forecast horizon parameter. You can meet this requirement by providing longer time-series in the dataset.
+#' @param ForecastTypes The forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with `mean`.
+#' @param ForecastDimensions An array of dimension (field) names that specify how to group the generated forecast.
 #' 
-#' For example, if you are generating forecasts for item sales across all
-#' your stores, and your dataset contains a `store_id` field, you would
-#' specify `store_id` as a dimension to group sales forecasts for each
-#' store.
+#' For example, if you are generating forecasts for item sales across all your stores, and your dataset contains a `store_id` field, you would specify `store_id` as a dimension to group sales forecasts for each store.
 #' @param ForecastFrequency The frequency of predictions in a forecast.
 #' 
-#' Valid intervals are an integer followed by Y (Year), M (Month), W
-#' (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates
-#' every day and "15min" indicates every 15 minutes. You cannot specify a
-#' value that would overlap with the next larger frequency. That means, for
-#' example, you cannot specify a frequency of 60 minutes, because that is
-#' equivalent to 1 hour. The valid values for each frequency are the
-#' following:
+#' Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
 #' 
 #' -   Minute - 1-59
 #' 
@@ -96,34 +66,23 @@ NULL
 #' 
 #' -   Year - 1
 #' 
-#' Thus, if you want every other week forecasts, specify "2W". Or, if you
-#' want quarterly forecasts, you specify "3M".
+#' Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".
 #' 
-#' The frequency must be greater than or equal to the TARGET_TIME_SERIES
-#' dataset frequency.
+#' The frequency must be greater than or equal to the TARGET_TIME_SERIES dataset frequency.
 #' 
-#' When a RELATED_TIME_SERIES dataset is provided, the frequency must be
-#' equal to the RELATED_TIME_SERIES dataset frequency.
-#' @param DataConfig The data configuration for your dataset group and any additional
-#' datasets.
-#' @param EncryptionConfig 
-#' @param ReferencePredictorArn The ARN of the predictor to retrain or upgrade. This parameter is only
-#' used when retraining or upgrading a predictor. When creating a new
-#' predictor, do not specify a value for this parameter.
+#' When a RELATED_TIME_SERIES dataset is provided, the frequency must be equal to the RELATED_TIME_SERIES dataset frequency.
+#' @param DataConfig The data configuration for your dataset group and any additional datasets.
+#' @param EncryptionConfig An Key Management Service (KMS) key and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key. You can specify this optional object in the [`create_dataset`][forecastservice_create_dataset] and [`create_predictor`][forecastservice_create_predictor] requests.
+#' @param ReferencePredictorArn The ARN of the predictor to retrain or upgrade. This parameter is only used when retraining or upgrading a predictor. When creating a new predictor, do not specify a value for this parameter.
 #' 
-#' When upgrading or retraining a predictor, only specify values for the
-#' `ReferencePredictorArn` and `PredictorName`. The value for
-#' `PredictorName` must be a unique predictor name.
+#' When upgrading or retraining a predictor, only specify values for the `ReferencePredictorArn` and `PredictorName`. The value for `PredictorName` must be a unique predictor name.
 #' @param OptimizationMetric The accuracy metric used to optimize the predictor.
 #' @param ExplainPredictor Create an Explainability resource for the predictor.
-#' @param Tags Optional metadata to help you categorize and organize your predictors.
-#' Each tag consists of a key and an optional value, both of which you
-#' define. Tag keys and values are case sensitive.
+#' @param Tags Optional metadata to help you categorize and organize your predictors. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.
 #' 
 #' The following restrictions apply to tags:
 #' 
-#' -   For each resource, each tag key must be unique and each tag key must
-#'     have one value.
+#' -   For each resource, each tag key must be unique and each tag key must have one value.
 #' 
 #' -   Maximum number of tags per resource: 50.
 #' 
@@ -131,31 +90,13 @@ NULL
 #' 
 #' -   Maximum value length: 256 Unicode characters in UTF-8.
 #' 
-#' -   Accepted characters: all letters and numbers, spaces representable
-#'     in UTF-8, and + - = . _ : / @@. If your tagging schema is used
-#'     across other services and resources, the character restrictions of
-#'     those services also apply.
+#' -   Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @@. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.
 #' 
-#' -   Key prefixes cannot include any upper or lowercase combination of
-#'     `aws:` or `AWS:`. Values can have this prefix. If a tag value has
-#'     `aws` as its prefix but the key does not, Forecast considers it to
-#'     be a user tag and will count against the limit of 50 tags. Tags with
-#'     only the key prefix of `aws` do not count against your tags per
-#'     resource limit. You cannot edit or delete tag keys with this prefix.
-#' @param MonitorConfig The configuration details for predictor monitoring. Provide a name for
-#' the monitor resource to enable predictor monitoring.
+#' -   Key prefixes cannot include any upper or lowercase combination of `aws:` or `AWS:`. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.
+#' @param MonitorConfig The configuration details for predictor monitoring. Provide a name for the monitor resource to enable predictor monitoring.
 #' 
-#' Predictor monitoring allows you to see how your predictor's performance
-#' changes over time. For more information, see [Predictor
-#' Monitoring](https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html).
-#' @param TimeAlignmentBoundary The time boundary Forecast uses to align and aggregate any data that
-#' doesn't align with your forecast frequency. Provide the unit of time and
-#' the time boundary as a key value pair. For more information on
-#' specifying a time boundary, see [Specifying a Time
-#' Boundary](https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary).
-#' If you don't provide a time boundary, Forecast uses a set of [Default
-#' Time
-#' Boundaries](https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries).
+#' Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see [Predictor Monitoring](https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html).
+#' @param TimeAlignmentBoundary The time boundary Forecast uses to align and aggregate any data that doesn't align with your forecast frequency. Provide the unit of time and the time boundary as a key value pair. For more information on specifying a time boundary, see [Specifying a Time Boundary](https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#specifying-time-boundary). If you don't provide a time boundary, Forecast uses a set of [Default Time Boundaries](https://docs.aws.amazon.com/forecast/latest/dg/data-aggregation.html#default-time-boundaries).
 #'
 #' @return
 #' A list with the following syntax:
@@ -250,67 +191,34 @@ forecastservice_create_auto_predictor <- function(PredictorName, ForecastHorizon
 #' Creates an Amazon Forecast dataset
 #'
 #' @description
-#' Creates an Amazon Forecast dataset. The information about the dataset
-#' that you provide helps Forecast understand how to consume the data for
-#' model training. This includes the following:
+#' Creates an Amazon Forecast dataset. The information about the dataset that you provide helps Forecast understand how to consume the data for model training. This includes the following:
 #' 
-#' -   *DataFrequency* - How frequently your historical time-series data is
-#'     collected.
+#' -   *DataFrequency* - How frequently your historical time-series data is collected.
 #' 
-#' -   *Domain* and *DatasetType* - Each dataset has an associated dataset
-#'     domain and a type within the domain. Amazon Forecast provides a list
-#'     of predefined domains and types within each domain. For each unique
-#'     dataset domain and type within the domain, Amazon Forecast requires
-#'     your data to include a minimum set of predefined fields.
+#' -   *Domain* and *DatasetType* - Each dataset has an associated dataset domain and a type within the domain. Amazon Forecast provides a list of predefined domains and types within each domain. For each unique dataset domain and type within the domain, Amazon Forecast requires your data to include a minimum set of predefined fields.
 #' 
-#' -   *Schema* - A schema specifies the fields in the dataset, including
-#'     the field name and data type.
+#' -   *Schema* - A schema specifies the fields in the dataset, including the field name and data type.
 #' 
-#' After creating a dataset, you import your training data into it and add
-#' the dataset to a dataset group. You use the dataset group to create a
-#' predictor. For more information, see [Importing
-#' datasets](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html).
+#' After creating a dataset, you import your training data into it and add the dataset to a dataset group. You use the dataset group to create a predictor. For more information, see [Importing datasets](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html).
 #' 
-#' To get a list of all your datasets, use the
-#' [`list_datasets`][forecastservice_list_datasets] operation.
+#' To get a list of all your datasets, use the [`list_datasets`][forecastservice_list_datasets] operation.
 #' 
-#' For example Forecast datasets, see the [Amazon Forecast Sample GitHub
-#' repository](https://github.com/aws-samples/amazon-forecast-samples).
+#' For example Forecast datasets, see the [Amazon Forecast Sample GitHub repository](https://github.com/aws-samples/amazon-forecast-samples).
 #' 
-#' The `Status` of a dataset must be `ACTIVE` before you can import
-#' training data. Use the
-#' [`describe_dataset`][forecastservice_describe_dataset] operation to get
-#' the status.
+#' The `Status` of a dataset must be `ACTIVE` before you can import training data. Use the [`describe_dataset`][forecastservice_describe_dataset] operation to get the status.
 #'
 #' @usage
 #' forecastservice_create_dataset(DatasetName, Domain, DatasetType,
 #'   DataFrequency, Schema, EncryptionConfig, Tags)
 #'
 #' @param DatasetName &#91;required&#93; A name for the dataset.
-#' @param Domain &#91;required&#93; The domain associated with the dataset. When you add a dataset to a
-#' dataset group, this value and the value specified for the `Domain`
-#' parameter of the
-#' [`create_dataset_group`][forecastservice_create_dataset_group] operation
-#' must match.
+#' @param Domain &#91;required&#93; The domain associated with the dataset. When you add a dataset to a dataset group, this value and the value specified for the `Domain` parameter of the [`create_dataset_group`][forecastservice_create_dataset_group] operation must match.
 #' 
-#' The `Domain` and `DatasetType` that you choose determine the fields that
-#' must be present in the training data that you import to the dataset. For
-#' example, if you choose the `RETAIL` domain and `TARGET_TIME_SERIES` as
-#' the `DatasetType`, Amazon Forecast requires `item_id`, `timestamp`, and
-#' `demand` fields to be present in your data. For more information, see
-#' [Importing
-#' datasets](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html).
+#' The `Domain` and `DatasetType` that you choose determine the fields that must be present in the training data that you import to the dataset. For example, if you choose the `RETAIL` domain and `TARGET_TIME_SERIES` as the `DatasetType`, Amazon Forecast requires `item_id`, `timestamp`, and `demand` fields to be present in your data. For more information, see [Importing datasets](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html).
 #' @param DatasetType &#91;required&#93; The dataset type. Valid values depend on the chosen `Domain`.
-#' @param DataFrequency The frequency of data collection. This parameter is required for
-#' RELATED_TIME_SERIES datasets.
+#' @param DataFrequency The frequency of data collection. This parameter is required for RELATED_TIME_SERIES datasets.
 #' 
-#' Valid intervals are an integer followed by Y (Year), M (Month), W
-#' (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates
-#' every day and "15min" indicates every 15 minutes. You cannot specify a
-#' value that would overlap with the next larger frequency. That means, for
-#' example, you cannot specify a frequency of 60 minutes, because that is
-#' equivalent to 1 hour. The valid values for each frequency are the
-#' following:
+#' Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day), H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates every 15 minutes. You cannot specify a value that would overlap with the next larger frequency. That means, for example, you cannot specify a frequency of 60 minutes, because that is equivalent to 1 hour. The valid values for each frequency are the following:
 #' 
 #' -   Minute - 1-59
 #' 
@@ -324,46 +232,26 @@ forecastservice_create_auto_predictor <- function(PredictorName, ForecastHorizon
 #' 
 #' -   Year - 1
 #' 
-#' Thus, if you want every other week forecasts, specify "2W". Or, if you
-#' want quarterly forecasts, you specify "3M".
-#' @param Schema &#91;required&#93; The schema for the dataset. The schema attributes and their order must
-#' match the fields in your data. The dataset `Domain` and `DatasetType`
-#' that you choose determine the minimum required fields in your training
-#' data. For information about the required fields for a specific dataset
-#' domain and type, see [Dataset Domains and Dataset
-#' Types](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html).
-#' @param EncryptionConfig An Key Management Service (KMS) key and the Identity and Access
-#' Management (IAM) role that Amazon Forecast can assume to access the key.
-#' @param Tags The optional metadata that you apply to the dataset to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly forecasts, you specify "3M".
+#' @param Schema &#91;required&#93; The schema for the dataset. The schema attributes and their order must match the fields in your data. The dataset `Domain` and `DatasetType` that you choose determine the minimum required fields in your training data. For information about the required fields for a specific dataset domain and type, see [Dataset Domains and Dataset Types](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-domains-ds-types.html).
+#' @param EncryptionConfig An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.
+#' @param Tags The optional metadata that you apply to the dataset to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of
-#'     such as a prefix for keys as it is reserved for Amazon Web Services
-#'     use. You cannot edit or delete tag keys with this prefix. Values can
-#'     have this prefix. If a tag value has `aws` as its prefix but the key
-#'     does not, then Forecast considers it to be a user tag and will count
-#'     against the limit of 50 tags. Tags with only the key prefix of `aws`
-#'     do not count against your tags per resource limit.
+#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit.
 #'
 #' @return
 #' A list with the following syntax:
@@ -428,73 +316,40 @@ forecastservice_create_dataset <- function(DatasetName, Domain, DatasetType, Dat
 #' Creates a dataset group, which holds a collection of related datasets
 #'
 #' @description
-#' Creates a dataset group, which holds a collection of related datasets.
-#' You can add datasets to the dataset group when you create the dataset
-#' group, or later by using the
-#' [`update_dataset_group`][forecastservice_update_dataset_group]
-#' operation.
+#' Creates a dataset group, which holds a collection of related datasets. You can add datasets to the dataset group when you create the dataset group, or later by using the [`update_dataset_group`][forecastservice_update_dataset_group] operation.
 #' 
-#' After creating a dataset group and adding datasets, you use the dataset
-#' group when you create a predictor. For more information, see [Dataset
-#' groups](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html).
+#' After creating a dataset group and adding datasets, you use the dataset group when you create a predictor. For more information, see [Dataset groups](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html).
 #' 
-#' To get a list of all your datasets groups, use the
-#' [`list_dataset_groups`][forecastservice_list_dataset_groups] operation.
+#' To get a list of all your datasets groups, use the [`list_dataset_groups`][forecastservice_list_dataset_groups] operation.
 #' 
-#' The `Status` of a dataset group must be `ACTIVE` before you can use the
-#' dataset group to create a predictor. To get the status, use the
-#' [`describe_dataset_group`][forecastservice_describe_dataset_group]
-#' operation.
+#' The `Status` of a dataset group must be `ACTIVE` before you can use the dataset group to create a predictor. To get the status, use the [`describe_dataset_group`][forecastservice_describe_dataset_group] operation.
 #'
 #' @usage
 #' forecastservice_create_dataset_group(DatasetGroupName, Domain,
 #'   DatasetArns, Tags)
 #'
 #' @param DatasetGroupName &#91;required&#93; A name for the dataset group.
-#' @param Domain &#91;required&#93; The domain associated with the dataset group. When you add a dataset to
-#' a dataset group, this value and the value specified for the `Domain`
-#' parameter of the [`create_dataset`][forecastservice_create_dataset]
-#' operation must match.
+#' @param Domain &#91;required&#93; The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the `Domain` parameter of the [`create_dataset`][forecastservice_create_dataset] operation must match.
 #' 
-#' The `Domain` and `DatasetType` that you choose determine the fields that
-#' must be present in training data that you import to a dataset. For
-#' example, if you choose the `RETAIL` domain and `TARGET_TIME_SERIES` as
-#' the `DatasetType`, Amazon Forecast requires that `item_id`, `timestamp`,
-#' and `demand` fields are present in your data. For more information, see
-#' [Dataset
-#' groups](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html).
-#' @param DatasetArns An array of Amazon Resource Names (ARNs) of the datasets that you want
-#' to include in the dataset group.
-#' @param Tags The optional metadata that you apply to the dataset group to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' The `Domain` and `DatasetType` that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the `RETAIL` domain and `TARGET_TIME_SERIES` as the `DatasetType`, Amazon Forecast requires that `item_id`, `timestamp`, and `demand` fields are present in your data. For more information, see [Dataset groups](https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html).
+#' @param DatasetArns An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.
+#' @param Tags The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of
-#'     such as a prefix for keys as it is reserved for Amazon Web Services
-#'     use. You cannot edit or delete tag keys with this prefix. Values can
-#'     have this prefix. If a tag value has `aws` as its prefix but the key
-#'     does not, then Forecast considers it to be a user tag and will count
-#'     against the limit of 50 tags. Tags with only the key prefix of `aws`
-#'     do not count against your tags per resource limit.
+#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit.
 #'
 #' @return
 #' A list with the following syntax:
@@ -548,59 +403,29 @@ forecastservice_create_dataset_group <- function(DatasetGroupName, Domain, Datas
 #' Imports your training data to an Amazon Forecast dataset
 #'
 #' @description
-#' Imports your training data to an Amazon Forecast dataset. You provide
-#' the location of your training data in an Amazon Simple Storage Service
-#' (Amazon S3) bucket and the Amazon Resource Name (ARN) of the dataset
-#' that you want to import the data to.
+#' Imports your training data to an Amazon Forecast dataset. You provide the location of your training data in an Amazon Simple Storage Service (Amazon S3) bucket and the Amazon Resource Name (ARN) of the dataset that you want to import the data to.
 #' 
-#' You must specify a
-#' [DataSource](https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html)
-#' object that includes an Identity and Access Management (IAM) role that
-#' Amazon Forecast can assume to access the data, as Amazon Forecast makes
-#' a copy of your data and processes it in an internal Amazon Web Services
-#' system. For more information, see [Set up
-#' permissions](https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html).
+#' You must specify a [DataSource](https://docs.aws.amazon.com/forecast/latest/dg/API_DataSource.html) object that includes an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in an internal Amazon Web Services system. For more information, see [Set up permissions](https://docs.aws.amazon.com/forecast/latest/dg/aws-forecast-iam-roles.html).
 #' 
-#' The training data must be in CSV or Parquet format. The delimiter must
-#' be a comma (,).
+#' The training data must be in CSV or Parquet format. The delimiter must be a comma (,).
 #' 
-#' You can specify the path to a specific file, the S3 bucket, or to a
-#' folder in the S3 bucket. For the latter two cases, Amazon Forecast
-#' imports all files up to the limit of 10,000 files.
+#' You can specify the path to a specific file, the S3 bucket, or to a folder in the S3 bucket. For the latter two cases, Amazon Forecast imports all files up to the limit of 10,000 files.
 #' 
-#' Because dataset imports are not aggregated, your most recent dataset
-#' import is the one that is used when training a predictor or generating a
-#' forecast. Make sure that your most recent dataset import contains all of
-#' the data you want to model off of, and not just the new data collected
-#' since the previous import.
+#' Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you want to model off of, and not just the new data collected since the previous import.
 #' 
-#' To get a list of all your dataset import jobs, filtered by specified
-#' criteria, use the
-#' [`list_dataset_import_jobs`][forecastservice_list_dataset_import_jobs]
-#' operation.
+#' To get a list of all your dataset import jobs, filtered by specified criteria, use the [`list_dataset_import_jobs`][forecastservice_list_dataset_import_jobs] operation.
 #'
 #' @usage
 #' forecastservice_create_dataset_import_job(DatasetImportJobName,
 #'   DatasetArn, DataSource, TimestampFormat, TimeZone,
 #'   UseGeolocationForTimeZone, GeolocationFormat, Tags, Format, ImportMode)
 #'
-#' @param DatasetImportJobName &#91;required&#93; The name for the dataset import job. We recommend including the current
-#' timestamp in the name, for example, `20190721DatasetImport`. This can
-#' help you avoid getting a `ResourceAlreadyExistsException` exception.
-#' @param DatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you
-#' want to import data to.
-#' @param DataSource &#91;required&#93; The location of the training data to import and an Identity and Access
-#' Management (IAM) role that Amazon Forecast can assume to access the
-#' data. The training data must be stored in an Amazon S3 bucket.
+#' @param DatasetImportJobName &#91;required&#93; The name for the dataset import job. We recommend including the current timestamp in the name, for example, `20190721DatasetImport`. This can help you avoid getting a `ResourceAlreadyExistsException` exception.
+#' @param DatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the Amazon Forecast dataset that you want to import data to.
+#' @param DataSource &#91;required&#93; The location of the training data to import and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the data. The training data must be stored in an Amazon S3 bucket.
 #' 
-#' If encryption is used, `DataSource` must include an Key Management
-#' Service (KMS) key and the IAM role must allow Amazon Forecast permission
-#' to access the key. The KMS key and IAM role must match those specified
-#' in the `EncryptionConfig` parameter of the
-#' [`create_dataset`][forecastservice_create_dataset] operation.
-#' @param TimestampFormat The format of timestamps in the dataset. The format that you specify
-#' depends on the `DataFrequency` specified when the dataset was created.
-#' The following formats are supported
+#' If encryption is used, `DataSource` must include an Key Management Service (KMS) key and the IAM role must allow Amazon Forecast permission to access the key. The KMS key and IAM role must match those specified in the `EncryptionConfig` parameter of the [`create_dataset`][forecastservice_create_dataset] operation.
+#' @param TimestampFormat The format of timestamps in the dataset. The format that you specify depends on the `DataFrequency` specified when the dataset was created. The following formats are supported
 #' 
 #' -   "yyyy-MM-dd"
 #' 
@@ -608,65 +433,37 @@ forecastservice_create_dataset_group <- function(DatasetGroupName, Domain, Datas
 #' 
 #' -   "yyyy-MM-dd HH:mm:ss"
 #' 
-#'     For the following data frequencies: H, 30min, 15min, and 1min; and
-#'     optionally, for: Y, M, W, and D
+#'     For the following data frequencies: H, 30min, 15min, and 1min; and optionally, for: Y, M, W, and D
 #' 
-#' If the format isn't specified, Amazon Forecast expects the format to be
-#' "yyyy-MM-dd HH:mm:ss".
-#' @param TimeZone A single time zone for every item in your dataset. This option is ideal
-#' for datasets with all timestamps within a single time zone, or if all
-#' timestamps are normalized to a single time zone.
+#' If the format isn't specified, Amazon Forecast expects the format to be "yyyy-MM-dd HH:mm:ss".
+#' @param TimeZone A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a single time zone, or if all timestamps are normalized to a single time zone.
 #' 
-#' Refer to the [Joda-Time
-#' API](https://joda-time.sourceforge.net/timezones.html) for a complete
-#' list of valid time zone names.
-#' @param UseGeolocationForTimeZone Automatically derive time zone information from the geolocation
-#' attribute. This option is ideal for datasets that contain timestamps in
-#' multiple time zones and those timestamps are expressed in local time.
-#' @param GeolocationFormat The format of the geolocation attribute. The geolocation attribute can
-#' be formatted in one of two ways:
+#' Refer to the [Joda-Time API](https://joda-time.sourceforge.net/timezones.html) for a complete list of valid time zone names.
+#' @param UseGeolocationForTimeZone Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+#' @param GeolocationFormat The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
 #' 
-#' -   `LAT_LONG` - the latitude and longitude in decimal format (Example:
-#'     47.61_-122.33).
+#' -   `LAT_LONG` - the latitude and longitude in decimal format (Example: 47.61_-122.33).
 #' 
-#' -   `CC_POSTALCODE` (US Only) - the country code (US), followed by the
-#'     5-digit ZIP code (Example: US_98121).
-#' @param Tags The optional metadata that you apply to the dataset import job to help
-#' you categorize and organize them. Each tag consists of a key and an
-#' optional value, both of which you define.
+#' -   `CC_POSTALCODE` (US Only) - the country code (US), followed by the 5-digit ZIP code (Example: US_98121).
+#' @param Tags The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of
-#'     such as a prefix for keys as it is reserved for Amazon Web Services
-#'     use. You cannot edit or delete tag keys with this prefix. Values can
-#'     have this prefix. If a tag value has `aws` as its prefix but the key
-#'     does not, then Forecast considers it to be a user tag and will count
-#'     against the limit of 50 tags. Tags with only the key prefix of `aws`
-#'     do not count against your tags per resource limit.
-#' @param Format The format of the imported data, CSV or PARQUET. The default value is
-#' CSV.
-#' @param ImportMode Specifies whether the dataset import job is a `FULL` or `INCREMENTAL`
-#' import. A `FULL` dataset import replaces all of the existing data with
-#' the newly imported data. An `INCREMENTAL` import appends the imported
-#' data to the existing data.
+#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit.
+#' @param Format The format of the imported data, CSV or PARQUET. The default value is CSV.
+#' @param ImportMode Specifies whether the dataset import job is a `FULL` or `INCREMENTAL` import. A `FULL` dataset import replaces all of the existing data with the newly imported data. An `INCREMENTAL` import appends the imported data to the existing data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -731,32 +528,19 @@ forecastservice_create_dataset_import_job <- function(DatasetImportJobName, Data
 #' from an AutoPredictor (CreateAutoPredictor)
 #'
 #' @description
-#' Explainability is only available for Forecasts and Predictors generated
-#' from an AutoPredictor
-#' ([`create_auto_predictor`][forecastservice_create_auto_predictor])
+#' Explainability is only available for Forecasts and Predictors generated from an AutoPredictor ([`create_auto_predictor`][forecastservice_create_auto_predictor])
 #' 
 #' Creates an Amazon Forecast Explainability.
 #' 
-#' Explainability helps you better understand how the attributes in your
-#' datasets impact forecast. Amazon Forecast uses a metric called Impact
-#' scores to quantify the relative impact of each attribute and determine
-#' whether they increase or decrease forecast values.
+#' Explainability helps you better understand how the attributes in your datasets impact forecast. Amazon Forecast uses a metric called Impact scores to quantify the relative impact of each attribute and determine whether they increase or decrease forecast values.
 #' 
-#' To enable Forecast Explainability, your predictor must include at least
-#' one of the following: related time series, item metadata, or additional
-#' datasets like Holidays and the Weather Index.
+#' To enable Forecast Explainability, your predictor must include at least one of the following: related time series, item metadata, or additional datasets like Holidays and the Weather Index.
 #' 
-#' CreateExplainability accepts either a Predictor ARN or Forecast ARN. To
-#' receive aggregated Impact scores for all time series and time points in
-#' your datasets, provide a Predictor ARN. To receive Impact scores for
-#' specific time series and time points, provide a Forecast ARN.
+#' CreateExplainability accepts either a Predictor ARN or Forecast ARN. To receive aggregated Impact scores for all time series and time points in your datasets, provide a Predictor ARN. To receive Impact scores for specific time series and time points, provide a Forecast ARN.
 #' 
 #' **CreateExplainability with a Predictor ARN**
 #' 
-#' You can only have one Explainability resource per predictor. If you
-#' already enabled `ExplainPredictor` in
-#' [`create_auto_predictor`][forecastservice_create_auto_predictor], that
-#' predictor already has an Explainability resource.
+#' You can only have one Explainability resource per predictor. If you already enabled `ExplainPredictor` in [`create_auto_predictor`][forecastservice_create_auto_predictor], that predictor already has an Explainability resource.
 #' 
 #' The following parameters are required when providing a Predictor ARN:
 #' 
@@ -774,8 +558,7 @@ forecastservice_create_dataset_import_job <- function(DatasetImportJobName, Data
 #' 
 #' -   `Schema` - Only valid when TimeSeriesGranularity is “SPECIFIC”.
 #' 
-#' -   `StartDateTime` - Only valid when TimePointGranularity is
-#'     “SPECIFIC”.
+#' -   `StartDateTime` - Only valid when TimePointGranularity is “SPECIFIC”.
 #' 
 #' -   `EndDateTime` - Only valid when TimePointGranularity is “SPECIFIC”.
 #' 
@@ -793,17 +576,13 @@ forecastservice_create_dataset_import_job <- function(DatasetImportJobName, Data
 #' 
 #' -   `TimeSeriesGranularity` - Either “ALL” or “SPECIFIC”.
 #' 
-#' If you set TimeSeriesGranularity to “SPECIFIC”, you must also provide
-#' the following:
+#' If you set TimeSeriesGranularity to “SPECIFIC”, you must also provide the following:
 #' 
-#' -   `DataSource` - The S3 location of the CSV file specifying your time
-#'     series.
+#' -   `DataSource` - The S3 location of the CSV file specifying your time series.
 #' 
-#' -   `Schema` - The Schema defines the attributes and attribute types
-#'     listed in the Data Source.
+#' -   `Schema` - The Schema defines the attributes and attribute types listed in the Data Source.
 #' 
-#' If you set TimePointGranularity to “SPECIFIC”, you must also provide the
-#' following:
+#' If you set TimePointGranularity to “SPECIFIC”, you must also provide the following:
 #' 
 #' -   `StartDateTime` - The first timestamp in the range of time points.
 #' 
@@ -815,32 +594,22 @@ forecastservice_create_dataset_import_job <- function(DatasetImportJobName, Data
 #'   StartDateTime, EndDateTime, Tags)
 #'
 #' @param ExplainabilityName &#91;required&#93; A unique name for the Explainability.
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Predictor or Forecast used to
-#' create the Explainability.
-#' @param ExplainabilityConfig &#91;required&#93; The configuration settings that define the granularity of time series
-#' and time points for the Explainability.
-#' @param DataSource 
-#' @param Schema 
-#' @param EnableVisualization Create an Explainability visualization that is viewable within the
-#' Amazon Web Services console.
-#' @param StartDateTime If `TimePointGranularity` is set to `SPECIFIC`, define the first point
-#' for the Explainability.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Predictor or Forecast used to create the Explainability.
+#' @param ExplainabilityConfig &#91;required&#93; The configuration settings that define the granularity of time series and time points for the Explainability.
+#' @param DataSource The source of your data, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the data and, optionally, an Key Management Service (KMS) key.
+#' @param Schema Defines the fields of a dataset.
+#' @param EnableVisualization Create an Explainability visualization that is viewable within the Amazon Web Services console.
+#' @param StartDateTime If `TimePointGranularity` is set to `SPECIFIC`, define the first point for the Explainability.
 #' 
-#' Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example:
-#' 2015-01-01T20:00:00)
-#' @param EndDateTime If `TimePointGranularity` is set to `SPECIFIC`, define the last time
-#' point for the Explainability.
+#' Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)
+#' @param EndDateTime If `TimePointGranularity` is set to `SPECIFIC`, define the last time point for the Explainability.
 #' 
-#' Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example:
-#' 2015-01-01T20:00:00)
-#' @param Tags Optional metadata to help you categorize and organize your resources.
-#' Each tag consists of a key and an optional value, both of which you
-#' define. Tag keys and values are case sensitive.
+#' Use the following timestamp format: yyyy-MM-ddTHH:mm:ss (example: 2015-01-01T20:00:00)
+#' @param Tags Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.
 #' 
 #' The following restrictions apply to tags:
 #' 
-#' -   For each resource, each tag key must be unique and each tag key must
-#'     have one value.
+#' -   For each resource, each tag key must be unique and each tag key must have one value.
 #' 
 #' -   Maximum number of tags per resource: 50.
 #' 
@@ -848,17 +617,9 @@ forecastservice_create_dataset_import_job <- function(DatasetImportJobName, Data
 #' 
 #' -   Maximum value length: 256 Unicode characters in UTF-8.
 #' 
-#' -   Accepted characters: all letters and numbers, spaces representable
-#'     in UTF-8, and + - = . _ : / @@. If your tagging schema is used
-#'     across other services and resources, the character restrictions of
-#'     those services also apply.
+#' -   Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @@. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.
 #' 
-#' -   Key prefixes cannot include any upper or lowercase combination of
-#'     `aws:` or `AWS:`. Values can have this prefix. If a tag value has
-#'     `aws` as its prefix but the key does not, Forecast considers it to
-#'     be a user tag and will count against the limit of 50 tags. Tags with
-#'     only the key prefix of `aws` do not count against your tags per
-#'     resource limit. You cannot edit or delete tag keys with this prefix.
+#' -   Key prefixes cannot include any upper or lowercase combination of `aws:` or `AWS:`. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.
 #'
 #' @return
 #' A list with the following syntax:
@@ -932,20 +693,11 @@ forecastservice_create_explainability <- function(ExplainabilityName, ResourceAr
 #' operation
 #'
 #' @description
-#' Exports an Explainability resource created by the
-#' [`create_explainability`][forecastservice_create_explainability]
-#' operation. Exported files are exported to an Amazon Simple Storage
-#' Service (Amazon S3) bucket.
+#' Exports an Explainability resource created by the [`create_explainability`][forecastservice_create_explainability] operation. Exported files are exported to an Amazon Simple Storage Service (Amazon S3) bucket.
 #' 
-#' You must specify a DataDestination object that includes an Amazon S3
-#' bucket and an Identity and Access Management (IAM) role that Amazon
-#' Forecast can assume to access the Amazon S3 bucket. For more
-#' information, see aws-forecast-iam-roles.
+#' You must specify a DataDestination object that includes an Amazon S3 bucket and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see aws-forecast-iam-roles.
 #' 
-#' The `Status` of the export job must be `ACTIVE` before you can access
-#' the export in your Amazon S3 bucket. To get the status, use the
-#' [`describe_explainability_export`][forecastservice_describe_explainability_export]
-#' operation.
+#' The `Status` of the export job must be `ACTIVE` before you can access the export in your Amazon S3 bucket. To get the status, use the [`describe_explainability_export`][forecastservice_describe_explainability_export] operation.
 #'
 #' @usage
 #' forecastservice_create_explainability_export(ExplainabilityExportName,
@@ -953,15 +705,12 @@ forecastservice_create_explainability <- function(ExplainabilityName, ResourceAr
 #'
 #' @param ExplainabilityExportName &#91;required&#93; A unique name for the Explainability export.
 #' @param ExplainabilityArn &#91;required&#93; The Amazon Resource Name (ARN) of the Explainability to export.
-#' @param Destination &#91;required&#93; 
-#' @param Tags Optional metadata to help you categorize and organize your resources.
-#' Each tag consists of a key and an optional value, both of which you
-#' define. Tag keys and values are case sensitive.
+#' @param Destination &#91;required&#93; The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).
+#' @param Tags Optional metadata to help you categorize and organize your resources. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.
 #' 
 #' The following restrictions apply to tags:
 #' 
-#' -   For each resource, each tag key must be unique and each tag key must
-#'     have one value.
+#' -   For each resource, each tag key must be unique and each tag key must have one value.
 #' 
 #' -   Maximum number of tags per resource: 50.
 #' 
@@ -969,17 +718,9 @@ forecastservice_create_explainability <- function(ExplainabilityName, ResourceAr
 #' 
 #' -   Maximum value length: 256 Unicode characters in UTF-8.
 #' 
-#' -   Accepted characters: all letters and numbers, spaces representable
-#'     in UTF-8, and + - = . _ : / @@. If your tagging schema is used
-#'     across other services and resources, the character restrictions of
-#'     those services also apply.
+#' -   Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @@. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.
 #' 
-#' -   Key prefixes cannot include any upper or lowercase combination of
-#'     `aws:` or `AWS:`. Values can have this prefix. If a tag value has
-#'     `aws` as its prefix but the key does not, Forecast considers it to
-#'     be a user tag and will count against the limit of 50 tags. Tags with
-#'     only the key prefix of `aws` do not count against your tags per
-#'     resource limit. You cannot edit or delete tag keys with this prefix.
+#' -   Key prefixes cannot include any upper or lowercase combination of `aws:` or `AWS:`. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.
 #' @param Format The format of the exported data, CSV or PARQUET.
 #'
 #' @return
@@ -1040,88 +781,47 @@ forecastservice_create_explainability_export <- function(ExplainabilityExportNam
 #' was used to train the predictor
 #'
 #' @description
-#' Creates a forecast for each item in the `TARGET_TIME_SERIES` dataset
-#' that was used to train the predictor. This is known as inference. To
-#' retrieve the forecast for a single item at low latency, use the
-#' operation. To export the complete forecast into your Amazon Simple
-#' Storage Service (Amazon S3) bucket, use the
-#' [`create_forecast_export_job`][forecastservice_create_forecast_export_job]
-#' operation.
+#' Creates a forecast for each item in the `TARGET_TIME_SERIES` dataset that was used to train the predictor. This is known as inference. To retrieve the forecast for a single item at low latency, use the operation. To export the complete forecast into your Amazon Simple Storage Service (Amazon S3) bucket, use the [`create_forecast_export_job`][forecastservice_create_forecast_export_job] operation.
 #' 
-#' The range of the forecast is determined by the `ForecastHorizon` value,
-#' which you specify in the
-#' [`create_predictor`][forecastservice_create_predictor] request. When you
-#' query a forecast, you can request a specific date range within the
-#' forecast.
+#' The range of the forecast is determined by the `ForecastHorizon` value, which you specify in the [`create_predictor`][forecastservice_create_predictor] request. When you query a forecast, you can request a specific date range within the forecast.
 #' 
-#' To get a list of all your forecasts, use the
-#' [`list_forecasts`][forecastservice_list_forecasts] operation.
+#' To get a list of all your forecasts, use the [`list_forecasts`][forecastservice_list_forecasts] operation.
 #' 
-#' The forecasts generated by Amazon Forecast are in the same time zone as
-#' the dataset that was used to create the predictor.
+#' The forecasts generated by Amazon Forecast are in the same time zone as the dataset that was used to create the predictor.
 #' 
 #' For more information, see howitworks-forecast.
 #' 
-#' The `Status` of the forecast must be `ACTIVE` before you can query or
-#' export the forecast. Use the
-#' [`describe_forecast`][forecastservice_describe_forecast] operation to
-#' get the status.
+#' The `Status` of the forecast must be `ACTIVE` before you can query or export the forecast. Use the [`describe_forecast`][forecastservice_describe_forecast] operation to get the status.
 #' 
-#' By default, a forecast includes predictions for every item (`item_id`)
-#' in the dataset group that was used to train the predictor. However, you
-#' can use the `TimeSeriesSelector` object to generate a forecast on a
-#' subset of time series. Forecast creation is skipped for any time series
-#' that you specify that are not in the input dataset. The forecast export
-#' file will not contain these time series or their forecasted values.
+#' By default, a forecast includes predictions for every item (`item_id`) in the dataset group that was used to train the predictor. However, you can use the `TimeSeriesSelector` object to generate a forecast on a subset of time series. Forecast creation is skipped for any time series that you specify that are not in the input dataset. The forecast export file will not contain these time series or their forecasted values.
 #'
 #' @usage
 #' forecastservice_create_forecast(ForecastName, PredictorArn,
 #'   ForecastTypes, Tags, TimeSeriesSelector)
 #'
 #' @param ForecastName &#91;required&#93; A name for the forecast.
-#' @param PredictorArn &#91;required&#93; The Amazon Resource Name (ARN) of the predictor to use to generate the
-#' forecast.
-#' @param ForecastTypes The quantiles at which probabilistic forecasts are generated. **You can
-#' currently specify up to 5 quantiles per forecast**. Accepted values
-#' include `0.01 to 0.99` (increments of .01 only) and `mean`. The mean
-#' forecast is different from the median (0.50) when the distribution is
-#' not symmetric (for example, Beta and Negative Binomial).
+#' @param PredictorArn &#91;required&#93; The Amazon Resource Name (ARN) of the predictor to use to generate the forecast.
+#' @param ForecastTypes The quantiles at which probabilistic forecasts are generated. **You can currently specify up to 5 quantiles per forecast**. Accepted values include `0.01 to 0.99` (increments of .01 only) and `mean`. The mean forecast is different from the median (0.50) when the distribution is not symmetric (for example, Beta and Negative Binomial).
 #' 
-#' The default quantiles are the quantiles you specified during predictor
-#' creation. If you didn't specify quantiles, the default values are
-#' `["0.1", "0.5", "0.9"]`.
-#' @param Tags The optional metadata that you apply to the forecast to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' The default quantiles are the quantiles you specified during predictor creation. If you didn't specify quantiles, the default values are `["0.1", "0.5", "0.9"]`.
+#' @param Tags The optional metadata that you apply to the forecast to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of
-#'     such as a prefix for keys as it is reserved for Amazon Web Services
-#'     use. You cannot edit or delete tag keys with this prefix. Values can
-#'     have this prefix. If a tag value has `aws` as its prefix but the key
-#'     does not, then Forecast considers it to be a user tag and will count
-#'     against the limit of 50 tags. Tags with only the key prefix of `aws`
-#'     do not count against your tags per resource limit.
-#' @param TimeSeriesSelector Defines the set of time series that are used to create the forecasts in
-#' a `TimeSeriesIdentifiers` object.
+#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit.
+#' @param TimeSeriesSelector Defines the set of time series that are used to create the forecasts in a `TimeSeriesIdentifiers` object.
 #' 
 #' The `TimeSeriesIdentifiers` object needs the following information:
 #' 
@@ -1204,30 +904,19 @@ forecastservice_create_forecast <- function(ForecastName, PredictorArn, Forecast
 #' Amazon Simple Storage Service (Amazon S3) bucket
 #'
 #' @description
-#' Exports a forecast created by the
-#' [`create_forecast`][forecastservice_create_forecast] operation to your
-#' Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name
-#' will match the following conventions:
+#' Exports a forecast created by the [`create_forecast`][forecastservice_create_forecast] operation to your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:
 #' 
 #' \<ForecastExportJobName\>_\<ExportTimestamp\>_\<PartNumber\>
 #' 
-#' where the \<ExportTimestamp\> component is in Java SimpleDateFormat
-#' (yyyy-MM-ddTHH-mm-ssZ).
+#' where the \<ExportTimestamp\> component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
 #' 
-#' You must specify a DataDestination object that includes an Identity and
-#' Access Management (IAM) role that Amazon Forecast can assume to access
-#' the Amazon S3 bucket. For more information, see aws-forecast-iam-roles.
+#' You must specify a DataDestination object that includes an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see aws-forecast-iam-roles.
 #' 
 #' For more information, see howitworks-forecast.
 #' 
-#' To get a list of all your forecast export jobs, use the
-#' [`list_forecast_export_jobs`][forecastservice_list_forecast_export_jobs]
-#' operation.
+#' To get a list of all your forecast export jobs, use the [`list_forecast_export_jobs`][forecastservice_list_forecast_export_jobs] operation.
 #' 
-#' The `Status` of the forecast export job must be `ACTIVE` before you can
-#' access the forecast in your Amazon S3 bucket. To get the status, use the
-#' [`describe_forecast_export_job`][forecastservice_describe_forecast_export_job]
-#' operation.
+#' The `Status` of the forecast export job must be `ACTIVE` before you can access the forecast in your Amazon S3 bucket. To get the status, use the [`describe_forecast_export_job`][forecastservice_describe_forecast_export_job] operation.
 #'
 #' @usage
 #' forecastservice_create_forecast_export_job(ForecastExportJobName,
@@ -1235,45 +924,27 @@ forecastservice_create_forecast <- function(ForecastName, PredictorArn, Forecast
 #'
 #' @param ForecastExportJobName &#91;required&#93; The name for the forecast export job.
 #' @param ForecastArn &#91;required&#93; The Amazon Resource Name (ARN) of the forecast that you want to export.
-#' @param Destination &#91;required&#93; The location where you want to save the forecast and an Identity and
-#' Access Management (IAM) role that Amazon Forecast can assume to access
-#' the location. The forecast must be exported to an Amazon S3 bucket.
+#' @param Destination &#91;required&#93; The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
 #' 
-#' If encryption is used, `Destination` must include an Key Management
-#' Service (KMS) key. The IAM role must allow Amazon Forecast permission to
-#' access the key.
-#' @param Tags The optional metadata that you apply to the forecast export job to help
-#' you categorize and organize them. Each tag consists of a key and an
-#' optional value, both of which you define.
+#' If encryption is used, `Destination` must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.
+#' @param Tags The optional metadata that you apply to the forecast export job to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of
-#'     such as a prefix for keys as it is reserved for Amazon Web Services
-#'     use. You cannot edit or delete tag keys with this prefix. Values can
-#'     have this prefix. If a tag value has `aws` as its prefix but the key
-#'     does not, then Forecast considers it to be a user tag and will count
-#'     against the limit of 50 tags. Tags with only the key prefix of `aws`
-#'     do not count against your tags per resource limit.
-#' @param Format The format of the exported data, CSV or PARQUET. The default value is
-#' CSV.
+#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit.
+#' @param Format The format of the exported data, CSV or PARQUET. The default value is CSV.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1332,19 +1003,14 @@ forecastservice_create_forecast_export_job <- function(ForecastExportJobName, Fo
 #' Creates a predictor monitor resource for an existing auto predictor
 #'
 #' @description
-#' Creates a predictor monitor resource for an existing auto predictor.
-#' Predictor monitoring allows you to see how your predictor's performance
-#' changes over time. For more information, see [Predictor
-#' Monitoring](https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html).
+#' Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see [Predictor Monitoring](https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html).
 #'
 #' @usage
 #' forecastservice_create_monitor(MonitorName, ResourceArn, Tags)
 #'
 #' @param MonitorName &#91;required&#93; The name of the monitor resource.
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the predictor to monitor.
-#' @param Tags A list of
-#' [tags](https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html)
-#' to apply to the monitor resource.
+#' @param Tags A list of [tags](https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html) to apply to the monitor resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1396,49 +1062,25 @@ forecastservice_create_monitor <- function(MonitorName, ResourceArn, Tags = NULL
 #' predictor functionalities provided by Amazon Forecast
 #'
 #' @description
-#' This operation creates a legacy predictor that does not include all the
-#' predictor functionalities provided by Amazon Forecast. To create a
-#' predictor that is compatible with all aspects of Forecast, use
-#' [`create_auto_predictor`][forecastservice_create_auto_predictor].
+#' This operation creates a legacy predictor that does not include all the predictor functionalities provided by Amazon Forecast. To create a predictor that is compatible with all aspects of Forecast, use [`create_auto_predictor`][forecastservice_create_auto_predictor].
 #' 
 #' Creates an Amazon Forecast predictor.
 #' 
-#' In the request, provide a dataset group and either specify an algorithm
-#' or let Amazon Forecast choose an algorithm for you using AutoML. If you
-#' specify an algorithm, you also can override algorithm-specific
-#' hyperparameters.
+#' In the request, provide a dataset group and either specify an algorithm or let Amazon Forecast choose an algorithm for you using AutoML. If you specify an algorithm, you also can override algorithm-specific hyperparameters.
 #' 
-#' Amazon Forecast uses the algorithm to train a predictor using the latest
-#' version of the datasets in the specified dataset group. You can then
-#' generate a forecast using the
-#' [`create_forecast`][forecastservice_create_forecast] operation.
+#' Amazon Forecast uses the algorithm to train a predictor using the latest version of the datasets in the specified dataset group. You can then generate a forecast using the [`create_forecast`][forecastservice_create_forecast] operation.
 #' 
-#' To see the evaluation metrics, use the
-#' [`get_accuracy_metrics`][forecastservice_get_accuracy_metrics]
-#' operation.
+#' To see the evaluation metrics, use the [`get_accuracy_metrics`][forecastservice_get_accuracy_metrics] operation.
 #' 
-#' You can specify a featurization configuration to fill and aggregate the
-#' data fields in the `TARGET_TIME_SERIES` dataset to improve model
-#' training. For more information, see FeaturizationConfig.
+#' You can specify a featurization configuration to fill and aggregate the data fields in the `TARGET_TIME_SERIES` dataset to improve model training. For more information, see FeaturizationConfig.
 #' 
-#' For RELATED_TIME_SERIES datasets,
-#' [`create_predictor`][forecastservice_create_predictor] verifies that the
-#' `DataFrequency` specified when the dataset was created matches the
-#' `ForecastFrequency`. TARGET_TIME_SERIES datasets don't have this
-#' restriction. Amazon Forecast also verifies the delimiter and timestamp
-#' format. For more information, see howitworks-datasets-groups.
+#' For RELATED_TIME_SERIES datasets, [`create_predictor`][forecastservice_create_predictor] verifies that the `DataFrequency` specified when the dataset was created matches the `ForecastFrequency`. TARGET_TIME_SERIES datasets don't have this restriction. Amazon Forecast also verifies the delimiter and timestamp format. For more information, see howitworks-datasets-groups.
 #' 
-#' By default, predictors are trained and evaluated at the 0.1 (P10), 0.5
-#' (P50), and 0.9 (P90) quantiles. You can choose custom forecast types to
-#' train and evaluate your predictor by setting the `ForecastTypes`.
+#' By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your predictor by setting the `ForecastTypes`.
 #' 
 #' **AutoML**
 #' 
-#' If you want Amazon Forecast to evaluate each algorithm and choose the
-#' one that minimizes the `objective function`, set `PerformAutoML` to
-#' `true`. The `objective function` is defined as the mean of the weighted
-#' losses over the forecast types. By default, these are the p10, p50, and
-#' p90 quantile losses. For more information, see EvaluationResult.
+#' If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes the `objective function`, set `PerformAutoML` to `true`. The `objective function` is defined as the mean of the weighted losses over the forecast types. By default, these are the p10, p50, and p90 quantile losses. For more information, see EvaluationResult.
 #' 
 #' When AutoML is enabled, the following properties are disallowed:
 #' 
@@ -1450,13 +1092,9 @@ forecastservice_create_monitor <- function(MonitorName, ResourceArn, Tags = NULL
 #' 
 #' -   `TrainingParameters`
 #' 
-#' To get a list of all of your predictors, use the
-#' [`list_predictors`][forecastservice_list_predictors] operation.
+#' To get a list of all of your predictors, use the [`list_predictors`][forecastservice_list_predictors] operation.
 #' 
-#' Before you can use the predictor to create a forecast, the `Status` of
-#' the predictor must be `ACTIVE`, signifying that training has completed.
-#' To get the status, use the
-#' [`describe_predictor`][forecastservice_describe_predictor] operation.
+#' Before you can use the predictor to create a forecast, the `Status` of the predictor must be `ACTIVE`, signifying that training has completed. To get the status, use the [`describe_predictor`][forecastservice_describe_predictor] operation.
 #'
 #' @usage
 #' forecastservice_create_predictor(PredictorName, AlgorithmArn,
@@ -1466,8 +1104,7 @@ forecastservice_create_monitor <- function(MonitorName, ResourceArn, Tags = NULL
 #'   OptimizationMetric)
 #'
 #' @param PredictorName &#91;required&#93; A name for the predictor.
-#' @param AlgorithmArn The Amazon Resource Name (ARN) of the algorithm to use for model
-#' training. Required if `PerformAutoML` is not set to `true`.
+#' @param AlgorithmArn The Amazon Resource Name (ARN) of the algorithm to use for model training. Required if `PerformAutoML` is not set to `true`.
 #' 
 #' **Supported algorithms:**
 #' 
@@ -1482,110 +1119,60 @@ forecastservice_create_monitor <- function(MonitorName, ResourceArn, Tags = NULL
 #' -   `arn:aws:forecast:::algorithm/NPTS`
 #' 
 #' -   `arn:aws:forecast:::algorithm/Prophet`
-#' @param ForecastHorizon &#91;required&#93; Specifies the number of time-steps that the model is trained to predict.
-#' The forecast horizon is also called the prediction length.
+#' @param ForecastHorizon &#91;required&#93; Specifies the number of time-steps that the model is trained to predict. The forecast horizon is also called the prediction length.
 #' 
-#' For example, if you configure a dataset for daily data collection (using
-#' the `DataFrequency` parameter of the
-#' [`create_dataset`][forecastservice_create_dataset] operation) and set
-#' the forecast horizon to 10, the model returns predictions for 10 days.
+#' For example, if you configure a dataset for daily data collection (using the `DataFrequency` parameter of the [`create_dataset`][forecastservice_create_dataset] operation) and set the forecast horizon to 10, the model returns predictions for 10 days.
 #' 
-#' The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of
-#' the TARGET_TIME_SERIES dataset length.
-#' @param ForecastTypes Specifies the forecast types used to train a predictor. You can specify
-#' up to five forecast types. Forecast types can be quantiles from 0.01 to
-#' 0.99, by increments of 0.01 or higher. You can also specify the mean
-#' forecast with `mean`.
+#' The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the TARGET_TIME_SERIES dataset length.
+#' @param ForecastTypes Specifies the forecast types used to train a predictor. You can specify up to five forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or higher. You can also specify the mean forecast with `mean`.
 #' 
 #' The default value is `["0.10", "0.50", "0.9"]`.
-#' @param PerformAutoML Whether to perform AutoML. When Amazon Forecast performs AutoML, it
-#' evaluates the algorithms it provides and chooses the best algorithm and
-#' configuration for your training dataset.
+#' @param PerformAutoML Whether to perform AutoML. When Amazon Forecast performs AutoML, it evaluates the algorithms it provides and chooses the best algorithm and configuration for your training dataset.
 #' 
-#' The default value is `false`. In this case, you are required to specify
-#' an algorithm.
+#' The default value is `false`. In this case, you are required to specify an algorithm.
 #' 
-#' Set `PerformAutoML` to `true` to have Amazon Forecast perform AutoML.
-#' This is a good option if you aren't sure which algorithm is suitable for
-#' your training data. In this case, `PerformHPO` must be false.
-#' @param AutoMLOverrideStrategy The `LatencyOptimized` AutoML override strategy is only available in
-#' private beta. Contact Amazon Web Services Support or your account
-#' manager to learn more about access privileges.
+#' Set `PerformAutoML` to `true` to have Amazon Forecast perform AutoML. This is a good option if you aren't sure which algorithm is suitable for your training data. In this case, `PerformHPO` must be false.
+#' @param AutoMLOverrideStrategy The `LatencyOptimized` AutoML override strategy is only available in private beta. Contact Amazon Web Services Support or your account manager to learn more about access privileges.
 #' 
-#' Used to overide the default AutoML strategy, which is to optimize
-#' predictor accuracy. To apply an AutoML strategy that minimizes training
-#' time, use `LatencyOptimized`.
+#' Used to overide the default AutoML strategy, which is to optimize predictor accuracy. To apply an AutoML strategy that minimizes training time, use `LatencyOptimized`.
 #' 
 #' This parameter is only valid for predictors trained using AutoML.
-#' @param PerformHPO Whether to perform hyperparameter optimization (HPO). HPO finds optimal
-#' hyperparameter values for your training data. The process of performing
-#' HPO is known as running a hyperparameter tuning job.
+#' @param PerformHPO Whether to perform hyperparameter optimization (HPO). HPO finds optimal hyperparameter values for your training data. The process of performing HPO is known as running a hyperparameter tuning job.
 #' 
-#' The default value is `false`. In this case, Amazon Forecast uses default
-#' hyperparameter values from the chosen algorithm.
+#' The default value is `false`. In this case, Amazon Forecast uses default hyperparameter values from the chosen algorithm.
 #' 
-#' To override the default values, set `PerformHPO` to `true` and,
-#' optionally, supply the HyperParameterTuningJobConfig object. The tuning
-#' job specifies a metric to optimize, which hyperparameters participate in
-#' tuning, and the valid range for each tunable hyperparameter. In this
-#' case, you are required to specify an algorithm and `PerformAutoML` must
-#' be false.
+#' To override the default values, set `PerformHPO` to `true` and, optionally, supply the HyperParameterTuningJobConfig object. The tuning job specifies a metric to optimize, which hyperparameters participate in tuning, and the valid range for each tunable hyperparameter. In this case, you are required to specify an algorithm and `PerformAutoML` must be false.
 #' 
 #' The following algorithms support HPO:
 #' 
 #' -   DeepAR+
 #' 
 #' -   CNN-QR
-#' @param TrainingParameters The hyperparameters to override for model training. The hyperparameters
-#' that you can override are listed in the individual algorithms. For the
-#' list of supported algorithms, see aws-forecast-choosing-recipes.
-#' @param EvaluationParameters Used to override the default evaluation parameters of the specified
-#' algorithm. Amazon Forecast evaluates a predictor by splitting a dataset
-#' into training data and testing data. The evaluation parameters define
-#' how to perform the split and the number of iterations.
-#' @param HPOConfig Provides hyperparameter override values for the algorithm. If you don't
-#' provide this parameter, Amazon Forecast uses default values. The
-#' individual algorithms specify which hyperparameters support
-#' hyperparameter optimization (HPO). For more information, see
-#' aws-forecast-choosing-recipes.
+#' @param TrainingParameters The hyperparameters to override for model training. The hyperparameters that you can override are listed in the individual algorithms. For the list of supported algorithms, see aws-forecast-choosing-recipes.
+#' @param EvaluationParameters Used to override the default evaluation parameters of the specified algorithm. Amazon Forecast evaluates a predictor by splitting a dataset into training data and testing data. The evaluation parameters define how to perform the split and the number of iterations.
+#' @param HPOConfig Provides hyperparameter override values for the algorithm. If you don't provide this parameter, Amazon Forecast uses default values. The individual algorithms specify which hyperparameters support hyperparameter optimization (HPO). For more information, see aws-forecast-choosing-recipes.
 #' 
-#' If you included the `HPOConfig` object, you must set `PerformHPO` to
-#' true.
-#' @param InputDataConfig &#91;required&#93; Describes the dataset group that contains the data to use to train the
-#' predictor.
+#' If you included the `HPOConfig` object, you must set `PerformHPO` to true.
+#' @param InputDataConfig &#91;required&#93; Describes the dataset group that contains the data to use to train the predictor.
 #' @param FeaturizationConfig &#91;required&#93; The featurization configuration.
-#' @param EncryptionConfig An Key Management Service (KMS) key and the Identity and Access
-#' Management (IAM) role that Amazon Forecast can assume to access the key.
-#' @param Tags The optional metadata that you apply to the predictor to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param EncryptionConfig An Key Management Service (KMS) key and the Identity and Access Management (IAM) role that Amazon Forecast can assume to access the key.
+#' @param Tags The optional metadata that you apply to the predictor to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of
-#'     such as a prefix for keys as it is reserved for Amazon Web Services
-#'     use. You cannot edit or delete tag keys with this prefix. Values can
-#'     have this prefix. If a tag value has `aws` as its prefix but the key
-#'     does not, then Forecast considers it to be a user tag and will count
-#'     against the limit of 50 tags. Tags with only the key prefix of `aws`
-#'     do not count against your tags per resource limit.
+#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit.
 #' @param OptimizationMetric The accuracy metric used to optimize the predictor.
 #'
 #' @return
@@ -1713,28 +1300,17 @@ forecastservice_create_predictor <- function(PredictorName, AlgorithmArn = NULL,
 #' CreateAutoPredictor or CreatePredictor operations
 #'
 #' @description
-#' Exports backtest forecasts and accuracy metrics generated by the
-#' [`create_auto_predictor`][forecastservice_create_auto_predictor] or
-#' [`create_predictor`][forecastservice_create_predictor] operations. Two
-#' folders containing CSV or Parquet files are exported to your specified
-#' S3 bucket.
+#' Exports backtest forecasts and accuracy metrics generated by the [`create_auto_predictor`][forecastservice_create_auto_predictor] or [`create_predictor`][forecastservice_create_predictor] operations. Two folders containing CSV or Parquet files are exported to your specified S3 bucket.
 #' 
 #' The export file names will match the following conventions:
 #' 
 #' `<ExportJobName>_<ExportTimestamp>_<PartNumber>.csv`
 #' 
-#' The \<ExportTimestamp\> component is in Java SimpleDate format
-#' (yyyy-MM-ddTHH-mm-ssZ).
+#' The \<ExportTimestamp\> component is in Java SimpleDate format (yyyy-MM-ddTHH-mm-ssZ).
 #' 
-#' You must specify a DataDestination object that includes an Amazon S3
-#' bucket and an Identity and Access Management (IAM) role that Amazon
-#' Forecast can assume to access the Amazon S3 bucket. For more
-#' information, see aws-forecast-iam-roles.
+#' You must specify a DataDestination object that includes an Amazon S3 bucket and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see aws-forecast-iam-roles.
 #' 
-#' The `Status` of the export job must be `ACTIVE` before you can access
-#' the export in your Amazon S3 bucket. To get the status, use the
-#' [`describe_predictor_backtest_export_job`][forecastservice_describe_predictor_backtest_export_job]
-#' operation.
+#' The `Status` of the export job must be `ACTIVE` before you can access the export in your Amazon S3 bucket. To get the status, use the [`describe_predictor_backtest_export_job`][forecastservice_describe_predictor_backtest_export_job] operation.
 #'
 #' @usage
 #' forecastservice_create_predictor_backtest_export_job(
@@ -1742,15 +1318,12 @@ forecastservice_create_predictor <- function(PredictorName, AlgorithmArn = NULL,
 #'
 #' @param PredictorBacktestExportJobName &#91;required&#93; The name for the backtest export job.
 #' @param PredictorArn &#91;required&#93; The Amazon Resource Name (ARN) of the predictor that you want to export.
-#' @param Destination &#91;required&#93; 
-#' @param Tags Optional metadata to help you categorize and organize your backtests.
-#' Each tag consists of a key and an optional value, both of which you
-#' define. Tag keys and values are case sensitive.
+#' @param Destination &#91;required&#93; The destination for an export job. Provide an S3 path, an Identity and Access Management (IAM) role that allows Amazon Forecast to access the location, and an Key Management Service (KMS) key (optional).
+#' @param Tags Optional metadata to help you categorize and organize your backtests. Each tag consists of a key and an optional value, both of which you define. Tag keys and values are case sensitive.
 #' 
 #' The following restrictions apply to tags:
 #' 
-#' -   For each resource, each tag key must be unique and each tag key must
-#'     have one value.
+#' -   For each resource, each tag key must be unique and each tag key must have one value.
 #' 
 #' -   Maximum number of tags per resource: 50.
 #' 
@@ -1758,19 +1331,10 @@ forecastservice_create_predictor <- function(PredictorName, AlgorithmArn = NULL,
 #' 
 #' -   Maximum value length: 256 Unicode characters in UTF-8.
 #' 
-#' -   Accepted characters: all letters and numbers, spaces representable
-#'     in UTF-8, and + - = . _ : / @@. If your tagging schema is used
-#'     across other services and resources, the character restrictions of
-#'     those services also apply.
+#' -   Accepted characters: all letters and numbers, spaces representable in UTF-8, and + - = . _ : / @@. If your tagging schema is used across other services and resources, the character restrictions of those services also apply.
 #' 
-#' -   Key prefixes cannot include any upper or lowercase combination of
-#'     `aws:` or `AWS:`. Values can have this prefix. If a tag value has
-#'     `aws` as its prefix but the key does not, Forecast considers it to
-#'     be a user tag and will count against the limit of 50 tags. Tags with
-#'     only the key prefix of `aws` do not count against your tags per
-#'     resource limit. You cannot edit or delete tag keys with this prefix.
-#' @param Format The format of the exported data, CSV or PARQUET. The default value is
-#' CSV.
+#' -   Key prefixes cannot include any upper or lowercase combination of `aws:` or `AWS:`. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit. You cannot edit or delete tag keys with this prefix.
+#' @param Format The format of the exported data, CSV or PARQUET. The default value is CSV.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1831,33 +1395,15 @@ forecastservice_create_predictor_backtest_export_job <- function(PredictorBackte
 #' by these changes against the baseline, unchanged time series
 #'
 #' @description
-#' What-if analysis is a scenario modeling technique where you make a
-#' hypothetical change to a time series and compare the forecasts generated
-#' by these changes against the baseline, unchanged time series. It is
-#' important to remember that the purpose of a what-if analysis is to
-#' understand how a forecast can change given different modifications to
-#' the baseline time series.
+#' What-if analysis is a scenario modeling technique where you make a hypothetical change to a time series and compare the forecasts generated by these changes against the baseline, unchanged time series. It is important to remember that the purpose of a what-if analysis is to understand how a forecast can change given different modifications to the baseline time series.
 #' 
-#' For example, imagine you are a clothing retailer who is considering an
-#' end of season sale to clear space for new styles. After creating a
-#' baseline forecast, you can use a what-if analysis to investigate how
-#' different sales tactics might affect your goals.
+#' For example, imagine you are a clothing retailer who is considering an end of season sale to clear space for new styles. After creating a baseline forecast, you can use a what-if analysis to investigate how different sales tactics might affect your goals.
 #' 
-#' You could create a scenario where everything is given a 25% markdown,
-#' and another where everything is given a fixed dollar markdown. You could
-#' create a scenario where the sale lasts for one week and another where
-#' the sale lasts for one month. With a what-if analysis, you can compare
-#' many different scenarios against each other.
+#' You could create a scenario where everything is given a 25% markdown, and another where everything is given a fixed dollar markdown. You could create a scenario where the sale lasts for one week and another where the sale lasts for one month. With a what-if analysis, you can compare many different scenarios against each other.
 #' 
-#' Note that a what-if analysis is meant to display what the forecasting
-#' model has learned and how it will behave in the scenarios that you are
-#' evaluating. Do not blindly use the results of the what-if analysis to
-#' make business decisions. For instance, forecasts might not be accurate
-#' for novel scenarios where there is no reference available to determine
-#' whether a forecast is good.
+#' Note that a what-if analysis is meant to display what the forecasting model has learned and how it will behave in the scenarios that you are evaluating. Do not blindly use the results of the what-if analysis to make business decisions. For instance, forecasts might not be accurate for novel scenarios where there is no reference available to determine whether a forecast is good.
 #' 
-#' The TimeSeriesSelector object defines the items that you want in the
-#' what-if analysis.
+#' The TimeSeriesSelector object defines the items that you want in the what-if analysis.
 #'
 #' @usage
 #' forecastservice_create_what_if_analysis(WhatIfAnalysisName, ForecastArn,
@@ -1865,9 +1411,7 @@ forecastservice_create_predictor_backtest_export_job <- function(PredictorBackte
 #'
 #' @param WhatIfAnalysisName &#91;required&#93; The name of the what-if analysis. Each name must be unique.
 #' @param ForecastArn &#91;required&#93; The Amazon Resource Name (ARN) of the baseline forecast.
-#' @param TimeSeriesSelector Defines the set of time series that are used in the what-if analysis
-#' with a `TimeSeriesIdentifiers` object. What-if analyses are performed
-#' only for the time series in this object.
+#' @param TimeSeriesSelector Defines the set of time series that are used in the what-if analysis with a `TimeSeriesIdentifiers` object. What-if analyses are performed only for the time series in this object.
 #' 
 #' The `TimeSeriesIdentifiers` object needs the following information:
 #' 
@@ -1876,9 +1420,7 @@ forecastservice_create_predictor_backtest_export_job <- function(PredictorBackte
 #' -   `Format`
 #' 
 #' -   `Schema`
-#' @param Tags A list of
-#' [tags](https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html)
-#' to apply to the what if forecast.
+#' @param Tags A list of [tags](https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html) to apply to the what if forecast.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1950,41 +1492,24 @@ forecastservice_create_what_if_analysis <- function(WhatIfAnalysisName, Forecast
 #' of the baseline forecast
 #'
 #' @description
-#' A what-if forecast is a forecast that is created from a modified version
-#' of the baseline forecast. Each what-if forecast incorporates either a
-#' replacement dataset or a set of transformations to the original dataset.
+#' A what-if forecast is a forecast that is created from a modified version of the baseline forecast. Each what-if forecast incorporates either a replacement dataset or a set of transformations to the original dataset.
 #'
 #' @usage
 #' forecastservice_create_what_if_forecast(WhatIfForecastName,
 #'   WhatIfAnalysisArn, TimeSeriesTransformations,
 #'   TimeSeriesReplacementsDataSource, Tags)
 #'
-#' @param WhatIfForecastName &#91;required&#93; The name of the what-if forecast. Names must be unique within each
-#' what-if analysis.
+#' @param WhatIfForecastName &#91;required&#93; The name of the what-if forecast. Names must be unique within each what-if analysis.
 #' @param WhatIfAnalysisArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if analysis.
-#' @param TimeSeriesTransformations The transformations that are applied to the baseline time series. Each
-#' transformation contains an action and a set of conditions. An action is
-#' applied only when all conditions are met. If no conditions are provided,
-#' the action is applied to all items.
-#' @param TimeSeriesReplacementsDataSource The replacement time series dataset, which contains the rows that you
-#' want to change in the related time series dataset. A replacement time
-#' series does not need to contain all rows that are in the baseline
-#' related time series. Include only the rows (measure-dimension
-#' combinations) that you want to include in the what-if forecast.
+#' @param TimeSeriesTransformations The transformations that are applied to the baseline time series. Each transformation contains an action and a set of conditions. An action is applied only when all conditions are met. If no conditions are provided, the action is applied to all items.
+#' @param TimeSeriesReplacementsDataSource The replacement time series dataset, which contains the rows that you want to change in the related time series dataset. A replacement time series does not need to contain all rows that are in the baseline related time series. Include only the rows (measure-dimension combinations) that you want to include in the what-if forecast.
 #' 
-#' This dataset is merged with the original time series to create a
-#' transformed dataset that is used for the what-if analysis.
+#' This dataset is merged with the original time series to create a transformed dataset that is used for the what-if analysis.
 #' 
-#' This dataset should contain the items to modify (such as item_id or
-#' workforce_type), any relevant dimensions, the timestamp column, and at
-#' least one of the related time series columns. This file should not
-#' contain duplicate timestamps for the same time series.
+#' This dataset should contain the items to modify (such as item_id or workforce_type), any relevant dimensions, the timestamp column, and at least one of the related time series columns. This file should not contain duplicate timestamps for the same time series.
 #' 
-#' Timestamps and item_ids not included in this dataset are not included in
-#' the what-if analysis.
-#' @param Tags A list of
-#' [tags](https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html)
-#' to apply to the what if forecast.
+#' Timestamps and item_ids not included in this dataset are not included in the what-if analysis.
+#' @param Tags A list of [tags](https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html) to apply to the what if forecast.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2069,30 +1594,19 @@ forecastservice_create_what_if_forecast <- function(WhatIfForecastName, WhatIfAn
 #' Amazon Simple Storage Service (Amazon S3) bucket
 #'
 #' @description
-#' Exports a forecast created by the
-#' [`create_what_if_forecast`][forecastservice_create_what_if_forecast]
-#' operation to your Amazon Simple Storage Service (Amazon S3) bucket. The
-#' forecast file name will match the following conventions:
+#' Exports a forecast created by the [`create_what_if_forecast`][forecastservice_create_what_if_forecast] operation to your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:
 #' 
 #' `≈<ForecastExportJobName>_<ExportTimestamp>_<PartNumber>`
 #' 
-#' The \<ExportTimestamp\> component is in Java SimpleDateFormat
-#' (yyyy-MM-ddTHH-mm-ssZ).
+#' The \<ExportTimestamp\> component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
 #' 
-#' You must specify a DataDestination object that includes an Identity and
-#' Access Management (IAM) role that Amazon Forecast can assume to access
-#' the Amazon S3 bucket. For more information, see aws-forecast-iam-roles.
+#' You must specify a DataDestination object that includes an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see aws-forecast-iam-roles.
 #' 
 #' For more information, see howitworks-forecast.
 #' 
-#' To get a list of all your what-if forecast export jobs, use the
-#' [`list_what_if_forecast_exports`][forecastservice_list_what_if_forecast_exports]
-#' operation.
+#' To get a list of all your what-if forecast export jobs, use the [`list_what_if_forecast_exports`][forecastservice_list_what_if_forecast_exports] operation.
 #' 
-#' The `Status` of the forecast export job must be `ACTIVE` before you can
-#' access the forecast in your Amazon S3 bucket. To get the status, use the
-#' [`describe_what_if_forecast_export`][forecastservice_describe_what_if_forecast_export]
-#' operation.
+#' The `Status` of the forecast export job must be `ACTIVE` before you can access the forecast in your Amazon S3 bucket. To get the status, use the [`describe_what_if_forecast_export`][forecastservice_describe_what_if_forecast_export] operation.
 #'
 #' @usage
 #' forecastservice_create_what_if_forecast_export(WhatIfForecastExportName,
@@ -2100,16 +1614,10 @@ forecastservice_create_what_if_forecast <- function(WhatIfForecastName, WhatIfAn
 #'
 #' @param WhatIfForecastExportName &#91;required&#93; The name of the what-if forecast to export.
 #' @param WhatIfForecastArns &#91;required&#93; The list of what-if forecast Amazon Resource Names (ARNs) to export.
-#' @param Destination &#91;required&#93; The location where you want to save the forecast and an Identity and
-#' Access Management (IAM) role that Amazon Forecast can assume to access
-#' the location. The forecast must be exported to an Amazon S3 bucket.
+#' @param Destination &#91;required&#93; The location where you want to save the forecast and an Identity and Access Management (IAM) role that Amazon Forecast can assume to access the location. The forecast must be exported to an Amazon S3 bucket.
 #' 
-#' If encryption is used, `Destination` must include an Key Management
-#' Service (KMS) key. The IAM role must allow Amazon Forecast permission to
-#' access the key.
-#' @param Tags A list of
-#' [tags](https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html)
-#' to apply to the what if forecast.
+#' If encryption is used, `Destination` must include an Key Management Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.
+#' @param Tags A list of [tags](https://docs.aws.amazon.com/forecast/latest/dg/tagging-forecast-resources.html) to apply to the what if forecast.
 #' @param Format The format of the exported data, CSV or PARQUET.
 #'
 #' @return
@@ -2172,16 +1680,9 @@ forecastservice_create_what_if_forecast_export <- function(WhatIfForecastExportN
 #' CreateDataset operation
 #'
 #' @description
-#' Deletes an Amazon Forecast dataset that was created using the
-#' [`create_dataset`][forecastservice_create_dataset] operation. You can
-#' only delete datasets that have a status of `ACTIVE` or `CREATE_FAILED`.
-#' To get the status use the
-#' [`describe_dataset`][forecastservice_describe_dataset] operation.
+#' Deletes an Amazon Forecast dataset that was created using the [`create_dataset`][forecastservice_create_dataset] operation. You can only delete datasets that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status use the [`describe_dataset`][forecastservice_describe_dataset] operation.
 #' 
-#' Forecast does not automatically update any dataset groups that contain
-#' the deleted dataset. In order to update the dataset group, use the
-#' [`update_dataset_group`][forecastservice_update_dataset_group]
-#' operation, omitting the deleted dataset's ARN.
+#' Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update the dataset group, use the [`update_dataset_group`][forecastservice_update_dataset_group] operation, omitting the deleted dataset's ARN.
 #'
 #' @usage
 #' forecastservice_delete_dataset(DatasetArn)
@@ -2225,15 +1726,9 @@ forecastservice_delete_dataset <- function(DatasetArn) {
 #' Deletes a dataset group created using the CreateDatasetGroup operation
 #'
 #' @description
-#' Deletes a dataset group created using the
-#' [`create_dataset_group`][forecastservice_create_dataset_group]
-#' operation. You can only delete dataset groups that have a status of
-#' `ACTIVE`, `CREATE_FAILED`, or `UPDATE_FAILED`. To get the status, use
-#' the [`describe_dataset_group`][forecastservice_describe_dataset_group]
-#' operation.
+#' Deletes a dataset group created using the [`create_dataset_group`][forecastservice_create_dataset_group] operation. You can only delete dataset groups that have a status of `ACTIVE`, `CREATE_FAILED`, or `UPDATE_FAILED`. To get the status, use the [`describe_dataset_group`][forecastservice_describe_dataset_group] operation.
 #' 
-#' This operation deletes only the dataset group, not the datasets in the
-#' group.
+#' This operation deletes only the dataset group, not the datasets in the group.
 #'
 #' @usage
 #' forecastservice_delete_dataset_group(DatasetGroupArn)
@@ -2278,12 +1773,7 @@ forecastservice_delete_dataset_group <- function(DatasetGroupArn) {
 #' operation
 #'
 #' @description
-#' Deletes a dataset import job created using the
-#' [`create_dataset_import_job`][forecastservice_create_dataset_import_job]
-#' operation. You can delete only dataset import jobs that have a status of
-#' `ACTIVE` or `CREATE_FAILED`. To get the status, use the
-#' [`describe_dataset_import_job`][forecastservice_describe_dataset_import_job]
-#' operation.
+#' Deletes a dataset import job created using the [`create_dataset_import_job`][forecastservice_create_dataset_import_job] operation. You can delete only dataset import jobs that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the [`describe_dataset_import_job`][forecastservice_describe_dataset_import_job] operation.
 #'
 #' @usage
 #' forecastservice_delete_dataset_import_job(DatasetImportJobArn)
@@ -2329,10 +1819,7 @@ forecastservice_delete_dataset_import_job <- function(DatasetImportJobArn) {
 #' @description
 #' Deletes an Explainability resource.
 #' 
-#' You can delete only predictor that have a status of `ACTIVE` or
-#' `CREATE_FAILED`. To get the status, use the
-#' [`describe_explainability`][forecastservice_describe_explainability]
-#' operation.
+#' You can delete only predictor that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the [`describe_explainability`][forecastservice_describe_explainability] operation.
 #'
 #' @usage
 #' forecastservice_delete_explainability(ExplainabilityArn)
@@ -2420,14 +1907,9 @@ forecastservice_delete_explainability_export <- function(ExplainabilityExportArn
 #' Deletes a forecast created using the CreateForecast operation
 #'
 #' @description
-#' Deletes a forecast created using the
-#' [`create_forecast`][forecastservice_create_forecast] operation. You can
-#' delete only forecasts that have a status of `ACTIVE` or `CREATE_FAILED`.
-#' To get the status, use the
-#' [`describe_forecast`][forecastservice_describe_forecast] operation.
+#' Deletes a forecast created using the [`create_forecast`][forecastservice_create_forecast] operation. You can delete only forecasts that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the [`describe_forecast`][forecastservice_describe_forecast] operation.
 #' 
-#' You can't delete a forecast while it is being exported. After a forecast
-#' is deleted, you can no longer query the forecast.
+#' You can't delete a forecast while it is being exported. After a forecast is deleted, you can no longer query the forecast.
 #'
 #' @usage
 #' forecastservice_delete_forecast(ForecastArn)
@@ -2472,12 +1954,7 @@ forecastservice_delete_forecast <- function(ForecastArn) {
 #' operation
 #'
 #' @description
-#' Deletes a forecast export job created using the
-#' [`create_forecast_export_job`][forecastservice_create_forecast_export_job]
-#' operation. You can delete only export jobs that have a status of
-#' `ACTIVE` or `CREATE_FAILED`. To get the status, use the
-#' [`describe_forecast_export_job`][forecastservice_describe_forecast_export_job]
-#' operation.
+#' Deletes a forecast export job created using the [`create_forecast_export_job`][forecastservice_create_forecast_export_job] operation. You can delete only export jobs that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the [`describe_forecast_export_job`][forecastservice_describe_forecast_export_job] operation.
 #'
 #' @usage
 #' forecastservice_delete_forecast_export_job(ForecastExportJobArn)
@@ -2521,9 +1998,7 @@ forecastservice_delete_forecast_export_job <- function(ForecastExportJobArn) {
 #' Deletes a monitor resource
 #'
 #' @description
-#' Deletes a monitor resource. You can only delete a monitor resource with
-#' a status of `ACTIVE`, `ACTIVE_STOPPED`, `CREATE_FAILED`, or
-#' `CREATE_STOPPED`.
+#' Deletes a monitor resource. You can only delete a monitor resource with a status of `ACTIVE`, `ACTIVE_STOPPED`, `CREATE_FAILED`, or `CREATE_STOPPED`.
 #'
 #' @usage
 #' forecastservice_delete_monitor(MonitorArn)
@@ -2568,12 +2043,7 @@ forecastservice_delete_monitor <- function(MonitorArn) {
 #' CreatePredictor operations
 #'
 #' @description
-#' Deletes a predictor created using the
-#' [`describe_predictor`][forecastservice_describe_predictor] or
-#' [`create_predictor`][forecastservice_create_predictor] operations. You
-#' can delete only predictor that have a status of `ACTIVE` or
-#' `CREATE_FAILED`. To get the status, use the
-#' [`describe_predictor`][forecastservice_describe_predictor] operation.
+#' Deletes a predictor created using the [`describe_predictor`][forecastservice_describe_predictor] or [`create_predictor`][forecastservice_create_predictor] operations. You can delete only predictor that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the [`describe_predictor`][forecastservice_describe_predictor] operation.
 #'
 #' @usage
 #' forecastservice_delete_predictor(PredictorArn)
@@ -2623,8 +2093,7 @@ forecastservice_delete_predictor <- function(PredictorArn) {
 #' forecastservice_delete_predictor_backtest_export_job(
 #'   PredictorBacktestExportJobArn)
 #'
-#' @param PredictorBacktestExportJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the predictor backtest export job to
-#' delete.
+#' @param PredictorBacktestExportJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the predictor backtest export job to delete.
 #'
 #' @return
 #' An empty list.
@@ -2663,35 +2132,26 @@ forecastservice_delete_predictor_backtest_export_job <- function(PredictorBackte
 #' Deletes an entire resource tree
 #'
 #' @description
-#' Deletes an entire resource tree. This operation will delete the parent
-#' resource and its child resources.
+#' Deletes an entire resource tree. This operation will delete the parent resource and its child resources.
 #' 
-#' Child resources are resources that were created from another resource.
-#' For example, when a forecast is generated from a predictor, the forecast
-#' is the child resource and the predictor is the parent resource.
+#' Child resources are resources that were created from another resource. For example, when a forecast is generated from a predictor, the forecast is the child resource and the predictor is the parent resource.
 #' 
-#' Amazon Forecast resources possess the following parent-child resource
-#' hierarchies:
+#' Amazon Forecast resources possess the following parent-child resource hierarchies:
 #' 
 #' -   **Dataset**: dataset import jobs
 #' 
-#' -   **Dataset Group**: predictors, predictor backtest export jobs,
-#'     forecasts, forecast export jobs
+#' -   **Dataset Group**: predictors, predictor backtest export jobs, forecasts, forecast export jobs
 #' 
-#' -   **Predictor**: predictor backtest export jobs, forecasts, forecast
-#'     export jobs
+#' -   **Predictor**: predictor backtest export jobs, forecasts, forecast export jobs
 #' 
 #' -   **Forecast**: forecast export jobs
 #' 
-#' [`delete_resource_tree`][forecastservice_delete_resource_tree] will only
-#' delete Amazon Forecast resources, and will not delete datasets or
-#' exported files stored in Amazon S3.
+#' [`delete_resource_tree`][forecastservice_delete_resource_tree] will only delete Amazon Forecast resources, and will not delete datasets or exported files stored in Amazon S3.
 #'
 #' @usage
 #' forecastservice_delete_resource_tree(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the parent resource to delete. All
-#' child resources of the parent resource will also be deleted.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the parent resource to delete. All child resources of the parent resource will also be deleted.
 #'
 #' @return
 #' An empty list.
@@ -2731,21 +2191,14 @@ forecastservice_delete_resource_tree <- function(ResourceArn) {
 #' operation
 #'
 #' @description
-#' Deletes a what-if analysis created using the
-#' [`create_what_if_analysis`][forecastservice_create_what_if_analysis]
-#' operation. You can delete only what-if analyses that have a status of
-#' `ACTIVE` or `CREATE_FAILED`. To get the status, use the
-#' [`describe_what_if_analysis`][forecastservice_describe_what_if_analysis]
-#' operation.
+#' Deletes a what-if analysis created using the [`create_what_if_analysis`][forecastservice_create_what_if_analysis] operation. You can delete only what-if analyses that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the [`describe_what_if_analysis`][forecastservice_describe_what_if_analysis] operation.
 #' 
-#' You can't delete a what-if analysis while any of its forecasts are being
-#' exported.
+#' You can't delete a what-if analysis while any of its forecasts are being exported.
 #'
 #' @usage
 #' forecastservice_delete_what_if_analysis(WhatIfAnalysisArn)
 #'
-#' @param WhatIfAnalysisArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if analysis that you want to
-#' delete.
+#' @param WhatIfAnalysisArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if analysis that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -2785,22 +2238,14 @@ forecastservice_delete_what_if_analysis <- function(WhatIfAnalysisArn) {
 #' operation
 #'
 #' @description
-#' Deletes a what-if forecast created using the
-#' [`create_what_if_forecast`][forecastservice_create_what_if_forecast]
-#' operation. You can delete only what-if forecasts that have a status of
-#' `ACTIVE` or `CREATE_FAILED`. To get the status, use the
-#' [`describe_what_if_forecast`][forecastservice_describe_what_if_forecast]
-#' operation.
+#' Deletes a what-if forecast created using the [`create_what_if_forecast`][forecastservice_create_what_if_forecast] operation. You can delete only what-if forecasts that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the [`describe_what_if_forecast`][forecastservice_describe_what_if_forecast] operation.
 #' 
-#' You can't delete a what-if forecast while it is being exported. After a
-#' what-if forecast is deleted, you can no longer query the what-if
-#' analysis.
+#' You can't delete a what-if forecast while it is being exported. After a what-if forecast is deleted, you can no longer query the what-if analysis.
 #'
 #' @usage
 #' forecastservice_delete_what_if_forecast(WhatIfForecastArn)
 #'
-#' @param WhatIfForecastArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast that you want to
-#' delete.
+#' @param WhatIfForecastArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -2840,18 +2285,12 @@ forecastservice_delete_what_if_forecast <- function(WhatIfForecastArn) {
 #' CreateWhatIfForecastExport operation
 #'
 #' @description
-#' Deletes a what-if forecast export created using the
-#' [`create_what_if_forecast_export`][forecastservice_create_what_if_forecast_export]
-#' operation. You can delete only what-if forecast exports that have a
-#' status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the
-#' [`describe_what_if_forecast_export`][forecastservice_describe_what_if_forecast_export]
-#' operation.
+#' Deletes a what-if forecast export created using the [`create_what_if_forecast_export`][forecastservice_create_what_if_forecast_export] operation. You can delete only what-if forecast exports that have a status of `ACTIVE` or `CREATE_FAILED`. To get the status, use the [`describe_what_if_forecast_export`][forecastservice_describe_what_if_forecast_export] operation.
 #'
 #' @usage
 #' forecastservice_delete_what_if_forecast_export(WhatIfForecastExportArn)
 #'
-#' @param WhatIfForecastExportArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast export that you
-#' want to delete.
+#' @param WhatIfForecastExportArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -3005,12 +2444,9 @@ forecastservice_describe_auto_predictor <- function(PredictorArn) {
 #' operation
 #'
 #' @description
-#' Describes an Amazon Forecast dataset created using the
-#' [`create_dataset`][forecastservice_create_dataset] operation.
+#' Describes an Amazon Forecast dataset created using the [`create_dataset`][forecastservice_create_dataset] operation.
 #' 
-#' In addition to listing the parameters specified in the
-#' [`create_dataset`][forecastservice_create_dataset] request, this
-#' operation includes the following dataset properties:
+#' In addition to listing the parameters specified in the [`create_dataset`][forecastservice_create_dataset] request, this operation includes the following dataset properties:
 #' 
 #' -   `CreationTime`
 #' 
@@ -3088,13 +2524,9 @@ forecastservice_describe_dataset <- function(DatasetArn) {
 #' Describes a dataset group created using the CreateDatasetGroup operation
 #'
 #' @description
-#' Describes a dataset group created using the
-#' [`create_dataset_group`][forecastservice_create_dataset_group]
-#' operation.
+#' Describes a dataset group created using the [`create_dataset_group`][forecastservice_create_dataset_group] operation.
 #' 
-#' In addition to listing the parameters provided in the
-#' [`create_dataset_group`][forecastservice_create_dataset_group] request,
-#' this operation includes the following properties:
+#' In addition to listing the parameters provided in the [`create_dataset_group`][forecastservice_create_dataset_group] request, this operation includes the following properties:
 #' 
 #' -   `DatasetArns` - The datasets belonging to the group.
 #' 
@@ -3164,13 +2596,9 @@ forecastservice_describe_dataset_group <- function(DatasetGroupArn) {
 #' operation
 #'
 #' @description
-#' Describes a dataset import job created using the
-#' [`create_dataset_import_job`][forecastservice_create_dataset_import_job]
-#' operation.
+#' Describes a dataset import job created using the [`create_dataset_import_job`][forecastservice_create_dataset_import_job] operation.
 #' 
-#' In addition to listing the parameters provided in the
-#' [`create_dataset_import_job`][forecastservice_create_dataset_import_job]
-#' request, this operation includes the following properties:
+#' In addition to listing the parameters provided in the [`create_dataset_import_job`][forecastservice_create_dataset_import_job] request, this operation includes the following properties:
 #' 
 #' -   `CreationTime`
 #' 
@@ -3273,9 +2701,7 @@ forecastservice_describe_dataset_import_job <- function(DatasetImportJobArn) {
 #' CreateExplainability operation
 #'
 #' @description
-#' Describes an Explainability resource created using the
-#' [`create_explainability`][forecastservice_create_explainability]
-#' operation.
+#' Describes an Explainability resource created using the [`create_explainability`][forecastservice_create_explainability] operation.
 #'
 #' @usage
 #' forecastservice_describe_explainability(ExplainabilityArn)
@@ -3358,9 +2784,7 @@ forecastservice_describe_explainability <- function(ExplainabilityArn) {
 #' CreateExplainabilityExport operation
 #'
 #' @description
-#' Describes an Explainability export created using the
-#' [`create_explainability_export`][forecastservice_create_explainability_export]
-#' operation.
+#' Describes an Explainability export created using the [`create_explainability_export`][forecastservice_create_explainability_export] operation.
 #'
 #' @usage
 #' forecastservice_describe_explainability_export(ExplainabilityExportArn)
@@ -3427,15 +2851,11 @@ forecastservice_describe_explainability_export <- function(ExplainabilityExportA
 #' Describes a forecast created using the CreateForecast operation
 #'
 #' @description
-#' Describes a forecast created using the
-#' [`create_forecast`][forecastservice_create_forecast] operation.
+#' Describes a forecast created using the [`create_forecast`][forecastservice_create_forecast] operation.
 #' 
-#' In addition to listing the properties provided in the
-#' [`create_forecast`][forecastservice_create_forecast] request, this
-#' operation lists the following properties:
+#' In addition to listing the properties provided in the [`create_forecast`][forecastservice_create_forecast] request, this operation lists the following properties:
 #' 
-#' -   `DatasetGroupArn` - The dataset group that provided the training
-#'     data.
+#' -   `DatasetGroupArn` - The dataset group that provided the training data.
 #' 
 #' -   `CreationTime`
 #' 
@@ -3528,13 +2948,9 @@ forecastservice_describe_forecast <- function(ForecastArn) {
 #' CreateForecastExportJob operation
 #'
 #' @description
-#' Describes a forecast export job created using the
-#' [`create_forecast_export_job`][forecastservice_create_forecast_export_job]
-#' operation.
+#' Describes a forecast export job created using the [`create_forecast_export_job`][forecastservice_create_forecast_export_job] operation.
 #' 
-#' In addition to listing the properties provided by the user in the
-#' [`create_forecast_export_job`][forecastservice_create_forecast_export_job]
-#' request, this operation lists the following properties:
+#' In addition to listing the properties provided by the user in the [`create_forecast_export_job`][forecastservice_create_forecast_export_job] request, this operation lists the following properties:
 #' 
 #' -   `CreationTime`
 #' 
@@ -3609,9 +3025,7 @@ forecastservice_describe_forecast_export_job <- function(ForecastExportJobArn) {
 #' Describes a monitor resource
 #'
 #' @description
-#' Describes a monitor resource. In addition to listing the properties
-#' provided in the [`create_monitor`][forecastservice_create_monitor]
-#' request, this operation lists the following properties:
+#' Describes a monitor resource. In addition to listing the properties provided in the [`create_monitor`][forecastservice_create_monitor] request, this operation lists the following properties:
 #' 
 #' -   `Baseline`
 #' 
@@ -3700,22 +3114,15 @@ forecastservice_describe_monitor <- function(MonitorArn) {
 #' CreatePredictor
 #'
 #' @description
-#' This operation is only valid for legacy predictors created with
-#' CreatePredictor. If you are not using a legacy predictor, use
-#' [`describe_auto_predictor`][forecastservice_describe_auto_predictor].
+#' This operation is only valid for legacy predictors created with CreatePredictor. If you are not using a legacy predictor, use [`describe_auto_predictor`][forecastservice_describe_auto_predictor].
 #' 
-#' Describes a predictor created using the
-#' [`create_predictor`][forecastservice_create_predictor] operation.
+#' Describes a predictor created using the [`create_predictor`][forecastservice_create_predictor] operation.
 #' 
-#' In addition to listing the properties provided in the
-#' [`create_predictor`][forecastservice_create_predictor] request, this
-#' operation lists the following properties:
+#' In addition to listing the properties provided in the [`create_predictor`][forecastservice_create_predictor] request, this operation lists the following properties:
 #' 
-#' -   `DatasetImportJobArns` - The dataset import jobs used to import
-#'     training data.
+#' -   `DatasetImportJobArns` - The dataset import jobs used to import training data.
 #' 
-#' -   `AutoMLAlgorithmArns` - If AutoML is performed, the algorithms that
-#'     were evaluated.
+#' -   `AutoMLAlgorithmArns` - If AutoML is performed, the algorithms that were evaluated.
 #' 
 #' -   `CreationTime`
 #' 
@@ -3728,8 +3135,7 @@ forecastservice_describe_monitor <- function(MonitorArn) {
 #' @usage
 #' forecastservice_describe_predictor(PredictorArn)
 #'
-#' @param PredictorArn &#91;required&#93; The Amazon Resource Name (ARN) of the predictor that you want
-#' information about.
+#' @param PredictorArn &#91;required&#93; The Amazon Resource Name (ARN) of the predictor that you want information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3886,13 +3292,9 @@ forecastservice_describe_predictor <- function(PredictorArn) {
 #' CreatePredictorBacktestExportJob operation
 #'
 #' @description
-#' Describes a predictor backtest export job created using the
-#' [`create_predictor_backtest_export_job`][forecastservice_create_predictor_backtest_export_job]
-#' operation.
+#' Describes a predictor backtest export job created using the [`create_predictor_backtest_export_job`][forecastservice_create_predictor_backtest_export_job] operation.
 #' 
-#' In addition to listing the properties provided by the user in the
-#' [`create_predictor_backtest_export_job`][forecastservice_create_predictor_backtest_export_job]
-#' request, this operation lists the following properties:
+#' In addition to listing the properties provided by the user in the [`create_predictor_backtest_export_job`][forecastservice_create_predictor_backtest_export_job] request, this operation lists the following properties:
 #' 
 #' -   `CreationTime`
 #' 
@@ -3969,13 +3371,9 @@ forecastservice_describe_predictor_backtest_export_job <- function(PredictorBack
 #' operation
 #'
 #' @description
-#' Describes the what-if analysis created using the
-#' [`create_what_if_analysis`][forecastservice_create_what_if_analysis]
-#' operation.
+#' Describes the what-if analysis created using the [`create_what_if_analysis`][forecastservice_create_what_if_analysis] operation.
 #' 
-#' In addition to listing the properties provided in the
-#' [`create_what_if_analysis`][forecastservice_create_what_if_analysis]
-#' request, this operation lists the following properties:
+#' In addition to listing the properties provided in the [`create_what_if_analysis`][forecastservice_create_what_if_analysis] request, this operation lists the following properties:
 #' 
 #' -   `CreationTime`
 #' 
@@ -3988,8 +3386,7 @@ forecastservice_describe_predictor_backtest_export_job <- function(PredictorBack
 #' @usage
 #' forecastservice_describe_what_if_analysis(WhatIfAnalysisArn)
 #'
-#' @param WhatIfAnalysisArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if analysis that you are
-#' interested in.
+#' @param WhatIfAnalysisArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4065,13 +3462,9 @@ forecastservice_describe_what_if_analysis <- function(WhatIfAnalysisArn) {
 #' operation
 #'
 #' @description
-#' Describes the what-if forecast created using the
-#' [`create_what_if_forecast`][forecastservice_create_what_if_forecast]
-#' operation.
+#' Describes the what-if forecast created using the [`create_what_if_forecast`][forecastservice_create_what_if_forecast] operation.
 #' 
-#' In addition to listing the properties provided in the
-#' [`create_what_if_forecast`][forecastservice_create_what_if_forecast]
-#' request, this operation lists the following properties:
+#' In addition to listing the properties provided in the [`create_what_if_forecast`][forecastservice_create_what_if_forecast] request, this operation lists the following properties:
 #' 
 #' -   `CreationTime`
 #' 
@@ -4084,8 +3477,7 @@ forecastservice_describe_what_if_analysis <- function(WhatIfAnalysisArn) {
 #' @usage
 #' forecastservice_describe_what_if_forecast(WhatIfForecastArn)
 #'
-#' @param WhatIfForecastArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast that you are
-#' interested in.
+#' @param WhatIfForecastArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4177,13 +3569,9 @@ forecastservice_describe_what_if_forecast <- function(WhatIfForecastArn) {
 #' CreateWhatIfForecastExport operation
 #'
 #' @description
-#' Describes the what-if forecast export created using the
-#' [`create_what_if_forecast_export`][forecastservice_create_what_if_forecast_export]
-#' operation.
+#' Describes the what-if forecast export created using the [`create_what_if_forecast_export`][forecastservice_create_what_if_forecast_export] operation.
 #' 
-#' In addition to listing the properties provided in the
-#' [`create_what_if_forecast_export`][forecastservice_create_what_if_forecast_export]
-#' request, this operation lists the following properties:
+#' In addition to listing the properties provided in the [`create_what_if_forecast_export`][forecastservice_create_what_if_forecast_export] request, this operation lists the following properties:
 #' 
 #' -   `CreationTime`
 #' 
@@ -4197,8 +3585,7 @@ forecastservice_describe_what_if_forecast <- function(WhatIfForecastArn) {
 #' forecastservice_describe_what_if_forecast_export(
 #'   WhatIfForecastExportArn)
 #'
-#' @param WhatIfForecastExportArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast export that you
-#' are interested in.
+#' @param WhatIfForecastExportArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast export that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4264,30 +3651,13 @@ forecastservice_describe_what_if_forecast_export <- function(WhatIfForecastExpor
 #' CreatePredictor operation
 #'
 #' @description
-#' Provides metrics on the accuracy of the models that were trained by the
-#' [`create_predictor`][forecastservice_create_predictor] operation. Use
-#' metrics to see how well the model performed and to decide whether to use
-#' the predictor to generate a forecast. For more information, see
-#' [Predictor
-#' Metrics](https://docs.aws.amazon.com/forecast/latest/dg/metrics.html).
+#' Provides metrics on the accuracy of the models that were trained by the [`create_predictor`][forecastservice_create_predictor] operation. Use metrics to see how well the model performed and to decide whether to use the predictor to generate a forecast. For more information, see [Predictor Metrics](https://docs.aws.amazon.com/forecast/latest/dg/metrics.html).
 #' 
-#' This operation generates metrics for each backtest window that was
-#' evaluated. The number of backtest windows (`NumberOfBacktestWindows`) is
-#' specified using the EvaluationParameters object, which is optionally
-#' included in the [`create_predictor`][forecastservice_create_predictor]
-#' request. If `NumberOfBacktestWindows` isn't specified, the number
-#' defaults to one.
+#' This operation generates metrics for each backtest window that was evaluated. The number of backtest windows (`NumberOfBacktestWindows`) is specified using the EvaluationParameters object, which is optionally included in the [`create_predictor`][forecastservice_create_predictor] request. If `NumberOfBacktestWindows` isn't specified, the number defaults to one.
 #' 
-#' The parameters of the `filling` method determine which items contribute
-#' to the metrics. If you want all items to contribute, specify `zero`. If
-#' you want only those items that have complete data in the range being
-#' evaluated to contribute, specify `nan`. For more information, see
-#' FeaturizationMethod.
+#' The parameters of the `filling` method determine which items contribute to the metrics. If you want all items to contribute, specify `zero`. If you want only those items that have complete data in the range being evaluated to contribute, specify `nan`. For more information, see FeaturizationMethod.
 #' 
-#' Before you can get accuracy metrics, the `Status` of the predictor must
-#' be `ACTIVE`, signifying that training has completed. To get the status,
-#' use the [`describe_predictor`][forecastservice_describe_predictor]
-#' operation.
+#' Before you can get accuracy metrics, the `Status` of the predictor must be `ACTIVE`, signifying that training has completed. To get the status, use the [`describe_predictor`][forecastservice_describe_predictor] operation.
 #'
 #' @usage
 #' forecastservice_get_accuracy_metrics(PredictorArn)
@@ -4375,21 +3745,12 @@ forecastservice_get_accuracy_metrics <- function(PredictorArn) {
 #' operation
 #'
 #' @description
-#' Returns a list of dataset groups created using the
-#' [`create_dataset_group`][forecastservice_create_dataset_group]
-#' operation. For each dataset group, this operation returns a summary of
-#' its properties, including its Amazon Resource Name (ARN). You can
-#' retrieve the complete set of properties by using the dataset group ARN
-#' with the
-#' [`describe_dataset_group`][forecastservice_describe_dataset_group]
-#' operation.
+#' Returns a list of dataset groups created using the [`create_dataset_group`][forecastservice_create_dataset_group] operation. For each dataset group, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the dataset group ARN with the [`describe_dataset_group`][forecastservice_describe_dataset_group] operation.
 #'
 #' @usage
 #' forecastservice_list_dataset_groups(NextToken, MaxResults)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
 #'
 #' @return
@@ -4448,42 +3809,24 @@ forecastservice_list_dataset_groups <- function(NextToken = NULL, MaxResults = N
 #' CreateDatasetImportJob operation
 #'
 #' @description
-#' Returns a list of dataset import jobs created using the
-#' [`create_dataset_import_job`][forecastservice_create_dataset_import_job]
-#' operation. For each import job, this operation returns a summary of its
-#' properties, including its Amazon Resource Name (ARN). You can retrieve
-#' the complete set of properties by using the ARN with the
-#' [`describe_dataset_import_job`][forecastservice_describe_dataset_import_job]
-#' operation. You can filter the list by providing an array of
-#' [Filter](https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html)
-#' objects.
+#' Returns a list of dataset import jobs created using the [`create_dataset_import_job`][forecastservice_create_dataset_import_job] operation. For each import job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the ARN with the [`describe_dataset_import_job`][forecastservice_describe_dataset_import_job] operation. You can filter the list by providing an array of [Filter](https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html) objects.
 #'
 #' @usage
 #' forecastservice_list_dataset_import_jobs(NextToken, MaxResults, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, you provide a condition and a
-#' match statement. The condition is either `IS` or `IS_NOT`, which
-#' specifies whether to include or exclude the datasets that match the
-#' statement from the list, respectively. The match statement consists of a
-#' key and a value.
+#' @param Filters An array of filters. For each filter, you provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the datasets that match the statement from the list, respectively. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`. To include the datasets that match the statement, specify
-#'     `IS`. To exclude matching datasets, specify `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`. To include the datasets that match the statement, specify `IS`. To exclude matching datasets, specify `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `DatasetArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `DatasetArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #' 
-#' For example, to list all dataset import jobs whose status is ACTIVE, you
-#' specify the following filter:
+#' For example, to list all dataset import jobs whose status is ACTIVE, you specify the following filter:
 #' 
 #' `"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]`
 #'
@@ -4559,19 +3902,12 @@ forecastservice_list_dataset_import_jobs <- function(NextToken = NULL, MaxResult
 #' Returns a list of datasets created using the CreateDataset operation
 #'
 #' @description
-#' Returns a list of datasets created using the
-#' [`create_dataset`][forecastservice_create_dataset] operation. For each
-#' dataset, a summary of its properties, including its Amazon Resource Name
-#' (ARN), is returned. To retrieve the complete set of properties, use the
-#' ARN with the [`describe_dataset`][forecastservice_describe_dataset]
-#' operation.
+#' Returns a list of datasets created using the [`create_dataset`][forecastservice_create_dataset] operation. For each dataset, a summary of its properties, including its Amazon Resource Name (ARN), is returned. To retrieve the complete set of properties, use the ARN with the [`describe_dataset`][forecastservice_describe_dataset] operation.
 #'
 #' @usage
 #' forecastservice_list_datasets(NextToken, MaxResults)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
 #'
 #' @return
@@ -4632,35 +3968,22 @@ forecastservice_list_datasets <- function(NextToken = NULL, MaxResults = NULL) {
 #' CreateExplainability operation
 #'
 #' @description
-#' Returns a list of Explainability resources created using the
-#' [`create_explainability`][forecastservice_create_explainability]
-#' operation. This operation returns a summary for each Explainability. You
-#' can filter the list using an array of Filter objects.
+#' Returns a list of Explainability resources created using the [`create_explainability`][forecastservice_create_explainability] operation. This operation returns a summary for each Explainability. You can filter the list using an array of Filter objects.
 #' 
-#' To retrieve the complete set of properties for a particular
-#' Explainability resource, use the ARN with the
-#' [`describe_explainability`][forecastservice_describe_explainability]
-#' operation.
+#' To retrieve the complete set of properties for a particular Explainability resource, use the ARN with the [`describe_explainability`][forecastservice_describe_explainability] operation.
 #'
 #' @usage
 #' forecastservice_list_explainabilities(NextToken, MaxResults, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a NextToken. To retrieve the next set of results, use the token
-#' in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items returned in the response.
-#' @param Filters An array of filters. For each filter, provide a condition and a match
-#' statement. The condition is either `IS` or `IS_NOT`, which specifies
-#' whether to include or exclude the resources that match the statement
-#' from the list. The match statement consists of a key and a value.
+#' @param Filters An array of filters. For each filter, provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `ResourceArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `ResourceArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #'
@@ -4734,36 +4057,23 @@ forecastservice_list_explainabilities <- function(NextToken = NULL, MaxResults =
 #' CreateExplainabilityExport operation
 #'
 #' @description
-#' Returns a list of Explainability exports created using the
-#' [`create_explainability_export`][forecastservice_create_explainability_export]
-#' operation. This operation returns a summary for each Explainability
-#' export. You can filter the list using an array of Filter objects.
+#' Returns a list of Explainability exports created using the [`create_explainability_export`][forecastservice_create_explainability_export] operation. This operation returns a summary for each Explainability export. You can filter the list using an array of Filter objects.
 #' 
-#' To retrieve the complete set of properties for a particular
-#' Explainability export, use the ARN with the
-#' [`describe_explainability`][forecastservice_describe_explainability]
-#' operation.
+#' To retrieve the complete set of properties for a particular Explainability export, use the ARN with the [`describe_explainability`][forecastservice_describe_explainability] operation.
 #'
 #' @usage
 #' forecastservice_list_explainability_exports(NextToken, MaxResults,
 #'   Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a NextToken. To retrieve the next set of results, use the token
-#' in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, provide a condition and a match
-#' statement. The condition is either `IS` or `IS_NOT`, which specifies
-#' whether to include or exclude resources that match the statement from
-#' the list. The match statement consists of a key and a value.
+#' @param Filters An array of filters. For each filter, provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude resources that match the statement from the list. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `ResourceArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `ResourceArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #'
@@ -4839,42 +4149,25 @@ forecastservice_list_explainability_exports <- function(NextToken = NULL, MaxRes
 #' CreateForecastExportJob operation
 #'
 #' @description
-#' Returns a list of forecast export jobs created using the
-#' [`create_forecast_export_job`][forecastservice_create_forecast_export_job]
-#' operation. For each forecast export job, this operation returns a
-#' summary of its properties, including its Amazon Resource Name (ARN). To
-#' retrieve the complete set of properties, use the ARN with the
-#' [`describe_forecast_export_job`][forecastservice_describe_forecast_export_job]
-#' operation. You can filter the list using an array of Filter objects.
+#' Returns a list of forecast export jobs created using the [`create_forecast_export_job`][forecastservice_create_forecast_export_job] operation. For each forecast export job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the complete set of properties, use the ARN with the [`describe_forecast_export_job`][forecastservice_describe_forecast_export_job] operation. You can filter the list using an array of Filter objects.
 #'
 #' @usage
 #' forecastservice_list_forecast_export_jobs(NextToken, MaxResults,
 #'   Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, you provide a condition and a
-#' match statement. The condition is either `IS` or `IS_NOT`, which
-#' specifies whether to include or exclude the forecast export jobs that
-#' match the statement from the list, respectively. The match statement
-#' consists of a key and a value.
+#' @param Filters An array of filters. For each filter, you provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`. To include the forecast export jobs that match the
-#'     statement, specify `IS`. To exclude matching forecast export jobs,
-#'     specify `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`. To include the forecast export jobs that match the statement, specify `IS`. To exclude matching forecast export jobs, specify `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `ForecastArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `ForecastArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #' 
-#' For example, to list all jobs that export a forecast named
-#' *electricityforecast*, specify the following filter:
+#' For example, to list all jobs that export a forecast named *electricityforecast*, specify the following filter:
 #' 
 #' `"Filters": [ { "Condition": "IS", "Key": "ForecastArn", "Value": "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityforecast" } ]`
 #'
@@ -4949,40 +4242,24 @@ forecastservice_list_forecast_export_jobs <- function(NextToken = NULL, MaxResul
 #' Returns a list of forecasts created using the CreateForecast operation
 #'
 #' @description
-#' Returns a list of forecasts created using the
-#' [`create_forecast`][forecastservice_create_forecast] operation. For each
-#' forecast, this operation returns a summary of its properties, including
-#' its Amazon Resource Name (ARN). To retrieve the complete set of
-#' properties, specify the ARN with the
-#' [`describe_forecast`][forecastservice_describe_forecast] operation. You
-#' can filter the list using an array of Filter objects.
+#' Returns a list of forecasts created using the [`create_forecast`][forecastservice_create_forecast] operation. For each forecast, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the complete set of properties, specify the ARN with the [`describe_forecast`][forecastservice_describe_forecast] operation. You can filter the list using an array of Filter objects.
 #'
 #' @usage
 #' forecastservice_list_forecasts(NextToken, MaxResults, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, you provide a condition and a
-#' match statement. The condition is either `IS` or `IS_NOT`, which
-#' specifies whether to include or exclude the forecasts that match the
-#' statement from the list, respectively. The match statement consists of a
-#' key and a value.
+#' @param Filters An array of filters. For each filter, you provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the forecasts that match the statement from the list, respectively. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`. To include the forecasts that match the statement, specify
-#'     `IS`. To exclude matching forecasts, specify `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`. To include the forecasts that match the statement, specify `IS`. To exclude matching forecasts, specify `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `DatasetGroupArn`, `PredictorArn`, and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `DatasetGroupArn`, `PredictorArn`, and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #' 
-#' For example, to list all forecasts whose status is not ACTIVE, you would
-#' specify:
+#' For example, to list all forecasts whose status is not ACTIVE, you would specify:
 #' 
 #' `"Filters": [ { "Condition": "IS_NOT", "Key": "Status", "Value": "ACTIVE" } ]`
 #'
@@ -5054,41 +4331,28 @@ forecastservice_list_forecasts <- function(NextToken = NULL, MaxResults = NULL, 
 #' collected by the monitor resource during different windows of time
 #'
 #' @description
-#' Returns a list of the monitoring evaluation results and predictor events
-#' collected by the monitor resource during different windows of time.
+#' Returns a list of the monitoring evaluation results and predictor events collected by the monitor resource during different windows of time.
 #' 
-#' For information about monitoring see predictor-monitoring. For more
-#' information about retrieving monitoring results see [Viewing Monitoring
-#' Results](https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html).
+#' For information about monitoring see predictor-monitoring. For more information about retrieving monitoring results see [Viewing Monitoring Results](https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring-results.html).
 #'
 #' @usage
 #' forecastservice_list_monitor_evaluations(NextToken, MaxResults,
 #'   MonitorArn, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The maximum number of monitoring results to return.
-#' @param MonitorArn &#91;required&#93; The Amazon Resource Name (ARN) of the monitor resource to get results
-#' from.
-#' @param Filters An array of filters. For each filter, provide a condition and a match
-#' statement. The condition is either `IS` or `IS_NOT`, which specifies
-#' whether to include or exclude the resources that match the statement
-#' from the list. The match statement consists of a key and a value.
+#' @param MonitorArn &#91;required&#93; The Amazon Resource Name (ARN) of the monitor resource to get results from.
+#' @param Filters An array of filters. For each filter, provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. The only valid value
-#'     is `EvaluationState`.
+#' -   `Key` - The name of the parameter to filter on. The only valid value is `EvaluationState`.
 #' 
-#' -   `Value` - The value to match. Valid values are only `SUCCESS` or
-#'     `FAILURE`.
+#' -   `Value` - The value to match. Valid values are only `SUCCESS` or `FAILURE`.
 #' 
-#' For example, to list only successful monitor evaluations, you would
-#' specify:
+#' For example, to list only successful monitor evaluations, you would specify:
 #' 
 #' `"Filters": [ { "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" } ]`
 #'
@@ -5179,39 +4443,24 @@ forecastservice_list_monitor_evaluations <- function(NextToken = NULL, MaxResult
 #' CreateAutoPredictor operation
 #'
 #' @description
-#' Returns a list of monitors created with the
-#' [`create_monitor`][forecastservice_create_monitor] operation and
-#' [`create_auto_predictor`][forecastservice_create_auto_predictor]
-#' operation. For each monitor resource, this operation returns of a
-#' summary of its properties, including its Amazon Resource Name (ARN). You
-#' can retrieve a complete set of properties of a monitor resource by
-#' specify the monitor's ARN in the
-#' [`describe_monitor`][forecastservice_describe_monitor] operation.
+#' Returns a list of monitors created with the [`create_monitor`][forecastservice_create_monitor] operation and [`create_auto_predictor`][forecastservice_create_auto_predictor] operation. For each monitor resource, this operation returns of a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve a complete set of properties of a monitor resource by specify the monitor's ARN in the [`describe_monitor`][forecastservice_describe_monitor] operation.
 #'
 #' @usage
 #' forecastservice_list_monitors(NextToken, MaxResults, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The maximum number of monitors to include in the response.
-#' @param Filters An array of filters. For each filter, provide a condition and a match
-#' statement. The condition is either `IS` or `IS_NOT`, which specifies
-#' whether to include or exclude the resources that match the statement
-#' from the list. The match statement consists of a key and a value.
+#' @param Filters An array of filters. For each filter, provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. The only valid value
-#'     is `Status`.
+#' -   `Key` - The name of the parameter to filter on. The only valid value is `Status`.
 #' 
 #' -   `Value` - The value to match.
 #' 
-#' For example, to list all monitors who's status is ACTIVE, you would
-#' specify:
+#' For example, to list all monitors who's status is ACTIVE, you would specify:
 #' 
 #' `"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]`
 #'
@@ -5280,39 +4529,23 @@ forecastservice_list_monitors <- function(NextToken = NULL, MaxResults = NULL, F
 #' CreatePredictorBacktestExportJob operation
 #'
 #' @description
-#' Returns a list of predictor backtest export jobs created using the
-#' [`create_predictor_backtest_export_job`][forecastservice_create_predictor_backtest_export_job]
-#' operation. This operation returns a summary for each backtest export
-#' job. You can filter the list using an array of Filter objects.
+#' Returns a list of predictor backtest export jobs created using the [`create_predictor_backtest_export_job`][forecastservice_create_predictor_backtest_export_job] operation. This operation returns a summary for each backtest export job. You can filter the list using an array of Filter objects.
 #' 
-#' To retrieve the complete set of properties for a particular backtest
-#' export job, use the ARN with the
-#' [`describe_predictor_backtest_export_job`][forecastservice_describe_predictor_backtest_export_job]
-#' operation.
+#' To retrieve the complete set of properties for a particular backtest export job, use the ARN with the [`describe_predictor_backtest_export_job`][forecastservice_describe_predictor_backtest_export_job] operation.
 #'
 #' @usage
 #' forecastservice_list_predictor_backtest_export_jobs(NextToken,
 #'   MaxResults, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a NextToken. To retrieve the next set of results, use the token
-#' in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a NextToken. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, provide a condition and a match
-#' statement. The condition is either `IS` or `IS_NOT`, which specifies
-#' whether to include or exclude the predictor backtest export jobs that
-#' match the statement from the list. The match statement consists of a key
-#' and a value.
+#' @param Filters An array of filters. For each filter, provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the predictor backtest export jobs that match the statement from the list. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`. To include the predictor backtest export jobs that match
-#'     the statement, specify `IS`. To exclude matching predictor backtest
-#'     export jobs, specify `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`. To include the predictor backtest export jobs that match the statement, specify `IS`. To exclude matching predictor backtest export jobs, specify `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `PredictorArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `PredictorArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #'
@@ -5388,43 +4621,26 @@ forecastservice_list_predictor_backtest_export_jobs <- function(NextToken = NULL
 #' CreatePredictor operations
 #'
 #' @description
-#' Returns a list of predictors created using the
-#' [`create_auto_predictor`][forecastservice_create_auto_predictor] or
-#' [`create_predictor`][forecastservice_create_predictor] operations. For
-#' each predictor, this operation returns a summary of its properties,
-#' including its Amazon Resource Name (ARN).
+#' Returns a list of predictors created using the [`create_auto_predictor`][forecastservice_create_auto_predictor] or [`create_predictor`][forecastservice_create_predictor] operations. For each predictor, this operation returns a summary of its properties, including its Amazon Resource Name (ARN).
 #' 
-#' You can retrieve the complete set of properties by using the ARN with
-#' the [`describe_auto_predictor`][forecastservice_describe_auto_predictor]
-#' and [`describe_predictor`][forecastservice_describe_predictor]
-#' operations. You can filter the list using an array of Filter objects.
+#' You can retrieve the complete set of properties by using the ARN with the [`describe_auto_predictor`][forecastservice_describe_auto_predictor] and [`describe_predictor`][forecastservice_describe_predictor] operations. You can filter the list using an array of Filter objects.
 #'
 #' @usage
 #' forecastservice_list_predictors(NextToken, MaxResults, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, you provide a condition and a
-#' match statement. The condition is either `IS` or `IS_NOT`, which
-#' specifies whether to include or exclude the predictors that match the
-#' statement from the list, respectively. The match statement consists of a
-#' key and a value.
+#' @param Filters An array of filters. For each filter, you provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`. To include the predictors that match the statement,
-#'     specify `IS`. To exclude matching predictors, specify `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`. To include the predictors that match the statement, specify `IS`. To exclude matching predictors, specify `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `DatasetGroupArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `DatasetGroupArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #' 
-#' For example, to list all predictors whose status is ACTIVE, you would
-#' specify:
+#' For example, to list all predictors whose status is ACTIVE, you would specify:
 #' 
 #' `"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]`
 #'
@@ -5503,8 +4719,7 @@ forecastservice_list_predictors <- function(NextToken = NULL, MaxResults = NULL,
 #' @usage
 #' forecastservice_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to
-#' list the tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to list the tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5554,42 +4769,24 @@ forecastservice_list_tags_for_resource <- function(ResourceArn) {
 #' CreateWhatIfAnalysis operation
 #'
 #' @description
-#' Returns a list of what-if analyses created using the
-#' [`create_what_if_analysis`][forecastservice_create_what_if_analysis]
-#' operation. For each what-if analysis, this operation returns a summary
-#' of its properties, including its Amazon Resource Name (ARN). You can
-#' retrieve the complete set of properties by using the what-if analysis
-#' ARN with the
-#' [`describe_what_if_analysis`][forecastservice_describe_what_if_analysis]
-#' operation.
+#' Returns a list of what-if analyses created using the [`create_what_if_analysis`][forecastservice_create_what_if_analysis] operation. For each what-if analysis, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if analysis ARN with the [`describe_what_if_analysis`][forecastservice_describe_what_if_analysis] operation.
 #'
 #' @usage
 #' forecastservice_list_what_if_analyses(NextToken, MaxResults, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, you provide a condition and a
-#' match statement. The condition is either `IS` or `IS_NOT`, which
-#' specifies whether to include or exclude the what-if analysis jobs that
-#' match the statement from the list, respectively. The match statement
-#' consists of a key and a value.
+#' @param Filters An array of filters. For each filter, you provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the what-if analysis jobs that match the statement from the list, respectively. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`. To include the what-if analysis jobs that match the
-#'     statement, specify `IS`. To exclude matching what-if analysis jobs,
-#'     specify `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`. To include the what-if analysis jobs that match the statement, specify `IS`. To exclude matching what-if analysis jobs, specify `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `WhatIfAnalysisArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `WhatIfAnalysisArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #' 
-#' For example, to list all jobs that export a forecast named
-#' *electricityWhatIf*, specify the following filter:
+#' For example, to list all jobs that export a forecast named *electricityWhatIf*, specify the following filter:
 #' 
 #' `"Filters": [ { "Condition": "IS", "Key": "WhatIfAnalysisArn", "Value": "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityWhatIf" } ]`
 #'
@@ -5659,43 +4856,25 @@ forecastservice_list_what_if_analyses <- function(NextToken = NULL, MaxResults =
 #' CreateWhatIfForecastExport operation
 #'
 #' @description
-#' Returns a list of what-if forecast exports created using the
-#' [`create_what_if_forecast_export`][forecastservice_create_what_if_forecast_export]
-#' operation. For each what-if forecast export, this operation returns a
-#' summary of its properties, including its Amazon Resource Name (ARN). You
-#' can retrieve the complete set of properties by using the what-if
-#' forecast export ARN with the
-#' [`describe_what_if_forecast_export`][forecastservice_describe_what_if_forecast_export]
-#' operation.
+#' Returns a list of what-if forecast exports created using the [`create_what_if_forecast_export`][forecastservice_create_what_if_forecast_export] operation. For each what-if forecast export, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if forecast export ARN with the [`describe_what_if_forecast_export`][forecastservice_describe_what_if_forecast_export] operation.
 #'
 #' @usage
 #' forecastservice_list_what_if_forecast_exports(NextToken, MaxResults,
 #'   Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, you provide a condition and a
-#' match statement. The condition is either `IS` or `IS_NOT`, which
-#' specifies whether to include or exclude the what-if forecast export jobs
-#' that match the statement from the list, respectively. The match
-#' statement consists of a key and a value.
+#' @param Filters An array of filters. For each filter, you provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`. To include the forecast export jobs that match the
-#'     statement, specify `IS`. To exclude matching forecast export jobs,
-#'     specify `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`. To include the forecast export jobs that match the statement, specify `IS`. To exclude matching forecast export jobs, specify `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `WhatIfForecastExportArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `WhatIfForecastExportArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #' 
-#' For example, to list all jobs that export a forecast named
-#' *electricityWIFExport*, specify the following filter:
+#' For example, to list all jobs that export a forecast named *electricityWIFExport*, specify the following filter:
 #' 
 #' `"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastExportArn", "Value": "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityWIFExport" } ]`
 #'
@@ -5774,42 +4953,24 @@ forecastservice_list_what_if_forecast_exports <- function(NextToken = NULL, MaxR
 #' CreateWhatIfForecast operation
 #'
 #' @description
-#' Returns a list of what-if forecasts created using the
-#' [`create_what_if_forecast`][forecastservice_create_what_if_forecast]
-#' operation. For each what-if forecast, this operation returns a summary
-#' of its properties, including its Amazon Resource Name (ARN). You can
-#' retrieve the complete set of properties by using the what-if forecast
-#' ARN with the
-#' [`describe_what_if_forecast`][forecastservice_describe_what_if_forecast]
-#' operation.
+#' Returns a list of what-if forecasts created using the [`create_what_if_forecast`][forecastservice_create_what_if_forecast] operation. For each what-if forecast, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if forecast ARN with the [`describe_what_if_forecast`][forecastservice_describe_what_if_forecast] operation.
 #'
 #' @usage
 #' forecastservice_list_what_if_forecasts(NextToken, MaxResults, Filters)
 #'
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #' @param MaxResults The number of items to return in the response.
-#' @param Filters An array of filters. For each filter, you provide a condition and a
-#' match statement. The condition is either `IS` or `IS_NOT`, which
-#' specifies whether to include or exclude the what-if forecast export jobs
-#' that match the statement from the list, respectively. The match
-#' statement consists of a key and a value.
+#' @param Filters An array of filters. For each filter, you provide a condition and a match statement. The condition is either `IS` or `IS_NOT`, which specifies whether to include or exclude the what-if forecast export jobs that match the statement from the list, respectively. The match statement consists of a key and a value.
 #' 
 #' **Filter properties**
 #' 
-#' -   `Condition` - The condition to apply. Valid values are `IS` and
-#'     `IS_NOT`. To include the forecast export jobs that match the
-#'     statement, specify `IS`. To exclude matching forecast export jobs,
-#'     specify `IS_NOT`.
+#' -   `Condition` - The condition to apply. Valid values are `IS` and `IS_NOT`. To include the forecast export jobs that match the statement, specify `IS`. To exclude matching forecast export jobs, specify `IS_NOT`.
 #' 
-#' -   `Key` - The name of the parameter to filter on. Valid values are
-#'     `WhatIfForecastArn` and `Status`.
+#' -   `Key` - The name of the parameter to filter on. Valid values are `WhatIfForecastArn` and `Status`.
 #' 
 #' -   `Value` - The value to match.
 #' 
-#' For example, to list all jobs that export a forecast named
-#' *electricityWhatIfForecast*, specify the following filter:
+#' For example, to list all jobs that export a forecast named *electricityWhatIfForecast*, specify the following filter:
 #' 
 #' `"Filters": [ { "Condition": "IS", "Key": "WhatIfForecastArn", "Value": "arn:aws:forecast:us-west-2:<acct-id>:forecast/electricityWhatIfForecast" } ]`
 #'
@@ -5924,11 +5085,9 @@ forecastservice_resume_resource <- function(ResourceArn) {
 #' @description
 #' Stops a resource.
 #' 
-#' The resource undergoes the following states: `CREATE_STOPPING` and
-#' `CREATE_STOPPED`. You cannot resume a resource once it has been stopped.
+#' The resource undergoes the following states: `CREATE_STOPPING` and `CREATE_STOPPED`. You cannot resume a resource once it has been stopped.
 #' 
-#' This operation can be applied to the following resources (and their
-#' corresponding child resources):
+#' This operation can be applied to the following resources (and their corresponding child resources):
 #' 
 #' -   Dataset Import Job
 #' 
@@ -5947,10 +5106,7 @@ forecastservice_resume_resource <- function(ResourceArn) {
 #' @usage
 #' forecastservice_stop_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to stop. The
-#' supported ARNs are `DatasetImportJobArn`, `PredictorArn`,
-#' `PredictorBacktestExportJobArn`, `ForecastArn`, `ForecastExportJobArn`,
-#' `ExplainabilityArn`, and `ExplainabilityExportArn`.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to stop. The supported ARNs are `DatasetImportJobArn`, `PredictorArn`, `PredictorBacktestExportJobArn`, `ForecastArn`, `ForecastExportJobArn`, `ExplainabilityArn`, and `ExplainabilityExportArn`.
 #'
 #' @return
 #' An empty list.
@@ -5990,44 +5146,29 @@ forecastservice_stop_resource <- function(ResourceArn) {
 #' resourceArn
 #'
 #' @description
-#' Associates the specified tags to a resource with the specified
-#' `resourceArn`. If existing tags on a resource are not specified in the
-#' request parameters, they are not changed. When a resource is deleted,
-#' the tags associated with that resource are also deleted.
+#' Associates the specified tags to a resource with the specified `resourceArn`. If existing tags on a resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags associated with that resource are also deleted.
 #'
 #' @usage
 #' forecastservice_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to
-#' list the tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to list the tags.
 #' @param Tags &#91;required&#93; The tags to add to the resource. A tag is an array of key-value pairs.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of
-#'     such as a prefix for keys as it is reserved for Amazon Web Services
-#'     use. You cannot edit or delete tag keys with this prefix. Values can
-#'     have this prefix. If a tag value has `aws` as its prefix but the key
-#'     does not, then Forecast considers it to be a user tag and will count
-#'     against the limit of 50 tags. Tags with only the key prefix of `aws`
-#'     do not count against your tags per resource limit.
+#' -   Do not use `aws:`, `AWS:`, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has `aws` as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of `aws` do not count against your tags per resource limit.
 #'
 #' @return
 #' An empty list.
@@ -6077,8 +5218,7 @@ forecastservice_tag_resource <- function(ResourceArn, Tags) {
 #' @usage
 #' forecastservice_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to
-#' list the tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource for which to list the tags.
 #' @param TagKeys &#91;required&#93; The keys of the tags to be removed.
 #'
 #' @return
@@ -6123,17 +5263,13 @@ forecastservice_untag_resource <- function(ResourceArn, TagKeys) {
 #' @description
 #' Replaces the datasets in a dataset group with the specified datasets.
 #' 
-#' The `Status` of the dataset group must be `ACTIVE` before you can use
-#' the dataset group to create a predictor. Use the
-#' [`describe_dataset_group`][forecastservice_describe_dataset_group]
-#' operation to get the status.
+#' The `Status` of the dataset group must be `ACTIVE` before you can use the dataset group to create a predictor. Use the [`describe_dataset_group`][forecastservice_describe_dataset_group] operation to get the status.
 #'
 #' @usage
 #' forecastservice_update_dataset_group(DatasetGroupArn, DatasetArns)
 #'
 #' @param DatasetGroupArn &#91;required&#93; The ARN of the dataset group.
-#' @param DatasetArns &#91;required&#93; An array of the Amazon Resource Names (ARNs) of the datasets to add to
-#' the dataset group.
+#' @param DatasetArns &#91;required&#93; An array of the Amazon Resource Names (ARNs) of the datasets to add to the dataset group.
 #'
 #' @return
 #' An empty list.

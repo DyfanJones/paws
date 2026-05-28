@@ -13,27 +13,21 @@ route53resolver_update_firewall_domains(
 \arguments{
 \item{FirewallDomainListId}{[required] The ID of the domain list whose domains you want to update.}
 
-\item{Operation}{[required] What you want DNS Firewall to do with the domains that you are
-providing:
+\item{Operation}{[required] What you want DNS Firewall to do with the domains that you are providing:
 \itemize{
-\item \code{ADD} - Add the domains to the ones that are already in the domain
-list.
-\item \code{REMOVE} - Search the domain list for the domains and remove them
-from the list.
-\item \code{REPLACE} - Update the domain list to exactly match the list that
-you are providing.
+\item \code{ADD} - Add the domains to the ones that are already in the domain list.
+\item \code{REMOVE} - Search the domain list for the domains and remove them from the list.
+\item \code{REPLACE} - Update the domain list to exactly match the list that you are providing.
 }}
 
 \item{Domains}{[required] A list of domains to use in the update operation.
 
 There is a limit of 1000 domains per request.
 
-Each domain specification in your domain list must satisfy the following
-requirements:
+Each domain specification in your domain list must satisfy the following requirements:
 \itemize{
 \item It can optionally start with \code{*} (asterisk).
-\item With the exception of the optional starting asterisk, it must only
-contain the following characters: \code{A-Z}, \code{a-z}, \code{0-9}, \code{-} (hyphen).
+\item With the exception of the optional starting asterisk, it must only contain the following characters: \code{A-Z}, \code{a-z}, \code{0-9}, \code{-} (hyphen).
 \item It must be from 1-255 characters in length.
 }}
 }

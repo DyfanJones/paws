@@ -8,9 +8,7 @@ Services resources}
 ecs_delete_express_gateway_service(serviceArn)
 }
 \arguments{
-\item{serviceArn}{[required] The Amazon Resource Name (ARN) of the Express service to delete. The ARN
-uniquely identifies the service within your Amazon Web Services account
-and region.}
+\item{serviceArn}{[required] The Amazon Resource Name (ARN) of the Express service to delete. The ARN uniquely identifies the service within your Amazon Web Services account and region.}
 }
 \description{
 Deletes an Express service and removes all associated Amazon Web Services resources. This operation stops service tasks, removes the Application Load Balancer, target groups, security groups, auto-scaling policies, and other managed infrastructure components.

@@ -16,8 +16,7 @@ sagemaker_create_action(
 )
 }
 \arguments{
-\item{ActionName}{[required] The name of the action. Must be unique to your account in an Amazon Web
-Services Region.}
+\item{ActionName}{[required] The name of the action. Must be unique to your account in an Amazon Web Services Region.}
 
 \item{Source}{[required] The source type, ID, and URI.}
 
@@ -28,6 +27,8 @@ Services Region.}
 \item{Status}{The status of the action.}
 
 \item{Properties}{A list of properties to add to the action.}
+
+\item{MetadataProperties}{Metadata properties of the tracking entity, trial, or trial component.}
 
 \item{Tags}{A list of tags to apply to the action.}
 }

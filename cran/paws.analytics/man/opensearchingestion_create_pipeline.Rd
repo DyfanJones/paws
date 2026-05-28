@@ -18,34 +18,25 @@ opensearchingestion_create_pipeline(
 )
 }
 \arguments{
-\item{PipelineName}{[required] The name of the OpenSearch Ingestion pipeline to create. Pipeline names
-are unique across the pipelines owned by an account within an Amazon Web
-Services Region.}
+\item{PipelineName}{[required] The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.}
 
 \item{MinUnits}{[required] The minimum pipeline capacity, in Ingestion Compute Units (ICUs).}
 
 \item{MaxUnits}{[required] The maximum pipeline capacity, in Ingestion Compute Units (ICUs).}
 
-\item{PipelineConfigurationBody}{[required] The pipeline configuration in YAML format. The command accepts the
-pipeline configuration as a string or within a .yaml file. If you
-provide the configuration as a string, each new line must be escaped
-with \verb{\\\\n}.}
+\item{PipelineConfigurationBody}{[required] The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \verb{\\\\n}.}
 
 \item{LogPublishingOptions}{Key-value pairs to configure log publishing.}
 
-\item{VpcOptions}{Container for the values required to configure VPC access for the
-pipeline. If you don't specify these values, OpenSearch Ingestion
-creates the pipeline with a public endpoint.}
+\item{VpcOptions}{Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.}
 
 \item{BufferOptions}{Key-value pairs to configure persistent buffering for the pipeline.}
 
-\item{EncryptionAtRestOptions}{Key-value pairs to configure encryption for data that is written to a
-persistent buffer.}
+\item{EncryptionAtRestOptions}{Key-value pairs to configure encryption for data that is written to a persistent buffer.}
 
 \item{Tags}{List of tags to add to the pipeline upon creation.}
 
-\item{PipelineRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants the pipeline
-permission to access Amazon Web Services resources.}
+\item{PipelineRoleArn}{The Amazon Resource Name (ARN) of the IAM role that grants the pipeline permission to access Amazon Web Services resources.}
 }
 \description{
 Creates an OpenSearch Ingestion pipeline. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html}{Creating Amazon OpenSearch Ingestion pipelines}.

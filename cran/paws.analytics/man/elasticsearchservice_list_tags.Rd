@@ -7,8 +7,7 @@
 elasticsearchservice_list_tags(ARN)
 }
 \arguments{
-\item{ARN}{[required] Specify the \code{ARN} for the Elasticsearch domain to which the tags are
-attached that you want to view.}
+\item{ARN}{[required] Specify the \code{ARN} for the Elasticsearch domain to which the tags are attached that you want to view.}
 }
 \description{
 Returns all tags for the given Elasticsearch domain.

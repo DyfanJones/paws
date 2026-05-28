@@ -12,14 +12,11 @@ networkfirewall_create_proxy_rule_group(
 )
 }
 \arguments{
-\item{ProxyRuleGroupName}{[required] The descriptive name of the proxy rule group. You can't change the name
-of a proxy rule group after you create it.}
+\item{ProxyRuleGroupName}{[required] The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.}
 
 \item{Description}{A description of the proxy rule group.}
 
-\item{Rules}{Individual rules that define match conditions and actions for
-application-layer traffic. Rules specify what to inspect (domains,
-headers, methods) and what action to take (allow, deny, alert).}
+\item{Rules}{Individual rules that define match conditions and actions for application-layer traffic. Rules specify what to inspect (domains, headers, methods) and what action to take (allow, deny, alert).}
 
 \item{Tags}{The key:value pairs to associate with the resource.}
 }

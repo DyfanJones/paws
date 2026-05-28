@@ -13,20 +13,13 @@ workmail_update_availability_configuration(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The WorkMail organization for which the \code{AvailabilityConfiguration} will
-be updated.}
+\item{OrganizationId}{[required] The WorkMail organization for which the \code{AvailabilityConfiguration} will be updated.}
 
 \item{DomainName}{[required] The domain to which the provider applies the availability configuration.}
 
-\item{EwsProvider}{The EWS availability provider definition. The request must contain
-exactly one provider definition, either \code{EwsProvider} or
-\code{LambdaProvider}. The previously stored provider will be overridden by
-the one provided.}
+\item{EwsProvider}{The EWS availability provider definition. The request must contain exactly one provider definition, either \code{EwsProvider} or \code{LambdaProvider}. The previously stored provider will be overridden by the one provided.}
 
-\item{LambdaProvider}{The Lambda availability provider definition. The request must contain
-exactly one provider definition, either \code{EwsProvider} or
-\code{LambdaProvider}. The previously stored provider will be overridden by
-the one provided.}
+\item{LambdaProvider}{The Lambda availability provider definition. The request must contain exactly one provider definition, either \code{EwsProvider} or \code{LambdaProvider}. The previously stored provider will be overridden by the one provided.}
 }
 \description{
 Updates an existing \code{AvailabilityConfiguration} for the given WorkMail organization and domain.

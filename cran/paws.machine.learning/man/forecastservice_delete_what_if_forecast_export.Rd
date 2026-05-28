@@ -8,8 +8,7 @@ CreateWhatIfForecastExport operation}
 forecastservice_delete_what_if_forecast_export(WhatIfForecastExportArn)
 }
 \arguments{
-\item{WhatIfForecastExportArn}{[required] The Amazon Resource Name (ARN) of the what-if forecast export that you
-want to delete.}
+\item{WhatIfForecastExportArn}{[required] The Amazon Resource Name (ARN) of the what-if forecast export that you want to delete.}
 }
 \description{
 Deletes a what-if forecast export created using the \code{\link[=forecastservice_create_what_if_forecast_export]{create_what_if_forecast_export}} operation. You can delete only what-if forecast exports that have a status of \code{ACTIVE} or \code{CREATE_FAILED}. To get the status, use the \code{\link[=forecastservice_describe_what_if_forecast_export]{describe_what_if_forecast_export}} operation.

@@ -13,23 +13,13 @@ redshift_describe_reserved_nodes(
 \arguments{
 \item{ReservedNodeId}{Identifier for the node reservation.}
 
-\item{MaxRecords}{The maximum number of response records to return in each call. If the
-number of remaining response records exceeds the specified \code{MaxRecords}
-value, a value is returned in a \code{marker} field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned marker value.
+\item{MaxRecords}{The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified \code{MaxRecords} value, a value is returned in a \code{marker} field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 
 Default: \code{100}
 
 Constraints: minimum 20, maximum 100.}
 
-\item{Marker}{An optional parameter that specifies the starting point to return a set
-of response records. When the results of a
-\code{\link[=redshift_describe_reserved_nodes]{describe_reserved_nodes}} request
-exceed the value specified in \code{MaxRecords}, Amazon Web Services returns
-a value in the \code{Marker} field of the response. You can retrieve the next
-set of response records by providing the returned marker value in the
-\code{Marker} parameter and retrying the request.}
+\item{Marker}{An optional parameter that specifies the starting point to return a set of response records. When the results of a \code{\link[=redshift_describe_reserved_nodes]{describe_reserved_nodes}} request exceed the value specified in \code{MaxRecords}, Amazon Web Services returns a value in the \code{Marker} field of the response. You can retrieve the next set of response records by providing the returned marker value in the \code{Marker} parameter and retrying the request.}
 }
 \description{
 Returns the descriptions of the reserved nodes.

@@ -8,8 +8,7 @@ to}
 quicksight_delete_theme_alias(AwsAccountId, ThemeId, AliasName)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the theme alias
-to delete.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the theme alias to delete.}
 
 \item{ThemeId}{[required] The ID for the theme that the specified alias is for.}
 

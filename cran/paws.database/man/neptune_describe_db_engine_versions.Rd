@@ -32,31 +32,19 @@ Constraints:
 
 \item{Filters}{Not currently supported.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more than
-the \code{MaxRecords} value is available, a pagination token called a marker
-is included in the response so that the following results can be
-retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more than the \code{MaxRecords} value is available, a pagination token called a marker is included in the response so that the following results can be retrieved.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 
-\item{DefaultOnly}{Indicates that only the default version of the specified engine or
-engine and major version combination is returned.}
+\item{DefaultOnly}{Indicates that only the default version of the specified engine or engine and major version combination is returned.}
 
-\item{ListSupportedCharacterSets}{If this parameter is specified and the requested engine supports the
-\code{CharacterSetName} parameter for
-\code{\link[=neptune_create_db_instance]{create_db_instance}}, the response
-includes a list of supported character sets for each engine version.}
+\item{ListSupportedCharacterSets}{If this parameter is specified and the requested engine supports the \code{CharacterSetName} parameter for \code{\link[=neptune_create_db_instance]{create_db_instance}}, the response includes a list of supported character sets for each engine version.}
 
-\item{ListSupportedTimezones}{If this parameter is specified and the requested engine supports the
-\code{TimeZone} parameter for
-\code{\link[=neptune_create_db_instance]{create_db_instance}}, the response
-includes a list of supported time zones for each engine version.}
+\item{ListSupportedTimezones}{If this parameter is specified and the requested engine supports the \code{TimeZone} parameter for \code{\link[=neptune_create_db_instance]{create_db_instance}}, the response includes a list of supported time zones for each engine version.}
 }
 \description{
 Returns a list of the available DB engines.

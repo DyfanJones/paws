@@ -7,9 +7,7 @@ NULL
 #' Directory
 #'
 #' @description
-#' Creates a connector between Amazon Web Services Private CA and an Active
-#' Directory. You must specify the private CA, directory ID, and security
-#' groups.
+#' Creates a connector between Amazon Web Services Private CA and an Active Directory. You must specify the private CA, directory ID, and security groups.
 #'
 #' @usage
 #' pcaconnectorad_create_connector(CertificateAuthorityArn, ClientToken,
@@ -75,8 +73,7 @@ pcaconnectorad_create_connector <- function(CertificateAuthorityArn, ClientToken
 #' Amazon Web Services Private CA and an Active Directory
 #'
 #' @description
-#' Creates a directory registration that authorizes communication between
-#' Amazon Web Services Private CA and an Active Directory
+#' Creates a directory registration that authorizes communication between Amazon Web Services Private CA and an Active Directory
 #'
 #' @usage
 #' pcaconnectorad_create_directory_registration(ClientToken, DirectoryId,
@@ -84,8 +81,7 @@ pcaconnectorad_create_connector <- function(CertificateAuthorityArn, ClientToken
 #'
 #' @param ClientToken Idempotency token.
 #' @param DirectoryId &#91;required&#93; The identifier of the Active Directory.
-#' @param Tags Metadata assigned to a directory registration consisting of a key-value
-#' pair.
+#' @param Tags Metadata assigned to a directory registration consisting of a key-value pair.
 #'
 #' @return
 #' A list with the following syntax:
@@ -134,19 +130,15 @@ pcaconnectorad_create_directory_registration <- function(ClientToken = NULL, Dir
 #' Directory
 #'
 #' @description
-#' Creates a service principal name (SPN) for the service account in Active
-#' Directory. Kerberos authentication uses SPNs to associate a service
-#' instance with a service sign-in account.
+#' Creates a service principal name (SPN) for the service account in Active Directory. Kerberos authentication uses SPNs to associate a service instance with a service sign-in account.
 #'
 #' @usage
 #' pcaconnectorad_create_service_principal_name(ClientToken, ConnectorArn,
 #'   DirectoryRegistrationArn)
 #'
 #' @param ClientToken Idempotency token.
-#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_connector`][pcaconnectorad_create_connector].
-#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_directory_registration`][pcaconnectorad_create_directory_registration].
+#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_connector`][pcaconnectorad_create_connector].
+#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_directory_registration`][pcaconnectorad_create_directory_registration].
 #'
 #' @return
 #' An empty list.
@@ -187,21 +179,15 @@ pcaconnectorad_create_service_principal_name <- function(ClientToken = NULL, Con
 #' Creates an Active Directory compatible certificate template
 #'
 #' @description
-#' Creates an Active Directory compatible certificate template. The
-#' connectors issues certificates using these templates based on the
-#' requester’s Active Directory group membership.
+#' Creates an Active Directory compatible certificate template. The connectors issues certificates using these templates based on the requester’s Active Directory group membership.
 #'
 #' @usage
 #' pcaconnectorad_create_template(ClientToken, ConnectorArn, Definition,
 #'   Name, Tags)
 #'
 #' @param ClientToken Idempotency token.
-#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_connector`][pcaconnectorad_create_connector].
-#' @param Definition &#91;required&#93; Template configuration to define the information included in
-#' certificates. Define certificate validity and renewal periods,
-#' certificate request handling and enrollment options, key usage
-#' extensions, application policies, and cryptography settings.
+#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_connector`][pcaconnectorad_create_connector].
+#' @param Definition &#91;required&#93; Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.
 #' @param Name &#91;required&#93; Name of the template. The template name must be unique.
 #' @param Tags Metadata assigned to a template consisting of a key-value pair.
 #'
@@ -491,23 +477,17 @@ pcaconnectorad_create_template <- function(ClientToken = NULL, ConnectorArn, Def
 #' Create a group access control entry
 #'
 #' @description
-#' Create a group access control entry. Allow or deny Active Directory
-#' groups from enrolling and/or autoenrolling with the template based on
-#' the group security identifiers (SIDs).
+#' Create a group access control entry. Allow or deny Active Directory groups from enrolling and/or autoenrolling with the template based on the group security identifiers (SIDs).
 #'
 #' @usage
 #' pcaconnectorad_create_template_group_access_control_entry(AccessRights,
 #'   ClientToken, GroupDisplayName, GroupSecurityIdentifier, TemplateArn)
 #'
-#' @param AccessRights &#91;required&#93; Allow or deny permissions for an Active Directory group to enroll or
-#' autoenroll certificates for a template.
+#' @param AccessRights &#91;required&#93; Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.
 #' @param ClientToken Idempotency token.
-#' @param GroupDisplayName &#91;required&#93; Name of the Active Directory group. This name does not need to match the
-#' group name in Active Directory.
-#' @param GroupSecurityIdentifier &#91;required&#93; Security identifier (SID) of the group object from Active Directory. The
-#' SID starts with "S-".
-#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_template`][pcaconnectorad_create_template].
+#' @param GroupDisplayName &#91;required&#93; Name of the Active Directory group. This name does not need to match the group name in Active Directory.
+#' @param GroupSecurityIdentifier &#91;required&#93; Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".
+#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_template`][pcaconnectorad_create_template].
 #'
 #' @return
 #' An empty list.
@@ -553,21 +533,12 @@ pcaconnectorad_create_template_group_access_control_entry <- function(AccessRigh
 #' Deletes a connector for Active Directory
 #'
 #' @description
-#' Deletes a connector for Active Directory. You must provide the Amazon
-#' Resource Name (ARN) of the connector that you want to delete. You can
-#' find the ARN by calling the
-#' [https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListConnectors](https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListConnectors.html)
-#' action. Deleting a connector does not deregister your directory with
-#' Amazon Web Services Private CA. You can deregister your directory by
-#' calling the
-#' [https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteDirectoryRegistration](https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteDirectoryRegistration.html)
-#' action.
+#' Deletes a connector for Active Directory. You must provide the Amazon Resource Name (ARN) of the connector that you want to delete. You can find the ARN by calling the [https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListConnectors](https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_ListConnectors.html) action. Deleting a connector does not deregister your directory with Amazon Web Services Private CA. You can deregister your directory by calling the [https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteDirectoryRegistration](https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_DeleteDirectoryRegistration.html) action.
 #'
 #' @usage
 #' pcaconnectorad_delete_connector(ConnectorArn)
 #'
-#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_connector`][pcaconnectorad_create_connector].
+#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_connector`][pcaconnectorad_create_connector].
 #'
 #' @return
 #' An empty list.
@@ -606,14 +577,12 @@ pcaconnectorad_delete_connector <- function(ConnectorArn) {
 #' Deletes a directory registration
 #'
 #' @description
-#' Deletes a directory registration. Deleting a directory registration
-#' deauthorizes Amazon Web Services Private CA with the directory.
+#' Deletes a directory registration. Deleting a directory registration deauthorizes Amazon Web Services Private CA with the directory.
 #'
 #' @usage
 #' pcaconnectorad_delete_directory_registration(DirectoryRegistrationArn)
 #'
-#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_directory_registration`][pcaconnectorad_create_directory_registration].
+#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_directory_registration`][pcaconnectorad_create_directory_registration].
 #'
 #' @return
 #' An empty list.
@@ -653,17 +622,14 @@ pcaconnectorad_delete_directory_registration <- function(DirectoryRegistrationAr
 #' authenticate with your Active Directory
 #'
 #' @description
-#' Deletes the service principal name (SPN) used by a connector to
-#' authenticate with your Active Directory.
+#' Deletes the service principal name (SPN) used by a connector to authenticate with your Active Directory.
 #'
 #' @usage
 #' pcaconnectorad_delete_service_principal_name(ConnectorArn,
 #'   DirectoryRegistrationArn)
 #'
-#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_connector`][pcaconnectorad_create_connector].
-#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_directory_registration`][pcaconnectorad_create_directory_registration].
+#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_connector`][pcaconnectorad_create_connector].
+#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_directory_registration`][pcaconnectorad_create_directory_registration].
 #'
 #' @return
 #' An empty list.
@@ -703,14 +669,12 @@ pcaconnectorad_delete_service_principal_name <- function(ConnectorArn, Directory
 #' Deletes a template
 #'
 #' @description
-#' Deletes a template. Certificates issued using the template are still
-#' valid until they are revoked or expired.
+#' Deletes a template. Certificates issued using the template are still valid until they are revoked or expired.
 #'
 #' @usage
 #' pcaconnectorad_delete_template(TemplateArn)
 #'
-#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_template`][pcaconnectorad_create_template].
+#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_template`][pcaconnectorad_create_template].
 #'
 #' @return
 #' An empty list.
@@ -755,10 +719,8 @@ pcaconnectorad_delete_template <- function(TemplateArn) {
 #' pcaconnectorad_delete_template_group_access_control_entry(
 #'   GroupSecurityIdentifier, TemplateArn)
 #'
-#' @param GroupSecurityIdentifier &#91;required&#93; Security identifier (SID) of the group object from Active Directory. The
-#' SID starts with "S-".
-#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_template`][pcaconnectorad_create_template].
+#' @param GroupSecurityIdentifier &#91;required&#93; Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".
+#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_template`][pcaconnectorad_create_template].
 #'
 #' @return
 #' An empty list.
@@ -798,14 +760,12 @@ pcaconnectorad_delete_template_group_access_control_entry <- function(GroupSecur
 #' Lists information about your connector
 #'
 #' @description
-#' Lists information about your connector. You specify the connector on
-#' input by its ARN (Amazon Resource Name).
+#' Lists information about your connector. You specify the connector on input by its ARN (Amazon Resource Name).
 #'
 #' @usage
 #' pcaconnectorad_get_connector(ConnectorArn)
 #'
-#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_connector`][pcaconnectorad_create_connector].
+#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_connector`][pcaconnectorad_create_connector].
 #'
 #' @return
 #' A list with the following syntax:
@@ -873,8 +833,7 @@ pcaconnectorad_get_connector <- function(ConnectorArn) {
 #' @usage
 #' pcaconnectorad_get_directory_registration(DirectoryRegistrationArn)
 #'
-#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_directory_registration`][pcaconnectorad_create_directory_registration].
+#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_directory_registration`][pcaconnectorad_create_directory_registration].
 #'
 #' @return
 #' A list with the following syntax:
@@ -930,17 +889,14 @@ pcaconnectorad_get_directory_registration <- function(DirectoryRegistrationArn) 
 #' with Active Directory
 #'
 #' @description
-#' Lists the service principal name that the connector uses to authenticate
-#' with Active Directory.
+#' Lists the service principal name that the connector uses to authenticate with Active Directory.
 #'
 #' @usage
 #' pcaconnectorad_get_service_principal_name(ConnectorArn,
 #'   DirectoryRegistrationArn)
 #'
-#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_connector`][pcaconnectorad_create_connector].
-#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_directory_registration`][pcaconnectorad_create_directory_registration].
+#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_connector`][pcaconnectorad_create_connector].
+#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_directory_registration`][pcaconnectorad_create_directory_registration].
 #'
 #' @return
 #' A list with the following syntax:
@@ -997,14 +953,12 @@ pcaconnectorad_get_service_principal_name <- function(ConnectorArn, DirectoryReg
 #' certificates from a private CA
 #'
 #' @description
-#' Retrieves a certificate template that the connector uses to issue
-#' certificates from a private CA.
+#' Retrieves a certificate template that the connector uses to issue certificates from a private CA.
 #'
 #' @usage
 #' pcaconnectorad_get_template(TemplateArn)
 #'
-#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_template`][pcaconnectorad_create_template].
+#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_template`][pcaconnectorad_create_template].
 #'
 #' @return
 #' A list with the following syntax:
@@ -1310,10 +1264,8 @@ pcaconnectorad_get_template <- function(TemplateArn) {
 #' pcaconnectorad_get_template_group_access_control_entry(
 #'   GroupSecurityIdentifier, TemplateArn)
 #'
-#' @param GroupSecurityIdentifier &#91;required&#93; Security identifier (SID) of the group object from Active Directory. The
-#' SID starts with "S-".
-#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_template`][pcaconnectorad_create_template].
+#' @param GroupSecurityIdentifier &#91;required&#93; Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".
+#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_template`][pcaconnectorad_create_template].
 #'
 #' @return
 #' A list with the following syntax:
@@ -1372,21 +1324,13 @@ pcaconnectorad_get_template_group_access_control_entry <- function(GroupSecurity
 #' Lists the connectors that you created by using the https://docs
 #'
 #' @description
-#' Lists the connectors that you created by using the
-#' [https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector](https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html)
-#' action.
+#' Lists the connectors that you created by using the [https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector](https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html) action.
 #'
 #' @usage
 #' pcaconnectorad_list_connectors(MaxResults, NextToken)
 #'
-#' @param MaxResults Use this parameter when paginating results to specify the maximum number
-#' of items to return in the response on each page. If additional items
-#' exist beyond the number you specify, the `NextToken` element is sent in
-#' the response. Use this `NextToken` value in a subsequent request to
-#' retrieve additional items.
-#' @param NextToken Use this parameter when paginating results in a subsequent request after
-#' you receive a response with truncated results. Set it to the value of
-#' the `NextToken` parameter from the response you just received.
+#' @param MaxResults Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the `NextToken` element is sent in the response. Use this `NextToken` value in a subsequent request to retrieve additional items.
+#' @param NextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the `NextToken` parameter from the response you just received.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1454,21 +1398,13 @@ pcaconnectorad_list_connectors <- function(MaxResults = NULL, NextToken = NULL) 
 #' https://docs
 #'
 #' @description
-#' Lists the directory registrations that you created by using the
-#' [https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration](https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html)
-#' action.
+#' Lists the directory registrations that you created by using the [https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration](https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateDirectoryRegistration.html) action.
 #'
 #' @usage
 #' pcaconnectorad_list_directory_registrations(MaxResults, NextToken)
 #'
-#' @param MaxResults Use this parameter when paginating results to specify the maximum number
-#' of items to return in the response on each page. If additional items
-#' exist beyond the number you specify, the `NextToken` element is sent in
-#' the response. Use this `NextToken` value in a subsequent request to
-#' retrieve additional items.
-#' @param NextToken Use this parameter when paginating results in a subsequent request after
-#' you receive a response with truncated results. Set it to the value of
-#' the `NextToken` parameter from the response you just received.
+#' @param MaxResults Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the `NextToken` element is sent in the response. Use this `NextToken` value in a subsequent request to retrieve additional items.
+#' @param NextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the `NextToken` parameter from the response you just received.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1528,23 +1464,15 @@ pcaconnectorad_list_directory_registrations <- function(MaxResults = NULL, NextT
 #' authenticate with Active Directory
 #'
 #' @description
-#' Lists the service principal names that the connector uses to
-#' authenticate with Active Directory.
+#' Lists the service principal names that the connector uses to authenticate with Active Directory.
 #'
 #' @usage
 #' pcaconnectorad_list_service_principal_names(DirectoryRegistrationArn,
 #'   MaxResults, NextToken)
 #'
-#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_directory_registration`][pcaconnectorad_create_directory_registration].
-#' @param MaxResults Use this parameter when paginating results to specify the maximum number
-#' of items to return in the response on each page. If additional items
-#' exist beyond the number you specify, the `NextToken` element is sent in
-#' the response. Use this `NextToken` value in a subsequent request to
-#' retrieve additional items.
-#' @param NextToken Use this parameter when paginating results in a subsequent request after
-#' you receive a response with truncated results. Set it to the value of
-#' the `NextToken` parameter from the response you just received.
+#' @param DirectoryRegistrationArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_directory_registration`][pcaconnectorad_create_directory_registration].
+#' @param MaxResults Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the `NextToken` element is sent in the response. Use this `NextToken` value in a subsequent request to retrieve additional items.
+#' @param NextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the `NextToken` parameter from the response you just received.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1609,8 +1537,7 @@ pcaconnectorad_list_service_principal_names <- function(DirectoryRegistrationArn
 #' @usage
 #' pcaconnectorad_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you created the
-#' resource.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you created the resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1662,16 +1589,9 @@ pcaconnectorad_list_tags_for_resource <- function(ResourceArn) {
 #' pcaconnectorad_list_template_group_access_control_entries(MaxResults,
 #'   NextToken, TemplateArn)
 #'
-#' @param MaxResults Use this parameter when paginating results to specify the maximum number
-#' of items to return in the response on each page. If additional items
-#' exist beyond the number you specify, the `NextToken` element is sent in
-#' the response. Use this `NextToken` value in a subsequent request to
-#' retrieve additional items.
-#' @param NextToken Use this parameter when paginating results in a subsequent request after
-#' you receive a response with truncated results. Set it to the value of
-#' the `NextToken` parameter from the response you just received.
-#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_template`][pcaconnectorad_create_template].
+#' @param MaxResults Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the `NextToken` element is sent in the response. Use this `NextToken` value in a subsequent request to retrieve additional items.
+#' @param NextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the `NextToken` parameter from the response you just received.
+#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_template`][pcaconnectorad_create_template].
 #'
 #' @return
 #' A list with the following syntax:
@@ -1739,16 +1659,9 @@ pcaconnectorad_list_template_group_access_control_entries <- function(MaxResults
 #' @usage
 #' pcaconnectorad_list_templates(ConnectorArn, MaxResults, NextToken)
 #'
-#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_connector`][pcaconnectorad_create_connector].
-#' @param MaxResults Use this parameter when paginating results to specify the maximum number
-#' of items to return in the response on each page. If additional items
-#' exist beyond the number you specify, the `NextToken` element is sent in
-#' the response. Use this `NextToken` value in a subsequent request to
-#' retrieve additional items.
-#' @param NextToken Use this parameter when paginating results in a subsequent request after
-#' you receive a response with truncated results. Set it to the value of
-#' the `NextToken` parameter from the response you just received.
+#' @param ConnectorArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_connector`][pcaconnectorad_create_connector].
+#' @param MaxResults Use this parameter when paginating results to specify the maximum number of items to return in the response on each page. If additional items exist beyond the number you specify, the `NextToken` element is sent in the response. Use this `NextToken` value in a subsequent request to retrieve additional items.
+#' @param NextToken Use this parameter when paginating results in a subsequent request after you receive a response with truncated results. Set it to the value of the `NextToken` parameter from the response you just received.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2058,10 +1971,8 @@ pcaconnectorad_list_templates <- function(ConnectorArn, MaxResults = NULL, NextT
 #' @usage
 #' pcaconnectorad_tag_resource(ResourceArn, Tags)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you created the
-#' resource.
-#' @param Tags &#91;required&#93; Metadata assigned to a directory registration consisting of a key-value
-#' pair.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you created the resource.
+#' @param Tags &#91;required&#93; Metadata assigned to a directory registration consisting of a key-value pair.
 #'
 #' @return
 #' An empty list.
@@ -2108,10 +2019,8 @@ pcaconnectorad_tag_resource <- function(ResourceArn, Tags) {
 #' @usage
 #' pcaconnectorad_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you created the
-#' resource.
-#' @param TagKeys &#91;required&#93; Specifies a list of tag keys that you want to remove from the specified
-#' resources.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you created the resource.
+#' @param TagKeys &#91;required&#93; Specifies a list of tag keys that you want to remove from the specified resources.
 #'
 #' @return
 #' An empty list.
@@ -2154,23 +2063,15 @@ pcaconnectorad_untag_resource <- function(ResourceArn, TagKeys) {
 #' certificates
 #'
 #' @description
-#' Update template configuration to define the information included in
-#' certificates.
+#' Update template configuration to define the information included in certificates.
 #'
 #' @usage
 #' pcaconnectorad_update_template(Definition,
 #'   ReenrollAllCertificateHolders, TemplateArn)
 #'
-#' @param Definition Template configuration to define the information included in
-#' certificates. Define certificate validity and renewal periods,
-#' certificate request handling and enrollment options, key usage
-#' extensions, application policies, and cryptography settings.
-#' @param ReenrollAllCertificateHolders This setting allows the major version of a template to be increased
-#' automatically. All members of Active Directory groups that are allowed
-#' to enroll with a template will receive a new certificate issued using
-#' that template.
-#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_template`][pcaconnectorad_create_template].
+#' @param Definition Template configuration to define the information included in certificates. Define certificate validity and renewal periods, certificate request handling and enrollment options, key usage extensions, application policies, and cryptography settings.
+#' @param ReenrollAllCertificateHolders This setting allows the major version of a template to be increased automatically. All members of Active Directory groups that are allowed to enroll with a template will receive a new certificate issued using that template.
+#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_template`][pcaconnectorad_create_template].
 #'
 #' @return
 #' An empty list.
@@ -2450,21 +2351,16 @@ pcaconnectorad_update_template <- function(Definition = NULL, ReenrollAllCertifi
 #' CreateTemplateGroupAccessControlEntry
 #'
 #' @description
-#' Update a group access control entry you created using
-#' [`create_template_group_access_control_entry`][pcaconnectorad_create_template_group_access_control_entry].
+#' Update a group access control entry you created using [`create_template_group_access_control_entry`][pcaconnectorad_create_template_group_access_control_entry].
 #'
 #' @usage
 #' pcaconnectorad_update_template_group_access_control_entry(AccessRights,
 #'   GroupDisplayName, GroupSecurityIdentifier, TemplateArn)
 #'
-#' @param AccessRights Allow or deny permissions for an Active Directory group to enroll or
-#' autoenroll certificates for a template.
-#' @param GroupDisplayName Name of the Active Directory group. This name does not need to match the
-#' group name in Active Directory.
-#' @param GroupSecurityIdentifier &#91;required&#93; Security identifier (SID) of the group object from Active Directory. The
-#' SID starts with "S-".
-#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called
-#' [`create_template`][pcaconnectorad_create_template].
+#' @param AccessRights Allow or deny permissions for an Active Directory group to enroll or autoenroll certificates for a template.
+#' @param GroupDisplayName Name of the Active Directory group. This name does not need to match the group name in Active Directory.
+#' @param GroupSecurityIdentifier &#91;required&#93; Security identifier (SID) of the group object from Active Directory. The SID starts with "S-".
+#' @param TemplateArn &#91;required&#93; The Amazon Resource Name (ARN) that was returned when you called [`create_template`][pcaconnectorad_create_template].
 #'
 #' @return
 #' An empty list.

@@ -16,11 +16,9 @@ bedrockagent_list_agent_collaborators(
 
 \item{agentVersion}{[required] The agent's version.}
 
-\item{maxResults}{The maximum number of agent collaborators to return in one page of
-results.}
+\item{maxResults}{The maximum number of agent collaborators to return in one page of results.}
 
-\item{nextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 }
 \description{
 Retrieve a list of an agent's collaborators.

@@ -7,11 +7,9 @@
 dynamodb_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The DynamoDB resource that the tags will be removed from. This value is
-an Amazon Resource Name (ARN).}
+\item{ResourceArn}{[required] The DynamoDB resource that the tags will be removed from. This value is an Amazon Resource Name (ARN).}
 
-\item{TagKeys}{[required] A list of tag keys. Existing tags of the resource whose keys are members
-of this list will be removed from the DynamoDB resource.}
+\item{TagKeys}{[required] A list of tag keys. Existing tags of the resource whose keys are members of this list will be removed from the DynamoDB resource.}
 }
 \description{
 Removes the association of tags from an Amazon DynamoDB resource. You can call \code{\link[=dynamodb_untag_resource]{untag_resource}} up to five times per second, per account.

@@ -7,13 +7,11 @@
 ivschat_send_event(roomIdentifier, eventName, attributes = NULL)
 }
 \arguments{
-\item{roomIdentifier}{[required] Identifier of the room to which the event will be sent. Currently this
-must be an ARN.}
+\item{roomIdentifier}{[required] Identifier of the room to which the event will be sent. Currently this must be an ARN.}
 
 \item{eventName}{[required] Application-defined name of the event to send to clients.}
 
-\item{attributes}{Application-defined metadata to attach to the event sent to clients. The
-maximum length of the metadata is 1 KB total.}
+\item{attributes}{Application-defined metadata to attach to the event sent to clients. The maximum length of the metadata is 1 KB total.}
 }
 \description{
 Sends an event to a room. Use this within your application’s business logic to send events to clients of a room; e.g., to notify clients to change the way the chat UI is rendered.

@@ -15,11 +15,19 @@ bedrockdataautomation_create_blueprint(
 )
 }
 \arguments{
-\item{blueprintName}{[required]}
+\item{blueprintName}{[required] Name of the Blueprint}
 
-\item{type}{[required]}
+\item{type}{[required] Type}
 
-\item{schema}{[required]}
+\item{blueprintStage}{Stage of the Blueprint}
+
+\item{schema}{[required] Schema of the blueprint}
+
+\item{clientToken}{Client specified token used for idempotency checks}
+
+\item{encryptionConfiguration}{KMS Encryption Configuration}
+
+\item{tags}{List of tags}
 }
 \description{
 Creates an Amazon Bedrock Data Automation Blueprint

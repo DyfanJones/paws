@@ -11,8 +11,7 @@ datazone_delete_project(domainIdentifier, identifier, skipDeletionCheck = NULL)
 
 \item{identifier}{[required] The identifier of the project that is to be deleted.}
 
-\item{skipDeletionCheck}{Specifies the optional flag to delete all child entities within the
-project.}
+\item{skipDeletionCheck}{Specifies the optional flag to delete all child entities within the project.}
 }
 \description{
 Deletes a project in Amazon DataZone.

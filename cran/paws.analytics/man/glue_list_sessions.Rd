@@ -12,8 +12,7 @@ glue_list_sessions(
 )
 }
 \arguments{
-\item{NextToken}{The token for the next set of results, or null if there are no more
-result.}
+\item{NextToken}{The token for the next set of results, or null if there are no more result.}
 
 \item{MaxResults}{The maximum number of results.}
 

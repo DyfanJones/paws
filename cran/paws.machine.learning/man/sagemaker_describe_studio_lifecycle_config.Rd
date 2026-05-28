@@ -7,8 +7,7 @@
 sagemaker_describe_studio_lifecycle_config(StudioLifecycleConfigName)
 }
 \arguments{
-\item{StudioLifecycleConfigName}{[required] The name of the Amazon SageMaker AI Studio Lifecycle Configuration to
-describe.}
+\item{StudioLifecycleConfigName}{[required] The name of the Amazon SageMaker AI Studio Lifecycle Configuration to describe.}
 }
 \description{
 Describes the Amazon SageMaker AI Studio Lifecycle Configuration.

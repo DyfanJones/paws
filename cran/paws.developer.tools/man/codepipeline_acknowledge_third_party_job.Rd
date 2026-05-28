@@ -9,15 +9,9 @@ codepipeline_acknowledge_third_party_job(jobId, nonce, clientToken)
 \arguments{
 \item{jobId}{[required] The unique system-generated ID of the job.}
 
-\item{nonce}{[required] A system-generated random number that CodePipeline uses to ensure that
-the job is being worked on by only one job worker. Get this number from
-the response to a
-\code{\link[=codepipeline_get_third_party_job_details]{get_third_party_job_details}}
-request.}
+\item{nonce}{[required] A system-generated random number that CodePipeline uses to ensure that the job is being worked on by only one job worker. Get this number from the response to a \code{\link[=codepipeline_get_third_party_job_details]{get_third_party_job_details}} request.}
 
-\item{clientToken}{[required] The clientToken portion of the clientId and clientToken pair used to
-verify that the calling entity is allowed access to the job and its
-details.}
+\item{clientToken}{[required] The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.}
 }
 \description{
 Confirms a job worker has received the specified job. Used for partner actions only.

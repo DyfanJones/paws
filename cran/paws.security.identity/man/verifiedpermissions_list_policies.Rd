@@ -15,38 +15,21 @@ verifiedpermissions_list_policies(
 \arguments{
 \item{policyStoreId}{[required] Specifies the ID of the policy store you want to list policies from.
 
-To specify a policy store, use its ID or alias name. When using an alias
-name, prefix it with \verb{policy-store-alias/}. For example:
+To specify a policy store, use its ID or alias name. When using an alias name, prefix it with \verb{policy-store-alias/}. For example:
 \itemize{
 \item ID: \code{PSEXAMPLEabcdefg111111}
 \item Alias name: \code{policy-store-alias/example-policy-store}
 }
 
-To view aliases, use
-\code{\link[=verifiedpermissions_list_policy_store_aliases]{list_policy_store_aliases}}.}
+To view aliases, use \code{\link[=verifiedpermissions_list_policy_store_aliases]{list_policy_store_aliases}}.}
 
-\item{nextToken}{Specifies that you want to receive the next page of results. Valid only
-if you received a \code{NextToken} response in the previous request. If you
-did, it indicates that more output is available. Set this parameter to
-the value provided by the previous call's \code{NextToken} response to
-request the next page of results.}
+\item{nextToken}{Specifies that you want to receive the next page of results. Valid only if you received a \code{NextToken} response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's \code{NextToken} response to request the next page of results.}
 
-\item{maxResults}{Specifies the total number of results that you want included in each
-response. If additional items exist beyond the number you specify, the
-\code{NextToken} response element is returned with a value (not null).
-Include the specified value as the \code{NextToken} request parameter in the
-next call to the operation to get the next set of results. Note that the
-service might return fewer results than the maximum even when there are
-more results available. You should check \code{NextToken} after every
-operation to ensure that you receive all of the results.
+\item{maxResults}{Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the \code{NextToken} response element is returned with a value (not null). Include the specified value as the \code{NextToken} request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check \code{NextToken} after every operation to ensure that you receive all of the results.
 
-If you do not specify this parameter, the operation defaults to 10
-policies per response. You can specify a maximum of 50 policies per
-response.}
+If you do not specify this parameter, the operation defaults to 10 policies per response. You can specify a maximum of 50 policies per response.}
 
-\item{filter}{Specifies a filter that limits the response to only policies that match
-the specified criteria. For example, you list only the policies that
-reference a specified principal.}
+\item{filter}{Specifies a filter that limits the response to only policies that match the specified criteria. For example, you list only the policies that reference a specified principal.}
 }
 \description{
 Returns a paginated list of all policies stored in the specified policy store.

@@ -12,35 +12,21 @@ networkfirewall_update_firewall_description(
 )
 }
 \arguments{
-\item{UpdateToken}{An optional token that you can use for optimistic locking. Network
-Firewall returns a token to your requests that access the firewall. The
-token marks the state of the firewall resource at the time of the
-request.
+\item{UpdateToken}{An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 
-To make an unconditional change to the firewall, omit the token in your
-update request. Without the token, Network Firewall performs your
-updates regardless of whether the firewall has changed since you last
-retrieved it.
+To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 
-To make a conditional change to the firewall, provide the token in your
-update request. Network Firewall uses the token to ensure that the
-firewall hasn't changed since you last retrieved it. If it has changed,
-the operation fails with an \code{InvalidTokenException}. If this happens,
-retrieve the firewall again to get a current copy of it with a new
-token. Reapply your changes as needed, then try the operation again
-using the new token.}
+To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an \code{InvalidTokenException}. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.}
 
 \item{FirewallArn}{The Amazon Resource Name (ARN) of the firewall.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{FirewallName}{The descriptive name of the firewall. You can't change the name of a
-firewall after you create it.
+\item{FirewallName}{The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{Description}{The new description for the firewall. If you omit this setting, Network
-Firewall removes the description for the firewall.}
+\item{Description}{The new description for the firewall. If you omit this setting, Network Firewall removes the description for the firewall.}
 }
 \description{
 Modifies the description for the specified firewall. Use the description to help you identify the firewall when you're working with it.

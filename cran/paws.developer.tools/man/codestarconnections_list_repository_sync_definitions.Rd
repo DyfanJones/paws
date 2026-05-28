@@ -11,11 +11,9 @@ codestarconnections_list_repository_sync_definitions(
 )
 }
 \arguments{
-\item{RepositoryLinkId}{[required] The ID of the repository link for the sync definition for which you want
-to retrieve information.}
+\item{RepositoryLinkId}{[required] The ID of the repository link for the sync definition for which you want to retrieve information.}
 
-\item{SyncType}{[required] The sync type of the repository link for the the sync definition for
-which you want to retrieve information.}
+\item{SyncType}{[required] The sync type of the repository link for the the sync definition for which you want to retrieve information.}
 }
 \description{
 Lists the repository sync definitions for repository links in your account.

@@ -12,8 +12,7 @@ quicksight_update_flow_permissions(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the flow you are
-updating permissions against.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the flow you are updating permissions against.}
 
 \item{FlowId}{[required] The unique identifier of the flow to update permissions for.}
 

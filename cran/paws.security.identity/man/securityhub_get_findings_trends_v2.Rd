@@ -15,14 +15,11 @@ securityhub_get_findings_trends_v2(
 \arguments{
 \item{Filters}{The filters to apply to the findings trend data.}
 
-\item{StartTime}{[required] The starting timestamp for the time period to analyze findings trends,
-in ISO 8601 format.}
+\item{StartTime}{[required] The starting timestamp for the time period to analyze findings trends, in ISO 8601 format.}
 
-\item{EndTime}{[required] The ending timestamp for the time period to analyze findings trends, in
-ISO 8601 format.}
+\item{EndTime}{[required] The ending timestamp for the time period to analyze findings trends, in ISO 8601 format.}
 
-\item{NextToken}{The token to use for paginating results. This value is returned in the
-response if more results are available.}
+\item{NextToken}{The token to use for paginating results. This value is returned in the response if more results are available.}
 
 \item{MaxResults}{The maximum number of trend data points to return in a single response.}
 }

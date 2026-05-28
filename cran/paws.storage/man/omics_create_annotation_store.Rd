@@ -25,8 +25,7 @@ omics_create_annotation_store(
 
 \item{tags}{Tags for the store.}
 
-\item{versionName}{The name given to an annotation store version to distinguish it from
-other versions.}
+\item{versionName}{The name given to an annotation store version to distinguish it from other versions.}
 
 \item{sseConfig}{Server-side encryption (SSE) settings for the store.}
 

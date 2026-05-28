@@ -18,20 +18,15 @@ sagemaker_list_transform_jobs(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only transform jobs created after the specified
-time.}
+\item{CreationTimeAfter}{A filter that returns only transform jobs created after the specified time.}
 
-\item{CreationTimeBefore}{A filter that returns only transform jobs created before the specified
-time.}
+\item{CreationTimeBefore}{A filter that returns only transform jobs created before the specified time.}
 
-\item{LastModifiedTimeAfter}{A filter that returns only transform jobs modified after the specified
-time.}
+\item{LastModifiedTimeAfter}{A filter that returns only transform jobs modified after the specified time.}
 
-\item{LastModifiedTimeBefore}{A filter that returns only transform jobs modified before the specified
-time.}
+\item{LastModifiedTimeBefore}{A filter that returns only transform jobs modified before the specified time.}
 
-\item{NameContains}{A string in the transform job name. This filter returns only transform
-jobs whose name contains the specified string.}
+\item{NameContains}{A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.}
 
 \item{StatusEquals}{A filter that retrieves only transform jobs with a specific status.}
 
@@ -39,13 +34,9 @@ jobs whose name contains the specified string.}
 
 \item{SortOrder}{The sort order for results. The default is \code{Descending}.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_transform_jobs]{list_transform_jobs}} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of transform jobs, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_transform_jobs]{list_transform_jobs}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of transform jobs, use the token in the next request.}
 
-\item{MaxResults}{The maximum number of transform jobs to return in the response. The
-default value is \code{10}.}
+\item{MaxResults}{The maximum number of transform jobs to return in the response. The default value is \code{10}.}
 }
 \description{
 Lists transform jobs.

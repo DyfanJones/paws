@@ -19,11 +19,9 @@ omics_create_multipart_read_set_upload(
 )
 }
 \arguments{
-\item{sequenceStoreId}{[required] The sequence store ID for the store that is the destination of the
-multipart uploads.}
+\item{sequenceStoreId}{[required] The sequence store ID for the store that is the destination of the multipart uploads.}
 
-\item{clientToken}{An idempotency token that can be used to avoid triggering multiple
-multipart uploads.}
+\item{clientToken}{An idempotency token that can be used to avoid triggering multiple multipart uploads.}
 
 \item{sourceFileType}{[required] The type of file being uploaded.}
 

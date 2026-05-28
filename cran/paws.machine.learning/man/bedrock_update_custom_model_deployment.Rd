@@ -10,11 +10,9 @@ bedrock_update_custom_model_deployment(
 )
 }
 \arguments{
-\item{modelArn}{[required] ARN of the new custom model to deploy. This replaces the currently
-deployed model.}
+\item{modelArn}{[required] ARN of the new custom model to deploy. This replaces the currently deployed model.}
 
-\item{customModelDeploymentIdentifier}{[required] Identifier of the custom model deployment to update with the new custom
-model.}
+\item{customModelDeploymentIdentifier}{[required] Identifier of the custom model deployment to update with the new custom model.}
 }
 \description{
 Updates a custom model deployment with a new custom model. This allows you to deploy updated models without creating new deployment endpoints.

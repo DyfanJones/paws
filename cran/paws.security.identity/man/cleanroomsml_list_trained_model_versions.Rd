@@ -13,22 +13,15 @@ cleanroomsml_list_trained_model_versions(
 )
 }
 \arguments{
-\item{nextToken}{The pagination token from a previous
-\code{\link[=cleanroomsml_list_trained_model_versions]{list_trained_model_versions}}
-request. Use this token to retrieve the next page of results.}
+\item{nextToken}{The pagination token from a previous \code{\link[=cleanroomsml_list_trained_model_versions]{list_trained_model_versions}} request. Use this token to retrieve the next page of results.}
 
-\item{maxResults}{The maximum number of trained model versions to return in a single page.
-The default value is 10, and the maximum value is 100.}
+\item{maxResults}{The maximum number of trained model versions to return in a single page. The default value is 10, and the maximum value is 100.}
 
-\item{membershipIdentifier}{[required] The membership identifier for the collaboration that contains the
-trained model.}
+\item{membershipIdentifier}{[required] The membership identifier for the collaboration that contains the trained model.}
 
-\item{trainedModelArn}{[required] The Amazon Resource Name (ARN) of the trained model for which to list
-versions.}
+\item{trainedModelArn}{[required] The Amazon Resource Name (ARN) of the trained model for which to list versions.}
 
-\item{status}{Filter the results to only include trained model versions with the
-specified status. Valid values include \code{CREATE_PENDING},
-\code{CREATE_IN_PROGRESS}, \code{ACTIVE}, \code{CREATE_FAILED}, and others.}
+\item{status}{Filter the results to only include trained model versions with the specified status. Valid values include \code{CREATE_PENDING}, \code{CREATE_IN_PROGRESS}, \code{ACTIVE}, \code{CREATE_FAILED}, and others.}
 }
 \description{
 Returns a list of trained model versions for a specified trained model. This operation allows you to view all versions of a trained model, including information about their status and creation details. You can use this to track the evolution of your trained models and select specific versions for inference or further training.

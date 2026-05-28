@@ -10,8 +10,7 @@ paymentcryptographycontrolplane_update_alias(AliasName, KeyArn = NULL)
 \arguments{
 \item{AliasName}{[required] The alias whose associated key is changing.}
 
-\item{KeyArn}{The \code{KeyARN} for the key that you are updating or removing from the
-alias.}
+\item{KeyArn}{The \code{KeyARN} for the key that you are updating or removing from the alias.}
 }
 \description{
 Associates an existing Amazon Web Services Payment Cryptography alias with a different key. Each alias is associated with only one Amazon Web Services Payment Cryptography key at a time, although a key can have multiple aliases. The alias and the Amazon Web Services Payment Cryptography key must be in the same Amazon Web Services account and Amazon Web Services Region

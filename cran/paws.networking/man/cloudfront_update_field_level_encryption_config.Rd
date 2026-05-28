@@ -15,8 +15,7 @@ cloudfront_update_field_level_encryption_config(
 
 \item{Id}{[required] The ID of the configuration you want to update.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-configuration identity to update. For example: \code{E2QWRUHAPOMQZL}.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the configuration identity to update. For example: \code{E2QWRUHAPOMQZL}.}
 }
 \description{
 Update a field-level encryption configuration.

@@ -21,28 +21,19 @@ sagemaker_update_partner_app(
 
 \item{MaintenanceConfig}{Maintenance configuration settings for the SageMaker Partner AI App.}
 
-\item{Tier}{Indicates the instance type and size of the cluster attached to the
-SageMaker Partner AI App.}
+\item{Tier}{Indicates the instance type and size of the cluster attached to the SageMaker Partner AI App.}
 
 \item{ApplicationConfig}{Configuration settings for the SageMaker Partner AI App.}
 
-\item{EnableIamSessionBasedIdentity}{When set to \code{TRUE}, the SageMaker Partner AI App sets the Amazon Web
-Services IAM session name or the authenticated IAM user as the identity
-of the SageMaker Partner AI App user.}
+\item{EnableIamSessionBasedIdentity}{When set to \code{TRUE}, the SageMaker Partner AI App sets the Amazon Web Services IAM session name or the authenticated IAM user as the identity of the SageMaker Partner AI App user.}
 
-\item{EnableAutoMinorVersionUpgrade}{When set to \code{TRUE}, the SageMaker Partner AI App is automatically
-upgraded to the latest minor version during the next scheduled
-maintenance window, if one is available.}
+\item{EnableAutoMinorVersionUpgrade}{When set to \code{TRUE}, the SageMaker Partner AI App is automatically upgraded to the latest minor version during the next scheduled maintenance window, if one is available.}
 
-\item{AppVersion}{The semantic version to upgrade the SageMaker Partner AI App to. Must be
-the same semantic version returned in the \code{AvailableUpgrade} field from
-\code{\link[=sagemaker_describe_partner_app]{describe_partner_app}}. Version
-skipping and downgrades are not supported.}
+\item{AppVersion}{The semantic version to upgrade the SageMaker Partner AI App to. Must be the same semantic version returned in the \code{AvailableUpgrade} field from \code{\link[=sagemaker_describe_partner_app]{describe_partner_app}}. Version skipping and downgrades are not supported.}
 
 \item{ClientToken}{A unique token that guarantees that the call to this API is idempotent.}
 
-\item{Tags}{Each tag consists of a key and an optional value. Tag keys must be
-unique per resource.}
+\item{Tags}{Each tag consists of a key and an optional value. Tag keys must be unique per resource.}
 }
 \description{
 Updates all of the SageMaker Partner AI Apps in an account.

@@ -48,27 +48,16 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Web Services Systems Manager is the operations hub for your
-Amazon Web Services applications and resources and a secure end-to-end
-management solution for hybrid cloud environments that enables safe and
-secure operations at scale.
+Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at scale.
 
-This reference is intended to be used with the \href{https://docs.aws.amazon.com/systems-manager/latest/userguide/}{Amazon Web Services Systems Manager User Guide}.
-To get started, see \href{https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-console.html}{Setting up Amazon Web Services Systems Manager}.
+This reference is intended to be used with the \href{https://docs.aws.amazon.com/systems-manager/latest/userguide/}{Amazon Web Services Systems Manager User Guide}. To get started, see \href{https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-console.html}{Setting up Amazon Web Services Systems Manager}.
 
 \strong{Related resources}
 \itemize{
-\item For information about each of the tools that comprise Systems
-Manager, see \href{https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html}{Using Systems Manager tools}
-in the \emph{Amazon Web Services Systems Manager User Guide}.
-\item For details about predefined runbooks for Automation, a tool in
-Amazon Web Services Systems Manager, see the \emph{\href{https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html}{SystemsManager Automation Runbook Reference}} .
-\item For information about AppConfig, a tool in Systems Manager, see the
-\emph{\href{https://docs.aws.amazon.com/appconfig/latest/userguide/}{AppConfigUser Guide}} and the \emph{
-\href{https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/}{AppConfigAPI Reference}} .
-\item For information about Incident Manager, a tool in Systems Manager,
-see the \emph{\href{https://docs.aws.amazon.com/incident-manager/latest/userguide/}{SystemsManager Incident Manager User Guide}} and the \emph{
-\href{https://docs.aws.amazon.com/incident-manager/latest/APIReference/}{SystemsManager Incident Manager API Reference}} .
+\item For information about each of the tools that comprise Systems Manager, see \href{https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html}{Using Systems Manager tools} in the \emph{Amazon Web Services Systems Manager User Guide}.
+\item For details about predefined runbooks for Automation, a tool in Amazon Web Services Systems Manager, see the \emph{\if{html}{\out{\href{https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html}{Systems Manager Automation Runbook Reference\if{html}{\out{}} .
+\item For information about AppConfig, a tool in Systems Manager, see the \emph{\if{html}{\out{\href{https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/}{AppConfig API Reference\if{html}{\out{}} .
+\item For information about Incident Manager, a tool in Systems Manager, see the \emph{\if{html}{\out{\href{https://docs.aws.amazon.com/incident-manager/latest/APIReference/}{Systems Manager Incident Manager API Reference\if{html}{\out{}} .
 }
 }
 \section{Service syntax}{

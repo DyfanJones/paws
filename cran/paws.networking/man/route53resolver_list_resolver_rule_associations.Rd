@@ -12,26 +12,15 @@ route53resolver_list_resolver_rule_associations(
 )
 }
 \arguments{
-\item{MaxResults}{The maximum number of rule associations that you want to return in the
-response to a
-\code{\link[=route53resolver_list_resolver_rule_associations]{list_resolver_rule_associations}}
-request. If you don't specify a value for \code{MaxResults}, Resolver returns
-up to 100 rule associations.}
+\item{MaxResults}{The maximum number of rule associations that you want to return in the response to a \code{\link[=route53resolver_list_resolver_rule_associations]{list_resolver_rule_associations}} request. If you don't specify a value for \code{MaxResults}, Resolver returns up to 100 rule associations.}
 
 \item{NextToken}{For the first \code{ListResolverRuleAssociation} request, omit this value.
 
-If you have more than \code{MaxResults} rule associations, you can submit
-another \code{ListResolverRuleAssociation} request to get the next group of
-rule associations. In the next request, specify the value of \code{NextToken}
-from the previous response.}
+If you have more than \code{MaxResults} rule associations, you can submit another \code{ListResolverRuleAssociation} request to get the next group of rule associations. In the next request, specify the value of \code{NextToken} from the previous response.}
 
-\item{Filters}{An optional specification to return a subset of Resolver rules, such as
-Resolver rules that are associated with the same VPC ID.
+\item{Filters}{An optional specification to return a subset of Resolver rules, such as Resolver rules that are associated with the same VPC ID.
 
-If you submit a second or subsequent
-\code{\link[=route53resolver_list_resolver_rule_associations]{list_resolver_rule_associations}}
-request and specify the \code{NextToken} parameter, you must use the same
-values for \code{Filters}, if any, as in the previous request.}
+If you submit a second or subsequent \code{\link[=route53resolver_list_resolver_rule_associations]{list_resolver_rule_associations}} request and specify the \code{NextToken} parameter, you must use the same values for \code{Filters}, if any, as in the previous request.}
 }
 \description{
 Lists the associations that were created between Resolver rules and VPCs using the current Amazon Web Services account.

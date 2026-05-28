@@ -18,8 +18,7 @@ frauddetector_update_event_label(
 
 \item{assignedLabel}{[required] The new label to assign to the event.}
 
-\item{labelTimestamp}{[required] The timestamp associated with the label. The timestamp must be specified
-using ISO 8601 standard in UTC.}
+\item{labelTimestamp}{[required] The timestamp associated with the label. The timestamp must be specified using ISO 8601 standard in UTC.}
 }
 \description{
 Updates the specified event with a new label.

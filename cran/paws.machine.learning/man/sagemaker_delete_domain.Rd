@@ -9,9 +9,7 @@ sagemaker_delete_domain(DomainId, RetentionPolicy = NULL)
 \arguments{
 \item{DomainId}{[required] The domain ID.}
 
-\item{RetentionPolicy}{The retention policy for this domain, which specifies whether resources
-will be retained after the Domain is deleted. By default, all resources
-are retained (not automatically deleted).}
+\item{RetentionPolicy}{The retention policy for this domain, which specifies whether resources will be retained after the Domain is deleted. By default, all resources are retained (not automatically deleted).}
 }
 \description{
 Used to delete a domain. If you onboarded with IAM mode, you will need to delete your domain to onboard again using IAM Identity Center. Use with caution. All of the members of the domain will lose access to their EFS volume, including data, notebooks, and other artifacts.

@@ -7,8 +7,7 @@
 billingconductor_delete_billing_group(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the billing group that you're
-deleting.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the billing group that you're deleting.}
 }
 \description{
 Deletes a billing group.

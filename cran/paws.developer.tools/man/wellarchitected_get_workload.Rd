@@ -7,7 +7,7 @@
 wellarchitected_get_workload(WorkloadId)
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 }
 \description{
 Get an existing workload.

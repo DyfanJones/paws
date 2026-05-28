@@ -2,7 +2,7 @@
 % Please edit documentation in R/bedrockagentcore_operations.R
 \name{bedrockagentcore_create_payment_session}
 \alias{bedrockagentcore_create_payment_session}
-\title{Create a new payment manager session}
+\title{Create a new payment session}
 \usage{
 bedrockagentcore_create_payment_session(
   userId = NULL,
@@ -24,10 +24,10 @@ bedrockagentcore_create_payment_session(
 
 \item{expiryTimeInMinutes}{[required] The session expiry time in minutes. Must be between 15 and 480 minutes.}
 
-\item{clientToken}{Idempotency token to ensure request uniqueness.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
-Create a new payment manager session
+Create a new payment session.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_create_payment_session/} for full documentation.
 }

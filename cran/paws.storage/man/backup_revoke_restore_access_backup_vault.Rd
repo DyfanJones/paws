@@ -12,13 +12,11 @@ backup_revoke_restore_access_backup_vault(
 )
 }
 \arguments{
-\item{BackupVaultName}{[required] The name of the source backup vault associated with the restore access
-backup vault to be revoked.}
+\item{BackupVaultName}{[required] The name of the source backup vault associated with the restore access backup vault to be revoked.}
 
 \item{RestoreAccessBackupVaultArn}{[required] The ARN of the restore access backup vault to revoke.}
 
-\item{RequesterComment}{A comment explaining the reason for revoking access to the restore
-access backup vault.}
+\item{RequesterComment}{A comment explaining the reason for revoking access to the restore access backup vault.}
 }
 \description{
 Revokes access to a restore access backup vault, removing the ability to restore from its recovery points and permanently deleting the vault.

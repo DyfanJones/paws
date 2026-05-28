@@ -14,19 +14,11 @@ organizations_list_targets_for_policy(
 \arguments{
 \item{PolicyId}{[required] ID for the policy whose attachments you want to know.
 
-The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for a policy ID
-string requires "p-" followed by from 8 to 128 lowercase or uppercase
-letters, digits, or the underscore character (_).}
+The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for a policy ID string requires "p-" followed by from 8 to 128 lowercase or uppercase letters, digits, or the underscore character (_).}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from.}
 
-\item{MaxResults}{The maximum number of items to return in the response. If more results
-exist than the specified \code{MaxResults} value, a token is included in the
-response so that you can retrieve the remaining results.}
+\item{MaxResults}{The maximum number of items to return in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that you can retrieve the remaining results.}
 }
 \description{
 Lists all the roots, organizational units (OUs), and accounts that the specified policy is attached to.

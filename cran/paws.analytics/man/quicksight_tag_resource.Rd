@@ -10,8 +10,7 @@ quicksight_tag_resource(ResourceArn, Tags)
 \arguments{
 \item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to tag.}
 
-\item{Tags}{[required] Contains a map of the key-value pairs for the resource tag or tags
-assigned to the resource.}
+\item{Tags}{[required] Contains a map of the key-value pairs for the resource tag or tags assigned to the resource.}
 }
 \description{
 Assigns one or more tags (key-value pairs) to the specified Amazon Quick Sight resource.

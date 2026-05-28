@@ -15,27 +15,19 @@ redshiftserverless_restore_from_snapshot(
 )
 }
 \arguments{
-\item{adminPasswordSecretKmsKeyId}{The ID of the Key Management Service (KMS) key used to encrypt and store
-the namespace's admin credentials secret.}
+\item{adminPasswordSecretKmsKeyId}{The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's admin credentials secret.}
 
-\item{manageAdminPassword}{If \code{true}, Amazon Redshift uses Secrets Manager to manage the restored
-snapshot's admin credentials. If \code{MmanageAdminPassword} is false or not
-set, Amazon Redshift uses the admin credentials that the namespace or
-cluster had at the time the snapshot was taken.}
+\item{manageAdminPassword}{If \code{true}, Amazon Redshift uses Secrets Manager to manage the restored snapshot's admin credentials. If \code{MmanageAdminPassword} is false or not set, Amazon Redshift uses the admin credentials that the namespace or cluster had at the time the snapshot was taken.}
 
 \item{namespaceName}{[required] The name of the namespace to restore the snapshot to.}
 
 \item{ownerAccount}{The Amazon Web Services account that owns the snapshot.}
 
-\item{snapshotArn}{The Amazon Resource Name (ARN) of the snapshot to restore from. Required
-if restoring from a provisioned cluster to Amazon Redshift Serverless.
-Must not be specified at the same time as \code{snapshotName}.
+\item{snapshotArn}{The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring from a provisioned cluster to Amazon Redshift Serverless. Must not be specified at the same time as \code{snapshotName}.
 
-The format of the ARN is
-arn:aws:redshift:\<region\>:\<account_id\>:snapshot:\<cluster_identifier\>/\<snapshot_identifier\>.}
+The format of the ARN is arn:aws:redshift:\<region\>:\<account_id\>:snapshot:\<cluster_identifier\>/\<snapshot_identifier\>.}
 
-\item{snapshotName}{The name of the snapshot to restore from. Must not be specified at the
-same time as \code{snapshotArn}.}
+\item{snapshotName}{The name of the snapshot to restore from. Must not be specified at the same time as \code{snapshotArn}.}
 
 \item{workgroupName}{[required] The name of the workgroup used to restore the snapshot.}
 }

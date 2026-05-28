@@ -7,8 +7,7 @@
 servicediscovery_delete_namespace(Id)
 }
 \arguments{
-\item{Id}{[required] The ID or Amazon Resource Name (ARN) of the namespace that you want to
-delete.}
+\item{Id}{[required] The ID or Amazon Resource Name (ARN) of the namespace that you want to delete.}
 }
 \description{
 Deletes a namespace from the current account. If the namespace still contains one or more services, the request fails.

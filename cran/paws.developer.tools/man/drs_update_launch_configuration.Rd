@@ -17,22 +17,17 @@ drs_update_launch_configuration(
 )
 }
 \arguments{
-\item{sourceServerID}{[required] The ID of the Source Server that we want to retrieve a Launch
-Configuration for.}
+\item{sourceServerID}{[required] The ID of the Source Server that we want to retrieve a Launch Configuration for.}
 
 \item{name}{The name of the launch configuration.}
 
 \item{launchDisposition}{The state of the Recovery Instance in EC2 after the recovery operation.}
 
-\item{targetInstanceTypeRightSizingMethod}{Whether Elastic Disaster Recovery should try to automatically choose the
-instance type that best matches the OS, CPU, and RAM of your Source
-Server.}
+\item{targetInstanceTypeRightSizingMethod}{Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.}
 
-\item{copyPrivateIp}{Whether we should copy the Private IP of the Source Server to the
-Recovery Instance.}
+\item{copyPrivateIp}{Whether we should copy the Private IP of the Source Server to the Recovery Instance.}
 
-\item{copyTags}{Whether we want to copy the tags of the Source Server to the EC2 machine
-of the Recovery Instance.}
+\item{copyTags}{Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.}
 
 \item{licensing}{The licensing configuration to be used for this launch configuration.}
 

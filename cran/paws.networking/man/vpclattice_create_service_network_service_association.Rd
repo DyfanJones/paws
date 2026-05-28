@@ -12,16 +12,11 @@ vpclattice_create_service_network_service_association(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request that completed
-successfully using the same client token and parameters, the retry
-succeeds without performing any actions. If the parameters aren't
-identical, the retry fails.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.}
 
 \item{serviceIdentifier}{[required] The ID or ARN of the service.}
 
-\item{serviceNetworkIdentifier}{[required] The ID or ARN of the service network. You must use an ARN if the
-resources are in different accounts.}
+\item{serviceNetworkIdentifier}{[required] The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.}
 
 \item{tags}{The tags for the association.}
 }

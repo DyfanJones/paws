@@ -12,14 +12,11 @@ quicksight_update_identity_propagation_config(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the identity
-propagation configuration that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the identity propagation configuration that you want to update.}
 
-\item{Service}{[required] The name of the Amazon Web Services service that contains the authorized
-targets that you want to add or update.}
+\item{Service}{[required] The name of the Amazon Web Services service that contains the authorized targets that you want to add or update.}
 
-\item{AuthorizedTargets}{Specifies a list of application ARNs that represent the authorized
-targets for a service.}
+\item{AuthorizedTargets}{Specifies a list of application ARNs that represent the authorized targets for a service.}
 }
 \description{
 Adds or updates services and authorized targets to configure what the Quick Sight IAM Identity Center application can access.

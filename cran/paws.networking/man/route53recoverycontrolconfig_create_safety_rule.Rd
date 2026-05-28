@@ -14,9 +14,7 @@ route53recoverycontrolconfig_create_safety_rule(
 \arguments{
 \item{AssertionRule}{The assertion rule requested.}
 
-\item{ClientToken}{A unique, case-sensitive string of up to 64 ASCII characters. To make an
-idempotent API request with an action, specify a client token in the
-request.}
+\item{ClientToken}{A unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request with an action, specify a client token in the request.}
 
 \item{GatingRule}{The gating rule requested.}
 

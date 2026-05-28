@@ -15,11 +15,7 @@ bedrockagentcorecontrol_delete_payment_connector(
 
 \item{paymentConnectorId}{[required] The unique identifier of the payment connector to delete.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 }
 \description{
 Deletes a payment connector.

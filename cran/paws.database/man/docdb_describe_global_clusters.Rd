@@ -12,25 +12,15 @@ docdb_describe_global_clusters(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{The user-supplied cluster identifier. If this parameter is specified,
-information from only the specific cluster is returned. This parameter
-isn't case-sensitive.}
+\item{GlobalClusterIdentifier}{The user-supplied cluster identifier. If this parameter is specified, information from only the specific cluster is returned. This parameter isn't case-sensitive.}
 
 \item{Filters}{A filter that specifies one or more global DB clusters to describe.
 
-Supported filters: \code{db-cluster-id} accepts cluster identifiers and
-cluster Amazon Resource Names (ARNs). The results list will only include
-information about the clusters identified by these ARNs.}
+Supported filters: \code{db-cluster-id} accepts cluster identifiers and cluster Amazon Resource Names (ARNs). The results list will only include information about the clusters identified by these ARNs.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so that you can retrieve the
-remaining results.}
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=docdb_describe_global_clusters]{describe_global_clusters}} request. If
-this parameter is specified, the response includes only records beyond
-the marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=docdb_describe_global_clusters]{describe_global_clusters}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns information about Amazon DocumentDB global clusters. This API supports pagination.

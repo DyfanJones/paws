@@ -22,27 +22,19 @@ sagemaker_list_model_card_export_jobs(
 
 \item{ModelCardVersion}{List export jobs for the model card with the specified version.}
 
-\item{CreationTimeAfter}{Only list model card export jobs that were created after the time
-specified.}
+\item{CreationTimeAfter}{Only list model card export jobs that were created after the time specified.}
 
-\item{CreationTimeBefore}{Only list model card export jobs that were created before the time
-specified.}
+\item{CreationTimeBefore}{Only list model card export jobs that were created before the time specified.}
 
-\item{ModelCardExportJobNameContains}{Only list model card export jobs with names that contain the specified
-string.}
+\item{ModelCardExportJobNameContains}{Only list model card export jobs with names that contain the specified string.}
 
 \item{StatusEquals}{Only list model card export jobs with the specified status.}
 
-\item{SortBy}{Sort model card export jobs by either name or creation time. Sorts by
-creation time by default.}
+\item{SortBy}{Sort model card export jobs by either name or creation time. Sorts by creation time by default.}
 
 \item{SortOrder}{Sort model card export jobs by ascending or descending order.}
 
-\item{NextToken}{If the response to a previous
-\code{\link[=sagemaker_list_model_card_export_jobs]{list_model_card_export_jobs}}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of model card export jobs, use the token in the next
-request.}
+\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_model_card_export_jobs]{list_model_card_export_jobs}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of model card export jobs, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of model card export jobs to list.}
 }

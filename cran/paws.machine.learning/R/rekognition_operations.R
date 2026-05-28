@@ -13,13 +13,8 @@ NULL
 #' @param CollectionId &#91;required&#93; The ID of an existing collection containing the UserID.
 #' @param UserId &#91;required&#93; The ID for the existing UserID.
 #' @param FaceIds &#91;required&#93; An array of FaceIDs to associate with the UserID.
-#' @param UserMatchThreshold An optional value specifying the minimum confidence in the UserID match
-#' to return. The default value is 75.
-#' @param ClientRequestToken Idempotent token used to identify the request to
-#' [`associate_faces`][rekognition_associate_faces]. If you use the same
-#' token with multiple [`associate_faces`][rekognition_associate_faces]
-#' requests, the same response is returned. Use ClientRequestToken to
-#' prevent the same request from being processed more than once.
+#' @param UserMatchThreshold An optional value specifying the minimum confidence in the UserID match to return. The default value is 75.
+#' @param ClientRequestToken Idempotent token used to identify the request to [`associate_faces`][rekognition_associate_faces]. If you use the same token with multiple [`associate_faces`][rekognition_associate_faces] requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.
 #'
 #' @keywords internal
 #'
@@ -51,34 +46,16 @@ rekognition_associate_faces <- function(CollectionId, UserId, FaceIds, UserMatch
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_compare_faces/](https://www.paws-r-sdk.com/docs/rekognition_compare_faces/) for full documentation.
 #'
-#' @param SourceImage &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the
-#' AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-#' image bytes is not supported.
+#' @param SourceImage &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
-#' @param TargetImage &#91;required&#93; The target image as base64-encoded bytes or an S3 object. If you use the
-#' AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-#' image bytes is not supported.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
+#' @param TargetImage &#91;required&#93; The target image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
-#' @param SimilarityThreshold The minimum level of confidence in the face matches that a match must
-#' meet to be included in the `FaceMatches` array.
-#' @param QualityFilter A filter that specifies a quality bar for how much filtering is done to
-#' identify faces. Filtered faces aren't compared. If you specify `AUTO`,
-#' Amazon Rekognition chooses the quality bar. If you specify `LOW`,
-#' `MEDIUM`, or `HIGH`, filtering removes all faces that don’t meet the
-#' chosen quality bar. The quality bar is based on a variety of common use
-#' cases. Low-quality detections can occur for a number of reasons. Some
-#' examples are an object that's misidentified as a face, a face that's too
-#' blurry, or a face with a pose that's too extreme to use. If you specify
-#' `NONE`, no filtering is performed. The default value is `NONE`.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
+#' @param SimilarityThreshold The minimum level of confidence in the face matches that a match must meet to be included in the `FaceMatches` array.
+#' @param QualityFilter A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't compared. If you specify `AUTO`, Amazon Rekognition chooses the quality bar. If you specify `LOW`, `MEDIUM`, or `HIGH`, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify `NONE`, no filtering is performed. The default value is `NONE`.
 #' 
-#' To use quality filtering, the collection you are using must be
-#' associated with version 3 of the face model or higher.
+#' To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.
 #'
 #' @keywords internal
 #'
@@ -110,23 +87,14 @@ rekognition_compare_faces <- function(SourceImage, TargetImage, SimilarityThresh
 #' See [https://www.paws-r-sdk.com/docs/rekognition_copy_project_version/](https://www.paws-r-sdk.com/docs/rekognition_copy_project_version/) for full documentation.
 #'
 #' @param SourceProjectArn &#91;required&#93; The ARN of the source project in the trusting AWS account.
-#' @param SourceProjectVersionArn &#91;required&#93; The ARN of the model version in the source project that you want to copy
-#' to a destination project.
-#' @param DestinationProjectArn &#91;required&#93; The ARN of the project in the trusted AWS account that you want to copy
-#' the model version to.
-#' @param VersionName &#91;required&#93; A name for the version of the model that's copied to the destination
-#' project.
-#' @param OutputConfig &#91;required&#93; The S3 bucket and folder location where the training output for the
-#' source model version is placed.
+#' @param SourceProjectVersionArn &#91;required&#93; The ARN of the model version in the source project that you want to copy to a destination project.
+#' @param DestinationProjectArn &#91;required&#93; The ARN of the project in the trusted AWS account that you want to copy the model version to.
+#' @param VersionName &#91;required&#93; A name for the version of the model that's copied to the destination project.
+#' @param OutputConfig &#91;required&#93; The S3 bucket and folder location where the training output for the source model version is placed.
 #' @param Tags The key-value tags to assign to the model version.
-#' @param KmsKeyId The identifier for your AWS Key Management Service key (AWS KMS key).
-#' You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of
-#' your KMS key, an alias for your KMS key, or an alias ARN. The key is
-#' used to encrypt training results and manifest files written to the
-#' output Amazon S3 bucket (`OutputConfig`).
+#' @param KmsKeyId The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (`OutputConfig`).
 #' 
-#' If you choose to use your own KMS key, you need the following
-#' permissions on the KMS key.
+#' If you choose to use your own KMS key, you need the following permissions on the KMS key.
 #' 
 #' -   kms:CreateGrant
 #' 
@@ -136,8 +104,7 @@ rekognition_compare_faces <- function(SourceImage, TargetImage, SimilarityThresh
 #' 
 #' -   kms:Decrypt
 #' 
-#' If you don't specify a value for `KmsKeyId`, images copied into the
-#' service are encrypted using a key that AWS owns and manages.
+#' If you don't specify a value for `KmsKeyId`, images copied into the service are encrypted using a key that AWS owns and manages.
 #'
 #' @keywords internal
 #'
@@ -169,8 +136,7 @@ rekognition_copy_project_version <- function(SourceProjectArn, SourceProjectVers
 #' See [https://www.paws-r-sdk.com/docs/rekognition_create_collection/](https://www.paws-r-sdk.com/docs/rekognition_create_collection/) for full documentation.
 #'
 #' @param CollectionId &#91;required&#93; ID for the collection that you are creating.
-#' @param Tags A set of tags (key-value pairs) that you want to attach to the
-#' collection.
+#' @param Tags A set of tags (key-value pairs) that you want to attach to the collection.
 #'
 #' @keywords internal
 #'
@@ -201,16 +167,9 @@ rekognition_create_collection <- function(CollectionId, Tags = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_create_dataset/](https://www.paws-r-sdk.com/docs/rekognition_create_dataset/) for full documentation.
 #'
-#' @param DatasetSource The source files for the dataset. You can specify the ARN of an existing
-#' dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker
-#' format manifest file. If you don't specify `datasetSource`, an empty
-#' dataset is created. To add labeled images to the dataset, You can use
-#' the console or call
-#' [`update_dataset_entries`][rekognition_update_dataset_entries].
-#' @param DatasetType &#91;required&#93; The type of the dataset. Specify `TRAIN` to create a training dataset.
-#' Specify `TEST` to create a test dataset.
-#' @param ProjectArn &#91;required&#93; The ARN of the Amazon Rekognition Custom Labels project to which you
-#' want to asssign the dataset.
+#' @param DatasetSource The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify `datasetSource`, an empty dataset is created. To add labeled images to the dataset, You can use the console or call [`update_dataset_entries`][rekognition_update_dataset_entries].
+#' @param DatasetType &#91;required&#93; The type of the dataset. Specify `TRAIN` to create a training dataset. Specify `TEST` to create a test dataset.
+#' @param ProjectArn &#91;required&#93; The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.
 #' @param Tags A set of tags (key-value pairs) that you want to attach to the dataset.
 #'
 #' @keywords internal
@@ -242,16 +201,9 @@ rekognition_create_dataset <- function(DatasetSource = NULL, DatasetType, Projec
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_create_face_liveness_session/](https://www.paws-r-sdk.com/docs/rekognition_create_face_liveness_session/) for full documentation.
 #'
-#' @param KmsKeyId The identifier for your AWS Key Management Service key (AWS KMS key).
-#' Used to encrypt audit images and reference images.
-#' @param Settings A session settings object. It contains settings for the operation to be
-#' performed. For Face Liveness, it accepts `OutputConfig` and
-#' `AuditImagesLimit`.
-#' @param ClientRequestToken Idempotent token is used to recognize the Face Liveness request. If the
-#' same token is used with multiple
-#' [`create_face_liveness_session`][rekognition_create_face_liveness_session]
-#' requests, the same session is returned. This token is employed to avoid
-#' unintentionally creating the same session multiple times.
+#' @param KmsKeyId The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.
+#' @param Settings A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts `OutputConfig` and `AuditImagesLimit`.
+#' @param ClientRequestToken Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple [`create_face_liveness_session`][rekognition_create_face_liveness_session] requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.
 #'
 #' @keywords internal
 #'
@@ -283,11 +235,8 @@ rekognition_create_face_liveness_session <- function(KmsKeyId = NULL, Settings =
 #' See [https://www.paws-r-sdk.com/docs/rekognition_create_project/](https://www.paws-r-sdk.com/docs/rekognition_create_project/) for full documentation.
 #'
 #' @param ProjectName &#91;required&#93; The name of the project to create.
-#' @param Feature Specifies feature that is being customized. If no value is provided
-#' CUSTOM_LABELS is used as a default.
-#' @param AutoUpdate Specifies whether automatic retraining should be attempted for the
-#' versions of the project. Automatic retraining is done as a best effort.
-#' Required argument for Content Moderation. Applicable only to adapters.
+#' @param Feature Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.
+#' @param AutoUpdate Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.
 #' @param Tags A set of tags (key-value pairs) that you want to attach to the project.
 #'
 #' @keywords internal
@@ -320,31 +269,15 @@ rekognition_create_project <- function(ProjectName, Feature = NULL, AutoUpdate =
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_create_project_version/](https://www.paws-r-sdk.com/docs/rekognition_create_project_version/) for full documentation.
 #'
-#' @param ProjectArn &#91;required&#93; The ARN of the Amazon Rekognition project that will manage the project
-#' version you want to train.
-#' @param VersionName &#91;required&#93; A name for the version of the project version. This value must be
-#' unique.
-#' @param OutputConfig &#91;required&#93; The Amazon S3 bucket location to store the results of training. The
-#' bucket can be any S3 bucket in your AWS account. You need `s3:PutObject`
-#' permission on the bucket.
-#' @param TrainingData Specifies an external manifest that the services uses to train the
-#' project version. If you specify `TrainingData` you must also specify
-#' `TestingData`. The project must not have any associated datasets.
-#' @param TestingData Specifies an external manifest that the service uses to test the project
-#' version. If you specify `TestingData` you must also specify
-#' `TrainingData`. The project must not have any associated datasets.
-#' @param Tags A set of tags (key-value pairs) that you want to attach to the project
-#' version.
-#' @param KmsKeyId The identifier for your AWS Key Management Service key (AWS KMS key).
-#' You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of
-#' your KMS key, an alias for your KMS key, or an alias ARN. The key is
-#' used to encrypt training images, test images, and manifest files copied
-#' into the service for the project version. Your source images are
-#' unaffected. The key is also used to encrypt training results and
-#' manifest files written to the output Amazon S3 bucket (`OutputConfig`).
+#' @param ProjectArn &#91;required&#93; The ARN of the Amazon Rekognition project that will manage the project version you want to train.
+#' @param VersionName &#91;required&#93; A name for the version of the project version. This value must be unique.
+#' @param OutputConfig &#91;required&#93; The Amazon S3 bucket location to store the results of training. The bucket can be any S3 bucket in your AWS account. You need `s3:PutObject` permission on the bucket.
+#' @param TrainingData Specifies an external manifest that the services uses to train the project version. If you specify `TrainingData` you must also specify `TestingData`. The project must not have any associated datasets.
+#' @param TestingData Specifies an external manifest that the service uses to test the project version. If you specify `TestingData` you must also specify `TrainingData`. The project must not have any associated datasets.
+#' @param Tags A set of tags (key-value pairs) that you want to attach to the project version.
+#' @param KmsKeyId The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training images, test images, and manifest files copied into the service for the project version. Your source images are unaffected. The key is also used to encrypt training results and manifest files written to the output Amazon S3 bucket (`OutputConfig`).
 #' 
-#' If you choose to use your own KMS key, you need the following
-#' permissions on the KMS key.
+#' If you choose to use your own KMS key, you need the following permissions on the KMS key.
 #' 
 #' -   kms:CreateGrant
 #' 
@@ -354,12 +287,9 @@ rekognition_create_project <- function(ProjectName, Feature = NULL, AutoUpdate =
 #' 
 #' -   kms:Decrypt
 #' 
-#' If you don't specify a value for `KmsKeyId`, images copied into the
-#' service are encrypted using a key that AWS owns and manages.
+#' If you don't specify a value for `KmsKeyId`, images copied into the service are encrypted using a key that AWS owns and manages.
 #' @param VersionDescription A description applied to the project version being created.
-#' @param FeatureConfig Feature-specific configuration of the training job. If the job
-#' configuration does not match the feature type associated with the
-#' project, an InvalidParameterException is returned.
+#' @param FeatureConfig Feature-specific configuration of the training job. If the job configuration does not match the feature type associated with the project, an InvalidParameterException is returned.
 #'
 #' @keywords internal
 #'
@@ -391,51 +321,16 @@ rekognition_create_project_version <- function(ProjectArn, VersionName, OutputCo
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_create_stream_processor/](https://www.paws-r-sdk.com/docs/rekognition_create_stream_processor/) for full documentation.
 #'
-#' @param Input &#91;required&#93; Kinesis video stream stream that provides the source streaming video. If
-#' you are using the AWS CLI, the parameter name is `StreamProcessorInput`.
-#' This is required for both face search and label detection stream
-#' processors.
-#' @param Output &#91;required&#93; Kinesis data stream stream or Amazon S3 bucket location to which Amazon
-#' Rekognition Video puts the analysis results. If you are using the AWS
-#' CLI, the parameter name is `StreamProcessorOutput`. This must be a
-#' S3Destination of an Amazon S3 bucket that you own for a label detection
-#' stream processor or a Kinesis data stream ARN for a face search stream
-#' processor.
-#' @param Name &#91;required&#93; An identifier you assign to the stream processor. You can use `Name` to
-#' manage the stream processor. For example, you can get the current status
-#' of the stream processor by calling
-#' [`describe_stream_processor`][rekognition_describe_stream_processor].
-#' `Name` is idempotent. This is required for both face search and label
-#' detection stream processors.
-#' @param Settings &#91;required&#93; Input parameters used in a streaming video analyzed by a stream
-#' processor. You can use `FaceSearch` to recognize faces in a streaming
-#' video, or you can use `ConnectedHome` to detect labels.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Number (ARN) of the IAM role that allows access to
-#' the stream processor. The IAM role provides Rekognition read permissions
-#' for a Kinesis stream. It also provides write permissions to an Amazon S3
-#' bucket and Amazon Simple Notification Service topic for a label
-#' detection stream processor. This is required for both face search and
-#' label detection stream processors.
-#' @param Tags A set of tags (key-value pairs) that you want to attach to the stream
-#' processor.
-#' @param NotificationChannel 
-#' @param KmsKeyId The identifier for your AWS Key Management Service key (AWS KMS key).
-#' This is an optional parameter for label detection stream processors and
-#' should not be used to create a face search stream processor. You can
-#' supply the Amazon Resource Name (ARN) of your KMS key, the ID of your
-#' KMS key, an alias for your KMS key, or an alias ARN. The key is used to
-#' encrypt results and data published to your Amazon S3 bucket, which
-#' includes image frames and hero images. Your source images are
-#' unaffected.
-#' @param RegionsOfInterest Specifies locations in the frames where Amazon Rekognition checks for
-#' objects or people. You can specify up to 10 regions of interest, and
-#' each region has either a polygon or a bounding box. This is an optional
-#' parameter for label detection stream processors and should not be used
-#' to create a face search stream processor.
-#' @param DataSharingPreference Shows whether you are sharing data with Rekognition to improve model
-#' performance. You can choose this option at the account level or on a
-#' per-stream basis. Note that if you opt out at the account level this
-#' setting is ignored on individual streams.
+#' @param Input &#91;required&#93; Kinesis video stream stream that provides the source streaming video. If you are using the AWS CLI, the parameter name is `StreamProcessorInput`. This is required for both face search and label detection stream processors.
+#' @param Output &#91;required&#93; Kinesis data stream stream or Amazon S3 bucket location to which Amazon Rekognition Video puts the analysis results. If you are using the AWS CLI, the parameter name is `StreamProcessorOutput`. This must be a S3Destination of an Amazon S3 bucket that you own for a label detection stream processor or a Kinesis data stream ARN for a face search stream processor.
+#' @param Name &#91;required&#93; An identifier you assign to the stream processor. You can use `Name` to manage the stream processor. For example, you can get the current status of the stream processor by calling [`describe_stream_processor`][rekognition_describe_stream_processor]. `Name` is idempotent. This is required for both face search and label detection stream processors.
+#' @param Settings &#91;required&#93; Input parameters used in a streaming video analyzed by a stream processor. You can use `FaceSearch` to recognize faces in a streaming video, or you can use `ConnectedHome` to detect labels.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Number (ARN) of the IAM role that allows access to the stream processor. The IAM role provides Rekognition read permissions for a Kinesis stream. It also provides write permissions to an Amazon S3 bucket and Amazon Simple Notification Service topic for a label detection stream processor. This is required for both face search and label detection stream processors.
+#' @param Tags A set of tags (key-value pairs) that you want to attach to the stream processor.
+#' @param NotificationChannel The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see [Calling Amazon Rekognition Video operations](https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html). Note that the Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see [Giving access to multiple Amazon SNS topics](https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics).
+#' @param KmsKeyId The identifier for your AWS Key Management Service key (AWS KMS key). This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor. You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt results and data published to your Amazon S3 bucket, which includes image frames and hero images. Your source images are unaffected.
+#' @param RegionsOfInterest Specifies locations in the frames where Amazon Rekognition checks for objects or people. You can specify up to 10 regions of interest, and each region has either a polygon or a bounding box. This is an optional parameter for label detection stream processors and should not be used to create a face search stream processor.
+#' @param DataSharingPreference Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.
 #'
 #' @keywords internal
 #'
@@ -466,15 +361,9 @@ rekognition_create_stream_processor <- function(Input, Output, Name, Settings, R
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_create_user/](https://www.paws-r-sdk.com/docs/rekognition_create_user/) for full documentation.
 #'
-#' @param CollectionId &#91;required&#93; The ID of an existing collection to which the new UserID needs to be
-#' created.
-#' @param UserId &#91;required&#93; ID for the UserID to be created. This ID needs to be unique within the
-#' collection.
-#' @param ClientRequestToken Idempotent token used to identify the request to
-#' [`create_user`][rekognition_create_user]. If you use the same token with
-#' multiple [`create_user`][rekognition_create_user] requests, the same
-#' response is returned. Use ClientRequestToken to prevent the same request
-#' from being processed more than once.
+#' @param CollectionId &#91;required&#93; The ID of an existing collection to which the new UserID needs to be created.
+#' @param UserId &#91;required&#93; ID for the UserID to be created. This ID needs to be unique within the collection.
+#' @param ClientRequestToken Idempotent token used to identify the request to [`create_user`][rekognition_create_user]. If you use the same token with multiple [`create_user`][rekognition_create_user] requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.
 #'
 #' @keywords internal
 #'
@@ -536,8 +425,7 @@ rekognition_delete_collection <- function(CollectionId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_delete_dataset/](https://www.paws-r-sdk.com/docs/rekognition_delete_dataset/) for full documentation.
 #'
-#' @param DatasetArn &#91;required&#93; The ARN of the Amazon Rekognition Custom Labels dataset that you want to
-#' delete.
+#' @param DatasetArn &#91;required&#93; The ARN of the Amazon Rekognition Custom Labels dataset that you want to delete.
 #'
 #' @keywords internal
 #'
@@ -631,8 +519,7 @@ rekognition_delete_project <- function(ProjectArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_delete_project_policy/](https://www.paws-r-sdk.com/docs/rekognition_delete_project_policy/) for full documentation.
 #'
-#' @param ProjectArn &#91;required&#93; The Amazon Resource Name (ARN) of the project that the project policy
-#' you want to delete is attached to.
+#' @param ProjectArn &#91;required&#93; The Amazon Resource Name (ARN) of the project that the project policy you want to delete is attached to.
 #' @param PolicyName &#91;required&#93; The name of the policy that you want to delete.
 #' @param PolicyRevisionId The ID of the project policy revision that you want to delete.
 #'
@@ -666,8 +553,7 @@ rekognition_delete_project_policy <- function(ProjectArn, PolicyName, PolicyRevi
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_delete_project_version/](https://www.paws-r-sdk.com/docs/rekognition_delete_project_version/) for full documentation.
 #'
-#' @param ProjectVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the project version that you want to
-#' delete.
+#' @param ProjectVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the project version that you want to delete.
 #'
 #' @keywords internal
 #'
@@ -729,14 +615,9 @@ rekognition_delete_stream_processor <- function(Name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_delete_user/](https://www.paws-r-sdk.com/docs/rekognition_delete_user/) for full documentation.
 #'
-#' @param CollectionId &#91;required&#93; The ID of an existing collection from which the UserID needs to be
-#' deleted.
+#' @param CollectionId &#91;required&#93; The ID of an existing collection from which the UserID needs to be deleted.
 #' @param UserId &#91;required&#93; ID for the UserID to be deleted.
-#' @param ClientRequestToken Idempotent token used to identify the request to
-#' [`delete_user`][rekognition_delete_user]. If you use the same token with
-#' multiple [`delete_user`][rekognition_delete_user]requests, the same
-#' response is returned. Use ClientRequestToken to prevent the same request
-#' from being processed more than once.
+#' @param ClientRequestToken Idempotent token used to identify the request to [`delete_user`][rekognition_delete_user]. If you use the same token with multiple [`delete_user`][rekognition_delete_user]requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.
 #'
 #' @keywords internal
 #'
@@ -829,21 +710,10 @@ rekognition_describe_dataset <- function(DatasetArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_describe_project_versions/](https://www.paws-r-sdk.com/docs/rekognition_describe_project_versions/) for full documentation.
 #'
-#' @param ProjectArn &#91;required&#93; The Amazon Resource Name (ARN) of the project that contains the
-#' model/adapter you want to describe.
-#' @param VersionNames A list of model or project version names that you want to describe. You
-#' can add up to 10 model or project version names to the list. If you
-#' don't specify a value, all project version descriptions are returned. A
-#' version name is part of a project version ARN. For example,
-#' `my-model.2020-01-21T09.10.15` is the version name in the following ARN.
-#' `arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/my-model.2020-01-21T09.10.15/1234567890123`.
-#' @param NextToken If the previous response was incomplete (because there is more results
-#' to retrieve), Amazon Rekognition returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' results.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value you can specify is 100. If you specify a value greater than 100, a
-#' ValidationException error occurs. The default value is 100.
+#' @param ProjectArn &#91;required&#93; The Amazon Resource Name (ARN) of the project that contains the model/adapter you want to describe.
+#' @param VersionNames A list of model or project version names that you want to describe. You can add up to 10 model or project version names to the list. If you don't specify a value, all project version descriptions are returned. A version name is part of a project version ARN. For example, `my-model.2020-01-21T09.10.15` is the version name in the following ARN. `arn:aws:rekognition:us-east-1:123456789012:project/getting-started/version/my-model.2020-01-21T09.10.15/1234567890123`.
+#' @param NextToken If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.
 #'
 #' @keywords internal
 #'
@@ -874,17 +744,10 @@ rekognition_describe_project_versions <- function(ProjectArn, VersionNames = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_describe_projects/](https://www.paws-r-sdk.com/docs/rekognition_describe_projects/) for full documentation.
 #'
-#' @param NextToken If the previous response was incomplete (because there is more results
-#' to retrieve), Rekognition returns a pagination token in the response.
-#' You can use this pagination token to retrieve the next set of results.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value you can specify is 100. If you specify a value greater than 100, a
-#' ValidationException error occurs. The default value is 100.
-#' @param ProjectNames A list of the projects that you want Rekognition to describe. If you
-#' don't specify a value, the response includes descriptions for all the
-#' projects in your AWS account.
-#' @param Features Specifies the type of customization to filter projects by. If no value
-#' is specified, CUSTOM_LABELS is used as a default.
+#' @param NextToken If the previous response was incomplete (because there is more results to retrieve), Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.
+#' @param ProjectNames A list of the projects that you want Rekognition to describe. If you don't specify a value, the response includes descriptions for all the projects in your AWS account.
+#' @param Features Specifies the type of customization to filter projects by. If no value is specified, CUSTOM_LABELS is used as a default.
 #'
 #' @keywords internal
 #'
@@ -947,23 +810,22 @@ rekognition_describe_stream_processor <- function(Name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_detect_custom_labels/](https://www.paws-r-sdk.com/docs/rekognition_detect_custom_labels/) for full documentation.
 #'
-#' @param ProjectVersionArn &#91;required&#93; The ARN of the model version that you want to use. Only models
-#' associated with Custom Labels projects accepted by the operation. If a
-#' provided ARN refers to a model version associated with a project for a
-#' different feature type, then an InvalidParameterException is returned.
-#' @param Image &#91;required&#93; 
-#' @param MaxResults Maximum number of results you want the service to return in the
-#' response. The service returns the specified number of highest confidence
-#' labels ranked from highest confidence to lowest.
-#' @param MinConfidence Specifies the minimum confidence level for the labels to return.
-#' [`detect_custom_labels`][rekognition_detect_custom_labels] doesn't
-#' return any labels with a confidence value that's lower than this
-#' specified value. If you specify a value of 0,
-#' [`detect_custom_labels`][rekognition_detect_custom_labels] returns all
-#' labels, regardless of the assumed threshold applied to each label. If
-#' you don't specify a value for `MinConfidence`,
-#' [`detect_custom_labels`][rekognition_detect_custom_labels] returns
-#' labels based on the assumed threshold of each label.
+#' @param ProjectVersionArn &#91;required&#93; The ARN of the model version that you want to use. Only models associated with Custom Labels projects accepted by the operation. If a provided ARN refers to a model version associated with a project for a different feature type, then an InvalidParameterException is returned.
+#' @param Image &#91;required&#93; Provides the input image either as bytes or an S3 object.
+#' 
+#' You pass image bytes to an Amazon Rekognition API operation by using the `Bytes` property. For example, you would use the `Bytes` property to pass an image loaded from a local file system. Image bytes passed by using the `Bytes` property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations.
+#' 
+#' For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.
+#' 
+#' You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the `S3Object` property. Images stored in an S3 bucket do not need to be base64-encoded.
+#' 
+#' The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
+#' 
+#' If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.
+#' 
+#' For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.
+#' @param MaxResults Maximum number of results you want the service to return in the response. The service returns the specified number of highest confidence labels ranked from highest confidence to lowest.
+#' @param MinConfidence Specifies the minimum confidence level for the labels to return. [`detect_custom_labels`][rekognition_detect_custom_labels] doesn't return any labels with a confidence value that's lower than this specified value. If you specify a value of 0, [`detect_custom_labels`][rekognition_detect_custom_labels] returns all labels, regardless of the assumed threshold applied to each label. If you don't specify a value for `MinConfidence`, [`detect_custom_labels`][rekognition_detect_custom_labels] returns labels based on the assumed threshold of each label.
 #'
 #' @keywords internal
 #'
@@ -994,30 +856,14 @@ rekognition_detect_custom_labels <- function(ProjectVersionArn, Image, MaxResult
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_detect_faces/](https://www.paws-r-sdk.com/docs/rekognition_detect_faces/) for full documentation.
 #'
-#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the
-#' AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-#' image bytes is not supported.
+#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
-#' @param Attributes An array of facial attributes you want to be returned. A `DEFAULT`
-#' subset of facial attributes - `BoundingBox`, `Confidence`, `Pose`,
-#' `Quality`, and `Landmarks` - will always be returned. You can request
-#' for specific facial attributes (in addition to the default list) - by
-#' using \[`"DEFAULT", "FACE_OCCLUDED"`\] or just \[`"FACE_OCCLUDED"`\].
-#' You can request for all facial attributes by using \[`"ALL"]`.
-#' Requesting more attributes may increase response time.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
+#' @param Attributes An array of facial attributes you want to be returned. A `DEFAULT` subset of facial attributes - `BoundingBox`, `Confidence`, `Pose`, `Quality`, and `Landmarks` - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using \[`"DEFAULT", "FACE_OCCLUDED"`\] or just \[`"FACE_OCCLUDED"`\]. You can request for all facial attributes by using \[`"ALL"]`. Requesting more attributes may increase response time.
 #' 
-#' If you provide both, `["ALL", "DEFAULT"]`, the service uses a logical
-#' "AND" operator to determine which attributes to return (in this case,
-#' all attributes).
+#' If you provide both, `["ALL", "DEFAULT"]`, the service uses a logical "AND" operator to determine which attributes to return (in this case, all attributes).
 #' 
-#' Note that while the FaceOccluded and EyeDirection attributes are
-#' supported when using [`detect_faces`][rekognition_detect_faces], they
-#' aren't supported when analyzing videos with
-#' [`start_face_detection`][rekognition_start_face_detection] and
-#' [`get_face_detection`][rekognition_get_face_detection].
+#' Note that while the FaceOccluded and EyeDirection attributes are supported when using [`detect_faces`][rekognition_detect_faces], they aren't supported when analyzing videos with [`start_face_detection`][rekognition_start_face_detection] and [`get_face_detection`][rekognition_get_face_detection].
 #'
 #' @keywords internal
 #'
@@ -1049,36 +895,15 @@ rekognition_detect_faces <- function(Image, Attributes = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_detect_labels/](https://www.paws-r-sdk.com/docs/rekognition_detect_labels/) for full documentation.
 #'
-#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the
-#' AWS CLI to call Amazon Rekognition operations, passing image bytes is
-#' not supported. Images stored in an S3 Bucket do not need to be
-#' base64-encoded.
+#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes is not supported. Images stored in an S3 Bucket do not need to be base64-encoded.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
-#' @param MaxLabels Maximum number of labels you want the service to return in the response.
-#' The service returns the specified number of highest confidence labels.
-#' Only valid when GENERAL_LABELS is specified as a feature type in the
-#' Feature input parameter.
-#' @param MinConfidence Specifies the minimum confidence level for the labels to return. Amazon
-#' Rekognition doesn't return any labels with confidence lower than this
-#' specified value.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
+#' @param MaxLabels Maximum number of labels you want the service to return in the response. The service returns the specified number of highest confidence labels. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.
+#' @param MinConfidence Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with confidence lower than this specified value.
 #' 
-#' If `MinConfidence` is not specified, the operation returns labels with a
-#' confidence values greater than or equal to 55 percent. Only valid when
-#' GENERAL_LABELS is specified as a feature type in the Feature input
-#' parameter.
-#' @param Features A list of the types of analysis to perform. Specifying GENERAL_LABELS
-#' uses the label detection feature, while specifying IMAGE_PROPERTIES
-#' returns information regarding image color and quality. If no option is
-#' specified GENERAL_LABELS is used by default.
-#' @param Settings A list of the filters to be applied to returned detected labels and
-#' image properties. Specified filters can be inclusive, exclusive, or a
-#' combination of both. Filters can be used for individual labels or label
-#' categories. The exact label names or label categories must be supplied.
-#' For a full list of labels and label categories, see [Detecting
-#' labels](https://docs.aws.amazon.com/rekognition/latest/dg/labels.html).
+#' If `MinConfidence` is not specified, the operation returns labels with a confidence values greater than or equal to 55 percent. Only valid when GENERAL_LABELS is specified as a feature type in the Feature input parameter.
+#' @param Features A list of the types of analysis to perform. Specifying GENERAL_LABELS uses the label detection feature, while specifying IMAGE_PROPERTIES returns information regarding image color and quality. If no option is specified GENERAL_LABELS is used by default.
+#' @param Settings A list of the filters to be applied to returned detected labels and image properties. Specified filters can be inclusive, exclusive, or a combination of both. Filters can be used for individual labels or label categories. The exact label names or label categories must be supplied. For a full list of labels and label categories, see [Detecting labels](https://docs.aws.amazon.com/rekognition/latest/dg/labels.html).
 #'
 #' @keywords internal
 #'
@@ -1109,24 +934,14 @@ rekognition_detect_labels <- function(Image, MaxLabels = NULL, MinConfidence = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_detect_moderation_labels/](https://www.paws-r-sdk.com/docs/rekognition_detect_moderation_labels/) for full documentation.
 #'
-#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the
-#' AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-#' image bytes is not supported.
+#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
-#' @param MinConfidence Specifies the minimum confidence level for the labels to return. Amazon
-#' Rekognition doesn't return any labels with a confidence level lower than
-#' this specified value.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
+#' @param MinConfidence Specifies the minimum confidence level for the labels to return. Amazon Rekognition doesn't return any labels with a confidence level lower than this specified value.
 #' 
-#' If you don't specify `MinConfidence`, the operation returns labels with
-#' confidence values greater than or equal to 50 percent.
-#' @param HumanLoopConfig Sets up the configuration for human evaluation, including the
-#' FlowDefinition the image will be sent to.
-#' @param ProjectVersion Identifier for the custom adapter. Expects the ProjectVersionArn as a
-#' value. Use the CreateProject or CreateProjectVersion APIs to create a
-#' custom adapter.
+#' If you don't specify `MinConfidence`, the operation returns labels with confidence values greater than or equal to 50 percent.
+#' @param HumanLoopConfig Sets up the configuration for human evaluation, including the FlowDefinition the image will be sent to.
+#' @param ProjectVersion Identifier for the custom adapter. Expects the ProjectVersionArn as a value. Use the CreateProject or CreateProjectVersion APIs to create a custom adapter.
 #'
 #' @keywords internal
 #'
@@ -1158,9 +973,7 @@ rekognition_detect_moderation_labels <- function(Image, MinConfidence = NULL, Hu
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_detect_protective_equipment/](https://www.paws-r-sdk.com/docs/rekognition_detect_protective_equipment/) for full documentation.
 #'
-#' @param Image &#91;required&#93; The image in which you want to detect PPE on detected persons. The image
-#' can be passed as image bytes or you can reference an image stored in an
-#' Amazon S3 bucket.
+#' @param Image &#91;required&#93; The image in which you want to detect PPE on detected persons. The image can be passed as image bytes or you can reference an image stored in an Amazon S3 bucket.
 #' @param SummarizationAttributes An array of PPE types that you want to summarize.
 #'
 #' @keywords internal
@@ -1193,15 +1006,10 @@ rekognition_detect_protective_equipment <- function(Image, SummarizationAttribut
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_detect_text/](https://www.paws-r-sdk.com/docs/rekognition_detect_text/) for full documentation.
 #'
-#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an Amazon S3 object. If you
-#' use the AWS CLI to call Amazon Rekognition operations, you can't pass
-#' image bytes.
+#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an Amazon S3 object. If you use the AWS CLI to call Amazon Rekognition operations, you can't pass image bytes.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
-#' @param Filters Optional parameters that let you set the criteria that the text must
-#' meet to be included in your response.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
+#' @param Filters Optional parameters that let you set the criteria that the text must meet to be included in your response.
 #'
 #' @keywords internal
 #'
@@ -1235,12 +1043,7 @@ rekognition_detect_text <- function(Image, Filters = NULL) {
 #'
 #' @param CollectionId &#91;required&#93; The ID of an existing collection containing the UserID.
 #' @param UserId &#91;required&#93; ID for the existing UserID.
-#' @param ClientRequestToken Idempotent token used to identify the request to
-#' [`disassociate_faces`][rekognition_disassociate_faces]. If you use the
-#' same token with multiple
-#' [`disassociate_faces`][rekognition_disassociate_faces] requests, the
-#' same response is returned. Use ClientRequestToken to prevent the same
-#' request from being processed more than once.
+#' @param ClientRequestToken Idempotent token used to identify the request to [`disassociate_faces`][rekognition_disassociate_faces]. If you use the same token with multiple [`disassociate_faces`][rekognition_disassociate_faces] requests, the same response is returned. Use ClientRequestToken to prevent the same request from being processed more than once.
 #' @param FaceIds &#91;required&#93; An array of face IDs to disassociate from the UserID.
 #'
 #' @keywords internal
@@ -1272,9 +1075,7 @@ rekognition_disassociate_faces <- function(CollectionId, UserId, ClientRequestTo
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_distribute_dataset_entries/](https://www.paws-r-sdk.com/docs/rekognition_distribute_dataset_entries/) for full documentation.
 #'
-#' @param Datasets &#91;required&#93; The ARNS for the training dataset and test dataset that you want to use.
-#' The datasets must belong to the same project. The test dataset must be
-#' empty.
+#' @param Datasets &#91;required&#93; The ARNS for the training dataset and test dataset that you want to use. The datasets must belong to the same project. The test dataset must be empty.
 #'
 #' @keywords internal
 #'
@@ -1306,9 +1107,7 @@ rekognition_distribute_dataset_entries <- function(Datasets) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_celebrity_info/](https://www.paws-r-sdk.com/docs/rekognition_get_celebrity_info/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The ID for the celebrity. You get the celebrity ID from a call to the
-#' [`recognize_celebrities`][rekognition_recognize_celebrities] operation,
-#' which recognizes celebrities in an image.
+#' @param Id &#91;required&#93; The ID for the celebrity. You get the celebrity ID from a call to the [`recognize_celebrities`][rekognition_recognize_celebrities] operation, which recognizes celebrities in an image.
 #'
 #' @keywords internal
 #'
@@ -1340,19 +1139,10 @@ rekognition_get_celebrity_info <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_celebrity_recognition/](https://www.paws-r-sdk.com/docs/rekognition_get_celebrity_recognition/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; Job identifier for the required celebrity recognition analysis. You can
-#' get the job identifer from a call to
-#' [`start_celebrity_recognition`][rekognition_start_celebrity_recognition].
-#' @param MaxResults Maximum number of results to return per paginated call. The largest
-#' value you can specify is 1000. If you specify a value greater than 1000,
-#' a maximum of 1000 results is returned. The default value is 1000.
-#' @param NextToken If the previous response was incomplete (because there is more
-#' recognized celebrities to retrieve), Amazon Rekognition Video returns a
-#' pagination token in the response. You can use this pagination token to
-#' retrieve the next set of celebrities.
-#' @param SortBy Sort to use for celebrities returned in `Celebrities` field. Specify
-#' `ID` to sort by the celebrity identifier, specify `TIMESTAMP` to sort by
-#' the time the celebrity was recognized.
+#' @param JobId &#91;required&#93; Job identifier for the required celebrity recognition analysis. You can get the job identifer from a call to [`start_celebrity_recognition`][rekognition_start_celebrity_recognition].
+#' @param MaxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
+#' @param NextToken If the previous response was incomplete (because there is more recognized celebrities to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of celebrities.
+#' @param SortBy Sort to use for celebrities returned in `Celebrities` field. Specify `ID` to sort by the celebrity identifier, specify `TIMESTAMP` to sort by the time the celebrity was recognized.
 #'
 #' @keywords internal
 #'
@@ -1385,24 +1175,11 @@ rekognition_get_celebrity_recognition <- function(JobId, MaxResults = NULL, Next
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_content_moderation/](https://www.paws-r-sdk.com/docs/rekognition_get_content_moderation/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; The identifier for the inappropriate, unwanted, or offensive content
-#' moderation job. Use `JobId` to identify the job in a subsequent call to
-#' [`get_content_moderation`][rekognition_get_content_moderation].
-#' @param MaxResults Maximum number of results to return per paginated call. The largest
-#' value you can specify is 1000. If you specify a value greater than 1000,
-#' a maximum of 1000 results is returned. The default value is 1000.
-#' @param NextToken If the previous response was incomplete (because there is more data to
-#' retrieve), Amazon Rekognition returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' content moderation labels.
-#' @param SortBy Sort to use for elements in the `ModerationLabelDetections` array. Use
-#' `TIMESTAMP` to sort array elements by the time labels are detected. Use
-#' `NAME` to alphabetically group elements for a label together. Within
-#' each label group, the array element are sorted by detection confidence.
-#' The default sort is by `TIMESTAMP`.
-#' @param AggregateBy Defines how to aggregate results of the StartContentModeration request.
-#' Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates
-#' moderation labels over time.
+#' @param JobId &#91;required&#93; The identifier for the inappropriate, unwanted, or offensive content moderation job. Use `JobId` to identify the job in a subsequent call to [`get_content_moderation`][rekognition_get_content_moderation].
+#' @param MaxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
+#' @param NextToken If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.
+#' @param SortBy Sort to use for elements in the `ModerationLabelDetections` array. Use `TIMESTAMP` to sort array elements by the time labels are detected. Use `NAME` to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by `TIMESTAMP`.
+#' @param AggregateBy Defines how to aggregate results of the StartContentModeration request. Default aggregation option is TIMESTAMPS. SEGMENTS mode aggregates moderation labels over time.
 #'
 #' @keywords internal
 #'
@@ -1434,15 +1211,9 @@ rekognition_get_content_moderation <- function(JobId, MaxResults = NULL, NextTok
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_face_detection/](https://www.paws-r-sdk.com/docs/rekognition_get_face_detection/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; Unique identifier for the face detection job. The `JobId` is returned
-#' from [`start_face_detection`][rekognition_start_face_detection].
-#' @param MaxResults Maximum number of results to return per paginated call. The largest
-#' value you can specify is 1000. If you specify a value greater than 1000,
-#' a maximum of 1000 results is returned. The default value is 1000.
-#' @param NextToken If the previous response was incomplete (because there are more faces to
-#' retrieve), Amazon Rekognition Video returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' faces.
+#' @param JobId &#91;required&#93; Unique identifier for the face detection job. The `JobId` is returned from [`start_face_detection`][rekognition_start_face_detection].
+#' @param MaxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
+#' @param NextToken If the previous response was incomplete (because there are more faces to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.
 #'
 #' @keywords internal
 #'
@@ -1473,9 +1244,7 @@ rekognition_get_face_detection <- function(JobId, MaxResults = NULL, NextToken =
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_face_liveness_session_results/](https://www.paws-r-sdk.com/docs/rekognition_get_face_liveness_session_results/) for full documentation.
 #'
-#' @param SessionId &#91;required&#93; A unique 128-bit UUID. This is used to uniquely identify the session and
-#' also acts as an idempotency token for all operations associated with the
-#' session.
+#' @param SessionId &#91;required&#93; A unique 128-bit UUID. This is used to uniquely identify the session and also acts as an idempotency token for all operations associated with the session.
 #'
 #' @keywords internal
 #'
@@ -1507,19 +1276,10 @@ rekognition_get_face_liveness_session_results <- function(SessionId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_face_search/](https://www.paws-r-sdk.com/docs/rekognition_get_face_search/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; The job identifer for the search request. You get the job identifier
-#' from an initial call to
-#' [`start_face_search`][rekognition_start_face_search].
-#' @param MaxResults Maximum number of results to return per paginated call. The largest
-#' value you can specify is 1000. If you specify a value greater than 1000,
-#' a maximum of 1000 results is returned. The default value is 1000.
-#' @param NextToken If the previous response was incomplete (because there is more search
-#' results to retrieve), Amazon Rekognition Video returns a pagination
-#' token in the response. You can use this pagination token to retrieve the
-#' next set of search results.
-#' @param SortBy Sort to use for grouping faces in the response. Use `TIMESTAMP` to group
-#' faces by the time that they are recognized. Use `INDEX` to sort by
-#' recognized faces.
+#' @param JobId &#91;required&#93; The job identifer for the search request. You get the job identifier from an initial call to [`start_face_search`][rekognition_start_face_search].
+#' @param MaxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
+#' @param NextToken If the previous response was incomplete (because there is more search results to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of search results.
+#' @param SortBy Sort to use for grouping faces in the response. Use `TIMESTAMP` to group faces by the time that they are recognized. Use `INDEX` to sort by recognized faces.
 #'
 #' @keywords internal
 #'
@@ -1551,23 +1311,11 @@ rekognition_get_face_search <- function(JobId, MaxResults = NULL, NextToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_label_detection/](https://www.paws-r-sdk.com/docs/rekognition_get_label_detection/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; Job identifier for the label detection operation for which you want
-#' results returned. You get the job identifer from an initial call to
-#' `StartlabelDetection`.
-#' @param MaxResults Maximum number of results to return per paginated call. The largest
-#' value you can specify is 1000. If you specify a value greater than 1000,
-#' a maximum of 1000 results is returned. The default value is 1000.
-#' @param NextToken If the previous response was incomplete (because there are more labels
-#' to retrieve), Amazon Rekognition Video returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' labels.
-#' @param SortBy Sort to use for elements in the `Labels` array. Use `TIMESTAMP` to sort
-#' array elements by the time labels are detected. Use `NAME` to
-#' alphabetically group elements for a label together. Within each label
-#' group, the array element are sorted by detection confidence. The default
-#' sort is by `TIMESTAMP`.
-#' @param AggregateBy Defines how to aggregate the returned results. Results can be aggregated
-#' by timestamps or segments.
+#' @param JobId &#91;required&#93; Job identifier for the label detection operation for which you want results returned. You get the job identifer from an initial call to `StartlabelDetection`.
+#' @param MaxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
+#' @param NextToken If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of labels.
+#' @param SortBy Sort to use for elements in the `Labels` array. Use `TIMESTAMP` to sort array elements by the time labels are detected. Use `NAME` to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by `TIMESTAMP`.
+#' @param AggregateBy Defines how to aggregate the returned results. Results can be aggregated by timestamps or segments.
 #'
 #' @keywords internal
 #'
@@ -1598,8 +1346,7 @@ rekognition_get_label_detection <- function(JobId, MaxResults = NULL, NextToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_media_analysis_job/](https://www.paws-r-sdk.com/docs/rekognition_get_media_analysis_job/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; Unique identifier for the media analysis job for which you want to
-#' retrieve results.
+#' @param JobId &#91;required&#93; Unique identifier for the media analysis job for which you want to retrieve results.
 #'
 #' @keywords internal
 #'
@@ -1631,21 +1378,10 @@ rekognition_get_media_analysis_job <- function(JobId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_person_tracking/](https://www.paws-r-sdk.com/docs/rekognition_get_person_tracking/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; The identifier for a job that tracks persons in a video. You get the
-#' `JobId` from a call to
-#' [`start_person_tracking`][rekognition_start_person_tracking].
-#' @param MaxResults Maximum number of results to return per paginated call. The largest
-#' value you can specify is 1000. If you specify a value greater than 1000,
-#' a maximum of 1000 results is returned. The default value is 1000.
-#' @param NextToken If the previous response was incomplete (because there are more persons
-#' to retrieve), Amazon Rekognition Video returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' persons.
-#' @param SortBy Sort to use for elements in the `Persons` array. Use `TIMESTAMP` to sort
-#' array elements by the time persons are detected. Use `INDEX` to sort by
-#' the tracked persons. If you sort by `INDEX`, the array elements for each
-#' person are sorted by detection confidence. The default sort is by
-#' `TIMESTAMP`.
+#' @param JobId &#91;required&#93; The identifier for a job that tracks persons in a video. You get the `JobId` from a call to [`start_person_tracking`][rekognition_start_person_tracking].
+#' @param MaxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.
+#' @param NextToken If the previous response was incomplete (because there are more persons to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of persons.
+#' @param SortBy Sort to use for elements in the `Persons` array. Use `TIMESTAMP` to sort array elements by the time persons are detected. Use `INDEX` to sort by the tracked persons. If you sort by `INDEX`, the array elements for each person are sorted by detection confidence. The default sort is by `TIMESTAMP`.
 #'
 #' @keywords internal
 #'
@@ -1677,14 +1413,9 @@ rekognition_get_person_tracking <- function(JobId, MaxResults = NULL, NextToken 
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_segment_detection/](https://www.paws-r-sdk.com/docs/rekognition_get_segment_detection/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; Job identifier for the text detection operation for which you want
-#' results returned. You get the job identifer from an initial call to
-#' [`start_segment_detection`][rekognition_start_segment_detection].
-#' @param MaxResults Maximum number of results to return per paginated call. The largest
-#' value you can specify is 1000.
-#' @param NextToken If the response is truncated, Amazon Rekognition Video returns this
-#' token that you can use in the subsequent request to retrieve the next
-#' set of text.
+#' @param JobId &#91;required&#93; Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to [`start_segment_detection`][rekognition_start_segment_detection].
+#' @param MaxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+#' @param NextToken If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of text.
 #'
 #' @keywords internal
 #'
@@ -1716,15 +1447,9 @@ rekognition_get_segment_detection <- function(JobId, MaxResults = NULL, NextToke
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_get_text_detection/](https://www.paws-r-sdk.com/docs/rekognition_get_text_detection/) for full documentation.
 #'
-#' @param JobId &#91;required&#93; Job identifier for the text detection operation for which you want
-#' results returned. You get the job identifer from an initial call to
-#' [`start_text_detection`][rekognition_start_text_detection].
-#' @param MaxResults Maximum number of results to return per paginated call. The largest
-#' value you can specify is 1000.
-#' @param NextToken If the previous response was incomplete (because there are more labels
-#' to retrieve), Amazon Rekognition Video returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' text.
+#' @param JobId &#91;required&#93; Job identifier for the text detection operation for which you want results returned. You get the job identifer from an initial call to [`start_text_detection`][rekognition_start_text_detection].
+#' @param MaxResults Maximum number of results to return per paginated call. The largest value you can specify is 1000.
+#' @param NextToken If the previous response was incomplete (because there are more labels to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of text.
 #'
 #' @keywords internal
 #'
@@ -1756,58 +1481,24 @@ rekognition_get_text_detection <- function(JobId, MaxResults = NULL, NextToken =
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_index_faces/](https://www.paws-r-sdk.com/docs/rekognition_index_faces/) for full documentation.
 #'
-#' @param CollectionId &#91;required&#93; The ID of an existing collection to which you want to add the faces that
-#' are detected in the input images.
-#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the
-#' AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-#' image bytes isn't supported.
+#' @param CollectionId &#91;required&#93; The ID of an existing collection to which you want to add the faces that are detected in the input images.
+#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
 #' @param ExternalImageId The ID you want to assign to all the faces detected in the image.
-#' @param DetectionAttributes An array of facial attributes you want to be returned. A `DEFAULT`
-#' subset of facial attributes - `BoundingBox`, `Confidence`, `Pose`,
-#' `Quality`, and `Landmarks` - will always be returned. You can request
-#' for specific facial attributes (in addition to the default list) - by
-#' using `["DEFAULT", "FACE_OCCLUDED"]` or just `["FACE_OCCLUDED"]`. You
-#' can request for all facial attributes by using `["ALL"]`. Requesting
-#' more attributes may increase response time.
+#' @param DetectionAttributes An array of facial attributes you want to be returned. A `DEFAULT` subset of facial attributes - `BoundingBox`, `Confidence`, `Pose`, `Quality`, and `Landmarks` - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using `["DEFAULT", "FACE_OCCLUDED"]` or just `["FACE_OCCLUDED"]`. You can request for all facial attributes by using `["ALL"]`. Requesting more attributes may increase response time.
 #' 
-#' If you provide both, `["ALL", "DEFAULT"]`, the service uses a logical
-#' AND operator to determine which attributes to return (in this case, all
-#' attributes).
-#' @param MaxFaces The maximum number of faces to index. The value of `MaxFaces` must be
-#' greater than or equal to 1. [`index_faces`][rekognition_index_faces]
-#' returns no more than 100 detected faces in an image, even if you specify
-#' a larger value for `MaxFaces`.
+#' If you provide both, `["ALL", "DEFAULT"]`, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).
+#' @param MaxFaces The maximum number of faces to index. The value of `MaxFaces` must be greater than or equal to 1. [`index_faces`][rekognition_index_faces] returns no more than 100 detected faces in an image, even if you specify a larger value for `MaxFaces`.
 #' 
-#' If [`index_faces`][rekognition_index_faces] detects more faces than the
-#' value of `MaxFaces`, the faces with the lowest quality are filtered out
-#' first. If there are still more faces than the value of `MaxFaces`, the
-#' faces with the smallest bounding boxes are filtered out (up to the
-#' number that's needed to satisfy the value of `MaxFaces`). Information
-#' about the unindexed faces is available in the `UnindexedFaces` array.
+#' If [`index_faces`][rekognition_index_faces] detects more faces than the value of `MaxFaces`, the faces with the lowest quality are filtered out first. If there are still more faces than the value of `MaxFaces`, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of `MaxFaces`). Information about the unindexed faces is available in the `UnindexedFaces` array.
 #' 
-#' The faces that are returned by [`index_faces`][rekognition_index_faces]
-#' are sorted by the largest face bounding box size to the smallest size,
-#' in descending order.
+#' The faces that are returned by [`index_faces`][rekognition_index_faces] are sorted by the largest face bounding box size to the smallest size, in descending order.
 #' 
-#' `MaxFaces` can be used with a collection associated with any version of
-#' the face model.
-#' @param QualityFilter A filter that specifies a quality bar for how much filtering is done to
-#' identify faces. Filtered faces aren't indexed. If you specify `AUTO`,
-#' Amazon Rekognition chooses the quality bar. If you specify `LOW`,
-#' `MEDIUM`, or `HIGH`, filtering removes all faces that don’t meet the
-#' chosen quality bar. The default value is `AUTO`. The quality bar is
-#' based on a variety of common use cases. Low-quality detections can occur
-#' for a number of reasons. Some examples are an object that's
-#' misidentified as a face, a face that's too blurry, or a face with a pose
-#' that's too extreme to use. If you specify `NONE`, no filtering is
-#' performed.
+#' `MaxFaces` can be used with a collection associated with any version of the face model.
+#' @param QualityFilter A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify `AUTO`, Amazon Rekognition chooses the quality bar. If you specify `LOW`, `MEDIUM`, or `HIGH`, filtering removes all faces that don’t meet the chosen quality bar. The default value is `AUTO`. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify `NONE`, no filtering is performed.
 #' 
-#' To use quality filtering, the collection you are using must be
-#' associated with version 3 of the face model or higher.
+#' To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.
 #'
 #' @keywords internal
 #'
@@ -1871,29 +1562,12 @@ rekognition_list_collections <- function(NextToken = NULL, MaxResults = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/rekognition_list_dataset_entries/](https://www.paws-r-sdk.com/docs/rekognition_list_dataset_entries/) for full documentation.
 #'
 #' @param DatasetArn &#91;required&#93; The Amazon Resource Name (ARN) for the dataset that you want to use.
-#' @param ContainsLabels Specifies a label filter for the response. The response includes an
-#' entry only if one or more of the labels in `ContainsLabels` exist in the
-#' entry.
-#' @param Labeled Specify `true` to get only the JSON Lines where the image is labeled.
-#' Specify `false` to get only the JSON Lines where the image isn't
-#' labeled. If you don't specify `Labeled`,
-#' [`list_dataset_entries`][rekognition_list_dataset_entries] returns JSON
-#' Lines for labeled and unlabeled images.
-#' @param SourceRefContains If specified, [`list_dataset_entries`][rekognition_list_dataset_entries]
-#' only returns JSON Lines where the value of `SourceRefContains` is part
-#' of the `source-ref` field. The `source-ref` field contains the Amazon S3
-#' location of the image. You can use `SouceRefContains` for tasks such as
-#' getting the JSON Line for a single image, or gettting JSON Lines for all
-#' images within a specific folder.
-#' @param HasErrors Specifies an error filter for the response. Specify `True` to only
-#' include entries that have errors.
-#' @param NextToken If the previous response was incomplete (because there is more results
-#' to retrieve), Amazon Rekognition Custom Labels returns a pagination
-#' token in the response. You can use this pagination token to retrieve the
-#' next set of results.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value you can specify is 100. If you specify a value greater than 100, a
-#' ValidationException error occurs. The default value is 100.
+#' @param ContainsLabels Specifies a label filter for the response. The response includes an entry only if one or more of the labels in `ContainsLabels` exist in the entry.
+#' @param Labeled Specify `true` to get only the JSON Lines where the image is labeled. Specify `false` to get only the JSON Lines where the image isn't labeled. If you don't specify `Labeled`, [`list_dataset_entries`][rekognition_list_dataset_entries] returns JSON Lines for labeled and unlabeled images.
+#' @param SourceRefContains If specified, [`list_dataset_entries`][rekognition_list_dataset_entries] only returns JSON Lines where the value of `SourceRefContains` is part of the `source-ref` field. The `source-ref` field contains the Amazon S3 location of the image. You can use `SouceRefContains` for tasks such as getting the JSON Line for a single image, or gettting JSON Lines for all images within a specific folder.
+#' @param HasErrors Specifies an error filter for the response. Specify `True` to only include entries that have errors.
+#' @param NextToken If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.
 #'
 #' @keywords internal
 #'
@@ -1925,13 +1599,8 @@ rekognition_list_dataset_entries <- function(DatasetArn, ContainsLabels = NULL, 
 #' See [https://www.paws-r-sdk.com/docs/rekognition_list_dataset_labels/](https://www.paws-r-sdk.com/docs/rekognition_list_dataset_labels/) for full documentation.
 #'
 #' @param DatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the dataset that you want to use.
-#' @param NextToken If the previous response was incomplete (because there is more results
-#' to retrieve), Amazon Rekognition Custom Labels returns a pagination
-#' token in the response. You can use this pagination token to retrieve the
-#' next set of results.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value you can specify is 100. If you specify a value greater than 100, a
-#' ValidationException error occurs. The default value is 100.
+#' @param NextToken If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value you can specify is 100. If you specify a value greater than 100, a ValidationException error occurs. The default value is 100.
 #'
 #' @keywords internal
 #'
@@ -1963,15 +1632,10 @@ rekognition_list_dataset_labels <- function(DatasetArn, NextToken = NULL, MaxRes
 #' See [https://www.paws-r-sdk.com/docs/rekognition_list_faces/](https://www.paws-r-sdk.com/docs/rekognition_list_faces/) for full documentation.
 #'
 #' @param CollectionId &#91;required&#93; ID of the collection from which to list the faces.
-#' @param NextToken If the previous response was incomplete (because there is more data to
-#' retrieve), Amazon Rekognition returns a pagination token in the
-#' response. You can use this pagination token to retrieve the next set of
-#' faces.
+#' @param NextToken If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of faces.
 #' @param MaxResults Maximum number of faces to return.
-#' @param UserId An array of user IDs to filter results with when listing faces in a
-#' collection.
-#' @param FaceIds An array of face IDs to filter results with when listing faces in a
-#' collection.
+#' @param UserId An array of user IDs to filter results with when listing faces in a collection.
+#' @param FaceIds An array of face IDs to filter results with when listing faces in a collection.
 #'
 #' @keywords internal
 #'
@@ -2003,10 +1667,7 @@ rekognition_list_faces <- function(CollectionId, NextToken = NULL, MaxResults = 
 #' See [https://www.paws-r-sdk.com/docs/rekognition_list_media_analysis_jobs/](https://www.paws-r-sdk.com/docs/rekognition_list_media_analysis_jobs/) for full documentation.
 #'
 #' @param NextToken Pagination token, if the previous response was incomplete.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value user can specify is 100. If user specifies a value greater than
-#' 100, an `InvalidParameterException` error occurs. The default value is
-#' 100.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value user can specify is 100. If user specifies a value greater than 100, an `InvalidParameterException` error occurs. The default value is 100.
 #'
 #' @keywords internal
 #'
@@ -2038,13 +1699,8 @@ rekognition_list_media_analysis_jobs <- function(NextToken = NULL, MaxResults = 
 #' See [https://www.paws-r-sdk.com/docs/rekognition_list_project_policies/](https://www.paws-r-sdk.com/docs/rekognition_list_project_policies/) for full documentation.
 #'
 #' @param ProjectArn &#91;required&#93; The ARN of the project for which you want to list the project policies.
-#' @param NextToken If the previous response was incomplete (because there is more results
-#' to retrieve), Amazon Rekognition Custom Labels returns a pagination
-#' token in the response. You can use this pagination token to retrieve the
-#' next set of results.
-#' @param MaxResults The maximum number of results to return per paginated call. The largest
-#' value you can specify is 5. If you specify a value greater than 5, a
-#' ValidationException error occurs. The default value is 5.
+#' @param NextToken If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
+#' @param MaxResults The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5.
 #'
 #' @keywords internal
 #'
@@ -2076,12 +1732,8 @@ rekognition_list_project_policies <- function(ProjectArn, NextToken = NULL, MaxR
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_list_stream_processors/](https://www.paws-r-sdk.com/docs/rekognition_list_stream_processors/) for full documentation.
 #'
-#' @param NextToken If the previous response was incomplete (because there are more stream
-#' processors to retrieve), Amazon Rekognition Video returns a pagination
-#' token in the response. You can use this pagination token to retrieve the
-#' next set of stream processors.
-#' @param MaxResults Maximum number of stream processors you want Amazon Rekognition Video to
-#' return in the response. The default is 1000.
+#' @param NextToken If the previous response was incomplete (because there are more stream processors to retrieve), Amazon Rekognition Video returns a pagination token in the response. You can use this pagination token to retrieve the next set of stream processors.
+#' @param MaxResults Maximum number of stream processors you want Amazon Rekognition Video to return in the response. The default is 1000.
 #'
 #' @keywords internal
 #'
@@ -2113,8 +1765,7 @@ rekognition_list_stream_processors <- function(NextToken = NULL, MaxResults = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/rekognition_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the model, collection, or stream processor
-#' that contains the tags that you want a list of.
+#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.
 #'
 #' @keywords internal
 #'
@@ -2178,17 +1829,10 @@ rekognition_list_users <- function(CollectionId, MaxResults = NULL, NextToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_put_project_policy/](https://www.paws-r-sdk.com/docs/rekognition_put_project_policy/) for full documentation.
 #'
-#' @param ProjectArn &#91;required&#93; The Amazon Resource Name (ARN) of the project that the project policy is
-#' attached to.
+#' @param ProjectArn &#91;required&#93; The Amazon Resource Name (ARN) of the project that the project policy is attached to.
 #' @param PolicyName &#91;required&#93; A name for the policy.
-#' @param PolicyRevisionId The revision ID for the Project Policy. Each time you modify a policy,
-#' Amazon Rekognition Custom Labels generates and assigns a new
-#' `PolicyRevisionId` and then deletes the previous version of the policy.
-#' @param PolicyDocument &#91;required&#93; A resource policy to add to the model. The policy is a JSON structure
-#' that contains one or more statements that define the policy. The policy
-#' must follow the IAM syntax. For more information about the contents of a
-#' JSON policy document, see [IAM JSON policy
-#' reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html).
+#' @param PolicyRevisionId The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new `PolicyRevisionId` and then deletes the previous version of the policy.
+#' @param PolicyDocument &#91;required&#93; A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see [IAM JSON policy reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html).
 #'
 #' @keywords internal
 #'
@@ -2219,13 +1863,9 @@ rekognition_put_project_policy <- function(ProjectArn, PolicyName, PolicyRevisio
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_recognize_celebrities/](https://www.paws-r-sdk.com/docs/rekognition_recognize_celebrities/) for full documentation.
 #'
-#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the
-#' AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-#' image bytes is not supported.
+#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
 #'
 #' @keywords internal
 #'
@@ -2259,11 +1899,8 @@ rekognition_recognize_celebrities <- function(Image) {
 #'
 #' @param CollectionId &#91;required&#93; ID of the collection the face belongs to.
 #' @param FaceId &#91;required&#93; ID of a face to find matches for in the collection.
-#' @param MaxFaces Maximum number of faces to return. The operation returns the maximum
-#' number of faces with the highest confidence in the match.
-#' @param FaceMatchThreshold Optional value specifying the minimum confidence in the face match to
-#' return. For example, don't return any matches where confidence in
-#' matches is less than 70%. The default value is 80%.
+#' @param MaxFaces Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.
+#' @param FaceMatchThreshold Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.
 #'
 #' @keywords internal
 #'
@@ -2296,31 +1933,14 @@ rekognition_search_faces <- function(CollectionId, FaceId, MaxFaces = NULL, Face
 #' See [https://www.paws-r-sdk.com/docs/rekognition_search_faces_by_image/](https://www.paws-r-sdk.com/docs/rekognition_search_faces_by_image/) for full documentation.
 #'
 #' @param CollectionId &#91;required&#93; ID of the collection to search.
-#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the
-#' AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-#' image bytes is not supported.
+#' @param Image &#91;required&#93; The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is not supported.
 #' 
-#' If you are using an AWS SDK to call Amazon Rekognition, you might not
-#' need to base64-encode image bytes passed using the `Bytes` field. For
-#' more information, see Images in the Amazon Rekognition developer guide.
-#' @param MaxFaces Maximum number of faces to return. The operation returns the maximum
-#' number of faces with the highest confidence in the match.
-#' @param FaceMatchThreshold (Optional) Specifies the minimum confidence in the face match to return.
-#' For example, don't return any matches where confidence in matches is
-#' less than 70%. The default value is 80%.
-#' @param QualityFilter A filter that specifies a quality bar for how much filtering is done to
-#' identify faces. Filtered faces aren't searched for in the collection. If
-#' you specify `AUTO`, Amazon Rekognition chooses the quality bar. If you
-#' specify `LOW`, `MEDIUM`, or `HIGH`, filtering removes all faces that
-#' don’t meet the chosen quality bar. The quality bar is based on a variety
-#' of common use cases. Low-quality detections can occur for a number of
-#' reasons. Some examples are an object that's misidentified as a face, a
-#' face that's too blurry, or a face with a pose that's too extreme to use.
-#' If you specify `NONE`, no filtering is performed. The default value is
-#' `NONE`.
+#' If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the `Bytes` field. For more information, see Images in the Amazon Rekognition developer guide.
+#' @param MaxFaces Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.
+#' @param FaceMatchThreshold (Optional) Specifies the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.
+#' @param QualityFilter A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. If you specify `AUTO`, Amazon Rekognition chooses the quality bar. If you specify `LOW`, `MEDIUM`, or `HIGH`, filtering removes all faces that don’t meet the chosen quality bar. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify `NONE`, no filtering is performed. The default value is `NONE`.
 #' 
-#' To use quality filtering, the collection you are using must be
-#' associated with version 3 of the face model or higher.
+#' To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.
 #'
 #' @keywords internal
 #'
@@ -2351,13 +1971,10 @@ rekognition_search_faces_by_image <- function(CollectionId, Image, MaxFaces = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_search_users/](https://www.paws-r-sdk.com/docs/rekognition_search_users/) for full documentation.
 #'
-#' @param CollectionId &#91;required&#93; The ID of an existing collection containing the UserID, used with a
-#' UserId or FaceId. If a FaceId is provided, UserId isn’t required to be
-#' present in the Collection.
+#' @param CollectionId &#91;required&#93; The ID of an existing collection containing the UserID, used with a UserId or FaceId. If a FaceId is provided, UserId isn’t required to be present in the Collection.
 #' @param UserId ID for the existing User.
 #' @param FaceId ID for the existing face.
-#' @param UserMatchThreshold Optional value that specifies the minimum confidence in the matched
-#' UserID to return. Default value of 80.
+#' @param UserMatchThreshold Optional value that specifies the minimum confidence in the matched UserID to return. Default value of 80.
 #' @param MaxUsers Maximum number of identities to return.
 #'
 #' @keywords internal
@@ -2390,13 +2007,22 @@ rekognition_search_users <- function(CollectionId, UserId = NULL, FaceId = NULL,
 #' See [https://www.paws-r-sdk.com/docs/rekognition_search_users_by_image/](https://www.paws-r-sdk.com/docs/rekognition_search_users_by_image/) for full documentation.
 #'
 #' @param CollectionId &#91;required&#93; The ID of an existing collection containing the UserID.
-#' @param Image &#91;required&#93; 
-#' @param UserMatchThreshold Specifies the minimum confidence in the UserID match to return. Default
-#' value is 80.
+#' @param Image &#91;required&#93; Provides the input image either as bytes or an S3 object.
+#' 
+#' You pass image bytes to an Amazon Rekognition API operation by using the `Bytes` property. For example, you would use the `Bytes` property to pass an image loaded from a local file system. Image bytes passed by using the `Bytes` property must be base64-encoded. Your code may not need to encode image bytes if you are using an AWS SDK to call Amazon Rekognition API operations.
+#' 
+#' For more information, see Analyzing an Image Loaded from a Local File System in the Amazon Rekognition Developer Guide.
+#' 
+#' You pass images stored in an S3 bucket to an Amazon Rekognition API operation by using the `S3Object` property. Images stored in an S3 bucket do not need to be base64-encoded.
+#' 
+#' The region for the S3 bucket containing the S3 object must match the region you use for Amazon Rekognition operations.
+#' 
+#' If you use the AWS CLI to call Amazon Rekognition operations, passing image bytes using the Bytes property is not supported. You must first upload the image to an Amazon S3 bucket and then call the operation using the S3Object property.
+#' 
+#' For Amazon Rekognition to process an S3 object, the user must have permission to access the S3 object. For more information, see How Amazon Rekognition works with IAM in the Amazon Rekognition Developer Guide.
+#' @param UserMatchThreshold Specifies the minimum confidence in the UserID match to return. Default value is 80.
 #' @param MaxUsers Maximum number of UserIDs to return.
-#' @param QualityFilter A filter that specifies a quality bar for how much filtering is done to
-#' identify faces. Filtered faces aren't searched for in the collection.
-#' The default value is NONE.
+#' @param QualityFilter A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't searched for in the collection. The default value is NONE.
 #'
 #' @keywords internal
 #'
@@ -2427,22 +2053,10 @@ rekognition_search_users_by_image <- function(CollectionId, Image, UserMatchThre
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_celebrity_recognition/](https://www.paws-r-sdk.com/docs/rekognition_start_celebrity_recognition/) for full documentation.
 #'
-#' @param Video &#91;required&#93; The video in which you want to recognize celebrities. The video must be
-#' stored in an Amazon S3 bucket.
-#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same
-#' token with multiple
-#' [`start_celebrity_recognition`][rekognition_start_celebrity_recognition]
-#' requests, the same `JobId` is returned. Use `ClientRequestToken` to
-#' prevent the same job from being accidently started more than once.
-#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Rekognition Video to
-#' publish the completion status of the celebrity recognition analysis to.
-#' The Amazon SNS topic must have a topic name that begins with
-#' *AmazonRekognition* if you are using the AmazonRekognitionServiceRole
-#' permissions policy.
-#' @param JobTag An identifier you specify that's returned in the completion notification
-#' that's published to your Amazon Simple Notification Service topic. For
-#' example, you can use `JobTag` to group related jobs and identify them in
-#' the completion notification.
+#' @param Video &#91;required&#93; The video in which you want to recognize celebrities. The video must be stored in an Amazon S3 bucket.
+#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same token with multiple [`start_celebrity_recognition`][rekognition_start_celebrity_recognition] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidently started more than once.
+#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy.
+#' @param JobTag An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use `JobTag` to group related jobs and identify them in the completion notification.
 #'
 #' @keywords internal
 #'
@@ -2474,31 +2088,11 @@ rekognition_start_celebrity_recognition <- function(Video, ClientRequestToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_content_moderation/](https://www.paws-r-sdk.com/docs/rekognition_start_content_moderation/) for full documentation.
 #'
-#' @param Video &#91;required&#93; The video in which you want to detect inappropriate, unwanted, or
-#' offensive content. The video must be stored in an Amazon S3 bucket.
-#' @param MinConfidence Specifies the minimum confidence that Amazon Rekognition must have in
-#' order to return a moderated content label. Confidence represents how
-#' certain Amazon Rekognition is that the moderated content is correctly
-#' identified. 0 is the lowest confidence. 100 is the highest confidence.
-#' Amazon Rekognition doesn't return any moderated content labels with a
-#' confidence level lower than this specified value. If you don't specify
-#' `MinConfidence`,
-#' [`get_content_moderation`][rekognition_get_content_moderation] returns
-#' labels with confidence values greater than or equal to 50 percent.
-#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same
-#' token with multiple
-#' [`start_content_moderation`][rekognition_start_content_moderation]
-#' requests, the same `JobId` is returned. Use `ClientRequestToken` to
-#' prevent the same job from being accidently started more than once.
-#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Rekognition Video to
-#' publish the completion status of the content analysis to. The Amazon SNS
-#' topic must have a topic name that begins with *AmazonRekognition* if you
-#' are using the AmazonRekognitionServiceRole permissions policy to access
-#' the topic.
-#' @param JobTag An identifier you specify that's returned in the completion notification
-#' that's published to your Amazon Simple Notification Service topic. For
-#' example, you can use `JobTag` to group related jobs and identify them in
-#' the completion notification.
+#' @param Video &#91;required&#93; The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored in an Amazon S3 bucket.
+#' @param MinConfidence Specifies the minimum confidence that Amazon Rekognition must have in order to return a moderated content label. Confidence represents how certain Amazon Rekognition is that the moderated content is correctly identified. 0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition doesn't return any moderated content labels with a confidence level lower than this specified value. If you don't specify `MinConfidence`, [`get_content_moderation`][rekognition_get_content_moderation] returns labels with confidence values greater than or equal to 50 percent.
+#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same token with multiple [`start_content_moderation`][rekognition_start_content_moderation] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidently started more than once.
+#' @param NotificationChannel The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the content analysis to. The Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
+#' @param JobTag An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use `JobTag` to group related jobs and identify them in the completion notification.
 #'
 #' @keywords internal
 #'
@@ -2529,28 +2123,15 @@ rekognition_start_content_moderation <- function(Video, MinConfidence = NULL, Cl
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_face_detection/](https://www.paws-r-sdk.com/docs/rekognition_start_face_detection/) for full documentation.
 #'
-#' @param Video &#91;required&#93; The video in which you want to detect faces. The video must be stored in
-#' an Amazon S3 bucket.
-#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same
-#' token with multiple
-#' [`start_face_detection`][rekognition_start_face_detection] requests, the
-#' same `JobId` is returned. Use `ClientRequestToken` to prevent the same
-#' job from being accidently started more than once.
-#' @param NotificationChannel The ARN of the Amazon SNS topic to which you want Amazon Rekognition
-#' Video to publish the completion status of the face detection operation.
-#' The Amazon SNS topic must have a topic name that begins with
-#' *AmazonRekognition* if you are using the AmazonRekognitionServiceRole
-#' permissions policy.
+#' @param Video &#91;required&#93; The video in which you want to detect faces. The video must be stored in an Amazon S3 bucket.
+#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same token with multiple [`start_face_detection`][rekognition_start_face_detection] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidently started more than once.
+#' @param NotificationChannel The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the face detection operation. The Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy.
 #' @param FaceAttributes The face attributes you want returned.
 #' 
-#' `DEFAULT` - The following subset of facial attributes are returned:
-#' BoundingBox, Confidence, Pose, Quality and Landmarks.
+#' `DEFAULT` - The following subset of facial attributes are returned: BoundingBox, Confidence, Pose, Quality and Landmarks.
 #' 
 #' `ALL` - All facial attributes are returned.
-#' @param JobTag An identifier you specify that's returned in the completion notification
-#' that's published to your Amazon Simple Notification Service topic. For
-#' example, you can use `JobTag` to group related jobs and identify them in
-#' the completion notification.
+#' @param JobTag An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use `JobTag` to group related jobs and identify them in the completion notification.
 #'
 #' @keywords internal
 #'
@@ -2582,25 +2163,12 @@ rekognition_start_face_detection <- function(Video, ClientRequestToken = NULL, N
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_face_search/](https://www.paws-r-sdk.com/docs/rekognition_start_face_search/) for full documentation.
 #'
-#' @param Video &#91;required&#93; The video you want to search. The video must be stored in an Amazon S3
-#' bucket.
-#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same
-#' token with multiple [`start_face_search`][rekognition_start_face_search]
-#' requests, the same `JobId` is returned. Use `ClientRequestToken` to
-#' prevent the same job from being accidently started more than once.
-#' @param FaceMatchThreshold The minimum confidence in the person match to return. For example, don't
-#' return any matches where confidence in matches is less than 70%. The
-#' default value is 80%.
+#' @param Video &#91;required&#93; The video you want to search. The video must be stored in an Amazon S3 bucket.
+#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same token with multiple [`start_face_search`][rekognition_start_face_search] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidently started more than once.
+#' @param FaceMatchThreshold The minimum confidence in the person match to return. For example, don't return any matches where confidence in matches is less than 70%. The default value is 80%.
 #' @param CollectionId &#91;required&#93; ID of the collection that contains the faces you want to search for.
-#' @param NotificationChannel The ARN of the Amazon SNS topic to which you want Amazon Rekognition
-#' Video to publish the completion status of the search. The Amazon SNS
-#' topic must have a topic name that begins with *AmazonRekognition* if you
-#' are using the AmazonRekognitionServiceRole permissions policy to access
-#' the topic.
-#' @param JobTag An identifier you specify that's returned in the completion notification
-#' that's published to your Amazon Simple Notification Service topic. For
-#' example, you can use `JobTag` to group related jobs and identify them in
-#' the completion notification.
+#' @param NotificationChannel The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
+#' @param JobTag An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use `JobTag` to group related jobs and identify them in the completion notification.
 #'
 #' @keywords internal
 #'
@@ -2631,36 +2199,15 @@ rekognition_start_face_search <- function(Video, ClientRequestToken = NULL, Face
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_label_detection/](https://www.paws-r-sdk.com/docs/rekognition_start_label_detection/) for full documentation.
 #'
-#' @param Video &#91;required&#93; The video in which you want to detect labels. The video must be stored
-#' in an Amazon S3 bucket.
-#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same
-#' token with multiple
-#' [`start_label_detection`][rekognition_start_label_detection] requests,
-#' the same `JobId` is returned. Use `ClientRequestToken` to prevent the
-#' same job from being accidently started more than once.
-#' @param MinConfidence Specifies the minimum confidence that Amazon Rekognition Video must have
-#' in order to return a detected label. Confidence represents how certain
-#' Amazon Rekognition is that a label is correctly identified.0 is the
-#' lowest confidence. 100 is the highest confidence. Amazon Rekognition
-#' Video doesn't return any labels with a confidence level lower than this
-#' specified value.
+#' @param Video &#91;required&#93; The video in which you want to detect labels. The video must be stored in an Amazon S3 bucket.
+#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same token with multiple [`start_label_detection`][rekognition_start_label_detection] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidently started more than once.
+#' @param MinConfidence Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected label. Confidence represents how certain Amazon Rekognition is that a label is correctly identified.0 is the lowest confidence. 100 is the highest confidence. Amazon Rekognition Video doesn't return any labels with a confidence level lower than this specified value.
 #' 
-#' If you don't specify `MinConfidence`, the operation returns labels and
-#' bounding boxes (if detected) with confidence values greater than or
-#' equal to 50 percent.
-#' @param NotificationChannel The Amazon SNS topic ARN you want Amazon Rekognition Video to publish
-#' the completion status of the label detection operation to. The Amazon
-#' SNS topic must have a topic name that begins with *AmazonRekognition* if
-#' you are using the AmazonRekognitionServiceRole permissions policy.
-#' @param JobTag An identifier you specify that's returned in the completion notification
-#' that's published to your Amazon Simple Notification Service topic. For
-#' example, you can use `JobTag` to group related jobs and identify them in
-#' the completion notification.
-#' @param Features The features to return after video analysis. You can specify that
-#' GENERAL_LABELS are returned.
-#' @param Settings The settings for a StartLabelDetection request.Contains the specified
-#' parameters for the label detection request of an asynchronous label
-#' analysis operation. Settings can include filters for GENERAL_LABELS.
+#' If you don't specify `MinConfidence`, the operation returns labels and bounding boxes (if detected) with confidence values greater than or equal to 50 percent.
+#' @param NotificationChannel The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection operation to. The Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy.
+#' @param JobTag An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use `JobTag` to group related jobs and identify them in the completion notification.
+#' @param Features The features to return after video analysis. You can specify that GENERAL_LABELS are returned.
+#' @param Settings The settings for a StartLabelDetection request.Contains the specified parameters for the label detection request of an asynchronous label analysis operation. Settings can include filters for GENERAL_LABELS.
 #'
 #' @keywords internal
 #'
@@ -2691,19 +2238,12 @@ rekognition_start_label_detection <- function(Video, ClientRequestToken = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_media_analysis_job/](https://www.paws-r-sdk.com/docs/rekognition_start_media_analysis_job/) for full documentation.
 #'
-#' @param ClientRequestToken Idempotency token used to prevent the accidental creation of duplicate
-#' versions. If you use the same token with multiple
-#' `StartMediaAnalysisJobRequest` requests, the same response is returned.
-#' Use `ClientRequestToken` to prevent the same request from being
-#' processed more than once.
+#' @param ClientRequestToken Idempotency token used to prevent the accidental creation of duplicate versions. If you use the same token with multiple `StartMediaAnalysisJobRequest` requests, the same response is returned. Use `ClientRequestToken` to prevent the same request from being processed more than once.
 #' @param JobName The name of the job. Does not have to be unique.
 #' @param OperationsConfig &#91;required&#93; Configuration options for the media analysis job to be created.
 #' @param Input &#91;required&#93; Input data to be analyzed by the job.
 #' @param OutputConfig &#91;required&#93; The Amazon S3 bucket location to store the results.
-#' @param KmsKeyId The identifier of customer managed AWS KMS key (name or ARN). The key is
-#' used to encrypt images copied into the service. The key is also used to
-#' encrypt results and manifest files written to the output Amazon S3
-#' bucket.
+#' @param KmsKeyId The identifier of customer managed AWS KMS key (name or ARN). The key is used to encrypt images copied into the service. The key is also used to encrypt results and manifest files written to the output Amazon S3 bucket.
 #'
 #' @keywords internal
 #'
@@ -2735,21 +2275,10 @@ rekognition_start_media_analysis_job <- function(ClientRequestToken = NULL, JobN
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_person_tracking/](https://www.paws-r-sdk.com/docs/rekognition_start_person_tracking/) for full documentation.
 #'
-#' @param Video &#91;required&#93; The video in which you want to detect people. The video must be stored
-#' in an Amazon S3 bucket.
-#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same
-#' token with multiple
-#' [`start_person_tracking`][rekognition_start_person_tracking] requests,
-#' the same `JobId` is returned. Use `ClientRequestToken` to prevent the
-#' same job from being accidently started more than once.
-#' @param NotificationChannel The Amazon SNS topic ARN you want Amazon Rekognition Video to publish
-#' the completion status of the people detection operation to. The Amazon
-#' SNS topic must have a topic name that begins with *AmazonRekognition* if
-#' you are using the AmazonRekognitionServiceRole permissions policy.
-#' @param JobTag An identifier you specify that's returned in the completion notification
-#' that's published to your Amazon Simple Notification Service topic. For
-#' example, you can use `JobTag` to group related jobs and identify them in
-#' the completion notification.
+#' @param Video &#91;required&#93; The video in which you want to detect people. The video must be stored in an Amazon S3 bucket.
+#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same token with multiple [`start_person_tracking`][rekognition_start_person_tracking] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidently started more than once.
+#' @param NotificationChannel The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection operation to. The Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy.
+#' @param JobTag An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use `JobTag` to group related jobs and identify them in the completion notification.
 #'
 #' @keywords internal
 #'
@@ -2780,16 +2309,11 @@ rekognition_start_person_tracking <- function(Video, ClientRequestToken = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_project_version/](https://www.paws-r-sdk.com/docs/rekognition_start_project_version/) for full documentation.
 #'
-#' @param ProjectVersionArn &#91;required&#93; The Amazon Resource Name(ARN) of the model version that you want to
-#' start.
-#' @param MinInferenceUnits &#91;required&#93; The minimum number of inference units to use. A single inference unit
-#' represents 1 hour of processing.
+#' @param ProjectVersionArn &#91;required&#93; The Amazon Resource Name(ARN) of the model version that you want to start.
+#' @param MinInferenceUnits &#91;required&#93; The minimum number of inference units to use. A single inference unit represents 1 hour of processing.
 #' 
-#' Use a higher number to increase the TPS throughput of your model. You
-#' are charged for the number of inference units that you use.
-#' @param MaxInferenceUnits The maximum number of inference units to use for auto-scaling the model.
-#' If you don't specify a value, Amazon Rekognition Custom Labels doesn't
-#' auto-scale the model.
+#' Use a higher number to increase the TPS throughput of your model. You are charged for the number of inference units that you use.
+#' @param MaxInferenceUnits The maximum number of inference units to use for auto-scaling the model. If you don't specify a value, Amazon Rekognition Custom Labels doesn't auto-scale the model.
 #'
 #' @keywords internal
 #'
@@ -2820,24 +2344,12 @@ rekognition_start_project_version <- function(ProjectVersionArn, MinInferenceUni
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_segment_detection/](https://www.paws-r-sdk.com/docs/rekognition_start_segment_detection/) for full documentation.
 #'
-#' @param Video &#91;required&#93; 
-#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same
-#' token with multiple
-#' [`start_segment_detection`][rekognition_start_segment_detection]
-#' requests, the same `JobId` is returned. Use `ClientRequestToken` to
-#' prevent the same job from being accidently started more than once.
-#' @param NotificationChannel The ARN of the Amazon SNS topic to which you want Amazon Rekognition
-#' Video to publish the completion status of the segment detection
-#' operation. Note that the Amazon SNS topic must have a topic name that
-#' begins with *AmazonRekognition* if you are using the
-#' AmazonRekognitionServiceRole permissions policy to access the topic.
-#' @param JobTag An identifier you specify that's returned in the completion notification
-#' that's published to your Amazon Simple Notification Service topic. For
-#' example, you can use `JobTag` to group related jobs and identify them in
-#' the completion notification.
+#' @param Video &#91;required&#93; Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as [`start_label_detection`][rekognition_start_label_detection] use `Video` to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.
+#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same token with multiple [`start_segment_detection`][rekognition_start_segment_detection] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidently started more than once.
+#' @param NotificationChannel The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
+#' @param JobTag An identifier you specify that's returned in the completion notification that's published to your Amazon Simple Notification Service topic. For example, you can use `JobTag` to group related jobs and identify them in the completion notification.
 #' @param Filters Filters for technical cue or shot detection.
-#' @param SegmentTypes &#91;required&#93; An array of segment types to detect in the video. Valid values are
-#' TECHNICAL_CUE and SHOT.
+#' @param SegmentTypes &#91;required&#93; An array of segment types to detect in the video. Valid values are TECHNICAL_CUE and SHOT.
 #'
 #' @keywords internal
 #'
@@ -2869,19 +2381,12 @@ rekognition_start_segment_detection <- function(Video, ClientRequestToken = NULL
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_stream_processor/](https://www.paws-r-sdk.com/docs/rekognition_start_stream_processor/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the stream processor to start processing.
-#' @param StartSelector Specifies the starting point in the Kinesis stream to start processing.
-#' You can use the producer timestamp or the fragment number. If you use
-#' the producer timestamp, you must put the time in milliseconds. For more
-#' information about fragment numbers, see
-#' [Fragment](https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_reader_Fragment.html).
+#' @param StartSelector Specifies the starting point in the Kinesis stream to start processing. You can use the producer timestamp or the fragment number. If you use the producer timestamp, you must put the time in milliseconds. For more information about fragment numbers, see [Fragment](https://docs.aws.amazon.com/kinesisvideostreams/latest/APIReference/API_reader_Fragment.html).
 #' 
-#' This is a required parameter for label detection stream processors and
-#' should not be used to start a face search stream processor.
-#' @param StopSelector Specifies when to stop processing the stream. You can specify a maximum
-#' amount of time to process the video.
+#' This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.
+#' @param StopSelector Specifies when to stop processing the stream. You can specify a maximum amount of time to process the video.
 #' 
-#' This is a required parameter for label detection stream processors and
-#' should not be used to start a face search stream processor.
+#' This is a required parameter for label detection stream processors and should not be used to start a face search stream processor.
 #'
 #' @keywords internal
 #'
@@ -2912,18 +2417,11 @@ rekognition_start_stream_processor <- function(Name, StartSelector = NULL, StopS
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_start_text_detection/](https://www.paws-r-sdk.com/docs/rekognition_start_text_detection/) for full documentation.
 #'
-#' @param Video &#91;required&#93; 
-#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same
-#' token with multiple
-#' [`start_text_detection`][rekognition_start_text_detection] requests, the
-#' same `JobId` is returned. Use `ClientRequestToken` to prevent the same
-#' job from being accidentaly started more than once.
-#' @param NotificationChannel 
-#' @param JobTag An identifier returned in the completion status published by your Amazon
-#' Simple Notification Service topic. For example, you can use `JobTag` to
-#' group related jobs and identify them in the completion notification.
-#' @param Filters Optional parameters that let you set criteria the text must meet to be
-#' included in your response.
+#' @param Video &#91;required&#93; Video file stored in an Amazon S3 bucket. Amazon Rekognition video start operations such as [`start_label_detection`][rekognition_start_label_detection] use `Video` to specify a video for analysis. The supported file formats are .mp4, .mov and .avi.
+#' @param ClientRequestToken Idempotent token used to identify the start request. If you use the same token with multiple [`start_text_detection`][rekognition_start_text_detection] requests, the same `JobId` is returned. Use `ClientRequestToken` to prevent the same job from being accidentaly started more than once.
+#' @param NotificationChannel The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see [Calling Amazon Rekognition Video operations](https://docs.aws.amazon.com/rekognition/latest/dg/api-video.html). Note that the Amazon SNS topic must have a topic name that begins with *AmazonRekognition* if you are using the AmazonRekognitionServiceRole permissions policy to access the topic. For more information, see [Giving access to multiple Amazon SNS topics](https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics).
+#' @param JobTag An identifier returned in the completion status published by your Amazon Simple Notification Service topic. For example, you can use `JobTag` to group related jobs and identify them in the completion notification.
+#' @param Filters Optional parameters that let you set criteria the text must meet to be included in your response.
 #'
 #' @keywords internal
 #'
@@ -2954,11 +2452,9 @@ rekognition_start_text_detection <- function(Video, ClientRequestToken = NULL, N
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_stop_project_version/](https://www.paws-r-sdk.com/docs/rekognition_stop_project_version/) for full documentation.
 #'
-#' @param ProjectVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the model version that you want to
-#' stop.
+#' @param ProjectVersionArn &#91;required&#93; The Amazon Resource Name (ARN) of the model version that you want to stop.
 #' 
-#' This operation requires permissions to perform the
-#' `rekognition:StopProjectVersion` action.
+#' This operation requires permissions to perform the `rekognition:StopProjectVersion` action.
 #'
 #' @keywords internal
 #'
@@ -2990,8 +2486,7 @@ rekognition_stop_project_version <- function(ProjectVersionArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_stop_stream_processor/](https://www.paws-r-sdk.com/docs/rekognition_stop_stream_processor/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of a stream processor created by
-#' [`create_stream_processor`][rekognition_create_stream_processor].
+#' @param Name &#91;required&#93; The name of a stream processor created by [`create_stream_processor`][rekognition_create_stream_processor].
 #'
 #' @keywords internal
 #'
@@ -3023,8 +2518,7 @@ rekognition_stop_stream_processor <- function(Name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_tag_resource/](https://www.paws-r-sdk.com/docs/rekognition_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the model, collection, or stream processor
-#' that you want to assign the tags to.
+#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to assign the tags to.
 #' @param Tags &#91;required&#93; The key-value tags to assign to the resource.
 #'
 #' @keywords internal
@@ -3057,8 +2551,7 @@ rekognition_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/rekognition_untag_resource/](https://www.paws-r-sdk.com/docs/rekognition_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the model, collection, or stream processor
-#' that you want to remove the tags from.
+#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the model, collection, or stream processor that you want to remove the tags from.
 #' @param TagKeys &#91;required&#93; A list of the tags that you want to remove.
 #'
 #' @keywords internal
@@ -3123,16 +2616,9 @@ rekognition_update_dataset_entries <- function(DatasetArn, Changes) {
 #' See [https://www.paws-r-sdk.com/docs/rekognition_update_stream_processor/](https://www.paws-r-sdk.com/docs/rekognition_update_stream_processor/) for full documentation.
 #'
 #' @param Name &#91;required&#93; Name of the stream processor that you want to update.
-#' @param SettingsForUpdate The stream processor settings that you want to update. Label detection
-#' settings can be updated to detect different labels with a different
-#' minimum confidence.
-#' @param RegionsOfInterestForUpdate Specifies locations in the frames where Amazon Rekognition checks for
-#' objects or people. This is an optional parameter for label detection
-#' stream processors.
-#' @param DataSharingPreferenceForUpdate Shows whether you are sharing data with Rekognition to improve model
-#' performance. You can choose this option at the account level or on a
-#' per-stream basis. Note that if you opt out at the account level this
-#' setting is ignored on individual streams.
+#' @param SettingsForUpdate The stream processor settings that you want to update. Label detection settings can be updated to detect different labels with a different minimum confidence.
+#' @param RegionsOfInterestForUpdate Specifies locations in the frames where Amazon Rekognition checks for objects or people. This is an optional parameter for label detection stream processors.
+#' @param DataSharingPreferenceForUpdate Shows whether you are sharing data with Rekognition to improve model performance. You can choose this option at the account level or on a per-stream basis. Note that if you opt out at the account level this setting is ignored on individual streams.
 #' @param ParametersToDelete A list of parameters you want to delete from the stream processor.
 #'
 #' @keywords internal

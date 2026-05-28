@@ -7,9 +7,9 @@
 cloudsearch_update_scaling_parameters(DomainName, ScalingParameters)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 
-\item{ScalingParameters}{[required]}
+\item{ScalingParameters}{[required] The desired instance type and desired number of replicas of each index partition.}
 }
 \description{
 Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">}}Configuring Scaling Options\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

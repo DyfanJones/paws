@@ -12,11 +12,9 @@ backup_list_restore_access_backup_vaults(
 )
 }
 \arguments{
-\item{BackupVaultName}{[required] The name of the backup vault for which to list associated restore access
-backup vaults.}
+\item{BackupVaultName}{[required] The name of the backup vault for which to list associated restore access backup vaults.}
 
-\item{NextToken}{The pagination token from a previous request to retrieve the next set of
-results.}
+\item{NextToken}{The pagination token from a previous request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of items to return in the response.}
 }

@@ -16,64 +16,33 @@ transcribeservice_create_vocabulary_filter(
 \arguments{
 \item{VocabularyFilterName}{[required] A unique name, chosen by you, for your new custom vocabulary filter.
 
-This name is case sensitive, cannot contain spaces, and must be unique
-within an Amazon Web Services account. If you try to create a new custom
-vocabulary filter with the same name as an existing custom vocabulary
-filter, you get a \code{ConflictException} error.}
+This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new custom vocabulary filter with the same name as an existing custom vocabulary filter, you get a \code{ConflictException} error.}
 
-\item{LanguageCode}{[required] The language code that represents the language of the entries in your
-vocabulary filter. Each custom vocabulary filter must contain terms in
-only one language.
+\item{LanguageCode}{[required] The language code that represents the language of the entries in your vocabulary filter. Each custom vocabulary filter must contain terms in only one language.
 
-A custom vocabulary filter can only be used to transcribe files in the
-same language as the filter. For example, if you create a custom
-vocabulary filter using US English (\code{en-US}), you can only apply this
-filter to files that contain English audio.
+A custom vocabulary filter can only be used to transcribe files in the same language as the filter. For example, if you create a custom vocabulary filter using US English (\code{en-US}), you can only apply this filter to files that contain English audio.
 
-For a list of supported languages and their associated language codes,
-refer to the \href{https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html}{Supported languages}
-table.}
+For a list of supported languages and their associated language codes, refer to the \href{https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html}{Supported languages} table.}
 
-\item{Words}{Use this parameter if you want to create your custom vocabulary filter
-by including all desired terms, as comma-separated values, within your
-request. The other option for creating your vocabulary filter is to save
-your entries in a text file and upload them to an Amazon S3 bucket, then
-specify the location of your file using the \code{VocabularyFilterFileUri}
-parameter.
+\item{Words}{Use this parameter if you want to create your custom vocabulary filter by including all desired terms, as comma-separated values, within your request. The other option for creating your vocabulary filter is to save your entries in a text file and upload them to an Amazon S3 bucket, then specify the location of your file using the \code{VocabularyFilterFileUri} parameter.
 
-Note that if you include \code{Words} in your request, you cannot use
-\code{VocabularyFilterFileUri}; you must choose one or the other.
+Note that if you include \code{Words} in your request, you cannot use \code{VocabularyFilterFileUri}; you must choose one or the other.
 
-Each language has a character set that contains all allowed characters
-for that specific language. If you use unsupported characters, your
-custom vocabulary filter request fails. Refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html}{Character Sets for Custom Vocabularies}
-to get the character set for your language.}
+Each language has a character set that contains all allowed characters for that specific language. If you use unsupported characters, your custom vocabulary filter request fails. Refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/charsets.html}{Character Sets for Custom Vocabularies} to get the character set for your language.}
 
-\item{VocabularyFilterFileUri}{The Amazon S3 location of the text file that contains your custom
-vocabulary filter terms. The URI must be located in the same Amazon Web
-Services Region as the resource you're calling.
+\item{VocabularyFilterFileUri}{The Amazon S3 location of the text file that contains your custom vocabulary filter terms. The URI must be located in the same Amazon Web Services Region as the resource you're calling.
 
-Here's an example URI path:
-\verb{s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt}
+Here's an example URI path: \verb{s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt}
 
-Note that if you include \code{VocabularyFilterFileUri} in your request, you
-cannot use \code{Words}; you must choose one or the other.}
+Note that if you include \code{VocabularyFilterFileUri} in your request, you cannot use \code{Words}; you must choose one or the other.}
 
-\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a
-new custom vocabulary filter at the time you create this new vocabulary
-filter.
+\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a new custom vocabulary filter at the time you create this new vocabulary filter.
 
 To learn more about using tags with Amazon Transcribe, refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html}{Tagging resources}.}
 
-\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of an IAM role that has permissions to
-access the Amazon S3 bucket that contains your input files (in this
-case, your custom vocabulary filter). If the role that you specify
-doesn’t have the appropriate permissions to access the specified Amazon
-S3 location, your request fails.
+\item{DataAccessRoleArn}{The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files (in this case, your custom vocabulary filter). If the role that you specify doesn’t have the appropriate permissions to access the specified Amazon S3 location, your request fails.
 
-IAM role ARNs have the format
-\code{arn:partition:iam::account:role/role-name-with-path}. For example:
-\verb{arn:aws:iam::111122223333:role/Admin}.
+IAM role ARNs have the format \code{arn:partition:iam::account:role/role-name-with-path}. For example: \verb{arn:aws:iam::111122223333:role/Admin}.
 
 For more information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns}{IAM ARNs}.}
 }

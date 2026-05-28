@@ -7,12 +7,9 @@
 quicksight_describe_analysis_permissions(AwsAccountId, AnalysisId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analysis
-whose permissions you're describing. You must be using the Amazon Web
-Services account that the analysis is in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analysis whose permissions you're describing. You must be using the Amazon Web Services account that the analysis is in.}
 
-\item{AnalysisId}{[required] The ID of the analysis whose permissions you're describing. The ID is
-part of the analysis URL.}
+\item{AnalysisId}{[required] The ID of the analysis whose permissions you're describing. The ID is part of the analysis URL.}
 }
 \description{
 Provides the read and write permissions for an analysis.

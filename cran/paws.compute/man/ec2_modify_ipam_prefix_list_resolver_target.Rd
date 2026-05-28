@@ -13,25 +13,17 @@ ec2_modify_ipam_prefix_list_resolver_target(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{IpamPrefixListResolverTargetId}{[required] The ID of the IPAM prefix list resolver target to modify.}
 
-\item{DesiredVersion}{The desired version of the prefix list to target. This allows you to pin
-the target to a specific version.}
+\item{DesiredVersion}{The desired version of the prefix list to target. This allows you to pin the target to a specific version.}
 
-\item{TrackLatestVersion}{Indicates whether the resolver target should automatically track the
-latest version of the prefix list. When enabled, the target will always
-synchronize with the most current version.
+\item{TrackLatestVersion}{Indicates whether the resolver target should automatically track the latest version of the prefix list. When enabled, the target will always synchronize with the most current version.
 
-Choose this for automatic updates when you want your prefix lists to
-stay current with infrastructure changes without manual intervention.}
+Choose this for automatic updates when you want your prefix lists to stay current with infrastructure changes without manual intervention.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 }
 \description{
 Modifies an IPAM prefix list resolver target. You can update version tracking settings and the desired version of the target prefix list.

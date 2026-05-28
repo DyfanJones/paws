@@ -8,10 +8,7 @@ account}
 codedeploy_list_deployment_configs(nextToken = NULL)
 }
 \arguments{
-\item{nextToken}{An identifier returned from the previous
-\code{\link[=codedeploy_list_deployment_configs]{list_deployment_configs}} call. It
-can be used to return the next set of deployment configurations in the
-list.}
+\item{nextToken}{An identifier returned from the previous \code{\link[=codedeploy_list_deployment_configs]{list_deployment_configs}} call. It can be used to return the next set of deployment configurations in the list.}
 }
 \description{
 Lists the deployment configurations with the user or Amazon Web Services account.

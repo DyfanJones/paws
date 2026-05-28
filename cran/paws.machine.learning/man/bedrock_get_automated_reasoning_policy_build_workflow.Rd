@@ -11,8 +11,7 @@ bedrock_get_automated_reasoning_policy_build_workflow(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-build workflow you want to retrieve.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow you want to retrieve.}
 
 \item{buildWorkflowId}{[required] The unique identifier of the build workflow to retrieve.}
 }

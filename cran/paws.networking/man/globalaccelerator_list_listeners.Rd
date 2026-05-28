@@ -11,14 +11,11 @@ globalaccelerator_list_listeners(
 )
 }
 \arguments{
-\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator for which you want to
-list listener objects.}
+\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.}
 
-\item{MaxResults}{The number of listener objects that you want to return with this call.
-The default value is 10.}
+\item{MaxResults}{The number of listener objects that you want to return with this call. The default value is 10.}
 
-\item{NextToken}{The token for the next set of results. You receive this token from a
-previous call.}
+\item{NextToken}{The token for the next set of results. You receive this token from a previous call.}
 }
 \description{
 List the listeners for an accelerator.

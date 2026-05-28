@@ -11,14 +11,11 @@ kafkaconnect_list_connector_operations(
 )
 }
 \arguments{
-\item{connectorArn}{[required] The Amazon Resource Name (ARN) of the connector for which to list
-operations.}
+\item{connectorArn}{[required] The Amazon Resource Name (ARN) of the connector for which to list operations.}
 
 \item{maxResults}{Maximum number of connector operations to fetch in one get request.}
 
-\item{nextToken}{If the response is truncated, it includes a NextToken. Send this
-NextToken in a subsequent request to continue listing from where it left
-off.}
+\item{nextToken}{If the response is truncated, it includes a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.}
 }
 \description{
 Lists information about a connector's operation(s).

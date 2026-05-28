@@ -12,13 +12,9 @@ timestreamwrite_list_batch_load_tasks(
 )
 }
 \arguments{
-\item{NextToken}{A token to specify where to start paginating. This is the NextToken from
-a previously truncated response.}
+\item{NextToken}{A token to specify where to start paginating. This is the NextToken from a previously truncated response.}
 
-\item{MaxResults}{The total number of items to return in the output. If the total number
-of items available is more than the value specified, a NextToken is
-provided in the output. To resume pagination, provide the NextToken
-value as argument of a subsequent API invocation.}
+\item{MaxResults}{The total number of items to return in the output. If the total number of items available is more than the value specified, a NextToken is provided in the output. To resume pagination, provide the NextToken value as argument of a subsequent API invocation.}
 
 \item{TaskStatus}{Status of the batch load task.}
 }

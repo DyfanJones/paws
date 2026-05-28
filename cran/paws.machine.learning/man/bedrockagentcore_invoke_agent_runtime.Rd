@@ -23,13 +23,9 @@ bedrockagentcore_invoke_agent_runtime(
 )
 }
 \arguments{
-\item{contentType}{The MIME type of the input data in the payload. This tells the agent
-runtime how to interpret the payload data. Common values include
-application/json for JSON data.}
+\item{contentType}{The MIME type of the input data in the payload. This tells the agent runtime how to interpret the payload data. Common values include application/json for JSON data.}
 
-\item{accept}{The desired MIME type for the response from the agent runtime. This
-tells the agent runtime what format to use for the response data. Common
-values include application/json for JSON data.}
+\item{accept}{The desired MIME type for the response from the agent runtime. This tells the agent runtime what format to use for the response data. Common values include application/json for JSON data.}
 
 \item{mcpSessionId}{The identifier of the MCP session.}
 
@@ -47,22 +43,13 @@ values include application/json for JSON data.}
 
 \item{baggage}{Additional context information for distributed tracing.}
 
-\item{agentRuntimeArn}{[required] The identifier of the agent runtime to invoke. You can specify either
-the full Amazon Web Services Resource Name (ARN) or the agent ID. If you
-use the agent ID, you must also provide the \code{accountId} query parameter.}
+\item{agentRuntimeArn}{[required] The identifier of the agent runtime to invoke. You can specify either the full Amazon Web Services Resource Name (ARN) or the agent ID. If you use the agent ID, you must also provide the \code{accountId} query parameter.}
 
-\item{qualifier}{The qualifier to use for the agent runtime. This is an endpoint name
-that points to a specific version. If not specified, Amazon Bedrock
-AgentCore uses the default endpoint of the agent runtime.}
+\item{qualifier}{The qualifier to use for the agent runtime. This is an endpoint name that points to a specific version. If not specified, Amazon Bedrock AgentCore uses the default endpoint of the agent runtime.}
 
-\item{accountId}{The identifier of the Amazon Web Services account for the agent runtime
-resource. This parameter is required when you specify an agent ID
-instead of the full ARN for \code{agentRuntimeArn}.}
+\item{accountId}{The identifier of the Amazon Web Services account for the agent runtime resource. This parameter is required when you specify an agent ID instead of the full ARN for \code{agentRuntimeArn}.}
 
-\item{payload}{[required] The input data to send to the agent runtime. The format of this data
-depends on the specific agent configuration and must match the specified
-content type. For most agents, this is a JSON object containing the
-user's request.}
+\item{payload}{[required] The input data to send to the agent runtime. The format of this data depends on the specific agent configuration and must match the specified content type. For most agents, this is a JSON object containing the user's request.}
 }
 \description{
 Sends a request to an agent or tool hosted in an Amazon Bedrock AgentCore Runtime and receives responses in real-time.

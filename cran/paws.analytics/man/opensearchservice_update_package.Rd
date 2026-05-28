@@ -20,8 +20,7 @@ opensearchservice_update_package(
 
 \item{PackageDescription}{A new description of the package.}
 
-\item{CommitMessage}{Commit message for the updated file, which is shown as part of
-\code{GetPackageVersionHistoryResponse}.}
+\item{CommitMessage}{Commit message for the updated file, which is shown as part of \code{GetPackageVersionHistoryResponse}.}
 
 \item{PackageConfiguration}{The updated configuration details for a package.}
 

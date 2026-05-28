@@ -11,8 +11,7 @@ datazone_reject_subscription_request(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which the subscription
-request was rejected.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which the subscription request was rejected.}
 
 \item{identifier}{[required] The identifier of the subscription request that was rejected.}
 

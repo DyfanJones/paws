@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-With Amazon Route 53 Profiles you can share Route 53 configurations with
-VPCs and AWS accounts
+With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and AWS accounts
 }
 \section{Service syntax}{
 

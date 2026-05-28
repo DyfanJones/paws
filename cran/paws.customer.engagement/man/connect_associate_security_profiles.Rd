@@ -12,8 +12,7 @@ connect_associate_security_profiles(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the instance
-ID in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can find the instance ID in the Amazon Resource Name (ARN) of the instance.}
 
 \item{SecurityProfiles}{[required] List of Security Profile Object.}
 

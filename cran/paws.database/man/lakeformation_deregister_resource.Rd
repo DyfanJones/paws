@@ -7,8 +7,7 @@
 lakeformation_deregister_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to
-deregister.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want to deregister.}
 }
 \description{
 Deregisters the resource as managed by the Data Catalog.

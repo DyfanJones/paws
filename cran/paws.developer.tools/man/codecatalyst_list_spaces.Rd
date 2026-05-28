@@ -7,8 +7,7 @@
 codecatalyst_list_spaces(nextToken = NULL)
 }
 \arguments{
-\item{nextToken}{A token returned from a call to this API to indicate the next batch of
-results to return, if any.}
+\item{nextToken}{A token returned from a call to this API to indicate the next batch of results to return, if any.}
 }
 \description{
 Retrieves a list of spaces.

@@ -15,24 +15,15 @@ vpclattice_create_service_network_vpc_association(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request that completed
-successfully using the same client token and parameters, the retry
-succeeds without performing any actions. If the parameters aren't
-identical, the retry fails.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.}
 
-\item{serviceNetworkIdentifier}{[required] The ID or ARN of the service network. You must use an ARN if the
-resources are in different accounts.}
+\item{serviceNetworkIdentifier}{[required] The ID or ARN of the service network. You must use an ARN if the resources are in different accounts.}
 
 \item{vpcIdentifier}{[required] The ID of the VPC.}
 
 \item{privateDnsEnabled}{Indicates if private DNS is enabled for the VPC association.}
 
-\item{securityGroupIds}{The IDs of the security groups. Security groups aren't added by default.
-You can add a security group to apply network level controls to control
-which resources in a VPC are allowed to access the service network and
-its services. For more information, see \href{https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html}{Control traffic to resources using security groups}
-in the \emph{Amazon VPC User Guide}.}
+\item{securityGroupIds}{The IDs of the security groups. Security groups aren't added by default. You can add a security group to apply network level controls to control which resources in a VPC are allowed to access the service network and its services. For more information, see \href{https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html}{Control traffic to resources using security groups} in the \emph{Amazon VPC User Guide}.}
 
 \item{tags}{The tags for the association.}
 

@@ -11,8 +11,7 @@ codestarconnections_get_repository_sync_status(
 )
 }
 \arguments{
-\item{Branch}{[required] The branch of the repository link for the requested repository sync
-status.}
+\item{Branch}{[required] The branch of the repository link for the requested repository sync status.}
 
 \item{RepositoryLinkId}{[required] The repository link ID for the requested repository sync status.}
 

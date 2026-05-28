@@ -7,8 +7,7 @@
 kafka_delete_vpc_connection(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC
-connection.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.}
 }
 \description{
 Deletes a MSK VPC connection.

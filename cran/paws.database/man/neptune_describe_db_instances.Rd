@@ -12,9 +12,7 @@ neptune_describe_db_instances(
 )
 }
 \arguments{
-\item{DBInstanceIdentifier}{The user-supplied instance identifier. If this parameter is specified,
-information from only the specific DB instance is returned. This
-parameter isn't case-sensitive.
+\item{DBInstanceIdentifier}{The user-supplied instance identifier. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
@@ -25,31 +23,19 @@ Constraints:
 
 Supported filters:
 \itemize{
-\item \code{db-cluster-id} - Accepts DB cluster identifiers and DB cluster
-Amazon Resource Names (ARNs). The results list will only include
-information about the DB instances associated with the DB clusters
-identified by these ARNs.
-\item \code{engine} - Accepts an engine name (such as \code{neptune}), and restricts
-the results list to DB instances created by that engine.
+\item \code{db-cluster-id} - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list will only include information about the DB instances associated with the DB clusters identified by these ARNs.
+\item \code{engine} - Accepts an engine name (such as \code{neptune}), and restricts the results list to DB instances created by that engine.
 }
 
-For example, to invoke this API from the Amazon CLI and filter so that
-only Neptune DB instances are returned, you could use the following
-command:}
+For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB instances are returned, you could use the following command:}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so that the remaining
-results can be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=neptune_describe_db_instances]{describe_db_instances}} request. If
-this parameter is specified, the response includes only records beyond
-the marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=neptune_describe_db_instances]{describe_db_instances}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns information about provisioned instances, and supports pagination.

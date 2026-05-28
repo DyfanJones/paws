@@ -13,25 +13,11 @@ ssoadmin_list_applications(
 )
 }
 \arguments{
-\item{InstanceArn}{[required] The ARN of the IAM Identity Center application under which the operation
-will run. For more information about ARNs, see Amazon Resource Names
-(ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon Web
-Services General Reference}.}
+\item{InstanceArn}{[required] The ARN of the IAM Identity Center application under which the operation will run. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon Web Services General Reference}.}
 
-\item{MaxResults}{Specifies the total number of results that you want included in each
-response. If additional items exist beyond the number you specify, the
-\code{NextToken} response element is returned with a value (not null).
-Include the specified value as the \code{NextToken} request parameter in the
-next call to the operation to get the next set of results. Note that the
-service might return fewer results than the maximum even when there are
-more results available. You should check \code{NextToken} after every
-operation to ensure that you receive all of the results.}
+\item{MaxResults}{Specifies the total number of results that you want included in each response. If additional items exist beyond the number you specify, the \code{NextToken} response element is returned with a value (not null). Include the specified value as the \code{NextToken} request parameter in the next call to the operation to get the next set of results. Note that the service might return fewer results than the maximum even when there are more results available. You should check \code{NextToken} after every operation to ensure that you receive all of the results.}
 
-\item{NextToken}{Specifies that you want to receive the next page of results. Valid only
-if you received a \code{NextToken} response in the previous request. If you
-did, it indicates that more output is available. Set this parameter to
-the value provided by the previous call's \code{NextToken} response to
-request the next page of results.}
+\item{NextToken}{Specifies that you want to receive the next page of results. Valid only if you received a \code{NextToken} response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's \code{NextToken} response to request the next page of results.}
 
 \item{Filter}{Filters response results.}
 }

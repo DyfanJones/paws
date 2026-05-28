@@ -19,9 +19,27 @@ bedrockdataautomation_create_data_automation_project(
 )
 }
 \arguments{
-\item{projectName}{[required]}
+\item{projectName}{[required] Name of the DataAutomationProject}
 
-\item{standardOutputConfiguration}{[required]}
+\item{projectDescription}{Description of the DataAutomationProject}
+
+\item{projectStage}{Stage of the Project}
+
+\item{projectType}{Type of the DataAutomationProject}
+
+\item{standardOutputConfiguration}{[required] Standard output configuration}
+
+\item{customOutputConfiguration}{Custom output configuration}
+
+\item{overrideConfiguration}{Override configuration}
+
+\item{dataAutomationLibraryConfiguration}{DataAutomation Library configuration}
+
+\item{clientToken}{Client specified token used for idempotency checks}
+
+\item{encryptionConfiguration}{KMS Encryption Configuration}
+
+\item{tags}{List of tags}
 }
 \description{
 Creates an Amazon Bedrock Data Automation Project

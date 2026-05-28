@@ -24,20 +24,17 @@ codeconnections_update_sync_configuration(
 
 \item{RepositoryLinkId}{The ID of the repository link for the sync configuration to be updated.}
 
-\item{ResourceName}{[required] The name of the Amazon Web Services resource for the sync configuration
-to be updated.}
+\item{ResourceName}{[required] The name of the Amazon Web Services resource for the sync configuration to be updated.}
 
 \item{RoleArn}{The ARN of the IAM role for the sync configuration to be updated.}
 
 \item{SyncType}{[required] The sync type for the sync configuration to be updated.}
 
-\item{PublishDeploymentStatus}{Whether to enable or disable publishing of deployment status to source
-providers.}
+\item{PublishDeploymentStatus}{Whether to enable or disable publishing of deployment status to source providers.}
 
 \item{TriggerResourceUpdateOn}{When to trigger Git sync to begin the stack update.}
 
-\item{PullRequestComment}{TA toggle that specifies whether to enable or disable pull request
-comments for the sync configuration to be updated.}
+\item{PullRequestComment}{TA toggle that specifies whether to enable or disable pull request comments for the sync configuration to be updated.}
 }
 \description{
 Updates the sync configuration for your connection and a specified external Git repository.

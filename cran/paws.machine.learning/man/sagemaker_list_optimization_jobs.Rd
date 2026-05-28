@@ -19,37 +19,25 @@ sagemaker_list_optimization_jobs(
 )
 }
 \arguments{
-\item{NextToken}{A token that you use to get the next set of results following a
-truncated response. If the response to the previous request was
-truncated, that response provides the value for this token.}
+\item{NextToken}{A token that you use to get the next set of results following a truncated response. If the response to the previous request was truncated, that response provides the value for this token.}
 
-\item{MaxResults}{The maximum number of optimization jobs to return in the response. The
-default is 50.}
+\item{MaxResults}{The maximum number of optimization jobs to return in the response. The default is 50.}
 
-\item{CreationTimeAfter}{Filters the results to only those optimization jobs that were created
-after the specified time.}
+\item{CreationTimeAfter}{Filters the results to only those optimization jobs that were created after the specified time.}
 
-\item{CreationTimeBefore}{Filters the results to only those optimization jobs that were created
-before the specified time.}
+\item{CreationTimeBefore}{Filters the results to only those optimization jobs that were created before the specified time.}
 
-\item{LastModifiedTimeAfter}{Filters the results to only those optimization jobs that were updated
-after the specified time.}
+\item{LastModifiedTimeAfter}{Filters the results to only those optimization jobs that were updated after the specified time.}
 
-\item{LastModifiedTimeBefore}{Filters the results to only those optimization jobs that were updated
-before the specified time.}
+\item{LastModifiedTimeBefore}{Filters the results to only those optimization jobs that were updated before the specified time.}
 
-\item{OptimizationContains}{Filters the results to only those optimization jobs that apply the
-specified optimization techniques. You can specify either \code{Quantization}
-or \code{Compilation}.}
+\item{OptimizationContains}{Filters the results to only those optimization jobs that apply the specified optimization techniques. You can specify either \code{Quantization} or \code{Compilation}.}
 
-\item{NameContains}{Filters the results to only those optimization jobs with a name that
-contains the specified string.}
+\item{NameContains}{Filters the results to only those optimization jobs with a name that contains the specified string.}
 
-\item{StatusEquals}{Filters the results to only those optimization jobs with the specified
-status.}
+\item{StatusEquals}{Filters the results to only those optimization jobs with the specified status.}
 
-\item{SortBy}{The field by which to sort the optimization jobs in the response. The
-default is \code{CreationTime}}
+\item{SortBy}{The field by which to sort the optimization jobs in the response. The default is \code{CreationTime}}
 
 \item{SortOrder}{The sort order for results. The default is \code{Ascending}}
 }

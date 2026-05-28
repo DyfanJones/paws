@@ -7,13 +7,9 @@
 ssoadmin_add_region(InstanceArn, RegionName)
 }
 \arguments{
-\item{InstanceArn}{[required] The Amazon Resource Name (ARN) of the IAM Identity Center instance to
-replicate to the target Region.}
+\item{InstanceArn}{[required] The Amazon Resource Name (ARN) of the IAM Identity Center instance to replicate to the target Region.}
 
-\item{RegionName}{[required] The name of the Amazon Web Services Region to add to the IAM Identity
-Center instance. The Region name must be 1-32 characters long and follow
-the pattern of Amazon Web Services Region names (for example,
-us-east-1).}
+\item{RegionName}{[required] The name of the Amazon Web Services Region to add to the IAM Identity Center instance. The Region name must be 1-32 characters long and follow the pattern of Amazon Web Services Region names (for example, us-east-1).}
 }
 \description{
 Adds a Region to an IAM Identity Center instance. This operation initiates an asynchronous workflow to replicate the IAM Identity Center instance to the target Region. The Region status is set to ADDING at first and changes to ACTIVE when the workflow completes.

@@ -13,23 +13,13 @@ lexmodelsv2_list_built_in_intents(
 )
 }
 \arguments{
-\item{localeId}{[required] The identifier of the language and locale of the intents to list. The
-string must match one of the supported locales. For more information,
-see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
-\item{sortBy}{Specifies sorting parameters for the list of built-in intents. You can
-specify that the list be sorted by the built-in intent signature in
-either ascending or descending order.}
+\item{sortBy}{Specifies sorting parameters for the list of built-in intents. You can specify that the list be sorted by the built-in intent signature in either ascending or descending order.}
 
-\item{maxResults}{The maximum number of built-in intents to return in each page of
-results. If there are fewer results than the max page size, only the
-actual number of results are returned.}
+\item{maxResults}{The maximum number of built-in intents to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response from the
-\code{\link[=lexmodelsv2_list_built_in_intents]{list_built_in_intents}} operation
-contains more results than specified in the \code{maxResults} parameter, a
-token is returned in the response. Use that token in the \code{nextToken}
-parameter to return the next page of results.}
+\item{nextToken}{If the response from the \code{\link[=lexmodelsv2_list_built_in_intents]{list_built_in_intents}} operation contains more results than specified in the \code{maxResults} parameter, a token is returned in the response. Use that token in the \code{nextToken} parameter to return the next page of results.}
 }
 \description{
 Gets a list of built-in intents provided by Amazon Lex that you can use in your bot.

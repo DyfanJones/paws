@@ -7,9 +7,7 @@
 opensearchservice_delete_package(PackageID)
 }
 \arguments{
-\item{PackageID}{[required] The internal ID of the package you want to delete. Use
-\code{\link[=opensearchservice_describe_packages]{describe_packages}} to find this
-value.}
+\item{PackageID}{[required] The internal ID of the package you want to delete. Use \code{\link[=opensearchservice_describe_packages]{describe_packages}} to find this value.}
 }
 \description{
 Deletes an Amazon OpenSearch Service package. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html}{Custom packages for Amazon OpenSearch Service}.

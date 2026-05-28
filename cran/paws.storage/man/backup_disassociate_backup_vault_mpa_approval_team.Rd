@@ -11,11 +11,9 @@ backup_disassociate_backup_vault_mpa_approval_team(
 )
 }
 \arguments{
-\item{BackupVaultName}{[required] The name of the backup vault from which to disassociate the MPA approval
-team.}
+\item{BackupVaultName}{[required] The name of the backup vault from which to disassociate the MPA approval team.}
 
-\item{RequesterComment}{An optional comment explaining the reason for disassociating the MPA
-approval team from the backup vault.}
+\item{RequesterComment}{An optional comment explaining the reason for disassociating the MPA approval team from the backup vault.}
 }
 \description{
 Removes the association between an MPA approval team and a backup vault, disabling the MPA approval workflow for restore operations.

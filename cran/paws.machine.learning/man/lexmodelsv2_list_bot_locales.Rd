@@ -18,22 +18,13 @@ lexmodelsv2_list_bot_locales(
 
 \item{botVersion}{[required] The version of the bot to list locales for.}
 
-\item{sortBy}{Specifies sorting parameters for the list of locales. You can sort by
-locale name in ascending or descending order.}
+\item{sortBy}{Specifies sorting parameters for the list of locales. You can sort by locale name in ascending or descending order.}
 
-\item{filters}{Provides the specification for a filter used to limit the response to
-only those locales that match the filter specification. You can only
-specify one filter and one value to filter on.}
+\item{filters}{Provides the specification for a filter used to limit the response to only those locales that match the filter specification. You can only specify one filter and one value to filter on.}
 
-\item{maxResults}{The maximum number of aliases to return in each page of results. If
-there are fewer results than the max page size, only the actual number
-of results are returned.}
+\item{maxResults}{The maximum number of aliases to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response from the
-\code{\link[=lexmodelsv2_list_bot_locales]{list_bot_locales}} operation contains
-more results than specified in the \code{maxResults} parameter, a token is
-returned in the response. Use that token as the \code{nextToken} parameter to
-return the next page of results.}
+\item{nextToken}{If the response from the \code{\link[=lexmodelsv2_list_bot_locales]{list_bot_locales}} operation contains more results than specified in the \code{maxResults} parameter, a token is returned in the response. Use that token as the \code{nextToken} parameter to return the next page of results.}
 }
 \description{
 Gets a list of locales for the specified bot.

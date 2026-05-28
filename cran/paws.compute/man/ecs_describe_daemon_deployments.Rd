@@ -7,8 +7,7 @@
 ecs_describe_daemon_deployments(daemonDeploymentArns)
 }
 \arguments{
-\item{daemonDeploymentArns}{[required] The ARN of the daemon deployments to describe. You can specify up to 20
-ARNs.}
+\item{daemonDeploymentArns}{[required] The ARN of the daemon deployments to describe. You can specify up to 20 ARNs.}
 }
 \description{
 Describes one or more of your daemon deployments.

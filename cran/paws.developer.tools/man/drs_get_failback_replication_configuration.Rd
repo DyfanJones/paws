@@ -8,8 +8,7 @@ Instance ID}
 drs_get_failback_replication_configuration(recoveryInstanceID)
 }
 \arguments{
-\item{recoveryInstanceID}{[required] The ID of the Recovery Instance whose failback replication configuration
-should be returned.}
+\item{recoveryInstanceID}{[required] The ID of the Recovery Instance whose failback replication configuration should be returned.}
 }
 \description{
 Lists all Failback ReplicationConfigurations, filtered by Recovery Instance ID.

@@ -6,8 +6,7 @@ NULL
 #' Deletes the specified report definition in AWS Application Cost Profiler
 #'
 #' @description
-#' Deletes the specified report definition in AWS Application Cost
-#' Profiler. This stops the report from being generated.
+#' Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being generated.
 #'
 #' @usage
 #' applicationcostprofiler_delete_report_definition(reportId)
@@ -57,8 +56,7 @@ applicationcostprofiler_delete_report_definition <- function(reportId) {
 #' Application Cost Profiler
 #'
 #' @description
-#' Retrieves the definition of a report already configured in AWS
-#' Application Cost Profiler.
+#' Retrieves the definition of a report already configured in AWS Application Cost Profiler.
 #'
 #' @usage
 #' applicationcostprofiler_get_report_definition(reportId)
@@ -121,12 +119,9 @@ applicationcostprofiler_get_report_definition <- function(reportId) {
 #' (Amazon S3)
 #'
 #' @description
-#' Ingests application usage data from Amazon Simple Storage Service
-#' (Amazon S3).
+#' Ingests application usage data from Amazon Simple Storage Service (Amazon S3).
 #' 
-#' The data must already exist in the S3 location. As part of the action,
-#' AWS Application Cost Profiler copies the object from your S3 bucket to
-#' an S3 bucket owned by Amazon for processing asynchronously.
+#' The data must already exist in the S3 location. As part of the action, AWS Application Cost Profiler copies the object from your S3 bucket to an S3 bucket owned by Amazon for processing asynchronously.
 #'
 #' @usage
 #' applicationcostprofiler_import_application_usage(sourceS3Location)
@@ -180,8 +175,7 @@ applicationcostprofiler_import_application_usage <- function(sourceS3Location) {
 #' account
 #'
 #' @description
-#' Retrieves a list of all reports and their configurations for your AWS
-#' account.
+#' Retrieves a list of all reports and their configurations for your AWS account.
 #' 
 #' The maximum number of reports is one.
 #'
@@ -258,13 +252,11 @@ applicationcostprofiler_list_report_definitions <- function(nextToken = NULL, ma
 #' applicationcostprofiler_put_report_definition(reportId,
 #'   reportDescription, reportFrequency, format, destinationS3Location)
 #'
-#' @param reportId &#91;required&#93; Required. ID of the report. You can choose any valid string matching the
-#' pattern for the ID.
+#' @param reportId &#91;required&#93; Required. ID of the report. You can choose any valid string matching the pattern for the ID.
 #' @param reportDescription &#91;required&#93; Required. Description of the report.
 #' @param reportFrequency &#91;required&#93; Required. The cadence to generate the report.
 #' @param format &#91;required&#93; Required. The format to use for the generated report.
-#' @param destinationS3Location &#91;required&#93; Required. Amazon Simple Storage Service (Amazon S3) location where
-#' Application Cost Profiler uploads the report.
+#' @param destinationS3Location &#91;required&#93; Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.
 #'
 #' @return
 #' A list with the following syntax:
@@ -325,8 +317,7 @@ applicationcostprofiler_put_report_definition <- function(reportId, reportDescri
 #' @param reportDescription &#91;required&#93; Required. Description of the report.
 #' @param reportFrequency &#91;required&#93; Required. The cadence to generate the report.
 #' @param format &#91;required&#93; Required. The format to use for the generated report.
-#' @param destinationS3Location &#91;required&#93; Required. Amazon Simple Storage Service (Amazon S3) location where
-#' Application Cost Profiler uploads the report.
+#' @param destinationS3Location &#91;required&#93; Required. Amazon Simple Storage Service (Amazon S3) location where Application Cost Profiler uploads the report.
 #'
 #' @return
 #' A list with the following syntax:

@@ -10,11 +10,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_associate_gateway_to_server/](https://www.paws-r-sdk.com/docs/backupgateway_associate_gateway_to_server/) for full documentation.
 #'
-#' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway. Use the
-#' [`list_gateways`][backupgateway_list_gateways] operation to return a
-#' list of gateways for your account and Amazon Web Services Region.
-#' @param ServerArn &#91;required&#93; The Amazon Resource Name (ARN) of the server that hosts your virtual
-#' machines.
+#' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway. Use the [`list_gateways`][backupgateway_list_gateways] operation to return a list of gateways for your account and Amazon Web Services Region.
+#' @param ServerArn &#91;required&#93; The Amazon Resource Name (ARN) of the server that hosts your virtual machines.
 #'
 #' @keywords internal
 #'
@@ -48,8 +45,7 @@ backupgateway_associate_gateway_to_server <- function(GatewayArn, ServerArn) {
 #' @param ActivationKey &#91;required&#93; The activation key of the created gateway.
 #' @param GatewayDisplayName &#91;required&#93; The display name of the created gateway.
 #' @param GatewayType &#91;required&#93; The type of created gateway.
-#' @param Tags A list of up to 50 tags to assign to the gateway. Each tag is a
-#' key-value pair.
+#' @param Tags A list of up to 50 tags to assign to the gateway. Each tag is a key-value pair.
 #'
 #' @keywords internal
 #'
@@ -173,10 +169,7 @@ backupgateway_disassociate_gateway_from_server <- function(GatewayArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_get_bandwidth_rate_limit_schedule/](https://www.paws-r-sdk.com/docs/backupgateway_get_bandwidth_rate_limit_schedule/) for full documentation.
 #'
-#' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway. Use the
-#' [`list_gateways`](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html)
-#' operation to return a list of gateways for your account and Amazon Web
-#' Services Region.
+#' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway. Use the [`list_gateways`](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html) operation to return a list of gateways for your account and Amazon Web Services Region.
 #'
 #' @keywords internal
 #'
@@ -335,8 +328,7 @@ backupgateway_get_virtual_machine <- function(ResourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_import_hypervisor_configuration/](https://www.paws-r-sdk.com/docs/backupgateway_import_hypervisor_configuration/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the hypervisor.
-#' @param Host &#91;required&#93; The server host of the hypervisor. This can be either an IP address or a
-#' fully-qualified domain name (FQDN).
+#' @param Host &#91;required&#93; The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).
 #' @param Username The username for the hypervisor.
 #' @param Password The password for the hypervisor.
 #' @param KmsKeyArn The Key Management Service for the hypervisor.
@@ -373,10 +365,7 @@ backupgateway_import_hypervisor_configuration <- function(Name, Host, Username =
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_list_gateways/](https://www.paws-r-sdk.com/docs/backupgateway_list_gateways/) for full documentation.
 #'
 #' @param MaxResults The maximum number of gateways to list.
-#' @param NextToken The next item following a partial list of returned resources. For
-#' example, if a request is made to return `MaxResults` number of
-#' resources, `NextToken` allows you to return more items in your list
-#' starting at the location pointed to by the next token.
+#' @param NextToken The next item following a partial list of returned resources. For example, if a request is made to return `MaxResults` number of resources, `NextToken` allows you to return more items in your list starting at the location pointed to by the next token.
 #'
 #' @keywords internal
 #'
@@ -408,10 +397,7 @@ backupgateway_list_gateways <- function(MaxResults = NULL, NextToken = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_list_hypervisors/](https://www.paws-r-sdk.com/docs/backupgateway_list_hypervisors/) for full documentation.
 #'
 #' @param MaxResults The maximum number of hypervisors to list.
-#' @param NextToken The next item following a partial list of returned resources. For
-#' example, if a request is made to return `maxResults` number of
-#' resources, `NextToken` allows you to return more items in your list
-#' starting at the location pointed to by the next token.
+#' @param NextToken The next item following a partial list of returned resources. For example, if a request is made to return `maxResults` number of resources, `NextToken` allows you to return more items in your list starting at the location pointed to by the next token.
 #'
 #' @keywords internal
 #'
@@ -474,13 +460,9 @@ backupgateway_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_list_virtual_machines/](https://www.paws-r-sdk.com/docs/backupgateway_list_virtual_machines/) for full documentation.
 #'
-#' @param HypervisorArn The Amazon Resource Name (ARN) of the hypervisor connected to your
-#' virtual machine.
+#' @param HypervisorArn The Amazon Resource Name (ARN) of the hypervisor connected to your virtual machine.
 #' @param MaxResults The maximum number of virtual machines to list.
-#' @param NextToken The next item following a partial list of returned resources. For
-#' example, if a request is made to return `maxResults` number of
-#' resources, `NextToken` allows you to return more items in your list
-#' starting at the location pointed to by the next token.
+#' @param NextToken The next item following a partial list of returned resources. For example, if a request is made to return `maxResults` number of resources, `NextToken` allows you to return more items in your list starting at the location pointed to by the next token.
 #'
 #' @keywords internal
 #'
@@ -512,13 +494,8 @@ backupgateway_list_virtual_machines <- function(HypervisorArn = NULL, MaxResults
 #'
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_put_bandwidth_rate_limit_schedule/](https://www.paws-r-sdk.com/docs/backupgateway_put_bandwidth_rate_limit_schedule/) for full documentation.
 #'
-#' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway. Use the
-#' [`list_gateways`](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html)
-#' operation to return a list of gateways for your account and Amazon Web
-#' Services Region.
-#' @param BandwidthRateLimitIntervals &#91;required&#93; An array containing bandwidth rate limit schedule intervals for a
-#' gateway. When no bandwidth rate limit intervals have been scheduled, the
-#' array is empty.
+#' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway. Use the [`list_gateways`](https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html) operation to return a list of gateways for your account and Amazon Web Services Region.
+#' @param BandwidthRateLimitIntervals &#91;required&#93; An array containing bandwidth rate limit schedule intervals for a gateway. When no bandwidth rate limit intervals have been scheduled, the array is empty.
 #'
 #' @keywords internal
 #'
@@ -550,8 +527,7 @@ backupgateway_put_bandwidth_rate_limit_schedule <- function(GatewayArn, Bandwidt
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_put_hypervisor_property_mappings/](https://www.paws-r-sdk.com/docs/backupgateway_put_hypervisor_property_mappings/) for full documentation.
 #'
 #' @param HypervisorArn &#91;required&#93; The Amazon Resource Name (ARN) of the hypervisor.
-#' @param VmwareToAwsTagMappings &#91;required&#93; This action requests the mappings of VMware tags to the Amazon Web
-#' Services tags.
+#' @param VmwareToAwsTagMappings &#91;required&#93; This action requests the mappings of VMware tags to the Amazon Web Services tags.
 #' @param IamRoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role.
 #'
 #' @keywords internal
@@ -583,8 +559,7 @@ backupgateway_put_hypervisor_property_mappings <- function(HypervisorArn, Vmware
 #'
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_put_maintenance_start_time/](https://www.paws-r-sdk.com/docs/backupgateway_put_maintenance_start_time/) for full documentation.
 #'
-#' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) for the gateway, used to specify its
-#' maintenance start time.
+#' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.
 #' @param HourOfDay &#91;required&#93; The hour of the day to start maintenance on a gateway.
 #' @param MinuteOfHour &#91;required&#93; The minute of the hour to start maintenance on a gateway.
 #' @param DayOfWeek The day of the week to start maintenance on a gateway.
@@ -687,8 +662,7 @@ backupgateway_tag_resource <- function(ResourceARN, Tags) {
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_test_hypervisor_configuration/](https://www.paws-r-sdk.com/docs/backupgateway_test_hypervisor_configuration/) for full documentation.
 #'
 #' @param GatewayArn &#91;required&#93; The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.
-#' @param Host &#91;required&#93; The server host of the hypervisor. This can be either an IP address or a
-#' fully-qualified domain name (FQDN).
+#' @param Host &#91;required&#93; The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).
 #' @param Username The username for the hypervisor.
 #' @param Password The password for the hypervisor.
 #'
@@ -721,8 +695,7 @@ backupgateway_test_hypervisor_configuration <- function(GatewayArn, Host, Userna
 #'
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_untag_resource/](https://www.paws-r-sdk.com/docs/backupgateway_untag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove
-#' tags.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to remove tags.
 #' @param TagKeys &#91;required&#93; The list of tag keys specifying which tags to remove.
 #'
 #' @keywords internal
@@ -819,13 +792,11 @@ backupgateway_update_gateway_software_now <- function(GatewayArn) {
 #' See [https://www.paws-r-sdk.com/docs/backupgateway_update_hypervisor/](https://www.paws-r-sdk.com/docs/backupgateway_update_hypervisor/) for full documentation.
 #'
 #' @param HypervisorArn &#91;required&#93; The Amazon Resource Name (ARN) of the hypervisor to update.
-#' @param Host The updated host of the hypervisor. This can be either an IP address or
-#' a fully-qualified domain name (FQDN).
+#' @param Host The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).
 #' @param Username The updated username for the hypervisor.
 #' @param Password The updated password for the hypervisor.
 #' @param Name The updated name for the hypervisor
-#' @param LogGroupArn The Amazon Resource Name (ARN) of the group of gateways within the
-#' requested log.
+#' @param LogGroupArn The Amazon Resource Name (ARN) of the group of gateways within the requested log.
 #'
 #' @keywords internal
 #'

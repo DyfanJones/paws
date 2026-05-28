@@ -12,13 +12,11 @@ quicksight_list_template_aliases(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template
-aliases that you're listing.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template aliases that you're listing.}
 
 \item{TemplateId}{[required] The ID for the template.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

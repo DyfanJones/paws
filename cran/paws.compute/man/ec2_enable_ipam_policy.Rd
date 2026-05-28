@@ -11,22 +11,13 @@ ec2_enable_ipam_policy(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{IpamPolicyId}{[required] The ID of the IPAM policy to enable.}
 
-\item{OrganizationTargetId}{A target can be an individual Amazon Web Services account or an entity
-within an Amazon Web Services Organization to which an IPAM policy can
-be applied.
+\item{OrganizationTargetId}{A target can be an individual Amazon Web Services account or an entity within an Amazon Web Services Organization to which an IPAM policy can be applied.
 
-The ID of the Amazon Web Services Organizations target for which to
-enable the IPAM policy. This parameter is required only when IPAM is
-integrated with Amazon Web Services Organizations. When IPAM is not
-integrated with Amazon Web Services Organizations, omit this parameter
-and the policy will apply to the current account.}
+The ID of the Amazon Web Services Organizations target for which to enable the IPAM policy. This parameter is required only when IPAM is integrated with Amazon Web Services Organizations. When IPAM is not integrated with Amazon Web Services Organizations, omit this parameter and the policy will apply to the current account.}
 }
 \description{
 Enables an IPAM policy.

@@ -13,8 +13,7 @@ workdocs_describe_notification_subscriptions(
 \arguments{
 \item{OrganizationId}{[required] The ID of the organization.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{Limit}{The maximum number of items to return with this call.}
 }

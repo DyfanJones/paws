@@ -10,19 +10,13 @@ xray_put_encryption_config(KeyId = NULL, Type)
 \item{KeyId}{An Amazon Web Services KMS key in one of the following formats:
 \itemize{
 \item \strong{Alias} - The name of the key. For example, \code{alias/MyKey}.
-\item \strong{Key ID} - The KMS key ID of the key. For example,
-\verb{ae4aa6d49-a4d8-9df9-a475-4ff6d7898456}. Amazon Web Services X-Ray
-does not support asymmetric KMS keys.
-\item \strong{ARN} - The full Amazon Resource Name of the key ID or alias. For
-example,
-\verb{arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456}.
-Use this format to specify a key in a different account.
+\item \strong{Key ID} - The KMS key ID of the key. For example, \verb{ae4aa6d49-a4d8-9df9-a475-4ff6d7898456}. Amazon Web Services X-Ray does not support asymmetric KMS keys.
+\item \strong{ARN} - The full Amazon Resource Name of the key ID or alias. For example, \verb{arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456}. Use this format to specify a key in a different account.
 }
 
 Omit this key if you set \code{Type} to \code{NONE}.}
 
-\item{Type}{[required] The type of encryption. Set to \code{KMS} to use your own key for encryption.
-Set to \code{NONE} for default encryption.}
+\item{Type}{[required] The type of encryption. Set to \code{KMS} to use your own key for encryption. Set to \code{NONE} for default encryption.}
 }
 \description{
 Updates the encryption configuration for X-Ray data.

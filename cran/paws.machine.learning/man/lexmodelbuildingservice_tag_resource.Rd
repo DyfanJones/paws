@@ -7,11 +7,9 @@
 lexmodelbuildingservice_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to
-tag.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.}
 
-\item{tags}{[required] A list of tag keys to add to the resource. If a tag key already exists,
-the existing value is replaced with the new value.}
+\item{tags}{[required] A list of tag keys to add to the resource. If a tag key already exists, the existing value is replaced with the new value.}
 }
 \description{
 Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value.

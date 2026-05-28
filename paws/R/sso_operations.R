@@ -7,18 +7,14 @@ NULL
 #' assigned to the user
 #'
 #' @description
-#' Returns the STS short-term credentials for a given role name that is
-#' assigned to the user.
+#' Returns the STS short-term credentials for a given role name that is assigned to the user.
 #'
 #' @usage
 #' sso_get_role_credentials(roleName, accountId, accessToken)
 #'
 #' @param roleName &#91;required&#93; The friendly name of the role that is assigned to the user.
 #' @param accountId &#91;required&#93; The identifier for the AWS account that is assigned to the user.
-#' @param accessToken &#91;required&#93; The token issued by the `CreateToken` API call. For more information,
-#' see
-#' [CreateToken](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html)
-#' in the *IAM Identity Center OIDC API Reference Guide*.
+#' @param accessToken &#91;required&#93; The token issued by the `CreateToken` API call. For more information, see [CreateToken](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html) in the *IAM Identity Center OIDC API Reference Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -74,13 +70,9 @@ sso_get_role_credentials <- function(roleName, accountId, accessToken) {
 #' @usage
 #' sso_list_account_roles(nextToken, maxResults, accessToken, accountId)
 #'
-#' @param nextToken The page token from the previous response output when you request
-#' subsequent pages.
+#' @param nextToken The page token from the previous response output when you request subsequent pages.
 #' @param maxResults The number of items that clients can request per page.
-#' @param accessToken &#91;required&#93; The token issued by the `CreateToken` API call. For more information,
-#' see
-#' [CreateToken](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html)
-#' in the *IAM Identity Center OIDC API Reference Guide*.
+#' @param accessToken &#91;required&#93; The token issued by the `CreateToken` API call. For more information, see [CreateToken](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html) in the *IAM Identity Center OIDC API Reference Guide*.
 #' @param accountId &#91;required&#93; The identifier for the AWS account that is assigned to the user.
 #'
 #' @return
@@ -134,23 +126,14 @@ sso_list_account_roles <- function(nextToken = NULL, maxResults = NULL, accessTo
 #' Lists all AWS accounts assigned to the user
 #'
 #' @description
-#' Lists all AWS accounts assigned to the user. These AWS accounts are
-#' assigned by the administrator of the account. For more information, see
-#' [Assign User
-#' Access](https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers)
-#' in the *IAM Identity Center User Guide*. This operation returns a
-#' paginated response.
+#' Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the administrator of the account. For more information, see [Assign User Access](https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers) in the *IAM Identity Center User Guide*. This operation returns a paginated response.
 #'
 #' @usage
 #' sso_list_accounts(nextToken, maxResults, accessToken)
 #'
-#' @param nextToken (Optional) When requesting subsequent pages, this is the page token from
-#' the previous response output.
+#' @param nextToken (Optional) When requesting subsequent pages, this is the page token from the previous response output.
 #' @param maxResults This is the number of items clients can request per page.
-#' @param accessToken &#91;required&#93; The token issued by the `CreateToken` API call. For more information,
-#' see
-#' [CreateToken](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html)
-#' in the *IAM Identity Center OIDC API Reference Guide*.
+#' @param accessToken &#91;required&#93; The token issued by the `CreateToken` API call. For more information, see [CreateToken](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html) in the *IAM Identity Center OIDC API Reference Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -205,30 +188,16 @@ sso_list_accounts <- function(nextToken = NULL, maxResults = NULL, accessToken) 
 #' corresponding server-side IAM Identity Center sign in session
 #'
 #' @description
-#' Removes the locally stored SSO tokens from the client-side cache and
-#' sends an API call to the IAM Identity Center service to invalidate the
-#' corresponding server-side IAM Identity Center sign in session.
+#' Removes the locally stored SSO tokens from the client-side cache and sends an API call to the IAM Identity Center service to invalidate the corresponding server-side IAM Identity Center sign in session.
 #' 
-#' If a user uses IAM Identity Center to access the AWS CLI, the user’s IAM
-#' Identity Center sign in session is used to obtain an IAM session, as
-#' specified in the corresponding IAM Identity Center permission set. More
-#' specifically, IAM Identity Center assumes an IAM role in the target
-#' account on behalf of the user, and the corresponding temporary AWS
-#' credentials are returned to the client.
+#' If a user uses IAM Identity Center to access the AWS CLI, the user’s IAM Identity Center sign in session is used to obtain an IAM session, as specified in the corresponding IAM Identity Center permission set. More specifically, IAM Identity Center assumes an IAM role in the target account on behalf of the user, and the corresponding temporary AWS credentials are returned to the client.
 #' 
-#' After user logout, any existing IAM role sessions that were created by
-#' using IAM Identity Center permission sets continue based on the duration
-#' configured in the permission set. For more information, see [User
-#' authentications](https://docs.aws.amazon.com/singlesignon/latest/userguide/authconcept.html)
-#' in the *IAM Identity Center User Guide*.
+#' After user logout, any existing IAM role sessions that were created by using IAM Identity Center permission sets continue based on the duration configured in the permission set. For more information, see [User authentications](https://docs.aws.amazon.com/singlesignon/latest/userguide/authconcept.html) in the *IAM Identity Center User Guide*.
 #'
 #' @usage
 #' sso_logout(accessToken)
 #'
-#' @param accessToken &#91;required&#93; The token issued by the `CreateToken` API call. For more information,
-#' see
-#' [CreateToken](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html)
-#' in the *IAM Identity Center OIDC API Reference Guide*.
+#' @param accessToken &#91;required&#93; The token issued by the `CreateToken` API call. For more information, see [CreateToken](https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/API_CreateToken.html) in the *IAM Identity Center OIDC API Reference Guide*.
 #'
 #' @return
 #' An empty list.

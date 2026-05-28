@@ -7,8 +7,7 @@
 globalaccelerator_delete_cross_account_attachment(AttachmentArn)
 }
 \arguments{
-\item{AttachmentArn}{[required] The Amazon Resource Name (ARN) for the cross-account attachment to
-delete.}
+\item{AttachmentArn}{[required] The Amazon Resource Name (ARN) for the cross-account attachment to delete.}
 }
 \description{
 Delete a cross-account attachment. When you delete an attachment, Global Accelerator revokes the permission to use the resources in the attachment from all principals in the list of principals. Global Accelerator revokes the permission for specific resources.

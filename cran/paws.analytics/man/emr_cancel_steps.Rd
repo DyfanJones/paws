@@ -7,15 +7,11 @@
 emr_cancel_steps(ClusterId, StepIds, StepCancellationOption = NULL)
 }
 \arguments{
-\item{ClusterId}{[required] The \code{ClusterID} for the specified steps that will be canceled. Use
-\code{\link[=emr_run_job_flow]{run_job_flow}} and
-\code{\link[=emr_list_clusters]{list_clusters}} to get ClusterIDs.}
+\item{ClusterId}{[required] The \code{ClusterID} for the specified steps that will be canceled. Use \code{\link[=emr_run_job_flow]{run_job_flow}} and \code{\link[=emr_list_clusters]{list_clusters}} to get ClusterIDs.}
 
-\item{StepIds}{[required] The list of \code{StepIDs} to cancel. Use \code{\link[=emr_list_steps]{list_steps}} to
-get steps and their states for the specified cluster.}
+\item{StepIds}{[required] The list of \code{StepIDs} to cancel. Use \code{\link[=emr_list_steps]{list_steps}} to get steps and their states for the specified cluster.}
 
-\item{StepCancellationOption}{The option to choose to cancel \code{RUNNING} steps. By default, the value is
-\code{SEND_INTERRUPT}.}
+\item{StepCancellationOption}{The option to choose to cancel \code{RUNNING} steps. By default, the value is \code{SEND_INTERRUPT}.}
 }
 \description{
 Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is successfully submitted. When you use Amazon EMR releases 5.28.0 and later, you can cancel steps that are in a \code{PENDING} or \code{RUNNING} state. In earlier versions of Amazon EMR, you can only cancel steps that are in a \code{PENDING} state.

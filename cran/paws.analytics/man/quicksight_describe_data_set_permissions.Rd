@@ -9,8 +9,7 @@ quicksight_describe_data_set_permissions(AwsAccountId, DataSetId)
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID.}
 
-\item{DataSetId}{[required] The ID for the dataset that you want to describe. This ID is unique per
-Amazon Web Services Region for each Amazon Web Services account.}
+\item{DataSetId}{[required] The ID for the dataset that you want to describe. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 }
 \description{
 Describes the permissions on a dataset.

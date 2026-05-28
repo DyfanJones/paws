@@ -11,8 +11,7 @@ glue_update_data_quality_ruleset(Name, Description = NULL, Ruleset = NULL)
 
 \item{Description}{A description of the ruleset.}
 
-\item{Ruleset}{A Data Quality Definition Language (DQDL) ruleset. For more information,
-see the Glue developer guide.}
+\item{Ruleset}{A Data Quality Definition Language (DQDL) ruleset. For more information, see the Glue developer guide.}
 }
 \description{
 Updates the specified data quality ruleset.

@@ -18,28 +18,19 @@ sagemaker_list_labeling_jobs(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{A filter that returns only labeling jobs created after the specified
-time (timestamp).}
+\item{CreationTimeAfter}{A filter that returns only labeling jobs created after the specified time (timestamp).}
 
-\item{CreationTimeBefore}{A filter that returns only labeling jobs created before the specified
-time (timestamp).}
+\item{CreationTimeBefore}{A filter that returns only labeling jobs created before the specified time (timestamp).}
 
-\item{LastModifiedTimeAfter}{A filter that returns only labeling jobs modified after the specified
-time (timestamp).}
+\item{LastModifiedTimeAfter}{A filter that returns only labeling jobs modified after the specified time (timestamp).}
 
-\item{LastModifiedTimeBefore}{A filter that returns only labeling jobs modified before the specified
-time (timestamp).}
+\item{LastModifiedTimeBefore}{A filter that returns only labeling jobs modified before the specified time (timestamp).}
 
-\item{MaxResults}{The maximum number of labeling jobs to return in each page of the
-response.}
+\item{MaxResults}{The maximum number of labeling jobs to return in each page of the response.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_labeling_jobs]{list_labeling_jobs}} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of labeling jobs, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_labeling_jobs]{list_labeling_jobs}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of labeling jobs, use the token in the next request.}
 
-\item{NameContains}{A string in the labeling job name. This filter returns only labeling
-jobs whose name contains the specified string.}
+\item{NameContains}{A string in the labeling job name. This filter returns only labeling jobs whose name contains the specified string.}
 
 \item{SortBy}{The field to sort results by. The default is \code{CreationTime}.}
 

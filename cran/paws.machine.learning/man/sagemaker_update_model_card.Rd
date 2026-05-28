@@ -13,21 +13,16 @@ sagemaker_update_model_card(
 \arguments{
 \item{ModelCardName}{[required] The name or Amazon Resource Name (ARN) of the model card to update.}
 
-\item{Content}{The updated model card content. Content must be in \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema}{model card JSON schema}
-and provided as a string.
+\item{Content}{The updated model card content. Content must be in \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema}{model card JSON schema} and provided as a string.
 
-When updating model card content, be sure to include the full content
-and not just updated content.}
+When updating model card content, be sure to include the full content and not just updated content.}
 
-\item{ModelCardStatus}{The approval status of the model card within your organization.
-Different organizations might have different criteria for model card
-review and approval.
+\item{ModelCardStatus}{The approval status of the model card within your organization. Different organizations might have different criteria for model card review and approval.
 \itemize{
 \item \code{Draft}: The model card is a work in progress.
 \item \code{PendingReview}: The model card is pending review.
 \item \code{Approved}: The model card is approved.
-\item \code{Archived}: The model card is archived. No more updates should be
-made to the model card, but it can still be exported.
+\item \code{Archived}: The model card is archived. No more updates should be made to the model card, but it can still be exported.
 }}
 }
 \description{

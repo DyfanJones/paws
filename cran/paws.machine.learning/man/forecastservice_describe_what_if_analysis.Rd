@@ -8,8 +8,7 @@ operation}
 forecastservice_describe_what_if_analysis(WhatIfAnalysisArn)
 }
 \arguments{
-\item{WhatIfAnalysisArn}{[required] The Amazon Resource Name (ARN) of the what-if analysis that you are
-interested in.}
+\item{WhatIfAnalysisArn}{[required] The Amazon Resource Name (ARN) of the what-if analysis that you are interested in.}
 }
 \description{
 Describes the what-if analysis created using the \code{\link[=forecastservice_create_what_if_analysis]{create_what_if_analysis}} operation.

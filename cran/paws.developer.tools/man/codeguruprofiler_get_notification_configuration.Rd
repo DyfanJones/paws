@@ -8,8 +8,7 @@ group}
 codeguruprofiler_get_notification_configuration(profilingGroupName)
 }
 \arguments{
-\item{profilingGroupName}{[required] The name of the profiling group we want to get the notification
-configuration for.}
+\item{profilingGroupName}{[required] The name of the profiling group we want to get the notification configuration for.}
 }
 \description{
 Get the current configuration for anomaly notifications for a profiling group.

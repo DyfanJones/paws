@@ -7,8 +7,7 @@
 quicksight_update_dashboards_qa_configuration(AwsAccountId, DashboardsQAStatus)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the dashboard QA
-configuration that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the dashboard QA configuration that you want to update.}
 
 \item{DashboardsQAStatus}{[required] The status of dashboards QA configuration that you want to update.}
 }

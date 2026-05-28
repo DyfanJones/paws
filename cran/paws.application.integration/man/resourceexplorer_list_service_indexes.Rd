@@ -12,15 +12,11 @@ resourceexplorer_list_service_indexes(
 )
 }
 \arguments{
-\item{Regions}{A list of Amazon Web Services Regions to include in the search for
-indexes. If not specified, indexes from all Regions are returned.}
+\item{Regions}{A list of Amazon Web Services Regions to include in the search for indexes. If not specified, indexes from all Regions are returned.}
 
-\item{MaxResults}{The maximum number of index results to return in a single response.
-Valid values are between \code{1} and \code{100}.}
+\item{MaxResults}{The maximum number of index results to return in a single response. Valid values are between \code{1} and \code{100}.}
 
-\item{NextToken}{The pagination token from a previous
-\code{\link[=resourceexplorer_list_service_indexes]{list_service_indexes}}
-response. Use this token to retrieve the next set of results.}
+\item{NextToken}{The pagination token from a previous \code{\link[=resourceexplorer_list_service_indexes]{list_service_indexes}} response. Use this token to retrieve the next set of results.}
 }
 \description{
 Lists all Resource Explorer indexes across the specified Amazon Web Services Regions. This operation returns information about indexes including their ARNs, types, and Regions.

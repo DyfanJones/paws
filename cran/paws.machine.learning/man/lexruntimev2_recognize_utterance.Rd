@@ -25,32 +25,23 @@ lexruntimev2_recognize_utterance(
 
 \item{sessionId}{[required] The identifier of the session in use.}
 
-\item{sessionState}{Sets the state of the session with the user. You can use this to set the
-current intent, attributes, context, and dialog action. Use the dialog
-action to determine the next step that Amazon Lex V2 should use in the
-conversation with the user.
+\item{sessionState}{Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.
 
-The \code{sessionState} field must be compressed using gzip and then base64
-encoded before sending to Amazon Lex V2.}
+The \code{sessionState} field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.}
 
-\item{requestAttributes}{Request-specific information passed between the client application and
-Amazon Lex V2
+\item{requestAttributes}{Request-specific information passed between the client application and Amazon Lex V2
 
-The namespace \verb{x-amz-lex:} is reserved for special attributes. Don't
-create any request attributes for prefix \verb{x-amz-lex:}.
+The namespace \verb{x-amz-lex:} is reserved for special attributes. Don't create any request attributes for prefix \verb{x-amz-lex:}.
 
-The \code{requestAttributes} field must be compressed using gzip and then
-base64 encoded before sending to Amazon Lex V2.}
+The \code{requestAttributes} field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.}
 
-\item{requestContentType}{[required] Indicates the format for audio input or that the content is text. The
-header must start with one of the following prefixes:
+\item{requestContentType}{[required] Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:
 \itemize{
 \item PCM format, audio data must be in little-endian byte order.
 \itemize{
 \item audio/l16; rate=16000; channels=1
 \item audio/x-l16; sample-rate=16000; channel-count=1
-\item audio/lpcm; sample-rate=8000; sample-size-bits=16;
-channel-count=1; is-big-endian=false
+\item audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false
 }
 \item Opus format
 \itemize{
@@ -62,19 +53,11 @@ channel-count=1; is-big-endian=false
 }
 }}
 
-\item{responseContentType}{The message that Amazon Lex V2 returns in the response can be either
-text or speech based on the \code{responseContentType} value.
+\item{responseContentType}{The message that Amazon Lex V2 returns in the response can be either text or speech based on the \code{responseContentType} value.
 \itemize{
-\item If the value is \verb{text/plain;charset=utf-8}, Amazon Lex V2 returns
-text in the response.
-\item If the value begins with \verb{audio/}, Amazon Lex V2 returns speech in
-the response. Amazon Lex V2 uses Amazon Polly to generate the speech
-using the configuration that you specified in the
-\code{responseContentType} parameter. For example, if you specify
-\code{audio/mpeg} as the value, Amazon Lex V2 returns speech in the MPEG
-format.
-\item If the value is \code{audio/pcm}, the speech returned is \code{audio/pcm} at
-16 KHz in 16-bit, little-endian format.
+\item If the value is \verb{text/plain;charset=utf-8}, Amazon Lex V2 returns text in the response.
+\item If the value begins with \verb{audio/}, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the \code{responseContentType} parameter. For example, if you specify \code{audio/mpeg} as the value, Amazon Lex V2 returns speech in the MPEG format.
+\item If the value is \code{audio/pcm}, the speech returned is \code{audio/pcm} at 16 KHz in 16-bit, little-endian format.
 \item The following are the accepted values:
 \itemize{
 \item audio/mpeg
@@ -85,8 +68,7 @@ format.
 }
 }}
 
-\item{inputStream}{User input in PCM or Opus audio format or text format as described in
-the \code{requestContentType} parameter.}
+\item{inputStream}{User input in PCM or Opus audio format or text format as described in the \code{requestContentType} parameter.}
 }
 \description{
 Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets the user input using the machine learning model built for the bot.

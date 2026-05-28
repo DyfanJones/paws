@@ -14,19 +14,15 @@ emr_get_on_cluster_app_ui_presigned_url(
 )
 }
 \arguments{
-\item{ClusterId}{[required] The cluster ID associated with the cluster's application user interface
-presigned URL.}
+\item{ClusterId}{[required] The cluster ID associated with the cluster's application user interface presigned URL.}
 
-\item{OnClusterAppUIType}{The application UI type associated with the cluster's application user
-interface presigned URL.}
+\item{OnClusterAppUIType}{The application UI type associated with the cluster's application user interface presigned URL.}
 
-\item{ApplicationId}{The application ID associated with the cluster's application user
-interface presigned URL.}
+\item{ApplicationId}{The application ID associated with the cluster's application user interface presigned URL.}
 
 \item{DryRun}{Determines if the user interface presigned URL is for a dry run.}
 
-\item{ExecutionRoleArn}{The execution role ARN associated with the cluster's application user
-interface presigned URL.}
+\item{ExecutionRoleArn}{The execution role ARN associated with the cluster's application user interface presigned URL.}
 }
 \description{
 The presigned URL properties for the cluster's application user interface.

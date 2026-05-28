@@ -17,28 +17,19 @@ rekognition_copy_project_version(
 \arguments{
 \item{SourceProjectArn}{[required] The ARN of the source project in the trusting AWS account.}
 
-\item{SourceProjectVersionArn}{[required] The ARN of the model version in the source project that you want to copy
-to a destination project.}
+\item{SourceProjectVersionArn}{[required] The ARN of the model version in the source project that you want to copy to a destination project.}
 
-\item{DestinationProjectArn}{[required] The ARN of the project in the trusted AWS account that you want to copy
-the model version to.}
+\item{DestinationProjectArn}{[required] The ARN of the project in the trusted AWS account that you want to copy the model version to.}
 
-\item{VersionName}{[required] A name for the version of the model that's copied to the destination
-project.}
+\item{VersionName}{[required] A name for the version of the model that's copied to the destination project.}
 
-\item{OutputConfig}{[required] The S3 bucket and folder location where the training output for the
-source model version is placed.}
+\item{OutputConfig}{[required] The S3 bucket and folder location where the training output for the source model version is placed.}
 
 \item{Tags}{The key-value tags to assign to the model version.}
 
-\item{KmsKeyId}{The identifier for your AWS Key Management Service key (AWS KMS key).
-You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of
-your KMS key, an alias for your KMS key, or an alias ARN. The key is
-used to encrypt training results and manifest files written to the
-output Amazon S3 bucket (\code{OutputConfig}).
+\item{KmsKeyId}{The identifier for your AWS Key Management Service key (AWS KMS key). You can supply the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for your KMS key, or an alias ARN. The key is used to encrypt training results and manifest files written to the output Amazon S3 bucket (\code{OutputConfig}).
 
-If you choose to use your own KMS key, you need the following
-permissions on the KMS key.
+If you choose to use your own KMS key, you need the following permissions on the KMS key.
 \itemize{
 \item kms:CreateGrant
 \item kms:DescribeKey
@@ -46,8 +37,7 @@ permissions on the KMS key.
 \item kms:Decrypt
 }
 
-If you don't specify a value for \code{KmsKeyId}, images copied into the
-service are encrypted using a key that AWS owns and manages.}
+If you don't specify a value for \code{KmsKeyId}, images copied into the service are encrypted using a key that AWS owns and manages.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

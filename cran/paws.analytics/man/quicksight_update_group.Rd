@@ -11,9 +11,7 @@ quicksight_update_group(GroupName, Description = NULL, AwsAccountId, Namespace)
 
 \item{Description}{The description for the group that you want to update.}
 
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the group is in.
-Currently, you use the ID for the Amazon Web Services account that
-contains your Amazon Quick Sight account.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.}
 
 \item{Namespace}{[required] The namespace of the group that you want to update.}
 }

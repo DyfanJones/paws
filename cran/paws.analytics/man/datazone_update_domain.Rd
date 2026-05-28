@@ -17,22 +17,17 @@ datazone_update_domain(
 \arguments{
 \item{identifier}{[required] The ID of the Amazon Web Services domain that is to be updated.}
 
-\item{description}{The description to be updated as part of the
-\code{\link[=datazone_update_domain]{update_domain}} action.}
+\item{description}{The description to be updated as part of the \code{\link[=datazone_update_domain]{update_domain}} action.}
 
-\item{singleSignOn}{The single sign-on option to be updated as part of the
-\code{\link[=datazone_update_domain]{update_domain}} action.}
+\item{singleSignOn}{The single sign-on option to be updated as part of the \code{\link[=datazone_update_domain]{update_domain}} action.}
 
-\item{domainExecutionRole}{The domain execution role to be updated as part of the
-\code{\link[=datazone_update_domain]{update_domain}} action.}
+\item{domainExecutionRole}{The domain execution role to be updated as part of the \code{\link[=datazone_update_domain]{update_domain}} action.}
 
 \item{serviceRole}{The service role of the domain.}
 
-\item{name}{The name to be updated as part of the
-\code{\link[=datazone_update_domain]{update_domain}} action.}
+\item{name}{The name to be updated as part of the \code{\link[=datazone_update_domain]{update_domain}} action.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Updates a Amazon DataZone domain.

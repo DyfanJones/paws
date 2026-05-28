@@ -7,8 +7,7 @@
 redshift_delete_event_subscription(SubscriptionName)
 }
 \arguments{
-\item{SubscriptionName}{[required] The name of the Amazon Redshift event notification subscription to be
-deleted.}
+\item{SubscriptionName}{[required] The name of the Amazon Redshift event notification subscription to be deleted.}
 }
 \description{
 Deletes an Amazon Redshift event notification subscription.

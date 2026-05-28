@@ -13,8 +13,7 @@ glue_list_materialized_view_refresh_task_runs(
 )
 }
 \arguments{
-\item{CatalogId}{[required] The ID of the Data Catalog where the table resides. If none is supplied,
-the account ID is used by default.}
+\item{CatalogId}{[required] The ID of the Data Catalog where the table resides. If none is supplied, the account ID is used by default.}
 
 \item{DatabaseName}{The database where the table resides.}
 

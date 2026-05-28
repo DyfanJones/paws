@@ -17,8 +17,7 @@ omics_list_annotation_stores(
 
 \item{maxResults}{The maximum number of stores to return in one page of results.}
 
-\item{nextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{nextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{filter}{A filter to apply to the list.}
 }

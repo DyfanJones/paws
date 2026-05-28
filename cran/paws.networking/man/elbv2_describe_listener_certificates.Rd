@@ -14,8 +14,7 @@ elbv2_describe_listener_certificates(
 \arguments{
 \item{ListenerArn}{[required] The Amazon Resource Names (ARN) of the listener.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{PageSize}{The maximum number of results to return with this call.}
 }

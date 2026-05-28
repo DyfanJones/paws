@@ -13,50 +13,19 @@ route53_list_traffic_policy_instances(
 )
 }
 \arguments{
-\item{HostedZoneIdMarker}{If the value of \code{IsTruncated} in the previous response was \code{true}, you
-have more traffic policy instances. To get more traffic policy
-instances, submit another
-\code{\link[=route53_list_traffic_policy_instances]{list_traffic_policy_instances}}
-request. For the value of \code{HostedZoneId}, specify the value of
-\code{HostedZoneIdMarker} from the previous response, which is the hosted
-zone ID of the first traffic policy instance in the next group of
-traffic policy instances.
+\item{HostedZoneIdMarker}{If the value of \code{IsTruncated} in the previous response was \code{true}, you have more traffic policy instances. To get more traffic policy instances, submit another \code{\link[=route53_list_traffic_policy_instances]{list_traffic_policy_instances}} request. For the value of \code{HostedZoneId}, specify the value of \code{HostedZoneIdMarker} from the previous response, which is the hosted zone ID of the first traffic policy instance in the next group of traffic policy instances.
 
-If the value of \code{IsTruncated} in the previous response was \code{false},
-there are no more traffic policy instances to get.}
+If the value of \code{IsTruncated} in the previous response was \code{false}, there are no more traffic policy instances to get.}
 
-\item{TrafficPolicyInstanceNameMarker}{If the value of \code{IsTruncated} in the previous response was \code{true}, you
-have more traffic policy instances. To get more traffic policy
-instances, submit another
-\code{\link[=route53_list_traffic_policy_instances]{list_traffic_policy_instances}}
-request. For the value of \code{trafficpolicyinstancename}, specify the value
-of \code{TrafficPolicyInstanceNameMarker} from the previous response, which
-is the name of the first traffic policy instance in the next group of
-traffic policy instances.
+\item{TrafficPolicyInstanceNameMarker}{If the value of \code{IsTruncated} in the previous response was \code{true}, you have more traffic policy instances. To get more traffic policy instances, submit another \code{\link[=route53_list_traffic_policy_instances]{list_traffic_policy_instances}} request. For the value of \code{trafficpolicyinstancename}, specify the value of \code{TrafficPolicyInstanceNameMarker} from the previous response, which is the name of the first traffic policy instance in the next group of traffic policy instances.
 
-If the value of \code{IsTruncated} in the previous response was \code{false},
-there are no more traffic policy instances to get.}
+If the value of \code{IsTruncated} in the previous response was \code{false}, there are no more traffic policy instances to get.}
 
-\item{TrafficPolicyInstanceTypeMarker}{If the value of \code{IsTruncated} in the previous response was \code{true}, you
-have more traffic policy instances. To get more traffic policy
-instances, submit another
-\code{\link[=route53_list_traffic_policy_instances]{list_traffic_policy_instances}}
-request. For the value of \code{trafficpolicyinstancetype}, specify the value
-of \code{TrafficPolicyInstanceTypeMarker} from the previous response, which
-is the type of the first traffic policy instance in the next group of
-traffic policy instances.
+\item{TrafficPolicyInstanceTypeMarker}{If the value of \code{IsTruncated} in the previous response was \code{true}, you have more traffic policy instances. To get more traffic policy instances, submit another \code{\link[=route53_list_traffic_policy_instances]{list_traffic_policy_instances}} request. For the value of \code{trafficpolicyinstancetype}, specify the value of \code{TrafficPolicyInstanceTypeMarker} from the previous response, which is the type of the first traffic policy instance in the next group of traffic policy instances.
 
-If the value of \code{IsTruncated} in the previous response was \code{false},
-there are no more traffic policy instances to get.}
+If the value of \code{IsTruncated} in the previous response was \code{false}, there are no more traffic policy instances to get.}
 
-\item{MaxItems}{The maximum number of traffic policy instances that you want Amazon
-Route 53 to return in response to a
-\code{\link[=route53_list_traffic_policy_instances]{list_traffic_policy_instances}}
-request. If you have more than \code{MaxItems} traffic policy instances, the
-value of the \code{IsTruncated} element in the response is \code{true}, and the
-values of \code{HostedZoneIdMarker}, \code{TrafficPolicyInstanceNameMarker}, and
-\code{TrafficPolicyInstanceTypeMarker} represent the first traffic policy
-instance in the next group of \code{MaxItems} traffic policy instances.}
+\item{MaxItems}{The maximum number of traffic policy instances that you want Amazon Route 53 to return in response to a \code{\link[=route53_list_traffic_policy_instances]{list_traffic_policy_instances}} request. If you have more than \code{MaxItems} traffic policy instances, the value of the \code{IsTruncated} element in the response is \code{true}, and the values of \code{HostedZoneIdMarker}, \code{TrafficPolicyInstanceNameMarker}, and \code{TrafficPolicyInstanceTypeMarker} represent the first traffic policy instance in the next group of \code{MaxItems} traffic policy instances.}
 }
 \description{
 Gets information about the traffic policy instances that you created by using the current Amazon Web Services account.

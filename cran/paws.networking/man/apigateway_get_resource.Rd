@@ -11,13 +11,7 @@ apigateway_get_resource(restApiId, resourceId, embed = NULL)
 
 \item{resourceId}{[required] The identifier for the Resource resource.}
 
-\item{embed}{A query parameter to retrieve the specified resources embedded in the
-returned Resource representation in the response. This \code{embed} parameter
-value is a list of comma-separated strings. Currently, the request
-supports only retrieval of the embedded Method resources this way. The
-query parameter value must be a single-valued list and contain the
-\code{"methods"} string. For example,
-\code{GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods}.}
+\item{embed}{A query parameter to retrieve the specified resources embedded in the returned Resource representation in the response. This \code{embed} parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the \code{"methods"} string. For example, \code{GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods}.}
 }
 \description{
 Lists information about a resource.

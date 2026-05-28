@@ -11,14 +11,11 @@ codeartifact_get_repository_permissions_policy(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain containing the repository whose associated
-resource policy is to be retrieved.}
+\item{domain}{[required] The name of the domain containing the repository whose associated resource policy is to be retrieved.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{repository}{[required] The name of the repository whose associated resource policy is to be
-retrieved.}
+\item{repository}{[required] The name of the repository whose associated resource policy is to be retrieved.}
 }
 \description{
 Returns the resource policy that is set on a repository.

@@ -18,13 +18,9 @@ sagemaker_list_ai_benchmark_jobs(
 \arguments{
 \item{MaxResults}{The maximum number of benchmark jobs to return in the response.}
 
-\item{NextToken}{If the previous call to
-\code{\link[=sagemaker_list_ai_benchmark_jobs]{list_ai_benchmark_jobs}} didn't
-return the full set of jobs, the call returns a token for getting the
-next set.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_ai_benchmark_jobs]{list_ai_benchmark_jobs}} didn't return the full set of jobs, the call returns a token for getting the next set.}
 
-\item{NameContains}{A string in the job name. This filter returns only jobs whose name
-contains the specified string.}
+\item{NameContains}{A string in the job name. This filter returns only jobs whose name contains the specified string.}
 
 \item{StatusEquals}{A filter that returns only benchmark jobs with the specified status.}
 

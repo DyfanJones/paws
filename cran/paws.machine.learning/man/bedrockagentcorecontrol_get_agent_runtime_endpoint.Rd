@@ -10,8 +10,7 @@ bedrockagentcorecontrol_get_agent_runtime_endpoint(
 )
 }
 \arguments{
-\item{agentRuntimeId}{[required] The unique identifier of the AgentCore Runtime associated with the
-endpoint.}
+\item{agentRuntimeId}{[required] The unique identifier of the AgentCore Runtime associated with the endpoint.}
 
 \item{endpointName}{[required] The name of the AgentCore Runtime endpoint to retrieve.}
 }

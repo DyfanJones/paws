@@ -18,36 +18,23 @@ lexmodelsv2_create_bot(
 )
 }
 \arguments{
-\item{botName}{[required] The name of the bot. The bot name must be unique in the account that
-creates the bot.}
+\item{botName}{[required] The name of the bot. The bot name must be unique in the account that creates the bot.}
 
-\item{description}{A description of the bot. It appears in lists to help you identify a
-particular bot.}
+\item{description}{A description of the bot. It appears in lists to help you identify a particular bot.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that has permission to
-access the bot.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that has permission to access the bot.}
 
-\item{dataPrivacy}{[required] Provides information on additional privacy protections Amazon Lex should
-use with the bot's data.}
+\item{dataPrivacy}{[required] Provides information on additional privacy protections Amazon Lex should use with the bot's data.}
 
-\item{idleSessionTTLInSeconds}{[required] The time, in seconds, that Amazon Lex should keep information about a
-user's conversation with the bot.
+\item{idleSessionTTLInSeconds}{[required] The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.
 
-A user interaction remains active for the amount of time specified. If
-no conversation occurs during this time, the session expires and Amazon
-Lex deletes any data provided before the timeout.
+A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.
 
 You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.}
 
-\item{botTags}{A list of tags to add to the bot. You can only add tags when you create
-a bot. You can't use the \code{\link[=lexmodelsv2_update_bot]{update_bot}}
-operation to update tags. To update tags, use the
-\code{\link[=lexmodelsv2_tag_resource]{tag_resource}} operation.}
+\item{botTags}{A list of tags to add to the bot. You can only add tags when you create a bot. You can't use the \code{\link[=lexmodelsv2_update_bot]{update_bot}} operation to update tags. To update tags, use the \code{\link[=lexmodelsv2_tag_resource]{tag_resource}} operation.}
 
-\item{testBotAliasTags}{A list of tags to add to the test alias for a bot. You can only add tags
-when you create a bot. You can't use the \code{UpdateAlias} operation to
-update tags. To update tags on the test alias, use the
-\code{\link[=lexmodelsv2_tag_resource]{tag_resource}} operation.}
+\item{testBotAliasTags}{A list of tags to add to the test alias for a bot. You can only add tags when you create a bot. You can't use the \code{UpdateAlias} operation to update tags. To update tags on the test alias, use the \code{\link[=lexmodelsv2_tag_resource]{tag_resource}} operation.}
 
 \item{botType}{The type of a bot to create.}
 

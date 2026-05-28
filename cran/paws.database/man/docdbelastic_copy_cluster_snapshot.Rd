@@ -13,39 +13,21 @@ docdbelastic_copy_cluster_snapshot(
 )
 }
 \arguments{
-\item{copyTags}{Set to \code{true} to copy all tags from the source cluster snapshot to the
-target elastic cluster snapshot. The default is \code{false}.}
+\item{copyTags}{Set to \code{true} to copy all tags from the source cluster snapshot to the target elastic cluster snapshot. The default is \code{false}.}
 
-\item{kmsKeyId}{The Amazon Web Services KMS key ID for an encrypted elastic cluster
-snapshot. The Amazon Web Services KMS key ID is the Amazon Resource Name
-(ARN), Amazon Web Services KMS key identifier, or the Amazon Web
-Services KMS key alias for the Amazon Web Services KMS encryption key.
+\item{kmsKeyId}{The Amazon Web Services KMS key ID for an encrypted elastic cluster snapshot. The Amazon Web Services KMS key ID is the Amazon Resource Name (ARN), Amazon Web Services KMS key identifier, or the Amazon Web Services KMS key alias for the Amazon Web Services KMS encryption key.
 
-If you copy an encrypted elastic cluster snapshot from your Amazon Web
-Services account, you can specify a value for \code{KmsKeyId} to encrypt the
-copy with a new Amazon Web ServicesS KMS encryption key. If you don't
-specify a value for \code{KmsKeyId}, then the copy of the elastic cluster
-snapshot is encrypted with the same \code{AWS} KMS key as the source elastic
-cluster snapshot.
+If you copy an encrypted elastic cluster snapshot from your Amazon Web Services account, you can specify a value for \code{KmsKeyId} to encrypt the copy with a new Amazon Web ServicesS KMS encryption key. If you don't specify a value for \code{KmsKeyId}, then the copy of the elastic cluster snapshot is encrypted with the same \code{AWS} KMS key as the source elastic cluster snapshot.
 
-To copy an encrypted elastic cluster snapshot to another Amazon Web
-Services region, set \code{KmsKeyId} to the Amazon Web Services KMS key ID
-that you want to use to encrypt the copy of the elastic cluster snapshot
-in the destination region. Amazon Web Services KMS encryption keys are
-specific to the Amazon Web Services region that they are created in, and
-you can't use encryption keys from one Amazon Web Services region in
-another Amazon Web Services region.
+To copy an encrypted elastic cluster snapshot to another Amazon Web Services region, set \code{KmsKeyId} to the Amazon Web Services KMS key ID that you want to use to encrypt the copy of the elastic cluster snapshot in the destination region. Amazon Web Services KMS encryption keys are specific to the Amazon Web Services region that they are created in, and you can't use encryption keys from one Amazon Web Services region in another Amazon Web Services region.
 
-If you copy an unencrypted elastic cluster snapshot and specify a value
-for the \code{KmsKeyId} parameter, an error is returned.}
+If you copy an unencrypted elastic cluster snapshot and specify a value for the \code{KmsKeyId} parameter, an error is returned.}
 
-\item{snapshotArn}{[required] The Amazon Resource Name (ARN) identifier of the elastic cluster
-snapshot.}
+\item{snapshotArn}{[required] The Amazon Resource Name (ARN) identifier of the elastic cluster snapshot.}
 
 \item{tags}{The tags to be assigned to the elastic cluster snapshot.}
 
-\item{targetSnapshotName}{[required] The identifier of the new elastic cluster snapshot to create from the
-source cluster snapshot. This parameter is not case sensitive.
+\item{targetSnapshotName}{[required] The identifier of the new elastic cluster snapshot to create from the source cluster snapshot. This parameter is not case sensitive.
 
 Constraints:
 \itemize{

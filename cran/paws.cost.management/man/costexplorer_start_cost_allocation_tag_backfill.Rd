@@ -7,9 +7,7 @@
 costexplorer_start_cost_allocation_tag_backfill(BackfillFrom)
 }
 \arguments{
-\item{BackfillFrom}{[required] The date you want the backfill to start from. The date can only be a
-first day of the month (a billing start date). Dates can't precede the
-previous twelve months, or in the future.}
+\item{BackfillFrom}{[required] The date you want the backfill to start from. The date can only be a first day of the month (a billing start date). Dates can't precede the previous twelve months, or in the future.}
 }
 \description{
 Request a cost allocation tag backfill. This will backfill the activation status (either \code{active} or \code{inactive}) for all tag keys from \code{para:BackfillFrom} up to the time this request is made.

@@ -13,8 +13,7 @@ apigateway_get_domain_names(
 \arguments{
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 
 \item{resourceOwner}{The owner of the domain name access association.}
 }

@@ -17,22 +17,17 @@ healthlake_list_fhir_import_jobs(
 \arguments{
 \item{DatastoreId}{[required] Limits the response to the import job with the specified data store ID.}
 
-\item{NextToken}{The pagination token used to identify the next page of results to
-return.}
+\item{NextToken}{The pagination token used to identify the next page of results to return.}
 
-\item{MaxResults}{Limits the number of results returned for
-\code{\link[=healthlake_list_fhir_import_jobs]{list_fhir_import_jobs}} to a maximum
-quantity specified by the user.}
+\item{MaxResults}{Limits the number of results returned for \code{\link[=healthlake_list_fhir_import_jobs]{list_fhir_import_jobs}} to a maximum quantity specified by the user.}
 
 \item{JobName}{Limits the response to the import job with the specified job name.}
 
 \item{JobStatus}{Limits the response to the import job with the specified job status.}
 
-\item{SubmittedBefore}{Limits the response to FHIR import jobs submitted before a user-
-specified date.}
+\item{SubmittedBefore}{Limits the response to FHIR import jobs submitted before a user- specified date.}
 
-\item{SubmittedAfter}{Limits the response to FHIR import jobs submitted after a user-specified
-date.}
+\item{SubmittedAfter}{Limits the response to FHIR import jobs submitted after a user-specified date.}
 }
 \description{
 List all FHIR import jobs associated with an account and their statuses.

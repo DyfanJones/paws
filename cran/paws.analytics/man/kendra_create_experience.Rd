@@ -18,25 +18,13 @@ kendra_create_experience(
 
 \item{IndexId}{[required] The identifier of the index for your Amazon Kendra experience.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) of an IAM role with permission to access
-\code{\link[=kendra_query]{query}} API,
-\code{\link[=kendra_get_query_suggestions]{get_query_suggestions}} API, and other
-required APIs. The role also must include permission to access IAM
-Identity Center that stores your user and group information. For more
-information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM access roles for Amazon Kendra}.}
+\item{RoleArn}{The Amazon Resource Name (ARN) of an IAM role with permission to access \code{\link[=kendra_query]{query}} API, \code{\link[=kendra_get_query_suggestions]{get_query_suggestions}} API, and other required APIs. The role also must include permission to access IAM Identity Center that stores your user and group information. For more information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM access roles for Amazon Kendra}.}
 
-\item{Configuration}{Configuration information for your Amazon Kendra experience. This
-includes \code{ContentSourceConfiguration}, which specifies the data source
-IDs and/or FAQ IDs, and \code{UserIdentityConfiguration}, which specifies the
-user or group information to grant access to your Amazon Kendra
-experience.}
+\item{Configuration}{Configuration information for your Amazon Kendra experience. This includes \code{ContentSourceConfiguration}, which specifies the data source IDs and/or FAQ IDs, and \code{UserIdentityConfiguration}, which specifies the user or group information to grant access to your Amazon Kendra experience.}
 
 \item{Description}{A description for your Amazon Kendra experience.}
 
-\item{ClientToken}{A token that you provide to identify the request to create your Amazon
-Kendra experience. Multiple calls to the
-\code{\link[=kendra_create_experience]{create_experience}} API with the same client
-token creates only one Amazon Kendra experience.}
+\item{ClientToken}{A token that you provide to identify the request to create your Amazon Kendra experience. Multiple calls to the \code{\link[=kendra_create_experience]{create_experience}} API with the same client token creates only one Amazon Kendra experience.}
 }
 \description{
 Creates an Amazon Kendra experience such as a search application. For more information on creating a search application experience, including using the Python and Java SDKs, see \href{https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html}{Building a search experience with no code}.

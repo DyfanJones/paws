@@ -16,9 +16,7 @@ kafka_update_connectivity(
 
 \item{ConnectivityInfo}{Information about the broker access configuration.}
 
-\item{CurrentVersion}{[required] The version of the MSK cluster to update. Cluster versions aren't simple
-numbers. You can describe an MSK cluster to find its version. When this
-update operation is successful, it generates a new cluster version.}
+\item{CurrentVersion}{[required] The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.}
 
 \item{ZookeeperAccess}{Access control settings for zookeeper}
 }

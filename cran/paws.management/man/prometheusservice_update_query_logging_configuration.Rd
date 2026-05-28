@@ -11,14 +11,11 @@ prometheusservice_update_query_logging_configuration(
 )
 }
 \arguments{
-\item{workspaceId}{[required] The ID of the workspace for which to update the query logging
-configuration.}
+\item{workspaceId}{[required] The ID of the workspace for which to update the query logging configuration.}
 
-\item{destinations}{[required] The destinations where query logs will be sent. Only CloudWatch Logs
-destination is supported. The list must contain exactly one element.}
+\item{destinations}{[required] The destinations where query logs will be sent. Only CloudWatch Logs destination is supported. The list must contain exactly one element.}
 
-\item{clientToken}{(Optional) A unique, case-sensitive identifier that you can provide to
-ensure the idempotency of the request.}
+\item{clientToken}{(Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.}
 }
 \description{
 Updates the query logging configuration for the specified workspace.

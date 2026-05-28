@@ -9,12 +9,7 @@ ivsrealtime_disconnect_participant(stageArn, participantId, reason = NULL)
 \arguments{
 \item{stageArn}{[required] ARN of the stage to which the participant is attached.}
 
-\item{participantId}{[required] Identifier of the participant to be disconnected. IVS assigns this; it
-is returned by
-\code{\link[=ivsrealtime_create_participant_token]{create_participant_token}} (for
-streams using WebRTC ingest) or
-\code{\link[=ivsrealtime_create_ingest_configuration]{create_ingest_configuration}}
-(for streams using RTMP ingest).}
+\item{participantId}{[required] Identifier of the participant to be disconnected. IVS assigns this; it is returned by \code{\link[=ivsrealtime_create_participant_token]{create_participant_token}} (for streams using WebRTC ingest) or \code{\link[=ivsrealtime_create_ingest_configuration]{create_ingest_configuration}} (for streams using RTMP ingest).}
 
 \item{reason}{Description of why this participant is being disconnected.}
 }

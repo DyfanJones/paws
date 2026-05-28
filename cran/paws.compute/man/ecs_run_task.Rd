@@ -29,181 +29,94 @@ ecs_run_task(
 \arguments{
 \item{capacityProviderStrategy}{The capacity provider strategy to use for the task.
 
-If you want to use Amazon ECS Managed Instances, you must use the
-\code{capacityProviderStrategy} request parameter and omit the \code{launchType}
-request parameter.
+If you want to use Amazon ECS Managed Instances, you must use the \code{capacityProviderStrategy} request parameter and omit the \code{launchType} request parameter.
 
-If a \code{capacityProviderStrategy} is specified, the \code{launchType} parameter
-must be omitted. If no \code{capacityProviderStrategy} or \code{launchType} is
-specified, the \code{defaultCapacityProviderStrategy} for the cluster is
-used.
+If a \code{capacityProviderStrategy} is specified, the \code{launchType} parameter must be omitted. If no \code{capacityProviderStrategy} or \code{launchType} is specified, the \code{defaultCapacityProviderStrategy} for the cluster is used.
 
-When you use cluster auto scaling, you must specify
-\code{capacityProviderStrategy} and not \code{launchType}.
+When you use cluster auto scaling, you must specify \code{capacityProviderStrategy} and not \code{launchType}.
 
-A capacity provider strategy can contain a maximum of 20 capacity
-providers.}
+A capacity provider strategy can contain a maximum of 20 capacity providers.}
 
-\item{cluster}{The short name or full Amazon Resource Name (ARN) of the cluster to run
-your task on. If you do not specify a cluster, the default cluster is
-assumed.
+\item{cluster}{The short name or full Amazon Resource Name (ARN) of the cluster to run your task on. If you do not specify a cluster, the default cluster is assumed.
 
-Each account receives a default cluster the first time you use the
-service, but you may also create other clusters.}
+Each account receives a default cluster the first time you use the service, but you may also create other clusters.}
 
-\item{count}{The number of instantiations of the specified task to place on your
-cluster. You can specify up to 10 tasks for each call.}
+\item{count}{The number of instantiations of the specified task to place on your cluster. You can specify up to 10 tasks for each call.}
 
-\item{enableECSManagedTags}{Specifies whether to use Amazon ECS managed tags for the task. For more
-information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html}{Tagging Your Amazon ECS Resources}
-in the \emph{Amazon Elastic Container Service Developer Guide}.}
+\item{enableECSManagedTags}{Specifies whether to use Amazon ECS managed tags for the task. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html}{Tagging Your Amazon ECS Resources} in the \emph{Amazon Elastic Container Service Developer Guide}.}
 
-\item{enableExecuteCommand}{Determines whether to use the execute command functionality for the
-containers in this task. If \code{true}, this enables execute command
-functionality on all containers in the task.
+\item{enableExecuteCommand}{Determines whether to use the execute command functionality for the containers in this task. If \code{true}, this enables execute command functionality on all containers in the task.
 
-If \code{true}, then the task definition must have a task role, or you must
-provide one as an override.}
+If \code{true}, then the task definition must have a task role, or you must provide one as an override.}
 
-\item{group}{The name of the task group to associate with the task. The default value
-is the family name of the task definition (for example,
-\code{family:my-family-name}).}
+\item{group}{The name of the task group to associate with the task. The default value is the family name of the task definition (for example, \code{family:my-family-name}).}
 
-\item{launchType}{The infrastructure to run your standalone task on. For more information,
-see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-configuration.html}{Amazon ECS launch types}
-in the \emph{Amazon Elastic Container Service Developer Guide}.
+\item{launchType}{The infrastructure to run your standalone task on. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-configuration.html}{Amazon ECS launch types} in the \emph{Amazon Elastic Container Service Developer Guide}.
 
-If you want to use Amazon ECS Managed Instances, you must use the
-\code{capacityProviderStrategy} request parameter and omit the \code{launchType}
-request parameter.
+If you want to use Amazon ECS Managed Instances, you must use the \code{capacityProviderStrategy} request parameter and omit the \code{launchType} request parameter.
 
-The \code{FARGATE} launch type runs your tasks on Fargate On-Demand
-infrastructure.
+The \code{FARGATE} launch type runs your tasks on Fargate On-Demand infrastructure.
 
-Fargate Spot infrastructure is available for use but a capacity provider
-strategy must be used. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html}{Fargate capacity providers}
-in the \emph{Amazon ECS Developer Guide}.
+Fargate Spot infrastructure is available for use but a capacity provider strategy must be used. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html}{Fargate capacity providers} in the \emph{Amazon ECS Developer Guide}.
 
-The \code{EC2} launch type runs your tasks on Amazon EC2 instances registered
-to your cluster.
+The \code{EC2} launch type runs your tasks on Amazon EC2 instances registered to your cluster.
 
-The \code{EXTERNAL} launch type runs your tasks on your on-premises server or
-virtual machine (VM) capacity registered to your cluster.
+The \code{EXTERNAL} launch type runs your tasks on your on-premises server or virtual machine (VM) capacity registered to your cluster.
 
-A task can use either a launch type or a capacity provider strategy. If
-a \code{launchType} is specified, the \code{capacityProviderStrategy} parameter
-must be omitted.
+A task can use either a launch type or a capacity provider strategy. If a \code{launchType} is specified, the \code{capacityProviderStrategy} parameter must be omitted.
 
-When you use cluster auto scaling, you must specify
-\code{capacityProviderStrategy} and not \code{launchType}.}
+When you use cluster auto scaling, you must specify \code{capacityProviderStrategy} and not \code{launchType}.}
 
-\item{networkConfiguration}{The network configuration for the task. This parameter is required for
-task definitions that use the \code{awsvpc} network mode to receive their own
-elastic network interface, and it isn't supported for other network
-modes. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html}{Task networking}
-in the \emph{Amazon Elastic Container Service Developer Guide}.}
+\item{networkConfiguration}{The network configuration for the task. This parameter is required for task definitions that use the \code{awsvpc} network mode to receive their own elastic network interface, and it isn't supported for other network modes. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html}{Task networking} in the \emph{Amazon Elastic Container Service Developer Guide}.}
 
-\item{overrides}{A list of container overrides in JSON format that specify the name of a
-container in the specified task definition and the overrides it should
-receive. You can override the default command for a container (that's
-specified in the task definition or Docker image) with a \code{command}
-override. You can also override existing environment variables (that are
-specified in the task definition or Docker image) on a container or add
-new environment variables to it with an \code{environment} override.
+\item{overrides}{A list of container overrides in JSON format that specify the name of a container in the specified task definition and the overrides it should receive. You can override the default command for a container (that's specified in the task definition or Docker image) with a \code{command} override. You can also override existing environment variables (that are specified in the task definition or Docker image) on a container or add new environment variables to it with an \code{environment} override.
 
-A total of 8192 characters are allowed for overrides. This limit
-includes the JSON formatting characters of the override structure.}
+A total of 8192 characters are allowed for overrides. This limit includes the JSON formatting characters of the override structure.}
 
-\item{placementConstraints}{An array of placement constraint objects to use for the task. You can
-specify up to 10 constraints for each task (including constraints in the
-task definition and those specified at runtime).}
+\item{placementConstraints}{An array of placement constraint objects to use for the task. You can specify up to 10 constraints for each task (including constraints in the task definition and those specified at runtime).}
 
-\item{placementStrategy}{The placement strategy objects to use for the task. You can specify a
-maximum of 5 strategy rules for each task.}
+\item{placementStrategy}{The placement strategy objects to use for the task. You can specify a maximum of 5 strategy rules for each task.}
 
-\item{platformVersion}{The platform version the task uses. A platform version is only specified
-for tasks hosted on Fargate. If one isn't specified, the \code{LATEST}
-platform version is used. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform-fargate.html}{Fargate platform versions}
-in the \emph{Amazon Elastic Container Service Developer Guide}.}
+\item{platformVersion}{The platform version the task uses. A platform version is only specified for tasks hosted on Fargate. If one isn't specified, the \code{LATEST} platform version is used. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform-fargate.html}{Fargate platform versions} in the \emph{Amazon Elastic Container Service Developer Guide}.}
 
-\item{propagateTags}{Specifies whether to propagate the tags from the task definition to the
-task. If no value is specified, the tags aren't propagated. Tags can
-only be propagated to the task during task creation. To add tags to a
-task after task creation, use the\code{\link[=ecs_tag_resource]{tag_resource}} API
-action.
+\item{propagateTags}{Specifies whether to propagate the tags from the task definition to the task. If no value is specified, the tags aren't propagated. Tags can only be propagated to the task during task creation. To add tags to a task after task creation, use the\code{\link[=ecs_tag_resource]{tag_resource}} API action.
 
-An error will be received if you specify the \code{SERVICE} option when
-running a task.}
+An error will be received if you specify the \code{SERVICE} option when running a task.}
 
-\item{referenceId}{This parameter is only used by Amazon ECS. It is not intended for use by
-customers.}
+\item{referenceId}{This parameter is only used by Amazon ECS. It is not intended for use by customers.}
 
-\item{startedBy}{An optional tag specified when a task is started. For example, if you
-automatically trigger a task to run a batch process job, you could apply
-a unique identifier for that job to your task with the \code{startedBy}
-parameter. You can then identify which tasks belong to that job by
-filtering the results of a \code{\link[=ecs_list_tasks]{list_tasks}} call with the
-\code{startedBy} value. Up to 128 letters (uppercase and lowercase), numbers,
-hyphens (-), forward slash (/), and underscores (_) are allowed.
+\item{startedBy}{An optional tag specified when a task is started. For example, if you automatically trigger a task to run a batch process job, you could apply a unique identifier for that job to your task with the \code{startedBy} parameter. You can then identify which tasks belong to that job by filtering the results of a \code{\link[=ecs_list_tasks]{list_tasks}} call with the \code{startedBy} value. Up to 128 letters (uppercase and lowercase), numbers, hyphens (-), forward slash (/), and underscores (_) are allowed.
 
-If a task is started by an Amazon ECS service, then the \code{startedBy}
-parameter contains the deployment ID of the service that starts it.}
+If a task is started by an Amazon ECS service, then the \code{startedBy} parameter contains the deployment ID of the service that starts it.}
 
-\item{tags}{The metadata that you apply to the task to help you categorize and
-organize them. Each tag consists of a key and an optional value, both of
-which you define.
+\item{tags}{The metadata that you apply to the task to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 
 The following basic restrictions apply to tags:
 \itemize{
 \item Maximum number of tags per resource - 50
-\item For each resource, each tag key must be unique, and each tag key can
-have only one value.
+\item For each resource, each tag key must be unique, and each tag key can have only one value.
 \item Maximum key length - 128 Unicode characters in UTF-8
 \item Maximum value length - 256 Unicode characters in UTF-8
-\item If your tagging schema is used across multiple services and
-resources, remember that other services may have restrictions on
-allowed characters. Generally allowed characters are: letters,
-numbers, and spaces representable in UTF-8, and the following
-characters: + - = . _ : / @.
+\item If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
 \item Tag keys and values are case-sensitive.
-\item Do not use \verb{aws:}, \verb{AWS:}, or any upper or lowercase combination of
-such as a prefix for either keys or values as it is reserved for
-Amazon Web Services use. You cannot edit or delete tag keys or
-values with this prefix. Tags with this prefix do not count against
-your tags per resource limit.
+\item Do not use \verb{aws:}, \verb{AWS:}, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
 }}
 
-\item{taskDefinition}{[required] The \code{family} and \code{revision} (\code{family:revision}) or full ARN of the task
-definition to run. If a \code{revision} isn't specified, the latest \code{ACTIVE}
-revision is used.
+\item{taskDefinition}{[required] The \code{family} and \code{revision} (\code{family:revision}) or full ARN of the task definition to run. If a \code{revision} isn't specified, the latest \code{ACTIVE} revision is used.
 
-The full ARN value must match the value that you specified as the
-\code{Resource} of the principal's permissions policy.
+The full ARN value must match the value that you specified as the \code{Resource} of the principal's permissions policy.
 
-When you specify a task definition, you must either specify a specific
-revision, or all revisions in the ARN.
+When you specify a task definition, you must either specify a specific revision, or all revisions in the ARN.
 
-To specify a specific revision, include the revision number in the ARN.
-For example, to specify revision 2, use
-\code{arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2}.
+To specify a specific revision, include the revision number in the ARN. For example, to specify revision 2, use \code{arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:2}.
 
-To specify all revisions, use the wildcard (*) in the ARN. For example,
-to specify all revisions, use
-\verb{arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*}.
+To specify all revisions, use the wildcard (*) in the ARN. For example, to specify all revisions, use \verb{arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*}.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources}{Policy Resources for Amazon ECS}
-in the Amazon Elastic Container Service Developer Guide.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-resources}{Policy Resources for Amazon ECS} in the Amazon Elastic Container Service Developer Guide.}
 
-\item{clientToken}{An identifier that you provide to ensure the idempotency of the request.
-It must be unique and is case sensitive. Up to 64 characters are
-allowed. The valid characters are characters in the range of 33-126,
-inclusive. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/APIReference/ECS_Idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{An identifier that you provide to ensure the idempotency of the request. It must be unique and is case sensitive. Up to 64 characters are allowed. The valid characters are characters in the range of 33-126, inclusive. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_Idempotency.html}{Ensuring idempotency}.}
 
-\item{volumeConfigurations}{The details of the volume that was \code{configuredAtLaunch}. You can
-configure the size, volumeType, IOPS, throughput, snapshot and
-encryption in
-\href{https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html}{TaskManagedEBSVolumeConfiguration}.
-The \code{name} of the volume must match the \code{name} from the task definition.}
+\item{volumeConfigurations}{The details of the volume that was \code{configuredAtLaunch}. You can configure the size, volumeType, IOPS, throughput, snapshot and encryption in \href{https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TaskManagedEBSVolumeConfiguration.html}{TaskManagedEBSVolumeConfiguration}. The \code{name} of the volume must match the \code{name} from the task definition.}
 }
 \description{
 Starts a new task using the specified task definition.

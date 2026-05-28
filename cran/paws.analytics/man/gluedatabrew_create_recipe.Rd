@@ -9,12 +9,9 @@ gluedatabrew_create_recipe(Description = NULL, Name, Steps, Tags = NULL)
 \arguments{
 \item{Description}{A description for the recipe.}
 
-\item{Name}{[required] A unique name for the recipe. Valid characters are alphanumeric (A-Z,
-a-z, 0-9), hyphen (-), period (.), and space.}
+\item{Name}{[required] A unique name for the recipe. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
 
-\item{Steps}{[required] An array containing the steps to be performed by the recipe. Each recipe
-step consists of one recipe action and (optionally) an array of
-condition expressions.}
+\item{Steps}{[required] An array containing the steps to be performed by the recipe. Each recipe step consists of one recipe action and (optionally) an array of condition expressions.}
 
 \item{Tags}{Metadata tags to apply to this recipe.}
 }

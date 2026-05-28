@@ -13,8 +13,7 @@ datazone_post_time_series_data_points(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which you want to post time
-series data points.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which you want to post time series data points.}
 
 \item{entityIdentifier}{[required] The ID of the asset for which you want to post time series data points.}
 
@@ -22,8 +21,7 @@ series data points.}
 
 \item{forms}{[required] The forms that contain the data points that you want to post.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Posts time series data points to Amazon DataZone for the specified asset.

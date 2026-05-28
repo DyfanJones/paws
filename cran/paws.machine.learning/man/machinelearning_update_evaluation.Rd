@@ -9,8 +9,7 @@ machinelearning_update_evaluation(EvaluationId, EvaluationName)
 \arguments{
 \item{EvaluationId}{[required] The ID assigned to the \code{Evaluation} during creation.}
 
-\item{EvaluationName}{[required] A new user-supplied name or description of the \code{Evaluation} that will
-replace the current content.}
+\item{EvaluationName}{[required] A new user-supplied name or description of the \code{Evaluation} that will replace the current content.}
 }
 \description{
 Updates the \code{EvaluationName} of an \code{Evaluation}.

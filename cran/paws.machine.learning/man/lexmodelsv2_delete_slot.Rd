@@ -13,9 +13,7 @@ lexmodelsv2_delete_slot(slotId, botId, botVersion, localeId, intentId)
 
 \item{botVersion}{[required] The version of the bot associated with the slot to delete.}
 
-\item{localeId}{[required] The identifier of the language and locale that the slot will be deleted
-from. The string must match one of the supported locales. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
 \item{intentId}{[required] The identifier of the intent associated with the slot.}
 }

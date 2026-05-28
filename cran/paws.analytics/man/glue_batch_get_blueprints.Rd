@@ -15,8 +15,7 @@ glue_batch_get_blueprints(
 
 \item{IncludeBlueprint}{Specifies whether or not to include the blueprint in the response.}
 
-\item{IncludeParameterSpec}{Specifies whether or not to include the parameters, as a JSON string,
-for the blueprint in the response.}
+\item{IncludeParameterSpec}{Specifies whether or not to include the parameters, as a JSON string, for the blueprint in the response.}
 }
 \description{
 Retrieves information about a list of blueprints.

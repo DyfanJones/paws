@@ -8,18 +8,14 @@ NULL
 #' @description
 #' Copy an CloudHSM cluster backup to a different region.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM backup in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_copy_backup_to_region(DestinationRegion, BackupId, TagList)
 #'
 #' @param DestinationRegion &#91;required&#93; The AWS region that will contain your copied CloudHSM cluster backup.
 #' @param BackupId &#91;required&#93; The ID of the backup that will be copied to the destination region.
-#' @param TagList Tags to apply to the destination backup during creation. If you specify
-#' tags, only these tags will be applied to the destination backup. If you
-#' do not specify tags, the service copies tags from the source backup to
-#' the destination backup.
+#' @param TagList Tags to apply to the destination backup during creation. If you specify tags, only these tags will be applied to the destination backup. If you do not specify tags, the service copies tags from the source backup to the destination backup.
 #'
 #' @return
 #' A list with the following syntax:
@@ -79,34 +75,23 @@ cloudhsmv2_copy_backup_to_region <- function(DestinationRegion, BackupId, TagLis
 #' @description
 #' Creates a new CloudHSM cluster.
 #' 
-#' **Cross-account use:** Yes. To perform this operation with an CloudHSM
-#' backup in a different AWS account, specify the full backup ARN in the
-#' value of the SourceBackupId parameter.
+#' **Cross-account use:** Yes. To perform this operation with an CloudHSM backup in a different AWS account, specify the full backup ARN in the value of the SourceBackupId parameter.
 #'
 #' @usage
 #' cloudhsmv2_create_cluster(BackupRetentionPolicy, HsmType,
 #'   SourceBackupId, SubnetIds, NetworkType, TagList, Mode)
 #'
 #' @param BackupRetentionPolicy A policy that defines how the service retains backups.
-#' @param HsmType &#91;required&#93; The type of HSM to use in the cluster. The allowed values are
-#' `hsm1.medium` and `hsm2m.medium`.
-#' @param SourceBackupId The identifier (ID) or the Amazon Resource Name (ARN) of the cluster
-#' backup to restore. Use this value to restore the cluster from a backup
-#' instead of creating a new cluster. To find the backup ID or ARN, use
-#' [`describe_backups`][cloudhsmv2_describe_backups]. *If using a backup in
-#' another account, the full ARN must be supplied.*
-#' @param SubnetIds &#91;required&#93; The identifiers (IDs) of the subnets where you are creating the cluster.
-#' You must specify at least one subnet. If you specify multiple subnets,
-#' they must meet the following criteria:
+#' @param HsmType &#91;required&#93; The type of HSM to use in the cluster. The allowed values are `hsm1.medium` and `hsm2m.medium`.
+#' @param SourceBackupId The identifier (ID) or the Amazon Resource Name (ARN) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID or ARN, use [`describe_backups`][cloudhsmv2_describe_backups]. *If using a backup in another account, the full ARN must be supplied.*
+#' @param SubnetIds &#91;required&#93; The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:
 #' 
 #' -   All subnets must be in the same virtual private cloud (VPC).
 #' 
 #' -   You can specify only one subnet per Availability Zone.
-#' @param NetworkType The NetworkType to create a cluster with. The allowed values are `IPV4`
-#' and `DUALSTACK`.
+#' @param NetworkType The NetworkType to create a cluster with. The allowed values are `IPV4` and `DUALSTACK`.
 #' @param TagList Tags to apply to the CloudHSM cluster during creation.
-#' @param Mode The mode to use in the cluster. The allowed values are `FIPS` and
-#' `NON_FIPS`.
+#' @param Mode The mode to use in the cluster. The allowed values are `FIPS` and `NON_FIPS`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -219,24 +204,16 @@ cloudhsmv2_create_cluster <- function(BackupRetentionPolicy = NULL, HsmType, Sou
 #' cluster
 #'
 #' @description
-#' Creates a new hardware security module (HSM) in the specified CloudHSM
-#' cluster.
+#' Creates a new hardware security module (HSM) in the specified CloudHSM cluster.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM cluster in a different Amazon Web Service account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Service account.
 #'
 #' @usage
 #' cloudhsmv2_create_hsm(ClusterId, AvailabilityZone, IpAddress)
 #'
-#' @param ClusterId &#91;required&#93; The identifier (ID) of the HSM's cluster. To find the cluster ID, use
-#' [`describe_clusters`][cloudhsmv2_describe_clusters].
-#' @param AvailabilityZone &#91;required&#93; The Availability Zone where you are creating the HSM. To find the
-#' cluster's Availability Zones, use
-#' [`describe_clusters`][cloudhsmv2_describe_clusters].
-#' @param IpAddress The HSM's IP address. If you specify an IP address, use an available
-#' address from the subnet that maps to the Availability Zone where you are
-#' creating the HSM. If you don't specify an IP address, one is chosen for
-#' you from that subnet.
+#' @param ClusterId &#91;required&#93; The identifier (ID) of the HSM's cluster. To find the cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' @param AvailabilityZone &#91;required&#93; The Availability Zone where you are creating the HSM. To find the cluster's Availability Zones, use [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' @param IpAddress The HSM's IP address. If you specify an IP address, use an available address from the subnet that maps to the Availability Zone where you are creating the HSM. If you don't specify an IP address, one is chosen for you from that subnet.
 #'
 #' @return
 #' A list with the following syntax:
@@ -293,18 +270,14 @@ cloudhsmv2_create_hsm <- function(ClusterId, AvailabilityZone, IpAddress = NULL)
 #' Deletes a specified CloudHSM backup
 #'
 #' @description
-#' Deletes a specified CloudHSM backup. A backup can be restored up to 7
-#' days after the DeleteBackup request is made. For more information on
-#' restoring a backup, see [`restore_backup`][cloudhsmv2_restore_backup].
+#' Deletes a specified CloudHSM backup. A backup can be restored up to 7 days after the DeleteBackup request is made. For more information on restoring a backup, see [`restore_backup`][cloudhsmv2_restore_backup].
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM backup in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_delete_backup(BackupId)
 #'
-#' @param BackupId &#91;required&#93; The ID of the backup to be deleted. To find the ID of a backup, use the
-#' [`describe_backups`][cloudhsmv2_describe_backups] operation.
+#' @param BackupId &#91;required&#93; The ID of the backup to be deleted. To find the ID of a backup, use the [`describe_backups`][cloudhsmv2_describe_backups] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -374,19 +347,14 @@ cloudhsmv2_delete_backup <- function(BackupId) {
 #' Deletes the specified CloudHSM cluster
 #'
 #' @description
-#' Deletes the specified CloudHSM cluster. Before you can delete a cluster,
-#' you must delete all HSMs in the cluster. To see if the cluster contains
-#' any HSMs, use [`describe_clusters`][cloudhsmv2_describe_clusters]. To
-#' delete an HSM, use [`delete_hsm`][cloudhsmv2_delete_hsm].
+#' Deletes the specified CloudHSM cluster. Before you can delete a cluster, you must delete all HSMs in the cluster. To see if the cluster contains any HSMs, use [`describe_clusters`][cloudhsmv2_describe_clusters]. To delete an HSM, use [`delete_hsm`][cloudhsmv2_delete_hsm].
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM cluster in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_delete_cluster(ClusterId)
 #'
-#' @param ClusterId &#91;required&#93; The identifier (ID) of the cluster that you are deleting. To find the
-#' cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' @param ClusterId &#91;required&#93; The identifier (ID) of the cluster that you are deleting. To find the cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
 #'
 #' @return
 #' A list with the following syntax:
@@ -482,25 +450,17 @@ cloudhsmv2_delete_cluster <- function(ClusterId) {
 #' Deletes the specified HSM
 #'
 #' @description
-#' Deletes the specified HSM. To specify an HSM, you can use its identifier
-#' (ID), the IP address of the HSM's elastic network interface (ENI), or
-#' the ID of the HSM's ENI. You need to specify only one of these values.
-#' To find these values, use
-#' [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI. You need to specify only one of these values. To find these values, use [`describe_clusters`][cloudhsmv2_describe_clusters].
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM hsm in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM hsm in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_delete_hsm(ClusterId, HsmId, EniId, EniIp)
 #'
-#' @param ClusterId &#91;required&#93; The identifier (ID) of the cluster that contains the HSM that you are
-#' deleting.
+#' @param ClusterId &#91;required&#93; The identifier (ID) of the cluster that contains the HSM that you are deleting.
 #' @param HsmId The identifier (ID) of the HSM that you are deleting.
-#' @param EniId The identifier (ID) of the elastic network interface (ENI) of the HSM
-#' that you are deleting.
-#' @param EniIp The IP address of the elastic network interface (ENI) of the HSM that
-#' you are deleting.
+#' @param EniId The identifier (ID) of the elastic network interface (ENI) of the HSM that you are deleting.
+#' @param EniIp The IP address of the elastic network interface (ENI) of the HSM that you are deleting.
 #'
 #' @return
 #' A list with the following syntax:
@@ -547,19 +507,14 @@ cloudhsmv2_delete_hsm <- function(ClusterId, HsmId = NULL, EniId = NULL, EniIp =
 #' Deletes an CloudHSM resource policy
 #'
 #' @description
-#' Deletes an CloudHSM resource policy. Deleting a resource policy will
-#' result in the resource being unshared and removed from any RAM resource
-#' shares. Deleting the resource policy attached to a backup will not
-#' impact any clusters created from that backup.
+#' Deletes an CloudHSM resource policy. Deleting a resource policy will result in the resource being unshared and removed from any RAM resource shares. Deleting the resource policy attached to a backup will not impact any clusters created from that backup.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM resource in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_delete_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn Amazon Resource Name (ARN) of the resource from which the policy will be
-#' removed.
+#' @param ResourceArn Amazon Resource Name (ARN) of the resource from which the policy will be removed.
 #'
 #' @return
 #' A list with the following syntax:
@@ -604,64 +559,33 @@ cloudhsmv2_delete_resource_policy <- function(ResourceArn = NULL) {
 #' Gets information about backups of CloudHSM clusters
 #'
 #' @description
-#' Gets information about backups of CloudHSM clusters. Lists either the
-#' backups you own or the backups shared with you when the Shared parameter
-#' is true.
+#' Gets information about backups of CloudHSM clusters. Lists either the backups you own or the backups shared with you when the Shared parameter is true.
 #' 
-#' This is a paginated operation, which means that each response might
-#' contain only a subset of all the backups. When the response contains
-#' only a subset of backups, it includes a `NextToken` value. Use this
-#' value in a subsequent [`describe_backups`][cloudhsmv2_describe_backups]
-#' request to get more backups. When you receive a response with no
-#' `NextToken` (or an empty or null value), that means there are no more
-#' backups to get.
+#' This is a paginated operation, which means that each response might contain only a subset of all the backups. When the response contains only a subset of backups, it includes a `NextToken` value. Use this value in a subsequent [`describe_backups`][cloudhsmv2_describe_backups] request to get more backups. When you receive a response with no `NextToken` (or an empty or null value), that means there are no more backups to get.
 #' 
-#' **Cross-account use:** Yes. Customers can describe backups in other
-#' Amazon Web Services accounts that are shared with them.
+#' **Cross-account use:** Yes. Customers can describe backups in other Amazon Web Services accounts that are shared with them.
 #'
 #' @usage
 #' cloudhsmv2_describe_backups(NextToken, MaxResults, Filters, Shared,
 #'   SortAscending)
 #'
-#' @param NextToken The `NextToken` value that you received in the previous response. Use
-#' this value to get more backups.
-#' @param MaxResults The maximum number of backups to return in the response. When there are
-#' more backups than the number you specify, the response contains a
-#' `NextToken` value.
+#' @param NextToken The `NextToken` value that you received in the previous response. Use this value to get more backups.
+#' @param MaxResults The maximum number of backups to return in the response. When there are more backups than the number you specify, the response contains a `NextToken` value.
 #' @param Filters One or more filters to limit the items returned in the response.
 #' 
-#' Use the `backupIds` filter to return only the specified backups. Specify
-#' backups by their backup identifier (ID).
+#' Use the `backupIds` filter to return only the specified backups. Specify backups by their backup identifier (ID).
 #' 
-#' Use the `sourceBackupIds` filter to return only the backups created from
-#' a source backup. The `sourceBackupID` of a source backup is returned by
-#' the [`copy_backup_to_region`][cloudhsmv2_copy_backup_to_region]
-#' operation.
+#' Use the `sourceBackupIds` filter to return only the backups created from a source backup. The `sourceBackupID` of a source backup is returned by the [`copy_backup_to_region`][cloudhsmv2_copy_backup_to_region] operation.
 #' 
-#' Use the `clusterIds` filter to return only the backups for the specified
-#' clusters. Specify clusters by their cluster identifier (ID).
+#' Use the `clusterIds` filter to return only the backups for the specified clusters. Specify clusters by their cluster identifier (ID).
 #' 
-#' Use the `states` filter to return only backups that match the specified
-#' state.
+#' Use the `states` filter to return only backups that match the specified state.
 #' 
-#' Use the `neverExpires` filter to return backups filtered by the value in
-#' the `neverExpires` parameter. `True` returns all backups exempt from the
-#' backup retention policy. `False` returns all backups with a backup
-#' retention policy defined at the cluster.
+#' Use the `neverExpires` filter to return backups filtered by the value in the `neverExpires` parameter. `True` returns all backups exempt from the backup retention policy. `False` returns all backups with a backup retention policy defined at the cluster.
 #' @param Shared Describe backups that are shared with you.
 #' 
-#' By default when using this option, the command returns backups that have
-#' been shared using a standard Resource Access Manager resource share. In
-#' order for a backup that was shared using the PutResourcePolicy command
-#' to be returned, the share must be promoted to a standard resource share
-#' using the RAM
-#' [PromoteResourceShareCreatedFromPolicy](https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html)
-#' API operation. For more information about sharing backups, see [Working
-#' with shared
-#' backups](https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html)
-#' in the CloudHSM User Guide.
-#' @param SortAscending Designates whether or not to sort the return backups by ascending
-#' chronological order of generation.
+#' By default when using this option, the command returns backups that have been shared using a standard Resource Access Manager resource share. In order for a backup that was shared using the PutResourcePolicy command to be returned, the share must be promoted to a standard resource share using the RAM [PromoteResourceShareCreatedFromPolicy](https://docs.aws.amazon.com/cli/latest/reference/ram/promote-resource-share-created-from-policy.html) API operation. For more information about sharing backups, see [Working with shared backups](https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html) in the CloudHSM User Guide.
+#' @param SortAscending Designates whether or not to sort the return backups by ascending chronological order of generation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -744,36 +668,22 @@ cloudhsmv2_describe_backups <- function(NextToken = NULL, MaxResults = NULL, Fil
 #' @description
 #' Gets information about CloudHSM clusters.
 #' 
-#' This is a paginated operation, which means that each response might
-#' contain only a subset of all the clusters. When the response contains
-#' only a subset of clusters, it includes a `NextToken` value. Use this
-#' value in a subsequent
-#' [`describe_clusters`][cloudhsmv2_describe_clusters] request to get more
-#' clusters. When you receive a response with no `NextToken` (or an empty
-#' or null value), that means there are no more clusters to get.
+#' This is a paginated operation, which means that each response might contain only a subset of all the clusters. When the response contains only a subset of clusters, it includes a `NextToken` value. Use this value in a subsequent [`describe_clusters`][cloudhsmv2_describe_clusters] request to get more clusters. When you receive a response with no `NextToken` (or an empty or null value), that means there are no more clusters to get.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on CloudHSM
-#' clusters in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on CloudHSM clusters in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_describe_clusters(Filters, NextToken, MaxResults)
 #'
 #' @param Filters One or more filters to limit the items returned in the response.
 #' 
-#' Use the `clusterIds` filter to return only the specified clusters.
-#' Specify clusters by their cluster identifier (ID).
+#' Use the `clusterIds` filter to return only the specified clusters. Specify clusters by their cluster identifier (ID).
 #' 
-#' Use the `vpcIds` filter to return only the clusters in the specified
-#' virtual private clouds (VPCs). Specify VPCs by their VPC identifier
-#' (ID).
+#' Use the `vpcIds` filter to return only the clusters in the specified virtual private clouds (VPCs). Specify VPCs by their VPC identifier (ID).
 #' 
-#' Use the `states` filter to return only clusters that match the specified
-#' state.
-#' @param NextToken The `NextToken` value that you received in the previous response. Use
-#' this value to get more clusters.
-#' @param MaxResults The maximum number of clusters to return in the response. When there are
-#' more clusters than the number you specify, the response contains a
-#' `NextToken` value.
+#' Use the `states` filter to return only clusters that match the specified state.
+#' @param NextToken The `NextToken` value that you received in the previous response. Use this value to get more clusters.
+#' @param MaxResults The maximum number of clusters to return in the response. When there are more clusters than the number you specify, the response contains a `NextToken` value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -880,14 +790,12 @@ cloudhsmv2_describe_clusters <- function(Filters = NULL, NextToken = NULL, MaxRe
 #' @description
 #' Retrieves the resource policy document attached to a given resource.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM resource in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_get_resource_policy(ResourceArn)
 #'
-#' @param ResourceArn Amazon Resource Name (ARN) of the resource to which a policy is
-#' attached.
+#' @param ResourceArn Amazon Resource Name (ARN) of the resource to which a policy is attached.
 #'
 #' @return
 #' A list with the following syntax:
@@ -932,28 +840,16 @@ cloudhsmv2_get_resource_policy <- function(ResourceArn = NULL) {
 #' by your issuing certificate authority (CA) and the CA's root certificate
 #'
 #' @description
-#' Claims an CloudHSM cluster by submitting the cluster certificate issued
-#' by your issuing certificate authority (CA) and the CA's root
-#' certificate. Before you can claim a cluster, you must sign the cluster's
-#' certificate signing request (CSR) with your issuing CA. To get the
-#' cluster's CSR, use [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' Claims an CloudHSM cluster by submitting the cluster certificate issued by your issuing certificate authority (CA) and the CA's root certificate. Before you can claim a cluster, you must sign the cluster's certificate signing request (CSR) with your issuing CA. To get the cluster's CSR, use [`describe_clusters`][cloudhsmv2_describe_clusters].
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM cluster in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_initialize_cluster(ClusterId, SignedCert, TrustAnchor)
 #'
-#' @param ClusterId &#91;required&#93; The identifier (ID) of the cluster that you are claiming. To find the
-#' cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
-#' @param SignedCert &#91;required&#93; The cluster certificate issued (signed) by your issuing certificate
-#' authority (CA). The certificate must be in PEM format and can contain a
-#' maximum of 5000 characters.
-#' @param TrustAnchor &#91;required&#93; The issuing certificate of the issuing certificate authority (CA) that
-#' issued (signed) the cluster certificate. You must use a self-signed
-#' certificate. The certificate used to sign the HSM CSR must be directly
-#' available, and thus must be the root certificate. The certificate must
-#' be in PEM format and can contain a maximum of 5000 characters.
+#' @param ClusterId &#91;required&#93; The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' @param SignedCert &#91;required&#93; The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.
+#' @param TrustAnchor &#91;required&#93; The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. You must use a self-signed certificate. The certificate used to sign the HSM CSR must be directly available, and thus must be the root certificate. The certificate must be in PEM format and can contain a maximum of 5000 characters.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1002,27 +898,16 @@ cloudhsmv2_initialize_cluster <- function(ClusterId, SignedCert, TrustAnchor) {
 #' @description
 #' Gets a list of tags for the specified CloudHSM cluster.
 #' 
-#' This is a paginated operation, which means that each response might
-#' contain only a subset of all the tags. When the response contains only a
-#' subset of tags, it includes a `NextToken` value. Use this value in a
-#' subsequent [`list_tags`][cloudhsmv2_list_tags] request to get more tags.
-#' When you receive a response with no `NextToken` (or an empty or null
-#' value), that means there are no more tags to get.
+#' This is a paginated operation, which means that each response might contain only a subset of all the tags. When the response contains only a subset of tags, it includes a `NextToken` value. Use this value in a subsequent [`list_tags`][cloudhsmv2_list_tags] request to get more tags. When you receive a response with no `NextToken` (or an empty or null value), that means there are no more tags to get.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM resource in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_list_tags(ResourceId, NextToken, MaxResults)
 #'
-#' @param ResourceId &#91;required&#93; The cluster identifier (ID) for the cluster whose tags you are getting.
-#' To find the cluster ID, use
-#' [`describe_clusters`][cloudhsmv2_describe_clusters].
-#' @param NextToken The `NextToken` value that you received in the previous response. Use
-#' this value to get more tags.
-#' @param MaxResults The maximum number of tags to return in the response. When there are
-#' more tags than the number you specify, the response contains a
-#' `NextToken` value.
+#' @param ResourceId &#91;required&#93; The cluster identifier (ID) for the cluster whose tags you are getting. To find the cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' @param NextToken The `NextToken` value that you received in the previous response. Use this value to get more tags.
+#' @param MaxResults The maximum number of tags to return in the response. When there are more tags than the number you specify, the response contains a `NextToken` value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1076,18 +961,13 @@ cloudhsmv2_list_tags <- function(ResourceId, NextToken = NULL, MaxResults = NULL
 #' @description
 #' Modifies attributes for CloudHSM backup.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM backup in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_modify_backup_attributes(BackupId, NeverExpires)
 #'
-#' @param BackupId &#91;required&#93; The identifier (ID) of the backup to modify. To find the ID of a backup,
-#' use the [`describe_backups`][cloudhsmv2_describe_backups] operation.
-#' @param NeverExpires &#91;required&#93; Specifies whether the service should exempt a backup from the retention
-#' policy for the cluster. `True` exempts a backup from the retention
-#' policy. `False` means the service applies the backup retention policy
-#' defined at the cluster.
+#' @param BackupId &#91;required&#93; The identifier (ID) of the backup to modify. To find the ID of a backup, use the [`describe_backups`][cloudhsmv2_describe_backups] operation.
+#' @param NeverExpires &#91;required&#93; Specifies whether the service should exempt a backup from the retention policy for the cluster. `True` exempts a backup from the retention policy. `False` means the service applies the backup retention policy defined at the cluster.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1160,16 +1040,14 @@ cloudhsmv2_modify_backup_attributes <- function(BackupId, NeverExpires) {
 #' @description
 #' Modifies CloudHSM cluster.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM cluster in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM cluster in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_modify_cluster(HsmType, BackupRetentionPolicy, ClusterId)
 #'
 #' @param HsmType The desired HSM type of the cluster.
 #' @param BackupRetentionPolicy A policy that defines how the service retains backups.
-#' @param ClusterId &#91;required&#93; The identifier (ID) of the cluster that you want to modify. To find the
-#' cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' @param ClusterId &#91;required&#93; The identifier (ID) of the cluster that you want to modify. To find the cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
 #'
 #' @return
 #' A list with the following syntax:
@@ -1270,43 +1148,23 @@ cloudhsmv2_modify_cluster <- function(HsmType = NULL, BackupRetentionPolicy = NU
 #' Creates or updates an CloudHSM resource policy
 #'
 #' @description
-#' Creates or updates an CloudHSM resource policy. A resource policy helps
-#' you to define the IAM entity (for example, an Amazon Web Services
-#' account) that can manage your CloudHSM resources. The following
-#' resources support CloudHSM resource policies:
+#' Creates or updates an CloudHSM resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your CloudHSM resources. The following resources support CloudHSM resource policies:
 #' 
-#' -   Backup - The resource policy allows you to describe the backup and
-#'     restore a cluster from the backup in another Amazon Web Services
-#'     account.
+#' -   Backup - The resource policy allows you to describe the backup and restore a cluster from the backup in another Amazon Web Services account.
 #' 
-#' In order to share a backup, it must be in a 'READY' state and you must
-#' own it.
+#' In order to share a backup, it must be in a 'READY' state and you must own it.
 #' 
-#' While you can share a backup using the CloudHSM PutResourcePolicy
-#' operation, we recommend using Resource Access Manager (RAM) instead.
-#' Using RAM provides multiple benefits as it creates the policy for you,
-#' allows multiple resources to be shared at one time, and increases the
-#' discoverability of shared resources. If you use PutResourcePolicy and
-#' want consumers to be able to describe the backups you share with them,
-#' you must promote the backup to a standard RAM Resource Share using the
-#' RAM PromoteResourceShareCreatedFromPolicy API operation. For more
-#' information, see [Working with shared
-#' backups](https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html)
-#' in the CloudHSM User Guide
+#' While you can share a backup using the CloudHSM PutResourcePolicy operation, we recommend using Resource Access Manager (RAM) instead. Using RAM provides multiple benefits as it creates the policy for you, allows multiple resources to be shared at one time, and increases the discoverability of shared resources. If you use PutResourcePolicy and want consumers to be able to describe the backups you share with them, you must promote the backup to a standard RAM Resource Share using the RAM PromoteResourceShareCreatedFromPolicy API operation. For more information, see [Working with shared backups](https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html) in the CloudHSM User Guide
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM resource in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_put_resource_policy(ResourceArn, Policy)
 #'
-#' @param ResourceArn Amazon Resource Name (ARN) of the resource to which you want to attach a
-#' policy.
+#' @param ResourceArn Amazon Resource Name (ARN) of the resource to which you want to attach a policy.
 #' @param Policy The policy you want to associate with a resource.
 #' 
-#' For an example policy, see [Working with shared
-#' backups](https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html)
-#' in the CloudHSM User Guide
+#' For an example policy, see [Working with shared backups](https://docs.aws.amazon.com/cloudhsm/latest/userguide/sharing.html) in the CloudHSM User Guide
 #'
 #' @return
 #' A list with the following syntax:
@@ -1353,18 +1211,14 @@ cloudhsmv2_put_resource_policy <- function(ResourceArn = NULL, Policy = NULL) {
 #' state
 #'
 #' @description
-#' Restores a specified CloudHSM backup that is in the `PENDING_DELETION`
-#' state. For more information on deleting a backup, see
-#' [`delete_backup`][cloudhsmv2_delete_backup].
+#' Restores a specified CloudHSM backup that is in the `PENDING_DELETION` state. For more information on deleting a backup, see [`delete_backup`][cloudhsmv2_delete_backup].
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM backup in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM backup in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_restore_backup(BackupId)
 #'
-#' @param BackupId &#91;required&#93; The ID of the backup to be restored. To find the ID of a backup, use the
-#' [`describe_backups`][cloudhsmv2_describe_backups] operation.
+#' @param BackupId &#91;required&#93; The ID of the backup to be restored. To find the ID of a backup, use the [`describe_backups`][cloudhsmv2_describe_backups] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1436,15 +1290,12 @@ cloudhsmv2_restore_backup <- function(BackupId) {
 #' @description
 #' Adds or overwrites one or more tags for the specified CloudHSM cluster.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM resource in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_tag_resource(ResourceId, TagList)
 #'
-#' @param ResourceId &#91;required&#93; The cluster identifier (ID) for the cluster that you are tagging. To
-#' find the cluster ID, use
-#' [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' @param ResourceId &#91;required&#93; The cluster identifier (ID) for the cluster that you are tagging. To find the cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
 #' @param TagList &#91;required&#93; A list of one or more tags.
 #'
 #' @return
@@ -1492,17 +1343,13 @@ cloudhsmv2_tag_resource <- function(ResourceId, TagList) {
 #' @description
 #' Removes the specified tag or tags from the specified CloudHSM cluster.
 #' 
-#' **Cross-account use:** No. You cannot perform this operation on an
-#' CloudHSM resource in a different Amazon Web Services account.
+#' **Cross-account use:** No. You cannot perform this operation on an CloudHSM resource in a different Amazon Web Services account.
 #'
 #' @usage
 #' cloudhsmv2_untag_resource(ResourceId, TagKeyList)
 #'
-#' @param ResourceId &#91;required&#93; The cluster identifier (ID) for the cluster whose tags you are removing.
-#' To find the cluster ID, use
-#' [`describe_clusters`][cloudhsmv2_describe_clusters].
-#' @param TagKeyList &#91;required&#93; A list of one or more tag keys for the tags that you are removing.
-#' Specify only the tag keys, not the tag values.
+#' @param ResourceId &#91;required&#93; The cluster identifier (ID) for the cluster whose tags you are removing. To find the cluster ID, use [`describe_clusters`][cloudhsmv2_describe_clusters].
+#' @param TagKeyList &#91;required&#93; A list of one or more tag keys for the tags that you are removing. Specify only the tag keys, not the tag values.
 #'
 #' @return
 #' An empty list.

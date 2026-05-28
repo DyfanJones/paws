@@ -8,19 +8,11 @@ single VPC from Amazon Virtual Private Cloud}
 route53resolver_update_resolver_config(ResourceId, AutodefinedReverseFlag)
 }
 \arguments{
-\item{ResourceId}{[required] The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile
-that you're configuring Resolver for.}
+\item{ResourceId}{[required] The ID of the Amazon Virtual Private Cloud VPC or a Route 53 Profile that you're configuring Resolver for.}
 
-\item{AutodefinedReverseFlag}{[required] Indicates whether or not the Resolver will create autodefined rules for
-reverse DNS lookups. This is enabled by default. Disabling this option
-will also affect EC2-Classic instances using ClassicLink. For more
-information, see
-\href{https://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/}{ClassicLink}
-in the \emph{Amazon EC2 guide}.
+\item{AutodefinedReverseFlag}{[required] Indicates whether or not the Resolver will create autodefined rules for reverse DNS lookups. This is enabled by default. Disabling this option will also affect EC2-Classic instances using ClassicLink. For more information, see \href{https://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/}{ClassicLink} in the \emph{Amazon EC2 guide}.
 
-We are retiring EC2-Classic on August 15, 2022. We recommend that you
-migrate from EC2-Classic to a VPC. For more information, see \href{https://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/}{Migrate from EC2-Classic to a VPC}
-in the \emph{Amazon EC2 guide} and the blog \href{https://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/}{EC2-Classic Networking is Retiring – Here’s How to Prepare}.
+We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from EC2-Classic to a VPC. For more information, see \href{https://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/}{Migrate from EC2-Classic to a VPC} in the \emph{Amazon EC2 guide} and the blog \href{https://aws.amazon.com/blogs/aws/ec2-classic-is-retiring-heres-how-to-prepare/}{EC2-Classic Networking is Retiring – Here’s How to Prepare}.
 
 It can take some time for the status change to be completed.}
 }

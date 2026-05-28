@@ -8,11 +8,9 @@ assignment}
 mturk_reject_assignment(AssignmentId, RequesterFeedback)
 }
 \arguments{
-\item{AssignmentId}{[required] The ID of the assignment. The assignment must correspond to a HIT
-created by the Requester.}
+\item{AssignmentId}{[required] The ID of the assignment. The assignment must correspond to a HIT created by the Requester.}
 
-\item{RequesterFeedback}{[required] A message for the Worker, which the Worker can see in the Status section
-of the web site.}
+\item{RequesterFeedback}{[required] A message for the Worker, which the Worker can see in the Status section of the web site.}
 }
 \description{
 The \code{\link[=mturk_reject_assignment]{reject_assignment}} operation rejects the results of a completed assignment.

@@ -8,8 +8,7 @@ application}
 kendra_describe_experience(Id, IndexId)
 }
 \arguments{
-\item{Id}{[required] The identifier of your Amazon Kendra experience you want to get
-information on.}
+\item{Id}{[required] The identifier of your Amazon Kendra experience you want to get information on.}
 
 \item{IndexId}{[required] The identifier of the index for your Amazon Kendra experience.}
 }

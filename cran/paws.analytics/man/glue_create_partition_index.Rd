@@ -14,14 +14,11 @@ glue_create_partition_index(
 \arguments{
 \item{CatalogId}{The catalog ID where the table resides.}
 
-\item{DatabaseName}{[required] Specifies the name of a database in which you want to create a partition
-index.}
+\item{DatabaseName}{[required] Specifies the name of a database in which you want to create a partition index.}
 
-\item{TableName}{[required] Specifies the name of a table in which you want to create a partition
-index.}
+\item{TableName}{[required] Specifies the name of a table in which you want to create a partition index.}
 
-\item{PartitionIndex}{[required] Specifies a \code{PartitionIndex} structure to create a partition index in an
-existing table.}
+\item{PartitionIndex}{[required] Specifies a \code{PartitionIndex} structure to create a partition index in an existing table.}
 }
 \description{
 Creates a specified partition index in an existing table.

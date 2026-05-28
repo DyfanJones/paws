@@ -50,10 +50,7 @@ Operations section.
 \description{
 Security Token Service
 
-Security Token Service (STS) enables you to request temporary,
-limited-privilege credentials for users. This guide provides
-descriptions of the STS API. For more information about using this
-service, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html}{Temporary Security Credentials}.
+Security Token Service (STS) enables you to request temporary, limited-privilege credentials for users. This guide provides descriptions of the STS API. For more information about using this service, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html}{Temporary Security Credentials}.
 }
 \section{Service syntax}{
 

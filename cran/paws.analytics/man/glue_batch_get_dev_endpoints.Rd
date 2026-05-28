@@ -8,8 +8,7 @@ endpoint names}
 glue_batch_get_dev_endpoints(DevEndpointNames)
 }
 \arguments{
-\item{DevEndpointNames}{[required] The list of \code{DevEndpoint} names, which might be the names returned from
-the \code{ListDevEndpoint} operation.}
+\item{DevEndpointNames}{[required] The list of \code{DevEndpoint} names, which might be the names returned from the \code{ListDevEndpoint} operation.}
 }
 \description{
 Returns a list of resource metadata for a given list of development endpoint names. After calling the \code{\link[=glue_list_dev_endpoints]{list_dev_endpoints}} operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.

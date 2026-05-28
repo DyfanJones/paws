@@ -27,54 +27,37 @@ bedrockagentcorecontrol_update_harness(
 \arguments{
 \item{harnessId}{[required] The ID of the harness to update.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 
-\item{executionRoleArn}{The ARN of the IAM role that the harness assumes when running. If not
-specified, the existing value is retained.}
+\item{executionRoleArn}{The ARN of the IAM role that the harness assumes when running. If not specified, the existing value is retained.}
 
-\item{environment}{The compute environment configuration for the harness. If not specified,
-the existing value is retained.}
+\item{environment}{The compute environment configuration for the harness. If not specified, the existing value is retained.}
 
-\item{environmentArtifact}{The environment artifact for the harness. Use the optionalValue wrapper
-to set a new value, or set it to null to clear the existing
-configuration.}
+\item{environmentArtifact}{The environment artifact for the harness. Use the optionalValue wrapper to set a new value, or set it to null to clear the existing configuration.}
 
-\item{environmentVariables}{Environment variables to set in the harness runtime environment. If
-specified, this replaces all existing environment variables. If not
-specified, the existing value is retained.}
+\item{environmentVariables}{Environment variables to set in the harness runtime environment. If specified, this replaces all existing environment variables. If not specified, the existing value is retained.}
 
-\item{model}{The model configuration for the harness. If not specified, the existing
-value is retained.}
+\item{authorizerConfiguration}{Wrapper for updating an optional AuthorizerConfiguration field with PATCH semantics. When present in an update request, the authorizer configuration is replaced with optionalValue. When absent, the authorizer configuration is left unchanged. To unset, include the wrapper with optionalValue not specified.}
 
-\item{systemPrompt}{The system prompt that defines the agent's behavior. If not specified,
-the existing value is retained.}
+\item{model}{The model configuration for the harness. If not specified, the existing value is retained.}
 
-\item{tools}{The tools available to the agent. If specified, this replaces all
-existing tools. If not specified, the existing value is retained.}
+\item{systemPrompt}{The system prompt that defines the agent's behavior. If not specified, the existing value is retained.}
 
-\item{skills}{The skills available to the agent. If specified, this replaces all
-existing skills. If not specified, the existing value is retained.}
+\item{tools}{The tools available to the agent. If specified, this replaces all existing tools. If not specified, the existing value is retained.}
 
-\item{allowedTools}{The tools that the agent is allowed to use. If specified, this replaces
-all existing allowed tools. If not specified, the existing value is
-retained.}
+\item{skills}{The skills available to the agent. If specified, this replaces all existing skills. If not specified, the existing value is retained.}
 
-\item{memory}{The AgentCore Memory configuration. Use the optionalValue wrapper to set
-a new value, or set it to null to clear the existing configuration.}
+\item{allowedTools}{The tools that the agent is allowed to use. If specified, this replaces all existing allowed tools. If not specified, the existing value is retained.}
 
-\item{truncation}{The truncation configuration for managing conversation context. If not
-specified, the existing value is retained.}
+\item{memory}{The AgentCore Memory configuration. Use the optionalValue wrapper to set a new value, or set it to null to clear the existing configuration.}
 
-\item{maxIterations}{The maximum number of iterations the agent loop can execute per
-invocation. If not specified, the existing value is retained.}
+\item{truncation}{The truncation configuration for managing conversation context. If not specified, the existing value is retained.}
 
-\item{maxTokens}{The maximum total number of output tokens the agent can generate across
-all model calls within a single invocation. If not specified, the
-existing value is retained.}
+\item{maxIterations}{The maximum number of iterations the agent loop can execute per invocation. If not specified, the existing value is retained.}
 
-\item{timeoutSeconds}{The maximum duration in seconds for the agent loop execution per
-invocation. If not specified, the existing value is retained.}
+\item{maxTokens}{The maximum total number of output tokens the agent can generate across all model calls within a single invocation. If not specified, the existing value is retained.}
+
+\item{timeoutSeconds}{The maximum duration in seconds for the agent loop execution per invocation. If not specified, the existing value is retained.}
 }
 \description{
 Operation to update a Harness.

@@ -7,8 +7,7 @@
 sagemaker_delete_studio_lifecycle_config(StudioLifecycleConfigName)
 }
 \arguments{
-\item{StudioLifecycleConfigName}{[required] The name of the Amazon SageMaker AI Studio Lifecycle Configuration to
-delete.}
+\item{StudioLifecycleConfigName}{[required] The name of the Amazon SageMaker AI Studio Lifecycle Configuration to delete.}
 }
 \description{
 Deletes the Amazon SageMaker AI Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.

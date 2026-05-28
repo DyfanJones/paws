@@ -22,18 +22,9 @@ datazone_search(
 
 \item{owningProjectIdentifier}{The identifier of the owning project specified for the search.}
 
-\item{maxResults}{The maximum number of results to return in a single call to
-\code{\link[=datazone_search]{search}}. When the number of results to be listed is
-greater than the value of \code{MaxResults}, the response contains a
-\code{NextToken} value that you can use in a subsequent call to
-\code{\link[=datazone_search]{search}} to list the next set of results.}
+\item{maxResults}{The maximum number of results to return in a single call to \code{\link[=datazone_search]{search}}. When the number of results to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_search]{search}} to list the next set of results.}
 
-\item{nextToken}{When the number of results is greater than the default value for the
-\code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of results, the response
-includes a pagination token named \code{NextToken}. You can specify this
-\code{NextToken} value in a subsequent call to \code{\link[=datazone_search]{search}} to
-list the next set of results.}
+\item{nextToken}{When the number of results is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of results, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_search]{search}} to list the next set of results.}
 
 \item{searchScope}{[required] The scope of the search.}
 
@@ -45,8 +36,7 @@ list the next set of results.}
 
 \item{sort}{Specifies the way in which the search results are to be sorted.}
 
-\item{additionalAttributes}{Specifies additional attributes for the \code{\link[=datazone_search]{search}}
-action.}
+\item{additionalAttributes}{Specifies additional attributes for the \code{\link[=datazone_search]{search}} action.}
 }
 \description{
 Searches for assets in Amazon DataZone.

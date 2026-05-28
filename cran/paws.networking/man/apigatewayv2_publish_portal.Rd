@@ -7,8 +7,7 @@
 apigatewayv2_publish_portal(Description = NULL, PortalId)
 }
 \arguments{
-\item{Description}{The description of the portal. When the portal is published, this
-description becomes the last published description.}
+\item{Description}{The description of the portal. When the portal is published, this description becomes the last published description.}
 
 \item{PortalId}{[required] The portal identifier.}
 }

@@ -17,9 +17,7 @@ quicksight_describe_group_membership(
 
 \item{GroupName}{[required] The name of the group that you want to search.}
 
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the group is in.
-Currently, you use the ID for the Amazon Web Services account that
-contains your Amazon Quick Sight account.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the group is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.}
 
 \item{Namespace}{[required] The namespace that includes the group you are searching within.}
 }

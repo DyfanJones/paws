@@ -8,11 +8,9 @@ schemas}
 glue_update_registry(RegistryId, Description)
 }
 \arguments{
-\item{RegistryId}{[required] This is a wrapper structure that may contain the registry name and
-Amazon Resource Name (ARN).}
+\item{RegistryId}{[required] This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).}
 
-\item{Description}{[required] A description of the registry. If description is not provided, this
-field will not be updated.}
+\item{Description}{[required] A description of the registry. If description is not provided, this field will not be updated.}
 }
 \description{
 Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry.

@@ -8,15 +8,11 @@ in your EKS orchestrated SageMaker HyperPod cluster}
 sagemaker_detach_cluster_node_volume(ClusterArn, NodeId, VolumeId)
 }
 \arguments{
-\item{ClusterArn}{[required] The Amazon Resource Name (ARN) of your SageMaker HyperPod cluster
-containing the target node. Your cluster must use EKS as the
-orchestration and be in the \code{InService} state.}
+\item{ClusterArn}{[required] The Amazon Resource Name (ARN) of your SageMaker HyperPod cluster containing the target node. Your cluster must use EKS as the orchestration and be in the \code{InService} state.}
 
-\item{NodeId}{[required] The unique identifier of the cluster node from which you want to detach
-the volume.}
+\item{NodeId}{[required] The unique identifier of the cluster node from which you want to detach the volume.}
 
-\item{VolumeId}{[required] The unique identifier of your EBS volume that you want to detach. Your
-volume must be currently attached to the specified node.}
+\item{VolumeId}{[required] The unique identifier of your EBS volume that you want to detach. Your volume must be currently attached to the specified node.}
 }
 \description{
 Detaches your Amazon Elastic Block Store (Amazon EBS) volume from a node in your EKS orchestrated SageMaker HyperPod cluster.

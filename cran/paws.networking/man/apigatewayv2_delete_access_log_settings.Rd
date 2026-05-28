@@ -9,8 +9,7 @@ apigatewayv2_delete_access_log_settings(ApiId, StageName)
 \arguments{
 \item{ApiId}{[required] The API identifier.}
 
-\item{StageName}{[required] The stage name. Stage names can only contain alphanumeric characters,
-hyphens, and underscores. Maximum length is 128 characters.}
+\item{StageName}{[required] The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.}
 }
 \description{
 Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.

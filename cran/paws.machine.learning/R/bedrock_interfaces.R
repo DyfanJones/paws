@@ -3,6 +3,18 @@
 #' @include bedrock_service.R
 NULL
 
+.bedrock$batch_delete_advanced_prompt_optimization_job_input <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(jobIdentifiers = structure(list(structure(logical(0), tags = list(type = "string"))), tags = list(type = "list"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.bedrock$batch_delete_advanced_prompt_optimization_job_output <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(errors = structure(list(structure(list(jobIdentifier = structure(logical(0), tags = list(type = "string")), code = structure(logical(0), tags = list(type = "string")), message = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))), tags = list(type = "list")), advancedPromptOptimizationJobs = structure(list(structure(list(jobIdentifier = structure(logical(0), tags = list(type = "string")), jobStatus = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))), tags = list(type = "list"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
 .bedrock$batch_delete_evaluation_job_input <- function(...) {
   args <- c(as.list(environment()), list(...))
   shape <- structure(list(jobIdentifiers = structure(list(structure(logical(0), tags = list(type = "string", sensitive = TRUE))), tags = list(type = "list"))), tags = list(type = "structure"))
@@ -24,6 +36,18 @@ NULL
 .bedrock$cancel_automated_reasoning_policy_build_workflow_output <- function(...) {
   args <- c(as.list(environment()), list(...))
   shape <- structure(list(), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.bedrock$create_advanced_prompt_optimization_job_input <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(jobName = structure(logical(0), tags = list(type = "string")), jobDescription = structure(logical(0), tags = list(type = "string")), clientToken = structure(logical(0), tags = list(idempotencyToken = TRUE, type = "string")), inputConfig = structure(list(s3Uri = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), outputConfig = structure(list(s3Uri = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), encryptionKeyArn = structure(logical(0), tags = list(type = "string")), tags = structure(list(structure(list(key = structure(logical(0), tags = list(type = "string")), value = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))), tags = list(type = "list")), modelConfigurations = structure(list(structure(list(modelId = structure(logical(0), tags = list(type = "string")), inferenceConfig = structure(list(maxTokens = structure(logical(0), tags = list(type = "integer", box = TRUE)), temperature = structure(logical(0), tags = list(type = "float", box = TRUE)), topP = structure(logical(0), tags = list(type = "float", box = TRUE)), stopSequences = structure(list(structure(logical(0), tags = list(type = "string"))), tags = list(type = "list"))), tags = list(type = "structure")), additionalModelRequestFields = structure(list(structure(list(), tags = list(type = "structure", document = TRUE))), tags = list(type = "map"))), tags = list(type = "structure"))), tags = list(type = "list"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.bedrock$create_advanced_prompt_optimization_job_output <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(jobArn = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))
   return(populate(args, shape))
 }
 
@@ -435,6 +459,18 @@ NULL
   return(populate(args, shape))
 }
 
+.bedrock$get_advanced_prompt_optimization_job_input <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(jobIdentifier = structure(logical(0), tags = list(location = "uri", locationName = "jobIdentifier", type = "string"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.bedrock$get_advanced_prompt_optimization_job_output <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(jobArn = structure(logical(0), tags = list(type = "string")), jobName = structure(logical(0), tags = list(type = "string")), jobDescription = structure(logical(0), tags = list(type = "string")), jobStatus = structure(logical(0), tags = list(type = "string")), inputConfig = structure(list(s3Uri = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), outputConfig = structure(list(s3Uri = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), encryptionKeyArn = structure(logical(0), tags = list(type = "string")), creationTime = structure(logical(0), tags = list(type = "timestamp", timestampFormat = "iso8601")), lastModifiedTime = structure(logical(0), tags = list(type = "timestamp", timestampFormat = "iso8601")), failureMessage = structure(logical(0), tags = list(type = "string")), modelConfigurations = structure(list(structure(list(modelId = structure(logical(0), tags = list(type = "string")), inferenceConfig = structure(list(maxTokens = structure(logical(0), tags = list(type = "integer", box = TRUE)), temperature = structure(logical(0), tags = list(type = "float", box = TRUE)), topP = structure(logical(0), tags = list(type = "float", box = TRUE)), stopSequences = structure(list(structure(logical(0), tags = list(type = "string"))), tags = list(type = "list"))), tags = list(type = "structure")), additionalModelRequestFields = structure(list(structure(list(), tags = list(type = "structure", document = TRUE))), tags = list(type = "map"))), tags = list(type = "structure"))), tags = list(type = "list"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
 .bedrock$get_automated_reasoning_policy_input <- function(...) {
   args <- c(as.list(environment()), list(...))
   shape <- structure(list(policyArn = structure(logical(0), tags = list(location = "uri", locationName = "policyArn", type = "string"))), tags = list(type = "structure"))
@@ -732,6 +768,18 @@ NULL
 .bedrock$get_use_case_for_model_access_output <- function(...) {
   args <- c(as.list(environment()), list(...))
   shape <- structure(list(formData = structure(logical(0), tags = list(type = "blob"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.bedrock$list_advanced_prompt_optimization_jobs_input <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(maxResults = structure(logical(0), tags = list(location = "querystring", locationName = "maxResults", type = "integer", box = TRUE)), nextToken = structure(logical(0), tags = list(location = "querystring", locationName = "nextToken", type = "string")), sortBy = structure(logical(0), tags = list(location = "querystring", locationName = "sortBy", type = "string")), sortOrder = structure(logical(0), tags = list(location = "querystring", locationName = "sortOrder", type = "string"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.bedrock$list_advanced_prompt_optimization_jobs_output <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(jobSummaries = structure(list(structure(list(jobArn = structure(logical(0), tags = list(type = "string")), jobName = structure(logical(0), tags = list(type = "string")), jobStatus = structure(logical(0), tags = list(type = "string")), creationTime = structure(logical(0), tags = list(type = "timestamp", timestampFormat = "iso8601")), lastModifiedTime = structure(logical(0), tags = list(type = "timestamp", timestampFormat = "iso8601"))), tags = list(type = "structure"))), tags = list(type = "list")), nextToken = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))
   return(populate(args, shape))
 }
 
@@ -1068,6 +1116,18 @@ NULL
 .bedrock$start_automated_reasoning_policy_test_workflow_output <- function(...) {
   args <- c(as.list(environment()), list(...))
   shape <- structure(list(policyArn = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.bedrock$stop_advanced_prompt_optimization_job_input <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(jobIdentifier = structure(logical(0), tags = list(location = "uri", locationName = "jobIdentifier", type = "string"))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.bedrock$stop_advanced_prompt_optimization_job_output <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(), tags = list(type = "structure"))
   return(populate(args, shape))
 }
 

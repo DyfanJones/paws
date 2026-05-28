@@ -22,8 +22,7 @@ networkmanager_start_route_analysis(
 
 \item{IncludeReturnPath}{Indicates whether to analyze the return path. The default is \code{false}.}
 
-\item{UseMiddleboxes}{Indicates whether to include the location of middlebox appliances in the
-route analysis. The default is \code{false}.}
+\item{UseMiddleboxes}{Indicates whether to include the location of middlebox appliances in the route analysis. The default is \code{false}.}
 }
 \description{
 Starts analyzing the routing path between the specified source and destination. For more information, see \href{https://docs.aws.amazon.com/network-manager/latest/tgwnm/route-analyzer.html}{Route Analyzer}.

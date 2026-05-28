@@ -10,9 +10,7 @@ cloudsearch_describe_domain_endpoint_options(DomainName, Deployed = NULL)
 \arguments{
 \item{DomainName}{[required] A string that represents the name of a domain.}
 
-\item{Deployed}{Whether to retrieve the latest configuration (which might be in a
-Processing state) or the current, active configuration. Defaults to
-\code{false}.}
+\item{Deployed}{Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to \code{false}.}
 }
 \description{
 Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">}}Configuring Domain Endpoint Options\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

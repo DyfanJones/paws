@@ -15,8 +15,7 @@ vpclattice_list_service_network_vpc_endpoint_associations(
 
 \item{maxResults}{The maximum page size.}
 
-\item{nextToken}{If there are additional results, a pagination token for the next page of
-results.}
+\item{nextToken}{If there are additional results, a pagination token for the next page of results.}
 }
 \description{
 Lists the associations between a service network and a VPC endpoint.

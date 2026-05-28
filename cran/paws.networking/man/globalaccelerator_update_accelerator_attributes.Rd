@@ -12,26 +12,17 @@ globalaccelerator_update_accelerator_attributes(
 )
 }
 \arguments{
-\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator that you want to
-update.}
+\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator that you want to update.}
 
-\item{FlowLogsEnabled}{Update whether flow logs are enabled. The default value is false. If the
-value is true, \code{FlowLogsS3Bucket} and \code{FlowLogsS3Prefix} must be
-specified.
+\item{FlowLogsEnabled}{Update whether flow logs are enabled. The default value is false. If the value is true, \code{FlowLogsS3Bucket} and \code{FlowLogsS3Prefix} must be specified.
 
-For more information, see \href{https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html}{Flow Logs}
-in the \emph{Global Accelerator Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html}{Flow Logs} in the \emph{Global Accelerator Developer Guide}.}
 
-\item{FlowLogsS3Bucket}{The name of the Amazon S3 bucket for the flow logs. Attribute is
-required if \code{FlowLogsEnabled} is \code{true}. The bucket must exist and have
-a bucket policy that grants Global Accelerator permission to write to
-the bucket.}
+\item{FlowLogsS3Bucket}{The name of the Amazon S3 bucket for the flow logs. Attribute is required if \code{FlowLogsEnabled} is \code{true}. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.}
 
-\item{FlowLogsS3Prefix}{Update the prefix for the location in the Amazon S3 bucket for the flow
-logs. Attribute is required if \code{FlowLogsEnabled} is \code{true}.
+\item{FlowLogsS3Prefix}{Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if \code{FlowLogsEnabled} is \code{true}.
 
-If you specify slash (/) for the S3 bucket prefix, the log file bucket
-folder structure will include a double slash (//), like the following:
+If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
 
 s3-bucket_name//AWSLogs/aws_account_id}
 }

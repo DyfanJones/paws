@@ -12,8 +12,7 @@ glue_resume_workflow_run(Name, RunId, NodeIds)
 
 \item{RunId}{[required] The ID of the workflow run to resume.}
 
-\item{NodeIds}{[required] A list of the node IDs for the nodes you want to restart. The nodes that
-are to be restarted must have a run attempt in the original run.}
+\item{NodeIds}{[required] A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.}
 }
 \description{
 Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected nodes and all nodes that are downstream from the selected nodes are run.

@@ -14,8 +14,7 @@ redshift_describe_custom_domain_associations(
 \arguments{
 \item{CustomDomainName}{The custom domain name for the custom domain association.}
 
-\item{CustomDomainCertificateArn}{The certificate Amazon Resource Name (ARN) for the custom domain
-association.}
+\item{CustomDomainCertificateArn}{The certificate Amazon Resource Name (ARN) for the custom domain association.}
 
 \item{MaxRecords}{The maximum records setting for the associated custom domain.}
 

@@ -17,33 +17,23 @@ appstream_create_updated_image(
 \arguments{
 \item{existingImageName}{[required] The name of the image to update.}
 
-\item{newImageName}{[required] The name of the new image. The name must be unique within the AWS
-account and Region.}
+\item{newImageName}{[required] The name of the new image. The name must be unique within the AWS account and Region.}
 
 \item{newImageDescription}{The description to display for the new image.}
 
 \item{newImageDisplayName}{The name to display for the new image.}
 
-\item{newImageTags}{The tags to associate with the new image. A tag is a key-value pair, and
-the value is optional. For example, Environment=Test. If you do not
-specify a value, Environment=.
+\item{newImageTags}{The tags to associate with the new image. A tag is a key-value pair, and the value is optional. For example, Environment=Test. If you do not specify a value, Environment=.
 
-Generally allowed characters are: letters, numbers, and spaces
-representable in UTF-8, and the following special characters:
+Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following special characters:
 
 _ . : / = + \\ - @
 
 If you do not specify a value, the value is set to an empty string.
 
-For more information about tags, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html}{Tagging Your Resources}
-in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
+For more information about tags, see \href{https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html}{Tagging Your Resources} in the \emph{Amazon WorkSpaces Applications Administration Guide}.}
 
-\item{dryRun}{Indicates whether to display the status of image update availability
-before WorkSpaces Applications initiates the process of creating a new
-updated image. If this value is set to \code{true}, WorkSpaces Applications
-displays whether image updates are available. If this value is set to
-\code{false}, WorkSpaces Applications initiates the process of creating a new
-updated image without displaying whether image updates are available.}
+\item{dryRun}{Indicates whether to display the status of image update availability before WorkSpaces Applications initiates the process of creating a new updated image. If this value is set to \code{true}, WorkSpaces Applications displays whether image updates are available. If this value is set to \code{false}, WorkSpaces Applications initiates the process of creating a new updated image without displaying whether image updates are available.}
 }
 \description{
 Creates a new image with the latest Windows operating system updates, driver updates, and WorkSpaces Applications agent software.

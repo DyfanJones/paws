@@ -14,18 +14,11 @@ lexmodelsv2_list_bot_versions(
 \arguments{
 \item{botId}{[required] The identifier of the bot to list versions for.}
 
-\item{sortBy}{Specifies sorting parameters for the list of versions. You can specify
-that the list be sorted by version name in either ascending or
-descending order.}
+\item{sortBy}{Specifies sorting parameters for the list of versions. You can specify that the list be sorted by version name in either ascending or descending order.}
 
-\item{maxResults}{The maximum number of versions to return in each page of results. If
-there are fewer results than the max page size, only the actual number
-of results are returned.}
+\item{maxResults}{The maximum number of versions to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response to the \code{ListBotVersion} operation contains more results
-than specified in the \code{maxResults} parameter, a token is returned in the
-response. Use that token in the \code{nextToken} parameter to return the next
-page of results.}
+\item{nextToken}{If the response to the \code{ListBotVersion} operation contains more results than specified in the \code{maxResults} parameter, a token is returned in the response. Use that token in the \code{nextToken} parameter to return the next page of results.}
 }
 \description{
 Gets information about all of the versions of a bot.

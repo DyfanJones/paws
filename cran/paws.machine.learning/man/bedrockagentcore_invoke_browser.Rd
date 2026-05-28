@@ -8,16 +8,11 @@ Bedrock AgentCore}
 bedrockagentcore_invoke_browser(browserIdentifier, sessionId, action)
 }
 \arguments{
-\item{browserIdentifier}{[required] The unique identifier of the browser associated with the session. This
-must match the identifier used when creating the session with
-\code{\link[=bedrockagentcore_start_browser_session]{start_browser_session}}.}
+\item{browserIdentifier}{[required] The unique identifier of the browser associated with the session. This must match the identifier used when creating the session with \code{\link[=bedrockagentcore_start_browser_session]{start_browser_session}}.}
 
-\item{sessionId}{[required] The unique identifier of the browser session on which to perform the
-action. This must be an active session created with
-\code{\link[=bedrockagentcore_start_browser_session]{start_browser_session}}.}
+\item{sessionId}{[required] The unique identifier of the browser session on which to perform the action. This must be an active session created with \code{\link[=bedrockagentcore_start_browser_session]{start_browser_session}}.}
 
-\item{action}{[required] The browser action to perform. Exactly one member of the \code{BrowserAction}
-union must be set per request.}
+\item{action}{[required] The browser action to perform. Exactly one member of the \code{BrowserAction} union must be set per request.}
 }
 \description{
 Invokes an operating system-level action on a browser session in Amazon Bedrock AgentCore. This operation provides direct OS-level control over browser sessions, enabling mouse actions, keyboard input, and screenshots that the WebSocket-based Chrome DevTools Protocol (CDP) cannot handle — such as interacting with print dialogs, context menus, and JavaScript alerts.

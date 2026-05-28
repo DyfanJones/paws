@@ -15,9 +15,7 @@ codestarconnections_update_host(
 
 \item{ProviderEndpoint}{The URL or endpoint of the host to be updated.}
 
-\item{VpcConfiguration}{The VPC configuration of the host to be updated. A VPC must be
-configured and the infrastructure to be represented by the host must
-already be connected to the VPC.}
+\item{VpcConfiguration}{The VPC configuration of the host to be updated. A VPC must be configured and the infrastructure to be represented by the host must already be connected to the VPC.}
 }
 \description{
 Updates a specified host with the provided configurations.

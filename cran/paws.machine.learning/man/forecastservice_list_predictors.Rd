@@ -12,30 +12,20 @@ forecastservice_list_predictors(
 )
 }
 \arguments{
-\item{NextToken}{If the result of the previous request was truncated, the response
-includes a \code{NextToken}. To retrieve the next set of results, use the
-token in the next request. Tokens expire after 24 hours.}
+\item{NextToken}{If the result of the previous request was truncated, the response includes a \code{NextToken}. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.}
 
 \item{MaxResults}{The number of items to return in the response.}
 
-\item{Filters}{An array of filters. For each filter, you provide a condition and a
-match statement. The condition is either \code{IS} or \code{IS_NOT}, which
-specifies whether to include or exclude the predictors that match the
-statement from the list, respectively. The match statement consists of a
-key and a value.
+\item{Filters}{An array of filters. For each filter, you provide a condition and a match statement. The condition is either \code{IS} or \code{IS_NOT}, which specifies whether to include or exclude the predictors that match the statement from the list, respectively. The match statement consists of a key and a value.
 
 \strong{Filter properties}
 \itemize{
-\item \code{Condition} - The condition to apply. Valid values are \code{IS} and
-\code{IS_NOT}. To include the predictors that match the statement,
-specify \code{IS}. To exclude matching predictors, specify \code{IS_NOT}.
-\item \code{Key} - The name of the parameter to filter on. Valid values are
-\code{DatasetGroupArn} and \code{Status}.
+\item \code{Condition} - The condition to apply. Valid values are \code{IS} and \code{IS_NOT}. To include the predictors that match the statement, specify \code{IS}. To exclude matching predictors, specify \code{IS_NOT}.
+\item \code{Key} - The name of the parameter to filter on. Valid values are \code{DatasetGroupArn} and \code{Status}.
 \item \code{Value} - The value to match.
 }
 
-For example, to list all predictors whose status is ACTIVE, you would
-specify:
+For example, to list all predictors whose status is ACTIVE, you would specify:
 
 \verb{"Filters": [ \{ "Condition": "IS", "Key": "Status", "Value": "ACTIVE" \} ]}}
 }

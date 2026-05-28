@@ -10,9 +10,7 @@ xray_list_tags_for_resource(ResourceARN, NextToken = NULL)
 \arguments{
 \item{ResourceARN}{[required] The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.}
 
-\item{NextToken}{A pagination token. If multiple pages of results are returned, use the
-\code{NextToken} value returned with the current page of results as the value
-of this parameter to get the next page of results.}
+\item{NextToken}{A pagination token. If multiple pages of results are returned, use the \code{NextToken} value returned with the current page of results as the value of this parameter to get the next page of results.}
 }
 \description{
 Returns a list of tags that are applied to the specified Amazon Web Services X-Ray group or sampling rule.

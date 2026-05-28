@@ -7,8 +7,7 @@
 quicksight_get_flow_permissions(AwsAccountId, FlowId)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the flow that
-you are getting permissions for.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the flow that you are getting permissions for.}
 
 \item{FlowId}{[required] The unique identifier of the flow to get permissions from.}
 }

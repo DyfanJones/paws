@@ -33,9 +33,7 @@ drs_update_launch_configuration_template(
 
 \item{postLaunchEnabled}{Whether we want to activate post-launch actions.}
 
-\item{launchIntoSourceInstance}{DRS will set the 'launch into instance ID' of any source server when
-performing a drill, recovery or failback to the previous region or
-availability zone, using the instance ID of the source instance.}
+\item{launchIntoSourceInstance}{DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.}
 }
 \description{
 Updates an existing Launch Configuration Template by ID.

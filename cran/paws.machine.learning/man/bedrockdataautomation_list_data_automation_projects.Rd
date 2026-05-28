@@ -13,6 +13,19 @@ bedrockdataautomation_list_data_automation_projects(
   libraryFilter = NULL
 )
 }
+\arguments{
+\item{maxResults}{Max Results}
+
+\item{nextToken}{Pagination token}
+
+\item{projectStageFilter}{Project Stage filter}
+
+\item{blueprintFilter}{Blueprint Filter}
+
+\item{resourceOwner}{Resource Owner}
+
+\item{libraryFilter}{Data Automation Library Filter}
+}
 \description{
 Lists all existing Amazon Bedrock Data Automation Projects
 

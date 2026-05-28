@@ -12,8 +12,7 @@ bedrockagentcorecontrol_set_token_vault_cmk(
 \arguments{
 \item{tokenVaultId}{The unique identifier of the token vault to update.}
 
-\item{kmsConfiguration}{[required] The KMS configuration for the token vault, including the key type and
-KMS key ARN.}
+\item{kmsConfiguration}{[required] The KMS configuration for the token vault, including the key type and KMS key ARN.}
 }
 \description{
 Sets the customer master key (CMK) for a token vault.

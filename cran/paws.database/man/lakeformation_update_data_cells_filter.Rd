@@ -7,8 +7,7 @@
 lakeformation_update_data_cells_filter(TableData)
 }
 \arguments{
-\item{TableData}{[required] A \code{DataCellsFilter} structure containing information about the data
-cells filter.}
+\item{TableData}{[required] A \code{DataCellsFilter} structure containing information about the data cells filter.}
 }
 \description{
 Updates a data cell filter.

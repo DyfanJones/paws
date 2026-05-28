@@ -11,14 +11,11 @@ translate_list_text_translation_jobs(
 )
 }
 \arguments{
-\item{Filter}{The parameters that specify which batch translation jobs to retrieve.
-Filters include job name, job status, and submission time. You can only
-set one filter at a time.}
+\item{Filter}{The parameters that specify which batch translation jobs to retrieve. Filters include job name, job status, and submission time. You can only set one filter at a time.}
 
 \item{NextToken}{The token to request the next page of results.}
 
-\item{MaxResults}{The maximum number of results to return in each page. The default value
-is 100.}
+\item{MaxResults}{The maximum number of results to return in each page. The default value is 100.}
 }
 \description{
 Gets a list of the batch translation jobs that you have submitted.

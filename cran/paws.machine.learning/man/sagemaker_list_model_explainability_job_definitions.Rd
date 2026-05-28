@@ -18,26 +18,19 @@ sagemaker_list_model_explainability_job_definitions(
 \arguments{
 \item{EndpointName}{Name of the endpoint to monitor for model explainability.}
 
-\item{SortBy}{Whether to sort results by the \code{Name} or \code{CreationTime} field. The
-default is \code{CreationTime}.}
+\item{SortBy}{Whether to sort results by the \code{Name} or \code{CreationTime} field. The default is \code{CreationTime}.}
 
-\item{SortOrder}{Whether to sort the results in \code{Ascending} or \code{Descending} order. The
-default is \code{Descending}.}
+\item{SortOrder}{Whether to sort the results in \code{Ascending} or \code{Descending} order. The default is \code{Descending}.}
 
-\item{NextToken}{The token returned if the response is truncated. To retrieve the next
-set of job executions, use it in the next request.}
+\item{NextToken}{The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.}
 
-\item{MaxResults}{The maximum number of jobs to return in the response. The default value
-is 10.}
+\item{MaxResults}{The maximum number of jobs to return in the response. The default value is 10.}
 
-\item{NameContains}{Filter for model explainability jobs whose name contains a specified
-string.}
+\item{NameContains}{Filter for model explainability jobs whose name contains a specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only model explainability jobs created before a
-specified time.}
+\item{CreationTimeBefore}{A filter that returns only model explainability jobs created before a specified time.}
 
-\item{CreationTimeAfter}{A filter that returns only model explainability jobs created after a
-specified time.}
+\item{CreationTimeAfter}{A filter that returns only model explainability jobs created after a specified time.}
 }
 \description{
 Lists model explainability job definitions that satisfy various filters.

@@ -9,8 +9,7 @@ cloudfront_delete_connection_group(Id, IfMatch)
 \arguments{
 \item{Id}{[required] The ID of the connection group to delete.}
 
-\item{IfMatch}{[required] The value of the \code{ETag} header that you received when retrieving the
-connection group to delete.}
+\item{IfMatch}{[required] The value of the \code{ETag} header that you received when retrieving the connection group to delete.}
 }
 \description{
 Deletes a connection group.

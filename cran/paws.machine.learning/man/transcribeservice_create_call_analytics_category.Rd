@@ -12,38 +12,23 @@ transcribeservice_create_call_analytics_category(
 )
 }
 \arguments{
-\item{CategoryName}{[required] A unique name, chosen by you, for your Call Analytics category. It's
-helpful to use a detailed naming system that will make sense to you in
-the future. For example, it's better to use
-\code{sentiment-positive-last30seconds} for a category over a generic name
-like \code{test-category}.
+\item{CategoryName}{[required] A unique name, chosen by you, for your Call Analytics category. It's helpful to use a detailed naming system that will make sense to you in the future. For example, it's better to use \code{sentiment-positive-last30seconds} for a category over a generic name like \code{test-category}.
 
 Category names are case sensitive.}
 
-\item{Rules}{[required] Rules define a Call Analytics category. When creating a new category,
-you must create between 1 and 20 rules for that category. For each rule,
-you specify a filter you want applied to the attributes of a call. For
-example, you can choose a sentiment filter that detects if a customer's
-sentiment was positive during the last 30 seconds of the call.}
+\item{Rules}{[required] Rules define a Call Analytics category. When creating a new category, you must create between 1 and 20 rules for that category. For each rule, you specify a filter you want applied to the attributes of a call. For example, you can choose a sentiment filter that detects if a customer's sentiment was positive during the last 30 seconds of the call.}
 
-\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a
-new call analytics category at the time you start this new job.
+\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to a new call analytics category at the time you start this new job.
 
 To learn more about using tags with Amazon Transcribe, refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html}{Tagging resources}.}
 
-\item{InputType}{Choose whether you want to create a real-time or a post-call category
-for your Call Analytics transcription.
+\item{InputType}{Choose whether you want to create a real-time or a post-call category for your Call Analytics transcription.
 
-Specifying \code{POST_CALL} assigns your category to post-call
-transcriptions; categories with this input type cannot be applied to
-streaming (real-time) transcriptions.
+Specifying \code{POST_CALL} assigns your category to post-call transcriptions; categories with this input type cannot be applied to streaming (real-time) transcriptions.
 
-Specifying \code{REAL_TIME} assigns your category to streaming
-transcriptions; categories with this input type cannot be applied to
-post-call transcriptions.
+Specifying \code{REAL_TIME} assigns your category to streaming transcriptions; categories with this input type cannot be applied to post-call transcriptions.
 
-If you do not include \code{InputType}, your category is created as a
-post-call category by default.}
+If you do not include \code{InputType}, your category is created as a post-call category by default.}
 }
 \description{
 Creates a new Call Analytics category.

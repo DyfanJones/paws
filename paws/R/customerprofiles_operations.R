@@ -7,24 +7,15 @@ NULL
 #' Record ContactId
 #'
 #' @description
-#' Associates a new key value with a specific profile, such as a Contact
-#' Record ContactId.
+#' Associates a new key value with a specific profile, such as a Contact Record ContactId.
 #' 
-#' A profile object can have a single unique key and any number of
-#' additional keys that can be used to identify the profile that it belongs
-#' to.
+#' A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.
 #'
 #' @usage
 #' customerprofiles_add_profile_key(ProfileId, KeyName, Values, DomainName)
 #'
 #' @param ProfileId &#91;required&#93; The unique identifier of a customer profile.
-#' @param KeyName &#91;required&#93; A searchable identifier of a customer profile. The predefined keys you
-#' can use include: _account, _profileId, _assetId, _caseId, _orderId,
-#' _fullName, _phone, _email, _ctrContactId, _marketoLeadId,
-#' _salesforceAccountId, _salesforceContactId, _salesforceAssetId,
-#' _zendeskUserId, _zendeskExternalId, _zendeskTicketId,
-#' _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId,
-#' _shopifyCustomerId, _shopifyOrderId.
+#' @param KeyName &#91;required&#93; A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 #' @param Values &#91;required&#93; A list of key values.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #'
@@ -87,8 +78,7 @@ customerprofiles_add_profile_key <- function(ProfileId, KeyName, Values, DomainN
 #' @param CalculatedAttributeName &#91;required&#93; The unique name of the calculated attribute.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ProfileIds &#91;required&#93; List of unique identifiers for customer profiles to retrieve.
-#' @param ConditionOverrides Overrides the condition block within the original calculated attribute
-#' definition.
+#' @param ConditionOverrides Overrides the condition block within the original calculated attribute definition.
 #'
 #' @return
 #' A list with the following syntax:
@@ -328,13 +318,7 @@ customerprofiles_batch_get_profile <- function(DomainName, ProfileIds) {
 #' Creates a new calculated attribute definition
 #'
 #' @description
-#' Creates a new calculated attribute definition. After creation, new
-#' object data ingested into Customer Profiles will be included in the
-#' calculated attribute, which can be retrieved for a profile using the
-#' [`get_calculated_attribute_for_profile`][customerprofiles_get_calculated_attribute_for_profile]
-#' API. Defining a calculated attribute makes it available for all profiles
-#' within a domain. Each calculated attribute can only reference one
-#' `ObjectType` and at most, two fields from that `ObjectType`.
+#' Creates a new calculated attribute definition. After creation, new object data ingested into Customer Profiles will be included in the calculated attribute, which can be retrieved for a profile using the [`get_calculated_attribute_for_profile`][customerprofiles_get_calculated_attribute_for_profile] API. Defining a calculated attribute makes it available for all profiles within a domain. Each calculated attribute can only reference one `ObjectType` and at most, two fields from that `ObjectType`.
 #'
 #' @usage
 #' customerprofiles_create_calculated_attribute_definition(DomainName,
@@ -345,15 +329,11 @@ customerprofiles_batch_get_profile <- function(DomainName, ProfileIds) {
 #' @param CalculatedAttributeName &#91;required&#93; The unique name of the calculated attribute.
 #' @param DisplayName The display name of the calculated attribute.
 #' @param Description The description of the calculated attribute.
-#' @param AttributeDetails &#91;required&#93; Mathematical expression and a list of attribute items specified in that
-#' expression.
-#' @param Conditions The conditions including range, object count, and threshold for the
-#' calculated attribute.
-#' @param Filter Defines how to filter incoming objects to include part of the Calculated
-#' Attribute.
+#' @param AttributeDetails &#91;required&#93; Mathematical expression and a list of attribute items specified in that expression.
+#' @param Conditions The conditions including range, object count, and threshold for the calculated attribute.
+#' @param Filter Defines how to filter incoming objects to include part of the Calculated Attribute.
 #' @param Statistic &#91;required&#93; The aggregation operation to perform for the calculated attribute.
-#' @param UseHistoricalData Whether historical data ingested before the Calculated Attribute was
-#' created should be included in calculations.
+#' @param UseHistoricalData Whether historical data ingested before the Calculated Attribute was created should be included in calculations.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -516,32 +496,17 @@ customerprofiles_create_calculated_attribute_definition <- function(DomainName, 
 #' keys
 #'
 #' @description
-#' Creates a domain, which is a container for all customer data, such as
-#' customer profile attributes, object types, profile keys, and encryption
-#' keys. You can create multiple domains, and each domain can have multiple
-#' third-party integrations.
+#' Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys. You can create multiple domains, and each domain can have multiple third-party integrations.
 #' 
-#' Each Amazon Connect instance can be associated with only one domain.
-#' Multiple Amazon Connect instances can be associated with one domain.
+#' Each Connect Customer instance can be associated with only one domain. Multiple Connect Customer instances can be associated with one domain.
 #' 
-#' Use this API or [`update_domain`][customerprofiles_update_domain] to
-#' enable [identity
-#' resolution](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_GetMatches.html):
-#' set `Matching` to true.
+#' Use this API or [`update_domain`][customerprofiles_update_domain] to enable [identity resolution](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_GetMatches.html): set `Matching` to true.
 #' 
-#' To prevent cross-service impersonation when you call this API, see
-#' [Cross-service confused deputy
-#' prevention](https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html)
-#' for sample policies that you should apply.
+#' To prevent cross-service impersonation when you call this API, see [Cross-service confused deputy prevention](https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html) for sample policies that you should apply.
 #' 
-#' It is not possible to associate a Customer Profiles domain with an
-#' Amazon Connect Instance directly from the API. If you would like to
-#' create a domain and associate a Customer Profiles domain, use the Amazon
-#' Connect admin website. For more information, see [Enable Customer
-#' Profiles](https://docs.aws.amazon.com/connect/latest/adminguide/enable-customer-profiles.html#enable-customer-profiles-step1).
+#' It is not possible to associate a Customer Profiles domain with an Amazon Connect Instance directly from the API. If you would like to create a domain and associate a Customer Profiles domain, use the Amazon Connect admin website. For more information, see [Enable Customer Profiles](https://docs.aws.amazon.com/connect/latest/adminguide/enable-customer-profiles.html#enable-customer-profiles-step1).
 #' 
-#' Each Amazon Connect instance can be associated with only one domain.
-#' Multiple Amazon Connect instances can be associated with one domain.
+#' Each Amazon Connect instance can be associated with only one domain. Multiple Amazon Connect instances can be associated with one domain.
 #'
 #' @usage
 #' customerprofiles_create_domain(DomainName, DefaultExpirationDays,
@@ -550,33 +515,12 @@ customerprofiles_create_calculated_attribute_definition <- function(DomainName, 
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param DefaultExpirationDays &#91;required&#93; The default number of days until the data within the domain expires.
-#' @param DefaultEncryptionKey The default encryption key, which is an AWS managed key, is used when no
-#' specific type of encryption key is specified. It is used to encrypt all
-#' data before it is placed in permanent or semi-permanent storage.
-#' @param DeadLetterQueueUrl The URL of the SQS dead letter queue, which is used for reporting errors
-#' associated with ingesting data from third party applications. You must
-#' set up a policy on the DeadLetterQueue for the SendMessage operation to
-#' enable Amazon Connect Customer Profiles to send messages to the
-#' DeadLetterQueue.
-#' @param Matching The process of matching duplicate profiles. If `Matching` = `true`,
-#' Amazon Connect Customer Profiles starts a weekly batch process called
-#' Identity Resolution Job. If you do not specify a date and time for
-#' Identity Resolution Job to run, by default it runs every Saturday at
-#' 12AM UTC to detect duplicate profiles in your domains.
+#' @param DefaultEncryptionKey The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.
+#' @param DeadLetterQueueUrl The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
+#' @param Matching The process of matching duplicate profiles. If `Matching` = `true`, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
 #' 
-#' After the Identity Resolution Job completes, use the
-#' [`get_matches`][customerprofiles_get_matches] API to return and review
-#' the results. Or, if you have configured `ExportingConfig` in the
-#' `MatchingRequest`, you can download the results from S3.
-#' @param RuleBasedMatching The process of matching duplicate profiles using the Rule-Based
-#' matching. If `RuleBasedMatching` = true, Amazon Connect Customer
-#' Profiles will start to match and merge your profiles according to your
-#' configuration in the `RuleBasedMatchingRequest`. You can use the
-#' [`list_rule_based_matches`][customerprofiles_list_rule_based_matches]
-#' and [`get_similar_profiles`][customerprofiles_get_similar_profiles] API
-#' to return and review the results. Also, if you have configured
-#' `ExportingConfig` in the `RuleBasedMatchingRequest`, you can download
-#' the results from S3.
+#' After the Identity Resolution Job completes, use the [`get_matches`][customerprofiles_get_matches] API to return and review the results. Or, if you have configured `ExportingConfig` in the `MatchingRequest`, you can download the results from S3.
+#' @param RuleBasedMatching The process of matching duplicate profiles using the Rule-Based matching. If `RuleBasedMatching` = true, Connect Customer Customer Profiles will start to match and merge your profiles according to your configuration in the `RuleBasedMatchingRequest`. You can use the [`list_rule_based_matches`][customerprofiles_list_rule_based_matches] and [`get_similar_profiles`][customerprofiles_get_similar_profiles] API to return and review the results. Also, if you have configured `ExportingConfig` in the `RuleBasedMatchingRequest`, you can download the results from S3.
 #' @param DataStore Set to true to enabled data store for this domain.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
@@ -775,8 +719,7 @@ customerprofiles_create_domain <- function(DomainName, DefaultExpirationDays, De
 #' Creates the layout to view data for a specific domain
 #'
 #' @description
-#' Creates the layout to view data for a specific domain. This API can only
-#' be invoked from the Amazon Connect admin website.
+#' Creates the layout to view data for a specific domain. This API can only be invoked from the Amazon Connect admin website.
 #'
 #' @usage
 #' customerprofiles_create_domain_layout(DomainName, LayoutDefinitionName,
@@ -786,13 +729,9 @@ customerprofiles_create_domain <- function(DomainName, DefaultExpirationDays, De
 #' @param LayoutDefinitionName &#91;required&#93; The unique name of the layout.
 #' @param Description &#91;required&#93; The description of the layout
 #' @param DisplayName &#91;required&#93; The display name of the layout
-#' @param IsDefault If set to true for a layout, this layout will be used by default to view
-#' data. If set to false, then the layout will not be used by default, but
-#' it can be used to view data by explicitly selecting it in the console.
-#' @param LayoutType &#91;required&#93; The type of layout that can be used to view data under a Customer
-#' Profiles domain.
-#' @param Layout &#91;required&#93; A customizable layout that can be used to view data under a Customer
-#' Profiles domain.
+#' @param IsDefault If set to true for a layout, this layout will be used by default to view data. If set to false, then the layout will not be used by default, but it can be used to view data by explicitly selecting it in the console.
+#' @param LayoutType &#91;required&#93; The type of layout that can be used to view data under a Customer Profiles domain.
+#' @param Layout &#91;required&#93; A customizable layout that can be used to view data under a Customer Profiles domain.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -859,25 +798,20 @@ customerprofiles_create_domain_layout <- function(DomainName, LayoutDefinitionNa
 .customerprofiles$operations$create_domain_layout <- customerprofiles_create_domain_layout
 
 #' Creates an event stream, which is a subscription to real-time events,
-#' such as when profiles are created and updated through Amazon Connect
+#' such as when profiles are created and updated through Connect Customer
 #' Customer Profiles
 #'
 #' @description
-#' Creates an event stream, which is a subscription to real-time events,
-#' such as when profiles are created and updated through Amazon Connect
-#' Customer Profiles.
+#' Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Connect Customer Customer Profiles.
 #' 
-#' Each event stream can be associated with only one Kinesis Data Stream
-#' destination in the same region and Amazon Web Services account as the
-#' customer profiles domain
+#' Each event stream can be associated with only one Kinesis Data Stream destination in the same region and Amazon Web Services account as the customer profiles domain
 #'
 #' @usage
 #' customerprofiles_create_event_stream(DomainName, Uri, EventStreamName,
 #'   Tags)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param Uri &#91;required&#93; The StreamARN of the destination to deliver profile events to. For
-#' example, arn:aws:kinesis:region:account-id:stream/stream-name
+#' @param Uri &#91;required&#93; The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name
 #' @param EventStreamName &#91;required&#93; The name of the event stream.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
@@ -932,11 +866,9 @@ customerprofiles_create_event_stream <- function(DomainName, Uri, EventStreamNam
 #' action based on customer's ingested data
 #'
 #' @description
-#' Creates an event trigger, which specifies the rules when to perform
-#' action based on customer's ingested data.
+#' Creates an event trigger, which specifies the rules when to perform action based on customer's ingested data.
 #' 
-#' Each event stream can be associated with only one integration in the
-#' same region and AWS account as the event stream.
+#' Each event stream can be associated with only one integration in the same region and AWS account as the event stream.
 #'
 #' @usage
 #' customerprofiles_create_event_trigger(DomainName, EventTriggerName,
@@ -947,13 +879,9 @@ customerprofiles_create_event_stream <- function(DomainName, Uri, EventStreamNam
 #' @param EventTriggerName &#91;required&#93; The unique name of the event trigger.
 #' @param ObjectTypeName &#91;required&#93; The unique name of the object type.
 #' @param Description The description of the event trigger.
-#' @param EventTriggerConditions &#91;required&#93; A list of conditions that determine when an event should trigger the
-#' destination.
-#' @param SegmentFilter The destination is triggered only for profiles that meet the criteria of
-#' a segment definition.
-#' @param EventTriggerLimits Defines limits controlling whether an event triggers the destination,
-#' based on ingestion latency and the number of invocations per profile
-#' over specific time periods.
+#' @param EventTriggerConditions &#91;required&#93; A list of conditions that determine when an event should trigger the destination.
+#' @param SegmentFilter The destination is triggered only for profiles that meet the criteria of a segment definition.
+#' @param EventTriggerLimits Defines limits controlling whether an event triggers the destination, based on ingestion latency and the number of invocations per profile over specific time periods.
 #' @param Tags An array of key-value pairs to apply to this resource.
 #'
 #' @return
@@ -1077,10 +1005,7 @@ customerprofiles_create_event_trigger <- function(DomainName, EventTriggerName, 
 #' Creates an integration workflow
 #'
 #' @description
-#' Creates an integration workflow. An integration workflow is an async
-#' process which ingests historic data and sets up an integration for
-#' ongoing updates. The supported Amazon AppFlow sources are Salesforce,
-#' ServiceNow, and Marketo.
+#' Creates an integration workflow. An integration workflow is an async process which ingests historic data and sets up an integration for ongoing updates. The supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo.
 #'
 #' @usage
 #' customerprofiles_create_integration_workflow(DomainName, WorkflowType,
@@ -1090,9 +1015,7 @@ customerprofiles_create_event_trigger <- function(DomainName, EventTriggerName, 
 #' @param WorkflowType &#91;required&#93; The type of workflow. The only supported value is APPFLOW_INTEGRATION.
 #' @param IntegrationConfig &#91;required&#93; Configuration data for integration workflow.
 #' @param ObjectTypeName &#91;required&#93; The name of the profile object type.
-#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role. Customer Profiles
-#' assumes this role to create resources on your behalf as part of workflow
-#' execution.
+#' @param RoleArn &#91;required&#93; The Amazon Resource Name (ARN) of the IAM role. Customer Profiles assumes this role to create resources on your behalf as part of workflow execution.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -1231,8 +1154,7 @@ customerprofiles_create_integration_workflow <- function(DomainName, WorkflowTyp
 #' @description
 #' Creates a standard profile.
 #' 
-#' A standard profile represents the following attributes for a customer
-#' profile in a domain.
+#' A standard profile represents the following attributes for a customer profile in a domain.
 #'
 #' @usage
 #' customerprofiles_create_profile(DomainName, AccountNumber,
@@ -1253,17 +1175,14 @@ customerprofiles_create_integration_workflow <- function(DomainName, WorkflowTyp
 #' @param LastName The customer’s last name.
 #' @param BirthDate The customer’s birth date.
 #' @param Gender The gender with which the customer identifies.
-#' @param PhoneNumber The customer’s phone number, which has not been specified as a mobile,
-#' home, or business number.
+#' @param PhoneNumber The customer’s phone number, which has not been specified as a mobile, home, or business number.
 #' @param MobilePhoneNumber The customer’s mobile phone number.
 #' @param HomePhoneNumber The customer’s home phone number.
 #' @param BusinessPhoneNumber The customer’s business phone number.
-#' @param EmailAddress The customer’s email address, which has not been specified as a personal
-#' or business address.
+#' @param EmailAddress The customer’s email address, which has not been specified as a personal or business address.
 #' @param PersonalEmailAddress The customer’s personal email address.
 #' @param BusinessEmailAddress The customer’s business email address.
-#' @param Address A generic address associated with the customer that is not mailing,
-#' shipping, or billing.
+#' @param Address A generic address associated with the customer that is not mailing, shipping, or billing.
 #' @param ShippingAddress The customer’s shipping address.
 #' @param MailingAddress The customer’s mailing address.
 #' @param BillingAddress The customer’s billing address.
@@ -1415,8 +1334,7 @@ customerprofiles_create_profile <- function(DomainName, AccountNumber = NULL, Ad
 #' @param RecommenderRecipeName &#91;required&#93; The name of the recommeder recipe.
 #' @param RecommenderConfig The recommender configuration.
 #' @param Description The description of the domain object type.
-#' @param RecommenderSchemaName The name of the recommender schema to use for this recommender. If not
-#' specified, the default schema is used.
+#' @param RecommenderSchemaName The name of the recommender schema to use for this recommender. If not specified, the default schema is used.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -1451,6 +1369,11 @@ customerprofiles_create_profile <- function(DomainName, AccountNumber = NULL, Ad
 #'       MinProvisionedTPS = 123
 #'     ),
 #'     IncludedColumns = list(
+#'       list(
+#'         "string"
+#'       )
+#'     ),
+#'     ExcludedColumns = list(
 #'       list(
 #'         "string"
 #'       )
@@ -1491,8 +1414,7 @@ customerprofiles_create_recommender <- function(DomainName, RecommenderName, Rec
 #' Creates a recommender filter
 #'
 #' @description
-#' Creates a recommender filter. A recommender filter specifies which items
-#' to include or exclude from recommendations.
+#' Creates a recommender filter. A recommender filter specifies which items to include or exclude from recommendations.
 #'
 #' @usage
 #' customerprofiles_create_recommender_filter(DomainName,
@@ -1500,12 +1422,9 @@ customerprofiles_create_recommender <- function(DomainName, RecommenderName, Rec
 #'   RecommenderSchemaName, Description, Tags)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param RecommenderFilterName &#91;required&#93; The name of the recommender filter. The name must be unique within the
-#' domain.
-#' @param RecommenderFilterExpression &#91;required&#93; The filter expression that defines which items to include or exclude
-#' from recommendations.
-#' @param RecommenderSchemaName The name of the recommender schema to use for this recommender filter.
-#' If not specified, the default schema is used.
+#' @param RecommenderFilterName &#91;required&#93; The name of the recommender filter. The name must be unique within the domain.
+#' @param RecommenderFilterExpression &#91;required&#93; The filter expression that defines which items to include or exclude from recommendations.
+#' @param RecommenderSchemaName The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.
 #' @param Description A description of the recommender filter.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
@@ -1561,20 +1480,15 @@ customerprofiles_create_recommender_filter <- function(DomainName, RecommenderFi
 #' Creates a recommender schema
 #'
 #' @description
-#' Creates a recommender schema. A recommender schema defines the set of
-#' data columns available for training recommenders and filters under a
-#' domain.
+#' Creates a recommender schema. A recommender schema defines the set of data columns available for training recommenders and filters under a domain.
 #'
 #' @usage
 #' customerprofiles_create_recommender_schema(DomainName,
 #'   RecommenderSchemaName, Fields, Tags)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param RecommenderSchemaName &#91;required&#93; The name of the recommender schema. The name must be unique within the
-#' domain.
-#' @param Fields &#91;required&#93; A map of dataset type to column definitions that specifies which data
-#' columns to include in the schema. Currently only the `_webAnalytics` key
-#' is supported.
+#' @param RecommenderSchemaName &#91;required&#93; The name of the recommender schema. The name must be unique within the domain.
+#' @param Fields &#91;required&#93; A map of dataset type to column definitions that specifies which data columns to include in the schema. The `_webAnalytics` and `_catalogItem` keys are supported.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -1660,8 +1574,7 @@ customerprofiles_create_recommender_schema <- function(DomainName, RecommenderSc
 #' @param SegmentDefinitionName &#91;required&#93; The unique name of the segment definition.
 #' @param DisplayName &#91;required&#93; The display name of the segment definition.
 #' @param Description The description of the segment definition.
-#' @param SegmentGroups Specifies the base segments and dimensions for a segment definition
-#' along with their respective relationship.
+#' @param SegmentGroups Specifies the base segments and dimensions for a segment definition along with their respective relationship.
 #' @param SegmentSqlQuery The segment SQL query.
 #' @param SegmentSort The segment sort.
 #' @param Tags The tags used to organize, track, or control access for this resource.
@@ -2393,14 +2306,9 @@ customerprofiles_create_segment_estimate <- function(DomainName, SegmentQuery = 
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param SegmentDefinitionName &#91;required&#93; The name of the segment definition used in this snapshot request.
 #' @param DataFormat &#91;required&#93; The format in which the segment will be exported.
-#' @param EncryptionKey The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-#' exported segment.
-#' @param RoleArn The Amazon Resource Name (ARN) of the IAM role that allows Customer
-#' Profiles service principal to assume the role for conducting KMS and S3
-#' operations.
-#' @param DestinationUri The destination to which the segment will be exported. This field must
-#' be provided if the request is not submitted from the Amazon Connect
-#' Admin Website.
+#' @param EncryptionKey The Amazon Resource Name (ARN) of the KMS key used to encrypt the exported segment.
+#' @param RoleArn The Amazon Resource Name (ARN) of the IAM role that allows Customer Profiles service principal to assume the role for conducting KMS and S3 operations.
+#' @param DestinationUri The destination to which the segment will be exported. This field must be provided if the request is not submitted from the Connect Customer Admin Website.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2449,23 +2357,17 @@ customerprofiles_create_segment_snapshot <- function(DomainName, SegmentDefiniti
 #' Creates an Upload job to ingest data for segment imports
 #'
 #' @description
-#' Creates an Upload job to ingest data for segment imports. The metadata
-#' is created for the job with the provided field mapping and unique key.
+#' Creates an Upload job to ingest data for segment imports. The metadata is created for the job with the provided field mapping and unique key.
 #'
 #' @usage
 #' customerprofiles_create_upload_job(DomainName, DisplayName, Fields,
 #'   UniqueKey, DataExpiry)
 #'
-#' @param DomainName &#91;required&#93; The unique name of the domain. Domain should be exists for the upload
-#' job to be created.
-#' @param DisplayName &#91;required&#93; The unique name of the upload job. Could be a file name to identify the
-#' upload job.
-#' @param Fields &#91;required&#93; The mapping between CSV Columns and Profile Object attributes. A map of
-#' the name and ObjectType field.
-#' @param UniqueKey &#91;required&#93; The unique key columns for de-duping the profiles used to map data to
-#' the profile.
-#' @param DataExpiry The expiry duration for the profiles ingested with the job. If not
-#' provided, the system default of 2 weeks is used.
+#' @param DomainName &#91;required&#93; The unique name of the domain. Domain should be exists for the upload job to be created.
+#' @param DisplayName &#91;required&#93; The unique name of the upload job. Could be a file name to identify the upload job.
+#' @param Fields &#91;required&#93; The mapping between CSV Columns and Profile Object attributes. A map of the name and ObjectType field.
+#' @param UniqueKey &#91;required&#93; The unique key columns for de-duping the profiles used to map data to the profile.
+#' @param DataExpiry The expiry duration for the profiles ingested with the job. If not provided, the system default of 2 weeks is used.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2519,11 +2421,7 @@ customerprofiles_create_upload_job <- function(DomainName, DisplayName, Fields, 
 #' Deletes an existing calculated attribute definition
 #'
 #' @description
-#' Deletes an existing calculated attribute definition. Note that deleting
-#' a default calculated attribute is possible, however once deleted, you
-#' will be unable to undo that action and will need to recreate it on your
-#' own using the CreateCalculatedAttributeDefinition API if you want it
-#' back.
+#' Deletes an existing calculated attribute definition. Note that deleting a default calculated attribute is possible, however once deleted, you will be unable to undo that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition API if you want it back.
 #'
 #' @usage
 #' customerprofiles_delete_calculated_attribute_definition(DomainName,
@@ -2571,8 +2469,7 @@ customerprofiles_delete_calculated_attribute_definition <- function(DomainName, 
 #' profile attributes and their related objects
 #'
 #' @description
-#' Deletes a specific domain and all of its customer data, such as customer
-#' profile attributes and their related objects.
+#' Deletes a specific domain and all of its customer data, such as customer profile attributes and their related objects.
 #'
 #' @usage
 #' customerprofiles_delete_domain(DomainName)
@@ -2621,8 +2518,7 @@ customerprofiles_delete_domain <- function(DomainName) {
 #' Deletes the layout used to view data for a specific domain
 #'
 #' @description
-#' Deletes the layout used to view data for a specific domain. This API can
-#' only be invoked from the Amazon Connect admin website.
+#' Deletes the layout used to view data for a specific domain. This API can only be invoked from the Amazon Connect admin website.
 #'
 #' @usage
 #' customerprofiles_delete_domain_layout(DomainName, LayoutDefinitionName)
@@ -2767,8 +2663,7 @@ customerprofiles_delete_event_stream <- function(DomainName, EventStreamName) {
 #' @description
 #' Disable and deletes the Event Trigger.
 #' 
-#' You cannot delete an Event Trigger with an active Integration
-#' associated.
+#' You cannot delete an Event Trigger with an active Integration associated.
 #'
 #' @usage
 #' customerprofiles_delete_event_trigger(DomainName, EventTriggerName)
@@ -2871,8 +2766,7 @@ customerprofiles_delete_integration <- function(DomainName, Uri) {
 #' profile
 #'
 #' @description
-#' Deletes the standard customer profile and all data pertaining to the
-#' profile.
+#' Deletes the standard customer profile and all data pertaining to the profile.
 #'
 #' @usage
 #' customerprofiles_delete_profile(ProfileId, DomainName)
@@ -2981,8 +2875,7 @@ customerprofiles_delete_profile_key <- function(ProfileId, KeyName, Values, Doma
 #' Removes an object associated with a profile of a given ProfileObjectType
 #'
 #' @description
-#' Removes an object associated with a profile of a given
-#' ProfileObjectType.
+#' Removes an object associated with a profile of a given ProfileObjectType.
 #'
 #' @usage
 #' customerprofiles_delete_profile_object(ProfileId,
@@ -3039,11 +2932,7 @@ customerprofiles_delete_profile_object <- function(ProfileId, ProfileObjectUniqu
 #' all the ProfileObjects of that type
 #'
 #' @description
-#' Removes a ProfileObjectType from a specific domain as well as removes
-#' all the ProfileObjects of that type. It also disables integrations from
-#' this specific ProfileObjectType. In addition, it scrubs all of the
-#' fields of the standard profile that were populated from this
-#' ProfileObjectType.
+#' Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type. It also disables integrations from this specific ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that were populated from this ProfileObjectType.
 #'
 #' @usage
 #' customerprofiles_delete_profile_object_type(DomainName, ObjectTypeName)
@@ -3291,8 +3180,7 @@ customerprofiles_delete_segment_definition <- function(DomainName, SegmentDefini
 #' Deletes the specified workflow and all its corresponding resources
 #'
 #' @description
-#' Deletes the specified workflow and all its corresponding resources. This
-#' is an async process.
+#' Deletes the specified workflow and all its corresponding resources. This is an async process.
 #'
 #' @usage
 #' customerprofiles_delete_workflow(DomainName, WorkflowId)
@@ -3339,8 +3227,7 @@ customerprofiles_delete_workflow <- function(DomainName, WorkflowId) {
 #' objects
 #'
 #' @description
-#' The process of detecting profile object type mapping by using given
-#' objects.
+#' The process of detecting profile object type mapping by using given objects.
 #'
 #' @usage
 #' customerprofiles_detect_profile_object_type(Objects, DomainName)
@@ -3417,22 +3304,11 @@ customerprofiles_detect_profile_object_type <- function(Objects, DomainName) {
 #' merging your data
 #'
 #' @description
-#' Tests the auto-merging settings of your Identity Resolution Job without
-#' merging your data. It randomly selects a sample of matching groups from
-#' the existing matching results, and applies the automerging settings that
-#' you provided. You can then view the number of profiles in the sample,
-#' the number of matches, and the number of profiles identified to be
-#' merged. This enables you to evaluate the accuracy of the attributes in
-#' your matching list.
+#' Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list.
 #' 
 #' You can't view which profiles are matched and would be merged.
 #' 
-#' We strongly recommend you use this API to do a dry run of the
-#' automerging process before running the Identity Resolution Job. Include
-#' **at least** two matching attributes. If your matching list includes too
-#' few attributes (such as only `FirstName` or only `LastName`), there may
-#' be a large number of matches. This increases the chances of erroneous
-#' merges.
+#' We strongly recommend you use this API to do a dry run of the automerging process before running the Identity Resolution Job. Include **at least** two matching attributes. If your matching list includes too few attributes (such as only `FirstName` or only `LastName`), there may be a large number of matches. This increases the chances of erroneous merges.
 #'
 #' @usage
 #' customerprofiles_get_auto_merging_preview(DomainName, Consolidation,
@@ -3440,10 +3316,8 @@ customerprofiles_detect_profile_object_type <- function(Objects, DomainName) {
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param Consolidation &#91;required&#93; A list of matching attributes that represent matching criteria.
-#' @param ConflictResolution &#91;required&#93; How the auto-merging process should resolve conflicts between different
-#' profiles.
-#' @param MinAllowedConfidenceScoreForMerging Minimum confidence score required for profiles within a matching group
-#' to be merged during the auto-merge process.
+#' @param ConflictResolution &#91;required&#93; How the auto-merging process should resolve conflicts between different profiles.
+#' @param MinAllowedConfidenceScoreForMerging Minimum confidence score required for profiles within a matching group to be merged during the auto-merge process.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3503,8 +3377,7 @@ customerprofiles_get_auto_merging_preview <- function(DomainName, Consolidation,
 #' Customer Profiles
 #'
 #' @description
-#' Provides more information on a calculated attribute definition for
-#' Customer Profiles.
+#' Provides more information on a calculated attribute definition for Customer Profiles.
 #'
 #' @usage
 #' customerprofiles_get_calculated_attribute_definition(DomainName,
@@ -3816,8 +3689,7 @@ customerprofiles_get_domain <- function(DomainName) {
 #' Gets the layout to view data for a specific domain
 #'
 #' @description
-#' Gets the layout to view data for a specific domain. This API can only be
-#' invoked from the Amazon Connect admin website.
+#' Gets the layout to view data for a specific domain. This API can only be invoked from the Amazon Connect admin website.
 #'
 #' @usage
 #' customerprofiles_get_domain_layout(DomainName, LayoutDefinitionName)
@@ -3954,8 +3826,7 @@ customerprofiles_get_domain_object_type <- function(DomainName, ObjectTypeName) 
 #' domain
 #'
 #' @description
-#' Returns information about the specified event stream in a specific
-#' domain.
+#' Returns information about the specified event stream in a specific domain.
 #'
 #' @usage
 #' customerprofiles_get_event_stream(DomainName, EventStreamName)
@@ -4119,13 +3990,9 @@ customerprofiles_get_event_trigger <- function(DomainName, EventTriggerName) {
 #' domain
 #'
 #' @description
-#' Returns information about an Identity Resolution Job in a specific
-#' domain.
+#' Returns information about an Identity Resolution Job in a specific domain.
 #' 
-#' Identity Resolution Jobs are set up using the Amazon Connect admin
-#' console. For more information, see [Use Identity Resolution to
-#' consolidate similar
-#' profiles](https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html).
+#' Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see [Use Identity Resolution to consolidate similar profiles](https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html).
 #'
 #' @usage
 #' customerprofiles_get_identity_resolution_job(DomainName, JobId)
@@ -4290,27 +4157,15 @@ customerprofiles_get_integration <- function(DomainName, Uri) {
 #' identity resolution: set Matching to true
 #'
 #' @description
-#' Before calling this API, use
-#' [`create_domain`][customerprofiles_create_domain] or
-#' [`update_domain`][customerprofiles_update_domain] to enable identity
-#' resolution: set `Matching` to true.
+#' Before calling this API, use [`create_domain`][customerprofiles_create_domain] or [`update_domain`][customerprofiles_update_domain] to enable identity resolution: set `Matching` to true.
 #' 
-#' GetMatches returns potentially matching profiles, based on the results
-#' of the latest run of a machine learning process.
+#' GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning process.
 #' 
-#' The process of matching duplicate profiles. If `Matching` = `true`,
-#' Amazon Connect Customer Profiles starts a weekly batch process called
-#' Identity Resolution Job. If you do not specify a date and time for
-#' Identity Resolution Job to run, by default it runs every Saturday at
-#' 12AM UTC to detect duplicate profiles in your domains.
+#' The process of matching duplicate profiles. If `Matching` = `true`, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
 #' 
-#' After the Identity Resolution Job completes, use the
-#' [`get_matches`][customerprofiles_get_matches] API to return and review
-#' the results. Or, if you have configured `ExportingConfig` in the
-#' `MatchingRequest`, you can download the results from S3.
+#' After the Identity Resolution Job completes, use the [`get_matches`][customerprofiles_get_matches] API to return and review the results. Or, if you have configured `ExportingConfig` in the `MatchingRequest`, you can download the results from S3.
 #' 
-#' Amazon Connect uses the following profile attributes to identify
-#' matches:
+#' Amazon Connect uses the following profile attributes to identify matches:
 #' 
 #' -   PhoneNumber
 #' 
@@ -4328,19 +4183,12 @@ customerprofiles_get_integration <- function(DomainName, Uri) {
 #' 
 #' -   FullName
 #' 
-#' For example, two or more profiles—with spelling mistakes such as **John
-#' Doe** and **Jhn Doe**, or different casing email addresses such as
-#' **JOHN_DOE@@ANYCOMPANY.COM** and **johndoe@@anycompany.com**, or different
-#' phone number formats such as **555-010-0000** and
-#' **+1-555-010-0000**—can be detected as belonging to the same customer
-#' **John Doe** and merged into a unified profile.
+#' For example, two or more profiles—with spelling mistakes such as **John Doe** and **Jhn Doe**, or different casing email addresses such as **JOHN_DOE@@ANYCOMPANY.COM** and **johndoe@@anycompany.com**, or different phone number formats such as **555-010-0000** and **+1-555-010-0000**—can be detected as belonging to the same customer **John Doe** and merged into a unified profile.
 #'
 #' @usage
 #' customerprofiles_get_matches(NextToken, MaxResults, DomainName)
 #'
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #'
@@ -4403,18 +4251,11 @@ customerprofiles_get_matches <- function(NextToken = NULL, MaxResults = NULL, Do
 #' for domains with data store enabled
 #'
 #' @description
-#' The GetObjectTypeAttributeValues API delivers statistical insights about
-#' attributes within a specific object type, but is exclusively available
-#' for domains with data store enabled. This API performs daily
-#' calculations to provide statistical information about your attribute
-#' values, helping you understand patterns and trends in your data. The
-#' statistical calculations are performed once per day, providing a
-#' consistent snapshot of your attribute data characteristics.
+#' The GetObjectTypeAttributeValues API delivers statistical insights about attributes within a specific object type, but is exclusively available for domains with data store enabled. This API performs daily calculations to provide statistical information about your attribute values, helping you understand patterns and trends in your data. The statistical calculations are performed once per day, providing a consistent snapshot of your attribute data characteristics.
 #' 
 #' You'll receive null values in two scenarios:
 #' 
-#' During the first period after enabling data vault (unless a calculation
-#' cycle occurs, which happens once daily).
+#' During the first period after enabling data vault (unless a calculation cycle occurs, which happens once daily).
 #' 
 #' For attributes that don't contain numeric values.
 #'
@@ -4490,10 +4331,8 @@ customerprofiles_get_object_type_attribute_statistics <- function(DomainName, Ob
 #' @usage
 #' customerprofiles_get_profile_history_record(DomainName, ProfileId, Id)
 #'
-#' @param DomainName &#91;required&#93; The unique name of the domain for which to return a profile history
-#' record.
-#' @param ProfileId &#91;required&#93; The unique identifier of the profile for which to return a history
-#' record.
+#' @param DomainName &#91;required&#93; The unique name of the domain for which to return a profile history record.
+#' @param ProfileId &#91;required&#93; The unique identifier of the profile for which to return a history record.
 #' @param Id &#91;required&#93; The unique identifier of the profile history record to return.
 #'
 #' @return
@@ -4641,11 +4480,7 @@ customerprofiles_get_profile_object_type <- function(DomainName, ObjectTypeName)
 #' @description
 #' Returns the template information for a specific object type.
 #' 
-#' A template is a predefined ProfileObjectType, such as
-#' “Salesforce-Account” or “Salesforce-Contact.” When a user sends a
-#' ProfileObject, using the PutProfileObject API, with an ObjectTypeName
-#' that matches one of the TemplateIds, it uses the mappings from the
-#' template.
+#' A template is a predefined ProfileObjectType, such as “Salesforce-Account” or “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API, with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the template.
 #'
 #' @usage
 #' customerprofiles_get_profile_object_type_template(TemplateId)
@@ -4718,8 +4553,7 @@ customerprofiles_get_profile_object_type_template <- function(TemplateId) {
 #' domain
 #'
 #' @description
-#' Fetches the recommendations for a profile in the input Customer Profiles
-#' domain. Fetches all the profile recommendations
+#' Fetches the recommendations for a profile in the input Customer Profiles domain. Fetches all the profile recommendations
 #'
 #' @usage
 #' customerprofiles_get_profile_recommendations(DomainName, ProfileId,
@@ -4727,25 +4561,14 @@ customerprofiles_get_profile_object_type_template <- function(TemplateId) {
 #'   RecommenderPromotionalFilters, CandidateIds, MaxResults, MetadataConfig)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param ProfileId &#91;required&#93; The unique identifier of the profile for which to retrieve
-#' recommendations.
+#' @param ProfileId &#91;required&#93; The unique identifier of the profile for which to retrieve recommendations.
 #' @param RecommenderName &#91;required&#93; The unique name of the recommender.
-#' @param Context The contextual metadata used to provide dynamic runtime information to
-#' tailor recommendations.
-#' @param RecommenderFilters A list of filters to apply to the returned recommendations. Filters
-#' define criteria for including or excluding items from the recommendation
-#' results.
-#' @param RecommenderPromotionalFilters A list of promotional filters to apply to the recommendations.
-#' Promotional filters allow you to promote specific items within a
-#' configurable subset of recommendation results.
-#' @param CandidateIds A list of item IDs to rank for the user. Use this when you want to
-#' re-rank a specific set of items rather than getting recommendations from
-#' the full item catalog. Required for personalized-ranking use cases.
-#' @param MaxResults The maximum number of recommendations to return. The default value is
-#' 10.
-#' @param MetadataConfig Configuration for including item metadata in the recommendation
-#' response. Use this to specify which metadata columns to return alongside
-#' recommended items.
+#' @param Context The contextual metadata used to provide dynamic runtime information to tailor recommendations.
+#' @param RecommenderFilters A list of filters to apply to the returned recommendations. Filters define criteria for including or excluding items from the recommendation results.
+#' @param RecommenderPromotionalFilters A list of promotional filters to apply to the recommendations. Promotional filters allow you to promote specific items within a configurable subset of recommendation results.
+#' @param CandidateIds A list of item IDs to rank for the user. Use this when you want to re-rank a specific set of items rather than getting recommendations from the full item catalog. Required for personalized-ranking use cases.
+#' @param MaxResults The maximum number of recommendations to return. The default value is 10.
+#' @param MetadataConfig Configuration for including item metadata in the recommendation response. Use this to specify which metadata columns to return alongside recommended items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4881,6 +4704,11 @@ customerprofiles_get_profile_recommendations <- function(DomainName, ProfileId, 
 #'       list(
 #'         "string"
 #'       )
+#'     ),
+#'     ExcludedColumns = list(
+#'       list(
+#'         "string"
+#'       )
 #'     )
 #'   ),
 #'   Description = "string",
@@ -4908,6 +4736,11 @@ customerprofiles_get_profile_recommendations <- function(DomainName, ProfileId, 
 #'         MinProvisionedTPS = 123
 #'       ),
 #'       IncludedColumns = list(
+#'         list(
+#'           "string"
+#'         )
+#'       ),
+#'       ExcludedColumns = list(
 #'         list(
 #'           "string"
 #'         )
@@ -5478,9 +5311,7 @@ customerprofiles_get_segment_definition <- function(DomainName, SegmentDefinitio
 #' customerprofiles_get_segment_estimate(DomainName, EstimateId)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param EstimateId &#91;required&#93; The query Id passed by a previous
-#' [`create_segment_estimate`][customerprofiles_create_segment_estimate]
-#' operation.
+#' @param EstimateId &#91;required&#93; The query Id passed by a previous [`create_segment_estimate`][customerprofiles_create_segment_estimate] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5537,8 +5368,7 @@ customerprofiles_get_segment_estimate <- function(DomainName, EstimateId) {
 #'   SegmentDefinitionName, ProfileIds)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param SegmentDefinitionName &#91;required&#93; The Id of the wanted segment. Needs to be a valid, and existing segment
-#' Id.
+#' @param SegmentDefinitionName &#91;required&#93; The Id of the wanted segment. Needs to be a valid, and existing segment Id.
 #' @param ProfileIds &#91;required&#93; The list of profile IDs to query for.
 #'
 #' @return
@@ -5763,18 +5593,13 @@ customerprofiles_get_segment_snapshot <- function(DomainName, SegmentDefinitionN
 #' the matchId or profileId
 #'
 #' @description
-#' Returns a set of profiles that belong to the same matching group using
-#' the `matchId` or `profileId`. You can also specify the type of matching
-#' that you want for finding similar profiles using either
-#' `RULE_BASED_MATCHING` or `ML_BASED_MATCHING`.
+#' Returns a set of profiles that belong to the same matching group using the `matchId` or `profileId`. You can also specify the type of matching that you want for finding similar profiles using either `RULE_BASED_MATCHING` or `ML_BASED_MATCHING`.
 #'
 #' @usage
 #' customerprofiles_get_similar_profiles(NextToken, MaxResults, DomainName,
 #'   MatchType, SearchKey, SearchValue)
 #'
-#' @param NextToken The pagination token from the previous
-#' [`get_similar_profiles`][customerprofiles_get_similar_profiles] API
-#' call.
+#' @param NextToken The pagination token from the previous [`get_similar_profiles`][customerprofiles_get_similar_profiles] API call.
 #' @param MaxResults The maximum number of objects returned per page.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param MatchType &#91;required&#93; Specify the type of matching to get similar profiles for.
@@ -5910,15 +5735,13 @@ customerprofiles_get_upload_job <- function(DomainName, JobId) {
 #' file associated with the upload job
 #'
 #' @description
-#' This API retrieves the pre-signed URL and client token for uploading the
-#' file associated with the upload job.
+#' This API retrieves the pre-signed URL and client token for uploading the file associated with the upload job.
 #'
 #' @usage
 #' customerprofiles_get_upload_job_path(DomainName, JobId)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain containing the upload job.
-#' @param JobId &#91;required&#93; The unique identifier of the upload job to retrieve the upload path for.
-#' This is generated from the CreateUploadJob API.
+#' @param JobId &#91;required&#93; The unique identifier of the upload job to retrieve the upload path for. This is generated from the CreateUploadJob API.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6049,9 +5872,7 @@ customerprofiles_get_workflow <- function(DomainName, WorkflowId) {
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param WorkflowId &#91;required&#93; Unique identifier for the workflow.
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #'
 #' @return
@@ -6120,8 +5941,7 @@ customerprofiles_get_workflow_steps <- function(DomainName, WorkflowId, NextToke
 #' account
 #'
 #' @description
-#' Lists all of the integrations associated to a specific URI in the AWS
-#' account.
+#' Lists all of the integrations associated to a specific URI in the AWS account.
 #'
 #' @usage
 #' customerprofiles_list_account_integrations(Uri, NextToken, MaxResults,
@@ -6130,8 +5950,7 @@ customerprofiles_get_workflow_steps <- function(DomainName, WorkflowId, NextToke
 #' @param Uri &#91;required&#93; The URI of the S3 bucket or any other type of data source.
 #' @param NextToken The pagination token from the previous ListAccountIntegrations API call.
 #' @param MaxResults The maximum number of objects returned per page.
-#' @param IncludeHidden Boolean to indicate if hidden integration should be returned. Defaults
-#' to `False`.
+#' @param IncludeHidden Boolean to indicate if hidden integration should be returned. Defaults to `False`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6211,10 +6030,8 @@ customerprofiles_list_account_integrations <- function(Uri, NextToken = NULL, Ma
 #'   NextToken, MaxResults)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param NextToken The pagination token from the previous call to
-#' ListCalculatedAttributeDefinitions.
-#' @param MaxResults The maximum number of calculated attribute definitions returned per
-#' page.
+#' @param NextToken The pagination token from the previous call to ListCalculatedAttributeDefinitions.
+#' @param MaxResults The maximum number of calculated attribute definitions returned per page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6284,8 +6101,7 @@ customerprofiles_list_calculated_attribute_definitions <- function(DomainName, N
 #' customerprofiles_list_calculated_attributes_for_profile(NextToken,
 #'   MaxResults, DomainName, ProfileId)
 #'
-#' @param NextToken The pagination token from the previous call to
-#' ListCalculatedAttributesForProfile.
+#' @param NextToken The pagination token from the previous call to ListCalculatedAttributesForProfile.
 #' @param MaxResults The maximum number of calculated attributes returned per page.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ProfileId &#91;required&#93; The unique identifier of a customer profile.
@@ -6347,9 +6163,7 @@ customerprofiles_list_calculated_attributes_for_profile <- function(NextToken = 
 #' domain
 #'
 #' @description
-#' Lists the existing layouts that can be used to view data for a specific
-#' domain. This API can only be invoked from the Amazon Connect admin
-#' website.
+#' Lists the existing layouts that can be used to view data for a specific domain. This API can only be invoked from the Amazon Connect admin website.
 #'
 #' @usage
 #' customerprofiles_list_domain_layouts(DomainName, NextToken, MaxResults)
@@ -6490,8 +6304,7 @@ customerprofiles_list_domain_object_types <- function(DomainName, MaxResults = N
 #' created
 #'
 #' @description
-#' Returns a list of all the domains for an AWS account that have been
-#' created.
+#' Returns a list of all the domains for an AWS account that have been created.
 #'
 #' @usage
 #' customerprofiles_list_domains(NextToken, MaxResults)
@@ -6699,17 +6512,14 @@ customerprofiles_list_event_triggers <- function(DomainName, NextToken = NULL, M
 #' Lists all of the Identity Resolution Jobs in your domain
 #'
 #' @description
-#' Lists all of the Identity Resolution Jobs in your domain. The response
-#' sorts the list by `JobStartTime`.
+#' Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by `JobStartTime`.
 #'
 #' @usage
 #' customerprofiles_list_identity_resolution_jobs(DomainName, NextToken,
 #'   MaxResults)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #'
 #' @return
@@ -6790,8 +6600,7 @@ customerprofiles_list_identity_resolution_jobs <- function(DomainName, NextToken
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param NextToken The pagination token from the previous ListIntegrations API call.
 #' @param MaxResults The maximum number of objects returned per page.
-#' @param IncludeHidden Boolean to indicate if hidden integration should be returned. Defaults
-#' to `False`.
+#' @param IncludeHidden Boolean to indicate if hidden integration should be returned. Defaults to `False`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6867,21 +6676,14 @@ customerprofiles_list_integrations <- function(DomainName, NextToken = NULL, Max
 #' types
 #'
 #' @description
-#' The ListObjectTypeAttributeValues API provides access to the most recent
-#' distinct values for any specified attribute, making it valuable for
-#' real-time data validation and consistency checks within your object
-#' types. This API works across domain, supporting both custom and standard
-#' object types. The API accepts the object type name, attribute name, and
-#' domain name as input parameters and returns values up to the storage
-#' limit of approximately 350KB.
+#' The ListObjectTypeAttributeValues API provides access to the most recent distinct values for any specified attribute, making it valuable for real-time data validation and consistency checks within your object types. This API works across domain, supporting both custom and standard object types. The API accepts the object type name, attribute name, and domain name as input parameters and returns values up to the storage limit of approximately 350KB.
 #'
 #' @usage
 #' customerprofiles_list_object_type_attribute_values(NextToken,
 #'   MaxResults, DomainName, ObjectTypeName, AttributeName)
 #'
 #' @param NextToken The pagination token from the previous call.
-#' @param MaxResults The maximum number of objects returned per page. Valid Range: Minimum
-#' value of 1. Maximum value of 100. If not provided default as 100.
+#' @param MaxResults The maximum number of objects returned per page. Valid Range: Minimum value of 1. Maximum value of 100. If not provided default as 100.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ObjectTypeName &#91;required&#93; The unique name of the domain object type.
 #' @param AttributeName &#91;required&#93; The attribute name.
@@ -7064,28 +6866,19 @@ customerprofiles_list_profile_attribute_values <- function(DomainName, Attribute
 #' domain
 #'
 #' @description
-#' Returns a list of history records for a specific profile, for a specific
-#' domain.
+#' Returns a list of history records for a specific profile, for a specific domain.
 #'
 #' @usage
 #' customerprofiles_list_profile_history_records(DomainName, ProfileId,
 #'   ObjectTypeName, NextToken, MaxResults, ActionType, PerformedBy)
 #'
-#' @param DomainName &#91;required&#93; The unique name of the domain for which to return profile history
-#' records.
+#' @param DomainName &#91;required&#93; The unique name of the domain for which to return profile history records.
 #' @param ProfileId &#91;required&#93; The identifier of the profile to be taken.
-#' @param ObjectTypeName Applies a filter to include profile history records only with the
-#' specified `ObjectTypeName` value in the response.
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param ObjectTypeName Applies a filter to include profile history records only with the specified `ObjectTypeName` value in the response.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
-#' @param ActionType Applies a filter to include profile history records only with the
-#' specified `ActionType` value in the response.
-#' @param PerformedBy Applies a filter to include profile history records only with the
-#' specified `PerformedBy` value in the response. The `PerformedBy` value
-#' can be the Amazon Resource Name (ARN) of the person or service principal
-#' who performed the action.
+#' @param ActionType Applies a filter to include profile history records only with the specified `ActionType` value in the response.
+#' @param PerformedBy Applies a filter to include profile history records only with the specified `PerformedBy` value in the response. The `PerformedBy` value can be the Amazon Resource Name (ARN) of the person or service principal who performed the action.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7282,8 +7075,7 @@ customerprofiles_list_profile_object_types <- function(DomainName, NextToken = N
 #' ProfileObjectType
 #'
 #' @description
-#' Returns a list of objects associated with a profile of a given
-#' ProfileObjectType.
+#' Returns a list of objects associated with a profile of a given ProfileObjectType.
 #'
 #' @usage
 #' customerprofiles_list_profile_objects(NextToken, MaxResults, DomainName,
@@ -7294,8 +7086,7 @@ customerprofiles_list_profile_object_types <- function(DomainName, NextToken = N
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ObjectTypeName &#91;required&#93; The name of the profile object type.
 #' @param ProfileId &#91;required&#93; The unique identifier of a customer profile.
-#' @param ObjectFilter Applies a filter to the response to include profile objects with the
-#' specified index values.
+#' @param ObjectFilter Applies a filter to the response to include profile objects with the specified index values.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7363,10 +7154,8 @@ customerprofiles_list_profile_objects <- function(NextToken = NULL, MaxResults =
 #'   NextToken)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param MaxResults The maximum number of recommender filters to return in the response. The
-#' default value is 100.
-#' @param NextToken A token received from a previous ListRecommenderFilters call to retrieve
-#' the next page of results.
+#' @param MaxResults The maximum number of recommender filters to return in the response. The default value is 100.
+#' @param NextToken A token received from a previous ListRecommenderFilters call to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7429,16 +7218,13 @@ customerprofiles_list_recommender_filters <- function(DomainName, MaxResults = N
 #' create recommenders
 #'
 #' @description
-#' Returns a list of available recommender recipes that can be used to
-#' create recommenders.
+#' Returns a list of available recommender recipes that can be used to create recommenders.
 #'
 #' @usage
 #' customerprofiles_list_recommender_recipes(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of recommender recipes to return in the response. The
-#' default value is 100.
-#' @param NextToken A token received from a previous ListRecommenderRecipes call to retrieve
-#' the next page of results.
+#' @param MaxResults The maximum number of recommender recipes to return in the response. The default value is 100.
+#' @param NextToken A token received from a previous ListRecommenderRecipes call to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7496,10 +7282,8 @@ customerprofiles_list_recommender_recipes <- function(MaxResults = NULL, NextTok
 #'   NextToken)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param MaxResults The maximum number of recommender schemas to return in the response. The
-#' default value is 100.
-#' @param NextToken A token received from a previous ListRecommenderSchemas call to retrieve
-#' the next page of results.
+#' @param MaxResults The maximum number of recommender schemas to return in the response. The default value is 100.
+#' @param NextToken A token received from a previous ListRecommenderSchemas call to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7569,10 +7353,8 @@ customerprofiles_list_recommender_schemas <- function(DomainName, MaxResults = N
 #' customerprofiles_list_recommenders(DomainName, MaxResults, NextToken)
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param MaxResults The maximum number of recommenders to return in the response. The
-#' default value is 100.
-#' @param NextToken A token received from a previous ListRecommenders call to retrieve the
-#' next page of results.
+#' @param MaxResults The maximum number of recommenders to return in the response. The default value is 100.
+#' @param NextToken A token received from a previous ListRecommenders call to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7599,6 +7381,11 @@ customerprofiles_list_recommender_schemas <- function(DomainName, MaxResults = N
 #'           MinProvisionedTPS = 123
 #'         ),
 #'         IncludedColumns = list(
+#'           list(
+#'             "string"
+#'           )
+#'         ),
+#'         ExcludedColumns = list(
 #'           list(
 #'             "string"
 #'           )
@@ -7632,6 +7419,11 @@ customerprofiles_list_recommender_schemas <- function(DomainName, MaxResults = N
 #'             MinProvisionedTPS = 123
 #'           ),
 #'           IncludedColumns = list(
+#'             list(
+#'               "string"
+#'             )
+#'           ),
+#'           ExcludedColumns = list(
 #'             list(
 #'               "string"
 #'             )
@@ -7693,9 +7485,7 @@ customerprofiles_list_recommenders <- function(DomainName, MaxResults = NULL, Ne
 #' customerprofiles_list_rule_based_matches(NextToken, MaxResults,
 #'   DomainName)
 #'
-#' @param NextToken The pagination token from the previous
-#' [`list_rule_based_matches`][customerprofiles_list_rule_based_matches]
-#' API call.
+#' @param NextToken The pagination token from the previous [`list_rule_based_matches`][customerprofiles_list_rule_based_matches] API call.
 #' @param MaxResults The maximum number of `MatchIds` returned per page.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #'
@@ -7816,9 +7606,7 @@ customerprofiles_list_segment_definitions <- function(DomainName, MaxResults = N
 #' resource
 #'
 #' @description
-#' Displays the tags associated with an Amazon Connect Customer Profiles
-#' resource. In Connect Customer Profiles, domains, profile object types,
-#' and integrations can be tagged.
+#' Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.
 #'
 #' @usage
 #' customerprofiles_list_tags_for_resource(resourceArn)
@@ -7876,8 +7664,7 @@ customerprofiles_list_tags_for_resource <- function(resourceArn) {
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain to list upload jobs for.
 #' @param MaxResults The maximum number of upload jobs to return per page.
-#' @param NextToken The pagination token from the previous call to retrieve the next page of
-#' results.
+#' @param NextToken The pagination token from the previous call to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7949,9 +7736,7 @@ customerprofiles_list_upload_jobs <- function(DomainName, MaxResults = NULL, Nex
 #' @param Status Status of workflow execution.
 #' @param QueryStartDate Retrieve workflows started after timestamp.
 #' @param QueryEndDate Retrieve workflows ended after timestamp.
-#' @param NextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param NextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return per page.
 #'
 #' @return
@@ -8022,35 +7807,25 @@ customerprofiles_list_workflows <- function(DomainName, WorkflowType = NULL, Sta
 #' @description
 #' Runs an AWS Lambda job that does the following:
 #' 
-#' 1.  All the profileKeys in the `ProfileToBeMerged` will be moved to the
-#'     main profile.
+#' 1.  All the profileKeys in the `ProfileToBeMerged` will be moved to the main profile.
 #' 
-#' 2.  All the objects in the `ProfileToBeMerged` will be moved to the main
-#'     profile.
+#' 2.  All the objects in the `ProfileToBeMerged` will be moved to the main profile.
 #' 
 #' 3.  All the `ProfileToBeMerged` will be deleted at the end.
 #' 
-#' 4.  All the profileKeys in the `ProfileIdsToBeMerged` will be moved to
-#'     the main profile.
+#' 4.  All the profileKeys in the `ProfileIdsToBeMerged` will be moved to the main profile.
 #' 
 #' 5.  Standard fields are merged as follows:
 #' 
-#'     1.  Fields are always "union"-ed if there are no conflicts in
-#'         standard fields or attributeKeys.
+#'     1.  Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.
 #' 
 #'     2.  When there are conflicting fields:
 #' 
-#'         1.  If no `SourceProfileIds` entry is specified, the main
-#'             Profile value is always taken.
+#'         1.  If no `SourceProfileIds` entry is specified, the main Profile value is always taken.
 #' 
-#'         2.  If a `SourceProfileIds` entry is specified, the specified
-#'             profileId is always taken, even if it is a NULL value.
+#'         2.  If a `SourceProfileIds` entry is specified, the specified profileId is always taken, even if it is a NULL value.
 #' 
-#' You can use MergeProfiles together with
-#' [`get_matches`][customerprofiles_get_matches], which returns potentially
-#' matching profiles, or use it with the results of another matching
-#' system. After profiles have been merged, they cannot be separated
-#' (unmerged).
+#' You can use MergeProfiles together with [`get_matches`][customerprofiles_get_matches], which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).
 #'
 #' @usage
 #' customerprofiles_merge_profiles(DomainName, MainProfileId,
@@ -8059,10 +7834,7 @@ customerprofiles_list_workflows <- function(DomainName, WorkflowType = NULL, Sta
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param MainProfileId &#91;required&#93; The identifier of the profile to be taken.
 #' @param ProfileIdsToBeMerged &#91;required&#93; The identifier of the profile to be merged into MainProfileId.
-#' @param FieldSourceProfileIds The identifiers of the fields in the profile that has the information
-#' you want to apply to the merge. For example, say you want to merge
-#' EmailAddress from Profile1 into MainProfile. This would be the
-#' identifier of the EmailAddress field in Profile1.
+#' @param FieldSourceProfileIds The identifiers of the fields in the profile that has the information you want to apply to the merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the identifier of the EmailAddress field in Profile1.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8137,9 +7909,7 @@ customerprofiles_merge_profiles <- function(DomainName, MainProfileId, ProfileId
 #' Create/Update a DomainObjectType in a Customer Profiles domain
 #'
 #' @description
-#' Create/Update a DomainObjectType in a Customer Profiles domain. To
-#' create a new DomainObjectType, Data Store needs to be enabled on the
-#' Domain.
+#' Create/Update a DomainObjectType in a Customer Profiles domain. To create a new DomainObjectType, Data Store needs to be enabled on the Domain.
 #'
 #' @usage
 #' customerprofiles_put_domain_object_type(DomainName, ObjectTypeName,
@@ -8148,10 +7918,8 @@ customerprofiles_merge_profiles <- function(DomainName, MainProfileId, ProfileId
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ObjectTypeName &#91;required&#93; The unique name of the domain object type.
 #' @param Description The description of the domain object type.
-#' @param EncryptionKey The customer provided KMS key used to encrypt this type of domain
-#' object.
-#' @param Fields &#91;required&#93; A map of field names to their corresponding domain object type field
-#' definitions.
+#' @param EncryptionKey The customer provided KMS key used to encrypt this type of domain object.
+#' @param Fields &#91;required&#93; A map of field names to their corresponding domain object type field definitions.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
 #' @return
@@ -8230,15 +7998,11 @@ customerprofiles_put_domain_object_type <- function(DomainName, ObjectTypeName, 
 #' includes Amazon AppFlow and Amazon Connect
 #'
 #' @description
-#' Adds an integration between the service and a third-party service, which
-#' includes Amazon AppFlow and Amazon Connect.
+#' Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.
 #' 
 #' An integration can belong to only one domain.
 #' 
-#' To add or remove tags on an existing Integration, see
-#' [TagResource](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_TagResource.html)
-#' /
-#' [UntagResource](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_UntagResource.html).
+#' To add or remove tags on an existing Integration, see [TagResource](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_TagResource.html) / [UntagResource](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_UntagResource.html).
 #'
 #' @usage
 #' customerprofiles_put_integration(DomainName, Uri, ObjectTypeName,
@@ -8248,23 +8012,12 @@ customerprofiles_put_domain_object_type <- function(DomainName, ObjectTypeName, 
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param Uri The URI of the S3 bucket or any other type of data source.
 #' @param ObjectTypeName The name of the profile object type.
-#' @param ObjectTypeNames A map in which each key is an event type from an external application
-#' such as Segment or Shopify, and each value is an `ObjectTypeName`
-#' (template) used to ingest the event. It supports the following event
-#' types: `SegmentIdentify`, `ShopifyCreateCustomers`,
-#' `ShopifyUpdateCustomers`, `ShopifyCreateDraftOrders`,
-#' `ShopifyUpdateDraftOrders`, `ShopifyCreateOrders`, and
-#' `ShopifyUpdatedOrders`.
+#' @param ObjectTypeNames A map in which each key is an event type from an external application such as Segment or Shopify, and each value is an `ObjectTypeName` (template) used to ingest the event. It supports the following event types: `SegmentIdentify`, `ShopifyCreateCustomers`, `ShopifyUpdateCustomers`, `ShopifyCreateDraftOrders`, `ShopifyUpdateDraftOrders`, `ShopifyCreateOrders`, and `ShopifyUpdatedOrders`.
 #' @param Tags The tags used to organize, track, or control access for this resource.
-#' @param FlowDefinition The configuration that controls how Customer Profiles retrieves data
-#' from the source.
-#' @param RoleArn The Amazon Resource Name (ARN) of the IAM role. The Integration uses
-#' this role to make Customer Profiles requests on your behalf.
-#' @param EventTriggerNames A list of unique names for active event triggers associated with the
-#' integration.
-#' @param Scope Specifies whether the integration applies to profile level data
-#' (associated with profiles) or domain level data (not associated with any
-#' specific profile). The default value is PROFILE.
+#' @param FlowDefinition The configuration that controls how Customer Profiles retrieves data from the source.
+#' @param RoleArn The Amazon Resource Name (ARN) of the IAM role. The Integration uses this role to make Customer Profiles requests on your behalf.
+#' @param EventTriggerNames A list of unique names for active event triggers associated with the integration.
+#' @param Scope Specifies whether the integration applies to profile level data (associated with profiles) or domain level data (not associated with any specific profile). The default value is PROFILE.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8415,18 +8168,11 @@ customerprofiles_put_integration <- function(DomainName, Uri = NULL, ObjectTypeN
 #' @description
 #' Adds additional objects to customer profiles of a given ObjectType.
 #' 
-#' When adding a specific profile object, like a Contact Record, an
-#' inferred profile can get created if it is not mapped to an existing
-#' profile. The resulting profile will only have a phone number populated
-#' in the standard ProfileObject. Any additional Contact Records with the
-#' same phone number will be mapped to the same inferred profile.
+#' When adding a specific profile object, like a Contact Record, an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional Contact Records with the same phone number will be mapped to the same inferred profile.
 #' 
-#' When a ProfileObject is created and if a ProfileObjectType already
-#' exists for the ProfileObject, it will provide data to a standard profile
-#' depending on the ProfileObjectType definition.
+#' When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.
 #' 
-#' PutProfileObject needs an ObjectType, which can be created using
-#' PutProfileObjectType.
+#' PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.
 #'
 #' @usage
 #' customerprofiles_put_profile_object(ObjectTypeName, Object, DomainName)
@@ -8481,8 +8227,7 @@ customerprofiles_put_profile_object <- function(ObjectTypeName, Object, DomainNa
 #' @description
 #' Defines a ProfileObjectType.
 #' 
-#' To add or remove tags on an existing ObjectType, see
-#' [TagResource](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_TagResource.html)/[`untag_resource`][customerprofiles_untag_resource].
+#' To add or remove tags on an existing ObjectType, see [TagResource](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_TagResource.html)/[`untag_resource`][customerprofiles_untag_resource].
 #'
 #' @usage
 #' customerprofiles_put_profile_object_type(DomainName, ObjectTypeName,
@@ -8493,30 +8238,13 @@ customerprofiles_put_profile_object <- function(ObjectTypeName, Object, DomainNa
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param ObjectTypeName &#91;required&#93; The name of the profile object type.
 #' @param Description &#91;required&#93; Description of the profile object type.
-#' @param TemplateId A unique identifier for the object template. For some attributes in the
-#' request, the service will use the default value from the object template
-#' when TemplateId is present. If these attributes are present in the
-#' request, the service may return a `BadRequestException`. These
-#' attributes include: AllowProfileCreation,
-#' SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if
-#' AllowProfileCreation is set to true when TemplateId is set, the service
-#' may return a `BadRequestException`.
+#' @param TemplateId A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a `BadRequestException`. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a `BadRequestException`.
 #' @param ExpirationDays The number of days until the data in the object expires.
-#' @param EncryptionKey The customer-provided key to encrypt the profile object that will be
-#' created in this profile object type.
-#' @param AllowProfileCreation Indicates whether a profile should be created when data is received if
-#' one doesn’t exist for an object of this type. The default is `FALSE`. If
-#' the AllowProfileCreation flag is set to `FALSE`, then the service tries
-#' to fetch a standard profile and associate this object with the profile.
-#' If it is set to `TRUE`, and if no match is found, then the service
-#' creates a new standard profile.
-#' @param SourceLastUpdatedTimestampFormat The format of your `sourceLastUpdatedTimestamp` that was previously set
-#' up.
+#' @param EncryptionKey The customer-provided key to encrypt the profile object that will be created in this profile object type.
+#' @param AllowProfileCreation Indicates whether a profile should be created when data is received if one doesn’t exist for an object of this type. The default is `FALSE`. If the AllowProfileCreation flag is set to `FALSE`, then the service tries to fetch a standard profile and associate this object with the profile. If it is set to `TRUE`, and if no match is found, then the service creates a new standard profile.
+#' @param SourceLastUpdatedTimestampFormat The format of your `sourceLastUpdatedTimestamp` that was previously set up.
 #' @param MaxProfileObjectCount The amount of profile object max count assigned to the object type
-#' @param SourcePriority An integer that determines the priority of this object type when data
-#' from multiple sources is ingested. Lower values take priority. Object
-#' types without a specified source priority default to the lowest
-#' priority.
+#' @param SourcePriority An integer that determines the priority of this object type when data from multiple sources is ingested. Lower values take priority. Object types without a specified source priority default to the lowest priority.
 #' @param Fields A map of the name and ObjectType field.
 #' @param Keys A list of unique keys that can be used to map data to the profile.
 #' @param Tags The tags used to organize, track, or control access for this resource.
@@ -8632,14 +8360,9 @@ customerprofiles_put_profile_object_type <- function(DomainName, ObjectTypeName,
 #' predefined search keys (e
 #'
 #' @description
-#' Searches for profiles within a specific domain using one or more
-#' predefined search keys (e.g., _fullName, _phone, _email, _account,
-#' etc.) and/or custom-defined search keys. A search key is a data type
-#' pair that consists of a `KeyName` and `Values` list.
+#' Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a `KeyName` and `Values` list.
 #' 
-#' This operation supports searching for profiles with a minimum of 1
-#' key-value(s) pair and up to 5 key-value(s) pairs using either `AND` or
-#' `OR` logic.
+#' This operation supports searching for profiles with a minimum of 1 key-value(s) pair and up to 5 key-value(s) pairs using either `AND` or `OR` logic.
 #'
 #' @usage
 #' customerprofiles_search_profiles(NextToken, MaxResults, DomainName,
@@ -8650,37 +8373,18 @@ customerprofiles_put_profile_object_type <- function(DomainName, ObjectTypeName,
 #' 
 #' The default is 20 if this parameter is not included in the request.
 #' @param DomainName &#91;required&#93; The unique name of the domain.
-#' @param KeyName &#91;required&#93; A searchable identifier of a customer profile. The predefined keys you
-#' can use to search include: _account, _profileId, _assetId, _caseId,
-#' _orderId, _fullName, _phone, _email, _ctrContactId,
-#' _marketoLeadId, _salesforceAccountId, _salesforceContactId,
-#' _salesforceAssetId, _zendeskUserId, _zendeskExternalId,
-#' _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId,
-#' _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
+#' @param KeyName &#91;required&#93; A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 #' @param Values &#91;required&#93; A list of key values.
-#' @param AdditionalSearchKeys A list of `AdditionalSearchKey` objects that are each searchable
-#' identifiers of a profile. Each `AdditionalSearchKey` object contains a
-#' `KeyName` and a list of `Values` associated with that specific key
-#' (i.e., a key-value(s) pair). These additional search keys will be used
-#' in conjunction with the `LogicalOperator` and the required `KeyName` and
-#' `Values` parameters to search for profiles that satisfy the search
-#' criteria.
-#' @param LogicalOperator Relationship between all specified search keys that will be used to
-#' search for profiles. This includes the required `KeyName` and `Values`
-#' parameters as well as any key-value(s) pairs specified in the
-#' `AdditionalSearchKeys` list.
+#' @param AdditionalSearchKeys A list of `AdditionalSearchKey` objects that are each searchable identifiers of a profile. Each `AdditionalSearchKey` object contains a `KeyName` and a list of `Values` associated with that specific key (i.e., a key-value(s) pair). These additional search keys will be used in conjunction with the `LogicalOperator` and the required `KeyName` and `Values` parameters to search for profiles that satisfy the search criteria.
+#' @param LogicalOperator Relationship between all specified search keys that will be used to search for profiles. This includes the required `KeyName` and `Values` parameters as well as any key-value(s) pairs specified in the `AdditionalSearchKeys` list.
 #' 
-#' This parameter influences which profiles will be returned in the
-#' response in the following manner:
+#' This parameter influences which profiles will be returned in the response in the following manner:
 #' 
-#' -   `AND` - The response only includes profiles that match all of the
-#'     search keys.
+#' -   `AND` - The response only includes profiles that match all of the search keys.
 #' 
-#' -   `OR` - The response includes profiles that match at least one of the
-#'     search keys.
+#' -   `OR` - The response includes profiles that match at least one of the search keys.
 #' 
-#' The `OR` relationship is the default behavior if this parameter is not
-#' included in the request.
+#' The `OR` relationship is the default behavior if this parameter is not included in the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8840,8 +8544,7 @@ customerprofiles_search_profiles <- function(NextToken = NULL, MaxResults = NULL
 #' Starts a recommender that was previously stopped
 #'
 #' @description
-#' Starts a recommender that was previously stopped. Starting a recommender
-#' resumes its ability to generate recommendations.
+#' Starts a recommender that was previously stopped. Starting a recommender resumes its ability to generate recommendations.
 #'
 #' @usage
 #' customerprofiles_start_recommender(DomainName, RecommenderName)
@@ -8933,8 +8636,7 @@ customerprofiles_start_upload_job <- function(DomainName, JobId) {
 #' Stops a recommender, suspending its ability to generate recommendations
 #'
 #' @description
-#' Stops a recommender, suspending its ability to generate recommendations.
-#' The recommender can be restarted later using StartRecommender.
+#' Stops a recommender, suspending its ability to generate recommendations. The recommender can be restarted later using StartRecommender.
 #'
 #' @usage
 #' customerprofiles_stop_recommender(DomainName, RecommenderName)
@@ -9027,21 +8729,11 @@ customerprofiles_stop_upload_job <- function(DomainName, JobId) {
 #' Connect Customer Profiles resource
 #'
 #' @description
-#' Assigns one or more tags (key-value pairs) to the specified Amazon
-#' Connect Customer Profiles resource. Tags can help you organize and
-#' categorize your resources. You can also use them to scope user
-#' permissions by granting a user permission to access or change only
-#' resources with certain tag values. In Connect Customer Profiles,
-#' domains, profile object types, and integrations can be tagged.
+#' Assigns one or more tags (key-value pairs) to the specified Amazon Connect Customer Profiles resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.
 #' 
-#' Tags don't have any semantic meaning to AWS and are interpreted strictly
-#' as strings of characters.
+#' Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.
 #' 
-#' You can use the TagResource action with a resource that already has
-#' tags. If you specify a new tag key, this tag is appended to the list of
-#' tags associated with the resource. If you specify a tag key that is
-#' already associated with the resource, the new tag value that you specify
-#' replaces the previous value for that tag.
+#' You can use the TagResource action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.
 #' 
 #' You can associate as many as 50 tags with a resource.
 #'
@@ -9092,9 +8784,7 @@ customerprofiles_tag_resource <- function(resourceArn, tags) {
 #' Profiles resource
 #'
 #' @description
-#' Removes one or more tags from the specified Amazon Connect Customer
-#' Profiles resource. In Connect Customer Profiles, domains, profile object
-#' types, and integrations can be tagged.
+#' Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.
 #'
 #' @usage
 #' customerprofiles_untag_resource(resourceArn, tagKeys)
@@ -9142,10 +8832,7 @@ customerprofiles_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates an existing calculated attribute definition
 #'
 #' @description
-#' Updates an existing calculated attribute definition. When updating the
-#' Conditions, note that increasing the date range of a calculated
-#' attribute will not trigger inclusion of historical data greater than the
-#' current date range.
+#' Updates an existing calculated attribute definition. When updating the Conditions, note that increasing the date range of a calculated attribute will not trigger inclusion of historical data greater than the current date range.
 #'
 #' @usage
 #' customerprofiles_update_calculated_attribute_definition(DomainName,
@@ -9155,8 +8842,7 @@ customerprofiles_untag_resource <- function(resourceArn, tagKeys) {
 #' @param CalculatedAttributeName &#91;required&#93; The unique name of the calculated attribute.
 #' @param DisplayName The display name of the calculated attribute.
 #' @param Description The description of the calculated attribute.
-#' @param Conditions The conditions including range, object count, and threshold for the
-#' calculated attribute.
+#' @param Conditions The conditions including range, object count, and threshold for the calculated attribute.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9264,23 +8950,15 @@ customerprofiles_update_calculated_attribute_definition <- function(DomainName, 
 #' dead letter queue or an encryption key
 #'
 #' @description
-#' Updates the properties of a domain, including creating or selecting a
-#' dead letter queue or an encryption key.
+#' Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.
 #' 
 #' After a domain is created, the name can’t be changed.
 #' 
-#' Use this API or [`create_domain`][customerprofiles_create_domain] to
-#' enable [identity
-#' resolution](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_GetMatches.html):
-#' set `Matching` to true.
+#' Use this API or [`create_domain`][customerprofiles_create_domain] to enable [identity resolution](https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-customer-profiles_GetMatches.html): set `Matching` to true.
 #' 
-#' To prevent cross-service impersonation when you call this API, see
-#' [Cross-service confused deputy
-#' prevention](https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html)
-#' for sample policies that you should apply.
+#' To prevent cross-service impersonation when you call this API, see [Cross-service confused deputy prevention](https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html) for sample policies that you should apply.
 #' 
-#' To add or remove tags on an existing Domain, see
-#' [`tag_resource`][customerprofiles_tag_resource]/[`untag_resource`][customerprofiles_untag_resource].
+#' To add or remove tags on an existing Domain, see [`tag_resource`][customerprofiles_tag_resource]/[`untag_resource`][customerprofiles_untag_resource].
 #'
 #' @usage
 #' customerprofiles_update_domain(DomainName, DefaultExpirationDays,
@@ -9289,35 +8967,12 @@ customerprofiles_update_calculated_attribute_definition <- function(DomainName, 
 #'
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param DefaultExpirationDays The default number of days until the data within the domain expires.
-#' @param DefaultEncryptionKey The default encryption key, which is an AWS managed key, is used when no
-#' specific type of encryption key is specified. It is used to encrypt all
-#' data before it is placed in permanent or semi-permanent storage. If
-#' specified as an empty string, it will clear any existing value.
-#' @param DeadLetterQueueUrl The URL of the SQS dead letter queue, which is used for reporting errors
-#' associated with ingesting data from third party applications. If
-#' specified as an empty string, it will clear any existing value. You must
-#' set up a policy on the DeadLetterQueue for the SendMessage operation to
-#' enable Amazon Connect Customer Profiles to send messages to the
-#' DeadLetterQueue.
-#' @param Matching The process of matching duplicate profiles. If `Matching` = `true`,
-#' Amazon Connect Customer Profiles starts a weekly batch process called
-#' Identity Resolution Job. If you do not specify a date and time for
-#' Identity Resolution Job to run, by default it runs every Saturday at
-#' 12AM UTC to detect duplicate profiles in your domains.
+#' @param DefaultEncryptionKey The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.
+#' @param DeadLetterQueueUrl The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
+#' @param Matching The process of matching duplicate profiles. If `Matching` = `true`, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
 #' 
-#' After the Identity Resolution Job completes, use the
-#' [`get_matches`][customerprofiles_get_matches] API to return and review
-#' the results. Or, if you have configured `ExportingConfig` in the
-#' `MatchingRequest`, you can download the results from S3.
-#' @param RuleBasedMatching The process of matching duplicate profiles using the rule-Based
-#' matching. If `RuleBasedMatching` = true, Amazon Connect Customer
-#' Profiles will start to match and merge your profiles according to your
-#' configuration in the `RuleBasedMatchingRequest`. You can use the
-#' [`list_rule_based_matches`][customerprofiles_list_rule_based_matches]
-#' and [`get_similar_profiles`][customerprofiles_get_similar_profiles] API
-#' to return and review the results. Also, if you have configured
-#' `ExportingConfig` in the `RuleBasedMatchingRequest`, you can download
-#' the results from S3.
+#' After the Identity Resolution Job completes, use the [`get_matches`][customerprofiles_get_matches] API to return and review the results. Or, if you have configured `ExportingConfig` in the `MatchingRequest`, you can download the results from S3.
+#' @param RuleBasedMatching The process of matching duplicate profiles using the rule-Based matching. If `RuleBasedMatching` = true, Connect Customer Customer Profiles will start to match and merge your profiles according to your configuration in the `RuleBasedMatchingRequest`. You can use the [`list_rule_based_matches`][customerprofiles_list_rule_based_matches] and [`get_similar_profiles`][customerprofiles_get_similar_profiles] API to return and review the results. Also, if you have configured `ExportingConfig` in the `RuleBasedMatchingRequest`, you can download the results from S3.
 #' @param DataStore Set to true to enabled data store for this domain.
 #' @param Tags The tags used to organize, track, or control access for this resource.
 #'
@@ -9516,8 +9171,7 @@ customerprofiles_update_domain <- function(DomainName, DefaultExpirationDays = N
 #' Updates the layout used to view data for a specific domain
 #'
 #' @description
-#' Updates the layout used to view data for a specific domain. This API can
-#' only be invoked from the Amazon Connect admin website.
+#' Updates the layout used to view data for a specific domain. This API can only be invoked from the Amazon Connect admin website.
 #'
 #' @usage
 #' customerprofiles_update_domain_layout(DomainName, LayoutDefinitionName,
@@ -9527,13 +9181,9 @@ customerprofiles_update_domain <- function(DomainName, DefaultExpirationDays = N
 #' @param LayoutDefinitionName &#91;required&#93; The unique name of the layout.
 #' @param Description The description of the layout
 #' @param DisplayName The display name of the layout
-#' @param IsDefault If set to true for a layout, this layout will be used by default to view
-#' data. If set to false, then the layout will not be used by default, but
-#' it can be used to view data by explicitly selecting it in the console.
-#' @param LayoutType The type of layout that can be used to view data under a Customer
-#' Profiles domain.
-#' @param Layout A customizable layout that can be used to view data under a Customer
-#' Profiles domain.
+#' @param IsDefault If set to true for a layout, this layout will be used by default to view data. If set to false, then the layout will not be used by default, but it can be used to view data by explicitly selecting it in the console.
+#' @param LayoutType The type of layout that can be used to view data under a Customer Profiles domain.
+#' @param Layout A customizable layout that can be used to view data under a Customer Profiles domain.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9609,13 +9259,9 @@ customerprofiles_update_domain_layout <- function(DomainName, LayoutDefinitionNa
 #' @param EventTriggerName &#91;required&#93; The unique name of the event trigger.
 #' @param ObjectTypeName The unique name of the object type.
 #' @param Description The description of the event trigger.
-#' @param EventTriggerConditions A list of conditions that determine when an event should trigger the
-#' destination.
-#' @param SegmentFilter The destination is triggered only for profiles that meet the criteria of
-#' a segment definition.
-#' @param EventTriggerLimits Defines limits controlling whether an event triggers the destination,
-#' based on ingestion latency and the number of invocations per profile
-#' over specific time periods.
+#' @param EventTriggerConditions A list of conditions that determine when an event should trigger the destination.
+#' @param SegmentFilter The destination is triggered only for profiles that meet the criteria of a segment definition.
+#' @param EventTriggerLimits Defines limits controlling whether an event triggers the destination, based on ingestion latency and the number of invocations per profile over specific time periods.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9735,12 +9381,9 @@ customerprofiles_update_event_trigger <- function(DomainName, EventTriggerName, 
 #' Updates the properties of a profile
 #'
 #' @description
-#' Updates the properties of a profile. The ProfileId is required for
-#' updating a customer profile.
+#' Updates the properties of a profile. The ProfileId is required for updating a customer profile.
 #' 
-#' When calling the UpdateProfile API, specifying an empty string value
-#' means that any existing value will be removed. Not specifying a string
-#' value means that any value already there will be kept.
+#' When calling the UpdateProfile API, specifying an empty string value means that any existing value will be removed. Not specifying a string value means that any value already there will be kept.
 #'
 #' @usage
 #' customerprofiles_update_profile(DomainName, ProfileId,
@@ -9762,17 +9405,14 @@ customerprofiles_update_event_trigger <- function(DomainName, EventTriggerName, 
 #' @param LastName The customer’s last name.
 #' @param BirthDate The customer’s birth date.
 #' @param Gender The gender with which the customer identifies.
-#' @param PhoneNumber The customer’s phone number, which has not been specified as a mobile,
-#' home, or business number.
+#' @param PhoneNumber The customer’s phone number, which has not been specified as a mobile, home, or business number.
 #' @param MobilePhoneNumber The customer’s mobile phone number.
 #' @param HomePhoneNumber The customer’s home phone number.
 #' @param BusinessPhoneNumber The customer’s business phone number.
-#' @param EmailAddress The customer’s email address, which has not been specified as a personal
-#' or business address.
+#' @param EmailAddress The customer’s email address, which has not been specified as a personal or business address.
 #' @param PersonalEmailAddress The customer’s personal email address.
 #' @param BusinessEmailAddress The customer’s business email address.
-#' @param Address A generic address associated with the customer that is not mailing,
-#' shipping, or billing.
+#' @param Address A generic address associated with the customer that is not mailing, shipping, or billing.
 #' @param ShippingAddress The customer’s shipping address.
 #' @param MailingAddress The customer’s mailing address.
 #' @param BillingAddress The customer’s billing address.
@@ -9914,8 +9554,7 @@ customerprofiles_update_profile <- function(DomainName, ProfileId, AdditionalInf
 #' modify its configuration and description
 #'
 #' @description
-#' Updates the properties of an existing recommender, allowing you to
-#' modify its configuration and description.
+#' Updates the properties of an existing recommender, allowing you to modify its configuration and description.
 #'
 #' @usage
 #' customerprofiles_update_recommender(DomainName, RecommenderName,
@@ -9924,8 +9563,7 @@ customerprofiles_update_profile <- function(DomainName, ProfileId, AdditionalInf
 #' @param DomainName &#91;required&#93; The unique name of the domain.
 #' @param RecommenderName &#91;required&#93; The name of the recommender to update.
 #' @param Description The new description to assign to the recommender.
-#' @param RecommenderConfig The new configuration settings to apply to the recommender, including
-#' updated parameters and settings that define its behavior.
+#' @param RecommenderConfig The new configuration settings to apply to the recommender, including updated parameters and settings that define its behavior.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9956,6 +9594,11 @@ customerprofiles_update_profile <- function(DomainName, ProfileId, AdditionalInf
 #'       MinProvisionedTPS = 123
 #'     ),
 #'     IncludedColumns = list(
+#'       list(
+#'         "string"
+#'       )
+#'     ),
+#'     ExcludedColumns = list(
 #'       list(
 #'         "string"
 #'       )

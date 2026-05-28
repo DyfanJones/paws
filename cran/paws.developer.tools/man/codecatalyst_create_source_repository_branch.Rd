@@ -21,8 +21,7 @@ codecatalyst_create_source_repository_branch(
 
 \item{name}{[required] The name for the branch you're creating.}
 
-\item{headCommitId}{The commit ID in an existing branch from which you want to create the
-new branch.}
+\item{headCommitId}{The commit ID in an existing branch from which you want to create the new branch.}
 }
 \description{
 Creates a branch in a specified source repository in Amazon CodeCatalyst.

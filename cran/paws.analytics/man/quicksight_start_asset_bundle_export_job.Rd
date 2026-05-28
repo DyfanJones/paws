@@ -21,11 +21,9 @@ quicksight_start_asset_bundle_export_job(
 \arguments{
 \item{AwsAccountId}{[required] The ID of the Amazon Web Services account to export assets from.}
 
-\item{AssetBundleExportJobId}{[required] The ID of the job. This ID is unique while the job is running. After the
-job is completed, you can reuse this ID for another job.}
+\item{AssetBundleExportJobId}{[required] The ID of the job. This ID is unique while the job is running. After the job is completed, you can reuse this ID for another job.}
 
-\item{ResourceArns}{[required] An array of resource ARNs to export. The following resources are
-supported.
+\item{ResourceArns}{[required] An array of resource ARNs to export. The following resources are supported.
 \itemize{
 \item \code{Analysis}
 \item \code{Dashboard}
@@ -36,45 +34,25 @@ supported.
 \item \code{VPCConnection}
 }
 
-The API caller must have the necessary permissions in their IAM role to
-access each resource before the resources can be exported.}
+The API caller must have the necessary permissions in their IAM role to access each resource before the resources can be exported.}
 
-\item{IncludeAllDependencies}{A Boolean that determines whether all dependencies of each resource ARN
-are recursively exported with the job. For example, say you provided a
-Dashboard ARN to the \code{ResourceArns} parameter. If you set
-\code{IncludeAllDependencies} to \code{TRUE}, any theme, dataset, and data source
-resource that is a dependency of the dashboard is also exported.}
+\item{IncludeAllDependencies}{A Boolean that determines whether all dependencies of each resource ARN are recursively exported with the job. For example, say you provided a Dashboard ARN to the \code{ResourceArns} parameter. If you set \code{IncludeAllDependencies} to \code{TRUE}, any theme, dataset, and data source resource that is a dependency of the dashboard is also exported.}
 
 \item{ExportFormat}{[required] The export data format.}
 
-\item{CloudFormationOverridePropertyConfiguration}{An optional collection of structures that generate CloudFormation
-parameters to override the existing resource property values when the
-resource is exported to a new CloudFormation template.
+\item{CloudFormationOverridePropertyConfiguration}{An optional collection of structures that generate CloudFormation parameters to override the existing resource property values when the resource is exported to a new CloudFormation template.
 
-Use this field if the \code{ExportFormat} field of a
-\code{StartAssetBundleExportJobRequest} API call is set to
-\code{CLOUDFORMATION_JSON}.}
+Use this field if the \code{ExportFormat} field of a \code{StartAssetBundleExportJobRequest} API call is set to \code{CLOUDFORMATION_JSON}.}
 
-\item{IncludePermissions}{A Boolean that determines whether all permissions for each resource ARN
-are exported with the job. If you set \code{IncludePermissions} to \code{TRUE},
-any permissions associated with each resource are exported.}
+\item{IncludePermissions}{A Boolean that determines whether all permissions for each resource ARN are exported with the job. If you set \code{IncludePermissions} to \code{TRUE}, any permissions associated with each resource are exported.}
 
-\item{IncludeTags}{A Boolean that determines whether all tags for each resource ARN are
-exported with the job. If you set \code{IncludeTags} to \code{TRUE}, any tags
-associated with each resource are exported.}
+\item{IncludeTags}{A Boolean that determines whether all tags for each resource ARN are exported with the job. If you set \code{IncludeTags} to \code{TRUE}, any tags associated with each resource are exported.}
 
-\item{ValidationStrategy}{An optional parameter that determines which validation strategy to use
-for the export job. If \code{StrictModeForAllResources} is set to \code{TRUE},
-strict validation for every error is enforced. If it is set to \code{FALSE},
-validation is skipped for specific UI errors that are shown as warnings.
-The default value for \code{StrictModeForAllResources} is \code{FALSE}.}
+\item{ValidationStrategy}{An optional parameter that determines which validation strategy to use for the export job. If \code{StrictModeForAllResources} is set to \code{TRUE}, strict validation for every error is enforced. If it is set to \code{FALSE}, validation is skipped for specific UI errors that are shown as warnings. The default value for \code{StrictModeForAllResources} is \code{FALSE}.}
 
-\item{IncludeFolderMemberships}{A Boolean that determines if the exported asset carries over information
-about the folders that the asset is a member of.}
+\item{IncludeFolderMemberships}{A Boolean that determines if the exported asset carries over information about the folders that the asset is a member of.}
 
-\item{IncludeFolderMembers}{A setting that indicates whether you want to include folder assets. You
-can also use this setting to recusrsively include all subfolders of an
-exported folder.}
+\item{IncludeFolderMembers}{A setting that indicates whether you want to include folder assets. You can also use this setting to recusrsively include all subfolders of an exported folder.}
 }
 \description{
 Starts an Asset Bundle export job.

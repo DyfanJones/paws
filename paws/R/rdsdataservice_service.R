@@ -7,9 +7,7 @@ NULL
 #' @description
 #' RDS Data API
 #' 
-#' Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon
-#' Aurora DB cluster. To run these statements, you use the RDS Data API
-#' (Data API).
+#' Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora DB cluster. To run these statements, you use the RDS Data API (Data API).
 #' 
 #' Data API is available with the following types of Aurora databases:
 #' 
@@ -17,9 +15,7 @@ NULL
 #' 
 #' -   Aurora MySQL - Serverless v2, provisioned, and Serverless v1
 #' 
-#' For more information about the Data API, see [Using RDS Data
-#' API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html)
-#' in the *Amazon Aurora User Guide*.
+#' For more information about the Data API, see [Using RDS Data API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html) in the *Amazon Aurora User Guide*.
 #'
 #' @param
 #' config

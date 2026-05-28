@@ -11,14 +11,11 @@ codeartifact_list_repositories(
 )
 }
 \arguments{
-\item{repositoryPrefix}{A prefix used to filter returned repositories. Only repositories with
-names that start with \code{repositoryPrefix} are returned.}
+\item{repositoryPrefix}{A prefix used to filter returned repositories. Only repositories with names that start with \code{repositoryPrefix} are returned.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Returns a list of \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html}{RepositorySummary} objects. Each \code{RepositorySummary} contains information about a repository in the specified Amazon Web Services account and that matches the input parameters.

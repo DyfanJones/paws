@@ -7,8 +7,7 @@
 gluedatabrew_list_projects(NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{NextToken}{The token returned by a previous call to retrieve the next set of
-results.}
+\item{NextToken}{The token returned by a previous call to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return in this request.}
 }

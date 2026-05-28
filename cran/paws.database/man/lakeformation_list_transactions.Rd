@@ -12,16 +12,13 @@ lakeformation_list_transactions(
 )
 }
 \arguments{
-\item{CatalogId}{The catalog for which to list transactions. Defaults to the account ID
-of the caller.}
+\item{CatalogId}{The catalog for which to list transactions. Defaults to the account ID of the caller.}
 
-\item{StatusFilter}{A filter indicating the status of transactions to return. Options are
-ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is \code{ALL}.}
+\item{StatusFilter}{A filter indicating the status of transactions to return. Options are ALL | COMPLETED | COMMITTED | ABORTED | ACTIVE. The default is \code{ALL}.}
 
 \item{MaxResults}{The maximum number of transactions to return in a single call.}
 
-\item{NextToken}{A continuation token if this is not the first call to retrieve
-transactions.}
+\item{NextToken}{A continuation token if this is not the first call to retrieve transactions.}
 }
 \description{
 Returns metadata about transactions and their status. To prevent the response from growing indefinitely, only uncommitted transactions and those available for time-travel queries are returned.

@@ -17,8 +17,7 @@ opensearchserviceserverless_create_access_policy(
 
 \item{name}{[required] The name of the policy.}
 
-\item{description}{A description of the policy. Typically used to store information about
-the permissions defined in the policy.}
+\item{description}{A description of the policy. Typically used to store information about the permissions defined in the policy.}
 
 \item{policy}{[required] The JSON policy document to use as the content for the policy.}
 

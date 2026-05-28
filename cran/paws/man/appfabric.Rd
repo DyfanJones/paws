@@ -53,16 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Web Services AppFabric quickly connects software as a service
-(SaaS) applications across your organization. This allows IT and
-security teams to easily manage and secure applications using a standard
-schema, and employees can complete everyday tasks faster using
-generative artificial intelligence (AI). You can use these APIs to
-complete AppFabric tasks, such as setting up audit log ingestions or
-viewing user access. For more information about AppFabric, including the
-required permissions to use the service, see the \href{https://docs.aws.amazon.com/appfabric/latest/adminguide/}{Amazon Web Services AppFabric Administration Guide}. For
-more information about using the Command Line Interface (CLI) to manage
-your AppFabric resources, see the \href{https://docs.aws.amazon.com/cli/latest/reference/appfabric/}{AppFabric section of the CLI Reference}.
+Amazon Web Services AppFabric quickly connects software as a service (SaaS) applications across your organization. This allows IT and security teams to easily manage and secure applications using a standard schema, and employees can complete everyday tasks faster using generative artificial intelligence (AI). You can use these APIs to complete AppFabric tasks, such as setting up audit log ingestions or viewing user access. For more information about AppFabric, including the required permissions to use the service, see the \href{https://docs.aws.amazon.com/appfabric/latest/adminguide/}{Amazon Web Services AppFabric Administration Guide}. For more information about using the Command Line Interface (CLI) to manage your AppFabric resources, see the \href{https://docs.aws.amazon.com/cli/latest/reference/appfabric/}{AppFabric section of the CLI Reference}.
 }
 \section{Service syntax}{
 

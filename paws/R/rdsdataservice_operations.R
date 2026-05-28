@@ -8,64 +8,39 @@ NULL
 #' @description
 #' Runs a batch SQL statement over an array of data.
 #' 
-#' You can run bulk update and insert operations for multiple records using
-#' a DML statement with different parameter sets. Bulk operations can
-#' provide a significant performance improvement over individual insert and
-#' update operations.
+#' You can run bulk update and insert operations for multiple records using a DML statement with different parameter sets. Bulk operations can provide a significant performance improvement over individual insert and update operations.
 #' 
-#' If a call isn't part of a transaction because it doesn't include the
-#' `transactionID` parameter, changes that result from the call are
-#' committed automatically.
+#' If a call isn't part of a transaction because it doesn't include the `transactionID` parameter, changes that result from the call are committed automatically.
 #' 
-#' There isn't a fixed upper limit on the number of parameter sets.
-#' However, the maximum size of the HTTP request submitted through the Data
-#' API is 4 MiB. If the request exceeds this limit, the Data API returns an
-#' error and doesn't process the request. This 4-MiB limit includes the
-#' size of the HTTP headers and the JSON notation in the request. Thus, the
-#' number of parameter sets that you can include depends on a combination
-#' of factors, such as the size of the SQL statement and the size of each
-#' parameter set.
+#' There isn't a fixed upper limit on the number of parameter sets. However, the maximum size of the HTTP request submitted through the Data API is 4 MiB. If the request exceeds this limit, the Data API returns an error and doesn't process the request. This 4-MiB limit includes the size of the HTTP headers and the JSON notation in the request. Thus, the number of parameter sets that you can include depends on a combination of factors, such as the size of the SQL statement and the size of each parameter set.
 #' 
-#' The response size limit is 1 MiB. If the call returns more than 1 MiB of
-#' response data, the call is terminated.
+#' The response size limit is 1 MiB. If the call returns more than 1 MiB of response data, the call is terminated.
 #'
 #' @usage
 #' rdsdataservice_batch_execute_statement(resourceArn, secretArn, sql,
 #'   database, schema, parameterSets, transactionId)
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-#' @param secretArn &#91;required&#93; The ARN of the secret that enables access to the DB cluster. Enter the
-#' database user name and password for the credentials in the secret.
+#' @param secretArn &#91;required&#93; The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.
 #' 
-#' For information about creating the secret, see [Create a database
-#' secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
-#' @param sql &#91;required&#93; The SQL statement to run. Don't include a semicolon (;) at the end of
-#' the SQL statement.
+#' For information about creating the secret, see [Create a database secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
+#' @param sql &#91;required&#93; The SQL statement to run. Don't include a semicolon (;) at the end of the SQL statement.
 #' @param database The name of the database.
 #' @param schema The name of the database schema.
 #' 
 #' Currently, the `schema` parameter isn't supported.
 #' @param parameterSets The parameter set for the batch operation.
 #' 
-#' The SQL statement is executed as many times as the number of parameter
-#' sets provided. To execute a SQL statement with no parameters, use one of
-#' the following options:
+#' The SQL statement is executed as many times as the number of parameter sets provided. To execute a SQL statement with no parameters, use one of the following options:
 #' 
 #' -   Specify one or more empty parameter sets.
 #' 
-#' -   Use the [`execute_statement`][rdsdataservice_execute_statement]
-#'     operation instead of the
-#'     [`batch_execute_statement`][rdsdataservice_batch_execute_statement]
-#'     operation.
+#' -   Use the [`execute_statement`][rdsdataservice_execute_statement] operation instead of the [`batch_execute_statement`][rdsdataservice_batch_execute_statement] operation.
 #' 
 #' Array parameters are not supported.
-#' @param transactionId The identifier of a transaction that was started by using the
-#' [`begin_transaction`][rdsdataservice_begin_transaction] operation.
-#' Specify the transaction ID of the transaction that you want to include
-#' the SQL statement in.
+#' @param transactionId The identifier of a transaction that was started by using the [`begin_transaction`][rdsdataservice_begin_transaction] operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.
 #' 
-#' If the SQL statement is not part of a transaction, don't set this
-#' parameter.
+#' If the SQL statement is not part of a transaction, don't set this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -179,17 +154,11 @@ rdsdataservice_batch_execute_statement <- function(resourceArn, secretArn, sql, 
 #' @description
 #' Starts a SQL transaction.
 #' 
-#' A transaction can run for a maximum of 24 hours. A transaction is
-#' terminated and rolled back automatically after 24 hours.
+#' A transaction can run for a maximum of 24 hours. A transaction is terminated and rolled back automatically after 24 hours.
 #' 
-#' A transaction times out if no calls use its transaction ID in three
-#' minutes. If a transaction times out before it's committed, it's rolled
-#' back automatically.
+#' A transaction times out if no calls use its transaction ID in three minutes. If a transaction times out before it's committed, it's rolled back automatically.
 #' 
-#' For Aurora MySQL, DDL statements inside a transaction cause an implicit
-#' commit. We recommend that you run each MySQL DDL statement in a separate
-#' [`execute_statement`][rdsdataservice_execute_statement] call with
-#' `continueAfterTimeout` enabled.
+#' For Aurora MySQL, DDL statements inside a transaction cause an implicit commit. We recommend that you run each MySQL DDL statement in a separate [`execute_statement`][rdsdataservice_execute_statement] call with `continueAfterTimeout` enabled.
 #'
 #' @usage
 #' rdsdataservice_begin_transaction(resourceArn, secretArn, database,
@@ -246,9 +215,7 @@ rdsdataservice_begin_transaction <- function(resourceArn, secretArn, database = 
 #' commits the changes
 #'
 #' @description
-#' Ends a SQL transaction started with the
-#' [`begin_transaction`][rdsdataservice_begin_transaction] operation and
-#' commits the changes.
+#' Ends a SQL transaction started with the [`begin_transaction`][rdsdataservice_begin_transaction] operation and commits the changes.
 #'
 #' @usage
 #' rdsdataservice_commit_transaction(resourceArn, secretArn, transactionId)
@@ -303,28 +270,19 @@ rdsdataservice_commit_transaction <- function(resourceArn, secretArn, transactio
 #' @description
 #' Runs one or more SQL statements.
 #' 
-#' This operation isn't supported for Aurora Serverless v2 and provisioned
-#' DB clusters. For Aurora Serverless v1 DB clusters, the operation is
-#' deprecated. Use the
-#' [`batch_execute_statement`][rdsdataservice_batch_execute_statement] or
-#' [`execute_statement`][rdsdataservice_execute_statement] operation.
+#' This operation isn't supported for Aurora Serverless v2 and provisioned DB clusters. For Aurora Serverless v1 DB clusters, the operation is deprecated. Use the [`batch_execute_statement`][rdsdataservice_batch_execute_statement] or [`execute_statement`][rdsdataservice_execute_statement] operation.
 #'
 #' @usage
 #' rdsdataservice_execute_sql(dbClusterOrInstanceArn, awsSecretStoreArn,
 #'   sqlStatements, database, schema)
 #'
 #' @param dbClusterOrInstanceArn &#91;required&#93; The ARN of the Aurora Serverless DB cluster.
-#' @param awsSecretStoreArn &#91;required&#93; The Amazon Resource Name (ARN) of the secret that enables access to the
-#' DB cluster. Enter the database user name and password for the
-#' credentials in the secret.
+#' @param awsSecretStoreArn &#91;required&#93; The Amazon Resource Name (ARN) of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.
 #' 
-#' For information about creating the secret, see [Create a database
-#' secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
+#' For information about creating the secret, see [Create a database secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
 #' @param sqlStatements &#91;required&#93; One or more SQL statements to run on the DB cluster.
 #' 
-#' You can separate SQL statements from each other with a semicolon (;).
-#' Any valid SQL statement is permitted, including data definition, data
-#' manipulation, and commit statements.
+#' You can separate SQL statements from each other with a semicolon (;). Any valid SQL statement is permitted, including data definition, data manipulation, and commit statements.
 #' @param database The name of the database.
 #' @param schema The name of the database schema.
 #'
@@ -427,12 +385,9 @@ rdsdataservice_execute_sql <- function(dbClusterOrInstanceArn, awsSecretStoreArn
 #' @description
 #' Runs a SQL statement against a database.
 #' 
-#' If a call isn't part of a transaction because it doesn't include the
-#' `transactionID` parameter, changes that result from the call are
-#' committed automatically.
+#' If a call isn't part of a transaction because it doesn't include the `transactionID` parameter, changes that result from the call are committed automatically.
 #' 
-#' If the binary response data from the database is more than 1 MB, the
-#' call is terminated.
+#' If the binary response data from the database is more than 1 MB, the call is terminated.
 #'
 #' @usage
 #' rdsdataservice_execute_statement(resourceArn, secretArn, sql, database,
@@ -440,11 +395,9 @@ rdsdataservice_execute_sql <- function(dbClusterOrInstanceArn, awsSecretStoreArn
 #'   continueAfterTimeout, resultSetOptions, formatRecordsAs)
 #'
 #' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Aurora Serverless DB cluster.
-#' @param secretArn &#91;required&#93; The ARN of the secret that enables access to the DB cluster. Enter the
-#' database user name and password for the credentials in the secret.
+#' @param secretArn &#91;required&#93; The ARN of the secret that enables access to the DB cluster. Enter the database user name and password for the credentials in the secret.
 #' 
-#' For information about creating the secret, see [Create a database
-#' secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
+#' For information about creating the secret, see [Create a database secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
 #' @param sql &#91;required&#93; The SQL statement to run.
 #' @param database The name of the database.
 #' @param schema The name of the database schema.
@@ -453,33 +406,17 @@ rdsdataservice_execute_sql <- function(dbClusterOrInstanceArn, awsSecretStoreArn
 #' @param parameters The parameters for the SQL statement.
 #' 
 #' Array parameters are not supported.
-#' @param transactionId The identifier of a transaction that was started by using the
-#' [`begin_transaction`][rdsdataservice_begin_transaction] operation.
-#' Specify the transaction ID of the transaction that you want to include
-#' the SQL statement in.
+#' @param transactionId The identifier of a transaction that was started by using the [`begin_transaction`][rdsdataservice_begin_transaction] operation. Specify the transaction ID of the transaction that you want to include the SQL statement in.
 #' 
-#' If the SQL statement is not part of a transaction, don't set this
-#' parameter.
+#' If the SQL statement is not part of a transaction, don't set this parameter.
 #' @param includeResultMetadata A value that indicates whether to include metadata in the results.
-#' @param continueAfterTimeout A value that indicates whether to continue running the statement after
-#' the call times out. By default, the statement stops running when the
-#' call times out.
+#' @param continueAfterTimeout A value that indicates whether to continue running the statement after the call times out. By default, the statement stops running when the call times out.
 #' 
-#' For DDL statements, we recommend continuing to run the statement after
-#' the call times out. When a DDL statement terminates before it is
-#' finished running, it can result in errors and possibly corrupted data
-#' structures.
+#' For DDL statements, we recommend continuing to run the statement after the call times out. When a DDL statement terminates before it is finished running, it can result in errors and possibly corrupted data structures.
 #' @param resultSetOptions Options that control how the result set is returned.
-#' @param formatRecordsAs A value that indicates whether to format the result set as a single JSON
-#' string. This parameter only applies to `SELECT` statements and is
-#' ignored for other types of statements. Allowed values are `NONE` and
-#' `JSON`. The default value is `NONE`. The result is returned in the
-#' `formattedRecords` field.
+#' @param formatRecordsAs A value that indicates whether to format the result set as a single JSON string. This parameter only applies to `SELECT` statements and is ignored for other types of statements. Allowed values are `NONE` and `JSON`. The default value is `NONE`. The result is returned in the `formattedRecords` field.
 #' 
-#' For usage information about the JSON format for result sets, see [Using
-#' the Data
-#' API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html)
-#' in the *Amazon Aurora User Guide*.
+#' For usage information about the JSON format for result sets, see [Using the Data API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html) in the *Amazon Aurora User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -641,8 +578,7 @@ rdsdataservice_execute_statement <- function(resourceArn, secretArn, sql, databa
 #' Performs a rollback of a transaction
 #'
 #' @description
-#' Performs a rollback of a transaction. Rolling back a transaction cancels
-#' its changes.
+#' Performs a rollback of a transaction. Rolling back a transaction cancels its changes.
 #'
 #' @usage
 #' rdsdataservice_rollback_transaction(resourceArn, secretArn,

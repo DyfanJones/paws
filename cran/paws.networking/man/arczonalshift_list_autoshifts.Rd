@@ -11,11 +11,7 @@ arczonalshift_list_autoshifts(
 )
 }
 \arguments{
-\item{nextToken}{Specifies that you want to receive the next page of results. Valid only
-if you received a \code{nextToken} response in the previous request. If you
-did, it indicates that more output is available. Set this parameter to
-the value provided by the previous call's \code{nextToken} response to
-request the next page of results.}
+\item{nextToken}{Specifies that you want to receive the next page of results. Valid only if you received a \code{nextToken} response in the previous request. If you did, it indicates that more output is available. Set this parameter to the value provided by the previous call's \code{nextToken} response to request the next page of results.}
 
 \item{status}{The status of the autoshift.}
 

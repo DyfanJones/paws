@@ -11,11 +11,9 @@ cloudwatchlogs_associate_source_to_s3_table_integration(
 )
 }
 \arguments{
-\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the S3 Table Integration to associate
-the data source with.}
+\item{integrationArn}{[required] The Amazon Resource Name (ARN) of the S3 Table Integration to associate the data source with.}
 
-\item{dataSource}{[required] The data source to associate with the S3 Table Integration. Contains the
-name and type of the data source.}
+\item{dataSource}{[required] The data source to associate with the S3 Table Integration. Contains the name and type of the data source.}
 }
 \description{
 Associates a data source with an S3 Table Integration for query access in the 'logs' namespace. This enables querying log data using analytics engines that support Iceberg such as Amazon Athena, Amazon Redshift, and Apache Spark.

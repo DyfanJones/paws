@@ -8,8 +8,7 @@ existing billing view}
 billing_disassociate_source_views(arn, sourceViews)
 }
 \arguments{
-\item{arn}{[required] The Amazon Resource Name (ARN) of the billing view to disassociate
-source views from.}
+\item{arn}{[required] The Amazon Resource Name (ARN) of the billing view to disassociate source views from.}
 
 \item{sourceViews}{[required] A list of ARNs of the source billing views to disassociate.}
 }

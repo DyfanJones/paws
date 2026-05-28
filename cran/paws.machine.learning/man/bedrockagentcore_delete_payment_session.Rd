@@ -2,7 +2,7 @@
 % Please edit documentation in R/bedrockagentcore_operations.R
 \name{bedrockagentcore_delete_payment_session}
 \alias{bedrockagentcore_delete_payment_session}
-\title{Delete a payment manager session}
+\title{Deletes a payment session}
 \usage{
 bedrockagentcore_delete_payment_session(
   userId = NULL,
@@ -18,7 +18,7 @@ bedrockagentcore_delete_payment_session(
 \item{paymentSessionId}{[required] The payment session ID to delete.}
 }
 \description{
-Delete a payment manager session
+Deletes a payment session. This permanently removes the payment session record.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_delete_payment_session/} for full documentation.
 }

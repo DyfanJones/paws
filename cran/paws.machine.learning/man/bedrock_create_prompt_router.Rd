@@ -16,26 +16,19 @@ bedrock_create_prompt_router(
 )
 }
 \arguments{
-\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure
-idempotency of your requests. If not specified, the Amazon Web Services
-SDK automatically generates one for you.}
+\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure idempotency of your requests. If not specified, the Amazon Web Services SDK automatically generates one for you.}
 
-\item{promptRouterName}{[required] The name of the prompt router. The name must be unique within your
-Amazon Web Services account in the current region.}
+\item{promptRouterName}{[required] The name of the prompt router. The name must be unique within your Amazon Web Services account in the current region.}
 
-\item{models}{[required] A list of foundation models that the prompt router can route requests
-to. At least one model must be specified.}
+\item{models}{[required] A list of foundation models that the prompt router can route requests to. At least one model must be specified.}
 
-\item{description}{An optional description of the prompt router to help identify its
-purpose.}
+\item{description}{An optional description of the prompt router to help identify its purpose.}
 
-\item{routingCriteria}{[required] The criteria, which is the response quality difference, used to
-determine how incoming requests are routed to different models.}
+\item{routingCriteria}{[required] The criteria, which is the response quality difference, used to determine how incoming requests are routed to different models.}
 
 \item{fallbackModel}{[required] The default model to use when the routing criteria is not met.}
 
-\item{tags}{An array of key-value pairs to apply to this resource as tags. You can
-use tags to categorize and manage your Amazon Web Services resources.}
+\item{tags}{An array of key-value pairs to apply to this resource as tags. You can use tags to categorize and manage your Amazon Web Services resources.}
 }
 \description{
 Creates a prompt router that manages the routing of requests between multiple foundation models based on the routing criteria.

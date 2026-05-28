@@ -15,10 +15,13 @@ wellarchitected_list_template_shares(
 \arguments{
 \item{TemplateArn}{[required] The review template ARN.}
 
-\item{SharedWithPrefix}{The Amazon Web Services account ID, organization ID, or organizational
-unit (OU) ID with which the profile is shared.}
+\item{SharedWithPrefix}{The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the profile is shared.}
+
+\item{NextToken}{The token to use to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return for this request.}
+
+\item{Status}{The status of the share request.}
 }
 \description{
 List review template shares.

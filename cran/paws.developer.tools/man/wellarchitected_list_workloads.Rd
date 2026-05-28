@@ -11,6 +11,10 @@ wellarchitected_list_workloads(
 )
 }
 \arguments{
+\item{WorkloadNamePrefix}{An optional string added to the beginning of each workload name returned in the results.}
+
+\item{NextToken}{The token to use to retrieve the next set of results.}
+
 \item{MaxResults}{The maximum number of results to return for this request.}
 }
 \description{

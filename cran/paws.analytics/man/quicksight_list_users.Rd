@@ -13,9 +13,7 @@ quicksight_list_users(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the user is in.
-Currently, you use the ID for the Amazon Web Services account that
-contains your Amazon Quick Sight account.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.}
 
 \item{NextToken}{A pagination token that can be used in a subsequent request.}
 

@@ -10,8 +10,7 @@ machinelearning_get_ml_model(MLModelId, Verbose = NULL)
 \arguments{
 \item{MLModelId}{[required] The ID assigned to the \code{MLModel} at creation.}
 
-\item{Verbose}{Specifies whether the \code{\link[=machinelearning_get_ml_model]{get_ml_model}}
-operation should return \code{Recipe}.
+\item{Verbose}{Specifies whether the \code{\link[=machinelearning_get_ml_model]{get_ml_model}} operation should return \code{Recipe}.
 
 If true, \code{Recipe} is returned.
 

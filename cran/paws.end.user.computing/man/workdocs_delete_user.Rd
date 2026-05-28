@@ -7,9 +7,7 @@
 workdocs_delete_user(AuthenticationToken = NULL, UserId)
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Do not set this field when using
-administrative API actions, as in accessing the API using Amazon Web
-Services credentials.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Do not set this field when using administrative API actions, as in accessing the API using Amazon Web Services credentials.}
 
 \item{UserId}{[required] The ID of the user.}
 }

@@ -9,8 +9,7 @@ codecatalyst_get_workflow(spaceName, id, projectName)
 \arguments{
 \item{spaceName}{[required] The name of the space.}
 
-\item{id}{[required] The ID of the workflow. To rerieve a list of workflow IDs, use
-\code{\link[=codecatalyst_list_workflows]{list_workflows}}.}
+\item{id}{[required] The ID of the workflow. To rerieve a list of workflow IDs, use \code{\link[=codecatalyst_list_workflows]{list_workflows}}.}
 
 \item{projectName}{[required] The name of the project in the space.}
 }

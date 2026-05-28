@@ -14,17 +14,13 @@ globalaccelerator_list_custom_routing_port_mappings(
 )
 }
 \arguments{
-\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator to list the custom
-routing port mappings for.}
+\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.}
 
-\item{EndpointGroupArn}{The Amazon Resource Name (ARN) of the endpoint group to list the custom
-routing port mappings for.}
+\item{EndpointGroupArn}{The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.}
 
-\item{MaxResults}{The number of destination port mappings that you want to return with
-this call. The default value is 10.}
+\item{MaxResults}{The number of destination port mappings that you want to return with this call. The default value is 10.}
 
-\item{NextToken}{The token for the next set of results. You receive this token from a
-previous call.}
+\item{NextToken}{The token for the next set of results. You receive this token from a previous call.}
 }
 \description{
 Provides a complete mapping from the public accelerator IP address and port to destination EC2 instance IP addresses and ports in the virtual public cloud (VPC) subnet endpoint for a custom routing accelerator. For each subnet endpoint that you add, Global Accelerator creates a new static port mapping for the accelerator. The port mappings don't change after Global Accelerator generates them, so you can retrieve and cache the full mapping on your servers.

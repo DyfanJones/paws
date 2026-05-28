@@ -11,8 +11,7 @@ datazone_get_subscription_target(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription target
-exists.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription target exists.}
 
 \item{environmentIdentifier}{[required] The ID of the environment associated with the subscription target.}
 

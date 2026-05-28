@@ -43,17 +43,12 @@ kafka_batch_associate_scram_secret <- function(ClusterArn, SecretArnList) {
 #' See [https://www.paws-r-sdk.com/docs/kafka_create_cluster/](https://www.paws-r-sdk.com/docs/kafka_create_cluster/) for full documentation.
 #'
 #' @param BrokerNodeGroupInfo &#91;required&#93; Information about the broker nodes in the cluster.
-#' @param Rebalancing Specifies if intelligent rebalancing should be turned on for the new MSK
-#' Provisioned cluster with Express brokers. By default, intelligent
-#' rebalancing status is ACTIVE for all new clusters.
+#' @param Rebalancing Specifies if intelligent rebalancing should be turned on for the new MSK Provisioned cluster with Express brokers. By default, intelligent rebalancing status is ACTIVE for all new clusters.
 #' @param ClientAuthentication Includes all client authentication related information.
 #' @param ClusterName &#91;required&#93; The name of the cluster.
-#' @param ConfigurationInfo Represents the configuration that you want MSK to use for the brokers in
-#' a cluster.
+#' @param ConfigurationInfo Represents the configuration that you want MSK to use for the brokers in a cluster.
 #' @param EncryptionInfo Includes all encryption-related information.
-#' @param EnhancedMonitoring Specifies the level of monitoring for the MSK cluster. The possible
-#' values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and
-#' PER_TOPIC_PER_PARTITION.
+#' @param EnhancedMonitoring Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
 #' @param OpenMonitoring The settings for open monitoring.
 #' @param KafkaVersion &#91;required&#93; The version of Apache Kafka.
 #' @param LoggingInfo 
@@ -125,13 +120,10 @@ kafka_create_cluster_v2 <- function(ClusterName, Tags = NULL, Provisioned = NULL
 #' See [https://www.paws-r-sdk.com/docs/kafka_create_configuration/](https://www.paws-r-sdk.com/docs/kafka_create_configuration/) for full documentation.
 #'
 #' @param Description The description of the configuration.
-#' @param KafkaVersions The versions of Apache Kafka with which you can use this MSK
-#' configuration.
+#' @param KafkaVersions The versions of Apache Kafka with which you can use this MSK configuration.
 #' @param Name &#91;required&#93; The name of the configuration.
-#' @param ServerProperties &#91;required&#93; Contents of the server.properties file. When using the API, you must
-#' ensure that the contents of the file are base64 encoded. When using the
-#' AWS Management Console, the SDK, or the AWS CLI, the contents of
-#' server.properties can be in plaintext.
+#' @param ServerProperties &#91;required&#93; Contents of the server.properties file. When using the API, you must ensure that the contents of the file are base64 encoded.
+#' When using the AWS Management Console, the SDK, or the AWS CLI, the contents of server.properties can be in plaintext.
 #'
 #' @keywords internal
 #'
@@ -164,12 +156,9 @@ kafka_create_configuration <- function(Description = NULL, KafkaVersions = NULL,
 #'
 #' @param Description A summary description of the replicator.
 #' @param KafkaClusters &#91;required&#93; Kafka Clusters to use in setting up sources / targets for replication.
-#' @param ReplicationInfoList &#91;required&#93; A list of replication configurations, where each configuration targets a
-#' given source cluster to target cluster replication flow.
-#' @param ReplicatorName &#91;required&#93; The name of the replicator. Alpha-numeric characters with '-' are
-#' allowed.
-#' @param ServiceExecutionRoleArn &#91;required&#93; The ARN of the IAM role used by the replicator to access resources in
-#' the customer's account (e.g source and target clusters)
+#' @param ReplicationInfoList &#91;required&#93; A list of replication configurations, where each configuration targets a given source cluster to target cluster replication flow.
+#' @param ReplicatorName &#91;required&#93; The name of the replicator. Alpha-numeric characters with '-' are allowed.
+#' @param ServiceExecutionRoleArn &#91;required&#93; The ARN of the IAM role used by the replicator to access resources in the customer's account (e.g source and target clusters)
 #' @param Tags List of tags to attach to created Replicator.
 #' @param LogDelivery Configuration for delivering replicator logs to customer destinations.
 #'
@@ -338,8 +327,7 @@ kafka_delete_cluster_policy <- function(ClusterArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_delete_configuration/](https://www.paws-r-sdk.com/docs/kafka_delete_configuration/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK
-#' configuration.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration.
 #'
 #' @keywords internal
 #'
@@ -434,8 +422,7 @@ kafka_delete_topic <- function(ClusterArn, TopicName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_delete_vpc_connection/](https://www.paws-r-sdk.com/docs/kafka_delete_vpc_connection/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC
-#' connection.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK VPC connection.
 #'
 #' @keywords internal
 #'
@@ -530,8 +517,7 @@ kafka_describe_cluster_v2 <- function(ClusterArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_describe_cluster_operation/](https://www.paws-r-sdk.com/docs/kafka_describe_cluster_operation/) for full documentation.
 #'
-#' @param ClusterOperationArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster
-#' operation.
+#' @param ClusterOperationArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the MSK cluster operation.
 #'
 #' @keywords internal
 #'
@@ -593,8 +579,7 @@ kafka_describe_cluster_operation_v2 <- function(ClusterOperationArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_describe_configuration/](https://www.paws-r-sdk.com/docs/kafka_describe_configuration/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK
-#' configuration and all of its revisions.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
 #'
 #' @keywords internal
 #'
@@ -625,8 +610,7 @@ kafka_describe_configuration <- function(Arn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_describe_configuration_revision/](https://www.paws-r-sdk.com/docs/kafka_describe_configuration_revision/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK
-#' configuration and all of its revisions.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
 #' @param Revision &#91;required&#93; A string that uniquely identifies a revision of an MSK configuration.
 #'
 #' @keywords internal
@@ -723,11 +707,9 @@ kafka_describe_topic <- function(ClusterArn, TopicName) {
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
 #' @param TopicName &#91;required&#93; The Kafka topic name that uniquely identifies the topic.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -758,8 +740,7 @@ kafka_describe_topic_partitions <- function(ClusterArn, TopicName, MaxResults = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_describe_vpc_connection/](https://www.paws-r-sdk.com/docs/kafka_describe_vpc_connection/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC
-#' connection.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies a MSK VPC connection.
 #'
 #' @keywords internal
 #'
@@ -918,11 +899,9 @@ kafka_get_cluster_policy <- function(ClusterArn) {
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_cluster_operations/](https://www.paws-r-sdk.com/docs/kafka_list_cluster_operations/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -987,13 +966,10 @@ kafka_list_cluster_operations_v2 <- function(ClusterArn, MaxResults = NULL, Next
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_clusters/](https://www.paws-r-sdk.com/docs/kafka_list_clusters/) for full documentation.
 #'
-#' @param ClusterNameFilter Specify a prefix of the name of the clusters that you want to list. The
-#' service lists all the clusters whose names start with this prefix.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param ClusterNameFilter Specify a prefix of the name of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -1024,14 +1000,11 @@ kafka_list_clusters <- function(ClusterNameFilter = NULL, MaxResults = NULL, Nex
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_clusters_v2/](https://www.paws-r-sdk.com/docs/kafka_list_clusters_v2/) for full documentation.
 #'
-#' @param ClusterNameFilter Specify a prefix of the names of the clusters that you want to list. The
-#' service lists all the clusters whose names start with this prefix.
+#' @param ClusterNameFilter Specify a prefix of the names of the clusters that you want to list. The service lists all the clusters whose names start with this prefix.
 #' @param ClusterTypeFilter Specify either PROVISIONED or SERVERLESS.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -1062,13 +1035,10 @@ kafka_list_clusters_v2 <- function(ClusterNameFilter = NULL, ClusterTypeFilter =
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_configuration_revisions/](https://www.paws-r-sdk.com/docs/kafka_list_configuration_revisions/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK
-#' configuration and all of its revisions.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies an MSK configuration and all of its revisions.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -1099,11 +1069,9 @@ kafka_list_configuration_revisions <- function(Arn, MaxResults = NULL, NextToken
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_configurations/](https://www.paws-r-sdk.com/docs/kafka_list_configurations/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -1134,11 +1102,8 @@ kafka_list_configurations <- function(MaxResults = NULL, NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_kafka_versions/](https://www.paws-r-sdk.com/docs/kafka_list_kafka_versions/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -1170,11 +1135,9 @@ kafka_list_kafka_versions <- function(MaxResults = NULL, NextToken = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_nodes/](https://www.paws-r-sdk.com/docs/kafka_list_nodes/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -1205,11 +1168,8 @@ kafka_list_nodes <- function(ClusterArn, MaxResults = NULL, NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_replicators/](https://www.paws-r-sdk.com/docs/kafka_list_replicators/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken If the response of ListReplicators is truncated, it returns a NextToken
-#' in the response. This NextToken should be sent in the subsequent request
-#' to ListReplicators.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken If the response of ListReplicators is truncated, it returns a NextToken in the response. This NextToken should be sent in the subsequent request to ListReplicators.
 #' @param ReplicatorNameFilter Returns replicators starting with given name.
 #'
 #' @keywords internal
@@ -1275,8 +1235,7 @@ kafka_list_scram_secrets <- function(ClusterArn, MaxResults = NULL, NextToken = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/kafka_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource
-#' that's associated with the tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
 #'
 #' @keywords internal
 #'
@@ -1308,11 +1267,9 @@ kafka_list_tags_for_resource <- function(ResourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_client_vpc_connections/](https://www.paws-r-sdk.com/docs/kafka_list_client_vpc_connections/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -1344,11 +1301,9 @@ kafka_list_client_vpc_connections <- function(ClusterArn, MaxResults = NULL, Nex
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_topics/](https://www.paws-r-sdk.com/docs/kafka_list_topics/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #' @param TopicNameFilter Returns topics starting with given name.
 #'
 #' @keywords internal
@@ -1380,11 +1335,9 @@ kafka_list_topics <- function(ClusterArn, MaxResults = NULL, NextToken = NULL, T
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_list_vpc_connections/](https://www.paws-r-sdk.com/docs/kafka_list_vpc_connections/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to return in the response. If there are
-#' more results, the response includes a NextToken parameter.
-#' @param NextToken The paginated results marker. When the result of the operation is
-#' truncated, the call returns NextToken in the response. To get the next
-#' batch, provide this token in your next request.
+#' @param MaxResults The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.
+#' @param NextToken The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response.
+#' To get the next batch, provide this token in your next request.
 #'
 #' @keywords internal
 #'
@@ -1481,8 +1434,7 @@ kafka_put_cluster_policy <- function(ClusterArn, CurrentVersion = NULL, Policy) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_reboot_broker/](https://www.paws-r-sdk.com/docs/kafka_reboot_broker/) for full documentation.
 #'
-#' @param BrokerIds &#91;required&#93; The list of broker IDs to be rebooted. The reboot-broker operation
-#' supports rebooting one broker at a time.
+#' @param BrokerIds &#91;required&#93; The list of broker IDs to be rebooted. The reboot-broker operation supports rebooting one broker at a time.
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster to be updated.
 #'
 #' @keywords internal
@@ -1514,8 +1466,7 @@ kafka_reboot_broker <- function(BrokerIds, ClusterArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_tag_resource/](https://www.paws-r-sdk.com/docs/kafka_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource
-#' that's associated with the tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
 #' @param Tags &#91;required&#93; The key-value pair for the resource tag.
 #'
 #' @keywords internal
@@ -1547,23 +1498,21 @@ kafka_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/kafka_untag_resource/](https://www.paws-r-sdk.com/docs/kafka_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource
-#' that's associated with the tags.
-#' @param TagKeys &#91;required&#93; Tag keys must be unique for a given cluster. In addition, the following
-#' restrictions apply:
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.
+#' @param TagKeys &#91;required&#93; Tag keys must be unique for a given cluster. In addition, the following restrictions apply:
 #' 
-#' -   Each tag key must be unique. If you add a tag with a key that's
-#'     already in use, your new tag overwrites the existing key-value pair.
+#' -   Each tag key must be unique. If you add a tag with a key that's already in
+#'     use, your new tag overwrites the existing key-value pair.
 #' 
-#' -   You can't start a tag key with aws: because this prefix is reserved
-#'     for use by AWS. AWS creates tags that begin with this prefix on your
-#'     behalf, but you can't edit or delete them.
+#' -   You can't start a tag key with aws: because this prefix is reserved for use
+#'     by AWS. AWS creates tags that begin with this prefix on your behalf, but
+#'     you can't edit or delete them.
 #' 
 #' -   Tag keys must be between 1 and 128 Unicode characters in length.
 #' 
-#' -   Tag keys must consist of the following characters: Unicode letters,
-#'     digits, white space, and the following special characters: _ . /
-#'     = + - @@.
+#' -   Tag keys must consist of the following characters: Unicode letters, digits,
+#'     white space, and the following special characters: _ . / = + -
+#'     @@.
 #'
 #' @keywords internal
 #'
@@ -1595,10 +1544,8 @@ kafka_untag_resource <- function(ResourceArn, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/kafka_update_broker_count/](https://www.paws-r-sdk.com/docs/kafka_update_broker_count/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then
-#' generate a new version.
-#' @param TargetNumberOfBrokerNodes &#91;required&#93; The number of broker nodes that you want the cluster to have after this
-#' operation completes successfully.
+#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then generate a new version.
+#' @param TargetNumberOfBrokerNodes &#91;required&#93; The number of broker nodes that you want the cluster to have after this operation completes successfully.
 #'
 #' @keywords internal
 #'
@@ -1630,10 +1577,8 @@ kafka_update_broker_count <- function(ClusterArn, CurrentVersion, TargetNumberOf
 #' See [https://www.paws-r-sdk.com/docs/kafka_update_broker_type/](https://www.paws-r-sdk.com/docs/kafka_update_broker_type/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The cluster version that you want to change. After this operation
-#' completes successfully, the cluster will have a new version.
-#' @param TargetInstanceType &#91;required&#93; The Amazon MSK broker type that you want all of the brokers in this
-#' cluster to be.
+#' @param CurrentVersion &#91;required&#93; The cluster version that you want to change. After this operation completes successfully, the cluster will have a new version.
+#' @param TargetInstanceType &#91;required&#93; The Amazon MSK broker type that you want all of the brokers in this cluster to be.
 #'
 #' @keywords internal
 #'
@@ -1665,10 +1610,8 @@ kafka_update_broker_type <- function(ClusterArn, CurrentVersion, TargetInstanceT
 #' See [https://www.paws-r-sdk.com/docs/kafka_update_broker_storage/](https://www.paws-r-sdk.com/docs/kafka_update_broker_storage/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then
-#' generate a new version.
-#' @param TargetBrokerEBSVolumeInfo &#91;required&#93; Describes the target volume size and the ID of the broker to apply the
-#' update to.
+#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then generate a new version.
+#' @param TargetBrokerEBSVolumeInfo &#91;required&#93; Describes the target volume size and the ID of the broker to apply the update to.
 #'
 #' @keywords internal
 #'
@@ -1701,10 +1644,8 @@ kafka_update_broker_storage <- function(ClusterArn, CurrentVersion, TargetBroker
 #'
 #' @param Arn &#91;required&#93; The Amazon Resource Name (ARN) of the configuration.
 #' @param Description The description of the configuration revision.
-#' @param ServerProperties &#91;required&#93; Contents of the server.properties file. When using the API, you must
-#' ensure that the contents of the file are base64 encoded. When using the
-#' AWS Management Console, the SDK, or the AWS CLI, the contents of
-#' server.properties can be in plaintext.
+#' @param ServerProperties &#91;required&#93; Contents of the server.properties file. When using the API, you must ensure that the contents of the file are base64 encoded.
+#' When using the AWS Management Console, the SDK, or the AWS CLI, the contents of server.properties can be in plaintext.
 #'
 #' @keywords internal
 #'
@@ -1737,9 +1678,7 @@ kafka_update_configuration <- function(Arn, Description = NULL, ServerProperties
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the configuration.
 #' @param ConnectivityInfo Information about the broker access configuration.
-#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple
-#' numbers. You can describe an MSK cluster to find its version. When this
-#' update operation is successful, it generates a new cluster version.
+#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.
 #' @param ZookeeperAccess Access control settings for zookeeper
 #'
 #' @keywords internal
@@ -1773,8 +1712,7 @@ kafka_update_connectivity <- function(ClusterArn, ConnectivityInfo = NULL, Curre
 #' See [https://www.paws-r-sdk.com/docs/kafka_update_cluster_configuration/](https://www.paws-r-sdk.com/docs/kafka_update_cluster_configuration/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param ConfigurationInfo &#91;required&#93; Represents the configuration that you want MSK to use for the brokers in
-#' a cluster.
+#' @param ConfigurationInfo &#91;required&#93; Represents the configuration that you want MSK to use for the brokers in a cluster.
 #' @param CurrentVersion &#91;required&#93; The version of the cluster that needs to be updated.
 #'
 #' @keywords internal
@@ -1807,8 +1745,7 @@ kafka_update_cluster_configuration <- function(ClusterArn, ConfigurationInfo, Cu
 #' See [https://www.paws-r-sdk.com/docs/kafka_update_cluster_kafka_version/](https://www.paws-r-sdk.com/docs/kafka_update_cluster_kafka_version/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster to be updated.
-#' @param ConfigurationInfo The custom configuration that should be applied on the new version of
-#' cluster.
+#' @param ConfigurationInfo The custom configuration that should be applied on the new version of cluster.
 #' @param CurrentVersion &#91;required&#93; Current cluster version.
 #' @param TargetKafkaVersion &#91;required&#93; Target Kafka version.
 #'
@@ -1842,11 +1779,8 @@ kafka_update_cluster_kafka_version <- function(ClusterArn, ConfigurationInfo = N
 #' See [https://www.paws-r-sdk.com/docs/kafka_update_monitoring/](https://www.paws-r-sdk.com/docs/kafka_update_monitoring/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple
-#' numbers. You can describe an MSK cluster to find its version. When this
-#' update operation is successful, it generates a new cluster version.
-#' @param EnhancedMonitoring Specifies which Apache Kafka metrics Amazon MSK gathers and sends to
-#' Amazon CloudWatch for this cluster.
+#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.
+#' @param EnhancedMonitoring Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.
 #' @param OpenMonitoring The settings for open monitoring.
 #' @param LoggingInfo 
 #'
@@ -1882,9 +1816,7 @@ kafka_update_monitoring <- function(ClusterArn, CurrentVersion, EnhancedMonitori
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster.
 #' @param CurrentVersion &#91;required&#93; The current version of the cluster.
-#' @param Rebalancing &#91;required&#93; Specifies if intelligent rebalancing should be turned on for your
-#' cluster. The default intelligent rebalancing status is ACTIVE for all
-#' new MSK Provisioned clusters that you create with Express brokers.
+#' @param Rebalancing &#91;required&#93; Specifies if intelligent rebalancing should be turned on for your cluster. The default intelligent rebalancing status is ACTIVE for all new MSK Provisioned clusters that you create with Express brokers.
 #'
 #' @keywords internal
 #'
@@ -1956,9 +1888,7 @@ kafka_update_replication_info <- function(ConsumerGroupReplication = NULL, Curre
 #'
 #' @param ClientAuthentication Includes all client authentication related information.
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) that uniquely identifies the cluster.
-#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple
-#' numbers. You can describe an MSK cluster to find its version. When this
-#' update operation is successful, it generates a new cluster version.
+#' @param CurrentVersion &#91;required&#93; The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.
 #' @param EncryptionInfo Includes all encryption-related information.
 #'
 #' @keywords internal
@@ -1992,8 +1922,7 @@ kafka_update_security <- function(ClientAuthentication = NULL, ClusterArn, Curre
 #' See [https://www.paws-r-sdk.com/docs/kafka_update_storage/](https://www.paws-r-sdk.com/docs/kafka_update_storage/) for full documentation.
 #'
 #' @param ClusterArn &#91;required&#93; The Amazon Resource Name (ARN) of the cluster to be updated.
-#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then
-#' generate a new version.
+#' @param CurrentVersion &#91;required&#93; The version of cluster to update from. A successful operation will then generate a new version.
 #' @param ProvisionedThroughput EBS volume provisioned throughput information.
 #' @param StorageMode Controls storage mode for supported storage tiers.
 #' @param VolumeSizeGB size of the EBS volume to update.

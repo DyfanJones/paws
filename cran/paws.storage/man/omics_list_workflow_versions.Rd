@@ -17,12 +17,9 @@ omics_list_workflow_versions(
 
 \item{type}{The workflow type.}
 
-\item{workflowOwnerId}{The 12-digit account ID of the workflow owner. The workflow owner ID can
-be retrieved using the \code{\link[=omics_get_share]{get_share}} API operation. If
-you are the workflow owner, you do not need to include this ID.}
+\item{workflowOwnerId}{The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved using the \code{\link[=omics_get_share]{get_share}} API operation. If you are the workflow owner, you do not need to include this ID.}
 
-\item{startingToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{startingToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of workflows to return in one page of results.}
 }

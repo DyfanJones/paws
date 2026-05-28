@@ -10,11 +10,9 @@ bedrockagentcore_get_resource_api_key(
 )
 }
 \arguments{
-\item{workloadIdentityToken}{[required] The identity token of the workload from which you want to retrieve the
-API key.}
+\item{workloadIdentityToken}{[required] The identity token of the workload from which you want to retrieve the API key.}
 
-\item{resourceCredentialProviderName}{[required] The credential provider name for the resource from which you are
-retrieving the API key.}
+\item{resourceCredentialProviderName}{[required] The credential provider name for the resource from which you are retrieving the API key.}
 }
 \description{
 Retrieves the API key associated with an API key credential provider.

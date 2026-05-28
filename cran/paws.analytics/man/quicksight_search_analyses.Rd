@@ -12,11 +12,9 @@ quicksight_search_analyses(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analyses
-that you're searching for.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analyses that you're searching for.}
 
-\item{Filters}{[required] The structure for the search filters that you want to apply to your
-search.}
+\item{Filters}{[required] The structure for the search filters that you want to apply to your search.}
 
 \item{NextToken}{A pagination token that can be used in a subsequent request.}
 

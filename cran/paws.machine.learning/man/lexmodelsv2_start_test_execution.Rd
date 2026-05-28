@@ -16,10 +16,7 @@ lexmodelsv2_start_test_execution(
 
 \item{target}{[required] The target bot for the test set execution.}
 
-\item{apiMode}{[required] Indicates whether we use streaming or non-streaming APIs for the test
-set execution. For streaming, StartConversation Runtime API is used.
-Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon
-Lex Runtime API are used.}
+\item{apiMode}{[required] Indicates whether we use streaming or non-streaming APIs for the test set execution. For streaming, StartConversation Runtime API is used. Whereas, for non-streaming, RecognizeUtterance and RecognizeText Amazon Lex Runtime API are used.}
 
 \item{testExecutionModality}{Indicates whether audio or text is used.}
 }

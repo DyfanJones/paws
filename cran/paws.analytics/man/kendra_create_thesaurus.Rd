@@ -21,20 +21,13 @@ kendra_create_thesaurus(
 
 \item{Description}{A description for the thesaurus.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role with permission to access
-your S3 bucket that contains the thesaurus file. For more information,
-see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM access roles for Amazon Kendra}.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role with permission to access your S3 bucket that contains the thesaurus file. For more information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM access roles for Amazon Kendra}.}
 
-\item{Tags}{A list of key-value pairs that identify or categorize the thesaurus. You
-can also use tags to help control access to the thesaurus. Tag keys and
-values can consist of Unicode letters, digits, white space, and any of
-the following symbols: _ . : / = + - @.}
+\item{Tags}{A list of key-value pairs that identify or categorize the thesaurus. You can also use tags to help control access to the thesaurus. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.}
 
 \item{SourceS3Path}{[required] The path to the thesaurus file in S3.}
 
-\item{ClientToken}{A token that you provide to identify the request to create a thesaurus.
-Multiple calls to the \code{\link[=kendra_create_thesaurus]{create_thesaurus}} API
-with the same client token will create only one thesaurus.}
+\item{ClientToken}{A token that you provide to identify the request to create a thesaurus. Multiple calls to the \code{\link[=kendra_create_thesaurus]{create_thesaurus}} API with the same client token will create only one thesaurus.}
 }
 \description{
 Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.

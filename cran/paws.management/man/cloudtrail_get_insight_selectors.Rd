@@ -8,15 +8,12 @@ configured for your trail or event data store}
 cloudtrail_get_insight_selectors(TrailName = NULL, EventDataStore = NULL)
 }
 \arguments{
-\item{TrailName}{Specifies the name of the trail or trail ARN. If you specify a trail
-name, the string must meet the following requirements:
+\item{TrailName}{Specifies the name of the trail or trail ARN. If you specify a trail name, the string must meet the following requirements:
 \itemize{
-\item Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.),
-underscores (_), or dashes (-)
+\item Contain only ASCII letters (a-z, A-Z), numbers (0-9), periods (.), underscores (_), or dashes (-)
 \item Start with a letter or number, and end with a letter or number
 \item Be between 3 and 128 characters
-\item Have no adjacent periods, underscores or dashes. Names like
-\verb{my-_namespace} and \code{my--namespace} are not valid.
+\item Have no adjacent periods, underscores or dashes. Names like \verb{my-_namespace} and \code{my--namespace} are not valid.
 \item Not be in IP address format (for example, 192.168.5.4)
 }
 
@@ -26,8 +23,7 @@ If you specify a trail ARN, it must be in the format:
 
 You cannot use this parameter with the \code{EventDataStore} parameter.}
 
-\item{EventDataStore}{Specifies the ARN (or ID suffix of the ARN) of the event data store for
-which you want to get Insights selectors.
+\item{EventDataStore}{Specifies the ARN (or ID suffix of the ARN) of the event data store for which you want to get Insights selectors.
 
 You cannot use this parameter with the \code{TrailName} parameter.}
 }

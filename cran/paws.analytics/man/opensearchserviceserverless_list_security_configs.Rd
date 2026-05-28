@@ -14,16 +14,9 @@ opensearchserviceserverless_list_security_configs(
 \arguments{
 \item{type}{[required] The type of security configuration.}
 
-\item{nextToken}{If your initial
-\code{\link[=opensearchserviceserverless_list_security_configs]{list_security_configs}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchserviceserverless_list_security_configs]{list_security_configs}}
-operations, which returns results in the next page.}
+\item{nextToken}{If your initial \code{\link[=opensearchserviceserverless_list_security_configs]{list_security_configs}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchserviceserverless_list_security_configs]{list_security_configs}} operations, which returns results in the next page.}
 
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results. The
-default is 20.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results. The default is 20.}
 }
 \description{
 Returns information about configured OpenSearch Serverless security configurations. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html}{SAML authentication for Amazon OpenSearch Serverless}.

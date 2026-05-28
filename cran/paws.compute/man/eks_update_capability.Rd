@@ -15,27 +15,17 @@ eks_update_capability(
 )
 }
 \arguments{
-\item{clusterName}{[required] The name of the Amazon EKS cluster that contains the capability you want
-to update configuration for.}
+\item{clusterName}{[required] The name of the Amazon EKS cluster that contains the capability you want to update configuration for.}
 
 \item{capabilityName}{[required] The name of the capability to update configuration for.}
 
-\item{roleArn}{The Amazon Resource Name (ARN) of the IAM role that the capability uses
-to interact with Amazon Web Services services. If you specify a new role
-ARN, the capability will start using the new role for all subsequent
-operations.}
+\item{roleArn}{The Amazon Resource Name (ARN) of the IAM role that the capability uses to interact with Amazon Web Services services. If you specify a new role ARN, the capability will start using the new role for all subsequent operations.}
 
-\item{configuration}{The updated configuration settings for the capability. You only need to
-specify the configuration parameters you want to change. For Argo CD
-capabilities, you can update RBAC role mappings and network access
-settings.}
+\item{configuration}{The updated configuration settings for the capability. You only need to specify the configuration parameters you want to change. For Argo CD capabilities, you can update RBAC role mappings and network access settings.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. This token is valid for 24 hours after
-creation.}
+\item{clientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This token is valid for 24 hours after creation.}
 
-\item{deletePropagationPolicy}{The updated delete propagation policy for the capability. Currently, the
-only supported value is \code{RETAIN}.}
+\item{deletePropagationPolicy}{The updated delete propagation policy for the capability. Currently, the only supported value is \code{RETAIN}.}
 }
 \description{
 Updates the configuration of a managed capability in your Amazon EKS cluster. You can update the IAM role, configuration settings, and delete propagation policy for a capability.

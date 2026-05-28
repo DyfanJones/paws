@@ -7,8 +7,7 @@
 transcribeservice_delete_call_analytics_job(CallAnalyticsJobName)
 }
 \arguments{
-\item{CallAnalyticsJobName}{[required] The name of the Call Analytics job you want to delete. Job names are
-case sensitive.}
+\item{CallAnalyticsJobName}{[required] The name of the Call Analytics job you want to delete. Job names are case sensitive.}
 }
 \description{
 Deletes a Call Analytics job. To use this operation, specify the name of the job you want to delete using \code{CallAnalyticsJobName}. Job names are case sensitive.

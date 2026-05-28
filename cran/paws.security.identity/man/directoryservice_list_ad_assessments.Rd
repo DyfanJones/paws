@@ -12,12 +12,9 @@ directoryservice_list_ad_assessments(
 )
 }
 \arguments{
-\item{DirectoryId}{The identifier of the directory for which to list assessments. If not
-specified, all assessments in your account are returned.}
+\item{DirectoryId}{The identifier of the directory for which to list assessments. If not specified, all assessments in your account are returned.}
 
-\item{NextToken}{The pagination token from a previous request to
-\code{\link[=directoryservice_list_ad_assessments]{list_ad_assessments}}. Pass null
-if this is the first request.}
+\item{NextToken}{The pagination token from a previous request to \code{\link[=directoryservice_list_ad_assessments]{list_ad_assessments}}. Pass null if this is the first request.}
 
 \item{Limit}{The maximum number of assessment summaries to return.}
 }

@@ -20,44 +20,29 @@ sagemaker_create_algorithm(
 
 \item{AlgorithmDescription}{A description of the algorithm.}
 
-\item{TrainingSpecification}{[required] Specifies details about training jobs run by this algorithm, including
-the following:
+\item{TrainingSpecification}{[required] Specifies details about training jobs run by this algorithm, including the following:
 \itemize{
-\item The Amazon ECR path of the container and the version digest of the
-algorithm.
+\item The Amazon ECR path of the container and the version digest of the algorithm.
 \item The hyperparameters that the algorithm supports.
 \item The instance types that the algorithm supports for training.
 \item Whether the algorithm supports distributed training.
 \item The metrics that the algorithm emits to Amazon CloudWatch.
-\item Which metrics that the algorithm emits can be used as the objective
-metric for hyperparameter tuning jobs.
-\item The input channels that the algorithm supports for training data.
-For example, an algorithm might support \code{train}, \code{validation}, and
-\code{test} channels.
+\item Which metrics that the algorithm emits can be used as the objective metric for hyperparameter tuning jobs.
+\item The input channels that the algorithm supports for training data. For example, an algorithm might support \code{train}, \code{validation}, and \code{test} channels.
 }}
 
-\item{InferenceSpecification}{Specifies details about inference jobs that the algorithm runs,
-including the following:
+\item{InferenceSpecification}{Specifies details about inference jobs that the algorithm runs, including the following:
 \itemize{
-\item The Amazon ECR paths of containers that contain the inference code
-and model artifacts.
-\item The instance types that the algorithm supports for transform jobs
-and real-time endpoints used for inference.
-\item The input and output content formats that the algorithm supports for
-inference.
+\item The Amazon ECR paths of containers that contain the inference code and model artifacts.
+\item The instance types that the algorithm supports for transform jobs and real-time endpoints used for inference.
+\item The input and output content formats that the algorithm supports for inference.
 }}
 
-\item{ValidationSpecification}{Specifies configurations for one or more training jobs and that
-SageMaker runs to test the algorithm's training code and, optionally,
-one or more batch transform jobs that SageMaker runs to test the
-algorithm's inference code.}
+\item{ValidationSpecification}{Specifies configurations for one or more training jobs and that SageMaker runs to test the algorithm's training code and, optionally, one or more batch transform jobs that SageMaker runs to test the algorithm's inference code.}
 
-\item{CertifyForMarketplace}{Whether to certify the algorithm so that it can be listed in Amazon Web
-Services Marketplace.}
+\item{CertifyForMarketplace}{Whether to certify the algorithm so that it can be listed in Amazon Web Services Marketplace.}
 
-\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon
-Web Services resources in different ways, for example, by purpose,
-owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.}
+\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.}
 }
 \description{
 Create a machine learning algorithm that you can use in SageMaker and list in the Amazon Web Services Marketplace.

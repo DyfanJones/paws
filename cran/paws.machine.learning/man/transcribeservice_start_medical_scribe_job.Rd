@@ -20,80 +20,41 @@ transcribeservice_start_medical_scribe_job(
 \arguments{
 \item{MedicalScribeJobName}{[required] A unique name, chosen by you, for your Medical Scribe job.
 
-This name is case sensitive, cannot contain spaces, and must be unique
-within an Amazon Web Services account. If you try to create a new job
-with the same name as an existing job, you get a \code{ConflictException}
-error.}
+This name is case sensitive, cannot contain spaces, and must be unique within an Amazon Web Services account. If you try to create a new job with the same name as an existing job, you get a \code{ConflictException} error.}
 
-\item{Media}{[required]}
+\item{Media}{[required] Describes the Amazon S3 location of the media file you want to use in your request.
 
-\item{OutputBucketName}{[required] The name of the Amazon S3 bucket where you want your Medical Scribe
-output stored. Do not include the \verb{S3://} prefix of the specified
-bucket.
+For information on supported media formats, refer to the \code{MediaFormat} parameter or the \href{https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio}{Media formats} section in the Amazon S3 Developer Guide.}
 
-Note that the role specified in the \code{DataAccessRoleArn} request
-parameter must have permission to use the specified location. You can
-change Amazon S3 permissions using the Amazon Web Services Management
-Console. See also \href{https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user}{Permissions Required for IAM User Roles}.}
+\item{OutputBucketName}{[required] The name of the Amazon S3 bucket where you want your Medical Scribe output stored. Do not include the \verb{S3://} prefix of the specified bucket.
 
-\item{OutputEncryptionKMSKeyId}{The Amazon Resource Name (ARN) of a KMS key that you want to use to
-encrypt your Medical Scribe output.
+Note that the role specified in the \code{DataAccessRoleArn} request parameter must have permission to use the specified location. You can change Amazon S3 permissions using the Amazon Web Services Management Console. See also \href{https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user}{Permissions Required for IAM User Roles}.}
 
-KMS key ARNs have the format
-\code{arn:partition:kms:region:account:key/key-id}. For example:
-\verb{arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}.
-For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN}{KMS key ARNs}.
+\item{OutputEncryptionKMSKeyId}{The Amazon Resource Name (ARN) of a KMS key that you want to use to encrypt your Medical Scribe output.
 
-If you do not specify an encryption key, your output is encrypted with
-the default Amazon S3 key (SSE-S3).
+KMS key ARNs have the format \code{arn:partition:kms:region:account:key/key-id}. For example: \verb{arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}. For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN}{KMS key ARNs}.
 
-Note that the role making the request and the role specified in the
-\code{DataAccessRoleArn} request parameter (if present) must have permission
-to use the specified KMS key.}
+If you do not specify an encryption key, your output is encrypted with the default Amazon S3 key (SSE-S3).
 
-\item{KMSEncryptionContext}{A map of plain text, non-secret key:value pairs, known as encryption
-context pairs, that provide an added layer of security for your data.
-For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/#kms-context}{KMS encryption context}
-and \href{https://docs.aws.amazon.com/transcribe/latest/dg/}{Asymmetric keys in KMS}.}
+Note that the role making the request and the role specified in the \code{DataAccessRoleArn} request parameter (if present) must have permission to use the specified KMS key.}
 
-\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that has permissions to
-access the Amazon S3 bucket that contains your input files, write to the
-output bucket, and use your KMS key if supplied. If the role that you
-specify doesn’t have the appropriate permissions your request fails.
+\item{KMSEncryptionContext}{A map of plain text, non-secret key:value pairs, known as encryption context pairs, that provide an added layer of security for your data. For more information, see \href{https://docs.aws.amazon.com/transcribe/latest/dg/#kms-context}{KMS encryption context} and \href{https://docs.aws.amazon.com/transcribe/latest/dg/}{Asymmetric keys in KMS}.}
 
-IAM role ARNs have the format
-\code{arn:partition:iam::account:role/role-name-with-path}. For example:
-\verb{arn:aws:iam::111122223333:role/Admin}.
+\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon S3 bucket that contains your input files, write to the output bucket, and use your KMS key if supplied. If the role that you specify doesn’t have the appropriate permissions your request fails.
+
+IAM role ARNs have the format \code{arn:partition:iam::account:role/role-name-with-path}. For example: \verb{arn:aws:iam::111122223333:role/Admin}.
 
 For more information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns}{IAM ARNs}.}
 
-\item{Settings}{[required] Makes it possible to control how your Medical Scribe job is processed
-using a \code{MedicalScribeSettings} object. Specify \code{ChannelIdentification}
-if \code{ChannelDefinitions} are set. Enabled \code{ShowSpeakerLabels} if
-\code{ChannelIdentification} and \code{ChannelDefinitions} are not set. One and
-only one of \code{ChannelIdentification} and \code{ShowSpeakerLabels} must be set.
-If \code{ShowSpeakerLabels} is set, \code{MaxSpeakerLabels} must also be set. Use
-\code{Settings} to specify a vocabulary or vocabulary filter or both using
-\code{VocabularyName}, \code{VocabularyFilterName}. \code{VocabularyFilterMethod} must
-be specified if \code{VocabularyFilterName} is set.}
+\item{Settings}{[required] Makes it possible to control how your Medical Scribe job is processed using a \code{MedicalScribeSettings} object. Specify \code{ChannelIdentification} if \code{ChannelDefinitions} are set. Enabled \code{ShowSpeakerLabels} if \code{ChannelIdentification} and \code{ChannelDefinitions} are not set. One and only one of \code{ChannelIdentification} and \code{ShowSpeakerLabels} must be set. If \code{ShowSpeakerLabels} is set, \code{MaxSpeakerLabels} must also be set. Use \code{Settings} to specify a vocabulary or vocabulary filter or both using \code{VocabularyName}, \code{VocabularyFilterName}. \code{VocabularyFilterMethod} must be specified if \code{VocabularyFilterName} is set.}
 
-\item{ChannelDefinitions}{Makes it possible to specify which speaker is on which channel. For
-example, if the clinician is the first participant to speak, you would
-set \code{ChannelId} of the first \code{ChannelDefinition} in the list to \code{0} (to
-indicate the first channel) and \code{ParticipantRole} to \code{CLINICIAN} (to
-indicate that it's the clinician speaking). Then you would set the
-\code{ChannelId} of the second \code{ChannelDefinition} in the list to \code{1} (to
-indicate the second channel) and \code{ParticipantRole} to \code{PATIENT} (to
-indicate that it's the patient speaking).}
+\item{ChannelDefinitions}{Makes it possible to specify which speaker is on which channel. For example, if the clinician is the first participant to speak, you would set \code{ChannelId} of the first \code{ChannelDefinition} in the list to \code{0} (to indicate the first channel) and \code{ParticipantRole} to \code{CLINICIAN} (to indicate that it's the clinician speaking). Then you would set the \code{ChannelId} of the second \code{ChannelDefinition} in the list to \code{1} (to indicate the second channel) and \code{ParticipantRole} to \code{PATIENT} (to indicate that it's the patient speaking).}
 
-\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to
-the Medical Scribe job.
+\item{Tags}{Adds one or more custom tags, each in the form of a key:value pair, to the Medical Scribe job.
 
 To learn more about using tags with Amazon Transcribe, refer to \href{https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html}{Tagging resources}.}
 
-\item{MedicalScribeContext}{The \code{MedicalScribeContext} object that contains contextual information
-which is used during clinical note generation to add relevant context to
-the note.}
+\item{MedicalScribeContext}{The \code{MedicalScribeContext} object that contains contextual information which is used during clinical note generation to add relevant context to the note.}
 }
 \description{
 Transcribes patient-clinician conversations and generates clinical notes.

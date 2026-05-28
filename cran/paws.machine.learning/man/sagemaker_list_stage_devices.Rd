@@ -14,8 +14,7 @@ sagemaker_list_stage_devices(
 )
 }
 \arguments{
-\item{NextToken}{The response from the last list when returning a list large enough to
-neeed tokening.}
+\item{NextToken}{The response from the last list when returning a list large enough to neeed tokening.}
 
 \item{MaxResults}{The maximum number of requests to select.}
 

@@ -14,8 +14,7 @@ redshift_delete_partner(
 \arguments{
 \item{AccountId}{[required] The Amazon Web Services account ID that owns the cluster.}
 
-\item{ClusterIdentifier}{[required] The cluster identifier of the cluster that receives data from the
-partner.}
+\item{ClusterIdentifier}{[required] The cluster identifier of the cluster that receives data from the partner.}
 
 \item{DatabaseName}{[required] The name of the database that receives data from the partner.}
 

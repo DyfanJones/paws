@@ -11,11 +11,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_associate_default_view/](https://www.paws-r-sdk.com/docs/resourceexplorer_associate_default_view/) for full documentation.
 #'
-#' @param ViewArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view to set as the default for the Amazon Web Services Region and
-#' Amazon Web Services account in which you call this operation. The
-#' specified view must already exist in the called Region.
+#' @param ViewArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.
 #'
 #' @keywords internal
 #'
@@ -46,9 +42,7 @@ resourceexplorer_associate_default_view <- function(ViewArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_batch_get_view/](https://www.paws-r-sdk.com/docs/resourceexplorer_batch_get_view/) for full documentation.
 #'
-#' @param ViewArns A list of [Amazon resource names
-#' (ARNs)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' that identify the views you want details for.
+#' @param ViewArns A list of [Amazon resource names (ARNs)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) that identify the views you want details for.
 #'
 #' @keywords internal
 #'
@@ -80,14 +74,8 @@ resourceexplorer_batch_get_view <- function(ViewArns = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_create_index/](https://www.paws-r-sdk.com/docs/resourceexplorer_create_index/) for full documentation.
 #'
-#' @param ClientToken This value helps ensure idempotency. Resource Explorer uses this value
-#' to prevent the accidental creation of duplicate versions. We recommend
-#' that you generate a [UUID-type
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier) to
-#' ensure the uniqueness of your index.
-#' @param Tags The specified tags are attached only to the index created in this Amazon
-#' Web Services Region. The tags aren't attached to any of the resources
-#' listed in the index.
+#' @param ClientToken This value helps ensure idempotency. Resource Explorer uses this value to prevent the accidental creation of duplicate versions. We recommend that you generate a [UUID-type value](https://en.wikipedia.org/wiki/Universally_unique_identifier) to ensure the uniqueness of your index.
+#' @param Tags The specified tags are attached only to the index created in this Amazon Web Services Region. The tags aren't attached to any of the resources listed in the index.
 #'
 #' @keywords internal
 #'
@@ -119,15 +107,9 @@ resourceexplorer_create_index <- function(ClientToken = NULL, Tags = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_create_resource_explorer_setup/](https://www.paws-r-sdk.com/docs/resourceexplorer_create_resource_explorer_setup/) for full documentation.
 #'
-#' @param RegionList &#91;required&#93; A list of Amazon Web Services Regions where Resource Explorer should be
-#' configured. Each Region in the list will have a user-owned index
-#' created.
-#' @param AggregatorRegions A list of Amazon Web Services Regions that should be configured as
-#' aggregator Regions. Aggregator Regions receive replicated index
-#' information from all other Regions where there is a user-owned index.
-#' @param ViewName &#91;required&#93; The name for the view to be created as part of the Resource Explorer
-#' setup. The view name must be unique within the Amazon Web Services
-#' account and Region.
+#' @param RegionList &#91;required&#93; A list of Amazon Web Services Regions where Resource Explorer should be configured. Each Region in the list will have a user-owned index created.
+#' @param AggregatorRegions A list of Amazon Web Services Regions that should be configured as aggregator Regions. Aggregator Regions receive replicated index information from all other Regions where there is a user-owned index.
+#' @param ViewName &#91;required&#93; The name for the view to be created as part of the Resource Explorer setup. The view name must be unique within the Amazon Web Services account and Region.
 #'
 #' @keywords internal
 #'
@@ -158,44 +140,19 @@ resourceexplorer_create_resource_explorer_setup <- function(RegionList, Aggregat
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_create_view/](https://www.paws-r-sdk.com/docs/resourceexplorer_create_view/) for full documentation.
 #'
-#' @param ClientToken This value helps ensure idempotency. Resource Explorer uses this value
-#' to prevent the accidental creation of duplicate versions. We recommend
-#' that you generate a [UUID-type
-#' value](https://en.wikipedia.org/wiki/Universally_unique_identifier) to
-#' ensure the uniqueness of your views.
-#' @param ViewName &#91;required&#93; The name of the new view. This name appears in the list of views in
-#' Resource Explorer.
+#' @param ClientToken This value helps ensure idempotency. Resource Explorer uses this value to prevent the accidental creation of duplicate versions. We recommend that you generate a [UUID-type value](https://en.wikipedia.org/wiki/Universally_unique_identifier) to ensure the uniqueness of your views.
+#' @param ViewName &#91;required&#93; The name of the new view. This name appears in the list of views in Resource Explorer.
 #' 
-#' The name must be no more than 64 characters long, and can include
-#' letters, digits, and the dash (-) character. The name must be unique
-#' within its Amazon Web Services Region.
-#' @param IncludedProperties Specifies optional fields that you want included in search results from
-#' this view. It is a list of objects that each describe a field to
-#' include.
+#' The name must be no more than 64 characters long, and can include letters, digits, and the dash (-) character. The name must be unique within its Amazon Web Services Region.
+#' @param IncludedProperties Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.
 #' 
-#' The default is an empty list, with no optional fields included in the
-#' results.
-#' @param Scope The root ARN of the account, an organizational unit (OU), or an
-#' organization ARN. If left empty, the default is account.
-#' @param Filters An array of strings that specify which resources are included in the
-#' results of queries made using this view. When you use this view in a
-#' [`search`][resourceexplorer_search] operation, the filter string is
-#' combined with the search's `QueryString` parameter using a logical `AND`
-#' operator.
+#' The default is an empty list, with no optional fields included in the results.
+#' @param Scope The root ARN of the account, an organizational unit (OU), or an organization ARN. If left empty, the default is account.
+#' @param Filters An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a [`search`][resourceexplorer_search] operation, the filter string is combined with the search's `QueryString` parameter using a logical `AND` operator.
 #' 
-#' For information about the supported syntax, see [Search query reference
-#' for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' For information about the supported syntax, see [Search query reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' This query string in the context of this operation supports only [filter
-#' prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters)
-#' with optional
-#' [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators).
-#' It doesn't support free-form text. For example, the string
-#' `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2
-#' resources in any Amazon Web Services Region that begins with the letters
-#' `us` and is *not* tagged with a key `Stage` that has the value `prod`.
+#' This query string in the context of this operation supports only [filter prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters) with optional [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators). It doesn't support free-form text. For example, the string `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters `us` and is *not* tagged with a key `Stage` that has the value `prod`.
 #' @param Tags Tag key and value pairs that are attached to the view.
 #'
 #' @keywords internal
@@ -228,9 +185,7 @@ resourceexplorer_create_view <- function(ClientToken = NULL, ViewName, IncludedP
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_delete_index/](https://www.paws-r-sdk.com/docs/resourceexplorer_delete_index/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the index that you want to delete.
+#' @param Arn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the index that you want to delete.
 #'
 #' @keywords internal
 #'
@@ -261,13 +216,8 @@ resourceexplorer_delete_index <- function(Arn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_delete_resource_explorer_setup/](https://www.paws-r-sdk.com/docs/resourceexplorer_delete_resource_explorer_setup/) for full documentation.
 #'
-#' @param RegionList A list of Amazon Web Services Regions from which to delete the Resource
-#' Explorer configuration. If not specified, the operation uses the
-#' `DeleteInAllRegions` parameter to determine scope.
-#' @param DeleteInAllRegions Specifies whether to delete Resource Explorer configuration from all
-#' Regions where it is currently enabled. If this parameter is set to
-#' `true`, a value for `RegionList` must not be provided. Otherwise, the
-#' operation fails with a `ValidationException` error.
+#' @param RegionList A list of Amazon Web Services Regions from which to delete the Resource Explorer configuration. If not specified, the operation uses the `DeleteInAllRegions` parameter to determine scope.
+#' @param DeleteInAllRegions Specifies whether to delete Resource Explorer configuration from all Regions where it is currently enabled. If this parameter is set to `true`, a value for `RegionList` must not be provided. Otherwise, the operation fails with a `ValidationException` error.
 #'
 #' @keywords internal
 #'
@@ -298,9 +248,7 @@ resourceexplorer_delete_resource_explorer_setup <- function(RegionList = NULL, D
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_delete_view/](https://www.paws-r-sdk.com/docs/resourceexplorer_delete_view/) for full documentation.
 #'
-#' @param ViewArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view that you want to delete.
+#' @param ViewArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view that you want to delete.
 #'
 #' @keywords internal
 #'
@@ -491,17 +439,9 @@ resourceexplorer_get_managed_view <- function(ManagedViewArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_get_resource_explorer_setup/](https://www.paws-r-sdk.com/docs/resourceexplorer_get_resource_explorer_setup/) for full documentation.
 #'
-#' @param TaskId &#91;required&#93; The unique identifier of the setup task to retrieve status information
-#' for. This ID is returned by
-#' [`create_resource_explorer_setup`][resourceexplorer_create_resource_explorer_setup]
-#' or
-#' [`delete_resource_explorer_setup`][resourceexplorer_delete_resource_explorer_setup]
-#' operations.
-#' @param MaxResults The maximum number of Region status results to return in a single
-#' response. Valid values are between `1` and `100`.
-#' @param NextToken The pagination token from a previous
-#' [`get_resource_explorer_setup`][resourceexplorer_get_resource_explorer_setup]
-#' response. Use this token to retrieve the next set of results.
+#' @param TaskId &#91;required&#93; The unique identifier of the setup task to retrieve status information for. This ID is returned by [`create_resource_explorer_setup`][resourceexplorer_create_resource_explorer_setup] or [`delete_resource_explorer_setup`][resourceexplorer_delete_resource_explorer_setup] operations.
+#' @param MaxResults The maximum number of Region status results to return in a single response. Valid values are between `1` and `100`.
+#' @param NextToken The pagination token from a previous [`get_resource_explorer_setup`][resourceexplorer_get_resource_explorer_setup] response. Use this token to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -564,8 +504,7 @@ resourceexplorer_get_service_index <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_get_service_view/](https://www.paws-r-sdk.com/docs/resourceexplorer_get_service_view/) for full documentation.
 #'
-#' @param ServiceViewArn &#91;required&#93; The Amazon Resource Name (ARN) of the service view to retrieve details
-#' for.
+#' @param ServiceViewArn &#91;required&#93; The Amazon Resource Name (ARN) of the service view to retrieve details for.
 #'
 #' @keywords internal
 #'
@@ -596,9 +535,7 @@ resourceexplorer_get_service_view <- function(ServiceViewArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_get_view/](https://www.paws-r-sdk.com/docs/resourceexplorer_get_view/) for full documentation.
 #'
-#' @param ViewArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view that you want information about.
+#' @param ViewArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view that you want information about.
 #'
 #' @keywords internal
 #'
@@ -631,28 +568,14 @@ resourceexplorer_get_view <- function(ViewArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_indexes/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_indexes/) for full documentation.
 #'
-#' @param Type If specified, limits the output to only indexes of the specified Type,
-#' either `LOCAL` or `AGGREGATOR`.
+#' @param Type If specified, limits the output to only indexes of the specified Type, either `LOCAL` or `AGGREGATOR`.
 #' 
 #' Use this option to discover the aggregator index for your account.
-#' @param Regions If specified, limits the response to only information about the index in
-#' the specified list of Amazon Web Services Regions.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param Regions If specified, limits the response to only information about the index in the specified list of Amazon Web Services Regions.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #'
 #' @keywords internal
 #'
@@ -685,24 +608,11 @@ resourceexplorer_list_indexes <- function(Type = NULL, Regions = NULL, MaxResult
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_indexes_for_members/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_indexes_for_members/) for full documentation.
 #'
-#' @param AccountIdList &#91;required&#93; The account IDs will limit the output to only indexes from these
-#' accounts.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param AccountIdList &#91;required&#93; The account IDs will limit the output to only indexes from these accounts.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #'
 #' @keywords internal
 #'
@@ -735,24 +645,11 @@ resourceexplorer_list_indexes_for_members <- function(AccountIdList, MaxResults 
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_managed_views/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_managed_views/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
-#' @param ServicePrincipal Specifies a service principal name. If specified, then the operation
-#' only returns the managed views that are managed by the input service.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
+#' @param ServicePrincipal Specifies a service principal name. If specified, then the operation only returns the managed views that are managed by the input service.
 #'
 #' @keywords internal
 #'
@@ -784,51 +681,18 @@ resourceexplorer_list_managed_views <- function(MaxResults = NULL, NextToken = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_resources/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_resources/) for full documentation.
 #'
-#' @param Filters An array of strings that specify which resources are included in the
-#' results of queries made using this view. When you use this view in a
-#' [`search`][resourceexplorer_search] operation, the filter string is
-#' combined with the search's `QueryString` parameter using a logical `AND`
-#' operator.
+#' @param Filters An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a [`search`][resourceexplorer_search] operation, the filter string is combined with the search's `QueryString` parameter using a logical `AND` operator.
 #' 
-#' For information about the supported syntax, see [Search query reference
-#' for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' For information about the supported syntax, see [Search query reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' This query string in the context of this operation supports only [filter
-#' prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters)
-#' with optional
-#' [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators).
-#' It doesn't support free-form text. For example, the string
-#' `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2
-#' resources in any Amazon Web Services Region that begins with the letters
-#' `us` and is *not* tagged with a key `Stage` that has the value `prod`.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' This query string in the context of this operation supports only [filter prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters) with optional [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators). It doesn't support free-form text. For example, the string `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters `us` and is *not* tagged with a key `Stage` that has the value `prod`.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param ViewArn Specifies the Amazon resource name (ARN) of the view to use for the
-#' query. If you don't specify a value for this parameter, then the
-#' operation automatically uses the default view for the Amazon Web
-#' Services Region in which you called this operation. If the Region either
-#' doesn't have a default view or if you don't have permission to use the
-#' default view, then the operation fails with a 401 Unauthorized
-#' exception.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param ViewArn Specifies the Amazon resource name (ARN) of the view to use for the query. If you don't specify a value for this parameter, then the operation automatically uses the default view for the Amazon Web Services Region in which you called this operation. If the Region either doesn't have a default view or if you don't have permission to use the default view, then the operation fails with a 401 Unauthorized exception.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #' 
-#' The [`list_resources`][resourceexplorer_list_resources] operation does
-#' not generate a `NextToken` if you set `MaxResults` to 1000.
+#' The [`list_resources`][resourceexplorer_list_resources] operation does not generate a `NextToken` if you set `MaxResults` to 1000.
 #'
 #' @keywords internal
 #'
@@ -860,13 +724,9 @@ resourceexplorer_list_resources <- function(Filters = NULL, MaxResults = NULL, V
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_service_indexes/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_service_indexes/) for full documentation.
 #'
-#' @param Regions A list of Amazon Web Services Regions to include in the search for
-#' indexes. If not specified, indexes from all Regions are returned.
-#' @param MaxResults The maximum number of index results to return in a single response.
-#' Valid values are between `1` and `100`.
-#' @param NextToken The pagination token from a previous
-#' [`list_service_indexes`][resourceexplorer_list_service_indexes]
-#' response. Use this token to retrieve the next set of results.
+#' @param Regions A list of Amazon Web Services Regions to include in the search for indexes. If not specified, indexes from all Regions are returned.
+#' @param MaxResults The maximum number of index results to return in a single response. Valid values are between `1` and `100`.
+#' @param NextToken The pagination token from a previous [`list_service_indexes`][resourceexplorer_list_service_indexes] response. Use this token to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -898,11 +758,8 @@ resourceexplorer_list_service_indexes <- function(Regions = NULL, MaxResults = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_service_views/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_service_views/) for full documentation.
 #'
-#' @param MaxResults The maximum number of service view results to return in a single
-#' response. Valid values are between `1` and `50`.
-#' @param NextToken The pagination token from a previous
-#' [`list_service_views`][resourceexplorer_list_service_views] response.
-#' Use this token to retrieve the next set of results.
+#' @param MaxResults The maximum number of service view results to return in a single response. Valid values are between `1` and `50`.
+#' @param NextToken The pagination token from a previous [`list_service_views`][resourceexplorer_list_service_views] response. Use this token to retrieve the next set of results.
 #'
 #' @keywords internal
 #'
@@ -934,16 +791,8 @@ resourceexplorer_list_service_views <- function(MaxResults = NULL, NextToken = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_streaming_access_for_services/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_streaming_access_for_services/) for full documentation.
 #'
-#' @param MaxResults The maximum number of streaming access entries to return in the
-#' response. If there are more results available, the response includes a
-#' NextToken value that you can use in a subsequent call to get the next
-#' set of results. The value must be between 1 and 50. If you don't specify
-#' a value, the default is 50.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' @param MaxResults The maximum number of streaming access entries to return in the response. If there are more results available, the response includes a NextToken value that you can use in a subsequent call to get the next set of results. The value must be between 1 and 50. If you don't specify a value, the default is 50.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #'
 #' @keywords internal
 #'
@@ -975,22 +824,10 @@ resourceexplorer_list_streaming_access_for_services <- function(MaxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_supported_resource_types/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_supported_resource_types/) for full documentation.
 #'
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #'
 #' @keywords internal
 #'
@@ -1021,9 +858,7 @@ resourceexplorer_list_supported_resource_types <- function(NextToken = NULL, Max
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view or index that you want to attach tags to.
+#' @param resourceArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view or index that you want to attach tags to.
 #'
 #' @keywords internal
 #'
@@ -1055,22 +890,10 @@ resourceexplorer_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_list_views/](https://www.paws-r-sdk.com/docs/resourceexplorer_list_views/) for full documentation.
 #'
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
 #'
 #' @keywords internal
 #'
@@ -1102,43 +925,18 @@ resourceexplorer_list_views <- function(NextToken = NULL, MaxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_search/](https://www.paws-r-sdk.com/docs/resourceexplorer_search/) for full documentation.
 #'
-#' @param QueryString &#91;required&#93; A string that includes keywords and filters that specify the resources
-#' that you want to include in the results.
+#' @param QueryString &#91;required&#93; A string that includes keywords and filters that specify the resources that you want to include in the results.
 #' 
-#' For the complete syntax supported by the `QueryString` parameter, see
-#' [Search query syntax reference for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
+#' For the complete syntax supported by the `QueryString` parameter, see [Search query syntax reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html).
 #' 
-#' The search is completely case insensitive. You can specify an empty
-#' string to return all results up to the limit of 1,000 total results.
+#' The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.
 #' 
-#' The operation can return only the first 1,000 results. If the resource
-#' you want is not included, then use a different value for `QueryString`
-#' to refine the results.
-#' @param MaxResults The maximum number of results that you want included on each page of the
-#' response. If you do not include this parameter, it defaults to a value
-#' appropriate to the operation. If additional items exist beyond those
-#' included in the current response, the `NextToken` response element is
-#' present and has a value (is not null). Include that value as the
-#' `NextToken` request parameter in the next call to the operation to get
-#' the next part of the results.
+#' The operation can return only the first 1,000 results. If the resource you want is not included, then use a different value for `QueryString` to refine the results.
+#' @param MaxResults The maximum number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value appropriate to the operation. If additional items exist beyond those included in the current response, the `NextToken` response element is present and has a value (is not null). Include that value as the `NextToken` request parameter in the next call to the operation to get the next part of the results.
 #' 
-#' An API operation can return fewer results than the maximum even when
-#' there are more results available. You should check `NextToken` after
-#' every operation to ensure that you receive all of the results.
-#' @param ViewArn Specifies the [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view to use for the query. If you don't specify a value for this
-#' parameter, then the operation automatically uses the default view for
-#' the Amazon Web Services Region in which you called this operation. If
-#' the Region either doesn't have a default view or if you don't have
-#' permission to use the default view, then the operation fails with a
-#' `401 Unauthorized` exception.
-#' @param NextToken The parameter for receiving additional results if you receive a
-#' `NextToken` response in a previous request. A `NextToken` response
-#' indicates that more output is available. Set this parameter to the value
-#' of the previous call's `NextToken` response to indicate where the output
-#' should continue from. The pagination tokens expire after 24 hours.
+#' An API operation can return fewer results than the maximum even when there are more results available. You should check `NextToken` after every operation to ensure that you receive all of the results.
+#' @param ViewArn Specifies the [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view to use for the query. If you don't specify a value for this parameter, then the operation automatically uses the default view for the Amazon Web Services Region in which you called this operation. If the Region either doesn't have a default view or if you don't have permission to use the default view, then the operation fails with a `401 Unauthorized` exception.
+#' @param NextToken The parameter for receiving additional results if you receive a `NextToken` response in a previous request. A `NextToken` response indicates that more output is available. Set this parameter to the value of the previous call's `NextToken` response to indicate where the output should continue from. The pagination tokens expire after 24 hours.
 #'
 #' @keywords internal
 #'
@@ -1170,10 +968,8 @@ resourceexplorer_search <- function(QueryString, MaxResults = NULL, ViewArn = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_tag_resource/](https://www.paws-r-sdk.com/docs/resourceexplorer_tag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the view or index that you want to
-#' attach tags to.
-#' @param Tags A list of tag key and value pairs that you want to attach to the
-#' specified view or index.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the view or index that you want to attach tags to.
+#' @param Tags A list of tag key and value pairs that you want to attach to the specified view or index.
 #'
 #' @keywords internal
 #'
@@ -1205,10 +1001,8 @@ resourceexplorer_tag_resource <- function(resourceArn, Tags = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_untag_resource/](https://www.paws-r-sdk.com/docs/resourceexplorer_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the view or index that you want to
-#' remove tags from.
-#' @param tagKeys &#91;required&#93; A list of the keys for the tags that you want to remove from the
-#' specified view or index.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the view or index that you want to remove tags from.
+#' @param tagKeys &#91;required&#93; A list of the keys for the tags that you want to remove from the specified view or index.
 #'
 #' @keywords internal
 #'
@@ -1240,13 +1034,8 @@ resourceexplorer_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_update_index_type/](https://www.paws-r-sdk.com/docs/resourceexplorer_update_index_type/) for full documentation.
 #'
-#' @param Arn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the index that you want to update.
-#' @param Type &#91;required&#93; The type of the index. To understand the difference between `LOCAL` and
-#' `AGGREGATOR`, see [Turning on cross-Region
-#' search](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' @param Arn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the index that you want to update.
+#' @param Type &#91;required&#93; The type of the index. To understand the difference between `LOCAL` and `AGGREGATOR`, see [Turning on cross-Region search](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #'
 #' @keywords internal
 #'
@@ -1277,34 +1066,15 @@ resourceexplorer_update_index_type <- function(Arn, Type) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/resourceexplorer_update_view/](https://www.paws-r-sdk.com/docs/resourceexplorer_update_view/) for full documentation.
 #'
-#' @param ViewArn &#91;required&#93; The [Amazon resource name
-#' (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' of the view that you want to modify.
-#' @param IncludedProperties Specifies optional fields that you want included in search results from
-#' this view. It is a list of objects that each describe a field to
-#' include.
+#' @param ViewArn &#91;required&#93; The [Amazon resource name (ARN)](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) of the view that you want to modify.
+#' @param IncludedProperties Specifies optional fields that you want included in search results from this view. It is a list of objects that each describe a field to include.
 #' 
-#' The default is an empty list, with no optional fields included in the
-#' results.
-#' @param Filters An array of strings that specify which resources are included in the
-#' results of queries made using this view. When you use this view in a
-#' [`search`][resourceexplorer_search] operation, the filter string is
-#' combined with the search's `QueryString` parameter using a logical `AND`
-#' operator.
+#' The default is an empty list, with no optional fields included in the results.
+#' @param Filters An array of strings that specify which resources are included in the results of queries made using this view. When you use this view in a [`search`][resourceexplorer_search] operation, the filter string is combined with the search's `QueryString` parameter using a logical `AND` operator.
 #' 
-#' For information about the supported syntax, see [Search query reference
-#' for Resource
-#' Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html)
-#' in the *Amazon Web Services Resource Explorer User Guide*.
+#' For information about the supported syntax, see [Search query reference for Resource Explorer](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html) in the *Amazon Web Services Resource Explorer User Guide*.
 #' 
-#' This query string in the context of this operation supports only [filter
-#' prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters)
-#' with optional
-#' [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators).
-#' It doesn't support free-form text. For example, the string
-#' `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2
-#' resources in any Amazon Web Services Region that begins with the letters
-#' `us` and is *not* tagged with a key `Stage` that has the value `prod`.
+#' This query string in the context of this operation supports only [filter prefixes](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters) with optional [operators](https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators). It doesn't support free-form text. For example, the string `region:us* service:ec2 -tag:stage=prod` includes all Amazon EC2 resources in any Amazon Web Services Region that begins with the letters `us` and is *not* tagged with a key `Stage` that has the value `prod`.
 #'
 #' @keywords internal
 #'

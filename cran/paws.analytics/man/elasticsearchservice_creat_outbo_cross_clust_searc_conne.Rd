@@ -14,11 +14,9 @@ elasticsearchservice_create_outbound_cross_cluster_search_connection(
 \arguments{
 \item{SourceDomainInfo}{[required] Specifies the \code{DomainInformation} for the source Elasticsearch domain.}
 
-\item{DestinationDomainInfo}{[required] Specifies the \code{DomainInformation} for the destination Elasticsearch
-domain.}
+\item{DestinationDomainInfo}{[required] Specifies the \code{DomainInformation} for the destination Elasticsearch domain.}
 
-\item{ConnectionAlias}{[required] Specifies the connection alias that will be used by the customer for
-this connection.}
+\item{ConnectionAlias}{[required] Specifies the connection alias that will be used by the customer for this connection.}
 }
 \description{
 Creates a new cross-cluster search connection from a source domain to a destination domain.

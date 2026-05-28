@@ -10,11 +10,9 @@ appfabric_get_app_authorization(
 )
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 
-\item{appAuthorizationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app authorization to use for the request.}
+\item{appAuthorizationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.}
 }
 \description{
 Returns information about an app authorization.

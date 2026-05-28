@@ -19,44 +19,25 @@ sagemaker_create_auto_ml_job(
 )
 }
 \arguments{
-\item{AutoMLJobName}{[required] Identifies an Autopilot job. The name must be unique to your account and
-is case insensitive.}
+\item{AutoMLJobName}{[required] Identifies an Autopilot job. The name must be unique to your account and is case insensitive.}
 
-\item{InputDataConfig}{[required] An array of channel objects that describes the input data and its
-location. Each channel is a named input source. Similar to
-\code{InputDataConfig} supported by
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html}{HyperParameterTrainingJobDefinition}.
-Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for
-the training dataset. There is not a minimum number of rows required for
-the validation dataset.}
+\item{InputDataConfig}{[required] An array of channel objects that describes the input data and its location. Each channel is a named input source. Similar to \code{InputDataConfig} supported by \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html}{HyperParameterTrainingJobDefinition}. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset. There is not a minimum number of rows required for the validation dataset.}
 
-\item{OutputDataConfig}{[required] Provides information about encryption and the Amazon S3 output path
-needed to store artifacts from an AutoML job. Format(s) supported: CSV.}
+\item{OutputDataConfig}{[required] Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job. Format(s) supported: CSV.}
 
-\item{ProblemType}{Defines the type of supervised learning problem available for the
-candidates. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types}{SageMaker Autopilot problem types}.}
+\item{ProblemType}{Defines the type of supervised learning problem available for the candidates. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types}{SageMaker Autopilot problem types}.}
 
-\item{AutoMLJobObjective}{Specifies a metric to minimize or maximize as the objective of a job. If
-not specified, the default objective metric depends on the problem type.
-See
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html}{AutoMLJobObjective}
-for the default values.}
+\item{AutoMLJobObjective}{Specifies a metric to minimize or maximize as the objective of a job. If not specified, the default objective metric depends on the problem type. See \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html}{AutoMLJobObjective} for the default values.}
 
 \item{AutoMLJobConfig}{A collection of settings used to configure an AutoML job.}
 
 \item{RoleArn}{[required] The ARN of the role that is used to access the data.}
 
-\item{GenerateCandidateDefinitionsOnly}{Generates possible candidates without training the models. A candidate
-is a combination of data preprocessors, algorithms, and algorithm
-parameter settings.}
+\item{GenerateCandidateDefinitionsOnly}{Generates possible candidates without training the models. A candidate is a combination of data preprocessors, algorithms, and algorithm parameter settings.}
 
-\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon
-Web Services resources in different ways, for example, by purpose,
-owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web ServicesResources}.
-Tag keys must be unique per resource.}
+\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web ServicesResources}. Tag keys must be unique per resource.}
 
-\item{ModelDeployConfig}{Specifies how to generate the endpoint name for an automatic one-click
-Autopilot model deployment.}
+\item{ModelDeployConfig}{Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.}
 }
 \description{
 Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.

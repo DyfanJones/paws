@@ -13,11 +13,9 @@ panorama_list_application_instance_dependencies(
 \arguments{
 \item{ApplicationInstanceId}{[required] The application instance's ID.}
 
-\item{MaxResults}{The maximum number of application instance dependencies to return in one
-page of results.}
+\item{MaxResults}{The maximum number of application instance dependencies to return in one page of results.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 }
 \description{
 Returns a list of application instance dependencies.

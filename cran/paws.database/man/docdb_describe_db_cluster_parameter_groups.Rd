@@ -16,24 +16,18 @@ docdb_describe_db_cluster_parameter_groups(
 
 Constraints:
 \itemize{
-\item If provided, must match the name of an existing
-\code{DBClusterParameterGroup}.
+\item If provided, must match the name of an existing \code{DBClusterParameterGroup}.
 }}
 
 \item{Filters}{This parameter is not currently supported.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-(marker) is included in the response so that the remaining results can
-be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns a list of \code{DBClusterParameterGroup} descriptions. If a \code{DBClusterParameterGroupName} parameter is specified, the list contains only the description of the specified cluster parameter group.

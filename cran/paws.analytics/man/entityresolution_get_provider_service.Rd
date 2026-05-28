@@ -9,8 +9,7 @@ entityresolution_get_provider_service(providerName, providerServiceName)
 \arguments{
 \item{providerName}{[required] The name of the provider. This name is typically the company name.}
 
-\item{providerServiceName}{[required] The ARN (Amazon Resource Name) of the product that the provider service
-provides.}
+\item{providerServiceName}{[required] The ARN (Amazon Resource Name) of the product that the provider service provides.}
 }
 \description{
 Returns the \code{ProviderService} of a given name.

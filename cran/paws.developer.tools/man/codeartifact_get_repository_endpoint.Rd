@@ -15,14 +15,11 @@ codeartifact_get_repository_endpoint(
 \arguments{
 \item{domain}{[required] The name of the domain that contains the repository.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain that contains the repository. It does not include dashes or
-spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository.}
 
-\item{format}{[required] Returns which endpoint of a repository to return. A repository has one
-endpoint for each package format.}
+\item{format}{[required] Returns which endpoint of a repository to return. A repository has one endpoint for each package format.}
 
 \item{endpointType}{A string that specifies the type of endpoint.}
 }

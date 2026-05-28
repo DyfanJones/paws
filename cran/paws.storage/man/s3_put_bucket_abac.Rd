@@ -16,25 +16,15 @@ s3_put_bucket_abac(
 \arguments{
 \item{Bucket}{[required] The name of the general purpose bucket.}
 
-\item{ContentMD5}{The MD5 hash of the \code{\link[=s3_put_bucket_abac]{put_bucket_abac}} request
-body.
+\item{ContentMD5}{The MD5 hash of the \code{\link[=s3_put_bucket_abac]{put_bucket_abac}} request body.
 
-For requests made using the Amazon Web Services Command Line Interface
-(CLI) or Amazon Web Services SDKs, this field is calculated
-automatically.}
+For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically.}
 
-\item{ChecksumAlgorithm}{Indicates the algorithm that you want Amazon S3 to use to create the
-checksum. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html}{Checking object integrity}
-in the \emph{Amazon S3 User Guide}.}
+\item{ChecksumAlgorithm}{Indicates the algorithm that you want Amazon S3 to use to create the checksum. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html}{Checking object integrity} in the \emph{Amazon S3 User Guide}.}
 
-\item{ExpectedBucketOwner}{The Amazon Web Services account ID of the general purpose bucket's
-owner.}
+\item{ExpectedBucketOwner}{The Amazon Web Services account ID of the general purpose bucket's owner.}
 
-\item{AbacStatus}{[required] The ABAC status of the general purpose bucket. When ABAC is enabled for
-the general purpose bucket, you can use tags to manage access to the
-general purpose buckets as well as for cost tracking purposes. When ABAC
-is disabled for the general purpose buckets, you can only use tags for
-cost tracking purposes. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html}{Using tags with S3 general purpose buckets}.}
+\item{AbacStatus}{[required] The ABAC status of the general purpose bucket. When ABAC is enabled for the general purpose bucket, you can use tags to manage access to the general purpose buckets as well as for cost tracking purposes. When ABAC is disabled for the general purpose buckets, you can only use tags for cost tracking purposes. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging.html}{Using tags with S3 general purpose buckets}.}
 }
 \description{
 Sets the attribute-based access control (ABAC) property of the general purpose bucket. You must have \code{s3:PutBucketABAC} permission to perform this action. When you enable ABAC, you can use tags for access control on your buckets. Additionally, when ABAC is enabled, you must use the \href{https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_TagResource.html}{TagResource} and \href{https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_UntagResource.html}{UntagResource} actions to manage tags on your buckets. You can nolonger use the \code{\link[=s3_put_bucket_tagging]{put_bucket_tagging}} and \code{\link[=s3_delete_bucket_tagging]{delete_bucket_tagging}} actions to tag your bucket. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html}{Enabling ABAC in general purpose buckets}.

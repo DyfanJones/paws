@@ -19,28 +19,19 @@ ec2_create_local_gateway_virtual_interface(
 \arguments{
 \item{LocalGatewayVirtualInterfaceGroupId}{[required] The ID of the local gateway virtual interface group.}
 
-\item{OutpostLagId}{[required] References the Link Aggregation Group (LAG) that connects the Outpost to
-on-premises network devices.}
+\item{OutpostLagId}{[required] References the Link Aggregation Group (LAG) that connects the Outpost to on-premises network devices.}
 
-\item{Vlan}{[required] The virtual local area network (VLAN) used for the local gateway virtual
-interface.}
+\item{Vlan}{[required] The virtual local area network (VLAN) used for the local gateway virtual interface.}
 
-\item{LocalAddress}{[required] The IP address assigned to the local gateway virtual interface on the
-Outpost side. Only IPv4 is supported.}
+\item{LocalAddress}{[required] The IP address assigned to the local gateway virtual interface on the Outpost side. Only IPv4 is supported.}
 
-\item{PeerAddress}{[required] The peer IP address for the local gateway virtual interface. Only IPv4
-is supported.}
+\item{PeerAddress}{[required] The peer IP address for the local gateway virtual interface. Only IPv4 is supported.}
 
-\item{PeerBgpAsn}{The Autonomous System Number (ASN) of the Border Gateway Protocol (BGP)
-peer.}
+\item{PeerBgpAsn}{The Autonomous System Number (ASN) of the Border Gateway Protocol (BGP) peer.}
 
-\item{TagSpecifications}{The tags to apply to a resource when the local gateway virtual interface
-is being created.}
+\item{TagSpecifications}{The tags to apply to a resource when the local gateway virtual interface is being created.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{PeerBgpAsnExtended}{The extended 32-bit ASN of the BGP peer for use with larger ASN values.}
 }

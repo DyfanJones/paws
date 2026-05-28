@@ -12,12 +12,9 @@ redshift_accept_reserved_node_exchange(
 )
 }
 \arguments{
-\item{ReservedNodeId}{[required] A string representing the node identifier of the DC1 Reserved Node to be
-exchanged.}
+\item{ReservedNodeId}{[required] A string representing the node identifier of the DC1 Reserved Node to be exchanged.}
 
-\item{TargetReservedNodeOfferingId}{[required] The unique identifier of the DC2 Reserved Node offering to be used for
-the exchange. You can obtain the value for the parameter by calling
-\code{\link[=redshift_get_reserved_node_exchange_offerings]{get_reserved_node_exchange_offerings}}}
+\item{TargetReservedNodeOfferingId}{[required] The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling \code{\link[=redshift_get_reserved_node_exchange_offerings]{get_reserved_node_exchange_offerings}}}
 }
 \description{
 Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs.

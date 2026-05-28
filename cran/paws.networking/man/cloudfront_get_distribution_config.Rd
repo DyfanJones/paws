@@ -7,8 +7,7 @@
 cloudfront_get_distribution_config(Id)
 }
 \arguments{
-\item{Id}{[required] The distribution's ID. If the ID is empty, an empty distribution
-configuration is returned.}
+\item{Id}{[required] The distribution's ID. If the ID is empty, an empty distribution configuration is returned.}
 }
 \description{
 Get the configuration information about a distribution.

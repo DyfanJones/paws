@@ -22,9 +22,7 @@ apigateway_create_stage(
 \arguments{
 \item{restApiId}{[required] The string identifier of the associated RestApi.}
 
-\item{stageName}{[required] The name for the Stage resource. Stage names can only contain
-alphanumeric characters, hyphens, and underscores. Maximum length is 128
-characters.}
+\item{stageName}{[required] The name for the Stage resource. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is 128 characters.}
 
 \item{deploymentId}{[required] The identifier of the Deployment resource for the Stage resource.}
 
@@ -32,12 +30,9 @@ characters.}
 
 \item{cacheClusterEnabled}{Whether cache clustering is enabled for the stage.}
 
-\item{cacheClusterSize}{The stage's cache capacity in GB. For more information about choosing a
-cache size, see \href{https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html}{Enabling API caching to enhance responsiveness}.}
+\item{cacheClusterSize}{The stage's cache capacity in GB. For more information about choosing a cache size, see \href{https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-caching.html}{Enabling API caching to enhance responsiveness}.}
 
-\item{variables}{A map that defines the stage variables for the new Stage resource.
-Variable names can have alphanumeric and underscore characters, and the
-values must match \verb{[A-Za-z0-9-._~:/?#&=,]+}.}
+\item{variables}{A map that defines the stage variables for the new Stage resource. Variable names can have alphanumeric and underscore characters, and the values must match \verb{[A-Za-z0-9-._~:/?#&=,]+}.}
 
 \item{documentationVersion}{The version of the associated API documentation.}
 
@@ -45,9 +40,7 @@ values must match \verb{[A-Za-z0-9-._~:/?#&=,]+}.}
 
 \item{tracingEnabled}{Specifies whether active tracing with X-ray is enabled for the Stage.}
 
-\item{tags}{The key-value map of strings. The valid character set is
-[a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not
-start with \verb{aws:}. The tag value can be up to 256 characters.}
+\item{tags}{The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with \verb{aws:}. The tag value can be up to 256 characters.}
 }
 \description{
 Creates a new Stage resource that references a pre-existing Deployment for the API.

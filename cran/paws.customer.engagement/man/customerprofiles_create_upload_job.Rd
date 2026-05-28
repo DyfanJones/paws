@@ -13,20 +13,15 @@ customerprofiles_create_upload_job(
 )
 }
 \arguments{
-\item{DomainName}{[required] The unique name of the domain. Domain should be exists for the upload
-job to be created.}
+\item{DomainName}{[required] The unique name of the domain. Domain should be exists for the upload job to be created.}
 
-\item{DisplayName}{[required] The unique name of the upload job. Could be a file name to identify the
-upload job.}
+\item{DisplayName}{[required] The unique name of the upload job. Could be a file name to identify the upload job.}
 
-\item{Fields}{[required] The mapping between CSV Columns and Profile Object attributes. A map of
-the name and ObjectType field.}
+\item{Fields}{[required] The mapping between CSV Columns and Profile Object attributes. A map of the name and ObjectType field.}
 
-\item{UniqueKey}{[required] The unique key columns for de-duping the profiles used to map data to
-the profile.}
+\item{UniqueKey}{[required] The unique key columns for de-duping the profiles used to map data to the profile.}
 
-\item{DataExpiry}{The expiry duration for the profiles ingested with the job. If not
-provided, the system default of 2 weeks is used.}
+\item{DataExpiry}{The expiry duration for the profiles ingested with the job. If not provided, the system default of 2 weeks is used.}
 }
 \description{
 Creates an Upload job to ingest data for segment imports. The metadata is created for the job with the provided field mapping and unique key.

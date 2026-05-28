@@ -8,7 +8,7 @@ check that was performed on the domain}
 elasticsearchservice_get_upgrade_status(DomainName)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 }
 \description{
 Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.

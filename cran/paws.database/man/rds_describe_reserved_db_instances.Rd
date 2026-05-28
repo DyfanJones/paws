@@ -20,49 +20,37 @@ rds_describe_reserved_db_instances(
 )
 }
 \arguments{
-\item{ReservedDBInstanceId}{The reserved DB instance identifier filter value. Specify this parameter
-to show only the reservation that matches the specified reservation ID.}
+\item{ReservedDBInstanceId}{The reserved DB instance identifier filter value. Specify this parameter to show only the reservation that matches the specified reservation ID.}
 
-\item{ReservedDBInstancesOfferingId}{The offering identifier filter value. Specify this parameter to show
-only purchased reservations matching the specified offering identifier.}
+\item{ReservedDBInstancesOfferingId}{The offering identifier filter value. Specify this parameter to show only purchased reservations matching the specified offering identifier.}
 
-\item{DBInstanceClass}{The DB instance class filter value. Specify this parameter to show only
-those reservations matching the specified DB instances class.}
+\item{DBInstanceClass}{The DB instance class filter value. Specify this parameter to show only those reservations matching the specified DB instances class.}
 
-\item{Duration}{The duration filter value, specified in years or seconds. Specify this
-parameter to show only reservations for this duration.
+\item{Duration}{The duration filter value, specified in years or seconds. Specify this parameter to show only reservations for this duration.
 
 Valid Values: \code{1 | 3 | 31536000 | 94608000}}
 
-\item{ProductDescription}{The product description filter value. Specify this parameter to show
-only those reservations matching the specified product description.}
+\item{ProductDescription}{The product description filter value. Specify this parameter to show only those reservations matching the specified product description.}
 
-\item{OfferingType}{The offering type filter value. Specify this parameter to show only the
-available offerings matching the specified offering type.
+\item{OfferingType}{The offering type filter value. Specify this parameter to show only the available offerings matching the specified offering type.
 
 Valid Values: \code{"Partial Upfront" | "All Upfront" | "No Upfront" }}
 
 \item{MultiAZ}{Specifies whether to show only those reservations that support Multi-AZ.}
 
-\item{LeaseId}{The lease identifier filter value. Specify this parameter to show only
-the reservation that matches the specified lease ID.
+\item{LeaseId}{The lease identifier filter value. Specify this parameter to show only the reservation that matches the specified lease ID.
 
-Amazon Web Services Support might request the lease ID for an issue
-related to a reserved DB instance.}
+Amazon Web Services Support might request the lease ID for an issue related to a reserved DB instance.}
 
 \item{Filters}{This parameter isn't currently supported.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more than
-the \code{MaxRecords} value is available, a pagination token called a marker
-is included in the response so you can retrieve the remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more than the \code{MaxRecords} value is available, a pagination token called a marker is included in the response so you can retrieve the remaining results.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns information about reserved DB instances for this account, or about a specified reserved DB instance.

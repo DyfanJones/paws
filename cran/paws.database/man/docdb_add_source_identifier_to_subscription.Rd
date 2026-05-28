@@ -7,19 +7,14 @@
 docdb_add_source_identifier_to_subscription(SubscriptionName, SourceIdentifier)
 }
 \arguments{
-\item{SubscriptionName}{[required] The name of the Amazon DocumentDB event notification subscription that
-you want to add a source identifier to.}
+\item{SubscriptionName}{[required] The name of the Amazon DocumentDB event notification subscription that you want to add a source identifier to.}
 
 \item{SourceIdentifier}{[required] The identifier of the event source to be added:
 \itemize{
-\item If the source type is an instance, a \code{DBInstanceIdentifier} must be
-provided.
-\item If the source type is a security group, a \code{DBSecurityGroupName} must
-be provided.
-\item If the source type is a parameter group, a \code{DBParameterGroupName}
-must be provided.
-\item If the source type is a snapshot, a \code{DBSnapshotIdentifier} must be
-provided.
+\item If the source type is an instance, a \code{DBInstanceIdentifier} must be provided.
+\item If the source type is a security group, a \code{DBSecurityGroupName} must be provided.
+\item If the source type is a parameter group, a \code{DBParameterGroupName} must be provided.
+\item If the source type is a snapshot, a \code{DBSnapshotIdentifier} must be provided.
 }}
 }
 \description{

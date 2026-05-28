@@ -14,10 +14,7 @@ ec2_describe_vpc_encryption_controls(
 )
 }
 \arguments{
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{Filters}{The filters to apply to the request.}
 
@@ -25,13 +22,9 @@ Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{VpcIds}{The IDs of the VPCs to describe encryption control configurations for.}
 
-\item{NextToken}{The token returned from a previous paginated request. Pagination
-continues from the end of the items returned by the previous request.}
+\item{NextToken}{The token returned from a previous paginated request. Pagination continues from the end of the items returned by the previous request.}
 
-\item{MaxResults}{The maximum number of items to return for this request. To get the next
-page of items, make another request with the token returned in the
-output. For more information, see
-\href{https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination}{Pagination}.}
+\item{MaxResults}{The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/Query-Requests.html#api-pagination}{Pagination}.}
 }
 \description{
 Describes one or more VPC Encryption Control configurations. VPC Encryption Control enables you to enforce encryption for all data in transit within and between VPCs to meet compliance requirements You can filter the results to return information about specific encryption controls or VPCs.

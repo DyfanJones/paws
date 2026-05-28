@@ -7,8 +7,7 @@
 chatbot_delete_chime_webhook_configuration(ChatConfigurationArn)
 }
 \arguments{
-\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to
-delete.}
+\item{ChatConfigurationArn}{[required] The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to delete.}
 }
 \description{
 Deletes a Amazon Chime webhook configuration for AWS Chatbot.

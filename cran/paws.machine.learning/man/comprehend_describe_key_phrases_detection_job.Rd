@@ -7,9 +7,7 @@
 comprehend_describe_key_phrases_detection_job(JobId)
 }
 \arguments{
-\item{JobId}{[required] The identifier that Amazon Comprehend generated for the job. The
-\code{\link[=comprehend_start_key_phrases_detection_job]{start_key_phrases_detection_job}}
-operation returns this identifier in its response.}
+\item{JobId}{[required] The identifier that Amazon Comprehend generated for the job. The \code{\link[=comprehend_start_key_phrases_detection_job]{start_key_phrases_detection_job}} operation returns this identifier in its response.}
 }
 \description{
 Gets the properties associated with a key phrases detection job. Use this operation to get the status of a detection job.

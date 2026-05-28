@@ -13,16 +13,13 @@ redshift_modify_cluster_iam_roles(
 )
 }
 \arguments{
-\item{ClusterIdentifier}{[required] The unique identifier of the cluster for which you want to associate or
-disassociate IAM roles.}
+\item{ClusterIdentifier}{[required] The unique identifier of the cluster for which you want to associate or disassociate IAM roles.}
 
-\item{AddIamRoles}{Zero or more IAM roles to associate with the cluster. The roles must be
-in their Amazon Resource Name (ARN) format.}
+\item{AddIamRoles}{Zero or more IAM roles to associate with the cluster. The roles must be in their Amazon Resource Name (ARN) format.}
 
 \item{RemoveIamRoles}{Zero or more IAM roles in ARN format to disassociate from the cluster.}
 
-\item{DefaultIamRoleArn}{The Amazon Resource Name (ARN) for the IAM role that was set as default
-for the cluster when the cluster was last modified.}
+\item{DefaultIamRoleArn}{The Amazon Resource Name (ARN) for the IAM role that was set as default for the cluster when the cluster was last modified.}
 }
 \description{
 Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.

@@ -7,11 +7,9 @@
 quicksight_describe_self_upgrade_configuration(AwsAccountId, Namespace)
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the Quick
-self-upgrade configuration.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the Quick self-upgrade configuration.}
 
-\item{Namespace}{[required] The Quick namespace that you want to describe the Quick self-upgrade
-configuration for.}
+\item{Namespace}{[required] The Quick namespace that you want to describe the Quick self-upgrade configuration for.}
 }
 \description{
 Describes the self-upgrade configuration for a Quick account.

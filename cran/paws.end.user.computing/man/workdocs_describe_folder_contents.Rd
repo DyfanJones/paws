@@ -17,8 +17,7 @@ workdocs_describe_folder_contents(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{FolderId}{[required] The ID of the folder.}
 
@@ -28,13 +27,11 @@ Services administrator credentials to access the API.}
 
 \item{Limit}{The maximum number of items to return with this call.}
 
-\item{Marker}{The marker for the next set of results. This marker was received from a
-previous call.}
+\item{Marker}{The marker for the next set of results. This marker was received from a previous call.}
 
 \item{Type}{The type of items.}
 
-\item{Include}{The contents to include. Specify "INITIALIZED" to include initialized
-documents.}
+\item{Include}{The contents to include. Specify "INITIALIZED" to include initialized documents.}
 }
 \description{
 Describes the contents of the specified folder, including its documents and subfolders.

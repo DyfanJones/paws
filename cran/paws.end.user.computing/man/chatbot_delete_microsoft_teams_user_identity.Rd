@@ -7,8 +7,7 @@
 chatbot_delete_microsoft_teams_user_identity(ChatConfigurationArn, UserId)
 }
 \arguments{
-\item{ChatConfigurationArn}{[required] The ARN of the MicrosoftTeamsChannelConfiguration associated with the
-user identity to delete.}
+\item{ChatConfigurationArn}{[required] The ARN of the MicrosoftTeamsChannelConfiguration associated with the user identity to delete.}
 
 \item{UserId}{[required] The Microsoft Teams user ID.}
 }

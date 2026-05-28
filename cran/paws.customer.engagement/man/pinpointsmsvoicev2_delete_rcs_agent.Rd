@@ -7,8 +7,7 @@
 pinpointsmsvoicev2_delete_rcs_agent(RcsAgentId)
 }
 \arguments{
-\item{RcsAgentId}{[required] The unique identifier of the RCS agent to delete. You can use either the
-RcsAgentId or RcsAgentArn.}
+\item{RcsAgentId}{[required] The unique identifier of the RCS agent to delete. You can use either the RcsAgentId or RcsAgentArn.}
 }
 \description{
 Deletes an existing RCS agent. If deletion protection is enabled, an error is returned.

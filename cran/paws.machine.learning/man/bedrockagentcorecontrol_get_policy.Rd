@@ -8,11 +8,9 @@ AgentCore Policy system}
 bedrockagentcorecontrol_get_policy(policyEngineId, policyId)
 }
 \arguments{
-\item{policyEngineId}{[required] The identifier of the policy engine that manages the policy to be
-retrieved.}
+\item{policyEngineId}{[required] The identifier of the policy engine that manages the policy to be retrieved.}
 
-\item{policyId}{[required] The unique identifier of the policy to be retrieved. This must be a
-valid policy ID that exists within the specified policy engine.}
+\item{policyId}{[required] The unique identifier of the policy to be retrieved. This must be a valid policy ID that exists within the specified policy engine.}
 }
 \description{
 Retrieves detailed information about a specific policy within the AgentCore Policy system. This operation returns the complete policy definition, metadata, and current status, allowing administrators to review and manage policy configurations.

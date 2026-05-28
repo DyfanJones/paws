@@ -17,37 +17,27 @@ lexmodelsv2_update_bot(
 )
 }
 \arguments{
-\item{botId}{[required] The unique identifier of the bot to update. This identifier is returned
-by the \code{\link[=lexmodelsv2_create_bot]{create_bot}} operation.}
+\item{botId}{[required] The unique identifier of the bot to update. This identifier is returned by the \code{\link[=lexmodelsv2_create_bot]{create_bot}} operation.}
 
-\item{botName}{[required] The new name of the bot. The name must be unique in the account that
-creates the bot.}
+\item{botName}{[required] The new name of the bot. The name must be unique in the account that creates the bot.}
 
 \item{description}{A description of the bot.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that has permissions to
-access the bot.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that has permissions to access the bot.}
 
-\item{dataPrivacy}{[required] Provides information on additional privacy protections Amazon Lex should
-use with the bot's data.}
+\item{dataPrivacy}{[required] Provides information on additional privacy protections Amazon Lex should use with the bot's data.}
 
-\item{idleSessionTTLInSeconds}{[required] The time, in seconds, that Amazon Lex should keep information about a
-user's conversation with the bot.
+\item{idleSessionTTLInSeconds}{[required] The time, in seconds, that Amazon Lex should keep information about a user's conversation with the bot.
 
-A user interaction remains active for the amount of time specified. If
-no conversation occurs during this time, the session expires and Amazon
-Lex deletes any data provided before the timeout.
+A user interaction remains active for the amount of time specified. If no conversation occurs during this time, the session expires and Amazon Lex deletes any data provided before the timeout.
 
 You can specify between 60 (1 minute) and 86,400 (24 hours) seconds.}
 
 \item{botType}{The type of the bot to be updated.}
 
-\item{botMembers}{The list of bot members in the network associated with the update
-action.}
+\item{botMembers}{The list of bot members in the network associated with the update action.}
 
-\item{errorLogSettings}{Allows you to modify how Amazon Lex logs errors during bot interactions,
-including destinations for error logs and the types of errors to be
-captured.}
+\item{errorLogSettings}{Allows you to modify how Amazon Lex logs errors during bot interactions, including destinations for error logs and the types of errors to be captured.}
 }
 \description{
 Updates the configuration of an existing bot.

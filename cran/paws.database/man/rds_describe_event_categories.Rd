@@ -8,11 +8,9 @@ specified, for a specified source type}
 rds_describe_event_categories(SourceType = NULL, Filters = NULL)
 }
 \arguments{
-\item{SourceType}{The type of source that is generating the events. For RDS Proxy events,
-specify \code{db-proxy}.
+\item{SourceType}{The type of source that is generating the events. For RDS Proxy events, specify \code{db-proxy}.
 
-Valid Values: \code{db-instance} | \code{db-cluster} | \code{db-parameter-group} |
-\code{db-security-group} | \code{db-snapshot} | \code{db-cluster-snapshot} | \code{db-proxy}}
+Valid Values: \code{db-instance} | \code{db-cluster} | \code{db-parameter-group} | \code{db-security-group} | \code{db-snapshot} | \code{db-cluster-snapshot} | \code{db-proxy}}
 
 \item{Filters}{This parameter isn't currently supported.}
 }

@@ -11,8 +11,7 @@ directoryservice_remove_ip_routes(
 )
 }
 \arguments{
-\item{DirectoryId}{[required] Identifier (ID) of the directory from which you want to remove the IP
-addresses.}
+\item{DirectoryId}{[required] Identifier (ID) of the directory from which you want to remove the IP addresses.}
 
 \item{CidrIps}{IP address blocks that you want to remove.}
 

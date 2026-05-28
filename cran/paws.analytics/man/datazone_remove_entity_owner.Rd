@@ -21,8 +21,7 @@ datazone_remove_entity_owner(
 
 \item{owner}{[required] The owner that you want to remove from an entity.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Removes an owner from an entity.

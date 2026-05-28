@@ -8,14 +8,9 @@ redirection}
 workspaces_create_connection_alias(ConnectionString, Tags = NULL)
 }
 \arguments{
-\item{ConnectionString}{[required] A connection string in the form of a fully qualified domain name (FQDN),
-such as \code{www.example.com}.
+\item{ConnectionString}{[required] A connection string in the form of a fully qualified domain name (FQDN), such as \code{www.example.com}.
 
-After you create a connection string, it is always associated to your
-Amazon Web Services account. You cannot recreate the same connection
-string with a different account, even if you delete all instances of it
-from the original account. The connection string is globally reserved
-for your account.}
+After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.}
 
 \item{Tags}{The tags to associate with the connection alias.}
 }

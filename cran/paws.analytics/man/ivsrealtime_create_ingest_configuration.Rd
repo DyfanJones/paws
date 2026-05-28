@@ -17,38 +17,21 @@ ivsrealtime_create_ingest_configuration(
 )
 }
 \arguments{
-\item{name}{Optional name that can be specified for the IngestConfiguration being
-created.}
+\item{name}{Optional name that can be specified for the IngestConfiguration being created.}
 
 \item{stageArn}{ARN of the stage with which the IngestConfiguration is associated.}
 
-\item{userId}{Customer-assigned name to help identify the participant using the
-IngestConfiguration; this can be used to link a participant to a user in
-the customer’s own systems. This can be any UTF-8 encoded text. \emph{This
-field is exposed to all stage participants and should not be used for
-personally identifying, confidential, or sensitive information.}}
+\item{userId}{Customer-assigned name to help identify the participant using the IngestConfiguration; this can be used to link a participant to a user in the customer’s own systems. This can be any UTF-8 encoded text. \emph{This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.}}
 
-\item{attributes}{Application-provided attributes to store in the IngestConfiguration and
-attach to a stage. Map keys and values can contain UTF-8 encoded text.
-The maximum length of this field is 1 KB total. \emph{This field is exposed
-to all stage participants and should not be used for personally
-identifying, confidential, or sensitive information.}}
+\item{attributes}{Application-provided attributes to store in the IngestConfiguration and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum length of this field is 1 KB total. \emph{This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.}}
 
-\item{ingestProtocol}{[required] Type of ingest protocol that the user employs to broadcast. If this is
-set to \code{RTMP}, \code{insecureIngest} must be set to \code{true}.}
+\item{ingestProtocol}{[required] Type of ingest protocol that the user employs to broadcast. If this is set to \code{RTMP}, \code{insecureIngest} must be set to \code{true}.}
 
-\item{insecureIngest}{Whether the stage allows insecure RTMP ingest. This must be set to
-\code{true}, if \code{ingestProtocol} is set to \code{RTMP}. Default: \code{false}.}
+\item{insecureIngest}{Whether the stage allows insecure RTMP ingest. This must be set to \code{true}, if \code{ingestProtocol} is set to \code{RTMP}. Default: \code{false}.}
 
-\item{redundantIngest}{Indicates whether redundant ingest is enabled for the ingest
-configuration. Default: \code{false}.}
+\item{redundantIngest}{Indicates whether redundant ingest is enabled for the ingest configuration. Default: \code{false}.}
 
-\item{tags}{Tags attached to the resource. Array of maps, each of the form
-\code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging AWS Resources and Tag Editor} for details, including
-restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS has no constraints on tags beyond what is
-documented there.}
+\item{tags}{Tags attached to the resource. Array of maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging AWS Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints on tags beyond what is documented there.}
 }
 \description{
 Creates a new IngestConfiguration resource, used to specify the ingest protocol for a stage.

@@ -7,8 +7,7 @@
 timestreamwrite_list_tags_for_resource(ResourceARN)
 }
 \arguments{
-\item{ResourceARN}{[required] The Timestream resource with tags to be listed. This value is an Amazon
-Resource Name (ARN).}
+\item{ResourceARN}{[required] The Timestream resource with tags to be listed. This value is an Amazon Resource Name (ARN).}
 }
 \description{
 Lists all tags on a Timestream resource.

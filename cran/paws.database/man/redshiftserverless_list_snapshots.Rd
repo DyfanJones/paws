@@ -17,17 +17,13 @@ redshiftserverless_list_snapshots(
 \arguments{
 \item{endTime}{The timestamp showing when the snapshot creation finished.}
 
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to display the next page of results.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to display the next page of results.}
 
-\item{namespaceArn}{The Amazon Resource Name (ARN) of the namespace from which to list all
-snapshots.}
+\item{namespaceArn}{The Amazon Resource Name (ARN) of the namespace from which to list all snapshots.}
 
 \item{namespaceName}{The namespace from which to list all snapshots.}
 
-\item{nextToken}{If \code{nextToken} is returned, there are more results available. The value
-of \code{nextToken} is a unique pagination token for each page. Make the call
-again using the returned token to retrieve the next page.}
+\item{nextToken}{If \code{nextToken} is returned, there are more results available. The value of \code{nextToken} is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.}
 
 \item{ownerAccount}{The owner Amazon Web Services account of the snapshot.}
 

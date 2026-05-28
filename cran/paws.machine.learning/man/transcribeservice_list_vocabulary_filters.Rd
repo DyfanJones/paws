@@ -12,21 +12,11 @@ transcribeservice_list_vocabulary_filters(
 )
 }
 \arguments{
-\item{NextToken}{If your
-\code{\link[=transcribeservice_list_vocabulary_filters]{list_vocabulary_filters}}
-request returns more results than can be displayed, \code{NextToken} is
-displayed in the response with an associated string. To get the next
-page of results, copy this string and repeat your request, including
-\code{NextToken} with the value of the copied string. Repeat as needed to
-view all your results.}
+\item{NextToken}{If your \code{\link[=transcribeservice_list_vocabulary_filters]{list_vocabulary_filters}} request returns more results than can be displayed, \code{NextToken} is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including \code{NextToken} with the value of the copied string. Repeat as needed to view all your results.}
 
-\item{MaxResults}{The maximum number of custom vocabulary filters to return in each page
-of results. If there are fewer results than the value that you specify,
-only the actual results are returned. If you do not specify a value, a
-default of 5 is used.}
+\item{MaxResults}{The maximum number of custom vocabulary filters to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.}
 
-\item{NameContains}{Returns only the custom vocabulary filters that contain the specified
-string. The search is not case sensitive.}
+\item{NameContains}{Returns only the custom vocabulary filters that contain the specified string. The search is not case sensitive.}
 }
 \description{
 Provides a list of custom vocabulary filters that match the specified criteria. If no criteria are specified, all custom vocabularies are returned.

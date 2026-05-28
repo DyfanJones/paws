@@ -12,11 +12,9 @@ quicksight_list_vpc_connections(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account that contains the VPC
-connections that you want to list.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account that contains the VPC connections that you want to list.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

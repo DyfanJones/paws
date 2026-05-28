@@ -17,17 +17,11 @@ sagemaker_list_trial_components(
 )
 }
 \arguments{
-\item{ExperimentName}{A filter that returns only components that are part of the specified
-experiment. If you specify \code{ExperimentName}, you can't filter by
-\code{SourceArn} or \code{TrialName}.}
+\item{ExperimentName}{A filter that returns only components that are part of the specified experiment. If you specify \code{ExperimentName}, you can't filter by \code{SourceArn} or \code{TrialName}.}
 
-\item{TrialName}{A filter that returns only components that are part of the specified
-trial. If you specify \code{TrialName}, you can't filter by \code{ExperimentName}
-or \code{SourceArn}.}
+\item{TrialName}{A filter that returns only components that are part of the specified trial. If you specify \code{TrialName}, you can't filter by \code{ExperimentName} or \code{SourceArn}.}
 
-\item{SourceArn}{A filter that returns only components that have the specified source
-Amazon Resource Name (ARN). If you specify \code{SourceArn}, you can't filter
-by \code{ExperimentName} or \code{TrialName}.}
+\item{SourceArn}{A filter that returns only components that have the specified source Amazon Resource Name (ARN). If you specify \code{SourceArn}, you can't filter by \code{ExperimentName} or \code{TrialName}.}
 
 \item{CreatedAfter}{A filter that returns only components created after the specified time.}
 
@@ -37,13 +31,9 @@ by \code{ExperimentName} or \code{TrialName}.}
 
 \item{SortOrder}{The sort order. The default value is \code{Descending}.}
 
-\item{MaxResults}{The maximum number of components to return in the response. The default
-value is 10.}
+\item{MaxResults}{The maximum number of components to return in the response. The default value is 10.}
 
-\item{NextToken}{If the previous call to
-\code{\link[=sagemaker_list_trial_components]{list_trial_components}} didn't return
-the full set of components, the call returns a token for getting the
-next set of components.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_trial_components]{list_trial_components}} didn't return the full set of components, the call returns a token for getting the next set of components.}
 }
 \description{
 Lists the trial components in your account. You can sort the list by trial component name or creation time. You can filter the list to show only components that were created in a specific time range. You can also filter on one of the following:

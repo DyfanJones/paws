@@ -9,8 +9,7 @@ firehose_untag_delivery_stream(DeliveryStreamName, TagKeys)
 \arguments{
 \item{DeliveryStreamName}{[required] The name of the Firehose stream.}
 
-\item{TagKeys}{[required] A list of tag keys. Each corresponding tag is removed from the delivery
-stream.}
+\item{TagKeys}{[required] A list of tag keys. Each corresponding tag is removed from the delivery stream.}
 }
 \description{
 Removes tags from the specified Firehose stream. Removed tags are deleted, and you can't recover them after this operation successfully completes.

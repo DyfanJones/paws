@@ -41,8 +41,7 @@ sagemakermetrics_batch_get_metrics <- function(MetricQueries) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/sagemakermetrics_batch_put_metrics/](https://www.paws-r-sdk.com/docs/sagemakermetrics_batch_put_metrics/) for full documentation.
 #'
-#' @param TrialComponentName &#91;required&#93; The name of the Trial Component to associate with the metrics. The Trial
-#' Component name must be entirely lowercase.
+#' @param TrialComponentName &#91;required&#93; The name of the Trial Component to associate with the metrics. The Trial Component name must be entirely lowercase.
 #' @param MetricData &#91;required&#93; A list of raw metric values to put.
 #'
 #' @keywords internal

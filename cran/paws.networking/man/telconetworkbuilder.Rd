@@ -53,11 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Web Services Telco Network Builder (TNB) is a network automation
-service that helps you deploy and manage telecom networks. AWS TNB helps
-you with the lifecycle management of your telecommunication network
-functions throughout planning, deployment, and post-deployment
-activities.
+Amazon Web Services Telco Network Builder (TNB) is a network automation service that helps you deploy and manage telecom networks. AWS TNB helps you with the lifecycle management of your telecommunication network functions throughout planning, deployment, and post-deployment activities.
 }
 \section{Service syntax}{
 

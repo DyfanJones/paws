@@ -14,16 +14,15 @@ gluedatabrew_create_dataset(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the dataset to be created. Valid characters are alphanumeric
-(A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
+\item{Name}{[required] The name of the dataset to be created. Valid characters are alphanumeric (A-Z, a-z, 0-9), hyphen (-), period (.), and space.}
 
-\item{Format}{The file format of a dataset that is created from an Amazon S3 file or
-folder.}
+\item{Format}{The file format of a dataset that is created from an Amazon S3 file or folder.}
 
-\item{Input}{[required]}
+\item{FormatOptions}{Represents a set of options that define the structure of either comma-separated value (CSV), Excel, or JSON input.}
 
-\item{PathOptions}{A set of options that defines how DataBrew interprets an Amazon S3 path
-of the dataset.}
+\item{Input}{[required] Represents information on how DataBrew can find data, in either the Glue Data Catalog or Amazon S3.}
+
+\item{PathOptions}{A set of options that defines how DataBrew interprets an Amazon S3 path of the dataset.}
 
 \item{Tags}{Metadata tags to apply to this dataset.}
 }

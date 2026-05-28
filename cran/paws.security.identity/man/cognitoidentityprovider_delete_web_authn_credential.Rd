@@ -8,9 +8,7 @@ currently signed-in user}
 cognitoidentityprovider_delete_web_authn_credential(AccessToken, CredentialId)
 }
 \arguments{
-\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 
 \item{CredentialId}{[required] The unique identifier of the passkey that you want to delete.}
 }

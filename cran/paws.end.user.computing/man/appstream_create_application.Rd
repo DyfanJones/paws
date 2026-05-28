@@ -19,11 +19,9 @@ appstream_create_application(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the application. This name is visible to users when display
-name is not specified.}
+\item{Name}{[required] The name of the application. This name is visible to users when display name is not specified.}
 
-\item{DisplayName}{The display name of the application. This name is visible to users in
-the application catalog.}
+\item{DisplayName}{The display name of the application. This name is visible to users in the application catalog.}
 
 \item{Description}{The description of the application.}
 
@@ -35,11 +33,9 @@ the application catalog.}
 
 \item{LaunchParameters}{The launch parameters of the application.}
 
-\item{Platforms}{[required] The platforms the application supports. WINDOWS_SERVER_2019,
-AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.}
+\item{Platforms}{[required] The platforms the application supports. WINDOWS_SERVER_2019, AMAZON_LINUX2 and UBUNTU_PRO_2404 are supported for Elastic fleets.}
 
-\item{InstanceFamilies}{[required] The instance families the application supports. Valid values are
-GENERAL_PURPOSE and GRAPHICS_G4.}
+\item{InstanceFamilies}{[required] The instance families the application supports. Valid values are GENERAL_PURPOSE and GRAPHICS_G4.}
 
 \item{AppBlockArn}{[required] The app block ARN to which the application should be associated}
 

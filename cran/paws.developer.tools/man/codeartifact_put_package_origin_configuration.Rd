@@ -15,37 +15,25 @@ codeartifact_put_package_origin_configuration(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the repository that contains the
-package.}
+\item{domain}{[required] The name of the domain that contains the repository that contains the package.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository that contains the package.}
 
 \item{format}{[required] A format that specifies the type of the package to be updated.}
 
-\item{namespace}{The namespace of the package to be updated. The package component that
-specifies its namespace depends on its type. For example:
+\item{namespace}{The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:
 \itemize{
 \item The namespace of a Maven package version is its \code{groupId}.
 \item The namespace of an npm or Swift package version is its \code{scope}.
 \item The namespace of a generic package is its \code{namespace}.
-\item Python, NuGet, Ruby, and Cargo package versions do not contain a
-corresponding component, package versions of those formats do not
-have a namespace.
+\item Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 }}
 
 \item{package}{[required] The name of the package to be updated.}
 
-\item{restrictions}{[required] A
-\href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html}{PackageOriginRestrictions}
-object that contains information about the \code{upstream} and \code{publish}
-package origin restrictions. The \code{upstream} restriction determines if
-new package versions can be ingested or retained from external
-connections or upstream repositories. The \code{publish} restriction
-determines if new package versions can be published directly to the
-repository.
+\item{restrictions}{[required] A \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html}{PackageOriginRestrictions} object that contains information about the \code{upstream} and \code{publish} package origin restrictions. The \code{upstream} restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The \code{publish} restriction determines if new package versions can be published directly to the repository.
 
 You must include both the desired \code{upstream} and \code{publish} restrictions.}
 }

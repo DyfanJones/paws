@@ -7,7 +7,7 @@
 wellarchitected_disassociate_profiles(WorkloadId, ProfileArns)
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
 
 \item{ProfileArns}{[required] The list of profile ARNs to disassociate from the workload.}
 }

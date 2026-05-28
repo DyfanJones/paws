@@ -20,22 +20,17 @@ sagemaker_list_artifacts(
 
 \item{ArtifactType}{A filter that returns only artifacts of the specified type.}
 
-\item{CreatedAfter}{A filter that returns only artifacts created on or after the specified
-time.}
+\item{CreatedAfter}{A filter that returns only artifacts created on or after the specified time.}
 
-\item{CreatedBefore}{A filter that returns only artifacts created on or before the specified
-time.}
+\item{CreatedBefore}{A filter that returns only artifacts created on or before the specified time.}
 
 \item{SortBy}{The property used to sort results. The default value is \code{CreationTime}.}
 
 \item{SortOrder}{The sort order. The default value is \code{Descending}.}
 
-\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_artifacts]{list_artifacts}}
-didn't return the full set of artifacts, the call returns a token for
-getting the next set of artifacts.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_artifacts]{list_artifacts}} didn't return the full set of artifacts, the call returns a token for getting the next set of artifacts.}
 
-\item{MaxResults}{The maximum number of artifacts to return in the response. The default
-value is 10.}
+\item{MaxResults}{The maximum number of artifacts to return in the response. The default value is 10.}
 }
 \description{
 Lists the artifacts in your account and their properties.

@@ -50,10 +50,7 @@ Operations section.
 \description{
 Backup
 
-Backup is a unified backup service designed to protect Amazon Web
-Services services and their associated data. Backup simplifies the
-creation, migration, restoration, and deletion of backups, while also
-providing reporting and auditing.
+Backup is a unified backup service designed to protect Amazon Web Services services and their associated data. Backup simplifies the creation, migration, restoration, and deletion of backups, while also providing reporting and auditing.
 }
 \section{Service syntax}{
 
@@ -142,6 +139,7 @@ providing reporting and auditing.
 \link[paws.storage:backup_get_backup_vault_access_policy]{get_backup_vault_access_policy} \tab Returns the access policy document that is associated with the named backup vault\cr
 \link[paws.storage:backup_get_backup_vault_notifications]{get_backup_vault_notifications} \tab Returns event notifications for the specified backup vault\cr
 \link[paws.storage:backup_get_legal_hold]{get_legal_hold} \tab This action returns details for a specified legal hold\cr
+\link[paws.storage:backup_get_pitr_malware_scan_results]{get_pitr_malware_scan_results} \tab Returns the malware scan results for a specified point in time within a continuous (point-in-time recovery) backup\cr
 \link[paws.storage:backup_get_recovery_point_index_details]{get_recovery_point_index_details} \tab This operation returns the metadata and details specific to the backup index associated with the specified recovery point\cr
 \link[paws.storage:backup_get_recovery_point_restore_metadata]{get_recovery_point_restore_metadata} \tab Returns a set of metadata key-value pairs that were used to create the backup\cr
 \link[paws.storage:backup_get_restore_job_metadata]{get_restore_job_metadata} \tab This request returns the metadata for the specified restore job\cr

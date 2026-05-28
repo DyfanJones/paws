@@ -2,7 +2,7 @@
 % Please edit documentation in R/datazone_operations.R
 \name{datazone_start_notebook_run}
 \alias{datazone_start_notebook_run}
-\title{Starts a notebook run in an Amazon DataZone domain}
+\title{Starts a notebook run in Amazon SageMaker Unified Studio}
 \usage{
 datazone_start_notebook_run(
   domainIdentifier,
@@ -19,8 +19,7 @@ datazone_start_notebook_run(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which the notebook run
-is started.}
+\item{domainIdentifier}{[required] The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is started.}
 
 \item{owningProjectIdentifier}{[required] The identifier of the project that owns the notebook run.}
 
@@ -28,30 +27,22 @@ is started.}
 
 \item{scheduleIdentifier}{The identifier of the schedule associated with the notebook run.}
 
-\item{computeConfiguration}{The compute configuration for the notebook run, including instance type
-and environment version.}
+\item{computeConfiguration}{The compute configuration for the notebook run, including instance type and environment version.}
 
-\item{networkConfiguration}{The network configuration for the notebook run, including network access
-type and optional VPC settings.}
+\item{networkConfiguration}{The network configuration for the notebook run, including network access type and optional VPC settings.}
 
-\item{timeoutConfiguration}{The timeout configuration for the notebook run. The default timeout is
-720 minutes (12 hours) and the maximum is 1440 minutes (24 hours).}
+\item{timeoutConfiguration}{The timeout configuration for the notebook run. The default timeout is 720 minutes (12 hours) and the maximum is 1440 minutes (24 hours).}
 
 \item{triggerSource}{The source that triggered the notebook run.}
 
-\item{metadata}{The metadata for the notebook run, specified as key-value pairs. You can
-specify up to 50 entries, with keys up to 128 characters and values up
-to 1024 characters.}
+\item{metadata}{The metadata for the notebook run, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.}
 
-\item{parameters}{The sensitive parameters for the notebook run, specified as key-value
-pairs. You can specify up to 50 entries, with keys up to 128 characters
-and values up to 1024 characters.}
+\item{parameters}{The sensitive parameters for the notebook run, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request. This field is automatically populated if not provided.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.}
 }
 \description{
-Starts a notebook run in an Amazon DataZone domain. A notebook run represents the execution of a Amazon DataZone notebook within a project. You can configure compute, network, timeout, and environment settings for the run.
+Starts a notebook run in Amazon SageMaker Unified Studio. A notebook run represents the execution of an \href{https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html}{Amazon SageMaker notebook} within a project. You can configure compute, network, timeout, and environment settings for the run.
 
 See \url{https://www.paws-r-sdk.com/docs/datazone_start_notebook_run/} for full documentation.
 }

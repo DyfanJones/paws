@@ -19,11 +19,9 @@ directconnect_create_direct_connect_gateway_association(
 
 \item{addAllowedPrefixesToDirectConnectGateway}{The Amazon VPC prefixes to advertise to the Direct Connect gateway
 
-This parameter is required when you create an association to a transit
-gateway.
+This parameter is required when you create an association to a transit gateway.
 
-For information about how to set the prefixes, see \href{https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes}{Allowed Prefixes}
-in the \emph{Direct Connect User Guide}.}
+For information about how to set the prefixes, see \href{https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes}{Allowed Prefixes} in the \emph{Direct Connect User Guide}.}
 
 \item{virtualGatewayId}{The ID of the virtual private gateway.}
 }

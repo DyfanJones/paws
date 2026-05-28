@@ -15,9 +15,7 @@ ivschat_update_logging_configuration(
 
 \item{name}{Logging-configuration name. The value does not need to be unique.}
 
-\item{destinationConfiguration}{A complex type that contains a destination configuration for where chat
-content will be logged. There can be only one type of destination
-(\code{cloudWatchLogs}, \code{firehose}, or \code{s3}) in a \code{destinationConfiguration}.}
+\item{destinationConfiguration}{A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (\code{cloudWatchLogs}, \code{firehose}, or \code{s3}) in a \code{destinationConfiguration}.}
 }
 \description{
 Updates a specified logging configuration.

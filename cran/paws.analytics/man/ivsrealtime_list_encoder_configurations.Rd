@@ -8,8 +8,7 @@ account, in the AWS region where the API request is processed}
 ivsrealtime_list_encoder_configurations(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{The first encoder configuration to retrieve. This is used for
-pagination; see the \code{nextToken} response field.}
+\item{nextToken}{The first encoder configuration to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of results to return. Default: 100.}
 }

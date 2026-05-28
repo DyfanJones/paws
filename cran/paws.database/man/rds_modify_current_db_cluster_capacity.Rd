@@ -13,8 +13,7 @@ rds_modify_current_db_cluster_capacity(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier for the cluster being modified. This parameter
-isn't case-sensitive.
+\item{DBClusterIdentifier}{[required] The DB cluster identifier for the cluster being modified. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
@@ -23,31 +22,23 @@ Constraints:
 
 \item{Capacity}{The DB cluster capacity.
 
-When you change the capacity of a paused Aurora Serverless v1 DB
-cluster, it automatically resumes.
+When you change the capacity of a paused Aurora Serverless v1 DB cluster, it automatically resumes.
 
 Constraints:
 \itemize{
-\item For Aurora MySQL, valid capacity values are \code{1}, \code{2}, \code{4}, \code{8},
-\code{16}, \code{32}, \code{64}, \code{128}, and \code{256}.
-\item For Aurora PostgreSQL, valid capacity values are \code{2}, \code{4}, \code{8},
-\code{16}, \code{32}, \code{64}, \code{192}, and \code{384}.
+\item For Aurora MySQL, valid capacity values are \code{1}, \code{2}, \code{4}, \code{8}, \code{16}, \code{32}, \code{64}, \code{128}, and \code{256}.
+\item For Aurora PostgreSQL, valid capacity values are \code{2}, \code{4}, \code{8}, \code{16}, \code{32}, \code{64}, \code{192}, and \code{384}.
 }}
 
-\item{SecondsBeforeTimeout}{The amount of time, in seconds, that Aurora Serverless v1 tries to find
-a scaling point to perform seamless scaling before enforcing the timeout
-action. The default is 300.
+\item{SecondsBeforeTimeout}{The amount of time, in seconds, that Aurora Serverless v1 tries to find a scaling point to perform seamless scaling before enforcing the timeout action. The default is 300.
 
 Specify a value between 10 and 600 seconds.}
 
-\item{TimeoutAction}{The action to take when the timeout is reached, either
-\code{ForceApplyCapacityChange} or \code{RollbackCapacityChange}.
+\item{TimeoutAction}{The action to take when the timeout is reached, either \code{ForceApplyCapacityChange} or \code{RollbackCapacityChange}.
 
-\code{ForceApplyCapacityChange}, the default, sets the capacity to the
-specified value as soon as possible.
+\code{ForceApplyCapacityChange}, the default, sets the capacity to the specified value as soon as possible.
 
-\code{RollbackCapacityChange} ignores the capacity change if a scaling point
-isn't found in the timeout period.}
+\code{RollbackCapacityChange} ignores the capacity change if a scaling point isn't found in the timeout period.}
 }
 \description{
 Set the capacity of an Aurora Serverless v1 DB cluster to a specific value.

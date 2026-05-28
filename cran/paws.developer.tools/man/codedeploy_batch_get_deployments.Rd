@@ -7,8 +7,7 @@
 codedeploy_batch_get_deployments(deploymentIds)
 }
 \arguments{
-\item{deploymentIds}{[required] A list of deployment IDs, separated by spaces. The maximum number of
-deployment IDs you can specify is 25.}
+\item{deploymentIds}{[required] A list of deployment IDs, separated by spaces. The maximum number of deployment IDs you can specify is 25.}
 }
 \description{
 Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.

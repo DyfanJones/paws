@@ -8,8 +8,7 @@ type}
 organizations_list_policies(Filter, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{Filter}{[required] Specifies the type of policy that you want to include in the response.
-You must specify one of the following values:
+\item{Filter}{[required] Specifies the type of policy that you want to include in the response. You must specify one of the following values:
 \itemize{
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scps.html}{SERVICE_CONTROL_POLICY}
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_rcps.html}{RESOURCE_CONTROL_POLICY}
@@ -26,15 +25,9 @@ You must specify one of the following values:
 \item \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_network_security_director.html}{NETWORK_SECURITY_DIRECTOR_POLICY}
 }}
 
-\item{NextToken}{The parameter for receiving additional results if you receive a
-\code{NextToken} response in a previous request. A \code{NextToken} response
-indicates that more output is available. Set this parameter to the value
-of the previous call's \code{NextToken} response to indicate where the output
-should continue from.}
+\item{NextToken}{The parameter for receiving additional results if you receive a \code{NextToken} response in a previous request. A \code{NextToken} response indicates that more output is available. Set this parameter to the value of the previous call's \code{NextToken} response to indicate where the output should continue from.}
 
-\item{MaxResults}{The maximum number of items to return in the response. If more results
-exist than the specified \code{MaxResults} value, a token is included in the
-response so that you can retrieve the remaining results.}
+\item{MaxResults}{The maximum number of items to return in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that you can retrieve the remaining results.}
 }
 \description{
 Retrieves the list of all policies in an organization of a specified type.

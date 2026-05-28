@@ -16,20 +16,15 @@ codeartifact_list_repositories_in_domain(
 \arguments{
 \item{domain}{[required] The name of the domain that contains the returned list of repositories.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{administratorAccount}{Filter the list of repositories to only include those that are managed
-by the Amazon Web Services account ID.}
+\item{administratorAccount}{Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.}
 
-\item{repositoryPrefix}{A prefix used to filter returned repositories. Only repositories with
-names that start with \code{repositoryPrefix} are returned.}
+\item{repositoryPrefix}{A prefix used to filter returned repositories. Only repositories with names that start with \code{repositoryPrefix} are returned.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Returns a list of \href{https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html}{RepositorySummary} objects. Each \code{RepositorySummary} contains information about a repository in the specified domain and that matches the input parameters.

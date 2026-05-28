@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS
-Resource
+Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS Resource
 }
 \section{Service syntax}{
 

@@ -17,12 +17,9 @@ apigateway_create_domain_name_access_association(
 
 \item{accessAssociationSourceType}{[required] The type of the domain name access association source.}
 
-\item{accessAssociationSource}{[required] The identifier of the domain name access association source. For a VPCE,
-the value is the VPC endpoint ID.}
+\item{accessAssociationSource}{[required] The identifier of the domain name access association source. For a VPCE, the value is the VPC endpoint ID.}
 
-\item{tags}{The key-value map of strings. The valid character set is
-[a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not
-start with \verb{aws:}. The tag value can be up to 256 characters.}
+\item{tags}{The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with \verb{aws:}. The tag value can be up to 256 characters.}
 }
 \description{
 Creates a domain name access association resource between an access association source and a private custom domain name.

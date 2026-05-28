@@ -7,8 +7,7 @@
 bedrockagentcore_delete_event(memoryId, sessionId, eventId, actorId)
 }
 \arguments{
-\item{memoryId}{[required] The identifier of the AgentCore Memory resource from which to delete the
-event.}
+\item{memoryId}{[required] The identifier of the AgentCore Memory resource from which to delete the event.}
 
 \item{sessionId}{[required] The identifier of the session containing the event to delete.}
 

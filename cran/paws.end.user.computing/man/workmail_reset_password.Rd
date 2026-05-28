@@ -7,8 +7,7 @@
 workmail_reset_password(OrganizationId, UserId, Password)
 }
 \arguments{
-\item{OrganizationId}{[required] The identifier of the organization that contains the user for which the
-password is reset.}
+\item{OrganizationId}{[required] The identifier of the organization that contains the user for which the password is reset.}
 
 \item{UserId}{[required] The identifier of the user for whom the password is reset.}
 

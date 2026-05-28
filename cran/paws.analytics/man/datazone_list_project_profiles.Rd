@@ -22,18 +22,9 @@ datazone_list_project_profiles(
 
 \item{sortOrder}{Specifies the sort order of the project profiles.}
 
-\item{nextToken}{When the number of project profiles is greater than the default value
-for the MaxResults parameter, or if you explicitly specify a value for
-MaxResults that is less than the number of project profiles, the
-response includes a pagination token named NextToken. You can specify
-this NextToken value in a subsequent call to ListProjectProfiles to list
-the next set of project profiles.}
+\item{nextToken}{When the number of project profiles is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of project profiles, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListProjectProfiles to list the next set of project profiles.}
 
-\item{maxResults}{The maximum number of project profiles to return in a single call to
-ListProjectProfiles. When the number of project profiles to be listed is
-greater than the value of MaxResults, the response contains a NextToken
-value that you can use in a subsequent call to ListProjectProfiles to
-list the next set of project profiles.}
+\item{maxResults}{The maximum number of project profiles to return in a single call to ListProjectProfiles. When the number of project profiles to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListProjectProfiles to list the next set of project profiles.}
 }
 \description{
 Lists project profiles.

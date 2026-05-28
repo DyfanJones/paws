@@ -7,8 +7,7 @@
 securityhub_get_configuration_policy(Identifier)
 }
 \arguments{
-\item{Identifier}{[required] The Amazon Resource Name (ARN) or universally unique identifier (UUID)
-of the configuration policy.}
+\item{Identifier}{[required] The Amazon Resource Name (ARN) or universally unique identifier (UUID) of the configuration policy.}
 }
 \description{
 Provides information about a configuration policy. Only the Security Hub CSPM delegated administrator can invoke this operation from the home Region.

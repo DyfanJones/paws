@@ -13,8 +13,7 @@ workspaces_describe_ip_groups(
 \arguments{
 \item{GroupIds}{The identifiers of one or more IP access control groups.}
 
-\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated,
-provide this token to receive the next set of results.}
+\item{NextToken}{If you received a \code{NextToken} from a previous call that was paginated, provide this token to receive the next set of results.}
 
 \item{MaxResults}{The maximum number of items to return.}
 }

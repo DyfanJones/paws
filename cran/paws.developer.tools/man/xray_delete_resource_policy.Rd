@@ -9,10 +9,7 @@ xray_delete_resource_policy(PolicyName, PolicyRevisionId = NULL)
 \arguments{
 \item{PolicyName}{[required] The name of the resource policy to delete.}
 
-\item{PolicyRevisionId}{Specifies a specific policy revision to delete. Provide a
-\code{PolicyRevisionId} to ensure an atomic delete operation. If the provided
-revision id does not match the latest policy revision id, an
-\code{InvalidPolicyRevisionIdException} exception is returned.}
+\item{PolicyRevisionId}{Specifies a specific policy revision to delete. Provide a \code{PolicyRevisionId} to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an \code{InvalidPolicyRevisionIdException} exception is returned.}
 }
 \description{
 Deletes a resource policy from the target Amazon Web Services account.

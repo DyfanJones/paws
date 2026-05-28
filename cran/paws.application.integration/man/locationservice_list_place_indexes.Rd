@@ -7,13 +7,11 @@
 locationservice_list_place_indexes(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{An optional limit for the maximum number of results returned in a single
-call.
+\item{MaxResults}{An optional limit for the maximum number of results returned in a single call.
 
 Default value: \code{100}}
 
-\item{NextToken}{The pagination token specifying which page of results to return in the
-response. If no token is provided, the default page is the first page.
+\item{NextToken}{The pagination token specifying which page of results to return in the response. If no token is provided, the default page is the first page.
 
 Default value: \code{null}}
 }

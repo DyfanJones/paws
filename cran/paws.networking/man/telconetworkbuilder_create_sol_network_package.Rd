@@ -7,10 +7,7 @@
 telconetworkbuilder_create_sol_network_package(tags = NULL)
 }
 \arguments{
-\item{tags}{A tag is a label that you assign to an Amazon Web Services resource.
-Each tag consists of a key and an optional value. You can use tags to
-search and filter your resources or track your Amazon Web Services
-costs.}
+\item{tags}{A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value. You can use tags to search and filter your resources or track your Amazon Web Services costs.}
 }
 \description{
 Creates a network package.

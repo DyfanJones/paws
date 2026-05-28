@@ -7,8 +7,7 @@
 servicediscovery_list_tags_for_resource(ResourceARN)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the resource that you want to retrieve
-tags for.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.}
 }
 \description{
 Lists tags for the specified resource.

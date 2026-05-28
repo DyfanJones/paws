@@ -8,8 +8,7 @@ registry}
 ecr_register_pull_time_update_exclusion(principalArn)
 }
 \arguments{
-\item{principalArn}{[required] The ARN of the IAM principal to exclude from having image pull times
-recorded.}
+\item{principalArn}{[required] The ARN of the IAM principal to exclude from having image pull times recorded.}
 }
 \description{
 Adds an IAM principal to the pull time update exclusion list for a registry. Amazon ECR will not record the pull time if an excluded principal pulls an image.

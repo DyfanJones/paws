@@ -12,9 +12,7 @@ opensearchservice_describe_insight_details(
 )
 }
 \arguments{
-\item{Entity}{[required] The entity for which to retrieve insight details. Specifies the type and
-value of the entity, such as a domain name or Amazon Web Services
-account ID.}
+\item{Entity}{[required] The entity for which to retrieve insight details. Specifies the type and value of the entity, such as a domain name or Amazon Web Services account ID.}
 
 \item{InsightId}{[required] The unique identifier of the insight to describe.}
 

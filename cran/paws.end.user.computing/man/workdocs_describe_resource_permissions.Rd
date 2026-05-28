@@ -13,8 +13,7 @@ workdocs_describe_resource_permissions(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{ResourceId}{[required] The ID of the resource.}
 
@@ -22,8 +21,7 @@ Services administrator credentials to access the API.}
 
 \item{Limit}{The maximum number of items to return with this call.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call)}
 }
 \description{
 Describes the permissions of a specified resource.

@@ -18,8 +18,7 @@ memorydb_create_snapshot(
 
 \item{KmsKeyId}{The ID of the KMS key used to encrypt the snapshot.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Creates a copy of an entire cluster at a specific moment in time.

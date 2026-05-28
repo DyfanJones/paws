@@ -7,8 +7,7 @@
 textract_list_tags_for_resource(ResourceARN)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) that specifies the resource to list tags
-for.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) that specifies the resource to list tags for.}
 }
 \description{
 Lists all tags for an Amazon Textract resource.

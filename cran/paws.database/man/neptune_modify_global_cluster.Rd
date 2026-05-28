@@ -13,14 +13,11 @@ neptune_modify_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The DB cluster identifier for the global cluster being modified. This
-parameter is not case-sensitive.
+\item{GlobalClusterIdentifier}{[required] The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.
 
-Constraints: Must match the identifier of an existing global database
-cluster.}
+Constraints: Must match the identifier of an existing global database cluster.}
 
-\item{NewGlobalClusterIdentifier}{A new cluster identifier to assign to the global database. This value is
-stored as a lowercase string.
+\item{NewGlobalClusterIdentifier}{A new cluster identifier to assign to the global database. This value is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -31,27 +28,17 @@ Constraints:
 
 Example: \code{my-cluster2}}
 
-\item{DeletionProtection}{Indicates whether the global database has deletion protection enabled.
-The global database cannot be deleted when deletion protection is
-enabled.}
+\item{DeletionProtection}{Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.}
 
-\item{EngineVersion}{The version number of the database engine to which you want to upgrade.
-Changing this parameter will result in an outage. The change is applied
-during the next maintenance window unless \code{ApplyImmediately} is enabled.
+\item{EngineVersion}{The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless \code{ApplyImmediately} is enabled.
 
-To list all of the available Neptune engine versions, use the following
-command:}
+To list all of the available Neptune engine versions, use the following command:}
 
 \item{AllowMajorVersionUpgrade}{A value that indicates whether major version upgrades are allowed.
 
-Constraints: You must allow major version upgrades if you specify a
-value for the \code{EngineVersion} parameter that is a different major
-version than the DB cluster's current version.
+Constraints: You must allow major version upgrades if you specify a value for the \code{EngineVersion} parameter that is a different major version than the DB cluster's current version.
 
-If you upgrade the major version of a global database, the cluster and
-DB instance parameter groups are set to the default parameter groups for
-the new version, so you will need to apply any custom parameter groups
-after completing the upgrade.}
+If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.}
 }
 \description{
 Modify a setting for an Amazon Neptune global cluster. You can change one or more database configuration parameters by specifying these parameters and their new values in the request.

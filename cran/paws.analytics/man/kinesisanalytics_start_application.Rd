@@ -10,10 +10,7 @@ kinesisanalytics_start_application(ApplicationName, InputConfigurations)
 \arguments{
 \item{ApplicationName}{[required] Name of the application.}
 
-\item{InputConfigurations}{[required] Identifies the specific input, by ID, that the application starts
-consuming. Amazon Kinesis Analytics starts reading the streaming source
-associated with the input. You can also specify where in the streaming
-source you want Amazon Kinesis Analytics to start reading.}
+\item{InputConfigurations}{[required] Identifies the specific input, by ID, that the application starts consuming. Amazon Kinesis Analytics starts reading the streaming source associated with the input. You can also specify where in the streaming source you want Amazon Kinesis Analytics to start reading.}
 }
 \description{
 This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see Amazon Kinesis Data Analytics API V2 Documentation.

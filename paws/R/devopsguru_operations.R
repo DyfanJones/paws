@@ -6,30 +6,16 @@ NULL
 #' Adds a notification channel to DevOps Guru
 #'
 #' @description
-#' Adds a notification channel to DevOps Guru. A notification channel is
-#' used to notify you about important DevOps Guru events, such as when an
-#' insight is generated.
+#' Adds a notification channel to DevOps Guru. A notification channel is used to notify you about important DevOps Guru events, such as when an insight is generated.
 #' 
-#' If you use an Amazon SNS topic in another account, you must attach a
-#' policy to it that grants DevOps Guru permission to send it
-#' notifications. DevOps Guru adds the required policy on your behalf to
-#' send notifications using Amazon SNS in your account. DevOps Guru only
-#' supports standard SNS topics. For more information, see [Permissions for
-#' Amazon SNS
-#' topics](https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html).
+#' If you use an Amazon SNS topic in another account, you must attach a policy to it that grants DevOps Guru permission to send it notifications. DevOps Guru adds the required policy on your behalf to send notifications using Amazon SNS in your account. DevOps Guru only supports standard SNS topics. For more information, see [Permissions for Amazon SNS topics](https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-required-permissions.html).
 #' 
-#' If you use an Amazon SNS topic that is encrypted by an Amazon Web
-#' Services Key Management Service customer-managed key (CMK), then you
-#' must add permissions to the CMK. For more information, see [Permissions
-#' for Amazon Web Services KMS–encrypted Amazon SNS
-#' topics](https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html).
+#' If you use an Amazon SNS topic that is encrypted by an Amazon Web Services Key Management Service customer-managed key (CMK), then you must add permissions to the CMK. For more information, see [Permissions for Amazon Web Services KMS–encrypted Amazon SNS topics](https://docs.aws.amazon.com/devops-guru/latest/userguide/sns-kms-permissions.html).
 #'
 #' @usage
 #' devopsguru_add_notification_channel(Config)
 #'
-#' @param Config &#91;required&#93; A `NotificationChannelConfig` object that specifies what type of
-#' notification channel to add. The one supported notification channel is
-#' Amazon Simple Notification Service (Amazon SNS).
+#' @param Config &#91;required&#93; A `NotificationChannelConfig` object that specifies what type of notification channel to add. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
 #'
 #' @return
 #' A list with the following syntax:
@@ -86,8 +72,7 @@ devopsguru_add_notification_channel <- function(Config) {
 #' recommendations
 #'
 #' @description
-#' Deletes the insight along with the associated anomalies, events and
-#' recommendations.
+#' Deletes the insight along with the associated anomalies, events and recommendations.
 #'
 #' @usage
 #' devopsguru_delete_insight(Id)
@@ -133,10 +118,7 @@ devopsguru_delete_insight <- function(Id) {
 #' Web Services account
 #'
 #' @description
-#' Returns the number of open reactive insights, the number of open
-#' proactive insights, and the number of metrics analyzed in your Amazon
-#' Web Services account. Use these numbers to gauge the health of
-#' operations in your Amazon Web Services account.
+#' Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account.
 #'
 #' @usage
 #' devopsguru_describe_account_health()
@@ -190,21 +172,13 @@ devopsguru_describe_account_health <- function() {
 #' reactive insights
 #'
 #' @description
-#' For the time range passed in, returns the number of open reactive
-#' insight that were created, the number of open proactive insights that
-#' were created, and the Mean Time to Recover (MTTR) for all closed
-#' reactive insights.
+#' For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights.
 #'
 #' @usage
 #' devopsguru_describe_account_overview(FromTime, ToTime)
 #'
-#' @param FromTime &#91;required&#93; The start of the time range passed in. The start time granularity is at
-#' the day level. The floor of the start time is used. Returned information
-#' occurred after this day.
-#' @param ToTime The end of the time range passed in. The start time granularity is at
-#' the day level. The floor of the start time is used. Returned information
-#' occurred before this day. If this is not specified, then the current day
-#' is used.
+#' @param FromTime &#91;required&#93; The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.
+#' @param ToTime The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
 #'
 #' @return
 #' A list with the following syntax:
@@ -582,11 +556,7 @@ devopsguru_describe_anomaly <- function(Id, AccountId = NULL) {
 #' DevOps Guru as Consumer via EventBridge
 #'
 #' @description
-#' Returns the integration status of services that are integrated with
-#' DevOps Guru as Consumer via EventBridge. The one service that can be
-#' integrated with DevOps Guru is Amazon CodeGuru Profiler, which can
-#' produce proactive recommendations which can be stored and viewed in
-#' DevOps Guru.
+#' Returns the integration status of services that are integrated with DevOps Guru as Consumer via EventBridge. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.
 #'
 #' @usage
 #' devopsguru_describe_event_sources_config()
@@ -638,8 +608,7 @@ devopsguru_describe_event_sources_config <- function() {
 #' Services account and Region
 #'
 #' @description
-#' Returns the most recent feedback submitted in the current Amazon Web
-#' Services account and Region.
+#' Returns the most recent feedback submitted in the current Amazon Web Services account and Region.
 #'
 #' @usage
 #' devopsguru_describe_feedback(InsightId)
@@ -812,8 +781,7 @@ devopsguru_describe_insight <- function(Id, AccountId = NULL) {
 #' analyzed in last hour
 #'
 #' @description
-#' Returns active insights, predictive insights, and resource hours
-#' analyzed in last hour.
+#' Returns active insights, predictive insights, and resource hours analyzed in last hour.
 #'
 #' @usage
 #' devopsguru_describe_organization_health(AccountIds,
@@ -873,21 +841,14 @@ devopsguru_describe_organization_health <- function(AccountIds = NULL, Organizat
 #' specified time range
 #'
 #' @description
-#' Returns an overview of your organization's history based on the
-#' specified time range. The overview includes the total reactive and
-#' proactive insights.
+#' Returns an overview of your organization's history based on the specified time range. The overview includes the total reactive and proactive insights.
 #'
 #' @usage
 #' devopsguru_describe_organization_overview(FromTime, ToTime, AccountIds,
 #'   OrganizationalUnitIds)
 #'
-#' @param FromTime &#91;required&#93; The start of the time range passed in. The start time granularity is at
-#' the day level. The floor of the start time is used. Returned information
-#' occurred after this day.
-#' @param ToTime The end of the time range passed in. The start time granularity is at
-#' the day level. The floor of the start time is used. Returned information
-#' occurred before this day. If this is not specified, then the current day
-#' is used.
+#' @param FromTime &#91;required&#93; The start of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred after this day.
+#' @param ToTime The end of the time range passed in. The start time granularity is at the day level. The floor of the start time is used. Returned information occurred before this day. If this is not specified, then the current day is used.
 #' @param AccountIds The ID of the Amazon Web Services account.
 #' @param OrganizationalUnitIds The ID of the organizational unit.
 #'
@@ -945,30 +906,18 @@ devopsguru_describe_organization_overview <- function(FromTime, ToTime = NULL, A
 #' Provides an overview of your system's health
 #'
 #' @description
-#' Provides an overview of your system's health. If additional member
-#' accounts are part of your organization, you can filter those accounts
-#' using the `AccountIds` field.
+#' Provides an overview of your system's health. If additional member accounts are part of your organization, you can filter those accounts using the `AccountIds` field.
 #'
 #' @usage
 #' devopsguru_describe_organization_resource_collection_health(
 #'   OrganizationResourceCollectionType, AccountIds, OrganizationalUnitIds,
 #'   NextToken, MaxResults)
 #'
-#' @param OrganizationResourceCollectionType &#91;required&#93; An Amazon Web Services resource collection type. This type specifies how
-#' analyzed Amazon Web Services resources are defined. The two types of
-#' Amazon Web Services resource collections supported are Amazon Web
-#' Services CloudFormation stacks and Amazon Web Services resources that
-#' contain the same Amazon Web Services tag. DevOps Guru can be configured
-#' to analyze the Amazon Web Services resources that are defined in the
-#' stacks or that are tagged using the same tag *key*. You can specify up
-#' to 500 Amazon Web Services CloudFormation stacks.
+#' @param OrganizationResourceCollectionType &#91;required&#93; An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks.
 #' @param AccountIds The ID of the Amazon Web Services account.
 #' @param OrganizationalUnitIds The ID of the organizational unit.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1064,31 +1013,14 @@ devopsguru_describe_organization_resource_collection_health <- function(Organiza
 #' collections in your account
 #'
 #' @description
-#' Returns the number of open proactive insights, open reactive insights,
-#' and the Mean Time to Recover (MTTR) for all closed insights in resource
-#' collections in your account. You specify the type of Amazon Web Services
-#' resources collection. The two types of Amazon Web Services resource
-#' collections supported are Amazon Web Services CloudFormation stacks and
-#' Amazon Web Services resources that contain the same Amazon Web Services
-#' tag. DevOps Guru can be configured to analyze the Amazon Web Services
-#' resources that are defined in the stacks or that are tagged using the
-#' same tag *key*. You can specify up to 500 Amazon Web Services
-#' CloudFormation stacks.
+#' Returns the number of open proactive insights, open reactive insights, and the Mean Time to Recover (MTTR) for all closed insights in resource collections in your account. You specify the type of Amazon Web Services resources collection. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks.
 #'
 #' @usage
 #' devopsguru_describe_resource_collection_health(ResourceCollectionType,
 #'   NextToken)
 #'
-#' @param ResourceCollectionType &#91;required&#93; An Amazon Web Services resource collection type. This type specifies how
-#' analyzed Amazon Web Services resources are defined. The two types of
-#' Amazon Web Services resource collections supported are Amazon Web
-#' Services CloudFormation stacks and Amazon Web Services resources that
-#' contain the same Amazon Web Services tag. DevOps Guru can be configured
-#' to analyze the Amazon Web Services resources that are defined in the
-#' stacks or that are tagged using the same tag *key*. You can specify up
-#' to 500 Amazon Web Services CloudFormation stacks.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param ResourceCollectionType &#91;required&#93; An Amazon Web Services resource collection type. This type specifies how analyzed Amazon Web Services resources are defined. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1167,10 +1099,7 @@ devopsguru_describe_resource_collection_health <- function(ResourceCollectionTyp
 #' DevOps Guru
 #'
 #' @description
-#' Returns the integration status of services that are integrated with
-#' DevOps Guru. The one service that can be integrated with DevOps Guru is
-#' Amazon Web Services Systems Manager, which can be used to create an
-#' OpsItem for each generated insight.
+#' Returns the integration status of services that are integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight.
 #'
 #' @usage
 #' devopsguru_describe_service_integration()
@@ -1230,18 +1159,12 @@ devopsguru_describe_service_integration <- function() {
 #' Amazon Web Services resources
 #'
 #' @description
-#' Returns an estimate of the monthly cost for DevOps Guru to analyze your
-#' Amazon Web Services resources. For more information, see [Estimate your
-#' Amazon DevOps Guru
-#' costs](https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html)
-#' and [Amazon DevOps Guru
-#' pricing](https://aws.amazon.com/devops-guru/pricing/).
+#' Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web Services resources. For more information, see [Estimate your Amazon DevOps Guru costs](https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html) and [Amazon DevOps Guru pricing](https://aws.amazon.com/devops-guru/pricing/).
 #'
 #' @usage
 #' devopsguru_get_cost_estimation(NextToken)
 #'
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1320,23 +1243,13 @@ devopsguru_get_cost_estimation <- function(NextToken = NULL) {
 #' resource collection type
 #'
 #' @description
-#' Returns lists Amazon Web Services resources that are of the specified
-#' resource collection type. The two types of Amazon Web Services resource
-#' collections supported are Amazon Web Services CloudFormation stacks and
-#' Amazon Web Services resources that contain the same Amazon Web Services
-#' tag. DevOps Guru can be configured to analyze the Amazon Web Services
-#' resources that are defined in the stacks or that are tagged using the
-#' same tag *key*. You can specify up to 500 Amazon Web Services
-#' CloudFormation stacks.
+#' Returns lists Amazon Web Services resources that are of the specified resource collection type. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks.
 #'
 #' @usage
 #' devopsguru_get_resource_collection(ResourceCollectionType, NextToken)
 #'
-#' @param ResourceCollectionType &#91;required&#93; The type of Amazon Web Services resource collections to return. The one
-#' valid value is `CLOUD_FORMATION` for Amazon Web Services CloudFormation
-#' stacks.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param ResourceCollectionType &#91;required&#93; The type of Amazon Web Services resource collections to return. The one valid value is `CLOUD_FORMATION` for Amazon Web Services CloudFormation stacks.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1397,21 +1310,16 @@ devopsguru_get_resource_collection <- function(ResourceCollectionType, NextToken
 #' specify using its ID
 #'
 #' @description
-#' Returns a list of the anomalies that belong to an insight that you
-#' specify using its ID.
+#' Returns a list of the anomalies that belong to an insight that you specify using its ID.
 #'
 #' @usage
 #' devopsguru_list_anomalies_for_insight(InsightId, StartTimeRange,
 #'   MaxResults, NextToken, AccountId, Filters)
 #'
 #' @param InsightId &#91;required&#93; The ID of the insight. The returned anomalies belong to this insight.
-#' @param StartTimeRange A time range used to specify when the requested anomalies started. All
-#' returned anomalies started during this time range.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param StartTimeRange A time range used to specify when the requested anomalies started. All returned anomalies started during this time range.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param AccountId The ID of the Amazon Web Services account.
 #' @param Filters Specifies one or more service names that are used to list anomalies.
 #'
@@ -1761,11 +1669,8 @@ devopsguru_list_anomalies_for_insight <- function(InsightId, StartTimeRange = NU
 #' devopsguru_list_anomalous_log_groups(InsightId, MaxResults, NextToken)
 #'
 #' @param InsightId &#91;required&#93; The ID of the insight containing the log groups.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1842,19 +1747,14 @@ devopsguru_list_anomalous_log_groups <- function(InsightId, MaxResults = NULL, N
 #' by DevOps Guru
 #'
 #' @description
-#' Returns a list of the events emitted by the resources that are evaluated
-#' by DevOps Guru. You can use filters to specify which events are
-#' returned.
+#' Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned.
 #'
 #' @usage
 #' devopsguru_list_events(Filters, MaxResults, NextToken, AccountId)
 #'
 #' @param Filters &#91;required&#93; A `ListEventsFilters` object used to specify which events to return.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param AccountId The ID of the Amazon Web Services account.
 #'
 #' @return
@@ -1964,20 +1864,14 @@ devopsguru_list_events <- function(Filters, MaxResults = NULL, NextToken = NULL,
 #' Returns a list of insights in your Amazon Web Services account
 #'
 #' @description
-#' Returns a list of insights in your Amazon Web Services account. You can
-#' specify which insights are returned by their start time and status
-#' (`ONGOING`, `CLOSED`, or `ANY`).
+#' Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time and status (`ONGOING`, `CLOSED`, or `ANY`).
 #'
 #' @usage
 #' devopsguru_list_insights(StatusFilter, MaxResults, NextToken)
 #'
-#' @param StatusFilter &#91;required&#93; A filter used to filter the returned insights by their status. You can
-#' specify one status filter.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param StatusFilter &#91;required&#93; A filter used to filter the returned insights by their status. You can specify one status filter.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2136,19 +2030,14 @@ devopsguru_list_insights <- function(StatusFilter, MaxResults = NULL, NextToken 
 #' by DevOps Guru
 #'
 #' @description
-#' Returns the list of all log groups that are being monitored and tagged
-#' by DevOps Guru.
+#' Returns the list of all log groups that are being monitored and tagged by DevOps Guru.
 #'
 #' @usage
 #' devopsguru_list_monitored_resources(Filters, MaxResults, NextToken)
 #'
-#' @param Filters Filters to determine which monitored resources you want to retrieve. You
-#' can filter by resource type or resource permission status.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param Filters Filters to determine which monitored resources you want to retrieve. You can filter by resource type or resource permission status.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2224,17 +2113,12 @@ devopsguru_list_monitored_resources <- function(Filters = NULL, MaxResults = NUL
 #' Returns a list of notification channels configured for DevOps Guru
 #'
 #' @description
-#' Returns a list of notification channels configured for DevOps Guru. Each
-#' notification channel is used to notify you when DevOps Guru generates an
-#' insight that contains information about how to improve your operations.
-#' The one supported notification channel is Amazon Simple Notification
-#' Service (Amazon SNS).
+#' Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS).
 #'
 #' @usage
 #' devopsguru_list_notification_channels(NextToken)
 #'
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2302,14 +2186,11 @@ devopsguru_list_notification_channels <- function(NextToken = NULL) {
 #' devopsguru_list_organization_insights(StatusFilter, MaxResults,
 #'   AccountIds, OrganizationalUnitIds, NextToken)
 #'
-#' @param StatusFilter &#91;required&#93; 
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param StatusFilter &#91;required&#93; A filter used by [`list_insights`][devopsguru_list_insights] to specify which insights to return.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param AccountIds The ID of the Amazon Web Services account.
 #' @param OrganizationalUnitIds The ID of the organizational unit.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2471,16 +2352,13 @@ devopsguru_list_organization_insights <- function(StatusFilter, MaxResults = NUL
 #' Returns a list of a specified insight's recommendations
 #'
 #' @description
-#' Returns a list of a specified insight's recommendations. Each
-#' recommendation includes a list of related metrics and a list of related
-#' events.
+#' Returns a list of a specified insight's recommendations. Each recommendation includes a list of related metrics and a list of related events.
 #'
 #' @usage
 #' devopsguru_list_recommendations(InsightId, NextToken, Locale, AccountId)
 #'
 #' @param InsightId &#91;required&#93; The ID of the requested insight.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param Locale A locale that specifies the language to use for recommendations.
 #' @param AccountId The ID of the Amazon Web Services account.
 #'
@@ -2575,8 +2453,7 @@ devopsguru_list_recommendations <- function(InsightId, NextToken = NULL, Locale 
 #' @usage
 #' devopsguru_put_feedback(InsightFeedback)
 #'
-#' @param InsightFeedback The feedback from customers is about the recommendations in this
-#' insight.
+#' @param InsightFeedback The feedback from customers is about the recommendations in this insight.
 #'
 #' @return
 #' An empty list.
@@ -2618,9 +2495,7 @@ devopsguru_put_feedback <- function(InsightFeedback = NULL) {
 #' Removes a notification channel from DevOps Guru
 #'
 #' @description
-#' Removes a notification channel from DevOps Guru. A notification channel
-#' is used to notify you when DevOps Guru generates an insight that
-#' contains information about how to improve your operations.
+#' Removes a notification channel from DevOps Guru. A notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations.
 #'
 #' @usage
 #' devopsguru_remove_notification_channel(Id)
@@ -2664,28 +2539,18 @@ devopsguru_remove_notification_channel <- function(Id) {
 #' Returns a list of insights in your Amazon Web Services account
 #'
 #' @description
-#' Returns a list of insights in your Amazon Web Services account. You can
-#' specify which insights are returned by their start time, one or more
-#' statuses (`ONGOING` or `CLOSED`), one or more severities (`LOW`,
-#' `MEDIUM`, and `HIGH`), and type (`REACTIVE` or `PROACTIVE`).
+#' Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (`ONGOING` or `CLOSED`), one or more severities (`LOW`, `MEDIUM`, and `HIGH`), and type (`REACTIVE` or `PROACTIVE`).
 #' 
-#' Use the `Filters` parameter to specify status and severity search
-#' parameters. Use the `Type` parameter to specify `REACTIVE` or
-#' `PROACTIVE` in your search.
+#' Use the `Filters` parameter to specify status and severity search parameters. Use the `Type` parameter to specify `REACTIVE` or `PROACTIVE` in your search.
 #'
 #' @usage
 #' devopsguru_search_insights(StartTimeRange, Filters, MaxResults,
 #'   NextToken, Type)
 #'
-#' @param StartTimeRange &#91;required&#93; The start of the time range passed in. Returned insights occurred after
-#' this time.
-#' @param Filters A `SearchInsightsFilters` object that is used to set the severity and
-#' status filters on your insight search.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param StartTimeRange &#91;required&#93; The start of the time range passed in. Returned insights occurred after this time.
+#' @param Filters A `SearchInsightsFilters` object that is used to set the severity and status filters on your insight search.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param Type &#91;required&#93; The type of insights you are searching for (`REACTIVE` or `PROACTIVE`).
 #'
 #' @return
@@ -2854,28 +2719,19 @@ devopsguru_search_insights <- function(StartTimeRange, Filters = NULL, MaxResult
 #' Returns a list of insights in your organization
 #'
 #' @description
-#' Returns a list of insights in your organization. You can specify which
-#' insights are returned by their start time, one or more statuses
-#' (`ONGOING`, `CLOSED`, and `CLOSED`), one or more severities (`LOW`,
-#' `MEDIUM`, and `HIGH`), and type (`REACTIVE` or `PROACTIVE`).
+#' Returns a list of insights in your organization. You can specify which insights are returned by their start time, one or more statuses (`ONGOING`, `CLOSED`, and `CLOSED`), one or more severities (`LOW`, `MEDIUM`, and `HIGH`), and type (`REACTIVE` or `PROACTIVE`).
 #' 
-#' Use the `Filters` parameter to specify status and severity search
-#' parameters. Use the `Type` parameter to specify `REACTIVE` or
-#' `PROACTIVE` in your search.
+#' Use the `Filters` parameter to specify status and severity search parameters. Use the `Type` parameter to specify `REACTIVE` or `PROACTIVE` in your search.
 #'
 #' @usage
 #' devopsguru_search_organization_insights(AccountIds, StartTimeRange,
 #'   Filters, MaxResults, NextToken, Type)
 #'
 #' @param AccountIds &#91;required&#93; The ID of the Amazon Web Services account.
-#' @param StartTimeRange &#91;required&#93; 
-#' @param Filters A `SearchOrganizationInsightsFilters` object that is used to set the
-#' severity and status filters on your insight search.
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
-#' @param NextToken The pagination token to use to retrieve the next page of results for
-#' this operation. If this value is null, it retrieves the first page.
+#' @param StartTimeRange &#91;required&#93; A time range used to specify when the behavior of an insight or anomaly started.
+#' @param Filters A `SearchOrganizationInsightsFilters` object that is used to set the severity and status filters on your insight search.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
+#' @param NextToken The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
 #' @param Type &#91;required&#93; The type of insights you are searching for (`REACTIVE` or `PROACTIVE`).
 #'
 #' @return
@@ -3048,14 +2904,12 @@ devopsguru_search_organization_insights <- function(AccountIds, StartTimeRange, 
 #' Amazon Web Services resources
 #'
 #' @description
-#' Starts the creation of an estimate of the monthly cost to analyze your
-#' Amazon Web Services resources.
+#' Starts the creation of an estimate of the monthly cost to analyze your Amazon Web Services resources.
 #'
 #' @usage
 #' devopsguru_start_cost_estimation(ResourceCollection, ClientToken)
 #'
-#' @param ResourceCollection &#91;required&#93; The collection of Amazon Web Services resources used to create a monthly
-#' DevOps Guru cost estimate.
+#' @param ResourceCollection &#91;required&#93; The collection of Amazon Web Services resources used to create a monthly DevOps Guru cost estimate.
 #' @param ClientToken The idempotency token used to identify each cost estimate request.
 #'
 #' @return
@@ -3111,16 +2965,12 @@ devopsguru_start_cost_estimation <- function(ResourceCollection, ClientToken = N
 #' with DevOps Guru
 #'
 #' @description
-#' Enables or disables integration with a service that can be integrated
-#' with DevOps Guru. The one service that can be integrated with DevOps
-#' Guru is Amazon CodeGuru Profiler, which can produce proactive
-#' recommendations which can be stored and viewed in DevOps Guru.
+#' Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.
 #'
 #' @usage
 #' devopsguru_update_event_sources_config(EventSources)
 #'
-#' @param EventSources Configuration information about the integration of DevOps Guru as the
-#' Consumer via EventBridge with another AWS Service.
+#' @param EventSources Configuration information about the integration of DevOps Guru as the Consumer via EventBridge with another AWS Service.
 #'
 #' @return
 #' An empty list.
@@ -3163,21 +3013,13 @@ devopsguru_update_event_sources_config <- function(EventSources = NULL) {
 #' Updates the collection of resources that DevOps Guru analyzes
 #'
 #' @description
-#' Updates the collection of resources that DevOps Guru analyzes. The two
-#' types of Amazon Web Services resource collections supported are Amazon
-#' Web Services CloudFormation stacks and Amazon Web Services resources
-#' that contain the same Amazon Web Services tag. DevOps Guru can be
-#' configured to analyze the Amazon Web Services resources that are defined
-#' in the stacks or that are tagged using the same tag *key*. You can
-#' specify up to 500 Amazon Web Services CloudFormation stacks. This method
-#' also creates the IAM role required for you to use DevOps Guru.
+#' Updates the collection of resources that DevOps Guru analyzes. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for you to use DevOps Guru.
 #'
 #' @usage
 #' devopsguru_update_resource_collection(Action, ResourceCollection)
 #'
-#' @param Action &#91;required&#93; Specifies if the resource collection in the request is added or deleted
-#' to the resource collection.
-#' @param ResourceCollection &#91;required&#93; 
+#' @param Action &#91;required&#93; Specifies if the resource collection in the request is added or deleted to the resource collection.
+#' @param ResourceCollection &#91;required&#93; A collection of Amazon Web Services resources supported by DevOps Guru. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag *key*. You can specify up to 500 Amazon Web Services CloudFormation stacks.
 #'
 #' @return
 #' An empty list.
@@ -3232,17 +3074,12 @@ devopsguru_update_resource_collection <- function(Action, ResourceCollection) {
 #' with DevOps Guru
 #'
 #' @description
-#' Enables or disables integration with a service that can be integrated
-#' with DevOps Guru. The one service that can be integrated with DevOps
-#' Guru is Amazon Web Services Systems Manager, which can be used to create
-#' an OpsItem for each generated insight.
+#' Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight.
 #'
 #' @usage
 #' devopsguru_update_service_integration(ServiceIntegration)
 #'
-#' @param ServiceIntegration &#91;required&#93; An `IntegratedServiceConfig` object used to specify the integrated
-#' service you want to update, and whether you want to update it to enabled
-#' or disabled.
+#' @param ServiceIntegration &#91;required&#93; An `IntegratedServiceConfig` object used to specify the integrated service you want to update, and whether you want to update it to enabled or disabled.
 #'
 #' @return
 #' An empty list.

@@ -17,20 +17,15 @@ sagemaker_list_pipelines(
 \arguments{
 \item{PipelineNamePrefix}{The prefix of the pipeline name.}
 
-\item{CreatedAfter}{A filter that returns the pipelines that were created after a specified
-time.}
+\item{CreatedAfter}{A filter that returns the pipelines that were created after a specified time.}
 
-\item{CreatedBefore}{A filter that returns the pipelines that were created before a specified
-time.}
+\item{CreatedBefore}{A filter that returns the pipelines that were created before a specified time.}
 
 \item{SortBy}{The field by which to sort results. The default is \code{CreatedTime}.}
 
 \item{SortOrder}{The sort order for results.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_pipelines]{list_pipelines}} request was truncated, the
-response includes a \code{NextToken}. To retrieve the next set of pipelines,
-use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_pipelines]{list_pipelines}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of pipelines, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of pipelines to return in the response.}
 }

@@ -22,18 +22,9 @@ datazone_list_job_runs(
 
 \item{sortOrder}{Specifies the order in which job runs are to be sorted.}
 
-\item{nextToken}{When the number of job runs is greater than the default value for the
-MaxResults parameter, or if you explicitly specify a value for
-MaxResults that is less than the number of job runs, the response
-includes a pagination token named NextToken. You can specify this
-NextToken value in a subsequent call to ListJobRuns to list the next set
-of job runs.}
+\item{nextToken}{When the number of job runs is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of job runs, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListJobRuns to list the next set of job runs.}
 
-\item{maxResults}{The maximum number of job runs to return in a single call to
-ListJobRuns. When the number of job runs to be listed is greater than
-the value of MaxResults, the response contains a NextToken value that
-you can use in a subsequent call to ListJobRuns to list the next set of
-job runs.}
+\item{maxResults}{The maximum number of job runs to return in a single call to ListJobRuns. When the number of job runs to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListJobRuns to list the next set of job runs.}
 }
 \description{
 Lists job runs.

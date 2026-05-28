@@ -11,18 +11,11 @@ rekognition_create_face_liveness_session(
 )
 }
 \arguments{
-\item{KmsKeyId}{The identifier for your AWS Key Management Service key (AWS KMS key).
-Used to encrypt audit images and reference images.}
+\item{KmsKeyId}{The identifier for your AWS Key Management Service key (AWS KMS key). Used to encrypt audit images and reference images.}
 
-\item{Settings}{A session settings object. It contains settings for the operation to be
-performed. For Face Liveness, it accepts \code{OutputConfig} and
-\code{AuditImagesLimit}.}
+\item{Settings}{A session settings object. It contains settings for the operation to be performed. For Face Liveness, it accepts \code{OutputConfig} and \code{AuditImagesLimit}.}
 
-\item{ClientRequestToken}{Idempotent token is used to recognize the Face Liveness request. If the
-same token is used with multiple
-\code{\link[=rekognition_create_face_liveness_session]{create_face_liveness_session}}
-requests, the same session is returned. This token is employed to avoid
-unintentionally creating the same session multiple times.}
+\item{ClientRequestToken}{Idempotent token is used to recognize the Face Liveness request. If the same token is used with multiple \code{\link[=rekognition_create_face_liveness_session]{create_face_liveness_session}} requests, the same session is returned. This token is employed to avoid unintentionally creating the same session multiple times.}
 }
 \description{
 This API operation initiates a Face Liveness session. It returns a \code{SessionId}, which you can use to start streaming Face Liveness video and get the results for a Face Liveness session.

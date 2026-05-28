@@ -15,19 +15,18 @@ cloudfront_create_anycast_ip_list(
 \arguments{
 \item{Name}{[required] Name of the Anycast static IP list.}
 
-\item{IpCount}{[required] The number of static IP addresses that are allocated to the Anycast
-static IP list. Valid values: 21 or 3.}
+\item{IpCount}{[required] The number of static IP addresses that are allocated to the Anycast static IP list. Valid values: 21 or 3.}
 
-\item{IpAddressType}{The IP address type for the Anycast static IP list. You can specify one
-of the following options:
+\item{Tags}{A complex type that contains zero or more \code{Tag} elements.}
+
+\item{IpAddressType}{The IP address type for the Anycast static IP list. You can specify one of the following options:
 \itemize{
 \item \code{ipv4} only
 \item \code{ipv6} only
 \item \code{dualstack} - Allocate a list of both IPv4 and IPv6 addresses
 }}
 
-\item{IpamCidrConfigs}{A list of IPAM CIDR configurations that specify the IP address ranges
-and IPAM pool settings for creating the Anycast static IP list.}
+\item{IpamCidrConfigs}{A list of IPAM CIDR configurations that specify the IP address ranges and IPAM pool settings for creating the Anycast static IP list.}
 }
 \description{
 Creates an Anycast static IP list.

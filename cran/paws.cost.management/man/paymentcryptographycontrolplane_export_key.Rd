@@ -11,11 +11,9 @@ paymentcryptographycontrolplane_export_key(
 )
 }
 \arguments{
-\item{KeyMaterial}{[required] The key block format type, for example, TR-34 or TR-31, to use during
-key material export.}
+\item{KeyMaterial}{[required] The key block format type, for example, TR-34 or TR-31, to use during key material export.}
 
-\item{ExportKeyIdentifier}{[required] The \code{KeyARN} of the key under export from Amazon Web Services Payment
-Cryptography.}
+\item{ExportKeyIdentifier}{[required] The \code{KeyARN} of the key under export from Amazon Web Services Payment Cryptography.}
 
 \item{ExportAttributes}{The attributes for IPEK generation during export.}
 }

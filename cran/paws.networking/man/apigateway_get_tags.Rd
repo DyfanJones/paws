@@ -9,11 +9,9 @@ apigateway_get_tags(resourceArn, position = NULL, limit = NULL)
 \arguments{
 \item{resourceArn}{[required] The ARN of a resource that can be tagged.}
 
-\item{position}{(Not currently supported) The current pagination position in the paged
-result set.}
+\item{position}{(Not currently supported) The current pagination position in the paged result set.}
 
-\item{limit}{(Not currently supported) The maximum number of returned results per
-page. The default value is 25 and the maximum value is 500.}
+\item{limit}{(Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 }
 \description{
 Gets the Tags collection for a given resource.

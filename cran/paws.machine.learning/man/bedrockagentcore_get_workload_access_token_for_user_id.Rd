@@ -8,8 +8,7 @@ of a user, using the user's ID}
 bedrockagentcore_get_workload_access_token_for_user_id(workloadName, userId)
 }
 \arguments{
-\item{workloadName}{[required] The name of the workload from which you want to retrieve the access
-token.}
+\item{workloadName}{[required] The name of the workload from which you want to retrieve the access token.}
 
 \item{userId}{[required] The ID of the user for whom you are retrieving the access token.}
 }

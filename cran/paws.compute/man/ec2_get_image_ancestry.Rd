@@ -10,10 +10,7 @@ ec2_get_image_ancestry(ImageId, DryRun = NULL)
 \arguments{
 \item{ImageId}{[required] The ID of the AMI whose ancestry you want to trace.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Retrieves the ancestry chain of the specified AMI, tracing its lineage back to the root AMI. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-ancestry.html}{AMI ancestry} in \emph{Amazon EC2 User Guide}.

@@ -8,7 +8,7 @@ indexing options}
 cloudsearch_index_documents(DomainName)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 }
 \description{
 Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose OptionStatus is \code{RequiresIndexDocuments}.

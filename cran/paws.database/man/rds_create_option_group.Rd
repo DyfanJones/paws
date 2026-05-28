@@ -43,8 +43,7 @@ Valid Values:
 \item \code{sqlserver-web}
 }}
 
-\item{MajorEngineVersion}{[required] Specifies the major version of the engine that this option group should
-be associated with.}
+\item{MajorEngineVersion}{[required] Specifies the major version of the engine that this option group should be associated with.}
 
 \item{OptionGroupDescription}{[required] The description of the option group.}
 

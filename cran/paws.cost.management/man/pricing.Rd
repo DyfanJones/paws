@@ -48,34 +48,17 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-The Amazon Web Services Price List API is a centralized and convenient
-way to programmatically query Amazon Web Services for services,
-products, and pricing information. The Amazon Web Services Price List
-uses standardized product attributes such as \code{Location},
-\verb{Storage Class}, and \verb{Operating System}, and provides prices at the SKU
-level. You can use the Amazon Web Services Price List to do the
-following:
+The Amazon Web Services Price List API is a centralized and convenient way to programmatically query Amazon Web Services for services, products, and pricing information. The Amazon Web Services Price List uses standardized product attributes such as \code{Location}, \verb{Storage Class}, and \verb{Operating System}, and provides prices at the SKU level. You can use the Amazon Web Services Price List to do the following:
 \itemize{
 \item Build cost control and scenario planning tools
 \item Reconcile billing data
 \item Forecast future spend for budgeting purposes
-\item Provide cost benefit analysis that compare your internal workloads
-with Amazon Web Services
+\item Provide cost benefit analysis that compare your internal workloads with Amazon Web Services
 }
 
-Use \code{GetServices} without a service code to retrieve the service codes
-for all Amazon Web Services services, then \code{GetServices} with a service
-code to retrieve the attribute names for that service. After you have
-the service code and attribute names, you can use
-\code{\link[=pricing_get_attribute_values]{get_attribute_values}} to see what
-values are available for an attribute. With the service code and an
-attribute name and value, you can use
-\code{\link[=pricing_get_products]{get_products}} to find specific products that
-you're interested in, such as an \code{AmazonEC2} instance, with a
-\verb{Provisioned IOPS} \code{volumeType}.
+Use \code{GetServices} without a service code to retrieve the service codes for all Amazon Web Services services, then \code{GetServices} with a service code to retrieve the attribute names for that service. After you have the service code and attribute names, you can use \code{\link[=pricing_get_attribute_values]{get_attribute_values}} to see what values are available for an attribute. With the service code and an attribute name and value, you can use \code{\link[=pricing_get_products]{get_products}} to find specific products that you're interested in, such as an \code{AmazonEC2} instance, with a \verb{Provisioned IOPS} \code{volumeType}.
 
-For more information, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html}{Using the Amazon Web Services Price List API}
-in the \emph{Billing User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html}{Using the Amazon Web Services Price List API} in the \emph{Billing User Guide}.
 }
 \section{Service syntax}{
 

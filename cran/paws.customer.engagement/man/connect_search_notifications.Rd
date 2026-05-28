@@ -13,19 +13,15 @@ connect_search_notifications(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response to retrieve the next page of results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response to retrieve the next page of results.}
 
 \item{MaxResults}{The maximum number of results to return per page. Valid range is 1-100.}
 
 \item{SearchFilter}{Filters to apply to the search results, such as tag-based filters.}
 
-\item{SearchCriteria}{The search criteria to apply when searching for notifications. Supports
-filtering by notification ID and message content using comparison types
-such as STARTS_WITH, CONTAINS, and EXACT.}
+\item{SearchCriteria}{The search criteria to apply when searching for notifications. Supports filtering by notification ID and message content using comparison types such as STARTS_WITH, CONTAINS, and EXACT.}
 }
 \description{
 Searches for notifications based on specified criteria and filters. Returns a paginated list of notifications matching the search parameters, ordered by descending creation time. Supports filtering by content and tags.

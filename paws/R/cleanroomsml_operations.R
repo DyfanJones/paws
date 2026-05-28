@@ -13,14 +13,10 @@ NULL
 #'   versionIdentifier)
 #'
 #' @param membershipIdentifier &#91;required&#93; The membership ID of the trained model job that you want to cancel.
-#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model job that you want to
-#' cancel.
-#' @param versionIdentifier The version identifier of the trained model to cancel. This parameter
-#' allows you to specify which version of the trained model you want to
-#' cancel when multiple versions exist.
+#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model job that you want to cancel.
+#' @param versionIdentifier The version identifier of the trained model to cancel. This parameter allows you to specify which version of the trained model you want to cancel when multiple versions exist.
 #' 
-#' If `versionIdentifier` is not specified, the base model will be
-#' cancelled.
+#' If `versionIdentifier` is not specified, the base model will be cancelled.
 #'
 #' @return
 #' An empty list.
@@ -67,10 +63,8 @@ cleanroomsml_cancel_trained_model <- function(membershipIdentifier, trainedModel
 #' cleanroomsml_cancel_trained_model_inference_job(membershipIdentifier,
 #'   trainedModelInferenceJobArn)
 #'
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the trained model inference job that you want to
-#' cancel.
-#' @param trainedModelInferenceJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model inference job that
-#' you want to cancel.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the trained model inference job that you want to cancel.
+#' @param trainedModelInferenceJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model inference job that you want to cancel.
 #'
 #' @return
 #' An empty list.
@@ -110,13 +104,7 @@ cleanroomsml_cancel_trained_model_inference_job <- function(membershipIdentifier
 #' Defines the information necessary to create an audience model
 #'
 #' @description
-#' Defines the information necessary to create an audience model. An
-#' audience model is a machine learning model that Clean Rooms ML trains to
-#' measure similarity between users. Clean Rooms ML manages training and
-#' storing the audience model. The audience model can be used in multiple
-#' calls to the
-#' [`start_audience_generation_job`][cleanroomsml_start_audience_generation_job]
-#' API.
+#' Defines the information necessary to create an audience model. An audience model is a machine learning model that Clean Rooms ML trains to measure similarity between users. Clean Rooms ML manages training and storing the audience model. The audience model can be used in multiple calls to the [`start_audience_generation_job`][cleanroomsml_start_audience_generation_job] API.
 #'
 #' @usage
 #' cleanroomsml_create_audience_model(trainingDataStartTime,
@@ -126,41 +114,25 @@ cleanroomsml_cancel_trained_model_inference_job <- function(membershipIdentifier
 #' @param trainingDataStartTime The start date and time of the training window.
 #' @param trainingDataEndTime The end date and time of the training window.
 #' @param name &#91;required&#93; The name of the audience model resource.
-#' @param trainingDatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the training dataset for this audience
-#' model.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key. This key is used to
-#' encrypt and decrypt customer-owned data in the trained ML model and the
-#' associated data.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param trainingDatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the training dataset for this audience model.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key. This key is used to encrypt and decrypt customer-owned data in the trained ML model and the associated data.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
 #' @param description The description of the audience model.
 #'
 #' @return
@@ -225,69 +197,32 @@ cleanroomsml_create_audience_model <- function(trainingDataStartTime = NULL, tra
 #'   audienceSizeConfig, tags, childResourceTagOnCreatePolicy)
 #'
 #' @param name &#91;required&#93; The name of the configured audience model.
-#' @param audienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience model to use for the
-#' configured audience model.
-#' @param outputConfig &#91;required&#93; Configure the Amazon S3 location and IAM Role for audiences created
-#' using this configured audience model. Each audience will have a unique
-#' location. The IAM Role must have `s3:PutObject` permission on the
-#' destination Amazon S3 location. If the destination is protected with
-#' Amazon S3 KMS-SSE, then the Role must also have the required KMS
-#' permissions.
+#' @param audienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience model to use for the configured audience model.
+#' @param outputConfig &#91;required&#93; Configure the Amazon S3 location and IAM Role for audiences created using this configured audience model. Each audience will have a unique location. The IAM Role must have `s3:PutObject` permission on the destination Amazon S3 location. If the destination is protected with Amazon S3 KMS-SSE, then the Role must also have the required KMS permissions.
 #' @param description The description of the configured audience model.
 #' @param sharedAudienceMetrics &#91;required&#93; Whether audience metrics are shared.
-#' @param minMatchingSeedSize The minimum number of users from the seed audience that must match with
-#' users in the training data of the audience model. The default value is
-#' 500.
-#' @param audienceSizeConfig Configure the list of output sizes of audiences that can be created
-#' using this configured audience model. A request to
-#' [`start_audience_generation_job`][cleanroomsml_start_audience_generation_job]
-#' that uses this configured audience model must have an `audienceSize`
-#' selected from this list. You can use the `ABSOLUTE` AudienceSize to
-#' configure out audience sizes using the count of identifiers in the
-#' output. You can use the `Percentage` AudienceSize to configure sizes in
-#' the range 1-100 percent.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param minMatchingSeedSize The minimum number of users from the seed audience that must match with users in the training data of the audience model. The default value is 500.
+#' @param audienceSizeConfig Configure the list of output sizes of audiences that can be created using this configured audience model. A request to [`start_audience_generation_job`][cleanroomsml_start_audience_generation_job] that uses this configured audience model must have an `audienceSize` selected from this list. You can use the `ABSOLUTE` AudienceSize to configure out audience sizes using the count of identifiers in the output. You can use the `Percentage` AudienceSize to configure sizes in the range 1-100 percent.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
-#' @param childResourceTagOnCreatePolicy Configure how the service tags audience generation jobs created using
-#' this configured audience model. If you specify `NONE`, the tags from the
-#' [`start_audience_generation_job`][cleanroomsml_start_audience_generation_job]
-#' request determine the tags of the audience generation job. If you
-#' specify `FROM_PARENT_RESOURCE`, the audience generation job inherits the
-#' tags from the configured audience model, by default. Tags in the
-#' [`start_audience_generation_job`][cleanroomsml_start_audience_generation_job]
-#' will override the default.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
+#' @param childResourceTagOnCreatePolicy Configure how the service tags audience generation jobs created using this configured audience model. If you specify `NONE`, the tags from the [`start_audience_generation_job`][cleanroomsml_start_audience_generation_job] request determine the tags of the audience generation job. If you specify `FROM_PARENT_RESOURCE`, the audience generation job inherits the tags from the configured audience model, by default. Tags in the [`start_audience_generation_job`][cleanroomsml_start_audience_generation_job] will override the default.
 #' 
-#' When the client is in a different account than the configured audience
-#' model, the tags from the client are never applied to a resource in the
-#' caller's account.
+#' When the client is in a different account than the configured audience model, the tags from the client are never applied to a resource in the caller's account.
 #'
 #' @return
 #' A list with the following syntax:
@@ -356,8 +291,7 @@ cleanroomsml_create_configured_audience_model <- function(name, audienceModelArn
 #' an ECR repository
 #'
 #' @description
-#' Creates a configured model algorithm using a container image stored in
-#' an ECR repository.
+#' Creates a configured model algorithm using a container image stored in an ECR repository.
 #'
 #' @usage
 #' cleanroomsml_create_configured_model_algorithm(name, description,
@@ -366,45 +300,27 @@ cleanroomsml_create_configured_audience_model <- function(name, audienceModelArn
 #'
 #' @param name &#91;required&#93; The name of the configured model algorithm.
 #' @param description The description of the configured model algorithm.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the role that is used to access the
-#' repository.
-#' @param trainingContainerConfig Configuration information for the training container, including
-#' entrypoints and arguments.
-#' @param inferenceContainerConfig Configuration information for the inference container that is used when
-#' you run an inference job on a configured model algorithm.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the role that is used to access the repository.
+#' @param trainingContainerConfig Configuration information for the training container, including entrypoints and arguments.
+#' @param inferenceContainerConfig Configuration information for the inference container that is used when you run an inference job on a configured model algorithm.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key. This key is used to
-#' encrypt and decrypt customer-owned data in the configured ML model
-#' algorithm and associated data.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key. This key is used to encrypt and decrypt customer-owned data in the configured ML model algorithm and associated data.
 #'
 #' @return
 #' A list with the following syntax:
@@ -473,53 +389,35 @@ cleanroomsml_create_configured_model_algorithm <- function(name, description = N
 #' any member of the collaboration
 #'
 #' @description
-#' Associates a configured model algorithm to a collaboration for use by
-#' any member of the collaboration.
+#' Associates a configured model algorithm to a collaboration for use by any member of the collaboration.
 #'
 #' @usage
 #' cleanroomsml_create_configured_model_algorithm_association(
 #'   membershipIdentifier, configuredModelAlgorithmArn, name, description,
 #'   privacyConfiguration, tags)
 #'
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member who is associating this configured model
-#' algorithm.
-#' @param configuredModelAlgorithmArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm that
-#' you want to associate.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member who is associating this configured model algorithm.
+#' @param configuredModelAlgorithmArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm that you want to associate.
 #' @param name &#91;required&#93; The name of the configured model algorithm association.
 #' @param description The description of the configured model algorithm association.
-#' @param privacyConfiguration Specifies the privacy configuration information for the configured model
-#' algorithm association. This information includes the maximum data size
-#' that can be exported.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param privacyConfiguration Specifies the privacy configuration information for the configured model algorithm association. This information includes the maximum data size that can be exported.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
 #'
 #' @return
 #' A list with the following syntax:
@@ -635,53 +533,38 @@ cleanroomsml_create_configured_model_algorithm_association <- function(membershi
 #' Provides the information to create an ML input channel
 #'
 #' @description
-#' Provides the information to create an ML input channel. An ML input
-#' channel is the result of a query that can be used for ML modeling.
+#' Provides the information to create an ML input channel. An ML input channel is the result of a query that can be used for ML modeling.
 #'
 #' @usage
 #' cleanroomsml_create_ml_input_channel(membershipIdentifier,
 #'   configuredModelAlgorithmAssociations, inputChannel, name,
-#'   retentionInDays, description, kmsKeyArn, tags)
+#'   retentionInDays, description, kmsKeyArn, tags, payerConfiguration)
 #'
 #' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is creating the ML input channel.
-#' @param configuredModelAlgorithmAssociations &#91;required&#93; The associated configured model algorithms that are necessary to create
-#' this ML input channel.
+#' @param configuredModelAlgorithmAssociations &#91;required&#93; The associated configured model algorithms that are necessary to create this ML input channel.
 #' @param inputChannel &#91;required&#93; The input data that is used to create this ML input channel.
 #' @param name &#91;required&#93; The name of the ML input channel.
 #' @param retentionInDays &#91;required&#93; The number of days that the data in the ML input channel is retained.
 #' @param description The description of the ML input channel.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key that is used to access the
-#' input channel.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key that is used to access the input channel.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
+#' @param payerConfiguration The payer configuration for the ML input channel. Determines which member account pays for compute and synthetic data costs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -730,6 +613,10 @@ cleanroomsml_create_configured_model_algorithm_association <- function(membershi
 #'   kmsKeyArn = "string",
 #'   tags = list(
 #'     "string"
+#'   ),
+#'   payerConfiguration = list(
+#'     computePayerAccountId = "string",
+#'     syntheticDataPayerAccountId = "string"
 #'   )
 #' )
 #' ```
@@ -739,7 +626,7 @@ cleanroomsml_create_configured_model_algorithm_association <- function(membershi
 #' @rdname cleanroomsml_create_ml_input_channel
 #'
 #' @aliases cleanroomsml_create_ml_input_channel
-cleanroomsml_create_ml_input_channel <- function(membershipIdentifier, configuredModelAlgorithmAssociations, inputChannel, name, retentionInDays, description = NULL, kmsKeyArn = NULL, tags = NULL) {
+cleanroomsml_create_ml_input_channel <- function(membershipIdentifier, configuredModelAlgorithmAssociations, inputChannel, name, retentionInDays, description = NULL, kmsKeyArn = NULL, tags = NULL, payerConfiguration = NULL) {
   op <- new_operation(
     name = "CreateMLInputChannel",
     http_method = "POST",
@@ -748,7 +635,7 @@ cleanroomsml_create_ml_input_channel <- function(membershipIdentifier, configure
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .cleanroomsml$create_ml_input_channel_input(membershipIdentifier = membershipIdentifier, configuredModelAlgorithmAssociations = configuredModelAlgorithmAssociations, inputChannel = inputChannel, name = name, retentionInDays = retentionInDays, description = description, kmsKeyArn = kmsKeyArn, tags = tags)
+  input <- .cleanroomsml$create_ml_input_channel_input(membershipIdentifier = membershipIdentifier, configuredModelAlgorithmAssociations = configuredModelAlgorithmAssociations, inputChannel = inputChannel, name = name, retentionInDays = retentionInDays, description = description, kmsKeyArn = kmsKeyArn, tags = tags, payerConfiguration = payerConfiguration)
   output <- .cleanroomsml$create_ml_input_channel_output()
   config <- get_config()
   svc <- .cleanroomsml$service(config, op)
@@ -762,85 +649,57 @@ cleanroomsml_create_ml_input_channel <- function(membershipIdentifier, configure
 #' using data from any member of the collaboration
 #'
 #' @description
-#' Creates a trained model from an associated configured model algorithm
-#' using data from any member of the collaboration.
+#' Creates a trained model from an associated configured model algorithm using data from any member of the collaboration.
 #'
 #' @usage
 #' cleanroomsml_create_trained_model(membershipIdentifier, name,
 #'   configuredModelAlgorithmAssociationArn, hyperparameters, environment,
 #'   resourceConfig, stoppingCondition, incrementalTrainingDataChannels,
-#'   dataChannels, trainingInputMode, description, kmsKeyArn, tags)
+#'   dataChannels, trainingInputMode, description, kmsKeyArn, tags,
+#'   mlModelTrainingPayerAccountId)
 #'
 #' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is creating the trained model.
 #' @param name &#91;required&#93; The name of the trained model.
 #' @param configuredModelAlgorithmAssociationArn &#91;required&#93; The associated configured model algorithm used to train this model.
-#' @param hyperparameters Algorithm-specific parameters that influence the quality of the model.
-#' You set hyperparameters before you start the learning process.
+#' @param hyperparameters Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process.
 #' @param environment The environment variables to set in the Docker container.
 #' @param resourceConfig &#91;required&#93; Information about the EC2 resources that are used to train this model.
 #' @param stoppingCondition The criteria that is used to stop model training.
 #' @param incrementalTrainingDataChannels Specifies the incremental training data channels for the trained model.
 #' 
-#' Incremental training allows you to create a new trained model with
-#' updates without retraining from scratch. You can specify up to one
-#' incremental training data channel that references a previously trained
-#' model and its version.
+#' Incremental training allows you to create a new trained model with updates without retraining from scratch. You can specify up to one incremental training data channel that references a previously trained model and its version.
 #' 
-#' Limit: Maximum of 20 channels total (including both
-#' `incrementalTrainingDataChannels` and `dataChannels`).
-#' @param dataChannels &#91;required&#93; Defines the data channels that are used as input for the trained model
-#' request.
+#' Limit: Maximum of 20 channels total (including both `incrementalTrainingDataChannels` and `dataChannels`).
+#' @param dataChannels &#91;required&#93; Defines the data channels that are used as input for the trained model request.
 #' 
-#' Limit: Maximum of 20 channels total (including both `dataChannels` and
-#' `incrementalTrainingDataChannels`).
-#' @param trainingInputMode The input mode for accessing the training data. This parameter
-#' determines how the training data is made available to the training
-#' algorithm. Valid values are:
+#' Limit: Maximum of 20 channels total (including both `dataChannels` and `incrementalTrainingDataChannels`).
+#' @param trainingInputMode The input mode for accessing the training data. This parameter determines how the training data is made available to the training algorithm. Valid values are:
 #' 
-#' -   `File` - The training data is downloaded to the training instance
-#'     and made available as files.
+#' -   `File` - The training data is downloaded to the training instance and made available as files.
 #' 
-#' -   `FastFile` - The training data is streamed directly from Amazon S3
-#'     to the training algorithm, providing faster access for large
-#'     datasets.
+#' -   `FastFile` - The training data is streamed directly from Amazon S3 to the training algorithm, providing faster access for large datasets.
 #' 
-#' -   `Pipe` - The training data is streamed to the training algorithm
-#'     using named pipes, which can improve performance for certain
-#'     algorithms.
+#' -   `Pipe` - The training data is streamed to the training algorithm using named pipes, which can improve performance for certain algorithms.
 #' @param description The description of the trained model.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key. This key is used to
-#' encrypt and decrypt customer-owned data in the trained ML model and the
-#' associated data.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key. This key is used to encrypt and decrypt customer-owned data in the trained ML model and the associated data.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
+#' @param mlModelTrainingPayerAccountId The account ID of the member that is responsible for paying for model training costs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -890,7 +749,8 @@ cleanroomsml_create_ml_input_channel <- function(membershipIdentifier, configure
 #'   kmsKeyArn = "string",
 #'   tags = list(
 #'     "string"
-#'   )
+#'   ),
+#'   mlModelTrainingPayerAccountId = "string"
 #' )
 #' ```
 #'
@@ -899,7 +759,7 @@ cleanroomsml_create_ml_input_channel <- function(membershipIdentifier, configure
 #' @rdname cleanroomsml_create_trained_model
 #'
 #' @aliases cleanroomsml_create_trained_model
-cleanroomsml_create_trained_model <- function(membershipIdentifier, name, configuredModelAlgorithmAssociationArn, hyperparameters = NULL, environment = NULL, resourceConfig, stoppingCondition = NULL, incrementalTrainingDataChannels = NULL, dataChannels, trainingInputMode = NULL, description = NULL, kmsKeyArn = NULL, tags = NULL) {
+cleanroomsml_create_trained_model <- function(membershipIdentifier, name, configuredModelAlgorithmAssociationArn, hyperparameters = NULL, environment = NULL, resourceConfig, stoppingCondition = NULL, incrementalTrainingDataChannels = NULL, dataChannels, trainingInputMode = NULL, description = NULL, kmsKeyArn = NULL, tags = NULL, mlModelTrainingPayerAccountId = NULL) {
   op <- new_operation(
     name = "CreateTrainedModel",
     http_method = "POST",
@@ -908,7 +768,7 @@ cleanroomsml_create_trained_model <- function(membershipIdentifier, name, config
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .cleanroomsml$create_trained_model_input(membershipIdentifier = membershipIdentifier, name = name, configuredModelAlgorithmAssociationArn = configuredModelAlgorithmAssociationArn, hyperparameters = hyperparameters, environment = environment, resourceConfig = resourceConfig, stoppingCondition = stoppingCondition, incrementalTrainingDataChannels = incrementalTrainingDataChannels, dataChannels = dataChannels, trainingInputMode = trainingInputMode, description = description, kmsKeyArn = kmsKeyArn, tags = tags)
+  input <- .cleanroomsml$create_trained_model_input(membershipIdentifier = membershipIdentifier, name = name, configuredModelAlgorithmAssociationArn = configuredModelAlgorithmAssociationArn, hyperparameters = hyperparameters, environment = environment, resourceConfig = resourceConfig, stoppingCondition = stoppingCondition, incrementalTrainingDataChannels = incrementalTrainingDataChannels, dataChannels = dataChannels, trainingInputMode = trainingInputMode, description = description, kmsKeyArn = kmsKeyArn, tags = tags, mlModelTrainingPayerAccountId = mlModelTrainingPayerAccountId)
   output <- .cleanroomsml$create_trained_model_output()
   config <- get_config()
   svc <- .cleanroomsml$service(config, op)
@@ -921,54 +781,34 @@ cleanroomsml_create_trained_model <- function(membershipIdentifier, name, config
 #' Defines the information necessary to create a training dataset
 #'
 #' @description
-#' Defines the information necessary to create a training dataset. In Clean
-#' Rooms ML, the `TrainingDataset` is metadata that points to a Glue table,
-#' which is read only during `AudienceModel` creation.
+#' Defines the information necessary to create a training dataset. In Clean Rooms ML, the `TrainingDataset` is metadata that points to a Glue table, which is read only during `AudienceModel` creation.
 #'
 #' @usage
 #' cleanroomsml_create_training_dataset(name, roleArn, trainingData, tags,
 #'   description)
 #'
-#' @param name &#91;required&#93; The name of the training dataset. This name must be unique in your
-#' account and region.
-#' @param roleArn &#91;required&#93; The ARN of the IAM role that Clean Rooms ML can assume to read the data
-#' referred to in the `dataSource` field of each dataset.
+#' @param name &#91;required&#93; The name of the training dataset. This name must be unique in your account and region.
+#' @param roleArn &#91;required&#93; The ARN of the IAM role that Clean Rooms ML can assume to read the data referred to in the `dataSource` field of each dataset.
 #' 
-#' Passing a role across AWS accounts is not allowed. If you pass a role
-#' that isn't in your account, you get an `AccessDeniedException` error.
-#' @param trainingData &#91;required&#93; An array of information that lists the Dataset objects, which specifies
-#' the dataset type and details on its location and schema. You must
-#' provide a role that has read access to these tables.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' Passing a role across AWS accounts is not allowed. If you pass a role that isn't in your account, you get an `AccessDeniedException` error.
+#' @param trainingData &#91;required&#93; An array of information that lists the Dataset objects, which specifies the dataset type and details on its location and schema. You must provide a role that has read access to these tables.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
 #' @param description The description of the training dataset.
 #'
 #' @return
@@ -1041,14 +881,12 @@ cleanroomsml_create_training_dataset <- function(name, roleArn, trainingData, ta
 #' associated with the job
 #'
 #' @description
-#' Deletes the specified audience generation job, and removes all data
-#' associated with the job.
+#' Deletes the specified audience generation job, and removes all data associated with the job.
 #'
 #' @usage
 #' cleanroomsml_delete_audience_generation_job(audienceGenerationJobArn)
 #'
-#' @param audienceGenerationJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience generation job that you
-#' want to delete.
+#' @param audienceGenerationJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience generation job that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -1087,15 +925,12 @@ cleanroomsml_delete_audience_generation_job <- function(audienceGenerationJobArn
 #' Specifies an audience model that you want to delete
 #'
 #' @description
-#' Specifies an audience model that you want to delete. You can't delete an
-#' audience model if there are any configured audience models that depend
-#' on the audience model.
+#' Specifies an audience model that you want to delete. You can't delete an audience model if there are any configured audience models that depend on the audience model.
 #'
 #' @usage
 #' cleanroomsml_delete_audience_model(audienceModelArn)
 #'
-#' @param audienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience model that you want to
-#' delete.
+#' @param audienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience model that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -1134,17 +969,13 @@ cleanroomsml_delete_audience_model <- function(audienceModelArn) {
 #' Deletes the specified configured audience model
 #'
 #' @description
-#' Deletes the specified configured audience model. You can't delete a
-#' configured audience model if there are any lookalike models that use the
-#' configured audience model. If you delete a configured audience model, it
-#' will be removed from any collaborations that it is associated to.
+#' Deletes the specified configured audience model. You can't delete a configured audience model if there are any lookalike models that use the configured audience model. If you delete a configured audience model, it will be removed from any collaborations that it is associated to.
 #'
 #' @usage
 #' cleanroomsml_delete_configured_audience_model(
 #'   configuredAudienceModelArn)
 #'
-#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that you
-#' want to delete.
+#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -1189,8 +1020,7 @@ cleanroomsml_delete_configured_audience_model <- function(configuredAudienceMode
 #' cleanroomsml_delete_configured_audience_model_policy(
 #'   configuredAudienceModelArn)
 #'
-#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model policy
-#' that you want to delete.
+#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model policy that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -1235,8 +1065,7 @@ cleanroomsml_delete_configured_audience_model_policy <- function(configuredAudie
 #' cleanroomsml_delete_configured_model_algorithm(
 #'   configuredModelAlgorithmArn)
 #'
-#' @param configuredModelAlgorithmArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm that
-#' you want to delete.
+#' @param configuredModelAlgorithmArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -1281,10 +1110,8 @@ cleanroomsml_delete_configured_model_algorithm <- function(configuredModelAlgori
 #' cleanroomsml_delete_configured_model_algorithm_association(
 #'   configuredModelAlgorithmAssociationArn, membershipIdentifier)
 #'
-#' @param configuredModelAlgorithmAssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm
-#' association that you want to delete.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is deleting the configured model
-#' algorithm association.
+#' @param configuredModelAlgorithmAssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm association that you want to delete.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is deleting the configured model algorithm association.
 #'
 #' @return
 #' An empty list.
@@ -1329,8 +1156,7 @@ cleanroomsml_delete_configured_model_algorithm_association <- function(configure
 #' @usage
 #' cleanroomsml_delete_ml_configuration(membershipIdentifier)
 #'
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the of the member that is deleting the ML modeling
-#' configuration.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the of the member that is deleting the ML modeling configuration.
 #'
 #' @return
 #' An empty list.
@@ -1375,10 +1201,8 @@ cleanroomsml_delete_ml_configuration <- function(membershipIdentifier) {
 #' cleanroomsml_delete_ml_input_channel_data(mlInputChannelArn,
 #'   membershipIdentifier)
 #'
-#' @param mlInputChannelArn &#91;required&#93; The Amazon Resource Name (ARN) of the ML input channel that you want to
-#' delete.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the membership that contains the ML input channel
-#' you want to delete.
+#' @param mlInputChannelArn &#91;required&#93; The Amazon Resource Name (ARN) of the ML input channel that you want to delete.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the membership that contains the ML input channel you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -1424,13 +1248,9 @@ cleanroomsml_delete_ml_input_channel_data <- function(mlInputChannelArn, members
 #' cleanroomsml_delete_trained_model_output(trainedModelArn,
 #'   membershipIdentifier, versionIdentifier)
 #'
-#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model whose output you
-#' want to delete.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is deleting the trained model
-#' output.
-#' @param versionIdentifier The version identifier of the trained model to delete. If not specified,
-#' the operation will delete the base version of the trained model. When
-#' specified, only the particular version will be deleted.
+#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model whose output you want to delete.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is deleting the trained model output.
+#' @param versionIdentifier The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.
 #'
 #' @return
 #' An empty list.
@@ -1471,17 +1291,12 @@ cleanroomsml_delete_trained_model_output <- function(trainedModelArn, membership
 #' Specifies a training dataset that you want to delete
 #'
 #' @description
-#' Specifies a training dataset that you want to delete. You can't delete a
-#' training dataset if there are any audience models that depend on the
-#' training dataset. In Clean Rooms ML, the `TrainingDataset` is metadata
-#' that points to a Glue table, which is read only during `AudienceModel`
-#' creation. This action deletes the metadata.
+#' Specifies a training dataset that you want to delete. You can't delete a training dataset if there are any audience models that depend on the training dataset. In Clean Rooms ML, the `TrainingDataset` is metadata that points to a Glue table, which is read only during `AudienceModel` creation. This action deletes the metadata.
 #'
 #' @usage
 #' cleanroomsml_delete_training_dataset(trainingDatasetArn)
 #'
-#' @param trainingDatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the training dataset that you want to
-#' delete.
+#' @param trainingDatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the training dataset that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -1525,8 +1340,7 @@ cleanroomsml_delete_training_dataset <- function(trainingDatasetArn) {
 #' @usage
 #' cleanroomsml_get_audience_generation_job(audienceGenerationJobArn)
 #'
-#' @param audienceGenerationJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience generation job that you
-#' are interested in.
+#' @param audienceGenerationJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience generation job that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1632,8 +1446,7 @@ cleanroomsml_get_audience_generation_job <- function(audienceGenerationJobArn) {
 #' @usage
 #' cleanroomsml_get_audience_model(audienceModelArn)
 #'
-#' @param audienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience model that you are
-#' interested in.
+#' @param audienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience model that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1702,17 +1515,14 @@ cleanroomsml_get_audience_model <- function(audienceModelArn) {
 #' a collaboration
 #'
 #' @description
-#' Returns information about the configured model algorithm association in
-#' a collaboration.
+#' Returns information about the configured model algorithm association in a collaboration.
 #'
 #' @usage
 #' cleanroomsml_get_collaboration_configured_model_algorithm_association(
 #'   configuredModelAlgorithmAssociationArn, collaborationIdentifier)
 #'
-#' @param configuredModelAlgorithmAssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm
-#' association that you want to return information about.
-#' @param collaborationIdentifier &#91;required&#93; The collaboration ID for the collaboration that contains the configured
-#' model algorithm association that you want to return information about.
+#' @param configuredModelAlgorithmAssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm association that you want to return information about.
+#' @param collaborationIdentifier &#91;required&#93; The collaboration ID for the collaboration that contains the configured model algorithm association that you want to return information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1835,17 +1645,14 @@ cleanroomsml_get_collaboration_configured_model_algorithm_association <- functio
 #' Returns information about a specific ML input channel in a collaboration
 #'
 #' @description
-#' Returns information about a specific ML input channel in a
-#' collaboration.
+#' Returns information about a specific ML input channel in a collaboration.
 #'
 #' @usage
 #' cleanroomsml_get_collaboration_ml_input_channel(mlInputChannelArn,
 #'   collaborationIdentifier)
 #'
-#' @param mlInputChannelArn &#91;required&#93; The Amazon Resource Name (ARN) of the ML input channel that you want to
-#' get.
-#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the ML input
-#' channel that you want to get.
+#' @param mlInputChannelArn &#91;required&#93; The Amazon Resource Name (ARN) of the ML input channel that you want to get.
+#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the ML input channel that you want to get.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1913,6 +1720,10 @@ cleanroomsml_get_collaboration_configured_model_algorithm_association <- functio
 #'       )
 #'     )
 #'   ),
+#'   payerConfiguration = list(
+#'     computePayerAccountId = "string",
+#'     syntheticDataPayerAccountId = "string"
+#'   ),
 #'   createTime = as.POSIXct(
 #'     "2015-01-01"
 #'   ),
@@ -1964,13 +1775,9 @@ cleanroomsml_get_collaboration_ml_input_channel <- function(mlInputChannelArn, c
 #' cleanroomsml_get_collaboration_trained_model(trainedModelArn,
 #'   collaborationIdentifier, versionIdentifier)
 #'
-#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that you want to
-#' return information about.
-#' @param collaborationIdentifier &#91;required&#93; The collaboration ID that contains the trained model that you want to
-#' return information about.
-#' @param versionIdentifier The version identifier of the trained model to retrieve. If not
-#' specified, the operation returns information about the latest version of
-#' the trained model.
+#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that you want to return information about.
+#' @param collaborationIdentifier &#91;required&#93; The collaboration ID that contains the trained model that you want to return information about.
+#' @param versionIdentifier The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2009,6 +1816,7 @@ cleanroomsml_get_collaboration_ml_input_channel <- function(mlInputChannelArn, c
 #'   logsStatus = "PUBLISH_SUCCEEDED"|"PUBLISH_FAILED",
 #'   logsStatusDetails = "string",
 #'   trainingContainerImageDigest = "string",
+#'   mlModelTrainingPayerAccountId = "string",
 #'   createTime = as.POSIXct(
 #'     "2015-01-01"
 #'   ),
@@ -2060,8 +1868,7 @@ cleanroomsml_get_collaboration_trained_model <- function(trainedModelArn, collab
 #' @usage
 #' cleanroomsml_get_configured_audience_model(configuredAudienceModelArn)
 #'
-#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that you
-#' are interested in.
+#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2143,8 +1950,7 @@ cleanroomsml_get_configured_audience_model <- function(configuredAudienceModelAr
 #' cleanroomsml_get_configured_audience_model_policy(
 #'   configuredAudienceModelArn)
 #'
-#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that you
-#' are interested in.
+#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2195,8 +2001,7 @@ cleanroomsml_get_configured_audience_model_policy <- function(configuredAudience
 #' @usage
 #' cleanroomsml_get_configured_model_algorithm(configuredModelAlgorithmArn)
 #'
-#' @param configuredModelAlgorithmArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm that
-#' you want to return information about.
+#' @param configuredModelAlgorithmArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm that you want to return information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2277,10 +2082,8 @@ cleanroomsml_get_configured_model_algorithm <- function(configuredModelAlgorithm
 #' cleanroomsml_get_configured_model_algorithm_association(
 #'   configuredModelAlgorithmAssociationArn, membershipIdentifier)
 #'
-#' @param configuredModelAlgorithmAssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm
-#' association that you want to return information about.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that created the configured model
-#' algorithm association.
+#' @param configuredModelAlgorithmAssociationArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured model algorithm association that you want to return information about.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that created the configured model algorithm association.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2410,8 +2213,7 @@ cleanroomsml_get_configured_model_algorithm_association <- function(configuredMo
 #' @usage
 #' cleanroomsml_get_ml_configuration(membershipIdentifier)
 #'
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that owns the ML configuration you want
-#' to return information about.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that owns the ML configuration you want to return information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2475,10 +2277,8 @@ cleanroomsml_get_ml_configuration <- function(membershipIdentifier) {
 #' cleanroomsml_get_ml_input_channel(mlInputChannelArn,
 #'   membershipIdentifier)
 #'
-#' @param mlInputChannelArn &#91;required&#93; The Amazon Resource Name (ARN) of the ML input channel that you want to
-#' get.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the membership that contains the ML input channel
-#' that you want to get.
+#' @param mlInputChannelArn &#91;required&#93; The Amazon Resource Name (ARN) of the ML input channel that you want to get.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the membership that contains the ML input channel that you want to get.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2545,6 +2345,10 @@ cleanroomsml_get_ml_configuration <- function(membershipIdentifier) {
 #'         )
 #'       )
 #'     )
+#'   ),
+#'   payerConfiguration = list(
+#'     computePayerAccountId = "string",
+#'     syntheticDataPayerAccountId = "string"
 #'   ),
 #'   createTime = as.POSIXct(
 #'     "2015-01-01"
@@ -2629,13 +2433,9 @@ cleanroomsml_get_ml_input_channel <- function(mlInputChannelArn, membershipIdent
 #' cleanroomsml_get_trained_model(trainedModelArn, membershipIdentifier,
 #'   versionIdentifier)
 #'
-#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that you are
-#' interested in.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that created the trained model that you
-#' are interested in.
-#' @param versionIdentifier The version identifier of the trained model to retrieve. If not
-#' specified, the operation returns information about the latest version of
-#' the trained model.
+#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that you are interested in.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that created the trained model that you are interested in.
+#' @param versionIdentifier The version identifier of the trained model to retrieve. If not specified, the operation returns information about the latest version of the trained model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2674,6 +2474,7 @@ cleanroomsml_get_ml_input_channel <- function(mlInputChannelArn, membershipIdent
 #'   logsStatus = "PUBLISH_SUCCEEDED"|"PUBLISH_FAILED",
 #'   logsStatusDetails = "string",
 #'   trainingContainerImageDigest = "string",
+#'   mlModelTrainingPayerAccountId = "string",
 #'   createTime = as.POSIXct(
 #'     "2015-01-01"
 #'   ),
@@ -2742,10 +2543,8 @@ cleanroomsml_get_trained_model <- function(trainedModelArn, membershipIdentifier
 #' cleanroomsml_get_trained_model_inference_job(membershipIdentifier,
 #'   trainedModelInferenceJobArn)
 #'
-#' @param membershipIdentifier &#91;required&#93; Provides the membership ID of the membership that contains the trained
-#' model inference job that you are interested in.
-#' @param trainedModelInferenceJobArn &#91;required&#93; Provides the Amazon Resource Name (ARN) of the trained model inference
-#' job that you are interested in.
+#' @param membershipIdentifier &#91;required&#93; Provides the membership ID of the membership that contains the trained model inference job that you are interested in.
+#' @param trainedModelInferenceJobArn &#91;required&#93; Provides the Amazon Resource Name (ARN) of the trained model inference job that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2798,7 +2597,8 @@ cleanroomsml_get_trained_model <- function(trainedModelArn, membershipIdentifier
 #'   logsStatusDetails = "string",
 #'   tags = list(
 #'     "string"
-#'   )
+#'   ),
+#'   mlModelInferencePayerAccountId = "string"
 #' )
 #' ```
 #'
@@ -2842,8 +2642,7 @@ cleanroomsml_get_trained_model_inference_job <- function(membershipIdentifier, t
 #' @usage
 #' cleanroomsml_get_training_dataset(trainingDatasetArn)
 #'
-#' @param trainingDatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the training dataset that you are
-#' interested in.
+#' @param trainingDatasetArn &#91;required&#93; The Amazon Resource Name (ARN) of the training dataset that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2928,11 +2727,9 @@ cleanroomsml_get_training_dataset <- function(trainingDatasetArn) {
 #' cleanroomsml_list_audience_export_jobs(nextToken, maxResults,
 #'   audienceGenerationJobArn)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
-#' @param audienceGenerationJobArn The Amazon Resource Name (ARN) of the audience generation job that you
-#' are interested in.
+#' @param audienceGenerationJobArn The Amazon Resource Name (ARN) of the audience generation job that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3007,13 +2804,10 @@ cleanroomsml_list_audience_export_jobs <- function(nextToken = NULL, maxResults 
 #' cleanroomsml_list_audience_generation_jobs(nextToken, maxResults,
 #'   configuredAudienceModelArn, collaborationId)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
-#' @param configuredAudienceModelArn The Amazon Resource Name (ARN) of the configured audience model that was
-#' used for the audience generation jobs that you are interested in.
-#' @param collaborationId The identifier of the collaboration that contains the audience
-#' generation jobs that you are interested in.
+#' @param configuredAudienceModelArn The Amazon Resource Name (ARN) of the configured audience model that was used for the audience generation jobs that you are interested in.
+#' @param collaborationId The identifier of the collaboration that contains the audience generation jobs that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3082,8 +2876,7 @@ cleanroomsml_list_audience_generation_jobs <- function(nextToken = NULL, maxResu
 #' @usage
 #' cleanroomsml_list_audience_models(nextToken, maxResults)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
 #'
 #' @return
@@ -3145,18 +2938,15 @@ cleanroomsml_list_audience_models <- function(nextToken = NULL, maxResults = NUL
 #' collaboration
 #'
 #' @description
-#' Returns a list of the configured model algorithm associations in a
-#' collaboration.
+#' Returns a list of the configured model algorithm associations in a collaboration.
 #'
 #' @usage
 #' cleanroomsml_list_collaboration_configured_model_algorithm_associations(
 #'   nextToken, maxResults, collaborationIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
-#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the configured
-#' model algorithm associations that you are interested in.
+#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the configured model algorithm associations that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3225,11 +3015,9 @@ cleanroomsml_list_collaboration_configured_model_algorithm_associations <- funct
 #' cleanroomsml_list_collaboration_ml_input_channels(nextToken, maxResults,
 #'   collaborationIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum number of results to return.
-#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the ML input
-#' channels that you want to list.
+#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the ML input channels that you want to list.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3253,7 +3041,11 @@ cleanroomsml_list_collaboration_configured_model_algorithm_associations <- funct
 #'       mlInputChannelArn = "string",
 #'       status = "CREATE_PENDING"|"CREATE_IN_PROGRESS"|"CREATE_FAILED"|"ACTIVE"|"DELETE_PENDING"|"DELETE_IN_PROGRESS"|"DELETE_FAILED"|"INACTIVE",
 #'       creatorAccountId = "string",
-#'       description = "string"
+#'       description = "string",
+#'       payerConfiguration = list(
+#'         computePayerAccountId = "string",
+#'         syntheticDataPayerAccountId = "string"
+#'       )
 #'     )
 #'   )
 #' )
@@ -3295,24 +3087,18 @@ cleanroomsml_list_collaboration_ml_input_channels <- function(nextToken = NULL, 
 #' Returns a list of the export jobs for a trained model in a collaboration
 #'
 #' @description
-#' Returns a list of the export jobs for a trained model in a
-#' collaboration.
+#' Returns a list of the export jobs for a trained model in a collaboration.
 #'
 #' @usage
 #' cleanroomsml_list_collaboration_trained_model_export_jobs(nextToken,
 #'   maxResults, collaborationIdentifier, trainedModelArn,
 #'   trainedModelVersionIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
-#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the trained
-#' model export jobs that you are interested in.
-#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that was used to
-#' create the export jobs that you are interested in.
-#' @param trainedModelVersionIdentifier The version identifier of the trained model to filter export jobs by.
-#' When specified, only export jobs for this specific version of the
-#' trained model are returned.
+#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the trained model export jobs that you are interested in.
+#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that was used to create the export jobs that you are interested in.
+#' @param trainedModelVersionIdentifier The version identifier of the trained model to filter export jobs by. When specified, only export jobs for this specific version of the trained model are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3390,24 +3176,18 @@ cleanroomsml_list_collaboration_trained_model_export_jobs <- function(nextToken 
 #' collaboration
 #'
 #' @description
-#' Returns a list of trained model inference jobs in a specified
-#' collaboration.
+#' Returns a list of trained model inference jobs in a specified collaboration.
 #'
 #' @usage
 #' cleanroomsml_list_collaboration_trained_model_inference_jobs(nextToken,
 #'   maxResults, collaborationIdentifier, trainedModelArn,
 #'   trainedModelVersionIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
-#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the trained
-#' model inference jobs that you are interested in.
-#' @param trainedModelArn The Amazon Resource Name (ARN) of the trained model that was used to
-#' create the trained model inference jobs that you are interested in.
-#' @param trainedModelVersionIdentifier The version identifier of the trained model to filter inference jobs by.
-#' When specified, only inference jobs that used this specific version of
-#' the trained model are returned.
+#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the trained model inference jobs that you are interested in.
+#' @param trainedModelArn The Amazon Resource Name (ARN) of the trained model that was used to create the trained model inference jobs that you are interested in.
+#' @param trainedModelVersionIdentifier The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3437,6 +3217,7 @@ cleanroomsml_list_collaboration_trained_model_export_jobs <- function(nextToken 
 #'       metricsStatusDetails = "string",
 #'       logsStatus = "PUBLISH_SUCCEEDED"|"PUBLISH_FAILED",
 #'       logsStatusDetails = "string",
+#'       mlModelInferencePayerAccountId = "string",
 #'       createTime = as.POSIXct(
 #'         "2015-01-01"
 #'       ),
@@ -3493,11 +3274,9 @@ cleanroomsml_list_collaboration_trained_model_inference_jobs <- function(nextTok
 #' cleanroomsml_list_collaboration_trained_models(nextToken, maxResults,
 #'   collaborationIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
-#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the trained
-#' models you are interested in.
+#' @param collaborationIdentifier &#91;required&#93; The collaboration ID of the collaboration that contains the trained models you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3527,7 +3306,8 @@ cleanroomsml_list_collaboration_trained_model_inference_jobs <- function(nextTok
 #'       collaborationIdentifier = "string",
 #'       status = "CREATE_PENDING"|"CREATE_IN_PROGRESS"|"CREATE_FAILED"|"ACTIVE"|"DELETE_PENDING"|"DELETE_IN_PROGRESS"|"DELETE_FAILED"|"INACTIVE"|"CANCEL_PENDING"|"CANCEL_IN_PROGRESS"|"CANCEL_FAILED",
 #'       configuredModelAlgorithmAssociationArn = "string",
-#'       creatorAccountId = "string"
+#'       creatorAccountId = "string",
+#'       mlModelTrainingPayerAccountId = "string"
 #'     )
 #'   )
 #' )
@@ -3574,8 +3354,7 @@ cleanroomsml_list_collaboration_trained_models <- function(nextToken = NULL, max
 #' @usage
 #' cleanroomsml_list_configured_audience_models(nextToken, maxResults)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
 #'
 #' @return
@@ -3650,11 +3429,9 @@ cleanroomsml_list_configured_audience_models <- function(nextToken = NULL, maxRe
 #' cleanroomsml_list_configured_model_algorithm_associations(nextToken,
 #'   maxResults, membershipIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that created the configured model
-#' algorithm associations you are interested in.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that created the configured model algorithm associations you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3721,8 +3498,7 @@ cleanroomsml_list_configured_model_algorithm_associations <- function(nextToken 
 #' @usage
 #' cleanroomsml_list_configured_model_algorithms(nextToken, maxResults)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
 #'
 #' @return
@@ -3787,11 +3563,9 @@ cleanroomsml_list_configured_model_algorithms <- function(nextToken = NULL, maxR
 #' cleanroomsml_list_ml_input_channels(nextToken, maxResults,
 #'   membershipIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum number of ML input channels to return.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the membership that contains the ML input channels
-#' that you want to list.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the membership that contains the ML input channels that you want to list.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3815,7 +3589,11 @@ cleanroomsml_list_configured_model_algorithms <- function(nextToken = NULL, maxR
 #'       protectedQueryIdentifier = "string",
 #'       mlInputChannelArn = "string",
 #'       status = "CREATE_PENDING"|"CREATE_IN_PROGRESS"|"CREATE_FAILED"|"ACTIVE"|"DELETE_PENDING"|"DELETE_IN_PROGRESS"|"DELETE_FAILED"|"INACTIVE",
-#'       description = "string"
+#'       description = "string",
+#'       payerConfiguration = list(
+#'         computePayerAccountId = "string",
+#'         syntheticDataPayerAccountId = "string"
+#'       )
 #'     )
 #'   )
 #' )
@@ -3862,8 +3640,7 @@ cleanroomsml_list_ml_input_channels <- function(nextToken = NULL, maxResults = N
 #' @usage
 #' cleanroomsml_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you are interested
-#' in.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3910,22 +3687,17 @@ cleanroomsml_list_tags_for_resource <- function(resourceArn) {
 #' parameters
 #'
 #' @description
-#' Returns a list of trained model inference jobs that match the request
-#' parameters.
+#' Returns a list of trained model inference jobs that match the request parameters.
 #'
 #' @usage
 #' cleanroomsml_list_trained_model_inference_jobs(nextToken, maxResults,
 #'   membershipIdentifier, trainedModelArn, trainedModelVersionIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
 #' @param membershipIdentifier &#91;required&#93; The membership
-#' @param trainedModelArn The Amazon Resource Name (ARN) of a trained model that was used to
-#' create the trained model inference jobs that you are interested in.
-#' @param trainedModelVersionIdentifier The version identifier of the trained model to filter inference jobs by.
-#' When specified, only inference jobs that used this specific version of
-#' the trained model are returned.
+#' @param trainedModelArn The Amazon Resource Name (ARN) of a trained model that was used to create the trained model inference jobs that you are interested in.
+#' @param trainedModelVersionIdentifier The version identifier of the trained model to filter inference jobs by. When specified, only inference jobs that used this specific version of the trained model are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3955,6 +3727,7 @@ cleanroomsml_list_tags_for_resource <- function(resourceArn) {
 #'       metricsStatusDetails = "string",
 #'       logsStatus = "PUBLISH_SUCCEEDED"|"PUBLISH_FAILED",
 #'       logsStatusDetails = "string",
+#'       mlModelInferencePayerAccountId = "string",
 #'       createTime = as.POSIXct(
 #'         "2015-01-01"
 #'       ),
@@ -4004,28 +3777,17 @@ cleanroomsml_list_trained_model_inference_jobs <- function(nextToken = NULL, max
 #' Returns a list of trained model versions for a specified trained model
 #'
 #' @description
-#' Returns a list of trained model versions for a specified trained model.
-#' This operation allows you to view all versions of a trained model,
-#' including information about their status and creation details. You can
-#' use this to track the evolution of your trained models and select
-#' specific versions for inference or further training.
+#' Returns a list of trained model versions for a specified trained model. This operation allows you to view all versions of a trained model, including information about their status and creation details. You can use this to track the evolution of your trained models and select specific versions for inference or further training.
 #'
 #' @usage
 #' cleanroomsml_list_trained_model_versions(nextToken, maxResults,
 #'   membershipIdentifier, trainedModelArn, status)
 #'
-#' @param nextToken The pagination token from a previous
-#' [`list_trained_model_versions`][cleanroomsml_list_trained_model_versions]
-#' request. Use this token to retrieve the next page of results.
-#' @param maxResults The maximum number of trained model versions to return in a single page.
-#' The default value is 10, and the maximum value is 100.
-#' @param membershipIdentifier &#91;required&#93; The membership identifier for the collaboration that contains the
-#' trained model.
-#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model for which to list
-#' versions.
-#' @param status Filter the results to only include trained model versions with the
-#' specified status. Valid values include `CREATE_PENDING`,
-#' `CREATE_IN_PROGRESS`, `ACTIVE`, `CREATE_FAILED`, and others.
+#' @param nextToken The pagination token from a previous [`list_trained_model_versions`][cleanroomsml_list_trained_model_versions] request. Use this token to retrieve the next page of results.
+#' @param maxResults The maximum number of trained model versions to return in a single page. The default value is 10, and the maximum value is 100.
+#' @param membershipIdentifier &#91;required&#93; The membership identifier for the collaboration that contains the trained model.
+#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model for which to list versions.
+#' @param status Filter the results to only include trained model versions with the specified status. Valid values include `CREATE_PENDING`, `CREATE_IN_PROGRESS`, `ACTIVE`, `CREATE_FAILED`, and others.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4054,7 +3816,8 @@ cleanroomsml_list_trained_model_inference_jobs <- function(nextToken = NULL, max
 #'       membershipIdentifier = "string",
 #'       collaborationIdentifier = "string",
 #'       status = "CREATE_PENDING"|"CREATE_IN_PROGRESS"|"CREATE_FAILED"|"ACTIVE"|"DELETE_PENDING"|"DELETE_IN_PROGRESS"|"DELETE_FAILED"|"INACTIVE"|"CANCEL_PENDING"|"CANCEL_IN_PROGRESS"|"CANCEL_FAILED",
-#'       configuredModelAlgorithmAssociationArn = "string"
+#'       configuredModelAlgorithmAssociationArn = "string",
+#'       mlModelTrainingPayerAccountId = "string"
 #'     )
 #'   )
 #' )
@@ -4104,11 +3867,9 @@ cleanroomsml_list_trained_model_versions <- function(nextToken = NULL, maxResult
 #' cleanroomsml_list_trained_models(nextToken, maxResults,
 #'   membershipIdentifier)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that created the trained models you are
-#' interested in.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that created the trained models you are interested in.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4137,7 +3898,8 @@ cleanroomsml_list_trained_model_versions <- function(nextToken = NULL, maxResult
 #'       membershipIdentifier = "string",
 #'       collaborationIdentifier = "string",
 #'       status = "CREATE_PENDING"|"CREATE_IN_PROGRESS"|"CREATE_FAILED"|"ACTIVE"|"DELETE_PENDING"|"DELETE_IN_PROGRESS"|"DELETE_FAILED"|"INACTIVE"|"CANCEL_PENDING"|"CANCEL_IN_PROGRESS"|"CANCEL_FAILED",
-#'       configuredModelAlgorithmAssociationArn = "string"
+#'       configuredModelAlgorithmAssociationArn = "string",
+#'       mlModelTrainingPayerAccountId = "string"
 #'     )
 #'   )
 #' )
@@ -4184,8 +3946,7 @@ cleanroomsml_list_trained_models <- function(nextToken = NULL, maxResults = NULL
 #' @usage
 #' cleanroomsml_list_training_datasets(nextToken, maxResults)
 #'
-#' @param nextToken The token value retrieved from a previous call to access the next page
-#' of results.
+#' @param nextToken The token value retrieved from a previous call to access the next page of results.
 #' @param maxResults The maximum size of the results that is returned per call.
 #'
 #' @return
@@ -4252,11 +4013,9 @@ cleanroomsml_list_training_datasets <- function(nextToken = NULL, maxResults = N
 #'   configuredAudienceModelArn, configuredAudienceModelPolicy,
 #'   previousPolicyHash, policyExistenceCondition)
 #'
-#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that the
-#' resource policy will govern.
+#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that the resource policy will govern.
 #' @param configuredAudienceModelPolicy &#91;required&#93; The IAM resource policy.
-#' @param previousPolicyHash A cryptographic hash of the contents of the policy used to prevent
-#' unexpected concurrent modification of the policy.
+#' @param previousPolicyHash A cryptographic hash of the contents of the policy used to prevent unexpected concurrent modification of the policy.
 #' @param policyExistenceCondition Use this to prevent unexpected concurrent modification of the policy.
 #'
 #' @return
@@ -4312,8 +4071,7 @@ cleanroomsml_put_configured_audience_model_policy <- function(configuredAudience
 #'   defaultOutputLocation)
 #'
 #' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is being configured.
-#' @param defaultOutputLocation &#91;required&#93; The default Amazon S3 location where ML output is stored for the
-#' specified member.
+#' @param defaultOutputLocation &#91;required&#93; The default Amazon S3 location where ML output is stored for the specified member.
 #'
 #' @return
 #' An empty list.
@@ -4361,17 +4119,15 @@ cleanroomsml_put_ml_configuration <- function(membershipIdentifier, defaultOutpu
 #' audience
 #'
 #' @description
-#' Export an audience of a specified size after you have generated an
-#' audience.
+#' Export an audience of a specified size after you have generated an audience.
 #'
 #' @usage
 #' cleanroomsml_start_audience_export_job(name, audienceGenerationJobArn,
 #'   audienceSize, description)
 #'
 #' @param name &#91;required&#93; The name of the audience export job.
-#' @param audienceGenerationJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience generation job that you
-#' want to export.
-#' @param audienceSize &#91;required&#93; 
+#' @param audienceGenerationJobArn &#91;required&#93; The Amazon Resource Name (ARN) of the audience generation job that you want to export.
+#' @param audienceSize &#91;required&#93; The size of the generated audience. Must match one of the sizes in the configured audience model.
 #' @param description The description of the audience export job.
 #'
 #' @return
@@ -4425,43 +4181,28 @@ cleanroomsml_start_audience_export_job <- function(name, audienceGenerationJobAr
 #'   collaborationId, description, tags)
 #'
 #' @param name &#91;required&#93; The name of the audience generation job.
-#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that is
-#' used for this audience generation job.
+#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that is used for this audience generation job.
 #' @param seedAudience &#91;required&#93; The seed audience that is used to generate the audience.
 #' @param includeSeedInOutput Whether the seed audience is included in the audience generation output.
-#' @param collaborationId The identifier of the collaboration that contains the audience
-#' generation job.
+#' @param collaborationId The identifier of the collaboration that contains the audience generation job.
 #' @param description The description of the audience generation job.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4544,13 +4285,9 @@ cleanroomsml_start_audience_generation_job <- function(name, configuredAudienceM
 #'   outputConfiguration, description)
 #'
 #' @param name &#91;required&#93; The name of the trained model export job.
-#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that you want to
-#' export.
-#' @param trainedModelVersionIdentifier The version identifier of the trained model to export. This specifies
-#' which version of the trained model should be exported to the specified
-#' destination.
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is receiving the exported trained
-#' model artifacts.
+#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that you want to export.
+#' @param trainedModelVersionIdentifier The version identifier of the trained model to export. This specifies which version of the trained model should be exported to the specified destination.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the member that is receiving the exported trained model artifacts.
 #' @param outputConfiguration &#91;required&#93; The output configuration information for the trained model export job.
 #' @param description The description of the trained model export job.
 #'
@@ -4602,67 +4339,46 @@ cleanroomsml_start_trained_model_export_job <- function(name, trainedModelArn, t
 #' Defines the information necessary to begin a trained model inference job
 #'
 #' @description
-#' Defines the information necessary to begin a trained model inference
-#' job.
+#' Defines the information necessary to begin a trained model inference job.
 #'
 #' @usage
 #' cleanroomsml_start_trained_model_inference_job(membershipIdentifier,
 #'   name, trainedModelArn, trainedModelVersionIdentifier,
 #'   configuredModelAlgorithmAssociationArn, resourceConfig,
 #'   outputConfiguration, dataSource, description,
-#'   containerExecutionParameters, environment, kmsKeyArn, tags)
+#'   containerExecutionParameters, environment, kmsKeyArn, tags,
+#'   mlModelInferencePayerAccountId)
 #'
-#' @param membershipIdentifier &#91;required&#93; The membership ID of the membership that contains the trained model
-#' inference job.
+#' @param membershipIdentifier &#91;required&#93; The membership ID of the membership that contains the trained model inference job.
 #' @param name &#91;required&#93; The name of the trained model inference job.
-#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that is used for
-#' this trained model inference job.
-#' @param trainedModelVersionIdentifier The version identifier of the trained model to use for inference. This
-#' specifies which version of the trained model should be used to generate
-#' predictions on the input data.
-#' @param configuredModelAlgorithmAssociationArn The Amazon Resource Name (ARN) of the configured model algorithm
-#' association that is used for this trained model inference job.
+#' @param trainedModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the trained model that is used for this trained model inference job.
+#' @param trainedModelVersionIdentifier The version identifier of the trained model to use for inference. This specifies which version of the trained model should be used to generate predictions on the input data.
+#' @param configuredModelAlgorithmAssociationArn The Amazon Resource Name (ARN) of the configured model algorithm association that is used for this trained model inference job.
 #' @param resourceConfig &#91;required&#93; Defines the resource configuration for the trained model inference job.
-#' @param outputConfiguration &#91;required&#93; Defines the output configuration information for the trained model
-#' inference job.
-#' @param dataSource &#91;required&#93; Defines the data source that is used for the trained model inference
-#' job.
+#' @param outputConfiguration &#91;required&#93; Defines the output configuration information for the trained model inference job.
+#' @param dataSource &#91;required&#93; Defines the data source that is used for the trained model inference job.
 #' @param description The description of the trained model inference job.
 #' @param containerExecutionParameters The execution parameters for the container.
 #' @param environment The environment variables to set in the Docker container.
-#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key. This key is used to
-#' encrypt and decrypt customer-owned data in the ML inference job and
-#' associated data.
-#' @param tags The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param kmsKeyArn The Amazon Resource Name (ARN) of the KMS key. This key is used to encrypt and decrypt customer-owned data in the ML inference job and associated data.
+#' @param tags The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms ML considers it to be a user tag and will count against the
-#'     limit of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms ML considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
+#' @param mlModelInferencePayerAccountId The account ID of the member that is responsible for paying for model inference costs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4705,7 +4421,8 @@ cleanroomsml_start_trained_model_export_job <- function(name, trainedModelArn, t
 #'   kmsKeyArn = "string",
 #'   tags = list(
 #'     "string"
-#'   )
+#'   ),
+#'   mlModelInferencePayerAccountId = "string"
 #' )
 #' ```
 #'
@@ -4714,7 +4431,7 @@ cleanroomsml_start_trained_model_export_job <- function(name, trainedModelArn, t
 #' @rdname cleanroomsml_start_trained_model_inference_job
 #'
 #' @aliases cleanroomsml_start_trained_model_inference_job
-cleanroomsml_start_trained_model_inference_job <- function(membershipIdentifier, name, trainedModelArn, trainedModelVersionIdentifier = NULL, configuredModelAlgorithmAssociationArn = NULL, resourceConfig, outputConfiguration, dataSource, description = NULL, containerExecutionParameters = NULL, environment = NULL, kmsKeyArn = NULL, tags = NULL) {
+cleanroomsml_start_trained_model_inference_job <- function(membershipIdentifier, name, trainedModelArn, trainedModelVersionIdentifier = NULL, configuredModelAlgorithmAssociationArn = NULL, resourceConfig, outputConfiguration, dataSource, description = NULL, containerExecutionParameters = NULL, environment = NULL, kmsKeyArn = NULL, tags = NULL, mlModelInferencePayerAccountId = NULL) {
   op <- new_operation(
     name = "StartTrainedModelInferenceJob",
     http_method = "POST",
@@ -4723,7 +4440,7 @@ cleanroomsml_start_trained_model_inference_job <- function(membershipIdentifier,
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .cleanroomsml$start_trained_model_inference_job_input(membershipIdentifier = membershipIdentifier, name = name, trainedModelArn = trainedModelArn, trainedModelVersionIdentifier = trainedModelVersionIdentifier, configuredModelAlgorithmAssociationArn = configuredModelAlgorithmAssociationArn, resourceConfig = resourceConfig, outputConfiguration = outputConfiguration, dataSource = dataSource, description = description, containerExecutionParameters = containerExecutionParameters, environment = environment, kmsKeyArn = kmsKeyArn, tags = tags)
+  input <- .cleanroomsml$start_trained_model_inference_job_input(membershipIdentifier = membershipIdentifier, name = name, trainedModelArn = trainedModelArn, trainedModelVersionIdentifier = trainedModelVersionIdentifier, configuredModelAlgorithmAssociationArn = configuredModelAlgorithmAssociationArn, resourceConfig = resourceConfig, outputConfiguration = outputConfiguration, dataSource = dataSource, description = description, containerExecutionParameters = containerExecutionParameters, environment = environment, kmsKeyArn = kmsKeyArn, tags = tags, mlModelInferencePayerAccountId = mlModelInferencePayerAccountId)
   output <- .cleanroomsml$start_trained_model_inference_job_output()
   config <- get_config()
   svc <- .cleanroomsml$service(config, op)
@@ -4741,38 +4458,24 @@ cleanroomsml_start_trained_model_inference_job <- function(membershipIdentifier,
 #' @usage
 #' cleanroomsml_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to assign
-#' tags.
-#' @param tags &#91;required&#93; The optional metadata that you apply to the resource to help you
-#' categorize and organize them. Each tag consists of a key and an optional
-#' value, both of which you define.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to assign tags.
+#' @param tags &#91;required&#93; The optional metadata that you apply to the resource to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 #' 
 #' The following basic restrictions apply to tags:
 #' 
 #' -   Maximum number of tags per resource - 50.
 #' 
-#' -   For each resource, each tag key must be unique, and each tag key can
-#'     have only one value.
+#' -   For each resource, each tag key must be unique, and each tag key can have only one value.
 #' 
 #' -   Maximum key length - 128 Unicode characters in UTF-8.
 #' 
 #' -   Maximum value length - 256 Unicode characters in UTF-8.
 #' 
-#' -   If your tagging schema is used across multiple services and
-#'     resources, remember that other services may have restrictions on
-#'     allowed characters. Generally allowed characters are: letters,
-#'     numbers, and spaces representable in UTF-8, and the following
-#'     characters: + - = . _ : / @@.
+#' -   If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @@.
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such
-#'     as a prefix for keys as it is reserved for AWS use. You cannot edit
-#'     or delete tag keys with this prefix. Values can have this prefix. If
-#'     a tag value has aws as its prefix but the key does not, then Clean
-#'     Rooms considers it to be a user tag and will count against the limit
-#'     of 50 tags. Tags with only the key prefix of aws do not count
-#'     against your tags per resource limit.
+#' -   Do not use aws:, AWS:, or any upper or lowercase combination of such as a prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has aws as its prefix but the key does not, then Clean Rooms considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of aws do not count against your tags per resource limit.
 #'
 #' @return
 #' An empty list.
@@ -4819,8 +4522,7 @@ cleanroomsml_tag_resource <- function(resourceArn, tags) {
 #' @usage
 #' cleanroomsml_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove
-#' tags from.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
 #' @param tagKeys &#91;required&#93; The key values of tags that you want to remove.
 #'
 #' @return
@@ -4863,9 +4565,7 @@ cleanroomsml_untag_resource <- function(resourceArn, tagKeys) {
 #' Provides the information necessary to update a configured audience model
 #'
 #' @description
-#' Provides the information necessary to update a configured audience
-#' model. Updates that impact audience generation jobs take effect when a
-#' new job starts, but do not impact currently running jobs.
+#' Provides the information necessary to update a configured audience model. Updates that impact audience generation jobs take effect when a new job starts, but do not impact currently running jobs.
 #'
 #' @usage
 #' cleanroomsml_update_configured_audience_model(
@@ -4873,14 +4573,11 @@ cleanroomsml_untag_resource <- function(resourceArn, tagKeys) {
 #'   sharedAudienceMetrics, minMatchingSeedSize, audienceSizeConfig,
 #'   description)
 #'
-#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that you
-#' want to update.
+#' @param configuredAudienceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the configured audience model that you want to update.
 #' @param outputConfig The new output configuration.
-#' @param audienceModelArn The Amazon Resource Name (ARN) of the new audience model that you want
-#' to use.
+#' @param audienceModelArn The Amazon Resource Name (ARN) of the new audience model that you want to use.
 #' @param sharedAudienceMetrics The new value for whether to share audience metrics.
-#' @param minMatchingSeedSize The minimum number of users from the seed audience that must match with
-#' users in the training data of the audience model.
+#' @param minMatchingSeedSize The minimum number of users from the seed audience that must match with users in the training data of the audience model.
 #' @param audienceSizeConfig The new audience size configuration.
 #' @param description The new description of the configured audience model.
 #'

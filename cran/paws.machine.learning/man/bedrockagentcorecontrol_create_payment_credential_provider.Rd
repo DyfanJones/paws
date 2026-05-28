@@ -14,13 +14,13 @@ bedrockagentcorecontrol_create_payment_credential_provider(
 )
 }
 \arguments{
-\item{name}{[required] Unique name for the payment credential provider}
+\item{name}{[required] Unique name for the payment credential provider.}
 
-\item{credentialProviderVendor}{[required] The vendor type (e.g., CoinbaseCDP)}
+\item{credentialProviderVendor}{[required] The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).}
 
-\item{providerConfigurationInput}{[required] Configuration specific to the vendor, including API credentials}
+\item{providerConfigurationInput}{[required] Configuration specific to the vendor, including API credentials.}
 
-\item{tags}{Optional tags for resource organization}
+\item{tags}{Optional tags for resource organization.}
 }
 \description{
 Creates a new payment credential provider for storing authentication credentials used by payment connectors to communicate with external payment providers.

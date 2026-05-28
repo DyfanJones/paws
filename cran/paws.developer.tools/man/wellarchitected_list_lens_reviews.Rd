@@ -12,7 +12,15 @@ wellarchitected_list_lens_reviews(
 )
 }
 \arguments{
-\item{WorkloadId}{[required]}
+\item{WorkloadId}{[required] The ID assigned to the workload. This ID is unique within an Amazon Web Services Region.}
+
+\item{MilestoneNumber}{The milestone number.
+
+A workload can have a maximum of 100 milestones.}
+
+\item{NextToken}{The token to use to retrieve the next set of results.}
+
+\item{MaxResults}{The maximum number of results to return for this request.}
 }
 \description{
 List lens reviews for a particular workload.

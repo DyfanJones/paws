@@ -14,21 +14,13 @@ ec2_get_ipam_prefix_list_resolver_versions(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{IpamPrefixListResolverId}{[required] The ID of the IPAM prefix list resolver whose versions you want to
-retrieve.}
+\item{IpamPrefixListResolverId}{[required] The ID of the IPAM prefix list resolver whose versions you want to retrieve.}
 
-\item{IpamPrefixListResolverVersions}{Specific version numbers to retrieve. If not specified, all versions are
-returned.}
+\item{IpamPrefixListResolverVersions}{Specific version numbers to retrieve. If not specified, all versions are returned.}
 
-\item{MaxResults}{The maximum number of items to return for this request. To get the next
-page of items, make another request with the token returned in the
-output. For more information, see
-\href{https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination}{Pagination}.}
+\item{MaxResults}{The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/Query-Requests.html#api-pagination}{Pagination}.}
 
 \item{Filters}{One or more filters to limit the results.}
 

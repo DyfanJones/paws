@@ -15,17 +15,16 @@ lakeformation_get_temporary_data_location_credentials(
 )
 }
 \arguments{
-\item{DurationSeconds}{The time period, between 900 and 43,200 seconds, for the timeout of the
-temporary credentials.}
+\item{DurationSeconds}{The time period, between 900 and 43,200 seconds, for the timeout of the temporary credentials.}
+
+\item{AuditContext}{A structure used to include auditing information on the privileged API.}
 
 \item{DataLocations}{The Amazon S3 data location that you want to access.}
 
-\item{CredentialsScope}{The credential scope is determined by the caller's Lake Formation
-permission on the associated table. Credential scope can be either:
+\item{CredentialsScope}{The credential scope is determined by the caller's Lake Formation permission on the associated table. Credential scope can be either:
 \itemize{
 \item READ - Provides read-only access to the data location.
-\item READ_WRITE - Provides both read and write access to the data
-location.
+\item READ_WRITE - Provides both read and write access to the data location.
 }}
 }
 \description{

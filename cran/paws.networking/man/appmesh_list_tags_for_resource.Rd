@@ -7,27 +7,11 @@
 appmesh_list_tags_for_resource(limit = NULL, nextToken = NULL, resourceArn)
 }
 \arguments{
-\item{limit}{The maximum number of tag results returned by
-\code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} in paginated
-output. When this parameter is used,
-\code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} returns only
-\code{limit} results in a single page along with a \code{nextToken} response
-element. You can see the remaining results of the initial request by
-sending another
-\code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} request with
-the returned \code{nextToken} value. This value can be between 1 and 100. If
-you don't use this parameter,
-\code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} returns up to
-100 results and a \code{nextToken} value if applicable.}
+\item{limit}{The maximum number of tag results returned by \code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} in paginated output. When this parameter is used, \code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} returns only \code{limit} results in a single page along with a \code{nextToken} response element. You can see the remaining results of the initial request by sending another \code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} request with the returned \code{nextToken} value. This value can be between 1 and 100. If you don't use this parameter, \code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} returns up to 100 results and a \code{nextToken} value if applicable.}
 
-\item{nextToken}{The \code{nextToken} value returned from a previous paginated
-\code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} request where
-\code{limit} was used and the results exceeded the value of that parameter.
-Pagination continues from the end of the previous results that returned
-the \code{nextToken} value.}
+\item{nextToken}{The \code{nextToken} value returned from a previous paginated \code{\link[=appmesh_list_tags_for_resource]{list_tags_for_resource}} request where \code{limit} was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the \code{nextToken} value.}
 
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) that identifies the resource to list the
-tags for.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) that identifies the resource to list the tags for.}
 }
 \description{
 List the tags for an App Mesh resource.

@@ -14,9 +14,7 @@ kinesis_add_tags_to_stream(
 \arguments{
 \item{StreamName}{The name of the stream.}
 
-\item{Tags}{[required] A set of up to 50 key-value pairs to use to create the tags. A tag
-consists of a required key and an optional value. You can add up to 50
-tags per resource.}
+\item{Tags}{[required] A set of up to 50 key-value pairs to use to create the tags. A tag consists of a required key and an optional value. You can add up to 50 tags per resource.}
 
 \item{StreamARN}{The ARN of the stream.}
 

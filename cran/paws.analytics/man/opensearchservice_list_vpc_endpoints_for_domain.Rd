@@ -10,10 +10,7 @@ opensearchservice_list_vpc_endpoints_for_domain(DomainName, NextToken = NULL)
 \arguments{
 \item{DomainName}{[required] The name of the domain to list associated VPC endpoints for.}
 
-\item{NextToken}{If your initial \code{ListEndpointsForDomain} operation returns a
-\code{nextToken}, you can include the returned \code{nextToken} in subsequent
-\code{ListEndpointsForDomain} operations, which returns results in the next
-page.}
+\item{NextToken}{If your initial \code{ListEndpointsForDomain} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{ListEndpointsForDomain} operations, which returns results in the next page.}
 }
 \description{
 Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.

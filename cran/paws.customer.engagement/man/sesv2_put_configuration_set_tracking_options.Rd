@@ -15,6 +15,8 @@ sesv2_put_configuration_set_tracking_options(
 \item{ConfigurationSetName}{[required] The name of the configuration set.}
 
 \item{CustomRedirectDomain}{The domain to use to track open and click events.}
+
+\item{HttpsPolicy}{The https policy to use for tracking open and click events. If the value is OPTIONAL or HttpsPolicy is not specified, the open trackers use HTTP and click tracker use the original protocol of the link. If the value is REQUIRE, both open and click tracker uses HTTPS and if the value is REQUIRE_OPEN_ONLY open tracker uses HTTPS and link tracker is same as original protocol of the link.}
 }
 \description{
 Specify a custom domain to use for open and click tracking elements in email that you send.

@@ -8,14 +8,11 @@ OpenSearch (self managed)}
 kendraranking_rescore(RescoreExecutionPlanId, SearchQuery, Documents)
 }
 \arguments{
-\item{RescoreExecutionPlanId}{[required] The identifier of the rescore execution plan. A rescore execution plan
-is an Amazon Kendra Intelligent Ranking resource used for provisioning
-the \code{\link[=kendraranking_rescore]{rescore}} API.}
+\item{RescoreExecutionPlanId}{[required] The identifier of the rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the \code{\link[=kendraranking_rescore]{rescore}} API.}
 
 \item{SearchQuery}{[required] The input query from the search service.}
 
-\item{Documents}{[required] The list of documents for Amazon Kendra Intelligent Ranking to rescore
-or rank on.}
+\item{Documents}{[required] The list of documents for Amazon Kendra Intelligent Ranking to rescore or rank on.}
 }
 \description{
 Rescores or re-ranks search results from a search service such as OpenSearch (self managed). You use the semantic search capabilities of Amazon Kendra Intelligent Ranking to improve the search service's results.

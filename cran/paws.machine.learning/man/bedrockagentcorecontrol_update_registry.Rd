@@ -13,23 +13,15 @@ bedrockagentcorecontrol_update_registry(
 )
 }
 \arguments{
-\item{registryId}{[required] The identifier of the registry to update. You can specify either the
-Amazon Resource Name (ARN) or the ID of the registry.}
+\item{registryId}{[required] The identifier of the registry to update. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 
 \item{name}{The updated name of the registry.}
 
-\item{description}{The updated description of the registry. To clear the description,
-include the \code{UpdatedDescription} wrapper with \code{optionalValue} not
-specified.}
+\item{description}{The updated description of the registry. To clear the description, include the \code{UpdatedDescription} wrapper with \code{optionalValue} not specified.}
 
-\item{authorizerConfiguration}{The updated authorizer configuration for the registry. Changing the
-authorizer configuration can break existing consumers of the registry
-who are using the authorization type prior to the update.}
+\item{authorizerConfiguration}{The updated authorizer configuration for the registry. Changing the authorizer configuration can break existing consumers of the registry who are using the authorization type prior to the update.}
 
-\item{approvalConfiguration}{The updated approval configuration for registry records. The updated
-configuration only affects new records that move to \code{PENDING_APPROVAL}
-status after the change. Existing records already in \code{PENDING_APPROVAL}
-status are not affected.}
+\item{approvalConfiguration}{The updated approval configuration for registry records. The updated configuration only affects new records that move to \code{PENDING_APPROVAL} status after the change. Existing records already in \code{PENDING_APPROVAL} status are not affected.}
 }
 \description{
 Updates an existing registry. This operation uses PATCH semantics, so you only need to specify the fields you want to change.

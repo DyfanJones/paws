@@ -16,30 +16,21 @@ redshift_enable_snapshot_copy(
 \arguments{
 \item{ClusterIdentifier}{[required] The unique identifier of the source cluster to copy snapshots from.
 
-Constraints: Must be the valid name of an existing cluster that does not
-already have cross-region snapshot copy enabled.}
+Constraints: Must be the valid name of an existing cluster that does not already have cross-region snapshot copy enabled.}
 
-\item{DestinationRegion}{[required] The destination Amazon Web Services Region that you want to copy
-snapshots to.
+\item{DestinationRegion}{[required] The destination Amazon Web Services Region that you want to copy snapshots to.
 
-Constraints: Must be the name of a valid Amazon Web Services Region. For
-more information, see \href{https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region}{Regions and Endpoints}
-in the Amazon Web Services General Reference.}
+Constraints: Must be the name of a valid Amazon Web Services Region. For more information, see \href{https://docs.aws.amazon.com/general/latest/gr/rande.html#redshift_region}{Regions and Endpoints} in the Amazon Web Services General Reference.}
 
-\item{RetentionPeriod}{The number of days to retain automated snapshots in the destination
-region after they are copied from the source region.
+\item{RetentionPeriod}{The number of days to retain automated snapshots in the destination region after they are copied from the source region.
 
 Default: 7.
 
 Constraints: Must be at least 1 and no more than 35.}
 
-\item{SnapshotCopyGrantName}{The name of the snapshot copy grant to use when snapshots of an Amazon
-Web Services KMS-encrypted cluster are copied to the destination region.}
+\item{SnapshotCopyGrantName}{The name of the snapshot copy grant to use when snapshots of an Amazon Web Services KMS-encrypted cluster are copied to the destination region.}
 
-\item{ManualSnapshotRetentionPeriod}{The number of days to retain newly copied snapshots in the destination
-Amazon Web Services Region after they are copied from the source Amazon
-Web Services Region. If the value is -1, the manual snapshot is retained
-indefinitely.
+\item{ManualSnapshotRetentionPeriod}{The number of days to retain newly copied snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. If the value is -1, the manual snapshot is retained indefinitely.
 
 The value must be either -1 or an integer between 1 and 3,653.}
 }

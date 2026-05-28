@@ -23,12 +23,9 @@ lexruntimev2_start_conversation(
 
 \item{sessionId}{[required] The identifier of the user session that is having the conversation.}
 
-\item{conversationMode}{The conversation type that you are using the Amazon Lex V2. If the
-conversation mode is \code{AUDIO} you can send both audio and DTMF
-information. If the mode is \code{TEXT} you can only send text.}
+\item{conversationMode}{The conversation type that you are using the Amazon Lex V2. If the conversation mode is \code{AUDIO} you can send both audio and DTMF information. If the mode is \code{TEXT} you can only send text.}
 
-\item{requestEventStream}{[required] Represents the stream of events to Amazon Lex V2 from your application.
-The events are encoded as HTTP/2 data frames.}
+\item{requestEventStream}{[required] Represents the stream of events to Amazon Lex V2 from your application. The events are encoded as HTTP/2 data frames.}
 }
 \description{
 Starts an HTTP/2 bidirectional event stream that enables you to send audio, text, or DTMF input in real time. After your application starts a conversation, users send input to Amazon Lex V2 as a stream of events. Amazon Lex V2 processes the incoming events and responds with streaming text or audio events.

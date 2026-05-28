@@ -30,121 +30,79 @@ sagemaker_create_model_package(
   SourceUri = NULL,
   SecurityConfig = NULL,
   ModelCard = NULL,
-  ModelLifeCycle = NULL
+  ModelLifeCycle = NULL,
+  ManagedStorageType = NULL
 )
 }
 \arguments{
-\item{ModelPackageName}{The name of the model package. The name must have 1 to 63 characters.
-Valid characters are a-z, A-Z, 0-9, and - (hyphen).
+\item{ModelPackageName}{The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).
 
-This parameter is required for unversioned models. It is not applicable
-to versioned models.}
+This parameter is required for unversioned models. It is not applicable to versioned models.}
 
-\item{ModelPackageGroupName}{The name or Amazon Resource Name (ARN) of the model package group that
-this model version belongs to.
+\item{ModelPackageGroupName}{The name or Amazon Resource Name (ARN) of the model package group that this model version belongs to.
 
-This parameter is required for versioned models, and does not apply to
-unversioned models.}
+This parameter is required for versioned models, and does not apply to unversioned models.}
 
 \item{ModelPackageDescription}{A description of the model package.}
 
 \item{ModelPackageRegistrationType}{The package registration type of the model package input.}
 
-\item{InferenceSpecification}{Specifies details about inference jobs that you can run with models
-based on this model package, including the following information:
+\item{InferenceSpecification}{Specifies details about inference jobs that you can run with models based on this model package, including the following information:
 \itemize{
-\item The Amazon ECR paths of containers that contain the inference code
-and model artifacts.
-\item The instance types that the model package supports for transform
-jobs and real-time endpoints used for inference.
-\item The input and output content formats that the model package supports
-for inference.
+\item The Amazon ECR paths of containers that contain the inference code and model artifacts.
+\item The instance types that the model package supports for transform jobs and real-time endpoints used for inference.
+\item The input and output content formats that the model package supports for inference.
 }}
 
-\item{ValidationSpecification}{Specifies configurations for one or more transform jobs that SageMaker
-runs to test the model package.}
+\item{ValidationSpecification}{Specifies configurations for one or more transform jobs that SageMaker runs to test the model package.}
 
 \item{SourceAlgorithmSpecification}{Details about the algorithm that was used to create the model package.}
 
-\item{CertifyForMarketplace}{Whether to certify the model package for listing on Amazon Web Services
-Marketplace.
+\item{CertifyForMarketplace}{Whether to certify the model package for listing on Amazon Web Services Marketplace.
 
-This parameter is optional for unversioned models, and does not apply to
-versioned models.}
+This parameter is optional for unversioned models, and does not apply to versioned models.}
 
-\item{Tags}{A list of key value pairs associated with the model. For more
-information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources}
-in the \emph{Amazon Web Services General Reference Guide}.
+\item{Tags}{A list of key value pairs associated with the model. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources} in the \emph{Amazon Web Services General Reference Guide}.
 
-If you supply \code{ModelPackageGroupName}, your model package belongs to the
-model group you specify and uses the tags associated with the model
-group. In this case, you cannot supply a \code{tag} argument.}
+If you supply \code{ModelPackageGroupName}, your model package belongs to the model group you specify and uses the tags associated with the model group. In this case, you cannot supply a \code{tag} argument.}
 
 \item{ModelApprovalStatus}{Whether the model is approved for deployment.
 
-This parameter is optional for versioned models, and does not apply to
-unversioned models.
+This parameter is optional for versioned models, and does not apply to unversioned models.
 
-For versioned models, the value of this parameter must be set to
-\code{Approved} to deploy the model.}
+For versioned models, the value of this parameter must be set to \code{Approved} to deploy the model.}
+
+\item{MetadataProperties}{Metadata properties of the tracking entity, trial, or trial component.}
 
 \item{ModelMetrics}{A structure that contains model metrics reports.}
 
 \item{ClientToken}{A unique token that guarantees that the call to this API is idempotent.}
 
-\item{Domain}{The machine learning domain of your model package and its components.
-Common machine learning domains include computer vision and natural
-language processing.}
+\item{Domain}{The machine learning domain of your model package and its components. Common machine learning domains include computer vision and natural language processing.}
 
-\item{Task}{The machine learning task your model package accomplishes. Common
-machine learning tasks include object detection and image
-classification. The following tasks are supported by Inference
-Recommender: \code{"IMAGE_CLASSIFICATION"} | \code{"OBJECT_DETECTION"} |
-\code{"TEXT_GENERATION"} |\code{"IMAGE_SEGMENTATION"} | \code{"FILL_MASK"} |
-\code{"CLASSIFICATION"} | \code{"REGRESSION"} | \code{"OTHER"}.
+\item{Task}{The machine learning task your model package accomplishes. Common machine learning tasks include object detection and image classification. The following tasks are supported by Inference Recommender: \code{"IMAGE_CLASSIFICATION"} | \code{"OBJECT_DETECTION"} | \code{"TEXT_GENERATION"} |\code{"IMAGE_SEGMENTATION"} | \code{"FILL_MASK"} | \code{"CLASSIFICATION"} | \code{"REGRESSION"} | \code{"OTHER"}.
 
 Specify "OTHER" if none of the tasks listed fit your use case.}
 
-\item{SamplePayloadUrl}{The Amazon Simple Storage Service (Amazon S3) path where the sample
-payload is stored. This path must point to a single gzip compressed tar
-archive (.tar.gz suffix). This archive can hold multiple files that are
-all equally used in the load test. Each file in the archive must satisfy
-the size constraints of the
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax}{InvokeEndpoint}
-call.}
+\item{SamplePayloadUrl}{The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored. This path must point to a single gzip compressed tar archive (.tar.gz suffix). This archive can hold multiple files that are all equally used in the load test. Each file in the archive must satisfy the size constraints of the \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax}{InvokeEndpoint} call.}
 
 \item{CustomerMetadataProperties}{The metadata properties associated with the model package versions.}
 
-\item{DriftCheckBaselines}{Represents the drift check baselines that can be used when the model
-monitor is set using the model package. For more information, see the
-topic on \href{https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection}{Drift Detection against Previous Baselines in SageMaker Pipelines}
-in the \emph{Amazon SageMaker Developer Guide}.}
+\item{DriftCheckBaselines}{Represents the drift check baselines that can be used when the model monitor is set using the model package. For more information, see the topic on \href{https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-quality-clarify-baseline-lifecycle.html#pipelines-quality-clarify-baseline-drift-detection}{Drift Detection against Previous Baselines in SageMaker Pipelines} in the \emph{Amazon SageMaker Developer Guide}.}
 
-\item{AdditionalInferenceSpecifications}{An array of additional Inference Specification objects. Each additional
-Inference Specification specifies artifacts based on this model package
-that can be used on inference endpoints. Generally used with SageMaker
-Neo to store the compiled artifacts.}
+\item{AdditionalInferenceSpecifications}{An array of additional Inference Specification objects. Each additional Inference Specification specifies artifacts based on this model package that can be used on inference endpoints. Generally used with SageMaker Neo to store the compiled artifacts.}
 
 \item{SkipModelValidation}{Indicates if you want to skip model validation.}
 
-\item{SourceUri}{The URI of the source for the model package. If you want to clone a
-model package, set it to the model package Amazon Resource Name (ARN).
-If you want to register a model, set it to the model ARN.}
+\item{SourceUri}{The URI of the source for the model package. If you want to clone a model package, set it to the model package Amazon Resource Name (ARN). If you want to register a model, set it to the model ARN.}
 
-\item{SecurityConfig}{The KMS Key ID (\code{KMSKeyId}) used for encryption of model package
-information.}
+\item{SecurityConfig}{The KMS Key ID (\code{KMSKeyId}) used for encryption of model package information.}
 
-\item{ModelCard}{The model card associated with the model package. Since
-\code{ModelPackageModelCard} is tied to a model package, it is a specific
-usage of a model card and its schema is simplified compared to the
-schema of \code{ModelCard}. The \code{ModelPackageModelCard} schema does not
-include \code{model_package_details}, and \code{model_overview} is composed of the
-\code{model_creator} and \code{model_artifact} properties. For more information
-about the model package model card schema, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema}{Model package model card schema}.
-For more information about the model card associated with the model
-package, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html}{View the Details of a Model Version}.}
+\item{ModelCard}{The model card associated with the model package. Since \code{ModelPackageModelCard} is tied to a model package, it is a specific usage of a model card and its schema is simplified compared to the schema of \code{ModelCard}. The \code{ModelPackageModelCard} schema does not include \code{model_package_details}, and \code{model_overview} is composed of the \code{model_creator} and \code{model_artifact} properties. For more information about the model package model card schema, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema}{Model package model card schema}. For more information about the model card associated with the model package, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html}{View the Details of a Model Version}.}
 
 \item{ModelLifeCycle}{A structure describing the current state of the model in its life cycle.}
+
+\item{ManagedStorageType}{The storage type of the model package.}
 }
 \description{
 Creates a model package that you can use to create SageMaker models or list on Amazon Web Services Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in SageMaker.

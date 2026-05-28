@@ -14,18 +14,15 @@ billingconductor_list_account_associations(
 \arguments{
 \item{BillingPeriod}{The preferred billing period to get account associations.}
 
-\item{Filters}{The filter on the account ID of the linked account, or any of the
-following:
+\item{Filters}{The filter on the account ID of the linked account, or any of the following:
 
 \code{MONITORED}: linked accounts that are associated to billing groups.
 
 \code{UNMONITORED}: linked accounts that aren't associated to billing groups.
 
-\verb{Billing Group Arn}: linked accounts that are associated to the provided
-billing group Arn.}
+\verb{Billing Group Arn}: linked accounts that are associated to the provided billing group Arn.}
 
-\item{NextToken}{The pagination token that's used on subsequent calls to retrieve
-accounts.}
+\item{NextToken}{The pagination token that's used on subsequent calls to retrieve accounts.}
 }
 \description{
 This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group that's associated with the linked account.

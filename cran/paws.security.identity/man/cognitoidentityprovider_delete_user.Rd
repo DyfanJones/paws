@@ -7,9 +7,7 @@
 cognitoidentityprovider_delete_user(AccessToken)
 }
 \arguments{
-\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently
-signed-in user. Must include a scope claim for
-\code{aws.cognito.signin.user.admin}.}
+\item{AccessToken}{[required] A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for \code{aws.cognito.signin.user.admin}.}
 }
 \description{
 Deletes the profile of the currently signed-in user. A deleted user profile can no longer be used to sign in and can't be restored.

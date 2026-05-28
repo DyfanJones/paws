@@ -16,52 +16,21 @@ ecs_list_daemon_task_definitions(
 )
 }
 \arguments{
-\item{familyPrefix}{The full family name to filter the
-\code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}}
-results with. Specifying a \code{familyPrefix} limits the listed daemon task
-definitions to daemon task definition families that start with the
-\code{familyPrefix} string.}
+\item{familyPrefix}{The full family name to filter the \code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}} results with. Specifying a \code{familyPrefix} limits the listed daemon task definitions to daemon task definition families that start with the \code{familyPrefix} string.}
 
-\item{family}{The exact name of the daemon task definition family to filter results
-with.}
+\item{family}{The exact name of the daemon task definition family to filter results with.}
 
-\item{revision}{The revision filter to apply. Specify \code{LAST_REGISTERED} to return only
-the last registered revision for each daemon task definition family.}
+\item{revision}{The revision filter to apply. Specify \code{LAST_REGISTERED} to return only the last registered revision for each daemon task definition family.}
 
-\item{status}{The daemon task definition status to filter the
-\code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}}
-results with. By default, only \code{ACTIVE} daemon task definitions are
-listed. If you set this parameter to \code{DELETE_IN_PROGRESS}, only daemon
-task definitions that are in the process of being deleted are listed. If
-you set this parameter to \code{ALL}, all daemon task definitions are listed
-regardless of status.}
+\item{status}{The daemon task definition status to filter the \code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}} results with. By default, only \code{ACTIVE} daemon task definitions are listed. If you set this parameter to \code{DELETE_IN_PROGRESS}, only daemon task definitions that are in the process of being deleted are listed. If you set this parameter to \code{ALL}, all daemon task definitions are listed regardless of status.}
 
-\item{sort}{The order to sort the results. Valid values are \code{ASC} and \code{DESC}. By
-default (\code{ASC}), daemon task definitions are listed in ascending order
-by family name and revision number.}
+\item{sort}{The order to sort the results. Valid values are \code{ASC} and \code{DESC}. By default (\code{ASC}), daemon task definitions are listed in ascending order by family name and revision number.}
 
-\item{nextToken}{The \code{nextToken} value returned from a
-\code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}}
-request indicating that more results are available to fulfill the
-request and further calls will be needed. If \code{maxResults} was provided,
-it's possible for the number of results to be fewer than \code{maxResults}.
+\item{nextToken}{The \code{nextToken} value returned from a \code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}} request indicating that more results are available to fulfill the request and further calls will be needed. If \code{maxResults} was provided, it's possible for the number of results to be fewer than \code{maxResults}.
 
-This token should be treated as an opaque identifier that is only used
-to retrieve the next items in a list and not for other programmatic
-purposes.}
+This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.}
 
-\item{maxResults}{The maximum number of daemon task definition results that
-\code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}}
-returned in paginated output. When this parameter is used,
-\code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}} only
-returns \code{maxResults} results in a single page along with a \code{nextToken}
-response element. The remaining results of the initial request can be
-seen by sending another
-\code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}}
-request with the returned \code{nextToken} value. This value can be between 1
-and 100. If this parameter isn't used, then
-\code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}}
-returns up to 100 results and a \code{nextToken} value if applicable.}
+\item{maxResults}{The maximum number of daemon task definition results that \code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}} returned in paginated output. When this parameter is used, \code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}} only returns \code{maxResults} results in a single page along with a \code{nextToken} response element. The remaining results of the initial request can be seen by sending another \code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}} request with the returned \code{nextToken} value. This value can be between 1 and 100. If this parameter isn't used, then \code{\link[=ecs_list_daemon_task_definitions]{list_daemon_task_definitions}} returns up to 100 results and a \code{nextToken} value if applicable.}
 }
 \description{
 Returns a list of daemon task definitions that are registered to your account. You can filter the results by family name, status, or both to find daemon task definitions that match your criteria.

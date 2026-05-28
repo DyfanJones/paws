@@ -16,16 +16,9 @@ apigateway_get_resources(
 
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 
-\item{embed}{A query parameter used to retrieve the specified resources embedded in
-the returned Resources resource in the response. This \code{embed} parameter
-value is a list of comma-separated strings. Currently, the request
-supports only retrieval of the embedded Method resources this way. The
-query parameter value must be a single-valued list and contain the
-\code{"methods"} string. For example,
-\code{GET /restapis/{restapi_id}/resources?embed=methods}.}
+\item{embed}{A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This \code{embed} parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the \code{"methods"} string. For example, \code{GET /restapis/{restapi_id}/resources?embed=methods}.}
 }
 \description{
 Lists information about a collection of Resource resources.

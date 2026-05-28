@@ -7,8 +7,7 @@
 lexmodelbuildingservice_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource to get a list of tags
-for.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource to get a list of tags for.}
 }
 \description{
 Gets a list of tags associated with the specified resource. Only bots, bot aliases, and bot channels can have tags associated with them.

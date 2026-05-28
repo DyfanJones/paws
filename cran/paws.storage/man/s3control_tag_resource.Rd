@@ -7,15 +7,11 @@
 s3control_tag_resource(AccountId, ResourceArn, Tags)
 }
 \arguments{
-\item{AccountId}{[required] The Amazon Web Services account ID that created the S3 resource that
-you're trying to add tags to or the requester's account ID.}
+\item{AccountId}{[required] The Amazon Web Services account ID that created the S3 resource that you're trying to add tags to or the requester's account ID.}
 
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the S3 resource that you're applying
-tags to. The tagged resource can be a directory bucket, S3 Storage Lens
-group or S3 Access Grants instance, registered location, or grant.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the S3 resource that you're applying tags to. The tagged resource can be a directory bucket, S3 Storage Lens group or S3 Access Grants instance, registered location, or grant.}
 
-\item{Tags}{[required] The Amazon Web Services resource tags that you want to add to the
-specified S3 resource.}
+\item{Tags}{[required] The Amazon Web Services resource tags that you want to add to the specified S3 resource.}
 }
 \description{
 Creates a new user-defined tag or updates an existing tag. Each tag is a label consisting of a key and value that is applied to your resource. Tags can help you organize, track costs for, and control access to your resources. You can add up to 50 Amazon Web Services resource tags for each S3 resource.

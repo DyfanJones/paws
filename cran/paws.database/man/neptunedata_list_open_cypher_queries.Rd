@@ -7,9 +7,7 @@
 neptunedata_list_open_cypher_queries(includeWaiting = NULL)
 }
 \arguments{
-\item{includeWaiting}{When set to \code{TRUE} and other parameters are not present, causes status
-information to be returned for waiting queries as well as for running
-queries.}
+\item{includeWaiting}{When set to \code{TRUE} and other parameters are not present, causes status information to be returned for waiting queries as well as for running queries.}
 }
 \description{
 Lists active openCypher queries. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-status.html}{Neptune openCypher status endpoint} for more information.

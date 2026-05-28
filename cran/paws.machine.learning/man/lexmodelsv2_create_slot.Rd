@@ -19,21 +19,15 @@ lexmodelsv2_create_slot(
 )
 }
 \arguments{
-\item{slotName}{[required] The name of the slot. Slot names must be unique within the bot that
-contains the slot.}
+\item{slotName}{[required] The name of the slot. Slot names must be unique within the bot that contains the slot.}
 
 \item{description}{A description of the slot. Use this to help identify the slot in lists.}
 
-\item{slotTypeId}{The unique identifier for the slot type associated with this slot. The
-slot type determines the values that can be entered into the slot.}
+\item{slotTypeId}{The unique identifier for the slot type associated with this slot. The slot type determines the values that can be entered into the slot.}
 
-\item{valueElicitationSetting}{[required] Specifies prompts that Amazon Lex sends to the user to elicit a response
-that provides the value for the slot.}
+\item{valueElicitationSetting}{[required] Specifies prompts that Amazon Lex sends to the user to elicit a response that provides the value for the slot.}
 
-\item{obfuscationSetting}{Determines how slot values are used in Amazon CloudWatch logs. If the
-value of the \code{obfuscationSetting} parameter is \code{DefaultObfuscation},
-slot values are obfuscated in the log output. If the value is \code{None},
-the actual value is present in the log output.
+\item{obfuscationSetting}{Determines how slot values are used in Amazon CloudWatch logs. If the value of the \code{obfuscationSetting} parameter is \code{DefaultObfuscation}, slot values are obfuscated in the log output. If the value is \code{None}, the actual value is present in the log output.
 
 The default is to obfuscate values in the CloudWatch logs.}
 
@@ -41,22 +35,15 @@ The default is to obfuscate values in the CloudWatch logs.}
 
 \item{botVersion}{[required] The version of the bot associated with the slot.}
 
-\item{localeId}{[required] The identifier of the language and locale that the slot will be used in.
-The string must match one of the supported locales. All of the bots,
-intents, slot types used by the slot must have the same locale. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
 \item{intentId}{[required] The identifier of the intent that contains the slot.}
 
-\item{multipleValuesSetting}{Indicates whether the slot returns multiple values in one response.
-Multi-value slots are only available in the \code{en-US} locale. If you set
-this value to \code{true} in any other locale, Amazon Lex throws a
-\code{ValidationException}.
+\item{multipleValuesSetting}{Indicates whether the slot returns multiple values in one response. Multi-value slots are only available in the \code{en-US} locale. If you set this value to \code{true} in any other locale, Amazon Lex throws a \code{ValidationException}.
 
 If the \code{multipleValuesSetting} is not set, the default value is \code{false}.}
 
-\item{subSlotSetting}{Specifications for the constituent sub slots and the expression for the
-composite slot.}
+\item{subSlotSetting}{Specifications for the constituent sub slots and the expression for the composite slot.}
 }
 \description{
 Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an \code{OrderPizza} intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user.

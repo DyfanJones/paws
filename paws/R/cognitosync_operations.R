@@ -7,22 +7,14 @@ NULL
 #' to the configured stream
 #'
 #' @description
-#' Initiates a bulk publish of all existing datasets for an Identity Pool
-#' to the configured stream. Customers are limited to one successful bulk
-#' publish per 24 hours. Bulk publish is an asynchronous request, customers
-#' can see the status of the request via the GetBulkPublishDetails
-#' operation.
+#' Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.
 #' 
-#' This API can only be called with developer credentials. You cannot call
-#' this API with the temporary user credentials provided by Cognito
-#' Identity.
+#' This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.
 #'
 #' @usage
 #' cognitosync_bulk_publish(IdentityPoolId)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -66,25 +58,16 @@ cognitosync_bulk_publish <- function(IdentityPoolId) {
 #' Deletes the specific dataset
 #'
 #' @description
-#' Deletes the specific dataset. The dataset will be deleted permanently,
-#' and the action can't be undone. Datasets that this dataset was merged
-#' with will no longer report the merge. Any subsequent operation on this
-#' dataset will result in a ResourceNotFoundException.
+#' Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.
 #' 
-#' This API can be called with temporary user credentials provided by
-#' Cognito Identity or with developer credentials.
+#' This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.
 #'
 #' @usage
 #' cognitosync_delete_dataset(IdentityPoolId, IdentityId, DatasetName)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param DatasetName &#91;required&#93; A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-#' '_' (underscore), '-' (dash), and '.' (dot).
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param DatasetName &#91;required&#93; A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
 #'
 #' @return
 #' A list with the following syntax:
@@ -142,26 +125,16 @@ cognitosync_delete_dataset <- function(IdentityPoolId, IdentityId, DatasetName) 
 #' Gets meta data about a dataset by identity and dataset name
 #'
 #' @description
-#' Gets meta data about a dataset by identity and dataset name. With Amazon
-#' Cognito Sync, each identity has access only to its own data. Thus, the
-#' credentials used to make this API call need to have access to the
-#' identity data.
+#' Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.
 #' 
-#' This API can be called with temporary user credentials provided by
-#' Cognito Identity or with developer credentials. You should use Cognito
-#' Identity credentials to make this API call.
+#' This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.
 #'
 #' @usage
 #' cognitosync_describe_dataset(IdentityPoolId, IdentityId, DatasetName)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param DatasetName &#91;required&#93; A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-#' '_' (underscore), '-' (dash), and '.' (dot).
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param DatasetName &#91;required&#93; A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
 #'
 #' @return
 #' A list with the following syntax:
@@ -220,19 +193,14 @@ cognitosync_describe_dataset <- function(IdentityPoolId, IdentityId, DatasetName
 #' identity pool
 #'
 #' @description
-#' Gets usage details (for example, data storage) about a particular
-#' identity pool.
+#' Gets usage details (for example, data storage) about a particular identity pool.
 #' 
-#' This API can only be called with developer credentials. You cannot call
-#' this API with the temporary user credentials provided by Cognito
-#' Identity.
+#' This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.
 #'
 #' @usage
 #' cognitosync_describe_identity_pool_usage(IdentityPoolId)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -284,21 +252,15 @@ cognitosync_describe_identity_pool_usage <- function(IdentityPoolId) {
 #' data usage
 #'
 #' @description
-#' Gets usage information for an identity, including number of datasets and
-#' data usage.
+#' Gets usage information for an identity, including number of datasets and data usage.
 #' 
-#' This API can be called with temporary user credentials provided by
-#' Cognito Identity or with developer credentials.
+#' This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.
 #'
 #' @usage
 #' cognitosync_describe_identity_usage(IdentityPoolId, IdentityId)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -353,16 +315,12 @@ cognitosync_describe_identity_usage <- function(IdentityPoolId, IdentityId) {
 #' @description
 #' Get the status of the last BulkPublish operation for an identity pool.
 #' 
-#' This API can only be called with developer credentials. You cannot call
-#' this API with the temporary user credentials provided by Cognito
-#' Identity.
+#' This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.
 #'
 #' @usage
 #' cognitosync_get_bulk_publish_details(IdentityPoolId)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
 #'
 #' @return
 #' A list with the following syntax:
@@ -415,12 +373,9 @@ cognitosync_get_bulk_publish_details <- function(IdentityPoolId) {
 #' an identity pool
 #'
 #' @description
-#' Gets the events and the corresponding Lambda functions associated with
-#' an identity pool.
+#' Gets the events and the corresponding Lambda functions associated with an identity pool.
 #' 
-#' This API can only be called with developer credentials. You cannot call
-#' this API with the temporary user credentials provided by Cognito
-#' Identity.
+#' This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.
 #'
 #' @usage
 #' cognitosync_get_cognito_events(IdentityPoolId)
@@ -473,16 +428,12 @@ cognitosync_get_cognito_events <- function(IdentityPoolId) {
 #' @description
 #' Gets the configuration settings of an identity pool.
 #' 
-#' This API can only be called with developer credentials. You cannot call
-#' this API with the temporary user credentials provided by Cognito
-#' Identity.
+#' This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.
 #'
 #' @usage
 #' cognitosync_get_identity_pool_configuration(IdentityPoolId)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. This is the ID of the pool for which to return a configuration.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -537,24 +488,16 @@ cognitosync_get_identity_pool_configuration <- function(IdentityPoolId) {
 #' Lists datasets for an identity
 #'
 #' @description
-#' Lists datasets for an identity. With Amazon Cognito Sync, each identity
-#' has access only to its own data. Thus, the credentials used to make this
-#' API call need to have access to the identity data.
+#' Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.
 #' 
-#' ListDatasets can be called with temporary user credentials provided by
-#' Cognito Identity or with developer credentials. You should use the
-#' Cognito Identity credentials to make this API call.
+#' ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.
 #'
 #' @usage
 #' cognitosync_list_datasets(IdentityPoolId, IdentityId, NextToken,
 #'   MaxResults)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
 #' @param NextToken A pagination token for obtaining the next page of results.
 #' @param MaxResults The maximum number of results to be returned.
 #'
@@ -621,9 +564,7 @@ cognitosync_list_datasets <- function(IdentityPoolId, IdentityId, NextToken = NU
 #' @description
 #' Gets a list of identity pools registered with Cognito.
 #' 
-#' ListIdentityPoolUsage can only be called with developer credentials. You
-#' cannot make this API call with the temporary user credentials provided
-#' by Cognito Identity.
+#' ListIdentityPoolUsage can only be called with developer credentials. You cannot make this API call with the temporary user credentials provided by Cognito Identity.
 #'
 #' @usage
 #' cognitosync_list_identity_pool_usage(NextToken, MaxResults)
@@ -687,27 +628,17 @@ cognitosync_list_identity_pool_usage <- function(NextToken = NULL, MaxResults = 
 #' for a dataset and identity
 #'
 #' @description
-#' Gets paginated records, optionally changed after a particular sync count
-#' for a dataset and identity. With Amazon Cognito Sync, each identity has
-#' access only to its own data. Thus, the credentials used to make this API
-#' call need to have access to the identity data.
+#' Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.
 #' 
-#' ListRecords can be called with temporary user credentials provided by
-#' Cognito Identity or with developer credentials. You should use Cognito
-#' Identity credentials to make this API call.
+#' ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.
 #'
 #' @usage
 #' cognitosync_list_records(IdentityPoolId, IdentityId, DatasetName,
 #'   LastSyncCount, NextToken, MaxResults, SyncSessionToken)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param DatasetName &#91;required&#93; A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-#' '_' (underscore), '-' (dash), and '.' (dot).
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param DatasetName &#91;required&#93; A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
 #' @param LastSyncCount The last server sync count for this record.
 #' @param NextToken A pagination token for obtaining the next page of results.
 #' @param MaxResults The maximum number of results to be returned.
@@ -786,15 +717,12 @@ cognitosync_list_records <- function(IdentityPoolId, IdentityId, DatasetName, La
 #' @description
 #' Registers a device to receive push sync notifications.
 #' 
-#' This API can only be called with temporary credentials provided by
-#' Cognito Identity. You cannot call this API with developer credentials.
+#' This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.
 #'
 #' @usage
 #' cognitosync_register_device(IdentityPoolId, IdentityId, Platform, Token)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. Here, the ID of the pool that the identity belongs to.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.
 #' @param IdentityId &#91;required&#93; The unique ID for this identity.
 #' @param Platform &#91;required&#93; The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).
 #' @param Token &#91;required&#93; The push token.
@@ -844,14 +772,9 @@ cognitosync_register_device <- function(IdentityPoolId, IdentityId, Platform, To
 #' Sets the AWS Lambda function for a given event type for an identity pool
 #'
 #' @description
-#' Sets the AWS Lambda function for a given event type for an identity
-#' pool. This request only updates the key/value pair specified. Other
-#' key/values pairs are not updated. To remove a key value pair, pass a
-#' empty value for the particular key.
+#' Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.
 #' 
-#' This API can only be called with developer credentials. You cannot call
-#' this API with the temporary user credentials provided by Cognito
-#' Identity.
+#' This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.
 #'
 #' @usage
 #' cognitosync_set_cognito_events(IdentityPoolId, Events)
@@ -901,17 +824,13 @@ cognitosync_set_cognito_events <- function(IdentityPoolId, Events) {
 #' @description
 #' Sets the necessary configuration for push sync.
 #' 
-#' This API can only be called with developer credentials. You cannot call
-#' this API with the temporary user credentials provided by Cognito
-#' Identity.
+#' This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.
 #'
 #' @usage
 #' cognitosync_set_identity_pool_configuration(IdentityPoolId, PushSync,
 #'   CognitoStreams)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. This is the ID of the pool to modify.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.
 #' @param PushSync Options to apply to this identity pool for push synchronization.
 #' @param CognitoStreams Options to apply to this identity pool for Amazon Cognito streams.
 #'
@@ -980,19 +899,15 @@ cognitosync_set_identity_pool_configuration <- function(IdentityPoolId, PushSync
 #' another device
 #'
 #' @description
-#' Subscribes to receive notifications when a dataset is modified by
-#' another device.
+#' Subscribes to receive notifications when a dataset is modified by another device.
 #' 
-#' This API can only be called with temporary credentials provided by
-#' Cognito Identity. You cannot call this API with developer credentials.
+#' This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.
 #'
 #' @usage
 #' cognitosync_subscribe_to_dataset(IdentityPoolId, IdentityId,
 #'   DatasetName, DeviceId)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. The ID of the pool to which the identity belongs.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.
 #' @param IdentityId &#91;required&#93; Unique ID for this identity.
 #' @param DatasetName &#91;required&#93; The name of the dataset to subcribe to.
 #' @param DeviceId &#91;required&#93; The unique ID generated for this device by Cognito.
@@ -1038,19 +953,15 @@ cognitosync_subscribe_to_dataset <- function(IdentityPoolId, IdentityId, Dataset
 #' another device
 #'
 #' @description
-#' Unsubscribes from receiving notifications when a dataset is modified by
-#' another device.
+#' Unsubscribes from receiving notifications when a dataset is modified by another device.
 #' 
-#' This API can only be called with temporary credentials provided by
-#' Cognito Identity. You cannot call this API with developer credentials.
+#' This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.
 #'
 #' @usage
 #' cognitosync_unsubscribe_from_dataset(IdentityPoolId, IdentityId,
 #'   DatasetName, DeviceId)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. The ID of the pool to which this identity belongs.
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.
 #' @param IdentityId &#91;required&#93; Unique ID for this identity.
 #' @param DatasetName &#91;required&#93; The name of the dataset from which to unsubcribe.
 #' @param DeviceId &#91;required&#93; The unique ID generated for this device by Cognito.
@@ -1096,44 +1007,25 @@ cognitosync_unsubscribe_from_dataset <- function(IdentityPoolId, IdentityId, Dat
 #' user
 #'
 #' @description
-#' Posts updates to records and adds and deletes records for a dataset and
-#' user.
+#' Posts updates to records and adds and deletes records for a dataset and user.
 #' 
-#' The sync count in the record patch is your last known sync count for
-#' that record. The server will reject an UpdateRecords request with a
-#' ResourceConflictException if you try to patch a record with a new value
-#' but a stale sync count.
+#' The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.
 #' 
-#' For example, if the sync count on the server is 5 for a key called
-#' highScore and you try and submit a new highScore with sync count of 4,
-#' the request will be rejected. To obtain the current sync count for a
-#' record, call ListRecords. On a successful update of the record, the
-#' response returns the new sync count for that record. You should present
-#' that sync count the next time you try to update that same record. When
-#' the record does not exist, specify the sync count as 0.
+#' For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.
 #' 
-#' This API can be called with temporary user credentials provided by
-#' Cognito Identity or with developer credentials.
+#' This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.
 #'
 #' @usage
 #' cognitosync_update_records(IdentityPoolId, IdentityId, DatasetName,
 #'   DeviceId, RecordPatches, SyncSessionToken, ClientContext)
 #'
-#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example,
-#' us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon
-#' Cognito. GUID generation is unique within a region.
-#' @param DatasetName &#91;required&#93; A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9,
-#' '_' (underscore), '-' (dash), and '.' (dot).
+#' @param IdentityPoolId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param IdentityId &#91;required&#93; A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+#' @param DatasetName &#91;required&#93; A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
 #' @param DeviceId The unique ID generated for this device by Cognito.
 #' @param RecordPatches A list of patch operations.
-#' @param SyncSessionToken &#91;required&#93; The SyncSessionToken returned by a previous call to ListRecords for this
-#' dataset and identity.
-#' @param ClientContext Intended to supply a device ID that will populate the lastModifiedBy
-#' field referenced in other methods. The ClientContext field is not yet
-#' implemented.
+#' @param SyncSessionToken &#91;required&#93; The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.
+#' @param ClientContext Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.
 #'
 #' @return
 #' A list with the following syntax:

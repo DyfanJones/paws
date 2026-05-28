@@ -25,8 +25,7 @@ Valid values:
 \item dismissed
 }}
 
-\item{RecommendedActionUpdates}{The list of recommended action status to update. You can update multiple
-recommended actions at one time.}
+\item{RecommendedActionUpdates}{The list of recommended action status to update. You can update multiple recommended actions at one time.}
 }
 \description{
 Updates the recommendation status and recommended action status for the specified recommendation.

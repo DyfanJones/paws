@@ -11,8 +11,7 @@ sagemaker_describe_training_plan_extension_history(
 )
 }
 \arguments{
-\item{TrainingPlanArn}{[required] The Amazon Resource Name (ARN); of the training plan to retrieve
-extension history for.}
+\item{TrainingPlanArn}{[required] The Amazon Resource Name (ARN); of the training plan to retrieve extension history for.}
 
 \item{NextToken}{A token to continue pagination if more results are available.}
 

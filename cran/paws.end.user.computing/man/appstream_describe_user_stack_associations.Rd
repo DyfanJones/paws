@@ -19,13 +19,11 @@ appstream_describe_user_stack_associations(
 
 Users' email addresses are case-sensitive.}
 
-\item{AuthenticationType}{The authentication type for the user who is associated with the stack.
-You must specify USERPOOL.}
+\item{AuthenticationType}{The authentication type for the user who is associated with the stack. You must specify USERPOOL.}
 
 \item{MaxResults}{The maximum size of each page of results.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 }
 \description{
 Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:

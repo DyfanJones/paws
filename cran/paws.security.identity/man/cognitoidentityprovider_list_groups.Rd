@@ -9,15 +9,9 @@ cognitoidentityprovider_list_groups(UserPoolId, Limit = NULL, NextToken = NULL)
 \arguments{
 \item{UserPoolId}{[required] The ID of the user pool where you want to list user groups.}
 
-\item{Limit}{The maximum number of groups that you want Amazon Cognito to return in
-the response.}
+\item{Limit}{The maximum number of groups that you want Amazon Cognito to return in the response.}
 
-\item{NextToken}{This API operation returns a limited number of results. The pagination
-token is an identifier that you can present in an additional API request
-with the same parameters. When you include the pagination token, Amazon
-Cognito returns the next set of items after the current list. Subsequent
-requests return a new pagination token. By use of this token, you can
-paginate through the full list of items.}
+\item{NextToken}{This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.}
 }
 \description{
 Given a user pool ID, returns user pool groups and their details.

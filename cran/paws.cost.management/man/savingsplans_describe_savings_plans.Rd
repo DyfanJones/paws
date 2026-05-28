@@ -20,8 +20,7 @@ savingsplans_describe_savings_plans(
 
 \item{nextToken}{The token for the next page of results.}
 
-\item{maxResults}{The maximum number of results to return with a single call. To retrieve
-additional results, make another call with the returned token value.}
+\item{maxResults}{The maximum number of results to return with a single call. To retrieve additional results, make another call with the returned token value.}
 
 \item{states}{The current states of the Savings Plans.}
 

@@ -15,17 +15,13 @@ batch_update_quota_share(
 \arguments{
 \item{quotaShareArn}{[required] The Amazon Resource Name (ARN) of the quota share to update.}
 
-\item{capacityLimits}{A list that specifies the quantity and type of compute capacity
-allocated to the quota share.}
+\item{capacityLimits}{A list that specifies the quantity and type of compute capacity allocated to the quota share.}
 
-\item{resourceSharingConfiguration}{Specifies whether a quota share reserves, lends, or both lends and
-borrows idle compute capacity.}
+\item{resourceSharingConfiguration}{Specifies whether a quota share reserves, lends, or both lends and borrows idle compute capacity.}
 
 \item{preemptionConfiguration}{Specifies the preemption behavior for jobs in a quota share.}
 
-\item{state}{The state of the quota share. If the quota share is \code{ENABLED}, it is
-able to accept jobs. If the quota share is \code{DISABLED}, new jobs won't be
-accepted but jobs already submitted can finish.}
+\item{state}{The state of the quota share. If the quota share is \code{ENABLED}, it is able to accept jobs. If the quota share is \code{DISABLED}, new jobs won't be accepted but jobs already submitted can finish.}
 }
 \description{
 Updates a quota share.

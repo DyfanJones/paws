@@ -17,15 +17,13 @@ sagemaker_list_device_fleets(
 )
 }
 \arguments{
-\item{NextToken}{The response from the last list when returning a list large enough to
-need tokening.}
+\item{NextToken}{The response from the last list when returning a list large enough to need tokening.}
 
 \item{MaxResults}{The maximum number of results to select.}
 
 \item{CreationTimeAfter}{Filter fleets where packaging job was created after specified time.}
 
-\item{CreationTimeBefore}{Filter fleets where the edge packaging job was created before specified
-time.}
+\item{CreationTimeBefore}{Filter fleets where the edge packaging job was created before specified time.}
 
 \item{LastModifiedTimeAfter}{Select fleets where the job was updated after X}
 

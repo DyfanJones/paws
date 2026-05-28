@@ -16,31 +16,21 @@ sagemaker_list_data_quality_job_definitions(
 )
 }
 \arguments{
-\item{EndpointName}{A filter that lists the data quality job definitions associated with the
-specified endpoint.}
+\item{EndpointName}{A filter that lists the data quality job definitions associated with the specified endpoint.}
 
 \item{SortBy}{The field to sort results by. The default is \code{CreationTime}.}
 
-\item{SortOrder}{Whether to sort the results in \code{Ascending} or \code{Descending} order. The
-default is \code{Descending}.}
+\item{SortOrder}{Whether to sort the results in \code{Ascending} or \code{Descending} order. The default is \code{Descending}.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_data_quality_job_definitions]{list_data_quality_job_definitions}}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of transform jobs, use the token in the next request.\>}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_data_quality_job_definitions]{list_data_quality_job_definitions}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of transform jobs, use the token in the next request.\>}
 
-\item{MaxResults}{The maximum number of data quality monitoring job definitions to return
-in the response.}
+\item{MaxResults}{The maximum number of data quality monitoring job definitions to return in the response.}
 
-\item{NameContains}{A string in the data quality monitoring job definition name. This filter
-returns only data quality monitoring job definitions whose name contains
-the specified string.}
+\item{NameContains}{A string in the data quality monitoring job definition name. This filter returns only data quality monitoring job definitions whose name contains the specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only data quality monitoring job definitions
-created before the specified time.}
+\item{CreationTimeBefore}{A filter that returns only data quality monitoring job definitions created before the specified time.}
 
-\item{CreationTimeAfter}{A filter that returns only data quality monitoring job definitions
-created after the specified time.}
+\item{CreationTimeAfter}{A filter that returns only data quality monitoring job definitions created after the specified time.}
 }
 \description{
 Lists the data quality job definitions in your account.

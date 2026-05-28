@@ -43,18 +43,10 @@ memorydb_batch_update_cluster <- function(ClusterNames, ServiceUpdate = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/memorydb_copy_snapshot/](https://www.paws-r-sdk.com/docs/memorydb_copy_snapshot/) for full documentation.
 #'
 #' @param SourceSnapshotName &#91;required&#93; The name of an existing snapshot from which to make a copy.
-#' @param TargetSnapshotName &#91;required&#93; A name for the snapshot copy. MemoryDB does not permit overwriting a
-#' snapshot, therefore this name must be unique within its context -
-#' MemoryDB or an Amazon S3 bucket if exporting.
-#' @param TargetBucket The Amazon S3 bucket to which the snapshot is exported. This parameter
-#' is used only when exporting a snapshot for external access. When using
-#' this parameter to export a snapshot, be sure MemoryDB has the needed
-#' permissions to this S3 bucket. For more information, see [Step 2: Grant
-#' MemoryDB Access to Your Amazon S3
-#' Bucket](https://docs.aws.amazon.com/memorydb/latest/devguide/snapshots-exporting.html).
+#' @param TargetSnapshotName &#91;required&#93; A name for the snapshot copy. MemoryDB does not permit overwriting a snapshot, therefore this name must be unique within its context - MemoryDB or an Amazon S3 bucket if exporting.
+#' @param TargetBucket The Amazon S3 bucket to which the snapshot is exported. This parameter is used only when exporting a snapshot for external access. When using this parameter to export a snapshot, be sure MemoryDB has the needed permissions to this S3 bucket. For more information, see [Step 2: Grant MemoryDB Access to Your Amazon S3 Bucket](https://docs.aws.amazon.com/memorydb/latest/devguide/snapshots-exporting.html).
 #' @param KmsKeyId The ID of the KMS key used to encrypt the target snapshot.
-#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair.
-#' A tag key must be accompanied by a tag value, although null is accepted.
+#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.
 #'
 #' @keywords internal
 #'
@@ -87,8 +79,7 @@ memorydb_copy_snapshot <- function(SourceSnapshotName, TargetSnapshotName, Targe
 #'
 #' @param ACLName &#91;required&#93; The name of the Access Control List.
 #' @param UserNames The list of users that belong to the Access Control List.
-#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair.
-#' A tag key must be accompanied by a tag value, although null is accepted.
+#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.
 #'
 #' @keywords internal
 #'
@@ -119,21 +110,16 @@ memorydb_create_acl <- function(ACLName, UserNames = NULL, Tags = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_create_cluster/](https://www.paws-r-sdk.com/docs/memorydb_create_cluster/) for full documentation.
 #'
-#' @param ClusterName &#91;required&#93; The name of the cluster. This value must be unique as it also serves as
-#' the cluster identifier.
+#' @param ClusterName &#91;required&#93; The name of the cluster. This value must be unique as it also serves as the cluster identifier.
 #' @param NodeType &#91;required&#93; The compute and memory capacity of the nodes in the cluster.
 #' @param MultiRegionClusterName The name of the multi-Region cluster to be created.
 #' @param ParameterGroupName The name of the parameter group associated with the cluster.
 #' @param Description An optional description of the cluster.
 #' @param NumShards The number of shards the cluster will contain. The default value is 1.
-#' @param NumReplicasPerShard The number of replicas to apply to each shard. The default value is 1.
-#' The maximum is 5.
+#' @param NumReplicasPerShard The number of replicas to apply to each shard. The default value is 1. The maximum is 5.
 #' @param SubnetGroupName The name of the subnet group to be used for the cluster.
 #' @param SecurityGroupIds A list of security group names to associate with this cluster.
-#' @param MaintenanceWindow Specifies the weekly time range during which maintenance on the cluster
-#' is performed. It is specified as a range in the format
-#' ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-#' is a 60 minute period.
+#' @param MaintenanceWindow Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
 #' 
 #' Valid values for `ddd` are:
 #' 
@@ -153,54 +139,25 @@ memorydb_create_acl <- function(ACLName, UserNames = NULL, Tags = NULL) {
 #' 
 #' Example: `sun:23:00-mon:01:30`
 #' @param Port The port number on which each of the nodes accepts connections.
-#' @param SnsTopicArn The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-#' (SNS) topic to which notifications are sent.
+#' @param SnsTopicArn The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.
 #' @param TLSEnabled A flag to enable in-transit encryption on the cluster.
 #' @param KmsKeyId The ID of the KMS key used to encrypt the cluster.
-#' @param SnapshotArns A list of Amazon Resource Names (ARN) that uniquely identify the RDB
-#' snapshot files stored in Amazon S3. The snapshot files are used to
-#' populate the new cluster. The Amazon S3 object name in the ARN cannot
-#' contain any commas.
-#' @param SnapshotName The name of a snapshot from which to restore data into the new cluster.
-#' The snapshot status changes to restoring while the new cluster is being
-#' created.
-#' @param SnapshotRetentionLimit The number of days for which MemoryDB retains automatic snapshots before
-#' deleting them. For example, if you set SnapshotRetentionLimit to 5, a
-#' snapshot that was taken today is retained for 5 days before being
-#' deleted.
-#' @param Tags A list of tags to be added to this resource. Tags are comma-separated
-#' key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include
-#' multiple tags as shown following: Key=myKey, Value=myKeyValue
-#' Key=mySecondKey, Value=mySecondKeyValue.
-#' @param SnapshotWindow The daily time range (in UTC) during which MemoryDB begins taking a
-#' daily snapshot of your shard.
+#' @param SnapshotArns A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.
+#' @param SnapshotName The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.
+#' @param SnapshotRetentionLimit The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.
+#' @param Tags A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.
+#' @param SnapshotWindow The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
 #' 
 #' Example: 05:00-09:00
 #' 
-#' If you do not specify this parameter, MemoryDB automatically chooses an
-#' appropriate time range.
+#' If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.
 #' @param ACLName &#91;required&#93; The name of the Access Control List to associate with the cluster.
 #' @param Engine The name of the engine to be used for the cluster.
 #' @param EngineVersion The version number of the Redis OSS engine to be used for the cluster.
-#' @param AutoMinorVersionUpgrade When set to true, the cluster will automatically receive minor engine
-#' version upgrades after launch.
-#' @param DataTiering Enables data tiering. Data tiering is only supported for clusters using
-#' the r6gd node type. This parameter must be set when using r6gd nodes.
-#' For more information, see [Data
-#' tiering](https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html).
-#' @param NetworkType Specifies the IP address type for the cluster. Valid values are 'ipv4',
-#' 'ipv6', or 'dual_stack'. When set to 'ipv4', the cluster will only be
-#' accessible via IPv4 addresses. When set to 'ipv6', the cluster will only
-#' be accessible via IPv6 addresses. When set to 'dual_stack', the cluster
-#' will be accessible via both IPv4 and IPv6 addresses. If not specified,
-#' the default is 'ipv4'.
-#' @param IpDiscovery The mechanism for discovering IP addresses for the cluster discovery
-#' protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster
-#' discovery functions such as cluster slots, cluster shards, and cluster
-#' nodes return IPv4 addresses for cluster nodes. When set to 'ipv6', the
-#' cluster discovery functions return IPv6 addresses for cluster nodes. The
-#' value must be compatible with the NetworkType parameter. If not
-#' specified, the default is 'ipv4'.
+#' @param AutoMinorVersionUpgrade When set to true, the cluster will automatically receive minor engine version upgrades after launch.
+#' @param DataTiering Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see [Data tiering](https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html).
+#' @param NetworkType Specifies the IP address type for the cluster. Valid values are 'ipv4', 'ipv6', or 'dual_stack'. When set to 'ipv4', the cluster will only be accessible via IPv4 addresses. When set to 'ipv6', the cluster will only be accessible via IPv6 addresses. When set to 'dual_stack', the cluster will be accessible via both IPv4 and IPv6 addresses. If not specified, the default is 'ipv4'.
+#' @param IpDiscovery The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.
 #'
 #' @keywords internal
 #'
@@ -231,19 +188,12 @@ memorydb_create_cluster <- function(ClusterName, NodeType, MultiRegionClusterNam
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_create_multi_region_cluster/](https://www.paws-r-sdk.com/docs/memorydb_create_multi_region_cluster/) for full documentation.
 #'
-#' @param MultiRegionClusterNameSuffix &#91;required&#93; A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB
-#' automatically applies a prefix to the Multi-Region cluster Name when it
-#' is created. Each Amazon Region has its own prefix. For instance, a
-#' Multi-Region cluster Name created in the US-West-1 region will begin
-#' with "virxk", along with the suffix name you provide. The suffix
-#' guarantees uniqueness of the Multi-Region cluster name across multiple
-#' regions.
+#' @param MultiRegionClusterNameSuffix &#91;required&#93; A suffix to be added to the Multi-Region cluster name. Amazon MemoryDB automatically applies a prefix to the Multi-Region cluster Name when it is created. Each Amazon Region has its own prefix. For instance, a Multi-Region cluster Name created in the US-West-1 region will begin with "virxk", along with the suffix name you provide. The suffix guarantees uniqueness of the Multi-Region cluster name across multiple regions.
 #' @param Description A description for the multi-Region cluster.
 #' @param Engine The name of the engine to be used for the multi-Region cluster.
 #' @param EngineVersion The version of the engine to be used for the multi-Region cluster.
 #' @param NodeType &#91;required&#93; The node type to be used for the multi-Region cluster.
-#' @param MultiRegionParameterGroupName The name of the multi-Region parameter group to be associated with the
-#' cluster.
+#' @param MultiRegionParameterGroupName The name of the multi-Region parameter group to be associated with the cluster.
 #' @param NumShards The number of shards for the multi-Region cluster.
 #' @param TLSEnabled Whether to enable TLS encryption for the multi-Region cluster.
 #' @param Tags A list of tags to be applied to the multi-Region cluster.
@@ -278,11 +228,9 @@ memorydb_create_multi_region_cluster <- function(MultiRegionClusterNameSuffix, D
 #' See [https://www.paws-r-sdk.com/docs/memorydb_create_parameter_group/](https://www.paws-r-sdk.com/docs/memorydb_create_parameter_group/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the parameter group.
-#' @param Family &#91;required&#93; The name of the parameter group family that the parameter group can be
-#' used with.
+#' @param Family &#91;required&#93; The name of the parameter group family that the parameter group can be used with.
 #' @param Description An optional description of the parameter group.
-#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair.
-#' A tag key must be accompanied by a tag value, although null is accepted.
+#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.
 #'
 #' @keywords internal
 #'
@@ -316,8 +264,7 @@ memorydb_create_parameter_group <- function(ParameterGroupName, Family, Descript
 #' @param ClusterName &#91;required&#93; The snapshot is created from this cluster.
 #' @param SnapshotName &#91;required&#93; A name for the snapshot being created.
 #' @param KmsKeyId The ID of the KMS key used to encrypt the snapshot.
-#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair.
-#' A tag key must be accompanied by a tag value, although null is accepted.
+#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.
 #'
 #' @keywords internal
 #'
@@ -351,8 +298,7 @@ memorydb_create_snapshot <- function(ClusterName, SnapshotName, KmsKeyId = NULL,
 #' @param SubnetGroupName &#91;required&#93; The name of the subnet group.
 #' @param Description A description for the subnet group.
 #' @param SubnetIds &#91;required&#93; A list of VPC subnet IDs for the subnet group.
-#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair.
-#' A tag key must be accompanied by a tag value, although null is accepted.
+#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.
 #'
 #' @keywords internal
 #'
@@ -383,13 +329,10 @@ memorydb_create_subnet_group <- function(SubnetGroupName, Description = NULL, Su
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_create_user/](https://www.paws-r-sdk.com/docs/memorydb_create_user/) for full documentation.
 #'
-#' @param UserName &#91;required&#93; The name of the user. This value must be unique as it also serves as the
-#' user identifier.
-#' @param AuthenticationMode &#91;required&#93; Denotes the user's authentication properties, such as whether it
-#' requires a password to authenticate.
+#' @param UserName &#91;required&#93; The name of the user. This value must be unique as it also serves as the user identifier.
+#' @param AuthenticationMode &#91;required&#93; Denotes the user's authentication properties, such as whether it requires a password to authenticate.
 #' @param AccessString &#91;required&#93; Access permissions string used for this user.
-#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair.
-#' A tag key must be accompanied by a tag value, although null is accepted.
+#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.
 #'
 #' @keywords internal
 #'
@@ -453,9 +396,7 @@ memorydb_delete_acl <- function(ACLName) {
 #'
 #' @param ClusterName &#91;required&#93; The name of the cluster to be deleted
 #' @param MultiRegionClusterName The name of the multi-Region cluster to be deleted.
-#' @param FinalSnapshotName The user-supplied name of a final cluster snapshot. This is the unique
-#' name that identifies the snapshot. MemoryDB creates the snapshot, and
-#' then deletes the cluster immediately afterward.
+#' @param FinalSnapshotName The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.
 #'
 #' @keywords internal
 #'
@@ -642,14 +583,8 @@ memorydb_delete_user <- function(UserName) {
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_ac_ls/](https://www.paws-r-sdk.com/docs/memorydb_describe_ac_ls/) for full documentation.
 #'
 #' @param ACLName The name of the ACL.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #'
 #' @keywords internal
 #'
@@ -683,16 +618,9 @@ memorydb_describe_ac_ls <- function(ACLName = NULL, MaxResults = NULL, NextToken
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_clusters/](https://www.paws-r-sdk.com/docs/memorydb_describe_clusters/) for full documentation.
 #'
 #' @param ClusterName The name of the cluster.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
-#' @param ShowShardDetails An optional flag that can be included in the request to retrieve
-#' information about the individual shard(s).
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+#' @param ShowShardDetails An optional flag that can be included in the request to retrieve information about the individual shard(s).
 #'
 #' @keywords internal
 #'
@@ -726,16 +654,9 @@ memorydb_describe_clusters <- function(ClusterName = NULL, MaxResults = NULL, Ne
 #' @param Engine The name of the engine for which to list available versions.
 #' @param EngineVersion The Redis OSS engine version
 #' @param ParameterGroupFamily The name of a specific parameter group family to return details for.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
-#' @param DefaultOnly If true, specifies that only the default version of the specified engine
-#' or engine and major version combination is to be returned.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+#' @param DefaultOnly If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.
 #'
 #' @keywords internal
 #'
@@ -767,23 +688,13 @@ memorydb_describe_engine_versions <- function(Engine = NULL, EngineVersion = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_events/](https://www.paws-r-sdk.com/docs/memorydb_describe_events/) for full documentation.
 #'
-#' @param SourceName The identifier of the event source for which events are returned. If not
-#' specified, all sources are included in the response.
-#' @param SourceType The event source to retrieve events for. If no value is specified, all
-#' events are returned.
-#' @param StartTime The beginning of the time interval to retrieve events for, specified in
-#' ISO 8601 format. Example: 2017-03-30T07:03:49.555Z
-#' @param EndTime The end of the time interval for which to retrieve events, specified in
-#' ISO 8601 format. Example: 2017-03-30T07:03:49.555Z
+#' @param SourceName The identifier of the event source for which events are returned. If not specified, all sources are included in the response.
+#' @param SourceType The event source to retrieve events for. If no value is specified, all events are returned.
+#' @param StartTime The beginning of the time interval to retrieve events for, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z
+#' @param EndTime The end of the time interval for which to retrieve events, specified in ISO 8601 format. Example: 2017-03-30T07:03:49.555Z
 #' @param Duration The number of minutes worth of events to retrieve.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #'
 #' @keywords internal
 #'
@@ -849,13 +760,8 @@ memorydb_describe_multi_region_clusters <- function(MultiRegionClusterName = NUL
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_multi_region_parameter_groups/](https://www.paws-r-sdk.com/docs/memorydb_describe_multi_region_parameter_groups/) for full documentation.
 #'
 #' @param MultiRegionParameterGroupName The request for information on a specific multi-region parameter group.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by MaxResults.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
 #'
 #' @keywords internal
 #'
@@ -888,15 +794,9 @@ memorydb_describe_multi_region_parameter_groups <- function(MultiRegionParameter
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_multi_region_parameters/](https://www.paws-r-sdk.com/docs/memorydb_describe_multi_region_parameters/) for full documentation.
 #'
 #' @param MultiRegionParameterGroupName &#91;required&#93; The name of the multi-region parameter group to return details for.
-#' @param Source The parameter types to return. Valid values: user | system |
-#' engine-default
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by MaxResults.
+#' @param Source The parameter types to return. Valid values: user | system | engine-default
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.
 #'
 #' @keywords internal
 #'
@@ -928,14 +828,8 @@ memorydb_describe_multi_region_parameters <- function(MultiRegionParameterGroupN
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_parameter_groups/](https://www.paws-r-sdk.com/docs/memorydb_describe_parameter_groups/) for full documentation.
 #'
 #' @param ParameterGroupName The name of a specific parameter group to return details for.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #'
 #' @keywords internal
 #'
@@ -967,14 +861,8 @@ memorydb_describe_parameter_groups <- function(ParameterGroupName = NULL, MaxRes
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_parameters/](https://www.paws-r-sdk.com/docs/memorydb_describe_parameters/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; he name of a specific parameter group to return details for.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #'
 #' @keywords internal
 #'
@@ -1006,26 +894,13 @@ memorydb_describe_parameters <- function(ParameterGroupName, MaxResults = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_reserved_nodes/](https://www.paws-r-sdk.com/docs/memorydb_describe_reserved_nodes/) for full documentation.
 #'
-#' @param ReservationId The reserved node identifier filter value. Use this parameter to show
-#' only the reservation that matches the specified reservation ID.
-#' @param ReservedNodesOfferingId The offering identifier filter value. Use this parameter to show only
-#' purchased reservations matching the specified offering identifier.
-#' @param NodeType The node type filter value. Use this parameter to show only those
-#' reservations matching the specified node type. For more information, see
-#' [Supported node
-#' types](https://docs.aws.amazon.com/memorydb/latest/devguide/#reserved-nodes-supported).
-#' @param Duration The duration filter value, specified in years or seconds. Use this
-#' parameter to show only reservations for this duration.
-#' @param OfferingType The offering type filter value. Use this parameter to show only the
-#' available offerings matching the specified offering type. Valid values:
-#' "All Upfront"|"Partial Upfront"| "No Upfront"
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxRecords value, a marker is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional marker returned from a prior request. Use this marker for
-#' pagination of results from this operation. If this parameter is
-#' specified, the response includes only records beyond the marker, up to
-#' the value specified by MaxRecords.
+#' @param ReservationId The reserved node identifier filter value. Use this parameter to show only the reservation that matches the specified reservation ID.
+#' @param ReservedNodesOfferingId The offering identifier filter value. Use this parameter to show only purchased reservations matching the specified offering identifier.
+#' @param NodeType The node type filter value. Use this parameter to show only those reservations matching the specified node type. For more information, see [Supported node types](https://docs.aws.amazon.com/memorydb/latest/devguide/#reserved-nodes-supported).
+#' @param Duration The duration filter value, specified in years or seconds. Use this parameter to show only reservations for this duration.
+#' @param OfferingType The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.
 #'
 #' @keywords internal
 #'
@@ -1056,24 +931,12 @@ memorydb_describe_reserved_nodes <- function(ReservationId = NULL, ReservedNodes
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_reserved_nodes_offerings/](https://www.paws-r-sdk.com/docs/memorydb_describe_reserved_nodes_offerings/) for full documentation.
 #'
-#' @param ReservedNodesOfferingId The offering identifier filter value. Use this parameter to show only
-#' the available offering that matches the specified reservation
-#' identifier.
-#' @param NodeType The node type for the reserved nodes. For more information, see
-#' [Supported node
-#' types](https://docs.aws.amazon.com/memorydb/latest/devguide/#reserved-nodes-supported).
-#' @param Duration Duration filter value, specified in years or seconds. Use this parameter
-#' to show only reservations for a given duration.
-#' @param OfferingType The offering type filter value. Use this parameter to show only the
-#' available offerings matching the specified offering type. Valid values:
-#' "All Upfront"|"Partial Upfront"| "No Upfront"
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxRecords value, a marker is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional marker returned from a prior request. Use this marker for
-#' pagination of results from this operation. If this parameter is
-#' specified, the response includes only records beyond the marker, up to
-#' the value specified by MaxRecords.
+#' @param ReservedNodesOfferingId The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.
+#' @param NodeType The node type for the reserved nodes. For more information, see [Supported node types](https://docs.aws.amazon.com/memorydb/latest/devguide/#reserved-nodes-supported).
+#' @param Duration Duration filter value, specified in years or seconds. Use this parameter to show only reservations for a given duration.
+#' @param OfferingType The offering type filter value. Use this parameter to show only the available offerings matching the specified offering type. Valid values: "All Upfront"|"Partial Upfront"| "No Upfront"
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxRecords value, a marker is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.
 #'
 #' @keywords internal
 #'
@@ -1107,14 +970,8 @@ memorydb_describe_reserved_nodes_offerings <- function(ReservedNodesOfferingId =
 #' @param ServiceUpdateName The unique ID of the service update to describe.
 #' @param ClusterNames The list of cluster names to identify service updates to apply.
 #' @param Status The status(es) of the service updates to filter on.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #'
 #' @keywords internal
 #'
@@ -1145,24 +1002,12 @@ memorydb_describe_service_updates <- function(ServiceUpdateName = NULL, ClusterN
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_snapshots/](https://www.paws-r-sdk.com/docs/memorydb_describe_snapshots/) for full documentation.
 #'
-#' @param ClusterName A user-supplied cluster identifier. If this parameter is specified, only
-#' snapshots associated with that specific cluster are described.
-#' @param SnapshotName A user-supplied name of the snapshot. If this parameter is specified,
-#' only this named snapshot is described.
-#' @param Source If set to system, the output shows snapshots that were automatically
-#' created by MemoryDB. If set to user the output shows snapshots that were
-#' manually created. If omitted, the output shows both automatically and
-#' manually created snapshots.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param ShowDetail A Boolean value which if true, the shard configuration is included in
-#' the snapshot description.
+#' @param ClusterName A user-supplied cluster identifier. If this parameter is specified, only snapshots associated with that specific cluster are described.
+#' @param SnapshotName A user-supplied name of the snapshot. If this parameter is specified, only this named snapshot is described.
+#' @param Source If set to system, the output shows snapshots that were automatically created by MemoryDB. If set to user the output shows snapshots that were manually created. If omitted, the output shows both automatically and manually created snapshots.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param ShowDetail A Boolean value which if true, the shard configuration is included in the snapshot description.
 #'
 #' @keywords internal
 #'
@@ -1194,14 +1039,8 @@ memorydb_describe_snapshots <- function(ClusterName = NULL, SnapshotName = NULL,
 #' See [https://www.paws-r-sdk.com/docs/memorydb_describe_subnet_groups/](https://www.paws-r-sdk.com/docs/memorydb_describe_subnet_groups/) for full documentation.
 #'
 #' @param SubnetGroupName The name of the subnet group to return details for.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #'
 #' @keywords internal
 #'
@@ -1234,14 +1073,8 @@ memorydb_describe_subnet_groups <- function(SubnetGroupName = NULL, MaxResults =
 #'
 #' @param UserName The name of the user.
 #' @param Filters Filter to determine the list of users to return.
-#' @param MaxResults The maximum number of records to include in the response. If more
-#' records exist than the specified MaxResults value, a token is included
-#' in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional argument to pass in case the total number of records exceeds
-#' the value of MaxResults. If nextToken is returned, there are more
-#' results available. The value of nextToken is a unique pagination token
-#' for each page. Make the call again using the returned token to retrieve
-#' the next page. Keep all other arguments unchanged.
+#' @param MaxResults The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.
 #'
 #' @keywords internal
 #'
@@ -1336,9 +1169,7 @@ memorydb_list_allowed_multi_region_cluster_updates <- function(MultiRegionCluste
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_list_allowed_node_type_updates/](https://www.paws-r-sdk.com/docs/memorydb_list_allowed_node_type_updates/) for full documentation.
 #'
-#' @param ClusterName &#91;required&#93; The name of the cluster you want to scale. MemoryDB uses the cluster
-#' name to identify the current node type being used by this cluster, and
-#' from that to create a list of node types you can scale up to.
+#' @param ClusterName &#91;required&#93; The name of the cluster you want to scale. MemoryDB uses the cluster name to identify the current node type being used by this cluster, and from that to create a list of node types you can scale up to.
 #'
 #' @keywords internal
 #'
@@ -1369,8 +1200,7 @@ memorydb_list_allowed_node_type_updates <- function(ClusterName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_list_tags/](https://www.paws-r-sdk.com/docs/memorydb_list_tags/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want the
-#' list of tags.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which you want the list of tags.
 #'
 #' @keywords internal
 #'
@@ -1404,8 +1234,7 @@ memorydb_list_tags <- function(ResourceArn) {
 #' @param ReservedNodesOfferingId &#91;required&#93; The ID of the reserved node offering to purchase.
 #' @param ReservationId A customer-specified identifier to track this reservation.
 #' @param NodeCount The number of node instances to reserve.
-#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair.
-#' A tag key must be accompanied by a tag value, although null is accepted.
+#' @param Tags A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.
 #'
 #' @keywords internal
 #'
@@ -1438,12 +1267,8 @@ memorydb_purchase_reserved_nodes_offering <- function(ReservedNodesOfferingId, R
 #' See [https://www.paws-r-sdk.com/docs/memorydb_reset_parameter_group/](https://www.paws-r-sdk.com/docs/memorydb_reset_parameter_group/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the parameter group to reset.
-#' @param AllParameters If true, all parameters in the parameter group are reset to their
-#' default values. If false, only the parameters listed by ParameterNames
-#' are reset to their default values.
-#' @param ParameterNames An array of parameter names to reset to their default values. If
-#' AllParameters is true, do not use ParameterNames. If AllParameters is
-#' false, you must specify the name of at least one parameter to reset.
+#' @param AllParameters If true, all parameters in the parameter group are reset to their default values. If false, only the parameters listed by ParameterNames are reset to their default values.
+#' @param ParameterNames An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.
 #'
 #' @keywords internal
 #'
@@ -1474,10 +1299,8 @@ memorydb_reset_parameter_group <- function(ParameterGroupName, AllParameters = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_tag_resource/](https://www.paws-r-sdk.com/docs/memorydb_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which the tags are to
-#' be added.
-#' @param Tags &#91;required&#93; A list of tags to be added to this resource. A tag is a key-value pair.
-#' A tag key must be accompanied by a tag value, although null is accepted.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which the tags are to be added.
+#' @param Tags &#91;required&#93; A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.
 #'
 #' @keywords internal
 #'
@@ -1508,8 +1331,7 @@ memorydb_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/memorydb_untag_resource/](https://www.paws-r-sdk.com/docs/memorydb_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which the tags are to
-#' be removed.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource to which the tags are to be removed.
 #' @param TagKeys &#91;required&#93; The list of keys of the tags that are to be removed.
 #'
 #' @keywords internal
@@ -1577,10 +1399,7 @@ memorydb_update_acl <- function(ACLName, UserNamesToAdd = NULL, UserNamesToRemov
 #' @param ClusterName &#91;required&#93; The name of the cluster to update.
 #' @param Description The description of the cluster to update.
 #' @param SecurityGroupIds The SecurityGroupIds to update.
-#' @param MaintenanceWindow Specifies the weekly time range during which maintenance on the cluster
-#' is performed. It is specified as a range in the format
-#' ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-#' is a 60 minute period.
+#' @param MaintenanceWindow Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
 #' 
 #' Valid values for `ddd` are:
 #' 
@@ -1600,32 +1419,17 @@ memorydb_update_acl <- function(ACLName, UserNamesToAdd = NULL, UserNamesToRemov
 #' 
 #' Example: `sun:23:00-mon:01:30`
 #' @param SnsTopicArn The SNS topic ARN to update.
-#' @param SnsTopicStatus The status of the Amazon SNS notification topic. Notifications are sent
-#' only if the status is active.
+#' @param SnsTopicStatus The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.
 #' @param ParameterGroupName The name of the parameter group to update.
-#' @param SnapshotWindow The daily time range (in UTC) during which MemoryDB begins taking a
-#' daily snapshot of your cluster.
-#' @param SnapshotRetentionLimit The number of days for which MemoryDB retains automatic cluster
-#' snapshots before deleting them. For example, if you set
-#' SnapshotRetentionLimit to 5, a snapshot that was taken today is retained
-#' for 5 days before being deleted.
+#' @param SnapshotWindow The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.
+#' @param SnapshotRetentionLimit The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.
 #' @param NodeType A valid node type that you want to scale this cluster up or down to.
 #' @param Engine The name of the engine to be used for the cluster.
-#' @param EngineVersion The upgraded version of the engine to be run on the nodes. You can
-#' upgrade to a newer engine version, but you cannot downgrade to an
-#' earlier engine version. If you want to use an earlier engine version,
-#' you must delete the existing cluster and create it anew with the earlier
-#' engine version.
+#' @param EngineVersion The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.
 #' @param ReplicaConfiguration The number of replicas that will reside in each shard.
 #' @param ShardConfiguration The number of shards in the cluster.
 #' @param ACLName The Access Control List that is associated with the cluster.
-#' @param IpDiscovery The mechanism for discovering IP addresses for the cluster discovery
-#' protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster
-#' discovery functions such as cluster slots, cluster shards, and cluster
-#' nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6',
-#' the cluster discovery functions return IPv6 addresses for cluster nodes.
-#' The value must be compatible with the NetworkType parameter. If not
-#' specified, the default is 'ipv4'.
+#' @param IpDiscovery The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.
 #'
 #' @keywords internal
 #'
@@ -1660,10 +1464,9 @@ memorydb_update_cluster <- function(ClusterName, Description = NULL, SecurityGro
 #' @param NodeType The new node type to be used for the multi-Region cluster.
 #' @param Description A new description for the multi-Region cluster.
 #' @param EngineVersion The new engine version to be used for the multi-Region cluster.
-#' @param ShardConfiguration 
+#' @param ShardConfiguration Shard configuration options. Each shard configuration has the following: Slots and ReplicaCount.
 #' @param MultiRegionParameterGroupName The new multi-Region parameter group to be associated with the cluster.
-#' @param UpdateStrategy The strategy to use for the update operation. Supported values are
-#' "coordinated" or "uncoordinated".
+#' @param UpdateStrategy The strategy to use for the update operation. Supported values are "coordinated" or "uncoordinated".
 #'
 #' @keywords internal
 #'
@@ -1695,9 +1498,7 @@ memorydb_update_multi_region_cluster <- function(MultiRegionClusterName, NodeTyp
 #' See [https://www.paws-r-sdk.com/docs/memorydb_update_parameter_group/](https://www.paws-r-sdk.com/docs/memorydb_update_parameter_group/) for full documentation.
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the parameter group to update.
-#' @param ParameterNameValues &#91;required&#93; An array of parameter names and values for the parameter update. You
-#' must supply at least one parameter name and value; subsequent arguments
-#' are optional. A maximum of 20 parameters may be updated per request.
+#' @param ParameterNameValues &#91;required&#93; An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be updated per request.
 #'
 #' @keywords internal
 #'
@@ -1762,8 +1563,7 @@ memorydb_update_subnet_group <- function(SubnetGroupName, Description = NULL, Su
 #' See [https://www.paws-r-sdk.com/docs/memorydb_update_user/](https://www.paws-r-sdk.com/docs/memorydb_update_user/) for full documentation.
 #'
 #' @param UserName &#91;required&#93; The name of the user
-#' @param AuthenticationMode Denotes the user's authentication properties, such as whether it
-#' requires a password to authenticate.
+#' @param AuthenticationMode Denotes the user's authentication properties, such as whether it requires a password to authenticate.
 #' @param AccessString Access permissions string used for this user.
 #'
 #' @keywords internal

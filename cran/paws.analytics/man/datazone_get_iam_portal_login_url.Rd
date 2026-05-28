@@ -7,8 +7,7 @@
 datazone_get_iam_portal_login_url(domainIdentifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] the ID of the Amazon DataZone domain the data portal of which you want
-to get.}
+\item{domainIdentifier}{[required] the ID of the Amazon DataZone domain the data portal of which you want to get.}
 }
 \description{
 Gets the data portal URL for the specified Amazon DataZone domain.

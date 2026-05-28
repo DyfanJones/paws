@@ -6,6 +6,9 @@
 \usage{
 elasticsearchservice_get_compatible_elasticsearch_versions(DomainName = NULL)
 }
+\arguments{
+\item{DomainName}{The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
+}
 \description{
 Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a \code{DomainName} to get all upgrade compatible Elasticsearch versions for that specific domain.
 

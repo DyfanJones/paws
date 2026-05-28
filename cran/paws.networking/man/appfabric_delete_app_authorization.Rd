@@ -10,11 +10,9 @@ appfabric_delete_app_authorization(
 )
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 
-\item{appAuthorizationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app authorization to use for the request.}
+\item{appAuthorizationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.}
 }
 \description{
 Deletes an app authorization. You must delete the associated ingestion before you can delete an app authorization.

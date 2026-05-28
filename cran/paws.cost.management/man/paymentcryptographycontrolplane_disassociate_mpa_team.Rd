@@ -11,15 +11,11 @@ paymentcryptographycontrolplane_disassociate_mpa_team(
 )
 }
 \arguments{
-\item{Action}{[required] The protected operation to disassociate from the MPA team. Currently,
-the only supported value is \code{IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE}.}
+\item{Action}{[required] The protected operation to disassociate from the MPA team. Currently, the only supported value is \code{IMPORT_ROOT_PUBLIC_KEY_CERTIFICATE}.}
 
-\item{RequesterComment}{The comment from the requester explaining the reason for the
-disassociation.
+\item{RequesterComment}{The comment from the requester explaining the reason for the disassociation.
 
-Don't include personal, confidential or sensitive information in this
-field. This field may be displayed in plaintext in CloudTrail logs and
-other output.}
+Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.}
 }
 \description{
 Removes the association between a Multi-Party Approval (MPA) team and a protected operation.

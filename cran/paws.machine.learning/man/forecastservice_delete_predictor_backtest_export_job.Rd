@@ -9,8 +9,7 @@ forecastservice_delete_predictor_backtest_export_job(
 )
 }
 \arguments{
-\item{PredictorBacktestExportJobArn}{[required] The Amazon Resource Name (ARN) of the predictor backtest export job to
-delete.}
+\item{PredictorBacktestExportJobArn}{[required] The Amazon Resource Name (ARN) of the predictor backtest export job to delete.}
 }
 \description{
 Deletes a predictor backtest export job.

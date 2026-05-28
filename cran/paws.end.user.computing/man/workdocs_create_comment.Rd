@@ -16,8 +16,7 @@ workdocs_create_comment(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{DocumentId}{[required] The ID of the document.}
 
@@ -29,13 +28,9 @@ Services administrator credentials to access the API.}
 
 \item{Text}{[required] The text of the comment.}
 
-\item{Visibility}{The visibility of the comment. Options are either PRIVATE, where the
-comment is visible only to the comment author and document owner and
-co-owners, or PUBLIC, where the comment is visible to document owners,
-co-owners, and contributors.}
+\item{Visibility}{The visibility of the comment. Options are either PRIVATE, where the comment is visible only to the comment author and document owner and co-owners, or PUBLIC, where the comment is visible to document owners, co-owners, and contributors.}
 
-\item{NotifyCollaborators}{Set this parameter to TRUE to send an email out to the document
-collaborators after the comment is created.}
+\item{NotifyCollaborators}{Set this parameter to TRUE to send an email out to the document collaborators after the comment is created.}
 }
 \description{
 Adds a new comment to the specified document version.

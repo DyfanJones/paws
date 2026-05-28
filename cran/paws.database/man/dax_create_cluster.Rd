@@ -36,38 +36,21 @@ dax_create_cluster(
 
 \item{Description}{A description of the cluster.}
 
-\item{ReplicationFactor}{[required] The number of nodes in the DAX cluster. A replication factor of 1 will
-create a single-node cluster, without any read replicas. For additional
-fault tolerance, you can create a multiple node cluster with one or more
-read replicas. To do this, set \code{ReplicationFactor} to a number between 3
-(one primary and two read replicas) and 10 (one primary and nine read
-replicas). \verb{If the AvailabilityZones} parameter is provided, its length
-must equal the \code{ReplicationFactor}.
+\item{ReplicationFactor}{[required] The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set \code{ReplicationFactor} to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). \verb{If the AvailabilityZones} parameter is provided, its length must equal the \code{ReplicationFactor}.
 
-Amazon Web Services recommends that you have at least two read replicas
-per cluster.}
+Amazon Web Services recommends that you have at least two read replicas per cluster.}
 
-\item{AvailabilityZones}{The Availability Zones (AZs) in which the cluster nodes will reside
-after the cluster has been created or updated. If provided, the length
-of this list must equal the \code{ReplicationFactor} parameter. If you omit
-this parameter, DAX will spread the nodes across Availability Zones for
-the highest availability.}
+\item{AvailabilityZones}{The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the \code{ReplicationFactor} parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.}
 
 \item{SubnetGroupName}{The name of the subnet group to be used for the replication group.
 
-DAX clusters can only run in an Amazon VPC environment. All of the
-subnets that you specify in a subnet group must exist in the same VPC.}
+DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.}
 
-\item{SecurityGroupIds}{A list of security group IDs to be assigned to each node in the DAX
-cluster. (Each of the security group ID is system-generated.)
+\item{SecurityGroupIds}{A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)
 
-If this parameter is not specified, DAX assigns the default VPC security
-group to each node.}
+If this parameter is not specified, DAX assigns the default VPC security group to each node.}
 
-\item{PreferredMaintenanceWindow}{Specifies the weekly time range during which maintenance on the DAX
-cluster is performed. It is specified as a range in the format
-ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-is a 60 minute period. Valid values for \code{ddd} are:
+\item{PreferredMaintenanceWindow}{Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for \code{ddd} are:
 \itemize{
 \item \code{sun}
 \item \code{mon}
@@ -80,44 +63,34 @@ is a 60 minute period. Valid values for \code{ddd} are:
 
 Example: \code{sun:05:00-sun:09:00}
 
-If you don't specify a preferred maintenance window when you create or
-modify a cache cluster, DAX assigns a 60-minute maintenance window on a
-randomly selected day of the week.}
+If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.}
 
-\item{NotificationTopicArn}{The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-notifications will be sent.
+\item{NotificationTopicArn}{The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.
 
 The Amazon SNS topic owner must be same as the DAX cluster owner.}
 
-\item{IamRoleArn}{[required] A valid Amazon Resource Name (ARN) that identifies an IAM role. At
-runtime, DAX will assume this role and use the role's permissions to
-access DynamoDB on your behalf.}
+\item{IamRoleArn}{[required] A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.}
 
 \item{ParameterGroupName}{The parameter group to be associated with the DAX cluster.}
 
 \item{Tags}{A set of tags to associate with the DAX cluster.}
 
-\item{SSESpecification}{Represents the settings used to enable server-side encryption on the
-cluster.}
+\item{SSESpecification}{Represents the settings used to enable server-side encryption on the cluster.}
 
-\item{ClusterEndpointEncryptionType}{The type of encryption the cluster's endpoint should support. Values
-are:
+\item{ClusterEndpointEncryptionType}{The type of encryption the cluster's endpoint should support. Values are:
 \itemize{
 \item \code{NONE} for no encryption
 \item \code{TLS} for Transport Layer Security
 }}
 
-\item{NetworkType}{Specifies the IP protocol(s) the cluster uses for network
-communications. Values are:
+\item{NetworkType}{Specifies the IP protocol(s) the cluster uses for network communications. Values are:
 \itemize{
 \item \code{ipv4} - The cluster is accessible only through IPv4 addresses
 \item \code{ipv6} - The cluster is accessible only through IPv6 addresses
-\item \code{dual_stack} - The cluster is accessible through both IPv4 and IPv6
-addresses.
+\item \code{dual_stack} - The cluster is accessible through both IPv4 and IPv6 addresses.
 }
 
-If no explicit \code{NetworkType} is provided, the network type is derived
-based on the subnet group's configuration.}
+If no explicit \code{NetworkType} is provided, the network type is derived based on the subnet group's configuration.}
 }
 \description{
 Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.

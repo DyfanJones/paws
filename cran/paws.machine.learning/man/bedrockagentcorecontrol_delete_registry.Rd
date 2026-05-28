@@ -7,8 +7,7 @@
 bedrockagentcorecontrol_delete_registry(registryId)
 }
 \arguments{
-\item{registryId}{[required] The identifier of the registry to delete. You can specify either the
-Amazon Resource Name (ARN) or the ID of the registry.}
+\item{registryId}{[required] The identifier of the registry to delete. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 }
 \description{
 Deletes a registry. The registry must contain zero records before it can be deleted. This operation initiates the deletion process asynchronously.

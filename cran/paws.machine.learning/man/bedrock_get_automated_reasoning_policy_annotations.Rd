@@ -8,11 +8,9 @@ build workflow}
 bedrock_get_automated_reasoning_policy_annotations(policyArn, buildWorkflowId)
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-annotations you want to retrieve.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose annotations you want to retrieve.}
 
-\item{buildWorkflowId}{[required] The unique identifier of the build workflow whose annotations you want
-to retrieve.}
+\item{buildWorkflowId}{[required] The unique identifier of the build workflow whose annotations you want to retrieve.}
 }
 \description{
 Retrieves the current annotations for an Automated Reasoning policy build workflow. Annotations contain corrections to the rules, variables and types to be applied to the policy.

@@ -16,27 +16,19 @@ customerprofiles_list_profile_history_records(
 )
 }
 \arguments{
-\item{DomainName}{[required] The unique name of the domain for which to return profile history
-records.}
+\item{DomainName}{[required] The unique name of the domain for which to return profile history records.}
 
 \item{ProfileId}{[required] The identifier of the profile to be taken.}
 
-\item{ObjectTypeName}{Applies a filter to include profile history records only with the
-specified \code{ObjectTypeName} value in the response.}
+\item{ObjectTypeName}{Applies a filter to include profile history records only with the specified \code{ObjectTypeName} value in the response.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
-\item{ActionType}{Applies a filter to include profile history records only with the
-specified \code{ActionType} value in the response.}
+\item{ActionType}{Applies a filter to include profile history records only with the specified \code{ActionType} value in the response.}
 
-\item{PerformedBy}{Applies a filter to include profile history records only with the
-specified \code{PerformedBy} value in the response. The \code{PerformedBy} value
-can be the Amazon Resource Name (ARN) of the person or service principal
-who performed the action.}
+\item{PerformedBy}{Applies a filter to include profile history records only with the specified \code{PerformedBy} value in the response. The \code{PerformedBy} value can be the Amazon Resource Name (ARN) of the person or service principal who performed the action.}
 }
 \description{
 Returns a list of history records for a specific profile, for a specific domain.

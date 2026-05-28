@@ -12,20 +12,13 @@ glue_get_connection(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog in which the connection resides. If none is
-provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog in which the connection resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{Name}{[required] The name of the connection definition to retrieve.}
 
-\item{HidePassword}{Allows you to retrieve the connection metadata without returning the
-password. For instance, the Glue console uses this flag to retrieve the
-connection, and does not display the password. Set this parameter when
-the caller might not have permission to use the KMS key to decrypt the
-password, but it does have permission to access the rest of the
-connection properties.}
+\item{HidePassword}{Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.}
 
-\item{ApplyOverrideForComputeEnvironment}{For connections that may be used in multiple services, specifies
-returning properties for the specified compute environment.}
+\item{ApplyOverrideForComputeEnvironment}{For connections that may be used in multiple services, specifies returning properties for the specified compute environment.}
 }
 \description{
 Retrieves a connection definition from the Data Catalog.

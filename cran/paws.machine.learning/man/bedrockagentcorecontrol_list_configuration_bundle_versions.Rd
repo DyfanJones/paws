@@ -15,17 +15,11 @@ bedrockagentcorecontrol_list_configuration_bundle_versions(
 \arguments{
 \item{bundleId}{[required] The unique identifier of the configuration bundle to list versions for.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{filter}{An optional filter for listing versions, including branch name, creation
-source, and whether to return only the latest version per branch.}
+\item{filter}{An optional filter for listing versions, including branch name, creation source, and whether to return only the latest version per branch.}
 }
 \description{
 Lists all versions of a configuration bundle, with optional filtering by branch name or creation source.

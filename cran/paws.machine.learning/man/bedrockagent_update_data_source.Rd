@@ -24,8 +24,7 @@ bedrockagent_update_data_source(
 
 \item{description}{Specifies a new description for the data source.}
 
-\item{dataSourceConfiguration}{[required] The connection configuration for the data source that you want to
-update.}
+\item{dataSourceConfiguration}{[required] The connection configuration for the data source that you want to update.}
 
 \item{dataDeletionPolicy}{The data deletion policy for the data source that you want to update.}
 

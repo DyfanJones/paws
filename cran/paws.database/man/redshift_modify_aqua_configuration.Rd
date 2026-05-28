@@ -12,8 +12,7 @@ redshift_modify_aqua_configuration(
 \arguments{
 \item{ClusterIdentifier}{[required] The identifier of the cluster to be modified.}
 
-\item{AquaConfigurationStatus}{This parameter is retired. Amazon Redshift automatically determines
-whether to use AQUA (Advanced Query Accelerator).}
+\item{AquaConfigurationStatus}{This parameter is retired. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).}
 }
 \description{
 This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator).

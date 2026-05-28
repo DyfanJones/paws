@@ -11,15 +11,9 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_create_http_namespace/](https://www.paws-r-sdk.com/docs/servicediscovery_create_http_namespace/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name that you want to assign to this namespace.
-#' @param CreatorRequestId A unique string that identifies the request and that allows failed
-#' [`create_http_namespace`][servicediscovery_create_http_namespace]
-#' requests to be retried without the risk of running the operation twice.
-#' `CreatorRequestId` can be any unique string (for example, a date/time
-#' stamp).
+#' @param CreatorRequestId A unique string that identifies the request and that allows failed [`create_http_namespace`][servicediscovery_create_http_namespace] requests to be retried without the risk of running the operation twice. `CreatorRequestId` can be any unique string (for example, a date/time stamp).
 #' @param Description A description for the namespace.
-#' @param Tags The tags to add to the namespace. Each tag consists of a key and an
-#' optional value that you define. Tags keys can be up to 128 characters in
-#' length, and tag values can be up to 256 characters in length.
+#' @param Tags The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
 #'
 #' @keywords internal
 #'
@@ -51,19 +45,11 @@ servicediscovery_create_http_namespace <- function(Name, CreatorRequestId = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_create_private_dns_namespace/](https://www.paws-r-sdk.com/docs/servicediscovery_create_private_dns_namespace/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name that you want to assign to this namespace. When you create a
-#' private DNS namespace, Cloud Map automatically creates an Amazon
-#' Route 53 private hosted zone that has the same name as the namespace.
-#' @param CreatorRequestId A unique string that identifies the request and that allows failed
-#' [`create_private_dns_namespace`][servicediscovery_create_private_dns_namespace]
-#' requests to be retried without the risk of running the operation twice.
-#' `CreatorRequestId` can be any unique string (for example, a
-#' date/timestamp).
+#' @param Name &#91;required&#93; The name that you want to assign to this namespace. When you create a private DNS namespace, Cloud Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+#' @param CreatorRequestId A unique string that identifies the request and that allows failed [`create_private_dns_namespace`][servicediscovery_create_private_dns_namespace] requests to be retried without the risk of running the operation twice. `CreatorRequestId` can be any unique string (for example, a date/timestamp).
 #' @param Description A description for the namespace.
 #' @param Vpc &#91;required&#93; The ID of the Amazon VPC that you want to associate the namespace with.
-#' @param Tags The tags to add to the namespace. Each tag consists of a key and an
-#' optional value that you define. Tags keys can be up to 128 characters in
-#' length, and tag values can be up to 256 characters in length.
+#' @param Tags The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
 #' @param Properties Properties for the private DNS namespace.
 #'
 #' @keywords internal
@@ -98,17 +84,10 @@ servicediscovery_create_private_dns_namespace <- function(Name, CreatorRequestId
 #'
 #' @param Name &#91;required&#93; The name that you want to assign to this namespace.
 #' 
-#' Do not include sensitive information in the name. The name is publicly
-#' available using DNS queries.
-#' @param CreatorRequestId A unique string that identifies the request and that allows failed
-#' [`create_public_dns_namespace`][servicediscovery_create_public_dns_namespace]
-#' requests to be retried without the risk of running the operation twice.
-#' `CreatorRequestId` can be any unique string (for example, a
-#' date/timestamp).
+#' Do not include sensitive information in the name. The name is publicly available using DNS queries.
+#' @param CreatorRequestId A unique string that identifies the request and that allows failed [`create_public_dns_namespace`][servicediscovery_create_public_dns_namespace] requests to be retried without the risk of running the operation twice. `CreatorRequestId` can be any unique string (for example, a date/timestamp).
 #' @param Description A description for the namespace.
-#' @param Tags The tags to add to the namespace. Each tag consists of a key and an
-#' optional value that you define. Tags keys can be up to 128 characters in
-#' length, and tag values can be up to 256 characters in length.
+#' @param Tags The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
 #' @param Properties Properties for the public DNS namespace.
 #'
 #' @keywords internal
@@ -142,69 +121,35 @@ servicediscovery_create_public_dns_namespace <- function(Name, CreatorRequestId 
 #'
 #' @param Name &#91;required&#93; The name that you want to assign to the service.
 #' 
-#' Do not include sensitive information in the name if the namespace is
-#' discoverable by public DNS queries.
+#' Do not include sensitive information in the name if the namespace is discoverable by public DNS queries.
 #' 
-#' If you want Cloud Map to create an `SRV` record when you register an
-#' instance and you're using a system that requires a specific `SRV`
-#' format, such as [HAProxy](http://www.haproxy.org/), specify the
-#' following for `Name`:
+#' If you want Cloud Map to create an `SRV` record when you register an instance and you're using a system that requires a specific `SRV` format, such as [HAProxy](http://www.haproxy.org/), specify the following for `Name`:
 #' 
 #' -   Start the name with an underscore (_), such as `_exampleservice`.
 #' 
 #' -   End the name with *._protocol*, such as `._tcp`.
 #' 
-#' When you register an instance, Cloud Map creates an `SRV` record and
-#' assigns a name to the record by concatenating the service name and the
-#' namespace name (for example,
+#' When you register an instance, Cloud Map creates an `SRV` record and assigns a name to the record by concatenating the service name and the namespace name (for example,
 #' 
 #' `_exampleservice._tcp.example.com`).
 #' 
-#' For services that are accessible by DNS queries, you can't create
-#' multiple services with names that differ only by case (such as EXAMPLE
-#' and example). Otherwise, these services have the same DNS name and can't
-#' be distinguished. However, if you use a namespace that's only accessible
-#' by API calls, then you can create services that with names that differ
-#' only by case.
-#' @param NamespaceId The ID or Amazon Resource Name (ARN) of the namespace that you want to
-#' use to create the service. For namespaces shared with your Amazon Web
-#' Services account, specify the namespace ARN. For more information about
-#' shared namespaces, see [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
-#' @param CreatorRequestId A unique string that identifies the request and that allows failed
-#' [`create_service`][servicediscovery_create_service] requests to be
-#' retried without the risk of running the operation twice.
-#' `CreatorRequestId` can be any unique string (for example, a
-#' date/timestamp).
+#' For services that are accessible by DNS queries, you can't create multiple services with names that differ only by case (such as EXAMPLE and example). Otherwise, these services have the same DNS name and can't be distinguished. However, if you use a namespace that's only accessible by API calls, then you can create services that with names that differ only by case.
+#' @param NamespaceId The ID or Amazon Resource Name (ARN) of the namespace that you want to use to create the service. For namespaces shared with your Amazon Web Services account, specify the namespace ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
+#' @param CreatorRequestId A unique string that identifies the request and that allows failed [`create_service`][servicediscovery_create_service] requests to be retried without the risk of running the operation twice. `CreatorRequestId` can be any unique string (for example, a date/timestamp).
 #' @param Description A description for the service.
-#' @param DnsConfig A complex type that contains information about the Amazon Route 53
-#' records that you want Cloud Map to create when you register an instance.
-#' @param HealthCheckConfig *Public DNS and HTTP namespaces only.* A complex type that contains
-#' settings for an optional Route 53 health check. If you specify settings
-#' for a health check, Cloud Map associates the health check with all the
-#' Route 53 DNS records that you specify in `DnsConfig`.
+#' @param DnsConfig A complex type that contains information about the Amazon Route 53 records that you want Cloud Map to create when you register an instance.
+#' @param HealthCheckConfig *Public DNS and HTTP namespaces only.* A complex type that contains settings for an optional Route 53 health check. If you specify settings for a health check, Cloud Map associates the health check with all the Route 53 DNS records that you specify in `DnsConfig`.
 #' 
-#' If you specify a health check configuration, you can specify either
-#' `HealthCheckCustomConfig` or `HealthCheckConfig` but not both.
+#' If you specify a health check configuration, you can specify either `HealthCheckCustomConfig` or `HealthCheckConfig` but not both.
 #' 
-#' For information about the charges for health checks, see [Cloud Map
-#' Pricing](https://aws.amazon.com/cloud-map/pricing/).
-#' @param HealthCheckCustomConfig A complex type that contains information about an optional custom health
-#' check.
+#' For information about the charges for health checks, see [Cloud Map Pricing](https://aws.amazon.com/cloud-map/pricing/).
+#' @param HealthCheckCustomConfig A complex type that contains information about an optional custom health check.
 #' 
-#' If you specify a health check configuration, you can specify either
-#' `HealthCheckCustomConfig` or `HealthCheckConfig` but not both.
+#' If you specify a health check configuration, you can specify either `HealthCheckCustomConfig` or `HealthCheckConfig` but not both.
 #' 
-#' You can't add, update, or delete a `HealthCheckCustomConfig`
-#' configuration from an existing service.
-#' @param Tags The tags to add to the service. Each tag consists of a key and an
-#' optional value that you define. Tags keys can be up to 128 characters in
-#' length, and tag values can be up to 256 characters in length.
-#' @param Type If present, specifies that the service instances are only discoverable
-#' using the [`discover_instances`][servicediscovery_discover_instances]
-#' API operation. No DNS records is registered for the service instances.
-#' The only valid value is `HTTP`.
+#' You can't add, update, or delete a `HealthCheckCustomConfig` configuration from an existing service.
+#' @param Tags The tags to add to the service. Each tag consists of a key and an optional value that you define. Tags keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
+#' @param Type If present, specifies that the service instances are only discoverable using the [`discover_instances`][servicediscovery_discover_instances] API operation. No DNS records is registered for the service instances. The only valid value is `HTTP`.
 #'
 #' @keywords internal
 #'
@@ -235,8 +180,7 @@ servicediscovery_create_service <- function(Name, NamespaceId = NULL, CreatorReq
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_delete_namespace/](https://www.paws-r-sdk.com/docs/servicediscovery_delete_namespace/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace that you want to
-#' delete.
+#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace that you want to delete.
 #'
 #' @keywords internal
 #'
@@ -267,12 +211,7 @@ servicediscovery_delete_namespace <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_delete_service/](https://www.paws-r-sdk.com/docs/servicediscovery_delete_service/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to
-#' delete. If the namespace associated with the service is shared with your
-#' Amazon Web Services account, specify the service ARN. For more
-#' information about shared namespaces, see [Cross-account Cloud Map
-#' namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html).
+#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to delete. If the namespace associated with the service is shared with your Amazon Web Services account, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html).
 #'
 #' @keywords internal
 #'
@@ -303,13 +242,7 @@ servicediscovery_delete_service <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_delete_service_attributes/](https://www.paws-r-sdk.com/docs/servicediscovery_delete_service_attributes/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service from which the
-#' attributes will be deleted. For services created in a namespace shared
-#' with your Amazon Web Services account, specify the service ARN. For more
-#' information about shared namespaces, see [Cross-account Cloud Map
-#' namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service from which the attributes will be deleted. For services created in a namespace shared with your Amazon Web Services account, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
 #' @param Attributes &#91;required&#93; A list of keys corresponding to each attribute that you want to delete.
 #'
 #' @keywords internal
@@ -342,14 +275,8 @@ servicediscovery_delete_service_attributes <- function(ServiceId, Attributes) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_deregister_instance/](https://www.paws-r-sdk.com/docs/servicediscovery_deregister_instance/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that the instance is
-#' associated with. If the namespace associated with the service is shared
-#' with your account, specify the service ARN. For more information about
-#' shared namespaces, see [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
-#' @param InstanceId &#91;required&#93; The value that you specified for `Id` in the
-#' [`register_instance`][servicediscovery_register_instance] request.
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that the instance is associated with. If the namespace associated with the service is shared with your account, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
+#' @param InstanceId &#91;required&#93; The value that you specified for `Id` in the [`register_instance`][servicediscovery_register_instance] request.
 #'
 #' @keywords internal
 #'
@@ -380,30 +307,12 @@ servicediscovery_deregister_instance <- function(ServiceId, InstanceId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_discover_instances/](https://www.paws-r-sdk.com/docs/servicediscovery_discover_instances/) for full documentation.
 #'
-#' @param NamespaceName &#91;required&#93; The `HttpName` name of the namespace. The `HttpName` is found in the
-#' `HttpProperties` member of the `Properties` member of the namespace. In
-#' most cases, `Name` and `HttpName` match. However, if you reuse `Name`
-#' for namespace creation, a generated hash is added to `HttpName` to
-#' distinguish the two.
-#' @param ServiceName &#91;required&#93; The name of the service that you specified when you registered the
-#' instance.
-#' @param MaxResults The maximum number of instances that you want Cloud Map to return in the
-#' response to a
-#' [`discover_instances`][servicediscovery_discover_instances] request. If
-#' you don't specify a value for `MaxResults`, Cloud Map returns up to 100
-#' instances.
-#' @param QueryParameters Filters to scope the results based on custom attributes for the instance
-#' (for example, `{version=v1, az=1a}`). Only instances that match all the
-#' specified key-value pairs are returned.
-#' @param OptionalParameters Opportunistic filters to scope the results based on custom attributes.
-#' If there are instances that match both the filters specified in both the
-#' `QueryParameters` parameter and this parameter, all of these instances
-#' are returned. Otherwise, the filters are ignored, and only instances
-#' that match the filters that are specified in the `QueryParameters`
-#' parameter are returned.
-#' @param HealthStatus The health status of the instances that you want to discover. This
-#' parameter is ignored for services that don't have a health check
-#' configured, and all instances are returned.
+#' @param NamespaceName &#91;required&#93; The `HttpName` name of the namespace. The `HttpName` is found in the `HttpProperties` member of the `Properties` member of the namespace. In most cases, `Name` and `HttpName` match. However, if you reuse `Name` for namespace creation, a generated hash is added to `HttpName` to distinguish the two.
+#' @param ServiceName &#91;required&#93; The name of the service that you specified when you registered the instance.
+#' @param MaxResults The maximum number of instances that you want Cloud Map to return in the response to a [`discover_instances`][servicediscovery_discover_instances] request. If you don't specify a value for `MaxResults`, Cloud Map returns up to 100 instances.
+#' @param QueryParameters Filters to scope the results based on custom attributes for the instance (for example, `{version=v1, az=1a}`). Only instances that match all the specified key-value pairs are returned.
+#' @param OptionalParameters Opportunistic filters to scope the results based on custom attributes. If there are instances that match both the filters specified in both the `QueryParameters` parameter and this parameter, all of these instances are returned. Otherwise, the filters are ignored, and only instances that match the filters that are specified in the `QueryParameters` parameter are returned.
+#' @param HealthStatus The health status of the instances that you want to discover. This parameter is ignored for services that don't have a health check configured, and all instances are returned.
 #' 
 #' **HEALTHY**
 #' 
@@ -419,12 +328,8 @@ servicediscovery_deregister_instance <- function(ServiceId, InstanceId) {
 #' 
 #' **HEALTHY_OR_ELSE_ALL**
 #' 
-#' Returns healthy instances, unless none are reporting a healthy state. In
-#' that case, return all instances. This is also called failing open.
-#' @param OwnerAccount The ID of the Amazon Web Services account that owns the namespace
-#' associated with the instance, as specified in the namespace
-#' `ResourceOwner` field. For instances associated with namespaces that are
-#' shared with your account, you must specify an `OwnerAccount`.
+#' Returns healthy instances, unless none are reporting a healthy state. In that case, return all instances. This is also called failing open.
+#' @param OwnerAccount The ID of the Amazon Web Services account that owns the namespace associated with the instance, as specified in the namespace `ResourceOwner` field. For instances associated with namespaces that are shared with your account, you must specify an `OwnerAccount`.
 #'
 #' @keywords internal
 #'
@@ -455,18 +360,9 @@ servicediscovery_discover_instances <- function(NamespaceName, ServiceName, MaxR
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_discover_instances_revision/](https://www.paws-r-sdk.com/docs/servicediscovery_discover_instances_revision/) for full documentation.
 #'
-#' @param NamespaceName &#91;required&#93; The `HttpName` name of the namespace. The `HttpName` is found in the
-#' `HttpProperties` member of the `Properties` member of the namespace.
-#' @param ServiceName &#91;required&#93; The name of the service that you specified when you registered the
-#' instance.
-#' @param OwnerAccount The ID of the Amazon Web Services account that owns the namespace
-#' associated with the instance, as specified in the namespace
-#' `ResourceOwner` field. For instances associated with namespaces that are
-#' shared with your account, you must specify an `OwnerAccount`. For more
-#' information about shared namespaces, see [Cross-account Cloud Map
-#' namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
+#' @param NamespaceName &#91;required&#93; The `HttpName` name of the namespace. The `HttpName` is found in the `HttpProperties` member of the `Properties` member of the namespace.
+#' @param ServiceName &#91;required&#93; The name of the service that you specified when you registered the instance.
+#' @param OwnerAccount The ID of the Amazon Web Services account that owns the namespace associated with the instance, as specified in the namespace `ResourceOwner` field. For instances associated with namespaces that are shared with your account, you must specify an `OwnerAccount`. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -497,12 +393,7 @@ servicediscovery_discover_instances_revision <- function(NamespaceName, ServiceN
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_get_instance/](https://www.paws-r-sdk.com/docs/servicediscovery_get_instance/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that the instance is
-#' associated with. For services created in a shared namespace, specify the
-#' service ARN. For more information about shared namespaces, see
-#' [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that the instance is associated with. For services created in a shared namespace, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
 #' @param InstanceId &#91;required&#93; The ID of the instance that you want to get information about.
 #'
 #' @keywords internal
@@ -535,35 +426,16 @@ servicediscovery_get_instance <- function(ServiceId, InstanceId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_get_instances_health_status/](https://www.paws-r-sdk.com/docs/servicediscovery_get_instances_health_status/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that the instance is
-#' associated with. For services created in a shared namespace, specify the
-#' service ARN. For more information about shared namespaces, see
-#' [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
-#' @param Instances An array that contains the IDs of all the instances that you want to get
-#' the health status for.
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that the instance is associated with. For services created in a shared namespace, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
+#' @param Instances An array that contains the IDs of all the instances that you want to get the health status for.
 #' 
-#' If you omit `Instances`, Cloud Map returns the health status for all the
-#' instances that are associated with the specified service.
+#' If you omit `Instances`, Cloud Map returns the health status for all the instances that are associated with the specified service.
 #' 
-#' To get the IDs for the instances that you've registered by using a
-#' specified service, submit a
-#' [`list_instances`][servicediscovery_list_instances] request.
-#' @param MaxResults The maximum number of instances that you want Cloud Map to return in the
-#' response to a
-#' [`get_instances_health_status`][servicediscovery_get_instances_health_status]
-#' request. If you don't specify a value for `MaxResults`, Cloud Map
-#' returns up to 100 instances.
-#' @param NextToken For the first
-#' [`get_instances_health_status`][servicediscovery_get_instances_health_status]
-#' request, omit this value.
+#' To get the IDs for the instances that you've registered by using a specified service, submit a [`list_instances`][servicediscovery_list_instances] request.
+#' @param MaxResults The maximum number of instances that you want Cloud Map to return in the response to a [`get_instances_health_status`][servicediscovery_get_instances_health_status] request. If you don't specify a value for `MaxResults`, Cloud Map returns up to 100 instances.
+#' @param NextToken For the first [`get_instances_health_status`][servicediscovery_get_instances_health_status] request, omit this value.
 #' 
-#' If more than `MaxResults` instances match the specified criteria, you
-#' can submit another
-#' [`get_instances_health_status`][servicediscovery_get_instances_health_status]
-#' request to get the next group of results. Specify the value of
-#' `NextToken` from the previous response in the next request.
+#' If more than `MaxResults` instances match the specified criteria, you can submit another [`get_instances_health_status`][servicediscovery_get_instances_health_status] request to get the next group of results. Specify the value of `NextToken` from the previous response in the next request.
 #'
 #' @keywords internal
 #'
@@ -594,12 +466,7 @@ servicediscovery_get_instances_health_status <- function(ServiceId, Instances = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_get_namespace/](https://www.paws-r-sdk.com/docs/servicediscovery_get_namespace/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace that you want to
-#' get information about. For namespaces shared with your Amazon Web
-#' Services account, specify the namespace ARN. For more information about
-#' shared namespaces, see [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*
+#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace that you want to get information about. For namespaces shared with your Amazon Web Services account, specify the namespace ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*
 #'
 #' @keywords internal
 #'
@@ -632,10 +499,7 @@ servicediscovery_get_namespace <- function(Id) {
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_get_operation/](https://www.paws-r-sdk.com/docs/servicediscovery_get_operation/) for full documentation.
 #'
 #' @param OperationId &#91;required&#93; The ID of the operation that you want to get more information about.
-#' @param OwnerAccount The ID of the Amazon Web Services account that owns the namespace
-#' associated with the operation, as specified in the namespace
-#' `ResourceOwner` field. For operations associated with namespaces that
-#' are shared with your account, you must specify an `OwnerAccount`.
+#' @param OwnerAccount The ID of the Amazon Web Services account that owns the namespace associated with the operation, as specified in the namespace `ResourceOwner` field. For operations associated with namespaces that are shared with your account, you must specify an `OwnerAccount`.
 #'
 #' @keywords internal
 #'
@@ -666,12 +530,7 @@ servicediscovery_get_operation <- function(OperationId, OwnerAccount = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_get_service/](https://www.paws-r-sdk.com/docs/servicediscovery_get_service/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to get
-#' settings for. For services created by consumers in a shared namespace,
-#' specify the service ARN. For more information about shared namespaces,
-#' see [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
+#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to get settings for. For services created by consumers in a shared namespace, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -702,13 +561,7 @@ servicediscovery_get_service <- function(Id) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_get_service_attributes/](https://www.paws-r-sdk.com/docs/servicediscovery_get_service_attributes/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to get
-#' attributes for. For services created in a namespace shared with your
-#' Amazon Web Services account, specify the service ARN. For more
-#' information about shared namespaces, see [Cross-account Cloud Map
-#' namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to get attributes for. For services created in a namespace shared with your Amazon Web Services account, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -740,23 +593,11 @@ servicediscovery_get_service_attributes <- function(ServiceId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_list_instances/](https://www.paws-r-sdk.com/docs/servicediscovery_list_instances/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to
-#' list instances for. For services created in a shared namespace, specify
-#' the service ARN. For more information about shared namespaces, see
-#' [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
-#' @param NextToken For the first [`list_instances`][servicediscovery_list_instances]
-#' request, omit this value.
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to list instances for. For services created in a shared namespace, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
+#' @param NextToken For the first [`list_instances`][servicediscovery_list_instances] request, omit this value.
 #' 
-#' If more than `MaxResults` instances match the specified criteria, you
-#' can submit another [`list_instances`][servicediscovery_list_instances]
-#' request to get the next group of results. Specify the value of
-#' `NextToken` from the previous response in the next request.
-#' @param MaxResults The maximum number of instances that you want Cloud Map to return in the
-#' response to a [`list_instances`][servicediscovery_list_instances]
-#' request. If you don't specify a value for `MaxResults`, Cloud Map
-#' returns up to 100 instances.
+#' If more than `MaxResults` instances match the specified criteria, you can submit another [`list_instances`][servicediscovery_list_instances] request to get the next group of results. Specify the value of `NextToken` from the previous response in the next request.
+#' @param MaxResults The maximum number of instances that you want Cloud Map to return in the response to a [`list_instances`][servicediscovery_list_instances] request. If you don't specify a value for `MaxResults`, Cloud Map returns up to 100 instances.
 #'
 #' @keywords internal
 #'
@@ -789,28 +630,15 @@ servicediscovery_list_instances <- function(ServiceId, NextToken = NULL, MaxResu
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_list_namespaces/](https://www.paws-r-sdk.com/docs/servicediscovery_list_namespaces/) for full documentation.
 #'
-#' @param NextToken For the first [`list_namespaces`][servicediscovery_list_namespaces]
-#' request, omit this value.
+#' @param NextToken For the first [`list_namespaces`][servicediscovery_list_namespaces] request, omit this value.
 #' 
-#' If the response contains `NextToken`, submit another
-#' [`list_namespaces`][servicediscovery_list_namespaces] request to get the
-#' next group of results. Specify the value of `NextToken` from the
-#' previous response in the next request.
+#' If the response contains `NextToken`, submit another [`list_namespaces`][servicediscovery_list_namespaces] request to get the next group of results. Specify the value of `NextToken` from the previous response in the next request.
 #' 
-#' Cloud Map gets `MaxResults` namespaces and then filters them based on
-#' the specified criteria. It's possible that no namespaces in the first
-#' `MaxResults` namespaces matched the specified criteria but that
-#' subsequent groups of `MaxResults` namespaces do contain namespaces that
-#' match the criteria.
-#' @param MaxResults The maximum number of namespaces that you want Cloud Map to return in
-#' the response to a [`list_namespaces`][servicediscovery_list_namespaces]
-#' request. If you don't specify a value for `MaxResults`, Cloud Map
-#' returns up to 100 namespaces.
-#' @param Filters A complex type that contains specifications for the namespaces that you
-#' want to list.
+#' Cloud Map gets `MaxResults` namespaces and then filters them based on the specified criteria. It's possible that no namespaces in the first `MaxResults` namespaces matched the specified criteria but that subsequent groups of `MaxResults` namespaces do contain namespaces that match the criteria.
+#' @param MaxResults The maximum number of namespaces that you want Cloud Map to return in the response to a [`list_namespaces`][servicediscovery_list_namespaces] request. If you don't specify a value for `MaxResults`, Cloud Map returns up to 100 namespaces.
+#' @param Filters A complex type that contains specifications for the namespaces that you want to list.
 #' 
-#' If you specify more than one filter, a namespace must match all filters
-#' to be returned by [`list_namespaces`][servicediscovery_list_namespaces].
+#' If you specify more than one filter, a namespace must match all filters to be returned by [`list_namespaces`][servicediscovery_list_namespaces].
 #'
 #' @keywords internal
 #'
@@ -841,29 +669,15 @@ servicediscovery_list_namespaces <- function(NextToken = NULL, MaxResults = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_list_operations/](https://www.paws-r-sdk.com/docs/servicediscovery_list_operations/) for full documentation.
 #'
-#' @param NextToken For the first [`list_operations`][servicediscovery_list_operations]
-#' request, omit this value.
+#' @param NextToken For the first [`list_operations`][servicediscovery_list_operations] request, omit this value.
 #' 
-#' If the response contains `NextToken`, submit another
-#' [`list_operations`][servicediscovery_list_operations] request to get the
-#' next group of results. Specify the value of `NextToken` from the
-#' previous response in the next request.
+#' If the response contains `NextToken`, submit another [`list_operations`][servicediscovery_list_operations] request to get the next group of results. Specify the value of `NextToken` from the previous response in the next request.
 #' 
-#' Cloud Map gets `MaxResults` operations and then filters them based on
-#' the specified criteria. It's possible that no operations in the first
-#' `MaxResults` operations matched the specified criteria but that
-#' subsequent groups of `MaxResults` operations do contain operations that
-#' match the criteria.
-#' @param MaxResults The maximum number of items that you want Cloud Map to return in the
-#' response to a [`list_operations`][servicediscovery_list_operations]
-#' request. If you don't specify a value for `MaxResults`, Cloud Map
-#' returns up to 100 operations.
-#' @param Filters A complex type that contains specifications for the operations that you
-#' want to list, for example, operations that you started between a
-#' specified start date and end date.
+#' Cloud Map gets `MaxResults` operations and then filters them based on the specified criteria. It's possible that no operations in the first `MaxResults` operations matched the specified criteria but that subsequent groups of `MaxResults` operations do contain operations that match the criteria.
+#' @param MaxResults The maximum number of items that you want Cloud Map to return in the response to a [`list_operations`][servicediscovery_list_operations] request. If you don't specify a value for `MaxResults`, Cloud Map returns up to 100 operations.
+#' @param Filters A complex type that contains specifications for the operations that you want to list, for example, operations that you started between a specified start date and end date.
 #' 
-#' If you specify more than one filter, an operation must match all filters
-#' to be returned by [`list_operations`][servicediscovery_list_operations].
+#' If you specify more than one filter, an operation must match all filters to be returned by [`list_operations`][servicediscovery_list_operations].
 #'
 #' @keywords internal
 #'
@@ -895,28 +709,15 @@ servicediscovery_list_operations <- function(NextToken = NULL, MaxResults = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_list_services/](https://www.paws-r-sdk.com/docs/servicediscovery_list_services/) for full documentation.
 #'
-#' @param NextToken For the first [`list_services`][servicediscovery_list_services] request,
-#' omit this value.
+#' @param NextToken For the first [`list_services`][servicediscovery_list_services] request, omit this value.
 #' 
-#' If the response contains `NextToken`, submit another
-#' [`list_services`][servicediscovery_list_services] request to get the
-#' next group of results. Specify the value of `NextToken` from the
-#' previous response in the next request.
+#' If the response contains `NextToken`, submit another [`list_services`][servicediscovery_list_services] request to get the next group of results. Specify the value of `NextToken` from the previous response in the next request.
 #' 
-#' Cloud Map gets `MaxResults` services and then filters them based on the
-#' specified criteria. It's possible that no services in the first
-#' `MaxResults` services matched the specified criteria but that subsequent
-#' groups of `MaxResults` services do contain services that match the
-#' criteria.
-#' @param MaxResults The maximum number of services that you want Cloud Map to return in the
-#' response to a [`list_services`][servicediscovery_list_services] request.
-#' If you don't specify a value for `MaxResults`, Cloud Map returns up to
-#' 100 services.
-#' @param Filters A complex type that contains specifications for the namespaces that you
-#' want to list services for.
+#' Cloud Map gets `MaxResults` services and then filters them based on the specified criteria. It's possible that no services in the first `MaxResults` services matched the specified criteria but that subsequent groups of `MaxResults` services do contain services that match the criteria.
+#' @param MaxResults The maximum number of services that you want Cloud Map to return in the response to a [`list_services`][servicediscovery_list_services] request. If you don't specify a value for `MaxResults`, Cloud Map returns up to 100 services.
+#' @param Filters A complex type that contains specifications for the namespaces that you want to list services for.
 #' 
-#' If you specify more than one filter, an operation must match all filters
-#' to be returned by [`list_services`][servicediscovery_list_services].
+#' If you specify more than one filter, an operation must match all filters to be returned by [`list_services`][servicediscovery_list_services].
 #'
 #' @keywords internal
 #'
@@ -947,8 +748,7 @@ servicediscovery_list_services <- function(NextToken = NULL, MaxResults = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/servicediscovery_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve
-#' tags for.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.
 #'
 #' @keywords internal
 #'
@@ -980,156 +780,86 @@ servicediscovery_list_tags_for_resource <- function(ResourceARN) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_register_instance/](https://www.paws-r-sdk.com/docs/servicediscovery_register_instance/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to use
-#' for settings for the instance. For services created in a shared
-#' namespace, specify the service ARN. For more information about shared
-#' namespaces, see [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
-#' @param InstanceId &#91;required&#93; An identifier that you want to associate with the instance. Note the
-#' following:
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to use for settings for the instance. For services created in a shared namespace, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
+#' @param InstanceId &#91;required&#93; An identifier that you want to associate with the instance. Note the following:
 #' 
-#' -   If the service that's specified by `ServiceId` includes settings for
-#'     an `SRV` record, the value of `InstanceId` is automatically included
-#'     as part of the value for the `SRV` record. For more information, see
-#'     [DnsRecord \>
-#'     Type](https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type).
+#' -   If the service that's specified by `ServiceId` includes settings for an `SRV` record, the value of `InstanceId` is automatically included as part of the value for the `SRV` record. For more information, see [DnsRecord \> Type](https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type).
 #' 
 #' -   You can use this value to update an existing instance.
 #' 
-#' -   To register a new instance, you must specify a value that's unique
-#'     among instances that you register by using the same service.
+#' -   To register a new instance, you must specify a value that's unique among instances that you register by using the same service.
 #' 
-#' -   If you specify an existing `InstanceId` and `ServiceId`, Cloud Map
-#'     updates the existing DNS records, if any. If there's also an
-#'     existing health check, Cloud Map deletes the old health check and
-#'     creates a new one.
+#' -   If you specify an existing `InstanceId` and `ServiceId`, Cloud Map updates the existing DNS records, if any. If there's also an existing health check, Cloud Map deletes the old health check and creates a new one.
 #' 
-#'     The health check isn't deleted immediately, so it will still appear
-#'     for a while if you submit a `ListHealthChecks` request, for example.
+#'     The health check isn't deleted immediately, so it will still appear for a while if you submit a `ListHealthChecks` request, for example.
 #' 
-#' Do not include sensitive information in `InstanceId` if the namespace is
-#' discoverable by public DNS queries and any `Type` member of `DnsRecord`
-#' for the service contains `SRV` because the `InstanceId` is discoverable
-#' by public DNS queries.
-#' @param CreatorRequestId A unique string that identifies the request and that allows failed
-#' [`register_instance`][servicediscovery_register_instance] requests to be
-#' retried without the risk of executing the operation twice. You must use
-#' a unique `CreatorRequestId` string every time you submit a
-#' [`register_instance`][servicediscovery_register_instance] request if
-#' you're registering additional instances for the same namespace and
-#' service. `CreatorRequestId` can be any unique string (for example, a
-#' date/time stamp).
-#' @param Attributes &#91;required&#93; A string map that contains the following information for the service
-#' that you specify in `ServiceId`:
+#' Do not include sensitive information in `InstanceId` if the namespace is discoverable by public DNS queries and any `Type` member of `DnsRecord` for the service contains `SRV` because the `InstanceId` is discoverable by public DNS queries.
+#' @param CreatorRequestId A unique string that identifies the request and that allows failed [`register_instance`][servicediscovery_register_instance] requests to be retried without the risk of executing the operation twice. You must use a unique `CreatorRequestId` string every time you submit a [`register_instance`][servicediscovery_register_instance] request if you're registering additional instances for the same namespace and service. `CreatorRequestId` can be any unique string (for example, a date/time stamp).
+#' @param Attributes &#91;required&#93; A string map that contains the following information for the service that you specify in `ServiceId`:
 #' 
-#' -   The attributes that apply to the records that are defined in the
-#'     service.
+#' -   The attributes that apply to the records that are defined in the service.
 #' 
 #' -   For each attribute, the applicable value.
 #' 
-#' Do not include sensitive information in the attributes if the namespace
-#' is discoverable by public DNS queries.
+#' Do not include sensitive information in the attributes if the namespace is discoverable by public DNS queries.
 #' 
 #' The following are the supported attribute keys.
 #' 
 #' **AWS_ALIAS_DNS_NAME**
 #' 
-#' If you want Cloud Map to create an Amazon Route 53 alias record that
-#' routes traffic to an Elastic Load Balancing load balancer, specify the
-#' DNS name that's associated with the load balancer. For information about
-#' how to get the DNS name, see "DNSName" in the topic
-#' [AliasTarget](https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html)
-#' in the *Route 53 API Reference*.
+#' If you want Cloud Map to create an Amazon Route 53 alias record that routes traffic to an Elastic Load Balancing load balancer, specify the DNS name that's associated with the load balancer. For information about how to get the DNS name, see "DNSName" in the topic [AliasTarget](https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html) in the *Route 53 API Reference*.
 #' 
 #' Note the following:
 #' 
-#' -   The configuration for the service that's specified by `ServiceId`
-#'     must include settings for an `A` record, an `AAAA` record, or both.
+#' -   The configuration for the service that's specified by `ServiceId` must include settings for an `A` record, an `AAAA` record, or both.
 #' 
-#' -   In the service that's specified by `ServiceId`, the value of
-#'     `RoutingPolicy` must be `WEIGHTED`.
+#' -   In the service that's specified by `ServiceId`, the value of `RoutingPolicy` must be `WEIGHTED`.
 #' 
-#' -   If the service that's specified by `ServiceId` includes
-#'     `HealthCheckConfig` settings, Cloud Map will create the Route 53
-#'     health check, but it doesn't associate the health check with the
-#'     alias record.
+#' -   If the service that's specified by `ServiceId` includes `HealthCheckConfig` settings, Cloud Map will create the Route 53 health check, but it doesn't associate the health check with the alias record.
 #' 
-#' -   Cloud Map currently doesn't support creating alias records that
-#'     route traffic to Amazon Web Services resources other than Elastic
-#'     Load Balancing load balancers.
+#' -   Cloud Map currently doesn't support creating alias records that route traffic to Amazon Web Services resources other than Elastic Load Balancing load balancers.
 #' 
-#' -   If you specify a value for `AWS_ALIAS_DNS_NAME`, don't specify
-#'     values for any of the `AWS_INSTANCE` attributes.
+#' -   If you specify a value for `AWS_ALIAS_DNS_NAME`, don't specify values for any of the `AWS_INSTANCE` attributes.
 #' 
-#' -   The `AWS_ALIAS_DNS_NAME` is not supported in the GovCloud (US)
-#'     Regions.
+#' -   The `AWS_ALIAS_DNS_NAME` is not supported in the GovCloud (US) Regions.
 #' 
 #' **AWS_EC2_INSTANCE_ID**
 #' 
-#' *HTTP namespaces only.* The Amazon EC2 instance ID for the instance. If
-#' the `AWS_EC2_INSTANCE_ID` attribute is specified, then the only other
-#' attribute that can be specified is `AWS_INIT_HEALTH_STATUS`. When the
-#' `AWS_EC2_INSTANCE_ID` attribute is specified, then the
-#' `AWS_INSTANCE_IPV4` attribute will be filled out with the primary
-#' private IPv4 address.
+#' *HTTP namespaces only.* The Amazon EC2 instance ID for the instance. If the `AWS_EC2_INSTANCE_ID` attribute is specified, then the only other attribute that can be specified is `AWS_INIT_HEALTH_STATUS`. When the `AWS_EC2_INSTANCE_ID` attribute is specified, then the `AWS_INSTANCE_IPV4` attribute will be filled out with the primary private IPv4 address.
 #' 
 #' **AWS_INIT_HEALTH_STATUS**
 #' 
-#' If the service configuration includes `HealthCheckCustomConfig`, you can
-#' optionally use `AWS_INIT_HEALTH_STATUS` to specify the initial status of
-#' the custom health check, `HEALTHY` or `UNHEALTHY`. If you don't specify
-#' a value for `AWS_INIT_HEALTH_STATUS`, the initial status is `HEALTHY`.
+#' If the service configuration includes `HealthCheckCustomConfig`, you can optionally use `AWS_INIT_HEALTH_STATUS` to specify the initial status of the custom health check, `HEALTHY` or `UNHEALTHY`. If you don't specify a value for `AWS_INIT_HEALTH_STATUS`, the initial status is `HEALTHY`.
 #' 
 #' **AWS_INSTANCE_CNAME**
 #' 
-#' If the service configuration includes a `CNAME` record, the domain name
-#' that you want Route 53 to return in response to DNS queries (for
-#' example, `example.com`).
+#' If the service configuration includes a `CNAME` record, the domain name that you want Route 53 to return in response to DNS queries (for example, `example.com`).
 #' 
-#' This value is required if the service specified by `ServiceId` includes
-#' settings for an `CNAME` record.
+#' This value is required if the service specified by `ServiceId` includes settings for an `CNAME` record.
 #' 
 #' **AWS_INSTANCE_IPV4**
 #' 
-#' If the service configuration includes an `A` record, the IPv4 address
-#' that you want Route 53 to return in response to DNS queries (for
-#' example, `192.0.2.44`).
+#' If the service configuration includes an `A` record, the IPv4 address that you want Route 53 to return in response to DNS queries (for example, `192.0.2.44`).
 #' 
-#' This value is required if the service specified by `ServiceId` includes
-#' settings for an `A` record. If the service includes settings for an
-#' `SRV` record, you must specify a value for `AWS_INSTANCE_IPV4`,
-#' `AWS_INSTANCE_IPV6`, or both.
+#' This value is required if the service specified by `ServiceId` includes settings for an `A` record. If the service includes settings for an `SRV` record, you must specify a value for `AWS_INSTANCE_IPV4`, `AWS_INSTANCE_IPV6`, or both.
 #' 
 #' **AWS_INSTANCE_IPV6**
 #' 
-#' If the service configuration includes an `AAAA` record, the IPv6 address
-#' that you want Route 53 to return in response to DNS queries (for
-#' example, `2001:0db8:85a3:0000:0000:abcd:0001:2345`).
+#' If the service configuration includes an `AAAA` record, the IPv6 address that you want Route 53 to return in response to DNS queries (for example, `2001:0db8:85a3:0000:0000:abcd:0001:2345`).
 #' 
-#' This value is required if the service specified by `ServiceId` includes
-#' settings for an `AAAA` record. If the service includes settings for an
-#' `SRV` record, you must specify a value for `AWS_INSTANCE_IPV4`,
-#' `AWS_INSTANCE_IPV6`, or both.
+#' This value is required if the service specified by `ServiceId` includes settings for an `AAAA` record. If the service includes settings for an `SRV` record, you must specify a value for `AWS_INSTANCE_IPV4`, `AWS_INSTANCE_IPV6`, or both.
 #' 
 #' **AWS_INSTANCE_PORT**
 #' 
-#' If the service includes an `SRV` record, the value that you want
-#' Route 53 to return for the port.
+#' If the service includes an `SRV` record, the value that you want Route 53 to return for the port.
 #' 
-#' If the service includes `HealthCheckConfig`, the port on the endpoint
-#' that you want Route 53 to send requests to.
+#' If the service includes `HealthCheckConfig`, the port on the endpoint that you want Route 53 to send requests to.
 #' 
-#' This value is required if you specified settings for an `SRV` record or
-#' a Route 53 health check when you created the service.
+#' This value is required if you specified settings for an `SRV` record or a Route 53 health check when you created the service.
 #' 
 #' **Custom attributes**
 #' 
-#' You can add up to 30 custom attributes. For each key-value pair, the
-#' maximum length of the attribute name is 255 characters, and the maximum
-#' length of the attribute value is 1,024 characters. The total size of all
-#' provided attributes (sum of all keys and values) must not exceed 5,000
-#' characters.
+#' You can add up to 30 custom attributes. For each key-value pair, the maximum length of the attribute name is 255 characters, and the maximum length of the attribute value is 1,024 characters. The total size of all provided attributes (sum of all keys and values) must not exceed 5,000 characters.
 #'
 #' @keywords internal
 #'
@@ -1160,11 +890,8 @@ servicediscovery_register_instance <- function(ServiceId, InstanceId, CreatorReq
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_tag_resource/](https://www.paws-r-sdk.com/docs/servicediscovery_tag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve
-#' tags for.
-#' @param Tags &#91;required&#93; The tags to add to the specified resource. Specifying the tag key is
-#' required. You can set the value of a tag to an empty string, but you
-#' can't set the value of a tag to null.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.
+#' @param Tags &#91;required&#93; The tags to add to the specified resource. Specifying the tag key is required. You can set the value of a tag to an empty string, but you can't set the value of a tag to null.
 #'
 #' @keywords internal
 #'
@@ -1195,8 +922,7 @@ servicediscovery_tag_resource <- function(ResourceARN, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_untag_resource/](https://www.paws-r-sdk.com/docs/servicediscovery_untag_resource/) for full documentation.
 #'
-#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve
-#' tags for.
+#' @param ResourceARN &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to retrieve tags for.
 #' @param TagKeys &#91;required&#93; The tag keys to remove from the specified resource.
 #'
 #' @keywords internal
@@ -1228,13 +954,8 @@ servicediscovery_untag_resource <- function(ResourceARN, TagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_update_http_namespace/](https://www.paws-r-sdk.com/docs/servicediscovery_update_http_namespace/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace that you want to
-#' update.
-#' @param UpdaterRequestId A unique string that identifies the request and that allows failed
-#' [`update_http_namespace`][servicediscovery_update_http_namespace]
-#' requests to be retried without the risk of running the operation twice.
-#' `UpdaterRequestId` can be any unique string (for example, a
-#' date/timestamp).
+#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace that you want to update.
+#' @param UpdaterRequestId A unique string that identifies the request and that allows failed [`update_http_namespace`][servicediscovery_update_http_namespace] requests to be retried without the risk of running the operation twice. `UpdaterRequestId` can be any unique string (for example, a date/timestamp).
 #' @param Namespace &#91;required&#93; Updated properties for the the HTTP namespace.
 #'
 #' @keywords internal
@@ -1267,13 +988,7 @@ servicediscovery_update_http_namespace <- function(Id, UpdaterRequestId = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_update_instance_custom_health_status/](https://www.paws-r-sdk.com/docs/servicediscovery_update_instance_custom_health_status/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that includes the
-#' configuration for the custom health check that you want to change the
-#' status for. For services created in a shared namespace, specify the
-#' service ARN. For more information about shared namespaces, see
-#' [Cross-account Cloud Map namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*.
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that includes the configuration for the custom health check that you want to change the status for. For services created in a shared namespace, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*.
 #' @param InstanceId &#91;required&#93; The ID of the instance that you want to change the health status for.
 #' @param Status &#91;required&#93; The new status of the instance, `HEALTHY` or `UNHEALTHY`.
 #'
@@ -1306,13 +1021,8 @@ servicediscovery_update_instance_custom_health_status <- function(ServiceId, Ins
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_update_private_dns_namespace/](https://www.paws-r-sdk.com/docs/servicediscovery_update_private_dns_namespace/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace that you want to
-#' update.
-#' @param UpdaterRequestId A unique string that identifies the request and that allows failed
-#' [`update_private_dns_namespace`][servicediscovery_update_private_dns_namespace]
-#' requests to be retried without the risk of running the operation twice.
-#' `UpdaterRequestId` can be any unique string (for example, a
-#' date/timestamp).
+#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace that you want to update.
+#' @param UpdaterRequestId A unique string that identifies the request and that allows failed [`update_private_dns_namespace`][servicediscovery_update_private_dns_namespace] requests to be retried without the risk of running the operation twice. `UpdaterRequestId` can be any unique string (for example, a date/timestamp).
 #' @param Namespace &#91;required&#93; Updated properties for the private DNS namespace.
 #'
 #' @keywords internal
@@ -1345,11 +1055,7 @@ servicediscovery_update_private_dns_namespace <- function(Id, UpdaterRequestId =
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_update_public_dns_namespace/](https://www.paws-r-sdk.com/docs/servicediscovery_update_public_dns_namespace/) for full documentation.
 #'
 #' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the namespace being updated.
-#' @param UpdaterRequestId A unique string that identifies the request and that allows failed
-#' [`update_public_dns_namespace`][servicediscovery_update_public_dns_namespace]
-#' requests to be retried without the risk of running the operation twice.
-#' `UpdaterRequestId` can be any unique string (for example, a
-#' date/timestamp).
+#' @param UpdaterRequestId A unique string that identifies the request and that allows failed [`update_public_dns_namespace`][servicediscovery_update_public_dns_namespace] requests to be retried without the risk of running the operation twice. `UpdaterRequestId` can be any unique string (for example, a date/timestamp).
 #' @param Namespace &#91;required&#93; Updated properties for the public DNS namespace.
 #'
 #' @keywords internal
@@ -1381,15 +1087,8 @@ servicediscovery_update_public_dns_namespace <- function(Id, UpdaterRequestId = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_update_service/](https://www.paws-r-sdk.com/docs/servicediscovery_update_service/) for full documentation.
 #'
-#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to
-#' update. If the namespace associated with the service is shared with your
-#' Amazon Web Services account, specify the service ARN. For more
-#' information about shared namespaces, see [Cross-account Cloud Map
-#' namespace
-#' sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html)
-#' in the *Cloud Map Developer Guide*
-#' @param Service &#91;required&#93; A complex type that contains the new settings for the service. You can
-#' specify a maximum of 30 attributes (key-value pairs).
+#' @param Id &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to update. If the namespace associated with the service is shared with your Amazon Web Services account, specify the service ARN. For more information about shared namespaces, see [Cross-account Cloud Map namespace sharing](https://docs.aws.amazon.com/cloud-map/latest/dg/sharing-namespaces.html) in the *Cloud Map Developer Guide*
+#' @param Service &#91;required&#93; A complex type that contains the new settings for the service. You can specify a maximum of 30 attributes (key-value pairs).
 #'
 #' @keywords internal
 #'
@@ -1421,9 +1120,7 @@ servicediscovery_update_service <- function(Id, Service) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/servicediscovery_update_service_attributes/](https://www.paws-r-sdk.com/docs/servicediscovery_update_service_attributes/) for full documentation.
 #'
-#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to
-#' update. For services created in a namespace shared with your Amazon Web
-#' Services account, specify the service ARN.
+#' @param ServiceId &#91;required&#93; The ID or Amazon Resource Name (ARN) of the service that you want to update. For services created in a namespace shared with your Amazon Web Services account, specify the service ARN.
 #' @param Attributes &#91;required&#93; A string map that contains attribute key-value pairs.
 #'
 #' @keywords internal

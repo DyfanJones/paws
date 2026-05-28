@@ -22,15 +22,13 @@ dynamodb_restore_table_from_backup(
 
 \item{BillingModeOverride}{The billing mode of the restored table.}
 
-\item{GlobalSecondaryIndexOverride}{List of global secondary indexes for the restored table. The indexes
-provided should match existing secondary indexes. You can choose to
-exclude some or all of the indexes at the time of restore.}
+\item{GlobalSecondaryIndexOverride}{List of global secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.}
 
-\item{LocalSecondaryIndexOverride}{List of local secondary indexes for the restored table. The indexes
-provided should match existing secondary indexes. You can choose to
-exclude some or all of the indexes at the time of restore.}
+\item{LocalSecondaryIndexOverride}{List of local secondary indexes for the restored table. The indexes provided should match existing secondary indexes. You can choose to exclude some or all of the indexes at the time of restore.}
 
 \item{ProvisionedThroughputOverride}{Provisioned throughput settings for the restored table.}
+
+\item{OnDemandThroughputOverride}{Overrides the on-demand throughput settings for this replica table. If you don't specify a value for this parameter, it uses the source table's on-demand throughput settings.}
 
 \item{SSESpecificationOverride}{The new server-side encryption settings for the restored table.}
 }

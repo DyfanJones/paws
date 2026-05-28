@@ -13,8 +13,7 @@ budgets_update_subscriber(
 )
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose subscriber you
-want to update.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget whose subscriber you want to update.}
 
 \item{BudgetName}{[required] The name of the budget whose subscriber you want to update.}
 

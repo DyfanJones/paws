@@ -7,8 +7,7 @@
 sagemakeredgemanager_get_device_registration(DeviceName, DeviceFleetName)
 }
 \arguments{
-\item{DeviceName}{[required] The unique name of the device you want to get the registration status
-from.}
+\item{DeviceName}{[required] The unique name of the device you want to get the registration status from.}
 
 \item{DeviceFleetName}{[required] The name of the fleet that the device belongs to.}
 }

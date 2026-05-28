@@ -10,8 +10,7 @@ omics_list_run_groups(name = NULL, startingToken = NULL, maxResults = NULL)
 \arguments{
 \item{name}{The run groups' name.}
 
-\item{startingToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{startingToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of run groups to return in one page of results.}
 }

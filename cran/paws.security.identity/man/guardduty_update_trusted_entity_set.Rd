@@ -15,30 +15,21 @@ guardduty_update_trusted_entity_set(
 )
 }
 \arguments{
-\item{DetectorId}{[required] The unique ID of the GuardDuty detector associated with the threat
-entity set that you want to update.
+\item{DetectorId}{[required] The unique ID of the GuardDuty detector associated with the threat entity set that you want to update.
 
-To find the \code{detectorId} in the current Region, see the Settings page in
-the GuardDuty console, or run the
-\code{\link[=guardduty_list_detectors]{list_detectors}} API.}
+To find the \code{detectorId} in the current Region, see the Settings page in the GuardDuty console, or run the \code{\link[=guardduty_list_detectors]{list_detectors}} API.}
 
-\item{TrustedEntitySetId}{[required] The ID returned by GuardDuty after updating the trusted entity set
-resource.}
+\item{TrustedEntitySetId}{[required] The ID returned by GuardDuty after updating the trusted entity set resource.}
 
 \item{Name}{A user-friendly name to identify the trusted entity set.
 
-The name of your list can include lowercase letters, uppercase letters,
-numbers, dash (-), and underscore (_).}
+The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).}
 
 \item{Location}{The URI of the file that contains the trusted entity set.}
 
-\item{ExpectedBucketOwner}{The Amazon Web Services account ID that owns the Amazon S3 bucket
-specified in the \strong{location} parameter.}
+\item{ExpectedBucketOwner}{The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the \strong{location} parameter.}
 
-\item{Activate}{A boolean value that indicates whether GuardDuty is to start using this
-updated trusted entity set. After you update an entity set, you will
-need to activate it again. It might take up to 15 minutes for the
-updated entity set to be effective.}
+\item{Activate}{A boolean value that indicates whether GuardDuty is to start using this updated trusted entity set. After you update an entity set, you will need to activate it again. It might take up to 15 minutes for the updated entity set to be effective.}
 }
 \description{
 Updates the trusted entity set associated with the specified \code{trustedEntitySetId}.

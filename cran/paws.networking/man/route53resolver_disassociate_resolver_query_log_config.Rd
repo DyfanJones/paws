@@ -10,11 +10,9 @@ route53resolver_disassociate_resolver_query_log_config(
 )
 }
 \arguments{
-\item{ResolverQueryLogConfigId}{[required] The ID of the query logging configuration that you want to disassociate
-a specified VPC from.}
+\item{ResolverQueryLogConfigId}{[required] The ID of the query logging configuration that you want to disassociate a specified VPC from.}
 
-\item{ResourceId}{[required] The ID of the Amazon VPC that you want to disassociate from a specified
-query logging configuration.}
+\item{ResourceId}{[required] The ID of the Amazon VPC that you want to disassociate from a specified query logging configuration.}
 }
 \description{
 Disassociates a VPC from a query logging configuration.

@@ -14,26 +14,15 @@ codegurureviewer_list_recommendation_feedback(
 )
 }
 \arguments{
-\item{NextToken}{If \code{nextToken} is returned, there are more results available. The value
-of \code{nextToken} is a unique pagination token for each page. Make the call
-again using the returned token to retrieve the next page. Keep all other
-arguments unchanged.}
+\item{NextToken}{If \code{nextToken} is returned, there are more results available. The value of \code{nextToken} is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged.}
 
-\item{MaxResults}{The maximum number of results that are returned per call. The default is
-100.}
+\item{MaxResults}{The maximum number of results that are returned per call. The default is 100.}
 
-\item{CodeReviewArn}{[required] The Amazon Resource Name (ARN) of the
-\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html}{CodeReview}
-object.}
+\item{CodeReviewArn}{[required] The Amazon Resource Name (ARN) of the \href{https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReview.html}{CodeReview} object.}
 
-\item{UserIds}{An Amazon Web Services user's account ID or Amazon Resource Name (ARN).
-Use this ID to query the recommendation feedback for a code review from
-that user.
+\item{UserIds}{An Amazon Web Services user's account ID or Amazon Resource Name (ARN). Use this ID to query the recommendation feedback for a code review from that user.
 
-The \code{UserId} is an IAM principal that can be specified as an Amazon Web
-Services account ID or an Amazon Resource Name (ARN). For more
-information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying}{Specifying a Principal}
-in the \emph{Amazon Web Services Identity and Access Management User Guide}.}
+The \code{UserId} is an IAM principal that can be specified as an Amazon Web Services account ID or an Amazon Resource Name (ARN). For more information, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#Principal_specifying}{Specifying a Principal} in the \emph{Amazon Web Services Identity and Access Management User Guide}.}
 
 \item{RecommendationIds}{Used to query the recommendation feedback for a given recommendation.}
 }

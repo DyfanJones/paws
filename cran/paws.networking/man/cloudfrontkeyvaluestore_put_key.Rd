@@ -13,8 +13,7 @@ cloudfrontkeyvaluestore_put_key(Key, Value, KvsARN, IfMatch)
 
 \item{KvsARN}{[required] The Amazon Resource Name (ARN) of the Key Value Store.}
 
-\item{IfMatch}{[required] The current version (ETag) of the Key Value Store that you are putting
-keys into, which you can get using DescribeKeyValueStore.}
+\item{IfMatch}{[required] The current version (ETag) of the Key Value Store that you are putting keys into, which you can get using DescribeKeyValueStore.}
 }
 \description{
 Creates a new key value pair or replaces the value of an existing key.

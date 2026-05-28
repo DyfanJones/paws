@@ -19,15 +19,11 @@ directconnect_create_lag(
 )
 }
 \arguments{
-\item{numberOfConnections}{[required] The number of physical dedicated connections initially provisioned and
-bundled by the LAG. You can have a maximum of four connections when the
-port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or
-400Gbps.}
+\item{numberOfConnections}{[required] The number of physical dedicated connections initially provisioned and bundled by the LAG. You can have a maximum of four connections when the port speed is 1Gbps or 10Gbps, or two when the port speed is 100Gbps or 400Gbps.}
 
 \item{location}{[required] The location for the LAG.}
 
-\item{connectionsBandwidth}{[required] The bandwidth of the individual physical dedicated connections bundled
-by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.}
+\item{connectionsBandwidth}{[required] The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.}
 
 \item{lagName}{[required] The name of the LAG.}
 
@@ -41,10 +37,7 @@ by the LAG. The possible values are 1Gbps,10Gbps, 100Gbps, and 400Gbps.}
 
 \item{requestMACSec}{Indicates whether the connection will support MAC Security (MACsec).
 
-All connections in the LAG must be capable of supporting MAC Security
-(MACsec). For information about MAC Security (MACsec) prerequisties, see
-\href{https://docs.aws.amazon.com/directconnect/latest/UserGuide/#mac-sec-prerequisites}{MACsec prerequisties}
-in the \emph{Direct Connect User Guide}.}
+All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see \href{https://docs.aws.amazon.com/directconnect/latest/UserGuide/#mac-sec-prerequisites}{MACsec prerequisties} in the \emph{Direct Connect User Guide}.}
 }
 \description{
 Creates a link aggregation group (LAG) with the specified number of bundled physical dedicated connections between the customer network and a specific Direct Connect location. A LAG is a logical interface that uses the Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single interface.

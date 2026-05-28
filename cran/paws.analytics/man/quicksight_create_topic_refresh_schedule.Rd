@@ -13,11 +13,9 @@ quicksight_create_topic_refresh_schedule(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic you're
-creating a refresh schedule for.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic you're creating a refresh schedule for.}
 
-\item{TopicId}{[required] The ID of the topic that you want to modify. This ID is unique per
-Amazon Web Services Region for each Amazon Web Services account.}
+\item{TopicId}{[required] The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
 \item{DatasetArn}{[required] The Amazon Resource Name (ARN) of the dataset.}
 

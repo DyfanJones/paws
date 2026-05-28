@@ -14,8 +14,7 @@ bedrockagentruntime_list_flow_execution_events(
 )
 }
 \arguments{
-\item{eventType}{[required] The type of events to retrieve. Specify \code{Node} for node-level events or
-\code{Flow} for flow-level events.}
+\item{eventType}{[required] The type of events to retrieve. Specify \code{Node} for node-level events or \code{Flow} for flow-level events.}
 
 \item{executionIdentifier}{[required] The unique identifier of the flow execution.}
 
@@ -23,12 +22,9 @@ bedrockagentruntime_list_flow_execution_events(
 
 \item{flowIdentifier}{[required] The unique identifier of the flow.}
 
-\item{maxResults}{The maximum number of events to return in a single response. If more
-events exist than the specified maxResults value, a token is included in
-the response so that the remaining results can be retrieved.}
+\item{maxResults}{The maximum number of events to return in a single response. If more events exist than the specified maxResults value, a token is included in the response so that the remaining results can be retrieved.}
 
-\item{nextToken}{A token to retrieve the next set of results. This value is returned in
-the response if more results are available.}
+\item{nextToken}{A token to retrieve the next set of results. This value is returned in the response if more results are available.}
 }
 \description{
 Lists events that occurred during a flow execution. Events provide detailed information about the execution progress, including node inputs and outputs, flow inputs and outputs, condition results, and failure events.

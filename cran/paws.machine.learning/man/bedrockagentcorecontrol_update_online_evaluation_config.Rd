@@ -17,26 +17,19 @@ bedrockagentcorecontrol_update_online_evaluation_config(
 )
 }
 \arguments{
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
 \item{onlineEvaluationConfigId}{[required] The unique identifier of the online evaluation configuration to update.}
 
 \item{description}{The updated description of the online evaluation configuration.}
 
-\item{rule}{The updated evaluation rule containing sampling configuration, filters,
-and session settings.}
+\item{rule}{The updated evaluation rule containing sampling configuration, filters, and session settings.}
 
-\item{dataSourceConfig}{The updated data source configuration specifying CloudWatch log groups
-and service names to monitor.}
+\item{dataSourceConfig}{The updated data source configuration specifying CloudWatch log groups and service names to monitor.}
 
 \item{evaluators}{The updated list of evaluators to apply during online evaluation.}
 
-\item{evaluationExecutionRoleArn}{The updated Amazon Resource Name (ARN) of the IAM role used for
-evaluation execution.}
+\item{evaluationExecutionRoleArn}{The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution.}
 
 \item{executionStatus}{The updated execution status to enable or disable the online evaluation.}
 }

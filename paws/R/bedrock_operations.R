@@ -3,19 +3,78 @@
 #' @include bedrock_service.R
 NULL
 
+#' Batch delete the specified advanced prompt optimization jobs
+#'
+#' @description
+#' Batch delete the specified advanced prompt optimization jobs.
+#'
+#' @usage
+#' bedrock_batch_delete_advanced_prompt_optimization_job(jobIdentifiers)
+#'
+#' @param jobIdentifiers &#91;required&#93; List of advanced prompt optimization job identifiers to delete.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   errors = list(
+#'     list(
+#'       jobIdentifier = "string",
+#'       code = "string",
+#'       message = "string"
+#'     )
+#'   ),
+#'   advancedPromptOptimizationJobs = list(
+#'     list(
+#'       jobIdentifier = "string",
+#'       jobStatus = "InProgress"|"Completed"|"Failed"|"PartiallyCompleted"|"Stopping"|"Stopped"|"Deleting"
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$batch_delete_advanced_prompt_optimization_job(
+#'   jobIdentifiers = list(
+#'     "string"
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrock_batch_delete_advanced_prompt_optimization_job
+#'
+#' @aliases bedrock_batch_delete_advanced_prompt_optimization_job
+bedrock_batch_delete_advanced_prompt_optimization_job <- function(jobIdentifiers) {
+  op <- new_operation(
+    name = "BatchDeleteAdvancedPromptOptimizationJob",
+    http_method = "POST",
+    http_path = "/advanced-prompt-optimization-job/batch-delete",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrock$batch_delete_advanced_prompt_optimization_job_input(jobIdentifiers = jobIdentifiers)
+  output <- .bedrock$batch_delete_advanced_prompt_optimization_job_output()
+  config <- get_config()
+  svc <- .bedrock$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrock$operations$batch_delete_advanced_prompt_optimization_job <- bedrock_batch_delete_advanced_prompt_optimization_job
+
 #' Deletes a batch of evaluation jobs
 #'
 #' @description
-#' Deletes a batch of evaluation jobs. An evaluation job can only be
-#' deleted if it has following status `FAILED`, `COMPLETED`, and `STOPPED`.
-#' You can request up to 25 model evaluation jobs be deleted in a single
-#' request.
+#' Deletes a batch of evaluation jobs. An evaluation job can only be deleted if it has following status `FAILED`, `COMPLETED`, and `STOPPED`. You can request up to 25 model evaluation jobs be deleted in a single request.
 #'
 #' @usage
 #' bedrock_batch_delete_evaluation_job(jobIdentifiers)
 #'
-#' @param jobIdentifiers &#91;required&#93; A list of one or more evaluation job Amazon Resource Names (ARNs) you
-#' want to delete.
+#' @param jobIdentifiers &#91;required&#93; A list of one or more evaluation job Amazon Resource Names (ARNs) you want to delete.
 #'
 #' @return
 #' A list with the following syntax:
@@ -73,19 +132,14 @@ bedrock_batch_delete_evaluation_job <- function(jobIdentifiers) {
 #' Cancels a running Automated Reasoning policy build workflow
 #'
 #' @description
-#' Cancels a running Automated Reasoning policy build workflow. This stops
-#' the policy generation process and prevents further processing of the
-#' source documents.
+#' Cancels a running Automated Reasoning policy build workflow. This stops the policy generation process and prevents further processing of the source documents.
 #'
 #' @usage
 #' bedrock_cancel_automated_reasoning_policy_build_workflow(policyArn,
 #'   buildWorkflowId)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-#' build workflow you want to cancel.
-#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow to cancel. You can get this
-#' ID from the StartAutomatedReasoningPolicyBuildWorkflow response or by
-#' listing build workflows.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow you want to cancel.
+#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow to cancel. You can get this ID from the StartAutomatedReasoningPolicyBuildWorkflow response or by listing build workflows.
 #'
 #' @return
 #' An empty list.
@@ -122,42 +176,112 @@ bedrock_cancel_automated_reasoning_policy_build_workflow <- function(policyArn, 
 }
 .bedrock$operations$cancel_automated_reasoning_policy_build_workflow <- bedrock_cancel_automated_reasoning_policy_build_workflow
 
+#' Creates an asynchronous batch job for advanced prompt optimization
+#'
+#' @description
+#' Creates an asynchronous batch job for advanced prompt optimization.
+#'
+#' @usage
+#' bedrock_create_advanced_prompt_optimization_job(jobName, jobDescription,
+#'   clientToken, inputConfig, outputConfig, encryptionKeyArn, tags,
+#'   modelConfigurations)
+#'
+#' @param jobName &#91;required&#93; Name of the advanced prompt optimization job.
+#' @param jobDescription Description of the advanced prompt optimization job.
+#' @param clientToken Idempotency token for the request.
+#' @param inputConfig &#91;required&#93; Input data configuration for the advanced prompt optimization job.
+#' @param outputConfig &#91;required&#93; Output data configuration for the advanced prompt optimization job.
+#' @param encryptionKeyArn KMS key ARN for encrypting output data.
+#' @param tags Tags to associate with the job.
+#' @param modelConfigurations &#91;required&#93; Model configurations for advanced prompt optimization.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   jobArn = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$create_advanced_prompt_optimization_job(
+#'   jobName = "string",
+#'   jobDescription = "string",
+#'   clientToken = "string",
+#'   inputConfig = list(
+#'     s3Uri = "string"
+#'   ),
+#'   outputConfig = list(
+#'     s3Uri = "string"
+#'   ),
+#'   encryptionKeyArn = "string",
+#'   tags = list(
+#'     list(
+#'       key = "string",
+#'       value = "string"
+#'     )
+#'   ),
+#'   modelConfigurations = list(
+#'     list(
+#'       modelId = "string",
+#'       inferenceConfig = list(
+#'         maxTokens = 123,
+#'         temperature = 123.0,
+#'         topP = 123.0,
+#'         stopSequences = list(
+#'           "string"
+#'         )
+#'       ),
+#'       additionalModelRequestFields = list(
+#'         list()
+#'       )
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrock_create_advanced_prompt_optimization_job
+#'
+#' @aliases bedrock_create_advanced_prompt_optimization_job
+bedrock_create_advanced_prompt_optimization_job <- function(jobName, jobDescription = NULL, clientToken = NULL, inputConfig, outputConfig, encryptionKeyArn = NULL, tags = NULL, modelConfigurations) {
+  op <- new_operation(
+    name = "CreateAdvancedPromptOptimizationJob",
+    http_method = "POST",
+    http_path = "/advanced-prompt-optimization-jobs",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrock$create_advanced_prompt_optimization_job_input(jobName = jobName, jobDescription = jobDescription, clientToken = clientToken, inputConfig = inputConfig, outputConfig = outputConfig, encryptionKeyArn = encryptionKeyArn, tags = tags, modelConfigurations = modelConfigurations)
+  output <- .bedrock$create_advanced_prompt_optimization_job_output()
+  config <- get_config()
+  svc <- .bedrock$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrock$operations$create_advanced_prompt_optimization_job <- bedrock_create_advanced_prompt_optimization_job
+
 #' Creates an Automated Reasoning policy for Amazon Bedrock Guardrails
 #'
 #' @description
-#' Creates an Automated Reasoning policy for Amazon Bedrock Guardrails.
-#' Automated Reasoning policies use mathematical techniques to detect
-#' hallucinations, suggest corrections, and highlight unstated assumptions
-#' in the responses of your GenAI application.
+#' Creates an Automated Reasoning policy for Amazon Bedrock Guardrails. Automated Reasoning policies use mathematical techniques to detect hallucinations, suggest corrections, and highlight unstated assumptions in the responses of your GenAI application.
 #' 
-#' To create a policy, you upload a source document that describes the
-#' rules that you're encoding. Automated Reasoning extracts important
-#' concepts from the source document that will become variables in the
-#' policy and infers policy rules.
+#' To create a policy, you upload a source document that describes the rules that you're encoding. Automated Reasoning extracts important concepts from the source document that will become variables in the policy and infers policy rules.
 #'
 #' @usage
 #' bedrock_create_automated_reasoning_policy(name, description,
 #'   clientRequestToken, policyDefinition, kmsKeyId, tags)
 #'
-#' @param name &#91;required&#93; A unique name for the Automated Reasoning policy. The name must be
-#' between 1 and 63 characters and can contain letters, numbers, hyphens,
-#' and underscores.
-#' @param description A description of the Automated Reasoning policy. Use this to provide
-#' context about the policy's purpose and the types of validations it
-#' performs.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than once. If this token matches a previous request,
-#' Amazon Bedrock ignores the request but doesn't return an error.
-#' @param policyDefinition The policy definition that contains the formal logic rules, variables,
-#' and custom variable types used to validate foundation model responses in
-#' your application.
-#' @param kmsKeyId The identifier of the KMS key to use for encrypting the automated
-#' reasoning policy and its associated artifacts. If you don't specify a
-#' KMS key, Amazon Bedrock uses an KMS managed key for encryption. For
-#' enhanced security and control, you can specify a customer managed KMS
-#' key.
-#' @param tags A list of tags to associate with the Automated Reasoning policy. Tags
-#' help you organize and manage your policies.
+#' @param name &#91;required&#93; A unique name for the Automated Reasoning policy. The name must be between 1 and 63 characters and can contain letters, numbers, hyphens, and underscores.
+#' @param description A description of the Automated Reasoning policy. Use this to provide context about the policy's purpose and the types of validations it performs.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation completes no more than once. If this token matches a previous request, Amazon Bedrock ignores the request but doesn't return an error.
+#' @param policyDefinition The policy definition that contains the formal logic rules, variables, and custom variable types used to validate foundation model responses in your application.
+#' @param kmsKeyId The identifier of the KMS key to use for encrypting the automated reasoning policy and its associated artifacts. If you don't specify a KMS key, Amazon Bedrock uses an KMS managed key for encryption. For enhanced security and control, you can specify a customer managed KMS key.
+#' @param tags A list of tags to associate with the Automated Reasoning policy. Tags help you organize and manage your policies.
 #'
 #' @return
 #' A list with the following syntax:
@@ -249,68 +373,33 @@ bedrock_create_automated_reasoning_policy <- function(name, description = NULL, 
 #' Creates a test for an Automated Reasoning policy
 #'
 #' @description
-#' Creates a test for an Automated Reasoning policy. Tests validate that
-#' your policy works as expected by providing sample inputs and expected
-#' outcomes. Use tests to verify policy behavior before deploying to
-#' production.
+#' Creates a test for an Automated Reasoning policy. Tests validate that your policy works as expected by providing sample inputs and expected outcomes. Use tests to verify policy behavior before deploying to production.
 #'
 #' @usage
 #' bedrock_create_automated_reasoning_policy_test_case(policyArn,
 #'   guardContent, queryContent, expectedAggregatedFindingsResult,
 #'   clientRequestToken, confidenceThreshold)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-#' which to create the test.
-#' @param guardContent &#91;required&#93; The output content that's validated by the Automated Reasoning policy.
-#' This represents the foundation model response that will be checked for
-#' accuracy.
-#' @param queryContent The input query or prompt that generated the content. This provides
-#' context for the validation.
-#' @param expectedAggregatedFindingsResult &#91;required&#93; The expected result of the Automated Reasoning check. Valid values
-#' include: , TOO_COMPLEX, and NO_TRANSLATIONS.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for which to create the test.
+#' @param guardContent &#91;required&#93; The output content that's validated by the Automated Reasoning policy. This represents the foundation model response that will be checked for accuracy.
+#' @param queryContent The input query or prompt that generated the content. This provides context for the validation.
+#' @param expectedAggregatedFindingsResult &#91;required&#93; The expected result of the Automated Reasoning check. Valid values include: , TOO_COMPLEX, and NO_TRANSLATIONS.
 #' 
-#' -   `VALID` - The claims are true. The claims are implied by the
-#'     premises and the Automated Reasoning policy. Given the Automated
-#'     Reasoning policy and premises, it is not possible for these claims
-#'     to be false. In other words, there are no alternative answers that
-#'     are true that contradict the claims.
+#' -   `VALID` - The claims are true. The claims are implied by the premises and the Automated Reasoning policy. Given the Automated Reasoning policy and premises, it is not possible for these claims to be false. In other words, there are no alternative answers that are true that contradict the claims.
 #' 
-#' -   `INVALID` - The claims are false. The claims are not implied by the
-#'     premises and Automated Reasoning policy. Furthermore, there exists
-#'     different claims that are consistent with the premises and Automated
-#'     Reasoning policy.
+#' -   `INVALID` - The claims are false. The claims are not implied by the premises and Automated Reasoning policy. Furthermore, there exists different claims that are consistent with the premises and Automated Reasoning policy.
 #' 
-#' -   `SATISFIABLE` - The claims can be true or false. It depends on what
-#'     assumptions are made for the claim to be implied from the premises
-#'     and Automated Reasoning policy rules. In this situation, different
-#'     assumptions can make input claims false and alternative claims true.
+#' -   `SATISFIABLE` - The claims can be true or false. It depends on what assumptions are made for the claim to be implied from the premises and Automated Reasoning policy rules. In this situation, different assumptions can make input claims false and alternative claims true.
 #' 
-#' -   `IMPOSSIBLE` - Automated Reasoning can’t make a statement about the
-#'     claims. This can happen if the premises are logically incorrect, or
-#'     if there is a conflict within the Automated Reasoning policy itself.
+#' -   `IMPOSSIBLE` - Automated Reasoning can’t make a statement about the claims. This can happen if the premises are logically incorrect, or if there is a conflict within the Automated Reasoning policy itself.
 #' 
-#' -   `TRANSLATION_AMBIGUOUS` - Detected an ambiguity in the translation
-#'     meant it would be unsound to continue with validity checking.
-#'     Additional context or follow-up questions might be needed to get
-#'     translation to succeed.
+#' -   `TRANSLATION_AMBIGUOUS` - Detected an ambiguity in the translation meant it would be unsound to continue with validity checking. Additional context or follow-up questions might be needed to get translation to succeed.
 #' 
-#' -   `TOO_COMPLEX` - The input contains too much information for
-#'     Automated Reasoning to process within its latency limits.
+#' -   `TOO_COMPLEX` - The input contains too much information for Automated Reasoning to process within its latency limits.
 #' 
-#' -   `NO_TRANSLATIONS` - Identifies that some or all of the input prompt
-#'     wasn't translated into logic. This can happen if the input isn't
-#'     relevant to the Automated Reasoning policy, or if the policy doesn't
-#'     have variables to model relevant input. If Automated Reasoning can't
-#'     translate anything, you get a single `NO_TRANSLATIONS` finding. You
-#'     might also see a `NO_TRANSLATIONS` (along with other findings) if
-#'     some part of the validation isn't translated.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error.
-#' @param confidenceThreshold The minimum confidence level for logic validation. Content that meets
-#' the threshold is considered a high-confidence finding that can be
-#' validated.
+#' -   `NO_TRANSLATIONS` - Identifies that some or all of the input prompt wasn't translated into logic. This can happen if the input isn't relevant to the Automated Reasoning policy, or if the policy doesn't have variables to model relevant input. If Automated Reasoning can't translate anything, you get a single `NO_TRANSLATIONS` finding. You might also see a `NO_TRANSLATIONS` (along with other findings) if some part of the validation isn't translated.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.
+#' @param confidenceThreshold The minimum confidence level for logic validation. Content that meets the threshold is considered a high-confidence finding that can be validated.
 #'
 #' @return
 #' A list with the following syntax:
@@ -360,22 +449,15 @@ bedrock_create_automated_reasoning_policy_test_case <- function(policyArn, guard
 #' Creates a new version of an existing Automated Reasoning policy
 #'
 #' @description
-#' Creates a new version of an existing Automated Reasoning policy. This
-#' allows you to iterate on your policy rules while maintaining previous
-#' versions for rollback or comparison purposes.
+#' Creates a new version of an existing Automated Reasoning policy. This allows you to iterate on your policy rules while maintaining previous versions for rollback or comparison purposes.
 #'
 #' @usage
 #' bedrock_create_automated_reasoning_policy_version(policyArn,
 #'   clientRequestToken, lastUpdatedDefinitionHash, tags)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-#' which to create a version.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error.
-#' @param lastUpdatedDefinitionHash &#91;required&#93; The hash of the current policy definition used as a concurrency token to
-#' ensure the policy hasn't been modified since you last retrieved it.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for which to create a version.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.
+#' @param lastUpdatedDefinitionHash &#91;required&#93; The hash of the current policy definition used as a concurrency token to ensure the policy hasn't been modified since you last retrieved it.
 #' @param tags A list of tags to associate with the policy version.
 #'
 #' @return
@@ -435,18 +517,11 @@ bedrock_create_automated_reasoning_policy_version <- function(policyArn, clientR
 #' Creates a new custom model in Amazon Bedrock
 #'
 #' @description
-#' Creates a new custom model in Amazon Bedrock. After the model is active,
-#' you can use it for inference.
+#' Creates a new custom model in Amazon Bedrock. After the model is active, you can use it for inference.
 #' 
-#' To use the model for inference, you must purchase Provisioned Throughput
-#' for it. You can't use On-demand inference with these custom models. For
-#' more information about Provisioned Throughput, see [Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html).
+#' To use the model for inference, you must purchase Provisioned Throughput for it. You can't use On-demand inference with these custom models. For more information about Provisioned Throughput, see [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html).
 #' 
-#' The model appears in [`list_custom_models`][bedrock_list_custom_models]
-#' with a `customizationType` of `imported`. To track the status of the new
-#' model, you use the [`get_custom_model`][bedrock_get_custom_model] API
-#' operation. The model can be in the following states:
+#' The model appears in [`list_custom_models`][bedrock_list_custom_models] with a `customizationType` of `imported`. To track the status of the new model, you use the [`get_custom_model`][bedrock_get_custom_model] API operation. The model can be in the following states:
 #' 
 #' -   `Creating` - Initial state during validation and registration
 #' 
@@ -467,36 +542,15 @@ bedrock_create_automated_reasoning_policy_version <- function(policyArn, clientR
 #'   modelKmsKeyArn, roleArn, modelTags, clientRequestToken)
 #'
 #' @param modelName &#91;required&#93; A unique name for the custom model.
-#' @param modelSourceConfig &#91;required&#93; The data source for the model. The Amazon S3 URI in the model source
-#' must be for the Amazon-managed Amazon S3 bucket containing your model
-#' artifacts.
-#' @param modelKmsKeyArn The Amazon Resource Name (ARN) of the customer managed KMS key to
-#' encrypt the custom model. If you don't provide a KMS key, Amazon Bedrock
-#' uses an Amazon Web Services-managed KMS key to encrypt the model.
+#' @param modelSourceConfig &#91;required&#93; The data source for the model. The Amazon S3 URI in the model source must be for the Amazon-managed Amazon S3 bucket containing your model artifacts.
+#' @param modelKmsKeyArn The Amazon Resource Name (ARN) of the customer managed KMS key to encrypt the custom model. If you don't provide a KMS key, Amazon Bedrock uses an Amazon Web Services-managed KMS key to encrypt the model.
 #' 
-#' If you provide a customer managed KMS key, your Amazon Bedrock service
-#' role must have permissions to use it. For more information see
-#' [Encryption of imported
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/encryption-import-model.html).
-#' @param roleArn The Amazon Resource Name (ARN) of an IAM service role that Amazon
-#' Bedrock assumes to perform tasks on your behalf. This role must have
-#' permissions to access the Amazon S3 bucket containing your model
-#' artifacts and the KMS key (if specified). For more information, see
-#' [Setting up an IAM service role for importing
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html)
-#' in the Amazon Bedrock User Guide.
-#' @param modelTags A list of key-value pairs to associate with the custom model resource.
-#' You can use these tags to organize and identify your resources.
+#' If you provide a customer managed KMS key, your Amazon Bedrock service role must have permissions to use it. For more information see [Encryption of imported models](https://docs.aws.amazon.com/bedrock/latest/userguide/encryption-import-model.html).
+#' @param roleArn The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock assumes to perform tasks on your behalf. This role must have permissions to access the Amazon S3 bucket containing your model artifacts and the KMS key (if specified). For more information, see [Setting up an IAM service role for importing models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-import-iam-role.html) in the Amazon Bedrock User Guide.
+#' @param modelTags A list of key-value pairs to associate with the custom model resource. You can use these tags to organize and identify your resources.
 #' 
-#' For more information, see [Tagging
-#' resources](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -554,18 +608,11 @@ bedrock_create_custom_model <- function(modelName, modelSourceConfig, modelKmsKe
 #' Deploys a custom model for on-demand inference in Amazon Bedrock
 #'
 #' @description
-#' Deploys a custom model for on-demand inference in Amazon Bedrock. After
-#' you deploy your custom model, you use the deployment's Amazon Resource
-#' Name (ARN) as the `modelId` parameter when you submit prompts and
-#' generate responses with model inference.
+#' Deploys a custom model for on-demand inference in Amazon Bedrock. After you deploy your custom model, you use the deployment's Amazon Resource Name (ARN) as the `modelId` parameter when you submit prompts and generate responses with model inference.
 #' 
-#' For more information about setting up on-demand inference for custom
-#' models, see [Set up inference for a custom
-#' model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html).
+#' For more information about setting up on-demand inference for custom models, see [Set up inference for a custom model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html).
 #' 
-#' The following actions are related to the
-#' [`create_custom_model_deployment`][bedrock_create_custom_model_deployment]
-#' operation:
+#' The following actions are related to the [`create_custom_model_deployment`][bedrock_create_custom_model_deployment] operation:
 #' 
 #' -   [`get_custom_model_deployment`][bedrock_get_custom_model_deployment]
 #' 
@@ -577,20 +624,11 @@ bedrock_create_custom_model <- function(modelName, modelSourceConfig, modelKmsKe
 #' bedrock_create_custom_model_deployment(modelDeploymentName, modelArn,
 #'   description, tags, clientRequestToken)
 #'
-#' @param modelDeploymentName &#91;required&#93; The name for the custom model deployment. The name must be unique within
-#' your Amazon Web Services account and Region.
-#' @param modelArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom model to deploy for
-#' on-demand inference. The custom model must be in the `Active` state.
-#' @param description A description for the custom model deployment to help you identify its
-#' purpose.
-#' @param tags Tags to assign to the custom model deployment. You can use tags to
-#' organize and track your Amazon Web Services resources for cost
-#' allocation and management purposes.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/bedrock/latest/userguide/).
+#' @param modelDeploymentName &#91;required&#93; The name for the custom model deployment. The name must be unique within your Amazon Web Services account and Region.
+#' @param modelArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom model to deploy for on-demand inference. The custom model must be in the `Active` state.
+#' @param description A description for the custom model deployment to help you identify its purpose.
+#' @param tags Tags to assign to the custom model deployment. You can use tags to organize and track your Amazon Web Services resources for cost allocation and management purposes.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/bedrock/latest/userguide/).
 #'
 #' @return
 #' A list with the following syntax:
@@ -650,35 +688,18 @@ bedrock_create_custom_model_deployment <- function(modelDeploymentName, modelArn
 #'   clientRequestToken, roleArn, customerEncryptionKeyId, jobTags,
 #'   applicationType, evaluationConfig, inferenceConfig, outputDataConfig)
 #'
-#' @param jobName &#91;required&#93; A name for the evaluation job. Names must unique with your Amazon Web
-#' Services account, and your account's Amazon Web Services region.
+#' @param jobName &#91;required&#93; A name for the evaluation job. Names must unique with your Amazon Web Services account, and your account's Amazon Web Services region.
 #' @param jobDescription A description of the evaluation job.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM service role that Amazon
-#' Bedrock can assume to perform tasks on your behalf. To learn more about
-#' the required permissions, see [Required permissions for model
-#' evaluations](https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security-service-roles.html).
-#' @param customerEncryptionKeyId Specify your customer managed encryption key Amazon Resource Name (ARN)
-#' that will be used to encrypt your evaluation job.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. To learn more about the required permissions, see [Required permissions for model evaluations](https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-security-service-roles.html).
+#' @param customerEncryptionKeyId Specify your customer managed encryption key Amazon Resource Name (ARN) that will be used to encrypt your evaluation job.
 #' @param jobTags Tags to attach to the model evaluation job.
-#' @param applicationType Specifies whether the evaluation job is for evaluating a model or
-#' evaluating a knowledge base (retrieval and response generation).
-#' @param evaluationConfig &#91;required&#93; Contains the configuration details of either an automated or human-based
-#' evaluation job.
-#' @param inferenceConfig &#91;required&#93; Contains the configuration details of the inference model for the
-#' evaluation job.
+#' @param applicationType Specifies whether the evaluation job is for evaluating a model or evaluating a knowledge base (retrieval and response generation).
+#' @param evaluationConfig &#91;required&#93; Contains the configuration details of either an automated or human-based evaluation job.
+#' @param inferenceConfig &#91;required&#93; Contains the configuration details of the inference model for the evaluation job.
 #' 
-#' For model evaluation jobs, automated jobs support a single model or
-#' [inference
-#' profile](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html),
-#' and jobs that use human workers support two models or inference
-#' profiles.
-#' @param outputDataConfig &#91;required&#93; Contains the configuration details of the Amazon S3 bucket for storing
-#' the results of the evaluation job.
+#' For model evaluation jobs, automated jobs support a single model or [inference profile](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html), and jobs that use human workers support two models or inference profiles.
+#' @param outputDataConfig &#91;required&#93; Contains the configuration details of the Amazon S3 bucket for storing the results of the evaluation job.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1161,35 +1182,21 @@ bedrock_create_foundation_model_agreement <- function(offerToken, modelId) {
 #' generative AI applications
 #'
 #' @description
-#' Creates a guardrail to block topics and to implement safeguards for your
-#' generative AI applications.
+#' Creates a guardrail to block topics and to implement safeguards for your generative AI applications.
 #' 
-#' You can configure the following policies in a guardrail to avoid
-#' undesirable and harmful content, filter out denied topics and words, and
-#' remove sensitive information for privacy protection.
+#' You can configure the following policies in a guardrail to avoid undesirable and harmful content, filter out denied topics and words, and remove sensitive information for privacy protection.
 #' 
-#' -   **Content filters** - Adjust filter strengths to block input prompts
-#'     or model responses containing harmful content.
+#' -   **Content filters** - Adjust filter strengths to block input prompts or model responses containing harmful content.
 #' 
-#' -   **Denied topics** - Define a set of topics that are undesirable in
-#'     the context of your application. These topics will be blocked if
-#'     detected in user queries or model responses.
+#' -   **Denied topics** - Define a set of topics that are undesirable in the context of your application. These topics will be blocked if detected in user queries or model responses.
 #' 
-#' -   **Word filters** - Configure filters to block undesirable words,
-#'     phrases, and profanity. Such words can include offensive terms,
-#'     competitor names etc.
+#' -   **Word filters** - Configure filters to block undesirable words, phrases, and profanity. Such words can include offensive terms, competitor names etc.
 #' 
-#' -   **Sensitive information filters** - Block or mask sensitive
-#'     information such as personally identifiable information (PII) or
-#'     custom regex in user inputs and model responses.
+#' -   **Sensitive information filters** - Block or mask sensitive information such as personally identifiable information (PII) or custom regex in user inputs and model responses.
 #' 
-#' In addition to the above policies, you can also configure the messages
-#' to be returned to the user if a user input or model response is in
-#' violation of the policies defined in the guardrail.
+#' In addition to the above policies, you can also configure the messages to be returned to the user if a user input or model response is in violation of the policies defined in the guardrail.
 #' 
-#' For more information, see [Amazon Bedrock
-#' Guardrails](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html)
-#' in the *Amazon Bedrock User Guide*.
+#' For more information, see [Amazon Bedrock Guardrails](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html) in the *Amazon Bedrock User Guide*.
 #'
 #' @usage
 #' bedrock_create_guardrail(name, description, topicPolicyConfig,
@@ -1204,26 +1211,16 @@ bedrock_create_foundation_model_agreement <- function(offerToken, modelId) {
 #' @param contentPolicyConfig The content filter policies to configure for the guardrail.
 #' @param wordPolicyConfig The word policy you configure for the guardrail.
 #' @param sensitiveInformationPolicyConfig The sensitive information policy to configure for the guardrail.
-#' @param contextualGroundingPolicyConfig The contextual grounding policy configuration used to create a
-#' guardrail.
-#' @param automatedReasoningPolicyConfig Optional configuration for integrating Automated Reasoning policies with
-#' the new guardrail.
-#' @param crossRegionConfig The system-defined guardrail profile that you're using with your
-#' guardrail. Guardrail profiles define the destination Amazon Web Services
-#' Regions where guardrail inference requests can be automatically routed.
+#' @param contextualGroundingPolicyConfig The contextual grounding policy configuration used to create a guardrail.
+#' @param automatedReasoningPolicyConfig Optional configuration for integrating Automated Reasoning policies with the new guardrail.
+#' @param crossRegionConfig The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.
 #' 
-#' For more information, see the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html).
+#' For more information, see the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html).
 #' @param blockedInputMessaging &#91;required&#93; The message to return when the guardrail blocks a prompt.
 #' @param blockedOutputsMessaging &#91;required&#93; The message to return when the guardrail blocks a model response.
 #' @param kmsKeyId The ARN of the KMS key that you use to encrypt the guardrail.
 #' @param tags The tags that you want to attach to the guardrail.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than once. If this token matches a previous request,
-#' Amazon Bedrock ignores the request, but does not return an error. For
-#' more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html)
-#' in the *Amazon S3 User Guide*.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than once. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html) in the *Amazon S3 User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1387,9 +1384,7 @@ bedrock_create_guardrail <- function(name, description = NULL, topicPolicyConfig
 #' Creates a version of the guardrail
 #'
 #' @description
-#' Creates a version of the guardrail. Use this API to create a snapshot of
-#' the guardrail when you are satisfied with a configuration, or to compare
-#' the configuration with another version.
+#' Creates a version of the guardrail. Use this API to create a snapshot of the guardrail when you are satisfied with a configuration, or to compare the configuration with another version.
 #'
 #' @usage
 #' bedrock_create_guardrail_version(guardrailIdentifier, description,
@@ -1397,12 +1392,7 @@ bedrock_create_guardrail <- function(name, description = NULL, topicPolicyConfig
 #'
 #' @param guardrailIdentifier &#91;required&#93; The unique identifier of the guardrail. This can be an ID or the ARN.
 #' @param description A description of the guardrail version.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than once. If this token matches a previous request,
-#' Amazon Bedrock ignores the request, but does not return an error. For
-#' more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html)
-#' in the *Amazon S3 User Guide*.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than once. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html) in the *Amazon S3 User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1450,16 +1440,7 @@ bedrock_create_guardrail_version <- function(guardrailIdentifier, description = 
 #' invoking a model
 #'
 #' @description
-#' Creates an application inference profile to track metrics and costs when
-#' invoking a model. To create an application inference profile for a
-#' foundation model in one region, specify the ARN of the model in that
-#' region. To create an application inference profile for a foundation
-#' model across multiple regions, specify the ARN of the system-defined
-#' inference profile that contains the regions that you want to route
-#' requests to. For more information, see [Increase throughput and
-#' resilience with cross-region inference in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html).
-#' in the Amazon Bedrock User Guide.
+#' Creates an application inference profile to track metrics and costs when invoking a model. To create an application inference profile for a foundation model in one region, specify the ARN of the model in that region. To create an application inference profile for a foundation model across multiple regions, specify the ARN of the system-defined inference profile that contains the regions that you want to route requests to. For more information, see [Increase throughput and resilience with cross-region inference in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrock_create_inference_profile(inferenceProfileName, description,
@@ -1467,18 +1448,9 @@ bedrock_create_guardrail_version <- function(guardrailIdentifier, description = 
 #'
 #' @param inferenceProfileName &#91;required&#93; A name for the inference profile.
 #' @param description A description for the inference profile.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param modelSource &#91;required&#93; The foundation model or system-defined inference profile that the
-#' inference profile will track metrics and costs for.
-#' @param tags An array of objects, each of which contains a tag and its value. For
-#' more information, see [Tagging
-#' resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param modelSource &#91;required&#93; The foundation model or system-defined inference profile that the inference profile will track metrics and costs for.
+#' @param tags An array of objects, each of which contains a tag and its value. For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1534,29 +1506,18 @@ bedrock_create_inference_profile <- function(inferenceProfileName, description =
 #' Creates an endpoint for a model from Amazon Bedrock Marketplace
 #'
 #' @description
-#' Creates an endpoint for a model from Amazon Bedrock Marketplace. The
-#' endpoint is hosted by Amazon SageMaker.
+#' Creates an endpoint for a model from Amazon Bedrock Marketplace. The endpoint is hosted by Amazon SageMaker.
 #'
 #' @usage
 #' bedrock_create_marketplace_model_endpoint(modelSourceIdentifier,
 #'   endpointConfig, acceptEula, endpointName, clientRequestToken, tags)
 #'
-#' @param modelSourceIdentifier &#91;required&#93; The ARN of the model from Amazon Bedrock Marketplace that you want to
-#' deploy to the endpoint.
-#' @param endpointConfig &#91;required&#93; The configuration for the endpoint, including the number and type of
-#' instances to use.
-#' @param acceptEula Indicates whether you accept the end-user license agreement (EULA) for
-#' the model. Set to `true` to accept the EULA.
-#' @param endpointName &#91;required&#93; The name of the endpoint. This name must be unique within your Amazon
-#' Web Services account and region.
-#' @param clientRequestToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. This token is listed as not required because
-#' Amazon Web Services SDKs automatically generate it for you and set this
-#' parameter. If you're not using the Amazon Web Services SDK or the CLI,
-#' you must provide this token or the action will fail.
-#' @param tags An array of key-value pairs to apply to the underlying Amazon SageMaker
-#' endpoint. You can use these tags to organize and identify your Amazon
-#' Web Services resources.
+#' @param modelSourceIdentifier &#91;required&#93; The ARN of the model from Amazon Bedrock Marketplace that you want to deploy to the endpoint.
+#' @param endpointConfig &#91;required&#93; The configuration for the endpoint, including the number and type of instances to use.
+#' @param acceptEula Indicates whether you accept the end-user license agreement (EULA) for the model. Set to `true` to accept the EULA.
+#' @param endpointName &#91;required&#93; The name of the endpoint. This name must be unique within your Amazon Web Services account and region.
+#' @param clientRequestToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This token is listed as not required because Amazon Web Services SDKs automatically generate it for you and set this parameter. If you're not using the Amazon Web Services SDK or the CLI, you must provide this token or the action will fail.
+#' @param tags An array of key-value pairs to apply to the underlying Amazon SageMaker endpoint. You can use these tags to organize and identify your Amazon Web Services resources.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1654,11 +1615,7 @@ bedrock_create_marketplace_model_endpoint <- function(modelSourceIdentifier, end
 #' Copies a model to another region so that it can be used there
 #'
 #' @description
-#' Copies a model to another region so that it can be used there. For more
-#' information, see [Copy models to be used in other
-#' regions](https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Copies a model to another region so that it can be used there. For more information, see [Copy models to be used in other regions](https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_create_model_copy_job(sourceModelArn, targetModelName,
@@ -1667,15 +1624,8 @@ bedrock_create_marketplace_model_endpoint <- function(modelSourceIdentifier, end
 #' @param sourceModelArn &#91;required&#93; The Amazon Resource Name (ARN) of the model to be copied.
 #' @param targetModelName &#91;required&#93; A name for the copied model.
 #' @param modelKmsKeyId The ARN of the KMS key that you use to encrypt the model copy.
-#' @param targetModelTags Tags to associate with the target model. For more information, see [Tag
-#' resources](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param targetModelTags Tags to associate with the target model. For more information, see [Tag resources](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1730,25 +1680,13 @@ bedrock_create_model_copy_job <- function(sourceModelArn, targetModelName, model
 #' @description
 #' Creates a fine-tuning job to customize a base model.
 #' 
-#' You specify the base foundation model and the location of the training
-#' data. After the model-customization job completes successfully, your
-#' custom model resource will be ready to use. Amazon Bedrock returns
-#' validation loss metrics and output generations after the job completes.
+#' You specify the base foundation model and the location of the training data. After the model-customization job completes successfully, your custom model resource will be ready to use. Amazon Bedrock returns validation loss metrics and output generations after the job completes.
 #' 
-#' For information on the format of training and validation data, see
-#' [Prepare the
-#' datasets](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html).
+#' For information on the format of training and validation data, see [Prepare the datasets](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html).
 #' 
-#' Model-customization jobs are asynchronous and the completion time
-#' depends on the base model and the training/validation data size. To
-#' monitor a job, use the
-#' [`get_model_customization_job`][bedrock_get_model_customization_job]
-#' operation to retrieve the job status.
+#' Model-customization jobs are asynchronous and the completion time depends on the base model and the training/validation data size. To monitor a job, use the [`get_model_customization_job`][bedrock_get_model_customization_job] operation to retrieve the job status.
 #' 
-#' For more information, see [Custom
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' For more information, see [Custom models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_create_model_customization_job(jobName, customModelName,
@@ -1759,17 +1697,8 @@ bedrock_create_model_copy_job <- function(sourceModelArn, targetModelName, model
 #'
 #' @param jobName &#91;required&#93; A name for the fine-tuning job.
 #' @param customModelName &#91;required&#93; A name for the resulting custom model.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM service role that Amazon
-#' Bedrock can assume to perform tasks on your behalf. For example, during
-#' model training, Amazon Bedrock needs your permission to read input data
-#' from an S3 bucket, write model artifacts to an S3 bucket. To pass this
-#' role to Amazon Bedrock, the caller of this API must have the
-#' `iam:PassRole` permission.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM service role that Amazon Bedrock can assume to perform tasks on your behalf. For example, during model training, Amazon Bedrock needs your permission to read input data from an S3 bucket, write model artifacts to an S3 bucket. To pass this role to Amazon Bedrock, the caller of this API must have the `iam:PassRole` permission.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
 #' @param baseModelIdentifier &#91;required&#93; Name of the base model.
 #' @param customizationType The customization type.
 #' @param customModelKmsKeyId The custom model is encrypted at rest using this key.
@@ -1778,13 +1707,8 @@ bedrock_create_model_copy_job <- function(sourceModelArn, targetModelName, model
 #' @param trainingDataConfig &#91;required&#93; Information about the training dataset.
 #' @param validationDataConfig Information about the validation dataset.
 #' @param outputDataConfig &#91;required&#93; S3 location for the output data.
-#' @param hyperParameters Parameters related to tuning the model. For details on the format for
-#' different models, see [Custom model
-#' hyperparameters](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html).
-#' @param vpcConfig The configuration of the Virtual Private Cloud (VPC) that contains the
-#' resources that you're using for this job. For more information, see
-#' [Protect your model customization jobs using a
-#' VPC](https://docs.aws.amazon.com/bedrock/latest/userguide/).
+#' @param hyperParameters Parameters related to tuning the model. For details on the format for different models, see [Custom model hyperparameters](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html).
+#' @param vpcConfig The configuration of the Virtual Private Cloud (VPC) that contains the resources that you're using for this job. For more information, see [Protect your model customization jobs using a VPC](https://docs.aws.amazon.com/bedrock/latest/userguide/).
 #' @param customizationConfig The customization configuration for the model customization job.
 #'
 #' @return
@@ -1931,10 +1855,7 @@ bedrock_create_model_customization_job <- function(jobName, customModelName, rol
 #' other environments, such as Amazon SageMaker
 #'
 #' @description
-#' Creates a model import job to import model that you have customized in
-#' other environments, such as Amazon SageMaker. For more information, see
-#' [Import a customized
-#' model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html)
+#' Creates a model import job to import model that you have customized in other environments, such as Amazon SageMaker. For more information, see [Import a customized model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html)
 #'
 #' @usage
 #' bedrock_create_model_import_job(jobName, importedModelName, roleArn,
@@ -1947,13 +1868,8 @@ bedrock_create_model_customization_job <- function(jobName, customModelName, rol
 #' @param modelDataSource &#91;required&#93; The data source for the imported model.
 #' @param jobTags Tags to attach to this import job.
 #' @param importedModelTags Tags to attach to the imported model.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param vpcConfig VPC configuration parameters for the private Virtual Private Cloud (VPC)
-#' that contains the resources you are using for the import job.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param vpcConfig VPC configuration parameters for the private Virtual Private Cloud (VPC) that contains the resources you are using for the import job.
 #' @param importedModelKmsKeyId The imported model is encrypted at rest using this key.
 #'
 #' @return
@@ -2027,15 +1943,9 @@ bedrock_create_model_import_job <- function(jobName, importedModelName, roleArn,
 #' Creates a batch inference job to invoke a model on multiple prompts
 #'
 #' @description
-#' Creates a batch inference job to invoke a model on multiple prompts.
-#' Format your data according to [Format your inference
-#' data](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html)
-#' and upload it to an Amazon S3 bucket. For more information, see [Process
-#' multiple prompts with batch
-#' inference](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html).
+#' Creates a batch inference job to invoke a model on multiple prompts. Format your data according to [Format your inference data](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html) and upload it to an Amazon S3 bucket. For more information, see [Process multiple prompts with batch inference](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference.html).
 #' 
-#' The response returns a `jobArn` that you can use to stop or get details
-#' about the job.
+#' The response returns a `jobArn` that you can use to stop or get details about the job.
 #'
 #' @usage
 #' bedrock_create_model_invocation_job(jobName, roleArn,
@@ -2043,29 +1953,14 @@ bedrock_create_model_import_job <- function(jobName, importedModelName, roleArn,
 #'   vpcConfig, timeoutDurationInHours, tags, modelInvocationType)
 #'
 #' @param jobName &#91;required&#93; A name to give the batch inference job.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the service role with permissions to
-#' carry out and manage batch inference. You can use the console to create
-#' a default service role or follow the steps at [Create a service role for
-#' batch
-#' inference](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-iam-sr.html).
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
-#' @param modelId &#91;required&#93; The unique identifier of the foundation model to use for the batch
-#' inference job.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of the service role with permissions to carry out and manage batch inference. You can use the console to create a default service role or follow the steps at [Create a service role for batch inference](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-iam-sr.html).
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html).
+#' @param modelId &#91;required&#93; The unique identifier of the foundation model to use for the batch inference job.
 #' @param inputDataConfig &#91;required&#93; Details about the location of the input to the batch inference job.
 #' @param outputDataConfig &#91;required&#93; Details about the location of the output of the batch inference job.
-#' @param vpcConfig The configuration of the Virtual Private Cloud (VPC) for the data in the
-#' batch inference job. For more information, see [Protect batch inference
-#' jobs using a
-#' VPC](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc.html).
-#' @param timeoutDurationInHours The number of hours after which to force the batch inference job to time
-#' out.
-#' @param tags Any tags to associate with the batch inference job. For more
-#' information, see [Tagging Amazon Bedrock
-#' resources](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
+#' @param vpcConfig The configuration of the Virtual Private Cloud (VPC) for the data in the batch inference job. For more information, see [Protect batch inference jobs using a VPC](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-vpc.html).
+#' @param timeoutDurationInHours The number of hours after which to force the batch inference job to time out.
+#' @param tags Any tags to associate with the batch inference job. For more information, see [Tagging Amazon Bedrock resources](https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html).
 #' @param modelInvocationType The invocation endpoint for ModelInvocationJob
 #'
 #' @return
@@ -2144,27 +2039,19 @@ bedrock_create_model_invocation_job <- function(jobName, roleArn, clientRequestT
 #' multiple foundation models based on the routing criteria
 #'
 #' @description
-#' Creates a prompt router that manages the routing of requests between
-#' multiple foundation models based on the routing criteria.
+#' Creates a prompt router that manages the routing of requests between multiple foundation models based on the routing criteria.
 #'
 #' @usage
 #' bedrock_create_prompt_router(clientRequestToken, promptRouterName,
 #'   models, description, routingCriteria, fallbackModel, tags)
 #'
-#' @param clientRequestToken A unique, case-sensitive identifier that you provide to ensure
-#' idempotency of your requests. If not specified, the Amazon Web Services
-#' SDK automatically generates one for you.
-#' @param promptRouterName &#91;required&#93; The name of the prompt router. The name must be unique within your
-#' Amazon Web Services account in the current region.
-#' @param models &#91;required&#93; A list of foundation models that the prompt router can route requests
-#' to. At least one model must be specified.
-#' @param description An optional description of the prompt router to help identify its
-#' purpose.
-#' @param routingCriteria &#91;required&#93; The criteria, which is the response quality difference, used to
-#' determine how incoming requests are routed to different models.
+#' @param clientRequestToken A unique, case-sensitive identifier that you provide to ensure idempotency of your requests. If not specified, the Amazon Web Services SDK automatically generates one for you.
+#' @param promptRouterName &#91;required&#93; The name of the prompt router. The name must be unique within your Amazon Web Services account in the current region.
+#' @param models &#91;required&#93; A list of foundation models that the prompt router can route requests to. At least one model must be specified.
+#' @param description An optional description of the prompt router to help identify its purpose.
+#' @param routingCriteria &#91;required&#93; The criteria, which is the response quality difference, used to determine how incoming requests are routed to different models.
 #' @param fallbackModel &#91;required&#93; The default model to use when the routing criteria is not met.
-#' @param tags An array of key-value pairs to apply to this resource as tags. You can
-#' use tags to categorize and manage your Amazon Web Services resources.
+#' @param tags An array of key-value pairs to apply to this resource as tags. You can use tags to categorize and manage your Amazon Web Services resources.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2228,56 +2115,23 @@ bedrock_create_prompt_router <- function(clientRequestToken = NULL, promptRouter
 #' units and for the duration that you specify
 #'
 #' @description
-#' Creates dedicated throughput for a base or custom model with the model
-#' units and for the duration that you specify. For pricing details, see
-#' [Amazon Bedrock Pricing](https://aws.amazon.com/bedrock/pricing/). For
-#' more information, see [Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Creates dedicated throughput for a base or custom model with the model units and for the duration that you specify. For pricing details, see [Amazon Bedrock Pricing](https://aws.amazon.com/bedrock/pricing/). For more information, see [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_create_provisioned_model_throughput(clientRequestToken,
 #'   modelUnits, provisionedModelName, modelId, commitmentDuration, tags)
 #'
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error. For more information, see [Ensuring
-#' idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html)
-#' in the Amazon S3 User Guide.
-#' @param modelUnits &#91;required&#93; Number of model units to allocate. A model unit delivers a specific
-#' throughput level for the specified model. The throughput level of a
-#' model unit specifies the total number of input and output tokens that it
-#' can process and generate within a span of one minute. By default, your
-#' account has no model units for purchasing Provisioned Throughputs with
-#' commitment. You must first visit the Amazon Web Services support center
-#' to request MUs.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see [Ensuring idempotency](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html) in the Amazon S3 User Guide.
+#' @param modelUnits &#91;required&#93; Number of model units to allocate. A model unit delivers a specific throughput level for the specified model. The throughput level of a model unit specifies the total number of input and output tokens that it can process and generate within a span of one minute. By default, your account has no model units for purchasing Provisioned Throughputs with commitment. You must first visit the Amazon Web Services support center to request MUs.
 #' 
-#' For model unit quotas, see [Provisioned Throughput
-#' quotas](https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html#prov-thru-quotas)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' For model unit quotas, see [Provisioned Throughput quotas](https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html#prov-thru-quotas) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #' 
-#' For more information about what an MU specifies, contact your Amazon Web
-#' Services account manager.
+#' For more information about what an MU specifies, contact your Amazon Web Services account manager.
 #' @param provisionedModelName &#91;required&#93; The name for this Provisioned Throughput.
-#' @param modelId &#91;required&#93; The Amazon Resource Name (ARN) or name of the model to associate with
-#' this Provisioned Throughput. For a list of models for which you can
-#' purchase Provisioned Throughput, see [Amazon Bedrock model IDs for
-#' purchasing Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#prov-throughput-models)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
-#' @param commitmentDuration The commitment duration requested for the Provisioned Throughput.
-#' Billing occurs hourly and is discounted for longer commitment terms. To
-#' request a no-commit Provisioned Throughput, omit this field.
+#' @param modelId &#91;required&#93; The Amazon Resource Name (ARN) or name of the model to associate with this Provisioned Throughput. For a list of models for which you can purchase Provisioned Throughput, see [Amazon Bedrock model IDs for purchasing Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#prov-throughput-models) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' @param commitmentDuration The commitment duration requested for the Provisioned Throughput. Billing occurs hourly and is discounted for longer commitment terms. To request a no-commit Provisioned Throughput, omit this field.
 #' 
-#' Custom models support all levels of commitment. To see which base models
-#' support no commitment, see [Supported regions and models for Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/) in
-#' the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
+#' Custom models support all levels of commitment. To see which base models support no commitment, see [Supported regions and models for Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
 #' @param tags Tags to associate with this Provisioned Throughput.
 #'
 #' @return
@@ -2332,21 +2186,13 @@ bedrock_create_provisioned_model_throughput <- function(clientRequestToken = NUL
 #' Deletes an Automated Reasoning policy or policy version
 #'
 #' @description
-#' Deletes an Automated Reasoning policy or policy version. This operation
-#' is idempotent. If you delete a policy more than once, each call
-#' succeeds. Deleting a policy removes it permanently and cannot be undone.
+#' Deletes an Automated Reasoning policy or policy version. This operation is idempotent. If you delete a policy more than once, each call succeeds. Deleting a policy removes it permanently and cannot be undone.
 #'
 #' @usage
 #' bedrock_delete_automated_reasoning_policy(policyArn, force)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-#' delete.
-#' @param force Specifies whether to force delete the automated reasoning policy even if
-#' it has active resources. When `false`, Amazon Bedrock validates if all
-#' artifacts have been deleted (e.g. policy version, test case, test
-#' result) for a policy before deletion. When `true`, Amazon Bedrock will
-#' delete the policy and all its artifacts without validation. Default is
-#' `false`.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to delete.
+#' @param force Specifies whether to force delete the automated reasoning policy even if it has active resources. When `false`, Amazon Bedrock validates if all artifacts have been deleted (e.g. policy version, test case, test result) for a policy before deletion. When `true`, Amazon Bedrock will delete the policy and all its artifacts without validation. Default is `false`.
 #'
 #' @return
 #' An empty list.
@@ -2387,20 +2233,15 @@ bedrock_delete_automated_reasoning_policy <- function(policyArn, force = NULL) {
 #' artifacts
 #'
 #' @description
-#' Deletes an Automated Reasoning policy build workflow and its associated
-#' artifacts. This permanently removes the workflow history and any
-#' generated assets.
+#' Deletes an Automated Reasoning policy build workflow and its associated artifacts. This permanently removes the workflow history and any generated assets.
 #'
 #' @usage
 #' bedrock_delete_automated_reasoning_policy_build_workflow(policyArn,
 #'   buildWorkflowId, lastUpdatedAt)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-#' build workflow you want to delete.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow you want to delete.
 #' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow to delete.
-#' @param lastUpdatedAt &#91;required&#93; The timestamp when the build workflow was last updated. This is used for
-#' optimistic concurrency control to prevent accidental deletion of
-#' workflows that have been modified.
+#' @param lastUpdatedAt &#91;required&#93; The timestamp when the build workflow was last updated. This is used for optimistic concurrency control to prevent accidental deletion of workflows that have been modified.
 #'
 #' @return
 #' An empty list.
@@ -2443,18 +2284,15 @@ bedrock_delete_automated_reasoning_policy_build_workflow <- function(policyArn, 
 #' Deletes an Automated Reasoning policy test
 #'
 #' @description
-#' Deletes an Automated Reasoning policy test. This operation is
-#' idempotent; if you delete a test more than once, each call succeeds.
+#' Deletes an Automated Reasoning policy test. This operation is idempotent; if you delete a test more than once, each call succeeds.
 #'
 #' @usage
 #' bedrock_delete_automated_reasoning_policy_test_case(policyArn,
 #'   testCaseId, lastUpdatedAt)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy that
-#' contains the test.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy that contains the test.
 #' @param testCaseId &#91;required&#93; The unique identifier of the test to delete.
-#' @param lastUpdatedAt &#91;required&#93; The timestamp when the test was last updated. This is used as a
-#' concurrency token to prevent conflicting modifications.
+#' @param lastUpdatedAt &#91;required&#93; The timestamp when the test was last updated. This is used as a concurrency token to prevent conflicting modifications.
 #'
 #' @return
 #' An empty list.
@@ -2497,11 +2335,7 @@ bedrock_delete_automated_reasoning_policy_test_case <- function(policyArn, testC
 #' Deletes a custom model that you created earlier
 #'
 #' @description
-#' Deletes a custom model that you created earlier. For more information,
-#' see [Custom
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Deletes a custom model that you created earlier. For more information, see [Custom models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_delete_custom_model(modelIdentifier)
@@ -2545,13 +2379,9 @@ bedrock_delete_custom_model <- function(modelIdentifier) {
 #' Deletes a custom model deployment
 #'
 #' @description
-#' Deletes a custom model deployment. This operation stops the deployment
-#' and removes it from your account. After deletion, the deployment ARN can
-#' no longer be used for inference requests.
+#' Deletes a custom model deployment. This operation stops the deployment and removes it from your account. After deletion, the deployment ARN can no longer be used for inference requests.
 #' 
-#' The following actions are related to the
-#' [`delete_custom_model_deployment`][bedrock_delete_custom_model_deployment]
-#' operation:
+#' The following actions are related to the [`delete_custom_model_deployment`][bedrock_delete_custom_model_deployment] operation:
 #' 
 #' -   [`create_custom_model_deployment`][bedrock_create_custom_model_deployment]
 #' 
@@ -2562,8 +2392,7 @@ bedrock_delete_custom_model <- function(modelIdentifier) {
 #' @usage
 #' bedrock_delete_custom_model_deployment(customModelDeploymentIdentifier)
 #'
-#' @param customModelDeploymentIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or name of the custom model deployment to
-#' delete.
+#' @param customModelDeploymentIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or name of the custom model deployment to delete.
 #'
 #' @return
 #' An empty list.
@@ -2692,13 +2521,9 @@ bedrock_delete_foundation_model_agreement <- function(modelId) {
 #' @description
 #' Deletes a guardrail.
 #' 
-#' -   To delete a guardrail, only specify the ARN of the guardrail in the
-#'     `guardrailIdentifier` field. If you delete a guardrail, all of its
-#'     versions will be deleted.
+#' -   To delete a guardrail, only specify the ARN of the guardrail in the `guardrailIdentifier` field. If you delete a guardrail, all of its versions will be deleted.
 #' 
-#' -   To delete a version of a guardrail, specify the ARN of the guardrail
-#'     in the `guardrailIdentifier` field and the version in the
-#'     `guardrailVersion` field.
+#' -   To delete a version of a guardrail, specify the ARN of the guardrail in the `guardrailIdentifier` field and the version in the `guardrailVersion` field.
 #'
 #' @usage
 #' bedrock_delete_guardrail(guardrailIdentifier, guardrailVersion)
@@ -2744,11 +2569,7 @@ bedrock_delete_guardrail <- function(guardrailIdentifier, guardrailVersion = NUL
 #' Deletes a custom model that you imported earlier
 #'
 #' @description
-#' Deletes a custom model that you imported earlier. For more information,
-#' see [Import a customized
-#' model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Deletes a custom model that you imported earlier. For more information, see [Import a customized model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_delete_imported_model(modelIdentifier)
@@ -2792,17 +2613,12 @@ bedrock_delete_imported_model <- function(modelIdentifier) {
 #' Deletes an application inference profile
 #'
 #' @description
-#' Deletes an application inference profile. For more information, see
-#' [Increase throughput and resilience with cross-region inference in
-#' Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html).
-#' in the Amazon Bedrock User Guide.
+#' Deletes an application inference profile. For more information, see [Increase throughput and resilience with cross-region inference in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrock_delete_inference_profile(inferenceProfileIdentifier)
 #'
-#' @param inferenceProfileIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or ID of the application inference
-#' profile to delete.
+#' @param inferenceProfileIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or ID of the application inference profile to delete.
 #'
 #' @return
 #' An empty list.
@@ -2971,12 +2787,7 @@ bedrock_delete_prompt_router <- function(promptRouterArn) {
 #' Deletes a Provisioned Throughput
 #'
 #' @description
-#' Deletes a Provisioned Throughput. You can't delete a Provisioned
-#' Throughput before the commitment term is over. For more information, see
-#' [Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Deletes a Provisioned Throughput. You can't delete a Provisioned Throughput before the commitment term is over. For more information, see [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_delete_provisioned_model_throughput(provisionedModelId)
@@ -3064,9 +2875,7 @@ bedrock_delete_resource_policy <- function(resourceArn) {
 #' Deregisters an endpoint for a model from Amazon Bedrock Marketplace
 #'
 #' @description
-#' Deregisters an endpoint for a model from Amazon Bedrock Marketplace.
-#' This operation removes the endpoint's association with Amazon Bedrock
-#' but does not delete the underlying Amazon SageMaker endpoint.
+#' Deregisters an endpoint for a model from Amazon Bedrock Marketplace. This operation removes the endpoint's association with Amazon Bedrock but does not delete the underlying Amazon SageMaker endpoint.
 #'
 #' @usage
 #' bedrock_deregister_marketplace_model_endpoint(endpointArn)
@@ -3110,16 +2919,12 @@ bedrock_deregister_marketplace_model_endpoint <- function(endpointArn) {
 #' Exports the policy definition for an Automated Reasoning policy version
 #'
 #' @description
-#' Exports the policy definition for an Automated Reasoning policy version.
-#' Returns the complete policy definition including rules, variables, and
-#' custom variable types in a structured format.
+#' Exports the policy definition for an Automated Reasoning policy version. Returns the complete policy definition including rules, variables, and custom variable types in a structured format.
 #'
 #' @usage
 #' bedrock_export_automated_reasoning_policy_version(policyArn)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-#' export. Can be either the unversioned ARN for the draft policy or a
-#' versioned ARN for a specific policy version.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to export. Can be either the unversioned ARN for the draft policy or a versioned ARN for a specific policy version.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3188,19 +2993,97 @@ bedrock_export_automated_reasoning_policy_version <- function(policyArn) {
 }
 .bedrock$operations$export_automated_reasoning_policy_version <- bedrock_export_automated_reasoning_policy_version
 
+#' Retrieves the details and status of an advanced prompt optimization job
+#'
+#' @description
+#' Retrieves the details and status of an advanced prompt optimization job.
+#'
+#' @usage
+#' bedrock_get_advanced_prompt_optimization_job(jobIdentifier)
+#'
+#' @param jobIdentifier &#91;required&#93; ARN or ID of the advanced prompt optimization job.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   jobArn = "string",
+#'   jobName = "string",
+#'   jobDescription = "string",
+#'   jobStatus = "InProgress"|"Completed"|"Failed"|"PartiallyCompleted"|"Stopping"|"Stopped"|"Deleting",
+#'   inputConfig = list(
+#'     s3Uri = "string"
+#'   ),
+#'   outputConfig = list(
+#'     s3Uri = "string"
+#'   ),
+#'   encryptionKeyArn = "string",
+#'   creationTime = as.POSIXct(
+#'     "2015-01-01"
+#'   ),
+#'   lastModifiedTime = as.POSIXct(
+#'     "2015-01-01"
+#'   ),
+#'   failureMessage = "string",
+#'   modelConfigurations = list(
+#'     list(
+#'       modelId = "string",
+#'       inferenceConfig = list(
+#'         maxTokens = 123,
+#'         temperature = 123.0,
+#'         topP = 123.0,
+#'         stopSequences = list(
+#'           "string"
+#'         )
+#'       ),
+#'       additionalModelRequestFields = list(
+#'         list()
+#'       )
+#'     )
+#'   )
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$get_advanced_prompt_optimization_job(
+#'   jobIdentifier = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrock_get_advanced_prompt_optimization_job
+#'
+#' @aliases bedrock_get_advanced_prompt_optimization_job
+bedrock_get_advanced_prompt_optimization_job <- function(jobIdentifier) {
+  op <- new_operation(
+    name = "GetAdvancedPromptOptimizationJob",
+    http_method = "GET",
+    http_path = "/advanced-prompt-optimization-jobs/{jobIdentifier}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrock$get_advanced_prompt_optimization_job_input(jobIdentifier = jobIdentifier)
+  output <- .bedrock$get_advanced_prompt_optimization_job_output()
+  config <- get_config()
+  svc <- .bedrock$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrock$operations$get_advanced_prompt_optimization_job <- bedrock_get_advanced_prompt_optimization_job
+
 #' Retrieves details about an Automated Reasoning policy or policy version
 #'
 #' @description
-#' Retrieves details about an Automated Reasoning policy or policy version.
-#' Returns information including the policy definition, metadata, and
-#' timestamps.
+#' Retrieves details about an Automated Reasoning policy or policy version. Returns information including the policy definition, metadata, and timestamps.
 #'
 #' @usage
 #' bedrock_get_automated_reasoning_policy(policyArn)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-#' retrieve. Can be either the unversioned ARN for the draft policy or an
-#' ARN for a specific policy version.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to retrieve. Can be either the unversioned ARN for the draft policy or an ARN for a specific policy version.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3257,18 +3140,14 @@ bedrock_get_automated_reasoning_policy <- function(policyArn) {
 #' build workflow
 #'
 #' @description
-#' Retrieves the current annotations for an Automated Reasoning policy
-#' build workflow. Annotations contain corrections to the rules, variables
-#' and types to be applied to the policy.
+#' Retrieves the current annotations for an Automated Reasoning policy build workflow. Annotations contain corrections to the rules, variables and types to be applied to the policy.
 #'
 #' @usage
 #' bedrock_get_automated_reasoning_policy_annotations(policyArn,
 #'   buildWorkflowId)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-#' annotations you want to retrieve.
-#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow whose annotations you want
-#' to retrieve.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose annotations you want to retrieve.
+#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow whose annotations you want to retrieve.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3400,15 +3279,13 @@ bedrock_get_automated_reasoning_policy_annotations <- function(policyArn, buildW
 #' workflow, including its status, configuration, and metadata
 #'
 #' @description
-#' Retrieves detailed information about an Automated Reasoning policy build
-#' workflow, including its status, configuration, and metadata.
+#' Retrieves detailed information about an Automated Reasoning policy build workflow, including its status, configuration, and metadata.
 #'
 #' @usage
 #' bedrock_get_automated_reasoning_policy_build_workflow(policyArn,
 #'   buildWorkflowId)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-#' build workflow you want to retrieve.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow you want to retrieve.
 #' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow to retrieve.
 #'
 #' @return
@@ -3468,25 +3345,16 @@ bedrock_get_automated_reasoning_policy_build_workflow <- function(policyArn, bui
 #' generated policy artifacts
 #'
 #' @description
-#' Retrieves the resulting assets from a completed Automated Reasoning
-#' policy build workflow, including build logs, quality reports, and
-#' generated policy artifacts.
+#' Retrieves the resulting assets from a completed Automated Reasoning policy build workflow, including build logs, quality reports, and generated policy artifacts.
 #'
 #' @usage
 #' bedrock_get_automated_reasoning_policy_build_workflow_result_assets(
 #'   policyArn, buildWorkflowId, assetType, assetId)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-#' build workflow assets you want to retrieve.
-#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow whose result assets you want
-#' to retrieve.
-#' @param assetType &#91;required&#93; The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT,
-#' POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS,
-#' FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).
-#' @param assetId The unique identifier of the specific asset to retrieve when multiple
-#' assets of the same type exist. This is required when retrieving
-#' SOURCE_DOCUMENT assets, as multiple source documents may have been used
-#' in the workflow. The asset ID can be obtained from the asset manifest.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflow assets you want to retrieve.
+#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow whose result assets you want to retrieve.
+#' @param assetType &#91;required&#93; The type of asset to retrieve (e.g., BUILD_LOG, QUALITY_REPORT, POLICY_DEFINITION, GENERATED_TEST_CASES, POLICY_SCENARIOS, FIDELITY_REPORT, ASSET_MANIFEST, SOURCE_DOCUMENT).
+#' @param assetId The unique identifier of the specific asset to retrieve when multiple assets of the same type exist. This is required when retrieving SOURCE_DOCUMENT assets, as multiple source documents may have been used in the workflow. The asset ID can be obtained from the asset manifest.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3883,18 +3751,14 @@ bedrock_get_automated_reasoning_policy_build_workflow_result_assets <- function(
 #' policy
 #'
 #' @description
-#' Retrieves the next test scenario for validating an Automated Reasoning
-#' policy. This is used during the interactive policy refinement process to
-#' test policy behavior.
+#' Retrieves the next test scenario for validating an Automated Reasoning policy. This is used during the interactive policy refinement process to test policy behavior.
 #'
 #' @usage
 #' bedrock_get_automated_reasoning_policy_next_scenario(policyArn,
 #'   buildWorkflowId)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-#' which you want to get the next test scenario.
-#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow associated with the test
-#' scenarios.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for which you want to get the next test scenario.
+#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow associated with the test scenarios.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3952,8 +3816,7 @@ bedrock_get_automated_reasoning_policy_next_scenario <- function(policyArn, buil
 #' @usage
 #' bedrock_get_automated_reasoning_policy_test_case(policyArn, testCaseId)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy that
-#' contains the test.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy that contains the test.
 #' @param testCaseId &#91;required&#93; The unique identifier of the test to retrieve.
 #'
 #' @return
@@ -4012,16 +3875,14 @@ bedrock_get_automated_reasoning_policy_test_case <- function(policyArn, testCase
 #' Retrieves the test result for a specific Automated Reasoning policy test
 #'
 #' @description
-#' Retrieves the test result for a specific Automated Reasoning policy
-#' test. Returns detailed validation findings and execution status.
+#' Retrieves the test result for a specific Automated Reasoning policy test. Returns detailed validation findings and execution status.
 #'
 #' @usage
 #' bedrock_get_automated_reasoning_policy_test_result(policyArn,
 #'   buildWorkflowId, testCaseId)
 #'
 #' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy.
-#' @param buildWorkflowId &#91;required&#93; The build workflow identifier. The build workflow must display a
-#' `COMPLETED` status to get results.
+#' @param buildWorkflowId &#91;required&#93; The build workflow identifier. The build workflow must display a `COMPLETED` status to get results.
 #' @param testCaseId &#91;required&#93; The unique identifier of the test for which to retrieve results.
 #'
 #' @return
@@ -4349,11 +4210,7 @@ bedrock_get_automated_reasoning_policy_test_result <- function(policyArn, buildW
 #' you have created
 #'
 #' @description
-#' Get the properties associated with a Amazon Bedrock custom model that
-#' you have created. For more information, see [Custom
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Get the properties associated with a Amazon Bedrock custom model that you have created. For more information, see [Custom models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_get_custom_model(modelIdentifier)
@@ -4497,13 +4354,9 @@ bedrock_get_custom_model <- function(modelIdentifier) {
 #' status, configuration, and metadata
 #'
 #' @description
-#' Retrieves information about a custom model deployment, including its
-#' status, configuration, and metadata. Use this operation to monitor the
-#' deployment status and retrieve details needed for inference requests.
+#' Retrieves information about a custom model deployment, including its status, configuration, and metadata. Use this operation to monitor the deployment status and retrieve details needed for inference requests.
 #' 
-#' The following actions are related to the
-#' [`get_custom_model_deployment`][bedrock_get_custom_model_deployment]
-#' operation:
+#' The following actions are related to the [`get_custom_model_deployment`][bedrock_get_custom_model_deployment] operation:
 #' 
 #' -   [`create_custom_model_deployment`][bedrock_create_custom_model_deployment]
 #' 
@@ -4514,8 +4367,7 @@ bedrock_get_custom_model <- function(modelIdentifier) {
 #' @usage
 #' bedrock_get_custom_model_deployment(customModelDeploymentIdentifier)
 #'
-#' @param customModelDeploymentIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or name of the custom model deployment to
-#' retrieve information about.
+#' @param customModelDeploymentIdentifier &#91;required&#93; The Amazon Resource Name (ARN) or name of the custom model deployment to retrieve information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4579,8 +4431,7 @@ bedrock_get_custom_model_deployment <- function(customModelDeploymentIdentifier)
 #' @usage
 #' bedrock_get_evaluation_job(jobIdentifier)
 #'
-#' @param jobIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of the evaluation job you want get
-#' information on.
+#' @param jobIdentifier &#91;required&#93; The Amazon Resource Name (ARN) of the evaluation job you want get information on.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5154,16 +5005,13 @@ bedrock_get_foundation_model_availability <- function(modelId) {
 #' Gets details about a guardrail
 #'
 #' @description
-#' Gets details about a guardrail. If you don't specify a version, the
-#' response returns details for the `DRAFT` version.
+#' Gets details about a guardrail. If you don't specify a version, the response returns details for the `DRAFT` version.
 #'
 #' @usage
 #' bedrock_get_guardrail(guardrailIdentifier, guardrailVersion)
 #'
-#' @param guardrailIdentifier &#91;required&#93; The unique identifier of the guardrail for which to get details. This
-#' can be an ID or the ARN.
-#' @param guardrailVersion The version of the guardrail for which to get details. If you don't
-#' specify a version, the response returns details for the `DRAFT` version.
+#' @param guardrailIdentifier &#91;required&#93; The unique identifier of the guardrail for which to get details. This can be an ID or the ARN.
+#' @param guardrailVersion The version of the guardrail for which to get details. If you don't specify a version, the response returns details for the `DRAFT` version.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5400,11 +5248,7 @@ bedrock_get_imported_model <- function(modelIdentifier) {
 #' Gets information about an inference profile
 #'
 #' @description
-#' Gets information about an inference profile. For more information, see
-#' [Increase throughput and resilience with cross-region inference in
-#' Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html).
-#' in the Amazon Bedrock User Guide.
+#' Gets information about an inference profile. For more information, see [Increase throughput and resilience with cross-region inference in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrock_get_inference_profile(inferenceProfileIdentifier)
@@ -5470,14 +5314,12 @@ bedrock_get_inference_profile <- function(inferenceProfileIdentifier) {
 #' Bedrock Marketplace
 #'
 #' @description
-#' Retrieves details about a specific endpoint for a model from Amazon
-#' Bedrock Marketplace.
+#' Retrieves details about a specific endpoint for a model from Amazon Bedrock Marketplace.
 #'
 #' @usage
 #' bedrock_get_marketplace_model_endpoint(endpointArn)
 #'
-#' @param endpointArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint you want to get
-#' information about.
+#' @param endpointArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint you want to get information about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5550,11 +5392,7 @@ bedrock_get_marketplace_model_endpoint <- function(endpointArn) {
 #' Retrieves information about a model copy job
 #'
 #' @description
-#' Retrieves information about a model copy job. For more information, see
-#' [Copy models to be used in other
-#' regions](https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Retrieves information about a model copy job. For more information, see [Copy models to be used in other regions](https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_get_model_copy_job(jobArn)
@@ -5621,11 +5459,7 @@ bedrock_get_model_copy_job <- function(jobArn) {
 #' including the status of the job
 #'
 #' @description
-#' Retrieves the properties associated with a model-customization job,
-#' including the status of the job. For more information, see [Custom
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Retrieves the properties associated with a model-customization job, including the status of the job. For more information, see [Custom models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_get_model_customization_job(jobIdentifier)
@@ -5814,11 +5648,7 @@ bedrock_get_model_customization_job <- function(jobIdentifier) {
 #' status of the job
 #'
 #' @description
-#' Retrieves the properties associated with import model job, including the
-#' status of the job. For more information, see [Import a customized
-#' model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Retrieves the properties associated with import model job, including the status of the job. For more information, see [Import a customized model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_get_model_import_job(jobIdentifier)
@@ -5896,9 +5726,7 @@ bedrock_get_model_import_job <- function(jobIdentifier) {
 #' Gets details about a batch inference job
 #'
 #' @description
-#' Gets details about a batch inference job. For more information, see
-#' [Monitor batch inference
-#' jobs](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor.html)
+#' Gets details about a batch inference job. For more information, see [Monitor batch inference jobs](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor.html)
 #'
 #' @usage
 #' bedrock_get_model_invocation_job(jobIdentifier)
@@ -6128,11 +5956,7 @@ bedrock_get_prompt_router <- function(promptRouterArn) {
 #' Returns details for a Provisioned Throughput
 #'
 #' @description
-#' Returns details for a Provisioned Throughput. For more information, see
-#' [Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Returns details for a Provisioned Throughput. For more information, see [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_get_provisioned_model_throughput(provisionedModelId)
@@ -6292,23 +6116,87 @@ bedrock_get_use_case_for_model_access <- function() {
 }
 .bedrock$operations$get_use_case_for_model_access <- bedrock_get_use_case_for_model_access
 
+#' Lists all advanced prompt optimization jobs for the account
+#'
+#' @description
+#' Lists all advanced prompt optimization jobs for the account.
+#'
+#' @usage
+#' bedrock_list_advanced_prompt_optimization_jobs(maxResults, nextToken,
+#'   sortBy, sortOrder)
+#'
+#' @param maxResults Maximum number of results to return.
+#' @param nextToken Pagination token for the next page of results.
+#' @param sortBy Field to sort by in the returned list of jobs.
+#' @param sortOrder Sort order for the results.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   jobSummaries = list(
+#'     list(
+#'       jobArn = "string",
+#'       jobName = "string",
+#'       jobStatus = "InProgress"|"Completed"|"Failed"|"PartiallyCompleted"|"Stopping"|"Stopped"|"Deleting",
+#'       creationTime = as.POSIXct(
+#'         "2015-01-01"
+#'       ),
+#'       lastModifiedTime = as.POSIXct(
+#'         "2015-01-01"
+#'       )
+#'     )
+#'   ),
+#'   nextToken = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_advanced_prompt_optimization_jobs(
+#'   maxResults = 123,
+#'   nextToken = "string",
+#'   sortBy = "CreationTime",
+#'   sortOrder = "Ascending"|"Descending"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrock_list_advanced_prompt_optimization_jobs
+#'
+#' @aliases bedrock_list_advanced_prompt_optimization_jobs
+bedrock_list_advanced_prompt_optimization_jobs <- function(maxResults = NULL, nextToken = NULL, sortBy = NULL, sortOrder = NULL) {
+  op <- new_operation(
+    name = "ListAdvancedPromptOptimizationJobs",
+    http_method = "GET",
+    http_path = "/advanced-prompt-optimization-jobs",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "jobSummaries"),
+    stream_api = FALSE
+  )
+  input <- .bedrock$list_advanced_prompt_optimization_jobs_input(maxResults = maxResults, nextToken = nextToken, sortBy = sortBy, sortOrder = sortOrder)
+  output <- .bedrock$list_advanced_prompt_optimization_jobs_output()
+  config <- get_config()
+  svc <- .bedrock$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrock$operations$list_advanced_prompt_optimization_jobs <- bedrock_list_advanced_prompt_optimization_jobs
+
 #' Lists all Automated Reasoning policies in your account, with optional
 #' filtering by policy ARN
 #'
 #' @description
-#' Lists all Automated Reasoning policies in your account, with optional
-#' filtering by policy ARN. This helps you manage and discover existing
-#' policies.
+#' Lists all Automated Reasoning policies in your account, with optional filtering by policy ARN. This helps you manage and discover existing policies.
 #'
 #' @usage
 #' bedrock_list_automated_reasoning_policies(policyArn, nextToken,
 #'   maxResults)
 #'
-#' @param policyArn Optional filter to list only the policy versions with the specified
-#' Amazon Resource Name (ARN). If not provided, the DRAFT versions for all
-#' policies are listed.
-#' @param nextToken The pagination token from a previous request to retrieve the next page
-#' of results.
+#' @param policyArn Optional filter to list only the policy versions with the specified Amazon Resource Name (ARN). If not provided, the DRAFT versions for all policies are listed.
+#' @param nextToken The pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of policies to return in a single call.
 #'
 #' @return
@@ -6371,19 +6259,15 @@ bedrock_list_automated_reasoning_policies <- function(policyArn = NULL, nextToke
 #' history of policy creation and modification attempts
 #'
 #' @description
-#' Lists all build workflows for an Automated Reasoning policy, showing the
-#' history of policy creation and modification attempts.
+#' Lists all build workflows for an Automated Reasoning policy, showing the history of policy creation and modification attempts.
 #'
 #' @usage
 #' bedrock_list_automated_reasoning_policy_build_workflows(policyArn,
 #'   nextToken, maxResults)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-#' build workflows you want to list.
-#' @param nextToken A pagination token from a previous request to continue listing build
-#' workflows from where the previous request left off.
-#' @param maxResults The maximum number of build workflows to return in a single response.
-#' Valid range is 1-100.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose build workflows you want to list.
+#' @param nextToken A pagination token from a previous request to continue listing build workflows from where the previous request left off.
+#' @param maxResults The maximum number of build workflows to return in a single response. Valid range is 1-100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6443,18 +6327,14 @@ bedrock_list_automated_reasoning_policy_build_workflows <- function(policyArn, n
 #' Lists tests for an Automated Reasoning policy
 #'
 #' @description
-#' Lists tests for an Automated Reasoning policy. We recommend using
-#' pagination to ensure that the operation returns quickly and
-#' successfully.
+#' Lists tests for an Automated Reasoning policy. We recommend using pagination to ensure that the operation returns quickly and successfully.
 #'
 #' @usage
 #' bedrock_list_automated_reasoning_policy_test_cases(policyArn, nextToken,
 #'   maxResults)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-#' which to list tests.
-#' @param nextToken The pagination token from a previous request to retrieve the next page
-#' of results.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for which to list tests.
+#' @param nextToken The pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of tests to return in a single call.
 #'
 #' @return
@@ -6517,21 +6397,16 @@ bedrock_list_automated_reasoning_policy_test_cases <- function(policyArn, nextTo
 #' policy performed against various test scenarios and validation checks
 #'
 #' @description
-#' Lists test results for an Automated Reasoning policy, showing how the
-#' policy performed against various test scenarios and validation checks.
+#' Lists test results for an Automated Reasoning policy, showing how the policy performed against various test scenarios and validation checks.
 #'
 #' @usage
 #' bedrock_list_automated_reasoning_policy_test_results(policyArn,
 #'   buildWorkflowId, nextToken, maxResults)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-#' test results you want to list.
-#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow whose test results you want
-#' to list.
-#' @param nextToken A pagination token from a previous request to continue listing test
-#' results from where the previous request left off.
-#' @param maxResults The maximum number of test results to return in a single response. Valid
-#' range is 1-100.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose test results you want to list.
+#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow whose test results you want to list.
+#' @param nextToken A pagination token from a previous request to continue listing test results from where the previous request left off.
+#' @param maxResults The maximum number of test results to return in a single response. Valid range is 1-100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6861,16 +6736,11 @@ bedrock_list_automated_reasoning_policy_test_results <- function(policyArn, buil
 #' Lists custom model deployments in your account
 #'
 #' @description
-#' Lists custom model deployments in your account. You can filter the
-#' results by creation time, name, status, and associated model. Use this
-#' operation to manage and monitor your custom model deployments.
+#' Lists custom model deployments in your account. You can filter the results by creation time, name, status, and associated model. Use this operation to manage and monitor your custom model deployments.
 #' 
-#' We recommend using pagination to ensure that the operation returns
-#' quickly and successfully.
+#' We recommend using pagination to ensure that the operation returns quickly and successfully.
 #' 
-#' The following actions are related to the
-#' [`list_custom_model_deployments`][bedrock_list_custom_model_deployments]
-#' operation:
+#' The following actions are related to the [`list_custom_model_deployments`][bedrock_list_custom_model_deployments] operation:
 #' 
 #' -   [`create_custom_model_deployment`][bedrock_create_custom_model_deployment]
 #' 
@@ -6887,16 +6757,11 @@ bedrock_list_automated_reasoning_policy_test_results <- function(policyArn, buil
 #' @param createdAfter Filters deployments created after the specified date and time.
 #' @param nameContains Filters deployments whose names contain the specified string.
 #' @param maxResults The maximum number of results to return in a single call.
-#' @param nextToken The token for the next set of results. Use this token to retrieve
-#' additional results when the response is truncated.
-#' @param sortBy The field to sort the results by. The only supported value is
-#' `CreationTime`.
-#' @param sortOrder The sort order for the results. Valid values are `Ascending` and
-#' `Descending`. Default is `Descending`.
-#' @param statusEquals Filters deployments by status. Valid values are `CREATING`, `ACTIVE`,
-#' and `FAILED`.
-#' @param modelArnEquals Filters deployments by the Amazon Resource Name (ARN) of the associated
-#' custom model.
+#' @param nextToken The token for the next set of results. Use this token to retrieve additional results when the response is truncated.
+#' @param sortBy The field to sort the results by. The only supported value is `CreationTime`.
+#' @param sortOrder The sort order for the results. Valid values are `Ascending` and `Descending`. Default is `Descending`.
+#' @param statusEquals Filters deployments by status. Valid values are `CREATING`, `ACTIVE`, and `FAILED`.
+#' @param modelArnEquals Filters deployments by the Amazon Resource Name (ARN) of the associated custom model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6968,14 +6833,9 @@ bedrock_list_custom_model_deployments <- function(createdBefore = NULL, createdA
 #' CreateModelCustomizationJob operation
 #'
 #' @description
-#' Returns a list of the custom models that you have created with the
-#' [`create_model_customization_job`][bedrock_create_model_customization_job]
-#' operation.
+#' Returns a list of the custom models that you have created with the [`create_model_customization_job`][bedrock_create_model_customization_job] operation.
 #' 
-#' For more information, see [Custom
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' For more information, see [Custom models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_list_custom_models(creationTimeBefore, creationTimeAfter,
@@ -6985,28 +6845,18 @@ bedrock_list_custom_model_deployments <- function(createdBefore = NULL, createdA
 #' @param creationTimeBefore Return custom models created before the specified time.
 #' @param creationTimeAfter Return custom models created after the specified time.
 #' @param nameContains Return custom models only if the job name contains these characters.
-#' @param baseModelArnEquals Return custom models only if the base model Amazon Resource Name (ARN)
-#' matches this parameter.
-#' @param foundationModelArnEquals Return custom models only if the foundation model Amazon Resource Name
-#' (ARN) matches this parameter.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param baseModelArnEquals Return custom models only if the base model Amazon Resource Name (ARN) matches this parameter.
+#' @param foundationModelArnEquals Return custom models only if the foundation model Amazon Resource Name (ARN) matches this parameter.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #' @param sortBy The field to sort by in the returned list of models.
 #' @param sortOrder The sort order of the results.
-#' @param isOwned Return custom models depending on if the current account owns them
-#' (`true`) or if they were shared with the current account (`false`).
+#' @param isOwned Return custom models depending on if the current account owns them (`true`) or if they were shared with the current account (`false`).
 #' @param modelStatus The status of them model to filter results by. Possible values include:
 #' 
-#' -   `Creating` - Include only models that are currently being created
-#'     and validated.
+#' -   `Creating` - Include only models that are currently being created and validated.
 #' 
-#' -   `Active` - Include only models that have been successfully created
-#'     and are ready for use.
+#' -   `Active` - Include only models that have been successfully created and are ready for use.
 #' 
 #' -   `Failed` - Include only models where the creation process failed.
 #' 
@@ -7171,17 +7021,12 @@ bedrock_list_enforced_guardrails_configuration <- function(nextToken = NULL) {
 #' @param creationTimeAfter A filter to only list evaluation jobs created after a specified time.
 #' @param creationTimeBefore A filter to only list evaluation jobs created before a specified time.
 #' @param statusEquals A filter to only list evaluation jobs that are of a certain status.
-#' @param applicationTypeEquals A filter to only list evaluation jobs that are either model evaluations
-#' or knowledge base evaluations.
-#' @param nameContains A filter to only list evaluation jobs that contain a specified string in
-#' the job name.
+#' @param applicationTypeEquals A filter to only list evaluation jobs that are either model evaluations or knowledge base evaluations.
+#' @param nameContains A filter to only list evaluation jobs that contain a specified string in the job name.
 #' @param maxResults The maximum number of results to return.
-#' @param nextToken Continuation token from the previous response, for Amazon Bedrock to
-#' list the next set of results.
-#' @param sortBy Specifies a creation time to sort the list of evaluation jobs by when
-#' they were created.
-#' @param sortOrder Specifies whether to sort the list of evaluation jobs by either
-#' ascending or descending order.
+#' @param nextToken Continuation token from the previous response, for Amazon Bedrock to list the next set of results.
+#' @param sortBy Specifies a creation time to sort the list of evaluation jobs by when they were created.
+#' @param sortOrder Specifies whether to sort the list of evaluation jobs by either ascending or descending order.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7360,29 +7205,16 @@ bedrock_list_foundation_model_agreement_offers <- function(modelId, offerType = 
 #' Lists Amazon Bedrock foundation models that you can use
 #'
 #' @description
-#' Lists Amazon Bedrock foundation models that you can use. You can filter
-#' the results with the request parameters. For more information, see
-#' [Foundation
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/) in the
-#' [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Lists Amazon Bedrock foundation models that you can use. You can filter the results with the request parameters. For more information, see [Foundation models](https://docs.aws.amazon.com/bedrock/latest/userguide/) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_list_foundation_models(byProvider, byCustomizationType,
 #'   byOutputModality, byInferenceType)
 #'
 #' @param byProvider Return models belonging to the model provider that you specify.
-#' @param byCustomizationType Return models that support the customization type that you specify. For
-#' more information, see [Custom
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' @param byCustomizationType Return models that support the customization type that you specify. For more information, see [Custom models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #' @param byOutputModality Return models that support the output modality that you specify.
-#' @param byInferenceType Return models that support the inference type that you specify. For more
-#' information, see [Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' @param byInferenceType Return models that support the inference type that you specify. For more information, see [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7464,26 +7296,16 @@ bedrock_list_foundation_models <- function(byProvider = NULL, byCustomizationTyp
 #' Lists details about all the guardrails in an account
 #'
 #' @description
-#' Lists details about all the guardrails in an account. To list the
-#' `DRAFT` version of all your guardrails, don't specify the
-#' `guardrailIdentifier` field. To list all versions of a guardrail,
-#' specify the ARN of the guardrail in the `guardrailIdentifier` field.
+#' Lists details about all the guardrails in an account. To list the `DRAFT` version of all your guardrails, don't specify the `guardrailIdentifier` field. To list all versions of a guardrail, specify the ARN of the guardrail in the `guardrailIdentifier` field.
 #' 
-#' You can set the maximum number of results to return in a response in the
-#' `maxResults` field. If there are more results than the number you set,
-#' the response returns a `nextToken` that you can send in another
-#' [`list_guardrails`][bedrock_list_guardrails] request to see the next
-#' batch of results.
+#' You can set the maximum number of results to return in a response in the `maxResults` field. If there are more results than the number you set, the response returns a `nextToken` that you can send in another [`list_guardrails`][bedrock_list_guardrails] request to see the next batch of results.
 #'
 #' @usage
 #' bedrock_list_guardrails(guardrailIdentifier, maxResults, nextToken)
 #'
 #' @param guardrailIdentifier The unique identifier of the guardrail. This can be an ID or the ARN.
 #' @param maxResults The maximum number of results to return in the response.
-#' @param nextToken If there are more results than were returned in the response, the
-#' response returns a `nextToken` that you can send in another
-#' [`list_guardrails`][bedrock_list_guardrails] request to see the next
-#' batch of results.
+#' @param nextToken If there are more results than were returned in the response, the response returns a `nextToken` that you can send in another [`list_guardrails`][bedrock_list_guardrails] request to see the next batch of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7549,12 +7371,7 @@ bedrock_list_guardrails <- function(guardrailIdentifier = NULL, maxResults = NUL
 #' Returns a list of models you've imported
 #'
 #' @description
-#' Returns a list of models you've imported. You can filter the results to
-#' return based on one or more criteria. For more information, see [Import
-#' a customized
-#' model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Returns a list of models you've imported. You can filter the results to return based on one or more criteria. For more information, see [Import a customized model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_list_imported_models(creationTimeBefore, creationTimeAfter,
@@ -7563,13 +7380,8 @@ bedrock_list_guardrails <- function(guardrailIdentifier = NULL, maxResults = NUL
 #' @param creationTimeBefore Return imported models that created before the specified time.
 #' @param creationTimeAfter Return imported models that were created after the specified time.
 #' @param nameContains Return imported models only if the model name contains these characters.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #' @param sortBy The field to sort by in the returned list of imported models.
 #' @param sortOrder Specifies whetehr to sort the results in ascending or descending order.
 #'
@@ -7636,32 +7448,18 @@ bedrock_list_imported_models <- function(creationTimeBefore = NULL, creationTime
 #' Returns a list of inference profiles that you can use
 #'
 #' @description
-#' Returns a list of inference profiles that you can use. For more
-#' information, see [Increase throughput and resilience with cross-region
-#' inference in Amazon
-#' Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html).
-#' in the Amazon Bedrock User Guide.
+#' Returns a list of inference profiles that you can use. For more information, see [Increase throughput and resilience with cross-region inference in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html). in the Amazon Bedrock User Guide.
 #'
 #' @usage
 #' bedrock_list_inference_profiles(maxResults, nextToken, typeEquals)
 #'
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #' @param typeEquals Filters for inference profiles that match the type you specify.
 #' 
-#' -   `SYSTEM_DEFINED` – The inference profile is defined by Amazon
-#'     Bedrock. You can route inference requests across regions with these
-#'     inference profiles.
+#' -   `SYSTEM_DEFINED` – The inference profile is defined by Amazon Bedrock. You can route inference requests across regions with these inference profiles.
 #' 
-#' -   `APPLICATION` – The inference profile was created by a user. This
-#'     type of inference profile can track metrics and costs when invoking
-#'     the model in it. The inference profile may route requests to one or
-#'     multiple regions.
+#' -   `APPLICATION` – The inference profile was created by a user. This type of inference profile can track metrics and costs when invoking the model in it. The inference profile may route requests to one or multiple regions.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7729,21 +7527,15 @@ bedrock_list_inference_profiles <- function(maxResults = NULL, nextToken = NULL,
 #' Amazon Web Services account
 #'
 #' @description
-#' Lists the endpoints for models from Amazon Bedrock Marketplace in your
-#' Amazon Web Services account.
+#' Lists the endpoints for models from Amazon Bedrock Marketplace in your Amazon Web Services account.
 #'
 #' @usage
 #' bedrock_list_marketplace_model_endpoints(maxResults, nextToken,
 #'   modelSourceEquals)
 #'
-#' @param maxResults The maximum number of results to return in a single call. If more
-#' results are available, the operation returns a `NextToken` value.
-#' @param nextToken The token for the next set of results. You receive this token from a
-#' previous
-#' [`list_marketplace_model_endpoints`][bedrock_list_marketplace_model_endpoints]
-#' call.
-#' @param modelSourceEquals If specified, only endpoints for the given model source identifier are
-#' returned.
+#' @param maxResults The maximum number of results to return in a single call. If more results are available, the operation returns a `NextToken` value.
+#' @param nextToken The token for the next set of results. You receive this token from a previous [`list_marketplace_model_endpoints`][bedrock_list_marketplace_model_endpoints] call.
+#' @param modelSourceEquals If specified, only endpoints for the given model source identifier are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7803,12 +7595,7 @@ bedrock_list_marketplace_model_endpoints <- function(maxResults = NULL, nextToke
 #' Returns a list of model copy jobs that you have submitted
 #'
 #' @description
-#' Returns a list of model copy jobs that you have submitted. You can
-#' filter the jobs to return based on one or more criteria. For more
-#' information, see [Copy models to be used in other
-#' regions](https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Returns a list of model copy jobs that you have submitted. You can filter the jobs to return based on one or more criteria. For more information, see [Copy models to be used in other regions](https://docs.aws.amazon.com/bedrock/latest/userguide/copy-model.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_list_model_copy_jobs(creationTimeAfter, creationTimeBefore,
@@ -7817,21 +7604,12 @@ bedrock_list_marketplace_model_endpoints <- function(maxResults = NULL, nextToke
 #'
 #' @param creationTimeAfter Filters for model copy jobs created after the specified time.
 #' @param creationTimeBefore Filters for model copy jobs created before the specified time.
-#' @param statusEquals Filters for model copy jobs whose status matches the value that you
-#' specify.
-#' @param sourceAccountEquals Filters for model copy jobs in which the account that the source model
-#' belongs to is equal to the value that you specify.
-#' @param sourceModelArnEquals Filters for model copy jobs in which the Amazon Resource Name (ARN) of
-#' the source model to is equal to the value that you specify.
-#' @param targetModelNameContains Filters for model copy jobs in which the name of the copied model
-#' contains the string that you specify.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param statusEquals Filters for model copy jobs whose status matches the value that you specify.
+#' @param sourceAccountEquals Filters for model copy jobs in which the account that the source model belongs to is equal to the value that you specify.
+#' @param sourceModelArnEquals Filters for model copy jobs in which the Amazon Resource Name (ARN) of the source model to is equal to the value that you specify.
+#' @param targetModelNameContains Filters for model copy jobs in which the name of the copied model contains the string that you specify.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #' @param sortBy The field to sort by in the returned list of model copy jobs.
 #' @param sortOrder Specifies whether to sort the results in ascending or descending order.
 #'
@@ -7912,13 +7690,9 @@ bedrock_list_model_copy_jobs <- function(creationTimeAfter = NULL, creationTimeB
 #' Returns a list of model customization jobs that you have submitted
 #'
 #' @description
-#' Returns a list of model customization jobs that you have submitted. You
-#' can filter the jobs to return based on one or more criteria.
+#' Returns a list of model customization jobs that you have submitted. You can filter the jobs to return based on one or more criteria.
 #' 
-#' For more information, see [Custom
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' For more information, see [Custom models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_list_model_customization_jobs(creationTimeAfter,
@@ -7928,15 +7702,9 @@ bedrock_list_model_copy_jobs <- function(creationTimeAfter = NULL, creationTimeB
 #' @param creationTimeAfter Return customization jobs created after the specified time.
 #' @param creationTimeBefore Return customization jobs created before the specified time.
 #' @param statusEquals Return customization jobs with the specified status.
-#' @param nameContains Return customization jobs only if the job name contains these
-#' characters.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param nameContains Return customization jobs only if the job name contains these characters.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #' @param sortBy The field to sort by in the returned list of jobs.
 #' @param sortOrder The sort order of the results.
 #'
@@ -8042,12 +7810,7 @@ bedrock_list_model_customization_jobs <- function(creationTimeAfter = NULL, crea
 #' Returns a list of import jobs you've submitted
 #'
 #' @description
-#' Returns a list of import jobs you've submitted. You can filter the
-#' results to return based on one or more criteria. For more information,
-#' see [Import a customized
-#' model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Returns a list of import jobs you've submitted. You can filter the results to return based on one or more criteria. For more information, see [Import a customized model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_list_model_import_jobs(creationTimeAfter, creationTimeBefore,
@@ -8057,13 +7820,8 @@ bedrock_list_model_customization_jobs <- function(creationTimeAfter = NULL, crea
 #' @param creationTimeBefore Return import jobs that were created before the specified time.
 #' @param statusEquals Return imported jobs with the specified status.
 #' @param nameContains Return imported jobs only if the job name contains these characters.
-#' @param maxResults The maximum number of results to return in the response. If the total
-#' number of results is greater than this value, use the token returned in
-#' the response in the `nextToken` field when making another request to
-#' return the next batch of results.
-#' @param nextToken If the total number of results is greater than the `maxResults` value
-#' provided in the request, enter the token returned in the `nextToken`
-#' field in the response in this field to return the next batch of results.
+#' @param maxResults The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the `nextToken` field when making another request to return the next batch of results.
+#' @param nextToken If the total number of results is greater than the `maxResults` value provided in the request, enter the token returned in the `nextToken` field in the response in this field to return the next batch of results.
 #' @param sortBy The field to sort by in the returned list of imported jobs.
 #' @param sortOrder Specifies whether to sort the results in ascending or descending order.
 #'
@@ -8138,76 +7896,46 @@ bedrock_list_model_import_jobs <- function(creationTimeAfter = NULL, creationTim
 #' Lists all batch inference jobs in the account
 #'
 #' @description
-#' Lists all batch inference jobs in the account. For more information, see
-#' [View details about a batch inference
-#' job](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor.html).
+#' Lists all batch inference jobs in the account. For more information, see [View details about a batch inference job](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-monitor.html).
 #'
 #' @usage
 #' bedrock_list_model_invocation_jobs(submitTimeAfter, submitTimeBefore,
 #'   statusEquals, nameContains, maxResults, nextToken, sortBy, sortOrder)
 #'
-#' @param submitTimeAfter Specify a time to filter for batch inference jobs that were submitted
-#' after the time you specify.
-#' @param submitTimeBefore Specify a time to filter for batch inference jobs that were submitted
-#' before the time you specify.
-#' @param statusEquals Specify a status to filter for batch inference jobs whose statuses match
-#' the string you specify.
+#' @param submitTimeAfter Specify a time to filter for batch inference jobs that were submitted after the time you specify.
+#' @param submitTimeBefore Specify a time to filter for batch inference jobs that were submitted before the time you specify.
+#' @param statusEquals Specify a status to filter for batch inference jobs whose statuses match the string you specify.
 #' 
 #' The following statuses are possible:
 #' 
 #' -   Submitted – This job has been submitted to a queue for validation.
 #' 
-#' -   Validating – This job is being validated for the requirements
-#'     described in [Format and upload your batch inference
-#'     data](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html).
-#'     The criteria include the following:
+#' -   Validating – This job is being validated for the requirements described in [Format and upload your batch inference data](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-data.html). The criteria include the following:
 #' 
-#'     -   Your IAM service role has access to the Amazon S3 buckets
-#'         containing your files.
+#'     -   Your IAM service role has access to the Amazon S3 buckets containing your files.
 #' 
-#'     -   Your files are .jsonl files and each individual record is a JSON
-#'         object in the correct format. Note that validation doesn't check
-#'         if the `modelInput` value matches the request body for the
-#'         model.
+#'     -   Your files are .jsonl files and each individual record is a JSON object in the correct format. Note that validation doesn't check if the `modelInput` value matches the request body for the model.
 #' 
-#'     -   Your files fulfill the requirements for file size and number of
-#'         records. For more information, see [Quotas for Amazon
-#'         Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html).
+#'     -   Your files fulfill the requirements for file size and number of records. For more information, see [Quotas for Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/quotas.html).
 #' 
-#' -   Scheduled – This job has been validated and is now in a queue. The
-#'     job will automatically start when it reaches its turn.
+#' -   Scheduled – This job has been validated and is now in a queue. The job will automatically start when it reaches its turn.
 #' 
-#' -   Expired – This job timed out because it was scheduled but didn't
-#'     begin before the set timeout duration. Submit a new job request.
+#' -   Expired – This job timed out because it was scheduled but didn't begin before the set timeout duration. Submit a new job request.
 #' 
-#' -   InProgress – This job has begun. You can start viewing the results
-#'     in the output S3 location.
+#' -   InProgress – This job has begun. You can start viewing the results in the output S3 location.
 #' 
-#' -   Completed – This job has successfully completed. View the output
-#'     files in the output S3 location.
+#' -   Completed – This job has successfully completed. View the output files in the output S3 location.
 #' 
-#' -   PartiallyCompleted – This job has partially completed. Not all of
-#'     your records could be processed in time. View the output files in
-#'     the output S3 location.
+#' -   PartiallyCompleted – This job has partially completed. Not all of your records could be processed in time. View the output files in the output S3 location.
 #' 
-#' -   Failed – This job has failed. Check the failure message for any
-#'     further details. For further assistance, reach out to the Amazon Web
-#'     Services Support Center.
+#' -   Failed – This job has failed. Check the failure message for any further details. For further assistance, reach out to the Amazon Web Services Support Center.
 #' 
 #' -   Stopped – This job was stopped by a user.
 #' 
 #' -   Stopping – This job is being stopped by a user.
-#' @param nameContains Specify a string to filter for batch inference jobs whose names contain
-#' the string.
-#' @param maxResults The maximum number of results to return. If there are more results than
-#' the number that you specify, a `nextToken` value is returned. Use the
-#' `nextToken` in a request to return the next batch of results.
-#' @param nextToken If there were more results than the value you specified in the
-#' `maxResults` field in a previous
-#' [`list_model_invocation_jobs`][bedrock_list_model_invocation_jobs]
-#' request, the response would have returned a `nextToken` value. To see
-#' the next batch of results, send the `nextToken` value in another
-#' request.
+#' @param nameContains Specify a string to filter for batch inference jobs whose names contain the string.
+#' @param maxResults The maximum number of results to return. If there are more results than the number that you specify, a `nextToken` value is returned. Use the `nextToken` in a request to return the next batch of results.
+#' @param nextToken If there were more results than the value you specified in the `maxResults` field in a previous [`list_model_invocation_jobs`][bedrock_list_model_invocation_jobs] request, the response would have returned a `nextToken` value. To see the next batch of results, send the `nextToken` value in another request.
 #' @param sortBy An attribute by which to sort the results.
 #' @param sortOrder Specifies whether to sort the results by ascending or descending order.
 #'
@@ -8321,8 +8049,7 @@ bedrock_list_model_invocation_jobs <- function(submitTimeAfter = NULL, submitTim
 #' bedrock_list_prompt_routers(maxResults, nextToken, type)
 #'
 #' @param maxResults The maximum number of prompt routers to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param type The type of the prompt routers, such as whether it's default or custom.
 #'
 #' @return
@@ -8395,34 +8122,20 @@ bedrock_list_prompt_routers <- function(maxResults = NULL, nextToken = NULL, typ
 #' Lists the Provisioned Throughputs in the account
 #'
 #' @description
-#' Lists the Provisioned Throughputs in the account. For more information,
-#' see [Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Lists the Provisioned Throughputs in the account. For more information, see [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_list_provisioned_model_throughputs(creationTimeAfter,
 #'   creationTimeBefore, statusEquals, modelArnEquals, nameContains,
 #'   maxResults, nextToken, sortBy, sortOrder)
 #'
-#' @param creationTimeAfter A filter that returns Provisioned Throughputs created after the
-#' specified time.
-#' @param creationTimeBefore A filter that returns Provisioned Throughputs created before the
-#' specified time.
-#' @param statusEquals A filter that returns Provisioned Throughputs if their statuses matches
-#' the value that you specify.
-#' @param modelArnEquals A filter that returns Provisioned Throughputs whose model Amazon
-#' Resource Name (ARN) is equal to the value that you specify.
-#' @param nameContains A filter that returns Provisioned Throughputs if their name contains the
-#' expression that you specify.
-#' @param maxResults THe maximum number of results to return in the response. If there are
-#' more results than the number you specified, the response returns a
-#' `nextToken` value. To see the next batch of results, send the
-#' `nextToken` value in another list request.
-#' @param nextToken If there are more results than the number you specified in the
-#' `maxResults` field, the response returns a `nextToken` value. To see the
-#' next batch of results, specify the `nextToken` value in this field.
+#' @param creationTimeAfter A filter that returns Provisioned Throughputs created after the specified time.
+#' @param creationTimeBefore A filter that returns Provisioned Throughputs created before the specified time.
+#' @param statusEquals A filter that returns Provisioned Throughputs if their statuses matches the value that you specify.
+#' @param modelArnEquals A filter that returns Provisioned Throughputs whose model Amazon Resource Name (ARN) is equal to the value that you specify.
+#' @param nameContains A filter that returns Provisioned Throughputs if their name contains the expression that you specify.
+#' @param maxResults THe maximum number of results to return in the response. If there are more results than the number you specified, the response returns a `nextToken` value. To see the next batch of results, send the `nextToken` value in another list request.
+#' @param nextToken If there are more results than the number you specified in the `maxResults` field, the response returns a `nextToken` value. To see the next batch of results, specify the `nextToken` value in this field.
 #' @param sortBy The field by which to sort the returned list of Provisioned Throughputs.
 #' @param sortOrder The sort order of the results.
 #'
@@ -8504,10 +8217,7 @@ bedrock_list_provisioned_model_throughputs <- function(creationTimeAfter = NULL,
 #' @description
 #' List the tags associated with the specified resource.
 #' 
-#' For more information, see [Tagging
-#' resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_list_tags_for_resource(resourceARN)
@@ -8790,17 +8500,14 @@ bedrock_put_use_case_for_model_access <- function(formData) {
 #' Marketplace, allowing it to be used with Amazon Bedrock APIs
 #'
 #' @description
-#' Registers an existing Amazon SageMaker endpoint with Amazon Bedrock
-#' Marketplace, allowing it to be used with Amazon Bedrock APIs.
+#' Registers an existing Amazon SageMaker endpoint with Amazon Bedrock Marketplace, allowing it to be used with Amazon Bedrock APIs.
 #'
 #' @usage
 #' bedrock_register_marketplace_model_endpoint(endpointIdentifier,
 #'   modelSourceIdentifier)
 #'
-#' @param endpointIdentifier &#91;required&#93; The ARN of the Amazon SageMaker endpoint you want to register with
-#' Amazon Bedrock Marketplace.
-#' @param modelSourceIdentifier &#91;required&#93; The ARN of the model from Amazon Bedrock Marketplace that is deployed on
-#' the endpoint.
+#' @param endpointIdentifier &#91;required&#93; The ARN of the Amazon SageMaker endpoint you want to register with Amazon Bedrock Marketplace.
+#' @param modelSourceIdentifier &#91;required&#93; The ARN of the model from Amazon Bedrock Marketplace that is deployed on the endpoint.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8874,23 +8581,16 @@ bedrock_register_marketplace_model_endpoint <- function(endpointIdentifier, mode
 #' Starts a new build workflow for an Automated Reasoning policy
 #'
 #' @description
-#' Starts a new build workflow for an Automated Reasoning policy. This
-#' initiates the process of analyzing source documents and generating
-#' policy rules, variables, and types.
+#' Starts a new build workflow for an Automated Reasoning policy. This initiates the process of analyzing source documents and generating policy rules, variables, and types.
 #'
 #' @usage
 #' bedrock_start_automated_reasoning_policy_build_workflow(policyArn,
 #'   buildWorkflowType, clientRequestToken, sourceContent)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-#' which to start the build workflow.
-#' @param buildWorkflowType &#91;required&#93; The type of build workflow to start (e.g., DOCUMENT_INGESTION for
-#' processing new documents, POLICY_REPAIR for fixing existing policies).
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than once. If this token matches a previous request,
-#' Amazon Bedrock ignores the request but doesn't return an error.
-#' @param sourceContent &#91;required&#93; The source content for the build workflow, such as documents to analyze
-#' or repair instructions for existing policies.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy for which to start the build workflow.
+#' @param buildWorkflowType &#91;required&#93; The type of build workflow to start (e.g., DOCUMENT_INGESTION for processing new documents, POLICY_REPAIR for fixing existing policies).
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation completes no more than once. If this token matches a previous request, Amazon Bedrock ignores the request but doesn't return an error.
+#' @param sourceContent &#91;required&#93; The source content for the build workflow, such as documents to analyze or repair instructions for existing policies.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9070,23 +8770,16 @@ bedrock_start_automated_reasoning_policy_build_workflow <- function(policyArn, b
 #' Initiates a test workflow to validate Automated Reasoning policy tests
 #'
 #' @description
-#' Initiates a test workflow to validate Automated Reasoning policy tests.
-#' The workflow executes the specified tests against the policy and
-#' generates validation results.
+#' Initiates a test workflow to validate Automated Reasoning policy tests. The workflow executes the specified tests against the policy and generates validation results.
 #'
 #' @usage
 #' bedrock_start_automated_reasoning_policy_test_workflow(policyArn,
 #'   buildWorkflowId, testCaseIds, clientRequestToken)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-#' test.
-#' @param buildWorkflowId &#91;required&#93; The build workflow identifier. The build workflow must show a
-#' `COMPLETED` status before running tests.
-#' @param testCaseIds The list of test identifiers to run. If not provided, all tests for the
-#' policy are run.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request but doesn't return an error.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to test.
+#' @param buildWorkflowId &#91;required&#93; The build workflow identifier. The build workflow must show a `COMPLETED` status before running tests.
+#' @param testCaseIds The list of test identifiers to run. If not provided, all tests for the policy are run.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request but doesn't return an error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9131,6 +8824,50 @@ bedrock_start_automated_reasoning_policy_test_workflow <- function(policyArn, bu
   return(response)
 }
 .bedrock$operations$start_automated_reasoning_policy_test_workflow <- bedrock_start_automated_reasoning_policy_test_workflow
+
+#' Stops an in-progress advanced prompt optimization job
+#'
+#' @description
+#' Stops an in-progress advanced prompt optimization job.
+#'
+#' @usage
+#' bedrock_stop_advanced_prompt_optimization_job(jobIdentifier)
+#'
+#' @param jobIdentifier &#91;required&#93; ARN or ID of the advanced prompt optimization job to stop.
+#'
+#' @return
+#' An empty list.
+#'
+#' @section Request syntax:
+#' ```
+#' svc$stop_advanced_prompt_optimization_job(
+#'   jobIdentifier = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname bedrock_stop_advanced_prompt_optimization_job
+#'
+#' @aliases bedrock_stop_advanced_prompt_optimization_job
+bedrock_stop_advanced_prompt_optimization_job <- function(jobIdentifier) {
+  op <- new_operation(
+    name = "StopAdvancedPromptOptimizationJob",
+    http_method = "POST",
+    http_path = "/advanced-prompt-optimization-jobs/{jobIdentifier}/stop",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .bedrock$stop_advanced_prompt_optimization_job_input(jobIdentifier = jobIdentifier)
+  output <- .bedrock$stop_advanced_prompt_optimization_job_output()
+  config <- get_config()
+  svc <- .bedrock$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.bedrock$operations$stop_advanced_prompt_optimization_job <- bedrock_stop_advanced_prompt_optimization_job
 
 #' Stops an evaluation job that is current being created or running
 #'
@@ -9179,11 +8916,7 @@ bedrock_stop_evaluation_job <- function(jobIdentifier) {
 #' Stops an active model customization job
 #'
 #' @description
-#' Stops an active model customization job. For more information, see
-#' [Custom
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Stops an active model customization job. For more information, see [Custom models](https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_stop_model_customization_job(jobIdentifier)
@@ -9227,9 +8960,7 @@ bedrock_stop_model_customization_job <- function(jobIdentifier) {
 #' Stops a batch inference job
 #'
 #' @description
-#' Stops a batch inference job. You're only charged for tokens that were
-#' already processed. For more information, see [Stop a batch inference
-#' job](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html).
+#' Stops a batch inference job. You're only charged for tokens that were already processed. For more information, see [Stop a batch inference job](https://docs.aws.amazon.com/bedrock/latest/userguide/batch-inference-stop.html).
 #'
 #' @usage
 #' bedrock_stop_model_invocation_job(jobIdentifier)
@@ -9273,10 +9004,7 @@ bedrock_stop_model_invocation_job <- function(jobIdentifier) {
 #' Associate tags with a resource
 #'
 #' @description
-#' Associate tags with a resource. For more information, see [Tagging
-#' resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Associate tags with a resource. For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_tag_resource(resourceARN, tags)
@@ -9327,11 +9055,7 @@ bedrock_tag_resource <- function(resourceARN, tags) {
 #' Remove one or more tags from a resource
 #'
 #' @description
-#' Remove one or more tags from a resource. For more information, see
-#' [Tagging
-#' resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Remove one or more tags from a resource. For more information, see [Tagging resources](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_untag_resource(resourceARN, tagKeys)
@@ -9380,18 +9104,14 @@ bedrock_untag_resource <- function(resourceARN, tagKeys) {
 #' variables, or configuration
 #'
 #' @description
-#' Updates an existing Automated Reasoning policy with new rules,
-#' variables, or configuration. This creates a new version of the policy
-#' while preserving the previous version.
+#' Updates an existing Automated Reasoning policy with new rules, variables, or configuration. This creates a new version of the policy while preserving the previous version.
 #'
 #' @usage
 #' bedrock_update_automated_reasoning_policy(policyArn, policyDefinition,
 #'   name, description)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to
-#' update. This must be the ARN of a draft policy.
-#' @param policyDefinition &#91;required&#93; The updated policy definition containing the formal logic rules,
-#' variables, and types.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy to update. This must be the ARN of a draft policy.
+#' @param policyDefinition &#91;required&#93; The updated policy definition containing the formal logic rules, variables, and types.
 #' @param name The updated name for the Automated Reasoning policy.
 #' @param description The updated description for the Automated Reasoning policy.
 #'
@@ -9473,22 +9193,16 @@ bedrock_update_automated_reasoning_policy <- function(policyArn, policyDefinitio
 #' Updates the annotations for an Automated Reasoning policy build workflow
 #'
 #' @description
-#' Updates the annotations for an Automated Reasoning policy build
-#' workflow. This allows you to modify extracted rules, variables, and
-#' types before finalizing the policy.
+#' Updates the annotations for an Automated Reasoning policy build workflow. This allows you to modify extracted rules, variables, and types before finalizing the policy.
 #'
 #' @usage
 #' bedrock_update_automated_reasoning_policy_annotations(policyArn,
 #'   buildWorkflowId, annotations, lastUpdatedAnnotationSetHash)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-#' annotations you want to update.
-#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow whose annotations you want
-#' to update.
-#' @param annotations &#91;required&#93; The updated annotations containing modified rules, variables, and types
-#' for the policy.
-#' @param lastUpdatedAnnotationSetHash &#91;required&#93; The hash value of the annotation set that you're updating. This is used
-#' for optimistic concurrency control to prevent conflicting updates.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy whose annotations you want to update.
+#' @param buildWorkflowId &#91;required&#93; The unique identifier of the build workflow whose annotations you want to update.
+#' @param annotations &#91;required&#93; The updated annotations containing modified rules, variables, and types for the policy.
+#' @param lastUpdatedAnnotationSetHash &#91;required&#93; The hash value of the annotation set that you're updating. This is used for optimistic concurrency control to prevent conflicting updates.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9619,8 +9333,7 @@ bedrock_update_automated_reasoning_policy_annotations <- function(policyArn, bui
 #' Updates an existing Automated Reasoning policy test
 #'
 #' @description
-#' Updates an existing Automated Reasoning policy test. You can modify the
-#' content, query, expected result, and confidence threshold.
+#' Updates an existing Automated Reasoning policy test. You can modify the content, query, expected result, and confidence threshold.
 #'
 #' @usage
 #' bedrock_update_automated_reasoning_policy_test_case(policyArn,
@@ -9628,20 +9341,14 @@ bedrock_update_automated_reasoning_policy_annotations <- function(policyArn, bui
 #'   expectedAggregatedFindingsResult, confidenceThreshold,
 #'   clientRequestToken)
 #'
-#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy that
-#' contains the test.
+#' @param policyArn &#91;required&#93; The Amazon Resource Name (ARN) of the Automated Reasoning policy that contains the test.
 #' @param testCaseId &#91;required&#93; The unique identifier of the test to update.
 #' @param guardContent &#91;required&#93; The updated content to be validated by the Automated Reasoning policy.
 #' @param queryContent The updated input query or prompt that generated the content.
-#' @param lastUpdatedAt &#91;required&#93; The timestamp when the test was last updated. This is used as a
-#' concurrency token to prevent conflicting modifications.
+#' @param lastUpdatedAt &#91;required&#93; The timestamp when the test was last updated. This is used as a concurrency token to prevent conflicting modifications.
 #' @param expectedAggregatedFindingsResult &#91;required&#93; The updated expected result of the Automated Reasoning check.
-#' @param confidenceThreshold The updated minimum confidence level for logic validation. If null is
-#' provided, the threshold will be removed.
-#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation
-#' completes no more than one time. If this token matches a previous
-#' request, Amazon Bedrock ignores the request, but does not return an
-#' error.
+#' @param confidenceThreshold The updated minimum confidence level for logic validation. If null is provided, the threshold will be removed.
+#' @param clientRequestToken A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9695,17 +9402,14 @@ bedrock_update_automated_reasoning_policy_test_case <- function(policyArn, testC
 #' Updates a custom model deployment with a new custom model
 #'
 #' @description
-#' Updates a custom model deployment with a new custom model. This allows
-#' you to deploy updated models without creating new deployment endpoints.
+#' Updates a custom model deployment with a new custom model. This allows you to deploy updated models without creating new deployment endpoints.
 #'
 #' @usage
 #' bedrock_update_custom_model_deployment(modelArn,
 #'   customModelDeploymentIdentifier)
 #'
-#' @param modelArn &#91;required&#93; ARN of the new custom model to deploy. This replaces the currently
-#' deployed model.
-#' @param customModelDeploymentIdentifier &#91;required&#93; Identifier of the custom model deployment to update with the new custom
-#' model.
+#' @param modelArn &#91;required&#93; ARN of the new custom model to deploy. This replaces the currently deployed model.
+#' @param customModelDeploymentIdentifier &#91;required&#93; Identifier of the custom model deployment to update with the new custom model.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9754,41 +9458,23 @@ bedrock_update_custom_model_deployment <- function(modelArn, customModelDeployme
 #' 
 #' -   Specify a `name` and optional `description`.
 #' 
-#' -   Specify messages for when the guardrail successfully blocks a prompt
-#'     or a model response in the `blockedInputMessaging` and
-#'     `blockedOutputsMessaging` fields.
+#' -   Specify messages for when the guardrail successfully blocks a prompt or a model response in the `blockedInputMessaging` and `blockedOutputsMessaging` fields.
 #' 
-#' -   Specify topics for the guardrail to deny in the `topicPolicyConfig`
-#'     object. Each
-#'     [GuardrailTopicConfig](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html)
-#'     object in the `topicsConfig` list pertains to one topic.
+#' -   Specify topics for the guardrail to deny in the `topicPolicyConfig` object. Each [GuardrailTopicConfig](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailTopicConfig.html) object in the `topicsConfig` list pertains to one topic.
 #' 
-#'     -   Give a `name` and `description` so that the guardrail can
-#'         properly identify the topic.
+#'     -   Give a `name` and `description` so that the guardrail can properly identify the topic.
 #' 
 #'     -   Specify `DENY` in the `type` field.
 #' 
-#'     -   (Optional) Provide up to five prompts that you would categorize
-#'         as belonging to the topic in the `examples` list.
+#'     -   (Optional) Provide up to five prompts that you would categorize as belonging to the topic in the `examples` list.
 #' 
-#' -   Specify filter strengths for the harmful categories defined in
-#'     Amazon Bedrock in the `contentPolicyConfig` object. Each
-#'     [GuardrailContentFilterConfig](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html)
-#'     object in the `filtersConfig` list pertains to a harmful category.
-#'     For more information, see [Content
-#'     filters](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-content-filters.html).
-#'     For more information about the fields in a content filter, see
-#'     [GuardrailContentFilterConfig](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html).
+#' -   Specify filter strengths for the harmful categories defined in Amazon Bedrock in the `contentPolicyConfig` object. Each [GuardrailContentFilterConfig](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html) object in the `filtersConfig` list pertains to a harmful category. For more information, see [Content filters](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-content-filters.html). For more information about the fields in a content filter, see [GuardrailContentFilterConfig](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html).
 #' 
 #'     -   Specify the category in the `type` field.
 #' 
-#'     -   Specify the strength of the filter for prompts in the
-#'         `inputStrength` field and for model responses in the `strength`
-#'         field of the
-#'         [GuardrailContentFilterConfig](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html).
+#'     -   Specify the strength of the filter for prompts in the `inputStrength` field and for model responses in the `strength` field of the [GuardrailContentFilterConfig](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GuardrailContentFilterConfig.html).
 #' 
-#' -   (Optional) For security, include the ARN of a KMS key in the
-#'     `kmsKeyId` field.
+#' -   (Optional) For security, include the ARN of a KMS key in the `kmsKeyId` field.
 #'
 #' @usage
 #' bedrock_update_guardrail(guardrailIdentifier, name, description,
@@ -9804,16 +9490,11 @@ bedrock_update_custom_model_deployment <- function(modelArn, customModelDeployme
 #' @param contentPolicyConfig The content policy to configure for the guardrail.
 #' @param wordPolicyConfig The word policy to configure for the guardrail.
 #' @param sensitiveInformationPolicyConfig The sensitive information policy to configure for the guardrail.
-#' @param contextualGroundingPolicyConfig The contextual grounding policy configuration used to update a
-#' guardrail.
-#' @param automatedReasoningPolicyConfig Updated configuration for Automated Reasoning policies associated with
-#' the guardrail.
-#' @param crossRegionConfig The system-defined guardrail profile that you're using with your
-#' guardrail. Guardrail profiles define the destination Amazon Web Services
-#' Regions where guardrail inference requests can be automatically routed.
+#' @param contextualGroundingPolicyConfig The contextual grounding policy configuration used to update a guardrail.
+#' @param automatedReasoningPolicyConfig Updated configuration for Automated Reasoning policies associated with the guardrail.
+#' @param crossRegionConfig The system-defined guardrail profile that you're using with your guardrail. Guardrail profiles define the destination Amazon Web Services Regions where guardrail inference requests can be automatically routed.
 #' 
-#' For more information, see the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html).
+#' For more information, see the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-cross-region.html).
 #' @param blockedInputMessaging &#91;required&#93; The message to return when the guardrail blocks a prompt.
 #' @param blockedOutputsMessaging &#91;required&#93; The message to return when the guardrail blocks a model response.
 #' @param kmsKeyId The ARN of the KMS key with which to encrypt the guardrail.
@@ -9975,21 +9656,15 @@ bedrock_update_guardrail <- function(guardrailIdentifier, name, description = NU
 #' Amazon Bedrock Marketplace
 #'
 #' @description
-#' Updates the configuration of an existing endpoint for a model from
-#' Amazon Bedrock Marketplace.
+#' Updates the configuration of an existing endpoint for a model from Amazon Bedrock Marketplace.
 #'
 #' @usage
 #' bedrock_update_marketplace_model_endpoint(endpointArn, endpointConfig,
 #'   clientRequestToken)
 #'
 #' @param endpointArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint you want to update.
-#' @param endpointConfig &#91;required&#93; The new configuration for the endpoint, including the number and type of
-#' instances to use.
-#' @param clientRequestToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. This token is listed as not required because
-#' Amazon Web Services SDKs automatically generate it for you and set this
-#' parameter. If you're not using the Amazon Web Services SDK or the CLI,
-#' you must provide this token or the action will fail.
+#' @param endpointConfig &#91;required&#93; The new configuration for the endpoint, including the number and type of instances to use.
+#' @param clientRequestToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This token is listed as not required because Amazon Web Services SDKs automatically generate it for you and set this parameter. If you're not using the Amazon Web Services SDK or the CLI, you must provide this token or the action will fail.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10079,30 +9754,21 @@ bedrock_update_marketplace_model_endpoint <- function(endpointArn, endpointConfi
 #' Updates the name or associated model for a Provisioned Throughput
 #'
 #' @description
-#' Updates the name or associated model for a Provisioned Throughput. For
-#' more information, see [Provisioned
-#' Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html)
-#' in the [Amazon Bedrock User
-#' Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
+#' Updates the name or associated model for a Provisioned Throughput. For more information, see [Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html) in the [Amazon Bedrock User Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html).
 #'
 #' @usage
 #' bedrock_update_provisioned_model_throughput(provisionedModelId,
 #'   desiredProvisionedModelName, desiredModelId)
 #'
-#' @param provisionedModelId &#91;required&#93; The Amazon Resource Name (ARN) or name of the Provisioned Throughput to
-#' update.
+#' @param provisionedModelId &#91;required&#93; The Amazon Resource Name (ARN) or name of the Provisioned Throughput to update.
 #' @param desiredProvisionedModelName The new name for this Provisioned Throughput.
-#' @param desiredModelId The Amazon Resource Name (ARN) of the new model to associate with this
-#' Provisioned Throughput. You can't specify this field if this Provisioned
-#' Throughput is associated with a base model.
+#' @param desiredModelId The Amazon Resource Name (ARN) of the new model to associate with this Provisioned Throughput. You can't specify this field if this Provisioned Throughput is associated with a base model.
 #' 
-#' If this Provisioned Throughput is associated with a custom model, you
-#' can specify one of the following options:
+#' If this Provisioned Throughput is associated with a custom model, you can specify one of the following options:
 #' 
 #' -   The base model from which the custom model was customized.
 #' 
-#' -   Another custom model that was customized from the same base model as
-#'     the custom model.
+#' -   Another custom model that was customized from the same base model as the custom model.
 #'
 #' @return
 #' An empty list.

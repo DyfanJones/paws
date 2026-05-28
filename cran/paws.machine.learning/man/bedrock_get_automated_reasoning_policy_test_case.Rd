@@ -7,8 +7,7 @@
 bedrock_get_automated_reasoning_policy_test_case(policyArn, testCaseId)
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy that
-contains the test.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy that contains the test.}
 
 \item{testCaseId}{[required] The unique identifier of the test to retrieve.}
 }

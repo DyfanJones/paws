@@ -11,13 +11,11 @@ bedrockagentcorecontrol_delete_agent_runtime_endpoint(
 )
 }
 \arguments{
-\item{agentRuntimeId}{[required] The unique identifier of the AgentCore Runtime associated with the
-endpoint.}
+\item{agentRuntimeId}{[required] The unique identifier of the AgentCore Runtime associated with the endpoint.}
 
 \item{endpointName}{[required] The name of the AgentCore Runtime endpoint to delete.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Deletes an AAgentCore Runtime endpoint.

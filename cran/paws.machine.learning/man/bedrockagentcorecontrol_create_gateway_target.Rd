@@ -18,29 +18,19 @@ bedrockagentcorecontrol_create_gateway_target(
 \arguments{
 \item{gatewayIdentifier}{[required] The identifier of the gateway to create a target for.}
 
-\item{name}{[required] The name of the gateway target. The name must be unique within the
-gateway.}
+\item{name}{[required] The name of the gateway target. The name must be unique within the gateway.}
 
 \item{description}{The description of the gateway target.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{targetConfiguration}{[required] The configuration settings for the target, including endpoint
-information and schema definitions.}
+\item{targetConfiguration}{[required] The configuration settings for the target, including endpoint information and schema definitions.}
 
-\item{credentialProviderConfigurations}{The credential provider configurations for the target. These
-configurations specify how the gateway authenticates with the target
-endpoint.}
+\item{credentialProviderConfigurations}{The credential provider configurations for the target. These configurations specify how the gateway authenticates with the target endpoint.}
 
-\item{metadataConfiguration}{Optional configuration for HTTP header and query parameter propagation
-to and from the gateway target.}
+\item{metadataConfiguration}{Optional configuration for HTTP header and query parameter propagation to and from the gateway target.}
 
-\item{privateEndpoint}{The private endpoint configuration for the gateway target. Use this to
-connect the gateway to private resources in your VPC.}
+\item{privateEndpoint}{The private endpoint configuration for the gateway target. Use this to connect the gateway to private resources in your VPC.}
 }
 \description{
 Creates a target for a gateway. A target defines an endpoint that the gateway can connect to.

@@ -11,11 +11,9 @@ opensearchserviceserverless_batch_get_collection_group(
 )
 }
 \arguments{
-\item{ids}{A list of collection group IDs. You can't provide names and IDs in the
-same request.}
+\item{ids}{A list of collection group IDs. You can't provide names and IDs in the same request.}
 
-\item{names}{A list of collection group names. You can't provide names and IDs in the
-same request.}
+\item{names}{A list of collection group names. You can't provide names and IDs in the same request.}
 }
 \description{
 Returns attributes for one or more collection groups, including capacity limits and the number of collections in each group. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html}{Creating and managing Amazon OpenSearch Serverless collections}.

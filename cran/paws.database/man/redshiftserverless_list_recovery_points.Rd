@@ -16,20 +16,13 @@ redshiftserverless_list_recovery_points(
 \arguments{
 \item{endTime}{The time when creation of the recovery point finished.}
 
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to display the next page of results.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to display the next page of results.}
 
-\item{namespaceArn}{The Amazon Resource Name (ARN) of the namespace from which to list
-recovery points.}
+\item{namespaceArn}{The Amazon Resource Name (ARN) of the namespace from which to list recovery points.}
 
 \item{namespaceName}{The name of the namespace to list recovery points for.}
 
-\item{nextToken}{If your initial
-\code{\link[=redshiftserverless_list_recovery_points]{list_recovery_points}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in following
-\code{\link[=redshiftserverless_list_recovery_points]{list_recovery_points}}
-operations, which returns results in the next page.}
+\item{nextToken}{If your initial \code{\link[=redshiftserverless_list_recovery_points]{list_recovery_points}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in following \code{\link[=redshiftserverless_list_recovery_points]{list_recovery_points}} operations, which returns results in the next page.}
 
 \item{startTime}{The time when the recovery point's creation was initiated.}
 }

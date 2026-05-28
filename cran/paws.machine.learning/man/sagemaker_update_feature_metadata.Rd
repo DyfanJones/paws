@@ -13,18 +13,15 @@ sagemaker_update_feature_metadata(
 )
 }
 \arguments{
-\item{FeatureGroupName}{[required] The name or Amazon Resource Name (ARN) of the feature group containing
-the feature that you're updating.}
+\item{FeatureGroupName}{[required] The name or Amazon Resource Name (ARN) of the feature group containing the feature that you're updating.}
 
 \item{FeatureName}{[required] The name of the feature that you're updating.}
 
 \item{Description}{A description that you can write to better describe the feature.}
 
-\item{ParameterAdditions}{A list of key-value pairs that you can add to better describe the
-feature.}
+\item{ParameterAdditions}{A list of key-value pairs that you can add to better describe the feature.}
 
-\item{ParameterRemovals}{A list of parameter keys that you can specify to remove parameters that
-describe your feature.}
+\item{ParameterRemovals}{A list of parameter keys that you can specify to remove parameters that describe your feature.}
 }
 \description{
 Updates the description and parameters of the feature group.

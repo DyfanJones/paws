@@ -11,8 +11,7 @@ cloudfront_associate_distribution_web_acl(Id, WebACLArn, IfMatch = NULL)
 
 \item{WebACLArn}{[required] The Amazon Resource Name (ARN) of the WAF web ACL to associate.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-distribution that you're associating with the WAF web ACL.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the distribution that you're associating with the WAF web ACL.}
 }
 \description{
 Associates the WAF web ACL with a distribution.

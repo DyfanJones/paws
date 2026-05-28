@@ -13,11 +13,9 @@ datazone_delete_domain(
 \arguments{
 \item{identifier}{[required] The identifier of the Amazon Web Services domain that is to be deleted.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 
-\item{skipDeletionCheck}{Specifies the optional flag to delete all child entities within the
-domain.}
+\item{skipDeletionCheck}{Specifies the optional flag to delete all child entities within the domain.}
 }
 \description{
 Deletes a Amazon DataZone domain.

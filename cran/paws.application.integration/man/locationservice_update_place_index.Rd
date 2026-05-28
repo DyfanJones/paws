@@ -14,8 +14,7 @@ locationservice_update_place_index(
 \arguments{
 \item{IndexName}{[required] The name of the place index resource to update.}
 
-\item{PricingPlan}{No longer used. If included, the only allowed value is
-\code{RequestBasedUsage}.}
+\item{PricingPlan}{No longer used. If included, the only allowed value is \code{RequestBasedUsage}.}
 
 \item{Description}{Updates the description for the place index resource.}
 

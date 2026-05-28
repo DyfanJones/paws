@@ -11,15 +11,11 @@ directoryservice_describe_hybrid_ad_update(
 )
 }
 \arguments{
-\item{DirectoryId}{[required] The identifier of the hybrid directory for which to retrieve update
-information.}
+\item{DirectoryId}{[required] The identifier of the hybrid directory for which to retrieve update information.}
 
-\item{UpdateType}{The type of update activities to retrieve. Valid values include
-\code{SelfManagedInstances} and \code{HybridAdministratorAccount}.}
+\item{UpdateType}{The type of update activities to retrieve. Valid values include \code{SelfManagedInstances} and \code{HybridAdministratorAccount}.}
 
-\item{NextToken}{The pagination token from a previous request to
-\code{\link[=directoryservice_describe_hybrid_ad_update]{describe_hybrid_ad_update}}.
-Pass null if this is the first request.}
+\item{NextToken}{The pagination token from a previous request to \code{\link[=directoryservice_describe_hybrid_ad_update]{describe_hybrid_ad_update}}. Pass null if this is the first request.}
 }
 \description{
 Retrieves information about update activities for a hybrid directory. This operation provides details about configuration changes, administrator account updates, and self-managed instance settings (IDs and DNS IPs).

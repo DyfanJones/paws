@@ -17,26 +17,17 @@ sagemaker_create_flow_definition(
 \arguments{
 \item{FlowDefinitionName}{[required] The name of your flow definition.}
 
-\item{HumanLoopRequestSource}{Container for configuring the source of human task requests. Use to
-specify if Amazon Rekognition or Amazon Textract is used as an
-integration source.}
+\item{HumanLoopRequestSource}{Container for configuring the source of human task requests. Use to specify if Amazon Rekognition or Amazon Textract is used as an integration source.}
 
-\item{HumanLoopActivationConfig}{An object containing information about the events that trigger a human
-workflow.}
+\item{HumanLoopActivationConfig}{An object containing information about the events that trigger a human workflow.}
 
-\item{HumanLoopConfig}{An object containing information about the tasks the human reviewers
-will perform.}
+\item{HumanLoopConfig}{An object containing information about the tasks the human reviewers will perform.}
 
-\item{OutputConfig}{[required] An object containing information about where the human review results
-will be uploaded.}
+\item{OutputConfig}{[required] An object containing information about where the human review results will be uploaded.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the role needed to call other services
-on your behalf. For example,
-\verb{arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298}.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of the role needed to call other services on your behalf. For example, \verb{arn:aws:iam::1234567890:role/service-role/AmazonSageMaker-ExecutionRole-20180111T151298}.}
 
-\item{Tags}{An array of key-value pairs that contain metadata to help you categorize
-and organize a flow definition. Each tag consists of a key and a value,
-both of which you define.}
+\item{Tags}{An array of key-value pairs that contain metadata to help you categorize and organize a flow definition. Each tag consists of a key and a value, both of which you define.}
 }
 \description{
 Creates a flow definition.

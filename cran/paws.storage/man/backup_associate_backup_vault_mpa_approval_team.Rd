@@ -13,8 +13,7 @@ backup_associate_backup_vault_mpa_approval_team(
 \arguments{
 \item{BackupVaultName}{[required] The name of the backup vault to associate with the MPA approval team.}
 
-\item{MpaApprovalTeamArn}{[required] The Amazon Resource Name (ARN) of the MPA approval team to associate
-with the backup vault.}
+\item{MpaApprovalTeamArn}{[required] The Amazon Resource Name (ARN) of the MPA approval team to associate with the backup vault.}
 
 \item{RequesterComment}{A comment provided by the requester explaining the association request.}
 }

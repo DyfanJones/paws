@@ -7,8 +7,7 @@
 route53recoveryreadiness_update_recovery_group(Cells, RecoveryGroupName)
 }
 \arguments{
-\item{Cells}{[required] A list of cell Amazon Resource Names (ARNs). This list completely
-replaces the previous list.}
+\item{Cells}{[required] A list of cell Amazon Resource Names (ARNs). This list completely replaces the previous list.}
 
 \item{RecoveryGroupName}{[required] The name of a recovery group.}
 }

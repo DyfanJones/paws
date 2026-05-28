@@ -7,8 +7,7 @@
 networkfirewall_describe_proxy(ProxyName = NULL, ProxyArn = NULL)
 }
 \arguments{
-\item{ProxyName}{The descriptive name of the proxy. You can't change the name of a proxy
-after you create it.
+\item{ProxyName}{The descriptive name of the proxy. You can't change the name of a proxy after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 

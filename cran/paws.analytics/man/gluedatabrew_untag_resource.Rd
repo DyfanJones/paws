@@ -7,8 +7,7 @@
 gluedatabrew_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] A DataBrew resource from which you want to remove a tag or tags. The
-value for this parameter is an Amazon Resource Name (ARN).}
+\item{ResourceArn}{[required] A DataBrew resource from which you want to remove a tag or tags. The value for this parameter is an Amazon Resource Name (ARN).}
 
 \item{TagKeys}{[required] The tag keys (names) of one or more tags to be removed.}
 }

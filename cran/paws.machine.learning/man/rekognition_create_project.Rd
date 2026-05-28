@@ -14,12 +14,9 @@ rekognition_create_project(
 \arguments{
 \item{ProjectName}{[required] The name of the project to create.}
 
-\item{Feature}{Specifies feature that is being customized. If no value is provided
-CUSTOM_LABELS is used as a default.}
+\item{Feature}{Specifies feature that is being customized. If no value is provided CUSTOM_LABELS is used as a default.}
 
-\item{AutoUpdate}{Specifies whether automatic retraining should be attempted for the
-versions of the project. Automatic retraining is done as a best effort.
-Required argument for Content Moderation. Applicable only to adapters.}
+\item{AutoUpdate}{Specifies whether automatic retraining should be attempted for the versions of the project. Automatic retraining is done as a best effort. Required argument for Content Moderation. Applicable only to adapters.}
 
 \item{Tags}{A set of tags (key-value pairs) that you want to attach to the project.}
 }

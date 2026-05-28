@@ -14,9 +14,7 @@ route53resolver_list_outpost_resolvers(
 \arguments{
 \item{OutpostArn}{The Amazon Resource Name (ARN) of the Outpost.}
 
-\item{MaxResults}{The maximum number of Resolvers on the Outpost that you want to return
-in the response to a \code{ListOutpostResolver} request. If you don't specify
-a value for \code{MaxResults}, the request returns up to 100 Resolvers.}
+\item{MaxResults}{The maximum number of Resolvers on the Outpost that you want to return in the response to a \code{ListOutpostResolver} request. If you don't specify a value for \code{MaxResults}, the request returns up to 100 Resolvers.}
 
 \item{NextToken}{For the first \code{ListOutpostResolver} request, omit this value.}
 }

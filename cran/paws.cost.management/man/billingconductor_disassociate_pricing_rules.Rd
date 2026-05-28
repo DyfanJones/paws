@@ -7,11 +7,9 @@
 billingconductor_disassociate_pricing_rules(Arn, PricingRuleArns)
 }
 \arguments{
-\item{Arn}{[required] The pricing plan Amazon Resource Name (ARN) to disassociate pricing
-rules from.}
+\item{Arn}{[required] The pricing plan Amazon Resource Name (ARN) to disassociate pricing rules from.}
 
-\item{PricingRuleArns}{[required] A list containing the Amazon Resource Name (ARN) of the pricing rules
-that will be disassociated.}
+\item{PricingRuleArns}{[required] A list containing the Amazon Resource Name (ARN) of the pricing rules that will be disassociated.}
 }
 \description{
 Disassociates a list of pricing rules from a pricing plan.

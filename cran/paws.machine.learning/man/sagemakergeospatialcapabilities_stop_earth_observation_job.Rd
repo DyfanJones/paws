@@ -7,8 +7,7 @@
 sagemakergeospatialcapabilities_stop_earth_observation_job(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the Earth Observation job being
-stopped.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the Earth Observation job being stopped.}
 }
 \description{
 Use this operation to stop an existing earth observation job.

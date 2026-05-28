@@ -13,13 +13,10 @@ glue_get_schema_versions_diff(
 )
 }
 \arguments{
-\item{SchemaId}{[required] This is a wrapper structure to contain schema identity fields. The
-structure contains:
+\item{SchemaId}{[required] This is a wrapper structure to contain schema identity fields. The structure contains:
 \itemize{
-\item SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema.
-One of \code{SchemaArn} or \code{SchemaName} has to be provided.
-\item SchemaId$SchemaName: The name of the schema. One of \code{SchemaArn} or
-\code{SchemaName} has to be provided.
+\item SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of \code{SchemaArn} or \code{SchemaName} has to be provided.
+\item SchemaId$SchemaName: The name of the schema. One of \code{SchemaArn} or \code{SchemaName} has to be provided.
 }}
 
 \item{FirstSchemaVersionNumber}{[required] The first of the two schema versions to be compared.}

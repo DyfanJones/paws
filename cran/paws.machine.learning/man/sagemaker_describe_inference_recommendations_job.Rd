@@ -7,8 +7,7 @@
 sagemaker_describe_inference_recommendations_job(JobName)
 }
 \arguments{
-\item{JobName}{[required] The name of the job. The name must be unique within an Amazon Web
-Services Region in the Amazon Web Services account.}
+\item{JobName}{[required] The name of the job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.}
 }
 \description{
 Provides the results of the Inference Recommender job. One or more recommendation jobs are returned.

@@ -44,8 +44,7 @@ elb_add_tags <- function(LoadBalancerNames, Tags) {
 #' See [https://www.paws-r-sdk.com/docs/elb_apply_security_groups_to_load_balancer/](https://www.paws-r-sdk.com/docs/elb_apply_security_groups_to_load_balancer/) for full documentation.
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
-#' @param SecurityGroups &#91;required&#93; The IDs of the security groups to associate with the load balancer. Note
-#' that you cannot specify the name of the security group.
+#' @param SecurityGroups &#91;required&#93; The IDs of the security groups to associate with the load balancer. Note that you cannot specify the name of the security group.
 #'
 #' @keywords internal
 #'
@@ -78,8 +77,7 @@ elb_apply_security_groups_to_load_balancer <- function(LoadBalancerName, Securit
 #' See [https://www.paws-r-sdk.com/docs/elb_attach_load_balancer_to_subnets/](https://www.paws-r-sdk.com/docs/elb_attach_load_balancer_to_subnets/) for full documentation.
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
-#' @param Subnets &#91;required&#93; The IDs of the subnets to add. You can add only one subnet per
-#' Availability Zone.
+#' @param Subnets &#91;required&#93; The IDs of the subnets to add. You can add only one subnet per Availability Zone.
 #'
 #' @keywords internal
 #'
@@ -145,9 +143,7 @@ elb_configure_health_check <- function(LoadBalancerName, HealthCheck) {
 #' See [https://www.paws-r-sdk.com/docs/elb_create_app_cookie_stickiness_policy/](https://www.paws-r-sdk.com/docs/elb_create_app_cookie_stickiness_policy/) for full documentation.
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
-#' @param PolicyName &#91;required&#93; The name of the policy being created. Policy names must consist of
-#' alphanumeric characters and dashes (-). This name must be unique within
-#' the set of policies for this load balancer.
+#' @param PolicyName &#91;required&#93; The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.
 #' @param CookieName &#91;required&#93; The name of the application cookie used for stickiness.
 #'
 #' @keywords internal
@@ -182,13 +178,8 @@ elb_create_app_cookie_stickiness_policy <- function(LoadBalancerName, PolicyName
 #' See [https://www.paws-r-sdk.com/docs/elb_create_lb_cookie_stickiness_policy/](https://www.paws-r-sdk.com/docs/elb_create_lb_cookie_stickiness_policy/) for full documentation.
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
-#' @param PolicyName &#91;required&#93; The name of the policy being created. Policy names must consist of
-#' alphanumeric characters and dashes (-). This name must be unique within
-#' the set of policies for this load balancer.
-#' @param CookieExpirationPeriod The time period, in seconds, after which the cookie should be considered
-#' stale. If you do not specify this parameter, the default value is 0,
-#' which indicates that the sticky session should last for the duration of
-#' the browser session.
+#' @param PolicyName &#91;required&#93; The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.
+#' @param CookieExpirationPeriod The time period, in seconds, after which the cookie should be considered stale. If you do not specify this parameter, the default value is 0, which indicates that the sticky session should last for the duration of the browser session.
 #'
 #' @keywords internal
 #'
@@ -221,44 +212,25 @@ elb_create_lb_cookie_stickiness_policy <- function(LoadBalancerName, PolicyName,
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
 #' 
-#' This name must be unique within your set of load balancers for the
-#' region, must have a maximum of 32 characters, must contain only
-#' alphanumeric characters or hyphens, and cannot begin or end with a
-#' hyphen.
+#' This name must be unique within your set of load balancers for the region, must have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and cannot begin or end with a hyphen.
 #' @param Listeners &#91;required&#93; The listeners.
 #' 
-#' For more information, see [Listeners for Your Classic Load
-#' Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
-#' in the *Classic Load Balancers Guide*.
-#' @param AvailabilityZones One or more Availability Zones from the same region as the load
-#' balancer.
+#' For more information, see [Listeners for Your Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html) in the *Classic Load Balancers Guide*.
+#' @param AvailabilityZones One or more Availability Zones from the same region as the load balancer.
 #' 
 #' You must specify at least one Availability Zone.
 #' 
-#' You can add more Availability Zones after you create the load balancer
-#' using
-#' [`enable_availability_zones_for_load_balancer`][elb_enable_availability_zones_for_load_balancer].
-#' @param Subnets The IDs of the subnets in your VPC to attach to the load balancer.
-#' Specify one subnet per Availability Zone specified in
-#' `AvailabilityZones`.
+#' You can add more Availability Zones after you create the load balancer using [`enable_availability_zones_for_load_balancer`][elb_enable_availability_zones_for_load_balancer].
+#' @param Subnets The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet per Availability Zone specified in `AvailabilityZones`.
 #' @param SecurityGroups The IDs of the security groups to assign to the load balancer.
 #' @param Scheme The type of a load balancer. Valid only for load balancers in a VPC.
 #' 
-#' By default, Elastic Load Balancing creates an Internet-facing load
-#' balancer with a DNS name that resolves to public IP addresses. For more
-#' information about Internet-facing and Internal load balancers, see [Load
-#' Balancer
-#' Scheme](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme)
-#' in the *Elastic Load Balancing User Guide*.
+#' By default, Elastic Load Balancing creates an Internet-facing load balancer with a DNS name that resolves to public IP addresses. For more information about Internet-facing and Internal load balancers, see [Load Balancer Scheme](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme) in the *Elastic Load Balancing User Guide*.
 #' 
-#' Specify `internal` to create a load balancer with a DNS name that
-#' resolves to private IP addresses.
+#' Specify `internal` to create a load balancer with a DNS name that resolves to private IP addresses.
 #' @param Tags A list of tags to assign to the load balancer.
 #' 
-#' For more information about tagging your load balancer, see [Tag Your
-#' Classic Load
-#' Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html)
-#' in the *Classic Load Balancers Guide*.
+#' For more information about tagging your load balancer, see [Tag Your Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/add-remove-tags.html) in the *Classic Load Balancers Guide*.
 #'
 #' @keywords internal
 #'
@@ -323,10 +295,8 @@ elb_create_load_balancer_listeners <- function(LoadBalancerName, Listeners) {
 #' See [https://www.paws-r-sdk.com/docs/elb_create_load_balancer_policy/](https://www.paws-r-sdk.com/docs/elb_create_load_balancer_policy/) for full documentation.
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
-#' @param PolicyName &#91;required&#93; The name of the load balancer policy to be created. This name must be
-#' unique within the set of policies for this load balancer.
-#' @param PolicyTypeName &#91;required&#93; The name of the base policy type. To get the list of policy types, use
-#' [`describe_load_balancer_policy_types`][elb_describe_load_balancer_policy_types].
+#' @param PolicyName &#91;required&#93; The name of the load balancer policy to be created. This name must be unique within the set of policies for this load balancer.
+#' @param PolicyTypeName &#91;required&#93; The name of the base policy type. To get the list of policy types, use [`describe_load_balancer_policy_types`][elb_describe_load_balancer_policy_types].
 #' @param PolicyAttributes The policy attributes.
 #'
 #' @keywords internal
@@ -486,8 +456,7 @@ elb_deregister_instances_from_load_balancer <- function(LoadBalancerName, Instan
 #'
 #' See [https://www.paws-r-sdk.com/docs/elb_describe_account_limits/](https://www.paws-r-sdk.com/docs/elb_describe_account_limits/) for full documentation.
 #'
-#' @param Marker The marker for the next set of results. (You received this marker from a
-#' previous call.)
+#' @param Marker The marker for the next set of results. (You received this marker from a previous call.)
 #' @param PageSize The maximum number of results to return with this call.
 #'
 #' @keywords internal
@@ -616,8 +585,7 @@ elb_describe_load_balancer_policies <- function(LoadBalancerName = NULL, PolicyN
 #'
 #' See [https://www.paws-r-sdk.com/docs/elb_describe_load_balancer_policy_types/](https://www.paws-r-sdk.com/docs/elb_describe_load_balancer_policy_types/) for full documentation.
 #'
-#' @param PolicyTypeNames The names of the policy types. If no names are specified, describes all
-#' policy types defined by Elastic Load Balancing.
+#' @param PolicyTypeNames The names of the policy types. If no names are specified, describes all policy types defined by Elastic Load Balancing.
 #'
 #' @keywords internal
 #'
@@ -649,10 +617,8 @@ elb_describe_load_balancer_policy_types <- function(PolicyTypeNames = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/elb_describe_load_balancers/](https://www.paws-r-sdk.com/docs/elb_describe_load_balancers/) for full documentation.
 #'
 #' @param LoadBalancerNames The names of the load balancers.
-#' @param Marker The marker for the next set of results. (You received this marker from a
-#' previous call.)
-#' @param PageSize The maximum number of results to return with this call (a number from 1
-#' to 400). The default is 400.
+#' @param Marker The marker for the next set of results. (You received this marker from a previous call.)
+#' @param PageSize The maximum number of results to return with this call (a number from 1 to 400). The default is 400.
 #'
 #' @keywords internal
 #'
@@ -782,8 +748,7 @@ elb_disable_availability_zones_for_load_balancer <- function(LoadBalancerName, A
 #' See [https://www.paws-r-sdk.com/docs/elb_enable_availability_zones_for_load_balancer/](https://www.paws-r-sdk.com/docs/elb_enable_availability_zones_for_load_balancer/) for full documentation.
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
-#' @param AvailabilityZones &#91;required&#93; The Availability Zones. These must be in the same region as the load
-#' balancer.
+#' @param AvailabilityZones &#91;required&#93; The Availability Zones. These must be in the same region as the load balancer.
 #'
 #' @keywords internal
 #'
@@ -878,8 +843,7 @@ elb_register_instances_with_load_balancer <- function(LoadBalancerName, Instance
 #'
 #' See [https://www.paws-r-sdk.com/docs/elb_remove_tags/](https://www.paws-r-sdk.com/docs/elb_remove_tags/) for full documentation.
 #'
-#' @param LoadBalancerNames &#91;required&#93; The name of the load balancer. You can specify a maximum of one load
-#' balancer name.
+#' @param LoadBalancerNames &#91;required&#93; The name of the load balancer. You can specify a maximum of one load balancer name.
 #' @param Tags &#91;required&#93; The list of tag keys to remove.
 #'
 #' @keywords internal
@@ -948,8 +912,7 @@ elb_set_load_balancer_listener_ssl_certificate <- function(LoadBalancerName, Loa
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
 #' @param InstancePort &#91;required&#93; The port number associated with the EC2 instance.
-#' @param PolicyNames &#91;required&#93; The names of the policies. If the list is empty, then all current
-#' polices are removed from the EC2 instance.
+#' @param PolicyNames &#91;required&#93; The names of the policies. If the list is empty, then all current polices are removed from the EC2 instance.
 #'
 #' @keywords internal
 #'
@@ -983,9 +946,7 @@ elb_set_load_balancer_policies_for_backend_server <- function(LoadBalancerName, 
 #'
 #' @param LoadBalancerName &#91;required&#93; The name of the load balancer.
 #' @param LoadBalancerPort &#91;required&#93; The external port of the load balancer.
-#' @param PolicyNames &#91;required&#93; The names of the policies. This list must include all policies to be
-#' enabled. If you omit a policy that is currently enabled, it is disabled.
-#' If the list is empty, all current policies are disabled.
+#' @param PolicyNames &#91;required&#93; The names of the policies. This list must include all policies to be enabled. If you omit a policy that is currently enabled, it is disabled. If the list is empty, all current policies are disabled.
 #'
 #' @keywords internal
 #'

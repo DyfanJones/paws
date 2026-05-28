@@ -17,34 +17,21 @@ sagemaker_create_mlflow_app(
 )
 }
 \arguments{
-\item{Name}{[required] A string identifying the MLflow app name. This string is not part of the
-tracking server ARN.}
+\item{Name}{[required] A string identifying the MLflow app name. This string is not part of the tracking server ARN.}
 
-\item{ArtifactStoreUri}{[required] The S3 URI for a general purpose bucket to use as the MLflow App
-artifact store.}
+\item{ArtifactStoreUri}{[required] The S3 URI for a general purpose bucket to use as the MLflow App artifact store.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) for an IAM role in your account that the
-MLflow App uses to access the artifact store in Amazon S3. The role
-should have the \code{AmazonS3FullAccess} permission.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) for an IAM role in your account that the MLflow App uses to access the artifact store in Amazon S3. The role should have the \code{AmazonS3FullAccess} permission.}
 
-\item{ModelRegistrationMode}{Whether to enable or disable automatic registration of new MLflow models
-to the SageMaker Model Registry. To enable automatic model registration,
-set this value to \code{AutoModelRegistrationEnabled}. To disable automatic
-model registration, set this value to \code{AutoModelRegistrationDisabled}.
-If not specified, \code{AutomaticModelRegistration} defaults to
-\code{AutoModelRegistrationDisabled}.}
+\item{ModelRegistrationMode}{Whether to enable or disable automatic registration of new MLflow models to the SageMaker Model Registry. To enable automatic model registration, set this value to \code{AutoModelRegistrationEnabled}. To disable automatic model registration, set this value to \code{AutoModelRegistrationDisabled}. If not specified, \code{AutomaticModelRegistration} defaults to \code{AutoModelRegistrationDisabled}.}
 
-\item{WeeklyMaintenanceWindowStart}{The day and time of the week in Coordinated Universal Time (UTC) 24-hour
-standard time that weekly maintenance updates are scheduled. For
-example: TUE:03:30.}
+\item{WeeklyMaintenanceWindowStart}{The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time that weekly maintenance updates are scheduled. For example: TUE:03:30.}
 
 \item{AccountDefaultStatus}{Indicates whether this MLflow app is the default for the entire account.}
 
-\item{DefaultDomainIdList}{List of SageMaker domain IDs for which this MLflow App is used as the
-default.}
+\item{DefaultDomainIdList}{List of SageMaker domain IDs for which this MLflow App is used as the default.}
 
-\item{Tags}{Tags consisting of key-value pairs used to manage metadata for the
-MLflow App.}
+\item{Tags}{Tags consisting of key-value pairs used to manage metadata for the MLflow App.}
 }
 \description{
 Creates an MLflow Tracking Server using a general purpose Amazon S3 bucket as the artifact store.

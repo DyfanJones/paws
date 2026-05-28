@@ -53,69 +53,44 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Organizations is a web service that enables you to consolidate your
-multiple Amazon Web Services accounts into an \emph{organization} and
-centrally manage your accounts and their resources.
+Organizations is a web service that enables you to consolidate your multiple Amazon Web Services accounts into an \emph{organization} and centrally manage your accounts and their resources.
 
-This guide provides descriptions of the Organizations operations. For
-more information about using this service, see the \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html}{Organizations User Guide}.
+This guide provides descriptions of the Organizations operations. For more information about using this service, see the \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html}{Organizations User Guide}.
 
 \strong{Support and feedback for Organizations}
 
-We welcome your feedback. You can post your feedback and questions in
-the Organizations support forum. For more information about the Amazon
-Web Services Support forums, see Forums Help.
+We welcome your feedback. You can post your feedback and questions in the Organizations support forum. For more information about the Amazon Web Services Support forums, see Forums Help.
 
 \strong{Endpoint to call When using the CLI or the Amazon Web Services SDK}
 
-For the current release of Organizations, specify the \code{us-east-1} region
-for all Amazon Web Services API and CLI calls made from the commercial
-Amazon Web Services Regions outside of China. If calling from one of the
-Amazon Web Services Regions in China, then specify \code{cn-northwest-1}. You
-can do this in the CLI by using these parameters and commands:
+For the current release of Organizations, specify the \code{us-east-1} region for all Amazon Web Services API and CLI calls made from the commercial Amazon Web Services Regions outside of China. If calling from one of the Amazon Web Services Regions in China, then specify \code{cn-northwest-1}. You can do this in the CLI by using these parameters and commands:
 \itemize{
-\item Use the following parameter with each command to specify both the
-endpoint and its region:
+\item Use the following parameter with each command to specify both the endpoint and its region:
 
-\verb{--endpoint-url https://organizations.us-east-1.amazonaws.com}
-\emph{(from commercial Amazon Web Services Regions outside of China)}
+\verb{--endpoint-url https://organizations.us-east-1.amazonaws.com} \emph{(from commercial Amazon Web Services Regions outside of China)}
 
 or
 
-\verb{--endpoint-url https://organizations.cn-northwest-1.amazonaws.com.cn}
-\emph{(from Amazon Web Services Regions in China)}
-\item Use the default endpoint, but configure your default region with
-this command:
+\verb{--endpoint-url https://organizations.cn-northwest-1.amazonaws.com.cn} \emph{(from Amazon Web Services Regions in China)}
+\item Use the default endpoint, but configure your default region with this command:
 
-\verb{aws configure set default.region us-east-1} \emph{(from commercial
-Amazon Web Services Regions outside of China)}
+\verb{aws configure set default.region us-east-1} \emph{(from commercial Amazon Web Services Regions outside of China)}
 
 or
 
-\verb{aws configure set default.region cn-northwest-1} \emph{(from Amazon Web
-Services Regions in China)}
-\item Use the following parameter with each command to specify the
-endpoint:
+\verb{aws configure set default.region cn-northwest-1} \emph{(from Amazon Web Services Regions in China)}
+\item Use the following parameter with each command to specify the endpoint:
 
-\verb{--region us-east-1} \emph{(from commercial Amazon Web Services Regions
-outside of China)}
+\verb{--region us-east-1} \emph{(from commercial Amazon Web Services Regions outside of China)}
 
 or
 
-\verb{--region cn-northwest-1} \emph{(from Amazon Web Services Regions in
-China)}
+\verb{--region cn-northwest-1} \emph{(from Amazon Web Services Regions in China)}
 }
 
 \strong{Recording API Requests}
 
-Organizations supports CloudTrail, a service that records Amazon Web
-Services API calls for your Amazon Web Services account and delivers log
-files to an Amazon S3 bucket. By using information collected by
-CloudTrail, you can determine which requests the Organizations service
-received, who made the request and when, and so on. For more about
-Organizations and its support for CloudTrail, see \href{https://docs.aws.amazon.com/organizations/latest/userguide/#orgs_cloudtrail-integration}{Logging Organizations API calls with CloudTrail}
-in the \emph{Organizations User Guide}. To learn more about CloudTrail,
-including how to turn it on and find your log files, see the \href{https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html}{CloudTrail User Guide}.
+Organizations supports CloudTrail, a service that records Amazon Web Services API calls for your Amazon Web Services account and delivers log files to an Amazon S3 bucket. By using information collected by CloudTrail, you can determine which requests the Organizations service received, who made the request and when, and so on. For more about Organizations and its support for CloudTrail, see \href{https://docs.aws.amazon.com/organizations/latest/userguide/#orgs_cloudtrail-integration}{Logging Organizations API calls with CloudTrail} in the \emph{Organizations User Guide}. To learn more about CloudTrail, including how to turn it on and find your log files, see the \href{https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html}{CloudTrail User Guide}.
 }
 \section{Service syntax}{
 

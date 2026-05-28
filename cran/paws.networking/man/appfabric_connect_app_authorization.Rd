@@ -12,17 +12,13 @@ appfabric_connect_app_authorization(
 )
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle that contains the app authorization to use for the
-request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle that contains the app authorization to use for the request.}
 
-\item{appAuthorizationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app authorization to use for the request.}
+\item{appAuthorizationIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app authorization to use for the request.}
 
 \item{authRequest}{Contains OAuth2 authorization information.
 
-This is required if the app authorization for the request is configured
-with an OAuth2 (\code{oauth2}) authorization type.}
+This is required if the app authorization for the request is configured with an OAuth2 (\code{oauth2}) authorization type.}
 }
 \description{
 Establishes a connection between Amazon Web Services AppFabric and an application, which allows AppFabric to call the APIs of the application.

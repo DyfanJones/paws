@@ -16,21 +16,13 @@ ivschat_create_room(
 \arguments{
 \item{name}{Room name. The value does not need to be unique.}
 
-\item{maximumMessageRatePerSecond}{Maximum number of messages per second that can be sent to the room (by
-all clients). Default: 10.}
+\item{maximumMessageRatePerSecond}{Maximum number of messages per second that can be sent to the room (by all clients). Default: 10.}
 
-\item{maximumMessageLength}{Maximum number of characters in a single message. Messages are expected
-to be UTF-8 encoded and this limit applies specifically to
-rune/code-point count, not number of bytes. Default: 500.}
+\item{maximumMessageLength}{Maximum number of characters in a single message. Messages are expected to be UTF-8 encoded and this limit applies specifically to rune/code-point count, not number of bytes. Default: 500.}
 
 \item{messageReviewHandler}{Configuration information for optional review of messages.}
 
-\item{tags}{Tags to attach to the resource. Array of maps, each of the form
-\code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details,
-including restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS Chat has no constraints beyond what is
-documented there.}
+\item{tags}{Tags to attach to the resource. Array of maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.}
 
 \item{loggingConfigurationIdentifiers}{Array of logging-configuration identifiers attached to the room.}
 }

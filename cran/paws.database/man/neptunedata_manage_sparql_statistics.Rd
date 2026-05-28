@@ -7,9 +7,7 @@
 neptunedata_manage_sparql_statistics(mode = NULL)
 }
 \arguments{
-\item{mode}{The statistics generation mode. One of: \code{DISABLE_AUTOCOMPUTE},
-\code{ENABLE_AUTOCOMPUTE}, or \code{REFRESH}, the last of which manually triggers
-DFE statistics generation.}
+\item{mode}{The statistics generation mode. One of: \code{DISABLE_AUTOCOMPUTE}, \code{ENABLE_AUTOCOMPUTE}, or \code{REFRESH}, the last of which manually triggers DFE statistics generation.}
 }
 \description{
 Manages the generation and use of RDF graph statistics.

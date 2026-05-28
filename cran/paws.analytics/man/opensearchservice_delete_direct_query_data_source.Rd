@@ -8,8 +8,7 @@ OpenSearch Service}
 opensearchservice_delete_direct_query_data_source(DataSourceName)
 }
 \arguments{
-\item{DataSourceName}{[required] A unique, user-defined label to identify the data source within your
-OpenSearch Service environment.}
+\item{DataSourceName}{[required] A unique, user-defined label to identify the data source within your OpenSearch Service environment.}
 }
 \description{
 Deletes a previously configured direct query data source from Amazon OpenSearch Service.

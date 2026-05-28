@@ -53,19 +53,11 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-The Identity Store service used by IAM Identity Center provides a single
-place to retrieve all of your identities (users and groups). For more
-information, see the \href{https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html}{IAM Identity Center User Guide}.
+The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities (users and groups). For more information, see the \href{https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html}{IAM Identity Center User Guide}.
 
-This reference guide describes the identity store operations that you
-can call programmatically and includes detailed information about data
-types and errors.
+This reference guide describes the identity store operations that you can call programmatically and includes detailed information about data types and errors.
 
-IAM Identity Center uses the \code{sso}, \code{sso-directory}, and \code{identitystore}
-API namespaces. The \code{sso-directory} and \code{identitystore} namespaces
-authorize access to data in the Identity Store. Make sure your policies
-with IAM actions from these two namespaces are consistent to avoid
-conflicting authorization to the same data.
+IAM Identity Center uses the \code{sso}, \code{sso-directory}, and \code{identitystore} API namespaces. The \code{sso-directory} and \code{identitystore} namespaces authorize access to data in the Identity Store. Make sure your policies with IAM actions from these two namespaces are consistent to avoid conflicting authorization to the same data.
 }
 \section{Service syntax}{
 

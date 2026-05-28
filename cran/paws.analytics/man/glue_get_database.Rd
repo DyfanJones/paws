@@ -7,11 +7,9 @@
 glue_get_database(CatalogId = NULL, Name)
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog in which the database resides. If none is
-provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog in which the database resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{Name}{[required] The name of the database to retrieve. For Hive compatibility, this
-should be all lowercase.}
+\item{Name}{[required] The name of the database to retrieve. For Hive compatibility, this should be all lowercase.}
 }
 \description{
 Retrieves the definition of a specified database.

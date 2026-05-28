@@ -17,11 +17,9 @@ appstream_copy_image(
 
 \item{DestinationImageName}{[required] The name that the image will have when it is copied to the destination.}
 
-\item{DestinationRegion}{[required] The destination region to which the image will be copied. This parameter
-is required, even if you are copying an image within the same region.}
+\item{DestinationRegion}{[required] The destination region to which the image will be copied. This parameter is required, even if you are copying an image within the same region.}
 
-\item{DestinationImageDescription}{The description that the image will have when it is copied to the
-destination.}
+\item{DestinationImageDescription}{The description that the image will have when it is copied to the destination.}
 }
 \description{
 Copies the image within the same region or to a new region within the same AWS account. Note that any tags you added to the image will not be copied.

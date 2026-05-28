@@ -12,14 +12,11 @@ opensearchservice_describe_instance_type_limits(
 )
 }
 \arguments{
-\item{DomainName}{The name of the domain. Only specify if you need the limits for an
-existing domain.}
+\item{DomainName}{The name of the domain. Only specify if you need the limits for an existing domain.}
 
-\item{InstanceType}{[required] The OpenSearch Service instance type for which you need limit
-information.}
+\item{InstanceType}{[required] The OpenSearch Service instance type for which you need limit information.}
 
-\item{EngineVersion}{[required] Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y
-or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.}
+\item{EngineVersion}{[required] Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.}
 }
 \description{
 Describes the instance count, storage, and master node limits for a given OpenSearch or Elasticsearch version and instance type.

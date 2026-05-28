@@ -16,12 +16,9 @@ quicksight_create_vpc_connection(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account where you want to
-create a new VPC connection.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID of the account where you want to create a new VPC connection.}
 
-\item{VPCConnectionId}{[required] The ID of the VPC connection that you're creating. This ID is a unique
-identifier for each Amazon Web Services Region in an Amazon Web Services
-account.}
+\item{VPCConnectionId}{[required] The ID of the VPC connection that you're creating. This ID is a unique identifier for each Amazon Web Services Region in an Amazon Web Services account.}
 
 \item{Name}{[required] The display name for the VPC connection.}
 
@@ -33,8 +30,7 @@ account.}
 
 \item{RoleArn}{[required] The IAM role to associate with the VPC connection.}
 
-\item{Tags}{A map of the key-value pairs for the resource tag or tags assigned to
-the VPC connection.}
+\item{Tags}{A map of the key-value pairs for the resource tag or tags assigned to the VPC connection.}
 }
 \description{
 Creates a new VPC connection.

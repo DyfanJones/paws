@@ -30,8 +30,7 @@ glue_update_column_statistics_task_settings(
 
 \item{CatalogID}{The ID of the Data Catalog in which the database resides.}
 
-\item{SecurityConfiguration}{Name of the security configuration that is used to encrypt CloudWatch
-logs.}
+\item{SecurityConfiguration}{Name of the security configuration that is used to encrypt CloudWatch logs.}
 }
 \description{
 Updates settings for a column statistics task.

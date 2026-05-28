@@ -11,14 +11,11 @@ redshiftserverless_list_scheduled_actions(
 )
 }
 \arguments{
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. Use \code{nextToken} to display the next page of results.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. Use \code{nextToken} to display the next page of results.}
 
 \item{namespaceName}{The name of namespace associated with the scheduled action to retrieve.}
 
-\item{nextToken}{If \code{nextToken} is returned, there are more results available. The value
-of \code{nextToken} is a unique pagination token for each page. Make the call
-again using the returned token to retrieve the next page.}
+\item{nextToken}{If \code{nextToken} is returned, there are more results available. The value of \code{nextToken} is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page.}
 }
 \description{
 Returns a list of scheduled actions. You can use the flags to filter the list of returned scheduled actions.

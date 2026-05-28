@@ -9,9 +9,7 @@ sagemaker_delete_pipeline(PipelineName, ClientRequestToken)
 \arguments{
 \item{PipelineName}{[required] The name of the pipeline to delete.}
 
-\item{ClientRequestToken}{[required] A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the operation. An idempotent operation completes no more
-than one time.}
+\item{ClientRequestToken}{[required] A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.}
 }
 \description{
 Deletes a pipeline if there are no running instances of the pipeline. To delete a pipeline, you must stop all running instances of the pipeline using the \code{\link[=sagemaker_stop_pipeline_execution]{stop_pipeline_execution}} API. When you delete a pipeline, all instances of the pipeline are deleted.

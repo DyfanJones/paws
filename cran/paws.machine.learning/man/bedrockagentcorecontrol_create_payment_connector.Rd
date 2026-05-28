@@ -14,25 +14,17 @@ bedrockagentcorecontrol_create_payment_connector(
 )
 }
 \arguments{
-\item{paymentManagerId}{[required] The unique identifier of the payment manager to create the connector
-for.}
+\item{paymentManagerId}{[required] The unique identifier of the payment manager to create the connector for.}
 
 \item{name}{[required] The name of the payment connector.}
 
 \item{description}{A description of the payment connector.}
 
-\item{type}{[required] The type of payment connector, which determines the payment provider
-integration.}
+\item{type}{[required] The type of payment connector, which determines the payment provider integration.}
 
-\item{credentialProviderConfigurations}{[required] The credential provider configurations for the payment connector. These
-configurations specify how the connector authenticates with the payment
-provider.}
+\item{credentialProviderConfigurations}{[required] The credential provider configurations for the payment connector. These configurations specify how the connector authenticates with the payment provider.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 }
 \description{
 Creates a new payment connector for a payment manager. A payment connector integrates with a supported payment provider to enable payment processing capabilities.

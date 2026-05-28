@@ -12,20 +12,11 @@ textract_get_document_text_detection(
 )
 }
 \arguments{
-\item{JobId}{[required] A unique identifier for the text detection job. The \code{JobId} is returned
-from
-\code{\link[=textract_start_document_text_detection]{start_document_text_detection}}.
-A \code{JobId} value is only valid for 7 days.}
+\item{JobId}{[required] A unique identifier for the text detection job. The \code{JobId} is returned from \code{\link[=textract_start_document_text_detection]{start_document_text_detection}}. A \code{JobId} value is only valid for 7 days.}
 
-\item{MaxResults}{The maximum number of results to return per paginated call. The largest
-value you can specify is 1,000. If you specify a value greater than
-1,000, a maximum of 1,000 results is returned. The default value is
-1,000.}
+\item{MaxResults}{The maximum number of results to return per paginated call. The largest value you can specify is 1,000. If you specify a value greater than 1,000, a maximum of 1,000 results is returned. The default value is 1,000.}
 
-\item{NextToken}{If the previous response was incomplete (because there are more blocks
-to retrieve), Amazon Textract returns a pagination token in the
-response. You can use this pagination token to retrieve the next set of
-blocks.}
+\item{NextToken}{If the previous response was incomplete (because there are more blocks to retrieve), Amazon Textract returns a pagination token in the response. You can use this pagination token to retrieve the next set of blocks.}
 }
 \description{
 Gets the results for an Amazon Textract asynchronous operation that detects text in a document. Amazon Textract can detect lines of text and the words that make up a line of text.

@@ -14,24 +14,17 @@ bedrockagent_list_ingestion_jobs(
 )
 }
 \arguments{
-\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base for the list of data
-ingestion jobs.}
+\item{knowledgeBaseId}{[required] The unique identifier of the knowledge base for the list of data ingestion jobs.}
 
-\item{dataSourceId}{[required] The unique identifier of the data source for the list of data ingestion
-jobs.}
+\item{dataSourceId}{[required] The unique identifier of the data source for the list of data ingestion jobs.}
 
 \item{filters}{Contains information about the filters for filtering the data.}
 
 \item{sortBy}{Contains details about how to sort the data.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 }
 \description{
 Lists the data ingestion jobs for a data source. The list also includes information about each job.

@@ -13,8 +13,7 @@ comprehend_list_entity_recognizer_summaries(
 \arguments{
 \item{NextToken}{Identifies the next page of results to return.}
 
-\item{MaxResults}{The maximum number of results to return on each page. The default is
-100.}
+\item{MaxResults}{The maximum number of results to return on each page. The default is 100.}
 }
 \description{
 Gets a list of summaries for the entity recognizers that you have created.

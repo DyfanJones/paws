@@ -7,8 +7,7 @@
 kafkaconnect_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to
-list all attached tags.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to list all attached tags.}
 }
 \description{
 Lists all the tags attached to the specified resource.

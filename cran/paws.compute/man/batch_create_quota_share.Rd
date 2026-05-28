@@ -15,31 +15,19 @@ batch_create_quota_share(
 )
 }
 \arguments{
-\item{quotaShareName}{[required] The name of the quota share. It can be up to 128 characters long. It can
-contain uppercase and lowercase letters, numbers, hyphens (-), and
-underscores (_).}
+\item{quotaShareName}{[required] The name of the quota share. It can be up to 128 characters long. It can contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).}
 
-\item{jobQueue}{[required] The Batch job queue associated with the quota share. This can be the job
-queue name or ARN. A job queue must be in the \code{VALID} state before you
-can associate it with a quota share.}
+\item{jobQueue}{[required] The Batch job queue associated with the quota share. This can be the job queue name or ARN. A job queue must be in the \code{VALID} state before you can associate it with a quota share.}
 
-\item{capacityLimits}{[required] A list that specifies the quantity and type of compute capacity
-allocated to the quota share.}
+\item{capacityLimits}{[required] A list that specifies the quantity and type of compute capacity allocated to the quota share.}
 
-\item{resourceSharingConfiguration}{[required] Specifies whether a quota share reserves, lends, or both lends and
-borrows idle compute capacity.}
+\item{resourceSharingConfiguration}{[required] Specifies whether a quota share reserves, lends, or both lends and borrows idle compute capacity.}
 
 \item{preemptionConfiguration}{[required] Specifies the preemption behavior for jobs in a quota share.}
 
-\item{state}{The state of the quota share. If the quota share is \code{ENABLED}, it is
-able to accept jobs. If the quota share is \code{DISABLED}, new jobs won't be
-accepted but jobs already submitted can finish. The default state is
-\code{ENABLED}.}
+\item{state}{The state of the quota share. If the quota share is \code{ENABLED}, it is able to accept jobs. If the quota share is \code{DISABLED}, new jobs won't be accepted but jobs already submitted can finish. The default state is \code{ENABLED}.}
 
-\item{tags}{The tags that you apply to the quota share to help you categorize and
-organize your resources. Each tag consists of a key and an optional
-value. For more information, see \href{https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html}{Tagging your Batch resources}
-in \emph{Batch User Guide}.}
+\item{tags}{The tags that you apply to the quota share to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see \href{https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html}{Tagging your Batch resources} in \emph{Batch User Guide}.}
 }
 \description{
 Creates an Batch quota share. Each quota share operates as a virtual queue with a configured compute capacity, resource sharing strategy, and borrow limits.

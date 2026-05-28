@@ -9,9 +9,7 @@ networkfirewall_reject_network_firewall_transit_gateway_attachment(
 )
 }
 \arguments{
-\item{TransitGatewayAttachmentId}{[required] Required. The unique identifier of the transit gateway attachment to
-reject. This ID is returned in the response when creating a transit
-gateway-attached firewall.}
+\item{TransitGatewayAttachmentId}{[required] Required. The unique identifier of the transit gateway attachment to reject. This ID is returned in the response when creating a transit gateway-attached firewall.}
 }
 \description{
 Rejects a transit gateway attachment request for Network Firewall. When you reject the attachment request, Network Firewall cancels the creation of routing components between the transit gateway and firewall endpoints.

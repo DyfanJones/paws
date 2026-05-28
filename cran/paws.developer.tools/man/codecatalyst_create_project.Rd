@@ -11,9 +11,7 @@ codecatalyst_create_project(spaceName, displayName, description = NULL)
 
 \item{displayName}{[required] The friendly name of the project that will be displayed to users.}
 
-\item{description}{The description of the project. This description will be displayed to
-all users of the project. We recommend providing a brief description of
-the project and its intended purpose.}
+\item{description}{The description of the project. This description will be displayed to all users of the project. We recommend providing a brief description of the project and its intended purpose.}
 }
 \description{
 Creates a project in a specified space.

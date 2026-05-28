@@ -12,21 +12,13 @@ route53profiles_list_profile_resource_associations(
 )
 }
 \arguments{
-\item{MaxResults}{The maximum number of objects that you want to return for this request.
-If more objects are available, in the response, a \code{NextToken} value,
-which you can use in a subsequent call to get the next batch of objects,
-is provided.
+\item{MaxResults}{The maximum number of objects that you want to return for this request. If more objects are available, in the response, a \code{NextToken} value, which you can use in a subsequent call to get the next batch of objects, is provided.
 
-If you don't specify a value for \code{MaxResults}, up to 100 objects are
-returned.}
+If you don't specify a value for \code{MaxResults}, up to 100 objects are returned.}
 
 \item{NextToken}{For the first call to this list request, omit this value.
 
-When you request a list of objects, at most the number of objects
-specified by \code{MaxResults} is returned. If more objects are available for
-retrieval, a \code{NextToken} value is returned in the response. To retrieve
-the next batch of objects, use the token that was returned for the prior
-request in your next request.}
+When you request a list of objects, at most the number of objects specified by \code{MaxResults} is returned. If more objects are available for retrieval, a \code{NextToken} value is returned in the response. To retrieve the next batch of objects, use the token that was returned for the prior request in your next request.}
 
 \item{ProfileId}{[required] The ID of the Profile.}
 

@@ -17,8 +17,7 @@ connectcases_create_field(
 
 \item{name}{[required] The name of the field.}
 
-\item{type}{[required] Defines the data type, some system constraints, and default display of
-the field.}
+\item{type}{[required] Defines the data type, some system constraints, and default display of the field.}
 
 \item{description}{The description of the field.}
 

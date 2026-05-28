@@ -8,8 +8,7 @@ OpenSearch Service domains}
 opensearchservice_describe_domains(DomainNames)
 }
 \arguments{
-\item{DomainNames}{[required] Array of OpenSearch Service domain names that you want information
-about. You must specify at least one domain name.}
+\item{DomainNames}{[required] Array of OpenSearch Service domain names that you want information about. You must specify at least one domain name.}
 }
 \description{
 Returns domain configuration information about the specified Amazon OpenSearch Service domains.

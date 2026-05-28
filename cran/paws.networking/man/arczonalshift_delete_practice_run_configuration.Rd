@@ -7,9 +7,7 @@
 arczonalshift_delete_practice_run_configuration(resourceIdentifier)
 }
 \arguments{
-\item{resourceIdentifier}{[required] The identifier for the resource that you want to delete the practice run
-configuration for. The identifier is the Amazon Resource Name (ARN) for
-the resource.}
+\item{resourceIdentifier}{[required] The identifier for the resource that you want to delete the practice run configuration for. The identifier is the Amazon Resource Name (ARN) for the resource.}
 }
 \description{
 Deletes the practice run configuration for a resource. Before you can delete a practice run configuration for a resource., you must disable zonal autoshift for the resource. Practice runs must be configured for zonal autoshift to be enabled.

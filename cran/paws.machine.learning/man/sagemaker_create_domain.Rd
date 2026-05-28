@@ -16,6 +16,7 @@ sagemaker_create_domain(
   HomeEfsFileSystemKmsKeyId = NULL,
   KmsKeyId = NULL,
   AppSecurityGroupManagement = NULL,
+  HomeEfsFileSystemCreation = NULL,
   TagPropagation = NULL,
   DefaultSpaceSettings = NULL
 )
@@ -25,60 +26,39 @@ sagemaker_create_domain(
 
 \item{AuthMode}{[required] The mode of authentication that members use to access the domain.}
 
-\item{DefaultUserSettings}{[required] The default settings to use to create a user profile when \code{UserSettings}
-isn't specified in the call to the
-\code{\link[=sagemaker_create_user_profile]{create_user_profile}} API.
+\item{DefaultUserSettings}{[required] The default settings to use to create a user profile when \code{UserSettings} isn't specified in the call to the \code{\link[=sagemaker_create_user_profile]{create_user_profile}} API.
 
-\code{SecurityGroups} is aggregated when specified in both calls. For all
-other settings in \code{UserSettings}, the values specified in
-\code{\link[=sagemaker_create_user_profile]{create_user_profile}} take precedence
-over those specified in \code{\link[=sagemaker_create_domain]{create_domain}}.}
+\code{SecurityGroups} is aggregated when specified in both calls. For all other settings in \code{UserSettings}, the values specified in \code{\link[=sagemaker_create_user_profile]{create_user_profile}} take precedence over those specified in \code{\link[=sagemaker_create_domain]{create_domain}}.}
 
 \item{DomainSettings}{A collection of \code{Domain} settings.}
 
 \item{SubnetIds}{The VPC subnets that the domain uses for communication.
 
-The field is optional when the \code{AppNetworkAccessType} parameter is set
-to \code{PublicInternetOnly} for domains created from Amazon SageMaker
-Unified Studio.}
+The field is optional when the \code{AppNetworkAccessType} parameter is set to \code{PublicInternetOnly} for domains created from Amazon SageMaker Unified Studio.}
 
-\item{VpcId}{The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses
-for communication.
+\item{VpcId}{The ID of the Amazon Virtual Private Cloud (VPC) that the domain uses for communication.
 
-The field is optional when the \code{AppNetworkAccessType} parameter is set
-to \code{PublicInternetOnly} for domains created from Amazon SageMaker
-Unified Studio.}
+The field is optional when the \code{AppNetworkAccessType} parameter is set to \code{PublicInternetOnly} for domains created from Amazon SageMaker Unified Studio.}
 
-\item{Tags}{Tags to associated with the Domain. Each tag consists of a key and an
-optional value. Tag keys must be unique per resource. Tags are
-searchable using the \code{\link[=sagemaker_search]{search}} API.
+\item{Tags}{Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per resource. Tags are searchable using the \code{\link[=sagemaker_search]{search}} API.
 
-Tags that you specify for the Domain are also added to all Apps that the
-Domain launches.}
+Tags that you specify for the Domain are also added to all Apps that the Domain launches.}
 
-\item{AppNetworkAccessType}{Specifies the VPC used for non-EFS traffic. The default value is
-\code{PublicInternetOnly}.
+\item{AppNetworkAccessType}{Specifies the VPC used for non-EFS traffic. The default value is \code{PublicInternetOnly}.
 \itemize{
-\item \code{PublicInternetOnly} - Non-EFS traffic is through a VPC managed by
-Amazon SageMaker AI, which allows direct internet access
+\item \code{PublicInternetOnly} - Non-EFS traffic is through a VPC managed by Amazon SageMaker AI, which allows direct internet access
 \item \code{VpcOnly} - All traffic is through the specified VPC and subnets
 }}
 
 \item{HomeEfsFileSystemKmsKeyId}{Use \code{KmsKeyId}.}
 
-\item{KmsKeyId}{SageMaker AI uses Amazon Web Services KMS to encrypt EFS and EBS volumes
-attached to the domain with an Amazon Web Services managed key by
-default. For more control, specify a customer managed key.}
+\item{KmsKeyId}{SageMaker AI uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to the domain with an Amazon Web Services managed key by default. For more control, specify a customer managed key.}
 
-\item{AppSecurityGroupManagement}{The entity that creates and manages the required security groups for
-inter-app communication in \code{VPCOnly} mode. Required when
-\code{CreateDomain.AppNetworkAccessType} is \code{VPCOnly} and
-\code{DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn}
-is provided. If setting up the domain for use with RStudio, this value
-must be set to \code{Service}.}
+\item{AppSecurityGroupManagement}{The entity that creates and manages the required security groups for inter-app communication in \code{VPCOnly} mode. Required when \code{CreateDomain.AppNetworkAccessType} is \code{VPCOnly} and \code{DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn} is provided. If setting up the domain for use with RStudio, this value must be set to \code{Service}.}
 
-\item{TagPropagation}{Indicates whether custom tag propagation is supported for the domain.
-Defaults to \code{DISABLED}.}
+\item{HomeEfsFileSystemCreation}{Indicates whether to create a home EFS file system for the domain. Defaults to \code{Enabled}. Set to \code{Disabled} to skip EFS creation and reduce domain creation time. You can enable EFS later by calling \code{\link[=sagemaker_update_domain]{update_domain}}.}
+
+\item{TagPropagation}{Indicates whether custom tag propagation is supported for the domain. Defaults to \code{DISABLED}.}
 
 \item{DefaultSpaceSettings}{The default settings for shared spaces that users create in the domain.}
 }

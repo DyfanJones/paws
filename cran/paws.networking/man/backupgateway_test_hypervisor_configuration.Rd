@@ -15,8 +15,7 @@ backupgateway_test_hypervisor_configuration(
 \arguments{
 \item{GatewayArn}{[required] The Amazon Resource Name (ARN) of the gateway to the hypervisor to test.}
 
-\item{Host}{[required] The server host of the hypervisor. This can be either an IP address or a
-fully-qualified domain name (FQDN).}
+\item{Host}{[required] The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).}
 
 \item{Username}{The username for the hypervisor.}
 

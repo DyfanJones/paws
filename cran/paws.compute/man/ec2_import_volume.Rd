@@ -16,18 +16,13 @@ ec2_import_volume(
 \arguments{
 \item{AvailabilityZoneId}{The ID of the Availability Zone for the resulting EBS volume.
 
-Either \code{AvailabilityZone} or \code{AvailabilityZoneId} must be specified, but
-not both.}
+Either \code{AvailabilityZone} or \code{AvailabilityZoneId} must be specified, but not both.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{AvailabilityZone}{The Availability Zone for the resulting EBS volume.
 
-Either \code{AvailabilityZone} or \code{AvailabilityZoneId} must be specified, but
-not both.}
+Either \code{AvailabilityZone} or \code{AvailabilityZoneId} must be specified, but not both.}
 
 \item{Image}{[required] The disk image.}
 

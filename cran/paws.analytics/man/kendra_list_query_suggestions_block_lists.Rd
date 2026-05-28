@@ -11,15 +11,11 @@ kendra_list_query_suggestions_block_lists(
 )
 }
 \arguments{
-\item{IndexId}{[required] The identifier of the index for a list of all block lists that exist for
-that index.
+\item{IndexId}{[required] The identifier of the index for a list of all block lists that exist for that index.
 
 For information on the current quota limits for block lists, see \href{https://docs.aws.amazon.com/kendra/latest/dg/quotas.html}{Quotas for Amazon Kendra}.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more data to
-retrieve), Amazon Kendra returns a pagination token in the response. You
-can use this pagination token to retrieve the next set of block lists
-(\code{BlockListSummaryItems}).}
+\item{NextToken}{If the previous response was incomplete (because there is more data to retrieve), Amazon Kendra returns a pagination token in the response. You can use this pagination token to retrieve the next set of block lists (\code{BlockListSummaryItems}).}
 
 \item{MaxResults}{The maximum number of block lists to return.}
 }

@@ -7,10 +7,9 @@
 connect_associate_contact_with_user(InstanceId, ContactId, UserId)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{ContactId}{[required] The identifier of the contact in this instance of Amazon Connect.}
+\item{ContactId}{[required] The identifier of the contact in this instance of Connect Customer.}
 
 \item{UserId}{[required] The identifier for the user. This can be the ID or the ARN of the user.}
 }

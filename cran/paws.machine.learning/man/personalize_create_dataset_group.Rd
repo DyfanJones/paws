@@ -15,22 +15,13 @@ personalize_create_dataset_group(
 \arguments{
 \item{name}{[required] The name for the new dataset group.}
 
-\item{roleArn}{The ARN of the Identity and Access Management (IAM) role that has
-permissions to access the Key Management Service (KMS) key. Supplying an
-IAM role is only valid when also specifying a KMS key.}
+\item{roleArn}{The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM role is only valid when also specifying a KMS key.}
 
-\item{kmsKeyArn}{The Amazon Resource Name (ARN) of a Key Management Service (KMS) key
-used to encrypt the datasets.}
+\item{kmsKeyArn}{The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.}
 
-\item{domain}{The domain of the dataset group. Specify a domain to create a Domain
-dataset group. The domain you specify determines the default schemas for
-datasets and the use cases available for recommenders. If you don't
-specify a domain, you create a Custom dataset group with solution
-versions that you deploy with a campaign.}
+\item{domain}{The domain of the dataset group. Specify a domain to create a Domain dataset group. The domain you specify determines the default schemas for datasets and the use cases available for recommenders. If you don't specify a domain, you create a Custom dataset group with solution versions that you deploy with a campaign.}
 
-\item{tags}{A list of
-\href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags}
-to apply to the dataset group.}
+\item{tags}{A list of \href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags} to apply to the dataset group.}
 }
 \description{
 Creates an empty dataset group. A dataset group is a container for Amazon Personalize resources. A dataset group can contain at most three datasets, one for each type of dataset:

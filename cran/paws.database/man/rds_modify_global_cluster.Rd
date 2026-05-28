@@ -13,16 +13,14 @@ rds_modify_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The cluster identifier for the global cluster to modify. This parameter
-isn't case-sensitive.
+\item{GlobalClusterIdentifier}{[required] The cluster identifier for the global cluster to modify. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
 \item Must match the identifier of an existing global database cluster.
 }}
 
-\item{NewGlobalClusterIdentifier}{The new cluster identifier for the global database cluster. This value
-is stored as a lowercase string.
+\item{NewGlobalClusterIdentifier}{The new cluster identifier for the global database cluster. This value is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -33,33 +31,23 @@ Constraints:
 
 Example: \code{my-cluster2}}
 
-\item{DeletionProtection}{Specifies whether to enable deletion protection for the global database
-cluster. The global database cluster can't be deleted when deletion
-protection is enabled.}
+\item{DeletionProtection}{Specifies whether to enable deletion protection for the global database cluster. The global database cluster can't be deleted when deletion protection is enabled.}
 
 \item{EngineVersion}{The version number of the database engine to which you want to upgrade.
 
-To list all of the available engine versions for \code{aurora-mysql} (for
-MySQL-based Aurora global databases), use the following command:
+To list all of the available engine versions for \code{aurora-mysql} (for MySQL-based Aurora global databases), use the following command:
 
 \verb{aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'}
 
-To list all of the available engine versions for \code{aurora-postgresql}
-(for PostgreSQL-based Aurora global databases), use the following
-command:
+To list all of the available engine versions for \code{aurora-postgresql} (for PostgreSQL-based Aurora global databases), use the following command:
 
 \verb{aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases == `true`].[EngineVersion]'}}
 
 \item{AllowMajorVersionUpgrade}{Specifies whether to allow major version upgrades.
 
-Constraints: Must be enabled if you specify a value for the
-\code{EngineVersion} parameter that's a different major version than the
-global cluster's current version.
+Constraints: Must be enabled if you specify a value for the \code{EngineVersion} parameter that's a different major version than the global cluster's current version.
 
-If you upgrade the major version of a global database, the cluster and
-DB instance parameter groups are set to the default parameter groups for
-the new version. Apply any custom parameter groups after completing the
-upgrade.}
+If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version. Apply any custom parameter groups after completing the upgrade.}
 }
 \description{
 Modifies a setting for an Amazon Aurora global database cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html}{What is Amazon Aurora?} in the \emph{Amazon Aurora User Guide}.

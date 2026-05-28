@@ -8,9 +8,7 @@ which can be a table or stream, in JSON format}
 dynamodb_get_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the DynamoDB resource to which the
-policy is attached. The resources you can specify include tables and
-streams.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the DynamoDB resource to which the policy is attached. The resources you can specify include tables and streams.}
 }
 \description{
 Returns the resource-based policy document attached to the resource, which can be a table or stream, in JSON format.

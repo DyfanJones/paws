@@ -8,19 +8,11 @@ NULL
 #' and its corresponding DynamoDB table
 #'
 #' @description
-#' Returns information about a stream, including the current status of the
-#' stream, its Amazon Resource Name (ARN), the composition of its shards,
-#' and its corresponding DynamoDB table.
+#' Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.
 #' 
-#' You can call [`describe_stream`][dynamodbstreams_describe_stream] at a
-#' maximum rate of 10 times per second.
+#' You can call [`describe_stream`][dynamodbstreams_describe_stream] at a maximum rate of 10 times per second.
 #' 
-#' Each shard in the stream has a `SequenceNumberRange` associated with it.
-#' If the `SequenceNumberRange` has a `StartingSequenceNumber` but no
-#' `EndingSequenceNumber`, then the shard is still open (able to receive
-#' more stream records). If both `StartingSequenceNumber` and
-#' `EndingSequenceNumber` are present, then that shard is closed and can no
-#' longer receive more data.
+#' Each shard in the stream has a `SequenceNumberRange` associated with it. If the `SequenceNumberRange` has a `StartingSequenceNumber` but no `EndingSequenceNumber`, then the shard is still open (able to receive more stream records). If both `StartingSequenceNumber` and `EndingSequenceNumber` are present, then that shard is closed and can no longer receive more data.
 #'
 #' @usage
 #' dynamodbstreams_describe_stream(StreamArn, Limit, ExclusiveStartShardId,
@@ -28,11 +20,8 @@ NULL
 #'
 #' @param StreamArn &#91;required&#93; The Amazon Resource Name (ARN) for the stream.
 #' @param Limit The maximum number of shard objects to return. The upper limit is 100.
-#' @param ExclusiveStartShardId The shard ID of the first item that this operation will evaluate. Use
-#' the value that was returned for `LastEvaluatedShardId` in the previous
-#' operation.
-#' @param ShardFilter This optional field contains the filter definition for the
-#' [`describe_stream`][dynamodbstreams_describe_stream] API.
+#' @param ExclusiveStartShardId The shard ID of the first item that this operation will evaluate. Use the value that was returned for `LastEvaluatedShardId` in the previous operation.
+#' @param ShardFilter This optional field contains the filter definition for the [`describe_stream`][dynamodbstreams_describe_stream] API.
 #'
 #' @return
 #' A list with the following syntax:
@@ -118,25 +107,15 @@ dynamodbstreams_describe_stream <- function(StreamArn, Limit = NULL, ExclusiveSt
 #' @description
 #' Retrieves the stream records from a given shard.
 #' 
-#' Specify a shard iterator using the `ShardIterator` parameter. The shard
-#' iterator specifies the position in the shard from which you want to
-#' start reading stream records sequentially. If there are no stream
-#' records available in the portion of the shard that the iterator points
-#' to, [`get_records`][dynamodbstreams_get_records] returns an empty list.
-#' Note that it might take multiple calls to get to a portion of the shard
-#' that contains stream records.
+#' Specify a shard iterator using the `ShardIterator` parameter. The shard iterator specifies the position in the shard from which you want to start reading stream records sequentially. If there are no stream records available in the portion of the shard that the iterator points to, [`get_records`][dynamodbstreams_get_records] returns an empty list. Note that it might take multiple calls to get to a portion of the shard that contains stream records.
 #' 
-#' [`get_records`][dynamodbstreams_get_records] can retrieve a maximum of 1
-#' MB of data or 1000 stream records, whichever comes first.
+#' [`get_records`][dynamodbstreams_get_records] can retrieve a maximum of 1 MB of data or 1000 stream records, whichever comes first.
 #'
 #' @usage
 #' dynamodbstreams_get_records(ShardIterator, Limit)
 #'
-#' @param ShardIterator &#91;required&#93; A shard iterator that was retrieved from a previous GetShardIterator
-#' operation. This iterator can be used to access the stream records in
-#' this shard.
-#' @param Limit The maximum number of records to return from the shard. The upper limit
-#' is 1000.
+#' @param ShardIterator &#91;required&#93; A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.
+#' @param Limit The maximum number of records to return from the shard. The upper limit is 1000.
 #'
 #' @return
 #' A list with the following syntax:
@@ -282,41 +261,26 @@ dynamodbstreams_get_records <- function(ShardIterator, Limit = NULL) {
 #' Returns a shard iterator
 #'
 #' @description
-#' Returns a shard iterator. A shard iterator provides information about
-#' how to retrieve the stream records from within a shard. Use the shard
-#' iterator in a subsequent [`get_records`][dynamodbstreams_get_records]
-#' request to read the stream records from the shard.
+#' Returns a shard iterator. A shard iterator provides information about how to retrieve the stream records from within a shard. Use the shard iterator in a subsequent [`get_records`][dynamodbstreams_get_records] request to read the stream records from the shard.
 #' 
-#' A shard iterator expires 15 minutes after it is returned to the
-#' requester.
+#' A shard iterator expires 15 minutes after it is returned to the requester.
 #'
 #' @usage
 #' dynamodbstreams_get_shard_iterator(StreamArn, ShardId,
 #'   ShardIteratorType, SequenceNumber)
 #'
 #' @param StreamArn &#91;required&#93; The Amazon Resource Name (ARN) for the stream.
-#' @param ShardId &#91;required&#93; The identifier of the shard. The iterator will be returned for this
-#' shard ID.
-#' @param ShardIteratorType &#91;required&#93; Determines how the shard iterator is used to start reading stream
-#' records from the shard:
+#' @param ShardId &#91;required&#93; The identifier of the shard. The iterator will be returned for this shard ID.
+#' @param ShardIteratorType &#91;required&#93; Determines how the shard iterator is used to start reading stream records from the shard:
 #' 
-#' -   `AT_SEQUENCE_NUMBER` - Start reading exactly from the position
-#'     denoted by a specific sequence number.
+#' -   `AT_SEQUENCE_NUMBER` - Start reading exactly from the position denoted by a specific sequence number.
 #' 
-#' -   `AFTER_SEQUENCE_NUMBER` - Start reading right after the position
-#'     denoted by a specific sequence number.
+#' -   `AFTER_SEQUENCE_NUMBER` - Start reading right after the position denoted by a specific sequence number.
 #' 
-#' -   `TRIM_HORIZON` - Start reading at the last (untrimmed) stream
-#'     record, which is the oldest record in the shard. In DynamoDB
-#'     Streams, there is a 24 hour limit on data retention. Stream records
-#'     whose age exceeds this limit are subject to removal (trimming) from
-#'     the stream.
+#' -   `TRIM_HORIZON` - Start reading at the last (untrimmed) stream record, which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on data retention. Stream records whose age exceeds this limit are subject to removal (trimming) from the stream.
 #' 
-#' -   `LATEST` - Start reading just after the most recent stream record in
-#'     the shard, so that you always read the most recent data in the
-#'     shard.
-#' @param SequenceNumber The sequence number of a stream record in the shard from which to start
-#' reading.
+#' -   `LATEST` - Start reading just after the most recent stream record in the shard, so that you always read the most recent data in the shard.
+#' @param SequenceNumber The sequence number of a stream record in the shard from which to start reading.
 #'
 #' @return
 #' A list with the following syntax:
@@ -375,23 +339,16 @@ dynamodbstreams_get_shard_iterator <- function(StreamArn, ShardId, ShardIterator
 #' endpoint
 #'
 #' @description
-#' Returns an array of stream ARNs associated with the current account and
-#' endpoint. If the `TableName` parameter is present, then
-#' [`list_streams`][dynamodbstreams_list_streams] will return only the
-#' streams ARNs for that table.
+#' Returns an array of stream ARNs associated with the current account and endpoint. If the `TableName` parameter is present, then [`list_streams`][dynamodbstreams_list_streams] will return only the streams ARNs for that table.
 #' 
-#' You can call [`list_streams`][dynamodbstreams_list_streams] at a maximum
-#' rate of 5 times per second.
+#' You can call [`list_streams`][dynamodbstreams_list_streams] at a maximum rate of 5 times per second.
 #'
 #' @usage
 #' dynamodbstreams_list_streams(TableName, Limit, ExclusiveStartStreamArn)
 #'
-#' @param TableName If this parameter is provided, then only the streams associated with
-#' this table name are returned.
+#' @param TableName If this parameter is provided, then only the streams associated with this table name are returned.
 #' @param Limit The maximum number of streams to return. The upper limit is 100.
-#' @param ExclusiveStartStreamArn The ARN (Amazon Resource Name) of the first item that this operation
-#' will evaluate. Use the value that was returned for
-#' `LastEvaluatedStreamArn` in the previous operation.
+#' @param ExclusiveStartStreamArn The ARN (Amazon Resource Name) of the first item that this operation will evaluate. Use the value that was returned for `LastEvaluatedStreamArn` in the previous operation.
 #'
 #' @return
 #' A list with the following syntax:

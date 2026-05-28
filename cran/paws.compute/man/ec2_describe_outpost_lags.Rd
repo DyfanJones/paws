@@ -15,36 +15,26 @@ ec2_describe_outpost_lags(
 \arguments{
 \item{OutpostLagIds}{The IDs of the Outpost LAGs.}
 
-\item{Filters}{The filters to use for narrowing down the request. The following filters
-are supported:
+\item{Filters}{The filters to use for narrowing down the request. The following filters are supported:
 \itemize{
-\item \code{service-link-virtual-interface-id} - The ID of the service link
-virtual interface.
-\item \code{service-link-virtual-interface-arn} - The ARN of the service link
-virtual interface.
+\item \code{service-link-virtual-interface-id} - The ID of the service link virtual interface.
+\item \code{service-link-virtual-interface-arn} - The ARN of the service link virtual interface.
 \item \code{outpost-id} - The Outpost ID.
 \item \code{outpost-arn} - The Outpost ARN.
-\item \code{owner-id} - The ID of the Amazon Web Services account that owns the
-service link virtual interface.
+\item \code{owner-id} - The ID of the Amazon Web Services account that owns the service link virtual interface.
 \item \code{vlan} - The ID of the address pool.
 \item \code{local-address} - The local address.
 \item \code{peer-address} - The peer address.
 \item \code{peer-bgp-asn} - The peer BGP ASN.
 \item \code{outpost-lag-id} - The Outpost LAG ID.
-\item \code{configuration-state} - The configuration state of the service link
-virtual interface.
+\item \code{configuration-state} - The configuration state of the service link virtual interface.
 }}
 
-\item{MaxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{MaxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
 \item{NextToken}{The token for the next page of results.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Describes the Outposts link aggregation groups (LAGs).

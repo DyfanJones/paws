@@ -9,9 +9,7 @@ timestreamwrite_create_database(DatabaseName, KmsKeyId = NULL, Tags = NULL)
 \arguments{
 \item{DatabaseName}{[required] The name of the Timestream database.}
 
-\item{KmsKeyId}{The KMS key for the database. If the KMS key is not specified, the
-database will be encrypted with a Timestream managed KMS key located in
-your account. For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk}{Amazon Web Services managed keys}.}
+\item{KmsKeyId}{The KMS key for the database. If the KMS key is not specified, the database will be encrypted with a Timestream managed KMS key located in your account. For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk}{Amazon Web Services managed keys}.}
 
 \item{Tags}{A list of key-value pairs to label the table.}
 }

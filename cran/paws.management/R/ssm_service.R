@@ -5,34 +5,19 @@ NULL
 #' Amazon Simple Systems Manager (SSM)
 #'
 #' @description
-#' Amazon Web Services Systems Manager is the operations hub for your
-#' Amazon Web Services applications and resources and a secure end-to-end
-#' management solution for hybrid cloud environments that enables safe and
-#' secure operations at scale.
+#' Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at scale.
 #' 
-#' This reference is intended to be used with the [Amazon Web Services
-#' Systems Manager User
-#' Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/).
-#' To get started, see [Setting up Amazon Web Services Systems
-#' Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-console.html).
+#' This reference is intended to be used with the [Amazon Web Services Systems Manager User Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/). To get started, see [Setting up Amazon Web Services Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-console.html).
 #' 
 #' **Related resources**
 #' 
-#' -   For information about each of the tools that comprise Systems
-#'     Manager, see [Using Systems Manager
-#'     tools](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html)
-#'     in the *Amazon Web Services Systems Manager User Guide*.
+#' -   For information about each of the tools that comprise Systems Manager, see [Using Systems Manager tools](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html) in the *Amazon Web Services Systems Manager User Guide*.
 #' 
-#' -   For details about predefined runbooks for Automation, a tool in
-#'     Amazon Web Services Systems Manager, see the *\href{https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html}{Systems Manager Automation Runbook Reference}* .
+#' -   For details about predefined runbooks for Automation, a tool in Amazon Web Services Systems Manager, see the *\href{https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html}{Systems Manager Automation Runbook Reference}* .
 #' 
-#' -   For information about AppConfig, a tool in Systems Manager, see the
-#'     *\href{https://docs.aws.amazon.com/appconfig/latest/userguide/}{AppConfig User Guide}* and the *
-#'     \href{https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/}{AppConfig API Reference}* .
+#' -   For information about AppConfig, a tool in Systems Manager, see the *\href{https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/}{AppConfig API Reference}* .
 #' 
-#' -   For information about Incident Manager, a tool in Systems Manager,
-#'     see the *\href{https://docs.aws.amazon.com/incident-manager/latest/userguide/}{Systems Manager Incident Manager User Guide}* and the *
-#'     \href{https://docs.aws.amazon.com/incident-manager/latest/APIReference/}{Systems Manager Incident Manager API Reference}* .
+#' -   For information about Incident Manager, a tool in Systems Manager, see the *\href{https://docs.aws.amazon.com/incident-manager/latest/APIReference/}{Systems Manager Incident Manager API Reference}* .
 #'
 #' @param
 #' config

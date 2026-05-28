@@ -11,8 +11,7 @@ athena_put_capacity_assignment_configuration(
 )
 }
 \arguments{
-\item{CapacityReservationName}{[required] The name of the capacity reservation to put a capacity assignment
-configuration for.}
+\item{CapacityReservationName}{[required] The name of the capacity reservation to put a capacity assignment configuration for.}
 
 \item{CapacityAssignments}{[required] The list of assignments for the capacity assignment configuration.}
 }

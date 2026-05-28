@@ -7,8 +7,7 @@
 datazone_get_glossary_term(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this business glossary
-term exists.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which this business glossary term exists.}
 
 \item{identifier}{[required] The ID of the business glossary term.}
 }

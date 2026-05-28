@@ -9,11 +9,9 @@ datazone_post_lineage_event(domainIdentifier, event, clientToken = NULL)
 \arguments{
 \item{domainIdentifier}{[required] The ID of the domain where you want to post a data lineage event.}
 
-\item{event}{[required] The data lineage event that you want to post. Only open-lineage run
-event are supported as events.}
+\item{event}{[required] The data lineage event that you want to post. Only open-lineage run event are supported as events.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Posts a data lineage event.

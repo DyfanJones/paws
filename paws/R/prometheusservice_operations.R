@@ -7,25 +7,17 @@ NULL
 #' definition in a workspace
 #'
 #' @description
-#' The
-#' [`create_alert_manager_definition`][prometheusservice_create_alert_manager_definition]
-#' operation creates the alert manager definition in a workspace. If a
-#' workspace already has an alert manager definition, don't use this
-#' operation to update it. Instead, use
-#' [`put_alert_manager_definition`][prometheusservice_put_alert_manager_definition].
+#' The [`create_alert_manager_definition`][prometheusservice_create_alert_manager_definition] operation creates the alert manager definition in a workspace. If a workspace already has an alert manager definition, don't use this operation to update it. Instead, use [`put_alert_manager_definition`][prometheusservice_put_alert_manager_definition].
 #'
 #' @usage
 #' prometheusservice_create_alert_manager_definition(workspaceId, data,
 #'   clientToken)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace to add the alert manager definition to.
-#' @param data &#91;required&#93; The alert manager definition to add. A base64-encoded version of the
-#' YAML alert manager definition file.
+#' @param data &#91;required&#93; The alert manager definition to add. A base64-encoded version of the YAML alert manager definition file.
 #' 
-#' For details about the alert manager definition, see
-#' [AlertManagedDefinitionData](https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html).
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' For details about the alert manager definition, see [AlertManagedDefinitionData](https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html).
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -75,29 +67,21 @@ prometheusservice_create_alert_manager_definition <- function(workspaceId, data,
 #' Forest algorithm for time-series analysis
 #'
 #' @description
-#' Creates an anomaly detector within a workspace using the Random Cut
-#' Forest algorithm for time-series analysis. The anomaly detector analyzes
-#' Amazon Managed Service for Prometheus metrics to identify unusual
-#' patterns and behaviors.
+#' Creates an anomaly detector within a workspace using the Random Cut Forest algorithm for time-series analysis. The anomaly detector analyzes Amazon Managed Service for Prometheus metrics to identify unusual patterns and behaviors.
 #'
 #' @usage
 #' prometheusservice_create_anomaly_detector(workspaceId, alias,
 #'   evaluationIntervalInSeconds, missingDataAction, configuration, labels,
 #'   clientToken, tags)
 #'
-#' @param workspaceId &#91;required&#93; The identifier of the workspace where the anomaly detector will be
-#' created.
+#' @param workspaceId &#91;required&#93; The identifier of the workspace where the anomaly detector will be created.
 #' @param alias &#91;required&#93; A user-friendly name for the anomaly detector.
-#' @param evaluationIntervalInSeconds The frequency, in seconds, at which the anomaly detector evaluates
-#' metrics. The default value is 60 seconds.
+#' @param evaluationIntervalInSeconds The frequency, in seconds, at which the anomaly detector evaluates metrics. The default value is 60 seconds.
 #' @param missingDataAction Specifies the action to take when data is missing during evaluation.
 #' @param configuration &#91;required&#93; The algorithm configuration for the anomaly detector.
-#' @param labels The Amazon Managed Service for Prometheus metric labels to associate
-#' with the anomaly detector.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
-#' @param tags The metadata to apply to the anomaly detector to assist with
-#' categorization and organization.
+#' @param labels The Amazon Managed Service for Prometheus metric labels to associate with the anomaly detector.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
+#' @param tags The metadata to apply to the anomaly detector to assist with categorization and organization.
 #'
 #' @return
 #' A list with the following syntax:
@@ -178,11 +162,7 @@ prometheusservice_create_anomaly_detector <- function(workspaceId, alias, evalua
 #' logging configuration for the workspace
 #'
 #' @description
-#' The
-#' [`create_logging_configuration`][prometheusservice_create_logging_configuration]
-#' operation creates rules and alerting logging configuration for the
-#' workspace. Use this operation to set the CloudWatch log group to which
-#' the logs will be published to.
+#' The [`create_logging_configuration`][prometheusservice_create_logging_configuration] operation creates rules and alerting logging configuration for the workspace. Use this operation to set the CloudWatch log group to which the logs will be published to.
 #' 
 #' These logging configurations are only for rules and alerting logs.
 #'
@@ -191,10 +171,8 @@ prometheusservice_create_anomaly_detector <- function(workspaceId, alias, evalua
 #'   clientToken)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace to create the logging configuration for.
-#' @param logGroupArn &#91;required&#93; The ARN of the CloudWatch log group to which the vended log data will be
-#' published. This log group must exist prior to calling this operation.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' @param logGroupArn &#91;required&#93; The ARN of the CloudWatch log group to which the vended log data will be published. This log group must exist prior to calling this operation.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -243,20 +221,15 @@ prometheusservice_create_logging_configuration <- function(workspaceId, logGroup
 #' Creates a query logging configuration for the specified workspace
 #'
 #' @description
-#' Creates a query logging configuration for the specified workspace. This
-#' operation enables logging of queries that exceed the specified QSP
-#' threshold.
+#' Creates a query logging configuration for the specified workspace. This operation enables logging of queries that exceed the specified QSP threshold.
 #'
 #' @usage
 #' prometheusservice_create_query_logging_configuration(workspaceId,
 #'   destinations, clientToken)
 #'
-#' @param workspaceId &#91;required&#93; The ID of the workspace for which to create the query logging
-#' configuration.
-#' @param destinations &#91;required&#93; The destinations where query logs will be sent. Only CloudWatch Logs
-#' destination is supported. The list must contain exactly one element.
-#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to
-#' ensure the idempotency of the request.
+#' @param workspaceId &#91;required&#93; The ID of the workspace for which to create the query logging configuration.
+#' @param destinations &#91;required&#93; The destinations where query logs will be sent. Only CloudWatch Logs destination is supported. The list must contain exactly one element.
+#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -315,18 +288,11 @@ prometheusservice_create_query_logging_configuration <- function(workspaceId, de
 #' within a workspace
 #'
 #' @description
-#' The
-#' [`create_rule_groups_namespace`][prometheusservice_create_rule_groups_namespace]
-#' operation creates a rule groups namespace within a workspace. A rule
-#' groups namespace is associated with exactly one rules file. A workspace
-#' can have multiple rule groups namespaces.
+#' The [`create_rule_groups_namespace`][prometheusservice_create_rule_groups_namespace] operation creates a rule groups namespace within a workspace. A rule groups namespace is associated with exactly one rules file. A workspace can have multiple rule groups namespaces.
 #' 
-#' The combined length of a rule group namespace and a rule group name
-#' cannot exceed 721 UTF-8 bytes.
+#' The combined length of a rule group namespace and a rule group name cannot exceed 721 UTF-8 bytes.
 #' 
-#' Use this operation only to create new rule groups namespaces. To update
-#' an existing rule groups namespace, use
-#' [`put_rule_groups_namespace`][prometheusservice_put_rule_groups_namespace].
+#' Use this operation only to create new rule groups namespaces. To update an existing rule groups namespace, use [`put_rule_groups_namespace`][prometheusservice_put_rule_groups_namespace].
 #'
 #' @usage
 #' prometheusservice_create_rule_groups_namespace(workspaceId, name, data,
@@ -338,12 +304,9 @@ prometheusservice_create_query_logging_configuration <- function(workspaceId, de
 #' 
 #' Contains the base64-encoded version of the YAML rules file.
 #' 
-#' For details about the rule groups namespace structure, see
-#' [RuleGroupsNamespaceData](https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html).
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
-#' @param tags The list of tag keys and values to associate with the rule groups
-#' namespace.
+#' For details about the rule groups namespace structure, see [RuleGroupsNamespaceData](https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html).
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
+#' @param tags The list of tag keys and values to associate with the rule groups namespace.
 #'
 #' @return
 #' A list with the following syntax:
@@ -401,57 +364,27 @@ prometheusservice_create_rule_groups_namespace <- function(workspaceId, name, da
 #' The CreateScraper operation creates a scraper to collect metrics
 #'
 #' @description
-#' The [`create_scraper`][prometheusservice_create_scraper] operation
-#' creates a scraper to collect metrics. A scraper pulls metrics from
-#' Prometheus-compatible sources and sends them to your Amazon Managed
-#' Service for Prometheus workspace. You can configure scrapers to collect
-#' metrics from Amazon EKS clusters, Amazon MSK clusters, or from VPC-based
-#' sources that support DNS-based service discovery. Scrapers are flexible,
-#' and can be configured to control what metrics are collected, the
-#' frequency of collection, what transformations are applied to the
-#' metrics, and more.
+#' The [`create_scraper`][prometheusservice_create_scraper] operation creates a scraper to collect metrics. A scraper pulls metrics from Prometheus-compatible sources and sends them to your Amazon Managed Service for Prometheus workspace. You can configure scrapers to collect metrics from Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based service discovery. Scrapers are flexible, and can be configured to control what metrics are collected, the frequency of collection, what transformations are applied to the metrics, and more.
 #' 
-#' An IAM role will be created for you that Amazon Managed Service for
-#' Prometheus uses to access the metrics in your source. You must configure
-#' this role with a policy that allows it to scrape metrics from your
-#' source. For Amazon EKS sources, see [Configuring your Amazon EKS
-#' cluster](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup)
-#' in the *Amazon Managed Service for Prometheus User Guide*.
+#' An IAM role will be created for you that Amazon Managed Service for Prometheus uses to access the metrics in your source. You must configure this role with a policy that allows it to scrape metrics from your source. For Amazon EKS sources, see [Configuring your Amazon EKS cluster](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-eks-setup) in the *Amazon Managed Service for Prometheus User Guide*.
 #' 
-#' The `scrapeConfiguration` parameter contains the base-64 encoded YAML
-#' configuration for the scraper.
+#' The `scrapeConfiguration` parameter contains the base-64 encoded YAML configuration for the scraper.
 #' 
-#' When creating a scraper, the service creates a `Network Interface` in
-#' each **Availability Zone** that are passed into
-#' [`create_scraper`][prometheusservice_create_scraper] through subnets.
-#' These network interfaces are used to connect to your source within the
-#' VPC for scraping metrics.
+#' When creating a scraper, the service creates a `Network Interface` in each **Availability Zone** that are passed into [`create_scraper`][prometheusservice_create_scraper] through subnets. These network interfaces are used to connect to your source within the VPC for scraping metrics.
 #' 
-#' For more information about collectors, including what metrics are
-#' collected, and how to configure the scraper, see [Using an Amazon Web
-#' Services managed
-#' collector](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html)
-#' in the *Amazon Managed Service for Prometheus User Guide*.
+#' For more information about collectors, including what metrics are collected, and how to configure the scraper, see [Using an Amazon Web Services managed collector](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html) in the *Amazon Managed Service for Prometheus User Guide*.
 #'
 #' @usage
 #' prometheusservice_create_scraper(alias, scrapeConfiguration, source,
 #'   destination, roleConfiguration, clientToken, tags)
 #'
-#' @param alias (optional) An alias to associate with the scraper. This is for your use,
-#' and does not need to be unique.
-#' @param scrapeConfiguration &#91;required&#93; The configuration file to use in the new scraper. For more information,
-#' see [Scraper
-#' configuration](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration)
-#' in the *Amazon Managed Service for Prometheus User Guide*.
-#' @param source &#91;required&#93; The Amazon EKS or Amazon Web Services cluster from which the scraper
-#' will collect metrics.
+#' @param alias (optional) An alias to associate with the scraper. This is for your use, and does not need to be unique.
+#' @param scrapeConfiguration &#91;required&#93; The configuration file to use in the new scraper. For more information, see [Scraper configuration](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html#AMP-collector-configuration) in the *Amazon Managed Service for Prometheus User Guide*.
+#' @param source &#91;required&#93; The Amazon EKS or Amazon Web Services cluster from which the scraper will collect metrics.
 #' @param destination &#91;required&#93; The Amazon Managed Service for Prometheus workspace to send metrics to.
-#' @param roleConfiguration Use this structure to enable cross-account access, so that you can use a
-#' target account to access Prometheus metrics from source accounts.
-#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to
-#' ensure the idempotency of the request.
-#' @param tags (Optional) The list of tag keys and values to associate with the
-#' scraper.
+#' @param roleConfiguration Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.
+#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.
+#' @param tags (Optional) The list of tag keys and values to associate with the scraper.
 #'
 #' @return
 #' A list with the following syntax:
@@ -537,26 +470,17 @@ prometheusservice_create_scraper <- function(alias = NULL, scrapeConfiguration, 
 #' Creates a Prometheus workspace
 #'
 #' @description
-#' Creates a Prometheus workspace. A workspace is a logical space dedicated
-#' to the storage and querying of Prometheus metrics. You can have one or
-#' more workspaces in each Region in your account.
+#' Creates a Prometheus workspace. A workspace is a logical space dedicated to the storage and querying of Prometheus metrics. You can have one or more workspaces in each Region in your account.
 #'
 #' @usage
 #' prometheusservice_create_workspace(alias, clientToken, tags, kmsKeyArn)
 #'
-#' @param alias An alias that you assign to this workspace to help you identify it. It
-#' does not need to be unique.
+#' @param alias An alias that you assign to this workspace to help you identify it. It does not need to be unique.
 #' 
-#' Blank spaces at the beginning or end of the alias that you specify will
-#' be trimmed from the value used.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' Blank spaces at the beginning or end of the alias that you specify will be trimmed from the value used.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #' @param tags The list of tag keys and values to associate with the workspace.
-#' @param kmsKeyArn (optional) The ARN for a customer managed KMS key to use for encrypting
-#' data within your workspace. For more information about using your own
-#' key in your workspace, see [Encryption at
-#' rest](https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html)
-#' in the *Amazon Managed Service for Prometheus User Guide*.
+#' @param kmsKeyArn (optional) The ARN for a customer managed KMS key to use for encrypting data within your workspace. For more information about using your own key in your workspace, see [Encryption at rest](https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html) in the *Amazon Managed Service for Prometheus User Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -620,8 +544,7 @@ prometheusservice_create_workspace <- function(alias = NULL, clientToken = NULL,
 #'   clientToken)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace to delete the alert manager definition from.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' An empty list.
@@ -661,18 +584,15 @@ prometheusservice_delete_alert_manager_definition <- function(workspaceId, clien
 #' Removes an anomaly detector from a workspace
 #'
 #' @description
-#' Removes an anomaly detector from a workspace. This operation is
-#' idempotent.
+#' Removes an anomaly detector from a workspace. This operation is idempotent.
 #'
 #' @usage
 #' prometheusservice_delete_anomaly_detector(workspaceId,
 #'   anomalyDetectorId, clientToken)
 #'
-#' @param workspaceId &#91;required&#93; The identifier of the workspace containing the anomaly detector to
-#' delete.
+#' @param workspaceId &#91;required&#93; The identifier of the workspace containing the anomaly detector to delete.
 #' @param anomalyDetectorId &#91;required&#93; The identifier of the anomaly detector to delete.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' An empty list.
@@ -721,8 +641,7 @@ prometheusservice_delete_anomaly_detector <- function(workspaceId, anomalyDetect
 #' prometheusservice_delete_logging_configuration(workspaceId, clientToken)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace containing the logging configuration to delete.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' An empty list.
@@ -768,10 +687,8 @@ prometheusservice_delete_logging_configuration <- function(workspaceId, clientTo
 #' prometheusservice_delete_query_logging_configuration(workspaceId,
 #'   clientToken)
 #'
-#' @param workspaceId &#91;required&#93; The ID of the workspace from which to delete the query logging
-#' configuration.
-#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to
-#' ensure the idempotency of the request.
+#' @param workspaceId &#91;required&#93; The ID of the workspace from which to delete the query logging configuration.
+#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.
 #'
 #' @return
 #' An empty list.
@@ -812,18 +729,15 @@ prometheusservice_delete_query_logging_configuration <- function(workspaceId, cl
 #' for Prometheus workspace
 #'
 #' @description
-#' Deletes the resource-based policy attached to an Amazon Managed Service
-#' for Prometheus workspace.
+#' Deletes the resource-based policy attached to an Amazon Managed Service for Prometheus workspace.
 #'
 #' @usage
 #' prometheusservice_delete_resource_policy(workspaceId, clientToken,
 #'   revisionId)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace from which to delete the resource-based policy.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' request is safe to retry (idempotent).
-#' @param revisionId The revision ID of the policy to delete. Use this parameter to ensure
-#' that you are deleting the correct version of the policy.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the request is safe to retry (idempotent).
+#' @param revisionId The revision ID of the policy to delete. Use this parameter to ensure that you are deleting the correct version of the policy.
 #'
 #' @return
 #' An empty list.
@@ -865,18 +779,15 @@ prometheusservice_delete_resource_policy <- function(workspaceId, clientToken = 
 #' definition
 #'
 #' @description
-#' Deletes one rule groups namespace and its associated rule groups
-#' definition.
+#' Deletes one rule groups namespace and its associated rule groups definition.
 #'
 #' @usage
 #' prometheusservice_delete_rule_groups_namespace(workspaceId, name,
 #'   clientToken)
 #'
-#' @param workspaceId &#91;required&#93; The ID of the workspace containing the rule groups namespace and
-#' definition to delete.
+#' @param workspaceId &#91;required&#93; The ID of the workspace containing the rule groups namespace and definition to delete.
 #' @param name &#91;required&#93; The name of the rule groups namespace to delete.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' An empty list.
@@ -918,16 +829,13 @@ prometheusservice_delete_rule_groups_namespace <- function(workspaceId, name, cl
 #' collection that the scraper performs
 #'
 #' @description
-#' The [`delete_scraper`][prometheusservice_delete_scraper] operation
-#' deletes one scraper, and stops any metrics collection that the scraper
-#' performs.
+#' The [`delete_scraper`][prometheusservice_delete_scraper] operation deletes one scraper, and stops any metrics collection that the scraper performs.
 #'
 #' @usage
 #' prometheusservice_delete_scraper(scraperId, clientToken)
 #'
 #' @param scraperId &#91;required&#93; The ID of the scraper to delete.
-#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to
-#' ensure the idempotency of the request.
+#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -976,16 +884,14 @@ prometheusservice_delete_scraper <- function(scraperId, clientToken = NULL) {
 #' Prometheus scraper
 #'
 #' @description
-#' Deletes the logging configuration for a Amazon Managed Service for
-#' Prometheus scraper.
+#' Deletes the logging configuration for a Amazon Managed Service for Prometheus scraper.
 #'
 #' @usage
 #' prometheusservice_delete_scraper_logging_configuration(scraperId,
 #'   clientToken)
 #'
 #' @param scraperId &#91;required&#93; The ID of the scraper whose logging configuration will be deleted.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' request is processed exactly once.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the request is processed exactly once.
 #'
 #' @return
 #' An empty list.
@@ -1027,16 +933,13 @@ prometheusservice_delete_scraper_logging_configuration <- function(scraperId, cl
 #' @description
 #' Deletes an existing workspace.
 #' 
-#' When you delete a workspace, the data that has been ingested into it is
-#' not immediately deleted. It will be permanently deleted within one
-#' month.
+#' When you delete a workspace, the data that has been ingested into it is not immediately deleted. It will be permanently deleted within one month.
 #'
 #' @usage
 #' prometheusservice_delete_workspace(workspaceId, clientToken)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace to delete.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' An empty list.
@@ -1077,8 +980,7 @@ prometheusservice_delete_workspace <- function(workspaceId, clientToken = NULL) 
 #' workspace
 #'
 #' @description
-#' Retrieves the full information about the alert manager definition for a
-#' workspace.
+#' Retrieves the full information about the alert manager definition for a workspace.
 #'
 #' @usage
 #' prometheusservice_describe_alert_manager_definition(workspaceId)
@@ -1140,8 +1042,7 @@ prometheusservice_describe_alert_manager_definition <- function(workspaceId) {
 #' including its status and configuration
 #'
 #' @description
-#' Retrieves detailed information about a specific anomaly detector,
-#' including its status and configuration.
+#' Retrieves detailed information about a specific anomaly detector, including its status and configuration.
 #'
 #' @usage
 #' prometheusservice_describe_anomaly_detector(workspaceId,
@@ -1234,8 +1135,7 @@ prometheusservice_describe_anomaly_detector <- function(workspaceId, anomalyDete
 #' logging configuration of the workspace
 #'
 #' @description
-#' Returns complete information about the current rules and alerting
-#' logging configuration of the workspace.
+#' Returns complete information about the current rules and alerting logging configuration of the workspace.
 #' 
 #' These logging configurations are only for rules and alerting logs.
 #'
@@ -1300,14 +1200,12 @@ prometheusservice_describe_logging_configuration <- function(workspaceId) {
 #' specified workspace
 #'
 #' @description
-#' Retrieves the details of the query logging configuration for the
-#' specified workspace.
+#' Retrieves the details of the query logging configuration for the specified workspace.
 #'
 #' @usage
 #' prometheusservice_describe_query_logging_configuration(workspaceId)
 #'
-#' @param workspaceId &#91;required&#93; The ID of the workspace for which to retrieve the query logging
-#' configuration.
+#' @param workspaceId &#91;required&#93; The ID of the workspace for which to retrieve the query logging configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1374,8 +1272,7 @@ prometheusservice_describe_query_logging_configuration <- function(workspaceId) 
 #' Amazon Managed Service for Prometheus workspace
 #'
 #' @description
-#' Returns information about the resource-based policy attached to an
-#' Amazon Managed Service for Prometheus workspace.
+#' Returns information about the resource-based policy attached to an Amazon Managed Service for Prometheus workspace.
 #'
 #' @usage
 #' prometheusservice_describe_resource_policy(workspaceId)
@@ -1426,9 +1323,7 @@ prometheusservice_describe_resource_policy <- function(workspaceId) {
 #' Returns complete information about one rule groups namespace
 #'
 #' @description
-#' Returns complete information about one rule groups namespace. To
-#' retrieve a list of rule groups namespaces, use
-#' [`list_rule_groups_namespaces`][prometheusservice_list_rule_groups_namespaces].
+#' Returns complete information about one rule groups namespace. To retrieve a list of rule groups namespaces, use [`list_rule_groups_namespaces`][prometheusservice_list_rule_groups_namespaces].
 #'
 #' @usage
 #' prometheusservice_describe_rule_groups_namespace(workspaceId, name)
@@ -1497,8 +1392,7 @@ prometheusservice_describe_rule_groups_namespace <- function(workspaceId, name) 
 #' scraper
 #'
 #' @description
-#' The [`describe_scraper`][prometheusservice_describe_scraper] operation
-#' displays information about an existing scraper.
+#' The [`describe_scraper`][prometheusservice_describe_scraper] operation displays information about an existing scraper.
 #'
 #' @usage
 #' prometheusservice_describe_scraper(scraperId)
@@ -1597,8 +1491,7 @@ prometheusservice_describe_scraper <- function(scraperId) {
 #' Prometheus scraper
 #'
 #' @description
-#' Describes the logging configuration for a Amazon Managed Service for
-#' Prometheus scraper.
+#' Describes the logging configuration for a Amazon Managed Service for Prometheus scraper.
 #'
 #' @usage
 #' prometheusservice_describe_scraper_logging_configuration(scraperId)
@@ -1734,16 +1627,12 @@ prometheusservice_describe_workspace <- function(workspaceId) {
 #' workspace
 #'
 #' @description
-#' Use this operation to return information about the configuration of a
-#' workspace. The configuration details returned include workspace
-#' configuration status, label set limits, and retention period.
+#' Use this operation to return information about the configuration of a workspace. The configuration details returned include workspace configuration status, label set limits, and retention period.
 #'
 #' @usage
 #' prometheusservice_describe_workspace_configuration(workspaceId)
 #'
-#' @param workspaceId &#91;required&#93; The ID of the workspace that you want to retrieve information for. To
-#' find the IDs of your workspaces, use the
-#' [`list_workspaces`][prometheusservice_list_workspaces] operation.
+#' @param workspaceId &#91;required&#93; The ID of the workspace that you want to retrieve information for. To find the IDs of your workspaces, use the [`list_workspaces`][prometheusservice_list_workspaces] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1804,10 +1693,7 @@ prometheusservice_describe_workspace_configuration <- function(workspaceId) {
 #' configuration used when Amazon EKS creates a scraper for you
 #'
 #' @description
-#' The
-#' [`get_default_scraper_configuration`][prometheusservice_get_default_scraper_configuration]
-#' operation returns the default scraper configuration used when Amazon EKS
-#' creates a scraper for you.
+#' The [`get_default_scraper_configuration`][prometheusservice_get_default_scraper_configuration] operation returns the default scraper configuration used when Amazon EKS creates a scraper for you.
 #'
 #' @usage
 #' prometheusservice_get_default_scraper_configuration()
@@ -1855,18 +1741,15 @@ prometheusservice_get_default_scraper_configuration <- function() {
 #' optional filtering by alias
 #'
 #' @description
-#' Returns a paginated list of anomaly detectors for a workspace with
-#' optional filtering by alias.
+#' Returns a paginated list of anomaly detectors for a workspace with optional filtering by alias.
 #'
 #' @usage
 #' prometheusservice_list_anomaly_detectors(workspaceId, alias, maxResults,
 #'   nextToken)
 #'
-#' @param workspaceId &#91;required&#93; The identifier of the workspace containing the anomaly detectors to
-#' list.
+#' @param workspaceId &#91;required&#93; The identifier of the workspace containing the anomaly detectors to list.
 #' @param alias Filters the results to anomaly detectors with the specified alias.
-#' @param maxResults The maximum number of results to return in a single call. Valid range is
-#' 1 to 1000.
+#' @param maxResults The maximum number of results to return in a single call. Valid range is 1 to 1000.
 #' @param nextToken The pagination token to continue retrieving results.
 #'
 #' @return
@@ -1941,17 +1824,10 @@ prometheusservice_list_anomaly_detectors <- function(workspaceId, alias = NULL, 
 #'   nextToken, maxResults)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace containing the rule groups namespaces.
-#' @param name Use this parameter to filter the rule groups namespaces that are
-#' returned. Only the namespaces with names that begin with the value that
-#' you specify are returned.
-#' @param nextToken The token for the next set of items to return. You receive this token
-#' from a previous call, and use it to get the next page of results. The
-#' other parameters must be the same as the initial call.
+#' @param name Use this parameter to filter the rule groups namespaces that are returned. Only the namespaces with names that begin with the value that you specify are returned.
+#' @param nextToken The token for the next set of items to return. You receive this token from a previous call, and use it to get the next page of results. The other parameters must be the same as the initial call.
 #' 
-#' For example, if your initial request has `maxResults` of 10, and there
-#' are 12 rule groups namespaces to return, then your initial request will
-#' return 10 and a `nextToken`. Using the next token in a subsequent call
-#' will return the remaining 2 namespaces.
+#' For example, if your initial request has `maxResults` of 10, and there are 12 rule groups namespaces to return, then your initial request will return 10 and a `nextToken`. Using the next token in a subsequent call will return the remaining 2 namespaces.
 #' @param maxResults The maximum number of results to return. The default is 100.
 #'
 #' @return
@@ -2018,35 +1894,22 @@ prometheusservice_list_rule_groups_namespaces <- function(workspaceId, name = NU
 #' The ListScrapers operation lists all of the scrapers in your account
 #'
 #' @description
-#' The [`list_scrapers`][prometheusservice_list_scrapers] operation lists
-#' all of the scrapers in your account. This includes scrapers being
-#' created or deleted. You can optionally filter the returned list.
+#' The [`list_scrapers`][prometheusservice_list_scrapers] operation lists all of the scrapers in your account. This includes scrapers being created or deleted. You can optionally filter the returned list.
 #'
 #' @usage
 #' prometheusservice_list_scrapers(filters, nextToken, maxResults)
 #'
-#' @param filters (Optional) A list of key-value pairs to filter the list of scrapers
-#' returned. Keys include `status`, `sourceArn`, `destinationArn`, and
-#' `alias`.
+#' @param filters (Optional) A list of key-value pairs to filter the list of scrapers returned. Keys include `status`, `sourceArn`, `destinationArn`, and `alias`.
 #' 
-#' Filters on the same key are `OR`'d together, and filters on different
-#' keys are `AND`'d together. For example,
-#' `status=ACTIVE&status=CREATING&alias=Test`, will return all scrapers
-#' that have the alias Test, and are either in status ACTIVE or CREATING.
+#' Filters on the same key are `OR`'d together, and filters on different keys are `AND`'d together. For example, `status=ACTIVE&status=CREATING&alias=Test`, will return all scrapers that have the alias Test, and are either in status ACTIVE or CREATING.
 #' 
-#' To find all active scrapers that are sending metrics to a specific
-#' Amazon Managed Service for Prometheus workspace, you would use the ARN
-#' of the workspace in a query:
+#' To find all active scrapers that are sending metrics to a specific Amazon Managed Service for Prometheus workspace, you would use the ARN of the workspace in a query:
 #' 
 #' `status=ACTIVE&destinationArn=arn:aws:aps:us-east-1:123456789012:workspace/ws-example1-1234-abcd-56ef-123456789012`
 #' 
-#' If this is included, it filters the results to only the scrapers that
-#' match the filter.
-#' @param nextToken (Optional) The token for the next set of items to return. (You received
-#' this token from a previous call.)
-#' @param maxResults Optional) The maximum number of scrapers to return in one
-#' [`list_scrapers`][prometheusservice_list_scrapers] operation. The range
-#' is 1-1000.
+#' If this is included, it filters the results to only the scrapers that match the filter.
+#' @param nextToken (Optional) The token for the next set of items to return. (You received this token from a previous call.)
+#' @param maxResults Optional) The maximum number of scrapers to return in one [`list_scrapers`][prometheusservice_list_scrapers] operation. The range is 1-1000.
 #' 
 #' If you omit this parameter, the default of 100 is used.
 #'
@@ -2148,16 +2011,12 @@ prometheusservice_list_scrapers <- function(filters = NULL, nextToken = NULL, ma
 #' with an Amazon Managed Service for Prometheus resource
 #'
 #' @description
-#' The [`list_tags_for_resource`][prometheusservice_list_tags_for_resource]
-#' operation returns the tags that are associated with an Amazon Managed
-#' Service for Prometheus resource. Currently, the only resources that can
-#' be tagged are scrapers, workspaces, and rule groups namespaces.
+#' The [`list_tags_for_resource`][prometheusservice_list_tags_for_resource] operation returns the tags that are associated with an Amazon Managed Service for Prometheus resource. Currently, the only resources that can be tagged are scrapers, workspaces, and rule groups namespaces.
 #'
 #' @usage
 #' prometheusservice_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The ARN of the resource to list tages for. Must be a workspace, scraper,
-#' or rule groups namespace resource.
+#' @param resourceArn &#91;required&#93; The ARN of the resource to list tages for. Must be a workspace, scraper, or rule groups namespace resource.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2204,27 +2063,18 @@ prometheusservice_list_tags_for_resource <- function(resourceArn) {
 #' your account
 #'
 #' @description
-#' Lists all of the Amazon Managed Service for Prometheus workspaces in
-#' your account. This includes workspaces being created or deleted.
+#' Lists all of the Amazon Managed Service for Prometheus workspaces in your account. This includes workspaces being created or deleted.
 #'
 #' @usage
 #' prometheusservice_list_workspaces(nextToken, alias, maxResults)
 #'
-#' @param nextToken The token for the next set of items to return. You receive this token
-#' from a previous call, and use it to get the next page of results. The
-#' other parameters must be the same as the initial call.
+#' @param nextToken The token for the next set of items to return. You receive this token from a previous call, and use it to get the next page of results. The other parameters must be the same as the initial call.
 #' 
-#' For example, if your initial request has `maxResults` of 10, and there
-#' are 12 workspaces to return, then your initial request will return 10
-#' and a `nextToken`. Using the next token in a subsequent call will return
-#' the remaining 2 workspaces.
-#' @param alias If this is included, it filters the results to only the workspaces with
-#' names that start with the value that you specify here.
+#' For example, if your initial request has `maxResults` of 10, and there are 12 workspaces to return, then your initial request will return 10 and a `nextToken`. Using the next token in a subsequent call will return the remaining 2 workspaces.
+#' @param alias If this is included, it filters the results to only the workspaces with names that start with the value that you specify here.
 #' 
-#' Amazon Managed Service for Prometheus will automatically strip any blank
-#' spaces from the beginning and end of the alias that you specify.
-#' @param maxResults The maximum number of workspaces to return per request. The default is
-#' 100.
+#' Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.
+#' @param maxResults The maximum number of workspaces to return per request. The default is 100.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2287,23 +2137,17 @@ prometheusservice_list_workspaces <- function(nextToken = NULL, alias = NULL, ma
 #' Updates an existing alert manager definition in a workspace
 #'
 #' @description
-#' Updates an existing alert manager definition in a workspace. If the
-#' workspace does not already have an alert manager definition, don't use
-#' this operation to create it. Instead, use
-#' [`create_alert_manager_definition`][prometheusservice_create_alert_manager_definition].
+#' Updates an existing alert manager definition in a workspace. If the workspace does not already have an alert manager definition, don't use this operation to create it. Instead, use [`create_alert_manager_definition`][prometheusservice_create_alert_manager_definition].
 #'
 #' @usage
 #' prometheusservice_put_alert_manager_definition(workspaceId, data,
 #'   clientToken)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace to update the alert manager definition in.
-#' @param data &#91;required&#93; The alert manager definition to use. A base64-encoded version of the
-#' YAML alert manager definition file.
+#' @param data &#91;required&#93; The alert manager definition to use. A base64-encoded version of the YAML alert manager definition file.
 #' 
-#' For details about the alert manager definition, see
-#' [AlertManagedDefinitionData](https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html).
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' For details about the alert manager definition, see [AlertManagedDefinitionData](https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-AlertManagerDefinitionData.html).
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2353,33 +2197,20 @@ prometheusservice_put_alert_manager_definition <- function(workspaceId, data, cl
 #' detector if one doesn't exist, or updates an existing one
 #'
 #' @description
-#' When you call
-#' [`put_anomaly_detector`][prometheusservice_put_anomaly_detector], the
-#' operation creates a new anomaly detector if one doesn't exist, or
-#' updates an existing one. Each call to this operation triggers a complete
-#' retraining of the detector, which includes querying the minimum required
-#' samples and backfilling the detector with historical data. This process
-#' occurs regardless of whether you're making a minor change like updating
-#' the evaluation interval or making more substantial modifications. The
-#' operation serves as the single method for creating, updating, and
-#' retraining anomaly detectors.
+#' When you call [`put_anomaly_detector`][prometheusservice_put_anomaly_detector], the operation creates a new anomaly detector if one doesn't exist, or updates an existing one. Each call to this operation triggers a complete retraining of the detector, which includes querying the minimum required samples and backfilling the detector with historical data. This process occurs regardless of whether you're making a minor change like updating the evaluation interval or making more substantial modifications. The operation serves as the single method for creating, updating, and retraining anomaly detectors.
 #'
 #' @usage
 #' prometheusservice_put_anomaly_detector(workspaceId, anomalyDetectorId,
 #'   evaluationIntervalInSeconds, missingDataAction, configuration, labels,
 #'   clientToken)
 #'
-#' @param workspaceId &#91;required&#93; The identifier of the workspace containing the anomaly detector to
-#' update.
+#' @param workspaceId &#91;required&#93; The identifier of the workspace containing the anomaly detector to update.
 #' @param anomalyDetectorId &#91;required&#93; The identifier of the anomaly detector to update.
-#' @param evaluationIntervalInSeconds The frequency, in seconds, at which the anomaly detector evaluates
-#' metrics.
+#' @param evaluationIntervalInSeconds The frequency, in seconds, at which the anomaly detector evaluates metrics.
 #' @param missingDataAction Specifies the action to take when data is missing during evaluation.
 #' @param configuration &#91;required&#93; The algorithm configuration for the anomaly detector.
-#' @param labels The Amazon Managed Service for Prometheus metric labels to associate
-#' with the anomaly detector.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param labels The Amazon Managed Service for Prometheus metric labels to associate with the anomaly detector.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2457,48 +2288,24 @@ prometheusservice_put_anomaly_detector <- function(workspaceId, anomalyDetectorI
 #' for Prometheus workspace
 #'
 #' @description
-#' Creates or updates a resource-based policy for an Amazon Managed Service
-#' for Prometheus workspace. Use resource-based policies to grant
-#' permissions to other AWS accounts or services to access your workspace.
+#' Creates or updates a resource-based policy for an Amazon Managed Service for Prometheus workspace. Use resource-based policies to grant permissions to other AWS accounts or services to access your workspace.
 #' 
-#' Only Prometheus-compatible APIs can be used for workspace sharing. You
-#' can add non-Prometheus-compatible APIs to the policy, but they will be
-#' ignored. For more information, see [Prometheus-compatible
-#' APIs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-Prometheus-Compatible-Apis.html)
-#' in the *Amazon Managed Service for Prometheus User Guide*.
+#' Only Prometheus-compatible APIs can be used for workspace sharing. You can add non-Prometheus-compatible APIs to the policy, but they will be ignored. For more information, see [Prometheus-compatible APIs](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference-Prometheus-Compatible-Apis.html) in the *Amazon Managed Service for Prometheus User Guide*.
 #' 
-#' If your workspace uses customer-managed KMS keys for encryption, you
-#' must grant the principals in your resource-based policy access to those
-#' KMS keys. You can do this by creating KMS grants. For more information,
-#' see
-#' [CreateGrant](https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html)
-#' in the *AWS Key Management Service API Reference* and [Encryption at
-#' rest](https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html)
-#' in the *Amazon Managed Service for Prometheus User Guide*.
+#' If your workspace uses customer-managed KMS keys for encryption, you must grant the principals in your resource-based policy access to those KMS keys. You can do this by creating KMS grants. For more information, see [CreateGrant](https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html) in the *AWS Key Management Service API Reference* and [Encryption at rest](https://docs.aws.amazon.com/prometheus/latest/userguide/encryption-at-rest-Amazon-Service-Prometheus.html) in the *Amazon Managed Service for Prometheus User Guide*.
 #' 
-#' For more information about working with IAM, see [Using Amazon Managed
-#' Service for Prometheus with
-#' IAM](https://docs.aws.amazon.com/prometheus/latest/userguide/security_iam_service-with-iam.html)
-#' in the *Amazon Managed Service for Prometheus User Guide*.
+#' For more information about working with IAM, see [Using Amazon Managed Service for Prometheus with IAM](https://docs.aws.amazon.com/prometheus/latest/userguide/security_iam_service-with-iam.html) in the *Amazon Managed Service for Prometheus User Guide*.
 #'
 #' @usage
 #' prometheusservice_put_resource_policy(workspaceId, policyDocument,
 #'   clientToken, revisionId)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace to attach the resource-based policy to.
-#' @param policyDocument &#91;required&#93; The JSON policy document to use as the resource-based policy. This
-#' policy defines the permissions that other AWS accounts or services have
-#' to access your workspace.
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' request is safe to retry (idempotent).
-#' @param revisionId The revision ID of the policy to update. Use this parameter to ensure
-#' that you are updating the correct version of the policy. If you don't
-#' specify a revision ID, the policy is updated regardless of its current
-#' revision.
+#' @param policyDocument &#91;required&#93; The JSON policy document to use as the resource-based policy. This policy defines the permissions that other AWS accounts or services have to access your workspace.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the request is safe to retry (idempotent).
+#' @param revisionId The revision ID of the policy to update. Use this parameter to ensure that you are updating the correct version of the policy. If you don't specify a revision ID, the policy is updated regardless of its current revision.
 #' 
-#' For the first **PUT** request on a workspace that doesn't have an
-#' existing resource policy, you can specify `NO_POLICY` as the revision
-#' ID.
+#' For the first **PUT** request on a workspace that doesn't have an existing resource policy, you can specify `NO_POLICY` as the revision ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2546,35 +2353,24 @@ prometheusservice_put_resource_policy <- function(workspaceId, policyDocument, c
 #' Updates an existing rule groups namespace within a workspace
 #'
 #' @description
-#' Updates an existing rule groups namespace within a workspace. A rule
-#' groups namespace is associated with exactly one rules file. A workspace
-#' can have multiple rule groups namespaces.
+#' Updates an existing rule groups namespace within a workspace. A rule groups namespace is associated with exactly one rules file. A workspace can have multiple rule groups namespaces.
 #' 
-#' The combined length of a rule group namespace and a rule group name
-#' cannot exceed 721 UTF-8 bytes.
+#' The combined length of a rule group namespace and a rule group name cannot exceed 721 UTF-8 bytes.
 #' 
-#' Use this operation only to update existing rule groups namespaces. To
-#' create a new rule groups namespace, use
-#' [`create_rule_groups_namespace`][prometheusservice_create_rule_groups_namespace].
+#' Use this operation only to update existing rule groups namespaces. To create a new rule groups namespace, use [`create_rule_groups_namespace`][prometheusservice_create_rule_groups_namespace].
 #' 
-#' You can't use this operation to add tags to an existing rule groups
-#' namespace. Instead, use
-#' [`tag_resource`][prometheusservice_tag_resource].
+#' You can't use this operation to add tags to an existing rule groups namespace. Instead, use [`tag_resource`][prometheusservice_tag_resource].
 #'
 #' @usage
 #' prometheusservice_put_rule_groups_namespace(workspaceId, name, data,
 #'   clientToken)
 #'
-#' @param workspaceId &#91;required&#93; The ID of the workspace where you are updating the rule groups
-#' namespace.
+#' @param workspaceId &#91;required&#93; The ID of the workspace where you are updating the rule groups namespace.
 #' @param name &#91;required&#93; The name of the rule groups namespace that you are updating.
-#' @param data &#91;required&#93; The new rules file to use in the namespace. A base64-encoded version of
-#' the YAML rule groups file.
+#' @param data &#91;required&#93; The new rules file to use in the namespace. A base64-encoded version of the YAML rule groups file.
 #' 
-#' For details about the rule groups namespace structure, see
-#' [RuleGroupsNamespaceData](https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html).
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' For details about the rule groups namespace structure, see [RuleGroupsNamespaceData](https://docs.aws.amazon.com/prometheus/latest/APIReference/yaml-RuleGroupsNamespaceData.html).
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2630,16 +2426,9 @@ prometheusservice_put_rule_groups_namespace <- function(workspaceId, name, data,
 #' for Prometheus resource
 #'
 #' @description
-#' The [`tag_resource`][prometheusservice_tag_resource] operation
-#' associates tags with an Amazon Managed Service for Prometheus resource.
-#' The only resources that can be tagged are rule groups namespaces,
-#' scrapers, and workspaces.
+#' The [`tag_resource`][prometheusservice_tag_resource] operation associates tags with an Amazon Managed Service for Prometheus resource. The only resources that can be tagged are rule groups namespaces, scrapers, and workspaces.
 #' 
-#' If you specify a new tag key for the resource, this tag is appended to
-#' the list of tags associated with the resource. If you specify a tag key
-#' that is already associated with the resource, the new tag value that you
-#' specify replaces the previous value for that tag. To remove a tag, use
-#' [`untag_resource`][prometheusservice_untag_resource].
+#' If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag. To remove a tag, use [`untag_resource`][prometheusservice_untag_resource].
 #'
 #' @usage
 #' prometheusservice_tag_resource(resourceArn, tags)
@@ -2690,9 +2479,7 @@ prometheusservice_tag_resource <- function(resourceArn, tags) {
 #' resource
 #'
 #' @description
-#' Removes the specified tags from an Amazon Managed Service for Prometheus
-#' resource. The only resources that can be tagged are rule groups
-#' namespaces, scrapers, and workspaces.
+#' Removes the specified tags from an Amazon Managed Service for Prometheus resource. The only resources that can be tagged are rule groups namespaces, scrapers, and workspaces.
 #'
 #' @usage
 #' prometheusservice_untag_resource(resourceArn, tagKeys)
@@ -2741,8 +2528,7 @@ prometheusservice_untag_resource <- function(resourceArn, tagKeys) {
 #' alerting logging configuration
 #'
 #' @description
-#' Updates the log group ARN or the workspace ID of the current rules and
-#' alerting logging configuration.
+#' Updates the log group ARN or the workspace ID of the current rules and alerting logging configuration.
 #' 
 #' These logging configurations are only for rules and alerting logs.
 #'
@@ -2751,10 +2537,8 @@ prometheusservice_untag_resource <- function(resourceArn, tagKeys) {
 #'   clientToken)
 #'
 #' @param workspaceId &#91;required&#93; The ID of the workspace to update the logging configuration for.
-#' @param logGroupArn &#91;required&#93; The ARN of the CloudWatch log group to which the vended log data will be
-#' published.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' @param logGroupArn &#91;required&#93; The ARN of the CloudWatch log group to which the vended log data will be published.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2809,12 +2593,9 @@ prometheusservice_update_logging_configuration <- function(workspaceId, logGroup
 #' prometheusservice_update_query_logging_configuration(workspaceId,
 #'   destinations, clientToken)
 #'
-#' @param workspaceId &#91;required&#93; The ID of the workspace for which to update the query logging
-#' configuration.
-#' @param destinations &#91;required&#93; The destinations where query logs will be sent. Only CloudWatch Logs
-#' destination is supported. The list must contain exactly one element.
-#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to
-#' ensure the idempotency of the request.
+#' @param workspaceId &#91;required&#93; The ID of the workspace for which to update the query logging configuration.
+#' @param destinations &#91;required&#93; The destinations where query logs will be sent. Only CloudWatch Logs destination is supported. The list must contain exactly one element.
+#' @param clientToken (Optional) A unique, case-sensitive identifier that you can provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2874,9 +2655,7 @@ prometheusservice_update_query_logging_configuration <- function(workspaceId, de
 #' @description
 #' Updates an existing scraper.
 #' 
-#' You can't use this function to update the source from which the scraper
-#' is collecting metrics. To change the source, delete the scraper and
-#' create a new one.
+#' You can't use this function to update the source from which the scraper is collecting metrics. To change the source, delete the scraper and create a new one.
 #'
 #' @usage
 #' prometheusservice_update_scraper(scraperId, alias, scrapeConfiguration,
@@ -2886,16 +2665,10 @@ prometheusservice_update_query_logging_configuration <- function(workspaceId, de
 #' @param alias The new alias of the scraper.
 #' @param scrapeConfiguration Contains the base-64 encoded YAML configuration for the scraper.
 #' 
-#' For more information about configuring a scraper, see [Using an Amazon
-#' Web Services managed
-#' collector](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html)
-#' in the *Amazon Managed Service for Prometheus User Guide*.
-#' @param destination The new Amazon Managed Service for Prometheus workspace to send metrics
-#' to.
-#' @param roleConfiguration Use this structure to enable cross-account access, so that you can use a
-#' target account to access Prometheus metrics from source accounts.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' For more information about configuring a scraper, see [Using an Amazon Web Services managed collector](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html) in the *Amazon Managed Service for Prometheus User Guide*.
+#' @param destination The new Amazon Managed Service for Prometheus workspace to send metrics to.
+#' @param roleConfiguration Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2961,8 +2734,7 @@ prometheusservice_update_scraper <- function(scraperId, alias = NULL, scrapeConf
 #' Prometheus scraper
 #'
 #' @description
-#' Updates the logging configuration for a Amazon Managed Service for
-#' Prometheus scraper.
+#' Updates the logging configuration for a Amazon Managed Service for Prometheus scraper.
 #'
 #' @usage
 #' prometheusservice_update_scraper_logging_configuration(scraperId,
@@ -3041,10 +2813,8 @@ prometheusservice_update_scraper_logging_configuration <- function(scraperId, lo
 #' @param workspaceId &#91;required&#93; The ID of the workspace to update.
 #' @param alias The new alias for the workspace. It does not need to be unique.
 #' 
-#' Amazon Managed Service for Prometheus will automatically strip any blank
-#' spaces from the beginning and end of the alias that you specify.
-#' @param clientToken A unique identifier that you can provide to ensure the idempotency of
-#' the request. Case-sensitive.
+#' Amazon Managed Service for Prometheus will automatically strip any blank spaces from the beginning and end of the alias that you specify.
+#' @param clientToken A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.
 #'
 #' @return
 #' An empty list.
@@ -3086,24 +2856,17 @@ prometheusservice_update_workspace_alias <- function(workspaceId, alias = NULL, 
 #' and retention period of a workspace
 #'
 #' @description
-#' Use this operation to create or update the label sets, label set limits,
-#' and retention period of a workspace.
+#' Use this operation to create or update the label sets, label set limits, and retention period of a workspace.
 #' 
-#' You must specify at least one of `limitsPerLabelSet` or
-#' `retentionPeriodInDays` for the request to be valid.
+#' You must specify at least one of `limitsPerLabelSet` or `retentionPeriodInDays` for the request to be valid.
 #'
 #' @usage
 #' prometheusservice_update_workspace_configuration(workspaceId,
 #'   clientToken, limitsPerLabelSet, retentionPeriodInDays)
 #'
-#' @param workspaceId &#91;required&#93; The ID of the workspace that you want to update. To find the IDs of your
-#' workspaces, use the
-#' [`list_workspaces`][prometheusservice_list_workspaces] operation.
-#' @param clientToken You can include a token in your operation to make it an idempotent
-#' opeartion.
-#' @param limitsPerLabelSet This is an array of structures, where each structure defines a label set
-#' for the workspace, and defines the active time series limit for each of
-#' those label sets. Each label name in a label set must be unique.
+#' @param workspaceId &#91;required&#93; The ID of the workspace that you want to update. To find the IDs of your workspaces, use the [`list_workspaces`][prometheusservice_list_workspaces] operation.
+#' @param clientToken You can include a token in your operation to make it an idempotent opeartion.
+#' @param limitsPerLabelSet This is an array of structures, where each structure defines a label set for the workspace, and defines the active time series limit for each of those label sets. Each label name in a label set must be unique.
 #' @param retentionPeriodInDays Specifies how many days that metrics will be retained in the workspace.
 #'
 #' @return

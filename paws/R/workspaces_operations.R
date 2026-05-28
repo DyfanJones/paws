@@ -8,15 +8,13 @@ NULL
 #' @description
 #' Accepts the account link invitation.
 #' 
-#' There's currently no unlinking capability after you accept the account
-#' linking invitation.
+#' There's currently no unlinking capability after you accept the account linking invitation.
 #'
 #' @usage
 #' workspaces_accept_account_link_invitation(LinkId, ClientToken)
 #'
 #' @param LinkId &#91;required&#93; The identifier of the account link.
-#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to
-#' ensure idempotent creation.
+#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -67,15 +65,9 @@ workspaces_accept_account_link_invitation <- function(LinkId, ClientToken = NULL
 #' to enable cross-Region redirection
 #'
 #' @description
-#' Associates the specified connection alias with the specified directory
-#' to enable cross-Region redirection. For more information, see
-#' [Cross-Region Redirection for Amazon
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
+#' Associates the specified connection alias with the specified directory to enable cross-Region redirection. For more information, see [Cross-Region Redirection for Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
 #' 
-#' Before performing this operation, call
-#' [DescribeConnectionAliases](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html)
-#' to make sure that the current state of the connection alias is
-#' `CREATED`.
+#' Before performing this operation, call [DescribeConnectionAliases](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html) to make sure that the current state of the connection alias is `CREATED`.
 #'
 #' @usage
 #' workspaces_associate_connection_alias(AliasId, ResourceId)
@@ -127,8 +119,7 @@ workspaces_associate_connection_alias <- function(AliasId, ResourceId) {
 #' directory
 #'
 #' @description
-#' Associates the specified IP access control group with the specified
-#' directory.
+#' Associates the specified IP access control group with the specified directory.
 #'
 #' @usage
 #' workspaces_associate_ip_groups(DirectoryId, GroupIds)
@@ -244,8 +235,7 @@ workspaces_associate_workspace_application <- function(WorkspaceId, ApplicationI
 #' @description
 #' Adds one or more rules to the specified IP access control group.
 #' 
-#' This action gives users permission to access their WorkSpaces from the
-#' CIDR address ranges specified in the rules.
+#' This action gives users permission to access their WorkSpaces from the CIDR address ranges specified in the rules.
 #'
 #' @usage
 #' workspaces_authorize_ip_rules(GroupId, UserRules)
@@ -297,25 +287,13 @@ workspaces_authorize_ip_rules <- function(GroupId, UserRules) {
 #' Region
 #'
 #' @description
-#' Copies the specified image from the specified Region to the current
-#' Region. For more information about copying images, see [Copy a Custom
-#' WorkSpaces
-#' Image](https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html).
+#' Copies the specified image from the specified Region to the current Region. For more information about copying images, see [Copy a Custom WorkSpaces Image](https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html).
 #' 
-#' In the China (Ningxia) Region, you can copy images only within the same
-#' Region.
+#' In the China (Ningxia) Region, you can copy images only within the same Region.
 #' 
-#' In Amazon Web Services GovCloud (US), to copy images to and from other
-#' Regions, contact Amazon Web Services Support.
+#' In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.
 #' 
-#' Before copying a shared image, be sure to verify that it has been shared
-#' from the correct Amazon Web Services account. To determine if an image
-#' has been shared and to see the ID of the Amazon Web Services account
-#' that owns an image, use the
-#' [DescribeWorkSpaceImages](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html)
-#' and
-#' [`describe_workspace_image_permissions`][workspaces_describe_workspace_image_permissions]
-#' API operations.
+#' Before copying a shared image, be sure to verify that it has been shared from the correct Amazon Web Services account. To determine if an image has been shared and to see the ID of the Amazon Web Services account that owns an image, use the [DescribeWorkSpaceImages](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html) and [`describe_workspace_image_permissions`][workspaces_describe_workspace_image_permissions] API operations.
 #'
 #' @usage
 #' workspaces_copy_workspace_image(Name, Description, SourceImageId,
@@ -384,8 +362,7 @@ workspaces_copy_workspace_image <- function(Name, Description = NULL, SourceImag
 #' workspaces_create_account_link_invitation(TargetAccountId, ClientToken)
 #'
 #' @param TargetAccountId &#91;required&#93; The identifier of the target account.
-#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to
-#' ensure idempotent creation.
+#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -435,11 +412,9 @@ workspaces_create_account_link_invitation <- function(TargetAccountId, ClientTok
 #' Creates a client-add-in for Amazon Connect within a directory
 #'
 #' @description
-#' Creates a client-add-in for Amazon Connect within a directory. You can
-#' create only one Amazon Connect client add-in within a directory.
+#' Creates a client-add-in for Amazon Connect within a directory. You can create only one Amazon Connect client add-in within a directory.
 #' 
-#' This client add-in allows WorkSpaces users to seamlessly connect to
-#' Amazon Connect.
+#' This client add-in allows WorkSpaces users to seamlessly connect to Amazon Connect.
 #'
 #' @usage
 #' workspaces_create_connect_client_add_in(ResourceId, Name, URL)
@@ -493,22 +468,14 @@ workspaces_create_connect_client_add_in <- function(ResourceId, Name, URL) {
 #' redirection
 #'
 #' @description
-#' Creates the specified connection alias for use with cross-Region
-#' redirection. For more information, see [Cross-Region Redirection for
-#' Amazon
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
+#' Creates the specified connection alias for use with cross-Region redirection. For more information, see [Cross-Region Redirection for Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
 #'
 #' @usage
 #' workspaces_create_connection_alias(ConnectionString, Tags)
 #'
-#' @param ConnectionString &#91;required&#93; A connection string in the form of a fully qualified domain name (FQDN),
-#' such as `www.example.com`.
+#' @param ConnectionString &#91;required&#93; A connection string in the form of a fully qualified domain name (FQDN), such as `www.example.com`.
 #' 
-#' After you create a connection string, it is always associated to your
-#' Amazon Web Services account. You cannot recreate the same connection
-#' string with a different account, even if you delete all instances of it
-#' from the original account. The connection string is globally reserved
-#' for your account.
+#' After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.
 #' @param Tags The tags to associate with the connection alias.
 #'
 #' @return
@@ -561,19 +528,9 @@ workspaces_create_connection_alias <- function(ConnectionString, Tags = NULL) {
 #' @description
 #' Creates an IP access control group.
 #' 
-#' An IP access control group provides you with the ability to control the
-#' IP addresses from which users are allowed to access their WorkSpaces. To
-#' specify the CIDR address ranges, add rules to your IP access control
-#' group and then associate the group with your directory. You can add
-#' rules when you create the group or at any time using
-#' [`authorize_ip_rules`][workspaces_authorize_ip_rules].
+#' An IP access control group provides you with the ability to control the IP addresses from which users are allowed to access their WorkSpaces. To specify the CIDR address ranges, add rules to your IP access control group and then associate the group with your directory. You can add rules when you create the group or at any time using [`authorize_ip_rules`][workspaces_authorize_ip_rules].
 #' 
-#' There is a default IP access control group associated with your
-#' directory. If you don't associate an IP access control group with your
-#' directory, the default group is used. The default group includes a
-#' default rule that allows users to access their WorkSpaces from anywhere.
-#' You cannot modify the default IP access control group for your
-#' directory.
+#' There is a default IP access control group associated with your directory. If you don't associate an IP access control group with your directory, the default group is used. The default group includes a default rule that allows users to access their WorkSpaces from anywhere. You cannot modify the default IP access control group for your directory.
 #'
 #' @usage
 #' workspaces_create_ip_group(GroupName, GroupDesc, UserRules, Tags)
@@ -732,9 +689,7 @@ workspaces_create_standby_workspaces <- function(PrimaryRegion, StandbyWorkspace
 #' @usage
 #' workspaces_create_tags(ResourceId, Tags)
 #'
-#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types
-#' are WorkSpaces, registered directories, images, custom bundles, IP
-#' access control groups, and connection aliases.
+#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.
 #' @param Tags &#91;required&#93; The tags. Each WorkSpaces resource can have a maximum of 50 tags.
 #'
 #' @return
@@ -781,23 +736,15 @@ workspaces_create_tags <- function(ResourceId, Tags) {
 #' image
 #'
 #' @description
-#' Creates a new updated WorkSpace image based on the specified source
-#' image. The new updated WorkSpace image has the latest drivers and other
-#' updates required by the Amazon WorkSpaces components.
+#' Creates a new updated WorkSpace image based on the specified source image. The new updated WorkSpace image has the latest drivers and other updates required by the Amazon WorkSpaces components.
 #' 
-#' To determine which WorkSpace images need to be updated with the latest
-#' Amazon WorkSpaces requirements, use
-#' [DescribeWorkspaceImages](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html).
+#' To determine which WorkSpace images need to be updated with the latest Amazon WorkSpaces requirements, use [DescribeWorkspaceImages](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceImages.html).
 #' 
-#' -   Only Windows 10, Windows Server 2016, and Windows Server 2019
-#'     WorkSpace images can be programmatically updated at this time.
+#' -   Only Windows 10, Windows Server 2016, and Windows Server 2019 WorkSpace images can be programmatically updated at this time.
 #' 
-#' -   Microsoft Windows updates and other application updates are not
-#'     included in the update process.
+#' -   Microsoft Windows updates and other application updates are not included in the update process.
 #' 
-#' -   The source WorkSpace image is not deleted. You can delete the source
-#'     image after you've verified your new updated image and created a new
-#'     bundle.
+#' -   The source WorkSpace image is not deleted. You can delete the source image after you've verified your new updated image and created a new bundle.
 #'
 #' @usage
 #' workspaces_create_updated_workspace_image(Name, Description,
@@ -808,9 +755,7 @@ workspaces_create_tags <- function(ResourceId, Tags) {
 #' @param SourceImageId &#91;required&#93; The identifier of the source WorkSpace image.
 #' @param Tags The tags that you want to add to the new updated WorkSpace image.
 #' 
-#' To add tags at the same time when you're creating the updated image, you
-#' must create an IAM policy that grants your IAM user permissions to use
-#' `workspaces:CreateTags`.
+#' To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use `workspaces:CreateTags`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -862,9 +807,7 @@ workspaces_create_updated_workspace_image <- function(Name, Description, SourceI
 #' Creates the specified WorkSpace bundle
 #'
 #' @description
-#' Creates the specified WorkSpace bundle. For more information about
-#' creating WorkSpace bundles, see [Create a Custom WorkSpaces Image and
-#' Bundle](https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html).
+#' Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see [Create a Custom WorkSpaces Image and Bundle](https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html).
 #'
 #' @usage
 #' workspaces_create_workspace_bundle(BundleName, BundleDescription,
@@ -873,14 +816,12 @@ workspaces_create_updated_workspace_image <- function(Name, Description, SourceI
 #' @param BundleName &#91;required&#93; The name of the bundle.
 #' @param BundleDescription &#91;required&#93; The description of the bundle.
 #' @param ImageId &#91;required&#93; The identifier of the image that is used to create the bundle.
-#' @param ComputeType &#91;required&#93; 
-#' @param UserStorage &#91;required&#93; 
-#' @param RootStorage 
+#' @param ComputeType &#91;required&#93; Describes the compute type of the bundle.
+#' @param UserStorage &#91;required&#93; Describes the user volume for a WorkSpace bundle.
+#' @param RootStorage Describes the root volume for a WorkSpace bundle.
 #' @param Tags The tags associated with the bundle.
 #' 
-#' To add tags at the same time when you're creating the bundle, you must
-#' create an IAM policy that grants your IAM user permissions to use
-#' `workspaces:CreateTags`.
+#' To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use `workspaces:CreateTags`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -972,9 +913,7 @@ workspaces_create_workspace_bundle <- function(BundleName, BundleDescription, Im
 #' @param Name &#91;required&#93; The name of the new WorkSpace image.
 #' @param Description &#91;required&#93; The description of the new WorkSpace image.
 #' @param WorkspaceId &#91;required&#93; The identifier of the source WorkSpace
-#' @param Tags The tags that you want to add to the new WorkSpace image. To add tags
-#' when you're creating the image, you must create an IAM policy that
-#' grants your IAM user permission to use `workspaces:CreateTags`.
+#' @param Tags The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use `workspaces:CreateTags`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1039,25 +978,15 @@ workspaces_create_workspace_image <- function(Name, Description, WorkspaceId, Ta
 #' @description
 #' Creates one or more WorkSpaces.
 #' 
-#' This operation is asynchronous and returns before the WorkSpaces are
-#' created.
+#' This operation is asynchronous and returns before the WorkSpaces are created.
 #' 
-#' -   The `MANUAL` running mode value is only supported by Amazon
-#'     WorkSpaces Core. Contact your account team to be allow-listed to use
-#'     this value. For more information, see [Amazon WorkSpaces
-#'     Core](https://aws.amazon.com/workspaces/vdi-partners/).
+#' -   The `MANUAL` running mode value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see [Amazon WorkSpaces Core](https://aws.amazon.com/workspaces/vdi-partners/).
 #' 
-#' -   You don't need to specify the `PCOIP` protocol for Linux bundles
-#'     because `DCV` (formerly WSP) is the default protocol for those
-#'     bundles.
+#' -   You don't need to specify the `PCOIP` protocol for Linux bundles because `DCV` (formerly WSP) is the default protocol for those bundles.
 #' 
-#' -   User-decoupled WorkSpaces are only supported by Amazon WorkSpaces
-#'     Core.
+#' -   User-decoupled WorkSpaces are only supported by Amazon WorkSpaces Core.
 #' 
-#' -   Review your running mode to ensure you are using one that is optimal
-#'     for your needs and budget. For more information on switching running
-#'     modes, see [Can I switch between hourly and monthly
-#'     billing?](https://aws.amazon.com/workspaces-family/workspaces/faqs/#:~:text=Can%20I%20switch%20between%20hourly%20and%20monthly%20billing%20on%20WorkSpaces%20Personal?)
+#' -   Review your running mode to ensure you are using one that is optimal for your needs and budget. For more information on switching running modes, see [Can I switch between hourly and monthly billing?](https://aws.amazon.com/workspaces-family/workspaces/faqs/#%3A~%3Atext%3DCan%20I%20switch%20between%20hourly%20and%20monthly%20billing%20on%20WorkSpaces%20Personal?)
 #'
 #' @usage
 #' workspaces_create_workspaces(Workspaces)
@@ -1358,8 +1287,7 @@ workspaces_create_workspaces_pool <- function(PoolName, Description, BundleId, D
 #' workspaces_delete_account_link_invitation(LinkId, ClientToken)
 #'
 #' @param LinkId &#91;required&#93; The identifier of the account link.
-#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to
-#' ensure idempotent creation.
+#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1409,19 +1337,14 @@ workspaces_delete_account_link_invitation <- function(LinkId, ClientToken = NULL
 #' Deletes customized client branding
 #'
 #' @description
-#' Deletes customized client branding. Client branding allows you to
-#' customize your WorkSpace's client login portal. You can tailor your
-#' login portal company logo, the support email address, support link, link
-#' to reset password, and a custom message for users trying to sign in.
+#' Deletes customized client branding. Client branding allows you to customize your WorkSpace's client login portal. You can tailor your login portal company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.
 #' 
-#' After you delete your customized client branding, your login portal
-#' reverts to the default client branding.
+#' After you delete your customized client branding, your login portal reverts to the default client branding.
 #'
 #' @usage
 #' workspaces_delete_client_branding(ResourceId, Platforms)
 #'
-#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to delete
-#' client branding.
+#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to delete client branding.
 #' @param Platforms &#91;required&#93; The device type for which you want to delete client branding.
 #'
 #' @return
@@ -1465,8 +1388,7 @@ workspaces_delete_client_branding <- function(ResourceId, Platforms) {
 #' directory
 #'
 #' @description
-#' Deletes a client-add-in for Amazon Connect that is configured within a
-#' directory.
+#' Deletes a client-add-in for Amazon Connect that is configured within a directory.
 #'
 #' @usage
 #' workspaces_delete_connect_client_add_in(AddInId, ResourceId)
@@ -1512,22 +1434,11 @@ workspaces_delete_connect_client_add_in <- function(AddInId, ResourceId) {
 #' Deletes the specified connection alias
 #'
 #' @description
-#' Deletes the specified connection alias. For more information, see
-#' [Cross-Region Redirection for Amazon
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
+#' Deletes the specified connection alias. For more information, see [Cross-Region Redirection for Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
 #' 
-#' **If you will no longer be using a fully qualified domain name (FQDN) as
-#' the registration code for your WorkSpaces users, you must take certain
-#' precautions to prevent potential security issues.** For more
-#' information, see [Security Considerations if You Stop Using Cross-Region
-#' Redirection](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations).
+#' **If you will no longer be using a fully qualified domain name (FQDN) as the registration code for your WorkSpaces users, you must take certain precautions to prevent potential security issues.** For more information, see [Security Considerations if You Stop Using Cross-Region Redirection](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html#cross-region-redirection-security-considerations).
 #' 
-#' To delete a connection alias that has been shared, the shared account
-#' must first disassociate the connection alias from any directories it has
-#' been associated with. Then you must unshare the connection alias from
-#' the account it has been shared with. You can delete a connection alias
-#' only after it is no longer shared with any accounts or associated with
-#' any directories.
+#' To delete a connection alias that has been shared, the shared account must first disassociate the connection alias from any directories it has been associated with. Then you must unshare the connection alias from the account it has been shared with. You can delete a connection alias only after it is no longer shared with any accounts or associated with any directories.
 #'
 #' @usage
 #' workspaces_delete_connection_alias(AliasId)
@@ -1573,8 +1484,7 @@ workspaces_delete_connection_alias <- function(AliasId) {
 #' @description
 #' Deletes the specified IP access control group.
 #' 
-#' You cannot delete an IP access control group that is associated with a
-#' directory.
+#' You cannot delete an IP access control group that is associated with a directory.
 #'
 #' @usage
 #' workspaces_delete_ip_group(GroupId)
@@ -1623,9 +1533,7 @@ workspaces_delete_ip_group <- function(GroupId) {
 #' @usage
 #' workspaces_delete_tags(ResourceId, TagKeys)
 #'
-#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types
-#' are WorkSpaces, registered directories, images, custom bundles, IP
-#' access control groups, and connection aliases.
+#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.
 #' @param TagKeys &#91;required&#93; The tag keys.
 #'
 #' @return
@@ -1668,9 +1576,7 @@ workspaces_delete_tags <- function(ResourceId, TagKeys) {
 #' Deletes the specified WorkSpace bundle
 #'
 #' @description
-#' Deletes the specified WorkSpace bundle. For more information about
-#' deleting WorkSpace bundles, see [Delete a Custom WorkSpaces Bundle or
-#' Image](https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html).
+#' Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see [Delete a Custom WorkSpaces Bundle or Image](https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html).
 #'
 #' @usage
 #' workspaces_delete_workspace_bundle(BundleId)
@@ -1714,9 +1620,7 @@ workspaces_delete_workspace_bundle <- function(BundleId = NULL) {
 #' Deletes the specified image from your account
 #'
 #' @description
-#' Deletes the specified image from your account. To delete an image, you
-#' must first delete any bundles that are associated with the image and
-#' unshare the image if it is shared with other accounts.
+#' Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image and unshare the image if it is shared with other accounts.
 #'
 #' @usage
 #' workspaces_delete_workspace_image(ImageId)
@@ -1766,9 +1670,7 @@ workspaces_delete_workspace_image <- function(ImageId) {
 #' workspaces_deploy_workspace_applications(WorkspaceId, Force)
 #'
 #' @param WorkspaceId &#91;required&#93; The identifier of the WorkSpace.
-#' @param Force Indicates whether the force flag is applied for the specified WorkSpace.
-#' When the force flag is enabled, it allows previously failed deployments
-#' to be retried.
+#' @param Force Indicates whether the force flag is applied for the specified WorkSpace. When the force flag is enabled, it allows previously failed deployments to be retried.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1832,30 +1734,16 @@ workspaces_deploy_workspace_applications <- function(WorkspaceId, Force = NULL) 
 #' Deregisters the specified directory
 #'
 #' @description
-#' Deregisters the specified directory. This operation is asynchronous and
-#' returns before the WorkSpace directory is deregistered. If any
-#' WorkSpaces are registered to this directory, you must remove them before
-#' you can deregister the directory.
+#' Deregisters the specified directory. This operation is asynchronous and returns before the WorkSpace directory is deregistered. If any WorkSpaces are registered to this directory, you must remove them before you can deregister the directory.
 #' 
-#' Simple AD and AD Connector are made available to you free of charge to
-#' use with WorkSpaces. If there are no WorkSpaces being used with your
-#' Simple AD or AD Connector directory for 30 consecutive days, this
-#' directory will be automatically deregistered for use with Amazon
-#' WorkSpaces, and you will be charged for this directory as per the
-#' [Directory Service pricing
-#' terms](https://aws.amazon.com/directoryservice/pricing/).
+#' Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces. If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30 consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces, and you will be charged for this directory as per the [Directory Service pricing terms](https://aws.amazon.com/directoryservice/pricing/).
 #' 
-#' To delete empty directories, see [Delete the Directory for Your
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html).
-#' If you delete your Simple AD or AD Connector directory, you can always
-#' create a new one when you want to start using WorkSpaces again.
+#' To delete empty directories, see [Delete the Directory for Your WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html). If you delete your Simple AD or AD Connector directory, you can always create a new one when you want to start using WorkSpaces again.
 #'
 #' @usage
 #' workspaces_deregister_workspace_directory(DirectoryId)
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory. If any WorkSpaces are registered to
-#' this directory, you must remove them before you deregister the
-#' directory, or you will receive an OperationNotSupportedException error.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.
 #'
 #' @return
 #' An empty list.
@@ -1895,8 +1783,7 @@ workspaces_deregister_workspace_directory <- function(DirectoryId) {
 #' License (BYOL) for the specified account
 #'
 #' @description
-#' Retrieves a list that describes the configuration of Bring Your Own
-#' License (BYOL) for the specified account.
+#' Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for the specified account.
 #'
 #' @usage
 #' workspaces_describe_account()
@@ -1947,14 +1834,12 @@ workspaces_describe_account <- function() {
 #' Bring Your Own License (BYOL) for the specified account
 #'
 #' @description
-#' Retrieves a list that describes modifications to the configuration of
-#' Bring Your Own License (BYOL) for the specified account.
+#' Retrieves a list that describes modifications to the configuration of Bring Your Own License (BYOL) for the specified account.
 #'
 #' @usage
 #' workspaces_describe_account_modifications(NextToken)
 #'
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2011,16 +1896,14 @@ workspaces_describe_account_modifications <- function(NextToken = NULL) {
 #' associated resources
 #'
 #' @description
-#' Describes the associations between the application and the specified
-#' associated resources.
+#' Describes the associations between the application and the specified associated resources.
 #'
 #' @usage
 #' workspaces_describe_application_associations(MaxResults, NextToken,
 #'   ApplicationId, AssociatedResourceTypes)
 #'
 #' @param MaxResults The maximum number of associations to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param ApplicationId &#91;required&#93; The identifier of the specified application.
 #' @param AssociatedResourceTypes &#91;required&#93; The resource type of the associated resources.
 #'
@@ -2090,8 +1973,7 @@ workspaces_describe_application_associations <- function(MaxResults = NULL, Next
 #' types, license availability, operating systems, and owners
 #'
 #' @description
-#' Describes the specified applications by filtering based on their compute
-#' types, license availability, operating systems, and owners.
+#' Describes the specified applications by filtering based on their compute types, license availability, operating systems, and owners.
 #'
 #' @usage
 #' workspaces_describe_applications(ApplicationIds, ComputeTypeNames,
@@ -2103,8 +1985,7 @@ workspaces_describe_application_associations <- function(MaxResults = NULL, Next
 #' @param OperatingSystemNames The operating systems supported by the applications.
 #' @param Owner The owner of the applications.
 #' @param MaxResults The maximum number of applications to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2180,8 +2061,7 @@ workspaces_describe_applications <- function(ApplicationIds = NULL, ComputeTypeN
 #' bundle
 #'
 #' @description
-#' Describes the associations between the applications and the specified
-#' bundle.
+#' Describes the associations between the applications and the specified bundle.
 #'
 #' @usage
 #' workspaces_describe_bundle_associations(BundleId,
@@ -2252,19 +2132,14 @@ workspaces_describe_bundle_associations <- function(BundleId, AssociatedResource
 #' Describes the specified client branding
 #'
 #' @description
-#' Describes the specified client branding. Client branding allows you to
-#' customize the log in page of various device types for your users. You
-#' can add your company logo, the support email address, support link, link
-#' to reset password, and a custom message for users trying to sign in.
+#' Describes the specified client branding. Client branding allows you to customize the log in page of various device types for your users. You can add your company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.
 #' 
-#' Only device types that have branding information configured will be
-#' shown in the response.
+#' Only device types that have branding information configured will be shown in the response.
 #'
 #' @usage
 #' workspaces_describe_client_branding(ResourceId)
 #'
-#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to view
-#' client branding information.
+#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to view client branding information.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2364,8 +2239,7 @@ workspaces_describe_client_branding <- function(ResourceId) {
 #' clients
 #'
 #' @description
-#' Retrieves a list that describes one or more specified Amazon WorkSpaces
-#' clients.
+#' Retrieves a list that describes one or more specified Amazon WorkSpaces clients.
 #'
 #' @usage
 #' workspaces_describe_client_properties(ResourceIds)
@@ -2424,16 +2298,14 @@ workspaces_describe_client_properties <- function(ResourceIds) {
 #' Retrieves a list of Amazon Connect client add-ins that have been created
 #'
 #' @description
-#' Retrieves a list of Amazon Connect client add-ins that have been
-#' created.
+#' Retrieves a list of Amazon Connect client add-ins that have been created.
 #'
 #' @usage
 #' workspaces_describe_connect_client_add_ins(ResourceId, NextToken,
 #'   MaxResults)
 #'
 #' @param ResourceId &#91;required&#93; The directory identifier for which the client add-in is configured.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of items to return.
 #'
 #' @return
@@ -2490,19 +2362,14 @@ workspaces_describe_connect_client_add_ins <- function(ResourceId, NextToken = N
 #' connection alias
 #'
 #' @description
-#' Describes the permissions that the owner of a connection alias has
-#' granted to another Amazon Web Services account for the specified
-#' connection alias. For more information, see [Cross-Region Redirection
-#' for Amazon
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
+#' Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for the specified connection alias. For more information, see [Cross-Region Redirection for Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
 #'
 #' @usage
 #' workspaces_describe_connection_alias_permissions(AliasId, NextToken,
 #'   MaxResults)
 #'
 #' @param AliasId &#91;required&#93; The identifier of the connection alias.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @return
@@ -2557,10 +2424,7 @@ workspaces_describe_connection_alias_permissions <- function(AliasId, NextToken 
 #' cross-Region redirection
 #'
 #' @description
-#' Retrieves a list that describes the connection aliases used for
-#' cross-Region redirection. For more information, see [Cross-Region
-#' Redirection for Amazon
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
+#' Retrieves a list that describes the connection aliases used for cross-Region redirection. For more information, see [Cross-Region Redirection for Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
 #'
 #' @usage
 #' workspaces_describe_connection_aliases(AliasIds, ResourceId, Limit,
@@ -2569,8 +2433,7 @@ workspaces_describe_connection_alias_permissions <- function(AliasId, NextToken 
 #' @param AliasIds The identifiers of the connection aliases to describe.
 #' @param ResourceId The identifier of the directory associated with the connection alias.
 #' @param Limit The maximum number of connection aliases to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2636,8 +2499,7 @@ workspaces_describe_connection_aliases <- function(AliasIds = NULL, ResourceId =
 #' ImportCustomWorkspaceImage
 #'
 #' @description
-#' Retrieves information about a WorkSpace BYOL image being imported via
-#' ImportCustomWorkspaceImage.
+#' Retrieves information about a WorkSpace BYOL image being imported via ImportCustomWorkspaceImage.
 #'
 #' @usage
 #' workspaces_describe_custom_workspace_image_import(ImageId)
@@ -2709,8 +2571,7 @@ workspaces_describe_custom_workspace_image_import <- function(ImageId) {
 #' image
 #'
 #' @description
-#' Describes the associations between the applications and the specified
-#' image.
+#' Describes the associations between the applications and the specified image.
 #'
 #' @usage
 #' workspaces_describe_image_associations(ImageId, AssociatedResourceTypes)
@@ -2786,8 +2647,7 @@ workspaces_describe_image_associations <- function(ImageId, AssociatedResourceTy
 #' workspaces_describe_ip_groups(GroupIds, NextToken, MaxResults)
 #'
 #' @param GroupIds The identifiers of one or more IP access control groups.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of items to return.
 #'
 #' @return
@@ -2854,9 +2714,7 @@ workspaces_describe_ip_groups <- function(GroupIds = NULL, NextToken = NULL, Max
 #' @usage
 #' workspaces_describe_tags(ResourceId)
 #'
-#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types
-#' are WorkSpaces, registered directories, images, custom bundles, IP
-#' access control groups, and connection aliases.
+#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2906,8 +2764,7 @@ workspaces_describe_tags <- function(ResourceId) {
 #' WorkSpace
 #'
 #' @description
-#' Describes the associations betweens applications and the specified
-#' WorkSpace.
+#' Describes the associations betweens applications and the specified WorkSpace.
 #'
 #' @usage
 #' workspaces_describe_workspace_associations(WorkspaceId,
@@ -2980,22 +2837,16 @@ workspaces_describe_workspace_associations <- function(WorkspaceId, AssociatedRe
 #' @description
 #' Retrieves a list that describes the available WorkSpace bundles.
 #' 
-#' You can filter the results using either bundle ID or owner, but not
-#' both.
+#' You can filter the results using either bundle ID or owner, but not both.
 #'
 #' @usage
 #' workspaces_describe_workspace_bundles(BundleIds, Owner, NextToken)
 #'
-#' @param BundleIds The identifiers of the bundles. You cannot combine this parameter with
-#' any other filter.
-#' @param Owner The owner of the bundles. You cannot combine this parameter with any
-#' other filter.
+#' @param BundleIds The identifiers of the bundles. You cannot combine this parameter with any other filter.
+#' @param Owner The owner of the bundles. You cannot combine this parameter with any other filter.
 #' 
-#' To describe the bundles provided by Amazon Web Services, specify
-#' `AMAZON`. To describe the bundles that belong to your account, don't
-#' specify a value.
-#' @param NextToken The token for the next set of results. (You received this token from a
-#' previous call.)
+#' To describe the bundles provided by Amazon Web Services, specify `AMAZON`. To describe the bundles that belong to your account, don't specify a value.
+#' @param NextToken The token for the next set of results. (You received this token from a previous call.)
 #'
 #' @return
 #' A list with the following syntax:
@@ -3070,19 +2921,16 @@ workspaces_describe_workspace_bundles <- function(BundleIds = NULL, Owner = NULL
 #' WorkSpaces
 #'
 #' @description
-#' Describes the available directories that are registered with Amazon
-#' WorkSpaces.
+#' Describes the available directories that are registered with Amazon WorkSpaces.
 #'
 #' @usage
 #' workspaces_describe_workspace_directories(DirectoryIds,
 #'   WorkspaceDirectoryNames, Limit, NextToken, Filters)
 #'
-#' @param DirectoryIds The identifiers of the directories. If the value is null, all
-#' directories are retrieved.
+#' @param DirectoryIds The identifiers of the directories. If the value is null, all directories are retrieved.
 #' @param WorkspaceDirectoryNames The names of the WorkSpace directories.
 #' @param Limit The maximum number of directories to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param Filters The filter condition for the WorkSpaces.
 #'
 #' @return
@@ -3253,16 +3101,14 @@ workspaces_describe_workspace_directories <- function(DirectoryIds = NULL, Works
 #' other Amazon Web Services accounts for an image
 #'
 #' @description
-#' Describes the permissions that the owner of an image has granted to
-#' other Amazon Web Services accounts for an image.
+#' Describes the permissions that the owner of an image has granted to other Amazon Web Services accounts for an image.
 #'
 #' @usage
 #' workspaces_describe_workspace_image_permissions(ImageId, NextToken,
 #'   MaxResults)
 #'
 #' @param ImageId &#91;required&#93; The identifier of the image.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of items to return.
 #'
 #' @return
@@ -3316,9 +3162,7 @@ workspaces_describe_workspace_image_permissions <- function(ImageId, NextToken =
 #' image identifiers are provided
 #'
 #' @description
-#' Retrieves a list that describes one or more specified images, if the
-#' image identifiers are provided. Otherwise, all images in the account are
-#' described.
+#' Retrieves a list that describes one or more specified images, if the image identifiers are provided. Otherwise, all images in the account are described.
 #'
 #' @usage
 #' workspaces_describe_workspace_images(ImageIds, ImageType, NextToken,
@@ -3326,8 +3170,7 @@ workspaces_describe_workspace_image_permissions <- function(ImageId, NextToken =
 #'
 #' @param ImageIds The identifier of the image.
 #' @param ImageType The type (owned or shared) of the image.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of items to return.
 #'
 #' @return
@@ -3469,32 +3312,20 @@ workspaces_describe_workspace_snapshots <- function(WorkspaceId) {
 #' @description
 #' Describes the specified WorkSpaces.
 #' 
-#' You can filter the results by using the bundle identifier, directory
-#' identifier, or owner, but you can specify only one filter at a time.
+#' You can filter the results by using the bundle identifier, directory identifier, or owner, but you can specify only one filter at a time.
 #'
 #' @usage
 #' workspaces_describe_workspaces(WorkspaceIds, DirectoryId, UserName,
 #'   BundleId, Limit, NextToken, WorkspaceName)
 #'
-#' @param WorkspaceIds The identifiers of the WorkSpaces. You cannot combine this parameter
-#' with any other filter.
+#' @param WorkspaceIds The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.
 #' 
-#' Because the [`create_workspaces`][workspaces_create_workspaces]
-#' operation is asynchronous, the identifier it returns is not immediately
-#' available. If you immediately call
-#' [`describe_workspaces`][workspaces_describe_workspaces] with this
-#' identifier, no information is returned.
-#' @param DirectoryId The identifier of the directory. In addition, you can optionally specify
-#' a specific directory user (see `UserName`). You cannot combine this
-#' parameter with any other filter.
-#' @param UserName The name of the directory user. You must specify this parameter with
-#' `DirectoryId`.
-#' @param BundleId The identifier of the bundle. All WorkSpaces that are created from this
-#' bundle are retrieved. You cannot combine this parameter with any other
-#' filter.
+#' Because the [`create_workspaces`][workspaces_create_workspaces] operation is asynchronous, the identifier it returns is not immediately available. If you immediately call [`describe_workspaces`][workspaces_describe_workspaces] with this identifier, no information is returned.
+#' @param DirectoryId The identifier of the directory. In addition, you can optionally specify a specific directory user (see `UserName`). You cannot combine this parameter with any other filter.
+#' @param UserName The name of the directory user. You must specify this parameter with `DirectoryId`.
+#' @param BundleId The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.
 #' @param Limit The maximum number of items to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param WorkspaceName The name of the user-decoupled WorkSpace.
 #'
 #' @return
@@ -3617,8 +3448,7 @@ workspaces_describe_workspaces <- function(WorkspaceIds = NULL, DirectoryId = NU
 #'   NextToken)
 #'
 #' @param WorkspaceIds The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3678,8 +3508,7 @@ workspaces_describe_workspaces_connection_status <- function(WorkspaceIds = NULL
 #' pool
 #'
 #' @description
-#' Retrieves a list that describes the streaming sessions for a specified
-#' pool.
+#' Retrieves a list that describes the streaming sessions for a specified pool.
 #'
 #' @usage
 #' workspaces_describe_workspaces_pool_sessions(PoolId, UserId, Limit,
@@ -3687,10 +3516,8 @@ workspaces_describe_workspaces_connection_status <- function(WorkspaceIds = NULL
 #'
 #' @param PoolId &#91;required&#93; The identifier of the pool.
 #' @param UserId The identifier of the user.
-#' @param Limit The maximum size of each page of results. The default value is 20 and
-#' the maximum value is 50.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param Limit The maximum size of each page of results. The default value is 20 and the maximum value is 50.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3765,8 +3592,7 @@ workspaces_describe_workspaces_pool_sessions <- function(PoolId, UserId = NULL, 
 #' @param PoolIds The identifier of the WorkSpaces Pools.
 #' @param Filters The filter conditions for the WorkSpaces Pool to return.
 #' @param Limit The maximum number of items to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3860,16 +3686,9 @@ workspaces_describe_workspaces_pools <- function(PoolIds = NULL, Filters = NULL,
 #' Disassociates a connection alias from a directory
 #'
 #' @description
-#' Disassociates a connection alias from a directory. Disassociating a
-#' connection alias disables cross-Region redirection between two
-#' directories in different Regions. For more information, see
-#' [Cross-Region Redirection for Amazon
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
+#' Disassociates a connection alias from a directory. Disassociating a connection alias disables cross-Region redirection between two directories in different Regions. For more information, see [Cross-Region Redirection for Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
 #' 
-#' Before performing this operation, call
-#' [DescribeConnectionAliases](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html)
-#' to make sure that the current state of the connection alias is
-#' `CREATED`.
+#' Before performing this operation, call [DescribeConnectionAliases](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html) to make sure that the current state of the connection alias is `CREATED`.
 #'
 #' @usage
 #' workspaces_disassociate_connection_alias(AliasId)
@@ -3914,8 +3733,7 @@ workspaces_disassociate_connection_alias <- function(AliasId) {
 #' directory
 #'
 #' @description
-#' Disassociates the specified IP access control group from the specified
-#' directory.
+#' Disassociates the specified IP access control group from the specified directory.
 #'
 #' @usage
 #' workspaces_disassociate_ip_groups(DirectoryId, GroupIds)
@@ -4086,35 +3904,24 @@ workspaces_get_account_link <- function(LinkId = NULL, LinkedAccountId = NULL) {
 #' Imports client branding
 #'
 #' @description
-#' Imports client branding. Client branding allows you to customize your
-#' WorkSpace's client login portal. You can tailor your login portal
-#' company logo, the support email address, support link, link to reset
-#' password, and a custom message for users trying to sign in.
+#' Imports client branding. Client branding allows you to customize your WorkSpace's client login portal. You can tailor your login portal company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.
 #' 
-#' After you import client branding, the default branding experience for
-#' the specified platform type is replaced with the imported experience
+#' After you import client branding, the default branding experience for the specified platform type is replaced with the imported experience
 #' 
-#' -   You must specify at least one platform type when importing client
-#'     branding.
+#' -   You must specify at least one platform type when importing client branding.
 #' 
-#' -   You can import up to 6 MB of data with each request. If your request
-#'     exceeds this limit, you can import client branding for different
-#'     platform types using separate requests.
+#' -   You can import up to 6 MB of data with each request. If your request exceeds this limit, you can import client branding for different platform types using separate requests.
 #' 
-#' -   In each platform type, the `SupportEmail` and `SupportLink`
-#'     parameters are mutually exclusive. You can specify only one
-#'     parameter for each platform type, but not both.
+#' -   In each platform type, the `SupportEmail` and `SupportLink` parameters are mutually exclusive. You can specify only one parameter for each platform type, but not both.
 #' 
-#' -   Imported data can take up to a minute to appear in the WorkSpaces
-#'     client.
+#' -   Imported data can take up to a minute to appear in the WorkSpaces client.
 #'
 #' @usage
 #' workspaces_import_client_branding(ResourceId, DeviceTypeWindows,
 #'   DeviceTypeOsx, DeviceTypeAndroid, DeviceTypeIos, DeviceTypeLinux,
 #'   DeviceTypeWeb)
 #'
-#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to import
-#' client branding.
+#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to import client branding.
 #' @param DeviceTypeWindows The branding information to import for Windows devices.
 #' @param DeviceTypeOsx The branding information to import for macOS devices.
 #' @param DeviceTypeAndroid The branding information to import for Android devices.
@@ -4276,12 +4083,7 @@ workspaces_import_client_branding <- function(ResourceId, DeviceTypeWindows = NU
 #' image into Amazon WorkSpaces using EC2 Image Builder
 #'
 #' @description
-#' Imports the specified Windows 10 or 11 Bring Your Own License (BYOL)
-#' image into Amazon WorkSpaces using EC2 Image Builder. The image must be
-#' an already licensed image that is in your Amazon Web Services account,
-#' and you must own the image. For more information about creating BYOL
-#' images, see [Bring Your Own Windows Desktop
-#' Licenses](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
+#' Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon WorkSpaces using EC2 Image Builder. The image must be an already licensed image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see [Bring Your Own Windows Desktop Licenses](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
 #'
 #' @usage
 #' workspaces_import_custom_workspace_image(ImageName, ImageDescription,
@@ -4291,15 +4093,12 @@ workspaces_import_client_branding <- function(ResourceId, DeviceTypeWindows = NU
 #' @param ImageName &#91;required&#93; The name of the WorkSpace image.
 #' @param ImageDescription &#91;required&#93; The description of the WorkSpace image.
 #' @param ComputeType &#91;required&#93; The supported compute type for the WorkSpace image.
-#' @param Protocol &#91;required&#93; The supported protocol for the WorkSpace image. Windows 11 does not
-#' support PCOIP protocol.
+#' @param Protocol &#91;required&#93; The supported protocol for the WorkSpace image. Windows 11 does not support PCOIP protocol.
 #' @param ImageSource &#91;required&#93; The options for image import source.
-#' @param InfrastructureConfigurationArn &#91;required&#93; The infrastructure configuration ARN that specifies how the WorkSpace
-#' image is built.
+#' @param InfrastructureConfigurationArn &#91;required&#93; The infrastructure configuration ARN that specifies how the WorkSpace image is built.
 #' @param Platform &#91;required&#93; The platform for the WorkSpace image source.
 #' @param OsVersion &#91;required&#93; The OS version for the WorkSpace image source.
-#' @param Tags The resource tags. Each WorkSpaces resource can have a maximum of 50
-#' tags.
+#' @param Tags The resource tags. Each WorkSpaces resource can have a maximum of 50 tags.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4362,48 +4161,26 @@ workspaces_import_custom_workspace_image <- function(ImageName, ImageDescription
 #' image into Amazon WorkSpaces
 #'
 #' @description
-#' Imports the specified Windows 10 or 11 Bring Your Own License (BYOL)
-#' image into Amazon WorkSpaces. The image must be an already licensed
-#' Amazon EC2 image that is in your Amazon Web Services account, and you
-#' must own the image. For more information about creating BYOL images, see
-#' [Bring Your Own Windows Desktop
-#' Licenses](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
+#' Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see [Bring Your Own Windows Desktop Licenses](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
 #'
 #' @usage
 #' workspaces_import_workspace_image(Ec2ImageId, IngestionProcess,
 #'   ImageName, ImageDescription, Tags, Applications)
 #'
 #' @param Ec2ImageId &#91;required&#93; The identifier of the EC2 image.
-#' @param IngestionProcess &#91;required&#93; The ingestion process to be used when importing the image, depending on
-#' which protocol you want to use for your BYOL Workspace image, either
-#' PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a
-#' value that ends in `_WSP`. To use PCoIP, specify a value that does not
-#' end in `_WSP`. To use BYOP, specify a value that ends in `_BYOP`.
+#' @param IngestionProcess &#91;required&#93; The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a value that ends in `_WSP`. To use PCoIP, specify a value that does not end in `_WSP`. To use BYOP, specify a value that ends in `_BYOP`.
 #' 
-#' For non-GPU-enabled bundles (bundles other than Graphics or
-#' GraphicsPro), specify `BYOL_REGULAR`, `BYOL_REGULAR_WSP`, or
-#' `BYOL_REGULAR_BYOP`, depending on the protocol.
+#' For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify `BYOL_REGULAR`, `BYOL_REGULAR_WSP`, or `BYOL_REGULAR_BYOP`, depending on the protocol.
 #' 
-#' The `BYOL_REGULAR_BYOP` and `BYOL_GRAPHICS_G4DN_BYOP` values are only
-#' supported by Amazon WorkSpaces Core. Contact your account team to be
-#' allow-listed to use these values. For more information, see [Amazon
-#' WorkSpaces Core](https://aws.amazon.com/workspaces/vdi-partners/).
+#' The `BYOL_REGULAR_BYOP` and `BYOL_GRAPHICS_G4DN_BYOP` values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see [Amazon WorkSpaces Core](https://aws.amazon.com/workspaces/vdi-partners/).
 #' @param ImageName &#91;required&#93; The name of the WorkSpace image.
 #' @param ImageDescription &#91;required&#93; The description of the WorkSpace image.
 #' @param Tags The tags. Each WorkSpaces resource can have a maximum of 50 tags.
-#' @param Applications If specified, the version of Microsoft Office to subscribe to. Valid
-#' only for Windows 10 and 11 BYOL images. For more information about
-#' subscribing to Office for BYOL images, see [Bring Your Own Windows
-#' Desktop
-#' Licenses](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
+#' @param Applications If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see [Bring Your Own Windows Desktop Licenses](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
 #' 
-#' -   Although this parameter is an array, only one item is allowed at
-#'     this time.
+#' -   Although this parameter is an array, only one item is allowed at this time.
 #' 
-#' -   During the image import process, non-GPU DCV (formerly WSP)
-#'     WorkSpaces with Windows 11 support only `Microsoft_Office_2019`. GPU
-#'     DCV (formerly WSP) WorkSpaces with Windows 11 do not support Office
-#'     installation.
+#' -   During the image import process, non-GPU DCV (formerly WSP) WorkSpaces with Windows 11 support only `Microsoft_Office_2019`. GPU DCV (formerly WSP) WorkSpaces with Windows 11 do not support Office installation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4465,8 +4242,7 @@ workspaces_import_workspace_image <- function(Ec2ImageId, IngestionProcess, Imag
 #' workspaces_list_account_links(LinkStatusFilter, NextToken, MaxResults)
 #'
 #' @param LinkStatusFilter Filters the account based on their link status.
-#' @param NextToken The token to use to retrieve the next page of results. This value is
-#' null when there are no more results to return.
+#' @param NextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.
 #' @param MaxResults The maximum number of accounts to return.
 #'
 #' @return
@@ -4525,29 +4301,19 @@ workspaces_list_account_links <- function(LinkStatusFilter = NULL, NextToken = N
 #' Bring Your Own License (BYOL)
 #'
 #' @description
-#' Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks,
-#' that you can use for the network management interface when you enable
-#' Bring Your Own License (BYOL).
+#' Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable Bring Your Own License (BYOL).
 #' 
-#' This operation can be run only by Amazon Web Services accounts that are
-#' enabled for BYOL. If your account isn't enabled for BYOL, you'll receive
-#' an `AccessDeniedException` error.
+#' This operation can be run only by Amazon Web Services accounts that are enabled for BYOL. If your account isn't enabled for BYOL, you'll receive an `AccessDeniedException` error.
 #' 
-#' The management network interface is connected to a secure Amazon
-#' WorkSpaces management network. It is used for interactive streaming of
-#' the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon
-#' WorkSpaces to manage the WorkSpace.
+#' The management network interface is connected to a secure Amazon WorkSpaces management network. It is used for interactive streaming of the WorkSpace desktop to Amazon WorkSpaces clients, and to allow Amazon WorkSpaces to manage the WorkSpace.
 #'
 #' @usage
 #' workspaces_list_available_management_cidr_ranges(
 #'   ManagementCidrRangeConstraint, MaxResults, NextToken)
 #'
-#' @param ManagementCidrRangeConstraint &#91;required&#93; The IP address range to search. Specify an IP address range that is
-#' compatible with your network and in CIDR notation (that is, specify the
-#' range as an IPv4 CIDR block).
+#' @param ManagementCidrRangeConstraint &#91;required&#93; The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).
 #' @param MaxResults The maximum number of items to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4597,20 +4363,11 @@ workspaces_list_available_management_cidr_ranges <- function(ManagementCidrRange
 #' another, while retaining the data on the user volume
 #'
 #' @description
-#' Migrates a WorkSpace from one operating system or bundle type to
-#' another, while retaining the data on the user volume.
+#' Migrates a WorkSpace from one operating system or bundle type to another, while retaining the data on the user volume.
 #' 
-#' The migration process recreates the WorkSpace by using a new root volume
-#' from the target bundle image and the user volume from the last available
-#' snapshot of the original WorkSpace. During migration, the original
-#' `D:\\Users%USERNAME%` user profile folder is renamed to
-#' `D:\\Users%USERNAME%MMddyyTHHmmss%.NotMigrated`. A new
-#' `D:\\Users%USERNAME%\` folder is generated by the new OS. Certain files
-#' in the old user profile are moved to the new user profile.
+#' The migration process recreates the WorkSpace by using a new root volume from the target bundle image and the user volume from the last available snapshot of the original WorkSpace. During migration, the original `D:\\Users%USERNAME%` user profile folder is renamed to `D:\\Users%USERNAME%MMddyyTHHmmss%.NotMigrated`. A new `D:\\Users%USERNAME%\` folder is generated by the new OS. Certain files in the old user profile are moved to the new user profile.
 #' 
-#' For available migration scenarios, details about what happens during
-#' migration, and best practices, see [Migrate a
-#' WorkSpace](https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html).
+#' For available migration scenarios, details about what happens during migration, and best practices, see [Migrate a WorkSpace](https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html).
 #'
 #' @usage
 #' workspaces_migrate_workspace(SourceWorkspaceId, BundleId)
@@ -4663,21 +4420,14 @@ workspaces_migrate_workspace <- function(SourceWorkspaceId, BundleId) {
 #' specified account
 #'
 #' @description
-#' Modifies the configuration of Bring Your Own License (BYOL) for the
-#' specified account.
+#' Modifies the configuration of Bring Your Own License (BYOL) for the specified account.
 #'
 #' @usage
 #' workspaces_modify_account(DedicatedTenancySupport,
 #'   DedicatedTenancyManagementCidrRange)
 #'
 #' @param DedicatedTenancySupport The status of BYOL.
-#' @param DedicatedTenancyManagementCidrRange The IP address range, specified as an IPv4 CIDR block, for the
-#' management network interface. Specify an IP address range that is
-#' compatible with your network and in CIDR notation (that is, specify the
-#' range as an IPv4 CIDR block). The CIDR block size must be /16 (for
-#' example, 203.0.113.25/16). It must also be specified as available by the
-#' [`list_available_management_cidr_ranges`][workspaces_list_available_management_cidr_ranges]
-#' operation.
+#' @param DedicatedTenancyManagementCidrRange The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the [`list_available_management_cidr_ranges`][workspaces_list_available_management_cidr_ranges] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4723,8 +4473,7 @@ workspaces_modify_account <- function(DedicatedTenancySupport = NULL, DedicatedT
 #' to use with your WorkSpaces
 #'
 #' @description
-#' Modifies the properties of the certificate-based authentication you want
-#' to use with your WorkSpaces.
+#' Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces.
 #'
 #' @usage
 #' workspaces_modify_certificate_based_auth_properties(ResourceId,
@@ -4732,8 +4481,7 @@ workspaces_modify_account <- function(DedicatedTenancySupport = NULL, DedicatedT
 #'
 #' @param ResourceId &#91;required&#93; The resource identifiers, in the form of directory IDs.
 #' @param CertificateBasedAuthProperties The properties of the certificate-based authentication.
-#' @param PropertiesToDelete The properties of the certificate-based authentication you want to
-#' delete.
+#' @param PropertiesToDelete The properties of the certificate-based authentication you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -4829,16 +4577,14 @@ workspaces_modify_client_properties <- function(ResourceId, ClientProperties) {
 #' specified directory between Standard TLS and FIPS 140-2 validated mode
 #'
 #' @description
-#' Modifies the endpoint encryption mode that allows you to configure the
-#' specified directory between Standard TLS and FIPS 140-2 validated mode.
+#' Modifies the endpoint encryption mode that allows you to configure the specified directory between Standard TLS and FIPS 140-2 validated mode.
 #'
 #' @usage
 #' workspaces_modify_endpoint_encryption_mode(DirectoryId,
 #'   EndpointEncryptionMode)
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param EndpointEncryptionMode &#91;required&#93; The encryption mode used for endpoint connections when streaming to
-#' WorkSpaces Personal or WorkSpace Pools.
+#' @param EndpointEncryptionMode &#91;required&#93; The encryption mode used for endpoint connections when streaming to WorkSpaces Personal or WorkSpace Pools.
 #'
 #' @return
 #' An empty list.
@@ -4878,17 +4624,13 @@ workspaces_modify_endpoint_encryption_mode <- function(DirectoryId, EndpointEncr
 #' Modifies multiple properties related to SAML 2
 #'
 #' @description
-#' Modifies multiple properties related to SAML 2.0 authentication,
-#' including the enablement status, user access URL, and relay state
-#' parameter name that are used for configuring federation with an SAML 2.0
-#' identity provider.
+#' Modifies multiple properties related to SAML 2.0 authentication, including the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.
 #'
 #' @usage
 #' workspaces_modify_saml_properties(ResourceId, SamlProperties,
 #'   PropertiesToDelete)
 #'
-#' @param ResourceId &#91;required&#93; The directory identifier for which you want to configure SAML
-#' properties.
+#' @param ResourceId &#91;required&#93; The directory identifier for which you want to configure SAML properties.
 #' @param SamlProperties The properties for configuring SAML 2.0 authentication.
 #' @param PropertiesToDelete The SAML properties to delete as part of your request.
 #' 
@@ -4896,8 +4638,7 @@ workspaces_modify_endpoint_encryption_mode <- function(DirectoryId, EndpointEncr
 #' 
 #' -   `SAML_PROPERTIES_USER_ACCESS_URL` to delete the user access URL.
 #' 
-#' -   `SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME` to delete the relay
-#'     state parameter name.
+#' -   `SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME` to delete the relay state parameter name.
 #'
 #' @return
 #' An empty list.
@@ -4945,10 +4686,7 @@ workspaces_modify_saml_properties <- function(ResourceId, SamlProperties = NULL,
 #' users
 #'
 #' @description
-#' Modifies the self-service WorkSpace management capabilities for your
-#' users. For more information, see [Enable Self-Service WorkSpace
-#' Management Capabilities for Your
-#' Users](https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html).
+#' Modifies the self-service WorkSpace management capabilities for your users. For more information, see [Enable Self-Service WorkSpace Management Capabilities for Your Users](https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html).
 #'
 #' @usage
 #' workspaces_modify_selfservice_permissions(ResourceId,
@@ -5067,9 +4805,7 @@ workspaces_modify_streaming_properties <- function(ResourceId, StreamingProperti
 #' their WorkSpaces
 #'
 #' @description
-#' Specifies which devices and operating systems users can use to access
-#' their WorkSpaces. For more information, see [Control Device
-#' Access](https://docs.aws.amazon.com/workspaces/latest/adminguide/#control-device-access).
+#' Specifies which devices and operating systems users can use to access their WorkSpaces. For more information, see [Control Device Access](https://docs.aws.amazon.com/workspaces/latest/adminguide/#control-device-access).
 #'
 #' @usage
 #' workspaces_modify_workspace_access_properties(ResourceId,
@@ -5191,14 +4927,9 @@ workspaces_modify_workspace_creation_properties <- function(ResourceId, Workspac
 #' Modifies the specified WorkSpace properties
 #'
 #' @description
-#' Modifies the specified WorkSpace properties. For important information
-#' about how to modify the size of the root and user volumes, see [Modify a
-#' WorkSpace](https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html).
+#' Modifies the specified WorkSpace properties. For important information about how to modify the size of the root and user volumes, see [Modify a WorkSpace](https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html).
 #' 
-#' The `MANUAL` running mode value is only supported by Amazon WorkSpaces
-#' Core. Contact your account team to be allow-listed to use this value.
-#' For more information, see [Amazon WorkSpaces
-#' Core](https://aws.amazon.com/workspaces/vdi-partners/).
+#' The `MANUAL` running mode value is only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use this value. For more information, see [Amazon WorkSpaces Core](https://aws.amazon.com/workspaces/vdi-partners/).
 #'
 #' @usage
 #' workspaces_modify_workspace_properties(WorkspaceId, WorkspaceProperties,
@@ -5263,11 +4994,7 @@ workspaces_modify_workspace_properties <- function(WorkspaceId, WorkspacePropert
 #' @description
 #' Sets the state of the specified WorkSpace.
 #' 
-#' To maintain a WorkSpace without being interrupted, set the WorkSpace
-#' state to `ADMIN_MAINTENANCE`. WorkSpaces in this state do not respond to
-#' requests to reboot, stop, start, rebuild, or restore. An AutoStop
-#' WorkSpace in this state is not stopped. Users cannot log into a
-#' WorkSpace in the `ADMIN_MAINTENANCE` state.
+#' To maintain a WorkSpace without being interrupted, set the WorkSpace state to `ADMIN_MAINTENANCE`. WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild, or restore. An AutoStop WorkSpace in this state is not stopped. Users cannot log into a WorkSpace in the `ADMIN_MAINTENANCE` state.
 #'
 #' @usage
 #' workspaces_modify_workspace_state(WorkspaceId, WorkspaceState)
@@ -5315,13 +5042,9 @@ workspaces_modify_workspace_state <- function(WorkspaceId, WorkspaceState) {
 #' @description
 #' Reboots the specified WorkSpaces.
 #' 
-#' You cannot reboot a WorkSpace unless its state is `AVAILABLE`,
-#' `UNHEALTHY`, or `REBOOTING`. Reboot a WorkSpace in the `REBOOTING` state
-#' only if your WorkSpace has been stuck in the `REBOOTING` state for over
-#' 20 minutes.
+#' You cannot reboot a WorkSpace unless its state is `AVAILABLE`, `UNHEALTHY`, or `REBOOTING`. Reboot a WorkSpace in the `REBOOTING` state only if your WorkSpace has been stuck in the `REBOOTING` state for over 20 minutes.
 #' 
-#' This operation is asynchronous and returns before the WorkSpaces have
-#' rebooted.
+#' This operation is asynchronous and returns before the WorkSpaces have rebooted.
 #'
 #' @usage
 #' workspaces_reboot_workspaces(RebootWorkspaceRequests)
@@ -5382,15 +5105,11 @@ workspaces_reboot_workspaces <- function(RebootWorkspaceRequests) {
 #' @description
 #' Rebuilds the specified WorkSpace.
 #' 
-#' You cannot rebuild a WorkSpace unless its state is `AVAILABLE`, `ERROR`,
-#' `UNHEALTHY`, `STOPPED`, or `REBOOTING`.
+#' You cannot rebuild a WorkSpace unless its state is `AVAILABLE`, `ERROR`, `UNHEALTHY`, `STOPPED`, or `REBOOTING`.
 #' 
-#' Rebuilding a WorkSpace is a potentially destructive action that can
-#' result in the loss of data. For more information, see [Rebuild a
-#' WorkSpace](https://docs.aws.amazon.com/workspaces/latest/adminguide/rebuild-workspace.html).
+#' Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see [Rebuild a WorkSpace](https://docs.aws.amazon.com/workspaces/latest/adminguide/rebuild-workspace.html).
 #' 
-#' This operation is asynchronous and returns before the WorkSpaces have
-#' been completely rebuilt.
+#' This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.
 #'
 #' @usage
 #' workspaces_rebuild_workspaces(RebuildWorkspaceRequests)
@@ -5449,12 +5168,7 @@ workspaces_rebuild_workspaces <- function(RebuildWorkspaceRequests) {
 #' Registers the specified directory
 #'
 #' @description
-#' Registers the specified directory. This operation is asynchronous and
-#' returns before the WorkSpace directory is registered. If this is the
-#' first time you are registering a directory, you will need to create the
-#' workspaces_DefaultRole role before you can register a directory. For
-#' more information, see [Creating the workspaces_DefaultRole
-#' Role](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role).
+#' Registers the specified directory. This operation is asynchronous and returns before the WorkSpace directory is registered. If this is the first time you are registering a directory, you will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see [Creating the workspaces_DefaultRole Role](https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role).
 #'
 #' @usage
 #' workspaces_register_workspace_directory(DirectoryId, SubnetIds,
@@ -5462,25 +5176,10 @@ workspaces_rebuild_workspaces <- function(RebuildWorkspaceRequests) {
 #'   WorkspaceDirectoryDescription, UserIdentityType, IdcInstanceArn,
 #'   MicrosoftEntraConfig, WorkspaceType, ActiveDirectoryConfig)
 #'
-#' @param DirectoryId The identifier of the directory. You cannot register a directory if it
-#' does not have a status of Active. If the directory does not have a
-#' status of Active, you will receive an InvalidResourceStateException
-#' error. If you have already registered the maximum number of directories
-#' that you can register with Amazon WorkSpaces, you will receive a
-#' ResourceLimitExceededException error. Deregister directories that you
-#' are not using for WorkSpaces, and try again.
-#' @param SubnetIds The identifiers of the subnets for your virtual private cloud (VPC).
-#' Make sure that the subnets are in supported Availability Zones. The
-#' subnets must also be in separate Availability Zones. If these conditions
-#' are not met, you will receive an OperationNotSupportedException error.
+#' @param DirectoryId The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.
+#' @param SubnetIds The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.
 #' @param EnableSelfService Indicates whether self-service capabilities are enabled or disabled.
-#' @param Tenancy Indicates whether your WorkSpace directory is dedicated or shared. To
-#' use Bring Your Own License (BYOL) images, this value must be set to
-#' `DEDICATED` and your Amazon Web Services account must be enabled for
-#' BYOL. If your account has not been enabled for BYOL, you will receive an
-#' InvalidParameterValuesException error. For more information about BYOL
-#' images, see [Bring Your Own Windows Desktop
-#' Images](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
+#' @param Tenancy Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to `DEDICATED` and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see [Bring Your Own Windows Desktop Images](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
 #' @param Tags The tags associated with the directory.
 #' @param WorkspaceDirectoryName The name of the directory to register.
 #' @param WorkspaceDirectoryDescription Description of the directory to register.
@@ -5615,15 +5314,11 @@ workspaces_reject_account_link_invitation <- function(LinkId, ClientToken = NULL
 #' @description
 #' Restores the specified WorkSpace to its last known healthy state.
 #' 
-#' You cannot restore a WorkSpace unless its state is ` AVAILABLE`,
-#' `ERROR`, `UNHEALTHY`, or `STOPPED`.
+#' You cannot restore a WorkSpace unless its state is ` AVAILABLE`, `ERROR`, `UNHEALTHY`, or `STOPPED`.
 #' 
-#' Restoring a WorkSpace is a potentially destructive action that can
-#' result in the loss of data. For more information, see [Restore a
-#' WorkSpace](https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html).
+#' Restoring a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see [Restore a WorkSpace](https://docs.aws.amazon.com/workspaces/latest/adminguide/restore-workspace.html).
 #' 
-#' This operation is asynchronous and returns before the WorkSpace is
-#' completely restored.
+#' This operation is asynchronous and returns before the WorkSpace is completely restored.
 #'
 #' @usage
 #' workspaces_restore_workspace(WorkspaceId)
@@ -5717,8 +5412,7 @@ workspaces_revoke_ip_rules <- function(GroupId, UserRules) {
 #' @description
 #' Starts the specified WorkSpaces.
 #' 
-#' You cannot start a WorkSpace unless it has a running mode of `AutoStop`
-#' or `Manual` and a state of `STOPPED`.
+#' You cannot start a WorkSpace unless it has a running mode of `AutoStop` or `Manual` and a state of `STOPPED`.
 #'
 #' @usage
 #' workspaces_start_workspaces(StartWorkspaceRequests)
@@ -5779,8 +5473,7 @@ workspaces_start_workspaces <- function(StartWorkspaceRequests) {
 #' @description
 #' Starts the specified pool.
 #' 
-#' You cannot start a pool unless it has a running mode of `AutoStop` and a
-#' state of `STOPPED`.
+#' You cannot start a pool unless it has a running mode of `AutoStop` and a state of `STOPPED`.
 #'
 #' @usage
 #' workspaces_start_workspaces_pool(PoolId)
@@ -5826,9 +5519,7 @@ workspaces_start_workspaces_pool <- function(PoolId) {
 #' @description
 #' Stops the specified WorkSpaces.
 #' 
-#' You cannot stop a WorkSpace unless it has a running mode of `AutoStop`
-#' or `Manual` and a state of `AVAILABLE`, `IMPAIRED`, `UNHEALTHY`, or
-#' `ERROR`.
+#' You cannot stop a WorkSpace unless it has a running mode of `AutoStop` or `Manual` and a state of `AVAILABLE`, `IMPAIRED`, `UNHEALTHY`, or `ERROR`.
 #'
 #' @usage
 #' workspaces_stop_workspaces(StopWorkspaceRequests)
@@ -5889,9 +5580,7 @@ workspaces_stop_workspaces <- function(StopWorkspaceRequests) {
 #' @description
 #' Stops the specified pool.
 #' 
-#' You cannot stop a WorkSpace pool unless it has a running mode of
-#' `AutoStop` and a state of `AVAILABLE`, `IMPAIRED`, `UNHEALTHY`, or
-#' `ERROR`.
+#' You cannot stop a WorkSpace pool unless it has a running mode of `AutoStop` and a state of `AVAILABLE`, `IMPAIRED`, `UNHEALTHY`, or `ERROR`.
 #'
 #' @usage
 #' workspaces_stop_workspaces_pool(PoolId)
@@ -5937,34 +5626,15 @@ workspaces_stop_workspaces_pool <- function(PoolId) {
 #' @description
 #' Terminates the specified WorkSpaces.
 #' 
-#' Terminating a WorkSpace is a permanent action and cannot be undone. The
-#' user's data is destroyed. If you need to archive any user data, contact
-#' Amazon Web Services Support before terminating the WorkSpace.
+#' Terminating a WorkSpace is a permanent action and cannot be undone. The user's data is destroyed. If you need to archive any user data, contact Amazon Web Services Support before terminating the WorkSpace.
 #' 
 #' You can terminate a WorkSpace that is in any state except `SUSPENDED`.
 #' 
-#' This operation is asynchronous and returns before the WorkSpaces have
-#' been completely terminated. After a WorkSpace is terminated, the
-#' `TERMINATED` state is returned only briefly before the WorkSpace
-#' directory metadata is cleaned up, so this state is rarely returned. To
-#' confirm that a WorkSpace is terminated, check for the WorkSpace ID by
-#' using
-#' [DescribeWorkSpaces](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html).
-#' If the WorkSpace ID isn't returned, then the WorkSpace has been
-#' successfully terminated.
+#' This operation is asynchronous and returns before the WorkSpaces have been completely terminated. After a WorkSpace is terminated, the `TERMINATED` state is returned only briefly before the WorkSpace directory metadata is cleaned up, so this state is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace ID by using [DescribeWorkSpaces](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html). If the WorkSpace ID isn't returned, then the WorkSpace has been successfully terminated.
 #' 
-#' Simple AD and AD Connector are made available to you free of charge to
-#' use with WorkSpaces. If there are no WorkSpaces being used with your
-#' Simple AD or AD Connector directory for 30 consecutive days, this
-#' directory will be automatically deregistered for use with Amazon
-#' WorkSpaces, and you will be charged for this directory as per the
-#' [Directory Service pricing
-#' terms](https://aws.amazon.com/directoryservice/pricing/).
+#' Simple AD and AD Connector are made available to you free of charge to use with WorkSpaces. If there are no WorkSpaces being used with your Simple AD or AD Connector directory for 30 consecutive days, this directory will be automatically deregistered for use with Amazon WorkSpaces, and you will be charged for this directory as per the [Directory Service pricing terms](https://aws.amazon.com/directoryservice/pricing/).
 #' 
-#' To delete empty directories, see [Delete the Directory for Your
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html).
-#' If you delete your Simple AD or AD Connector directory, you can always
-#' create a new one when you want to start using WorkSpaces again.
+#' To delete empty directories, see [Delete the Directory for Your WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/delete-workspaces-directory.html). If you delete your Simple AD or AD Connector directory, you can always create a new one when you want to start using WorkSpaces again.
 #'
 #' @usage
 #' workspaces_terminate_workspaces(TerminateWorkspaceRequests)
@@ -6111,8 +5781,7 @@ workspaces_terminate_workspaces_pool_session <- function(SessionId) {
 #' Updates a Amazon Connect client add-in
 #'
 #' @description
-#' Updates a Amazon Connect client add-in. Use this action to update the
-#' name and endpoint URL of a Amazon Connect client add-in.
+#' Updates a Amazon Connect client add-in. Use this action to update the name and endpoint URL of a Amazon Connect client add-in.
 #'
 #' @usage
 #' workspaces_update_connect_client_add_in(AddInId, ResourceId, Name, URL)
@@ -6164,34 +5833,18 @@ workspaces_update_connect_client_add_in <- function(AddInId, ResourceId, Name = 
 #' with a directory
 #'
 #' @description
-#' Shares or unshares a connection alias with one account by specifying
-#' whether that account has permission to associate the connection alias
-#' with a directory. If the association permission is granted, the
-#' connection alias is shared with that account. If the association
-#' permission is revoked, the connection alias is unshared with the
-#' account. For more information, see [Cross-Region Redirection for Amazon
-#' WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
+#' Shares or unshares a connection alias with one account by specifying whether that account has permission to associate the connection alias with a directory. If the association permission is granted, the connection alias is shared with that account. If the association permission is revoked, the connection alias is unshared with the account. For more information, see [Cross-Region Redirection for Amazon WorkSpaces](https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html).
 #' 
-#' -   Before performing this operation, call
-#'     [DescribeConnectionAliases](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html)
-#'     to make sure that the current state of the connection alias is
-#'     `CREATED`.
+#' -   Before performing this operation, call [DescribeConnectionAliases](https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html) to make sure that the current state of the connection alias is `CREATED`.
 #' 
-#' -   To delete a connection alias that has been shared, the shared
-#'     account must first disassociate the connection alias from any
-#'     directories it has been associated with. Then you must unshare the
-#'     connection alias from the account it has been shared with. You can
-#'     delete a connection alias only after it is no longer shared with any
-#'     accounts or associated with any directories.
+#' -   To delete a connection alias that has been shared, the shared account must first disassociate the connection alias from any directories it has been associated with. Then you must unshare the connection alias from the account it has been shared with. You can delete a connection alias only after it is no longer shared with any accounts or associated with any directories.
 #'
 #' @usage
 #' workspaces_update_connection_alias_permission(AliasId,
 #'   ConnectionAliasPermission)
 #'
-#' @param AliasId &#91;required&#93; The identifier of the connection alias that you want to update
-#' permissions for.
-#' @param ConnectionAliasPermission &#91;required&#93; Indicates whether to share or unshare the connection alias with the
-#' specified Amazon Web Services account.
+#' @param AliasId &#91;required&#93; The identifier of the connection alias that you want to update permissions for.
+#' @param ConnectionAliasPermission &#91;required&#93; Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.
 #'
 #' @return
 #' An empty list.
@@ -6235,8 +5888,7 @@ workspaces_update_connection_alias_permission <- function(AliasId, ConnectionAli
 #' the specified rules
 #'
 #' @description
-#' Replaces the current rules of the specified IP access control group with
-#' the specified rules.
+#' Replaces the current rules of the specified IP access control group with the specified rules.
 #'
 #' @usage
 #' workspaces_update_rules_of_ip_group(GroupId, UserRules)
@@ -6287,14 +5939,9 @@ workspaces_update_rules_of_ip_group <- function(GroupId, UserRules) {
 #' Updates a WorkSpace bundle with a new image
 #'
 #' @description
-#' Updates a WorkSpace bundle with a new image. For more information about
-#' updating WorkSpace bundles, see [Update a Custom WorkSpaces
-#' Bundle](https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html).
+#' Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see [Update a Custom WorkSpaces Bundle](https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html).
 #' 
-#' Existing WorkSpaces aren't automatically updated when you update the
-#' bundle that they're based on. To update existing WorkSpaces that are
-#' based on a bundle that you've updated, you must either rebuild the
-#' WorkSpaces or delete and recreate them.
+#' Existing WorkSpaces aren't automatically updated when you update the bundle that they're based on. To update existing WorkSpaces that are based on a bundle that you've updated, you must either rebuild the WorkSpaces or delete and recreate them.
 #'
 #' @usage
 #' workspaces_update_workspace_bundle(BundleId, ImageId)
@@ -6342,46 +5989,29 @@ workspaces_update_workspace_bundle <- function(BundleId = NULL, ImageId = NULL) 
 #' copy the image
 #'
 #' @description
-#' Shares or unshares an image with one account in the same Amazon Web
-#' Services Region by specifying whether that account has permission to
-#' copy the image. If the copy image permission is granted, the image is
-#' shared with that account. If the copy image permission is revoked, the
-#' image is unshared with the account.
+#' Shares or unshares an image with one account in the same Amazon Web Services Region by specifying whether that account has permission to copy the image. If the copy image permission is granted, the image is shared with that account. If the copy image permission is revoked, the image is unshared with the account.
 #' 
-#' After an image has been shared, the recipient account can copy the image
-#' to other Regions as needed.
+#' After an image has been shared, the recipient account can copy the image to other Regions as needed.
 #' 
-#' In the China (Ningxia) Region, you can copy images only within the same
-#' Region.
+#' In the China (Ningxia) Region, you can copy images only within the same Region.
 #' 
-#' In Amazon Web Services GovCloud (US), to copy images to and from other
-#' Regions, contact Amazon Web Services Support.
+#' In Amazon Web Services GovCloud (US), to copy images to and from other Regions, contact Amazon Web Services Support.
 #' 
-#' For more information about sharing images, see [Share or Unshare a
-#' Custom WorkSpaces
-#' Image](https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html).
+#' For more information about sharing images, see [Share or Unshare a Custom WorkSpaces Image](https://docs.aws.amazon.com/workspaces/latest/adminguide/share-custom-image.html).
 #' 
-#' -   To delete an image that has been shared, you must unshare the image
-#'     before you delete it.
+#' -   To delete an image that has been shared, you must unshare the image before you delete it.
 #' 
-#' -   Sharing Bring Your Own License (BYOL) images across Amazon Web
-#'     Services accounts isn't supported at this time in Amazon Web
-#'     Services GovCloud (US). To share BYOL images across accounts in
-#'     Amazon Web Services GovCloud (US), contact Amazon Web Services
-#'     Support.
+#' -   Sharing Bring Your Own License (BYOL) images across Amazon Web Services accounts isn't supported at this time in Amazon Web Services GovCloud (US). To share BYOL images across accounts in Amazon Web Services GovCloud (US), contact Amazon Web Services Support.
 #'
 #' @usage
 #' workspaces_update_workspace_image_permission(ImageId, AllowCopyImage,
 #'   SharedAccountId)
 #'
 #' @param ImageId &#91;required&#93; The identifier of the image.
-#' @param AllowCopyImage &#91;required&#93; The permission to copy the image. This permission can be revoked only
-#' after an image has been shared.
-#' @param SharedAccountId &#91;required&#93; The identifier of the Amazon Web Services account to share or unshare
-#' the image with.
+#' @param AllowCopyImage &#91;required&#93; The permission to copy the image. This permission can be revoked only after an image has been shared.
+#' @param SharedAccountId &#91;required&#93; The identifier of the Amazon Web Services account to share or unshare the image with.
 #' 
-#' Before sharing the image, confirm that you are sharing to the correct
-#' Amazon Web Services account ID.
+#' Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.
 #'
 #' @return
 #' An empty list.
@@ -6436,8 +6066,7 @@ workspaces_update_workspace_image_permission <- function(ImageId, AllowCopyImage
 #' @param Capacity The desired capacity for the pool.
 #' @param ApplicationSettings The persistent application settings for users in the pool.
 #' @param TimeoutSettings Indicates the timeout settings of the specified pool.
-#' @param RunningMode The desired running mode for the pool. The running mode can only be
-#' updated when the pool is in a stopped state.
+#' @param RunningMode The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.
 #'
 #' @return
 #' A list with the following syntax:

@@ -16,12 +16,9 @@ codecatalyst_stop_dev_environment_session(
 
 \item{projectName}{[required] The name of the project in the space.}
 
-\item{id}{[required] The system-generated unique ID of the Dev Environment. To obtain this
-ID, use \code{\link[=codecatalyst_list_dev_environments]{list_dev_environments}}.}
+\item{id}{[required] The system-generated unique ID of the Dev Environment. To obtain this ID, use \code{\link[=codecatalyst_list_dev_environments]{list_dev_environments}}.}
 
-\item{sessionId}{[required] The system-generated unique ID of the Dev Environment session. This ID
-is returned by
-\code{\link[=codecatalyst_start_dev_environment_session]{start_dev_environment_session}}.}
+\item{sessionId}{[required] The system-generated unique ID of the Dev Environment session. This ID is returned by \code{\link[=codecatalyst_start_dev_environment_session]{start_dev_environment_session}}.}
 }
 \description{
 Stops a session for a specified Dev Environment.

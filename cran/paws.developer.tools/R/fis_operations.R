@@ -10,14 +10,12 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/fis_create_experiment_template/](https://www.paws-r-sdk.com/docs/fis_create_experiment_template/) for full documentation.
 #'
-#' @param clientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param description &#91;required&#93; A description for the experiment template.
 #' @param stopConditions &#91;required&#93; The stop conditions.
 #' @param targets The targets for the experiment.
 #' @param actions &#91;required&#93; The actions for the experiment.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that grants the FIS
-#' service permission to perform service actions on your behalf.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.
 #' @param tags The tags to apply to the experiment template.
 #' @param logConfiguration The configuration for experiment logging.
 #' @param experimentOptions The experiment options for the experiment template.
@@ -52,8 +50,7 @@ fis_create_experiment_template <- function(clientToken, description, stopConditi
 #'
 #' See [https://www.paws-r-sdk.com/docs/fis_create_target_account_configuration/](https://www.paws-r-sdk.com/docs/fis_create_target_account_configuration/) for full documentation.
 #'
-#' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param experimentTemplateId &#91;required&#93; The experiment template ID.
 #' @param accountId &#91;required&#93; The Amazon Web Services account ID of the target account.
 #' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role for the target account.
@@ -373,9 +370,7 @@ fis_get_target_resource_type <- function(resourceType) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/fis_list_actions/](https://www.paws-r-sdk.com/docs/fis_list_actions/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param nextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -408,9 +403,7 @@ fis_list_actions <- function(maxResults = NULL, nextToken = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/fis_list_experiment_resolved_targets/](https://www.paws-r-sdk.com/docs/fis_list_experiment_resolved_targets/) for full documentation.
 #'
 #' @param experimentId &#91;required&#93; The ID of the experiment.
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param nextToken The token for the next page of results.
 #' @param targetName The name of the target.
 #'
@@ -475,9 +468,7 @@ fis_list_experiment_target_account_configurations <- function(experimentId, next
 #'
 #' See [https://www.paws-r-sdk.com/docs/fis_list_experiment_templates/](https://www.paws-r-sdk.com/docs/fis_list_experiment_templates/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param nextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -509,9 +500,7 @@ fis_list_experiment_templates <- function(maxResults = NULL, nextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/fis_list_experiments/](https://www.paws-r-sdk.com/docs/fis_list_experiments/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param nextToken The token for the next page of results.
 #' @param experimentTemplateId The ID of the experiment template.
 #'
@@ -577,9 +566,7 @@ fis_list_tags_for_resource <- function(resourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/fis_list_target_account_configurations/](https://www.paws-r-sdk.com/docs/fis_list_target_account_configurations/) for full documentation.
 #'
 #' @param experimentTemplateId &#91;required&#93; The ID of the experiment template.
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param nextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -611,9 +598,7 @@ fis_list_target_account_configurations <- function(experimentTemplateId, maxResu
 #'
 #' See [https://www.paws-r-sdk.com/docs/fis_list_target_resource_types/](https://www.paws-r-sdk.com/docs/fis_list_target_resource_types/) for full documentation.
 #'
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param nextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -645,8 +630,7 @@ fis_list_target_resource_types <- function(maxResults = NULL, nextToken = NULL) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/fis_start_experiment/](https://www.paws-r-sdk.com/docs/fis_start_experiment/) for full documentation.
 #'
-#' @param clientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param experimentTemplateId &#91;required&#93; The ID of the experiment template.
 #' @param experimentOptions The experiment options for running the experiment.
 #' @param tags The tags to apply to the experiment.
@@ -780,8 +764,7 @@ fis_untag_resource <- function(resourceArn, tagKeys = NULL) {
 #' @param stopConditions The stop conditions for the experiment.
 #' @param targets The targets for the experiment.
 #' @param actions The actions for the experiment.
-#' @param roleArn The Amazon Resource Name (ARN) of an IAM role that grants the FIS
-#' service permission to perform service actions on your behalf.
+#' @param roleArn The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.
 #' @param logConfiguration The configuration for experiment logging.
 #' @param experimentOptions The experiment options for the experiment template.
 #' @param experimentReportConfiguration The experiment report configuration for the experiment template.

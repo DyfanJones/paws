@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_get_metric_data_v2}
 \alias{connect_get_metric_data_v2}
-\title{Gets metric data from the specified Amazon Connect instance}
+\title{Gets metric data from the specified Connect Customer instance}
 \usage{
 connect_get_metric_data_v2(
   ResourceArn,
@@ -17,162 +17,69 @@ connect_get_metric_data_v2(
 )
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource. This includes the
-\code{instanceId} an Amazon Connect instance.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource. This includes the \code{instanceId} an Connect Customer instance.}
 
-\item{StartTime}{[required] The timestamp, in UNIX Epoch time format, at which to start the
-reporting interval for the retrieval of historical metrics data. The
-time must be before the end time timestamp. The start and end time
-depends on the \code{IntervalPeriod} selected. By default the time range
-between start and end time is 35 days. Historical metrics are available
-for 3 months.}
+\item{StartTime}{[required] The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be before the end time timestamp. The start and end time depends on the \code{IntervalPeriod} selected. By default the time range between start and end time is 35 days. Historical metrics are available for 3 months.}
 
-\item{EndTime}{[required] The timestamp, in UNIX Epoch time format, at which to end the reporting
-interval for the retrieval of historical metrics data. The time must be
-later than the start time timestamp. It cannot be later than the current
-timestamp.}
+\item{EndTime}{[required] The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be later than the start time timestamp. It cannot be later than the current timestamp.}
 
 \item{Interval}{The interval period and timezone to apply to returned metrics.
 \itemize{
-\item \code{IntervalPeriod}: An aggregated grouping applied to request metrics.
-Valid \code{IntervalPeriod} values are: \code{FIFTEEN_MIN} | \code{THIRTY_MIN} |
-\code{HOUR} | \code{DAY} | \code{WEEK} | \code{TOTAL}.
+\item \code{IntervalPeriod}: An aggregated grouping applied to request metrics. Valid \code{IntervalPeriod} values are: \code{FIFTEEN_MIN} | \code{THIRTY_MIN} | \code{HOUR} | \code{DAY} | \code{WEEK} | \code{TOTAL}.
 
-For example, if \code{IntervalPeriod} is selected \code{THIRTY_MIN},
-\code{StartTime} and \code{EndTime} differs by 1 day, then Amazon Connect
-returns 48 results in the response. Each result is aggregated by the
-THIRTY_MIN period. By default Amazon Connect aggregates results
-based on the \code{TOTAL} interval period.
+For example, if \code{IntervalPeriod} is selected \code{THIRTY_MIN}, \code{StartTime} and \code{EndTime} differs by 1 day, then Connect Customer returns 48 results in the response. Each result is aggregated by the THIRTY_MIN period. By default Connect Customer aggregates results based on the \code{TOTAL} interval period.
 
-The following list describes restrictions on \code{StartTime} and
-\code{EndTime} based on which \code{IntervalPeriod} is requested.
+The following list describes restrictions on \code{StartTime} and \code{EndTime} based on which \code{IntervalPeriod} is requested.
 \itemize{
-\item \code{FIFTEEN_MIN}: The difference between \code{StartTime} and \code{EndTime}
-must be less than 3 days.
-\item \code{THIRTY_MIN}: The difference between \code{StartTime} and \code{EndTime}
-must be less than 3 days.
-\item \code{HOUR}: The difference between \code{StartTime} and \code{EndTime} must be
-less than 3 days.
-\item \code{DAY}: The difference between \code{StartTime} and \code{EndTime} must be
-less than 35 days.
-\item \code{WEEK}: The difference between \code{StartTime} and \code{EndTime} must be
-less than 35 days.
-\item \code{TOTAL}: The difference between \code{StartTime} and \code{EndTime} must
-be less than 35 days.
+\item \code{FIFTEEN_MIN}: The difference between \code{StartTime} and \code{EndTime} must be less than 3 days.
+\item \code{THIRTY_MIN}: The difference between \code{StartTime} and \code{EndTime} must be less than 3 days.
+\item \code{HOUR}: The difference between \code{StartTime} and \code{EndTime} must be less than 3 days.
+\item \code{DAY}: The difference between \code{StartTime} and \code{EndTime} must be less than 35 days.
+\item \code{WEEK}: The difference between \code{StartTime} and \code{EndTime} must be less than 35 days.
+\item \code{TOTAL}: The difference between \code{StartTime} and \code{EndTime} must be less than 35 days.
 }
 \item \code{TimeZone}: The timezone applied to requested metrics.
 }}
 
-\item{Filters}{[required] Filtering is an operation that selects records that match a set of
-specified criteria. By narrowing the dataset before aggregation, filters
-ensure that only relevant records are included in the computation.
+\item{Filters}{[required] Filtering is an operation that selects records that match a set of specified criteria. By narrowing the dataset before aggregation, filters ensure that only relevant records are included in the computation.
 
 \strong{Filter keys}
 
-The following are valid filter keys for a
-\code{\link[=connect_get_metric_data_v2]{get_metric_data_v2}} request:
+The following are valid filter keys for a \code{\link[=connect_get_metric_data_v2]{get_metric_data_v2}} request:
 
-\code{AGENT} | \code{AGENT_HIERARCHY_LEVEL_ONE} | \code{AGENT_HIERARCHY_LEVEL_TWO} |
-\code{AGENT_HIERARCHY_LEVEL_THREE} | \code{AGENT_HIERARCHY_LEVEL_FOUR} |
-\code{AGENT_HIERARCHY_LEVEL_FIVE} | \code{ANSWERING_MACHINE_DETECTION_STATUS} |
-\code{BOT_ALIAS} | \code{BOT_ID} | \code{BOT_INTENT_NAME} | \code{BOT_LOCALE} |
-\code{BOT_VERSION} | \code{CAMPAIGN} | \code{CAMPAIGN_DELIVERY_EVENT_TYPE} |
-\code{CAMPAIGN_EXCLUDED_EVENT_TYPE} | \code{CASE_STATUS} | \code{CASE_TEMPLATE_ARN} |
-\code{CHANNEL} | \code{contact/segmentAttributes/connect:Subtype} |
-\code{contact/segmentAttributes/connect:ValidationTestType} |
-\code{DISCONNECT_REASON} | \code{EVALUATION_FORM} | \code{EVALUATION_QUESTION} |
-\code{EVALUATION_SECTION} | \code{EVALUATION_SOURCE} | \code{EVALUATOR_ID} | \code{FEATURE}
-| \code{FLOW_ACTION_ID} | \code{FLOW_TYPE} | \code{FLOWS_MODULE_RESOURCE_ID} |
-\code{FLOWS_NEXT_RESOURCE_ID} | \code{FLOWS_NEXT_RESOURCE_QUEUE_ID} |
-\code{FLOWS_OUTCOME_TYPE} | \code{FLOWS_RESOURCE_ID} | \code{FORM_VERSION} |
-\code{INITIATING_FLOW} | \code{INITIATION_METHOD} |
-\code{INVOKING_RESOURCE_PUBLISHED_TIMESTAMP} | \code{INVOKING_RESOURCE_TYPE} |
-\code{PARENT_FLOWS_RESOURCE_ID} | \code{Q_CONNECT_ENABLED} | \code{QUEUE} |
-\code{RESOURCE_PUBLISHED_TIMESTAMP} | \code{ROUTING_PROFILE} |
-\code{ROUTING_STEP_EXPRESSION} | \code{TEST_CASE} |
-\code{TEST_CASE_EXECUTION_FAILURE_REASON} | \code{TEST_CASE_EXECUTION_RESULT} |
-\code{TEST_CASE_EXECUTION_STATE}
+\code{AGENT} | \code{AGENT_HIERARCHY_LEVEL_ONE} | \code{AGENT_HIERARCHY_LEVEL_TWO} | \code{AGENT_HIERARCHY_LEVEL_THREE} | \code{AGENT_HIERARCHY_LEVEL_FOUR} | \code{AGENT_HIERARCHY_LEVEL_FIVE} | \code{ANSWERING_MACHINE_DETECTION_STATUS} | \code{BOT_ALIAS} | \code{BOT_ID} | \code{BOT_INTENT_NAME} | \code{BOT_LOCALE} | \code{BOT_VERSION} | \code{CAMPAIGN} | \code{CAMPAIGN_DELIVERY_EVENT_TYPE} | \code{CAMPAIGN_EXCLUDED_EVENT_TYPE} | \code{CASE_STATUS} | \code{CASE_TEMPLATE_ARN} | \code{CHANNEL} | \code{contact/segmentAttributes/connect:Subtype} | \code{contact/segmentAttributes/connect:ValidationTestType} | \code{DISCONNECT_REASON} | \code{EVALUATION_FORM} | \code{EVALUATION_QUESTION} | \code{EVALUATION_SECTION} | \code{EVALUATION_SOURCE} | \code{EVALUATOR_ID} | \code{FEATURE} | \code{FLOW_ACTION_ID} | \code{FLOW_TYPE} | \code{FLOWS_MODULE_RESOURCE_ID} | \code{FLOWS_NEXT_RESOURCE_ID} | \code{FLOWS_NEXT_RESOURCE_QUEUE_ID} | \code{FLOWS_OUTCOME_TYPE} | \code{FLOWS_RESOURCE_ID} | \code{FORM_VERSION} | \code{INITIATING_FLOW} | \code{INITIATION_METHOD} | \code{INVOKING_RESOURCE_PUBLISHED_TIMESTAMP} | \code{INVOKING_RESOURCE_TYPE} | \code{PARENT_FLOWS_RESOURCE_ID} | \code{Q_CONNECT_ENABLED} | `QU
 
-The following filter keys correspond to Amazon Connect resources and are
-used for authorizing requests. A
-\code{\link[=connect_get_metric_data_v2]{get_metric_data_v2}} request requires at
-least one of these filters:
+The following filter keys correspond to Connect Customer resources and are used for authorizing requests. A \code{\link[=connect_get_metric_data_v2]{get_metric_data_v2}} request requires at least one of these filters:
 
-\code{QUEUE}, \code{ROUTING_PROFILE}, \code{AGENT}, \code{AGENT_HIERARCHY_LEVEL_ONE},
-\code{AGENT_HIERARCHY_LEVEL_TWO}, \code{AGENT_HIERARCHY_LEVEL_THREE},
-\code{AGENT_HIERARCHY_LEVEL_FOUR}, \code{AGENT_HIERARCHY_LEVEL_FIVE}, \code{CAMPAIGN},
-\code{EVALUATION_FORM}, \code{EVALUATOR_ID}
+\code{QUEUE}, \code{ROUTING_PROFILE}, \code{AGENT}, \code{AGENT_HIERARCHY_LEVEL_ONE}, \code{AGENT_HIERARCHY_LEVEL_TWO}, \code{AGENT_HIERARCHY_LEVEL_THREE}, \code{AGENT_HIERARCHY_LEVEL_FOUR}, \code{AGENT_HIERARCHY_LEVEL_FIVE}, \code{CAMPAIGN}, \code{EVALUATION_FORM}, \code{EVALUATOR_ID}
 
-You can use up to 5 filter keys in a single request, and up to 100
-filter values across all filter keys.
+You can use up to 5 filter keys in a single request, and up to 100 filter values across all filter keys.
 
 \strong{Filter values}
 \itemize{
-\item VOICE, CHAT, TASK, and EMAIL are valid filter values for the
-\code{CHANNEL} filter key. They do not count towards the limit of 100
-filter values. For example, a
-\code{\link[=connect_get_metric_data_v2]{get_metric_data_v2}} request can
-filter by 50 queues, 35 agents, and 15 routing profiles for a total
-of 100 filter values, along with 4 channel filters.
-\item \code{contact_lens_conversational_analytics} is a valid filter value for
-the \code{FEATURE} filter key. It is available only for contacts analyzed
-by Contact Lens conversational analytics.
-\item \code{connect:Chat}, \code{connect:SMS}, \code{connect:Telephony}, and
-\code{connect:WebRTC} are valid filter value examples (not exhaustive)
-for the \code{contact/segmentAttributes/connect:Subtype} filter key.
-\item \code{ROUTING_STEP_EXPRESSION} accepts a filter value up to 3,000
-characters in length. This filter is case-sensitive and
-order-sensitive. JSON string fields must be sorted in ascending
-order, and JSON array order must be preserved.
-\item TRUE and FALSE are the only valid filter values for the
-\code{Q_CONNECT_ENABLED} filter key.
+\item VOICE, CHAT, TASK, and EMAIL are valid filter values for the \code{CHANNEL} filter key. They do not count towards the limit of 100 filter values. For example, a \code{\link[=connect_get_metric_data_v2]{get_metric_data_v2}} request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of 100 filter values, along with 4 channel filters.
+\item \code{contact_lens_conversational_analytics} is a valid filter value for the \code{FEATURE} filter key. It is available only for contacts analyzed by Contact Lens conversational analytics.
+\item \code{connect:Chat}, \code{connect:SMS}, \code{connect:Telephony}, and \code{connect:WebRTC} are valid filter value examples (not exhaustive) for the \code{contact/segmentAttributes/connect:Subtype} filter key.
+\item \code{ROUTING_STEP_EXPRESSION} accepts a filter value up to 3,000 characters in length. This filter is case-sensitive and order-sensitive. JSON string fields must be sorted in ascending order, and JSON array order must be preserved.
+\item TRUE and FALSE are the only valid filter values for the \code{Q_CONNECT_ENABLED} filter key.
 \itemize{
-\item TRUE includes all contacts that had Connect AI Agents enabled as
-part of the flow.
-\item FALSE includes all contacts that did not have Connect AI Agents
-enabled as part of the flow.
+\item TRUE includes all contacts that had Connect AI Agents enabled as part of the flow.
+\item FALSE includes all contacts that did not have Connect AI Agents enabled as part of the flow.
 }
-\item \code{EXPERIENCE_VALIDATION} and \code{FLOW_VALIDATION} are the only valid
-filter values for the
-\code{contact/segmentAttributes/connect:ValidationTestType} filter key.
-This filter is available only for contact record-driven metrics.
-\item \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html}{Campaign}
-ARNs are valid filter values for the \code{CAMPAIGN} filter key.
-\item To filter by phone number, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html}{Create a historical metrics report}
-in the \emph{Amazon Connect Administrator Guide}.
+\item \code{EXPERIENCE_VALIDATION} and \code{FLOW_VALIDATION} are the only valid filter values for the \code{contact/segmentAttributes/connect:ValidationTestType} filter key. This filter is available only for contact record-driven metrics.
+\item \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-outbound-campaigns_Campaign.html}{Campaign} ARNs are valid filter values for the \code{CAMPAIGN} filter key.
+\item To filter by phone number, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/create-historical-metrics-report.html}{Create a historical metrics report} in the \emph{Connect Customer Administrator Guide}.
 }}
 
-\item{Groupings}{The grouping applied to the metrics that are returned. For example, when
-results are grouped by queue, the metrics returned are grouped by queue.
-The values that are returned apply to the metrics for each queue. They
-are not aggregated for all queues.
+\item{Groupings}{The grouping applied to the metrics that are returned. For example, when results are grouped by queue, the metrics returned are grouped by queue. The values that are returned apply to the metrics for each queue. They are not aggregated for all queues.
 
 If no grouping is specified, a summary of all metrics is returned.
 
-Valid grouping keys: \code{AGENT} | \code{AGENT_HIERARCHY_LEVEL_ONE} |
-\code{AGENT_HIERARCHY_LEVEL_TWO} | \code{AGENT_HIERARCHY_LEVEL_THREE} |
-\code{AGENT_HIERARCHY_LEVEL_FOUR} | \code{AGENT_HIERARCHY_LEVEL_FIVE} |
-\code{ANSWERING_MACHINE_DETECTION_STATUS} | \code{BOT_ID} | \code{BOT_ALIAS} |
-\code{BOT_VERSION} | \code{BOT_LOCALE} | \code{BOT_INTENT_NAME} | \code{CAMPAIGN} |
-\code{CAMPAIGN_DELIVERY_EVENT_TYPE} | \code{CAMPAIGN_EXCLUDED_EVENT_TYPE} |
-\code{CAMPAIGN_EXECUTION_TIMESTAMP} | \code{CASE_TEMPLATE_ARN} | \code{CASE_STATUS} |
-\code{CHANNEL} | \code{contact/segmentAttributes/connect:Subtype} |
-\code{DISCONNECT_REASON} | \code{EVALUATION_FORM} | \code{EVALUATION_SECTION} |
-\code{EVALUATION_QUESTION} | \code{EVALUATION_SOURCE} | \code{EVALUATOR_ID} |
-\code{FLOWS_RESOURCE_ID} | \code{FLOWS_MODULE_RESOURCE_ID} | \code{FLOW_ACTION_ID} |
-\code{FLOW_TYPE} | \code{FLOWS_OUTCOME_TYPE} | \code{FORM_VERSION} |
-\code{INITIATION_METHOD} | \code{INVOKING_RESOURCE_PUBLISHED_TIMESTAMP} |
-\code{INVOKING_RESOURCE_TYPE} | \code{PARENT_FLOWS_RESOURCE_ID} |
-\code{Q_CONNECT_ENABLED} | \code{QUEUE} | \code{RESOURCE_PUBLISHED_TIMESTAMP} |
-\code{ROUTING_PROFILE} | \code{ROUTING_STEP_EXPRESSION} | \code{TEST_CASE} |
-\code{TEST_CASE_EXECUTION_FAILURE_REASON} | \code{TEST_CASE_INVOCATION_METHOD}
+Valid grouping keys: \code{AGENT} | \code{AGENT_HIERARCHY_LEVEL_ONE} | \code{AGENT_HIERARCHY_LEVEL_TWO} | \code{AGENT_HIERARCHY_LEVEL_THREE} | \code{AGENT_HIERARCHY_LEVEL_FOUR} | \code{AGENT_HIERARCHY_LEVEL_FIVE} | \code{ANSWERING_MACHINE_DETECTION_STATUS} | \code{BOT_ID} | \code{BOT_ALIAS} | \code{BOT_VERSION} | \code{BOT_LOCALE} | \code{BOT_INTENT_NAME} | \code{CAMPAIGN} | \code{CAMPAIGN_DELIVERY_EVENT_TYPE} | \code{CAMPAIGN_EXCLUDED_EVENT_TYPE} | \code{CAMPAIGN_EXECUTION_TIMESTAMP} | \code{CASE_TEMPLATE_ARN} | \code{CASE_STATUS} | \code{CHANNEL} | \code{contact/segmentAttributes/connect:Subtype} | \code{DISCONNECT_REASON} | \code{EVALUATION_FORM} | \code{EVALUATION_SECTION} | \code{EVALUATION_QUESTION} | \code{EVALUATION_SOURCE} | \code{EVALUATOR_ID} | \code{FLOWS_RESOURCE_ID} | \code{FLOWS_MODULE_RESOURCE_ID} | \code{FLOW_ACTION_ID} | \code{FLOW_TYPE} | \code{FLOWS_OUTCOME_TYPE} | \code{FORM_VERSION} | \code{INITIATION_METHOD} | \code{INVOKING_RESOURCE_PUBLISHED_TIMESTAMP} | \code{INVOKING_RESOURCE_TYPE} | \code{PARENT_FLOWS_RESOURCE_ID} | \code{Q_CONNECT_ENABLED} | \code{QUEUE} | \code{RESOURCE_PUBLISHED_TIMESTAMP} | \code{ROUTING_PROFILE} | \code{ROUTING_STEP_EXPRESSION} | `TEST_C
 
-API, SCHEDULE, and EVENT are the only valid filterValues for
-TEST_CASE_INVOCATION_METHOD.
+API, SCHEDULE, and EVENT are the only valid filterValues for TEST_CASE_INVOCATION_METHOD.
 
-OBSERVE_EVENT, SEND_INSTRUCTION, ASSERT_DATA, and
-OVERRIDE_SYSTEM_BEHAVIOR are the only valid filterValues for
-TEST_CASE_EXECUTION_FAILURE_REASON
+OBSERVE_EVENT, SEND_INSTRUCTION, ASSERT_DATA, and OVERRIDE_SYSTEM_BEHAVIOR are the only valid filterValues for TEST_CASE_EXECUTION_FAILURE_REASON
 
 Type: Array of strings
 
@@ -180,34 +87,25 @@ Array Members: Maximum number of 4 items
 
 Required: No}
 
-\item{Metrics}{[required] The metrics to retrieve. Specify the name or metricId, groupings, and
-filters for each metric. The following historical metrics are available.
-For a description of each metric, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html}{Metrics definition}
-in the \emph{Amazon Connect Administrator Guide}.
+\item{Metrics}{[required] The metrics to retrieve. Specify the name or metricId, groupings, and filters for each metric. The following historical metrics are available. For a description of each metric, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html}{Metrics definition} in the \emph{Connect Customer Administrator Guide}.
 
-MetricId should be used to reference custom metrics or out of the box
-metrics as Arn. If using MetricId, the limit is 20 MetricId per request.
+MetricId should be used to reference custom metrics or out of the box metrics as Arn. If using MetricId, the limit is 20 MetricId per request.
 
 \strong{ABANDONMENT_RATE}
 
 Unit: Percent
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q
-in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#abandonment-rate}{Abandonment rate}
 
 \strong{AGENT_ADHERENT_TIME}
 
-This metric is available only in Amazon Web Services Regions where
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region}{Forecasting, capacity planning, and scheduling}
-is available.
+This metric is available only in Amazon Web Services Regions where \href{https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region}{Forecasting, capacity planning, and scheduling} is available.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#adherent-time}{Adherent time}
 
@@ -215,8 +113,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-answer-rate}{Agent answer rate}
 
@@ -224,8 +121,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#non-adherent-time}{Non-adherent time}
 
@@ -233,8 +129,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-non-response}{Agent non-response}
 
@@ -242,11 +137,9 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
-Data for this metric is available starting from October 1, 2023 0:00:00
-GMT.
+Data for this metric is available starting from October 1, 2023 0:00:00 GMT.
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-non-response-without-customer-abandons}{Agent non-response without customer abandons}
 
@@ -256,33 +149,25 @@ Unit: Percentage
 
 Valid groupings and filters: Routing Profile, Agent, Agent Hierarchy
 
-UI name:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#occupancy}{Occupancy}
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#occupancy}{Occupancy}
 
 \strong{AGENT_SCHEDULE_ADHERENCE}
 
-This metric is available only in Amazon Web Services Regions where
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region}{Forecasting, capacity planning, and scheduling}
-is available.
+This metric is available only in Amazon Web Services Regions where \href{https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region}{Forecasting, capacity planning, and scheduling} is available.
 
 Unit: Percent
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
-UI name:
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#adherence}{Adherence}
+UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#adherence}{Adherence}
 
 \strong{AGENT_SCHEDULED_TIME}
 
-This metric is available only in Amazon Web Services Regions where
-\href{https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region}{Forecasting, capacity planning, and scheduling}
-is available.
+This metric is available only in Amazon Web Services Regions where \href{https://docs.aws.amazon.com/connect/latest/adminguide/regions.html#optimization_region}{Forecasting, capacity planning, and scheduling} is available.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#scheduled-time}{Scheduled time}
 
@@ -290,9 +175,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q
-in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 Valid metric filter key: \code{INITIATION_METHOD}
 
@@ -302,8 +185,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-active-time}{Average active time}
 
@@ -313,9 +195,7 @@ Unit: Seconds
 
 Valid metric filter key: \code{INITIATION_METHOD}
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q
-in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#after-contact-work-time}{Average after contact work time}
 
@@ -325,8 +205,7 @@ Feature is a valid filter but not a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-concurrency}{Average agent concurrency}
 
@@ -334,24 +213,19 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid metric filter key: \code{INITIATION_METHOD}. For now, this metric only
-supports the following as \code{INITIATION_METHOD}: \code{INBOUND} | \code{OUTBOUND} |
-\code{CALLBACK} | \code{API}
+Valid metric filter key: \code{INITIATION_METHOD}. For now, this metric only supports the following as \code{INITIATION_METHOD}: \code{INBOUND} | \code{OUTBOUND} | \code{CALLBACK} | \code{API}
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-api-connecting-time}{Average agent API connecting time}
 
-The \code{Negate} key in metric-level filters is not applicable for this
-metric.
+The \code{Negate} key in metric-level filters is not applicable for this metric.
 
 \strong{AVG_AGENT_PAUSE_TIME}
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-pause-time}{Average agent pause time}
 
@@ -359,11 +233,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot
-version, Bot locale, Flows resource ID, Flows module resource ID, Flow
-type, Flow action ID, Invoking resource published timestamp, Initiation
-method, Invoking resource type, Parent flows resource ID
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID, Flow type, Flow action ID, Invoking resource published timestamp, Initiation method, Invoking resource type, Parent flows resource ID
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#average-bot-conversation-time}{Average bot conversation time}
 
@@ -371,11 +241,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics
 
 Unit: Count
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot
-version, Bot locale, Flows resource ID, Flows module resource ID, Flow
-type, Flow action ID, Invoking resource published timestamp, Initiation
-method, Invoking resource type, Parent flows resource ID
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID, Flow type, Flow action ID, Invoking resource published timestamp, Initiation method, Invoking resource type, Parent flows resource ID
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#average-bot-conversation-turns}{Average bot conversation turns}
 
@@ -403,9 +269,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q
-in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-contact-duration}{Average contact duration}
 
@@ -415,10 +279,7 @@ Feature is a valid filter but not a valid grouping.
 
 Unit: Seconds
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-average-contact-first-response-wait-time}{Agent average contact first response wait time}
 
@@ -426,10 +287,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-conversation-close-time}{Average conversation close time}
 
@@ -437,16 +295,13 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q
-in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-conversation-duration}{Average conversation duration}
 
 \strong{AVG_DIALS_PER_MINUTE}
 
-This metric is available only for outbound campaigns that use the agent
-assisted voice and automated voice delivery modes.
+This metric is available only for outbound campaigns that use the agent assisted voice and automated voice delivery modes.
 
 Unit: Count
 
@@ -458,9 +313,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation
-Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation
-Source, Form Version, Queue, Routing Profile
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-evaluation-score}{Average evaluation score}
 
@@ -468,10 +321,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-first-response-time}{Average agent first response time}
 
@@ -479,23 +329,17 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Flow type, Flows module
-resource ID, Flows next resource ID, Flows next resource queue ID, Flows
-outcome type, Flows resource ID, Initiation method, Resource published
-timestamp
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource published timestamp
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-flow-time}{Average flow time}
 
 \strong{AVG_GREETING_TIME_AGENT}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-greeting-time}{Average agent greeting time}
 
@@ -503,9 +347,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype,
-RoutingStepExpression
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-handle-time}{Average handle time}
 
@@ -515,8 +357,7 @@ Feature is a valid filter but not a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI
-Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#active-ai-agents}{Active AI Agents}
 
@@ -524,8 +365,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoff-rate}{AI Handoff Rate}
 
@@ -533,8 +373,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-handoffs}{AI Handoffs}
 
@@ -542,8 +381,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success}{AI Agent Invocation Success}
 
@@ -553,8 +391,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Percent
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocation-success-rate}{AI Agent Invocation Success Rate}
 
@@ -564,8 +401,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI
-Agent Name Version, AI Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Agent Name Version, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-agent-invocations}{AI Agent Invocations}
 
@@ -575,8 +411,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Percent
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-response-completion-rate}{AI Response Completion Rate}
 
@@ -584,8 +419,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-involved-contacts}{AI Involved Contacts}
 
@@ -593,9 +427,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI
-Prompt Type, AI Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success}{AI Prompt Invocation Success}
 
@@ -605,9 +437,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Percent
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI
-Prompt Type, AI Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocation-success-rate}{AI Prompt Invocation Success Rate}
 
@@ -617,9 +447,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI
-Prompt Type, AI Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-prompt-invocations}{AI Prompt Invocations}
 
@@ -629,9 +457,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use
-Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success}{AI Tool Invocation Success}
 
@@ -641,9 +467,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Percent
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use
-Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocation-success-rate}{AI Tool Invocation Success Rate}
 
@@ -653,9 +477,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use
-Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#ai-tool-invocations}{AI Tool Invocations}
 
@@ -665,8 +487,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-agent-conversation-turns}{Average AI Agent Conversation Turns}
 
@@ -676,8 +497,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-conversation-turns}{Average AI Conversation Turns}
 
@@ -685,9 +505,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Milliseconds
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI
-Prompt Type, AI Use Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Prompt, AI Prompt ID, AI Prompt Name, AI Prompt Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-prompt-invocation-latency}{Average AI Prompt Invocation Latency}
 
@@ -697,9 +515,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Milliseconds
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name
-Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use
-Case, Channel, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Name Version, AI Agent Type, AI Tool ID, AI Tool Name, AI Tool Type, AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-ai-tool-invocation-latency}{Average AI Tool Invocation Latency}
 
@@ -709,8 +525,7 @@ AI Agent Name Version is not a valid filter but a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI
-Use Case, Channel, Knowledge Base Name, Queue, Routing Profile
+Valid groupings and filters: AI Agent, AI Agent Name, AI Agent Type, AI Use Case, Channel, Knowledge Base Name, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#knowledge-content-references}{Knowledge Content References}
 
@@ -718,8 +533,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engagement-rate}{Proactive Intent Engagement Rate}
 
@@ -727,8 +541,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-response-rate}{Proactive Intent Response Rate}
 
@@ -736,8 +549,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-answered}{Proactive Intents Answered}
 
@@ -745,8 +557,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-detected}{Proactive Intents Detected}
 
@@ -754,8 +565,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: AI Use Case, Channel, Queue, Routing
-Profile
+Valid groupings and filters: AI Use Case, Channel, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#proactive-intents-engaged}{Proactive Intents Engaged}
 
@@ -763,9 +573,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q
-in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-hold-time}{Average customer hold time}
 
@@ -775,8 +583,7 @@ Feature is a valid filter but not a valid grouping.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-hold-time-all-contacts}{Average customer hold time all contacts}
 
@@ -784,9 +591,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q
-in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-holds}{Average holds}
 
@@ -796,8 +601,7 @@ Feature is a valid filter but not a valid grouping.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interaction-and-customer-hold-time}{Average agent interaction and customer hold time}
 
@@ -807,8 +611,7 @@ Unit: Seconds
 
 Valid metric filter key: \code{INITIATION_METHOD}
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interaction-time}{Average agent interaction time}
 
@@ -816,25 +619,21 @@ Feature is a valid filter but not a valid grouping.
 
 \strong{AVG_INTERRUPTIONS_AGENT}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interruptions}{Average agent interruptions}
 
 \strong{AVG_INTERRUPTION_TIME_AGENT}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-interruption-time}{Average agent interruption time}
 
@@ -842,10 +641,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-message-length}{Average agent message length}
 
@@ -853,10 +649,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-message-length}{Average customer message length}
 
@@ -864,10 +657,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-messages}{Average messages}
 
@@ -875,10 +665,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-messages}{Average agent messages}
 
@@ -886,10 +673,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-bot-messages}{Average bot messages}
 
@@ -897,22 +681,17 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-messages}{Average customer messages}
 
 \strong{AVG_NON_TALK_TIME}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-non-talk-time}{Average non-talk time}
 
@@ -920,13 +699,11 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time}{Average queue answer time}
 
-Valid metric level filters: \code{INITIATION_METHOD}, \code{FEATURE},
-\code{DISCONNECT_REASON}
+Valid metric level filters: \code{INITIATION_METHOD}, \code{FEATURE}, \code{DISCONNECT_REASON}
 
 Feature is a valid filter but not a valid grouping.
 
@@ -934,9 +711,7 @@ Feature is a valid filter but not a valid grouping.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent
-Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-queue-answer-time-customer-first-callback}{Avg. queue answer time - customer first callback}
 
@@ -944,10 +719,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-response-time-agent}{Average agent response time}
 
@@ -955,10 +727,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-time-agent}{Average customer response time}
 
@@ -966,51 +735,43 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-resolution-time}{Average resolution time}
 
 \strong{AVG_TALK_TIME}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-talk-time}{Average talk time}
 
 \strong{AVG_TALK_TIME_AGENT}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-agent-talk-time}{Average agent talk time}
 
 \strong{AVG_TALK_TIME_CUSTOMER}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-customer-talk-time}{Average customer talk time}
 
 \strong{AVG_WAIT_TIME_AFTER_CUSTOMER_CONNECTION}
 
-This metric is available only for outbound campaigns that use the agent
-assisted voice and automated voice delivery modes.
+This metric is available only for outbound campaigns that use the agent assisted voice and automated voice delivery modes.
 
 Unit: Seconds
 
@@ -1022,9 +783,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent
-Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-wait-time-after-customer-connection-customer-first-callback}{Avg. wait time after customer connection - customer first callback}
 
@@ -1032,9 +791,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation
-Form Id, Evaluation Section ID, Evaluation Question ID, Evaluation
-Source, Form Version, Queue, Routing Profile
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form Id, Evaluation Section ID, Evaluation Question ID, Evaluation Source, Form Version, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#average-weighted-evaluation-score}{Average weighted evaluation score}
 
@@ -1042,11 +799,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot
-version, Bot locale, Flows resource ID, Flows module resource ID, Flow
-type, Flow action ID, Invoking resource published timestamp, Initiation
-method, Invoking resource type, Parent flows resource ID
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID, Flow type, Flow action ID, Invoking resource published timestamp, Initiation method, Invoking resource type, Parent flows resource ID
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-conversations-completed}{Bot conversations completed}
 
@@ -1054,49 +807,37 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics
 
 Unit: Count
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot
-version, Bot locale, Bot intent name, Flows resource ID, Flows module
-resource ID, Flow type, Flow action ID, Invoking resource published
-timestamp, Initiation method, Invoking resource type, Parent flows
-resource ID
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot locale, Bot intent name, Flows resource ID, Flows module resource ID, Flow type, Flow action ID, Invoking resource published timestamp, Initiation method, Invoking resource type, Parent flows resource ID
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#bot-intents-completed}{Bot intents completed}
 
 \strong{CAMPAIGN_CONTACTS_ABANDONED_AFTER_X}
 
-This metric is available only for outbound campaigns using the agent
-assisted voice and automated voice delivery modes.
+This metric is available only for outbound campaigns using the agent assisted voice and automated voice delivery modes.
 
 Unit: Count
 
 Valid groupings and filters: Agent, Campaign
 
-Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800
-(inclusive), in seconds. For \code{Comparison}, you must enter \code{GT} (for
-\emph{Greater than}).
+Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800 (inclusive), in seconds. For \code{Comparison}, you must enter \code{GT} (for \emph{Greater than}).
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-contacts-abandoned-after-x}{Campaign contacts abandoned after X}
 
 \strong{CAMPAIGN_CONTACTS_ABANDONED_AFTER_X_RATE}
 
-This metric is available only for outbound campaigns using the agent
-assisted voice and automated voice delivery modes.
+This metric is available only for outbound campaigns using the agent assisted voice and automated voice delivery modes.
 
 Unit: Percent
 
 Valid groupings and filters: Agent, Campaign
 
-Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800
-(inclusive), in seconds. For \code{Comparison}, you must enter \code{GT} (for
-\emph{Greater than}).
+Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800 (inclusive), in seconds. For \code{Comparison}, you must enter \code{GT} (for \emph{Greater than}).
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-contacts-abandoned-after-x-rate}{Campaign contacts abandoned after X rate}
 
 \strong{CAMPAIGN_INTERACTIONS}
 
-This metric is available only for outbound campaigns using the email
-delivery mode.
+This metric is available only for outbound campaigns using the email delivery mode.
 
 Unit: Count
 
@@ -1108,8 +849,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 \strong{CAMPAIGN_PROGRESS_RATE}
 
-This metric is only available for outbound campaigns initiated using a
-customer segment. It is not available for event triggered campaigns.
+This metric is only available for outbound campaigns initiated using a customer segment. It is not available for event triggered campaigns.
 
 Unit: Percent
 
@@ -1123,8 +863,7 @@ This metric is available only for outbound campaigns.
 
 Unit: Count
 
-Valid groupings and filters: Campaign, Channel,
-contact/segmentAttributes/connect:Subtype
+Valid groupings and filters: Campaign, Channel, contact/segmentAttributes/connect:Subtype
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-send-attempts}{Campaign send attempts}
 
@@ -1136,8 +875,7 @@ Valid metric filter key: CAMPAIGN_EXCLUDED_EVENT_TYPE
 
 Unit: Count
 
-Valid groupings and filters: Campaign, Campaign Excluded Event Type,
-Campaign Execution Timestamp
+Valid groupings and filters: Campaign, Campaign Excluded Event Type, Campaign Execution Timestamp
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#campaign-send-exclusions}{Campaign send exclusions}
 
@@ -1157,8 +895,7 @@ Unit: Count
 
 Valid metric filter key: \code{INITIATION_METHOD}
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Feature,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-created}{Contacts created}
 
@@ -1170,9 +907,7 @@ Unit: Count
 
 Valid metric filter key: \code{INITIATION_METHOD}, \code{DISCONNECT_REASON}
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype,
-RoutingStepExpression, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled}{Contacts handled}
 
@@ -1184,8 +919,7 @@ Unit: Count
 
 Valid metric filter key: \code{INITIATION_METHOD}
 
-Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-handled-by-connected-to-agent-timestamp}{Contacts handled (connected to agent timestamp)}
 
@@ -1193,8 +927,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-hold-disconnect}{Contacts hold disconnect}
 
@@ -1202,8 +935,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-hold-agent-disconnect}{Contacts hold agent disconnect}
 
@@ -1211,8 +943,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-hold-customer-disconnect}{Contacts hold customer disconnect}
 
@@ -1220,8 +951,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-put-on-hold}{Contacts put on hold}
 
@@ -1229,8 +959,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-external}{Contacts transferred out external}
 
@@ -1238,8 +967,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-internal}{Contacts transferred out internal}
 
@@ -1247,8 +975,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-queued}{Contacts queued}
 
@@ -1256,8 +983,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy,
-contact/segmentAttributes/connect:Subtype
+Valid groupings and filters: Queue, Channel, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-queued-by-enqueue}{Contacts queued (enqueue timestamp)}
 
@@ -1265,12 +991,9 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Q in
-Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
 
-Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800
-(inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less
-than") or \code{LTE} (for "Less than equal").
+Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800 (inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less than") or \code{LTE} (for "Less than equal").
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-removed-from-queue}{Contacts removed from queue in X seconds}
 
@@ -1278,12 +1001,9 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in Connect
 
-Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800
-(inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less
-than") or \code{LTE} (for "Less than equal").
+Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800 (inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less than") or \code{LTE} (for "Less than equal").
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-resolved}{Contacts resolved in X}
 
@@ -1291,9 +1011,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q
-in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Feature, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out}{Contacts transferred out}
 
@@ -1303,8 +1021,7 @@ Feature is a valid filter but not a valid grouping.
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-by-agent}{Contacts transferred out by agent}
 
@@ -1312,8 +1029,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-transferred-out-queue}{Contacts transferred out queue}
 
@@ -1331,10 +1047,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature,
-RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in
-Connect
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Feature, RoutingStepExpression, Initiation method, Routing Profile, Queue, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#conversations-abandoned}{Conversations abandoned}
 
@@ -1344,49 +1057,33 @@ This metric is available only for outbound campaigns.
 
 Unit: Count
 
-Valid metric filter key: \code{ANSWERING_MACHINE_DETECTION_STATUS},
-\code{CAMPAIGN_DELIVERY_EVENT_TYPE}, \code{DISCONNECT_REASON}
+Valid metric filter key: \code{ANSWERING_MACHINE_DETECTION_STATUS}, \code{CAMPAIGN_DELIVERY_EVENT_TYPE}, \code{DISCONNECT_REASON}
 
-Valid groupings and filters: Agent, Answering Machine Detection Status,
-Campaign, Campaign Delivery EventType, Channel,
-contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue,
-Routing Profile
+Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign, Campaign Delivery EventType, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#delivery-attempts}{Delivery attempts}
 
-Campaign Delivery EventType filter and grouping are only available for
-SMS and Email campaign delivery modes. Agent, Queue, Routing Profile,
-Answering Machine Detection Status and Disconnect Reason are only
-available for agent assisted voice and automated voice delivery modes.
+Campaign Delivery EventType filter and grouping are only available for SMS and Email campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection Status and Disconnect Reason are only available for agent assisted voice and automated voice delivery modes.
 
 \strong{DELIVERY_ATTEMPT_DISPOSITION_RATE}
 
-This metric is available only for outbound campaigns. Dispositions for
-the agent assisted voice and automated voice delivery modes are only
-available with answering machine detection enabled.
+This metric is available only for outbound campaigns. Dispositions for the agent assisted voice and automated voice delivery modes are only available with answering machine detection enabled.
 
 Unit: Percent
 
-Valid metric filter key: \code{ANSWERING_MACHINE_DETECTION_STATUS},
-\code{CAMPAIGN_DELIVERY_EVENT_TYPE}, \code{DISCONNECT_REASON}
+Valid metric filter key: \code{ANSWERING_MACHINE_DETECTION_STATUS}, \code{CAMPAIGN_DELIVERY_EVENT_TYPE}, \code{DISCONNECT_REASON}
 
-Valid groupings and filters: Agent, Answering Machine Detection Status,
-Campaign, Channel, contact/segmentAttributes/connect:Subtype, Disconnect
-Reason, Queue, Routing Profile
+Valid groupings and filters: Agent, Answering Machine Detection Status, Campaign, Channel, contact/segmentAttributes/connect:Subtype, Disconnect Reason, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#delivery-attempt-disposition-rate}{Delivery attempt disposition rate}
 
-Campaign Delivery Event Type filter and grouping are only available for
-SMS and Email campaign delivery modes. Agent, Queue, Routing Profile,
-Answering Machine Detection Status and Disconnect Reason are only
-available for agent assisted voice and automated voice delivery modes.
+Campaign Delivery Event Type filter and grouping are only available for SMS and Email campaign delivery modes. Agent, Queue, Routing Profile, Answering Machine Detection Status and Disconnect Reason are only available for agent assisted voice and automated voice delivery modes.
 
 \strong{EVALUATIONS_PERFORMED}
 
 Unit: Count
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation
-Form ID, Evaluation Source, Form Version, Queue, Routing Profile
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#evaluations-performed}{Evaluations performed}
 
@@ -1394,11 +1091,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Flow type, Flows module
-resource ID, Flows next resource ID, Flows next resource queue ID, Flows
-outcome type, Flows resource ID, Initiation method, Resource published
-timestamp
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource published timestamp
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#flows-outcome}{Flows outcome}
 
@@ -1406,18 +1099,13 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Flow type, Flows module
-resource ID, Flows resource ID, Initiation method, Resource published
-timestamp
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows resource ID, Initiation method, Resource published timestamp
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#flows-started}{Flows started}
 
 \strong{HUMAN_ANSWERED_CALLS}
 
-This metric is available only for outbound campaigns. Dispositions for
-the agent assisted voice and automated voice delivery modes are only
-available with answering machine detection enabled.
+This metric is available only for outbound campaigns. Dispositions for the agent assisted voice and automated voice delivery modes are only available with answering machine detection enabled.
 
 Unit: Count
 
@@ -1429,11 +1117,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Flow type, Flows module
-resource ID, Flows next resource ID, Flows next resource queue ID, Flows
-outcome type, Flows resource ID, Initiation method, Resource published
-timestamp
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource published timestamp
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#maximum-flow-time}{Maximum flow time}
 
@@ -1441,8 +1125,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#maximum-queued-time}{Maximum queued time}
 
@@ -1450,11 +1133,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Flow type, Flows module
-resource ID, Flows next resource ID, Flows next resource queue ID, Flows
-outcome type, Flows resource ID, Initiation method, Resource published
-timestamp
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource published timestamp
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#minimum-flow-time}{Minimum flow time}
 
@@ -1462,8 +1141,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation
-Form ID, Evaluation Source, Form Version, Queue, Routing Profile
+Valid groupings and filters: Agent, Agent Hierarchy, Channel, Evaluation Form ID, Evaluation Source, Form Version, Queue, Routing Profile
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#automatic-fails-percent}{Automatic fails percent}
 
@@ -1471,11 +1149,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Percent
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot
-version, Bot locale, Flows resource ID, Flows module resource ID, Flow
-type, Flow action ID, Invoking resource published timestamp, Initiation
-method, Invoking resource type, Parent flows resource ID
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot locale, Flows resource ID, Flows module resource ID, Flow type, Flow action ID, Invoking resource published timestamp, Initiation method, Invoking resource type, Parent flows resource ID
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#percent-bot-conversations-outcome}{Percent bot conversations outcome}
 
@@ -1483,12 +1157,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics
 
 Unit: Percent
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot
-version, Bot locale, Bot intent name, Flows resource ID, Flows module
-resource ID, Flow type, Flow action ID, Invoking resource published
-timestamp, Initiation method, Invoking resource type, Parent flows
-resource ID
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Bot ID, Bot alias, Bot version, Bot locale, Bot intent name, Flows resource ID, Flows module resource ID, Flow type, Flow action ID, Invoking resource published timestamp, Initiation method, Invoking resource type, Parent flows resource ID
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/bot-metrics.html#percent-bot-intents-outcome}{Percent bot intents outcome}
 
@@ -1508,8 +1177,7 @@ Unit: Percent
 
 Valid groupings and filters: Queue, RoutingStepExpression
 
-UI name: This metric is available in Real-time Metrics UI but not on the
-Historical Metrics UI.
+UI name: This metric is available in Real-time Metrics UI but not on the Historical Metrics UI.
 
 \strong{PERCENT_CONTACTS_STEP_JOINED}
 
@@ -1517,8 +1185,7 @@ Unit: Percent
 
 Valid groupings and filters: Queue, RoutingStepExpression
 
-UI name: This metric is available in Real-time Metrics UI but not on the
-Historical Metrics UI.
+UI name: This metric is available in Real-time Metrics UI but not on the Historical Metrics UI.
 
 \strong{PERCENT_FLOWS_OUTCOME}
 
@@ -1526,11 +1193,7 @@ Unit: Percent
 
 Valid metric filter key: \code{FLOWS_OUTCOME_TYPE}
 
-Valid groupings and filters: Channel,
-contact/segmentAttributes/connect:Subtype, Flow type, Flows module
-resource ID, Flows next resource ID, Flows next resource queue ID, Flows
-outcome type, Flows resource ID, Initiation method, Resource published
-timestamp
+Valid groupings and filters: Channel, contact/segmentAttributes/connect:Subtype, Flow type, Flows module resource ID, Flows next resource ID, Flows next resource queue ID, Flows outcome type, Flows resource ID, Initiation method, Resource published timestamp
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#flows-outcome-percentage}{Flows outcome percentage}.
 
@@ -1538,56 +1201,47 @@ The \code{FLOWS_OUTCOME_TYPE} is not a valid grouping.
 
 \strong{PERCENT_NON_TALK_TIME}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Percentage
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#non-talk-time-percent}{Non-talk time percent}
 
 \strong{PERCENT_TALK_TIME}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Percentage
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#talk-time-percent}{Talk time percent}
 
 \strong{PERCENT_TALK_TIME_AGENT}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Percentage
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-talk-time-percent}{Agent talk time percent}
 
 \strong{PERCENT_TALK_TIME_CUSTOMER}
 
-This metric is available only for contacts analyzed by Contact Lens
-conversational analytics.
+This metric is available only for contacts analyzed by Contact Lens conversational analytics.
 
 Unit: Percentage
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#customer-talk-time-percent}{Customer talk time percent}
 
 \strong{RECIPIENTS_ATTEMPTED}
 
-This metric is only available for outbound campaigns initiated using a
-customer segment. It is not available for event triggered campaigns.
+This metric is only available for outbound campaigns initiated using a customer segment. It is not available for event triggered campaigns.
 
 Unit: Count
 
@@ -1597,22 +1251,19 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 \strong{RECIPIENTS_INTERACTED}
 
-This metric is only available for outbound campaigns initiated using a
-customer segment. It is not available for event triggered campaigns.
+This metric is only available for outbound campaigns initiated using a customer segment. It is not available for event triggered campaigns.
 
 Valid metric filter key: CAMPAIGN_INTERACTION_EVENT_TYPE
 
 Unit: Count
 
-Valid groupings and filters: Campaign, Channel,
-contact/segmentAttributes/connect:Subtype, Campaign Execution Timestamp
+Valid groupings and filters: Campaign, Channel, contact/segmentAttributes/connect:Subtype, Campaign Execution Timestamp
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#recipients-interacted}{Recipients interacted}
 
 \strong{RECIPIENTS_TARGETED}
 
-This metric is only available for outbound campaigns initiated using a
-customer segment. It is not available for event triggered campaigns.
+This metric is only available for outbound campaigns initiated using a customer segment. It is not available for event triggered campaigns.
 
 Unit: Count
 
@@ -1646,12 +1297,9 @@ You can include up to 20 SERVICE_LEVEL metrics in a request.
 
 Unit: Percent
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Q in
-Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Q in Connect
 
-Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800
-(inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less
-than") or \code{LTE} (for "Less than equal").
+Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800 (inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less than") or \code{LTE} (for "Less than equal").
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#service-level}{Service level X}
 
@@ -1661,15 +1309,13 @@ Unit: Count
 
 Valid groupings and filters: Queue, RoutingStepExpression
 
-UI name: This metric is available in Real-time Metrics UI but not on the
-Historical Metrics UI.
+UI name: This metric is available in Real-time Metrics UI but not on the Historical Metrics UI.
 
 \strong{SUM_AFTER_CONTACT_WORK_TIME}
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#after-contact-work-time}{After contact work time}
 
@@ -1677,17 +1323,13 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid metric filter key: \code{INITIATION_METHOD}. This metric only supports
-the following filter keys as \code{INITIATION_METHOD}: \code{INBOUND} | \code{OUTBOUND}
-| \code{CALLBACK} | \code{API} | \code{CALLBACK_CUSTOMER_FIRST_DIALED}
+Valid metric filter key: \code{INITIATION_METHOD}. This metric only supports the following filter keys as \code{INITIATION_METHOD}: \code{INBOUND} | \code{OUTBOUND} | \code{CALLBACK} | \code{API} | \code{CALLBACK_CUSTOMER_FIRST_DIALED}
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-api-connecting-time}{Agent API connecting time}
 
-The \code{Negate} key in metric-level filters is not applicable for this
-metric.
+The \code{Negate} key in metric-level filters is not applicable for this metric.
 
 \strong{CONTACTS_ABANDONED}
 
@@ -1695,14 +1337,10 @@ Unit: Count
 
 Metric filter:
 \itemize{
-\item Valid values: \code{API}| \code{INCOMING} | \code{OUTBOUND} | \code{TRANSFER} |
-\code{CALLBACK} | \code{QUEUE_TRANSFER}| \code{Disconnect} |
-\code{CALLBACK_CUSTOMER_FIRST_DIALED}
+\item Valid values: \code{API}| \code{INCOMING} | \code{OUTBOUND} | \code{TRANSFER} | \code{CALLBACK} | \code{QUEUE_TRANSFER}| \code{Disconnect} | \code{CALLBACK_CUSTOMER_FIRST_DIALED}
 }
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype,
-RoutingStepExpression, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, RoutingStepExpression, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned}{Contact abandoned}
 
@@ -1710,12 +1348,9 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in Connect
 
-Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800
-(inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less
-than") or \code{LTE} (for "Less than equal").
+Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800 (inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less than") or \code{LTE} (for "Less than equal").
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-abandoned-in-x-seconds}{Contacts abandoned in X seconds}
 
@@ -1723,12 +1358,9 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in Connect
 
-Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800
-(inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less
-than") or \code{LTE} (for "Less than equal").
+Threshold: For \code{ThresholdValue}, enter any whole number from 1 to 604800 (inclusive), in seconds. For \code{Comparison}, you can use \code{LT} (for "Less than") or \code{LTE} (for "Less than equal").
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contacts-answered-in-x-seconds}{Contacts answered in X seconds}
 
@@ -1736,8 +1368,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contact-flow-time}{Contact flow time}
 
@@ -1755,8 +1386,7 @@ Valid metric filter key: \code{DISCONNECT_REASON}
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contact-disconnected}{Contact disconnected}
 
@@ -1772,8 +1402,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#contact-handle-time}{Contact handle time}
 
@@ -1781,8 +1410,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#customer-hold-time}{Customer hold time}
 
@@ -1798,8 +1426,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-interaction-and-hold-time}{Agent interaction and hold time}
 
@@ -1807,8 +1434,7 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Seconds
 
-Valid groupings and filters: Queue, Channel, Routing Profile, Agent,
-Agent Hierarchy
+Valid groupings and filters: Queue, Channel, Routing Profile, Agent, Agent Hierarchy
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#agent-interaction-time}{Agent interaction time}
 
@@ -1832,19 +1458,16 @@ UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-def
 
 Unit: Count
 
-Valid groupings and filters: Queue, Channel, Routing Profile,
-contact/segmentAttributes/connect:Subtype, Q in Connect
+Valid groupings and filters: Queue, Channel, Routing Profile, contact/segmentAttributes/connect:Subtype, Q in Connect
 
 UI name: \href{https://docs.aws.amazon.com/connect/latest/adminguide/metrics-definitions.html#callback-attempts}{Callback attempts}}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 }
 \description{
-Gets metric data from the specified Amazon Connect instance.
+Gets metric data from the specified Connect Customer instance.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_get_metric_data_v2/} for full documentation.
 }

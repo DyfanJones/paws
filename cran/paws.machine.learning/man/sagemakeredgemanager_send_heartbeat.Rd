@@ -15,8 +15,7 @@ sagemakeredgemanager_send_heartbeat(
 )
 }
 \arguments{
-\item{AgentMetrics}{For internal use. Returns a list of SageMaker Edge Manager agent
-operating metrics.}
+\item{AgentMetrics}{For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.}
 
 \item{Models}{Returns a list of models deployed on the the device.}
 

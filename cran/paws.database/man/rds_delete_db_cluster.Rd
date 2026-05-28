@@ -12,30 +12,20 @@ rds_delete_db_cluster(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier for the DB cluster to be deleted. This
-parameter isn't case-sensitive.
+\item{DBClusterIdentifier}{[required] The DB cluster identifier for the DB cluster to be deleted. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
 \item Must match an existing DBClusterIdentifier.
 }}
 
-\item{SkipFinalSnapshot}{Specifies whether to skip the creation of a final DB cluster snapshot
-before RDS deletes the DB cluster. If you set this value to \code{true}, RDS
-doesn't create a final DB cluster snapshot. If you set this value to
-\code{false} or don't specify it, RDS creates a DB cluster snapshot before it
-deletes the DB cluster. By default, this parameter is disabled, so RDS
-creates a final DB cluster snapshot.
+\item{SkipFinalSnapshot}{Specifies whether to skip the creation of a final DB cluster snapshot before RDS deletes the DB cluster. If you set this value to \code{true}, RDS doesn't create a final DB cluster snapshot. If you set this value to \code{false} or don't specify it, RDS creates a DB cluster snapshot before it deletes the DB cluster. By default, this parameter is disabled, so RDS creates a final DB cluster snapshot.
 
-If \code{SkipFinalSnapshot} is disabled, you must specify a value for the
-\code{FinalDBSnapshotIdentifier} parameter.}
+If \code{SkipFinalSnapshot} is disabled, you must specify a value for the \code{FinalDBSnapshotIdentifier} parameter.}
 
-\item{FinalDBSnapshotIdentifier}{The DB cluster snapshot identifier of the new DB cluster snapshot
-created when \code{SkipFinalSnapshot} is disabled.
+\item{FinalDBSnapshotIdentifier}{The DB cluster snapshot identifier of the new DB cluster snapshot created when \code{SkipFinalSnapshot} is disabled.
 
-If you specify this parameter and also skip the creation of a final DB
-cluster snapshot with the \code{SkipFinalShapshot} parameter, the request
-results in an error.
+If you specify this parameter and also skip the creation of a final DB cluster snapshot with the \code{SkipFinalShapshot} parameter, the request results in an error.
 
 Constraints:
 \itemize{
@@ -44,11 +34,7 @@ Constraints:
 \item Can't end with a hyphen or contain two consecutive hyphens
 }}
 
-\item{DeleteAutomatedBackups}{Specifies whether to remove automated backups immediately after the DB
-cluster is deleted. This parameter isn't case-sensitive. The default is
-to remove automated backups immediately after the DB cluster is deleted,
-unless the Amazon Web Services Backup policy specifies a point-in-time
-restore rule.}
+\item{DeleteAutomatedBackups}{Specifies whether to remove automated backups immediately after the DB cluster is deleted. This parameter isn't case-sensitive. The default is to remove automated backups immediately after the DB cluster is deleted, unless the Amazon Web Services Backup policy specifies a point-in-time restore rule.}
 }
 \description{
 The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.

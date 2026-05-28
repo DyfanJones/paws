@@ -7,9 +7,7 @@ NULL
 #' modify launch templates to use this network
 #'
 #' @description
-#' Associate a Source Network to an existing CloudFormation Stack and
-#' modify launch templates to use this network. Can be used for reverting
-#' to previously deployed CloudFormation stacks.
+#' Associate a Source Network to an existing CloudFormation Stack and modify launch templates to use this network. Can be used for reverting to previously deployed CloudFormation stacks.
 #'
 #' @usage
 #' drs_associate_source_network_stack(sourceNetworkID, cfnStackName)
@@ -115,14 +113,12 @@ drs_associate_source_network_stack <- function(sourceNetworkID, cfnStackName) {
 #' source server in staging account
 #'
 #' @description
-#' Create an extended source server in the target Account based on the
-#' source server in staging account.
+#' Create an extended source server in the target Account based on the source server in staging account.
 #'
 #' @usage
 #' drs_create_extended_source_server(sourceServerArn, tags)
 #'
-#' @param sourceServerArn &#91;required&#93; This defines the ARN of the source server in staging Account based on
-#' which you want to create an extended source server.
+#' @param sourceServerArn &#91;required&#93; This defines the ARN of the source server in staging Account based on which you want to create an extended source server.
 #' @param tags A list of tags associated with the extended source server.
 #'
 #' @return
@@ -282,8 +278,7 @@ drs_create_extended_source_server <- function(sourceServerArn, tags = NULL) {
 #'   targetInstanceTypeRightSizingMethod, copyPrivateIp, copyTags, licensing,
 #'   exportBucketArn, postLaunchEnabled, launchIntoSourceInstance)
 #'
-#' @param tags Request to associate tags during creation of a Launch Configuration
-#' Template.
+#' @param tags Request to associate tags during creation of a Launch Configuration Template.
 #' @param launchDisposition Launch disposition.
 #' @param targetInstanceTypeRightSizingMethod Target instance type right-sizing method.
 #' @param copyPrivateIp Copy private IP.
@@ -291,9 +286,7 @@ drs_create_extended_source_server <- function(sourceServerArn, tags = NULL) {
 #' @param licensing Licensing.
 #' @param exportBucketArn S3 bucket ARN to export Source Network templates.
 #' @param postLaunchEnabled Whether we want to activate post-launch actions.
-#' @param launchIntoSourceInstance DRS will set the 'launch into instance ID' of any source server when
-#' performing a drill, recovery or failback to the previous region or
-#' availability zone, using the instance ID of the source instance.
+#' @param launchIntoSourceInstance DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.
 #'
 #' @return
 #' A list with the following syntax:
@@ -376,30 +369,21 @@ drs_create_launch_configuration_template <- function(tags = NULL, launchDisposit
 #'   pitPolicy, tags, autoReplicateNewDisks, internetProtocol)
 #'
 #' @param stagingAreaSubnetId &#91;required&#93; The subnet to be used by the replication staging area.
-#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security
-#' group with the Replication Configuration Template.
+#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.
 #' @param replicationServersSecurityGroupsIDs &#91;required&#93; The security group IDs that will be used by the replication server.
 #' @param replicationServerInstanceType The instance type to be used for the replication server.
-#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging
-#' area.
+#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging area.
 #' @param defaultLargeStagingDiskType The Staging Disk EBS volume type to be used during replication.
 #' @param ebsEncryption &#91;required&#93; The type of EBS encryption to be used during replication.
 #' @param ebsEncryptionKeyArn The ARN of the EBS encryption key to be used during replication.
-#' @param bandwidthThrottling &#91;required&#93; Configure bandwidth throttling for the outbound data transfer rate of
-#' the Source Server in Mbps.
+#' @param bandwidthThrottling &#91;required&#93; Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.
 #' @param dataPlaneRouting The data plane routing mechanism that will be used for replication.
 #' @param createPublicIP Whether to create a Public IP for the Recovery Instance by default.
-#' @param stagingAreaTags &#91;required&#93; A set of tags to be associated with all resources created in the
-#' replication staging area: EC2 replication server, EBS volumes, EBS
-#' snapshots, etc.
-#' @param pitPolicy &#91;required&#93; The Point in time (PIT) policy to manage snapshots taken during
-#' replication.
-#' @param tags A set of tags to be associated with the Replication Configuration
-#' Template resource.
-#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate
-#' newly added disks.
-#' @param internetProtocol Which version of the Internet Protocol to use for replication of data.
-#' (IPv4 or IPv6)
+#' @param stagingAreaTags &#91;required&#93; A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
+#' @param pitPolicy &#91;required&#93; The Point in time (PIT) policy to manage snapshots taken during replication.
+#' @param tags A set of tags to be associated with the Replication Configuration Template resource.
+#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate newly added disks.
+#' @param internetProtocol Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
 #'
 #' @return
 #' A list with the following syntax:
@@ -609,8 +593,8 @@ drs_delete_job <- function(jobID) {
 #' @usage
 #' drs_delete_launch_action(resourceId, actionId)
 #'
-#' @param resourceId &#91;required&#93; 
-#' @param actionId &#91;required&#93; 
+#' @param resourceId &#91;required&#93; Launch configuration template Id or Source Server Id
+#' @param actionId &#91;required&#93; Launch action Id.
 #'
 #' @return
 #' An empty list.
@@ -694,9 +678,7 @@ drs_delete_launch_configuration_template <- function(launchConfigurationTemplate
 #' Deletes a single Recovery Instance by ID
 #'
 #' @description
-#' Deletes a single Recovery Instance by ID. This deletes the Recovery
-#' Instance resource from Elastic Disaster Recovery. The Recovery Instance
-#' must be disconnected first in order to delete it.
+#' Deletes a single Recovery Instance by ID. This deletes the Recovery Instance resource from Elastic Disaster Recovery. The Recovery Instance must be disconnected first in order to delete it.
 #'
 #' @usage
 #' drs_delete_recovery_instance(recoveryInstanceID)
@@ -829,8 +811,7 @@ drs_delete_source_network <- function(sourceNetworkID) {
 #' Deletes a single Source Server by ID
 #'
 #' @description
-#' Deletes a single Source Server by ID. The Source Server must be
-#' disconnected first.
+#' Deletes a single Source Server by ID. The Source Server must be disconnected first.
 #'
 #' @usage
 #' drs_delete_source_server(sourceServerID)
@@ -970,13 +951,7 @@ drs_describe_job_log_items <- function(jobID, maxResults = NULL, nextToken = NUL
 #' Returns a list of Jobs
 #'
 #' @description
-#' Returns a list of Jobs. Use the JobsID and fromDate and toDate filters
-#' to limit which jobs are returned. The response is sorted by
-#' creationDataTime - latest date first. Jobs are created by the
-#' StartRecovery, TerminateRecoveryInstances and StartFailbackLaunch APIs.
-#' Jobs are also created by DiagnosticLaunch and
-#' TerminateDiagnosticInstances, which are APIs available only to
-#' *Support* and only used in response to relevant support tickets.
+#' Returns a list of Jobs. Use the JobsID and fromDate and toDate filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are created by the StartRecovery, TerminateRecoveryInstances and StartFailbackLaunch APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets.
 #'
 #' @usage
 #' drs_describe_jobs(filters, maxResults, nextToken)
@@ -1093,15 +1068,13 @@ drs_describe_jobs <- function(filters = NULL, maxResults = NULL, nextToken = NUL
 #' Configuration Template IDs
 #'
 #' @description
-#' Lists all Launch Configuration Templates, filtered by Launch
-#' Configuration Template IDs
+#' Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs
 #'
 #' @usage
 #' drs_describe_launch_configuration_templates(
 #'   launchConfigurationTemplateIDs, maxResults, nextToken)
 #'
-#' @param launchConfigurationTemplateIDs Request to filter Launch Configuration Templates list by Launch
-#' Configuration Template ID.
+#' @param launchConfigurationTemplateIDs Request to filter Launch Configuration Templates list by Launch Configuration Template ID.
 #' @param maxResults Maximum results to be returned in DescribeLaunchConfigurationTemplates.
 #' @param nextToken The token of the next Launch Configuration Template to retrieve.
 #'
@@ -1398,15 +1371,13 @@ drs_describe_recovery_snapshots <- function(sourceServerID, filters = NULL, orde
 #' IDs
 #'
 #' @description
-#' Lists all ReplicationConfigurationTemplates, filtered by Source Server
-#' IDs.
+#' Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
 #'
 #' @usage
 #' drs_describe_replication_configuration_templates(
 #'   replicationConfigurationTemplateIDs, maxResults, nextToken)
 #'
-#' @param replicationConfigurationTemplateIDs The IDs of the Replication Configuration Templates to retrieve. An empty
-#' list means all Replication Configuration Templates.
+#' @param replicationConfigurationTemplateIDs The IDs of the Replication Configuration Templates to retrieve. An empty list means all Replication Configuration Templates.
 #' @param maxResults Maximum number of Replication Configuration Templates to retrieve.
 #' @param nextToken The token of the next Replication Configuration Template to retrieve.
 #'
@@ -1743,19 +1714,7 @@ drs_describe_source_servers <- function(filters = NULL, maxResults = NULL, nextT
 #' Disconnect a Recovery Instance from Elastic Disaster Recovery
 #'
 #' @description
-#' Disconnect a Recovery Instance from Elastic Disaster Recovery. Data
-#' replication is stopped immediately. All AWS resources created by Elastic
-#' Disaster Recovery for enabling the replication of the Recovery Instance
-#' will be terminated / deleted within 90 minutes. If the agent on the
-#' Recovery Instance has not been prevented from communicating with the
-#' Elastic Disaster Recovery service, then it will receive a command to
-#' uninstall itself (within approximately 10 minutes). The following
-#' properties of the Recovery Instance will be changed immediately:
-#' dataReplicationInfo.dataReplicationState will be set to DISCONNECTED;
-#' The totalStorageBytes property for each of
-#' dataReplicationInfo.replicatedDisks will be set to zero;
-#' dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will
-#' be nullified.
+#' Disconnect a Recovery Instance from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Recovery Instance will be terminated / deleted within 90 minutes. If the agent on the Recovery Instance has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the Recovery Instance will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.
 #'
 #' @usage
 #' drs_disconnect_recovery_instance(recoveryInstanceID)
@@ -1799,20 +1758,7 @@ drs_disconnect_recovery_instance <- function(recoveryInstanceID) {
 #' Disconnects a specific Source Server from Elastic Disaster Recovery
 #'
 #' @description
-#' Disconnects a specific Source Server from Elastic Disaster Recovery.
-#' Data replication is stopped immediately. All AWS resources created by
-#' Elastic Disaster Recovery for enabling the replication of the Source
-#' Server will be terminated / deleted within 90 minutes. You cannot
-#' disconnect a Source Server if it has a Recovery Instance. If the agent
-#' on the Source Server has not been prevented from communicating with the
-#' Elastic Disaster Recovery service, then it will receive a command to
-#' uninstall itself (within approximately 10 minutes). The following
-#' properties of the SourceServer will be changed immediately:
-#' dataReplicationInfo.dataReplicationState will be set to DISCONNECTED;
-#' The totalStorageBytes property for each of
-#' dataReplicationInfo.replicatedDisks will be set to zero;
-#' dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will
-#' be nullified.
+#' Disconnects a specific Source Server from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Source Server will be terminated / deleted within 90 minutes. You cannot disconnect a Source Server if it has a Recovery Instance. If the agent on the Source Server has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.
 #'
 #' @usage
 #' drs_disconnect_source_server(sourceServerID)
@@ -1969,8 +1915,7 @@ drs_disconnect_source_server <- function(sourceServerID) {
 #' @usage
 #' drs_export_source_network_cfn_template(sourceNetworkID)
 #'
-#' @param sourceNetworkID &#91;required&#93; The Source Network ID to export its CloudFormation template to an S3
-#' bucket.
+#' @param sourceNetworkID &#91;required&#93; The Source Network ID to export its CloudFormation template to an S3 bucket.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2015,14 +1960,12 @@ drs_export_source_network_cfn_template <- function(sourceNetworkID) {
 #' Instance ID
 #'
 #' @description
-#' Lists all Failback ReplicationConfigurations, filtered by Recovery
-#' Instance ID.
+#' Lists all Failback ReplicationConfigurations, filtered by Recovery Instance ID.
 #'
 #' @usage
 #' drs_get_failback_replication_configuration(recoveryInstanceID)
 #'
-#' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance whose failback replication configuration
-#' should be returned.
+#' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance whose failback replication configuration should be returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2075,8 +2018,7 @@ drs_get_failback_replication_configuration <- function(recoveryInstanceID) {
 #' @usage
 #' drs_get_launch_configuration(sourceServerID)
 #'
-#' @param sourceServerID &#91;required&#93; The ID of the Source Server that we want to retrieve a Launch
-#' Configuration for.
+#' @param sourceServerID &#91;required&#93; The ID of the Source Server that we want to retrieve a Launch Configuration for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2263,17 +2205,13 @@ drs_initialize_service <- function() {
 #' extensible, which means that: a
 #'
 #' @description
-#' Returns a list of source servers on a staging account that are
-#' extensible, which means that: a. The source server is not already
-#' extended into this Account. b. The source server on the Account we’re
-#' reading from is not an extension of another source server.
+#' Returns a list of source servers on a staging account that are extensible, which means that: a. The source server is not already extended into this Account. b. The source server on the Account we’re reading from is not an extension of another source server.
 #'
 #' @usage
 #' drs_list_extensible_source_servers(stagingAccountID, maxResults,
 #'   nextToken)
 #'
-#' @param stagingAccountID &#91;required&#93; The Id of the staging Account to retrieve extensible source servers
-#' from.
+#' @param stagingAccountID &#91;required&#93; The Id of the staging Account to retrieve extensible source servers from.
 #' @param maxResults The maximum number of extensible source servers to retrieve.
 #' @param nextToken The token of the next extensible source server to retrieve.
 #'
@@ -2335,7 +2273,7 @@ drs_list_extensible_source_servers <- function(stagingAccountID, maxResults = NU
 #' @usage
 #' drs_list_launch_actions(resourceId, filters, maxResults, nextToken)
 #'
-#' @param resourceId &#91;required&#93; 
+#' @param resourceId &#91;required&#93; Launch configuration template Id or Source Server Id
 #' @param filters Filters to apply when listing resource launch actions.
 #' @param maxResults Maximum amount of items to return when listing resource launch actions.
 #' @param nextToken Next token to use when listing resource launch actions.
@@ -2410,8 +2348,7 @@ drs_list_launch_actions <- function(resourceId, filters = NULL, maxResults = NUL
 #' servers
 #'
 #' @description
-#' Returns an array of staging accounts for existing extended source
-#' servers.
+#' Returns an array of staging accounts for existing extended source servers.
 #'
 #' @usage
 #' drs_list_staging_accounts(maxResults, nextToken)
@@ -2524,17 +2461,17 @@ drs_list_tags_for_resource <- function(resourceArn) {
 #' drs_put_launch_action(resourceId, actionCode, order, actionId, optional,
 #'   active, name, actionVersion, category, parameters, description)
 #'
-#' @param resourceId &#91;required&#93; 
+#' @param resourceId &#91;required&#93; Launch configuration template Id or Source Server Id
 #' @param actionCode &#91;required&#93; Launch action code.
-#' @param order &#91;required&#93; 
-#' @param actionId &#91;required&#93; 
+#' @param order &#91;required&#93; Launch action order.
+#' @param actionId &#91;required&#93; Launch action Id.
 #' @param optional &#91;required&#93; Whether the launch will not be marked as failed if this action fails.
 #' @param active &#91;required&#93; Whether the launch action is active.
-#' @param name &#91;required&#93; 
-#' @param actionVersion &#91;required&#93; 
-#' @param category &#91;required&#93; 
-#' @param parameters 
-#' @param description &#91;required&#93; 
+#' @param name &#91;required&#93; Launch action name.
+#' @param actionVersion &#91;required&#93; Launch action version.
+#' @param category &#91;required&#93; Launch action category.
+#' @param parameters Launch action parameters.
+#' @param description &#91;required&#93; Launch action description.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2609,11 +2546,7 @@ drs_put_launch_action <- function(resourceId, actionCode, order, actionId, optio
 #' WARNING: RetryDataReplication is deprecated
 #'
 #' @description
-#' WARNING: RetryDataReplication is deprecated. Causes the data replication
-#' initiation sequence to begin immediately upon next Handshake for the
-#' specified Source Server ID, regardless of when the previous initiation
-#' started. This command will work only if the Source Server is stalled or
-#' is in a DISCONNECTED or STOPPED state.
+#' WARNING: RetryDataReplication is deprecated. Causes the data replication initiation sequence to begin immediately upon next Handshake for the specified Source Server ID, regardless of when the previous initiation started. This command will work only if the Source Server is stalled or is in a DISCONNECTED or STOPPED state.
 #'
 #' @usage
 #' drs_retry_data_replication(sourceServerID)
@@ -2766,17 +2699,12 @@ drs_retry_data_replication <- function(sourceServerID) {
 #' instances that originated in EC2
 #'
 #' @description
-#' Start replication to origin / target region - applies only to protected
-#' instances that originated in EC2. For recovery instances on target
-#' region - starts replication back to origin region. For failback
-#' instances on origin region - starts replication to target region to
-#' re-protect them.
+#' Start replication to origin / target region - applies only to protected instances that originated in EC2. For recovery instances on target region - starts replication back to origin region. For failback instances on origin region - starts replication to target region to re-protect them.
 #'
 #' @usage
 #' drs_reverse_replication(recoveryInstanceID)
 #'
-#' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance that we want to reverse the replication
-#' for.
+#' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance that we want to reverse the replication for.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2821,16 +2749,12 @@ drs_reverse_replication <- function(recoveryInstanceID) {
 #' from the specified Recovery Instance
 #'
 #' @description
-#' Initiates a Job for launching the machine that is being failed back to
-#' from the specified Recovery Instance. This will run conversion on the
-#' failback client and will reboot your machine, thus completing the
-#' failback process.
+#' Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This will run conversion on the failback client and will reboot your machine, thus completing the failback process.
 #'
 #' @usage
 #' drs_start_failback_launch(recoveryInstanceIDs, tags)
 #'
-#' @param recoveryInstanceIDs &#91;required&#93; The IDs of the Recovery Instance whose failback launch we want to
-#' request.
+#' @param recoveryInstanceIDs &#91;required&#93; The IDs of the Recovery Instance whose failback launch we want to request.
 #' @param tags The tags to be associated with the failback launch Job.
 #'
 #' @return
@@ -2934,9 +2858,7 @@ drs_start_failback_launch <- function(recoveryInstanceIDs, tags = NULL) {
 #' Launches Recovery Instances for the specified Source Servers
 #'
 #' @description
-#' Launches Recovery Instances for the specified Source Servers. For each
-#' Source Server you may choose a point in time snapshot to launch from, or
-#' use an on demand snapshot.
+#' Launches Recovery Instances for the specified Source Servers. For each Source Server you may choose a point in time snapshot to launch from, or use an on demand snapshot.
 #'
 #' @usage
 #' drs_start_recovery(sourceServers, isDrill, tags)
@@ -3050,8 +2972,7 @@ drs_start_recovery <- function(sourceServers, isDrill = NULL, tags = NULL) {
 #' Starts replication for a stopped Source Server
 #'
 #' @description
-#' Starts replication for a stopped Source Server. This action would make
-#' the Source Server protected again and restart billing for it.
+#' Starts replication for a stopped Source Server. This action would make the Source Server protected again and restart billing for it.
 #'
 #' @usage
 #' drs_start_replication(sourceServerID)
@@ -3206,16 +3127,13 @@ drs_start_replication <- function(sourceServerID) {
 #' to use this network
 #'
 #' @description
-#' Deploy VPC for the specified Source Network and modify launch templates
-#' to use this network. The VPC will be deployed using a dedicated
-#' CloudFormation stack.
+#' Deploy VPC for the specified Source Network and modify launch templates to use this network. The VPC will be deployed using a dedicated CloudFormation stack.
 #'
 #' @usage
 #' drs_start_source_network_recovery(sourceNetworks, deployAsNew, tags)
 #'
 #' @param sourceNetworks &#91;required&#93; The Source Networks that we want to start a Recovery Job for.
-#' @param deployAsNew Don't update existing CloudFormation Stack, recover the network using a
-#' new stack.
+#' @param deployAsNew Don't update existing CloudFormation Stack, recover the network using a new stack.
 #' @param tags The tags to be associated with the Source Network recovery Job.
 #'
 #' @return
@@ -3323,8 +3241,7 @@ drs_start_source_network_recovery <- function(sourceNetworks, deployAsNew = NULL
 #' Starts replication for a Source Network
 #'
 #' @description
-#' Starts replication for a Source Network. This action would make the
-#' Source Network protected.
+#' Starts replication for a Source Network. This action would make the Source Network protected.
 #'
 #' @usage
 #' drs_start_source_network_replication(sourceNetworkID)
@@ -3393,9 +3310,7 @@ drs_start_source_network_replication <- function(sourceNetworkID) {
 #' Stops the failback process for a specified Recovery Instance
 #'
 #' @description
-#' Stops the failback process for a specified Recovery Instance. This
-#' changes the Failback State of the Recovery Instance back to
-#' FAILBACK_NOT_STARTED.
+#' Stops the failback process for a specified Recovery Instance. This changes the Failback State of the Recovery Instance back to FAILBACK_NOT_STARTED.
 #'
 #' @usage
 #' drs_stop_failback(recoveryInstanceID)
@@ -3439,9 +3354,7 @@ drs_stop_failback <- function(recoveryInstanceID) {
 #' Stops replication for a Source Server
 #'
 #' @description
-#' Stops replication for a Source Server. This action would make the Source
-#' Server unprotected, delete its existing snapshots and stop billing for
-#' it.
+#' Stops replication for a Source Server. This action would make the Source Server unprotected, delete its existing snapshots and stop billing for it.
 #'
 #' @usage
 #' drs_stop_replication(sourceServerID)
@@ -3595,8 +3508,7 @@ drs_stop_replication <- function(sourceServerID) {
 #' Stops replication for a Source Network
 #'
 #' @description
-#' Stops replication for a Source Network. This action would make the
-#' Source Network unprotected.
+#' Stops replication for a Source Network. This action would make the Source Network unprotected.
 #'
 #' @usage
 #' drs_stop_source_network_replication(sourceNetworkID)
@@ -3666,11 +3578,7 @@ drs_stop_source_network_replication <- function(sourceNetworkID) {
 #' Disaster Recovery resource or resources
 #'
 #' @description
-#' Adds or overwrites only the specified tags for the specified Elastic
-#' Disaster Recovery resource or resources. When you specify an existing
-#' tag key, the value is overwritten with the new value. Each resource can
-#' have a maximum of 50 tags. Each tag consists of a key and optional
-#' value.
+#' Adds or overwrites only the specified tags for the specified Elastic Disaster Recovery resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.
 #'
 #' @usage
 #' drs_tag_resource(resourceArn, tags)
@@ -3720,9 +3628,7 @@ drs_tag_resource <- function(resourceArn, tags) {
 #' Instances from the Elastic Disaster Recovery service
 #'
 #' @description
-#' Initiates a Job for terminating the EC2 resources associated with the
-#' specified Recovery Instances, and then will delete the Recovery
-#' Instances from the Elastic Disaster Recovery service.
+#' Initiates a Job for terminating the EC2 resources associated with the specified Recovery Instances, and then will delete the Recovery Instances from the Elastic Disaster Recovery service.
 #'
 #' @usage
 #' drs_terminate_recovery_instances(recoveryInstanceIDs)
@@ -3828,8 +3734,7 @@ drs_terminate_recovery_instances <- function(recoveryInstanceIDs) {
 #' Disaster Recovery resources
 #'
 #' @description
-#' Deletes the specified set of tags from the specified set of Elastic
-#' Disaster Recovery resources.
+#' Deletes the specified set of tags from the specified set of Elastic Disaster Recovery resources.
 #'
 #' @usage
 #' drs_untag_resource(resourceArn, tagKeys)
@@ -3878,8 +3783,7 @@ drs_untag_resource <- function(resourceArn, tagKeys) {
 #' Recovery Instance by ID
 #'
 #' @description
-#' Allows you to update the failback replication configuration of a
-#' Recovery Instance by ID.
+#' Allows you to update the failback replication configuration of a Recovery Instance by ID.
 #'
 #' @usage
 #' drs_update_failback_replication_configuration(recoveryInstanceID, name,
@@ -3887,12 +3791,9 @@ drs_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param recoveryInstanceID &#91;required&#93; The ID of the Recovery Instance.
 #' @param name The name of the Failback Replication Configuration.
-#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of
-#' the Recovery Instance in Mbps.
-#' @param usePrivateIP Whether to use Private IP for the failback replication of the Recovery
-#' Instance.
-#' @param internetProtocol Which version of the Internet Protocol to use for replication of data.
-#' (IPv4 or IPv6)
+#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.
+#' @param usePrivateIP Whether to use Private IP for the failback replication of the Recovery Instance.
+#' @param internetProtocol Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
 #'
 #' @return
 #' An empty list.
@@ -3942,17 +3843,12 @@ drs_update_failback_replication_configuration <- function(recoveryInstanceID, na
 #'   targetInstanceTypeRightSizingMethod, copyPrivateIp, copyTags, licensing,
 #'   postLaunchEnabled, launchIntoInstanceProperties)
 #'
-#' @param sourceServerID &#91;required&#93; The ID of the Source Server that we want to retrieve a Launch
-#' Configuration for.
+#' @param sourceServerID &#91;required&#93; The ID of the Source Server that we want to retrieve a Launch Configuration for.
 #' @param name The name of the launch configuration.
 #' @param launchDisposition The state of the Recovery Instance in EC2 after the recovery operation.
-#' @param targetInstanceTypeRightSizingMethod Whether Elastic Disaster Recovery should try to automatically choose the
-#' instance type that best matches the OS, CPU, and RAM of your Source
-#' Server.
-#' @param copyPrivateIp Whether we should copy the Private IP of the Source Server to the
-#' Recovery Instance.
-#' @param copyTags Whether we want to copy the tags of the Source Server to the EC2 machine
-#' of the Recovery Instance.
+#' @param targetInstanceTypeRightSizingMethod Whether Elastic Disaster Recovery should try to automatically choose the instance type that best matches the OS, CPU, and RAM of your Source Server.
+#' @param copyPrivateIp Whether we should copy the Private IP of the Source Server to the Recovery Instance.
+#' @param copyTags Whether we want to copy the tags of the Source Server to the EC2 machine of the Recovery Instance.
 #' @param licensing The licensing configuration to be used for this launch configuration.
 #' @param postLaunchEnabled Whether we want to enable post-launch actions for the Source Server.
 #' @param launchIntoInstanceProperties Launch into existing instance properties.
@@ -4040,9 +3936,7 @@ drs_update_launch_configuration <- function(sourceServerID, name = NULL, launchD
 #' @param licensing Licensing.
 #' @param exportBucketArn S3 bucket ARN to export Source Network templates.
 #' @param postLaunchEnabled Whether we want to activate post-launch actions.
-#' @param launchIntoSourceInstance DRS will set the 'launch into instance ID' of any source server when
-#' performing a drill, recovery or failback to the previous region or
-#' availability zone, using the instance ID of the source instance.
+#' @param launchIntoSourceInstance DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4126,29 +4020,21 @@ drs_update_launch_configuration_template <- function(launchConfigurationTemplate
 #' @param sourceServerID &#91;required&#93; The ID of the Source Server for this Replication Configuration.
 #' @param name The name of the Replication Configuration.
 #' @param stagingAreaSubnetId The subnet to be used by the replication staging area.
-#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security
-#' group with the Replication Configuration.
+#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration.
 #' @param replicationServersSecurityGroupsIDs The security group IDs that will be used by the replication server.
 #' @param replicationServerInstanceType The instance type to be used for the replication server.
-#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging
-#' area.
+#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging area.
 #' @param defaultLargeStagingDiskType The Staging Disk EBS volume type to be used during replication.
 #' @param replicatedDisks The configuration of the disks of the Source Server to be replicated.
 #' @param ebsEncryption The type of EBS encryption to be used during replication.
 #' @param ebsEncryptionKeyArn The ARN of the EBS encryption key to be used during replication.
-#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of
-#' the Source Server in Mbps.
+#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.
 #' @param dataPlaneRouting The data plane routing mechanism that will be used for replication.
 #' @param createPublicIP Whether to create a Public IP for the Recovery Instance by default.
-#' @param stagingAreaTags A set of tags to be associated with all resources created in the
-#' replication staging area: EC2 replication server, EBS volumes, EBS
-#' snapshots, etc.
-#' @param pitPolicy The Point in time (PIT) policy to manage snapshots taken during
-#' replication.
-#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate
-#' newly added disks.
-#' @param internetProtocol Which version of the Internet Protocol to use for replication of data.
-#' (IPv4 or IPv6)
+#' @param stagingAreaTags A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
+#' @param pitPolicy The Point in time (PIT) policy to manage snapshots taken during replication.
+#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate newly added disks.
+#' @param internetProtocol Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
 #'
 #' @return
 #' A list with the following syntax:
@@ -4282,28 +4168,20 @@ drs_update_replication_configuration <- function(sourceServerID, name = NULL, st
 #' @param replicationConfigurationTemplateID &#91;required&#93; The Replication Configuration Template ID.
 #' @param arn The Replication Configuration Template ARN.
 #' @param stagingAreaSubnetId The subnet to be used by the replication staging area.
-#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security
-#' group with the Replication Configuration Template.
+#' @param associateDefaultSecurityGroup Whether to associate the default Elastic Disaster Recovery Security group with the Replication Configuration Template.
 #' @param replicationServersSecurityGroupsIDs The security group IDs that will be used by the replication server.
 #' @param replicationServerInstanceType The instance type to be used for the replication server.
-#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging
-#' area.
+#' @param useDedicatedReplicationServer Whether to use a dedicated Replication Server in the replication staging area.
 #' @param defaultLargeStagingDiskType The Staging Disk EBS volume type to be used during replication.
 #' @param ebsEncryption The type of EBS encryption to be used during replication.
 #' @param ebsEncryptionKeyArn The ARN of the EBS encryption key to be used during replication.
-#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of
-#' the Source Server in Mbps.
+#' @param bandwidthThrottling Configure bandwidth throttling for the outbound data transfer rate of the Source Server in Mbps.
 #' @param dataPlaneRouting The data plane routing mechanism that will be used for replication.
 #' @param createPublicIP Whether to create a Public IP for the Recovery Instance by default.
-#' @param stagingAreaTags A set of tags to be associated with all resources created in the
-#' replication staging area: EC2 replication server, EBS volumes, EBS
-#' snapshots, etc.
-#' @param pitPolicy The Point in time (PIT) policy to manage snapshots taken during
-#' replication.
-#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate
-#' newly added disks.
-#' @param internetProtocol Which version of the Internet Protocol to use for replication of data.
-#' (IPv4 or IPv6)
+#' @param stagingAreaTags A set of tags to be associated with all resources created in the replication staging area: EC2 replication server, EBS volumes, EBS snapshots, etc.
+#' @param pitPolicy The Point in time (PIT) policy to manage snapshots taken during replication.
+#' @param autoReplicateNewDisks Whether to allow the AWS replication agent to automatically replicate newly added disks.
+#' @param internetProtocol Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)
 #'
 #' @return
 #' A list with the following syntax:

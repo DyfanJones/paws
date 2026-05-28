@@ -18,14 +18,11 @@ bedrockagent_update_flow(
 
 \item{description}{A description for the flow.}
 
-\item{executionRoleArn}{[required] The Amazon Resource Name (ARN) of the service role with permissions to
-create and manage a flow. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html}{Create a service role for flows in Amazon Bedrock}
-in the Amazon Bedrock User Guide.}
+\item{executionRoleArn}{[required] The Amazon Resource Name (ARN) of the service role with permissions to create and manage a flow. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html}{Create a service role for flows in Amazon Bedrock} in the Amazon Bedrock User Guide.}
 
 \item{customerEncryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key to encrypt the flow.}
 
-\item{definition}{A definition of the nodes and the connections between the nodes in the
-flow.}
+\item{definition}{A definition of the nodes and the connections between the nodes in the flow.}
 
 \item{flowIdentifier}{[required] The unique identifier of the flow.}
 }

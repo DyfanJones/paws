@@ -17,27 +17,17 @@ ecs_update_daemon(
 \arguments{
 \item{daemonArn}{[required] The Amazon Resource Name (ARN) of the daemon to update.}
 
-\item{daemonTaskDefinitionArn}{[required] The Amazon Resource Name (ARN) of the daemon task definition to use for
-the updated daemon.}
+\item{daemonTaskDefinitionArn}{[required] The Amazon Resource Name (ARN) of the daemon task definition to use for the updated daemon.}
 
-\item{capacityProviderArns}{[required] The Amazon Resource Names (ARNs) of the capacity providers to associate
-with the daemon.}
+\item{capacityProviderArns}{[required] The Amazon Resource Names (ARNs) of the capacity providers to associate with the daemon.}
 
-\item{deploymentConfiguration}{Optional deployment parameters that control how the daemon rolls out
-updates, including the drain percentage, alarm-based rollback, and bake
-time.}
+\item{deploymentConfiguration}{Optional deployment parameters that control how the daemon rolls out updates, including the drain percentage, alarm-based rollback, and bake time.}
 
-\item{propagateTags}{Specifies whether to propagate the tags from the daemon to the daemon
-tasks. If you don't specify a value, the tags aren't propagated. You can
-only propagate tags to daemon tasks during task creation.}
+\item{propagateTags}{Specifies whether to propagate the tags from the daemon to the daemon tasks. If you don't specify a value, the tags aren't propagated. You can only propagate tags to daemon tasks during task creation.}
 
-\item{enableECSManagedTags}{Specifies whether to turn on Amazon ECS managed tags for the tasks in
-the daemon. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html}{Tagging your Amazon ECS resources}
-in the \emph{Amazon Elastic Container Service Developer Guide}.}
+\item{enableECSManagedTags}{Specifies whether to turn on Amazon ECS managed tags for the tasks in the daemon. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html}{Tagging your Amazon ECS resources} in the \emph{Amazon Elastic Container Service Developer Guide}.}
 
-\item{enableExecuteCommand}{If \code{true}, the execute command functionality is turned on for all tasks
-in the daemon. If \code{false}, the execute command functionality is turned
-off.}
+\item{enableExecuteCommand}{If \code{true}, the execute command functionality is turned on for all tasks in the daemon. If \code{false}, the execute command functionality is turned off.}
 }
 \description{
 Updates the specified daemon. When you update a daemon, a new deployment is triggered that progressively rolls out the changes to the container instances associated with the daemon's capacity providers. For more information, see \href{https://docs.aws.amazon.com/AmazonECS/latest/developerguide/}{Daemon deployments} in the \emph{Amazon Elastic Container Service Developer Guide}.

@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Describes the API operations for creating and managing Amazon Bedrock
-agents.
+Describes the API operations for creating and managing Amazon Bedrock agents.
 }
 \section{Service syntax}{
 

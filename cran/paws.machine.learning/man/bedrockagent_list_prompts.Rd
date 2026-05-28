@@ -14,18 +14,11 @@ bedrockagent_list_prompts(
 )
 }
 \arguments{
-\item{promptIdentifier}{The unique identifier of the prompt for whose versions you want to
-return information. Omit this field to list information about all
-prompts in an account.}
+\item{promptIdentifier}{The unique identifier of the prompt for whose versions you want to return information. Omit this field to list information about all prompts in an account.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 }
 \description{
 Returns either information about the working draft (\code{DRAFT} version) of each prompt in an account, or information about of all versions of a prompt, depending on whether you include the \code{promptIdentifier} field or not. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/#prompt-management-view.html}{View information about prompts using Prompt management} in the Amazon Bedrock User Guide.

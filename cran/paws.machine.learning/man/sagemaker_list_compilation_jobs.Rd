@@ -18,30 +18,21 @@ sagemaker_list_compilation_jobs(
 )
 }
 \arguments{
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_compilation_jobs]{list_compilation_jobs}} request was
-truncated, the response includes a \code{NextToken}. To retrieve the next set
-of model compilation jobs, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_compilation_jobs]{list_compilation_jobs}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of model compilation jobs, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of model compilation jobs to return in the response.}
 
-\item{CreationTimeAfter}{A filter that returns the model compilation jobs that were created after
-a specified time.}
+\item{CreationTimeAfter}{A filter that returns the model compilation jobs that were created after a specified time.}
 
-\item{CreationTimeBefore}{A filter that returns the model compilation jobs that were created
-before a specified time.}
+\item{CreationTimeBefore}{A filter that returns the model compilation jobs that were created before a specified time.}
 
-\item{LastModifiedTimeAfter}{A filter that returns the model compilation jobs that were modified
-after a specified time.}
+\item{LastModifiedTimeAfter}{A filter that returns the model compilation jobs that were modified after a specified time.}
 
-\item{LastModifiedTimeBefore}{A filter that returns the model compilation jobs that were modified
-before a specified time.}
+\item{LastModifiedTimeBefore}{A filter that returns the model compilation jobs that were modified before a specified time.}
 
-\item{NameContains}{A filter that returns the model compilation jobs whose name contains a
-specified string.}
+\item{NameContains}{A filter that returns the model compilation jobs whose name contains a specified string.}
 
-\item{StatusEquals}{A filter that retrieves model compilation jobs with a specific
-\code{CompilationJobStatus} status.}
+\item{StatusEquals}{A filter that retrieves model compilation jobs with a specific \code{CompilationJobStatus} status.}
 
 \item{SortBy}{The field by which to sort results. The default is \code{CreationTime}.}
 

@@ -53,54 +53,35 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-This CodeStar Notifications API Reference provides descriptions and
-usage examples of the operations and data types for the CodeStar
-Notifications API. You can use the CodeStar Notifications API to work
-with the following objects:
+This CodeStar Notifications API Reference provides descriptions and usage examples of the operations and data types for the CodeStar Notifications API. You can use the CodeStar Notifications API to work with the following objects:
 
 Notification rules, by calling the following:
 \itemize{
-\item \code{\link[=codestarnotifications_create_notification_rule]{create_notification_rule}},
-which creates a notification rule for a resource in your account.
-\item \code{\link[=codestarnotifications_delete_notification_rule]{delete_notification_rule}},
-which deletes a notification rule.
-\item \code{\link[=codestarnotifications_describe_notification_rule]{describe_notification_rule}},
-which provides information about a notification rule.
-\item \code{\link[=codestarnotifications_list_notification_rules]{list_notification_rules}},
-which lists the notification rules associated with your account.
-\item \code{\link[=codestarnotifications_update_notification_rule]{update_notification_rule}},
-which changes the name, events, or targets associated with a
-notification rule.
-\item \code{\link[=codestarnotifications_subscribe]{subscribe}}, which subscribes a
-target to a notification rule.
-\item \code{\link[=codestarnotifications_unsubscribe]{unsubscribe}}, which removes a
-target from a notification rule.
+\item \code{\link[=codestarnotifications_create_notification_rule]{create_notification_rule}}, which creates a notification rule for a resource in your account.
+\item \code{\link[=codestarnotifications_delete_notification_rule]{delete_notification_rule}}, which deletes a notification rule.
+\item \code{\link[=codestarnotifications_describe_notification_rule]{describe_notification_rule}}, which provides information about a notification rule.
+\item \code{\link[=codestarnotifications_list_notification_rules]{list_notification_rules}}, which lists the notification rules associated with your account.
+\item \code{\link[=codestarnotifications_update_notification_rule]{update_notification_rule}}, which changes the name, events, or targets associated with a notification rule.
+\item \code{\link[=codestarnotifications_subscribe]{subscribe}}, which subscribes a target to a notification rule.
+\item \code{\link[=codestarnotifications_unsubscribe]{unsubscribe}}, which removes a target from a notification rule.
 }
 
 Targets, by calling the following:
 \itemize{
-\item \code{\link[=codestarnotifications_delete_target]{delete_target}}, which
-removes a notification rule target from a notification rule.
-\item \code{\link[=codestarnotifications_list_targets]{list_targets}}, which lists
-the targets associated with a notification rule.
+\item \code{\link[=codestarnotifications_delete_target]{delete_target}}, which removes a notification rule target from a notification rule.
+\item \code{\link[=codestarnotifications_list_targets]{list_targets}}, which lists the targets associated with a notification rule.
 }
 
 Events, by calling the following:
 \itemize{
-\item \code{\link[=codestarnotifications_list_event_types]{list_event_types}}, which
-lists the event types you can include in a notification rule.
+\item \code{\link[=codestarnotifications_list_event_types]{list_event_types}}, which lists the event types you can include in a notification rule.
 }
 
 Tags, by calling the following:
 \itemize{
-\item \code{\link[=codestarnotifications_list_tags_for_resource]{list_tags_for_resource}},
-which lists the tags already associated with a notification rule in
-your account.
-\item \code{\link[=codestarnotifications_tag_resource]{tag_resource}}, which
-associates a tag you provide with a notification rule in your
-account.
-\item \code{\link[=codestarnotifications_untag_resource]{untag_resource}}, which
-removes a tag from a notification rule in your account.
+\item \code{\link[=codestarnotifications_list_tags_for_resource]{list_tags_for_resource}}, which lists the tags already associated with a notification rule in your account.
+\item \code{\link[=codestarnotifications_tag_resource]{tag_resource}}, which associates a tag you provide with a notification rule in your account.
+\item \code{\link[=codestarnotifications_untag_resource]{untag_resource}}, which removes a tag from a notification rule in your account.
 }
 
 For information about how to use CodeStar Notifications, see the \href{https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html}{Amazon Web Services Developer Tools Console User Guide}.

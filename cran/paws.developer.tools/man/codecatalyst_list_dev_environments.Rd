@@ -17,16 +17,11 @@ codecatalyst_list_dev_environments(
 
 \item{projectName}{The name of the project in the space.}
 
-\item{filters}{Information about filters to apply to narrow the results returned in the
-list.}
+\item{filters}{Information about filters to apply to narrow the results returned in the list.}
 
-\item{nextToken}{A token returned from a call to this API to indicate the next batch of
-results to return, if any.}
+\item{nextToken}{A token returned from a call to this API to indicate the next batch of results to return, if any.}
 
-\item{maxResults}{The maximum number of results to show in a single call to this API. If
-the number of results is larger than the number you specified, the
-response will include a \code{NextToken} element, which you can use to obtain
-additional results.}
+\item{maxResults}{The maximum number of results to show in a single call to this API. If the number of results is larger than the number you specified, the response will include a \code{NextToken} element, which you can use to obtain additional results.}
 }
 \description{
 Retrieves a list of Dev Environments in a project.

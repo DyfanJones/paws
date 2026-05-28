@@ -30,10 +30,7 @@ frauddetector_create_batch_prediction_job(
 
 \item{iamRoleArn}{[required] The ARN of the IAM role to use for this job request.
 
-The IAM Role must have read permissions to your input S3 bucket and
-write permissions to your output S3 bucket. For more information about
-bucket permissions, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html}{User policy examples}
-in the \emph{Amazon S3 User Guide}.}
+The IAM Role must have read permissions to your input S3 bucket and write permissions to your output S3 bucket. For more information about bucket permissions, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-policies-s3.html}{User policy examples} in the \emph{Amazon S3 User Guide}.}
 
 \item{tags}{A collection of key and value pairs.}
 }

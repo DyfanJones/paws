@@ -11,8 +11,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_associate_member/](https://www.paws-r-sdk.com/docs/inspector2_associate_member/) for full documentation.
 #'
-#' @param accountId &#91;required&#93; The Amazon Web Services account ID of the member account to be
-#' associated.
+#' @param accountId &#91;required&#93; The Amazon Web Services account ID of the member account to be associated.
 #'
 #' @keywords internal
 #'
@@ -44,8 +43,7 @@ inspector2_associate_member <- function(accountId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_batch_associate_code_security_scan_configuration/](https://www.paws-r-sdk.com/docs/inspector2_batch_associate_code_security_scan_configuration/) for full documentation.
 #'
-#' @param associateConfigurationRequests &#91;required&#93; A list of code repositories to associate with the specified scan
-#' configuration.
+#' @param associateConfigurationRequests &#91;required&#93; A list of code repositories to associate with the specified scan configuration.
 #'
 #' @keywords internal
 #'
@@ -77,8 +75,7 @@ inspector2_batch_associate_code_security_scan_configuration <- function(associat
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_batch_disassociate_code_security_scan_configuration/](https://www.paws-r-sdk.com/docs/inspector2_batch_disassociate_code_security_scan_configuration/) for full documentation.
 #'
-#' @param disassociateConfigurationRequests &#91;required&#93; A list of code repositories to disassociate from the specified scan
-#' configuration.
+#' @param disassociateConfigurationRequests &#91;required&#93; A list of code repositories to disassociate from the specified scan configuration.
 #'
 #' @keywords internal
 #'
@@ -110,8 +107,7 @@ inspector2_batch_disassociate_code_security_scan_configuration <- function(disas
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_batch_get_account_status/](https://www.paws-r-sdk.com/docs/inspector2_batch_get_account_status/) for full documentation.
 #'
-#' @param accountIds The 12-digit Amazon Web Services account IDs of the accounts to retrieve
-#' Amazon Inspector status for.
+#' @param accountIds The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for.
 #'
 #' @keywords internal
 #'
@@ -143,8 +139,7 @@ inspector2_batch_get_account_status <- function(accountIds = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_batch_get_code_snippet/](https://www.paws-r-sdk.com/docs/inspector2_batch_get_code_snippet/) for full documentation.
 #'
-#' @param findingArns &#91;required&#93; An array of finding ARNs for the findings you want to retrieve code
-#' snippets from.
+#' @param findingArns &#91;required&#93; An array of finding ARNs for the findings you want to retrieve code snippets from.
 #'
 #' @keywords internal
 #'
@@ -238,8 +233,7 @@ inspector2_batch_get_free_trial_info <- function(accountIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_batch_get_member_ec_2_deep_inspection_status/](https://www.paws-r-sdk.com/docs/inspector2_batch_get_member_ec_2_deep_inspection_status/) for full documentation.
 #'
-#' @param accountIds The unique identifiers for the Amazon Web Services accounts to retrieve
-#' Amazon Inspector deep inspection activation status for.
+#' @param accountIds The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for.
 #'
 #' @keywords internal
 #'
@@ -271,8 +265,7 @@ inspector2_batch_get_member_ec_2_deep_inspection_status <- function(accountIds =
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_batch_update_member_ec_2_deep_inspection_status/](https://www.paws-r-sdk.com/docs/inspector2_batch_update_member_ec_2_deep_inspection_status/) for full documentation.
 #'
-#' @param accountIds &#91;required&#93; The unique identifiers for the Amazon Web Services accounts to change
-#' Amazon Inspector deep inspection status for.
+#' @param accountIds &#91;required&#93; The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.
 #'
 #' @keywords internal
 #'
@@ -366,8 +359,7 @@ inspector2_cancel_sbom_export <- function(reportId) {
 #' See [https://www.paws-r-sdk.com/docs/inspector2_create_cis_scan_configuration/](https://www.paws-r-sdk.com/docs/inspector2_create_cis_scan_configuration/) for full documentation.
 #'
 #' @param scanName &#91;required&#93; The scan name for the CIS scan configuration.
-#' @param securityLevel &#91;required&#93; The security level for the CIS scan configuration. Security level refers
-#' to the Benchmark levels that CIS assigns to a profile.
+#' @param securityLevel &#91;required&#93; The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile.
 #' @param schedule &#91;required&#93; The schedule for the CIS scan configuration.
 #' @param targets &#91;required&#93; The targets for the CIS scan configuration.
 #' @param tags The tags for the CIS scan configuration.
@@ -439,14 +431,9 @@ inspector2_create_code_security_integration <- function(name, type, details = NU
 #' @param name &#91;required&#93; The name of the scan configuration.
 #' @param level &#91;required&#93; The security level for the scan configuration.
 #' @param configuration &#91;required&#93; The configuration settings for the code security scan.
-#' @param scopeSettings The scope settings that define which repositories will be scanned.
-#' Include this parameter to create a default scan configuration. Otherwise
-#' Amazon Inspector creates a general scan configuration.
+#' @param scopeSettings The scope settings that define which repositories will be scanned. Include this parameter to create a default scan configuration. Otherwise Amazon Inspector creates a general scan configuration.
 #' 
-#' A default scan configuration automatically applies to all existing and
-#' future projects imported into Amazon Inspector. Use the
-#' [`batch_associate_code_security_scan_configuration`][inspector2_batch_associate_code_security_scan_configuration]
-#' operation to associate a general scan configuration with projects.
+#' A default scan configuration automatically applies to all existing and future projects imported into Amazon Inspector. Use the [`batch_associate_code_security_scan_configuration`][inspector2_batch_associate_code_security_scan_configuration] operation to associate a general scan configuration with projects.
 #' @param tags The tags to apply to the scan configuration.
 #'
 #' @keywords internal
@@ -478,13 +465,10 @@ inspector2_create_code_security_scan_configuration <- function(name, level, conf
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_create_filter/](https://www.paws-r-sdk.com/docs/inspector2_create_filter/) for full documentation.
 #'
-#' @param action &#91;required&#93; Defines the action that is to be applied to the findings that match the
-#' filter.
+#' @param action &#91;required&#93; Defines the action that is to be applied to the findings that match the filter.
 #' @param description A description of the filter.
 #' @param filterCriteria &#91;required&#93; Defines the criteria to be used in the filter for querying findings.
-#' @param name &#91;required&#93; The name of the filter. Minimum length of 3. Maximum length of 64. Valid
-#' characters include alphanumeric characters, dot (.), underscore (_),
-#' and dash (-). Spaces are not allowed.
+#' @param name &#91;required&#93; The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.
 #' @param tags A list of tags for the filter.
 #' @param reason The reason for creating the filter.
 #'
@@ -550,11 +534,9 @@ inspector2_create_findings_report <- function(filterCriteria = NULL, reportForma
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_create_sbom_export/](https://www.paws-r-sdk.com/docs/inspector2_create_sbom_export/) for full documentation.
 #'
-#' @param resourceFilterCriteria The resource filter criteria for the software bill of materials (SBOM)
-#' report.
+#' @param resourceFilterCriteria The resource filter criteria for the software bill of materials (SBOM) report.
 #' @param reportFormat &#91;required&#93; The output format for the software bill of materials (SBOM) report.
-#' @param s3Destination &#91;required&#93; Contains details of the Amazon S3 bucket and KMS key used to export
-#' findings.
+#' @param s3Destination &#91;required&#93; Contains details of the Amazon S3 bucket and KMS key used to export findings.
 #'
 #' @keywords internal
 #'
@@ -616,8 +598,7 @@ inspector2_delete_cis_scan_configuration <- function(scanConfigurationArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_delete_code_security_integration/](https://www.paws-r-sdk.com/docs/inspector2_delete_code_security_integration/) for full documentation.
 #'
-#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the code security integration to
-#' delete.
+#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the code security integration to delete.
 #'
 #' @keywords internal
 #'
@@ -776,8 +757,7 @@ inspector2_disable <- function(accountIds = NULL, resourceTypes = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_disable_delegated_admin_account/](https://www.paws-r-sdk.com/docs/inspector2_disable_delegated_admin_account/) for full documentation.
 #'
-#' @param delegatedAdminAccountId &#91;required&#93; The Amazon Web Services account ID of the current Amazon Inspector
-#' delegated administrator.
+#' @param delegatedAdminAccountId &#91;required&#93; The Amazon Web Services account ID of the current Amazon Inspector delegated administrator.
 #'
 #' @keywords internal
 #'
@@ -809,8 +789,7 @@ inspector2_disable_delegated_admin_account <- function(delegatedAdminAccountId) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_disassociate_member/](https://www.paws-r-sdk.com/docs/inspector2_disassociate_member/) for full documentation.
 #'
-#' @param accountId &#91;required&#93; The Amazon Web Services account ID of the member account to
-#' disassociate.
+#' @param accountId &#91;required&#93; The Amazon Web Services account ID of the member account to disassociate.
 #'
 #' @keywords internal
 #'
@@ -876,8 +855,7 @@ inspector2_enable <- function(accountIds = NULL, resourceTypes, clientToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_enable_delegated_admin_account/](https://www.paws-r-sdk.com/docs/inspector2_enable_delegated_admin_account/) for full documentation.
 #'
-#' @param delegatedAdminAccountId &#91;required&#93; The Amazon Web Services account ID of the Amazon Inspector delegated
-#' administrator.
+#' @param delegatedAdminAccountId &#91;required&#93; The Amazon Web Services account ID of the Amazon Inspector delegated administrator.
 #' @param clientToken The idempotency token for the request.
 #'
 #' @keywords internal
@@ -911,8 +889,7 @@ inspector2_enable_delegated_admin_account <- function(delegatedAdminAccountId, c
 #'
 #' @param scanArn &#91;required&#93; The scan ARN.
 #' @param targetAccounts The target accounts.
-#' @param reportFormat The format of the report. Valid values are `PDF` and `CSV`. If no value
-#' is specified, the report format defaults to `PDF`.
+#' @param reportFormat The format of the report. Valid values are `PDF` and `CSV`. If no value is specified, the report format defaults to `PDF`.
 #'
 #' @keywords internal
 #'
@@ -949,10 +926,8 @@ inspector2_get_cis_scan_report <- function(scanArn, targetAccounts = NULL, repor
 #' @param filterCriteria The filter criteria.
 #' @param sortBy The sort by order.
 #' @param sortOrder The sort order.
-#' @param nextToken The pagination token from a previous request that's used to retrieve the
-#' next page of results.
-#' @param maxResults The maximum number of CIS scan result details to be returned in a single
-#' page of results.
+#' @param nextToken The pagination token from a previous request that's used to retrieve the next page of results.
+#' @param maxResults The maximum number of CIS scan result details to be returned in a single page of results.
 #'
 #' @keywords internal
 #'
@@ -984,10 +959,8 @@ inspector2_get_cis_scan_result_details <- function(scanArn, targetResourceId, ac
 #' See [https://www.paws-r-sdk.com/docs/inspector2_get_clusters_for_image/](https://www.paws-r-sdk.com/docs/inspector2_get_clusters_for_image/) for full documentation.
 #'
 #' @param filter &#91;required&#93; The resource Id for the Amazon ECR image.
-#' @param maxResults The maximum number of results to be returned in a single page of
-#' results.
-#' @param nextToken The pagination token from a previous request used to retrieve the next
-#' page of results.
+#' @param maxResults The maximum number of results to be returned in a single page of results.
+#' @param nextToken The pagination token from a previous request used to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -1018,8 +991,7 @@ inspector2_get_clusters_for_image <- function(filter, maxResults = NULL, nextTok
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_get_code_security_integration/](https://www.paws-r-sdk.com/docs/inspector2_get_code_security_integration/) for full documentation.
 #'
-#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the code security integration to
-#' retrieve.
+#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the code security integration to retrieve.
 #' @param tags The tags associated with the code security integration.
 #'
 #' @keywords internal
@@ -1272,8 +1244,7 @@ inspector2_get_findings_report_status <- function(reportId = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_get_member/](https://www.paws-r-sdk.com/docs/inspector2_get_member/) for full documentation.
 #'
-#' @param accountId &#91;required&#93; The Amazon Web Services account ID of the member account to retrieve
-#' information on.
+#' @param accountId &#91;required&#93; The Amazon Web Services account ID of the member account to retrieve information on.
 #'
 #' @keywords internal
 #'
@@ -1336,16 +1307,8 @@ inspector2_get_sbom_export <- function(reportId) {
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_account_permissions/](https://www.paws-r-sdk.com/docs/inspector2_list_account_permissions/) for full documentation.
 #'
 #' @param service The service scan type to check permissions for.
-#' @param maxResults The maximum number of results the response can return. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. If your response returns more than the `maxResults` maximum
-#' value it will also return a `nextToken` value. For subsequent calls, use
-#' the NextToken value returned from the previous request to continue
-#' listing results after the first page.
+#' @param maxResults The maximum number of results the response can return. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the `maxResults` maximum value it will also return a `nextToken` value. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.
 #'
 #' @keywords internal
 #'
@@ -1379,10 +1342,8 @@ inspector2_list_account_permissions <- function(service = NULL, maxResults = NUL
 #' @param filterCriteria The CIS scan configuration filter criteria.
 #' @param sortBy The CIS scan configuration sort by order.
 #' @param sortOrder The CIS scan configuration sort order order.
-#' @param nextToken The pagination token from a previous request that's used to retrieve the
-#' next page of results.
-#' @param maxResults The maximum number of CIS scan configurations to be returned in a single
-#' page of results.
+#' @param nextToken The pagination token from a previous request that's used to retrieve the next page of results.
+#' @param maxResults The maximum number of CIS scan configurations to be returned in a single page of results.
 #'
 #' @keywords internal
 #'
@@ -1417,10 +1378,8 @@ inspector2_list_cis_scan_configurations <- function(filterCriteria = NULL, sortB
 #' @param filterCriteria The filter criteria.
 #' @param sortBy The sort by order.
 #' @param sortOrder The sort order.
-#' @param nextToken The pagination token from a previous request that's used to retrieve the
-#' next page of results.
-#' @param maxResults The maximum number of scan results aggregated by checks to be returned
-#' in a single page of results.
+#' @param nextToken The pagination token from a previous request that's used to retrieve the next page of results.
+#' @param maxResults The maximum number of scan results aggregated by checks to be returned in a single page of results.
 #'
 #' @keywords internal
 #'
@@ -1455,10 +1414,8 @@ inspector2_list_cis_scan_results_aggregated_by_checks <- function(scanArn, filte
 #' @param filterCriteria The filter criteria.
 #' @param sortBy The sort by order.
 #' @param sortOrder The sort order.
-#' @param nextToken The pagination token from a previous request that's used to retrieve the
-#' next page of results.
-#' @param maxResults The maximum number of scan results aggregated by a target resource to be
-#' returned in a single page of results.
+#' @param nextToken The pagination token from a previous request that's used to retrieve the next page of results.
+#' @param maxResults The maximum number of scan results aggregated by a target resource to be returned in a single page of results.
 #'
 #' @keywords internal
 #'
@@ -1493,8 +1450,7 @@ inspector2_list_cis_scan_results_aggregated_by_target_resource <- function(scanA
 #' @param detailLevel The detail applied to the CIS scan.
 #' @param sortBy The CIS scans sort by order.
 #' @param sortOrder The CIS scans sort order.
-#' @param nextToken The pagination token from a previous request that's used to retrieve the
-#' next page of results.
+#' @param nextToken The pagination token from a previous request that's used to retrieve the next page of results.
 #' @param maxResults The maximum number of results to be returned.
 #'
 #' @keywords internal
@@ -1526,10 +1482,7 @@ inspector2_list_cis_scans <- function(filterCriteria = NULL, detailLevel = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_code_security_integrations/](https://www.paws-r-sdk.com/docs/inspector2_list_code_security_integrations/) for full documentation.
 #'
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request. For
-#' subsequent calls, use the NextToken value returned from the previous
-#' request to continue listing results after the first page.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.
 #' @param maxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -1562,16 +1515,9 @@ inspector2_list_code_security_integrations <- function(nextToken = NULL, maxResu
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_code_security_scan_configuration_associations/](https://www.paws-r-sdk.com/docs/inspector2_list_code_security_scan_configuration_associations/) for full documentation.
 #'
-#' @param scanConfigurationArn &#91;required&#93; The Amazon Resource Name (ARN) of the scan configuration to list
-#' associations for.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the `NextToken` value returned from
-#' the previous request to continue listing results after the first page.
-#' @param maxResults The maximum number of results to return in the response. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
+#' @param scanConfigurationArn &#91;required&#93; The Amazon Resource Name (ARN) of the scan configuration to list associations for.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the `NextToken` value returned from the previous request to continue listing results after the first page.
+#' @param maxResults The maximum number of results to return in the response. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
 #'
 #' @keywords internal
 #'
@@ -1602,10 +1548,7 @@ inspector2_list_code_security_scan_configuration_associations <- function(scanCo
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_code_security_scan_configurations/](https://www.paws-r-sdk.com/docs/inspector2_list_code_security_scan_configurations/) for full documentation.
 #'
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request. For
-#' subsequent calls, use the NextToken value returned from the previous
-#' request to continue listing results after the first page.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.
 #' @param maxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -1637,18 +1580,9 @@ inspector2_list_code_security_scan_configurations <- function(nextToken = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_coverage/](https://www.paws-r-sdk.com/docs/inspector2_list_coverage/) for full documentation.
 #'
-#' @param maxResults The maximum number of results the response can return. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. If your response returns more than the `maxResults` maximum
-#' value it will also return a `nextToken` value. For subsequent calls, use
-#' the `nextToken` value returned from the previous request to continue
-#' listing results after the first page.
-#' @param filterCriteria An object that contains details on the filters to apply to the coverage
-#' data for your environment.
+#' @param maxResults The maximum number of results the response can return. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the `maxResults` maximum value it will also return a `nextToken` value. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
+#' @param filterCriteria An object that contains details on the filters to apply to the coverage data for your environment.
 #'
 #' @keywords internal
 #'
@@ -1679,13 +1613,9 @@ inspector2_list_coverage <- function(maxResults = NULL, nextToken = NULL, filter
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_coverage_statistics/](https://www.paws-r-sdk.com/docs/inspector2_list_coverage_statistics/) for full documentation.
 #'
-#' @param filterCriteria An object that contains details on the filters to apply to the coverage
-#' data for your environment.
+#' @param filterCriteria An object that contains details on the filters to apply to the coverage data for your environment.
 #' @param groupBy The value to group the results by.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the `NextToken` value returned from
-#' the previous request to continue listing results after the first page.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the `NextToken` value returned from the previous request to continue listing results after the first page.
 #'
 #' @keywords internal
 #'
@@ -1717,16 +1647,8 @@ inspector2_list_coverage_statistics <- function(filterCriteria = NULL, groupBy =
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_delegated_admin_accounts/](https://www.paws-r-sdk.com/docs/inspector2_list_delegated_admin_accounts/) for full documentation.
 #'
-#' @param maxResults The maximum number of results the response can return. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. If your response returns more than the `maxResults` maximum
-#' value it will also return a `nextToken` value. For subsequent calls, use
-#' the `nextToken` value returned from the previous request to continue
-#' listing results after the first page.
+#' @param maxResults The maximum number of results the response can return. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the `maxResults` maximum value it will also return a `nextToken` value. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
 #'
 #' @keywords internal
 #'
@@ -1759,16 +1681,8 @@ inspector2_list_delegated_admin_accounts <- function(maxResults = NULL, nextToke
 #'
 #' @param arns The Amazon resource number (ARN) of the filter.
 #' @param action The action the filter applies to matched findings.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. If your response returns more than the `maxResults` maximum
-#' value it will also return a `nextToken` value. For subsequent calls, use
-#' the `nextToken` value returned from the previous request to continue
-#' listing results after the first page.
-#' @param maxResults The maximum number of results the response can return. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the `maxResults` maximum value it will also return a `nextToken` value. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
+#' @param maxResults The maximum number of results the response can return. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
 #'
 #' @keywords internal
 #'
@@ -1801,20 +1715,10 @@ inspector2_list_filters <- function(arns = NULL, action = NULL, nextToken = NULL
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_finding_aggregations/](https://www.paws-r-sdk.com/docs/inspector2_list_finding_aggregations/) for full documentation.
 #'
 #' @param aggregationType &#91;required&#93; The type of the aggregation request.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. If your response returns more than the `maxResults` maximum
-#' value it will also return a `nextToken` value. For subsequent calls, use
-#' the `nextToken` value returned from the previous request to continue
-#' listing results after the first page.
-#' @param maxResults The maximum number of results the response can return. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
-#' @param accountIds The Amazon Web Services account IDs to retrieve finding aggregation data
-#' for.
-#' @param aggregationRequest Details of the aggregation request that is used to filter your
-#' aggregation results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the `maxResults` maximum value it will also return a `nextToken` value. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
+#' @param maxResults The maximum number of results the response can return. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
+#' @param accountIds The Amazon Web Services account IDs to retrieve finding aggregation data for.
+#' @param aggregationRequest Details of the aggregation request that is used to filter your aggregation results.
 #'
 #' @keywords internal
 #'
@@ -1845,16 +1749,8 @@ inspector2_list_finding_aggregations <- function(aggregationType, nextToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_findings/](https://www.paws-r-sdk.com/docs/inspector2_list_findings/) for full documentation.
 #'
-#' @param maxResults The maximum number of results the response can return. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. If your response returns more than the `maxResults` maximum
-#' value it will also return a `nextToken` value. For subsequent calls, use
-#' the `nextToken` value returned from the previous request to continue
-#' listing results after the first page.
+#' @param maxResults The maximum number of results the response can return. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the `maxResults` maximum value it will also return a `nextToken` value. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
 #' @param filterCriteria Details on the filters to apply to your finding results.
 #' @param sortCriteria Details on the sort criteria to apply to your finding results.
 #'
@@ -1888,18 +1784,9 @@ inspector2_list_findings <- function(maxResults = NULL, nextToken = NULL, filter
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_members/](https://www.paws-r-sdk.com/docs/inspector2_list_members/) for full documentation.
 #'
-#' @param onlyAssociated Specifies whether to list only currently associated members if `True` or
-#' to list all members within the organization if `False`.
-#' @param maxResults The maximum number of results the response can return. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. If your response returns more than the `maxResults` maximum
-#' value it will also return a `nextToken` value. For subsequent calls, use
-#' the `nextToken` value returned from the previous request to continue
-#' listing results after the first page.
+#' @param onlyAssociated Specifies whether to list only currently associated members if `True` or to list all members within the organization if `False`.
+#' @param maxResults The maximum number of results the response can return. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the `maxResults` maximum value it will also return a `nextToken` value. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
 #'
 #' @keywords internal
 #'
@@ -1961,16 +1848,8 @@ inspector2_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_list_usage_totals/](https://www.paws-r-sdk.com/docs/inspector2_list_usage_totals/) for full documentation.
 #'
-#' @param maxResults The maximum number of results the response can return. If your request
-#' would return more than the maximum the response will return a
-#' `nextToken` value, use this value when you call the action again to get
-#' the remaining results.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. If your response returns more than the `maxResults` maximum
-#' value it will also return a `nextToken` value. For subsequent calls, use
-#' the `nextToken` value returned from the previous request to continue
-#' listing results after the first page.
+#' @param maxResults The maximum number of results the response can return. If your request would return more than the maximum the response will return a `nextToken` value, use this value when you call the action again to get the remaining results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. If your response returns more than the `maxResults` maximum value it will also return a `nextToken` value. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
 #' @param accountIds The Amazon Web Services account IDs to retrieve usage totals for.
 #'
 #' @keywords internal
@@ -2035,10 +1914,7 @@ inspector2_reset_encryption_key <- function(scanType, resourceType) {
 #' See [https://www.paws-r-sdk.com/docs/inspector2_search_vulnerabilities/](https://www.paws-r-sdk.com/docs/inspector2_search_vulnerabilities/) for full documentation.
 #'
 #' @param filterCriteria &#91;required&#93; The criteria used to filter the results of a vulnerability search.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the `NextToken` value returned from
-#' the previous request to continue listing results after the first page.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the `NextToken` value returned from the previous request to continue listing results after the first page.
 #'
 #' @keywords internal
 #'
@@ -2166,8 +2042,7 @@ inspector2_start_cis_session <- function(scanJobId, message) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_start_code_security_scan/](https://www.paws-r-sdk.com/docs/inspector2_start_code_security_scan/) for full documentation.
 #'
-#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param resource &#91;required&#93; The resource identifier for the code repository to scan.
 #'
 #' @keywords internal
@@ -2298,8 +2173,7 @@ inspector2_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' @param scanConfigurationArn &#91;required&#93; The CIS scan configuration ARN.
 #' @param scanName The scan name for the CIS scan configuration.
-#' @param securityLevel The security level for the CIS scan configuration. Security level refers
-#' to the Benchmark levels that CIS assigns to a profile.
+#' @param securityLevel The security level for the CIS scan configuration. Security level refers to the Benchmark levels that CIS assigns to a profile.
 #' @param schedule The schedule for the CIS scan configuration.
 #' @param targets The targets for the CIS scan configuration.
 #'
@@ -2332,10 +2206,8 @@ inspector2_update_cis_scan_configuration <- function(scanConfigurationArn, scanN
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_update_code_security_integration/](https://www.paws-r-sdk.com/docs/inspector2_update_code_security_integration/) for full documentation.
 #'
-#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the code security integration to
-#' update.
-#' @param details &#91;required&#93; The updated integration details specific to the repository provider
-#' type.
+#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the code security integration to update.
+#' @param details &#91;required&#93; The updated integration details specific to the repository provider type.
 #'
 #' @keywords internal
 #'
@@ -2398,10 +2270,8 @@ inspector2_update_code_security_scan_configuration <- function(scanConfiguration
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_update_configuration/](https://www.paws-r-sdk.com/docs/inspector2_update_configuration/) for full documentation.
 #'
-#' @param ecrConfiguration Specifies how the ECR automated re-scan will be updated for your
-#' environment.
-#' @param ec2Configuration Specifies how the Amazon EC2 automated scan will be updated for your
-#' environment.
+#' @param ecrConfiguration Specifies how the ECR automated re-scan will be updated for your environment.
+#' @param ec2Configuration Specifies how the Amazon EC2 automated scan will be updated for your environment.
 #'
 #' @keywords internal
 #'
@@ -2433,13 +2303,8 @@ inspector2_update_configuration <- function(ecrConfiguration = NULL, ec2Configur
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_update_ec_2_deep_inspection_configuration/](https://www.paws-r-sdk.com/docs/inspector2_update_ec_2_deep_inspection_configuration/) for full documentation.
 #'
-#' @param activateDeepInspection Specify `TRUE` to activate Amazon Inspector deep inspection in your
-#' account, or `FALSE` to deactivate. Member accounts in an organization
-#' cannot deactivate deep inspection, instead the delegated administrator
-#' for the organization can deactivate a member account using
-#' [`batch_update_member_ec_2_deep_inspection_status`][inspector2_batch_update_member_ec_2_deep_inspection_status].
-#' @param packagePaths The Amazon Inspector deep inspection custom paths you are adding for
-#' your account.
+#' @param activateDeepInspection Specify `TRUE` to activate Amazon Inspector deep inspection in your account, or `FALSE` to deactivate. Member accounts in an organization cannot deactivate deep inspection, instead the delegated administrator for the organization can deactivate a member account using [`batch_update_member_ec_2_deep_inspection_status`][inspector2_batch_update_member_ec_2_deep_inspection_status].
+#' @param packagePaths The Amazon Inspector deep inspection custom paths you are adding for your account.
 #'
 #' @keywords internal
 #'
@@ -2504,8 +2369,7 @@ inspector2_update_encryption_key <- function(kmsKeyId, scanType, resourceType) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_update_filter/](https://www.paws-r-sdk.com/docs/inspector2_update_filter/) for full documentation.
 #'
-#' @param action Specifies the action that is to be applied to the findings that match
-#' the filter.
+#' @param action Specifies the action that is to be applied to the findings that match the filter.
 #' @param description A description of the filter.
 #' @param filterCriteria Defines the criteria to be update in the filter.
 #' @param name The name of the filter.
@@ -2542,8 +2406,7 @@ inspector2_update_filter <- function(action = NULL, description = NULL, filterCr
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_update_org_ec_2_deep_inspection_configuration/](https://www.paws-r-sdk.com/docs/inspector2_update_org_ec_2_deep_inspection_configuration/) for full documentation.
 #'
-#' @param orgPackagePaths &#91;required&#93; The Amazon Inspector deep inspection custom paths you are adding for
-#' your organization.
+#' @param orgPackagePaths &#91;required&#93; The Amazon Inspector deep inspection custom paths you are adding for your organization.
 #'
 #' @keywords internal
 #'
@@ -2574,8 +2437,7 @@ inspector2_update_org_ec_2_deep_inspection_configuration <- function(orgPackageP
 #'
 #' See [https://www.paws-r-sdk.com/docs/inspector2_update_organization_configuration/](https://www.paws-r-sdk.com/docs/inspector2_update_organization_configuration/) for full documentation.
 #'
-#' @param autoEnable &#91;required&#93; Defines which scan types are enabled automatically for new members of
-#' your Amazon Inspector organization.
+#' @param autoEnable &#91;required&#93; Defines which scan types are enabled automatically for new members of your Amazon Inspector organization.
 #'
 #' @keywords internal
 #'

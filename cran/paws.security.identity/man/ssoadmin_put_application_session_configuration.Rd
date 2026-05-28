@@ -11,8 +11,7 @@ ssoadmin_put_application_session_configuration(
 )
 }
 \arguments{
-\item{ApplicationArn}{[required] The Amazon Resource Name (ARN) of the application for which to update
-the session configuration.}
+\item{ApplicationArn}{[required] The Amazon Resource Name (ARN) of the application for which to update the session configuration.}
 
 \item{UserBackgroundSessionApplicationStatus}{The status of user background sessions for the application.}
 }

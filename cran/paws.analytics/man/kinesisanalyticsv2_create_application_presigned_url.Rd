@@ -14,8 +14,7 @@ kinesisanalyticsv2_create_application_presigned_url(
 \arguments{
 \item{ApplicationName}{[required] The name of the application.}
 
-\item{UrlType}{[required] The type of the extension for which to create and return a URL.
-Currently, the only valid extension URL type is \code{FLINK_DASHBOARD_URL}.}
+\item{UrlType}{[required] The type of the extension for which to create and return a URL. Currently, the only valid extension URL type is \code{FLINK_DASHBOARD_URL}.}
 
 \item{SessionExpirationDurationInSeconds}{The duration in seconds for which the returned URL will be valid.}
 }

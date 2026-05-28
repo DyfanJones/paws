@@ -15,8 +15,7 @@ sagemaker_create_partner_app_presigned_url(
 
 \item{ExpiresInSeconds}{The time that will pass before the presigned URL expires.}
 
-\item{SessionExpirationDurationInSeconds}{Indicates how long the Amazon SageMaker Partner AI App session can be
-accessed for after logging in.}
+\item{SessionExpirationDurationInSeconds}{Indicates how long the Amazon SageMaker Partner AI App session can be accessed for after logging in.}
 }
 \description{
 Creates a presigned URL to access an Amazon SageMaker Partner AI App.

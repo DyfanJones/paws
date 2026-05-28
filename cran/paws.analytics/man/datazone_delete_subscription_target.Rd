@@ -11,11 +11,9 @@ datazone_delete_subscription_target(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription target is
-deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription target is deleted.}
 
-\item{environmentIdentifier}{[required] The ID of the Amazon DataZone environment in which the subscription
-target is deleted.}
+\item{environmentIdentifier}{[required] The ID of the Amazon DataZone environment in which the subscription target is deleted.}
 
 \item{identifier}{[required] The ID of the subscription target that is deleted.}
 }

@@ -15,18 +15,13 @@ omics_start_run_batch(
 \arguments{
 \item{batchName}{An optional user-friendly name for the run batch.}
 
-\item{requestId}{[required] A client token used to deduplicate retry requests and prevent duplicate
-batches from being created.}
+\item{requestId}{[required] A client token used to deduplicate retry requests and prevent duplicate batches from being created.}
 
-\item{tags}{AWS tags to associate with the batch resource. These tags are not
-inherited by individual runs. To tag individual runs, use
-\code{defaultRunSetting.runTags}.}
+\item{tags}{AWS tags to associate with the batch resource. These tags are not inherited by individual runs. To tag individual runs, use \code{defaultRunSetting.runTags}.}
 
-\item{defaultRunSetting}{[required] Shared configuration applied to all runs in the batch. See
-\code{DefaultRunSetting}.}
+\item{defaultRunSetting}{[required] Shared configuration applied to all runs in the batch. See \code{DefaultRunSetting}.}
 
-\item{batchRunSettings}{[required] The individual run configurations. Specify exactly one of
-\code{inlineSettings} or \code{s3UriSettings}. See \code{BatchRunSettings}.}
+\item{batchRunSettings}{[required] The individual run configurations. Specify exactly one of \code{inlineSettings} or \code{s3UriSettings}. See \code{BatchRunSettings}.}
 }
 \description{
 Starts a batch of workflow runs. You can group up to 100,000 runs into a single batch that share a common configuration defined in \code{defaultRunSetting}. Per-run overrides can be provided either inline via \code{inlineSettings} (up to 100 runs) or via a JSON file stored in Amazon S3 via \code{s3UriSettings} (up to 100,000 runs).

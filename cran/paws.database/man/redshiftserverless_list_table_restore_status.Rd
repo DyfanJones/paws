@@ -12,23 +12,13 @@ redshiftserverless_list_table_restore_status(
 )
 }
 \arguments{
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use nextToken to display the next page of results.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use nextToken to display the next page of results.}
 
-\item{namespaceName}{The namespace from which to list all of the statuses of
-\code{\link[=redshiftserverless_restore_table_from_snapshot]{restore_table_from_snapshot}}
-operations .}
+\item{namespaceName}{The namespace from which to list all of the statuses of \code{\link[=redshiftserverless_restore_table_from_snapshot]{restore_table_from_snapshot}} operations .}
 
-\item{nextToken}{If your initial
-\code{\link[=redshiftserverless_list_table_restore_status]{list_table_restore_status}}
-operation returns a nextToken, you can include the returned \code{nextToken}
-in following
-\code{\link[=redshiftserverless_list_table_restore_status]{list_table_restore_status}}
-operations. This will return results on the next page.}
+\item{nextToken}{If your initial \code{\link[=redshiftserverless_list_table_restore_status]{list_table_restore_status}} operation returns a nextToken, you can include the returned \code{nextToken} in following \code{\link[=redshiftserverless_list_table_restore_status]{list_table_restore_status}} operations. This will return results on the next page.}
 
-\item{workgroupName}{The workgroup from which to list all of the statuses of
-\code{\link[=redshiftserverless_restore_table_from_snapshot]{restore_table_from_snapshot}}
-operations.}
+\item{workgroupName}{The workgroup from which to list all of the statuses of \code{\link[=redshiftserverless_restore_table_from_snapshot]{restore_table_from_snapshot}} operations.}
 }
 \description{
 Returns information about an array of \code{TableRestoreStatus} objects.

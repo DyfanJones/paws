@@ -8,11 +8,9 @@ within an Amazon EMR cluster}
 emr_remove_auto_scaling_policy(ClusterId, InstanceGroupId)
 }
 \arguments{
-\item{ClusterId}{[required] Specifies the ID of a cluster. The instance group to which the automatic
-scaling policy is applied is within this cluster.}
+\item{ClusterId}{[required] Specifies the ID of a cluster. The instance group to which the automatic scaling policy is applied is within this cluster.}
 
-\item{InstanceGroupId}{[required] Specifies the ID of the instance group to which the scaling policy is
-applied.}
+\item{InstanceGroupId}{[required] Specifies the ID of the instance group to which the scaling policy is applied.}
 }
 \description{
 Removes an automatic scaling policy from a specified instance group within an Amazon EMR cluster.

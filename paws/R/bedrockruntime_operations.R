@@ -8,11 +8,7 @@ NULL
 #' @description
 #' The action to apply a guardrail.
 #' 
-#' For troubleshooting some of the common errors you might encounter when
-#' using the [`apply_guardrail`][bedrockruntime_apply_guardrail] API, see
-#' [Troubleshooting Amazon Bedrock API Error
-#' Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html)
-#' in the Amazon Bedrock User Guide
+#' For troubleshooting some of the common errors you might encounter when using the [`apply_guardrail`][bedrockruntime_apply_guardrail] API, see [Troubleshooting Amazon Bedrock API Error Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html) in the Amazon Bedrock User Guide
 #'
 #' @usage
 #' bedrockruntime_apply_guardrail(guardrailIdentifier, guardrailVersion,
@@ -22,14 +18,9 @@ NULL
 #' @param guardrailVersion &#91;required&#93; The guardrail version used in the request to apply the guardrail.
 #' @param source &#91;required&#93; The source of data used in the request to apply the guardrail.
 #' @param content &#91;required&#93; The content details used in the request to apply the guardrail.
-#' @param outputScope Specifies the scope of the output that you get in the response. Set to
-#' `FULL` to return the entire output, including any detected and
-#' non-detected entries in the response for enhanced debugging.
+#' @param outputScope Specifies the scope of the output that you get in the response. Set to `FULL` to return the entire output, including any detected and non-detected entries in the response for enhanced debugging.
 #' 
-#' Note that the full output scope doesn't apply to word filters or regex
-#' in sensitive information filters. It does apply to all other filtering
-#' policies, including sensitive information with filters that can detect
-#' personally identifiable information (PII).
+#' Note that the full output scope doesn't apply to word filters or regex in sensitive information filters. It does apply to all other filtering policies, including sensitive information with filters that can detect personally identifiable information (PII).
 #'
 #' @return
 #' A list with the following syntax:
@@ -485,56 +476,23 @@ bedrockruntime_apply_guardrail <- function(guardrailIdentifier, guardrailVersion
 #' Sends messages to the specified Amazon Bedrock model
 #'
 #' @description
-#' Sends messages to the specified Amazon Bedrock model.
-#' [`converse`][bedrockruntime_converse] provides a consistent interface
-#' that works with all models that support messages. This allows you to
-#' write code once and use it with different models. If a model has unique
-#' inference parameters, you can also pass those unique parameters to the
-#' model.
+#' Sends messages to the specified Amazon Bedrock model. [`converse`][bedrockruntime_converse] provides a consistent interface that works with all models that support messages. This allows you to write code once and use it with different models. If a model has unique inference parameters, you can also pass those unique parameters to the model.
 #' 
-#' Amazon Bedrock doesn't store any text, images, or documents that you
-#' provide as content. The data is only used to generate the response.
+#' Amazon Bedrock doesn't store any text, images, or documents that you provide as content. The data is only used to generate the response.
 #' 
-#' You can submit a prompt by including it in the `messages` field,
-#' specifying the `modelId` of a foundation model or inference profile to
-#' run inference on it, and including any other fields that are relevant to
-#' your use case.
+#' You can submit a prompt by including it in the `messages` field, specifying the `modelId` of a foundation model or inference profile to run inference on it, and including any other fields that are relevant to your use case.
 #' 
-#' You can also submit a prompt from Prompt management by specifying the
-#' ARN of the prompt version and including a map of variables to values in
-#' the `promptVariables` field. You can append more messages to the prompt
-#' by using the `messages` field. If you use a prompt from Prompt
-#' management, you can't include the following fields in the request:
-#' `additionalModelRequestFields`, `inferenceConfig`, `system`, or
-#' `toolConfig`. Instead, these fields must be defined through Prompt
-#' management. For more information, see [Use a prompt from Prompt
-#' management](https://docs.aws.amazon.com/bedrock/latest/userguide/).
+#' You can also submit a prompt from Prompt management by specifying the ARN of the prompt version and including a map of variables to values in the `promptVariables` field. You can append more messages to the prompt by using the `messages` field. If you use a prompt from Prompt management, you can't include the following fields in the request: `additionalModelRequestFields`, `inferenceConfig`, `system`, or `toolConfig`. Instead, these fields must be defined through Prompt management. For more information, see [Use a prompt from Prompt management](https://docs.aws.amazon.com/bedrock/latest/userguide/).
 #' 
-#' For information about the Converse API, see *Use the Converse API* in
-#' the *Amazon Bedrock User Guide*. To use a guardrail, see *Use a
-#' guardrail with the Converse API* in the *Amazon Bedrock User Guide*. To
-#' use a tool with a model, see *Tool use (Function calling)* in the
-#' *Amazon Bedrock User Guide*
+#' For information about the Converse API, see *Use the Converse API* in the *Amazon Bedrock User Guide*. To use a guardrail, see *Use a guardrail with the Converse API* in the *Amazon Bedrock User Guide*. To use a tool with a model, see *Tool use (Function calling)* in the *Amazon Bedrock User Guide*
 #' 
-#' For example code, see *Converse API examples* in the *Amazon Bedrock
-#' User Guide*.
+#' For example code, see *Converse API examples* in the *Amazon Bedrock User Guide*.
 #' 
 #' This operation requires permission for the `bedrock:InvokeModel` action.
 #' 
-#' To deny all inference access to resources that you specify in the
-#' modelId field, you need to deny access to the `bedrock:InvokeModel` and
-#' `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies
-#' access to the resource through the base inference actions
-#' ([`invoke_model`][bedrockruntime_invoke_model] and
-#' [`invoke_model_with_response_stream`][bedrockruntime_invoke_model_with_response_stream]).
-#' For more information see [Deny access for inference on specific
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
+#' To deny all inference access to resources that you specify in the modelId field, you need to deny access to the `bedrock:InvokeModel` and `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies access to the resource through the base inference actions ([`invoke_model`][bedrockruntime_invoke_model] and [`invoke_model_with_response_stream`][bedrockruntime_invoke_model_with_response_stream]). For more information see [Deny access for inference on specific models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
 #' 
-#' For troubleshooting some of the common errors you might encounter when
-#' using the [`converse`][bedrockruntime_converse] API, see
-#' [Troubleshooting Amazon Bedrock API Error
-#' Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html)
-#' in the Amazon Bedrock User Guide
+#' For troubleshooting some of the common errors you might encounter when using the [`converse`][bedrockruntime_converse] API, see [Troubleshooting Amazon Bedrock API Error Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html) in the Amazon Bedrock User Guide
 #'
 #' @usage
 #' bedrockruntime_converse(modelId, messages, system, inferenceConfig,
@@ -542,92 +500,38 @@ bedrockruntime_apply_guardrail <- function(guardrailIdentifier, guardrailVersion
 #'   promptVariables, additionalModelResponseFieldPaths, requestMetadata,
 #'   performanceConfig, serviceTier, outputConfig)
 #'
-#' @param modelId &#91;required&#93; Specifies the model or throughput with which to run inference, or the
-#' prompt resource to use in inference. The value depends on the resource
-#' that you use:
+#' @param modelId &#91;required&#93; Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:
 #' 
-#' -   If you use a base model, specify the model ID or its ARN. For a list
-#'     of model IDs for base models, see [Amazon Bedrock base model IDs
-#'     (on-demand
-#'     throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see [Amazon Bedrock base model IDs (on-demand throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an inference profile, specify the inference profile ID or
-#'     its ARN. For a list of inference profile IDs, see [Supported Regions
-#'     and models for cross-region
-#'     inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see [Supported Regions and models for cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a provisioned model, specify the ARN of the Provisioned
-#'     Throughput. For more information, see [Run inference using a
-#'     Provisioned
-#'     Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see [Run inference using a Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a custom model, first purchase Provisioned Throughput for
-#'     it. Then specify the ARN of the resulting provisioned model. For
-#'     more information, see [Use a custom model in Amazon
-#'     Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see [Use a custom model in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   To include a prompt that was defined in [Prompt
-#'     management](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html),
-#'     specify the ARN of the prompt version to use.
+#' -   To include a prompt that was defined in [Prompt management](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html), specify the ARN of the prompt version to use.
 #' 
-#' The Converse API doesn't support [imported
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html).
+#' The Converse API doesn't support [imported models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html).
 #' @param messages The messages that you want to send to the model.
-#' @param system A prompt that provides instructions or context to the model about the
-#' task it should perform, or the persona it should adopt during the
-#' conversation.
-#' @param inferenceConfig Inference parameters to pass to the model.
-#' [`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream] support a base set
-#' of inference parameters. If you need to pass additional parameters that
-#' the model supports, use the `additionalModelRequestFields` request
-#' field.
-#' @param toolConfig Configuration information for the tools that the model can use when
-#' generating a response.
+#' @param system A prompt that provides instructions or context to the model about the task it should perform, or the persona it should adopt during the conversation.
+#' @param inferenceConfig Inference parameters to pass to the model. [`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream] support a base set of inference parameters. If you need to pass additional parameters that the model supports, use the `additionalModelRequestFields` request field.
+#' @param toolConfig Configuration information for the tools that the model can use when generating a response.
 #' 
-#' For information about models that support tool use, see [Supported
-#' models and model
-#' features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
-#' @param guardrailConfig Configuration information for a guardrail that you want to use in the
-#' request. If you include `guardContent` blocks in the `content` field in
-#' the `messages` field, the guardrail operates only on those messages. If
-#' you include no `guardContent` blocks, the guardrail operates on all
-#' messages in the request body and in any included prompt resource.
-#' @param additionalModelRequestFields Additional inference parameters that the model supports, beyond the base
-#' set of inference parameters that [`converse`][bedrockruntime_converse]
-#' and [`converse_stream`][bedrockruntime_converse_stream] support in the
-#' `inferenceConfig` field. For more information, see [Model
-#' parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html).
-#' @param promptVariables Contains a map of variables in a prompt from Prompt management to
-#' objects containing the values to fill in for them when running model
-#' invocation. This field is ignored if you don't specify a prompt resource
-#' in the `modelId` field.
-#' @param additionalModelResponseFieldPaths Additional model parameters field paths to return in the response.
-#' [`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream] return the requested
-#' fields as a JSON Pointer object in the `additionalModelResponseFields`
-#' field. The following is example JSON for
-#' `additionalModelResponseFieldPaths`.
+#' For information about models that support tool use, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
+#' @param guardrailConfig Configuration information for a guardrail that you want to use in the request. If you include `guardContent` blocks in the `content` field in the `messages` field, the guardrail operates only on those messages. If you include no `guardContent` blocks, the guardrail operates on all messages in the request body and in any included prompt resource.
+#' @param additionalModelRequestFields Additional inference parameters that the model supports, beyond the base set of inference parameters that [`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream] support in the `inferenceConfig` field. For more information, see [Model parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html).
+#' @param promptVariables Contains a map of variables in a prompt from Prompt management to objects containing the values to fill in for them when running model invocation. This field is ignored if you don't specify a prompt resource in the `modelId` field.
+#' @param additionalModelResponseFieldPaths Additional model parameters field paths to return in the response. [`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream] return the requested fields as a JSON Pointer object in the `additionalModelResponseFields` field. The following is example JSON for `additionalModelResponseFieldPaths`.
 #' 
 #' `[ "/stop_sequence" ]`
 #' 
-#' For information about the JSON Pointer syntax, see the [Internet
-#' Engineering Task Force
-#' (IETF)](https://datatracker.ietf.org/doc/html/rfc6901) documentation.
+#' For information about the JSON Pointer syntax, see the [Internet Engineering Task Force (IETF)](https://datatracker.ietf.org/doc/html/rfc6901) documentation.
 #' 
-#' [`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream] reject an empty JSON
-#' Pointer or incorrectly structured JSON Pointer with a `400` error code.
-#' if the JSON Pointer is valid, but the requested field is not in the
-#' model response, it is ignored by [`converse`][bedrockruntime_converse].
+#' [`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream] reject an empty JSON Pointer or incorrectly structured JSON Pointer with a `400` error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by [`converse`][bedrockruntime_converse].
 #' @param requestMetadata Key-value pairs that you can use to filter invocation logs.
 #' @param performanceConfig Model performance settings for the request.
-#' @param serviceTier Specifies the processing tier configuration used for serving the
-#' request.
+#' @param serviceTier Specifies the processing tier configuration used for serving the request.
 #' @param outputConfig Output configuration for a model response.
 #'
 #' @return
@@ -1977,65 +1881,27 @@ bedrockruntime_converse <- function(modelId, messages = NULL, system = NULL, inf
 #' response in a stream
 #'
 #' @description
-#' Sends messages to the specified Amazon Bedrock model and returns the
-#' response in a stream.
-#' [`converse_stream`][bedrockruntime_converse_stream] provides a
-#' consistent API that works with all Amazon Bedrock models that support
-#' messages. This allows you to write code once and use it with different
-#' models. Should a model have unique inference parameters, you can also
-#' pass those unique parameters to the model.
+#' Sends messages to the specified Amazon Bedrock model and returns the response in a stream. [`converse_stream`][bedrockruntime_converse_stream] provides a consistent API that works with all Amazon Bedrock models that support messages. This allows you to write code once and use it with different models. Should a model have unique inference parameters, you can also pass those unique parameters to the model.
 #' 
-#' To find out if a model supports streaming, call
-#' [GetFoundationModel](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html)
-#' and check the `responseStreamingSupported` field in the response.
+#' To find out if a model supports streaming, call [GetFoundationModel](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html) and check the `responseStreamingSupported` field in the response.
 #' 
-#' The CLI doesn't support streaming operations in Amazon Bedrock,
-#' including [`converse_stream`][bedrockruntime_converse_stream].
+#' The CLI doesn't support streaming operations in Amazon Bedrock, including [`converse_stream`][bedrockruntime_converse_stream].
 #' 
-#' Amazon Bedrock doesn't store any text, images, or documents that you
-#' provide as content. The data is only used to generate the response.
+#' Amazon Bedrock doesn't store any text, images, or documents that you provide as content. The data is only used to generate the response.
 #' 
-#' You can submit a prompt by including it in the `messages` field,
-#' specifying the `modelId` of a foundation model or inference profile to
-#' run inference on it, and including any other fields that are relevant to
-#' your use case.
+#' You can submit a prompt by including it in the `messages` field, specifying the `modelId` of a foundation model or inference profile to run inference on it, and including any other fields that are relevant to your use case.
 #' 
-#' You can also submit a prompt from Prompt management by specifying the
-#' ARN of the prompt version and including a map of variables to values in
-#' the `promptVariables` field. You can append more messages to the prompt
-#' by using the `messages` field. If you use a prompt from Prompt
-#' management, you can't include the following fields in the request:
-#' `additionalModelRequestFields`, `inferenceConfig`, `system`, or
-#' `toolConfig`. Instead, these fields must be defined through Prompt
-#' management. For more information, see [Use a prompt from Prompt
-#' management](https://docs.aws.amazon.com/bedrock/latest/userguide/).
+#' You can also submit a prompt from Prompt management by specifying the ARN of the prompt version and including a map of variables to values in the `promptVariables` field. You can append more messages to the prompt by using the `messages` field. If you use a prompt from Prompt management, you can't include the following fields in the request: `additionalModelRequestFields`, `inferenceConfig`, `system`, or `toolConfig`. Instead, these fields must be defined through Prompt management. For more information, see [Use a prompt from Prompt management](https://docs.aws.amazon.com/bedrock/latest/userguide/).
 #' 
-#' For information about the Converse API, see *Use the Converse API* in
-#' the *Amazon Bedrock User Guide*. To use a guardrail, see *Use a
-#' guardrail with the Converse API* in the *Amazon Bedrock User Guide*. To
-#' use a tool with a model, see *Tool use (Function calling)* in the
-#' *Amazon Bedrock User Guide*
+#' For information about the Converse API, see *Use the Converse API* in the *Amazon Bedrock User Guide*. To use a guardrail, see *Use a guardrail with the Converse API* in the *Amazon Bedrock User Guide*. To use a tool with a model, see *Tool use (Function calling)* in the *Amazon Bedrock User Guide*
 #' 
-#' For example code, see *Conversation streaming example* in the *Amazon
-#' Bedrock User Guide*.
+#' For example code, see *Conversation streaming example* in the *Amazon Bedrock User Guide*.
 #' 
-#' This operation requires permission for the
-#' `bedrock:InvokeModelWithResponseStream` action.
+#' This operation requires permission for the `bedrock:InvokeModelWithResponseStream` action.
 #' 
-#' To deny all inference access to resources that you specify in the
-#' modelId field, you need to deny access to the `bedrock:InvokeModel` and
-#' `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies
-#' access to the resource through the base inference actions
-#' ([`invoke_model`][bedrockruntime_invoke_model] and
-#' [`invoke_model_with_response_stream`][bedrockruntime_invoke_model_with_response_stream]).
-#' For more information see [Deny access for inference on specific
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
+#' To deny all inference access to resources that you specify in the modelId field, you need to deny access to the `bedrock:InvokeModel` and `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies access to the resource through the base inference actions ([`invoke_model`][bedrockruntime_invoke_model] and [`invoke_model_with_response_stream`][bedrockruntime_invoke_model_with_response_stream]). For more information see [Deny access for inference on specific models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
 #' 
-#' For troubleshooting some of the common errors you might encounter when
-#' using the [`converse_stream`][bedrockruntime_converse_stream] API, see
-#' [Troubleshooting Amazon Bedrock API Error
-#' Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html)
-#' in the Amazon Bedrock User Guide
+#' For troubleshooting some of the common errors you might encounter when using the [`converse_stream`][bedrockruntime_converse_stream] API, see [Troubleshooting Amazon Bedrock API Error Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html) in the Amazon Bedrock User Guide
 #'
 #' @usage
 #' bedrockruntime_converse_stream(modelId, messages, system,
@@ -2044,92 +1910,38 @@ bedrockruntime_converse <- function(modelId, messages = NULL, system = NULL, inf
 #'   additionalModelResponseFieldPaths, requestMetadata, performanceConfig,
 #'   serviceTier, outputConfig)
 #'
-#' @param modelId &#91;required&#93; Specifies the model or throughput with which to run inference, or the
-#' prompt resource to use in inference. The value depends on the resource
-#' that you use:
+#' @param modelId &#91;required&#93; Specifies the model or throughput with which to run inference, or the prompt resource to use in inference. The value depends on the resource that you use:
 #' 
-#' -   If you use a base model, specify the model ID or its ARN. For a list
-#'     of model IDs for base models, see [Amazon Bedrock base model IDs
-#'     (on-demand
-#'     throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see [Amazon Bedrock base model IDs (on-demand throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an inference profile, specify the inference profile ID or
-#'     its ARN. For a list of inference profile IDs, see [Supported Regions
-#'     and models for cross-region
-#'     inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see [Supported Regions and models for cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a provisioned model, specify the ARN of the Provisioned
-#'     Throughput. For more information, see [Run inference using a
-#'     Provisioned
-#'     Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see [Run inference using a Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a custom model, first purchase Provisioned Throughput for
-#'     it. Then specify the ARN of the resulting provisioned model. For
-#'     more information, see [Use a custom model in Amazon
-#'     Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a custom model, first purchase Provisioned Throughput for it. Then specify the ARN of the resulting provisioned model. For more information, see [Use a custom model in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   To include a prompt that was defined in [Prompt
-#'     management](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html),
-#'     specify the ARN of the prompt version to use.
+#' -   To include a prompt that was defined in [Prompt management](https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html), specify the ARN of the prompt version to use.
 #' 
-#' The Converse API doesn't support [imported
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html).
+#' The Converse API doesn't support [imported models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html).
 #' @param messages The messages that you want to send to the model.
-#' @param system A prompt that provides instructions or context to the model about the
-#' task it should perform, or the persona it should adopt during the
-#' conversation.
-#' @param inferenceConfig Inference parameters to pass to the model.
-#' [`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream] support a base set
-#' of inference parameters. If you need to pass additional parameters that
-#' the model supports, use the `additionalModelRequestFields` request
-#' field.
-#' @param toolConfig Configuration information for the tools that the model can use when
-#' generating a response.
+#' @param system A prompt that provides instructions or context to the model about the task it should perform, or the persona it should adopt during the conversation.
+#' @param inferenceConfig Inference parameters to pass to the model. [`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream] support a base set of inference parameters. If you need to pass additional parameters that the model supports, use the `additionalModelRequestFields` request field.
+#' @param toolConfig Configuration information for the tools that the model can use when generating a response.
 #' 
-#' For information about models that support streaming tool use, see
-#' [Supported models and model
-#' features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
-#' @param guardrailConfig Configuration information for a guardrail that you want to use in the
-#' request. If you include `guardContent` blocks in the `content` field in
-#' the `messages` field, the guardrail operates only on those messages. If
-#' you include no `guardContent` blocks, the guardrail operates on all
-#' messages in the request body and in any included prompt resource.
-#' @param additionalModelRequestFields Additional inference parameters that the model supports, beyond the base
-#' set of inference parameters that [`converse`][bedrockruntime_converse]
-#' and [`converse_stream`][bedrockruntime_converse_stream] support in the
-#' `inferenceConfig` field. For more information, see [Model
-#' parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html).
-#' @param promptVariables Contains a map of variables in a prompt from Prompt management to
-#' objects containing the values to fill in for them when running model
-#' invocation. This field is ignored if you don't specify a prompt resource
-#' in the `modelId` field.
-#' @param additionalModelResponseFieldPaths Additional model parameters field paths to return in the response.
-#' [`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream] return the requested
-#' fields as a JSON Pointer object in the `additionalModelResponseFields`
-#' field. The following is example JSON for
-#' `additionalModelResponseFieldPaths`.
+#' For information about models that support streaming tool use, see [Supported models and model features](https://docs.aws.amazon.com/bedrock/latest/userguide/conversation-inference.html#conversation-inference-supported-models-features).
+#' @param guardrailConfig Configuration information for a guardrail that you want to use in the request. If you include `guardContent` blocks in the `content` field in the `messages` field, the guardrail operates only on those messages. If you include no `guardContent` blocks, the guardrail operates on all messages in the request body and in any included prompt resource.
+#' @param additionalModelRequestFields Additional inference parameters that the model supports, beyond the base set of inference parameters that [`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream] support in the `inferenceConfig` field. For more information, see [Model parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html).
+#' @param promptVariables Contains a map of variables in a prompt from Prompt management to objects containing the values to fill in for them when running model invocation. This field is ignored if you don't specify a prompt resource in the `modelId` field.
+#' @param additionalModelResponseFieldPaths Additional model parameters field paths to return in the response. [`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream] return the requested fields as a JSON Pointer object in the `additionalModelResponseFields` field. The following is example JSON for `additionalModelResponseFieldPaths`.
 #' 
 #' `[ "/stop_sequence" ]`
 #' 
-#' For information about the JSON Pointer syntax, see the [Internet
-#' Engineering Task Force
-#' (IETF)](https://datatracker.ietf.org/doc/html/rfc6901) documentation.
+#' For information about the JSON Pointer syntax, see the [Internet Engineering Task Force (IETF)](https://datatracker.ietf.org/doc/html/rfc6901) documentation.
 #' 
-#' [`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream] reject an empty JSON
-#' Pointer or incorrectly structured JSON Pointer with a `400` error code.
-#' if the JSON Pointer is valid, but the requested field is not in the
-#' model response, it is ignored by [`converse`][bedrockruntime_converse].
+#' [`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream] reject an empty JSON Pointer or incorrectly structured JSON Pointer with a `400` error code. if the JSON Pointer is valid, but the requested field is not in the model response, it is ignored by [`converse`][bedrockruntime_converse].
 #' @param requestMetadata Key-value pairs that you can use to filter invocation logs.
 #' @param performanceConfig Model performance settings for the request.
-#' @param serviceTier Specifies the processing tier configuration used for serving the
-#' request.
+#' @param serviceTier Specifies the processing tier configuration used for serving the request.
 #' @param outputConfig Output configuration for a model response.
 #'
 #' @return
@@ -3372,16 +3184,9 @@ bedrockruntime_converse_stream <- function(modelId, messages = NULL, system = NU
 #' Returns the token count for a given inference request
 #'
 #' @description
-#' Returns the token count for a given inference request. This operation
-#' helps you estimate token usage before sending requests to foundation
-#' models by returning the token count that would be used if the same input
-#' were sent to the model in an inference request.
+#' Returns the token count for a given inference request. This operation helps you estimate token usage before sending requests to foundation models by returning the token count that would be used if the same input were sent to the model in an inference request.
 #' 
-#' Token counting is model-specific because different models use different
-#' tokenization strategies. The token count returned by this operation will
-#' match the token count that would be charged if the same input were sent
-#' to the model in an [`invoke_model`][bedrockruntime_invoke_model] or
-#' [`converse`][bedrockruntime_converse] request.
+#' Token counting is model-specific because different models use different tokenization strategies. The token count returned by this operation will match the token count that would be charged if the same input were sent to the model in an [`invoke_model`][bedrockruntime_invoke_model] or [`converse`][bedrockruntime_converse] request.
 #' 
 #' You can use this operation to:
 #' 
@@ -3391,39 +3196,25 @@ bedrockruntime_converse_stream <- function(modelId, messages = NULL, system = NU
 #' 
 #' -   Plan for token usage in your applications.
 #' 
-#' This operation accepts the same input formats as
-#' [`invoke_model`][bedrockruntime_invoke_model] and
-#' [`converse`][bedrockruntime_converse], allowing you to count tokens for
-#' both raw text inputs and structured conversation formats.
+#' This operation accepts the same input formats as [`invoke_model`][bedrockruntime_invoke_model] and [`converse`][bedrockruntime_converse], allowing you to count tokens for both raw text inputs and structured conversation formats.
 #' 
-#' The following operations are related to
-#' [`count_tokens`][bedrockruntime_count_tokens]:
+#' The following operations are related to [`count_tokens`][bedrockruntime_count_tokens]:
 #' 
-#' -   [`invoke_model`][bedrockruntime_invoke_model] - Sends inference
-#'     requests to foundation models
+#' -   [`invoke_model`][bedrockruntime_invoke_model] - Sends inference requests to foundation models
 #' 
-#' -   [`converse`][bedrockruntime_converse] - Sends conversation-based
-#'     inference requests to foundation models
+#' -   [`converse`][bedrockruntime_converse] - Sends conversation-based inference requests to foundation models
 #'
 #' @usage
 #' bedrockruntime_count_tokens(modelId, input)
 #'
-#' @param modelId &#91;required&#93; The unique identifier or ARN of the foundation model to use for token
-#' counting. Each model processes tokens differently, so the token count is
-#' specific to the model you specify.
-#' @param input &#91;required&#93; The input for which to count tokens. The structure of this parameter
-#' depends on whether you're counting tokens for an
-#' [`invoke_model`][bedrockruntime_invoke_model] or
-#' [`converse`][bedrockruntime_converse] request:
+#' @param modelId &#91;required&#93; The unique identifier or ARN of the foundation model to use for token counting. Each model processes tokens differently, so the token count is specific to the model you specify.
+#' @param input &#91;required&#93; The input for which to count tokens. The structure of this parameter depends on whether you're counting tokens for an [`invoke_model`][bedrockruntime_invoke_model] or [`converse`][bedrockruntime_converse] request:
 #' 
-#' -   For [`invoke_model`][bedrockruntime_invoke_model] requests, provide
-#'     the request body in the `invokeModel` field
+#' -   For [`invoke_model`][bedrockruntime_invoke_model] requests, provide the request body in the `invokeModel` field
 #' 
-#' -   For [`converse`][bedrockruntime_converse] requests, provide the
-#'     messages and system content in the `converse` field
+#' -   For [`converse`][bedrockruntime_converse] requests, provide the messages and system content in the `converse` field
 #' 
-#' The input format must be compatible with the model specified in the
-#' `modelId` parameter.
+#' The input format must be compatible with the model specified in the `modelId` parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3817,101 +3608,51 @@ bedrockruntime_get_async_invoke <- function(invocationArn) {
 #' prompt and inference parameters provided in the request body
 #'
 #' @description
-#' Invokes the specified Amazon Bedrock model to run inference using the
-#' prompt and inference parameters provided in the request body. You use
-#' model inference to generate text, images, and embeddings.
+#' Invokes the specified Amazon Bedrock model to run inference using the prompt and inference parameters provided in the request body. You use model inference to generate text, images, and embeddings.
 #' 
-#' For example code, see *Invoke model code examples* in the *Amazon
-#' Bedrock User Guide*.
+#' For example code, see *Invoke model code examples* in the *Amazon Bedrock User Guide*.
 #' 
 #' This operation requires permission for the `bedrock:InvokeModel` action.
 #' 
-#' To deny all inference access to resources that you specify in the
-#' modelId field, you need to deny access to the `bedrock:InvokeModel` and
-#' `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies
-#' access to the resource through the Converse API actions
-#' ([`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream]). For more
-#' information see [Deny access for inference on specific
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
+#' To deny all inference access to resources that you specify in the modelId field, you need to deny access to the `bedrock:InvokeModel` and `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies access to the resource through the Converse API actions ([`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream]). For more information see [Deny access for inference on specific models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
 #' 
-#' For troubleshooting some of the common errors you might encounter when
-#' using the [`invoke_model`][bedrockruntime_invoke_model] API, see
-#' [Troubleshooting Amazon Bedrock API Error
-#' Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html)
-#' in the Amazon Bedrock User Guide
+#' For troubleshooting some of the common errors you might encounter when using the [`invoke_model`][bedrockruntime_invoke_model] API, see [Troubleshooting Amazon Bedrock API Error Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html) in the Amazon Bedrock User Guide
 #'
 #' @usage
 #' bedrockruntime_invoke_model(body, contentType, accept, modelId, trace,
 #'   guardrailIdentifier, guardrailVersion, performanceConfigLatency,
-#'   serviceTier)
+#'   serviceTier, requestMetadata)
 #'
-#' @param body The prompt and inference parameters in the format specified in the
-#' `contentType` in the header. You must provide the body in JSON format.
-#' To see the format and content of the request and response bodies for
-#' different models, refer to [Inference
-#' parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html).
-#' For more information, see [Run
-#' inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference.html)
-#' in the Bedrock User Guide.
-#' @param contentType The MIME type of the input data in the request. You must specify
-#' `application/json`.
-#' @param accept The desired MIME type of the inference body in the response. The default
-#' value is `application/json`.
+#' @param body The prompt and inference parameters in the format specified in the `contentType` in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to [Inference parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html). For more information, see [Run inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference.html) in the Bedrock User Guide.
+#' @param contentType The MIME type of the input data in the request. You must specify `application/json`.
+#' @param accept The desired MIME type of the inference body in the response. The default value is `application/json`.
 #' @param modelId &#91;required&#93; The unique identifier of the model to invoke to run inference.
 #' 
-#' The `modelId` to provide depends on the type of model or throughput that
-#' you use:
+#' The `modelId` to provide depends on the type of model or throughput that you use:
 #' 
-#' -   If you use a base model, specify the model ID or its ARN. For a list
-#'     of model IDs for base models, see [Amazon Bedrock base model IDs
-#'     (on-demand
-#'     throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see [Amazon Bedrock base model IDs (on-demand throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an inference profile, specify the inference profile ID or
-#'     its ARN. For a list of inference profile IDs, see [Supported Regions
-#'     and models for cross-region
-#'     inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see [Supported Regions and models for cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a provisioned model, specify the ARN of the Provisioned
-#'     Throughput. For more information, see [Run inference using a
-#'     Provisioned
-#'     Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see [Run inference using a Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a custom model, specify the ARN of the custom model
-#'     deployment (for on-demand inference) or the ARN of your provisioned
-#'     model (for Provisioned Throughput). For more information, see [Use a
-#'     custom model in Amazon
-#'     Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a custom model, specify the ARN of the custom model deployment (for on-demand inference) or the ARN of your provisioned model (for Provisioned Throughput). For more information, see [Use a custom model in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an [imported
-#'     model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html),
-#'     specify the ARN of the imported model. You can get the model ARN
-#'     from a successful call to
-#'     [CreateModelImportJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html)
-#'     or from the Imported models page in the Amazon Bedrock console.
-#' @param trace Specifies whether to enable or disable the Bedrock trace. If enabled,
-#' you can see the full Bedrock trace.
-#' @param guardrailIdentifier The unique identifier of the guardrail that you want to use. If you
-#' don't provide a value, no guardrail is applied to the invocation.
+#' -   If you use an [imported model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html), specify the ARN of the imported model. You can get the model ARN from a successful call to [CreateModelImportJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html) or from the Imported models page in the Amazon Bedrock console.
+#' @param trace Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+#' @param guardrailIdentifier The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is applied to the invocation.
 #' 
 #' An error will be thrown in the following situations.
 #' 
-#' -   You don't provide a guardrail identifier but you specify the
-#'     `amazon-bedrock-guardrailConfig` field in the request body.
+#' -   You don't provide a guardrail identifier but you specify the `amazon-bedrock-guardrailConfig` field in the request body.
 #' 
-#' -   You enable the guardrail but the `contentType` isn't
-#'     `application/json`.
+#' -   You enable the guardrail but the `contentType` isn't `application/json`.
 #' 
-#' -   You provide a guardrail identifier, but `guardrailVersion` isn't
-#'     specified.
+#' -   You provide a guardrail identifier, but `guardrailVersion` isn't specified.
 #' @param guardrailVersion The version number for the guardrail. The value can also be `DRAFT`.
 #' @param performanceConfigLatency Model performance settings for the request.
 #' @param serviceTier Specifies the processing tier type used for serving the request.
+#' @param requestMetadata Key-value pairs that you can use to filter invocation logs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3935,7 +3676,8 @@ bedrockruntime_get_async_invoke <- function(invocationArn) {
 #'   guardrailIdentifier = "string",
 #'   guardrailVersion = "string",
 #'   performanceConfigLatency = "standard"|"optimized",
-#'   serviceTier = "priority"|"default"|"flex"|"reserved"
+#'   serviceTier = "priority"|"default"|"flex"|"reserved",
+#'   requestMetadata = "string"
 #' )
 #' ```
 #'
@@ -3944,7 +3686,7 @@ bedrockruntime_get_async_invoke <- function(invocationArn) {
 #' @rdname bedrockruntime_invoke_model
 #'
 #' @aliases bedrockruntime_invoke_model
-bedrockruntime_invoke_model <- function(body = NULL, contentType = NULL, accept = NULL, modelId, trace = NULL, guardrailIdentifier = NULL, guardrailVersion = NULL, performanceConfigLatency = NULL, serviceTier = NULL) {
+bedrockruntime_invoke_model <- function(body = NULL, contentType = NULL, accept = NULL, modelId, trace = NULL, guardrailIdentifier = NULL, guardrailVersion = NULL, performanceConfigLatency = NULL, serviceTier = NULL, requestMetadata = NULL) {
   op <- new_operation(
     name = "InvokeModel",
     http_method = "POST",
@@ -3953,7 +3695,7 @@ bedrockruntime_invoke_model <- function(body = NULL, contentType = NULL, accept 
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .bedrockruntime$invoke_model_input(body = body, contentType = contentType, accept = accept, modelId = modelId, trace = trace, guardrailIdentifier = guardrailIdentifier, guardrailVersion = guardrailVersion, performanceConfigLatency = performanceConfigLatency, serviceTier = serviceTier)
+  input <- .bedrockruntime$invoke_model_input(body = body, contentType = contentType, accept = accept, modelId = modelId, trace = trace, guardrailIdentifier = guardrailIdentifier, guardrailVersion = guardrailVersion, performanceConfigLatency = performanceConfigLatency, serviceTier = serviceTier, requestMetadata = requestMetadata)
   output <- .bedrockruntime$invoke_model_output()
   config <- get_config()
   svc <- .bedrockruntime$service(config, op)
@@ -3967,31 +3709,15 @@ bedrockruntime_invoke_model <- function(body = NULL, contentType = NULL, accept 
 #' bidirectional stream
 #'
 #' @description
-#' Invoke the specified Amazon Bedrock model to run inference using the
-#' bidirectional stream. The response is returned in a stream that remains
-#' open for 8 minutes. A single session can contain multiple prompts and
-#' responses from the model. The prompts to the model are provided as audio
-#' files and the model's responses are spoken back to the user and
-#' transcribed.
+#' Invoke the specified Amazon Bedrock model to run inference using the bidirectional stream. The response is returned in a stream that remains open for 8 minutes. A single session can contain multiple prompts and responses from the model. The prompts to the model are provided as audio files and the model's responses are spoken back to the user and transcribed.
 #' 
-#' It is possible for users to interrupt the model's response with a new
-#' prompt, which will halt the response speech. The model will retain
-#' contextual awareness of the conversation while pivoting to respond to
-#' the new prompt.
+#' It is possible for users to interrupt the model's response with a new prompt, which will halt the response speech. The model will retain contextual awareness of the conversation while pivoting to respond to the new prompt.
 #'
 #' @usage
 #' bedrockruntime_invoke_model_with_bidirectional_stream(modelId, body)
 #'
-#' @param modelId &#91;required&#93; The model ID or ARN of the model ID to use. Currently, only
-#' `amazon.nova-sonic-v1:0` is supported.
-#' @param body &#91;required&#93; The prompt and inference parameters in the format specified in the
-#' `BidirectionalInputPayloadPart` in the header. You must provide the body
-#' in JSON format. To see the format and content of the request and
-#' response bodies for different models, refer to [Inference
-#' parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html).
-#' For more information, see [Run
-#' inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference.html)
-#' in the Bedrock User Guide.
+#' @param modelId &#91;required&#93; The model ID or ARN of the model ID to use. Currently, only `amazon.nova-sonic-v1:0` is supported.
+#' @param body &#91;required&#93; The prompt and inference parameters in the format specified in the `BidirectionalInputPayloadPart` in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to [Inference parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html). For more information, see [Run inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference.html) in the Bedrock User Guide.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4065,111 +3791,55 @@ bedrockruntime_invoke_model_with_bidirectional_stream <- function(modelId, body)
 #' prompt and inference parameters provided in the request body
 #'
 #' @description
-#' Invoke the specified Amazon Bedrock model to run inference using the
-#' prompt and inference parameters provided in the request body. The
-#' response is returned in a stream.
+#' Invoke the specified Amazon Bedrock model to run inference using the prompt and inference parameters provided in the request body. The response is returned in a stream.
 #' 
-#' To see if a model supports streaming, call
-#' [GetFoundationModel](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html)
-#' and check the `responseStreamingSupported` field in the response.
+#' To see if a model supports streaming, call [GetFoundationModel](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_GetFoundationModel.html) and check the `responseStreamingSupported` field in the response.
 #' 
-#' The CLI doesn't support streaming operations in Amazon Bedrock,
-#' including
-#' [`invoke_model_with_response_stream`][bedrockruntime_invoke_model_with_response_stream].
+#' The CLI doesn't support streaming operations in Amazon Bedrock, including [`invoke_model_with_response_stream`][bedrockruntime_invoke_model_with_response_stream].
 #' 
-#' For example code, see *Invoke model with streaming code example* in the
-#' *Amazon Bedrock User Guide*.
+#' For example code, see *Invoke model with streaming code example* in the *Amazon Bedrock User Guide*.
 #' 
-#' This operation requires permissions to perform the
-#' `bedrock:InvokeModelWithResponseStream` action.
+#' This operation requires permissions to perform the `bedrock:InvokeModelWithResponseStream` action.
 #' 
-#' To deny all inference access to resources that you specify in the
-#' modelId field, you need to deny access to the `bedrock:InvokeModel` and
-#' `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies
-#' access to the resource through the Converse API actions
-#' ([`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream]). For more
-#' information see [Deny access for inference on specific
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
+#' To deny all inference access to resources that you specify in the modelId field, you need to deny access to the `bedrock:InvokeModel` and `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies access to the resource through the Converse API actions ([`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream]). For more information see [Deny access for inference on specific models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
 #' 
-#' For troubleshooting some of the common errors you might encounter when
-#' using the
-#' [`invoke_model_with_response_stream`][bedrockruntime_invoke_model_with_response_stream]
-#' API, see [Troubleshooting Amazon Bedrock API Error
-#' Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html)
-#' in the Amazon Bedrock User Guide
+#' For troubleshooting some of the common errors you might encounter when using the [`invoke_model_with_response_stream`][bedrockruntime_invoke_model_with_response_stream] API, see [Troubleshooting Amazon Bedrock API Error Codes](https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html) in the Amazon Bedrock User Guide
 #'
 #' @usage
 #' bedrockruntime_invoke_model_with_response_stream(body, contentType,
 #'   accept, modelId, trace, guardrailIdentifier, guardrailVersion,
-#'   performanceConfigLatency, serviceTier)
+#'   performanceConfigLatency, serviceTier, requestMetadata)
 #'
-#' @param body The prompt and inference parameters in the format specified in the
-#' `contentType` in the header. You must provide the body in JSON format.
-#' To see the format and content of the request and response bodies for
-#' different models, refer to [Inference
-#' parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html).
-#' For more information, see [Run
-#' inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference.html)
-#' in the Bedrock User Guide.
-#' @param contentType The MIME type of the input data in the request. You must specify
-#' `application/json`.
-#' @param accept The desired MIME type of the inference body in the response. The default
-#' value is `application/json`.
+#' @param body The prompt and inference parameters in the format specified in the `contentType` in the header. You must provide the body in JSON format. To see the format and content of the request and response bodies for different models, refer to [Inference parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html). For more information, see [Run inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference.html) in the Bedrock User Guide.
+#' @param contentType The MIME type of the input data in the request. You must specify `application/json`.
+#' @param accept The desired MIME type of the inference body in the response. The default value is `application/json`.
 #' @param modelId &#91;required&#93; The unique identifier of the model to invoke to run inference.
 #' 
-#' The `modelId` to provide depends on the type of model or throughput that
-#' you use:
+#' The `modelId` to provide depends on the type of model or throughput that you use:
 #' 
-#' -   If you use a base model, specify the model ID or its ARN. For a list
-#'     of model IDs for base models, see [Amazon Bedrock base model IDs
-#'     (on-demand
-#'     throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a base model, specify the model ID or its ARN. For a list of model IDs for base models, see [Amazon Bedrock base model IDs (on-demand throughput)](https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html#model-ids-arns) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an inference profile, specify the inference profile ID or
-#'     its ARN. For a list of inference profile IDs, see [Supported Regions
-#'     and models for cross-region
-#'     inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use an inference profile, specify the inference profile ID or its ARN. For a list of inference profile IDs, see [Supported Regions and models for cross-region inference](https://docs.aws.amazon.com/bedrock/latest/userguide/inference-profiles-support.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a provisioned model, specify the ARN of the Provisioned
-#'     Throughput. For more information, see [Run inference using a
-#'     Provisioned
-#'     Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a provisioned model, specify the ARN of the Provisioned Throughput. For more information, see [Run inference using a Provisioned Throughput](https://docs.aws.amazon.com/bedrock/latest/userguide/prov-thru-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use a custom model, specify the ARN of the custom model
-#'     deployment (for on-demand inference) or the ARN of your provisioned
-#'     model (for Provisioned Throughput). For more information, see [Use a
-#'     custom model in Amazon
-#'     Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html)
-#'     in the Amazon Bedrock User Guide.
+#' -   If you use a custom model, specify the ARN of the custom model deployment (for on-demand inference) or the ARN of your provisioned model (for Provisioned Throughput). For more information, see [Use a custom model in Amazon Bedrock](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-use.html) in the Amazon Bedrock User Guide.
 #' 
-#' -   If you use an [imported
-#'     model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html),
-#'     specify the ARN of the imported model. You can get the model ARN
-#'     from a successful call to
-#'     [CreateModelImportJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html)
-#'     or from the Imported models page in the Amazon Bedrock console.
-#' @param trace Specifies whether to enable or disable the Bedrock trace. If enabled,
-#' you can see the full Bedrock trace.
-#' @param guardrailIdentifier The unique identifier of the guardrail that you want to use. If you
-#' don't provide a value, no guardrail is applied to the invocation.
+#' -   If you use an [imported model](https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html), specify the ARN of the imported model. You can get the model ARN from a successful call to [CreateModelImportJob](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html) or from the Imported models page in the Amazon Bedrock console.
+#' @param trace Specifies whether to enable or disable the Bedrock trace. If enabled, you can see the full Bedrock trace.
+#' @param guardrailIdentifier The unique identifier of the guardrail that you want to use. If you don't provide a value, no guardrail is applied to the invocation.
 #' 
 #' An error is thrown in the following situations.
 #' 
-#' -   You don't provide a guardrail identifier but you specify the
-#'     `amazon-bedrock-guardrailConfig` field in the request body.
+#' -   You don't provide a guardrail identifier but you specify the `amazon-bedrock-guardrailConfig` field in the request body.
 #' 
-#' -   You enable the guardrail but the `contentType` isn't
-#'     `application/json`.
+#' -   You enable the guardrail but the `contentType` isn't `application/json`.
 #' 
-#' -   You provide a guardrail identifier, but `guardrailVersion` isn't
-#'     specified.
+#' -   You provide a guardrail identifier, but `guardrailVersion` isn't specified.
 #' @param guardrailVersion The version number for the guardrail. The value can also be `DRAFT`.
 #' @param performanceConfigLatency Model performance settings for the request.
 #' @param serviceTier Specifies the processing tier type used for serving the request.
+#' @param requestMetadata Key-value pairs that you can use to filter invocation logs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4217,7 +3887,8 @@ bedrockruntime_invoke_model_with_bidirectional_stream <- function(modelId, body)
 #'   guardrailIdentifier = "string",
 #'   guardrailVersion = "string",
 #'   performanceConfigLatency = "standard"|"optimized",
-#'   serviceTier = "priority"|"default"|"flex"|"reserved"
+#'   serviceTier = "priority"|"default"|"flex"|"reserved",
+#'   requestMetadata = "string"
 #' )
 #' ```
 #'
@@ -4226,7 +3897,7 @@ bedrockruntime_invoke_model_with_bidirectional_stream <- function(modelId, body)
 #' @rdname bedrockruntime_invoke_model_with_response_stream
 #'
 #' @aliases bedrockruntime_invoke_model_with_response_stream
-bedrockruntime_invoke_model_with_response_stream <- function(body = NULL, contentType = NULL, accept = NULL, modelId, trace = NULL, guardrailIdentifier = NULL, guardrailVersion = NULL, performanceConfigLatency = NULL, serviceTier = NULL) {
+bedrockruntime_invoke_model_with_response_stream <- function(body = NULL, contentType = NULL, accept = NULL, modelId, trace = NULL, guardrailIdentifier = NULL, guardrailVersion = NULL, performanceConfigLatency = NULL, serviceTier = NULL, requestMetadata = NULL) {
   op <- new_operation(
     name = "InvokeModelWithResponseStream",
     http_method = "POST",
@@ -4235,7 +3906,7 @@ bedrockruntime_invoke_model_with_response_stream <- function(body = NULL, conten
     paginator = list(),
     stream_api = TRUE
   )
-  input <- .bedrockruntime$invoke_model_with_response_stream_input(body = body, contentType = contentType, accept = accept, modelId = modelId, trace = trace, guardrailIdentifier = guardrailIdentifier, guardrailVersion = guardrailVersion, performanceConfigLatency = performanceConfigLatency, serviceTier = serviceTier)
+  input <- .bedrockruntime$invoke_model_with_response_stream_input(body = body, contentType = contentType, accept = accept, modelId = modelId, trace = trace, guardrailIdentifier = guardrailIdentifier, guardrailVersion = guardrailVersion, performanceConfigLatency = performanceConfigLatency, serviceTier = serviceTier, requestMetadata = requestMetadata)
   output <- .bedrockruntime$invoke_model_with_response_stream_output()
   config <- get_config()
   svc <- .bedrockruntime$service(config, op)
@@ -4258,8 +3929,7 @@ bedrockruntime_invoke_model_with_response_stream <- function(body = NULL, conten
 #' @param submitTimeBefore Include invocations submitted before this time.
 #' @param statusEquals Filter invocations by status.
 #' @param maxResults The maximum number of invocations to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param sortBy How to sort the response.
 #' @param sortOrder The sorting order for the response.
 #'
@@ -4344,14 +4014,7 @@ bedrockruntime_list_async_invokes <- function(submitTimeAfter = NULL, submitTime
 #' 
 #' This operation requires permission for the `bedrock:InvokeModel` action.
 #' 
-#' To deny all inference access to resources that you specify in the
-#' modelId field, you need to deny access to the `bedrock:InvokeModel` and
-#' `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies
-#' access to the resource through the Converse API actions
-#' ([`converse`][bedrockruntime_converse] and
-#' [`converse_stream`][bedrockruntime_converse_stream]). For more
-#' information see [Deny access for inference on specific
-#' models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
+#' To deny all inference access to resources that you specify in the modelId field, you need to deny access to the `bedrock:InvokeModel` and `bedrock:InvokeModelWithResponseStream` actions. Doing this also denies access to the resource through the Converse API actions ([`converse`][bedrockruntime_converse] and [`converse_stream`][bedrockruntime_converse_stream]). For more information see [Deny access for inference on specific models](https://docs.aws.amazon.com/bedrock/latest/userguide/security_iam_id-based-policy-examples.html#security_iam_id-based-policy-examples-deny-inference).
 #'
 #' @usage
 #' bedrockruntime_start_async_invoke(clientRequestToken, modelId,

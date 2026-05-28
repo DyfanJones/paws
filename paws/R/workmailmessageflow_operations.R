@@ -6,8 +6,7 @@ NULL
 #' Retrieves the raw content of an in-transit email message, in MIME format
 #'
 #' @description
-#' Retrieves the raw content of an in-transit email message, in MIME
-#' format.
+#' Retrieves the raw content of an in-transit email message, in MIME format.
 #'
 #' @usage
 #' workmailmessageflow_get_raw_message_content(messageId)
@@ -58,21 +57,9 @@ workmailmessageflow_get_raw_message_content <- function(messageId) {
 #' @description
 #' Updates the raw content of an in-transit email message, in MIME format.
 #' 
-#' This example describes how to update in-transit email message. For more
-#' information and examples for using this API, see [Updating message
-#' content with AWS
-#' Lambda](https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html).
+#' This example describes how to update in-transit email message. For more information and examples for using this API, see [Updating message content with AWS Lambda](https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html).
 #' 
-#' Updates to an in-transit message only appear when you call
-#' [`put_raw_message_content`][workmailmessageflow_put_raw_message_content]
-#' from an AWS Lambda function configured with a synchronous [Run
-#' Lambda](https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules)
-#' rule. If you call
-#' [`put_raw_message_content`][workmailmessageflow_put_raw_message_content]
-#' on a delivered or sent message, the message remains unchanged, even
-#' though
-#' [`get_raw_message_content`][workmailmessageflow_get_raw_message_content]
-#' returns an updated message.
+#' Updates to an in-transit message only appear when you call [`put_raw_message_content`][workmailmessageflow_put_raw_message_content] from an AWS Lambda function configured with a synchronous [Run Lambda](https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules) rule. If you call [`put_raw_message_content`][workmailmessageflow_put_raw_message_content] on a delivered or sent message, the message remains unchanged, even though [`get_raw_message_content`][workmailmessageflow_get_raw_message_content] returns an updated message.
 #'
 #' @usage
 #' workmailmessageflow_put_raw_message_content(messageId, content)

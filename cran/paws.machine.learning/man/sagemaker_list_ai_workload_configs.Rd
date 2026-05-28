@@ -15,22 +15,15 @@ sagemaker_list_ai_workload_configs(
 )
 }
 \arguments{
-\item{MaxResults}{The maximum number of AI workload configurations to return in the
-response.}
+\item{MaxResults}{The maximum number of AI workload configurations to return in the response.}
 
-\item{NextToken}{If the previous call to
-\code{\link[=sagemaker_list_ai_workload_configs]{list_ai_workload_configs}} didn't
-return the full set of configurations, the call returns a token for
-getting the next set of configurations.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_ai_workload_configs]{list_ai_workload_configs}} didn't return the full set of configurations, the call returns a token for getting the next set of configurations.}
 
-\item{NameContains}{A string in the configuration name. This filter returns only
-configurations whose name contains the specified string.}
+\item{NameContains}{A string in the configuration name. This filter returns only configurations whose name contains the specified string.}
 
-\item{CreationTimeAfter}{A filter that returns only configurations created after the specified
-time.}
+\item{CreationTimeAfter}{A filter that returns only configurations created after the specified time.}
 
-\item{CreationTimeBefore}{A filter that returns only configurations created before the specified
-time.}
+\item{CreationTimeBefore}{A filter that returns only configurations created before the specified time.}
 
 \item{SortBy}{The field to sort results by. The default is \code{CreationTime}.}
 

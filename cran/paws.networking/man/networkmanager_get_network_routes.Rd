@@ -28,8 +28,7 @@ networkmanager_get_network_routes(
 
 \item{SubnetOfMatches}{The routes with a subnet that match the specified CIDR filter.}
 
-\item{SupernetOfMatches}{The routes with a CIDR that encompasses the CIDR filter. Example: If you
-specify 10.0.1.0/30, then the result returns 10.0.1.0/29.}
+\item{SupernetOfMatches}{The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.}
 
 \item{PrefixListIds}{The IDs of the prefix lists.}
 
@@ -37,8 +36,7 @@ specify 10.0.1.0/30, then the result returns 10.0.1.0/29.}
 
 \item{Types}{The route types.}
 
-\item{DestinationFilters}{Filter by route table destination. Possible Values:
-TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.}
+\item{DestinationFilters}{Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.}
 }
 \description{
 Gets the network routes of the specified global network.

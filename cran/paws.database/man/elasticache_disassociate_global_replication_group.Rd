@@ -14,11 +14,9 @@ elasticache_disassociate_global_replication_group(
 \arguments{
 \item{GlobalReplicationGroupId}{[required] The name of the Global datastore}
 
-\item{ReplicationGroupId}{[required] The name of the secondary cluster you wish to remove from the Global
-datastore}
+\item{ReplicationGroupId}{[required] The name of the secondary cluster you wish to remove from the Global datastore}
 
-\item{ReplicationGroupRegion}{[required] The Amazon region of secondary cluster you wish to remove from the
-Global datastore}
+\item{ReplicationGroupRegion}{[required] The Amazon region of secondary cluster you wish to remove from the Global datastore}
 }
 \description{
 Remove a secondary cluster from the Global datastore using the Global datastore name. The secondary cluster will no longer receive updates from the primary cluster, but will remain as a standalone cluster in that Amazon region.

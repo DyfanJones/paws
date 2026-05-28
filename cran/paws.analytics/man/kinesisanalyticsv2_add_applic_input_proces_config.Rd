@@ -13,21 +13,11 @@ kinesisanalyticsv2_add_application_input_processing_configuration(
 )
 }
 \arguments{
-\item{ApplicationName}{[required] The name of the application to which you want to add the input
-processing configuration.}
+\item{ApplicationName}{[required] The name of the application to which you want to add the input processing configuration.}
 
-\item{CurrentApplicationVersionId}{[required] The version of the application to which you want to add the input
-processing configuration. You can use the
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}
-operation to get the current application version. If the version
-specified is not the current version, the
-\code{ConcurrentModificationException} is returned.}
+\item{CurrentApplicationVersionId}{[required] The version of the application to which you want to add the input processing configuration. You can use the \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}} operation to get the current application version. If the version specified is not the current version, the \code{ConcurrentModificationException} is returned.}
 
-\item{InputId}{[required] The ID of the input configuration to add the input processing
-configuration to. You can get a list of the input IDs for an application
-using the
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}
-operation.}
+\item{InputId}{[required] The ID of the input configuration to add the input processing configuration to. You can get a list of the input IDs for an application using the \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}} operation.}
 
 \item{InputProcessingConfiguration}{[required] The InputProcessingConfiguration to add to the application.}
 }

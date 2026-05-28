@@ -10,8 +10,7 @@ connect_describe_data_table_attribute(InstanceId, DataTableId, AttributeName)
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN
-with or without a version alias.}
+\item{DataTableId}{[required] The unique identifier for the data table. Must also accept the table ARN with or without a version alias.}
 
 \item{AttributeName}{[required] The name of the attribute to retrieve detailed information for.}
 }

@@ -53,9 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Lookout for Equipment is a machine learning service that uses
-advanced analytics to identify anomalies in machines from sensor data
-for use in predictive maintenance.
+Amazon Lookout for Equipment is a machine learning service that uses advanced analytics to identify anomalies in machines from sensor data for use in predictive maintenance.
 }
 \section{Service syntax}{
 

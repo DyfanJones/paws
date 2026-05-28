@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Describes the API operations for running inference using Amazon Bedrock
-models.
+Describes the API operations for running inference using Amazon Bedrock models.
 }
 \section{Service syntax}{
 

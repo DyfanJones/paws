@@ -15,20 +15,9 @@ emr_get_studio_session_mapping(
 \arguments{
 \item{StudioId}{[required] The ID of the Amazon EMR Studio.}
 
-\item{IdentityId}{The globally unique identifier (GUID) of the user or group. For more
-information, see
-\href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId}{UserId}
-and
-\href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId}{GroupId}
-in the \emph{IAM Identity Center Identity Store API Reference}. Either
-\code{IdentityName} or \code{IdentityId} must be specified.}
+\item{IdentityId}{The globally unique identifier (GUID) of the user or group. For more information, see \href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId}{UserId} and \href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId}{GroupId} in the \emph{IAM Identity Center Identity Store API Reference}. Either \code{IdentityName} or \code{IdentityId} must be specified.}
 
-\item{IdentityName}{The name of the user or group to fetch. For more information, see
-\href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName}{UserName}
-and
-\href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName}{DisplayName}
-in the \emph{IAM Identity Center Identity Store API Reference}. Either
-\code{IdentityName} or \code{IdentityId} must be specified.}
+\item{IdentityName}{The name of the user or group to fetch. For more information, see \href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName}{UserName} and \href{https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName}{DisplayName} in the \emph{IAM Identity Center Identity Store API Reference}. Either \code{IdentityName} or \code{IdentityId} must be specified.}
 
 \item{IdentityType}{[required] Specifies whether the identity to fetch is a user or a group.}
 }

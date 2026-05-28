@@ -19,9 +19,7 @@ securityhub_create_ticket_v2(
 
 \item{ClientToken}{The client idempotency token.}
 
-\item{Mode}{The mode for ticket creation. When set to DRYRUN, the ticket is created
-using a Security Hub owned template test finding to verify the
-integration is working correctly.}
+\item{Mode}{The mode for ticket creation. When set to DRYRUN, the ticket is created using a Security Hub owned template test finding to verify the integration is working correctly.}
 }
 \description{
 Grants permission to create a ticket in the chosen ITSM based on finding information for the provided finding metadata UID.

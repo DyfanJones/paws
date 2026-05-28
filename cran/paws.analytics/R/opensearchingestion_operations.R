@@ -10,25 +10,16 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_create_pipeline/](https://www.paws-r-sdk.com/docs/opensearchingestion_create_pipeline/) for full documentation.
 #'
-#' @param PipelineName &#91;required&#93; The name of the OpenSearch Ingestion pipeline to create. Pipeline names
-#' are unique across the pipelines owned by an account within an Amazon Web
-#' Services Region.
+#' @param PipelineName &#91;required&#93; The name of the OpenSearch Ingestion pipeline to create. Pipeline names are unique across the pipelines owned by an account within an Amazon Web Services Region.
 #' @param MinUnits &#91;required&#93; The minimum pipeline capacity, in Ingestion Compute Units (ICUs).
 #' @param MaxUnits &#91;required&#93; The maximum pipeline capacity, in Ingestion Compute Units (ICUs).
-#' @param PipelineConfigurationBody &#91;required&#93; The pipeline configuration in YAML format. The command accepts the
-#' pipeline configuration as a string or within a .yaml file. If you
-#' provide the configuration as a string, each new line must be escaped
-#' with `\\n`.
+#' @param PipelineConfigurationBody &#91;required&#93; The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with `\\n`.
 #' @param LogPublishingOptions Key-value pairs to configure log publishing.
-#' @param VpcOptions Container for the values required to configure VPC access for the
-#' pipeline. If you don't specify these values, OpenSearch Ingestion
-#' creates the pipeline with a public endpoint.
+#' @param VpcOptions Container for the values required to configure VPC access for the pipeline. If you don't specify these values, OpenSearch Ingestion creates the pipeline with a public endpoint.
 #' @param BufferOptions Key-value pairs to configure persistent buffering for the pipeline.
-#' @param EncryptionAtRestOptions Key-value pairs to configure encryption for data that is written to a
-#' persistent buffer.
+#' @param EncryptionAtRestOptions Key-value pairs to configure encryption for data that is written to a persistent buffer.
 #' @param Tags List of tags to add to the pipeline upon creation.
-#' @param PipelineRoleArn The Amazon Resource Name (ARN) of the IAM role that grants the pipeline
-#' permission to access Amazon Web Services resources.
+#' @param PipelineRoleArn The Amazon Resource Name (ARN) of the IAM role that grants the pipeline permission to access Amazon Web Services resources.
 #'
 #' @keywords internal
 #'
@@ -59,10 +50,8 @@ opensearchingestion_create_pipeline <- function(PipelineName, MinUnits, MaxUnits
 #'
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_create_pipeline_endpoint/](https://www.paws-r-sdk.com/docs/opensearchingestion_create_pipeline_endpoint/) for full documentation.
 #'
-#' @param PipelineArn &#91;required&#93; The Amazon Resource Name (ARN) of the pipeline to create the endpoint
-#' for.
-#' @param VpcOptions &#91;required&#93; Container for the VPC configuration for the pipeline endpoint, including
-#' subnet IDs and security group IDs.
+#' @param PipelineArn &#91;required&#93; The Amazon Resource Name (ARN) of the pipeline to create the endpoint for.
+#' @param VpcOptions &#91;required&#93; Container for the VPC configuration for the pipeline endpoint, including subnet IDs and security group IDs.
 #'
 #' @keywords internal
 #'
@@ -155,8 +144,7 @@ opensearchingestion_delete_pipeline_endpoint <- function(EndpointId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_delete_resource_policy/](https://www.paws-r-sdk.com/docs/opensearchingestion_delete_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to delete the
-#' policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource from which to delete the policy.
 #'
 #' @keywords internal
 #'
@@ -284,8 +272,7 @@ opensearchingestion_get_pipeline_change_progress <- function(PipelineName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_get_resource_policy/](https://www.paws-r-sdk.com/docs/opensearchingestion_get_resource_policy/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to retrieve the
-#' policy.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource for which to retrieve the policy.
 #'
 #' @keywords internal
 #'
@@ -347,14 +334,8 @@ opensearchingestion_list_pipeline_blueprints <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_list_pipeline_endpoint_connections/](https://www.paws-r-sdk.com/docs/opensearchingestion_list_pipeline_endpoint_connections/) for full documentation.
 #'
-#' @param MaxResults The maximum number of pipeline endpoint connections to return in the
-#' response.
-#' @param NextToken If your initial
-#' [`list_pipeline_endpoint_connections`][opensearchingestion_list_pipeline_endpoint_connections]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_pipeline_endpoint_connections`][opensearchingestion_list_pipeline_endpoint_connections]
-#' operations, which returns results in the next page.
+#' @param MaxResults The maximum number of pipeline endpoint connections to return in the response.
+#' @param NextToken If your initial [`list_pipeline_endpoint_connections`][opensearchingestion_list_pipeline_endpoint_connections] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_pipeline_endpoint_connections`][opensearchingestion_list_pipeline_endpoint_connections] operations, which returns results in the next page.
 #'
 #' @keywords internal
 #'
@@ -386,12 +367,7 @@ opensearchingestion_list_pipeline_endpoint_connections <- function(MaxResults = 
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_list_pipeline_endpoints/](https://www.paws-r-sdk.com/docs/opensearchingestion_list_pipeline_endpoints/) for full documentation.
 #'
 #' @param MaxResults The maximum number of pipeline endpoints to return in the response.
-#' @param NextToken If your initial
-#' [`list_pipeline_endpoints`][opensearchingestion_list_pipeline_endpoints]
-#' operation returns a `NextToken`, you can include the returned
-#' `NextToken` in subsequent
-#' [`list_pipeline_endpoints`][opensearchingestion_list_pipeline_endpoints]
-#' operations, which returns results in the next page.
+#' @param NextToken If your initial [`list_pipeline_endpoints`][opensearchingestion_list_pipeline_endpoints] operation returns a `NextToken`, you can include the returned `NextToken` in subsequent [`list_pipeline_endpoints`][opensearchingestion_list_pipeline_endpoints] operations, which returns results in the next page.
 #'
 #' @keywords internal
 #'
@@ -423,13 +399,8 @@ opensearchingestion_list_pipeline_endpoints <- function(MaxResults = NULL, NextT
 #'
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_list_pipelines/](https://www.paws-r-sdk.com/docs/opensearchingestion_list_pipelines/) for full documentation.
 #'
-#' @param MaxResults An optional parameter that specifies the maximum number of results to
-#' return. You can use `nextToken` to get the next page of results.
-#' @param NextToken If your initial [`list_pipelines`][opensearchingestion_list_pipelines]
-#' operation returns a `nextToken`, you can include the returned
-#' `nextToken` in subsequent
-#' [`list_pipelines`][opensearchingestion_list_pipelines] operations, which
-#' returns results in the next page.
+#' @param MaxResults An optional parameter that specifies the maximum number of results to return. You can use `nextToken` to get the next page of results.
+#' @param NextToken If your initial [`list_pipelines`][opensearchingestion_list_pipelines] operation returns a `nextToken`, you can include the returned `nextToken` in subsequent [`list_pipelines`][opensearchingestion_list_pipelines] operations, which returns results in the next page.
 #'
 #' @keywords internal
 #'
@@ -523,8 +494,7 @@ opensearchingestion_put_resource_policy <- function(ResourceArn, Policy) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_revoke_pipeline_endpoint_connections/](https://www.paws-r-sdk.com/docs/opensearchingestion_revoke_pipeline_endpoint_connections/) for full documentation.
 #'
-#' @param PipelineArn &#91;required&#93; The Amazon Resource Name (ARN) of the pipeline from which to revoke
-#' endpoint connections.
+#' @param PipelineArn &#91;required&#93; The Amazon Resource Name (ARN) of the pipeline from which to revoke endpoint connections.
 #' @param EndpointIds &#91;required&#93; A list of endpoint IDs for which to revoke access to the pipeline.
 #'
 #' @keywords internal
@@ -685,16 +655,11 @@ opensearchingestion_untag_resource <- function(Arn, TagKeys) {
 #' @param PipelineName &#91;required&#93; The name of the pipeline to update.
 #' @param MinUnits The minimum pipeline capacity, in Ingestion Compute Units (ICUs).
 #' @param MaxUnits The maximum pipeline capacity, in Ingestion Compute Units (ICUs)
-#' @param PipelineConfigurationBody The pipeline configuration in YAML format. The command accepts the
-#' pipeline configuration as a string or within a .yaml file. If you
-#' provide the configuration as a string, each new line must be escaped
-#' with `\\n`.
+#' @param PipelineConfigurationBody The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with `\\n`.
 #' @param LogPublishingOptions Key-value pairs to configure log publishing.
 #' @param BufferOptions Key-value pairs to configure persistent buffering for the pipeline.
-#' @param EncryptionAtRestOptions Key-value pairs to configure encryption for data that is written to a
-#' persistent buffer.
-#' @param PipelineRoleArn The Amazon Resource Name (ARN) of the IAM role that grants the pipeline
-#' permission to access Amazon Web Services resources.
+#' @param EncryptionAtRestOptions Key-value pairs to configure encryption for data that is written to a persistent buffer.
+#' @param PipelineRoleArn The Amazon Resource Name (ARN) of the IAM role that grants the pipeline permission to access Amazon Web Services resources.
 #'
 #' @keywords internal
 #'
@@ -726,10 +691,7 @@ opensearchingestion_update_pipeline <- function(PipelineName, MinUnits = NULL, M
 #'
 #' See [https://www.paws-r-sdk.com/docs/opensearchingestion_validate_pipeline/](https://www.paws-r-sdk.com/docs/opensearchingestion_validate_pipeline/) for full documentation.
 #'
-#' @param PipelineConfigurationBody &#91;required&#93; The pipeline configuration in YAML format. The command accepts the
-#' pipeline configuration as a string or within a .yaml file. If you
-#' provide the configuration as a string, each new line must be escaped
-#' with `\\n`.
+#' @param PipelineConfigurationBody &#91;required&#93; The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with `\\n`.
 #'
 #' @keywords internal
 #'

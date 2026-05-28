@@ -7,11 +7,9 @@
 route53_update_traffic_policy_comment(Id, Version, Comment)
 }
 \arguments{
-\item{Id}{[required] The value of \code{Id} for the traffic policy that you want to update the
-comment for.}
+\item{Id}{[required] The value of \code{Id} for the traffic policy that you want to update the comment for.}
 
-\item{Version}{[required] The value of \code{Version} for the traffic policy that you want to update
-the comment for.}
+\item{Version}{[required] The value of \code{Version} for the traffic policy that you want to update the comment for.}
 
 \item{Comment}{[required] The new comment for the specified traffic policy and version.}
 }

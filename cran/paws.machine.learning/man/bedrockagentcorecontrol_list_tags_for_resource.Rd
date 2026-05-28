@@ -7,8 +7,7 @@
 bedrockagentcorecontrol_list_tags_for_resource(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to
-list tags.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to list tags.}
 }
 \description{
 Lists the tags associated with the specified resource.

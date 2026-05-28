@@ -16,20 +16,15 @@ costexplorer_update_cost_category_definition(
 \arguments{
 \item{CostCategoryArn}{[required] The unique identifier for your cost category.}
 
-\item{EffectiveStart}{The cost category's effective start date. It can only be a billing start
-date (first day of the month). If the date isn't provided, it's the
-first day of the current month. Dates can't be before the previous
-twelve months, or in the future.}
+\item{EffectiveStart}{The cost category's effective start date. It can only be a billing start date (first day of the month). If the date isn't provided, it's the first day of the current month. Dates can't be before the previous twelve months, or in the future.}
 
-\item{RuleVersion}{[required]}
+\item{RuleVersion}{[required] The rule schema version in this particular cost category.}
 
-\item{Rules}{[required] The \code{Expression} object used to categorize costs. For more information,
-see
-\href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html}{CostCategoryRule}
-.}
+\item{Rules}{[required] The \code{Expression} object used to categorize costs. For more information, see \href{https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html}{CostCategoryRule} .}
 
-\item{SplitChargeRules}{The split charge rules used to allocate your charges between your cost
-category values.}
+\item{DefaultValue}{The default value for the cost category.}
+
+\item{SplitChargeRules}{The split charge rules used to allocate your charges between your cost category values.}
 }
 \description{
 Updates an existing cost category. Changes made to the cost category rules will be used to categorize the current month’s expenses and future expenses. This won’t change categorization for the previous months.

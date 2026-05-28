@@ -9,8 +9,7 @@ codestarconnections_get_sync_blocker_summary(SyncType, ResourceName)
 \arguments{
 \item{SyncType}{[required] The sync type for the sync blocker summary.}
 
-\item{ResourceName}{[required] The name of the Amazon Web Services resource currently blocked from
-automatically being synced from a Git repository.}
+\item{ResourceName}{[required] The name of the Amazon Web Services resource currently blocked from automatically being synced from a Git repository.}
 }
 \description{
 Returns a list of the most recent sync blockers.

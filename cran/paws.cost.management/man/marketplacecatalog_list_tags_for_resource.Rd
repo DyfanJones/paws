@@ -8,8 +8,7 @@ change set)}
 marketplacecatalog_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] Required. The Amazon Resource Name (ARN) associated with the resource
-you want to list tags on.}
+\item{ResourceArn}{[required] Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.}
 }
 \description{
 Lists all tags that have been added to a resource (either an \href{https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#catalog-api-entities}{entity} or \href{https://docs.aws.amazon.com/marketplace/latest/APIReference/catalog-apis.html#working-with-change-sets}{change set}).

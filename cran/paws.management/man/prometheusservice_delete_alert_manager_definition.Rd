@@ -12,8 +12,7 @@ prometheusservice_delete_alert_manager_definition(
 \arguments{
 \item{workspaceId}{[required] The ID of the workspace to delete the alert manager definition from.}
 
-\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of
-the request. Case-sensitive.}
+\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.}
 }
 \description{
 Deletes the alert manager definition from a workspace.

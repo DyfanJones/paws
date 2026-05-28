@@ -10,17 +10,14 @@ workmail_get_mobile_device_access_override(OrganizationId, UserId, DeviceId)
 \arguments{
 \item{OrganizationId}{[required] The WorkMail organization to which you want to apply the override.}
 
-\item{UserId}{[required] Identifies the WorkMail user for the override. Accepts the following
-types of user identities:
+\item{UserId}{[required] Identifies the WorkMail user for the override. Accepts the following types of user identities:
 \itemize{
-\item User ID: \code{12345678-1234-1234-1234-123456789012} or
-\code{S-1-1-12-1234567890-123456789-123456789-1234}
+\item User ID: \code{12345678-1234-1234-1234-123456789012} or \code{S-1-1-12-1234567890-123456789-123456789-1234}
 \item Email address: \code{user@domain.tld}
 \item User name: \code{user}
 }}
 
-\item{DeviceId}{[required] The mobile device to which the override applies. \code{DeviceId} is case
-insensitive.}
+\item{DeviceId}{[required] The mobile device to which the override applies. \code{DeviceId} is case insensitive.}
 }
 \description{
 Gets the mobile device access override for the given WorkMail organization, user, and device.

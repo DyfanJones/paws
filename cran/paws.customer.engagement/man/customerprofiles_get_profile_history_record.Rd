@@ -7,11 +7,9 @@
 customerprofiles_get_profile_history_record(DomainName, ProfileId, Id)
 }
 \arguments{
-\item{DomainName}{[required] The unique name of the domain for which to return a profile history
-record.}
+\item{DomainName}{[required] The unique name of the domain for which to return a profile history record.}
 
-\item{ProfileId}{[required] The unique identifier of the profile for which to return a history
-record.}
+\item{ProfileId}{[required] The unique identifier of the profile for which to return a history record.}
 
 \item{Id}{[required] The unique identifier of the profile history record to return.}
 }

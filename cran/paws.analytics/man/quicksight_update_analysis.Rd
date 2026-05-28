@@ -16,34 +16,23 @@ quicksight_update_analysis(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analysis
-that you're updating.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the analysis that you're updating.}
 
-\item{AnalysisId}{[required] The ID for the analysis that you're updating. This ID displays in the
-URL of the analysis.}
+\item{AnalysisId}{[required] The ID for the analysis that you're updating. This ID displays in the URL of the analysis.}
 
-\item{Name}{[required] A descriptive name for the analysis that you're updating. This name
-displays for the analysis in the Amazon Quick Sight console.}
+\item{Name}{[required] A descriptive name for the analysis that you're updating. This name displays for the analysis in the Amazon Quick Sight console.}
 
-\item{Parameters}{The parameter names and override values that you want to use. An
-analysis can have any parameter type, and some parameters might accept
-multiple values.}
+\item{Parameters}{The parameter names and override values that you want to use. An analysis can have any parameter type, and some parameters might accept multiple values.}
 
-\item{SourceEntity}{A source entity to use for the analysis that you're updating. This
-metadata structure contains details that describe a source template and
-one or more datasets.}
+\item{SourceEntity}{A source entity to use for the analysis that you're updating. This metadata structure contains details that describe a source template and one or more datasets.}
 
-\item{ThemeArn}{The Amazon Resource Name (ARN) for the theme to apply to the analysis
-that you're creating. To see the theme in the Amazon Quick Sight
-console, make sure that you have access to it.}
+\item{ThemeArn}{The Amazon Resource Name (ARN) for the theme to apply to the analysis that you're creating. To see the theme in the Amazon Quick Sight console, make sure that you have access to it.}
 
 \item{Definition}{The definition of an analysis.
 
-A definition is the data model of all features in a Dashboard, Template,
-or Analysis.}
+A definition is the data model of all features in a Dashboard, Template, or Analysis.}
 
-\item{ValidationStrategy}{The option to relax the validation needed to update an analysis with
-definition objects. This skips the validation step for specific errors.}
+\item{ValidationStrategy}{The option to relax the validation needed to update an analysis with definition objects. This skips the validation step for specific errors.}
 }
 \description{
 Updates an analysis in Amazon Quick Sight

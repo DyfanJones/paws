@@ -10,9 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_add_tags/](https://www.paws-r-sdk.com/docs/machinelearning_add_tags/) for full documentation.
 #'
-#' @param Tags &#91;required&#93; The key-value pairs to use to create tags. If you specify a key without
-#' specifying a value, Amazon ML creates a tag with the specified key and a
-#' value of null.
+#' @param Tags &#91;required&#93; The key-value pairs to use to create tags. If you specify a key without specifying a value, Amazon ML creates a tag with the specified key and a value of null.
 #' @param ResourceId &#91;required&#93; The ID of the ML object to tag. For example, `exampleModelId`.
 #' @param ResourceType &#91;required&#93; The type of the ML object to tag.
 #'
@@ -46,21 +44,12 @@ machinelearning_add_tags <- function(Tags, ResourceId, ResourceType) {
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_create_batch_prediction/](https://www.paws-r-sdk.com/docs/machinelearning_create_batch_prediction/) for full documentation.
 #'
 #' @param BatchPredictionId &#91;required&#93; A user-supplied ID that uniquely identifies the `BatchPrediction`.
-#' @param BatchPredictionName A user-supplied name or description of the `BatchPrediction`.
-#' `BatchPredictionName` can only use the UTF-8 character set.
-#' @param MLModelId &#91;required&#93; The ID of the `MLModel` that will generate predictions for the group of
-#' observations.
-#' @param BatchPredictionDataSourceId &#91;required&#93; The ID of the `DataSource` that points to the group of observations to
-#' predict.
-#' @param OutputUri &#91;required&#93; The location of an Amazon Simple Storage Service (Amazon S3) bucket or
-#' directory to store the batch prediction results. The following
-#' substrings are not allowed in the `s3 key` portion of the `outputURI`
-#' field: ':', '//', '/./', '/../'.
+#' @param BatchPredictionName A user-supplied name or description of the `BatchPrediction`. `BatchPredictionName` can only use the UTF-8 character set.
+#' @param MLModelId &#91;required&#93; The ID of the `MLModel` that will generate predictions for the group of observations.
+#' @param BatchPredictionDataSourceId &#91;required&#93; The ID of the `DataSource` that points to the group of observations to predict.
+#' @param OutputUri &#91;required&#93; The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to store the batch prediction results. The following substrings are not allowed in the `s3 key` portion of the `outputURI` field: ':', '//', '/./', '/../'.
 #' 
-#' Amazon ML needs permissions to store and retrieve the logs on your
-#' behalf. For information about how to set permissions, see the [Amazon
-#' Machine Learning Developer
-#' Guide](https://docs.aws.amazon.com/machine-learning/latest/dg/).
+#' Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set permissions, see the [Amazon Machine Learning Developer Guide](https://docs.aws.amazon.com/machine-learning/latest/dg/).
 #'
 #' @keywords internal
 #'
@@ -92,8 +81,7 @@ machinelearning_create_batch_prediction <- function(BatchPredictionId, BatchPred
 #'
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_create_data_source_from_rds/](https://www.paws-r-sdk.com/docs/machinelearning_create_data_source_from_rds/) for full documentation.
 #'
-#' @param DataSourceId &#91;required&#93; A user-supplied ID that uniquely identifies the `DataSource`. Typically,
-#' an Amazon Resource Number (ARN) becomes the ID for a `DataSource`.
+#' @param DataSourceId &#91;required&#93; A user-supplied ID that uniquely identifies the `DataSource`. Typically, an Amazon Resource Number (ARN) becomes the ID for a `DataSource`.
 #' @param DataSourceName A user-supplied name or description of the `DataSource`.
 #' @param RDSData &#91;required&#93; The data specification of an Amazon RDS `DataSource`:
 #' 
@@ -101,55 +89,29 @@ machinelearning_create_batch_prediction <- function(BatchPredictionId, BatchPred
 #' 
 #'     -   `DatabaseName` - The name of the Amazon RDS database.
 #' 
-#'     -   `InstanceIdentifier ` - A unique identifier for the Amazon RDS
-#'         database instance.
+#'     -   `InstanceIdentifier ` - A unique identifier for the Amazon RDS database instance.
 #' 
-#' -   DatabaseCredentials - AWS Identity and Access Management (IAM)
-#'     credentials that are used to connect to the Amazon RDS database.
+#' -   DatabaseCredentials - AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon RDS database.
 #' 
-#' -   ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by
-#'     an EC2 instance to carry out the copy task from Amazon RDS to Amazon
-#'     Simple Storage Service (Amazon S3). For more information, see [Role
-#'     templates](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html)
-#'     for data pipelines.
+#' -   ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see [Role templates](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) for data pipelines.
 #' 
-#' -   ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS
-#'     Data Pipeline service to monitor the progress of the copy task from
-#'     Amazon RDS to Amazon S3. For more information, see [Role
-#'     templates](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html)
-#'     for data pipelines.
+#' -   ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress of the copy task from Amazon RDS to Amazon S3. For more information, see [Role templates](https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html) for data pipelines.
 #' 
-#' -   SecurityInfo - The security information to use to access an RDS DB
-#'     instance. You need to set up appropriate ingress rules for the
-#'     security entity IDs provided to allow access to the Amazon RDS
-#'     instance. Specify a \[`SubnetId`, `SecurityGroupIds`\] pair for a
-#'     VPC-based RDS DB instance.
+#' -   SecurityInfo - The security information to use to access an RDS DB instance. You need to set up appropriate ingress rules for the security entity IDs provided to allow access to the Amazon RDS instance. Specify a \[`SubnetId`, `SecurityGroupIds`\] pair for a VPC-based RDS DB instance.
 #' 
-#' -   SelectSqlQuery - A query that is used to retrieve the observation
-#'     data for the `Datasource`.
+#' -   SelectSqlQuery - A query that is used to retrieve the observation data for the `Datasource`.
 #' 
-#' -   S3StagingLocation - The Amazon S3 location for staging Amazon RDS
-#'     data. The data retrieved from Amazon RDS using `SelectSqlQuery` is
-#'     stored in this location.
+#' -   S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon RDS using `SelectSqlQuery` is stored in this location.
 #' 
 #' -   DataSchemaUri - The Amazon S3 location of the `DataSchema`.
 #' 
-#' -   DataSchema - A JSON string representing the schema. This is not
-#'     required if `DataSchemaUri` is specified.
+#' -   DataSchema - A JSON string representing the schema. This is not required if `DataSchemaUri` is specified.
 #' 
-#' -   DataRearrangement - A JSON string that represents the splitting and
-#'     rearrangement requirements for the `Datasource`.
+#' -   DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the `Datasource`.
 #' 
-#'     Sample -
-#'     ` "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"`
-#' @param RoleARN &#91;required&#93; The role that Amazon ML assumes on behalf of the user to create and
-#' activate a data pipeline in the user's account and copy data using the
-#' `SelectSqlQuery` query from Amazon RDS to Amazon S3.
-#' @param ComputeStatistics The compute statistics for a `DataSource`. The statistics are generated
-#' from the observation data referenced by a `DataSource`. Amazon ML uses
-#' the statistics internally during `MLModel` training. This parameter must
-#' be set to `true` if the ``DataSource`` needs to be used for `MLModel`
-#' training.
+#'     Sample - ` "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"`
+#' @param RoleARN &#91;required&#93; The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's account and copy data using the `SelectSqlQuery` query from Amazon RDS to Amazon S3.
+#' @param ComputeStatistics The compute statistics for a `DataSource`. The statistics are generated from the observation data referenced by a `DataSource`. Amazon ML uses the statistics internally during `MLModel` training. This parameter must be set to `true` if the ``DataSource`` needs to be used for `MLModel` training.
 #'
 #' @keywords internal
 #'
@@ -189,44 +151,27 @@ machinelearning_create_data_source_from_rds <- function(DataSourceId, DataSource
 #' 
 #'     -   `DatabaseName` - The name of the Amazon Redshift database.
 #' 
-#'     -   ` ClusterIdentifier` - The unique ID for the Amazon Redshift
-#'         cluster.
+#'     -   ` ClusterIdentifier` - The unique ID for the Amazon Redshift cluster.
 #' 
-#' -   DatabaseCredentials - The AWS Identity and Access Management (IAM)
-#'     credentials that are used to connect to the Amazon Redshift
-#'     database.
+#' -   DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.
 #' 
-#' -   SelectSqlQuery - The query that is used to retrieve the observation
-#'     data for the `Datasource`.
+#' -   SelectSqlQuery - The query that is used to retrieve the observation data for the `Datasource`.
 #' 
-#' -   S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
-#'     location for staging Amazon Redshift data. The data retrieved from
-#'     Amazon Redshift using the `SelectSqlQuery` query is stored in this
-#'     location.
+#' -   S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the `SelectSqlQuery` query is stored in this location.
 #' 
 #' -   DataSchemaUri - The Amazon S3 location of the `DataSchema`.
 #' 
-#' -   DataSchema - A JSON string representing the schema. This is not
-#'     required if `DataSchemaUri` is specified.
+#' -   DataSchema - A JSON string representing the schema. This is not required if `DataSchemaUri` is specified.
 #' 
-#' -   DataRearrangement - A JSON string that represents the splitting and
-#'     rearrangement requirements for the `DataSource`.
+#' -   DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the `DataSource`.
 #' 
-#'     Sample -
-#'     ` "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"`
-#' @param RoleARN &#91;required&#93; A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the
-#' role on behalf of the user to create the following:
+#'     Sample - ` "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"`
+#' @param RoleARN &#91;required&#93; A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:
 #' 
-#' -   A security group to allow Amazon ML to execute the `SelectSqlQuery`
-#'     query on an Amazon Redshift cluster
+#' -   A security group to allow Amazon ML to execute the `SelectSqlQuery` query on an Amazon Redshift cluster
 #' 
-#' -   An Amazon S3 bucket policy to grant Amazon ML read/write permissions
-#'     on the `S3StagingLocation`
-#' @param ComputeStatistics The compute statistics for a `DataSource`. The statistics are generated
-#' from the observation data referenced by a `DataSource`. Amazon ML uses
-#' the statistics internally during `MLModel` training. This parameter must
-#' be set to `true` if the `DataSource` needs to be used for `MLModel`
-#' training.
+#' -   An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the `S3StagingLocation`
+#' @param ComputeStatistics The compute statistics for a `DataSource`. The statistics are generated from the observation data referenced by a `DataSource`. Amazon ML uses the statistics internally during `MLModel` training. This parameter must be set to `true` if the `DataSource` needs to be used for `MLModel` training.
 #'
 #' @keywords internal
 #'
@@ -265,19 +210,12 @@ machinelearning_create_data_source_from_redshift <- function(DataSourceId, DataS
 #' 
 #' -   DataSchemaLocationS3 - The Amazon S3 location of the `DataSchema`.
 #' 
-#' -   DataSchema - A JSON string representing the schema. This is not
-#'     required if `DataSchemaUri` is specified.
+#' -   DataSchema - A JSON string representing the schema. This is not required if `DataSchemaUri` is specified.
 #' 
-#' -   DataRearrangement - A JSON string that represents the splitting and
-#'     rearrangement requirements for the `Datasource`.
+#' -   DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the `Datasource`.
 #' 
-#'     Sample -
-#'     ` "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"`
-#' @param ComputeStatistics The compute statistics for a `DataSource`. The statistics are generated
-#' from the observation data referenced by a `DataSource`. Amazon ML uses
-#' the statistics internally during `MLModel` training. This parameter must
-#' be set to `true` if the ``DataSource`` needs to be used for `MLModel`
-#' training.
+#'     Sample - ` "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"`
+#' @param ComputeStatistics The compute statistics for a `DataSource`. The statistics are generated from the observation data referenced by a `DataSource`. Amazon ML uses the statistics internally during `MLModel` training. This parameter must be set to `true` if the ``DataSource`` needs to be used for `MLModel` training.
 #'
 #' @keywords internal
 #'
@@ -312,10 +250,8 @@ machinelearning_create_data_source_from_s3 <- function(DataSourceId, DataSourceN
 #' @param EvaluationName A user-supplied name or description of the `Evaluation`.
 #' @param MLModelId &#91;required&#93; The ID of the `MLModel` to evaluate.
 #' 
-#' The schema used in creating the `MLModel` must match the schema of the
-#' `DataSource` used in the `Evaluation`.
-#' @param EvaluationDataSourceId &#91;required&#93; The ID of the `DataSource` for the evaluation. The schema of the
-#' `DataSource` must match the schema used to create the `MLModel`.
+#' The schema used in creating the `MLModel` must match the schema of the `DataSource` used in the `Evaluation`.
+#' @param EvaluationDataSourceId &#91;required&#93; The ID of the `DataSource` for the evaluation. The schema of the `DataSource` must match the schema used to create the `MLModel`.
 #'
 #' @keywords internal
 #'
@@ -349,68 +285,37 @@ machinelearning_create_evaluation <- function(EvaluationId, EvaluationName = NUL
 #'
 #' @param MLModelId &#91;required&#93; A user-supplied ID that uniquely identifies the `MLModel`.
 #' @param MLModelName A user-supplied name or description of the `MLModel`.
-#' @param MLModelType &#91;required&#93; The category of supervised learning that this `MLModel` will address.
-#' Choose from the following types:
+#' @param MLModelType &#91;required&#93; The category of supervised learning that this `MLModel` will address. Choose from the following types:
 #' 
-#' -   Choose `REGRESSION` if the `MLModel` will be used to predict a
-#'     numeric value.
+#' -   Choose `REGRESSION` if the `MLModel` will be used to predict a numeric value.
 #' 
 #' -   Choose `BINARY` if the `MLModel` result has two possible values.
 #' 
-#' -   Choose `MULTICLASS` if the `MLModel` result has a limited number of
-#'     values.
+#' -   Choose `MULTICLASS` if the `MLModel` result has a limited number of values.
 #' 
-#' For more information, see the [Amazon Machine Learning Developer
-#' Guide](https://docs.aws.amazon.com/machine-learning/latest/dg/).
-#' @param Parameters A list of the training parameters in the `MLModel`. The list is
-#' implemented as a map of key-value pairs.
+#' For more information, see the [Amazon Machine Learning Developer Guide](https://docs.aws.amazon.com/machine-learning/latest/dg/).
+#' @param Parameters A list of the training parameters in the `MLModel`. The list is implemented as a map of key-value pairs.
 #' 
 #' The following is the current set of training parameters:
 #' 
-#' -   `sgd.maxMLModelSizeInBytes` - The maximum allowed size of the model.
-#'     Depending on the input data, the size of the model might affect its
-#'     performance.
+#' -   `sgd.maxMLModelSizeInBytes` - The maximum allowed size of the model. Depending on the input data, the size of the model might affect its performance.
 #' 
-#'     The value is an integer that ranges from `100000` to `2147483648`.
-#'     The default value is `33554432`.
+#'     The value is an integer that ranges from `100000` to `2147483648`. The default value is `33554432`.
 #' 
-#' -   `sgd.maxPasses` - The number of times that the training process
-#'     traverses the observations to build the `MLModel`. The value is an
-#'     integer that ranges from `1` to `10000`. The default value is `10`.
+#' -   `sgd.maxPasses` - The number of times that the training process traverses the observations to build the `MLModel`. The value is an integer that ranges from `1` to `10000`. The default value is `10`.
 #' 
-#' -   `sgd.shuffleType` - Whether Amazon ML shuffles the training data.
-#'     Shuffling the data improves a model's ability to find the optimal
-#'     solution for a variety of data types. The valid values are `auto`
-#'     and `none`. The default value is `none`. We strongly recommend that
-#'     you shuffle your data.
+#' -   `sgd.shuffleType` - Whether Amazon ML shuffles the training data. Shuffling the data improves a model's ability to find the optimal solution for a variety of data types. The valid values are `auto` and `none`. The default value is `none`. We strongly recommend that you shuffle your data.
 #' 
-#' -   `sgd.l1RegularizationAmount` - The coefficient regularization L1
-#'     norm. It controls overfitting the data by penalizing large
-#'     coefficients. This tends to drive coefficients to zero, resulting in
-#'     a sparse feature set. If you use this parameter, start by specifying
-#'     a small value, such as `1.0E-08`.
+#' -   `sgd.l1RegularizationAmount` - The coefficient regularization L1 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to zero, resulting in a sparse feature set. If you use this parameter, start by specifying a small value, such as `1.0E-08`.
 #' 
-#'     The value is a double that ranges from `0` to `MAX_DOUBLE`. The
-#'     default is to not use L1 normalization. This parameter can't be used
-#'     when `L2` is specified. Use this parameter sparingly.
+#'     The value is a double that ranges from `0` to `MAX_DOUBLE`. The default is to not use L1 normalization. This parameter can't be used when `L2` is specified. Use this parameter sparingly.
 #' 
-#' -   `sgd.l2RegularizationAmount` - The coefficient regularization L2
-#'     norm. It controls overfitting the data by penalizing large
-#'     coefficients. This tends to drive coefficients to small, nonzero
-#'     values. If you use this parameter, start by specifying a small
-#'     value, such as `1.0E-08`.
+#' -   `sgd.l2RegularizationAmount` - The coefficient regularization L2 norm. It controls overfitting the data by penalizing large coefficients. This tends to drive coefficients to small, nonzero values. If you use this parameter, start by specifying a small value, such as `1.0E-08`.
 #' 
-#'     The value is a double that ranges from `0` to `MAX_DOUBLE`. The
-#'     default is to not use L2 normalization. This parameter can't be used
-#'     when `L1` is specified. Use this parameter sparingly.
+#'     The value is a double that ranges from `0` to `MAX_DOUBLE`. The default is to not use L2 normalization. This parameter can't be used when `L1` is specified. Use this parameter sparingly.
 #' @param TrainingDataSourceId &#91;required&#93; The `DataSource` that points to the training data.
-#' @param Recipe The data recipe for creating the `MLModel`. You must specify either the
-#' recipe or its URI. If you don't specify a recipe or its URI, Amazon ML
-#' creates a default.
-#' @param RecipeUri The Amazon Simple Storage Service (Amazon S3) location and file name
-#' that contains the `MLModel` recipe. You must specify either the recipe
-#' or its URI. If you don't specify a recipe or its URI, Amazon ML creates
-#' a default.
+#' @param Recipe The data recipe for creating the `MLModel`. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.
+#' @param RecipeUri The Amazon Simple Storage Service (Amazon S3) location and file name that contains the `MLModel` recipe. You must specify either the recipe or its URI. If you don't specify a recipe or its URI, Amazon ML creates a default.
 #'
 #' @keywords internal
 #'
@@ -661,61 +566,37 @@ machinelearning_delete_tags <- function(TagKeys, ResourceId, ResourceType) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_describe_batch_predictions/](https://www.paws-r-sdk.com/docs/machinelearning_describe_batch_predictions/) for full documentation.
 #'
-#' @param FilterVariable Use one of the following variables to filter a list of
-#' `BatchPrediction`:
+#' @param FilterVariable Use one of the following variables to filter a list of `BatchPrediction`:
 #' 
-#' -   `CreatedAt` - Sets the search criteria to the `BatchPrediction`
-#'     creation date.
+#' -   `CreatedAt` - Sets the search criteria to the `BatchPrediction` creation date.
 #' 
 #' -   `Status` - Sets the search criteria to the `BatchPrediction` status.
 #' 
-#' -   `Name` - Sets the search criteria to the contents of the
-#'     `BatchPrediction` `Name`.
+#' -   `Name` - Sets the search criteria to the contents of the `BatchPrediction` `Name`.
 #' 
-#' -   `IAMUser` - Sets the search criteria to the user account that
-#'     invoked the `BatchPrediction` creation.
+#' -   `IAMUser` - Sets the search criteria to the user account that invoked the `BatchPrediction` creation.
 #' 
-#' -   `MLModelId` - Sets the search criteria to the `MLModel` used in the
-#'     `BatchPrediction`.
+#' -   `MLModelId` - Sets the search criteria to the `MLModel` used in the `BatchPrediction`.
 #' 
-#' -   `DataSourceId` - Sets the search criteria to the `DataSource` used
-#'     in the `BatchPrediction`.
+#' -   `DataSourceId` - Sets the search criteria to the `DataSource` used in the `BatchPrediction`.
 #' 
-#' -   `DataURI` - Sets the search criteria to the data file(s) used in the
-#'     `BatchPrediction`. The URL can identify either a file or an Amazon
-#'     Simple Storage Solution (Amazon S3) bucket or directory.
-#' @param EQ The equal to operator. The `BatchPrediction` results will have
-#' `FilterVariable` values that exactly match the value specified with
-#' `EQ`.
-#' @param GT The greater than operator. The `BatchPrediction` results will have
-#' `FilterVariable` values that are greater than the value specified with
-#' `GT`.
-#' @param LT The less than operator. The `BatchPrediction` results will have
-#' `FilterVariable` values that are less than the value specified with
-#' `LT`.
-#' @param GE The greater than or equal to operator. The `BatchPrediction` results
-#' will have `FilterVariable` values that are greater than or equal to the
-#' value specified with `GE`.
-#' @param LE The less than or equal to operator. The `BatchPrediction` results will
-#' have `FilterVariable` values that are less than or equal to the value
-#' specified with `LE`.
-#' @param NE The not equal to operator. The `BatchPrediction` results will have
-#' `FilterVariable` values not equal to the value specified with `NE`.
-#' @param Prefix A string that is found at the beginning of a variable, such as `Name` or
-#' `Id`.
+#' -   `DataURI` - Sets the search criteria to the data file(s) used in the `BatchPrediction`. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+#' @param EQ The equal to operator. The `BatchPrediction` results will have `FilterVariable` values that exactly match the value specified with `EQ`.
+#' @param GT The greater than operator. The `BatchPrediction` results will have `FilterVariable` values that are greater than the value specified with `GT`.
+#' @param LT The less than operator. The `BatchPrediction` results will have `FilterVariable` values that are less than the value specified with `LT`.
+#' @param GE The greater than or equal to operator. The `BatchPrediction` results will have `FilterVariable` values that are greater than or equal to the value specified with `GE`.
+#' @param LE The less than or equal to operator. The `BatchPrediction` results will have `FilterVariable` values that are less than or equal to the value specified with `LE`.
+#' @param NE The not equal to operator. The `BatchPrediction` results will have `FilterVariable` values not equal to the value specified with `NE`.
+#' @param Prefix A string that is found at the beginning of a variable, such as `Name` or `Id`.
 #' 
-#' For example, a `Batch Prediction` operation could have the `Name`
-#' `2014-09-09-HolidayGiftMailer`. To search for this `BatchPrediction`,
-#' select `Name` for the `FilterVariable` and any of the following strings
-#' for the `Prefix`:
+#' For example, a `Batch Prediction` operation could have the `Name` `2014-09-09-HolidayGiftMailer`. To search for this `BatchPrediction`, select `Name` for the `FilterVariable` and any of the following strings for the `Prefix`:
 #' 
 #' -   2014-09
 #' 
 #' -   2014-09-09
 #' 
 #' -   2014-09-09-Holiday
-#' @param SortOrder A two-value parameter that determines the sequence of the resulting list
-#' of `MLModel`s.
+#' @param SortOrder A two-value parameter that determines the sequence of the resulting list of `MLModel`s.
 #' 
 #' -   `asc` - Arranges the list in ascending order (A-Z, 0-9).
 #' 
@@ -723,8 +604,7 @@ machinelearning_delete_tags <- function(TagKeys, ResourceId, ResourceType) {
 #' 
 #' Results are sorted by `FilterVariable`.
 #' @param NextToken An ID of the page in the paginated results.
-#' @param Limit The number of pages of information to include in the result. The range
-#' of acceptable values is `1` through `100`. The default value is `100`.
+#' @param Limit The number of pages of information to include in the result. The range of acceptable values is `1` through `100`. The default value is `100`.
 #'
 #' @keywords internal
 #'
@@ -758,52 +638,31 @@ machinelearning_describe_batch_predictions <- function(FilterVariable = NULL, EQ
 #'
 #' @param FilterVariable Use one of the following variables to filter a list of `DataSource`:
 #' 
-#' -   `CreatedAt` - Sets the search criteria to `DataSource` creation
-#'     dates.
+#' -   `CreatedAt` - Sets the search criteria to `DataSource` creation dates.
 #' 
 #' -   `Status` - Sets the search criteria to `DataSource` statuses.
 #' 
-#' -   `Name` - Sets the search criteria to the contents of `DataSource`
-#'     `Name`.
+#' -   `Name` - Sets the search criteria to the contents of `DataSource` `Name`.
 #' 
-#' -   `DataUri` - Sets the search criteria to the URI of data files used
-#'     to create the `DataSource`. The URI can identify either a file or an
-#'     Amazon Simple Storage Service (Amazon S3) bucket or directory.
+#' -   `DataUri` - Sets the search criteria to the URI of data files used to create the `DataSource`. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
 #' 
-#' -   `IAMUser` - Sets the search criteria to the user account that
-#'     invoked the `DataSource` creation.
-#' @param EQ The equal to operator. The `DataSource` results will have
-#' `FilterVariable` values that exactly match the value specified with
-#' `EQ`.
-#' @param GT The greater than operator. The `DataSource` results will have
-#' `FilterVariable` values that are greater than the value specified with
-#' `GT`.
-#' @param LT The less than operator. The `DataSource` results will have
-#' `FilterVariable` values that are less than the value specified with
-#' `LT`.
-#' @param GE The greater than or equal to operator. The `DataSource` results will
-#' have `FilterVariable` values that are greater than or equal to the value
-#' specified with `GE`.
-#' @param LE The less than or equal to operator. The `DataSource` results will have
-#' `FilterVariable` values that are less than or equal to the value
-#' specified with `LE`.
-#' @param NE The not equal to operator. The `DataSource` results will have
-#' `FilterVariable` values not equal to the value specified with `NE`.
-#' @param Prefix A string that is found at the beginning of a variable, such as `Name` or
-#' `Id`.
+#' -   `IAMUser` - Sets the search criteria to the user account that invoked the `DataSource` creation.
+#' @param EQ The equal to operator. The `DataSource` results will have `FilterVariable` values that exactly match the value specified with `EQ`.
+#' @param GT The greater than operator. The `DataSource` results will have `FilterVariable` values that are greater than the value specified with `GT`.
+#' @param LT The less than operator. The `DataSource` results will have `FilterVariable` values that are less than the value specified with `LT`.
+#' @param GE The greater than or equal to operator. The `DataSource` results will have `FilterVariable` values that are greater than or equal to the value specified with `GE`.
+#' @param LE The less than or equal to operator. The `DataSource` results will have `FilterVariable` values that are less than or equal to the value specified with `LE`.
+#' @param NE The not equal to operator. The `DataSource` results will have `FilterVariable` values not equal to the value specified with `NE`.
+#' @param Prefix A string that is found at the beginning of a variable, such as `Name` or `Id`.
 #' 
-#' For example, a `DataSource` could have the `Name`
-#' `2014-09-09-HolidayGiftMailer`. To search for this `DataSource`, select
-#' `Name` for the `FilterVariable` and any of the following strings for the
-#' `Prefix`:
+#' For example, a `DataSource` could have the `Name` `2014-09-09-HolidayGiftMailer`. To search for this `DataSource`, select `Name` for the `FilterVariable` and any of the following strings for the `Prefix`:
 #' 
 #' -   2014-09
 #' 
 #' -   2014-09-09
 #' 
 #' -   2014-09-09-Holiday
-#' @param SortOrder A two-value parameter that determines the sequence of the resulting list
-#' of `DataSource`.
+#' @param SortOrder A two-value parameter that determines the sequence of the resulting list of `DataSource`.
 #' 
 #' -   `asc` - Arranges the list in ascending order (A-Z, 0-9).
 #' 
@@ -843,61 +702,37 @@ machinelearning_describe_data_sources <- function(FilterVariable = NULL, EQ = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_describe_evaluations/](https://www.paws-r-sdk.com/docs/machinelearning_describe_evaluations/) for full documentation.
 #'
-#' @param FilterVariable Use one of the following variable to filter a list of `Evaluation`
-#' objects:
+#' @param FilterVariable Use one of the following variable to filter a list of `Evaluation` objects:
 #' 
-#' -   `CreatedAt` - Sets the search criteria to the `Evaluation` creation
-#'     date.
+#' -   `CreatedAt` - Sets the search criteria to the `Evaluation` creation date.
 #' 
 #' -   `Status` - Sets the search criteria to the `Evaluation` status.
 #' 
-#' -   `Name` - Sets the search criteria to the contents of `Evaluation`
-#'     `Name`.
+#' -   `Name` - Sets the search criteria to the contents of `Evaluation` `Name`.
 #' 
-#' -   `IAMUser` - Sets the search criteria to the user account that
-#'     invoked an `Evaluation`.
+#' -   `IAMUser` - Sets the search criteria to the user account that invoked an `Evaluation`.
 #' 
-#' -   `MLModelId` - Sets the search criteria to the `MLModel` that was
-#'     evaluated.
+#' -   `MLModelId` - Sets the search criteria to the `MLModel` that was evaluated.
 #' 
-#' -   `DataSourceId` - Sets the search criteria to the `DataSource` used
-#'     in `Evaluation`.
+#' -   `DataSourceId` - Sets the search criteria to the `DataSource` used in `Evaluation`.
 #' 
-#' -   `DataUri` - Sets the search criteria to the data file(s) used in
-#'     `Evaluation`. The URL can identify either a file or an Amazon Simple
-#'     Storage Solution (Amazon S3) bucket or directory.
-#' @param EQ The equal to operator. The `Evaluation` results will have
-#' `FilterVariable` values that exactly match the value specified with
-#' `EQ`.
-#' @param GT The greater than operator. The `Evaluation` results will have
-#' `FilterVariable` values that are greater than the value specified with
-#' `GT`.
-#' @param LT The less than operator. The `Evaluation` results will have
-#' `FilterVariable` values that are less than the value specified with
-#' `LT`.
-#' @param GE The greater than or equal to operator. The `Evaluation` results will
-#' have `FilterVariable` values that are greater than or equal to the value
-#' specified with `GE`.
-#' @param LE The less than or equal to operator. The `Evaluation` results will have
-#' `FilterVariable` values that are less than or equal to the value
-#' specified with `LE`.
-#' @param NE The not equal to operator. The `Evaluation` results will have
-#' `FilterVariable` values not equal to the value specified with `NE`.
-#' @param Prefix A string that is found at the beginning of a variable, such as `Name` or
-#' `Id`.
+#' -   `DataUri` - Sets the search criteria to the data file(s) used in `Evaluation`. The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3) bucket or directory.
+#' @param EQ The equal to operator. The `Evaluation` results will have `FilterVariable` values that exactly match the value specified with `EQ`.
+#' @param GT The greater than operator. The `Evaluation` results will have `FilterVariable` values that are greater than the value specified with `GT`.
+#' @param LT The less than operator. The `Evaluation` results will have `FilterVariable` values that are less than the value specified with `LT`.
+#' @param GE The greater than or equal to operator. The `Evaluation` results will have `FilterVariable` values that are greater than or equal to the value specified with `GE`.
+#' @param LE The less than or equal to operator. The `Evaluation` results will have `FilterVariable` values that are less than or equal to the value specified with `LE`.
+#' @param NE The not equal to operator. The `Evaluation` results will have `FilterVariable` values not equal to the value specified with `NE`.
+#' @param Prefix A string that is found at the beginning of a variable, such as `Name` or `Id`.
 #' 
-#' For example, an `Evaluation` could have the `Name`
-#' `2014-09-09-HolidayGiftMailer`. To search for this `Evaluation`, select
-#' `Name` for the `FilterVariable` and any of the following strings for the
-#' `Prefix`:
+#' For example, an `Evaluation` could have the `Name` `2014-09-09-HolidayGiftMailer`. To search for this `Evaluation`, select `Name` for the `FilterVariable` and any of the following strings for the `Prefix`:
 #' 
 #' -   2014-09
 #' 
 #' -   2014-09-09
 #' 
 #' -   2014-09-09-Holiday
-#' @param SortOrder A two-value parameter that determines the sequence of the resulting list
-#' of `Evaluation`.
+#' @param SortOrder A two-value parameter that determines the sequence of the resulting list of `Evaluation`.
 #' 
 #' -   `asc` - Arranges the list in ascending order (A-Z, 0-9).
 #' 
@@ -942,57 +777,35 @@ machinelearning_describe_evaluations <- function(FilterVariable = NULL, EQ = NUL
 #' 
 #' -   `Status` - Sets the search criteria to `MLModel` status.
 #' 
-#' -   `Name` - Sets the search criteria to the contents of `MLModel`
-#'     `Name`.
+#' -   `Name` - Sets the search criteria to the contents of `MLModel` `Name`.
 #' 
-#' -   `IAMUser` - Sets the search criteria to the user account that
-#'     invoked the `MLModel` creation.
+#' -   `IAMUser` - Sets the search criteria to the user account that invoked the `MLModel` creation.
 #' 
-#' -   `TrainingDataSourceId` - Sets the search criteria to the
-#'     `DataSource` used to train one or more `MLModel`.
+#' -   `TrainingDataSourceId` - Sets the search criteria to the `DataSource` used to train one or more `MLModel`.
 #' 
-#' -   `RealtimeEndpointStatus` - Sets the search criteria to the `MLModel`
-#'     real-time endpoint status.
+#' -   `RealtimeEndpointStatus` - Sets the search criteria to the `MLModel` real-time endpoint status.
 #' 
-#' -   `MLModelType` - Sets the search criteria to `MLModel` type: binary,
-#'     regression, or multi-class.
+#' -   `MLModelType` - Sets the search criteria to `MLModel` type: binary, regression, or multi-class.
 #' 
-#' -   `Algorithm` - Sets the search criteria to the algorithm that the
-#'     `MLModel` uses.
+#' -   `Algorithm` - Sets the search criteria to the algorithm that the `MLModel` uses.
 #' 
-#' -   `TrainingDataURI` - Sets the search criteria to the data file(s)
-#'     used in training a `MLModel`. The URL can identify either a file or
-#'     an Amazon Simple Storage Service (Amazon S3) bucket or directory.
-#' @param EQ The equal to operator. The `MLModel` results will have `FilterVariable`
-#' values that exactly match the value specified with `EQ`.
-#' @param GT The greater than operator. The `MLModel` results will have
-#' `FilterVariable` values that are greater than the value specified with
-#' `GT`.
-#' @param LT The less than operator. The `MLModel` results will have `FilterVariable`
-#' values that are less than the value specified with `LT`.
-#' @param GE The greater than or equal to operator. The `MLModel` results will have
-#' `FilterVariable` values that are greater than or equal to the value
-#' specified with `GE`.
-#' @param LE The less than or equal to operator. The `MLModel` results will have
-#' `FilterVariable` values that are less than or equal to the value
-#' specified with `LE`.
-#' @param NE The not equal to operator. The `MLModel` results will have
-#' `FilterVariable` values not equal to the value specified with `NE`.
-#' @param Prefix A string that is found at the beginning of a variable, such as `Name` or
-#' `Id`.
+#' -   `TrainingDataURI` - Sets the search criteria to the data file(s) used in training a `MLModel`. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket or directory.
+#' @param EQ The equal to operator. The `MLModel` results will have `FilterVariable` values that exactly match the value specified with `EQ`.
+#' @param GT The greater than operator. The `MLModel` results will have `FilterVariable` values that are greater than the value specified with `GT`.
+#' @param LT The less than operator. The `MLModel` results will have `FilterVariable` values that are less than the value specified with `LT`.
+#' @param GE The greater than or equal to operator. The `MLModel` results will have `FilterVariable` values that are greater than or equal to the value specified with `GE`.
+#' @param LE The less than or equal to operator. The `MLModel` results will have `FilterVariable` values that are less than or equal to the value specified with `LE`.
+#' @param NE The not equal to operator. The `MLModel` results will have `FilterVariable` values not equal to the value specified with `NE`.
+#' @param Prefix A string that is found at the beginning of a variable, such as `Name` or `Id`.
 #' 
-#' For example, an `MLModel` could have the `Name`
-#' `2014-09-09-HolidayGiftMailer`. To search for this `MLModel`, select
-#' `Name` for the `FilterVariable` and any of the following strings for the
-#' `Prefix`:
+#' For example, an `MLModel` could have the `Name` `2014-09-09-HolidayGiftMailer`. To search for this `MLModel`, select `Name` for the `FilterVariable` and any of the following strings for the `Prefix`:
 #' 
 #' -   2014-09
 #' 
 #' -   2014-09-09
 #' 
 #' -   2014-09-09-Holiday
-#' @param SortOrder A two-value parameter that determines the sequence of the resulting list
-#' of `MLModel`.
+#' @param SortOrder A two-value parameter that determines the sequence of the resulting list of `MLModel`.
 #' 
 #' -   `asc` - Arranges the list in ascending order (A-Z, 0-9).
 #' 
@@ -1000,8 +813,7 @@ machinelearning_describe_evaluations <- function(FilterVariable = NULL, EQ = NUL
 #' 
 #' Results are sorted by `FilterVariable`.
 #' @param NextToken The ID of the page in the paginated results.
-#' @param Limit The number of pages of information to include in the result. The range
-#' of acceptable values is `1` through `100`. The default value is `100`.
+#' @param Limit The number of pages of information to include in the result. The range of acceptable values is `1` through `100`. The default value is `100`.
 #'
 #' @keywords internal
 #'
@@ -1098,9 +910,7 @@ machinelearning_get_batch_prediction <- function(BatchPredictionId) {
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_get_data_source/](https://www.paws-r-sdk.com/docs/machinelearning_get_data_source/) for full documentation.
 #'
 #' @param DataSourceId &#91;required&#93; The ID assigned to the `DataSource` at creation.
-#' @param Verbose Specifies whether the
-#' [`get_data_source`][machinelearning_get_data_source] operation should
-#' return `DataSourceSchema`.
+#' @param Verbose Specifies whether the [`get_data_source`][machinelearning_get_data_source] operation should return `DataSourceSchema`.
 #' 
 #' If true, `DataSourceSchema` is returned.
 #' 
@@ -1136,9 +946,7 @@ machinelearning_get_data_source <- function(DataSourceId, Verbose = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_get_evaluation/](https://www.paws-r-sdk.com/docs/machinelearning_get_evaluation/) for full documentation.
 #'
-#' @param EvaluationId &#91;required&#93; The ID of the `Evaluation` to retrieve. The evaluation of each `MLModel`
-#' is recorded and cataloged. The ID provides the means to access the
-#' information.
+#' @param EvaluationId &#91;required&#93; The ID of the `Evaluation` to retrieve. The evaluation of each `MLModel` is recorded and cataloged. The ID provides the means to access the information.
 #'
 #' @keywords internal
 #'
@@ -1171,8 +979,7 @@ machinelearning_get_evaluation <- function(EvaluationId) {
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_get_ml_model/](https://www.paws-r-sdk.com/docs/machinelearning_get_ml_model/) for full documentation.
 #'
 #' @param MLModelId &#91;required&#93; The ID assigned to the `MLModel` at creation.
-#' @param Verbose Specifies whether the [`get_ml_model`][machinelearning_get_ml_model]
-#' operation should return `Recipe`.
+#' @param Verbose Specifies whether the [`get_ml_model`][machinelearning_get_ml_model] operation should return `Recipe`.
 #' 
 #' If true, `Recipe` is returned.
 #' 
@@ -1208,7 +1015,7 @@ machinelearning_get_ml_model <- function(MLModelId, Verbose = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_predict/](https://www.paws-r-sdk.com/docs/machinelearning_predict/) for full documentation.
 #'
 #' @param MLModelId &#91;required&#93; A unique identifier of the `MLModel`.
-#' @param Record &#91;required&#93; 
+#' @param Record &#91;required&#93; A map of variable name-value pairs that represent an observation.
 #' @param PredictEndpoint &#91;required&#93; 
 #'
 #' @keywords internal
@@ -1273,8 +1080,7 @@ machinelearning_update_batch_prediction <- function(BatchPredictionId, BatchPred
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_update_data_source/](https://www.paws-r-sdk.com/docs/machinelearning_update_data_source/) for full documentation.
 #'
 #' @param DataSourceId &#91;required&#93; The ID assigned to the `DataSource` during creation.
-#' @param DataSourceName &#91;required&#93; A new user-supplied name or description of the `DataSource` that will
-#' replace the current description.
+#' @param DataSourceName &#91;required&#93; A new user-supplied name or description of the `DataSource` that will replace the current description.
 #'
 #' @keywords internal
 #'
@@ -1306,8 +1112,7 @@ machinelearning_update_data_source <- function(DataSourceId, DataSourceName) {
 #' See [https://www.paws-r-sdk.com/docs/machinelearning_update_evaluation/](https://www.paws-r-sdk.com/docs/machinelearning_update_evaluation/) for full documentation.
 #'
 #' @param EvaluationId &#91;required&#93; The ID assigned to the `Evaluation` during creation.
-#' @param EvaluationName &#91;required&#93; A new user-supplied name or description of the `Evaluation` that will
-#' replace the current content.
+#' @param EvaluationName &#91;required&#93; A new user-supplied name or description of the `Evaluation` that will replace the current content.
 #'
 #' @keywords internal
 #'
@@ -1340,13 +1145,9 @@ machinelearning_update_evaluation <- function(EvaluationId, EvaluationName) {
 #'
 #' @param MLModelId &#91;required&#93; The ID assigned to the `MLModel` during creation.
 #' @param MLModelName A user-supplied name or description of the `MLModel`.
-#' @param ScoreThreshold The `ScoreThreshold` used in binary classification `MLModel` that marks
-#' the boundary between a positive prediction and a negative prediction.
+#' @param ScoreThreshold The `ScoreThreshold` used in binary classification `MLModel` that marks the boundary between a positive prediction and a negative prediction.
 #' 
-#' Output values greater than or equal to the `ScoreThreshold` receive a
-#' positive result from the `MLModel`, such as `true`. Output values less
-#' than the `ScoreThreshold` receive a negative response from the
-#' `MLModel`, such as `false`.
+#' Output values greater than or equal to the `ScoreThreshold` receive a positive result from the `MLModel`, such as `true`. Output values less than the `ScoreThreshold` receive a negative response from the `MLModel`, such as `false`.
 #'
 #' @keywords internal
 #'

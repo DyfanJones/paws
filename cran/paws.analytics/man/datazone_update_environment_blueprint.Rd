@@ -13,22 +13,15 @@ datazone_update_environment_blueprint(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which an environment
-blueprint is to be updated.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which an environment blueprint is to be updated.}
 
 \item{identifier}{[required] The identifier of the environment blueprint to be updated.}
 
-\item{description}{The description to be updated as part of the
-\code{\link[=datazone_update_environment_blueprint]{update_environment_blueprint}}
-action.}
+\item{description}{The description to be updated as part of the \code{\link[=datazone_update_environment_blueprint]{update_environment_blueprint}} action.}
 
-\item{provisioningProperties}{The provisioning properties to be updated as part of the
-\code{\link[=datazone_update_environment_blueprint]{update_environment_blueprint}}
-action.}
+\item{provisioningProperties}{The provisioning properties to be updated as part of the \code{\link[=datazone_update_environment_blueprint]{update_environment_blueprint}} action.}
 
-\item{userParameters}{The user parameters to be updated as part of the
-\code{\link[=datazone_update_environment_blueprint]{update_environment_blueprint}}
-action.}
+\item{userParameters}{The user parameters to be updated as part of the \code{\link[=datazone_update_environment_blueprint]{update_environment_blueprint}} action.}
 }
 \description{
 Updates an environment blueprint in Amazon DataZone.

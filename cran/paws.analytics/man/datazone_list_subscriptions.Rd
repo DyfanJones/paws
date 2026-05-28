@@ -23,16 +23,13 @@ datazone_list_subscriptions(
 \arguments{
 \item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain.}
 
-\item{subscriptionRequestIdentifier}{The identifier of the subscription request for the subscriptions that
-you want to list.}
+\item{subscriptionRequestIdentifier}{The identifier of the subscription request for the subscriptions that you want to list.}
 
 \item{status}{The status of the subscriptions that you want to list.
 
-This is not a required parameter, but if not provided, by default,
-Amazon DataZone returns only \code{APPROVED} subscriptions.}
+This is not a required parameter, but if not provided, by default, Amazon DataZone returns only \code{APPROVED} subscriptions.}
 
-\item{subscribedListingId}{The identifier of the subscribed listing for the subscriptions that you
-want to list.}
+\item{subscribedListingId}{The identifier of the subscribed listing for the subscriptions that you want to list.}
 
 \item{owningProjectId}{The identifier of the owning project.}
 
@@ -48,20 +45,9 @@ want to list.}
 
 \item{sortOrder}{Specifies the sort order for the results of this action.}
 
-\item{maxResults}{The maximum number of subscriptions to return in a single call to
-\code{\link[=datazone_list_subscriptions]{list_subscriptions}}. When the number of
-subscriptions to be listed is greater than the value of \code{MaxResults},
-the response contains a \code{NextToken} value that you can use in a
-subsequent call to \code{\link[=datazone_list_subscriptions]{list_subscriptions}}
-to list the next set of Subscriptions.}
+\item{maxResults}{The maximum number of subscriptions to return in a single call to \code{\link[=datazone_list_subscriptions]{list_subscriptions}}. When the number of subscriptions to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_subscriptions]{list_subscriptions}} to list the next set of Subscriptions.}
 
-\item{nextToken}{When the number of subscriptions is greater than the default value for
-the \code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of subscriptions, the response
-includes a pagination token named \code{NextToken}. You can specify this
-\code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_subscriptions]{list_subscriptions}} to list the next set
-of subscriptions.}
+\item{nextToken}{When the number of subscriptions is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of subscriptions, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_subscriptions]{list_subscriptions}} to list the next set of subscriptions.}
 }
 \description{
 Lists subscriptions in Amazon DataZone.

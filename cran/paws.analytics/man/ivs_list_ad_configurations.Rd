@@ -8,11 +8,9 @@ the AWS region where the API request is processed}
 ivs_list_ad_configurations(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{The first ad configuration to retrieve. This is used for pagination; see
-the \code{nextToken} response field.}
+\item{nextToken}{The first ad configuration to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
-\item{maxResults}{Maximum number of ad configurations to return. Default: your service
-quota or 100, whichever is smaller.}
+\item{maxResults}{Maximum number of ad configurations to return. Default: your service quota or 100, whichever is smaller.}
 }
 \description{
 Gets summary information about all ad configurations in your account, in the AWS region where the API request is processed.

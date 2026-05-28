@@ -16,8 +16,7 @@ quicksight_create_folder(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account where you want to create the
-folder.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account where you want to create the folder.}
 
 \item{FolderId}{[required] The ID of the folder.}
 
@@ -27,18 +26,15 @@ folder.}
 
 \item{ParentFolderArn}{The Amazon Resource Name (ARN) for the parent folder.
 
-\code{ParentFolderArn} can be null. An empty \code{parentFolderArn} creates a
-root-level folder.}
+\code{ParentFolderArn} can be null. An empty \code{parentFolderArn} creates a root-level folder.}
 
-\item{Permissions}{A structure that describes the principals and the resource-level
-permissions of a folder.
+\item{Permissions}{A structure that describes the principals and the resource-level permissions of a folder.
 
 To specify no permissions, omit \code{Permissions}.}
 
 \item{Tags}{Tags for the folder.}
 
-\item{SharingModel}{An optional parameter that determines the sharing scope of the folder.
-The default value for this parameter is \code{ACCOUNT}.}
+\item{SharingModel}{An optional parameter that determines the sharing scope of the folder. The default value for this parameter is \code{ACCOUNT}.}
 }
 \description{
 Creates an empty shared folder.

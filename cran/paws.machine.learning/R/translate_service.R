@@ -5,8 +5,7 @@ NULL
 #' Amazon Translate
 #'
 #' @description
-#' Provides translation of the input content from the source language to
-#' the target language.
+#' Provides translation of the input content from the source language to the target language.
 #'
 #' @param
 #' config

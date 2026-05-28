@@ -16,23 +16,17 @@ sagemaker_list_model_card_versions(
 )
 }
 \arguments{
-\item{CreationTimeAfter}{Only list model card versions that were created after the time
-specified.}
+\item{CreationTimeAfter}{Only list model card versions that were created after the time specified.}
 
-\item{CreationTimeBefore}{Only list model card versions that were created before the time
-specified.}
+\item{CreationTimeBefore}{Only list model card versions that were created before the time specified.}
 
 \item{MaxResults}{The maximum number of model card versions to list.}
 
-\item{ModelCardName}{[required] List model card versions for the model card with the specified name or
-Amazon Resource Name (ARN).}
+\item{ModelCardName}{[required] List model card versions for the model card with the specified name or Amazon Resource Name (ARN).}
 
 \item{ModelCardStatus}{Only list model card versions with the specified approval status.}
 
-\item{NextToken}{If the response to a previous
-\code{\link[=sagemaker_list_model_card_versions]{list_model_card_versions}} request
-was truncated, the response includes a \code{NextToken}. To retrieve the next
-set of model card versions, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_model_card_versions]{list_model_card_versions}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of model card versions, use the token in the next request.}
 
 \item{SortBy}{Sort listed model card versions by version. Sorts by version by default.}
 

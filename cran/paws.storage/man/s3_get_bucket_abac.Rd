@@ -10,8 +10,7 @@ s3_get_bucket_abac(Bucket, ExpectedBucketOwner = NULL)
 \arguments{
 \item{Bucket}{[required] The name of the general purpose bucket.}
 
-\item{ExpectedBucketOwner}{The Amazon Web Services account ID of the general purpose bucket's
-owner.}
+\item{ExpectedBucketOwner}{The Amazon Web Services account ID of the general purpose bucket's owner.}
 }
 \description{
 Returns the attribute-based access control (ABAC) property of the general purpose bucket. If ABAC is enabled on your bucket, you can use tags on the bucket for access control. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/buckets-tagging-enable-abac.html}{Enabling ABAC in general purpose buckets}.

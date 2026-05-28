@@ -2,7 +2,7 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_search_contact_evaluations}
 \alias{connect_search_contact_evaluations}
-\title{Searches contact evaluations in an Amazon Connect instance, with
+\title{Searches contact evaluations in an Connect Customer instance, with
 optional filtering}
 \usage{
 connect_search_contact_evaluations(
@@ -14,12 +14,9 @@ connect_search_contact_evaluations(
 )
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return per page.}
 
@@ -28,7 +25,7 @@ results.}
 \item{SearchFilter}{Filters to be applied to search results.}
 }
 \description{
-Searches contact evaluations in an Amazon Connect instance, with optional filtering.
+Searches contact evaluations in an Connect Customer instance, with optional filtering.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_search_contact_evaluations/} for full documentation.
 }

@@ -7,12 +7,9 @@
 dynamodbstreams_get_records(ShardIterator, Limit = NULL)
 }
 \arguments{
-\item{ShardIterator}{[required] A shard iterator that was retrieved from a previous GetShardIterator
-operation. This iterator can be used to access the stream records in
-this shard.}
+\item{ShardIterator}{[required] A shard iterator that was retrieved from a previous GetShardIterator operation. This iterator can be used to access the stream records in this shard.}
 
-\item{Limit}{The maximum number of records to return from the shard. The upper limit
-is 1000.}
+\item{Limit}{The maximum number of records to return from the shard. The upper limit is 1000.}
 }
 \description{
 Retrieves the stream records from a given shard.

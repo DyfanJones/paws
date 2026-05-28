@@ -17,8 +17,7 @@ licensemanager_list_license_asset_rulesets(
 \item \code{Name}
 }}
 
-\item{ShowAWSManagedLicenseAssetRulesets}{Specifies whether to show License Manager managed license asset
-rulesets.}
+\item{ShowAWSManagedLicenseAssetRulesets}{Specifies whether to show License Manager managed license asset rulesets.}
 
 \item{MaxResults}{Maximum number of results to return in a single call.}
 

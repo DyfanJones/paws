@@ -14,9 +14,7 @@ elb_create_app_cookie_stickiness_policy(
 \arguments{
 \item{LoadBalancerName}{[required] The name of the load balancer.}
 
-\item{PolicyName}{[required] The name of the policy being created. Policy names must consist of
-alphanumeric characters and dashes (-). This name must be unique within
-the set of policies for this load balancer.}
+\item{PolicyName}{[required] The name of the policy being created. Policy names must consist of alphanumeric characters and dashes (-). This name must be unique within the set of policies for this load balancer.}
 
 \item{CookieName}{[required] The name of the application cookie used for stickiness.}
 }

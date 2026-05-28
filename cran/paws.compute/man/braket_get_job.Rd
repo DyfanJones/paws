@@ -9,8 +9,7 @@ braket_get_job(jobArn, additionalAttributeNames = NULL)
 \arguments{
 \item{jobArn}{[required] The ARN of the hybrid job to retrieve.}
 
-\item{additionalAttributeNames}{A list of attributes to return additional information for. Only the
-QueueInfo additional attribute name is currently supported.}
+\item{additionalAttributeNames}{A list of attributes to return additional information for. Only the QueueInfo additional attribute name is currently supported.}
 }
 \description{
 Retrieves the specified Amazon Braket hybrid job.

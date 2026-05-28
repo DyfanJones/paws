@@ -11,19 +11,14 @@ rds_switchover_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The identifier of the global database cluster to switch over. This
-parameter isn't case-sensitive.
+\item{GlobalClusterIdentifier}{[required] The identifier of the global database cluster to switch over. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
-\item Must match the identifier of an existing global database cluster
-(Aurora global database).
+\item Must match the identifier of an existing global database cluster (Aurora global database).
 }}
 
-\item{TargetDbClusterIdentifier}{[required] The identifier of the secondary Aurora DB cluster to promote to the new
-primary for the global database cluster. Use the Amazon Resource Name
-(ARN) for the identifier so that Aurora can locate the cluster in its
-Amazon Web Services Region.}
+\item{TargetDbClusterIdentifier}{[required] The identifier of the secondary Aurora DB cluster to promote to the new primary for the global database cluster. Use the Amazon Resource Name (ARN) for the identifier so that Aurora can locate the cluster in its Amazon Web Services Region.}
 }
 \description{
 Switches over the specified secondary DB cluster to be the new primary DB cluster in the global database cluster. Switchover operations were previously called "managed planned failovers."

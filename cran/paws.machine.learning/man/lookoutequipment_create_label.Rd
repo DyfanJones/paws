@@ -18,8 +18,7 @@ lookoutequipment_create_label(
 \arguments{
 \item{LabelGroupName}{[required] The name of a group of labels.
 
-Data in this field will be retained for service usage. Follow best
-practices for the security of your data.}
+Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 
 \item{StartTime}{[required] The start time of the labeled event.}
 
@@ -27,24 +26,19 @@ practices for the security of your data.}
 
 \item{Rating}{[required] Indicates whether a labeled event represents an anomaly.}
 
-\item{FaultCode}{Provides additional information about the label. The fault code must be
-defined in the FaultCodes attribute of the label group.
+\item{FaultCode}{Provides additional information about the label. The fault code must be defined in the FaultCodes attribute of the label group.
 
-Data in this field will be retained for service usage. Follow best
-practices for the security of your data.}
+Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 
 \item{Notes}{Metadata providing additional information about the label.
 
-Data in this field will be retained for service usage. Follow best
-practices for the security of your data.}
+Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 
 \item{Equipment}{Indicates that a label pertains to a particular piece of equipment.
 
-Data in this field will be retained for service usage. Follow best
-practices for the security of your data.}
+Data in this field will be retained for service usage. Follow best practices for the security of your data.}
 
-\item{ClientToken}{[required] A unique identifier for the request to create a label. If you do not set
-the client request token, Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request to create a label. If you do not set the client request token, Lookout for Equipment generates one.}
 }
 \description{
 Creates a label for an event.

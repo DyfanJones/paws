@@ -21,8 +21,7 @@ iamrolesanywhere_import_crl(
 
 \item{tags}{A list of tags to attach to the certificate revocation list (CRL).}
 
-\item{trustAnchorArn}{[required] The ARN of the TrustAnchor the certificate revocation list (CRL) will
-provide revocation for.}
+\item{trustAnchorArn}{[required] The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.}
 }
 \description{
 Imports the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate Authority (CA).In order to be properly imported, a CRL must be in PEM format. IAM Roles Anywhere validates against the CRL before issuing credentials.

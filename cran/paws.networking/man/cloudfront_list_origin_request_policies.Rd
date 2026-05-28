@@ -11,23 +11,15 @@ cloudfront_list_origin_request_policies(
 )
 }
 \arguments{
-\item{Type}{A filter to return only the specified kinds of origin request policies.
-Valid values are:
+\item{Type}{A filter to return only the specified kinds of origin request policies. Valid values are:
 \itemize{
-\item \code{managed} – Returns only the managed policies created by Amazon Web
-Services.
-\item \code{custom} – Returns only the custom policies created in your Amazon
-Web Services account.
+\item \code{managed} – Returns only the managed policies created by Amazon Web Services.
+\item \code{custom} – Returns only the custom policies created in your Amazon Web Services account.
 }}
 
-\item{Marker}{Use this field when paginating results to indicate where to begin in
-your list of origin request policies. The response includes origin
-request policies in the list that occur after the marker. To get the
-next page of the list, set this field's value to the value of
-\code{NextMarker} from the current page's response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in your list of origin request policies. The response includes origin request policies in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
-\item{MaxItems}{The maximum number of origin request policies that you want in the
-response.}
+\item{MaxItems}{The maximum number of origin request policies that you want in the response.}
 }
 \description{
 Gets a list of origin request policies.

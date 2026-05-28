@@ -5,8 +5,7 @@ NULL
 #' Amazon CloudFront KeyValueStore
 #'
 #' @description
-#' Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS
-#' Resource
+#' Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS Resource
 #'
 #' @param
 #' config

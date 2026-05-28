@@ -7,9 +7,7 @@
 personalizeevents_put_action_interactions(trackingId, actionInteractions)
 }
 \arguments{
-\item{trackingId}{[required] The ID of your action interaction event tracker. When you create an
-Action interactions dataset, Amazon Personalize creates an action
-interaction event tracker for you. For more information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-tracker-id.html}{Action interaction event tracker ID}.}
+\item{trackingId}{[required] The ID of your action interaction event tracker. When you create an Action interactions dataset, Amazon Personalize creates an action interaction event tracker for you. For more information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-tracker-id.html}{Action interaction event tracker ID}.}
 
 \item{actionInteractions}{[required] A list of action interaction events from the session.}
 }

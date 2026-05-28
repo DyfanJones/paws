@@ -17,13 +17,9 @@ sagemaker_list_cluster_scheduler_configs(
 )
 }
 \arguments{
-\item{CreatedAfter}{Filter for after this creation time. The input for this parameter is a
-Unix timestamp. To convert a date and time into a Unix timestamp, see
-\href{https://www.epochconverter.com/}{EpochConverter}.}
+\item{CreatedAfter}{Filter for after this creation time. The input for this parameter is a Unix timestamp. To convert a date and time into a Unix timestamp, see \href{https://www.epochconverter.com/}{EpochConverter}.}
 
-\item{CreatedBefore}{Filter for before this creation time. The input for this parameter is a
-Unix timestamp. To convert a date and time into a Unix timestamp, see
-\href{https://www.epochconverter.com/}{EpochConverter}.}
+\item{CreatedBefore}{Filter for before this creation time. The input for this parameter is a Unix timestamp. To convert a date and time into a Unix timestamp, see \href{https://www.epochconverter.com/}{EpochConverter}.}
 
 \item{NameContains}{Filter for name containing this string.}
 
@@ -31,15 +27,11 @@ Unix timestamp. To convert a date and time into a Unix timestamp, see
 
 \item{Status}{Filter for status.}
 
-\item{SortBy}{Filter for sorting the list by a given value. For example, sort by name,
-creation time, or status.}
+\item{SortBy}{Filter for sorting the list by a given value. For example, sort by name, creation time, or status.}
 
-\item{SortOrder}{The order of the list. By default, listed in \code{Descending} order
-according to by \code{SortBy}. To change the list order, you can specify
-\code{SortOrder} to be \code{Ascending}.}
+\item{SortOrder}{The order of the list. By default, listed in \code{Descending} order according to by \code{SortBy}. To change the list order, you can specify \code{SortOrder} to be \code{Ascending}.}
 
-\item{NextToken}{If the previous response was truncated, you will receive this token. Use
-it in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.}
 
 \item{MaxResults}{The maximum number of cluster policies to list.}
 }

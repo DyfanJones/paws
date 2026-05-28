@@ -7,11 +7,9 @@
 sns_publish_batch(TopicArn, PublishBatchRequestEntries)
 }
 \arguments{
-\item{TopicArn}{[required] The Amazon resource name (ARN) of the topic you want to batch publish
-to.}
+\item{TopicArn}{[required] The Amazon resource name (ARN) of the topic you want to batch publish to.}
 
-\item{PublishBatchRequestEntries}{[required] A list of \code{\link[=sns_publish_batch]{publish_batch}} request entries to be
-sent to the SNS topic.}
+\item{PublishBatchRequestEntries}{[required] A list of \code{\link[=sns_publish_batch]{publish_batch}} request entries to be sent to the SNS topic.}
 }
 \description{
 Publishes up to 10 messages to the specified topic in a single batch. This is a batch version of the \code{\link[=sns_publish]{publish}} API. If you try to send more than 10 messages in a single batch request, you will receive a \code{TooManyEntriesInBatchRequest} exception.

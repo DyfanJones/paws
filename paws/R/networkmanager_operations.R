@@ -8,8 +8,7 @@ NULL
 #' @description
 #' Accepts a core network attachment request.
 #' 
-#' Once the attachment request is accepted by a core network owner, the
-#' attachment is created and connected to a core network.
+#' Once the attachment request is accepted by a core network owner, the attachment is created and connected to a core network.
 #'
 #' @usage
 #' networkmanager_accept_attachment(AttachmentId)
@@ -114,12 +113,9 @@ networkmanager_accept_attachment <- function(AttachmentId) {
 #' with a link
 #'
 #' @description
-#' Associates a core network Connect peer with a device and optionally,
-#' with a link.
+#' Associates a core network Connect peer with a device and optionally, with a link.
 #' 
-#' If you specify a link, it must be associated with the specified device.
-#' You can only associate core network Connect peers that have been created
-#' on a core network Connect attachment on a core network.
+#' If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network.
 #'
 #' @usage
 #' networkmanager_associate_connect_peer(GlobalNetworkId, ConnectPeerId,
@@ -181,20 +177,11 @@ networkmanager_associate_connect_peer <- function(GlobalNetworkId, ConnectPeerId
 #' Associates a customer gateway with a device and optionally, with a link
 #'
 #' @description
-#' Associates a customer gateway with a device and optionally, with a link.
-#' If you specify a link, it must be associated with the specified device.
+#' Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device.
 #' 
-#' You can only associate customer gateways that are connected to a VPN
-#' attachment on a transit gateway or core network registered in your
-#' global network. When you register a transit gateway or core network,
-#' customer gateways that are connected to the transit gateway are
-#' automatically included in the global network. To list customer gateways
-#' that are connected to a transit gateway, use the
-#' [DescribeVpnConnections](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html)
-#' EC2 API and filter by `transit-gateway-id`.
+#' You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core network registered in your global network. When you register a transit gateway or core network, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the [DescribeVpnConnections](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html) EC2 API and filter by `transit-gateway-id`.
 #' 
-#' You cannot associate a customer gateway with more than one device and
-#' link.
+#' You cannot associate a customer gateway with more than one device and link.
 #'
 #' @usage
 #' networkmanager_associate_customer_gateway(CustomerGatewayArn,
@@ -256,9 +243,7 @@ networkmanager_associate_customer_gateway <- function(CustomerGatewayArn, Global
 #' Associates a link to a device
 #'
 #' @description
-#' Associates a link to a device. A device can be associated to multiple
-#' links and a link can be associated to multiple devices. The device and
-#' link must be in the same global network and the same site.
+#' Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site.
 #'
 #' @usage
 #' networkmanager_associate_link(GlobalNetworkId, DeviceId, LinkId)
@@ -317,15 +302,11 @@ networkmanager_associate_link <- function(GlobalNetworkId, DeviceId, LinkId) {
 #' with a link
 #'
 #' @description
-#' Associates a transit gateway Connect peer with a device, and optionally,
-#' with a link. If you specify a link, it must be associated with the
-#' specified device.
+#' Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device.
 #' 
-#' You can only associate transit gateway Connect peers that have been
-#' created on a transit gateway that's registered in your global network.
+#' You can only associate transit gateway Connect peers that have been created on a transit gateway that's registered in your global network.
 #' 
-#' You cannot associate a transit gateway Connect peer with more than one
-#' device and link.
+#' You cannot associate a transit gateway Connect peer with more than one device and link.
 #'
 #' @usage
 #' networkmanager_associate_transit_gateway_connect_peer(GlobalNetworkId,
@@ -388,13 +369,9 @@ networkmanager_associate_transit_gateway_connect_peer <- function(GlobalNetworkI
 #' attachment
 #'
 #' @description
-#' Creates a core network Connect attachment from a specified core network
-#' attachment.
+#' Creates a core network Connect attachment from a specified core network attachment.
 #' 
-#' A core network Connect attachment is a GRE-based tunnel attachment that
-#' you can use to establish a connection between a core network and an
-#' appliance. A core network Connect attachment uses an existing VPC
-#' attachment as the underlying transport mechanism.
+#' A core network Connect attachment is a GRE-based tunnel attachment that you can use to establish a connection between a core network and an appliance. A core network Connect attachment uses an existing VPC attachment as the underlying transport mechanism.
 #'
 #' @usage
 #' networkmanager_create_connect_attachment(CoreNetworkId, EdgeLocation,
@@ -403,8 +380,7 @@ networkmanager_associate_transit_gateway_connect_peer <- function(GlobalNetworkI
 #' @param CoreNetworkId &#91;required&#93; The ID of a core network where you want to create the attachment.
 #' @param EdgeLocation &#91;required&#93; The Region where the edge is located.
 #' @param TransportAttachmentId &#91;required&#93; The ID of the attachment between the two connections.
-#' @param RoutingPolicyLabel The routing policy label to apply to the Connect attachment for traffic
-#' routing decisions.
+#' @param RoutingPolicyLabel The routing policy label to apply to the Connect attachment for traffic routing decisions.
 #' @param Options &#91;required&#93; Options for creating an attachment.
 #' @param Tags The list of key-value tags associated with the request.
 #' @param ClientToken The client token associated with the request.
@@ -526,10 +502,7 @@ networkmanager_create_connect_attachment <- function(CoreNetworkId, EdgeLocation
 #' attachment between a core network and an appliance
 #'
 #' @description
-#' Creates a core network Connect peer for a specified core network connect
-#' attachment between a core network and an appliance. The peer address and
-#' transit gateway address must be the same IP address family (IPv4 or
-#' IPv6).
+#' Creates a core network Connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).
 #'
 #' @usage
 #' networkmanager_create_connect_peer(ConnectAttachmentId,
@@ -537,16 +510,13 @@ networkmanager_create_connect_attachment <- function(CoreNetworkId, EdgeLocation
 #'   ClientToken, SubnetArn)
 #'
 #' @param ConnectAttachmentId &#91;required&#93; The ID of the connection attachment.
-#' @param CoreNetworkAddress A Connect peer core network address. This only applies only when the
-#' protocol is `GRE`.
+#' @param CoreNetworkAddress A Connect peer core network address. This only applies only when the protocol is `GRE`.
 #' @param PeerAddress &#91;required&#93; The Connect peer address.
-#' @param BgpOptions The Connect peer BGP options. This only applies only when the protocol
-#' is `GRE`.
+#' @param BgpOptions The Connect peer BGP options. This only applies only when the protocol is `GRE`.
 #' @param InsideCidrBlocks The inside IP addresses used for BGP peering.
 #' @param Tags The tags associated with the peer request.
 #' @param ClientToken The client token associated with the request.
-#' @param SubnetArn The subnet ARN for the Connect peer. This only applies only when the
-#' protocol is NO_ENCAP.
+#' @param SubnetArn The subnet ARN for the Connect peer. This only applies only when the protocol is NO_ENCAP.
 #'
 #' @return
 #' A list with the following syntax:
@@ -646,10 +616,7 @@ networkmanager_create_connect_peer <- function(ConnectAttachmentId, CoreNetworkA
 #' Creates a connection between two devices
 #'
 #' @description
-#' Creates a connection between two devices. The devices can be a physical
-#' or virtual appliance that connects to a third-party appliance in a VPC,
-#' or a physical appliance that connects to another physical appliance in
-#' an on-premises network.
+#' Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an on-premises network.
 #'
 #' @usage
 #' networkmanager_create_connection(GlobalNetworkId, DeviceId,
@@ -738,8 +705,7 @@ networkmanager_create_connection <- function(GlobalNetworkId, DeviceId, Connecte
 #' with a core network policy
 #'
 #' @description
-#' Creates a core network as part of your global network, and optionally,
-#' with a core network policy.
+#' Creates a core network as part of your global network, and optionally, with a core network policy.
 #'
 #' @usage
 #' networkmanager_create_core_network(GlobalNetworkId, Description, Tags,
@@ -854,8 +820,7 @@ networkmanager_create_core_network <- function(GlobalNetworkId, Description = NU
 #' routing control
 #'
 #' @description
-#' Creates an association between a core network and a prefix list for
-#' routing control.
+#' Creates an association between a core network and a prefix list for routing control.
 #'
 #' @usage
 #' networkmanager_create_core_network_prefix_list_association(
@@ -864,8 +829,7 @@ networkmanager_create_core_network <- function(GlobalNetworkId, Description = NU
 #' @param CoreNetworkId &#91;required&#93; The ID of the core network to associate with the prefix list.
 #' @param PrefixListArn &#91;required&#93; The ARN of the prefix list to associate with the core network.
 #' @param PrefixListAlias &#91;required&#93; An optional alias for the prefix list association.
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -914,17 +878,14 @@ networkmanager_create_core_network_prefix_list_association <- function(CoreNetwo
 #' Creates a new device in a global network
 #'
 #' @description
-#' Creates a new device in a global network. If you specify both a site ID
-#' and a location, the location of the site is used for visualization in
-#' the Network Manager console.
+#' Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.
 #'
 #' @usage
 #' networkmanager_create_device(GlobalNetworkId, AWSLocation, Description,
 #'   Type, Vendor, Model, SerialNumber, Location, SiteId, Tags)
 #'
 #' @param GlobalNetworkId &#91;required&#93; The ID of the global network.
-#' @param AWSLocation The Amazon Web Services location of the device, if applicable. For an
-#' on-premises device, you can omit this parameter.
+#' @param AWSLocation The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.
 #' @param Description A description of the device.
 #' 
 #' Constraints: Maximum length of 256 characters.
@@ -1041,15 +1002,11 @@ networkmanager_create_device <- function(GlobalNetworkId, AWSLocation = NULL, De
 #'   DirectConnectGatewayArn, RoutingPolicyLabel, EdgeLocations, Tags,
 #'   ClientToken)
 #'
-#' @param CoreNetworkId &#91;required&#93; The ID of the Cloud WAN core network that the Direct Connect gateway
-#' attachment should be attached to.
+#' @param CoreNetworkId &#91;required&#93; The ID of the Cloud WAN core network that the Direct Connect gateway attachment should be attached to.
 #' @param DirectConnectGatewayArn &#91;required&#93; The ARN of the Direct Connect gateway attachment.
-#' @param RoutingPolicyLabel The routing policy label to apply to the Direct Connect Gateway
-#' attachment for traffic routing decisions.
-#' @param EdgeLocations &#91;required&#93; One or more core network edge locations that the Direct Connect gateway
-#' attachment is associated with.
-#' @param Tags The key value tags to apply to the Direct Connect gateway attachment
-#' during creation.
+#' @param RoutingPolicyLabel The routing policy label to apply to the Direct Connect Gateway attachment for traffic routing decisions.
+#' @param EdgeLocations &#91;required&#93; One or more core network edge locations that the Direct Connect gateway attachment is associated with.
+#' @param Tags The key value tags to apply to the Direct Connect gateway attachment during creation.
 #' @param ClientToken client token
 #'
 #' @return
@@ -1248,13 +1205,11 @@ networkmanager_create_global_network <- function(Description = NULL, Tags = NULL
 #' Constraints: Maximum length of 256 characters.
 #' @param Type The type of the link.
 #' 
-#' Constraints: Maximum length of 128 characters. Cannot include the
-#' following characters: | \\ ^
+#' Constraints: Maximum length of 128 characters. Cannot include the following characters: | \\ ^
 #' @param Bandwidth &#91;required&#93; The upload speed and download speed in Mbps.
 #' @param Provider The provider of the link.
 #' 
-#' Constraints: Maximum length of 128 characters. Cannot include the
-#' following characters: | \\ ^
+#' Constraints: Maximum length of 128 characters. Cannot include the following characters: | \\ ^
 #' @param SiteId &#91;required&#93; The ID of the site.
 #' @param Tags The tags to apply to the resource during creation.
 #'
@@ -1345,9 +1300,7 @@ networkmanager_create_link <- function(GlobalNetworkId, Description = NULL, Type
 #' @param Description A description of your site.
 #' 
 #' Constraints: Maximum length of 256 characters.
-#' @param Location The site location. This information is used for visualization in the
-#' Network Manager console. If you specify the address, the latitude and
-#' longitude are automatically calculated.
+#' @param Location The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.
 #' 
 #' -   `Address`: The physical address of the site.
 #' 
@@ -1431,18 +1384,15 @@ networkmanager_create_site <- function(GlobalNetworkId, Description = NULL, Loca
 #' location of a core network
 #'
 #' @description
-#' Creates an Amazon Web Services site-to-site VPN attachment on an edge
-#' location of a core network.
+#' Creates an Amazon Web Services site-to-site VPN attachment on an edge location of a core network.
 #'
 #' @usage
 #' networkmanager_create_site_to_site_vpn_attachment(CoreNetworkId,
 #'   VpnConnectionArn, RoutingPolicyLabel, Tags, ClientToken)
 #'
-#' @param CoreNetworkId &#91;required&#93; The ID of a core network where you're creating a site-to-site VPN
-#' attachment.
+#' @param CoreNetworkId &#91;required&#93; The ID of a core network where you're creating a site-to-site VPN attachment.
 #' @param VpnConnectionArn &#91;required&#93; The ARN identifying the VPN attachment.
-#' @param RoutingPolicyLabel The routing policy label to apply to the Site-to-Site VPN attachment for
-#' traffic routing decisions.
+#' @param RoutingPolicyLabel The routing policy label to apply to the Site-to-Site VPN attachment for traffic routing decisions.
 #' @param Tags The tags associated with the request.
 #' @param ClientToken The client token associated with the request.
 #'
@@ -1656,11 +1606,8 @@ networkmanager_create_transit_gateway_peering <- function(CoreNetworkId, Transit
 #'   TransitGatewayRouteTableArn, RoutingPolicyLabel, Tags, ClientToken)
 #'
 #' @param PeeringId &#91;required&#93; The ID of the peer for the
-#' @param TransitGatewayRouteTableArn &#91;required&#93; The ARN of the transit gateway route table for the attachment request.
-#' For example,
-#' `"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"`.
-#' @param RoutingPolicyLabel The routing policy label to apply to the Transit Gateway route table
-#' attachment for traffic routing decisions.
+#' @param TransitGatewayRouteTableArn &#91;required&#93; The ARN of the transit gateway route table for the attachment request. For example, `"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"`.
+#' @param RoutingPolicyLabel The routing policy label to apply to the Transit Gateway route table attachment for traffic routing decisions.
 #' @param Tags The list of key-value tags associated with the request.
 #' @param ClientToken The client token associated with the request.
 #'
@@ -1784,8 +1731,7 @@ networkmanager_create_transit_gateway_route_table_attachment <- function(Peering
 #' @param VpcArn &#91;required&#93; The ARN of the VPC.
 #' @param SubnetArns &#91;required&#93; The subnet ARN of the VPC attachment.
 #' @param Options Options for the VPC attachment.
-#' @param RoutingPolicyLabel The routing policy label to apply to the VPC attachment for traffic
-#' routing decisions.
+#' @param RoutingPolicyLabel The routing policy label to apply to the VPC attachment for traffic routing decisions.
 #' @param Tags The key-value tags associated with the request.
 #' @param ClientToken The client token associated with the request.
 #'
@@ -2178,8 +2124,7 @@ networkmanager_delete_connection <- function(GlobalNetworkId, ConnectionId) {
 #' Deletes a core network along with all core network policies
 #'
 #' @description
-#' Deletes a core network along with all core network policies. This can
-#' only be done if there are no attachments on a core network.
+#' Deletes a core network along with all core network policies. This can only be done if there are no attachments on a core network.
 #'
 #' @usage
 #' networkmanager_delete_core_network(CoreNetworkId)
@@ -2279,8 +2224,7 @@ networkmanager_delete_core_network <- function(CoreNetworkId) {
 #' Deletes a policy version from a core network
 #'
 #' @description
-#' Deletes a policy version from a core network. You can't delete the
-#' current LIVE policy.
+#' Deletes a policy version from a core network. You can't delete the current LIVE policy.
 #'
 #' @usage
 #' networkmanager_delete_core_network_policy_version(CoreNetworkId,
@@ -2355,8 +2299,7 @@ networkmanager_delete_core_network_policy_version <- function(CoreNetworkId, Pol
 #' networkmanager_delete_core_network_prefix_list_association(
 #'   CoreNetworkId, PrefixListArn)
 #'
-#' @param CoreNetworkId &#91;required&#93; The ID of the core network from which to delete the prefix list
-#' association.
+#' @param CoreNetworkId &#91;required&#93; The ID of the core network from which to delete the prefix list association.
 #' @param PrefixListArn &#91;required&#93; The ARN of the prefix list to disassociate from the core network.
 #'
 #' @return
@@ -2403,8 +2346,7 @@ networkmanager_delete_core_network_prefix_list_association <- function(CoreNetwo
 #' Deletes an existing device
 #'
 #' @description
-#' Deletes an existing device. You must first disassociate the device from
-#' any links and customer gateways.
+#' Deletes an existing device. You must first disassociate the device from any links and customer gateways.
 #'
 #' @usage
 #' networkmanager_delete_device(GlobalNetworkId, DeviceId)
@@ -2484,9 +2426,7 @@ networkmanager_delete_device <- function(GlobalNetworkId, DeviceId) {
 #' Deletes an existing global network
 #'
 #' @description
-#' Deletes an existing global network. You must first delete all global
-#' network objects (devices, links, and sites), deregister all transit
-#' gateways, and delete any core networks.
+#' Deletes an existing global network. You must first delete all global network objects (devices, links, and sites), deregister all transit gateways, and delete any core networks.
 #'
 #' @usage
 #' networkmanager_delete_global_network(GlobalNetworkId)
@@ -2549,8 +2489,7 @@ networkmanager_delete_global_network <- function(GlobalNetworkId) {
 #' Deletes an existing link
 #'
 #' @description
-#' Deletes an existing link. You must first disassociate the link from any
-#' devices and customer gateways.
+#' Deletes an existing link. You must first disassociate the link from any devices and customer gateways.
 #'
 #' @usage
 #' networkmanager_delete_link(GlobalNetworkId, LinkId)
@@ -2701,8 +2640,7 @@ networkmanager_delete_peering <- function(PeeringId) {
 #' Deletes a resource policy for the specified resource
 #'
 #' @description
-#' Deletes a resource policy for the specified resource. This revokes the
-#' access of the principals specified in the resource policy.
+#' Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the resource policy.
 #'
 #' @usage
 #' networkmanager_delete_resource_policy(ResourceArn)
@@ -2746,8 +2684,7 @@ networkmanager_delete_resource_policy <- function(ResourceArn) {
 #' Deletes an existing site
 #'
 #' @description
-#' Deletes an existing site. The site cannot be associated with any device
-#' or link.
+#' Deletes an existing site. The site cannot be associated with any device or link.
 #'
 #' @usage
 #' networkmanager_delete_site(GlobalNetworkId, SiteId)
@@ -2818,9 +2755,7 @@ networkmanager_delete_site <- function(GlobalNetworkId, SiteId) {
 #' Deregisters a transit gateway from your global network
 #'
 #' @description
-#' Deregisters a transit gateway from your global network. This action does
-#' not delete your transit gateway, or modify any of its attachments. This
-#' action removes any customer gateway associations.
+#' Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.
 #'
 #' @usage
 #' networkmanager_deregister_transit_gateway(GlobalNetworkId,
@@ -2879,11 +2814,7 @@ networkmanager_deregister_transit_gateway <- function(GlobalNetworkId, TransitGa
 #' Describes one or more global networks
 #'
 #' @description
-#' Describes one or more global networks. By default, all global networks
-#' are described. To describe the objects in your global network, you must
-#' use the appropriate `Get*` action. For example, to list the transit
-#' gateways in your global network, use
-#' [`get_transit_gateway_registrations`][networkmanager_get_transit_gateway_registrations].
+#' Describes one or more global networks. By default, all global networks are described. To describe the objects in your global network, you must use the appropriate `Get*` action. For example, to list the transit gateways in your global network, use [`get_transit_gateway_registrations`][networkmanager_get_transit_gateway_registrations].
 #'
 #' @usage
 #' networkmanager_describe_global_networks(GlobalNetworkIds, MaxResults,
@@ -3071,8 +3002,7 @@ networkmanager_disassociate_customer_gateway <- function(GlobalNetworkId, Custom
 #' Disassociates an existing device from a link
 #'
 #' @description
-#' Disassociates an existing device from a link. You must first
-#' disassociate any customer gateways that are associated with the link.
+#' Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link.
 #'
 #' @usage
 #' networkmanager_disassociate_link(GlobalNetworkId, DeviceId, LinkId)
@@ -3188,8 +3118,7 @@ networkmanager_disassociate_transit_gateway_connect_peer <- function(GlobalNetwo
 #' Executes a change set on your core network
 #'
 #' @description
-#' Executes a change set on your core network. Deploys changes globally
-#' based on the policy submitted..
+#' Executes a change set on your core network. Deploys changes globally based on the policy submitted..
 #'
 #' @usage
 #' networkmanager_execute_core_network_change_set(CoreNetworkId,
@@ -3503,8 +3432,7 @@ networkmanager_get_connect_peer_associations <- function(GlobalNetworkId, Connec
 #' network
 #'
 #' @description
-#' Gets information about one or more of your connections in a global
-#' network.
+#' Gets information about one or more of your connections in a global network.
 #'
 #' @usage
 #' networkmanager_get_connections(GlobalNetworkId, ConnectionIds, DeviceId,
@@ -3773,8 +3701,7 @@ networkmanager_get_core_network_change_events <- function(CoreNetworkId, PolicyV
 #' submitted policy
 #'
 #' @description
-#' Returns a change set between the LIVE core network policy and a
-#' submitted policy.
+#' Returns a change set between the LIVE core network policy and a submitted policy.
 #'
 #' @usage
 #' networkmanager_get_core_network_change_set(CoreNetworkId,
@@ -3964,8 +3891,7 @@ networkmanager_get_core_network_change_set <- function(CoreNetworkId, PolicyVers
 #' Returns details about a core network policy
 #'
 #' @description
-#' Returns details about a core network policy. You can get details about
-#' your current live policy or any previous policy version.
+#' Returns details about a core network policy. You can get details about your current live policy or any previous policy version.
 #'
 #' @usage
 #' networkmanager_get_core_network_policy(CoreNetworkId, PolicyVersionId,
@@ -4037,16 +3963,14 @@ networkmanager_get_core_network_policy <- function(CoreNetworkId, PolicyVersionI
 #' associated with devices and links in your global network
 #'
 #' @description
-#' Gets the association information for customer gateways that are
-#' associated with devices and links in your global network.
+#' Gets the association information for customer gateways that are associated with devices and links in your global network.
 #'
 #' @usage
 #' networkmanager_get_customer_gateway_associations(GlobalNetworkId,
 #'   CustomerGatewayArns, MaxResults, NextToken)
 #'
 #' @param GlobalNetworkId &#91;required&#93; The ID of the global network.
-#' @param CustomerGatewayArns One or more customer gateway Amazon Resource Names (ARNs). The maximum
-#' is 10.
+#' @param CustomerGatewayArns One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.
 #' @param MaxResults The maximum number of results to return.
 #' @param NextToken The token for the next page of results.
 #'
@@ -4199,14 +4123,12 @@ networkmanager_get_devices <- function(GlobalNetworkId, DeviceIds = NULL, SiteId
 #' gateway attachment
 #'
 #' @description
-#' Returns information about a specific Amazon Web Services Direct Connect
-#' gateway attachment.
+#' Returns information about a specific Amazon Web Services Direct Connect gateway attachment.
 #'
 #' @usage
 #' networkmanager_get_direct_connect_gateway_attachment(AttachmentId)
 #'
-#' @param AttachmentId &#91;required&#93; The ID of the Direct Connect gateway attachment that you want to see
-#' details about.
+#' @param AttachmentId &#91;required&#93; The ID of the Direct Connect gateway attachment that you want to see details about.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4308,8 +4230,7 @@ networkmanager_get_direct_connect_gateway_attachment <- function(AttachmentId) {
 #' Gets the link associations for a device or a link
 #'
 #' @description
-#' Gets the link associations for a device or a link. Either the device ID
-#' or the link ID must be specified.
+#' Gets the link associations for a device or a link. Either the device ID or the link ID must be specified.
 #'
 #' @usage
 #' networkmanager_get_link_associations(GlobalNetworkId, DeviceId, LinkId,
@@ -4377,9 +4298,7 @@ networkmanager_get_link_associations <- function(GlobalNetworkId, DeviceId = NUL
 #' @description
 #' Gets information about one or more links in a specified global network.
 #' 
-#' If you specify the site ID, you cannot specify the type or provider in
-#' the same request. You can specify the type and provider in the same
-#' request.
+#' If you specify the site ID, you cannot specify the type or provider in the same request. You can specify the type and provider in the same request.
 #'
 #' @usage
 #' networkmanager_get_links(GlobalNetworkId, LinkIds, SiteId, Type,
@@ -4469,8 +4388,7 @@ networkmanager_get_links <- function(GlobalNetworkId, LinkIds = NULL, SiteId = N
 #' global network
 #'
 #' @description
-#' Gets the count of network resources, by resource type, for the specified
-#' global network.
+#' Gets the count of network resources, by resource type, for the specified global network.
 #'
 #' @usage
 #' networkmanager_get_network_resource_counts(GlobalNetworkId,
@@ -4572,8 +4490,7 @@ networkmanager_get_network_resource_counts <- function(GlobalNetworkId, Resource
 #' Gets the network resource relationships for the specified global network
 #'
 #' @description
-#' Gets the network resource relationships for the specified global
-#' network.
+#' Gets the network resource relationships for the specified global network.
 #'
 #' @usage
 #' networkmanager_get_network_resource_relationships(GlobalNetworkId,
@@ -4688,8 +4605,7 @@ networkmanager_get_network_resource_relationships <- function(GlobalNetworkId, C
 #' @description
 #' Describes the network resources for the specified global network.
 #' 
-#' The results include information from the corresponding Describe call for
-#' the resource, minus any sensitive information such as pre-shared keys.
+#' The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.
 #'
 #' @usage
 #' networkmanager_get_network_resources(GlobalNetworkId, CoreNetworkId,
@@ -4832,13 +4748,11 @@ networkmanager_get_network_resources <- function(GlobalNetworkId, CoreNetworkId 
 #' @param ExactCidrMatches An exact CIDR block.
 #' @param LongestPrefixMatches The most specific route that matches the traffic (longest prefix match).
 #' @param SubnetOfMatches The routes with a subnet that match the specified CIDR filter.
-#' @param SupernetOfMatches The routes with a CIDR that encompasses the CIDR filter. Example: If you
-#' specify 10.0.1.0/30, then the result returns 10.0.1.0/29.
+#' @param SupernetOfMatches The routes with a CIDR that encompasses the CIDR filter. Example: If you specify 10.0.1.0/30, then the result returns 10.0.1.0/29.
 #' @param PrefixListIds The IDs of the prefix lists.
 #' @param States The route states.
 #' @param Types The route types.
-#' @param DestinationFilters Filter by route table destination. Possible Values:
-#' TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.
+#' @param DestinationFilters Filter by route table destination. Possible Values: TRANSIT_GATEWAY_ATTACHMENT_ID, RESOURCE_ID, or RESOURCE_TYPE.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5396,8 +5310,7 @@ networkmanager_get_sites <- function(GlobalNetworkId, SiteIds = NULL, MaxResults
 #' associations in a global network
 #'
 #' @description
-#' Gets information about one or more of your transit gateway Connect peer
-#' associations in a global network.
+#' Gets information about one or more of your transit gateway Connect peer associations in a global network.
 #'
 #' @usage
 #' networkmanager_get_transit_gateway_connect_peer_associations(
@@ -5547,16 +5460,14 @@ networkmanager_get_transit_gateway_peering <- function(PeeringId) {
 #' global network
 #'
 #' @description
-#' Gets information about the transit gateway registrations in a specified
-#' global network.
+#' Gets information about the transit gateway registrations in a specified global network.
 #'
 #' @usage
 #' networkmanager_get_transit_gateway_registrations(GlobalNetworkId,
 #'   TransitGatewayArns, MaxResults, NextToken)
 #'
 #' @param GlobalNetworkId &#91;required&#93; The ID of the global network.
-#' @param TransitGatewayArns The Amazon Resource Names (ARNs) of one or more transit gateways. The
-#' maximum is 10.
+#' @param TransitGatewayArns The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.
 #' @param MaxResults The maximum number of results to return.
 #' @param NextToken The token for the next page of results.
 #'
@@ -5846,10 +5757,8 @@ networkmanager_get_vpc_attachment <- function(AttachmentId) {
 #' networkmanager_list_attachment_routing_policy_associations(
 #'   CoreNetworkId, AttachmentId, MaxResults, NextToken)
 #'
-#' @param CoreNetworkId &#91;required&#93; The ID of the core network to list attachment routing policy
-#' associations for.
-#' @param AttachmentId The ID of a specific attachment to filter the routing policy
-#' associations.
+#' @param CoreNetworkId &#91;required&#93; The ID of the core network to list attachment routing policy associations for.
+#' @param AttachmentId The ID of a specific attachment to filter the routing policy associations.
 #' @param MaxResults The maximum number of results to return in a single page.
 #' @param NextToken The token for the next page of results.
 #'
@@ -6233,8 +6142,7 @@ networkmanager_list_core_network_prefix_list_associations <- function(CoreNetwor
 #' attributes
 #'
 #' @description
-#' Lists routing information for a core network, including routes and their
-#' attributes.
+#' Lists routing information for a core network, including routes and their attributes.
 #'
 #' @usage
 #' networkmanager_list_core_network_routing_information(CoreNetworkId,
@@ -6247,11 +6155,9 @@ networkmanager_list_core_network_prefix_list_associations <- function(CoreNetwor
 #' @param NextHopFilters Filters to apply based on next hop information.
 #' @param LocalPreferenceMatches Local preference values to match when filtering routing information.
 #' @param ExactAsPathMatches Exact AS path values to match when filtering routing information.
-#' @param MedMatches Multi-Exit Discriminator (MED) values to match when filtering routing
-#' information.
+#' @param MedMatches Multi-Exit Discriminator (MED) values to match when filtering routing information.
 #' @param CommunityMatches BGP community values to match when filtering routing information.
-#' @param MaxResults The maximum number of routing information entries to return in a single
-#' page.
+#' @param MaxResults The maximum number of routing information entries to return in a single page.
 #' @param NextToken The token for the next page of results.
 #'
 #' @return
@@ -6406,8 +6312,7 @@ networkmanager_list_core_networks <- function(MaxResults = NULL, NextToken = NUL
 #' accounts in a given Amazon Web Services Organization
 #'
 #' @description
-#' Gets the status of the Service Linked Role (SLR) deployment for the
-#' accounts in a given Amazon Web Services Organization.
+#' Gets the status of the Service Linked Role (SLR) deployment for the accounts in a given Amazon Web Services Organization.
 #'
 #' @usage
 #' networkmanager_list_organization_service_access_status(MaxResults,
@@ -6617,8 +6522,7 @@ networkmanager_list_tags_for_resource <- function(ResourceArn) {
 #' decisions
 #'
 #' @description
-#' Applies a routing policy label to an attachment for traffic routing
-#' decisions.
+#' Applies a routing policy label to an attachment for traffic routing decisions.
 #'
 #' @usage
 #' networkmanager_put_attachment_routing_policy_label(CoreNetworkId,
@@ -6627,8 +6531,7 @@ networkmanager_list_tags_for_resource <- function(ResourceArn) {
 #' @param CoreNetworkId &#91;required&#93; The ID of the core network containing the attachment.
 #' @param AttachmentId &#91;required&#93; The ID of the attachment to apply the routing policy label to.
 #' @param RoutingPolicyLabel &#91;required&#93; The routing policy label to apply to the attachment.
-#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param ClientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6677,9 +6580,7 @@ networkmanager_put_attachment_routing_policy_label <- function(CoreNetworkId, At
 #' Creates a new, immutable version of a core network policy
 #'
 #' @description
-#' Creates a new, immutable version of a core network policy. A subsequent
-#' change set is created showing the differences between the LIVE policy
-#' and the submitted policy.
+#' Creates a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and the submitted policy.
 #'
 #' @usage
 #' networkmanager_put_core_network_policy(CoreNetworkId, PolicyDocument,
@@ -6800,15 +6701,7 @@ networkmanager_put_resource_policy <- function(PolicyDocument, ResourceArn) {
 #' Registers a transit gateway in your global network
 #'
 #' @description
-#' Registers a transit gateway in your global network. Not all Regions
-#' support transit gateways for global networks. For a list of the
-#' supported Regions, see [Region
-#' Availability](https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html#nm-available-regions)
-#' in the *Amazon Web Services Transit Gateways for Global Networks User
-#' Guide*. The transit gateway can be in any of the supported Amazon Web
-#' Services Regions, but it must be owned by the same Amazon Web Services
-#' account that owns the global network. You cannot register a transit
-#' gateway in more than one global network.
+#' Registers a transit gateway in your global network. Not all Regions support transit gateways for global networks. For a list of the supported Regions, see [Region Availability](https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html#nm-available-regions) in the *Amazon Web Services Transit Gateways for Global Networks User Guide*. The transit gateway can be in any of the supported Amazon Web Services Regions, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network.
 #'
 #' @usage
 #' networkmanager_register_transit_gateway(GlobalNetworkId,
@@ -7026,9 +6919,7 @@ networkmanager_remove_attachment_routing_policy_label <- function(CoreNetworkId,
 #' network policy
 #'
 #' @description
-#' Restores a previous policy version as a new, immutable version of a core
-#' network policy. A subsequent change set is created showing the
-#' differences between the LIVE policy and restored policy.
+#' Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and restored policy.
 #'
 #' @usage
 #' networkmanager_restore_core_network_policy_version(CoreNetworkId,
@@ -7098,15 +6989,12 @@ networkmanager_restore_core_network_policy_version <- function(CoreNetworkId, Po
 #' Organization
 #'
 #' @description
-#' Enables the Network Manager service for an Amazon Web Services
-#' Organization. This can only be called by a management account within the
-#' organization.
+#' Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization.
 #'
 #' @usage
 #' networkmanager_start_organization_service_access_update(Action)
 #'
-#' @param Action &#91;required&#93; The action to take for the update request. This can be either `ENABLE`
-#' or `DISABLE`.
+#' @param Action &#91;required&#93; The action to take for the update request. This can be either `ENABLE` or `DISABLE`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7161,9 +7049,7 @@ networkmanager_start_organization_service_access_update <- function(Action) {
 #' destination
 #'
 #' @description
-#' Starts analyzing the routing path between the specified source and
-#' destination. For more information, see [Route
-#' Analyzer](https://docs.aws.amazon.com/network-manager/latest/tgwnm/route-analyzer.html).
+#' Starts analyzing the routing path between the specified source and destination. For more information, see [Route Analyzer](https://docs.aws.amazon.com/network-manager/latest/tgwnm/route-analyzer.html).
 #'
 #' @usage
 #' networkmanager_start_route_analysis(GlobalNetworkId, Source,
@@ -7173,8 +7059,7 @@ networkmanager_start_organization_service_access_update <- function(Action) {
 #' @param Source &#91;required&#93; The source from which traffic originates.
 #' @param Destination &#91;required&#93; The destination.
 #' @param IncludeReturnPath Indicates whether to analyze the return path. The default is `false`.
-#' @param UseMiddleboxes Indicates whether to include the location of middlebox appliances in the
-#' route analysis. The default is `false`.
+#' @param UseMiddleboxes Indicates whether to include the location of middlebox appliances in the route analysis. The default is `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7393,8 +7278,7 @@ networkmanager_untag_resource <- function(ResourceArn, TagKeys) {
 #' Updates the information for an existing connection
 #'
 #' @description
-#' Updates the information for an existing connection. To remove
-#' information for any of the parameters, specify an empty string.
+#' Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string.
 #'
 #' @usage
 #' networkmanager_update_connection(GlobalNetworkId, ConnectionId, LinkId,
@@ -7575,8 +7459,7 @@ networkmanager_update_core_network <- function(CoreNetworkId, Description = NULL
 #' Updates the details for an existing device
 #'
 #' @description
-#' Updates the details for an existing device. To remove information for
-#' any of the parameters, specify an empty string.
+#' Updates the details for an existing device. To remove information for any of the parameters, specify an empty string.
 #'
 #' @usage
 #' networkmanager_update_device(GlobalNetworkId, DeviceId, AWSLocation,
@@ -7584,8 +7467,7 @@ networkmanager_update_core_network <- function(CoreNetworkId, Description = NULL
 #'
 #' @param GlobalNetworkId &#91;required&#93; The ID of the global network.
 #' @param DeviceId &#91;required&#93; The ID of the device.
-#' @param AWSLocation The Amazon Web Services location of the device, if applicable. For an
-#' on-premises device, you can omit this parameter.
+#' @param AWSLocation The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.
 #' @param Description A description of the device.
 #' 
 #' Constraints: Maximum length of 256 characters.
@@ -7599,7 +7481,7 @@ networkmanager_update_core_network <- function(CoreNetworkId, Description = NULL
 #' @param SerialNumber The serial number of the device.
 #' 
 #' Constraints: Maximum length of 128 characters.
-#' @param Location 
+#' @param Location Describes a location.
 #' @param SiteId The ID of the site.
 #'
 #' @return
@@ -7690,19 +7572,14 @@ networkmanager_update_device <- function(GlobalNetworkId, DeviceId, AWSLocation 
 #' Connect gateway attachment
 #'
 #' @description
-#' Updates the edge locations associated with an Amazon Web Services Direct
-#' Connect gateway attachment.
+#' Updates the edge locations associated with an Amazon Web Services Direct Connect gateway attachment.
 #'
 #' @usage
 #' networkmanager_update_direct_connect_gateway_attachment(AttachmentId,
 #'   EdgeLocations)
 #'
-#' @param AttachmentId &#91;required&#93; The ID of the Direct Connect gateway attachment for the updated edge
-#' locations.
-#' @param EdgeLocations One or more edge locations to update for the Direct Connect gateway
-#' attachment. The updated array of edge locations overwrites the previous
-#' array of locations. `EdgeLocations` is only used for Direct Connect
-#' gateway attachments.
+#' @param AttachmentId &#91;required&#93; The ID of the Direct Connect gateway attachment for the updated edge locations.
+#' @param EdgeLocations One or more edge locations to update for the Direct Connect gateway attachment. The updated array of edge locations overwrites the previous array of locations. `EdgeLocations` is only used for Direct Connect gateway attachments.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7807,8 +7684,7 @@ networkmanager_update_direct_connect_gateway_attachment <- function(AttachmentId
 #' Updates an existing global network
 #'
 #' @description
-#' Updates an existing global network. To remove information for any of the
-#' parameters, specify an empty string.
+#' Updates an existing global network. To remove information for any of the parameters, specify an empty string.
 #'
 #' @usage
 #' networkmanager_update_global_network(GlobalNetworkId, Description)
@@ -7875,8 +7751,7 @@ networkmanager_update_global_network <- function(GlobalNetworkId, Description = 
 #' Updates the details for an existing link
 #'
 #' @description
-#' Updates the details for an existing link. To remove information for any
-#' of the parameters, specify an empty string.
+#' Updates the details for an existing link. To remove information for any of the parameters, specify an empty string.
 #'
 #' @usage
 #' networkmanager_update_link(GlobalNetworkId, LinkId, Description, Type,
@@ -8026,8 +7901,7 @@ networkmanager_update_network_resource_metadata <- function(GlobalNetworkId, Res
 #' Updates the information for an existing site
 #'
 #' @description
-#' Updates the information for an existing site. To remove information for
-#' any of the parameters, specify an empty string.
+#' Updates the information for an existing site. To remove information for any of the parameters, specify an empty string.
 #'
 #' @usage
 #' networkmanager_update_site(GlobalNetworkId, SiteId, Description,

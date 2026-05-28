@@ -53,26 +53,14 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Managed Service for Prometheus is a serverless,
-Prometheus-compatible monitoring service for container metrics that
-makes it easier to securely monitor container environments at scale.
-With Amazon Managed Service for Prometheus, you can use the same
-open-source Prometheus data model and query language that you use today
-to monitor the performance of your containerized workloads, and also
-enjoy improved scalability, availability, and security without having to
-manage the underlying infrastructure.
+Amazon Managed Service for Prometheus is a serverless, Prometheus-compatible monitoring service for container metrics that makes it easier to securely monitor container environments at scale. With Amazon Managed Service for Prometheus, you can use the same open-source Prometheus data model and query language that you use today to monitor the performance of your containerized workloads, and also enjoy improved scalability, availability, and security without having to manage the underlying infrastructure.
 
-For more information about Amazon Managed Service for Prometheus, see
-the \href{https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html}{Amazon Managed Service for Prometheus}
-User Guide.
+For more information about Amazon Managed Service for Prometheus, see the \href{https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html}{Amazon Managed Service for Prometheus} User Guide.
 
 Amazon Managed Service for Prometheus includes two APIs.
 \itemize{
-\item Use the Amazon Web Services API described in this guide to manage
-Amazon Managed Service for Prometheus resources, such as workspaces,
-rule groups, and alert managers.
-\item Use the \href{https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-Prometheus-Compatible-Apis}{Prometheus-compatible API}
-to work within your Prometheus workspace.
+\item Use the Amazon Web Services API described in this guide to manage Amazon Managed Service for Prometheus resources, such as workspaces, rule groups, and alert managers.
+\item Use the \href{https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-Prometheus-Compatible-Apis}{Prometheus-compatible API} to work within your Prometheus workspace.
 }
 }
 \section{Service syntax}{

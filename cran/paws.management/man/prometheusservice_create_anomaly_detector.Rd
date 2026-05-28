@@ -17,26 +17,21 @@ prometheusservice_create_anomaly_detector(
 )
 }
 \arguments{
-\item{workspaceId}{[required] The identifier of the workspace where the anomaly detector will be
-created.}
+\item{workspaceId}{[required] The identifier of the workspace where the anomaly detector will be created.}
 
 \item{alias}{[required] A user-friendly name for the anomaly detector.}
 
-\item{evaluationIntervalInSeconds}{The frequency, in seconds, at which the anomaly detector evaluates
-metrics. The default value is 60 seconds.}
+\item{evaluationIntervalInSeconds}{The frequency, in seconds, at which the anomaly detector evaluates metrics. The default value is 60 seconds.}
 
 \item{missingDataAction}{Specifies the action to take when data is missing during evaluation.}
 
 \item{configuration}{[required] The algorithm configuration for the anomaly detector.}
 
-\item{labels}{The Amazon Managed Service for Prometheus metric labels to associate
-with the anomaly detector.}
+\item{labels}{The Amazon Managed Service for Prometheus metric labels to associate with the anomaly detector.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
-\item{tags}{The metadata to apply to the anomaly detector to assist with
-categorization and organization.}
+\item{tags}{The metadata to apply to the anomaly detector to assist with categorization and organization.}
 }
 \description{
 Creates an anomaly detector within a workspace using the Random Cut Forest algorithm for time-series analysis. The anomaly detector analyzes Amazon Managed Service for Prometheus metrics to identify unusual patterns and behaviors.

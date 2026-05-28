@@ -13,23 +13,16 @@ route53resolver_put_resolver_query_log_config_policy(
 )
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the account that you want to share
-rules with.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the account that you want to share rules with.}
 
-\item{ResolverQueryLogConfigPolicy}{[required] An Identity and Access Management policy statement that lists the query
-logging configurations that you want to share with another Amazon Web
-Services account and the operations that you want the account to be able
-to perform. You can specify the following operations in the \code{Actions}
-section of the statement:
+\item{ResolverQueryLogConfigPolicy}{[required] An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account and the operations that you want the account to be able to perform. You can specify the following operations in the \code{Actions} section of the statement:
 \itemize{
 \item \code{route53resolver:AssociateResolverQueryLogConfig}
 \item \code{route53resolver:DisassociateResolverQueryLogConfig}
 \item \code{route53resolver:ListResolverQueryLogConfigs}
 }
 
-In the \code{Resource} section of the statement, you specify the ARNs for the
-query logging configurations that you want to share with the account
-that you specified in \code{Arn}.}
+In the \code{Resource} section of the statement, you specify the ARNs for the query logging configurations that you want to share with the account that you specified in \code{Arn}.}
 }
 \description{
 Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration.

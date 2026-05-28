@@ -10,6 +10,11 @@ costandusagereportservice_describe_report_definitions(
   NextToken = NULL
 )
 }
+\arguments{
+\item{MaxResults}{The maximum number of results that Amazon Web Services returns for the operation.}
+
+\item{NextToken}{A generic string.}
+}
 \description{
 Lists the Amazon Web Services Cost and Usage Report available to this account.
 

@@ -14,15 +14,11 @@ connect_list_security_profile_flow_modules(
 \arguments{
 \item{SecurityProfileId}{[required] The identifier for the security profile.}
 
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{NextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{NextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default MaxResult
-size is 100.}
+\item{MaxResults}{The maximum number of results to return per page. The default MaxResult size is 100.}
 }
 \description{
 A list of Flow Modules an AI Agent can invoke as a tool

@@ -14,19 +14,15 @@ batch_create_consumable_resource(
 \arguments{
 \item{consumableResourceName}{[required] The name of the consumable resource. Must be unique.}
 
-\item{totalQuantity}{The total amount of the consumable resource that is available. Must be
-non-negative.}
+\item{totalQuantity}{The total amount of the consumable resource that is available. Must be non-negative.}
 
-\item{resourceType}{Indicates whether the resource is available to be re-used after a job
-completes. Can be one of:
+\item{resourceType}{Indicates whether the resource is available to be re-used after a job completes. Can be one of:
 \itemize{
 \item \code{REPLENISHABLE} (default)
 \item \code{NON_REPLENISHABLE}
 }}
 
-\item{tags}{The tags that you apply to the consumable resource to help you
-categorize and organize your resources. Each tag consists of a key and
-an optional value. For more information, see \href{https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html}{Tagging your Batch resources}.}
+\item{tags}{The tags that you apply to the consumable resource to help you categorize and organize your resources. Each tag consists of a key and an optional value. For more information, see \href{https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html}{Tagging your Batch resources}.}
 }
 \description{
 Creates an Batch consumable resource.

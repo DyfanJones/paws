@@ -14,37 +14,22 @@ codegurusecurity_create_scan(
 )
 }
 \arguments{
-\item{clientToken}{The idempotency token for the request. Amazon CodeGuru Security uses
-this value to prevent the accidental creation of duplicate scans if
-there are failures and retries.}
+\item{clientToken}{The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.}
 
 \item{resourceId}{[required] The identifier for the resource object to be scanned.}
 
-\item{scanName}{[required] The unique name that CodeGuru Security uses to track revisions across
-multiple scans of the same resource. Only allowed for a \code{STANDARD} scan
-type.}
+\item{scanName}{[required] The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a \code{STANDARD} scan type.}
 
-\item{scanType}{The type of scan, either \code{Standard} or \code{Express}. Defaults to \code{Standard}
-type if missing.
+\item{scanType}{The type of scan, either \code{Standard} or \code{Express}. Defaults to \code{Standard} type if missing.
 
-\code{Express} scans run on limited resources and use a limited set of
-detectors to analyze your code in near-real time. \code{Standard} scans have
-standard resource limits and use the full set of detectors to analyze
-your code.}
+\code{Express} scans run on limited resources and use a limited set of detectors to analyze your code in near-real time. \code{Standard} scans have standard resource limits and use the full set of detectors to analyze your code.}
 
-\item{analysisType}{The type of analysis you want CodeGuru Security to perform in the scan,
-either \code{Security} or \code{All}. The \code{Security} type only generates findings
-related to security. The \code{All} type generates both security findings and
-quality findings. Defaults to \code{Security} type if missing.}
+\item{analysisType}{The type of analysis you want CodeGuru Security to perform in the scan, either \code{Security} or \code{All}. The \code{Security} type only generates findings related to security. The \code{All} type generates both security findings and quality findings. Defaults to \code{Security} type if missing.}
 
-\item{tags}{An array of key-value pairs used to tag a scan. A tag is a custom
-attribute label with two parts:
+\item{tags}{An array of key-value pairs used to tag a scan. A tag is a custom attribute label with two parts:
 \itemize{
-\item A tag key. For example, \code{CostCenter}, \code{Environment}, or \code{Secret}.
-Tag keys are case sensitive.
-\item An optional tag value field. For example, \code{111122223333},
-\code{Production}, or a team name. Omitting the tag value is the same as
-using an empty string. Tag values are case sensitive.
+\item A tag key. For example, \code{CostCenter}, \code{Environment}, or \code{Secret}. Tag keys are case sensitive.
+\item An optional tag value field. For example, \code{111122223333}, \code{Production}, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.
 }}
 }
 \description{

@@ -19,20 +19,15 @@ sagemaker_list_models(
 
 \item{SortOrder}{The sort order for results. The default is \code{Descending}.}
 
-\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_models]{list_models}}
-request was truncated, the response includes a \code{NextToken}. To retrieve
-the next set of models, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_models]{list_models}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of models, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of models to return in the response.}
 
-\item{NameContains}{A string in the model name. This filter returns only models whose name
-contains the specified string.}
+\item{NameContains}{A string in the model name. This filter returns only models whose name contains the specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only models created before the specified time
-(timestamp).}
+\item{CreationTimeBefore}{A filter that returns only models created before the specified time (timestamp).}
 
-\item{CreationTimeAfter}{A filter that returns only models with a creation time greater than or
-equal to the specified time (timestamp).}
+\item{CreationTimeAfter}{A filter that returns only models with a creation time greater than or equal to the specified time (timestamp).}
 }
 \description{
 Lists models created with the \code{\link[=sagemaker_create_model]{create_model}} API.

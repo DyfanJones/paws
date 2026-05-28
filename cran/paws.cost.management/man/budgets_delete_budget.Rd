@@ -7,8 +7,7 @@
 budgets_delete_budget(AccountId, BudgetName)
 }
 \arguments{
-\item{AccountId}{[required] The \code{accountId} that is associated with the budget that you want to
-delete.}
+\item{AccountId}{[required] The \code{accountId} that is associated with the budget that you want to delete.}
 
 \item{BudgetName}{[required] The name of the budget that you want to delete.}
 }

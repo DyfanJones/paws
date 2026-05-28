@@ -15,21 +15,13 @@ prometheusservice_put_resource_policy(
 \arguments{
 \item{workspaceId}{[required] The ID of the workspace to attach the resource-based policy to.}
 
-\item{policyDocument}{[required] The JSON policy document to use as the resource-based policy. This
-policy defines the permissions that other AWS accounts or services have
-to access your workspace.}
+\item{policyDocument}{[required] The JSON policy document to use as the resource-based policy. This policy defines the permissions that other AWS accounts or services have to access your workspace.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-request is safe to retry (idempotent).}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the request is safe to retry (idempotent).}
 
-\item{revisionId}{The revision ID of the policy to update. Use this parameter to ensure
-that you are updating the correct version of the policy. If you don't
-specify a revision ID, the policy is updated regardless of its current
-revision.
+\item{revisionId}{The revision ID of the policy to update. Use this parameter to ensure that you are updating the correct version of the policy. If you don't specify a revision ID, the policy is updated regardless of its current revision.
 
-For the first \strong{PUT} request on a workspace that doesn't have an
-existing resource policy, you can specify \code{NO_POLICY} as the revision
-ID.}
+For the first \strong{PUT} request on a workspace that doesn't have an existing resource policy, you can specify \code{NO_POLICY} as the revision ID.}
 }
 \description{
 Creates or updates a resource-based policy for an Amazon Managed Service for Prometheus workspace. Use resource-based policies to grant permissions to other AWS accounts or services to access your workspace.

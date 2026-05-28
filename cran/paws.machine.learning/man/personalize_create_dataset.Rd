@@ -15,11 +15,9 @@ personalize_create_dataset(
 \arguments{
 \item{name}{[required] The name for the dataset.}
 
-\item{schemaArn}{[required] The ARN of the schema to associate with the dataset. The schema defines
-the dataset fields.}
+\item{schemaArn}{[required] The ARN of the schema to associate with the dataset. The schema defines the dataset fields.}
 
-\item{datasetGroupArn}{[required] The Amazon Resource Name (ARN) of the dataset group to add the dataset
-to.}
+\item{datasetGroupArn}{[required] The Amazon Resource Name (ARN) of the dataset group to add the dataset to.}
 
 \item{datasetType}{[required] The type of dataset.
 
@@ -32,9 +30,7 @@ One of the following (case insensitive) values:
 \item Action_Interactions
 }}
 
-\item{tags}{A list of
-\href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags}
-to apply to the dataset.}
+\item{tags}{A list of \href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags} to apply to the dataset.}
 }
 \description{
 Creates an empty dataset and adds it to the specified dataset group. Use \code{\link[=personalize_create_dataset_import_job]{create_dataset_import_job}} to import your training data to a dataset.

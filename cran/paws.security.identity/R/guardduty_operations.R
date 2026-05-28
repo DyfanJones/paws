@@ -12,10 +12,8 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/guardduty_accept_administrator_invitation/](https://www.paws-r-sdk.com/docs/guardduty_accept_administrator_invitation/) for full documentation.
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty member account.
-#' @param AdministratorId &#91;required&#93; The account ID of the GuardDuty administrator account whose invitation
-#' you're accepting.
-#' @param InvitationId &#91;required&#93; The value that is used to validate the administrator account to the
-#' member account.
+#' @param AdministratorId &#91;required&#93; The account ID of the GuardDuty administrator account whose invitation you're accepting.
+#' @param InvitationId &#91;required&#93; The value that is used to validate the administrator account to the member account.
 #'
 #' @keywords internal
 #'
@@ -49,13 +47,9 @@ guardduty_accept_administrator_invitation <- function(DetectorId, AdministratorI
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty member account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MasterId &#91;required&#93; The account ID of the GuardDuty administrator account whose invitation
-#' you're accepting.
-#' @param InvitationId &#91;required&#93; The value that is used to validate the administrator account to the
-#' member account.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MasterId &#91;required&#93; The account ID of the GuardDuty administrator account whose invitation you're accepting.
+#' @param InvitationId &#91;required&#93; The value that is used to validate the administrator account to the member account.
 #'
 #' @keywords internal
 #'
@@ -87,12 +81,9 @@ guardduty_accept_invitation <- function(DetectorId, MasterId, InvitationId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_archive_findings/](https://www.paws-r-sdk.com/docs/guardduty_archive_findings/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose
-#' findings you want to archive.
+#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose findings you want to archive.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingIds &#91;required&#93; The IDs of the findings that you want to archive.
 #'
 #' @keywords internal
@@ -129,10 +120,7 @@ guardduty_archive_findings <- function(DetectorId, FindingIds) {
 #' @param FindingPublishingFrequency A value that specifies how frequently updated findings are exported.
 #' @param DataSources Describes which data sources will be enabled for the detector.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #' @param Tags The tags to be added to a new detector resource.
 #' @param Features A list of features that will be configured for the detector.
 #'
@@ -165,29 +153,16 @@ guardduty_create_detector <- function(Enable, ClientToken = NULL, FindingPublish
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_create_filter/](https://www.paws-r-sdk.com/docs/guardduty_create_filter/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The detector ID associated with the GuardDuty account for which you want
-#' to create a filter.
+#' @param DetectorId &#91;required&#93; The detector ID associated with the GuardDuty account for which you want to create a filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param Name &#91;required&#93; The name of the filter. Valid characters include period (.), underscore
-#' (_), dash (-), and alphanumeric characters. A whitespace is considered
-#' to be an invalid character.
-#' @param Description The description of the filter. Valid characters include alphanumeric
-#' characters, and special characters such as hyphen, period, colon,
-#' underscore, parentheses (`{ }`, `[ ]`, and `( )`), forward slash,
-#' horizontal tab, vertical tab, newline, form feed, return, and
-#' whitespace.
-#' @param Action Specifies the action that is to be applied to the findings that match
-#' the filter.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param Name &#91;required&#93; The name of the filter. Valid characters include period (.), underscore (_), dash (-), and alphanumeric characters. A whitespace is considered to be an invalid character.
+#' @param Description The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (`{ }`, `[ ]`, and `( )`), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
+#' @param Action Specifies the action that is to be applied to the findings that match the filter.
 #' 
 #' Default: NOOP
-#' @param Rank Specifies the position of the filter in the list of current filters.
-#' Also specifies the order in which this filter is applied to the
-#' findings.
-#' @param FindingCriteria &#91;required&#93; Represents the criteria to be used in the filter for querying findings.
-#' The following fields are available for filtering:
+#' @param Rank Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
+#' @param FindingCriteria &#91;required&#93; Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:
 #' 
 #' -   accountId
 #' 
@@ -1493,9 +1468,7 @@ guardduty_create_detector <- function(Enable, ClientToken = NULL, FindingPublish
 #' 
 #' -   severity
 #' 
-#'     To configure severity based filters, use the following for the
-#'     [FindingCriteria](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html)
-#'     condition:
+#'     To configure severity based filters, use the following for the [FindingCriteria](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html) condition:
 #' 
 #'     -   **Low**: `["1", "2", "3"]`
 #' 
@@ -1505,9 +1478,7 @@ guardduty_create_detector <- function(Enable, ClientToken = NULL, FindingPublish
 #' 
 #'     -   **Critical**: `["9", "10"]`
 #' 
-#'     For more information, see [Findings severity
-#'     levels](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html)
-#'     in the *Amazon GuardDuty User Guide*.
+#'     For more information, see [Findings severity levels](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html) in the *Amazon GuardDuty User Guide*.
 #' 
 #' -   title
 #' 
@@ -1549,24 +1520,18 @@ guardduty_create_filter <- function(DetectorId, Name, Description = NULL, Action
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_create_ip_set/](https://www.paws-r-sdk.com/docs/guardduty_create_ip_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to create an IPSet.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to create an IPSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param Name &#91;required&#93; The user-friendly name to identify the IPSet.
 #' 
-#' Allowed characters are alphanumeric, whitespace, dash (-), and
-#' underscores (_).
+#' Allowed characters are alphanumeric, whitespace, dash (-), and underscores (_).
 #' @param Format &#91;required&#93; The format of the file that contains the IPSet.
 #' @param Location &#91;required&#93; The URI of the file that contains the IPSet.
-#' @param Activate &#91;required&#93; A Boolean value that indicates whether GuardDuty is to start using the
-#' uploaded IPSet.
+#' @param Activate &#91;required&#93; A Boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new IP set resource.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
 #'
 #' @keywords internal
 #'
@@ -1598,13 +1563,9 @@ guardduty_create_ip_set <- function(DetectorId, Name, Format, Location, Activate
 #' See [https://www.paws-r-sdk.com/docs/guardduty_create_malware_protection_plan/](https://www.paws-r-sdk.com/docs/guardduty_create_malware_protection_plan/) for full documentation.
 #'
 #' @param ClientToken The idempotency token for the create request.
-#' @param Role &#91;required&#93; Amazon Resource Name (ARN) of the IAM role that has the permissions to
-#' scan and add tags to the associated protected resource.
-#' @param ProtectedResource &#91;required&#93; Information about the protected resource that is associated with the
-#' created Malware Protection plan. Presently, `S3Bucket` is the only
-#' supported protected resource.
-#' @param Actions Information about whether the tags will be added to the S3 object after
-#' scanning.
+#' @param Role &#91;required&#93; Amazon Resource Name (ARN) of the IAM role that has the permissions to scan and add tags to the associated protected resource.
+#' @param ProtectedResource &#91;required&#93; Information about the protected resource that is associated with the created Malware Protection plan. Presently, `S3Bucket` is the only supported protected resource.
+#' @param Actions Information about whether the tags will be added to the S3 object after scanning.
 #' @param Tags Tags added to the Malware Protection plan resource.
 #'
 #' @keywords internal
@@ -1637,14 +1598,10 @@ guardduty_create_malware_protection_plan <- function(ClientToken = NULL, Role, P
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_create_members/](https://www.paws-r-sdk.com/docs/guardduty_create_members/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to associate member accounts.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to associate member accounts.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountDetails &#91;required&#93; A list of account ID and email address pairs of the accounts that you
-#' want to associate with the GuardDuty administrator account.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountDetails &#91;required&#93; A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty administrator account.
 #'
 #' @keywords internal
 #'
@@ -1676,16 +1633,11 @@ guardduty_create_members <- function(DetectorId, AccountDetails) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_create_publishing_destination/](https://www.paws-r-sdk.com/docs/guardduty_create_publishing_destination/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The ID of the GuardDuty detector associated with the publishing
-#' destination.
+#' @param DetectorId &#91;required&#93; The ID of the GuardDuty detector associated with the publishing destination.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param DestinationType &#91;required&#93; The type of resource for the publishing destination. Currently only
-#' Amazon S3 buckets are supported.
-#' @param DestinationProperties &#91;required&#93; The properties of the publishing destination, including the ARNs for the
-#' destination and the KMS key used for encryption.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param DestinationType &#91;required&#93; The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.
+#' @param DestinationProperties &#91;required&#93; The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.
 #' @param ClientToken The idempotency token for the request.
 #' @param Tags The tags to be added to a new publishing destination resource.
 #'
@@ -1721,9 +1673,7 @@ guardduty_create_publishing_destination <- function(DetectorId, DestinationType,
 #'
 #' @param DetectorId &#91;required&#93; The ID of the detector for which you need to create sample findings.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingTypes The types of sample findings to generate.
 #'
 #' @keywords internal
@@ -1751,33 +1701,20 @@ guardduty_create_sample_findings <- function(DetectorId, FindingTypes = NULL) {
 #' Creates a new threat entity set
 #'
 #' @description
-#' Creates a new threat entity set. In a threat entity set, you can provide known malicious IP addresses and domains for your Amazon Web Services environment. GuardDuty generates findings based on the entries in the threat entity sets. Only users of the administrator account can manage entity sets, which automatically apply to member accounts.
+#' Creates a new threat entity set. In a threat entity set, you can provide known malicious threat entities for your Amazon Web Services environment. GuardDuty generates findings based on the entries in the threat entity sets. Only users of the administrator account can manage entity sets, which automatically apply to member accounts.
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_create_threat_entity_set/](https://www.paws-r-sdk.com/docs/guardduty_create_threat_entity_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to create a threat entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to create a threat entity set.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param Name &#91;required&#93; A user-friendly name to identify the threat entity set.
 #' 
-#' The name of your list can include lowercase letters, uppercase letters,
-#' numbers, dash (-), and underscore (_).
+#' The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).
 #' @param Format &#91;required&#93; The format of the file that contains the threat entity set.
-#' @param Location &#91;required&#93; The URI of the file that contains the threat entity set. The format of
-#' the `Location` URL must be a valid Amazon S3 URL format. Invalid URL
-#' formats will result in an error, regardless of whether you activate the
-#' entity set or not. For more information about format of the location
-#' URLs, see [Format of location URL under Step 2: Adding trusted or threat
-#' intelligence
-#' data](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html)
-#' in the *Amazon GuardDuty User Guide*.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
-#' @param Activate &#91;required&#93; A boolean value that indicates whether GuardDuty should start using the
-#' uploaded threat entity set to generate findings.
+#' @param Location &#91;required&#93; The URI of the file that contains the threat entity set. The format of the `Location` URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see [Format of location URL under Step 2: Adding trusted or threat intelligence data](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html) in the *Amazon GuardDuty User Guide*.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
+#' @param Activate &#91;required&#93; A boolean value that indicates whether GuardDuty should start using the uploaded threat entity set to generate findings.
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new threat entity set resource.
 #'
@@ -1810,23 +1747,16 @@ guardduty_create_threat_entity_set <- function(DetectorId, Name, Format, Locatio
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_create_threat_intel_set/](https://www.paws-r-sdk.com/docs/guardduty_create_threat_intel_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to create a `threatIntelSet`.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to create a `threatIntelSet`.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param Name &#91;required&#93; A user-friendly ThreatIntelSet name displayed in all findings that are
-#' generated by activity that involves IP addresses included in this
-#' ThreatIntelSet.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param Name &#91;required&#93; A user-friendly ThreatIntelSet name displayed in all findings that are generated by activity that involves IP addresses included in this ThreatIntelSet.
 #' @param Format &#91;required&#93; The format of the file that contains the ThreatIntelSet.
 #' @param Location &#91;required&#93; The URI of the file that contains the ThreatIntelSet.
-#' @param Activate &#91;required&#93; A Boolean value that indicates whether GuardDuty is to start using the
-#' uploaded ThreatIntelSet.
+#' @param Activate &#91;required&#93; A Boolean value that indicates whether GuardDuty is to start using the uploaded ThreatIntelSet.
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new threat list resource.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
 #'
 #' @keywords internal
 #'
@@ -1857,29 +1787,16 @@ guardduty_create_threat_intel_set <- function(DetectorId, Name, Format, Location
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_create_trusted_entity_set/](https://www.paws-r-sdk.com/docs/guardduty_create_trusted_entity_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you
-#' want to create a trusted entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account for which you want to create a trusted entity set.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param Name &#91;required&#93; A user-friendly name to identify the trusted entity set.
 #' 
-#' The name of your list can include lowercase letters, uppercase letters,
-#' numbers, dash (-), and underscore (_).
+#' The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).
 #' @param Format &#91;required&#93; The format of the file that contains the trusted entity set.
-#' @param Location &#91;required&#93; The URI of the file that contains the threat entity set. The format of
-#' the `Location` URL must be a valid Amazon S3 URL format. Invalid URL
-#' formats will result in an error, regardless of whether you activate the
-#' entity set or not. For more information about format of the location
-#' URLs, see [Format of location URL under Step 2: Adding trusted or threat
-#' intelligence
-#' data](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html)
-#' in the *Amazon GuardDuty User Guide*.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
-#' @param Activate &#91;required&#93; A boolean value that indicates whether GuardDuty is to start using the
-#' uploaded trusted entity set.
+#' @param Location &#91;required&#93; The URI of the file that contains the threat entity set. The format of the `Location` URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see [Format of location URL under Step 2: Adding trusted or threat intelligence data](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html) in the *Amazon GuardDuty User Guide*.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
+#' @param Activate &#91;required&#93; A boolean value that indicates whether GuardDuty is to start using the uploaded trusted entity set.
 #' @param ClientToken The idempotency token for the create request.
 #' @param Tags The tags to be added to a new trusted entity set resource.
 #'
@@ -1913,9 +1830,7 @@ guardduty_create_trusted_entity_set <- function(DetectorId, Name, Format, Locati
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_decline_invitations/](https://www.paws-r-sdk.com/docs/guardduty_decline_invitations/) for full documentation.
 #'
-#' @param AccountIds &#91;required&#93; A list of account IDs of the Amazon Web Services accounts that sent
-#' invitations to the current member account that you want to decline
-#' invitations from.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to decline invitations from.
 #'
 #' @keywords internal
 #'
@@ -1949,9 +1864,7 @@ guardduty_decline_invitations <- function(AccountIds) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that you want to delete.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #'
 #' @keywords internal
 #'
@@ -1984,9 +1897,7 @@ guardduty_delete_detector <- function(DetectorId) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FilterName &#91;required&#93; The name of the filter that you want to delete.
 #'
 #' @keywords internal
@@ -2020,9 +1931,7 @@ guardduty_delete_filter <- function(DetectorId, FilterName) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the IPSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param IpSetId &#91;required&#93; The unique ID of the IPSet to delete.
 #'
 #' @keywords internal
@@ -2055,9 +1964,7 @@ guardduty_delete_ip_set <- function(DetectorId, IpSetId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_delete_invitations/](https://www.paws-r-sdk.com/docs/guardduty_delete_invitations/) for full documentation.
 #'
-#' @param AccountIds &#91;required&#93; A list of account IDs of the Amazon Web Services accounts that sent
-#' invitations to the current member account that you want to delete
-#' invitations from.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the Amazon Web Services accounts that sent invitations to the current member account that you want to delete invitations from.
 #'
 #' @keywords internal
 #'
@@ -2121,14 +2028,10 @@ guardduty_delete_malware_protection_plan <- function(MalwareProtectionPlanId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_delete_members/](https://www.paws-r-sdk.com/docs/guardduty_delete_members/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you
-#' want to delete.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you want to delete.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to
-#' delete.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to delete.
 #'
 #' @keywords internal
 #'
@@ -2159,12 +2062,9 @@ guardduty_delete_members <- function(DetectorId, AccountIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_delete_publishing_destination/](https://www.paws-r-sdk.com/docs/guardduty_delete_publishing_destination/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the publishing destination
-#' to delete.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the publishing destination to delete.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param DestinationId &#91;required&#93; The ID of the publishing destination to delete.
 #'
 #' @keywords internal
@@ -2197,14 +2097,10 @@ guardduty_delete_publishing_destination <- function(DetectorId, DestinationId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_delete_threat_entity_set/](https://www.paws-r-sdk.com/docs/guardduty_delete_threat_entity_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the threat entity set
-#' resource.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the threat entity set resource.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param ThreatEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify which threat entity set
-#' needs to be deleted.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param ThreatEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify which threat entity set needs to be deleted.
 #'
 #' @keywords internal
 #'
@@ -2235,12 +2131,9 @@ guardduty_delete_threat_entity_set <- function(DetectorId, ThreatEntitySetId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_delete_threat_intel_set/](https://www.paws-r-sdk.com/docs/guardduty_delete_threat_intel_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the
-#' threatIntelSet.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the threatIntelSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param ThreatIntelSetId &#91;required&#93; The unique ID of the threatIntelSet that you want to delete.
 #'
 #' @keywords internal
@@ -2273,14 +2166,10 @@ guardduty_delete_threat_intel_set <- function(DetectorId, ThreatIntelSetId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_delete_trusted_entity_set/](https://www.paws-r-sdk.com/docs/guardduty_delete_trusted_entity_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the trusted entity set
-#' resource.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the trusted entity set resource.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param TrustedEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify which trusted entity set
-#' needs to be deleted.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param TrustedEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify which trusted entity set needs to be deleted.
 #'
 #' @keywords internal
 #'
@@ -2313,21 +2202,11 @@ guardduty_delete_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) 
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that the request is associated with.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param FilterCriteria Represents the criteria to be used in the filter for describing scan
-#' entries.
-#' @param SortCriteria Represents the criteria used for sorting scan entries. The
-#' [`attributeName`](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_SortCriteria.html#guardduty-Type-SortCriteria-attributeName)
-#' is required and it must be `scanStartTime`.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param FilterCriteria Represents the criteria to be used in the filter for describing scan entries.
+#' @param SortCriteria Represents the criteria used for sorting scan entries. The [`attributeName`](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_SortCriteria.html#guardduty-Type-SortCriteria-attributeName) is required and it must be `scanStartTime`.
 #'
 #' @keywords internal
 #'
@@ -2359,19 +2238,11 @@ guardduty_describe_malware_scans <- function(DetectorId, NextToken = NULL, MaxRe
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_describe_organization_configuration/](https://www.paws-r-sdk.com/docs/guardduty_describe_organization_configuration/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The detector ID of the delegated administrator for which you need to
-#' retrieve the information.
+#' @param DetectorId &#91;required&#93; The detector ID of the delegated administrator for which you need to retrieve the information.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill `nextToken` in the request with the
-#' value of `NextToken` from the previous response to continue listing
-#' data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill `nextToken` in the request with the value of `NextToken` from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -2403,12 +2274,9 @@ guardduty_describe_organization_configuration <- function(DetectorId, MaxResults
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_describe_publishing_destination/](https://www.paws-r-sdk.com/docs/guardduty_describe_publishing_destination/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the publishing destination
-#' to retrieve.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the publishing destination to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param DestinationId &#91;required&#93; The ID of the publishing destination to retrieve.
 #'
 #' @keywords internal
@@ -2441,8 +2309,7 @@ guardduty_describe_publishing_destination <- function(DetectorId, DestinationId)
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_disable_organization_admin_account/](https://www.paws-r-sdk.com/docs/guardduty_disable_organization_admin_account/) for full documentation.
 #'
-#' @param AdminAccountId &#91;required&#93; The Amazon Web Services Account ID for the organizations account to be
-#' disabled as a GuardDuty delegated administrator.
+#' @param AdminAccountId &#91;required&#93; The Amazon Web Services Account ID for the organizations account to be disabled as a GuardDuty delegated administrator.
 #'
 #' @keywords internal
 #'
@@ -2538,10 +2405,8 @@ guardduty_disassociate_from_master_account <- function(DetectorId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_disassociate_members/](https://www.paws-r-sdk.com/docs/guardduty_disassociate_members/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you
-#' want to disassociate from the administrator account.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to
-#' disassociate from the administrator account.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the administrator account.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator account.
 #'
 #' @keywords internal
 #'
@@ -2573,8 +2438,7 @@ guardduty_disassociate_members <- function(DetectorId, AccountIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_enable_organization_admin_account/](https://www.paws-r-sdk.com/docs/guardduty_enable_organization_admin_account/) for full documentation.
 #'
-#' @param AdminAccountId &#91;required&#93; The Amazon Web Services account ID for the organization account to be
-#' enabled as a GuardDuty delegated administrator.
+#' @param AdminAccountId &#91;required&#93; The Amazon Web Services account ID for the organization account to be enabled as a GuardDuty delegated administrator.
 #'
 #' @keywords internal
 #'
@@ -2639,9 +2503,7 @@ guardduty_get_administrator_account <- function(DetectorId) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FilterCriteria Represents the criteria used to filter the coverage statistics.
 #' @param StatisticsType &#91;required&#93; Represents the statistics type used to aggregate the coverage details.
 #'
@@ -2676,9 +2538,7 @@ guardduty_get_coverage_statistics <- function(DetectorId, FilterCriteria = NULL,
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that you want to get.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #'
 #' @keywords internal
 #'
@@ -2711,9 +2571,7 @@ guardduty_get_detector <- function(DetectorId) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with this filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FilterName &#91;required&#93; The name of the filter you want to get.
 #'
 #' @keywords internal
@@ -2745,12 +2603,9 @@ guardduty_get_filter <- function(DetectorId, FilterName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_get_findings/](https://www.paws-r-sdk.com/docs/guardduty_get_findings/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose
-#' findings you want to retrieve.
+#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingIds &#91;required&#93; The IDs of the findings that you want to retrieve.
 #' @param SortCriteria Represents the criteria used for sorting findings.
 #'
@@ -2785,19 +2640,14 @@ guardduty_get_findings <- function(DetectorId, FindingIds, SortCriteria = NULL) 
 #'
 #' @param DetectorId &#91;required&#93; The ID of the detector whose findings statistics you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingStatisticTypes The types of finding statistics to retrieve.
 #' @param FindingCriteria Represents the criteria that is used for querying findings.
-#' @param GroupBy Displays the findings statistics grouped by one of the listed valid
-#' values.
-#' @param OrderBy Displays the sorted findings in the requested order. The default value
-#' of `orderBy` is `DESC`.
+#' @param GroupBy Displays the findings statistics grouped by one of the listed valid values.
+#' @param OrderBy Displays the sorted findings in the requested order. The default value of `orderBy` is `DESC`.
 #' 
 #' You can use this parameter only with the `groupBy` parameter.
-#' @param MaxResults The maximum number of results to be returned in the response. The
-#' default value is 25.
+#' @param MaxResults The maximum number of results to be returned in the response. The default value is 25.
 #' 
 #' You can use this parameter only with the `groupBy` parameter.
 #'
@@ -2832,9 +2682,7 @@ guardduty_get_findings_statistics <- function(DetectorId, FindingStatisticTypes 
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the IPSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param IpSetId &#91;required&#93; The unique ID of the IPSet to retrieve.
 #'
 #' @keywords internal
@@ -2930,9 +2778,7 @@ guardduty_get_malware_protection_plan <- function(MalwareProtectionPlanId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_get_malware_scan/](https://www.paws-r-sdk.com/docs/guardduty_get_malware_scan/) for full documentation.
 #'
-#' @param ScanId &#91;required&#93; A unique identifier that gets generated when you invoke the API without
-#' any error. Each malware scan has a corresponding scan ID. Using this
-#' scan ID, you can monitor the status of your malware scan.
+#' @param ScanId &#91;required&#93; A unique identifier that gets generated when you invoke the API without any error. Each malware scan has a corresponding scan ID. Using this scan ID, you can monitor the status of your malware scan.
 #'
 #' @keywords internal
 #'
@@ -2965,9 +2811,7 @@ guardduty_get_malware_scan <- function(ScanId) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with this scan.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #'
 #' @keywords internal
 #'
@@ -3001,9 +2845,7 @@ guardduty_get_malware_scan_settings <- function(DetectorId) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty member account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #'
 #' @keywords internal
 #'
@@ -3037,9 +2879,7 @@ guardduty_get_master_account <- function(DetectorId) {
 #'
 #' @param DetectorId &#91;required&#93; The detector ID for the administrator account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param AccountIds &#91;required&#93; A list of member account IDs.
 #'
 #' @keywords internal
@@ -3072,14 +2912,10 @@ guardduty_get_member_detectors <- function(DetectorId, AccountIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_get_members/](https://www.paws-r-sdk.com/docs/guardduty_get_members/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you
-#' want to retrieve.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account whose members you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to
-#' describe.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts that you want to describe.
 #'
 #' @keywords internal
 #'
@@ -3145,9 +2981,7 @@ guardduty_get_organization_statistics <- function() {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty member account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param AccountIds &#91;required&#93; A list of account identifiers of the GuardDuty member account.
 #'
 #' @keywords internal
@@ -3180,12 +3014,9 @@ guardduty_get_remaining_free_trial_days <- function(DetectorId, AccountIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_get_threat_entity_set/](https://www.paws-r-sdk.com/docs/guardduty_get_threat_entity_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the threat entity set
-#' resource.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the threat entity set resource.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param ThreatEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify the threat entity set.
 #'
 #' @keywords internal
@@ -3217,12 +3048,9 @@ guardduty_get_threat_entity_set <- function(DetectorId, ThreatEntitySetId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_get_threat_intel_set/](https://www.paws-r-sdk.com/docs/guardduty_get_threat_intel_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the
-#' threatIntelSet.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the threatIntelSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param ThreatIntelSetId &#91;required&#93; The unique ID of the threatIntelSet that you want to get.
 #'
 #' @keywords internal
@@ -3255,8 +3083,7 @@ guardduty_get_threat_intel_set <- function(DetectorId, ThreatIntelSetId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_get_trusted_entity_set/](https://www.paws-r-sdk.com/docs/guardduty_get_trusted_entity_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with this trusted
-#' entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with this trusted entity set.
 #' @param TrustedEntitySetId &#91;required&#93; The unique ID that helps GuardDuty identify the trusted entity set.
 #'
 #' @keywords internal
@@ -3289,21 +3116,14 @@ guardduty_get_trusted_entity_set <- function(DetectorId, TrustedEntitySetId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_get_usage_statistics/](https://www.paws-r-sdk.com/docs/guardduty_get_usage_statistics/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose usage
-#' statistics you want to retrieve.
+#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose usage statistics you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param UsageStatisticType &#91;required&#93; The type of usage statistics to retrieve.
 #' @param UsageCriteria &#91;required&#93; Represents the criteria used for querying usage.
-#' @param Unit The currency unit you would like to view your usage statistics in.
-#' Current valid values are USD.
+#' @param Unit The currency unit you would like to view your usage statistics in. Current valid values are USD.
 #' @param MaxResults The maximum number of results to return in the response.
-#' @param NextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the NextToken value returned from the
-#' previous request to continue listing results after the first page.
+#' @param NextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.
 #'
 #' @keywords internal
 #'
@@ -3336,19 +3156,12 @@ guardduty_get_usage_statistics <- function(DetectorId, UsageStatisticType, Usage
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_invite_members/](https://www.paws-r-sdk.com/docs/guardduty_invite_members/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account with which you
-#' want to invite members.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty account with which you want to invite members.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the accounts that you want to invite to
-#' GuardDuty as members.
-#' @param DisableEmailNotification A Boolean value that specifies whether you want to disable email
-#' notification to the accounts that you are inviting to GuardDuty as
-#' members.
-#' @param Message The invitation message that you want to send to the accounts that you're
-#' inviting to GuardDuty as members.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the accounts that you want to invite to GuardDuty as members.
+#' @param DisableEmailNotification A Boolean value that specifies whether you want to disable email notification to the accounts that you are inviting to GuardDuty as members.
+#' @param Message The invitation message that you want to send to the accounts that you're inviting to GuardDuty as members.
 #'
 #' @keywords internal
 #'
@@ -3379,16 +3192,10 @@ guardduty_invite_members <- function(DetectorId, AccountIds, DisableEmailNotific
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_coverage/](https://www.paws-r-sdk.com/docs/guardduty_list_coverage/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector whose coverage details you want to
-#' retrieve.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector whose coverage details you want to retrieve.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param NextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the NextToken value returned from the
-#' previous request to continue listing results after the first page.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param NextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the NextToken value returned from the previous request to continue listing results after the first page.
 #' @param MaxResults The maximum number of results to return in the response.
 #' @param FilterCriteria Represents the criteria used to filter the coverage details.
 #' @param SortCriteria Represents the criteria used to sort the coverage details.
@@ -3423,13 +3230,8 @@ guardduty_list_coverage <- function(DetectorId, NextToken = NULL, MaxResults = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_detectors/](https://www.paws-r-sdk.com/docs/guardduty_list_detectors/) for full documentation.
 #'
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -3462,16 +3264,9 @@ guardduty_list_detectors <- function(MaxResults = NULL, NextToken = NULL) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -3502,14 +3297,10 @@ guardduty_list_filters <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_findings/](https://www.paws-r-sdk.com/docs/guardduty_list_findings/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose
-#' findings you want to list.
+#' @param DetectorId &#91;required&#93; The ID of the detector that specifies the GuardDuty service whose findings you want to list.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param FindingCriteria Represents the criteria used for querying findings. Valid values
-#' include:
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param FindingCriteria Represents the criteria used for querying findings. Valid values include:
 #' 
 #' -   JSON field name
 #' 
@@ -3601,10 +3392,7 @@ guardduty_list_filters <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #' 
 #' -   service.archived
 #' 
-#'     When this attribute is set to 'true', only archived findings are
-#'     listed. When it's set to 'false', only unarchived findings are
-#'     listed. When this attribute is not set, all existing findings are
-#'     listed.
+#'     When this attribute is set to 'true', only archived findings are listed. When it's set to 'false', only unarchived findings are listed. When this attribute is not set, all existing findings are listed.
 #' 
 #' -   service.ebsVolumeScanDetails.scanId
 #' 
@@ -3618,12 +3406,8 @@ guardduty_list_filters <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #' 
 #'     Type: Timestamp in Unix Epoch millisecond format: 1486685375000
 #' @param SortCriteria Represents the criteria used for sorting findings.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50. The maximum value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -3656,15 +3440,9 @@ guardduty_list_findings <- function(DetectorId, FindingCriteria = NULL, SortCrit
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with IPSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50. The maximum value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -3696,13 +3474,8 @@ guardduty_list_ip_sets <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_invitations/](https://www.paws-r-sdk.com/docs/guardduty_list_invitations/) for full documentation.
 #'
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -3734,11 +3507,7 @@ guardduty_list_invitations <- function(MaxResults = NULL, NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_malware_protection_plans/](https://www.paws-r-sdk.com/docs/guardduty_list_malware_protection_plans/) for full documentation.
 #'
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of `NextToken` from the previous response to continue listing
-#' data. The default page size is 100 plans.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of `NextToken` from the previous response to continue listing data. The default page size is 100 plans.
 #'
 #' @keywords internal
 #'
@@ -3769,14 +3538,8 @@ guardduty_list_malware_protection_plans <- function(NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_malware_scans/](https://www.paws-r-sdk.com/docs/guardduty_list_malware_scans/) for full documentation.
 #'
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing
-#' results.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing results.
 #' @param FilterCriteria Represents the criteria used to filter the malware scan entries.
 #' @param SortCriteria Represents the criteria used for sorting malware scan entries.
 #'
@@ -3812,21 +3575,10 @@ guardduty_list_malware_scans <- function(MaxResults = NULL, NextToken = NULL, Fi
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the member.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50. The maximum value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
-#' @param OnlyAssociated Specifies whether to only return associated members or to return all
-#' members (including members who haven't been invited yet or have been
-#' disassociated). Member accounts must have been previously associated
-#' with the GuardDuty administrator account using
-#' [`Create Members`](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html)
-#' .
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
+#' @param OnlyAssociated Specifies whether to only return associated members or to return all members (including members who haven't been invited yet or have been disassociated). Member accounts must have been previously associated with the GuardDuty administrator account using [`Create Members`](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html) .
 #'
 #' @keywords internal
 #'
@@ -3858,10 +3610,7 @@ guardduty_list_members <- function(DetectorId, MaxResults = NULL, NextToken = NU
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_organization_admin_accounts/](https://www.paws-r-sdk.com/docs/guardduty_list_organization_admin_accounts/) for full documentation.
 #'
 #' @param MaxResults The maximum number of results to return in the response.
-#' @param NextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the `NextToken` value returned from
-#' the previous request to continue listing results after the first page.
+#' @param NextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the `NextToken` value returned from the previous request to continue listing results after the first page.
 #'
 #' @keywords internal
 #'
@@ -3893,17 +3642,11 @@ guardduty_list_organization_admin_accounts <- function(MaxResults = NULL, NextTo
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_publishing_destinations/](https://www.paws-r-sdk.com/docs/guardduty_list_publishing_destinations/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The detector ID for which you want to retrieve the publishing
-#' destination.
+#' @param DetectorId &#91;required&#93; The detector ID for which you want to retrieve the publishing destination.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param MaxResults The maximum number of results to return in the response.
-#' @param NextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request to a list
-#' action. For subsequent calls, use the `NextToken` value returned from
-#' the previous request to continue listing results after the first page.
+#' @param NextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the `NextToken` value returned from the previous request to continue listing results after the first page.
 #'
 #' @keywords internal
 #'
@@ -3966,18 +3709,11 @@ guardduty_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_threat_entity_sets/](https://www.paws-r-sdk.com/docs/guardduty_list_threat_entity_sets/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector that is associated with this
-#' threat entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector that is associated with this threat entity set.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -4009,20 +3745,11 @@ guardduty_list_threat_entity_sets <- function(DetectorId, MaxResults = NULL, Nex
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_threat_intel_sets/](https://www.paws-r-sdk.com/docs/guardduty_list_threat_intel_sets/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the
-#' threatIntelSet.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that is associated with the threatIntelSet.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items that
-#' you want in the response. The default value is 50. The maximum value is
-#' 50.
-#' @param NextToken You can use this parameter to paginate results in the response. Set the
-#' value of this parameter to null on your first call to the list action.
-#' For subsequent calls to the action, fill nextToken in the request with
-#' the value of NextToken from the previous response to continue listing
-#' data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items that you want in the response. The default value is 50. The maximum value is 50.
+#' @param NextToken You can use this parameter to paginate results in the response. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -4054,18 +3781,11 @@ guardduty_list_threat_intel_sets <- function(DetectorId, MaxResults = NULL, Next
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_list_trusted_entity_sets/](https://www.paws-r-sdk.com/docs/guardduty_list_trusted_entity_sets/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector that is associated with this
-#' threat entity set.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector that is associated with this threat entity set.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param MaxResults You can use this parameter to indicate the maximum number of items you
-#' want in the response. The default value is 50.
-#' @param NextToken You can use this parameter when paginating results. Set the value of
-#' this parameter to null on your first call to the list action. For
-#' subsequent calls to the action, fill nextToken in the request with the
-#' value of NextToken from the previous response to continue listing data.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param MaxResults You can use this parameter to indicate the maximum number of items you want in the response. The default value is 50.
+#' @param NextToken You can use this parameter when paginating results. Set the value of this parameter to null on your first call to the list action. For subsequent calls to the action, fill nextToken in the request with the value of NextToken from the previous response to continue listing data.
 #'
 #' @keywords internal
 #'
@@ -4096,8 +3816,7 @@ guardduty_list_trusted_entity_sets <- function(DetectorId, MaxResults = NULL, Ne
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_send_object_malware_scan/](https://www.paws-r-sdk.com/docs/guardduty_send_object_malware_scan/) for full documentation.
 #'
-#' @param S3Object The S3 object information for the object you want to scan. The bucket
-#' must have a Malware Protection plan configured to use this API.
+#' @param S3Object The S3 object information for the object you want to scan. The bucket must have a Malware Protection plan configured to use this API.
 #'
 #' @keywords internal
 #'
@@ -4128,11 +3847,9 @@ guardduty_send_object_malware_scan <- function(S3Object = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_start_malware_scan/](https://www.paws-r-sdk.com/docs/guardduty_start_malware_scan/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the resource for which you invoked the
-#' API.
+#' @param ResourceArn &#91;required&#93; Amazon Resource Name (ARN) of the resource for which you invoked the API.
 #' @param ClientToken The idempotency token for the create request.
-#' @param ScanConfiguration Contains information about the configuration to be used for the malware
-#' scan.
+#' @param ScanConfiguration Contains information about the configuration to be used for the malware scan.
 #'
 #' @keywords internal
 #'
@@ -4163,14 +3880,10 @@ guardduty_start_malware_scan <- function(ResourceArn, ClientToken = NULL, ScanCo
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_start_monitoring_members/](https://www.paws-r-sdk.com/docs/guardduty_start_monitoring_members/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty administrator account
-#' associated with the member accounts to monitor.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to monitor.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts to start
-#' monitoring.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AccountIds &#91;required&#93; A list of account IDs of the GuardDuty member accounts to start monitoring.
 #'
 #' @keywords internal
 #'
@@ -4201,12 +3914,9 @@ guardduty_start_monitoring_members <- function(DetectorId, AccountIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_stop_monitoring_members/](https://www.paws-r-sdk.com/docs/guardduty_stop_monitoring_members/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the GuardDuty
-#' administrator account that is monitoring member accounts.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector associated with the GuardDuty administrator account that is monitoring member accounts.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param AccountIds &#91;required&#93; A list of account IDs for the member accounts to stop monitoring.
 #'
 #' @keywords internal
@@ -4238,8 +3948,7 @@ guardduty_stop_monitoring_members <- function(DetectorId, AccountIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_tag_resource/](https://www.paws-r-sdk.com/docs/guardduty_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag
-#' to.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) for the GuardDuty resource to apply a tag to.
 #' @param Tags &#91;required&#93; The tags to be added to a resource.
 #'
 #' @keywords internal
@@ -4273,9 +3982,7 @@ guardduty_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' @param DetectorId &#91;required&#93; The ID of the detector associated with the findings to unarchive.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingIds &#91;required&#93; The IDs of the findings to unarchive.
 #'
 #' @keywords internal
@@ -4341,18 +4048,12 @@ guardduty_untag_resource <- function(ResourceArn, TagKeys) {
 #'
 #' @param DetectorId &#91;required&#93; The unique ID of the detector to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param Enable Specifies whether the detector is enabled or not enabled.
-#' @param FindingPublishingFrequency An enum value that specifies how frequently findings are exported, such
-#' as to CloudWatch Events.
+#' @param FindingPublishingFrequency An enum value that specifies how frequently findings are exported, such as to CloudWatch Events.
 #' @param DataSources Describes which data sources will be updated.
 #' 
-#' There might be regional differences because some data sources might not
-#' be available in all the Amazon Web Services Regions where GuardDuty is
-#' presently supported. For more information, see [Regions and
-#' endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
+#' There might be regional differences because some data sources might not be available in all the Amazon Web Services Regions where GuardDuty is presently supported. For more information, see [Regions and endpoints](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html).
 #' @param Features Provides the features that will be updated for the detector.
 #'
 #' @keywords internal
@@ -4384,27 +4085,16 @@ guardduty_update_detector <- function(DetectorId, Enable = NULL, FindingPublishi
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_filter/](https://www.paws-r-sdk.com/docs/guardduty_update_filter/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that specifies the GuardDuty service where
-#' you want to update a filter.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that specifies the GuardDuty service where you want to update a filter.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FilterName &#91;required&#93; The name of the filter.
-#' @param Description The description of the filter. Valid characters include alphanumeric
-#' characters, and special characters such as hyphen, period, colon,
-#' underscore, parentheses (`{ }`, `[ ]`, and `( )`), forward slash,
-#' horizontal tab, vertical tab, newline, form feed, return, and
-#' whitespace.
-#' @param Action Specifies the action that is to be applied to the findings that match
-#' the filter.
+#' @param Description The description of the filter. Valid characters include alphanumeric characters, and special characters such as hyphen, period, colon, underscore, parentheses (`{ }`, `[ ]`, and `( )`), forward slash, horizontal tab, vertical tab, newline, form feed, return, and whitespace.
+#' @param Action Specifies the action that is to be applied to the findings that match the filter.
 #' 
 #' Default: NOOP
-#' @param Rank Specifies the position of the filter in the list of current filters.
-#' Also specifies the order in which this filter is applied to the
-#' findings.
-#' @param FindingCriteria Represents the criteria to be used in the filter for querying findings.
-#' The following fields are available for filtering:
+#' @param Rank Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
+#' @param FindingCriteria Represents the criteria to be used in the filter for querying findings. The following fields are available for filtering:
 #' 
 #' -   accountId
 #' 
@@ -5710,9 +5400,7 @@ guardduty_update_detector <- function(DetectorId, Enable = NULL, FindingPublishi
 #' 
 #' -   severity
 #' 
-#'     To configure severity based filters, use the following for the
-#'     [FindingCriteria](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html)
-#'     condition:
+#'     To configure severity based filters, use the following for the [FindingCriteria](https://docs.aws.amazon.com/guardduty/latest/APIReference/API_FindingCriteria.html) condition:
 #' 
 #'     -   **Low**: `["1", "2", "3"]`
 #' 
@@ -5722,9 +5410,7 @@ guardduty_update_detector <- function(DetectorId, Enable = NULL, FindingPublishi
 #' 
 #'     -   **Critical**: `["9", "10"]`
 #' 
-#'     For more information, see [Findings severity
-#'     levels](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html)
-#'     in the *Amazon GuardDuty User Guide*.
+#'     For more information, see [Findings severity levels](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings-severity.html) in the *Amazon GuardDuty User Guide*.
 #' 
 #' -   title
 #' 
@@ -5763,12 +5449,9 @@ guardduty_update_filter <- function(DetectorId, FilterName, Description = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_findings_feedback/](https://www.paws-r-sdk.com/docs/guardduty_update_findings_feedback/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector that is associated with the findings for which
-#' you want to update the feedback.
+#' @param DetectorId &#91;required&#93; The ID of the detector that is associated with the findings for which you want to update the feedback.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param FindingIds &#91;required&#93; The IDs of the findings that you want to mark as useful or not useful.
 #' @param Feedback &#91;required&#93; The feedback for the finding.
 #' @param Comments Additional feedback about the GuardDuty findings.
@@ -5802,19 +5485,14 @@ guardduty_update_findings_feedback <- function(DetectorId, FindingIds, Feedback,
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_ip_set/](https://www.paws-r-sdk.com/docs/guardduty_update_ip_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The detectorID that specifies the GuardDuty service whose IPSet you want
-#' to update.
+#' @param DetectorId &#91;required&#93; The detectorID that specifies the GuardDuty service whose IPSet you want to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param IpSetId &#91;required&#93; The unique ID that specifies the IPSet that you want to update.
 #' @param Name The unique ID that specifies the IPSet that you want to update.
 #' @param Location The updated URI of the file that contains the IPSet.
-#' @param Activate The updated Boolean value that specifies whether the IPSet is active or
-#' not.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
+#' @param Activate The updated Boolean value that specifies whether the IPSet is active or not.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
 #'
 #' @keywords internal
 #'
@@ -5846,13 +5524,9 @@ guardduty_update_ip_set <- function(DetectorId, IpSetId, Name = NULL, Location =
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_malware_protection_plan/](https://www.paws-r-sdk.com/docs/guardduty_update_malware_protection_plan/) for full documentation.
 #'
 #' @param MalwareProtectionPlanId &#91;required&#93; A unique identifier associated with the Malware Protection plan.
-#' @param Role Amazon Resource Name (ARN) of the IAM role with permissions to scan and
-#' add tags to the associated protected resource.
-#' @param Actions Information about whether the tags will be added to the S3 object after
-#' scanning.
-#' @param ProtectedResource Information about the protected resource that is associated with the
-#' created Malware Protection plan. Presently, `S3Bucket` is the only
-#' supported protected resource.
+#' @param Role Amazon Resource Name (ARN) of the IAM role with permissions to scan and add tags to the associated protected resource.
+#' @param Actions Information about whether the tags will be added to the S3 object after scanning.
+#' @param ProtectedResource Information about the protected resource that is associated with the created Malware Protection plan. Presently, `S3Bucket` is the only supported protected resource.
 #'
 #' @keywords internal
 #'
@@ -5883,14 +5557,10 @@ guardduty_update_malware_protection_plan <- function(MalwareProtectionPlanId, Ro
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_malware_scan_settings/](https://www.paws-r-sdk.com/docs/guardduty_update_malware_scan_settings/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the detector that specifies the GuardDuty service where
-#' you want to update scan settings.
+#' @param DetectorId &#91;required&#93; The unique ID of the detector that specifies the GuardDuty service where you want to update scan settings.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param ScanResourceCriteria Represents the criteria to be used in the filter for selecting resources
-#' to scan.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param ScanResourceCriteria Represents the criteria to be used in the filter for selecting resources to scan.
 #' @param EbsSnapshotPreservation An enum value representing possible snapshot preservation settings.
 #'
 #' @keywords internal
@@ -5924,13 +5594,10 @@ guardduty_update_malware_scan_settings <- function(DetectorId, ScanResourceCrite
 #'
 #' @param DetectorId &#91;required&#93; The detector ID of the administrator account.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param AccountIds &#91;required&#93; A list of member account IDs to be updated.
 #' @param DataSources Describes which data sources will be updated.
-#' @param Features A list of features that will be updated for the specified member
-#' accounts.
+#' @param Features A list of features that will be updated for the specified member accounts.
 #'
 #' @keywords internal
 #'
@@ -5963,48 +5630,25 @@ guardduty_update_member_detectors <- function(DetectorId, AccountIds, DataSource
 #'
 #' @param DetectorId &#91;required&#93; The ID of the detector that configures the delegated administrator.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param AutoEnable Represents whether to automatically enable member accounts in the
-#' organization. This applies to only new member accounts, not the existing
-#' member accounts. When a new account joins the organization, the chosen
-#' features will be enabled for them by default.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param AutoEnable Represents whether to automatically enable member accounts in the organization. This applies to only new member accounts, not the existing member accounts. When a new account joins the organization, the chosen features will be enabled for them by default.
 #' 
-#' Even though this is still supported, we recommend using
-#' `AutoEnableOrganizationMembers` to achieve the similar results. You must
-#' provide a value for either `autoEnableOrganizationMembers` or
-#' `autoEnable`.
+#' Even though this is still supported, we recommend using `AutoEnableOrganizationMembers` to achieve the similar results. You must provide a value for either `autoEnableOrganizationMembers` or `autoEnable`.
 #' @param DataSources Describes which data sources will be updated.
 #' @param Features A list of features that will be configured for the organization.
-#' @param AutoEnableOrganizationMembers Indicates the auto-enablement configuration of GuardDuty for the member
-#' accounts in the organization. You must provide a value for either
-#' `autoEnableOrganizationMembers` or `autoEnable`.
+#' @param AutoEnableOrganizationMembers Indicates the auto-enablement configuration of GuardDuty for the member accounts in the organization. You must provide a value for either `autoEnableOrganizationMembers` or `autoEnable`.
 #' 
-#' Use one of the following configuration values for
-#' `autoEnableOrganizationMembers`:
+#' Use one of the following configuration values for `autoEnableOrganizationMembers`:
 #' 
-#' -   `NEW`: Indicates that when a new account joins the organization,
-#'     they will have GuardDuty enabled automatically.
+#' -   `NEW`: Indicates that when a new account joins the organization, they will have GuardDuty enabled automatically.
 #' 
-#' -   `ALL`: Indicates that all accounts in the organization have
-#'     GuardDuty enabled automatically. This includes `NEW` accounts that
-#'     join the organization and accounts that may have been suspended or
-#'     removed from the organization in GuardDuty.
+#' -   `ALL`: Indicates that all accounts in the organization have GuardDuty enabled automatically. This includes `NEW` accounts that join the organization and accounts that may have been suspended or removed from the organization in GuardDuty.
 #' 
-#'     It may take up to 24 hours to update the configuration for all the
-#'     member accounts.
+#'     It may take up to 24 hours to update the configuration for all the member accounts.
 #' 
-#' -   `NONE`: Indicates that GuardDuty will not be automatically enabled
-#'     for any account in the organization. The administrator must manage
-#'     GuardDuty for each account in the organization individually.
+#' -   `NONE`: Indicates that GuardDuty will not be automatically enabled for any account in the organization. The administrator must manage GuardDuty for each account in the organization individually.
 #' 
-#'     When you update the auto-enable setting from `ALL` or `NEW` to
-#'     `NONE`, this action doesn't disable the corresponding option for
-#'     your existing accounts. This configuration will apply to the new
-#'     accounts that join the organization. After you update the
-#'     auto-enable settings, no new account will have the corresponding
-#'     option as enabled.
+#'     When you update the auto-enable setting from `ALL` or `NEW` to `NONE`, this action doesn't disable the corresponding option for your existing accounts. This configuration will apply to the new accounts that join the organization. After you update the auto-enable settings, no new account will have the corresponding option as enabled.
 #'
 #' @keywords internal
 #'
@@ -6036,15 +5680,11 @@ guardduty_update_organization_configuration <- function(DetectorId, AutoEnable =
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_publishing_destination/](https://www.paws-r-sdk.com/docs/guardduty_update_publishing_destination/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The ID of the detector associated with the publishing destinations to
-#' update.
+#' @param DetectorId &#91;required&#93; The ID of the detector associated with the publishing destinations to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param DestinationId &#91;required&#93; The ID of the publishing destination to update.
-#' @param DestinationProperties A `DestinationProperties` object that includes the `DestinationArn` and
-#' `KmsKeyArn` of the publishing destination.
+#' @param DestinationProperties A `DestinationProperties` object that includes the `DestinationArn` and `KmsKeyArn` of the publishing destination.
 #'
 #' @keywords internal
 #'
@@ -6076,25 +5716,16 @@ guardduty_update_publishing_destination <- function(DetectorId, DestinationId, D
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_threat_entity_set/](https://www.paws-r-sdk.com/docs/guardduty_update_threat_entity_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with the threat
-#' entity set that you want to update.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with the threat entity set that you want to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param ThreatEntitySetId &#91;required&#93; The ID returned by GuardDuty after updating the threat entity set
-#' resource.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param ThreatEntitySetId &#91;required&#93; The ID returned by GuardDuty after updating the threat entity set resource.
 #' @param Name A user-friendly name to identify the trusted entity set.
 #' 
-#' The name of your list can include lowercase letters, uppercase letters,
-#' numbers, dash (-), and underscore (_).
+#' The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).
 #' @param Location The URI of the file that contains the trusted entity set.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
-#' @param Activate A boolean value that indicates whether GuardDuty is to start using this
-#' updated threat entity set. After you update an entity set, you will need
-#' to activate it again. It might take up to 15 minutes for the updated
-#' entity set to be effective.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
+#' @param Activate A boolean value that indicates whether GuardDuty is to start using this updated threat entity set. After you update an entity set, you will need to activate it again. It might take up to 15 minutes for the updated entity set to be effective.
 #'
 #' @keywords internal
 #'
@@ -6125,19 +5756,14 @@ guardduty_update_threat_entity_set <- function(DetectorId, ThreatEntitySetId, Na
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_threat_intel_set/](https://www.paws-r-sdk.com/docs/guardduty_update_threat_intel_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The detectorID that specifies the GuardDuty service whose ThreatIntelSet
-#' you want to update.
+#' @param DetectorId &#91;required&#93; The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
 #' @param ThreatIntelSetId &#91;required&#93; The unique ID that specifies the ThreatIntelSet that you want to update.
 #' @param Name The unique ID that specifies the ThreatIntelSet that you want to update.
 #' @param Location The updated URI of the file that contains the ThreateIntelSet.
-#' @param Activate The updated Boolean value that specifies whether the ThreateIntelSet is
-#' active or not.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
+#' @param Activate The updated Boolean value that specifies whether the ThreateIntelSet is active or not.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
 #'
 #' @keywords internal
 #'
@@ -6169,25 +5795,16 @@ guardduty_update_threat_intel_set <- function(DetectorId, ThreatIntelSetId, Name
 #'
 #' See [https://www.paws-r-sdk.com/docs/guardduty_update_trusted_entity_set/](https://www.paws-r-sdk.com/docs/guardduty_update_trusted_entity_set/) for full documentation.
 #'
-#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with the threat
-#' entity set that you want to update.
+#' @param DetectorId &#91;required&#93; The unique ID of the GuardDuty detector associated with the threat entity set that you want to update.
 #' 
-#' To find the `detectorId` in the current Region, see the Settings page in
-#' the GuardDuty console, or run the
-#' [`list_detectors`][guardduty_list_detectors] API.
-#' @param TrustedEntitySetId &#91;required&#93; The ID returned by GuardDuty after updating the trusted entity set
-#' resource.
+#' To find the `detectorId` in the current Region, see the Settings page in the GuardDuty console, or run the [`list_detectors`][guardduty_list_detectors] API.
+#' @param TrustedEntitySetId &#91;required&#93; The ID returned by GuardDuty after updating the trusted entity set resource.
 #' @param Name A user-friendly name to identify the trusted entity set.
 #' 
-#' The name of your list can include lowercase letters, uppercase letters,
-#' numbers, dash (-), and underscore (_).
+#' The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).
 #' @param Location The URI of the file that contains the trusted entity set.
-#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket
-#' specified in the **location** parameter.
-#' @param Activate A boolean value that indicates whether GuardDuty is to start using this
-#' updated trusted entity set. After you update an entity set, you will
-#' need to activate it again. It might take up to 15 minutes for the
-#' updated entity set to be effective.
+#' @param ExpectedBucketOwner The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the **location** parameter.
+#' @param Activate A boolean value that indicates whether GuardDuty is to start using this updated trusted entity set. After you update an entity set, you will need to activate it again. It might take up to 15 minutes for the updated entity set to be effective.
 #'
 #' @keywords internal
 #'

@@ -13,8 +13,7 @@ lookoutequipment_list_label_groups(
 \arguments{
 \item{LabelGroupNameBeginsWith}{The beginning of the name of the label groups to be listed.}
 
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-label groups.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of label groups.}
 
 \item{MaxResults}{Specifies the maximum number of label groups to list.}
 }

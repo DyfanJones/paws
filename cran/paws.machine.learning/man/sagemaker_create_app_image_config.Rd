@@ -18,18 +18,11 @@ sagemaker_create_app_image_config(
 
 \item{Tags}{A list of tags to apply to the AppImageConfig.}
 
-\item{KernelGatewayImageConfig}{The KernelGatewayImageConfig. You can only specify one image kernel in
-the AppImageConfig API. This kernel will be shown to users before the
-image starts. Once the image runs, all kernels are visible in
-JupyterLab.}
+\item{KernelGatewayImageConfig}{The KernelGatewayImageConfig. You can only specify one image kernel in the AppImageConfig API. This kernel will be shown to users before the image starts. Once the image runs, all kernels are visible in JupyterLab.}
 
-\item{JupyterLabAppImageConfig}{The \code{JupyterLabAppImageConfig}. You can only specify one image kernel in
-the \code{AppImageConfig} API. This kernel is shown to users before the image
-starts. After the image runs, all kernels are visible in JupyterLab.}
+\item{JupyterLabAppImageConfig}{The \code{JupyterLabAppImageConfig}. You can only specify one image kernel in the \code{AppImageConfig} API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in JupyterLab.}
 
-\item{CodeEditorAppImageConfig}{The \code{CodeEditorAppImageConfig}. You can only specify one image kernel in
-the AppImageConfig API. This kernel is shown to users before the image
-starts. After the image runs, all kernels are visible in Code Editor.}
+\item{CodeEditorAppImageConfig}{The \code{CodeEditorAppImageConfig}. You can only specify one image kernel in the AppImageConfig API. This kernel is shown to users before the image starts. After the image runs, all kernels are visible in Code Editor.}
 }
 \description{
 Creates a configuration for running a SageMaker AI image as a KernelGateway app. The configuration specifies the Amazon Elastic File System storage volume on the image, and a list of the kernels in the image.

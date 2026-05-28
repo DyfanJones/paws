@@ -16,32 +16,16 @@ redshiftdataapiservice_list_statements(
 )
 }
 \arguments{
-\item{NextToken}{A value that indicates the starting point for the next set of response
-records in a subsequent request. If a value is returned in a response,
-you can retrieve the next set of records by providing this returned
-NextToken value in the next NextToken parameter and retrying the
-command. If the NextToken field is empty, all response records have been
-retrieved for the request.}
+\item{NextToken}{A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request.}
 
-\item{MaxResults}{The maximum number of SQL statements to return in the response. If more
-SQL statements exist than fit in one response, then \code{NextToken} is
-returned to page through the results.}
+\item{MaxResults}{The maximum number of SQL statements to return in the response. If more SQL statements exist than fit in one response, then \code{NextToken} is returned to page through the results.}
 
-\item{StatementName}{The name of the SQL statement specified as input to
-\code{\link[=redshiftdataapiservice_batch_execute_statement]{batch_execute_statement}}
-or \code{\link[=redshiftdataapiservice_execute_statement]{execute_statement}} to
-identify the query. You can list multiple statements by providing a
-prefix that matches the beginning of the statement name. For example, to
-list myStatement1, myStatement2, myStatement3, and so on, then provide
-the a value of \code{myStatement}. Data API does a case-sensitive match of
-SQL statement names to the prefix value you provide.}
+\item{StatementName}{The name of the SQL statement specified as input to \code{\link[=redshiftdataapiservice_batch_execute_statement]{batch_execute_statement}} or \code{\link[=redshiftdataapiservice_execute_statement]{execute_statement}} to identify the query. You can list multiple statements by providing a prefix that matches the beginning of the statement name. For example, to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value of \code{myStatement}. Data API does a case-sensitive match of SQL statement names to the prefix value you provide.}
 
-\item{Status}{The status of the SQL statement to list. Status values are defined as
-follows:
+\item{Status}{The status of the SQL statement to list. Status values are defined as follows:
 \itemize{
 \item ABORTED - The query run was stopped by the user.
-\item ALL - A status value that includes all query statuses. This value
-can be used to filter results.
+\item ALL - A status value that includes all query statuses. This value can be used to filter results.
 \item FAILED - The query run failed.
 \item FINISHED - The query has finished running.
 \item PICKED - The query has been chosen to be run.
@@ -49,21 +33,13 @@ can be used to filter results.
 \item SUBMITTED - The query was submitted, but not yet processed.
 }}
 
-\item{RoleLevel}{A value that filters which statements to return in the response. If
-true, all statements run by the caller's IAM role are returned. If
-false, only statements run by the caller's IAM role in the current IAM
-session are returned. The default is true.}
+\item{RoleLevel}{A value that filters which statements to return in the response. If true, all statements run by the caller's IAM role are returned. If false, only statements run by the caller's IAM role in the current IAM session are returned. The default is true.}
 
-\item{Database}{The name of the database when listing statements run against a
-\code{ClusterIdentifier} or \code{WorkgroupName}.}
+\item{Database}{The name of the database when listing statements run against a \code{ClusterIdentifier} or \code{WorkgroupName}.}
 
-\item{ClusterIdentifier}{The cluster identifier. Only statements that ran on this cluster are
-returned. When providing \code{ClusterIdentifier}, then \code{WorkgroupName} can't
-be specified.}
+\item{ClusterIdentifier}{The cluster identifier. Only statements that ran on this cluster are returned. When providing \code{ClusterIdentifier}, then \code{WorkgroupName} can't be specified.}
 
-\item{WorkgroupName}{The serverless workgroup name or Amazon Resource Name (ARN). Only
-statements that ran on this workgroup are returned. When providing
-\code{WorkgroupName}, then \code{ClusterIdentifier} can't be specified.}
+\item{WorkgroupName}{The serverless workgroup name or Amazon Resource Name (ARN). Only statements that ran on this workgroup are returned. When providing \code{WorkgroupName}, then \code{ClusterIdentifier} can't be specified.}
 }
 \description{
 List of SQL statements. By default, only finished statements are shown. A token is returned to page through the statement list.

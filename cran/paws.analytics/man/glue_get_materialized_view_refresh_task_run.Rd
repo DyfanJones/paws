@@ -11,8 +11,7 @@ glue_get_materialized_view_refresh_task_run(
 )
 }
 \arguments{
-\item{CatalogId}{[required] The ID of the Data Catalog where the table resides. If none is supplied,
-the account ID is used by default.}
+\item{CatalogId}{[required] The ID of the Data Catalog where the table resides. If none is supplied, the account ID is used by default.}
 
 \item{MaterializedViewRefreshTaskRunId}{[required] The identifier for the particular materialized view refresh task run.}
 }

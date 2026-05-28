@@ -16,8 +16,7 @@ appstream_describe_entitlements(
 
 \item{StackName}{[required] The name of the stack with which the entitlement is associated.}
 
-\item{NextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{NextToken}{The pagination token used to retrieve the next page of results for this operation.}
 
 \item{MaxResults}{The maximum size of each page of results.}
 }

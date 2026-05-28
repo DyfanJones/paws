@@ -9,9 +9,15 @@ wellarchitected_get_review_template_answer(TemplateArn, LensAlias, QuestionId)
 \arguments{
 \item{TemplateArn}{[required] The review template ARN.}
 
-\item{LensAlias}{[required]}
+\item{LensAlias}{[required] The alias of the lens.
 
-\item{QuestionId}{[required]}
+For Amazon Web Services official lenses, this is either the lens alias, such as \code{serverless}, or the lens ARN, such as \verb{arn:aws:wellarchitected:us-east-1::lens/serverless}. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+
+For custom lenses, this is the lens ARN, such as \verb{arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef}.
+
+Each lens is identified by its LensSummary$LensAlias.}
+
+\item{QuestionId}{[required] The ID of the question.}
 }
 \description{
 Get review template answer.

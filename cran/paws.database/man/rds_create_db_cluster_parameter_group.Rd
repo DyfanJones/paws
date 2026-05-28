@@ -21,11 +21,7 @@ Constraints:
 
 This value is stored as a lowercase string.}
 
-\item{DBParameterGroupFamily}{[required] The DB cluster parameter group family name. A DB cluster parameter group
-can be associated with one and only one DB cluster parameter group
-family, and can be applied only to a DB cluster running a database
-engine and engine version compatible with that DB cluster parameter
-group family.
+\item{DBParameterGroupFamily}{[required] The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.
 
 \strong{Aurora MySQL}
 
@@ -43,13 +39,11 @@ Example: \code{mysql8.0}
 
 Example: \code{postgres13}
 
-To list all of the available parameter group families for a DB engine,
-use the following command:
+To list all of the available parameter group families for a DB engine, use the following command:
 
 \verb{aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine <engine>}
 
-For example, to list all of the available parameter group families for
-the Aurora PostgreSQL DB engine, use the following command:
+For example, to list all of the available parameter group families for the Aurora PostgreSQL DB engine, use the following command:
 
 \verb{aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily" --engine aurora-postgresql}
 

@@ -8,11 +8,9 @@ policy for sharing the rule group}
 route53resolver_put_firewall_rule_group_policy(Arn, FirewallRuleGroupPolicy)
 }
 \arguments{
-\item{Arn}{[required] The ARN (Amazon Resource Name) for the rule group that you want to
-share.}
+\item{Arn}{[required] The ARN (Amazon Resource Name) for the rule group that you want to share.}
 
-\item{FirewallRuleGroupPolicy}{[required] The Identity and Access Management (Amazon Web Services IAM) policy to
-attach to the rule group.}
+\item{FirewallRuleGroupPolicy}{[required] The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.}
 }
 \description{
 Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule group. You can use the policy to share the rule group using Resource Access Manager (RAM).

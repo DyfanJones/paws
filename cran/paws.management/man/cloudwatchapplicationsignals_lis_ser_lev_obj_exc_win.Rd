@@ -13,11 +13,9 @@ cloudwatchapplicationsignals_list_service_level_objective_exclusion_windows(
 \arguments{
 \item{Id}{[required] The ID of the SLO to list exclusion windows for.}
 
-\item{MaxResults}{The maximum number of results to return in one operation. If you omit
-this parameter, the default of 50 is used.}
+\item{MaxResults}{The maximum number of results to return in one operation. If you omit this parameter, the default of 50 is used.}
 
-\item{NextToken}{Include this value, if it was returned by the previous operation, to get
-the next set of service level objectives.}
+\item{NextToken}{Include this value, if it was returned by the previous operation, to get the next set of service level objectives.}
 }
 \description{
 Retrieves all exclusion windows configured for a specific SLO.

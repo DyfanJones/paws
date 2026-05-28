@@ -7,14 +7,9 @@
 bedrockagentcore_complete_resource_token_auth(userIdentifier, sessionUri)
 }
 \arguments{
-\item{userIdentifier}{[required] The OAuth2.0 token or user ID that was used to generate the workload
-access token used for initiating the user authorization flow to retrieve
-OAuth2.0 tokens.}
+\item{userIdentifier}{[required] The OAuth2.0 token or user ID that was used to generate the workload access token used for initiating the user authorization flow to retrieve OAuth2.0 tokens.}
 
-\item{sessionUri}{[required] Unique identifier for the user's authentication session for retrieving
-OAuth2 tokens. This ID tracks the authorization flow state across
-multiple requests and responses during the OAuth2 authentication
-process.}
+\item{sessionUri}{[required] Unique identifier for the user's authentication session for retrieving OAuth2 tokens. This ID tracks the authorization flow state across multiple requests and responses during the OAuth2 authentication process.}
 }
 \description{
 Confirms the user authentication session for obtaining OAuth2.0 tokens for a resource.

@@ -26,13 +26,9 @@ sagemaker_list_model_cards(
 
 \item{ModelCardStatus}{Only list model cards with the specified approval status.}
 
-\item{NextToken}{If the response to a previous
-\code{\link[=sagemaker_list_model_cards]{list_model_cards}} request was truncated,
-the response includes a \code{NextToken}. To retrieve the next set of model
-cards, use the token in the next request.}
+\item{NextToken}{If the response to a previous \code{\link[=sagemaker_list_model_cards]{list_model_cards}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of model cards, use the token in the next request.}
 
-\item{SortBy}{Sort model cards by either name or creation time. Sorts by creation time
-by default.}
+\item{SortBy}{Sort model cards by either name or creation time. Sorts by creation time by default.}
 
 \item{SortOrder}{Sort model cards by ascending or descending order.}
 }

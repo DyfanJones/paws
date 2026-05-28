@@ -36,8 +36,7 @@ sagemaker_list_auto_ml_jobs(
 
 \item{MaxResults}{Request a list of jobs up to a specified limit.}
 
-\item{NextToken}{If the previous response was truncated, you receive this token. Use it
-in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.}
 }
 \description{
 Request a list of jobs.

@@ -7,8 +7,7 @@
 bedrockagent_get_agent_alias(agentId, agentAliasId)
 }
 \arguments{
-\item{agentId}{[required] The unique identifier of the agent to which the alias to get information
-belongs.}
+\item{agentId}{[required] The unique identifier of the agent to which the alias to get information belongs.}
 
 \item{agentAliasId}{[required] The unique identifier of the alias for which to get information.}
 }

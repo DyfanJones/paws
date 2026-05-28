@@ -9,8 +9,7 @@ bedrockagentcorecontrol_get_configuration_bundle(bundleId, branchName = NULL)
 \arguments{
 \item{bundleId}{[required] The unique identifier of the configuration bundle to retrieve.}
 
-\item{branchName}{The branch name to get the latest version from. If not specified,
-returns the latest version on the mainline branch.}
+\item{branchName}{The branch name to get the latest version from. If not specified, returns the latest version on the mainline branch.}
 }
 \description{
 Gets the latest version of a configuration bundle. By default, returns the latest version on the mainline branch. Use \code{\link[=bedrockagentcorecontrol_get_configuration_bundle_version]{get_configuration_bundle_version}} to retrieve a specific historical version.

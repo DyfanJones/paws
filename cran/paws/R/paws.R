@@ -3,33 +3,17 @@
 #' @description
 #' App Runner
 #' 
-#' App Runner is an application service that provides a fast, simple, and
-#' cost-effective way to go directly from an existing container image or
-#' source code to a running service in the Amazon Web Services Cloud in
-#' seconds. You don't need to learn new technologies, decide which compute
-#' service to use, or understand how to provision and configure Amazon Web
-#' Services resources.
+#' App Runner is an application service that provides a fast, simple, and cost-effective way to go directly from an existing container image or source code to a running service in the Amazon Web Services Cloud in seconds. You don't need to learn new technologies, decide which compute service to use, or understand how to provision and configure Amazon Web Services resources.
 #' 
-#' App Runner connects directly to your container registry or source code
-#' repository. It provides an automatic delivery pipeline with fully
-#' managed operations, high performance, scalability, and security.
+#' App Runner connects directly to your container registry or source code repository. It provides an automatic delivery pipeline with fully managed operations, high performance, scalability, and security.
 #' 
-#' For more information about App Runner, see the [App Runner Developer
-#' Guide](https://docs.aws.amazon.com/apprunner/latest/dg/). For release
-#' information, see the [App Runner Release
-#' Notes](https://docs.aws.amazon.com/apprunner/latest/relnotes/).
+#' For more information about App Runner, see the [App Runner Developer Guide](https://docs.aws.amazon.com/apprunner/latest/dg/). For release information, see the [App Runner Release Notes](https://docs.aws.amazon.com/apprunner/latest/relnotes/).
 #' 
-#' To install the Software Development Kits (SDKs), Integrated Development
-#' Environment (IDE) Toolkits, and command line tools that you can use to
-#' access the API, see [Tools for Amazon Web
-#' Services](https://builder.aws.com/build/tools).
+#' To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that you can use to access the API, see [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
 #' 
 #' **Endpoints**
 #' 
-#' For a list of Region-specific endpoints that App Runner supports, see
-#' [App Runner endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/apprunner.html) in
-#' the *Amazon Web Services General Reference*.
+#' For a list of Region-specific endpoints that App Runner supports, see [App Runner endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/apprunner.html) in the *Amazon Web Services General Reference*.
 #'
 #' @param
 #' config
@@ -175,22 +159,9 @@ apprunner <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' @description
 #' Batch
 #' 
-#' Using Batch, you can run batch computing workloads on the Amazon Web
-#' Services Cloud. Batch computing is a common means for developers,
-#' scientists, and engineers to access large amounts of compute resources.
-#' Batch uses the advantages of the batch computing to remove the
-#' undifferentiated heavy lifting of configuring and managing required
-#' infrastructure. At the same time, it also adopts a familiar batch
-#' computing software approach. You can use Batch to efficiently provision
-#' resources, and work toward eliminating capacity constraints, reducing
-#' your overall compute costs, and delivering results more quickly.
+#' Using Batch, you can run batch computing workloads on the Amazon Web Services Cloud. Batch computing is a common means for developers, scientists, and engineers to access large amounts of compute resources. Batch uses the advantages of the batch computing to remove the undifferentiated heavy lifting of configuring and managing required infrastructure. At the same time, it also adopts a familiar batch computing software approach. You can use Batch to efficiently provision resources, and work toward eliminating capacity constraints, reducing your overall compute costs, and delivering results more quickly.
 #' 
-#' As a fully managed service, Batch can run batch computing workloads of
-#' any scale. Batch automatically provisions compute resources and
-#' optimizes workload distribution based on the quantity and scale of your
-#' specific workloads. With Batch, there's no need to install or manage
-#' batch computing software. This means that you can focus on analyzing
-#' results and solving your specific problems instead.
+#' As a fully managed service, Batch can run batch computing workloads of any scale. Batch automatically provisions compute resources and optimizes workload distribution based on the quantity and scale of your specific workloads. With Batch, there's no need to install or manage batch computing software. This means that you can focus on analyzing results and solving your specific problems instead.
 #'
 #' @param
 #' config
@@ -344,28 +315,15 @@ batch <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' Braket
 #'
 #' @description
-#' The Amazon Braket API Reference provides information about the
-#' operations and structures supported by Amazon Braket.
+#' The Amazon Braket API Reference provides information about the operations and structures supported by Amazon Braket.
 #' 
-#' To learn about the permissions required to call an Amazon Braket API
-#' action, see [Actions, resources, and condition keys for Amazon
-#' Braket](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbraket.html).
-#' [Amazon Braket Python
-#' SDK](https://amazon-braket-sdk-python.readthedocs.io/en/latest/#) and
-#' the [AWS Command Line
-#' Interface](https://docs.aws.amazon.com/cli/latest/reference/braket/) can
-#' be used to make discovery and creation of API calls easier. For more
-#' information about Amazon Braket features, see [What is Amazon
-#' Braket?](https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html)
-#' and important [terms and
-#' concepts](https://docs.aws.amazon.com/braket/latest/developerguide/braket-terms.html)
-#' in the *Amazon Braket Developer Guide*.
+#' To learn about the permissions required to call an Amazon Braket API action, see [Actions, resources, and condition keys for Amazon Braket](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbraket.html). [Amazon Braket Python SDK](https://amazon-braket-sdk-python.readthedocs.io/en/latest/) and the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/braket/) can be used to make discovery and creation of API calls easier. For more information about Amazon Braket features, see [What is Amazon Braket?](https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html) and important [terms and concepts](https://docs.aws.amazon.com/braket/latest/developerguide/braket-terms.html) in the *Amazon Braket Developer Guide*.
 #' 
 #' **In this guide:**
 #' 
-#' -   
+#' -
 #' 
-#' -   
+#' -
 #' 
 #' -   CommonParameters
 #' 
@@ -377,8 +335,7 @@ batch <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' 
 #' -   [C++](https://docs.aws.amazon.com/sdk-for-cpp/latest/api/root/html/)
 #' 
-#' -   [Go API
-#'     reference](https://docs.aws.amazon.com/sdk-for-go/api/service/braket/)
+#' -   [Go API reference](https://docs.aws.amazon.com/sdk-for-go/api/service/braket/)
 #' 
 #' -   [Java](https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/braket/package-summary.html)
 #' 
@@ -386,15 +343,13 @@ batch <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' 
 #' -   [PHP](https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Braket.BraketClient.html)
 #' 
-#' -   [Python
-#'     (Boto)](https://docs.aws.amazon.com/boto3/latest/reference/services/braket.html)
+#' -   [Python (Boto)](https://docs.aws.amazon.com/boto3/latest/reference/services/braket.html)
 #' 
 #' -   [Ruby](https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/Braket.html)
 #' 
 #' **Code examples from the Amazon Braket Tutorials GitHub repository:**
 #' 
-#' -   [Amazon Braket
-#'     Examples](https://github.com/amazon-braket/amazon-braket-examples)
+#' -   [Amazon Braket Examples](https://github.com/amazon-braket/amazon-braket-examples)
 #'
 #' @param
 #' config
@@ -518,21 +473,7 @@ braket <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' AWS Compute Optimizer
 #'
 #' @description
-#' Compute Optimizer is a service that analyzes the configuration and
-#' utilization metrics of your Amazon Web Services compute resources, such
-#' as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda
-#' functions, Amazon EBS volumes, and Amazon ECS services on Fargate. It
-#' reports whether your resources are optimal, and generates optimization
-#' recommendations to reduce the cost and improve the performance of your
-#' workloads. Compute Optimizer also provides recent utilization metric
-#' data, in addition to projected utilization metric data for the
-#' recommendations, which you can use to evaluate which recommendation
-#' provides the best price-performance trade-off. The analysis of your
-#' usage patterns can help you decide when to move or resize your running
-#' resources, and still meet your performance and capacity requirements.
-#' For more information about Compute Optimizer, including the required
-#' permissions to use the service, see the [Compute Optimizer User
-#' Guide](https://docs.aws.amazon.com/compute-optimizer/latest/ug/).
+#' Compute Optimizer is a service that analyzes the configuration and utilization metrics of your Amazon Web Services compute resources, such as Amazon EC2 instances, Amazon EC2 Auto Scaling groups, Lambda functions, Amazon EBS volumes, and Amazon ECS services on Fargate. It reports whether your resources are optimal, and generates optimization recommendations to reduce the cost and improve the performance of your workloads. Compute Optimizer also provides recent utilization metric data, in addition to projected utilization metric data for the recommendations, which you can use to evaluate which recommendation provides the best price-performance trade-off. The analysis of your usage patterns can help you decide when to move or resize your running resources, and still meet your performance and capacity requirements. For more information about Compute Optimizer, including the required permissions to use the service, see the [Compute Optimizer User Guide](https://docs.aws.amazon.com/compute-optimizer/latest/ug/).
 #'
 #' @param
 #' config
@@ -667,9 +608,29 @@ computeoptimizer <- function(config = list(), credentials = list(), endpoint = N
 #' Amazon Elastic Compute Cloud
 #'
 #' @description
-#' You can access the features of Amazon Elastic Compute Cloud (Amazon EC2)
-#' programmatically. For more information, see the [Amazon EC2 Developer
-#' Guide](https://docs.aws.amazon.com/ec2/latest/devguide/).
+#' This is the *Amazon EC2 API Reference*. It provides descriptions, API request parameters, and the XML response for each of the Amazon EC2 Query API actions. Note that the Amazon EC2 API includes actions for Amazon EC2 plus additional services, such as Amazon EBS and Amazon VPC.
+#' 
+#' **Learn more**
+#' 
+#' -   To learn about using the Query API, see [Using the API for Amazon EC2](https://docs.aws.amazon.com/ec2/latest/devguide/ec2-low-level-api.html).
+#' 
+#' -   To learn about the permissions required to call an Amazon EC2 API action, see [Actions, resources, and condition keys for Amazon EC2](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonec2.html).
+#' 
+#' -   To get the list of API actions by service and resource, see [Actions by service](https://docs.aws.amazon.com/ec2/latest/devguide/OperationList-query.html).
+#' 
+#' -   To get the alphabetical list of API actions, see .
+#' 
+#' -   To get descriptions of the API error codes, see [Error codes for the Amazon EC2 API](https://docs.aws.amazon.com/ec2/latest/devguide/errors-overview.html).
+#' 
+#' Alternatively, use one of the following methods to access the Amazon EC2 API, instead of using the Query API directly:
+#' 
+#' -   [Amazon Web Services CLI Command Reference - ec2 commands](https://docs.aws.amazon.com/cli/latest/reference/ec2/)
+#' 
+#' -   [CloudFormation - Amazon EC2 resource type reference](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/AWS_EC2.html)
+#' 
+#' -   [Amazon Web Services Tools for PowerShell Cmdlet Reference - Amazon EC2 cmdlets](https://docs.aws.amazon.com/powershell/v5/reference/items/EC2_cmdlets.html)
+#' 
+#' -   [Amazon Web Services SDKs](https://builder.aws.com/build/tools)
 #'
 #' @param
 #' config
@@ -1096,6 +1057,7 @@ computeoptimizer <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.compute:ec2_describe_ipam_byoasn]{describe_ipam_byoasn} \tab Describes your Autonomous System Numbers (ASNs), their provisioning statuses, and the BYOIP CIDRs with which they are associated\cr
 #'  \link[paws.compute:ec2_describe_ipam_external_resource_verification_tokens]{describe_ipam_external_resource_verification_tokens} \tab Describe verification tokens\cr
 #'  \link[paws.compute:ec2_describe_ipam_policies]{describe_ipam_policies} \tab Describes one or more IPAM policies\cr
+#'  \link[paws.compute:ec2_describe_ipam_pool_allocations]{describe_ipam_pool_allocations} \tab Describes IPAM pool allocations\cr
 #'  \link[paws.compute:ec2_describe_ipam_pools]{describe_ipam_pools} \tab Get information about your IPAM pools\cr
 #'  \link[paws.compute:ec2_describe_ipam_prefix_list_resolvers]{describe_ipam_prefix_list_resolvers} \tab Describes one or more IPAM prefix list resolvers\cr
 #'  \link[paws.compute:ec2_describe_ipam_prefix_list_resolver_targets]{describe_ipam_prefix_list_resolver_targets} \tab Describes one or more IPAM prefix list resolver Targets\cr
@@ -1389,6 +1351,7 @@ computeoptimizer <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.compute:ec2_modify_ipam]{modify_ipam} \tab Modify the configurations of an IPAM\cr
 #'  \link[paws.compute:ec2_modify_ipam_policy_allocation_rules]{modify_ipam_policy_allocation_rules} \tab Modifies the allocation rules in an IPAM policy\cr
 #'  \link[paws.compute:ec2_modify_ipam_pool]{modify_ipam_pool} \tab Modify the configurations of an IPAM pool\cr
+#'  \link[paws.compute:ec2_modify_ipam_pool_allocation]{modify_ipam_pool_allocation} \tab Modifies the description of an IPAM pool allocation\cr
 #'  \link[paws.compute:ec2_modify_ipam_prefix_list_resolver]{modify_ipam_prefix_list_resolver} \tab Modifies an IPAM prefix list resolver\cr
 #'  \link[paws.compute:ec2_modify_ipam_prefix_list_resolver_target]{modify_ipam_prefix_list_resolver_target} \tab Modifies an IPAM prefix list resolver target\cr
 #'  \link[paws.compute:ec2_modify_ipam_resource_cidr]{modify_ipam_resource_cidr} \tab Modify a resource CIDR\cr
@@ -1541,18 +1504,11 @@ ec2 <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' AWS EC2 Instance Connect
 #'
 #' @description
-#' This is the *Amazon EC2 Instance Connect API Reference*. It provides
-#' descriptions, syntax, and usage examples for each of the actions for
-#' Amazon EC2 Instance Connect. Amazon EC2 Instance Connect enables system
-#' administrators to publish one-time use SSH public keys to EC2, providing
-#' users a simple and secure way to connect to their instances.
+#' This is the *Amazon EC2 Instance Connect API Reference*. It provides descriptions, syntax, and usage examples for each of the actions for Amazon EC2 Instance Connect. Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing users a simple and secure way to connect to their instances.
 #' 
-#' To view the Amazon EC2 Instance Connect content in the *Amazon EC2 User
-#' Guide*, see [Connect to your Linux instance using EC2 Instance
-#' Connect](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-eic.html).
+#' To view the Amazon EC2 Instance Connect content in the *Amazon EC2 User Guide*, see [Connect to your Linux instance using EC2 Instance Connect](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-eic.html).
 #' 
-#' For Amazon EC2 APIs, see the [Amazon EC2 API
-#' Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html).
+#' For Amazon EC2 APIs, see the [Amazon EC2 API Reference](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html).
 #'
 #' @param
 #' config
@@ -1666,18 +1622,9 @@ ec2instanceconnect <- function(config = list(), credentials = list(), endpoint =
 #' Amazon Elastic Container Registry
 #'
 #' @description
-#' Amazon Elastic Container Registry (Amazon ECR) is a managed container
-#' image registry service. Customers can use the familiar Docker CLI, or
-#' their preferred client, to push, pull, and manage images. Amazon ECR
-#' provides a secure, scalable, and reliable registry for your Docker or
-#' Open Container Initiative (OCI) images. Amazon ECR supports private
-#' repositories with resource-based permissions using IAM so that specific
-#' users or Amazon EC2 instances can access repositories and images.
+#' Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service. Customers can use the familiar Docker CLI, or their preferred client, to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports private repositories with resource-based permissions using IAM so that specific users or Amazon EC2 instances can access repositories and images.
 #' 
-#' Amazon ECR has service endpoints in each supported Region. For more
-#' information, see [Amazon ECR
-#' endpoints](https://docs.aws.amazon.com/general/latest/gr/ecr.html) in
-#' the *Amazon Web Services General Reference*.
+#' Amazon ECR has service endpoints in each supported Region. For more information, see [Amazon ECR endpoints](https://docs.aws.amazon.com/general/latest/gr/ecr.html) in the *Amazon Web Services General Reference*.
 #'
 #' @param
 #' config
@@ -1849,16 +1796,7 @@ ecr <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon Elastic Container Registry Public
 #'
 #' @description
-#' Amazon Elastic Container Registry Public (Amazon ECR Public) is a
-#' managed container image registry service. Amazon ECR provides both
-#' public and private registries to host your container images. You can use
-#' the Docker CLI or your preferred client to push, pull, and manage
-#' images. Amazon ECR provides a secure, scalable, and reliable registry
-#' for your Docker or Open Container Initiative (OCI) images. Amazon ECR
-#' supports public repositories with this API. For information about the
-#' Amazon ECR API for private repositories, see [Amazon Elastic Container
-#' Registry API
-#' Reference](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html).
+#' Amazon Elastic Container Registry Public (Amazon ECR Public) is a managed container image registry service. Amazon ECR provides both public and private registries to host your container images. You can use the Docker CLI or your preferred client to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports public repositories with this API. For information about the Amazon ECR API for private repositories, see [Amazon Elastic Container Registry API Reference](https://docs.aws.amazon.com/AmazonECR/latest/APIReference/Welcome.html).
 #'
 #' @param
 #' config
@@ -1990,24 +1928,11 @@ ecrpublic <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' @description
 #' Amazon Elastic Container Service
 #' 
-#' Amazon Elastic Container Service (Amazon ECS) is a highly scalable,
-#' fast, container management service. It makes it easy to run, stop, and
-#' manage Docker containers. You can host your cluster on a serverless
-#' infrastructure that's managed by Amazon ECS by launching your services
-#' or tasks on Fargate. For more control, you can host your tasks on a
-#' cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External
-#' (on-premises) instances that you manage.
+#' Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service. It makes it easy to run, stop, and manage Docker containers. You can host your cluster on a serverless infrastructure that's managed by Amazon ECS by launching your services or tasks on Fargate. For more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) or External (on-premises) instances that you manage.
 #' 
-#' Amazon ECS makes it easy to launch and stop container-based applications
-#' with simple API calls. This makes it easy to get the state of your
-#' cluster from a centralized service, and gives you access to many
-#' familiar Amazon EC2 features.
+#' Amazon ECS makes it easy to launch and stop container-based applications with simple API calls. This makes it easy to get the state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.
 #' 
-#' You can use Amazon ECS to schedule the placement of containers across
-#' your cluster based on your resource needs, isolation policies, and
-#' availability requirements. With Amazon ECS, you don't need to operate
-#' your own cluster management and configuration management systems. You
-#' also don't need to worry about scaling your management infrastructure.
+#' You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs, isolation policies, and availability requirements. With Amazon ECS, you don't need to operate your own cluster management and configuration management systems. You also don't need to worry about scaling your management infrastructure.
 #'
 #' @param
 #' config
@@ -2093,6 +2018,7 @@ ecrpublic <- function(config = list(), credentials = list(), endpoint = NULL, re
 #'
 #' @section Operations:
 #' \tabular{ll}{
+#'  \link[paws.compute:ecs_continue_service_deployment]{continue_service_deployment} \tab Continues or rolls back an Amazon ECS service deployment that is paused at a lifecycle hook\cr
 #'  \link[paws.compute:ecs_create_capacity_provider]{create_capacity_provider} \tab Creates a capacity provider\cr
 #'  \link[paws.compute:ecs_create_cluster]{create_cluster} \tab Creates a new Amazon ECS cluster\cr
 #'  \link[paws.compute:ecs_create_daemon]{create_daemon} \tab Creates a new daemon in the specified cluster and capacity providers\cr
@@ -2191,19 +2117,9 @@ ecs <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon Elastic Kubernetes Service
 #'
 #' @description
-#' Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that
-#' makes it easy for you to run Kubernetes on Amazon Web Services without
-#' needing to setup or maintain your own Kubernetes control plane.
-#' Kubernetes is an open-source system for automating the deployment,
-#' scaling, and management of containerized applications.
+#' Amazon Elastic Kubernetes Service (Amazon EKS) is a managed service that makes it easy for you to run Kubernetes on Amazon Web Services without needing to setup or maintain your own Kubernetes control plane. Kubernetes is an open-source system for automating the deployment, scaling, and management of containerized applications.
 #' 
-#' Amazon EKS runs up-to-date versions of the open-source Kubernetes
-#' software, so you can use all the existing plugins and tooling from the
-#' Kubernetes community. Applications running on Amazon EKS are fully
-#' compatible with applications running on any standard Kubernetes
-#' environment, whether running in on-premises data centers or public
-#' clouds. This means that you can easily migrate any standard Kubernetes
-#' application to Amazon EKS without any code modification required.
+#' Amazon EKS runs up-to-date versions of the open-source Kubernetes software, so you can use all the existing plugins and tooling from the Kubernetes community. Applications running on Amazon EKS are fully compatible with applications running on any standard Kubernetes environment, whether running in on-premises data centers or public clouds. This means that you can easily migrate any standard Kubernetes application to Amazon EKS without any code modification required.
 #'
 #' @param
 #' config
@@ -2387,25 +2303,13 @@ eks <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' AWS Elastic Beanstalk
 #'
 #' @description
-#' AWS Elastic Beanstalk makes it easy for you to create, deploy, and
-#' manage scalable, fault-tolerant applications running on the Amazon Web
-#' Services cloud.
+#' AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services cloud.
 #' 
-#' For more information about this product, go to the [AWS Elastic
-#' Beanstalk](https://aws.amazon.com/elasticbeanstalk/) details page. The
-#' location of the latest AWS Elastic Beanstalk WSDL is
-#' <https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl>.
-#' To install the Software Development Kits (SDKs), Integrated Development
-#' Environment (IDE) Toolkits, and command line tools that enable you to
-#' access the API, go to [Tools for Amazon Web
-#' Services](https://builder.aws.com/build/tools).
+#' For more information about this product, go to the [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/) details page. The location of the latest AWS Elastic Beanstalk WSDL is <https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
 #' 
 #' **Endpoints**
 #' 
-#' For a list of region-specific endpoints that AWS Elastic Beanstalk
-#' supports, go to [Regions and
-#' Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region)
-#' in the *Amazon Web Services Glossary*.
+#' For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region) in the *Amazon Web Services Glossary*.
 #'
 #' @param
 #' config
@@ -2561,30 +2465,15 @@ elasticbeanstalk <- function(config = list(), credentials = list(), endpoint = N
 #' Amazon EMR Containers
 #'
 #' @description
-#' Amazon EMR on EKS provides a deployment option for Amazon EMR that
-#' allows you to run open-source big data frameworks on Amazon Elastic
-#' Kubernetes Service (Amazon EKS). With this deployment option, you can
-#' focus on running analytics workloads while Amazon EMR on EKS builds,
-#' configures, and manages containers for open-source applications. For
-#' more information about Amazon EMR on EKS concepts and tasks, see [What
-#' is Amazon EMR on
-#' EKS](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html).
+#' Amazon EMR on EKS provides a deployment option for Amazon EMR that allows you to run open-source big data frameworks on Amazon Elastic Kubernetes Service (Amazon EKS). With this deployment option, you can focus on running analytics workloads while Amazon EMR on EKS builds, configures, and manages containers for open-source applications. For more information about Amazon EMR on EKS concepts and tasks, see [What is Amazon EMR on EKS](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/emr-eks.html).
 #' 
-#' *Amazon EMR containers* is the API name for Amazon EMR on EKS. The
-#' `emr-containers` prefix is used in the following scenarios:
+#' *Amazon EMR containers* is the API name for Amazon EMR on EKS. The `emr-containers` prefix is used in the following scenarios:
 #' 
-#' -   It is the prefix in the CLI commands for Amazon EMR on EKS. For
-#'     example, `aws emr-containers start-job-run`.
+#' -   It is the prefix in the CLI commands for Amazon EMR on EKS. For example, `aws emr-containers start-job-run`.
 #' 
-#' -   It is the prefix before IAM policy actions for Amazon EMR on EKS.
-#'     For example, `"Action": [ "emr-containers:StartJobRun"]`. For more
-#'     information, see [Policy actions for Amazon EMR on
-#'     EKS](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions).
+#' -   It is the prefix before IAM policy actions for Amazon EMR on EKS. For example, `"Action": [ "emr-containers:StartJobRun"]`. For more information, see [Policy actions for Amazon EMR on EKS](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions).
 #' 
-#' -   It is the prefix used in Amazon EMR on EKS service endpoints. For
-#'     example, `emr-containers.us-east-2.amazonaws.com`. For more
-#'     information, see [Amazon EMR on EKSService
-#'     Endpoints](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints).
+#' -   It is the prefix used in Amazon EMR on EKS service endpoints. For example, `emr-containers.us-east-2.amazonaws.com`. For more information, see [Amazon EMR on EKSService Endpoints](https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints).
 #'
 #' @param
 #' config
@@ -2714,26 +2603,15 @@ emrcontainers <- function(config = list(), credentials = list(), endpoint = NULL
 #' EMR Serverless
 #'
 #' @description
-#' Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon
-#' EMR Serverless provides a serverless runtime environment that simplifies
-#' running analytics applications using the latest open source frameworks
-#' such as Apache Spark and Apache Hive. With Amazon EMR Serverless, you
-#' don’t have to configure, optimize, secure, or operate clusters to run
-#' applications with these frameworks.
+#' Amazon EMR Serverless is a new deployment option for Amazon EMR. Amazon EMR Serverless provides a serverless runtime environment that simplifies running analytics applications using the latest open source frameworks such as Apache Spark and Apache Hive. With Amazon EMR Serverless, you don’t have to configure, optimize, secure, or operate clusters to run applications with these frameworks.
 #' 
-#' The API reference to Amazon EMR Serverless is `emr-serverless`. The
-#' `emr-serverless` prefix is used in the following scenarios:
+#' The API reference to Amazon EMR Serverless is `emr-serverless`. The `emr-serverless` prefix is used in the following scenarios:
 #' 
-#' -   It is the prefix in the CLI commands for Amazon EMR Serverless. For
-#'     example, `aws emr-serverless start-job-run`.
+#' -   It is the prefix in the CLI commands for Amazon EMR Serverless. For example, `aws emr-serverless start-job-run`.
 #' 
-#' -   It is the prefix before IAM policy actions for Amazon EMR
-#'     Serverless. For example, `"Action": ["emr-serverless:StartJobRun"]`.
-#'     For more information, see [Policy actions for Amazon EMR
-#'     Serverless](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions).
+#' -   It is the prefix before IAM policy actions for Amazon EMR Serverless. For example, `"Action": ["emr-serverless:StartJobRun"]`. For more information, see [Policy actions for Amazon EMR Serverless](https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions).
 #' 
-#' -   It is the prefix used in Amazon EMR Serverless service endpoints.
-#'     For example, `emr-serverless.us-east-2.amazonaws.com`.
+#' -   It is the prefix used in Amazon EMR Serverless service endpoints. For example, `emr-serverless.us-east-2.amazonaws.com`.
 #'
 #' @param
 #' config
@@ -2862,11 +2740,7 @@ emrserverless <- function(config = list(), credentials = list(), endpoint = NULL
 #' EC2 Image Builder
 #'
 #' @description
-#' EC2 Image Builder is a fully managed Amazon Web Services service that
-#' makes it easier to automate the creation, management, and deployment of
-#' customized, secure, and up-to-date "golden" server images that are
-#' pre-installed and pre-configured with software and settings to meet
-#' specific IT standards.
+#' EC2 Image Builder is a fully managed Amazon Web Services service that makes it easier to automate the creation, management, and deployment of customized, secure, and up-to-date "golden" server images that are pre-installed and pre-configured with software and settings to meet specific IT standards.
 #'
 #' @param
 #' config
@@ -3054,67 +2928,29 @@ imagebuilder <- function(config = list(), credentials = list(), endpoint = NULL,
 #' 
 #' **Overview**
 #' 
-#' Lambda is a compute service that lets you run code without provisioning
-#' or managing servers. Lambda runs your code on a high-availability
-#' compute infrastructure and performs all of the administration of the
-#' compute resources, including server and operating system maintenance,
-#' capacity provisioning and automatic scaling, code monitoring and
-#' logging. With Lambda, you can run code for virtually any type of
-#' application or backend service. For more information about the Lambda
-#' service, see [What is
-#' Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) in
-#' the **Lambda Developer Guide**.
+#' Lambda is a compute service that lets you run code without provisioning or managing servers. Lambda runs your code on a high-availability compute infrastructure and performs all of the administration of the compute resources, including server and operating system maintenance, capacity provisioning and automatic scaling, code monitoring and logging. With Lambda, you can run code for virtually any type of application or backend service. For more information about the Lambda service, see [What is Lambda](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html) in the **Lambda Developer Guide**.
 #' 
-#' The *Lambda API Reference* provides information about each of the API
-#' methods, including details about the parameters in each API request and
-#' response.
+#' The *Lambda API Reference* provides information about each of the API methods, including details about the parameters in each API request and response.
 #' 
-#' You can use Software Development Kits (SDKs), Integrated Development
-#' Environment (IDE) Toolkits, and command line tools to access the API.
-#' For installation instructions, see [Tools for Amazon Web
-#' Services](https://builder.aws.com/build/tools).
+#' You can use Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools to access the API. For installation instructions, see [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
 #' 
-#' For a list of Region-specific endpoints that Lambda supports, see
-#' [Lambda endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/lambda-service.html)
-#' in the *Amazon Web Services General Reference.*.
+#' For a list of Region-specific endpoints that Lambda supports, see [Lambda endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/lambda-service.html) in the *Amazon Web Services General Reference.*.
 #' 
-#' When making the API calls, you will need to authenticate your request by
-#' providing a signature. Lambda supports signature version 4. For more
-#' information, see [Signature Version 4 signing
-#' process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
-#' in the *Amazon Web Services General Reference.*.
+#' When making the API calls, you will need to authenticate your request by providing a signature. Lambda supports signature version 4. For more information, see [Signature Version 4 signing process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html) in the *Amazon Web Services General Reference.*.
 #' 
 #' **CA certificates**
 #' 
-#' Because Amazon Web Services SDKs use the CA certificates from your
-#' computer, changes to the certificates on the Amazon Web Services servers
-#' can cause connection failures when you attempt to use an SDK. You can
-#' prevent these failures by keeping your computer's CA certificates and
-#' operating system up-to-date. If you encounter this issue in a corporate
-#' environment and do not manage your own computer, you might need to ask
-#' an administrator to assist with the update process. The following list
-#' shows minimum operating system and Java versions:
+#' Because Amazon Web Services SDKs use the CA certificates from your computer, changes to the certificates on the Amazon Web Services servers can cause connection failures when you attempt to use an SDK. You can prevent these failures by keeping your computer's CA certificates and operating system up-to-date. If you encounter this issue in a corporate environment and do not manage your own computer, you might need to ask an administrator to assist with the update process. The following list shows minimum operating system and Java versions:
 #' 
-#' -   Microsoft Windows versions that have updates from January 2005 or
-#'     later installed contain at least one of the required CAs in their
-#'     trust list.
+#' -   Microsoft Windows versions that have updates from January 2005 or later installed contain at least one of the required CAs in their trust list.
 #' 
-#' -   Mac OS X 10.4 with Java for Mac OS X 10.4 Release 5 (February 2007),
-#'     Mac OS X 10.5 (October 2007), and later versions contain at least
-#'     one of the required CAs in their trust list.
+#' -   Mac OS X 10.4 with Java for Mac OS X 10.4 Release 5 (February 2007), Mac OS X 10.5 (October 2007), and later versions contain at least one of the required CAs in their trust list.
 #' 
-#' -   Red Hat Enterprise Linux 5 (March 2007), 6, and 7 and CentOS 5, 6,
-#'     and 7 all contain at least one of the required CAs in their default
-#'     trusted CA list.
+#' -   Red Hat Enterprise Linux 5 (March 2007), 6, and 7 and CentOS 5, 6, and 7 all contain at least one of the required CAs in their default trusted CA list.
 #' 
-#' -   Java 1.4.2_12 (May 2006), 5 Update 2 (March 2005), and all later
-#'     versions, including Java 6 (December 2006), 7, and 8, contain at
-#'     least one of the required CAs in their default trusted CA list.
+#' -   Java 1.4.2_12 (May 2006), 5 Update 2 (March 2005), and all later versions, including Java 6 (December 2006), 7, and 8, contain at least one of the required CAs in their default trusted CA list.
 #' 
-#' When accessing the Lambda management console or Lambda API endpoints,
-#' whether through browsers or programmatically, you will need to ensure
-#' your client machines support any of the following CAs:
+#' When accessing the Lambda management console or Lambda API endpoints, whether through browsers or programmatically, you will need to ensure your client machines support any of the following CAs:
 #' 
 #' -   Amazon Root CA 1
 #' 
@@ -3122,12 +2958,7 @@ imagebuilder <- function(config = list(), credentials = list(), endpoint = NULL,
 #' 
 #' -   Starfield Class 2 Certification Authority
 #' 
-#' Root certificates from the first two authorities are available from
-#' [Amazon trust services](https://www.amazontrust.com/repository/), but
-#' keeping your computer up-to-date is the more straightforward solution.
-#' To learn more about ACM-provided certificates, see [Amazon Web Services
-#' Certificate Manager
-#' FAQs.](https://aws.amazon.com/certificate-manager/faqs/#certificates)
+#' Root certificates from the first two authorities are available from [Amazon trust services](https://www.amazontrust.com/repository/), but keeping your computer up-to-date is the more straightforward solution. To learn more about ACM-provided certificates, see [Amazon Web Services Certificate Manager FAQs.](https://aws.amazon.com/certificate-manager/faqs/#certificates)
 #'
 #' @param
 #' config
@@ -3325,28 +3156,11 @@ lambda <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' Amazon Lightsail
 #'
 #' @description
-#' Amazon Lightsail is the easiest way to get started with Amazon Web
-#' Services (Amazon Web Services) for developers who need to build websites
-#' or web applications. It includes everything you need to launch your
-#' project quickly - instances (virtual private servers), container
-#' services, storage buckets, managed databases, SSD-based block storage,
-#' static IP addresses, load balancers, content delivery network (CDN)
-#' distributions, DNS management of registered domains, and resource
-#' snapshots (backups) - for a low, predictable monthly price.
+#' Amazon Lightsail is the easiest way to get started with Amazon Web Services (Amazon Web Services) for developers who need to build websites or web applications. It includes everything you need to launch your project quickly - instances (virtual private servers), container services, storage buckets, managed databases, SSD-based block storage, static IP addresses, load balancers, content delivery network (CDN) distributions, DNS management of registered domains, and resource snapshots (backups) - for a low, predictable monthly price.
 #' 
-#' You can manage your Lightsail resources using the Lightsail console,
-#' Lightsail API, Command Line Interface (CLI), or SDKs. For more
-#' information about Lightsail concepts and tasks, see the [Amazon
-#' Lightsail Developer
-#' Guide](https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-how-to-set-up-and-configure-aws-cli.html).
+#' You can manage your Lightsail resources using the Lightsail console, Lightsail API, Command Line Interface (CLI), or SDKs. For more information about Lightsail concepts and tasks, see the [Amazon Lightsail Developer Guide](https://docs.aws.amazon.com/lightsail/latest/userguide/lightsail-how-to-set-up-and-configure-aws-cli.html).
 #' 
-#' This API Reference provides detailed information about the actions, data
-#' types, parameters, and errors of the Lightsail service. For more
-#' information about the supported Amazon Web Services Regions, endpoints,
-#' and service quotas of the Lightsail service, see [Amazon Lightsail
-#' Endpoints and
-#' Quotas](https://docs.aws.amazon.com/general/latest/gr/lightsail.html) in
-#' the *Amazon Web Services General Reference*.
+#' This API Reference provides detailed information about the actions, data types, parameters, and errors of the Lightsail service. For more information about the supported Amazon Web Services Regions, endpoints, and service quotas of the Lightsail service, see [Amazon Lightsail Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/lightsail.html) in the *Amazon Web Services General Reference*.
 #'
 #' @param
 #' config
@@ -3614,89 +3428,41 @@ lightsail <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' AWS Proton
 #'
 #' @description
-#' This is the Proton Service API Reference. It provides descriptions,
-#' syntax and usage examples for each of the
-#' [actions](https://docs.aws.amazon.com/proton/latest/APIReference/API_Operations.html)
-#' and [data
-#' types](https://docs.aws.amazon.com/proton/latest/APIReference/API_Types.html)
-#' for the Proton service.
+#' This is the Proton Service API Reference. It provides descriptions, syntax and usage examples for each of the [actions](https://docs.aws.amazon.com/proton/latest/APIReference/API_Operations.html) and [data types](https://docs.aws.amazon.com/proton/latest/APIReference/API_Types.html) for the Proton service.
 #' 
-#' The documentation for each action shows the Query API request parameters
-#' and the XML response.
+#' The documentation for each action shows the Query API request parameters and the XML response.
 #' 
-#' Alternatively, you can use the Amazon Web Services CLI to access an API.
-#' For more information, see the [Amazon Web Services Command Line
-#' Interface User
-#' Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
+#' Alternatively, you can use the Amazon Web Services CLI to access an API. For more information, see the [Amazon Web Services Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
 #' 
-#' The Proton service is a two-pronged automation framework. Administrators
-#' create service templates to provide standardized infrastructure and
-#' deployment tooling for serverless and container based applications.
-#' Developers, in turn, select from the available service templates to
-#' automate their application or service deployments.
+#' The Proton service is a two-pronged automation framework. Administrators create service templates to provide standardized infrastructure and deployment tooling for serverless and container based applications. Developers, in turn, select from the available service templates to automate their application or service deployments.
 #' 
-#' Because administrators define the infrastructure and tooling that Proton
-#' deploys and manages, they need permissions to use all of the listed API
-#' operations.
+#' Because administrators define the infrastructure and tooling that Proton deploys and manages, they need permissions to use all of the listed API operations.
 #' 
-#' When developers select a specific infrastructure and tooling set, Proton
-#' deploys their applications. To monitor their applications that are
-#' running on Proton, developers need permissions to the service *create*,
-#' *list*, *update* and *delete* API operations and the service instance
-#' *list* and *update* API operations.
+#' When developers select a specific infrastructure and tooling set, Proton deploys their applications. To monitor their applications that are running on Proton, developers need permissions to the service *create*, *list*, *update* and *delete* API operations and the service instance *list* and *update* API operations.
 #' 
-#' To learn more about Proton, see the [Proton User
-#' Guide](https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html).
+#' To learn more about Proton, see the [Proton User Guide](https://docs.aws.amazon.com/proton/latest/userguide/Welcome.html).
 #' 
 #' **Ensuring Idempotency**
 #' 
-#' When you make a mutating API request, the request typically returns a
-#' result before the asynchronous workflows of the operation are complete.
-#' Operations might also time out or encounter other server issues before
-#' they're complete, even if the request already returned a result. This
-#' might make it difficult to determine whether the request succeeded.
-#' Moreover, you might need to retry the request multiple times to ensure
-#' that the operation completes successfully. However, if the original
-#' request and the subsequent retries are successful, the operation occurs
-#' multiple times. This means that you might create more resources than you
-#' intended.
+#' When you make a mutating API request, the request typically returns a result before the asynchronous workflows of the operation are complete. Operations might also time out or encounter other server issues before they're complete, even if the request already returned a result. This might make it difficult to determine whether the request succeeded. Moreover, you might need to retry the request multiple times to ensure that the operation completes successfully. However, if the original request and the subsequent retries are successful, the operation occurs multiple times. This means that you might create more resources than you intended.
 #' 
-#' *Idempotency* ensures that an API request action completes no more than
-#' one time. With an idempotent request, if the original request action
-#' completes successfully, any subsequent retries complete successfully
-#' without performing any further actions. However, the result might
-#' contain updated information, such as the current creation status.
+#' *Idempotency* ensures that an API request action completes no more than one time. With an idempotent request, if the original request action completes successfully, any subsequent retries complete successfully without performing any further actions. However, the result might contain updated information, such as the current creation status.
 #' 
-#' The following lists of APIs are grouped according to methods that ensure
-#' idempotency.
+#' The following lists of APIs are grouped according to methods that ensure idempotency.
 #' 
 #' **Idempotent create APIs with a client token**
 #' 
-#' The API actions in this list support idempotency with the use of a
-#' *client token*. The corresponding Amazon Web Services CLI commands also
-#' support idempotency using a client token. A client token is a unique,
-#' case-sensitive string of up to 64 ASCII characters. To make an
-#' idempotent API request using one of these actions, specify a client
-#' token in the request. We recommend that you *don't* reuse the same
-#' client token for other API requests. If you don’t provide a client token
-#' for these APIs, a default client token is automatically provided by
-#' SDKs.
+#' The API actions in this list support idempotency with the use of a *client token*. The corresponding Amazon Web Services CLI commands also support idempotency using a client token. A client token is a unique, case-sensitive string of up to 64 ASCII characters. To make an idempotent API request using one of these actions, specify a client token in the request. We recommend that you *don't* reuse the same client token for other API requests. If you don’t provide a client token for these APIs, a default client token is automatically provided by SDKs.
 #' 
 #' Given a request action that has succeeded:
 #' 
-#' If you retry the request using the same client token and the same
-#' parameters, the retry succeeds without performing any further actions
-#' other than returning the original resource detail data in the response.
+#' If you retry the request using the same client token and the same parameters, the retry succeeds without performing any further actions other than returning the original resource detail data in the response.
 #' 
-#' If you retry the request using the same client token, but one or more of
-#' the parameters are different, the retry throws a `ValidationException`
-#' with an `IdempotentParameterMismatch` error.
+#' If you retry the request using the same client token, but one or more of the parameters are different, the retry throws a `ValidationException` with an `IdempotentParameterMismatch` error.
 #' 
-#' Client tokens expire eight hours after a request is made. If you retry
-#' the request with the expired token, a new resource is created.
+#' Client tokens expire eight hours after a request is made. If you retry the request with the expired token, a new resource is created.
 #' 
-#' If the original resource is deleted and you retry the request, a new
-#' resource is created.
+#' If the original resource is deleted and you retry the request, a new resource is created.
 #' 
 #' Idempotent create APIs with a client token:
 #' 
@@ -3710,16 +3476,11 @@ lightsail <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' 
 #' Given a request action that has succeeded:
 #' 
-#' If you retry the request with an API from this group, and the original
-#' resource *hasn't* been modified, the retry succeeds without performing
-#' any further actions other than returning the original resource detail
-#' data in the response.
+#' If you retry the request with an API from this group, and the original resource *hasn't* been modified, the retry succeeds without performing any further actions other than returning the original resource detail data in the response.
 #' 
-#' If the original resource has been modified, the retry throws a
-#' `ConflictException`.
+#' If the original resource has been modified, the retry throws a `ConflictException`.
 #' 
-#' If you retry with different input parameters, the retry throws a
-#' `ValidationException` with an `IdempotentParameterMismatch` error.
+#' If you retry with different input parameters, the retry throws a `ValidationException` with an `IdempotentParameterMismatch` error.
 #' 
 #' Idempotent create APIs:
 #' 
@@ -3735,8 +3496,7 @@ lightsail <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' 
 #' Given a request action that has succeeded:
 #' 
-#' When you retry the request with an API from this group and the resource
-#' was deleted, its metadata is returned in the response.
+#' When you retry the request with an API from this group and the resource was deleted, its metadata is returned in the response.
 #' 
 #' If you retry and the resource doesn't exist, the response is empty.
 #' 
@@ -3758,13 +3518,9 @@ lightsail <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' 
 #' Given a request action that has succeeded:
 #' 
-#' If you retry the request with an API from this group, if the original
-#' request delete operation status is `DELETE_IN_PROGRESS`, the retry
-#' returns the resource detail data in the response without performing any
-#' further actions.
+#' If you retry the request with an API from this group, if the original request delete operation status is `DELETE_IN_PROGRESS`, the retry returns the resource detail data in the response without performing any further actions.
 #' 
-#' If the original request delete operation is complete, a retry returns an
-#' empty response.
+#' If the original request delete operation is complete, a retry returns an empty response.
 #' 
 #' Asynchronous idempotent delete APIs:
 #' 
@@ -3964,39 +3720,31 @@ proton <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' AWSServerlessApplicationRepository
 #'
 #' @description
-#' The AWS Serverless Application Repository makes it easy for developers
-#' and enterprises to quickly find and deploy serverless applications in
-#' the AWS Cloud. For more information about serverless applications, see
-#' Serverless Computing and Applications on the AWS website.
+#' The AWS Serverless Application Repository makes it easy for developers and enterprises to quickly find
+#' and deploy serverless applications in the AWS Cloud. For more information about serverless applications,
+#' see Serverless Computing and Applications on the AWS website.
 #' 
-#' The AWS Serverless Application Repository is deeply integrated with the
-#' AWS Lambda console, so that developers of all levels can get started
-#' with serverless computing without needing to learn anything new. You can
-#' use category keywords to browse for applications such as web and mobile
-#' backends, data processing applications, or chatbots. You can also search
-#' for applications by name, publisher, or event source. To use an
-#' application, you simply choose it, configure any required fields, and
-#' deploy it with a few clicks.
+#' The AWS Serverless Application Repository is deeply integrated with the AWS Lambda console, so that developers of
+#' all levels can get started with serverless computing without needing to learn anything new. You can use category
+#' keywords to browse for applications such as web and mobile backends, data processing applications, or chatbots.
+#' You can also search for applications by name, publisher, or event source. To use an application, you simply choose it,
+#' configure any required fields, and deploy it with a few clicks.
 #' 
-#' You can also easily publish applications, sharing them publicly with the
-#' community at large, or privately within your team or across your
-#' organization. To publish a serverless application (or app), you can use
-#' the AWS Management Console, AWS Command Line Interface (AWS CLI), or AWS
-#' SDKs to upload the code. Along with the code, you upload a simple
-#' manifest file, also known as the AWS Serverless Application Model (AWS
-#' SAM) template. For more information about AWS SAM, see AWS Serverless
-#' Application Model (AWS SAM) on the AWS Labs GitHub repository.
+#' You can also easily publish applications, sharing them publicly with the community at large, or privately
+#' within your team or across your organization. To publish a serverless application (or app), you can use the
+#' AWS Management Console, AWS Command Line Interface (AWS CLI), or AWS SDKs to upload the code. Along with the
+#' code, you upload a simple manifest file, also known as the AWS Serverless Application Model (AWS SAM) template.
+#' For more information about AWS SAM, see AWS Serverless Application Model (AWS SAM) on the AWS Labs
+#' GitHub repository.
 #' 
-#' The AWS Serverless Application Repository Developer Guide contains more
-#' information about the two developer experiences available:
+#' The AWS Serverless Application Repository Developer Guide contains more information about the two developer
+#' experiences available:
 #' 
-#' -   Consuming Applications – Browse for applications and view
-#'     information about them, including source code and readme files. Also
-#'     install, configure, and deploy applications of your choosing.
+#' -   Consuming Applications – Browse for applications and view information about them, including
+#'     source code and readme files. Also install, configure, and deploy applications of your choosing.
 #' 
-#'     Publishing Applications – Configure and upload applications to make
-#'     them available to other developers, and publish new versions of
-#'     applications.
+#'     Publishing Applications – Configure and upload applications to make them available to other
+#'     developers, and publish new versions of applications.
 #'
 #' @param
 #' config
@@ -4119,10 +3867,7 @@ serverlessapplicationrepository <- function(config = list(), credentials = list(
 #' @description
 #' Backup
 #' 
-#' Backup is a unified backup service designed to protect Amazon Web
-#' Services services and their associated data. Backup simplifies the
-#' creation, migration, restoration, and deletion of backups, while also
-#' providing reporting and auditing.
+#' Backup is a unified backup service designed to protect Amazon Web Services services and their associated data. Backup simplifies the creation, migration, restoration, and deletion of backups, while also providing reporting and auditing.
 #'
 #' @param
 #' config
@@ -4255,6 +4000,7 @@ serverlessapplicationrepository <- function(config = list(), credentials = list(
 #'  \link[paws.storage:backup_get_backup_vault_access_policy]{get_backup_vault_access_policy} \tab Returns the access policy document that is associated with the named backup vault\cr
 #'  \link[paws.storage:backup_get_backup_vault_notifications]{get_backup_vault_notifications} \tab Returns event notifications for the specified backup vault\cr
 #'  \link[paws.storage:backup_get_legal_hold]{get_legal_hold} \tab This action returns details for a specified legal hold\cr
+#'  \link[paws.storage:backup_get_pitr_malware_scan_results]{get_pitr_malware_scan_results} \tab Returns the malware scan results for a specified point in time within a continuous (point-in-time recovery) backup\cr
 #'  \link[paws.storage:backup_get_recovery_point_index_details]{get_recovery_point_index_details} \tab This operation returns the metadata and details specific to the backup index associated with the specified recovery point\cr
 #'  \link[paws.storage:backup_get_recovery_point_restore_metadata]{get_recovery_point_restore_metadata} \tab Returns a set of metadata key-value pairs that were used to create the backup\cr
 #'  \link[paws.storage:backup_get_restore_job_metadata]{get_restore_job_metadata} \tab This request returns the metadata for the specified restore job\cr
@@ -4337,15 +4083,9 @@ backup <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' Amazon Data Lifecycle Manager
 #'
 #' @description
-#' With Amazon Data Lifecycle Manager, you can manage the lifecycle of your
-#' Amazon Web Services resources. You create lifecycle policies, which are
-#' used to automate operations on the specified resources.
+#' With Amazon Data Lifecycle Manager, you can manage the lifecycle of your Amazon Web Services resources. You create lifecycle policies, which are used to automate operations on the specified resources.
 #' 
-#' Amazon Data Lifecycle Manager supports Amazon EBS volumes and snapshots.
-#' For information about using Amazon Data Lifecycle Manager with Amazon
-#' EBS, see [Amazon Data Lifecycle
-#' Manager](https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-lifecycle.html)
-#' in the *Amazon EC2 User Guide*.
+#' Amazon Data Lifecycle Manager supports Amazon EBS volumes and snapshots. For information about using Amazon Data Lifecycle Manager with Amazon EBS, see [Amazon Data Lifecycle Manager](https://docs.aws.amazon.com/ebs/latest/userguide/snapshot-lifecycle.html) in the *Amazon EC2 User Guide*.
 #'
 #' @param
 #' config
@@ -4460,36 +4200,11 @@ dlm <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon Elastic Block Store
 #'
 #' @description
-#' You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to
-#' create Amazon EBS snapshots, write data directly to your snapshots, read
-#' data on your snapshots, and identify the differences or changes between
-#' two snapshots. If you’re an independent software vendor (ISV) who offers
-#' backup services for Amazon EBS, the EBS direct APIs make it more
-#' efficient and cost-effective to track incremental changes on your Amazon
-#' EBS volumes through snapshots. This can be done without having to create
-#' new volumes from snapshots, and then use Amazon Elastic Compute Cloud
-#' (Amazon EC2) instances to compare the differences.
+#' You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create Amazon EBS snapshots, write data directly to your snapshots, read data on your snapshots, and identify the differences or changes between two snapshots. If you’re an independent software vendor (ISV) who offers backup services for Amazon EBS, the EBS direct APIs make it more efficient and cost-effective to track incremental changes on your Amazon EBS volumes through snapshots. This can be done without having to create new volumes from snapshots, and then use Amazon Elastic Compute Cloud (Amazon EC2) instances to compare the differences.
 #' 
-#' You can create incremental snapshots directly from data on-premises into
-#' volumes and the cloud to use for quick disaster recovery. With the
-#' ability to write and read snapshots, you can write your on-premises data
-#' to an snapshot during a disaster. Then after recovery, you can restore
-#' it back to Amazon Web Services or on-premises from the snapshot. You no
-#' longer need to build and maintain complex mechanisms to copy data to and
-#' from Amazon EBS.
+#' You can create incremental snapshots directly from data on-premises into volumes and the cloud to use for quick disaster recovery. With the ability to write and read snapshots, you can write your on-premises data to an snapshot during a disaster. Then after recovery, you can restore it back to Amazon Web Services or on-premises from the snapshot. You no longer need to build and maintain complex mechanisms to copy data to and from Amazon EBS.
 #' 
-#' This API reference provides detailed information about the actions, data
-#' types, parameters, and errors of the EBS direct APIs. For more
-#' information about the elements that make up the EBS direct APIs, and
-#' examples of how to use them effectively, see [Accessing the Contents of
-#' an Amazon EBS
-#' Snapshot](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-accessing-snapshot.html)
-#' in the *Amazon Elastic Compute Cloud User Guide*. For more information
-#' about the supported Amazon Web Services Regions, endpoints, and service
-#' quotas for the EBS direct APIs, see [Amazon Elastic Block Store
-#' Endpoints and
-#' Quotas](https://docs.aws.amazon.com/general/latest/gr/ebs-service.html)
-#' in the *Amazon Web Services General Reference*.
+#' This API reference provides detailed information about the actions, data types, parameters, and errors of the EBS direct APIs. For more information about the elements that make up the EBS direct APIs, and examples of how to use them effectively, see [Accessing the Contents of an Amazon EBS Snapshot](https://docs.aws.amazon.com/ebs/latest/userguide/ebs-accessing-snapshot.html) in the *Amazon Elastic Compute Cloud User Guide*. For more information about the supported Amazon Web Services Regions, endpoints, and service quotas for the EBS direct APIs, see [Amazon Elastic Block Store Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/ebs-service.html) in the *Amazon Web Services General Reference*.
 #'
 #' @param
 #' config
@@ -4602,15 +4317,7 @@ ebs <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon Elastic File System
 #'
 #' @description
-#' Amazon Elastic File System (Amazon EFS) provides simple, scalable file
-#' storage for use with Amazon EC2 Linux and Mac instances in the Amazon
-#' Web Services Cloud. With Amazon EFS, storage capacity is elastic,
-#' growing and shrinking automatically as you add and remove files, so that
-#' your applications have the storage they need, when they need it. For
-#' more information, see the [Amazon Elastic File System API
-#' Reference](https://docs.aws.amazon.com/efs/latest/ug/api-reference.html)
-#' and the [Amazon Elastic File System User
-#' Guide](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html).
+#' Amazon Elastic File System (Amazon EFS) provides simple, scalable file storage for use with Amazon EC2 Linux and Mac instances in the Amazon Web Services Cloud. With Amazon EFS, storage capacity is elastic, growing and shrinking automatically as you add and remove files, so that your applications have the storage they need, when they need it. For more information, see the [Amazon Elastic File System API Reference](https://docs.aws.amazon.com/efs/latest/ug/api-reference.html) and the [Amazon Elastic File System User Guide](https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html).
 #'
 #' @param
 #' config
@@ -4897,8 +4604,7 @@ finspacedata <- function(config = list(), credentials = list(), endpoint = NULL,
 #' Amazon FSx
 #'
 #' @description
-#' Amazon FSx is a fully managed service that makes it easy for storage and
-#' application administrators to launch and use shared file storage.
+#' Amazon FSx is a fully managed service that makes it easy for storage and application administrators to launch and use shared file storage.
 #'
 #' @param
 #' config
@@ -5057,38 +4763,17 @@ fsx <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' @description
 #' Amazon Glacier (Glacier) is a storage solution for "cold data."
 #' 
-#' Glacier is an extremely low-cost storage service that provides secure,
-#' durable, and easy-to-use storage for data backup and archival. With
-#' Glacier, customers can store their data cost effectively for months,
-#' years, or decades. Glacier also enables customers to offload the
-#' administrative burdens of operating and scaling storage to AWS, so they
-#' don't have to worry about capacity planning, hardware provisioning, data
-#' replication, hardware failure and recovery, or time-consuming hardware
-#' migrations.
+#' Glacier is an extremely low-cost storage service that provides secure, durable, and easy-to-use storage for data backup and archival. With Glacier, customers can store their data cost effectively for months, years, or decades. Glacier also enables customers to offload the administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure and recovery, or time-consuming hardware migrations.
 #' 
-#' Glacier is a great storage choice when low storage cost is paramount and
-#' your data is rarely retrieved. If your application requires fast or
-#' frequent access to your data, consider using Amazon S3. For more
-#' information, see [Amazon Simple Storage Service (Amazon
-#' S3)](https://aws.amazon.com/s3/).
+#' Glacier is a great storage choice when low storage cost is paramount and your data is rarely retrieved. If your application requires fast or frequent access to your data, consider using Amazon S3. For more information, see [Amazon Simple Storage Service (Amazon S3)](https://aws.amazon.com/s3/).
 #' 
-#' You can store any kind of data in any format. There is no maximum limit
-#' on the total amount of data you can store in Glacier.
+#' You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in Glacier.
 #' 
-#' If you are a first-time user of Glacier, we recommend that you begin by
-#' reading the following sections in the *Amazon Glacier Developer Guide*:
+#' If you are a first-time user of Glacier, we recommend that you begin by reading the following sections in the *Amazon Glacier Developer Guide*:
 #' 
-#' -   [What is Amazon
-#'     Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html) -
-#'     This section of the Developer Guide describes the underlying data
-#'     model, the operations it supports, and the AWS SDKs that you can use
-#'     to interact with the service.
+#' -   [What is Amazon Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html) - This section of the Developer Guide describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.
 #' 
-#' -   [Getting Started with Amazon
-#'     Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html) -
-#'     The Getting Started section walks you through the process of
-#'     creating a vault, uploading archives, creating jobs to download
-#'     archives, retrieving the job output, and deleting archives.
+#' -   [Getting Started with Amazon Glacier](https://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html) - The Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job output, and deleting archives.
 #'
 #' @param
 #' config
@@ -5232,15 +4917,9 @@ glacier <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' Amazon Omics
 #'
 #' @description
-#' Amazon Web Services HealthOmics is a service that helps users such as
-#' bioinformaticians, researchers, and scientists to store, query, analyze,
-#' and generate insights from genomics and other biological data. It
-#' simplifies and accelerates the process of storing and analyzing genomic
-#' information for Amazon Web Services.
+#' Amazon Web Services HealthOmics is a service that helps users such as bioinformaticians, researchers, and scientists to store, query, analyze, and generate insights from genomics and other biological data. It simplifies and accelerates the process of storing and analyzing genomic information for Amazon Web Services.
 #' 
-#' For an introduction to the service, see [What is Amazon Web Services
-#' HealthOmics?](https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For an introduction to the service, see [What is Amazon Web Services HealthOmics?](https://docs.aws.amazon.com/omics/latest/dev/what-is-healthomics.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @param
 #' config
@@ -5454,25 +5133,11 @@ omics <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' Amazon Recycle Bin
 #'
 #' @description
-#' This is the *Recycle Bin API Reference*. This documentation provides
-#' descriptions and syntax for each of the actions and data types in
-#' Recycle Bin.
+#' This is the *Recycle Bin API Reference*. This documentation provides descriptions and syntax for each of the actions and data types in Recycle Bin.
 #' 
-#' Recycle Bin is a resource recovery feature that enables you to restore
-#' accidentally deleted EBS volumes, EBS snapshots, and EBS-backed AMIs.
-#' When using Recycle Bin, if your resources are deleted, they are retained
-#' in the Recycle Bin for a time period that you specify.
+#' Recycle Bin is a resource recovery feature that enables you to restore accidentally deleted EBS volumes, EBS snapshots, and EBS-backed AMIs. When using Recycle Bin, if your resources are deleted, they are retained in the Recycle Bin for a time period that you specify.
 #' 
-#' You can restore a resource from the Recycle Bin at any time before its
-#' retention period expires. After you restore a resource from the Recycle
-#' Bin, the resource is removed from the Recycle Bin, and you can then use
-#' it in the same way you use any other resource of that type in your
-#' account. If the retention period expires and the resource is not
-#' restored, the resource is permanently deleted from the Recycle Bin and
-#' is no longer available for recovery. For more information about Recycle
-#' Bin, see [Recycle
-#' Bin](https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin.html)
-#' in the *Amazon Elastic Compute Cloud User Guide*.
+#' You can restore a resource from the Recycle Bin at any time before its retention period expires. After you restore a resource from the Recycle Bin, the resource is removed from the Recycle Bin, and you can then use it in the same way you use any other resource of that type in your account. If the retention period expires and the resource is not restored, the resource is permanently deleted from the Recycle Bin and is no longer available for recovery. For more information about Recycle Bin, see [Recycle Bin](https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin.html) in the *Amazon Elastic Compute Cloud User Guide*.
 #'
 #' @param
 #' config
@@ -5811,8 +5476,7 @@ s3 <- function(config = list(), credentials = list(), endpoint = NULL, region = 
 #' AWS S3 Control
 #'
 #' @description
-#' Amazon Web Services S3 Control provides access to Amazon S3 control
-#' plane actions.
+#' Amazon Web Services S3 Control provides access to Amazon S3 control plane actions.
 #'
 #' @param
 #' config
@@ -6128,17 +5792,7 @@ s3outposts <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' Amazon S3 Tables
 #'
 #' @description
-#' An Amazon S3 table represents a structured dataset consisting of tabular
-#' data in [Apache Parquet](https://parquet.apache.org/docs/) format and
-#' related metadata. This data is stored inside an S3 table as a
-#' subresource. All tables in a table bucket are stored in the [Apache
-#' Iceberg](https://iceberg.apache.org/docs/latest/) table format. Through
-#' integration with the Amazon Web Services Glue Data Catalog you can
-#' interact with your tables using Amazon Web Services analytics services,
-#' such as Amazon Athena and Amazon Redshift. Amazon S3 manages maintenance
-#' of your tables through automatic file compaction and snapshot
-#' management. For more information, see [Amazon S3 table
-#' buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html).
+#' An Amazon S3 table represents a structured dataset consisting of tabular data in [Apache Parquet](https://parquet.apache.org/docs/) format and related metadata. This data is stored inside an S3 table as a subresource. All tables in a table bucket are stored in the [Apache Iceberg](https://iceberg.apache.org/docs/latest/) table format. Through integration with the Amazon Web Services Glue Data Catalog you can interact with your tables using Amazon Web Services analytics services, such as Amazon Athena and Amazon Redshift. Amazon S3 manages maintenance of your tables through automatic file compaction and snapshot management. For more information, see [Amazon S3 table buckets](https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html).
 #'
 #' @param
 #' config
@@ -6296,72 +5950,33 @@ s3tables <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' @description
 #' Storage Gateway Service
 #' 
-#' Amazon FSx File Gateway is no longer available to new customers.
-#' Existing customers of FSx File Gateway can continue to use the service
-#' normally. For capabilities similar to FSx File Gateway, visit [this blog
-#' post](https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/).
+#' Amazon FSx File Gateway is no longer available to new customers. Existing customers of FSx File Gateway can continue to use the service normally. For capabilities similar to FSx File Gateway, visit [this blog post](https://aws.amazon.com/blogs/storage/switch-your-file-share-access-from-amazon-fsx-file-gateway-to-amazon-fsx-for-windows-file-server/).
 #' 
-#' Storage Gateway is the service that connects an on-premises software
-#' appliance with cloud-based storage to provide seamless and secure
-#' integration between an organization's on-premises IT environment and the
-#' Amazon Web Services storage infrastructure. The service enables you to
-#' securely upload data to the Amazon Web Services Cloud for cost effective
-#' backup and rapid disaster recovery.
+#' Storage Gateway is the service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration between an organization's on-premises IT environment and the Amazon Web Services storage infrastructure. The service enables you to securely upload data to the Amazon Web Services Cloud for cost effective backup and rapid disaster recovery.
 #' 
-#' Use the following links to get started using the *Storage Gateway
-#' Service API Reference*:
+#' Use the following links to get started using the *Storage Gateway Service API Reference*:
 #' 
-#' -   [Storage Gateway required request
-#'     headers](https://docs.aws.amazon.com/storagegateway/#AWSStorageGatewayHTTPRequestsHeaders):
-#'     Describes the required headers that you must send with every POST
-#'     request to Storage Gateway.
+#' -   [Storage Gateway required request headers](https://docs.aws.amazon.com/storagegateway/#AWSStorageGatewayHTTPRequestsHeaders): Describes the required headers that you must send with every POST request to Storage Gateway.
 #' 
-#' -   [Signing
-#'     requests](https://docs.aws.amazon.com/storagegateway/#AWSStorageGatewaySigningRequests):
-#'     Storage Gateway requires that you authenticate every request you
-#'     send; this topic describes how sign such a request.
+#' -   [Signing requests](https://docs.aws.amazon.com/storagegateway/#AWSStorageGatewaySigningRequests): Storage Gateway requires that you authenticate every request you send; this topic describes how sign such a request.
 #' 
-#' -   [Error
-#'     responses](https://docs.aws.amazon.com/storagegateway/#APIErrorResponses):
-#'     Provides reference information about Storage Gateway errors.
+#' -   [Error responses](https://docs.aws.amazon.com/storagegateway/#APIErrorResponses): Provides reference information about Storage Gateway errors.
 #' 
-#' -   [Operations in Storage
-#'     Gateway](https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html):
-#'     Contains detailed descriptions of all Storage Gateway operations,
-#'     their request parameters, response elements, possible errors, and
-#'     examples of requests and responses.
+#' -   [Operations in Storage Gateway](https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html): Contains detailed descriptions of all Storage Gateway operations, their request parameters, response elements, possible errors, and examples of requests and responses.
 #' 
-#' -   [Storage Gateway endpoints and
-#'     quotas](https://docs.aws.amazon.com/general/latest/gr/sg.html):
-#'     Provides a list of each Amazon Web Services Region and the endpoints
-#'     available for use with Storage Gateway.
+#' -   [Storage Gateway endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/sg.html): Provides a list of each Amazon Web Services Region and the endpoints available for use with Storage Gateway.
 #' 
-#' Storage Gateway resource IDs are in uppercase. When you use these
-#' resource IDs with the Amazon EC2 API, EC2 expects resource IDs in
-#' lowercase. You must change your resource ID to lowercase to use it with
-#' the EC2 API. For example, in Storage Gateway the ID for a volume might
-#' be `vol-AA22BB012345DAF670`. When you use this ID with the EC2 API, you
-#' must change it to `vol-aa22bb012345daf670`. Otherwise, the EC2 API might
-#' not behave as expected.
+#' Storage Gateway resource IDs are in uppercase. When you use these resource IDs with the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your resource ID to lowercase to use it with the EC2 API. For example, in Storage Gateway the ID for a volume might be `vol-AA22BB012345DAF670`. When you use this ID with the EC2 API, you must change it to `vol-aa22bb012345daf670`. Otherwise, the EC2 API might not behave as expected.
 #' 
-#' IDs for Storage Gateway volumes and Amazon EBS snapshots created from
-#' gateway volumes are changing to a longer format. Starting in December
-#' 2016, all new volumes and snapshots will be created with a 17-character
-#' string. Starting in April 2016, you will be able to use these longer IDs
-#' so you can test your systems with the new format. For more information,
-#' see [Longer EC2 and EBS resource
-#' IDs](https://aws.amazon.com/ec2/faqs/#longer-ids).
+#' IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway volumes are changing to a longer format. Starting in December 2016, all new volumes and snapshots will be created with a 17-character string. Starting in April 2016, you will be able to use these longer IDs so you can test your systems with the new format. For more information, see [Longer EC2 and EBS resource IDs](https://aws.amazon.com/ec2/faqs/#longer-ids).
 #' 
-#' For example, a volume Amazon Resource Name (ARN) with the longer volume
-#' ID format looks like the following:
+#' For example, a volume Amazon Resource Name (ARN) with the longer volume ID format looks like the following:
 #' 
 #' `arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG`.
 #' 
-#' A snapshot ID with the longer ID format looks like the following:
-#' `snap-78e226633445566ee`.
+#' A snapshot ID with the longer ID format looks like the following: `snap-78e226633445566ee`.
 #' 
-#' For more information, see Announcement: Heads-up – Longer Storage
-#' Gateway volume and snapshot IDs coming in 2016.
+#' For more information, see Announcement: Heads-up – Longer Storage Gateway volume and snapshot IDs coming in 2016.
 #'
 #' @param
 #' config
@@ -6571,13 +6186,7 @@ storagegateway <- function(config = list(), credentials = list(), endpoint = NUL
 #' Amazon DynamoDB Accelerator (DAX)
 #'
 #' @description
-#' DAX is a managed caching service engineered for Amazon DynamoDB. DAX
-#' dramatically speeds up database reads by caching frequently-accessed
-#' data from DynamoDB, so applications can access that data with
-#' sub-millisecond latency. You can create a DAX cluster easily, using the
-#' Amazon Web Services Management Console. With a few simple modifications
-#' to your code, your application can begin taking advantage of the DAX
-#' cluster and realize significant improvements in read performance.
+#' DAX is a managed caching service engineered for Amazon DynamoDB. DAX dramatically speeds up database reads by caching frequently-accessed data from DynamoDB, so applications can access that data with sub-millisecond latency. You can create a DAX cluster easily, using the Amazon Web Services Management Console. With a few simple modifications to your code, your application can begin taking advantage of the DAX cluster and realize significant improvements in read performance.
 #'
 #' @param
 #' config
@@ -6705,11 +6314,7 @@ dax <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon DocumentDB with MongoDB compatibility
 #'
 #' @description
-#' Amazon DocumentDB is a fast, reliable, and fully managed database
-#' service. Amazon DocumentDB makes it easy to set up, operate, and scale
-#' MongoDB-compatible databases in the cloud. With Amazon DocumentDB, you
-#' can run the same application code and use the same drivers and tools
-#' that you use with MongoDB.
+#' Amazon DocumentDB is a fast, reliable, and fully managed database service. Amazon DocumentDB makes it easy to set up, operate, and scale MongoDB-compatible databases in the cloud. With Amazon DocumentDB, you can run the same application code and use the same drivers and tools that you use with MongoDB.
 #'
 #' @param
 #' config
@@ -6873,23 +6478,15 @@ docdb <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' @description
 #' Amazon DocumentDB elastic clusters
 #' 
-#' Amazon DocumentDB elastic-clusters support workloads with millions of
-#' reads/writes per second and petabytes of storage capacity. Amazon
-#' DocumentDB elastic clusters also simplify how developers interact with
-#' Amazon DocumentDB elastic-clusters by eliminating the need to choose,
-#' manage or upgrade instances.
+#' Amazon DocumentDB elastic-clusters support workloads with millions of reads/writes per second and petabytes of storage capacity. Amazon DocumentDB elastic clusters also simplify how developers interact with Amazon DocumentDB elastic-clusters by eliminating the need to choose, manage or upgrade instances.
 #' 
 #' Amazon DocumentDB elastic-clusters were created to:
 #' 
-#' -   provide a solution for customers looking for a database that
-#'     provides virtually limitless scale with rich query capabilities and
-#'     MongoDB API compatibility.
+#' -   provide a solution for customers looking for a database that provides virtually limitless scale with rich query capabilities and MongoDB API compatibility.
 #' 
-#' -   give customers higher connection limits, and to reduce downtime from
-#'     patching.
+#' -   give customers higher connection limits, and to reduce downtime from patching.
 #' 
-#' -   continue investing in a cloud-native, elastic, and class leading
-#'     architecture for JSON workloads.
+#' -   continue investing in a cloud-native, elastic, and class leading architecture for JSON workloads.
 #'
 #' @param
 #' config
@@ -7015,26 +6612,11 @@ docdbelastic <- function(config = list(), credentials = list(), endpoint = NULL,
 #' Amazon DynamoDB
 #'
 #' @description
-#' Amazon DynamoDB is a fully managed NoSQL database service that provides
-#' fast and predictable performance with seamless scalability. DynamoDB
-#' lets you offload the administrative burdens of operating and scaling a
-#' distributed database, so that you don't have to worry about hardware
-#' provisioning, setup and configuration, replication, software patching,
-#' or cluster scaling.
+#' Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. DynamoDB lets you offload the administrative burdens of operating and scaling a distributed database, so that you don't have to worry about hardware provisioning, setup and configuration, replication, software patching, or cluster scaling.
 #' 
-#' With DynamoDB, you can create database tables that can store and
-#' retrieve any amount of data, and serve any level of request traffic. You
-#' can scale up or scale down your tables' throughput capacity without
-#' downtime or performance degradation, and use the Amazon Web Services
-#' Management Console to monitor resource utilization and performance
-#' metrics.
+#' With DynamoDB, you can create database tables that can store and retrieve any amount of data, and serve any level of request traffic. You can scale up or scale down your tables' throughput capacity without downtime or performance degradation, and use the Amazon Web Services Management Console to monitor resource utilization and performance metrics.
 #' 
-#' DynamoDB automatically spreads the data and traffic for your tables over
-#' a sufficient number of servers to handle your throughput and storage
-#' requirements, while maintaining consistent and fast performance. All of
-#' your data is stored on solid state disks (SSDs) and automatically
-#' replicated across multiple Availability Zones in an Amazon Web Services
-#' Region, providing built-in high availability and data durability.
+#' DynamoDB automatically spreads the data and traffic for your tables over a sufficient number of servers to handle your throughput and storage requirements, while maintaining consistent and fast performance. All of your data is stored on solid state disks (SSDs) and automatically replicated across multiple Availability Zones in an Amazon Web Services Region, providing built-in high availability and data durability.
 #'
 #' @param
 #' config
@@ -7232,11 +6814,7 @@ dynamodb <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' @description
 #' Amazon DynamoDB
 #' 
-#' Amazon DynamoDB Streams provides API actions for accessing streams and
-#' processing stream records. To learn more about application development
-#' with Streams, see [Capturing Table Activity with DynamoDB
-#' Streams](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html)
-#' in the Amazon DynamoDB Developer Guide.
+#' Amazon DynamoDB Streams provides API actions for accessing streams and processing stream records. To learn more about application development with Streams, see [Capturing Table Activity with DynamoDB Streams](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Streams.html) in the Amazon DynamoDB Developer Guide.
 #'
 #' @param
 #' config
@@ -7348,18 +6926,11 @@ dynamodbstreams <- function(config = list(), credentials = list(), endpoint = NU
 #' Amazon ElastiCache
 #'
 #' @description
-#' Amazon ElastiCache is a web service that makes it easier to set up,
-#' operate, and scale a distributed cache in the cloud.
+#' Amazon ElastiCache is a web service that makes it easier to set up, operate, and scale a distributed cache in the cloud.
 #' 
-#' With ElastiCache, customers get all of the benefits of a
-#' high-performance, in-memory cache with less of the administrative burden
-#' involved in launching and managing a distributed cache. The service
-#' makes setup, scaling, and cluster failure handling much simpler than in
-#' a self-managed cache deployment.
+#' With ElastiCache, customers get all of the benefits of a high-performance, in-memory cache with less of the administrative burden involved in launching and managing a distributed cache. The service makes setup, scaling, and cluster failure handling much simpler than in a self-managed cache deployment.
 #' 
-#' In addition, through integration with Amazon CloudWatch, customers get
-#' enhanced visibility into the key performance statistics associated with
-#' their cache and can receive alarms if a part of their cache runs hot.
+#' In addition, through integration with Amazon CloudWatch, customers get enhanced visibility into the key performance statistics associated with their cache and can receive alarms if a part of their cache runs hot.
 #'
 #' @param
 #' config
@@ -7552,36 +7123,15 @@ elasticache <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon Keyspaces
 #'
 #' @description
-#' Amazon Keyspaces (for Apache Cassandra) is a scalable, highly available,
-#' and managed Apache Cassandra-compatible database service. Amazon
-#' Keyspaces makes it easy to migrate, run, and scale Cassandra workloads
-#' in the Amazon Web Services Cloud. With just a few clicks on the Amazon
-#' Web Services Management Console or a few lines of code, you can create
-#' keyspaces and tables in Amazon Keyspaces, without deploying any
-#' infrastructure or installing software.
+#' Amazon Keyspaces (for Apache Cassandra) is a scalable, highly available, and managed Apache Cassandra-compatible database service. Amazon Keyspaces makes it easy to migrate, run, and scale Cassandra workloads in the Amazon Web Services Cloud. With just a few clicks on the Amazon Web Services Management Console or a few lines of code, you can create keyspaces and tables in Amazon Keyspaces, without deploying any infrastructure or installing software.
 #' 
-#' In addition to supporting Cassandra Query Language (CQL) requests via
-#' open-source Cassandra drivers, Amazon Keyspaces supports data definition
-#' language (DDL) operations to manage keyspaces and tables using the
-#' Amazon Web Services SDK and CLI, as well as infrastructure as code (IaC)
-#' services and tools such as CloudFormation and Terraform. This API
-#' reference describes the supported DDL operations in detail.
+#' In addition to supporting Cassandra Query Language (CQL) requests via open-source Cassandra drivers, Amazon Keyspaces supports data definition language (DDL) operations to manage keyspaces and tables using the Amazon Web Services SDK and CLI, as well as infrastructure as code (IaC) services and tools such as CloudFormation and Terraform. This API reference describes the supported DDL operations in detail.
 #' 
-#' For the list of all supported CQL APIs, see [Supported Cassandra APIs,
-#' operations, and data types in Amazon
-#' Keyspaces](https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' For the list of all supported CQL APIs, see [Supported Cassandra APIs, operations, and data types in Amazon Keyspaces](https://docs.aws.amazon.com/keyspaces/latest/devguide/cassandra-apis.html) in the *Amazon Keyspaces Developer Guide*.
 #' 
-#' To learn how Amazon Keyspaces API actions are recorded with CloudTrail,
-#' see [Amazon Keyspaces information in
-#' CloudTrail](https://docs.aws.amazon.com/keyspaces/latest/devguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail)
-#' in the *Amazon Keyspaces Developer Guide*.
+#' To learn how Amazon Keyspaces API actions are recorded with CloudTrail, see [Amazon Keyspaces information in CloudTrail](https://docs.aws.amazon.com/keyspaces/latest/devguide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail) in the *Amazon Keyspaces Developer Guide*.
 #' 
-#' For more information about Amazon Web Services APIs, for example how to
-#' implement retry logic or how to sign Amazon Web Services API requests,
-#' see [Amazon Web Services
-#' APIs](https://docs.aws.amazon.com/general/latest/gr/) in the *General
-#' Reference*.
+#' For more information about Amazon Web Services APIs, for example how to implement retry logic or how to sign Amazon Web Services API requests, see [Amazon Web Services APIs](https://docs.aws.amazon.com/general/latest/gr/) in the *General Reference*.
 #'
 #' @param
 #' config
@@ -7877,13 +7427,7 @@ lakeformation <- function(config = list(), credentials = list(), endpoint = NULL
 #' Amazon MemoryDB
 #'
 #' @description
-#' MemoryDB is a fully managed, Redis OSS-compatible, in-memory database
-#' that delivers ultra-fast performance and Multi-AZ durability for modern
-#' applications built using microservices architectures. MemoryDB stores
-#' the entire database in-memory, enabling low latency and high throughput
-#' data access. It is compatible with Redis OSS, a popular open source data
-#' store, enabling you to leverage Redis OSS’ flexible and friendly data
-#' structures, APIs, and commands.
+#' MemoryDB is a fully managed, Redis OSS-compatible, in-memory database that delivers ultra-fast performance and Multi-AZ durability for modern applications built using microservices architectures. MemoryDB stores the entire database in-memory, enabling low latency and high throughput data access. It is compatible with Redis OSS, a popular open source data store, enabling you to leverage Redis OSS’ flexible and friendly data structures, APIs, and commands.
 #'
 #' @param
 #' config
@@ -8035,27 +7579,9 @@ memorydb <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' Amazon Neptune
 #'
 #' @description
-#' Amazon Neptune is a fast, reliable, fully-managed graph database service
-#' that makes it easy to build and run applications that work with highly
-#' connected datasets. The core of Amazon Neptune is a purpose-built,
-#' high-performance graph database engine optimized for storing billions of
-#' relationships and querying the graph with milliseconds latency. Amazon
-#' Neptune supports popular graph models Property Graph and W3C's RDF, and
-#' their respective query languages Apache TinkerPop Gremlin and SPARQL,
-#' allowing you to easily build queries that efficiently navigate highly
-#' connected datasets. Neptune powers graph use cases such as
-#' recommendation engines, fraud detection, knowledge graphs, drug
-#' discovery, and network security.
+#' Amazon Neptune is a fast, reliable, fully-managed graph database service that makes it easy to build and run applications that work with highly connected datasets. The core of Amazon Neptune is a purpose-built, high-performance graph database engine optimized for storing billions of relationships and querying the graph with milliseconds latency. Amazon Neptune supports popular graph models Property Graph and W3C's RDF, and their respective query languages Apache TinkerPop Gremlin and SPARQL, allowing you to easily build queries that efficiently navigate highly connected datasets. Neptune powers graph use cases such as recommendation engines, fraud detection, knowledge graphs, drug discovery, and network security.
 #' 
-#' This interface reference for Amazon Neptune contains documentation for a
-#' programming or command line interface you can use to manage Amazon
-#' Neptune. Note that Amazon Neptune is asynchronous, which means that some
-#' interfaces might require techniques such as polling or callback
-#' functions to determine when a command has been applied. In this
-#' reference, the parameter descriptions indicate whether a command is
-#' applied immediately, on the next instance reboot, or during the
-#' maintenance window. The reference structure is as follows, and we list
-#' following some related topics from the user guide.
+#' This interface reference for Amazon Neptune contains documentation for a programming or command line interface you can use to manage Amazon Neptune. Note that Amazon Neptune is asynchronous, which means that some interfaces might require techniques such as polling or callback functions to determine when a command has been applied. In this reference, the parameter descriptions indicate whether a command is applied immediately, on the next instance reboot, or during the maintenance window. The reference structure is as follows, and we list following some related topics from the user guide.
 #'
 #' @param
 #' config
@@ -8234,12 +7760,7 @@ neptune <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' @description
 #' Neptune Data API
 #' 
-#' The Amazon Neptune data API provides SDK support for more than 40 of
-#' Neptune's data operations, including data loading, query execution, data
-#' inquiry, and machine learning. It supports the Gremlin and openCypher
-#' query languages, and is available in all SDK languages. It automatically
-#' signs API requests and greatly simplifies integrating Neptune into your
-#' applications.
+#' The Amazon Neptune data API provides SDK support for more than 40 of Neptune's data operations, including data loading, query execution, data inquiry, and machine learning. It supports the Gremlin and openCypher query languages, and is available in all SDK languages. It automatically signs API requests and greatly simplifies integrating Neptune into your applications.
 #'
 #' @param
 #' config
@@ -8389,56 +7910,27 @@ neptunedata <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon Relational Database Service
 #'
 #' @description
-#' Amazon Relational Database Service (Amazon RDS) is a web service that
-#' makes it easier to set up, operate, and scale a relational database in
-#' the cloud. It provides cost-efficient, resizeable capacity for an
-#' industry-standard relational database and manages common database
-#' administration tasks, freeing up developers to focus on what makes their
-#' applications and businesses unique.
+#' Amazon Relational Database Service (Amazon RDS) is a web service that makes it easier to set up, operate, and scale a relational database in the cloud. It provides cost-efficient, resizeable capacity for an industry-standard relational database and manages common database administration tasks, freeing up developers to focus on what makes their applications and businesses unique.
 #' 
-#' Amazon RDS gives you access to the capabilities of a MySQL, MariaDB,
-#' PostgreSQL, Microsoft SQL Server, Oracle, Db2, or Amazon Aurora database
-#' server. These capabilities mean that the code, applications, and tools
-#' you already use today with your existing databases work with Amazon RDS
-#' without modification. Amazon RDS automatically backs up your database
-#' and maintains the database software that powers your DB instance. Amazon
-#' RDS is flexible: you can scale your DB instance's compute resources and
-#' storage capacity to meet your application's demand. As with all Amazon
-#' Web Services, there are no up-front investments, and you pay only for
-#' the resources you use.
+#' Amazon RDS gives you access to the capabilities of a MySQL, MariaDB, PostgreSQL, Microsoft SQL Server, Oracle, Db2, or Amazon Aurora database server. These capabilities mean that the code, applications, and tools you already use today with your existing databases work with Amazon RDS without modification. Amazon RDS automatically backs up your database and maintains the database software that powers your DB instance. Amazon RDS is flexible: you can scale your DB instance's compute resources and storage capacity to meet your application's demand. As with all Amazon Web Services, there are no up-front investments, and you pay only for the resources you use.
 #' 
-#' This interface reference for Amazon RDS contains documentation for a
-#' programming or command line interface you can use to manage Amazon RDS.
-#' Amazon RDS is asynchronous, which means that some interfaces might
-#' require techniques such as polling or callback functions to determine
-#' when a command has been applied. In this reference, the parameter
-#' descriptions indicate whether a command is applied immediately, on the
-#' next instance reboot, or during the maintenance window. The reference
-#' structure is as follows, and we list following some related topics from
-#' the user guide.
+#' This interface reference for Amazon RDS contains documentation for a programming or command line interface you can use to manage Amazon RDS. Amazon RDS is asynchronous, which means that some interfaces might require techniques such as polling or callback functions to determine when a command has been applied. In this reference, the parameter descriptions indicate whether a command is applied immediately, on the next instance reboot, or during the maintenance window. The reference structure is as follows, and we list following some related topics from the user guide.
 #' 
 #' **Amazon RDS API Reference**
 #' 
-#' -   For the alphabetical list of API actions, see [API
-#'     Actions](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html).
+#' -   For the alphabetical list of API actions, see [API Actions](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html).
 #' 
-#' -   For the alphabetical list of data types, see [Data
-#'     Types](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html).
+#' -   For the alphabetical list of data types, see [Data Types](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Types.html).
 #' 
-#' -   For a list of common query parameters, see [Common
-#'     Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html).
+#' -   For a list of common query parameters, see [Common Parameters](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonParameters.html).
 #' 
-#' -   For descriptions of the error codes, see [Common
-#'     Errors](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html).
+#' -   For descriptions of the error codes, see [Common Errors](https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/CommonErrors.html).
 #' 
 #' **Amazon RDS User Guide**
 #' 
-#' -   For a summary of the Amazon RDS interfaces, see [Available RDS
-#'     Interfaces](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces).
+#' -   For a summary of the Amazon RDS interfaces, see [Available RDS Interfaces](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html#Welcome.Interfaces).
 #' 
-#' -   For more information about how to use the Query API, see [Using the
-#'     Query
-#'     API](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html).
+#' -   For more information about how to use the Query API, see [Using the Query API](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Using_the_Query_API.html).
 #'
 #' @param
 #' config
@@ -8716,9 +8208,7 @@ rds <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' @description
 #' RDS Data API
 #' 
-#' Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon
-#' Aurora DB cluster. To run these statements, you use the RDS Data API
-#' (Data API).
+#' Amazon RDS provides an HTTP endpoint to run SQL statements on an Amazon Aurora DB cluster. To run these statements, you use the RDS Data API (Data API).
 #' 
 #' Data API is available with the following types of Aurora databases:
 #' 
@@ -8726,9 +8216,7 @@ rds <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' 
 #' -   Aurora MySQL - Serverless v2, provisioned, and Serverless v1
 #' 
-#' For more information about the Data API, see [Using RDS Data
-#' API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html)
-#' in the *Amazon Aurora User Guide*.
+#' For more information about the Data API, see [Using RDS Data API](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html) in the *Amazon Aurora User Guide*.
 #'
 #' @param
 #' config
@@ -8843,32 +8331,13 @@ rdsdataservice <- function(config = list(), credentials = list(), endpoint = NUL
 #' @description
 #' **Overview**
 #' 
-#' This is an interface reference for Amazon Redshift. It contains
-#' documentation for one of the programming or command line interfaces you
-#' can use to manage Amazon Redshift clusters. Note that Amazon Redshift is
-#' asynchronous, which means that some interfaces may require techniques,
-#' such as polling or asynchronous callback handlers, to determine when a
-#' command has been applied. In this reference, the parameter descriptions
-#' indicate whether a change is applied immediately, on the next instance
-#' reboot, or during the next maintenance window. For a summary of the
-#' Amazon Redshift cluster management interfaces, go to [Using the Amazon
-#' Redshift Management
-#' Interfaces](https://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html).
+#' This is an interface reference for Amazon Redshift. It contains documentation for one of the programming or command line interfaces you can use to manage Amazon Redshift clusters. Note that Amazon Redshift is asynchronous, which means that some interfaces may require techniques, such as polling or asynchronous callback handlers, to determine when a command has been applied. In this reference, the parameter descriptions indicate whether a change is applied immediately, on the next instance reboot, or during the next maintenance window. For a summary of the Amazon Redshift cluster management interfaces, go to [Using the Amazon Redshift Management Interfaces](https://docs.aws.amazon.com/redshift/latest/mgmt/using-aws-sdk.html).
 #' 
-#' Amazon Redshift manages all the work of setting up, operating, and
-#' scaling a data warehouse: provisioning capacity, monitoring and backing
-#' up the cluster, and applying patches and upgrades to the Amazon Redshift
-#' engine. You can focus on using your data to acquire new insights for
-#' your business and customers.
+#' Amazon Redshift manages all the work of setting up, operating, and scaling a data warehouse: provisioning capacity, monitoring and backing up the cluster, and applying patches and upgrades to the Amazon Redshift engine. You can focus on using your data to acquire new insights for your business and customers.
 #' 
-#' If you are a first-time user of Amazon Redshift, we recommend that you
-#' begin by reading the [Amazon Redshift Getting Started
-#' Guide](https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html).
+#' If you are a first-time user of Amazon Redshift, we recommend that you begin by reading the [Amazon Redshift Getting Started Guide](https://docs.aws.amazon.com/redshift/latest/gsg/getting-started.html).
 #' 
-#' If you are a database developer, the [Amazon Redshift Database Developer
-#' Guide](https://docs.aws.amazon.com/redshift/latest/dg/welcome.html)
-#' explains how to design, build, query, and maintain the databases that
-#' make up your data warehouse.
+#' If you are a database developer, the [Amazon Redshift Database Developer Guide](https://docs.aws.amazon.com/redshift/latest/dg/welcome.html) explains how to design, build, query, and maintain the databases that make up your data warehouse.
 #'
 #' @param
 #' config
@@ -9116,14 +8585,9 @@ redshift <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' Redshift Data API Service
 #'
 #' @description
-#' You can use the Amazon Redshift Data API to run queries on Amazon
-#' Redshift tables. You can run SQL statements, which are committed if the
-#' statement succeeds.
+#' You can use the Amazon Redshift Data API to run queries on Amazon Redshift tables. You can run SQL statements, which are committed if the statement succeeds.
 #' 
-#' For more information about the Amazon Redshift Data API and CLI usage
-#' examples, see [Using the Amazon Redshift Data
-#' API](https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html) in
-#' the *Amazon Redshift Management Guide*.
+#' For more information about the Amazon Redshift Data API and CLI usage examples, see [Using the Amazon Redshift Data API](https://docs.aws.amazon.com/redshift/latest/mgmt/data-api.html) in the *Amazon Redshift Management Guide*.
 #'
 #' @param
 #' config
@@ -9241,21 +8705,11 @@ redshiftdataapiservice <- function(config = list(), credentials = list(), endpoi
 #' Redshift Serverless
 #'
 #' @description
-#' This is an interface reference for Amazon Redshift Serverless. It
-#' contains documentation for one of the programming or command line
-#' interfaces you can use to manage Amazon Redshift Serverless.
+#' This is an interface reference for Amazon Redshift Serverless. It contains documentation for one of the programming or command line interfaces you can use to manage Amazon Redshift Serverless.
 #' 
-#' Amazon Redshift Serverless automatically provisions data warehouse
-#' capacity and intelligently scales the underlying resources based on
-#' workload demands. Amazon Redshift Serverless adjusts capacity in seconds
-#' to deliver consistently high performance and simplified operations for
-#' even the most demanding and volatile workloads. Amazon Redshift
-#' Serverless lets you focus on using your data to acquire new insights for
-#' your business and customers.
+#' Amazon Redshift Serverless automatically provisions data warehouse capacity and intelligently scales the underlying resources based on workload demands. Amazon Redshift Serverless adjusts capacity in seconds to deliver consistently high performance and simplified operations for even the most demanding and volatile workloads. Amazon Redshift Serverless lets you focus on using your data to acquire new insights for your business and customers.
 #' 
-#' To learn more about Amazon Redshift Serverless, see [What is Amazon
-#' Redshift
-#' Serverless?](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-whatis.html).
+#' To learn more about Amazon Redshift Serverless, see [What is Amazon Redshift Serverless?](https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-whatis.html).
 #'
 #' @param
 #' config
@@ -9427,25 +8881,11 @@ redshiftserverless <- function(config = list(), credentials = list(), endpoint =
 #' Amazon SimpleDB
 #'
 #' @description
-#' Amazon SimpleDB is a web service providing the core database functions
-#' of data indexing and querying in the cloud. By offloading the time and
-#' effort associated with building and operating a web-scale database,
-#' SimpleDB provides developers the freedom to focus on application
-#' development.
+#' Amazon SimpleDB is a web service providing the core database functions of data indexing and querying in the cloud. By offloading the time and effort associated with building and operating a web-scale database, SimpleDB provides developers the freedom to focus on application development.
 #' 
-#' A traditional, clustered relational database requires a sizable upfront
-#' capital outlay, is complex to design, and often requires extensive and
-#' repetitive database administration. Amazon SimpleDB is dramatically
-#' simpler, requiring no schema, automatically indexing your data and
-#' providing a simple API for storage and access. This approach eliminates
-#' the administrative burden of data modeling, index maintenance, and
-#' performance tuning. Developers gain access to this functionality within
-#' Amazon's proven computing environment, are able to scale instantly, and
-#' pay only for what they use.
+#' A traditional, clustered relational database requires a sizable upfront capital outlay, is complex to design, and often requires extensive and repetitive database administration. Amazon SimpleDB is dramatically simpler, requiring no schema, automatically indexing your data and providing a simple API for storage and access. This approach eliminates the administrative burden of data modeling, index maintenance, and performance tuning. Developers gain access to this functionality within Amazon's proven computing environment, are able to scale instantly, and pay only for what they use.
 #' 
-#' Visit
-#' [http://aws.amazon.com/simpledb/](https://aws.amazon.com/simpledb/) for
-#' more information.
+#' Visit [http://aws.amazon.com/simpledb/](https://aws.amazon.com/simpledb/) for more information.
 #'
 #' @param
 #' config
@@ -9684,22 +9124,9 @@ timestreamquery <- function(config = list(), credentials = list(), endpoint = NU
 #' Amazon Timestream Write
 #'
 #' @description
-#' Amazon Timestream is a fast, scalable, fully managed time-series
-#' database service that makes it easy to store and analyze trillions of
-#' time-series data points per day. With Timestream, you can easily store
-#' and analyze IoT sensor data to derive insights from your IoT
-#' applications. You can analyze industrial telemetry to streamline
-#' equipment management and maintenance. You can also store and analyze log
-#' data and metrics to improve the performance and availability of your
-#' applications.
+#' Amazon Timestream is a fast, scalable, fully managed time-series database service that makes it easy to store and analyze trillions of time-series data points per day. With Timestream, you can easily store and analyze IoT sensor data to derive insights from your IoT applications. You can analyze industrial telemetry to streamline equipment management and maintenance. You can also store and analyze log data and metrics to improve the performance and availability of your applications.
 #' 
-#' Timestream is built from the ground up to effectively ingest, process,
-#' and store time-series data. It organizes data to optimize query
-#' processing. It automatically scales based on the volume of data ingested
-#' and on the query volume to ensure you receive optimal performance while
-#' inserting and querying data. As your data grows over time, Timestream’s
-#' adaptive query processing engine spans across storage tiers to provide
-#' fast analysis while reducing costs.
+#' Timestream is built from the ground up to effectively ingest, process, and store time-series data. It organizes data to optimize query processing. It automatically scales based on the volume of data ingested and on the query volume to ensure you receive optimal performance while inserting and querying data. As your data grows over time, Timestream’s adaptive query processing engine spans across storage tiers to provide fast analysis while reducing costs.
 #'
 #' @param
 #' config
@@ -9825,11 +9252,7 @@ timestreamwrite <- function(config = list(), credentials = list(), endpoint = NU
 #' Amazon API Gateway
 #'
 #' @description
-#' Amazon API Gateway helps developers deliver robust, secure, and scalable
-#' mobile and web application back ends. API Gateway allows developers to
-#' securely connect mobile and web applications to APIs that run on Lambda,
-#' Amazon EC2, or other publicly addressable web services that are hosted
-#' outside of AWS.
+#' Amazon API Gateway helps developers deliver robust, secure, and scalable mobile and web application back ends. API Gateway allows developers to securely connect mobile and web applications to APIs that run on Lambda, Amazon EC2, or other publicly addressable web services that are hosted outside of AWS.
 #'
 #' @param
 #' config
@@ -10060,13 +9483,7 @@ apigateway <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' AmazonApiGatewayManagementApi
 #'
 #' @description
-#' The Amazon API Gateway Management API allows you to directly manage
-#' runtime aspects of your deployed APIs. To use it, you must explicitly
-#' set the SDK's endpoint to point to the endpoint of your deployed API.
-#' The endpoint will be of the form
-#' https://\{api-id\}.execute-api.\{region\}.amazonaws.com/\{stage\},
-#' or will be the endpoint corresponding to your API's custom domain and
-#' base path, if applicable.
+#' The Amazon API Gateway Management API allows you to directly manage runtime aspects of your deployed APIs. To use it, you must explicitly set the SDK's endpoint to point to the endpoint of your deployed API. The endpoint will be of the form https://\{api-id\}.execute-api.\{region\}.amazonaws.com/\{stage\}, or will be the endpoint corresponding to your API's custom domain and base path, if applicable.
 #'
 #' @param
 #' config
@@ -10386,19 +9803,7 @@ apigatewayv2 <- function(config = list(), credentials = list(), endpoint = NULL,
 #' AppFabric
 #'
 #' @description
-#' Amazon Web Services AppFabric quickly connects software as a service
-#' (SaaS) applications across your organization. This allows IT and
-#' security teams to easily manage and secure applications using a standard
-#' schema, and employees can complete everyday tasks faster using
-#' generative artificial intelligence (AI). You can use these APIs to
-#' complete AppFabric tasks, such as setting up audit log ingestions or
-#' viewing user access. For more information about AppFabric, including the
-#' required permissions to use the service, see the [Amazon Web Services
-#' AppFabric Administration
-#' Guide](https://docs.aws.amazon.com/appfabric/latest/adminguide/). For
-#' more information about using the Command Line Interface (CLI) to manage
-#' your AppFabric resources, see the [AppFabric section of the CLI
-#' Reference](https://docs.aws.amazon.com/cli/latest/reference/appfabric/).
+#' Amazon Web Services AppFabric quickly connects software as a service (SaaS) applications across your organization. This allows IT and security teams to easily manage and secure applications using a standard schema, and employees can complete everyday tasks faster using generative artificial intelligence (AI). You can use these APIs to complete AppFabric tasks, such as setting up audit log ingestions or viewing user access. For more information about AppFabric, including the required permissions to use the service, see the [Amazon Web Services AppFabric Administration Guide](https://docs.aws.amazon.com/appfabric/latest/adminguide/). For more information about using the Command Line Interface (CLI) to manage your AppFabric resources, see the [AppFabric section of the CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/appfabric/).
 #'
 #' @param
 #' config
@@ -10531,25 +9936,11 @@ appfabric <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' AWS App Mesh
 #'
 #' @description
-#' App Mesh is a service mesh based on the Envoy proxy that makes it easy
-#' to monitor and control microservices. App Mesh standardizes how your
-#' microservices communicate, giving you end-to-end visibility and helping
-#' to ensure high availability for your applications.
+#' App Mesh is a service mesh based on the Envoy proxy that makes it easy to monitor and control microservices. App Mesh standardizes how your microservices communicate, giving you end-to-end visibility and helping to ensure high availability for your applications.
 #' 
-#' App Mesh gives you consistent visibility and network traffic controls
-#' for every microservice in an application. You can use App Mesh with
-#' Amazon Web Services Fargate, Amazon ECS, Amazon EKS, Kubernetes on
-#' Amazon Web Services, and Amazon EC2.
+#' App Mesh gives you consistent visibility and network traffic controls for every microservice in an application. You can use App Mesh with Amazon Web Services Fargate, Amazon ECS, Amazon EKS, Kubernetes on Amazon Web Services, and Amazon EC2.
 #' 
-#' App Mesh supports microservice applications that use service discovery
-#' naming for their components. For more information about service
-#' discovery on Amazon ECS, see [Service
-#' Discovery](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html)
-#' in the *Amazon Elastic Container Service Developer Guide*. Kubernetes
-#' `kube-dns` and `coredns` are supported. For more information, see [DNS
-#' for Services and
-#' Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/)
-#' in the Kubernetes documentation.
+#' App Mesh supports microservice applications that use service discovery naming for their components. For more information about service discovery on Amazon ECS, see [Service Discovery](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html) in the *Amazon Elastic Container Service Developer Guide*. Kubernetes `kube-dns` and `coredns` are supported. For more information, see [DNS for Services and Pods](https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/) in the Kubernetes documentation.
 #'
 #' @param
 #' config
@@ -10694,27 +10085,13 @@ appmesh <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' AWS ARC - Zonal Shift
 #'
 #' @description
-#' Welcome to the API Reference Guide for zonal shift and zonal autoshift
-#' in Amazon Application Recovery Controller (ARC).
+#' Welcome to the API Reference Guide for zonal shift and zonal autoshift in Amazon Application Recovery Controller (ARC).
 #' 
-#' You can start a zonal shift to move traffic for a load balancer resource
-#' away from an Availability Zone to help your application recover quickly
-#' from an impairment in an Availability Zone. For example, you can recover
-#' your application from a developer's bad code deployment or from an
-#' Amazon Web Services infrastructure failure in a single Availability
-#' Zone.
+#' You can start a zonal shift to move traffic for a load balancer resource away from an Availability Zone to help your application recover quickly from an impairment in an Availability Zone. For example, you can recover your application from a developer's bad code deployment or from an Amazon Web Services infrastructure failure in a single Availability Zone.
 #' 
-#' You can also configure zonal autoshift for supported load balancer
-#' resources. Zonal autoshift is a capability in ARC where you authorize
-#' Amazon Web Services to shift away application resource traffic from an
-#' Availability Zone during events, on your behalf, to help reduce your
-#' time to recovery. Amazon Web Services starts an autoshift when internal
-#' telemetry indicates that there is an Availability Zone impairment that
-#' could potentially impact customers.
+#' You can also configure zonal autoshift for supported load balancer resources. Zonal autoshift is a capability in ARC where you authorize Amazon Web Services to shift away application resource traffic from an Availability Zone during events, on your behalf, to help reduce your time to recovery. Amazon Web Services starts an autoshift when internal telemetry indicates that there is an Availability Zone impairment that could potentially impact customers.
 #' 
-#' For more information about using zonal shift and zonal autoshift, see
-#' the [Amazon Application Recovery Controller Developer
-#' Guide](https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html).
+#' For more information about using zonal shift and zonal autoshift, see the [Amazon Application Recovery Controller Developer Guide](https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route53-recovery.html).
 #'
 #' @param
 #' config
@@ -10838,20 +10215,13 @@ arczonalshift <- function(config = list(), credentials = list(), endpoint = NULL
 #' @description
 #' Backup gateway
 #' 
-#' Backup gateway connects Backup to your hypervisor, so you can create,
-#' store, and restore backups of your virtual machines (VMs) anywhere,
-#' whether on-premises or in the VMware Cloud (VMC) on Amazon Web Services.
+#' Backup gateway connects Backup to your hypervisor, so you can create, store, and restore backups of your virtual machines (VMs) anywhere, whether on-premises or in the VMware Cloud (VMC) on Amazon Web Services.
 #' 
-#' Add on-premises resources by connecting to a hypervisor through a
-#' gateway. Backup will automatically discover the resources in your
-#' hypervisor.
+#' Add on-premises resources by connecting to a hypervisor through a gateway. Backup will automatically discover the resources in your hypervisor.
 #' 
-#' Use Backup to assign virtual or on-premises resources to a backup plan,
-#' or run on-demand backups. Once you have backed up your resources, you
-#' can view them and restore them like any resource supported by Backup.
+#' Use Backup to assign virtual or on-premises resources to a backup plan, or run on-demand backups. Once you have backed up your resources, you can view them and restore them like any resource supported by Backup.
 #' 
-#' To download the Amazon Web Services software to get started, navigate to
-#' the Backup console, choose **Gateways**, then choose **Create gateway**.
+#' To download the Amazon Web Services software to get started, navigate to the Backup console, choose **Gateways**, then choose **Create gateway**.
 #'
 #' @param
 #' config
@@ -10983,11 +10353,7 @@ backupgateway <- function(config = list(), credentials = list(), endpoint = NULL
 #' Amazon CloudFront
 #'
 #' @description
-#' This is the *Amazon CloudFront API Reference*. This guide is for
-#' developers who need detailed information about CloudFront API actions,
-#' data types, and errors. For detailed information about CloudFront
-#' features, see the [Amazon CloudFront Developer
-#' Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html).
+#' This is the *Amazon CloudFront API Reference*. This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the [Amazon CloudFront Developer Guide](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html).
 #'
 #' @param
 #' config
@@ -11261,8 +10627,7 @@ cloudfront <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' Amazon CloudFront KeyValueStore
 #'
 #' @description
-#' Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS
-#' Resource
+#' Amazon CloudFront KeyValueStore Service to View and Update Data in a KVS Resource
 #'
 #' @param
 #' config
@@ -11375,16 +10740,7 @@ cloudfrontkeyvaluestore <- function(config = list(), credentials = list(), endpo
 #' AWS Direct Connect
 #'
 #' @description
-#' Direct Connect links your internal network to an Direct Connect location
-#' over a standard Ethernet fiber-optic cable. One end of the cable is
-#' connected to your router, the other to an Direct Connect router. With
-#' this connection in place, you can create virtual interfaces directly to
-#' the Amazon Web Services Cloud (for example, to Amazon EC2 and Amazon S3)
-#' and to Amazon VPC, bypassing Internet service providers in your network
-#' path. A connection provides access to all Amazon Web Services Regions
-#' except the China (Beijing) and (China) Ningxia Regions. Amazon Web
-#' Services resources in the China Regions can only be accessed through
-#' locations associated with those Regions.
+#' Direct Connect links your internal network to an Direct Connect location over a standard Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an Direct Connect router. With this connection in place, you can create virtual interfaces directly to the Amazon Web Services Cloud (for example, to Amazon EC2 and Amazon S3) and to Amazon VPC, bypassing Internet service providers in your network path. A connection provides access to all Amazon Web Services Regions except the China (Beijing) and (China) Ningxia Regions. Amazon Web Services resources in the China Regions can only be accessed through locations associated with those Regions.
 #'
 #' @param
 #' config
@@ -11554,34 +10910,15 @@ directconnect <- function(config = list(), credentials = list(), endpoint = NULL
 #' Elastic Load Balancing
 #'
 #' @description
-#' A load balancer can distribute incoming traffic across your EC2
-#' instances. This enables you to increase the availability of your
-#' application. The load balancer also monitors the health of its
-#' registered instances and ensures that it routes traffic only to healthy
-#' instances. You configure your load balancer to accept incoming traffic
-#' by specifying one or more listeners, which are configured with a
-#' protocol and port number for connections from clients to the load
-#' balancer and a protocol and port number for connections from the load
-#' balancer to the instances.
+#' A load balancer can distribute incoming traffic across your EC2 instances. This enables you to increase the availability of your application. The load balancer also monitors the health of its registered instances and ensures that it routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by specifying one or more listeners, which are configured with a protocol and port number for connections from clients to the load balancer and a protocol and port number for connections from the load balancer to the instances.
 #' 
-#' Elastic Load Balancing supports three types of load balancers:
-#' Application Load Balancers, Network Load Balancers, and Classic Load
-#' Balancers. You can select a load balancer based on your application
-#' needs. For more information, see the [Elastic Load Balancing User
-#' Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/).
+#' Elastic Load Balancing supports three types of load balancers: Application Load Balancers, Network Load Balancers, and Classic Load Balancers. You can select a load balancer based on your application needs. For more information, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/).
 #' 
-#' This reference covers the 2012-06-01 API, which supports Classic Load
-#' Balancers. The 2015-12-01 API supports Application Load Balancers and
-#' Network Load Balancers.
+#' This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The 2015-12-01 API supports Application Load Balancers and Network Load Balancers.
 #' 
-#' To get started, create a load balancer with one or more listeners using
-#' `create_load_balancer`. Register your
-#' instances with the load balancer using
-#' `register_instances_with_load_balancer`.
+#' To get started, create a load balancer with one or more listeners using `create_load_balancer`. Register your instances with the load balancer using `register_instances_with_load_balancer`.
 #' 
-#' All Elastic Load Balancing operations are *idempotent*, which means that
-#' they complete at most one time. If you repeat an operation, it succeeds
-#' with a 200 OK response code.
+#' All Elastic Load Balancing operations are *idempotent*, which means that they complete at most one time. If you repeat an operation, it succeeds with a 200 OK response code.
 #'
 #' @param
 #' config
@@ -11730,35 +11067,19 @@ elb <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Elastic Load Balancing
 #'
 #' @description
-#' A load balancer distributes incoming traffic across targets, such as
-#' your EC2 instances. This enables you to increase the availability of
-#' your application. The load balancer also monitors the health of its
-#' registered targets and ensures that it routes traffic only to healthy
-#' targets. You configure your load balancer to accept incoming traffic by
-#' specifying one or more listeners, which are configured with a protocol
-#' and port number for connections from clients to the load balancer. You
-#' configure a target group with a protocol and port number for connections
-#' from the load balancer to the targets, and with health check settings to
-#' be used when checking the health status of the targets.
+#' A load balancer distributes incoming traffic across targets, such as your EC2 instances. This enables you to increase the availability of your application. The load balancer also monitors the health of its registered targets and ensures that it routes traffic only to healthy targets. You configure your load balancer to accept incoming traffic by specifying one or more listeners, which are configured with a protocol and port number for connections from clients to the load balancer. You configure a target group with a protocol and port number for connections from the load balancer to the targets, and with health check settings to be used when checking the health status of the targets.
 #' 
-#' Elastic Load Balancing supports the following types of load balancers:
-#' Application Load Balancers, Network Load Balancers, Gateway Load
-#' Balancers, and Classic Load Balancers. This reference covers the
-#' following load balancer types:
+#' Elastic Load Balancing supports the following types of load balancers: Application Load Balancers, Network Load Balancers, Gateway Load Balancers, and Classic Load Balancers. This reference covers the following load balancer types:
 #' 
-#' -   Application Load Balancer - Operates at the application layer
-#'     (layer 7) and supports HTTP and HTTPS.
+#' -   Application Load Balancer - Operates at the application layer (layer 7) and supports HTTP and HTTPS.
 #' 
-#' -   Network Load Balancer - Operates at the transport layer (layer 4)
-#'     and supports TCP, TLS, UDP, and QUIC.
+#' -   Network Load Balancer - Operates at the transport layer (layer 4) and supports TCP, TLS, UDP, and QUIC.
 #' 
 #' -   Gateway Load Balancer - Operates at the network layer (layer 3).
 #' 
-#' For more information, see the [Elastic Load Balancing User
-#' Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/).
+#' For more information, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/).
 #' 
-#' All Elastic Load Balancing operations are idempotent, which means that
-#' they complete at most one time. If you repeat an operation, it succeeds.
+#' All Elastic Load Balancing operations are idempotent, which means that they complete at most one time. If you repeat an operation, it succeeds.
 #'
 #' @param
 #' config
@@ -11931,73 +11252,25 @@ elbv2 <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' @description
 #' Global Accelerator
 #' 
-#' This is the *Global Accelerator API Reference*. This guide is for
-#' developers who need detailed information about Global Accelerator API
-#' actions, data types, and errors. For more information about Global
-#' Accelerator features, see the [Global Accelerator Developer
-#' Guide](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
+#' This is the *Global Accelerator API Reference*. This guide is for developers who need detailed information about Global Accelerator API actions, data types, and errors. For more information about Global Accelerator features, see the [Global Accelerator Developer Guide](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
 #' 
-#' Global Accelerator is a service in which you create *accelerators* to
-#' improve the performance of your applications for local and global users.
-#' Depending on the type of accelerator you choose, you can gain additional
-#' benefits.
+#' Global Accelerator is a service in which you create *accelerators* to improve the performance of your applications for local and global users. Depending on the type of accelerator you choose, you can gain additional benefits.
 #' 
-#' -   By using a standard accelerator, you can improve availability of
-#'     your internet applications that are used by a global audience. With
-#'     a standard accelerator, Global Accelerator directs traffic to
-#'     optimal endpoints over the Amazon Web Services global network.
+#' -   By using a standard accelerator, you can improve availability of your internet applications that are used by a global audience. With a standard accelerator, Global Accelerator directs traffic to optimal endpoints over the Amazon Web Services global network.
 #' 
-#' -   For other scenarios, you might choose a custom routing accelerator.
-#'     With a custom routing accelerator, you can use application logic to
-#'     directly map one or more users to a specific endpoint among many
-#'     endpoints.
+#' -   For other scenarios, you might choose a custom routing accelerator. With a custom routing accelerator, you can use application logic to directly map one or more users to a specific endpoint among many endpoints.
 #' 
-#' Global Accelerator is a global service that supports endpoints in
-#' multiple Amazon Web Services Regions but you must specify the US West
-#' (Oregon) Region to create, update, or otherwise work with accelerators.
-#' That is, for example, specify `--region us-west-2` on Amazon Web
-#' Services CLI commands.
+#' Global Accelerator is a global service that supports endpoints in multiple Amazon Web Services Regions but you must specify the US West (Oregon) Region to create, update, or otherwise work with accelerators. That is, for example, specify `--region us-west-2` on Amazon Web Services CLI commands.
 #' 
-#' By default, Global Accelerator provides you with static IP addresses
-#' that you associate with your accelerator. The static IP addresses are
-#' anycast from the Amazon Web Services edge network. For IPv4, Global
-#' Accelerator provides two static IPv4 addresses. For dual-stack, Global
-#' Accelerator provides a total of four addresses: two static IPv4
-#' addresses and two static IPv6 addresses. With a standard accelerator for
-#' IPv4, instead of using the addresses that Global Accelerator provides,
-#' you can configure these entry points to be IPv4 addresses from your own
-#' IP address ranges that you bring to Global Accelerator (BYOIP).
+#' By default, Global Accelerator provides you with static IP addresses that you associate with your accelerator. The static IP addresses are anycast from the Amazon Web Services edge network. For IPv4, Global Accelerator provides two static IPv4 addresses. For dual-stack, Global Accelerator provides a total of four addresses: two static IPv4 addresses and two static IPv6 addresses. With a standard accelerator for IPv4, instead of using the addresses that Global Accelerator provides, you can configure these entry points to be IPv4 addresses from your own IP address ranges that you bring to Global Accelerator (BYOIP).
 #' 
-#' For a standard accelerator, they distribute incoming application traffic
-#' across multiple endpoint resources in multiple Amazon Web Services
-#' Regions , which increases the availability of your applications.
-#' Endpoints for standard accelerators can be Network Load Balancers,
-#' Application Load Balancers, Amazon EC2 instances, or Elastic IP
-#' addresses that are located in one Amazon Web Services Region or multiple
-#' Amazon Web Services Regions. For custom routing accelerators, you map
-#' traffic that arrives to the static IP addresses to specific Amazon EC2
-#' servers in endpoints that are virtual private cloud (VPC) subnets.
+#' For a standard accelerator, they distribute incoming application traffic across multiple endpoint resources in multiple Amazon Web Services Regions , which increases the availability of your applications. Endpoints for standard accelerators can be Network Load Balancers, Application Load Balancers, Amazon EC2 instances, or Elastic IP addresses that are located in one Amazon Web Services Region or multiple Amazon Web Services Regions. For custom routing accelerators, you map traffic that arrives to the static IP addresses to specific Amazon EC2 servers in endpoints that are virtual private cloud (VPC) subnets.
 #' 
-#' The static IP addresses remain assigned to your accelerator for as long
-#' as it exists, even if you disable the accelerator and it no longer
-#' accepts or routes traffic. However, when you *delete* an accelerator,
-#' you lose the static IP addresses that are assigned to it, so you can no
-#' longer route traffic by using them. You can use IAM policies like
-#' tag-based permissions with Global Accelerator to limit the users who
-#' have permissions to delete an accelerator. For more information, see
-#' [Tag-based
-#' policies](https://docs.aws.amazon.com/global-accelerator/latest/dg/).
+#' The static IP addresses remain assigned to your accelerator for as long as it exists, even if you disable the accelerator and it no longer accepts or routes traffic. However, when you *delete* an accelerator, you lose the static IP addresses that are assigned to it, so you can no longer route traffic by using them. You can use IAM policies like tag-based permissions with Global Accelerator to limit the users who have permissions to delete an accelerator. For more information, see [Tag-based policies](https://docs.aws.amazon.com/global-accelerator/latest/dg/).
 #' 
-#' For standard accelerators, Global Accelerator uses the Amazon Web
-#' Services global network to route traffic to the optimal regional
-#' endpoint based on health, client location, and policies that you
-#' configure. The service reacts instantly to changes in health or
-#' configuration to ensure that internet traffic from clients is always
-#' directed to healthy endpoints.
+#' For standard accelerators, Global Accelerator uses the Amazon Web Services global network to route traffic to the optimal regional endpoint based on health, client location, and policies that you configure. The service reacts instantly to changes in health or configuration to ensure that internet traffic from clients is always directed to healthy endpoints.
 #' 
-#' For more information about understanding and using Global Accelerator,
-#' see the [Global Accelerator Developer
-#' Guide](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
+#' For more information about understanding and using Global Accelerator, see the [Global Accelerator Developer Guide](https://docs.aws.amazon.com/global-accelerator/latest/dg/what-is-global-accelerator.html).
 #'
 #' @param
 #' config
@@ -12160,101 +11433,51 @@ globalaccelerator <- function(config = list(), credentials = list(), endpoint = 
 #' AWS Network Firewall
 #'
 #' @description
-#' This is the API Reference for Network Firewall. This guide is for
-#' developers who need detailed information about the Network Firewall API
-#' actions, data types, and errors.
+#' This is the API Reference for Network Firewall. This guide is for developers who need detailed information about the Network Firewall API actions, data types, and errors.
 #' 
-#' The REST API requires you to handle connection details, such as
-#' calculating signatures, handling request retries, and error handling.
-#' For general information about using the Amazon Web Services REST APIs,
-#' see [Amazon Web Services
-#' APIs](https://docs.aws.amazon.com/general/latest/gr/).
+#' The REST API requires you to handle connection details, such as calculating signatures, handling request retries, and error handling. For general information about using the Amazon Web Services REST APIs, see [Amazon Web Services APIs](https://docs.aws.amazon.com/general/latest/gr/).
 #' 
-#' To view the complete list of Amazon Web Services Regions where Network
-#' Firewall is available, see [Service endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/network-firewall.html)
-#' in the *Amazon Web Services General Reference*.
+#' To view the complete list of Amazon Web Services Regions where Network Firewall is available, see [Service endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/network-firewall.html) in the *Amazon Web Services General Reference*.
 #' 
-#' To access Network Firewall using the IPv4 REST API endpoint:
-#' `https://network-firewall.<region>.amazonaws.com `
+#' To access Network Firewall using the IPv4 REST API endpoint: `https://network-firewall.<region>.amazonaws.com `
 #' 
-#' To access Network Firewall using the Dualstack (IPv4 and IPv6) REST API
-#' endpoint: `https://network-firewall.<region>.aws.api `
+#' To access Network Firewall using the Dualstack (IPv4 and IPv6) REST API endpoint: `https://network-firewall.<region>.aws.api `
 #' 
-#' Alternatively, you can use one of the Amazon Web Services SDKs to access
-#' an API that's tailored to the programming language or platform that
-#' you're using. For more information, see [Amazon Web Services
-#' SDKs](https://builder.aws.com/build/tools#SDKs).
+#' Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's tailored to the programming language or platform that you're using. For more information, see [Amazon Web Services SDKs](https://builder.aws.com/build/tools#SDKs).
 #' 
-#' For descriptions of Network Firewall features, including and
-#' step-by-step instructions on how to use them through the Network
-#' Firewall console, see the [Network Firewall Developer
-#' Guide](https://docs.aws.amazon.com/network-firewall/latest/developerguide/).
+#' For descriptions of Network Firewall features, including and step-by-step instructions on how to use them through the Network Firewall console, see the [Network Firewall Developer Guide](https://docs.aws.amazon.com/network-firewall/latest/developerguide/).
 #' 
-#' Network Firewall is a stateful, managed, network firewall and intrusion
-#' detection and prevention service for Amazon Virtual Private Cloud
-#' (Amazon VPC). With Network Firewall, you can filter traffic at the
-#' perimeter of your VPC. This includes filtering traffic going to and
-#' coming from an internet gateway, NAT gateway, or over VPN or Direct
-#' Connect. Network Firewall uses rules that are compatible with Suricata,
-#' a free, open source network analysis and threat detection engine.
-#' Network Firewall supports Suricata version 7.0.3. For information about
-#' Suricata, see the [Suricata website](https://suricata.io/) and the
-#' [Suricata User Guide](https://docs.suricata.io/en/suricata-7.0.3/).
+#' Network Firewall is a stateful, managed, network firewall and intrusion detection and prevention service for Amazon Virtual Private Cloud (Amazon VPC). With Network Firewall, you can filter traffic at the perimeter of your VPC. This includes filtering traffic going to and coming from an internet gateway, NAT gateway, or over VPN or Direct Connect. Network Firewall uses rules that are compatible with Suricata, a free, open source network analysis and threat detection engine. Network Firewall supports Suricata version 7.0.3. For information about Suricata, see the [Suricata website](https://suricata.io/) and the [Suricata User Guide](https://docs.suricata.io/en/suricata-7.0.3/).
 #' 
-#' You can use Network Firewall to monitor and protect your VPC traffic in
-#' a number of ways. The following are just a few examples:
+#' You can use Network Firewall to monitor and protect your VPC traffic in a number of ways. The following are just a few examples:
 #' 
-#' -   Allow domains or IP addresses for known Amazon Web Services service
-#'     endpoints, such as Amazon S3, and block all other forms of traffic.
+#' -   Allow domains or IP addresses for known Amazon Web Services service endpoints, such as Amazon S3, and block all other forms of traffic.
 #' 
-#' -   Use custom lists of known bad domains to limit the types of domain
-#'     names that your applications can access.
+#' -   Use custom lists of known bad domains to limit the types of domain names that your applications can access.
 #' 
-#' -   Perform deep packet inspection on traffic entering or leaving your
-#'     VPC.
+#' -   Perform deep packet inspection on traffic entering or leaving your VPC.
 #' 
-#' -   Use stateful protocol detection to filter protocols like HTTPS,
-#'     regardless of the port used.
+#' -   Use stateful protocol detection to filter protocols like HTTPS, regardless of the port used.
 #' 
-#' To enable Network Firewall for your VPCs, you perform steps in both
-#' Amazon VPC and in Network Firewall. For information about using Amazon
-#' VPC, see [Amazon VPC User
-#' Guide](https://docs.aws.amazon.com/vpc/latest/userguide/).
+#' To enable Network Firewall for your VPCs, you perform steps in both Amazon VPC and in Network Firewall. For information about using Amazon VPC, see [Amazon VPC User Guide](https://docs.aws.amazon.com/vpc/latest/userguide/).
 #' 
 #' To start using Network Firewall, do the following:
 #' 
-#' 1.  (Optional) If you don't already have a VPC that you want to protect,
-#'     create it in Amazon VPC.
+#' 1.  (Optional) If you don't already have a VPC that you want to protect, create it in Amazon VPC.
 #' 
-#' 2.  In Amazon VPC, in each Availability Zone where you want to have a
-#'     firewall endpoint, create a subnet for the sole use of Network
-#'     Firewall.
+#' 2.  In Amazon VPC, in each Availability Zone where you want to have a firewall endpoint, create a subnet for the sole use of Network Firewall.
 #' 
 #' 3.  In Network Firewall, define the firewall behavior as follows:
 #' 
-#'     1.  Create stateless and stateful rule groups, to define the
-#'         components of the network traffic filtering behavior that you
-#'         want your firewall to have.
+#'     1.  Create stateless and stateful rule groups, to define the components of the network traffic filtering behavior that you want your firewall to have.
 #' 
-#'     2.  Create a firewall policy that uses your rule groups and
-#'         specifies additional default traffic filtering behavior.
+#'     2.  Create a firewall policy that uses your rule groups and specifies additional default traffic filtering behavior.
 #' 
-#' 4.  In Network Firewall, create a firewall and specify your new firewall
-#'     policy and VPC subnets. Network Firewall creates a firewall endpoint
-#'     in each subnet that you specify, with the behavior that's defined in
-#'     the firewall policy.
+#' 4.  In Network Firewall, create a firewall and specify your new firewall policy and VPC subnets. Network Firewall creates a firewall endpoint in each subnet that you specify, with the behavior that's defined in the firewall policy.
 #' 
-#' 5.  In Amazon VPC, use ingress routing enhancements to route traffic
-#'     through the new firewall endpoints.
+#' 5.  In Amazon VPC, use ingress routing enhancements to route traffic through the new firewall endpoints.
 #' 
-#' After your firewall is established, you can add firewall endpoints for
-#' new Availability Zones by following the prior steps for the Amazon VPC
-#' setup and firewall subnet definitions. You can also add endpoints to
-#' Availability Zones that you're using in the firewall, either for the
-#' same VPC or for another VPC, by following the prior steps for the Amazon
-#' VPC setup, and defining the new VPC subnets as VPC endpoint
-#' associations.
+#' After your firewall is established, you can add firewall endpoints for new Availability Zones by following the prior steps for the Amazon VPC setup and firewall subnet definitions. You can also add endpoints to Availability Zones that you're using in the firewall, either for the same VPC or for another VPC, by following the prior steps for the Amazon VPC setup, and defining the new VPC subnets as VPC endpoint associations.
 #'
 #' @param
 #' config
@@ -12440,9 +11663,7 @@ networkfirewall <- function(config = list(), credentials = list(), endpoint = NU
 #' AWS Network Manager
 #'
 #' @description
-#' Amazon Web Services enables you to centrally manage your Amazon Web
-#' Services Cloud WAN core network and your Transit Gateway network across
-#' Amazon Web Services accounts, Regions, and on-premises locations.
+#' Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud WAN core network and your Transit Gateway network across Amazon Web Services accounts, Regions, and on-premises locations.
 #'
 #' @param
 #' config
@@ -12644,26 +11865,21 @@ networkmanager <- function(config = list(), credentials = list(), endpoint = NUL
 #' Amazon Route 53
 #'
 #' @description
-#' Amazon Route 53 is a highly available and scalable Domain Name System
-#' (DNS) web service.
+#' Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
 #' 
 #' You can use Route 53 to:
 #' 
 #' -   Register domain names.
 #' 
-#'     For more information, see [How domain registration
-#'     works](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-domain-registration.html).
+#'     For more information, see [How domain registration works](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-domain-registration.html).
 #' 
 #' -   Route internet traffic to the resources for your domain
 #' 
-#'     For more information, see [How internet traffic is routed to your
-#'     website or web
-#'     application](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html).
+#'     For more information, see [How internet traffic is routed to your website or web application](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-dns-service.html).
 #' 
 #' -   Check the health of your resources.
 #' 
-#'     For more information, see [How Route 53 checks the health of your
-#'     resources](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html).
+#'     For more information, see [How Route 53 checks the health of your resources](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/welcome-health-checks.html).
 #'
 #' @param
 #' config
@@ -12848,8 +12064,7 @@ route53 <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' Amazon Route 53 Domains
 #'
 #' @description
-#' Amazon Route 53 API actions let you register domain names and perform
-#' related operations.
+#' Amazon Route 53 API actions let you register domain names and perform related operations.
 #'
 #' @param
 #' config
@@ -12990,8 +12205,7 @@ route53domains <- function(config = list(), credentials = list(), endpoint = NUL
 #' Route 53 Profiles
 #'
 #' @description
-#' With Amazon Route 53 Profiles you can share Route 53 configurations with
-#' VPCs and AWS accounts
+#' With Amazon Route 53 Profiles you can share Route 53 configurations with VPCs and AWS accounts
 #'
 #' @param
 #' config
@@ -13114,62 +12328,23 @@ route53profiles <- function(config = list(), credentials = list(), endpoint = NU
 #' Route53 Recovery Cluster
 #'
 #' @description
-#' Welcome to the Routing Control (Recovery Cluster) API Reference Guide
-#' for Amazon Route 53 Application Recovery Controller.
+#' Welcome to the Routing Control (Recovery Cluster) API Reference Guide for Amazon Route 53 Application Recovery Controller.
 #' 
-#' With Route 53 ARC, you can use routing control with extreme reliability
-#' to recover applications by rerouting traffic across Availability Zones
-#' or Amazon Web Services Regions. Routing controls are simple on/off
-#' switches hosted on a highly available cluster in Route 53 ARC. A cluster
-#' provides a set of five redundant Regional endpoints against which you
-#' can run API calls to get or update the state of routing controls. To
-#' implement failover, you set one routing control to ON and another one to
-#' OFF, to reroute traffic from one Availability Zone or Amazon Web
-#' Services Region to another.
+#' With Route 53 ARC, you can use routing control with extreme reliability to recover applications by rerouting traffic across Availability Zones or Amazon Web Services Regions. Routing controls are simple on/off switches hosted on a highly available cluster in Route 53 ARC. A cluster provides a set of five redundant Regional endpoints against which you can run API calls to get or update the state of routing controls. To implement failover, you set one routing control to ON and another one to OFF, to reroute traffic from one Availability Zone or Amazon Web Services Region to another.
 #' 
-#' *Be aware that you must specify a Regional endpoint for a cluster when
-#' you work with API cluster operations to get or update routing control
-#' states in Route 53 ARC.* In addition, you must specify the US West
-#' (Oregon) Region for Route 53 ARC API calls. For example, use the
-#' parameter `--region us-west-2` with AWS CLI commands. For more
-#' information, see [Get and update routing control states using the
-#' API](https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.api.html)
-#' in the Amazon Route 53 Application Recovery Controller Developer Guide.
+#' *Be aware that you must specify a Regional endpoint for a cluster when you work with API cluster operations to get or update routing control states in Route 53 ARC.* In addition, you must specify the US West (Oregon) Region for Route 53 ARC API calls. For example, use the parameter `--region us-west-2` with AWS CLI commands. For more information, see [Get and update routing control states using the API](https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.api.html) in the Amazon Route 53 Application Recovery Controller Developer Guide.
 #' 
-#' This API guide includes information about the API operations for how to
-#' get and update routing control states in Route 53 ARC. To work with
-#' routing control in Route 53 ARC, you must first create the required
-#' components (clusters, control panels, and routing controls) using the
-#' recovery cluster configuration API.
+#' This API guide includes information about the API operations for how to get and update routing control states in Route 53 ARC. To work with routing control in Route 53 ARC, you must first create the required components (clusters, control panels, and routing controls) using the recovery cluster configuration API.
 #' 
-#' For more information about working with routing control in Route 53 ARC,
-#' see the following:
+#' For more information about working with routing control in Route 53 ARC, see the following:
 #' 
-#' -   Create clusters, control panels, and routing controls by using API
-#'     operations. For more information, see the [Recovery Control
-#'     Configuration API Reference Guide for Amazon Route 53 Application
-#'     Recovery
-#'     Controller](https://docs.aws.amazon.com/recovery-cluster/latest/api/).
+#' -   Create clusters, control panels, and routing controls by using API operations. For more information, see the [Recovery Control Configuration API Reference Guide for Amazon Route 53 Application Recovery Controller](https://docs.aws.amazon.com/recovery-cluster/latest/api/).
 #' 
-#' -   Learn about the components in recovery control, including clusters,
-#'     routing controls, and control panels, and how to work with Route 53
-#'     ARC in the Amazon Web Services console. For more information, see
-#'     [Recovery control
-#'     components](https://docs.aws.amazon.com/r53recovery/latest/dg/introduction-components-zonal.html#introduction-components-routing)
-#'     in the Amazon Route 53 Application Recovery Controller Developer
-#'     Guide.
+#' -   Learn about the components in recovery control, including clusters, routing controls, and control panels, and how to work with Route 53 ARC in the Amazon Web Services console. For more information, see [Recovery control components](https://docs.aws.amazon.com/r53recovery/latest/dg/introduction-components-zonal.html#introduction-components-routing) in the Amazon Route 53 Application Recovery Controller Developer Guide.
 #' 
-#' -   Route 53 ARC also provides readiness checks that continually audit
-#'     resources to help make sure that your applications are scaled and
-#'     ready to handle failover traffic. For more information about the
-#'     related API operations, see the [Recovery Readiness API Reference
-#'     Guide for Amazon Route 53 Application Recovery
-#'     Controller](https://docs.aws.amazon.com/recovery-readiness/latest/api/).
+#' -   Route 53 ARC also provides readiness checks that continually audit resources to help make sure that your applications are scaled and ready to handle failover traffic. For more information about the related API operations, see the [Recovery Readiness API Reference Guide for Amazon Route 53 Application Recovery Controller](https://docs.aws.amazon.com/recovery-readiness/latest/api/).
 #' 
-#' -   For more information about creating resilient applications and
-#'     preparing for recovery readiness with Route 53 ARC, see the [Amazon
-#'     Route 53 Application Recovery Controller Developer
-#'     Guide](https://docs.aws.amazon.com/r53recovery/latest/dg/).
+#' -   For more information about creating resilient applications and preparing for recovery readiness with Route 53 ARC, see the [Amazon Route 53 Application Recovery Controller Developer Guide](https://docs.aws.amazon.com/r53recovery/latest/dg/).
 #'
 #' @param
 #' config
@@ -13280,8 +12455,7 @@ route53recoverycluster <- function(config = list(), credentials = list(), endpoi
 #' AWS Route53 Recovery Control Config
 #'
 #' @description
-#' Recovery Control Configuration API Reference for Amazon Route 53
-#' Application Recovery Controller
+#' Recovery Control Configuration API Reference for Amazon Route 53 Application Recovery Controller
 #'
 #' @param
 #' config
@@ -13552,47 +12726,19 @@ route53recoveryreadiness <- function(config = list(), credentials = list(), endp
 #' Amazon Route 53 Resolver
 #'
 #' @description
-#' When you create a VPC using Amazon VPC, you automatically get DNS
-#' resolution within the VPC from Route 53 Resolver. By default, Resolver
-#' answers DNS queries for VPC domain names such as domain names for EC2
-#' instances or Elastic Load Balancing load balancers. Resolver performs
-#' recursive lookups against public name servers for all other domain
-#' names.
+#' When you create a VPC using Amazon VPC, you automatically get DNS resolution within the VPC from Route 53 Resolver. By default, Resolver answers DNS queries for VPC domain names such as domain names for EC2 instances or Elastic Load Balancing load balancers. Resolver performs recursive lookups against public name servers for all other domain names.
 #' 
-#' You can also configure DNS resolution between your VPC and your network
-#' over a Direct Connect or VPN connection:
+#' You can also configure DNS resolution between your VPC and your network over a Direct Connect or VPN connection:
 #' 
-#' **Forward DNS queries from resolvers on your network to Route 53
-#' Resolver**
+#' **Forward DNS queries from resolvers on your network to Route 53 Resolver**
 #' 
-#' DNS resolvers on your network can forward DNS queries to Resolver in a
-#' specified VPC. This allows your DNS resolvers to easily resolve domain
-#' names for Amazon Web Services resources such as EC2 instances or records
-#' in a Route 53 private hosted zone. For more information, see [How DNS
-#' Resolvers on Your Network Forward DNS Queries to Route 53
-#' Resolver](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc)
-#' in the *Amazon Route 53 Developer Guide*.
+#' DNS resolvers on your network can forward DNS queries to Resolver in a specified VPC. This allows your DNS resolvers to easily resolve domain names for Amazon Web Services resources such as EC2 instances or records in a Route 53 private hosted zone. For more information, see [How DNS Resolvers on Your Network Forward DNS Queries to Route 53 Resolver](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-network-to-vpc) in the *Amazon Route 53 Developer Guide*.
 #' 
-#' **Conditionally forward queries from a VPC to resolvers on your
-#' network**
+#' **Conditionally forward queries from a VPC to resolvers on your network**
 #' 
-#' You can configure Resolver to forward queries that it receives from EC2
-#' instances in your VPCs to DNS resolvers on your network. To forward
-#' selected queries, you create Resolver rules that specify the domain
-#' names for the DNS queries that you want to forward (such as
-#' example.com), and the IP addresses of the DNS resolvers on your network
-#' that you want to forward the queries to. If a query matches multiple
-#' rules (example.com, acme.example.com), Resolver chooses the rule with
-#' the most specific match (acme.example.com) and forwards the query to the
-#' IP addresses that you specified in that rule. For more information, see
-#' [How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your
-#' Network](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network)
-#' in the *Amazon Route 53 Developer Guide*.
+#' You can configure Resolver to forward queries that it receives from EC2 instances in your VPCs to DNS resolvers on your network. To forward selected queries, you create Resolver rules that specify the domain names for the DNS queries that you want to forward (such as example.com), and the IP addresses of the DNS resolvers on your network that you want to forward the queries to. If a query matches multiple rules (example.com, acme.example.com), Resolver chooses the rule with the most specific match (acme.example.com) and forwards the query to the IP addresses that you specified in that rule. For more information, see [How Route 53 Resolver Forwards DNS Queries from Your VPCs to Your Network](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver.html#resolver-overview-forward-vpc-to-network) in the *Amazon Route 53 Developer Guide*.
 #' 
-#' Like Amazon VPC, Resolver is Regional. In each Region where you have
-#' VPCs, you can choose whether to forward queries from your VPCs to your
-#' network (outbound queries), from your network to your VPCs (inbound
-#' queries), or both.
+#' Like Amazon VPC, Resolver is Regional. In each Region where you have VPCs, you can choose whether to forward queries from your VPCs to your network (outbound queries), from your network to your VPCs (inbound queries), or both.
 #'
 #' @param
 #' config
@@ -13769,13 +12915,7 @@ route53resolver <- function(config = list(), credentials = list(), endpoint = NU
 #' @description
 #' Cloud Map
 #' 
-#' With Cloud Map, you can configure public DNS, private DNS, or HTTP
-#' namespaces that your microservice applications run in. When an instance
-#' becomes available, you can call the Cloud Map API to register the
-#' instance with Cloud Map. For public or private DNS namespaces, Cloud Map
-#' automatically creates DNS records and an optional health check. Clients
-#' that submit public or private DNS queries, or HTTP requests, for the
-#' service receive an answer that contains up to eight healthy records.
+#' With Cloud Map, you can configure public DNS, private DNS, or HTTP namespaces that your microservice applications run in. When an instance becomes available, you can call the Cloud Map API to register the instance with Cloud Map. For public or private DNS namespaces, Cloud Map automatically creates DNS records and an optional health check. Clients that submit public or private DNS queries, or HTTP requests, for the service receive an answer that contains up to eight healthy records.
 #'
 #' @param
 #' config
@@ -13915,11 +13055,7 @@ servicediscovery <- function(config = list(), credentials = list(), endpoint = N
 #' AWS Telco Network Builder
 #'
 #' @description
-#' Amazon Web Services Telco Network Builder (TNB) is a network automation
-#' service that helps you deploy and manage telecom networks. AWS TNB helps
-#' you with the lifecycle management of your telecommunication network
-#' functions throughout planning, deployment, and post-deployment
-#' activities.
+#' Amazon Web Services Telco Network Builder (TNB) is a network automation service that helps you deploy and manage telecom networks. AWS TNB helps you with the lifecycle management of your telecommunication network functions throughout planning, deployment, and post-deployment activities.
 #'
 #' @param
 #' config
@@ -14059,13 +13195,7 @@ telconetworkbuilder <- function(config = list(), credentials = list(), endpoint 
 #' Amazon VPC Lattice
 #'
 #' @description
-#' Amazon VPC Lattice is a fully managed application networking service
-#' that you use to connect, secure, and monitor all of your services across
-#' multiple accounts and virtual private clouds (VPCs). Amazon VPC Lattice
-#' interconnects your microservices and legacy services within a logical
-#' boundary, so that you can discover and manage them more efficiently. For
-#' more information, see the [Amazon VPC Lattice User
-#' Guide](https://docs.aws.amazon.com/vpc-lattice/latest/ug/)
+#' Amazon VPC Lattice is a fully managed application networking service that you use to connect, secure, and monitor all of your services across multiple accounts and virtual private clouds (VPCs). Amazon VPC Lattice interconnects your microservices and legacy services within a logical boundary, so that you can discover and manage them more efficiently. For more information, see the [Amazon VPC Lattice User Guide](https://docs.aws.amazon.com/vpc-lattice/latest/ug/)
 #'
 #' @param
 #' config
@@ -14247,58 +13377,39 @@ vpclattice <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' @description
 #' Cloud9
 #' 
-#' Cloud9 is a collection of tools that you can use to code, build, run,
-#' test, debug, and release software in the cloud.
+#' Cloud9 is a collection of tools that you can use to code, build, run, test, debug, and release software in the cloud.
 #' 
-#' For more information about Cloud9, see the [Cloud9 User
-#' Guide](https://docs.aws.amazon.com/cloud9/latest/user-guide/).
+#' For more information about Cloud9, see the [Cloud9 User Guide](https://docs.aws.amazon.com/cloud9/latest/user-guide/).
 #' 
-#' Cloud9 is no longer available to new customers. Existing customers of
-#' Cloud9 can continue to use the service as normal. [Learn
-#' more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
+#' Cloud9 is no longer available to new customers. Existing customers of Cloud9 can continue to use the service as normal. [Learn more"](https://aws.amazon.com/blogs/devops/how-to-migrate-from-aws-cloud9-to-aws-ide-toolkits-or-aws-cloudshell/)
 #' 
 #' Cloud9 supports these operations:
 #' 
-#' -   [`create_environment_ec2`][cloud9_create_environment_ec2]: Creates
-#'     an Cloud9 development environment, launches an Amazon EC2 instance,
-#'     and then connects from the instance to the environment.
+#' -   [`create_environment_ec2`][cloud9_create_environment_ec2]: Creates an Cloud9 development environment, launches an Amazon EC2 instance, and then connects from the instance to the environment.
 #' 
-#' -   [`create_environment_membership`][cloud9_create_environment_membership]:
-#'     Adds an environment member to an environment.
+#' -   [`create_environment_membership`][cloud9_create_environment_membership]: Adds an environment member to an environment.
 #' 
-#' -   [`delete_environment`][cloud9_delete_environment]: Deletes an
-#'     environment. If an Amazon EC2 instance is connected to the
-#'     environment, also terminates the instance.
+#' -   [`delete_environment`][cloud9_delete_environment]: Deletes an environment. If an Amazon EC2 instance is connected to the environment, also terminates the instance.
 #' 
-#' -   [`delete_environment_membership`][cloud9_delete_environment_membership]:
-#'     Deletes an environment member from an environment.
+#' -   [`delete_environment_membership`][cloud9_delete_environment_membership]: Deletes an environment member from an environment.
 #' 
-#' -   [`describe_environment_memberships`][cloud9_describe_environment_memberships]:
-#'     Gets information about environment members for an environment.
+#' -   [`describe_environment_memberships`][cloud9_describe_environment_memberships]: Gets information about environment members for an environment.
 #' 
-#' -   [`describe_environments`][cloud9_describe_environments]: Gets
-#'     information about environments.
+#' -   [`describe_environments`][cloud9_describe_environments]: Gets information about environments.
 #' 
-#' -   [`describe_environment_status`][cloud9_describe_environment_status]:
-#'     Gets status information for an environment.
+#' -   [`describe_environment_status`][cloud9_describe_environment_status]: Gets status information for an environment.
 #' 
-#' -   [`list_environments`][cloud9_list_environments]: Gets a list of
-#'     environment identifiers.
+#' -   [`list_environments`][cloud9_list_environments]: Gets a list of environment identifiers.
 #' 
-#' -   [`list_tags_for_resource`][cloud9_list_tags_for_resource]: Gets the
-#'     tags for an environment.
+#' -   [`list_tags_for_resource`][cloud9_list_tags_for_resource]: Gets the tags for an environment.
 #' 
 #' -   [`tag_resource`][cloud9_tag_resource]: Adds tags to an environment.
 #' 
-#' -   [`untag_resource`][cloud9_untag_resource]: Removes tags from an
-#'     environment.
+#' -   [`untag_resource`][cloud9_untag_resource]: Removes tags from an environment.
 #' 
-#' -   [`update_environment`][cloud9_update_environment]: Changes the
-#'     settings of an existing environment.
+#' -   [`update_environment`][cloud9_update_environment]: Changes the settings of an existing environment.
 #' 
-#' -   [`update_environment_membership`][cloud9_update_environment_membership]:
-#'     Changes the settings of an existing environment member for an
-#'     environment.
+#' -   [`update_environment_membership`][cloud9_update_environment_membership]: Changes the settings of an existing environment member for an environment.
 #'
 #' @param
 #' config
@@ -14424,9 +13535,7 @@ cloud9 <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' AWS Cloud Control API
 #'
 #' @description
-#' For more information about Amazon Web Services Cloud Control API, see
-#' the [Amazon Web Services Cloud Control API User
-#' Guide](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html).
+#' For more information about Amazon Web Services Cloud Control API, see the [Amazon Web Services Cloud Control API User Guide](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html).
 #'
 #' @param
 #' config
@@ -14543,16 +13652,7 @@ cloudcontrolapi <- function(config = list(), credentials = list(), endpoint = NU
 #' @description
 #' CodeBuild
 #' 
-#' CodeBuild is a fully managed build service in the cloud. CodeBuild
-#' compiles your source code, runs unit tests, and produces artifacts that
-#' are ready to deploy. CodeBuild eliminates the need to provision, manage,
-#' and scale your own build servers. It provides prepackaged build
-#' environments for the most popular programming languages and build tools,
-#' such as Apache Maven, Gradle, and more. You can also fully customize
-#' build environments in CodeBuild to use your own build tools. CodeBuild
-#' scales automatically to meet peak build requests. You pay only for the
-#' build time you consume. For more information about CodeBuild, see the
-#' *\href{https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html}{CodeBuild User Guide}.*
+#' CodeBuild is a fully managed build service in the cloud. CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy. CodeBuild eliminates the need to provision, manage, and scale your own build servers. It provides prepackaged build environments for the most popular programming languages and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in CodeBuild to use your own build tools. CodeBuild scales automatically to meet peak build requests. You pay only for the build time you consume. For more information about CodeBuild, see the *\href{https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html}{CodeBuild User Guide}.*
 #'
 #' @param
 #' config
@@ -14723,59 +13823,25 @@ codebuild <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' CodeArtifact
 #'
 #' @description
-#' CodeArtifact is a fully managed artifact repository compatible with
-#' language-native package managers and build tools such as npm, Apache
-#' Maven, pip, and dotnet. You can use CodeArtifact to share packages with
-#' development teams and pull packages. Packages can be pulled from both
-#' public and CodeArtifact repositories. You can also create an upstream
-#' relationship between a CodeArtifact repository and another repository,
-#' which effectively merges their contents from the point of view of a
-#' package manager client.
+#' CodeArtifact is a fully managed artifact repository compatible with language-native package managers and build tools such as npm, Apache Maven, pip, and dotnet. You can use CodeArtifact to share packages with development teams and pull packages. Packages can be pulled from both public and CodeArtifact repositories. You can also create an upstream relationship between a CodeArtifact repository and another repository, which effectively merges their contents from the point of view of a package manager client.
 #' 
 #' **CodeArtifact concepts**
 #' 
-#' -   **Repository**: A CodeArtifact repository contains a set of [package
-#'     versions](https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version),
-#'     each of which maps to a set of assets, or files. Repositories are
-#'     polyglot, so a single repository can contain packages of any
-#'     supported type. Each repository exposes endpoints for fetching and
-#'     publishing packages using tools such as the **`npm`** CLI or the
-#'     Maven CLI ( **`mvn`** ). For a list of supported package managers,
-#'     see the [CodeArtifact User
-#'     Guide](https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html).
+#' -   **Repository**: A CodeArtifact repository contains a set of [package versions](https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version), each of which maps to a set of assets, or files. Repositories are polyglot, so a single repository can contain packages of any supported type. Each repository exposes endpoints for fetching and publishing packages using tools such as the **`npm`** CLI or the Maven CLI ( **`mvn`** ). For a list of supported package managers, see the [CodeArtifact User Guide](https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html).
 #' 
-#' -   **Domain**: Repositories are aggregated into a higher-level entity
-#'     known as a *domain*. All package assets and metadata are stored in
-#'     the domain, but are consumed through repositories. A given package
-#'     asset, such as a Maven JAR file, is stored once per domain, no
-#'     matter how many repositories it's present in. All of the assets and
-#'     metadata in a domain are encrypted with the same customer master key
-#'     (CMK) stored in Key Management Service (KMS).
+#' -   **Domain**: Repositories are aggregated into a higher-level entity known as a *domain*. All package assets and metadata are stored in the domain, but are consumed through repositories. A given package asset, such as a Maven JAR file, is stored once per domain, no matter how many repositories it's present in. All of the assets and metadata in a domain are encrypted with the same customer master key (CMK) stored in Key Management Service (KMS).
 #' 
-#'     Each repository is a member of a single domain and can't be moved to
-#'     a different domain.
+#'     Each repository is a member of a single domain and can't be moved to a different domain.
 #' 
-#'     The domain allows organizational policy to be applied across
-#'     multiple repositories, such as which accounts can access
-#'     repositories in the domain, and which public repositories can be
-#'     used as sources of packages.
+#'     The domain allows organizational policy to be applied across multiple repositories, such as which accounts can access repositories in the domain, and which public repositories can be used as sources of packages.
 #' 
-#'     Although an organization can have multiple domains, we recommend a
-#'     single production domain that contains all published artifacts so
-#'     that teams can find and share packages across their organization.
+#'     Although an organization can have multiple domains, we recommend a single production domain that contains all published artifacts so that teams can find and share packages across their organization.
 #' 
-#' -   **Package**: A *package* is a bundle of software and the metadata
-#'     required to resolve dependencies and install the software.
-#'     CodeArtifact supports npm, PyPI, Maven, NuGet, Swift, Ruby, Cargo,
-#'     and generic package formats. For more information about the
-#'     supported package formats and how to use CodeArtifact with them, see
-#'     the [CodeArtifact User
-#'     Guide](https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html).
+#' -   **Package**: A *package* is a bundle of software and the metadata required to resolve dependencies and install the software. CodeArtifact supports npm, PyPI, Maven, NuGet, Swift, Ruby, Cargo, and generic package formats. For more information about the supported package formats and how to use CodeArtifact with them, see the [CodeArtifact User Guide](https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html).
 #' 
 #'     In CodeArtifact, a package consists of:
 #' 
-#'     -   A *name* (for example, `webpack` is the name of a popular npm
-#'         package)
+#'     -   A *name* (for example, `webpack` is the name of a popular npm package)
 #' 
 #'     -   An optional namespace (for example, `@@types` in `@@types/node`)
 #' 
@@ -14783,129 +13849,65 @@ codebuild <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' 
 #'     -   Package-level metadata (for example, npm tags)
 #' 
-#' -   **Package group**: A group of packages that match a specified
-#'     definition. Package groups can be used to apply configuration to
-#'     multiple packages that match a defined pattern using package format,
-#'     package namespace, and package name. You can use package groups to
-#'     more conveniently configure package origin controls for multiple
-#'     packages. Package origin controls are used to block or allow
-#'     ingestion or publishing of new package versions, which protects
-#'     users from malicious actions known as dependency substitution
-#'     attacks.
+#' -   **Package group**: A group of packages that match a specified definition. Package groups can be used to apply configuration to multiple packages that match a defined pattern using package format, package namespace, and package name. You can use package groups to more conveniently configure package origin controls for multiple packages. Package origin controls are used to block or allow ingestion or publishing of new package versions, which protects users from malicious actions known as dependency substitution attacks.
 #' 
-#' -   **Package version**: A version of a package, such as
-#'     `@@types/node 12.6.9`. The version number format and semantics vary
-#'     for different package formats. For example, npm package versions
-#'     must conform to the [Semantic Versioning
-#'     specification](https://semver.org/). In CodeArtifact, a package
-#'     version consists of the version identifier, metadata at the package
-#'     version level, and a set of assets.
+#' -   **Package version**: A version of a package, such as `@@types/node 12.6.9`. The version number format and semantics vary for different package formats. For example, npm package versions must conform to the [Semantic Versioning specification](https://semver.org/). In CodeArtifact, a package version consists of the version identifier, metadata at the package version level, and a set of assets.
 #' 
-#' -   **Upstream repository**: One repository is *upstream* of another
-#'     when the package versions in it can be accessed from the repository
-#'     endpoint of the downstream repository, effectively merging the
-#'     contents of the two repositories from the point of view of a client.
-#'     CodeArtifact allows creating an upstream relationship between two
-#'     repositories.
+#' -   **Upstream repository**: One repository is *upstream* of another when the package versions in it can be accessed from the repository endpoint of the downstream repository, effectively merging the contents of the two repositories from the point of view of a client. CodeArtifact allows creating an upstream relationship between two repositories.
 #' 
-#' -   **Asset**: An individual file stored in CodeArtifact associated with
-#'     a package version, such as an npm `.tgz` file or Maven POM and JAR
-#'     files.
+#' -   **Asset**: An individual file stored in CodeArtifact associated with a package version, such as an npm `.tgz` file or Maven POM and JAR files.
 #' 
 #' **CodeArtifact supported API operations**
 #' 
-#' -   `associate_external_connection`:
-#'     Adds an existing external connection to a repository.
+#' -   `associate_external_connection`: Adds an existing external connection to a repository.
 #' 
-#' -   `copy_package_versions`:
-#'     Copies package versions from one repository to another repository in
-#'     the same domain.
+#' -   `copy_package_versions`: Copies package versions from one repository to another repository in the same domain.
 #' 
 #' -   `create_domain`: Creates a domain.
 #' 
-#' -   `create_package_group`: Creates
-#'     a package group.
+#' -   `create_package_group`: Creates a package group.
 #' 
-#' -   `create_repository`: Creates a
-#'     CodeArtifact repository in a domain.
+#' -   `create_repository`: Creates a CodeArtifact repository in a domain.
 #' 
-#' -   `delete_domain`: Deletes a domain. You
-#'     cannot delete a domain that contains repositories.
+#' -   `delete_domain`: Deletes a domain. You cannot delete a domain that contains repositories.
 #' 
-#' -   `delete_domain_permissions_policy`:
-#'     Deletes the resource policy that is set on a domain.
+#' -   `delete_domain_permissions_policy`: Deletes the resource policy that is set on a domain.
 #' 
-#' -   `delete_package`: Deletes a package
-#'     and all associated package versions.
+#' -   `delete_package`: Deletes a package and all associated package versions.
 #' 
-#' -   `delete_package_group`: Deletes
-#'     a package group. Does not delete packages or package versions that
-#'     are associated with a package group.
+#' -   `delete_package_group`: Deletes a package group. Does not delete packages or package versions that are associated with a package group.
 #' 
-#' -   `delete_package_versions`:
-#'     Deletes versions of a package. After a package has been deleted, it
-#'     can be republished, but its assets and metadata cannot be restored
-#'     because they have been permanently removed from storage.
+#' -   `delete_package_versions`: Deletes versions of a package. After a package has been deleted, it can be republished, but its assets and metadata cannot be restored because they have been permanently removed from storage.
 #' 
-#' -   `delete_repository`: Deletes a
-#'     repository.
+#' -   `delete_repository`: Deletes a repository.
 #' 
-#' -   `delete_repository_permissions_policy`:
-#'     Deletes the resource policy that is set on a repository.
+#' -   `delete_repository_permissions_policy`: Deletes the resource policy that is set on a repository.
 #' 
-#' -   `describe_domain`: Returns a
-#'     `DomainDescription` object that contains information about the
-#'     requested domain.
+#' -   `describe_domain`: Returns a `DomainDescription` object that contains information about the requested domain.
 #' 
-#' -   `describe_package`: Returns a
-#'     [PackageDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html)
-#'     object that contains details about a package.
+#' -   `describe_package`: Returns a [PackageDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html) object that contains details about a package.
 #' 
-#' -   `describe_package_group`:
-#'     Returns a
-#'     [PackageGroup](https://docs.aws.amazon.com/codeartifact/latest/APIReference/)
-#'     object that contains details about a package group.
+#' -   `describe_package_group`: Returns a [PackageGroup](https://docs.aws.amazon.com/codeartifact/latest/APIReference/) object that contains details about a package group.
 #' 
-#' -   `describe_package_version`:
-#'     Returns a
-#'     [PackageVersionDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html)
-#'     object that contains details about a package version.
+#' -   `describe_package_version`: Returns a [PackageVersionDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html) object that contains details about a package version.
 #' 
-#' -   `describe_repository`: Returns a
-#'     `RepositoryDescription` object that contains detailed information
-#'     about the requested repository.
+#' -   `describe_repository`: Returns a `RepositoryDescription` object that contains detailed information about the requested repository.
 #' 
-#' -   `dispose_package_versions`:
-#'     Disposes versions of a package. A package version with the status
-#'     `Disposed` cannot be restored because they have been permanently
-#'     removed from storage.
+#' -   `dispose_package_versions`: Disposes versions of a package. A package version with the status `Disposed` cannot be restored because they have been permanently removed from storage.
 #' 
-#' -   `disassociate_external_connection`:
-#'     Removes an existing external connection from a repository.
+#' -   `disassociate_external_connection`: Removes an existing external connection from a repository.
 #' 
-#' -   `get_associated_package_group`:
-#'     Returns the most closely associated package group to the specified
-#'     package.
+#' -   `get_associated_package_group`: Returns the most closely associated package group to the specified package.
 #' 
-#' -   `get_authorization_token`:
-#'     Generates a temporary authorization token for accessing repositories
-#'     in the domain. The token expires the authorization period has
-#'     passed. The default authorization period is 12 hours and can be
-#'     customized to any length with a maximum of 12 hours.
+#' -   `get_authorization_token`: Generates a temporary authorization token for accessing repositories in the domain. The token expires the authorization period has passed. The default authorization period is 12 hours and can be customized to any length with a maximum of 12 hours.
 #' 
-#' -   `get_domain_permissions_policy`:
-#'     Returns the policy of a resource that is attached to the specified
-#'     domain.
+#' -   `get_domain_permissions_policy`: Returns the policy of a resource that is attached to the specified domain.
 #' 
-#' -   `get_package_version_asset`:
-#'     Returns the contents of an asset that is in a package version.
+#' -   `get_package_version_asset`: Returns the contents of an asset that is in a package version.
 #' 
-#' -   `get_package_version_readme`:
-#'     Gets the readme file or descriptive text for a package version.
+#' -   `get_package_version_readme`: Gets the readme file or descriptive text for a package version.
 #' 
-#' -   `get_repository_endpoint`:
-#'     Returns the endpoint of a repository for a specific package format.
-#'     A repository has one endpoint for each package format:
+#' -   `get_repository_endpoint`: Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each package format:
 #' 
 #'     -   `cargo`
 #' 
@@ -14923,74 +13925,45 @@ codebuild <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' 
 #'     -   `swift`
 #' 
-#' -   `get_repository_permissions_policy`:
-#'     Returns the resource policy that is set on a repository.
+#' -   `get_repository_permissions_policy`: Returns the resource policy that is set on a repository.
 #' 
-#' -   `list_allowed_repositories_for_group`:
-#'     Lists the allowed repositories for a package group that has origin
-#'     configuration set to `ALLOW_SPECIFIC_REPOSITORIES`.
+#' -   `list_allowed_repositories_for_group`: Lists the allowed repositories for a package group that has origin configuration set to `ALLOW_SPECIFIC_REPOSITORIES`.
 #' 
-#' -   `list_associated_packages`:
-#'     Returns a list of packages associated with the requested package
-#'     group.
+#' -   `list_associated_packages`: Returns a list of packages associated with the requested package group.
 #' 
-#' -   `list_domains`: Returns a list of
-#'     `DomainSummary` objects. Each returned `DomainSummary` object
-#'     contains information about a domain.
+#' -   `list_domains`: Returns a list of `DomainSummary` objects. Each returned `DomainSummary` object contains information about a domain.
 #' 
-#' -   `list_packages`: Lists the packages in
-#'     a repository.
+#' -   `list_packages`: Lists the packages in a repository.
 #' 
-#' -   `list_package_groups`: Returns a
-#'     list of package groups in the requested domain.
+#' -   `list_package_groups`: Returns a list of package groups in the requested domain.
 #' 
-#' -   `list_package_version_assets`:
-#'     Lists the assets for a given package version.
+#' -   `list_package_version_assets`: Lists the assets for a given package version.
 #' 
-#' -   `list_package_version_dependencies`:
-#'     Returns a list of the direct dependencies for a package version.
+#' -   `list_package_version_dependencies`: Returns a list of the direct dependencies for a package version.
 #' 
-#' -   `list_package_versions`:
-#'     Returns a list of package versions for a specified package in a
-#'     repository.
+#' -   `list_package_versions`: Returns a list of package versions for a specified package in a repository.
 #' 
-#' -   `list_repositories`: Returns a
-#'     list of repositories owned by the Amazon Web Services account that
-#'     called this method.
+#' -   `list_repositories`: Returns a list of repositories owned by the Amazon Web Services account that called this method.
 #' 
-#' -   `list_repositories_in_domain`:
-#'     Returns a list of the repositories in a domain.
+#' -   `list_repositories_in_domain`: Returns a list of the repositories in a domain.
 #' 
-#' -   `list_sub_package_groups`:
-#'     Returns a list of direct children of the specified package group.
+#' -   `list_sub_package_groups`: Returns a list of direct children of the specified package group.
 #' 
-#' -   `publish_package_version`:
-#'     Creates a new package version containing one or more assets.
+#' -   `publish_package_version`: Creates a new package version containing one or more assets.
 #' 
-#' -   `put_domain_permissions_policy`:
-#'     Attaches a resource policy to a domain.
+#' -   `put_domain_permissions_policy`: Attaches a resource policy to a domain.
 #' 
-#' -   `put_package_origin_configuration`:
-#'     Sets the package origin configuration for a package, which determine
-#'     how new versions of the package can be added to a specific
-#'     repository.
+#' -   `put_package_origin_configuration`: Sets the package origin configuration for a package, which determine how new versions of the package can be added to a specific repository.
 #' 
-#' -   `put_repository_permissions_policy`:
-#'     Sets the resource policy on a repository that specifies permissions
-#'     to access it.
+#' -   `put_repository_permissions_policy`: Sets the resource policy on a repository that specifies permissions to access it.
 #' 
-#' -   `update_package_group`: Updates
-#'     a package group. This API cannot be used to update a package group's
-#'     origin configuration or pattern.
+#' -   `update_package_group`: Updates a package group. This API cannot be used to update a package group's origin configuration or pattern.
 #' 
-#' -   `update_package_group_origin_configuration`:
-#'     Updates the package origin configuration for a package group.
+#' -   `update_package_group_origin_configuration`: Updates the package origin configuration for a package group.
 #' 
-#' -   `update_package_versions_status`:
-#'     Updates the status of one or more versions of a package.
+#' -   `update_package_versions_status`: Updates the status of one or more versions of a package.
 #' 
-#' -   `update_repository`: Updates the
-#'     properties of a repository.
+#' -   `update_repository`: Updates the properties of a repository.
 #'
 #' @param
 #' config
@@ -15147,322 +14120,189 @@ codeartifact <- function(config = list(), credentials = list(), endpoint = NULL,
 #' @description
 #' CodeCommit
 #' 
-#' This is the *CodeCommit API Reference*. This reference provides
-#' descriptions of the operations and data types for CodeCommit API along
-#' with usage examples.
+#' This is the *CodeCommit API Reference*. This reference provides descriptions of the operations and data types for CodeCommit API along with usage examples.
 #' 
 #' You can use the CodeCommit API to work with the following objects:
 #' 
 #' Repositories, by calling the following:
 #' 
-#' -   `batch_get_repositories`, which
-#'     returns information about one or more repositories associated with
-#'     your Amazon Web Services account.
+#' -   `batch_get_repositories`, which returns information about one or more repositories associated with your Amazon Web Services account.
 #' 
-#' -   `create_repository`, which creates
-#'     an CodeCommit repository.
+#' -   `create_repository`, which creates an CodeCommit repository.
 #' 
-#' -   `delete_repository`, which deletes
-#'     an CodeCommit repository.
+#' -   `delete_repository`, which deletes an CodeCommit repository.
 #' 
-#' -   `get_repository`, which returns
-#'     information about a specified repository.
+#' -   `get_repository`, which returns information about a specified repository.
 #' 
-#' -   `list_repositories`, which lists all
-#'     CodeCommit repositories associated with your Amazon Web Services
-#'     account.
+#' -   `list_repositories`, which lists all CodeCommit repositories associated with your Amazon Web Services account.
 #' 
-#' -   `update_repository_description`,
-#'     which sets or updates the description of the repository.
+#' -   `update_repository_description`, which sets or updates the description of the repository.
 #' 
-#' -   `update_repository_encryption_key`,
-#'     which updates the Key Management Service encryption key used to
-#'     encrypt and decrypt a repository.
+#' -   `update_repository_encryption_key`, which updates the Key Management Service encryption key used to encrypt and decrypt a repository.
 #' 
-#' -   `update_repository_name`, which
-#'     changes the name of the repository. If you change the name of a
-#'     repository, no other users of that repository can access it until
-#'     you send them the new HTTPS or SSH URL to use.
+#' -   `update_repository_name`, which changes the name of the repository. If you change the name of a repository, no other users of that repository can access it until you send them the new HTTPS or SSH URL to use.
 #' 
 #' Branches, by calling the following:
 #' 
-#' -   `create_branch`, which creates a branch
-#'     in a specified repository.
+#' -   `create_branch`, which creates a branch in a specified repository.
 #' 
-#' -   `delete_branch`, which deletes the
-#'     specified branch in a repository unless it is the default branch.
+#' -   `delete_branch`, which deletes the specified branch in a repository unless it is the default branch.
 #' 
-#' -   `get_branch`, which returns information
-#'     about a specified branch.
+#' -   `get_branch`, which returns information about a specified branch.
 #' 
-#' -   `list_branches`, which lists all
-#'     branches for a specified repository.
+#' -   `list_branches`, which lists all branches for a specified repository.
 #' 
-#' -   `update_default_branch`, which
-#'     changes the default branch for a repository.
+#' -   `update_default_branch`, which changes the default branch for a repository.
 #' 
 #' Files, by calling the following:
 #' 
-#' -   `delete_file`, which deletes the content
-#'     of a specified file from a specified branch.
+#' -   `delete_file`, which deletes the content of a specified file from a specified branch.
 #' 
-#' -   `get_blob`, which returns the base-64 encoded
-#'     content of an individual Git blob object in a repository.
+#' -   `get_blob`, which returns the base-64 encoded content of an individual Git blob object in a repository.
 #' 
-#' -   `get_file`, which returns the base-64 encoded
-#'     content of a specified file.
+#' -   `get_file`, which returns the base-64 encoded content of a specified file.
 #' 
-#' -   `get_folder`, which returns the contents of
-#'     a specified folder or directory.
+#' -   `get_folder`, which returns the contents of a specified folder or directory.
 #' 
-#' -   `list_file_commit_history`,
-#'     which retrieves a list of commits and changes to a specified file.
+#' -   `list_file_commit_history`, which retrieves a list of commits and changes to a specified file.
 #' 
-#' -   `put_file`, which adds or modifies a single
-#'     file in a specified repository and branch.
+#' -   `put_file`, which adds or modifies a single file in a specified repository and branch.
 #' 
 #' Commits, by calling the following:
 #' 
-#' -   `batch_get_commits`, which returns
-#'     information about one or more commits in a repository.
+#' -   `batch_get_commits`, which returns information about one or more commits in a repository.
 #' 
-#' -   `create_commit`, which creates a commit
-#'     for changes to a repository.
+#' -   `create_commit`, which creates a commit for changes to a repository.
 #' 
-#' -   `get_commit`, which returns information
-#'     about a commit, including commit messages and author and committer
-#'     information.
+#' -   `get_commit`, which returns information about a commit, including commit messages and author and committer information.
 #' 
-#' -   `get_differences`, which returns
-#'     information about the differences in a valid commit specifier (such
-#'     as a branch, tag, HEAD, commit ID, or other fully qualified
-#'     reference).
+#' -   `get_differences`, which returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID, or other fully qualified reference).
 #' 
 #' Merges, by calling the following:
 #' 
-#' -   `batch_describe_merge_conflicts`,
-#'     which returns information about conflicts in a merge between commits
-#'     in a repository.
+#' -   `batch_describe_merge_conflicts`, which returns information about conflicts in a merge between commits in a repository.
 #' 
-#' -   `create_unreferenced_merge_commit`,
-#'     which creates an unreferenced commit between two branches or commits
-#'     for the purpose of comparing them and identifying any potential
-#'     conflicts.
+#' -   `create_unreferenced_merge_commit`, which creates an unreferenced commit between two branches or commits for the purpose of comparing them and identifying any potential conflicts.
 #' 
-#' -   `describe_merge_conflicts`,
-#'     which returns information about merge conflicts between the base,
-#'     source, and destination versions of a file in a potential merge.
+#' -   `describe_merge_conflicts`, which returns information about merge conflicts between the base, source, and destination versions of a file in a potential merge.
 #' 
-#' -   `get_merge_commit`, which returns
-#'     information about the merge between a source and destination commit.
+#' -   `get_merge_commit`, which returns information about the merge between a source and destination commit.
 #' 
-#' -   `get_merge_conflicts`, which
-#'     returns information about merge conflicts between the source and
-#'     destination branch in a pull request.
+#' -   `get_merge_conflicts`, which returns information about merge conflicts between the source and destination branch in a pull request.
 #' 
-#' -   `get_merge_options`, which returns
-#'     information about the available merge options between two branches
-#'     or commit specifiers.
+#' -   `get_merge_options`, which returns information about the available merge options between two branches or commit specifiers.
 #' 
-#' -   `merge_branches_by_fast_forward`,
-#'     which merges two branches using the fast-forward merge option.
+#' -   `merge_branches_by_fast_forward`, which merges two branches using the fast-forward merge option.
 #' 
-#' -   `merge_branches_by_squash`,
-#'     which merges two branches using the squash merge option.
+#' -   `merge_branches_by_squash`, which merges two branches using the squash merge option.
 #' 
-#' -   `merge_branches_by_three_way`,
-#'     which merges two branches using the three-way merge option.
+#' -   `merge_branches_by_three_way`, which merges two branches using the three-way merge option.
 #' 
 #' Pull requests, by calling the following:
 #' 
-#' -   `create_pull_request`, which
-#'     creates a pull request in a specified repository.
+#' -   `create_pull_request`, which creates a pull request in a specified repository.
 #' 
-#' -   `create_pull_request_approval_rule`,
-#'     which creates an approval rule for a specified pull request.
+#' -   `create_pull_request_approval_rule`, which creates an approval rule for a specified pull request.
 #' 
-#' -   `delete_pull_request_approval_rule`,
-#'     which deletes an approval rule for a specified pull request.
+#' -   `delete_pull_request_approval_rule`, which deletes an approval rule for a specified pull request.
 #' 
-#' -   `describe_pull_request_events`,
-#'     which returns information about one or more pull request events.
+#' -   `describe_pull_request_events`, which returns information about one or more pull request events.
 #' 
-#' -   `evaluate_pull_request_approval_rules`,
-#'     which evaluates whether a pull request has met all the conditions
-#'     specified in its associated approval rules.
+#' -   `evaluate_pull_request_approval_rules`, which evaluates whether a pull request has met all the conditions specified in its associated approval rules.
 #' 
-#' -   `get_comments_for_pull_request`,
-#'     which returns information about comments on a specified pull
-#'     request.
+#' -   `get_comments_for_pull_request`, which returns information about comments on a specified pull request.
 #' 
-#' -   `get_pull_request`, which returns
-#'     information about a specified pull request.
+#' -   `get_pull_request`, which returns information about a specified pull request.
 #' 
-#' -   `get_pull_request_approval_states`,
-#'     which returns information about the approval states for a specified
-#'     pull request.
+#' -   `get_pull_request_approval_states`, which returns information about the approval states for a specified pull request.
 #' 
-#' -   `get_pull_request_override_state`,
-#'     which returns information about whether approval rules have been set
-#'     aside (overriden) for a pull request, and if so, the Amazon Resource
-#'     Name (ARN) of the user or identity that overrode the rules and their
-#'     requirements for the pull request.
+#' -   `get_pull_request_override_state`, which returns information about whether approval rules have been set aside (overriden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.
 #' 
-#' -   `list_pull_requests`, which lists
-#'     all pull requests for a repository.
+#' -   `list_pull_requests`, which lists all pull requests for a repository.
 #' 
-#' -   `merge_pull_request_by_fast_forward`,
-#'     which merges the source destination branch of a pull request into
-#'     the specified destination branch for that pull request using the
-#'     fast-forward merge option.
+#' -   `merge_pull_request_by_fast_forward`, which merges the source destination branch of a pull request into the specified destination branch for that pull request using the fast-forward merge option.
 #' 
-#' -   `merge_pull_request_by_squash`,
-#'     which merges the source destination branch of a pull request into
-#'     the specified destination branch for that pull request using the
-#'     squash merge option.
+#' -   `merge_pull_request_by_squash`, which merges the source destination branch of a pull request into the specified destination branch for that pull request using the squash merge option.
 #' 
-#' -   `merge_pull_request_by_three_way`,
-#'     which merges the source destination branch of a pull request into
-#'     the specified destination branch for that pull request using the
-#'     three-way merge option.
+#' -   `merge_pull_request_by_three_way`, which merges the source destination branch of a pull request into the specified destination branch for that pull request using the three-way merge option.
 #' 
-#' -   `override_pull_request_approval_rules`,
-#'     which sets aside all approval rule requirements for a pull request.
+#' -   `override_pull_request_approval_rules`, which sets aside all approval rule requirements for a pull request.
 #' 
-#' -   `post_comment_for_pull_request`,
-#'     which posts a comment to a pull request at the specified line, file,
-#'     or request.
+#' -   `post_comment_for_pull_request`, which posts a comment to a pull request at the specified line, file, or request.
 #' 
-#' -   `update_pull_request_approval_rule_content`,
-#'     which updates the structure of an approval rule for a pull request.
+#' -   `update_pull_request_approval_rule_content`, which updates the structure of an approval rule for a pull request.
 #' 
-#' -   `update_pull_request_approval_state`,
-#'     which updates the state of an approval on a pull request.
+#' -   `update_pull_request_approval_state`, which updates the state of an approval on a pull request.
 #' 
-#' -   `update_pull_request_description`,
-#'     which updates the description of a pull request.
+#' -   `update_pull_request_description`, which updates the description of a pull request.
 #' 
-#' -   `update_pull_request_status`,
-#'     which updates the status of a pull request.
+#' -   `update_pull_request_status`, which updates the status of a pull request.
 #' 
-#' -   `update_pull_request_title`,
-#'     which updates the title of a pull request.
+#' -   `update_pull_request_title`, which updates the title of a pull request.
 #' 
 #' Approval rule templates, by calling the following:
 #' 
-#' -   `associate_approval_rule_template_with_repository`,
-#'     which associates a template with a specified repository. After the
-#'     template is associated with a repository, CodeCommit creates
-#'     approval rules that match the template conditions on every pull
-#'     request created in the specified repository.
+#' -   `associate_approval_rule_template_with_repository`, which associates a template with a specified repository. After the template is associated with a repository, CodeCommit creates approval rules that match the template conditions on every pull request created in the specified repository.
 #' 
-#' -   `batch_associate_approval_rule_template_with_repositories`,
-#'     which associates a template with one or more specified repositories.
-#'     After the template is associated with a repository, CodeCommit
-#'     creates approval rules that match the template conditions on every
-#'     pull request created in the specified repositories.
+#' -   `batch_associate_approval_rule_template_with_repositories`, which associates a template with one or more specified repositories. After the template is associated with a repository, CodeCommit creates approval rules that match the template conditions on every pull request created in the specified repositories.
 #' 
-#' -   `batch_disassociate_approval_rule_template_from_repositories`,
-#'     which removes the association between a template and specified
-#'     repositories so that approval rules based on the template are not
-#'     automatically created when pull requests are created in those
-#'     repositories.
+#' -   `batch_disassociate_approval_rule_template_from_repositories`, which removes the association between a template and specified repositories so that approval rules based on the template are not automatically created when pull requests are created in those repositories.
 #' 
-#' -   `create_approval_rule_template`,
-#'     which creates a template for approval rules that can then be
-#'     associated with one or more repositories in your Amazon Web Services
-#'     account.
+#' -   `create_approval_rule_template`, which creates a template for approval rules that can then be associated with one or more repositories in your Amazon Web Services account.
 #' 
-#' -   `delete_approval_rule_template`,
-#'     which deletes the specified template. It does not remove approval
-#'     rules on pull requests already created with the template.
+#' -   `delete_approval_rule_template`, which deletes the specified template. It does not remove approval rules on pull requests already created with the template.
 #' 
-#' -   `disassociate_approval_rule_template_from_repository`,
-#'     which removes the association between a template and a repository so
-#'     that approval rules based on the template are not automatically
-#'     created when pull requests are created in the specified repository.
+#' -   `disassociate_approval_rule_template_from_repository`, which removes the association between a template and a repository so that approval rules based on the template are not automatically created when pull requests are created in the specified repository.
 #' 
-#' -   `get_approval_rule_template`,
-#'     which returns information about an approval rule template.
+#' -   `get_approval_rule_template`, which returns information about an approval rule template.
 #' 
-#' -   `list_approval_rule_templates`,
-#'     which lists all approval rule templates in the Amazon Web Services
-#'     Region in your Amazon Web Services account.
+#' -   `list_approval_rule_templates`, which lists all approval rule templates in the Amazon Web Services Region in your Amazon Web Services account.
 #' 
-#' -   `list_associated_approval_rule_templates_for_repository`,
-#'     which lists all approval rule templates that are associated with a
-#'     specified repository.
+#' -   `list_associated_approval_rule_templates_for_repository`, which lists all approval rule templates that are associated with a specified repository.
 #' 
-#' -   `list_repositories_for_approval_rule_template`,
-#'     which lists all repositories associated with the specified approval
-#'     rule template.
+#' -   `list_repositories_for_approval_rule_template`, which lists all repositories associated with the specified approval rule template.
 #' 
-#' -   `update_approval_rule_template_description`,
-#'     which updates the description of an approval rule template.
+#' -   `update_approval_rule_template_description`, which updates the description of an approval rule template.
 #' 
-#' -   `update_approval_rule_template_name`,
-#'     which updates the name of an approval rule template.
+#' -   `update_approval_rule_template_name`, which updates the name of an approval rule template.
 #' 
-#' -   `update_approval_rule_template_content`,
-#'     which updates the content of an approval rule template.
+#' -   `update_approval_rule_template_content`, which updates the content of an approval rule template.
 #' 
 #' Comments in a repository, by calling the following:
 #' 
-#' -   `delete_comment_content`, which
-#'     deletes the content of a comment on a commit in a repository.
+#' -   `delete_comment_content`, which deletes the content of a comment on a commit in a repository.
 #' 
-#' -   `get_comment`, which returns information
-#'     about a comment on a commit.
+#' -   `get_comment`, which returns information about a comment on a commit.
 #' 
-#' -   `get_comment_reactions`, which
-#'     returns information about emoji reactions to comments.
+#' -   `get_comment_reactions`, which returns information about emoji reactions to comments.
 #' 
-#' -   `get_comments_for_compared_commit`,
-#'     which returns information about comments on the comparison between
-#'     two commit specifiers in a repository.
+#' -   `get_comments_for_compared_commit`, which returns information about comments on the comparison between two commit specifiers in a repository.
 #' 
-#' -   `post_comment_for_compared_commit`,
-#'     which creates a comment on the comparison between two commit
-#'     specifiers in a repository.
+#' -   `post_comment_for_compared_commit`, which creates a comment on the comparison between two commit specifiers in a repository.
 #' 
-#' -   `post_comment_reply`, which creates
-#'     a reply to a comment.
+#' -   `post_comment_reply`, which creates a reply to a comment.
 #' 
-#' -   `put_comment_reaction`, which
-#'     creates or updates an emoji reaction to a comment.
+#' -   `put_comment_reaction`, which creates or updates an emoji reaction to a comment.
 #' 
-#' -   `update_comment`, which updates the
-#'     content of a comment on a commit in a repository.
+#' -   `update_comment`, which updates the content of a comment on a commit in a repository.
 #' 
-#' Tags used to tag resources in CodeCommit (not Git tags), by calling the
-#' following:
+#' Tags used to tag resources in CodeCommit (not Git tags), by calling the following:
 #' 
-#' -   `list_tags_for_resource`, which
-#'     gets information about Amazon Web Servicestags for a specified
-#'     Amazon Resource Name (ARN) in CodeCommit.
+#' -   `list_tags_for_resource`, which gets information about Amazon Web Servicestags for a specified Amazon Resource Name (ARN) in CodeCommit.
 #' 
-#' -   `tag_resource`, which adds or updates
-#'     tags for a resource in CodeCommit.
+#' -   `tag_resource`, which adds or updates tags for a resource in CodeCommit.
 #' 
-#' -   `untag_resource`, which removes tags
-#'     for a resource in CodeCommit.
+#' -   `untag_resource`, which removes tags for a resource in CodeCommit.
 #' 
 #' Triggers, by calling the following:
 #' 
-#' -   `get_repository_triggers`,
-#'     which returns information about triggers configured for a
-#'     repository.
+#' -   `get_repository_triggers`, which returns information about triggers configured for a repository.
 #' 
-#' -   `put_repository_triggers`,
-#'     which replaces all triggers for a repository and can be used to
-#'     create or delete triggers.
+#' -   `put_repository_triggers`, which replaces all triggers for a repository and can be used to create or delete triggers.
 #' 
-#' -   `test_repository_triggers`,
-#'     which tests the functionality of a repository trigger by sending
-#'     data to the trigger target.
+#' -   `test_repository_triggers`, which tests the functionality of a repository trigger by sending data to the trigger target.
 #' 
-#' For information about how to use CodeCommit, see the [CodeCommit User
-#' Guide](https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html).
+#' For information about how to use CodeCommit, see the [CodeCommit User Guide](https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html).
 #'
 #' @param
 #' config
@@ -15648,148 +14488,95 @@ codecommit <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' Amazon CodeCatalyst
 #'
 #' @description
-#' Welcome to the Amazon CodeCatalyst API reference. This reference
-#' provides descriptions of operations and data types for Amazon
-#' CodeCatalyst. You can use the Amazon CodeCatalyst API to work with the
-#' following objects.
+#' Welcome to the Amazon CodeCatalyst API reference. This reference provides descriptions of operations and data types for Amazon CodeCatalyst. You can use the Amazon CodeCatalyst API to work with the following objects.
 #' 
 #' Spaces, by calling the following:
 #' 
 #' -   `delete_space`, which deletes a space.
 #' 
-#' -   `get_space`, which returns information
-#'     about a space.
+#' -   `get_space`, which returns information about a space.
 #' 
-#' -   `get_subscription`, which returns
-#'     information about the Amazon Web Services account used for billing
-#'     purposes and the billing plan for the space.
+#' -   `get_subscription`, which returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.
 #' 
-#' -   `list_spaces`, which retrieves a list of
-#'     spaces.
+#' -   `list_spaces`, which retrieves a list of spaces.
 #' 
-#' -   `update_space`, which changes one or
-#'     more values for a space.
+#' -   `update_space`, which changes one or more values for a space.
 #' 
 #' Projects, by calling the following:
 #' 
-#' -   `create_project` which creates a
-#'     project in a specified space.
+#' -   `create_project` which creates a project in a specified space.
 #' 
-#' -   `get_project`, which returns information
-#'     about a project.
+#' -   `get_project`, which returns information about a project.
 #' 
-#' -   `list_projects`, which retrieves a
-#'     list of projects in a space.
+#' -   `list_projects`, which retrieves a list of projects in a space.
 #' 
 #' Users, by calling the following:
 #' 
-#' -   `get_user_details`, which returns
-#'     information about a user in Amazon CodeCatalyst.
+#' -   `get_user_details`, which returns information about a user in Amazon CodeCatalyst.
 #' 
 #' Source repositories, by calling the following:
 #' 
-#' -   `create_source_repository`,
-#'     which creates an empty Git-based source repository in a specified
-#'     project.
+#' -   `create_source_repository`, which creates an empty Git-based source repository in a specified project.
 #' 
-#' -   `create_source_repository_branch`,
-#'     which creates a branch in a specified repository where you can work
-#'     on code.
+#' -   `create_source_repository_branch`, which creates a branch in a specified repository where you can work on code.
 #' 
-#' -   `delete_source_repository`,
-#'     which deletes a source repository.
+#' -   `delete_source_repository`, which deletes a source repository.
 #' 
-#' -   `get_source_repository`, which
-#'     returns information about a source repository.
+#' -   `get_source_repository`, which returns information about a source repository.
 #' 
-#' -   `get_source_repository_clone_urls`,
-#'     which returns information about the URLs that can be used with a Git
-#'     client to clone a source repository.
+#' -   `get_source_repository_clone_urls`, which returns information about the URLs that can be used with a Git client to clone a source repository.
 #' 
-#' -   `list_source_repositories`,
-#'     which retrieves a list of source repositories in a project.
+#' -   `list_source_repositories`, which retrieves a list of source repositories in a project.
 #' 
-#' -   `list_source_repository_branches`,
-#'     which retrieves a list of branches in a source repository.
+#' -   `list_source_repository_branches`, which retrieves a list of branches in a source repository.
 #' 
-#' Dev Environments and the Amazon Web Services Toolkits, by calling the
-#' following:
+#' Dev Environments and the Amazon Web Services Toolkits, by calling the following:
 #' 
-#' -   `create_dev_environment`,
-#'     which creates a Dev Environment, where you can quickly work on the
-#'     code stored in the source repositories of your project.
+#' -   `create_dev_environment`, which creates a Dev Environment, where you can quickly work on the code stored in the source repositories of your project.
 #' 
-#' -   `delete_dev_environment`,
-#'     which deletes a Dev Environment.
+#' -   `delete_dev_environment`, which deletes a Dev Environment.
 #' 
-#' -   `get_dev_environment`, which
-#'     returns information about a Dev Environment.
+#' -   `get_dev_environment`, which returns information about a Dev Environment.
 #' 
-#' -   `list_dev_environments`, which
-#'     retrieves a list of Dev Environments in a project.
+#' -   `list_dev_environments`, which retrieves a list of Dev Environments in a project.
 #' 
-#' -   `list_dev_environment_sessions`,
-#'     which retrieves a list of active Dev Environment sessions in a
-#'     project.
+#' -   `list_dev_environment_sessions`, which retrieves a list of active Dev Environment sessions in a project.
 #' 
-#' -   `start_dev_environment`, which
-#'     starts a specified Dev Environment and puts it into an active state.
+#' -   `start_dev_environment`, which starts a specified Dev Environment and puts it into an active state.
 #' 
-#' -   `start_dev_environment_session`,
-#'     which starts a session to a specified Dev Environment.
+#' -   `start_dev_environment_session`, which starts a session to a specified Dev Environment.
 #' 
-#' -   `stop_dev_environment`, which
-#'     stops a specified Dev Environment and puts it into an stopped state.
+#' -   `stop_dev_environment`, which stops a specified Dev Environment and puts it into an stopped state.
 #' 
-#' -   `stop_dev_environment_session`,
-#'     which stops a session for a specified Dev Environment.
+#' -   `stop_dev_environment_session`, which stops a session for a specified Dev Environment.
 #' 
-#' -   `update_dev_environment`,
-#'     which changes one or more values for a Dev Environment.
+#' -   `update_dev_environment`, which changes one or more values for a Dev Environment.
 #' 
 #' Workflows, by calling the following:
 #' 
-#' -   `get_workflow`, which returns
-#'     information about a workflow.
+#' -   `get_workflow`, which returns information about a workflow.
 #' 
-#' -   `get_workflow_run`, which returns
-#'     information about a specified run of a workflow.
+#' -   `get_workflow_run`, which returns information about a specified run of a workflow.
 #' 
-#' -   `list_workflow_runs`, which
-#'     retrieves a list of runs of a specified workflow.
+#' -   `list_workflow_runs`, which retrieves a list of runs of a specified workflow.
 #' 
-#' -   `list_workflows`, which retrieves a
-#'     list of workflows in a specified project.
+#' -   `list_workflows`, which retrieves a list of workflows in a specified project.
 #' 
-#' -   `start_workflow_run`, which
-#'     starts a run of a specified workflow.
+#' -   `start_workflow_run`, which starts a run of a specified workflow.
 #' 
-#' Security, activity, and resource management in Amazon CodeCatalyst, by
-#' calling the following:
+#' Security, activity, and resource management in Amazon CodeCatalyst, by calling the following:
 #' 
-#' -   `create_access_token`, which
-#'     creates a personal access token (PAT) for the current user.
+#' -   `create_access_token`, which creates a personal access token (PAT) for the current user.
 #' 
-#' -   `delete_access_token`, which
-#'     deletes a specified personal access token (PAT).
+#' -   `delete_access_token`, which deletes a specified personal access token (PAT).
 #' 
-#' -   `list_access_tokens`, which lists
-#'     all personal access tokens (PATs) associated with a user.
+#' -   `list_access_tokens`, which lists all personal access tokens (PATs) associated with a user.
 #' 
-#' -   `list_event_logs`, which retrieves a
-#'     list of events that occurred during a specified time period in a
-#'     space.
+#' -   `list_event_logs`, which retrieves a list of events that occurred during a specified time period in a space.
 #' 
-#' -   `verify_session`, which verifies
-#'     whether the calling user has a valid Amazon CodeCatalyst login and
-#'     session.
+#' -   `verify_session`, which verifies whether the calling user has a valid Amazon CodeCatalyst login and session.
 #' 
-#' If you are using the Amazon CodeCatalyst APIs with an SDK or the CLI,
-#' you must configure your computer to work with Amazon CodeCatalyst and
-#' single sign-on (SSO). For more information, see [Setting up to use the
-#' CLI with Amazon
-#' CodeCatalyst](https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html)
-#' and the SSO documentation for your SDK.
+#' If you are using the Amazon CodeCatalyst APIs with an SDK or the CLI, you must configure your computer to work with Amazon CodeCatalyst and single sign-on (SSO). For more information, see [Setting up to use the CLI with Amazon CodeCatalyst](https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html) and the SSO documentation for your SDK.
 #'
 #' @param
 #' config
@@ -15934,83 +14721,35 @@ codecatalyst <- function(config = list(), credentials = list(), endpoint = NULL,
 #' AWS CodeDeploy
 #'
 #' @description
-#' CodeDeploy is a deployment service that automates application
-#' deployments to Amazon EC2 instances, on-premises instances running in
-#' your own facility, serverless Lambda functions, or applications in an
-#' Amazon ECS service.
+#' CodeDeploy is a deployment service that automates application deployments to Amazon EC2 instances, on-premises instances running in your own facility, serverless Lambda functions, or applications in an Amazon ECS service.
 #' 
-#' You can deploy a nearly unlimited variety of application content, such
-#' as an updated Lambda function, updated applications in an Amazon ECS
-#' service, code, web and configuration files, executables, packages,
-#' scripts, multimedia files, and so on. CodeDeploy can deploy application
-#' content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket
-#' repositories. You do not need to make changes to your existing code
-#' before you can use CodeDeploy.
+#' You can deploy a nearly unlimited variety of application content, such as an updated Lambda function, updated applications in an Amazon ECS service, code, web and configuration files, executables, packages, scripts, multimedia files, and so on. CodeDeploy can deploy application content stored in Amazon S3 buckets, GitHub repositories, or Bitbucket repositories. You do not need to make changes to your existing code before you can use CodeDeploy.
 #' 
-#' CodeDeploy makes it easier for you to rapidly release new features,
-#' helps you avoid downtime during application deployment, and handles the
-#' complexity of updating your applications, without many of the risks
-#' associated with error-prone manual deployments.
+#' CodeDeploy makes it easier for you to rapidly release new features, helps you avoid downtime during application deployment, and handles the complexity of updating your applications, without many of the risks associated with error-prone manual deployments.
 #' 
 #' **CodeDeploy Components**
 #' 
-#' Use the information in this guide to help you work with the following
-#' CodeDeploy components:
+#' Use the information in this guide to help you work with the following CodeDeploy components:
 #' 
-#' -   **Application**: A name that uniquely identifies the application you
-#'     want to deploy. CodeDeploy uses this name, which functions as a
-#'     container, to ensure the correct combination of revision, deployment
-#'     configuration, and deployment group are referenced during a
-#'     deployment.
+#' -   **Application**: A name that uniquely identifies the application you want to deploy. CodeDeploy uses this name, which functions as a container, to ensure the correct combination of revision, deployment configuration, and deployment group are referenced during a deployment.
 #' 
-#' -   **Deployment group**: A set of individual instances, CodeDeploy
-#'     Lambda deployment configuration settings, or an Amazon ECS service
-#'     and network details. A Lambda deployment group specifies how to
-#'     route traffic to a new version of a Lambda function. An Amazon ECS
-#'     deployment group specifies the service created in Amazon ECS to
-#'     deploy, a load balancer, and a listener to reroute production
-#'     traffic to an updated containerized application. An Amazon
-#'     EC2/On-premises deployment group contains individually tagged
-#'     instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups,
-#'     or both. All deployment groups can specify optional trigger, alarm,
-#'     and rollback settings.
+#' -   **Deployment group**: A set of individual instances, CodeDeploy Lambda deployment configuration settings, or an Amazon ECS service and network details. A Lambda deployment group specifies how to route traffic to a new version of a Lambda function. An Amazon ECS deployment group specifies the service created in Amazon ECS to deploy, a load balancer, and a listener to reroute production traffic to an updated containerized application. An Amazon EC2/On-premises deployment group contains individually tagged instances, Amazon EC2 instances in Amazon EC2 Auto Scaling groups, or both. All deployment groups can specify optional trigger, alarm, and rollback settings.
 #' 
-#' -   **Deployment configuration**: A set of deployment rules and
-#'     deployment success and failure conditions used by CodeDeploy during
-#'     a deployment.
+#' -   **Deployment configuration**: A set of deployment rules and deployment success and failure conditions used by CodeDeploy during a deployment.
 #' 
-#' -   **Deployment**: The process and the components used when updating a
-#'     Lambda function, a containerized application in an Amazon ECS
-#'     service, or of installing content on one or more instances.
+#' -   **Deployment**: The process and the components used when updating a Lambda function, a containerized application in an Amazon ECS service, or of installing content on one or more instances.
 #' 
-#' -   **Application revisions**: For an Lambda deployment, this is an
-#'     AppSpec file that specifies the Lambda function to be updated and
-#'     one or more functions to validate deployment lifecycle events. For
-#'     an Amazon ECS deployment, this is an AppSpec file that specifies the
-#'     Amazon ECS task definition, container, and port where production
-#'     traffic is rerouted. For an EC2/On-premises deployment, this is an
-#'     archive file that contains source content—source code, webpages,
-#'     executable files, and deployment scripts—along with an AppSpec file.
-#'     Revisions are stored in Amazon S3 buckets or GitHub repositories.
-#'     For Amazon S3, a revision is uniquely identified by its Amazon S3
-#'     object key and its ETag, version, or both. For GitHub, a revision is
-#'     uniquely identified by its commit ID.
+#' -   **Application revisions**: For an Lambda deployment, this is an AppSpec file that specifies the Lambda function to be updated and one or more functions to validate deployment lifecycle events. For an Amazon ECS deployment, this is an AppSpec file that specifies the Amazon ECS task definition, container, and port where production traffic is rerouted. For an EC2/On-premises deployment, this is an archive file that contains source content—source code, webpages, executable files, and deployment scripts—along with an AppSpec file. Revisions are stored in Amazon S3 buckets or GitHub repositories. For Amazon S3, a revision is uniquely identified by its Amazon S3 object key and its ETag, version, or both. For GitHub, a revision is uniquely identified by its commit ID.
 #' 
-#' This guide also contains information to help you get details about the
-#' instances in your deployments, to make on-premises instances available
-#' for CodeDeploy deployments, to get details about a Lambda function
-#' deployment, and to get details about Amazon ECS service deployments.
+#' This guide also contains information to help you get details about the instances in your deployments, to make on-premises instances available for CodeDeploy deployments, to get details about a Lambda function deployment, and to get details about Amazon ECS service deployments.
 #' 
 #' **CodeDeploy Information Resources**
 #' 
-#' -   [CodeDeploy User
-#'     Guide](https://docs.aws.amazon.com/codedeploy/latest/userguide/)
+#' -   [CodeDeploy User Guide](https://docs.aws.amazon.com/codedeploy/latest/userguide/)
 #' 
-#' -   [CodeDeploy API Reference
-#'     Guide](https://docs.aws.amazon.com/codedeploy/latest/APIReference/)
+#' -   [CodeDeploy API Reference Guide](https://docs.aws.amazon.com/codedeploy/latest/APIReference/)
 #' 
-#' -   [CLI Reference for
-#'     CodeDeploy](https://docs.aws.amazon.com/cli/latest/reference/deploy/)
+#' -   [CLI Reference for CodeDeploy](https://docs.aws.amazon.com/cli/latest/reference/deploy/)
 #' 
 #' -   CodeDeploy Developer Forum
 #'
@@ -16166,30 +14905,15 @@ codedeploy <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' Amazon CodeGuru Profiler
 #'
 #' @description
-#' This section provides documentation for the Amazon CodeGuru Profiler API
-#' operations.
+#' This section provides documentation for the Amazon CodeGuru Profiler API operations.
 #' 
-#' Amazon CodeGuru Profiler collects runtime performance data from your
-#' live applications, and provides recommendations that can help you
-#' fine-tune your application performance. Using machine learning
-#' algorithms, CodeGuru Profiler can help you find your most expensive
-#' lines of code and suggest ways you can improve efficiency and remove CPU
-#' bottlenecks.
+#' Amazon CodeGuru Profiler collects runtime performance data from your live applications, and provides recommendations that can help you fine-tune your application performance. Using machine learning algorithms, CodeGuru Profiler can help you find your most expensive lines of code and suggest ways you can improve efficiency and remove CPU bottlenecks.
 #' 
-#' Amazon CodeGuru Profiler provides different visualizations of profiling
-#' data to help you identify what code is running on the CPU, see how much
-#' time is consumed, and suggest ways to reduce CPU utilization.
+#' Amazon CodeGuru Profiler provides different visualizations of profiling data to help you identify what code is running on the CPU, see how much time is consumed, and suggest ways to reduce CPU utilization.
 #' 
-#' Amazon CodeGuru Profiler currently supports applications written in all
-#' Java virtual machine (JVM) languages and Python. While CodeGuru Profiler
-#' supports both visualizations and recommendations for applications
-#' written in Java, it can also generate visualizations and a subset of
-#' recommendations for applications written in other JVM languages and
-#' Python.
+#' Amazon CodeGuru Profiler currently supports applications written in all Java virtual machine (JVM) languages and Python. While CodeGuru Profiler supports both visualizations and recommendations for applications written in Java, it can also generate visualizations and a subset of recommendations for applications written in other JVM languages and Python.
 #' 
-#' For more information, see [What is Amazon CodeGuru
-#' Profiler](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html)
-#' in the *Amazon CodeGuru Profiler User Guide*.
+#' For more information, see [What is Amazon CodeGuru Profiler](https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html) in the *Amazon CodeGuru Profiler User Guide*.
 #'
 #' @param
 #' config
@@ -16319,23 +15043,11 @@ codeguruprofiler <- function(config = list(), credentials = list(), endpoint = N
 #' Amazon CodeGuru Reviewer
 #'
 #' @description
-#' This section provides documentation for the Amazon CodeGuru Reviewer API
-#' operations. CodeGuru Reviewer is a service that uses program analysis
-#' and machine learning to detect potential defects that are difficult for
-#' developers to find and recommends fixes in your Java and Python code.
+#' This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service that uses program analysis and machine learning to detect potential defects that are difficult for developers to find and recommends fixes in your Java and Python code.
 #' 
-#' By proactively detecting and providing recommendations for addressing
-#' code defects and implementing best practices, CodeGuru Reviewer improves
-#' the overall quality and maintainability of your code base during the
-#' code review stage. For more information about CodeGuru Reviewer, see the
-#' *\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html}{Amazon CodeGuru Reviewer User Guide}.*
+#' By proactively detecting and providing recommendations for addressing code defects and implementing best practices, CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage. For more information about CodeGuru Reviewer, see the *\href{https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html}{Amazon CodeGuru Reviewer User Guide}.*
 #' 
-#' To improve the security of your CodeGuru Reviewer API calls, you can
-#' establish a private connection between your VPC and CodeGuru Reviewer by
-#' creating an *interface VPC endpoint*. For more information, see
-#' [CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services
-#' PrivateLink)](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html)
-#' in the *Amazon CodeGuru Reviewer User Guide*.
+#' To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC and CodeGuru Reviewer by creating an *interface VPC endpoint*. For more information, see [CodeGuru Reviewer and interface VPC endpoints (Amazon Web Services PrivateLink)](https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html) in the *Amazon CodeGuru Reviewer User Guide*.
 #'
 #' @param
 #' config
@@ -16456,21 +15168,11 @@ codegurureviewer <- function(config = list(), credentials = list(), endpoint = N
 #' Amazon CodeGuru Security
 #'
 #' @description
-#' On November 20, 2025, AWS will discontinue support for Amazon CodeGuru
-#' Security. After November 20, 2025, you will no longer be able to access
-#' the /codeguru/security console, service resources, or documentation. For
-#' more information, see
-#' https://docs.aws.amazon.com/codeguru/latest/security-ug/end-of-support.html.
+#' On November 20, 2025, AWS will discontinue support for Amazon CodeGuru Security. After November 20, 2025, you will no longer be able to access the /codeguru/security console, service resources, or documentation. For more information, see https://docs.aws.amazon.com/codeguru/latest/security-ug/end-of-support.html.
 #' 
-#' This section provides documentation for the Amazon CodeGuru Security API
-#' operations. CodeGuru Security is a service that uses program analysis
-#' and machine learning to detect security policy violations and
-#' vulnerabilities, and recommends ways to address these security risks.
+#' This section provides documentation for the Amazon CodeGuru Security API operations. CodeGuru Security is a service that uses program analysis and machine learning to detect security policy violations and vulnerabilities, and recommends ways to address these security risks.
 #' 
-#' By proactively detecting and providing recommendations for addressing
-#' security risks, CodeGuru Security improves the overall security of your
-#' application code. For more information about CodeGuru Security, see the
-#' Amazon CodeGuru Security User Guide.
+#' By proactively detecting and providing recommendations for addressing security risks, CodeGuru Security improves the overall security of your application code. For more information about CodeGuru Security, see the Amazon CodeGuru Security User Guide.
 #'
 #' @param
 #' config
@@ -16594,83 +15296,39 @@ codegurusecurity <- function(config = list(), credentials = list(), endpoint = N
 #' 
 #' **Overview**
 #' 
-#' This is the CodePipeline API Reference. This guide provides descriptions
-#' of the actions and data types for CodePipeline. Some functionality for
-#' your pipeline can only be configured through the API. For more
-#' information, see the [CodePipeline User
-#' Guide](https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html).
+#' This is the CodePipeline API Reference. This guide provides descriptions of the actions and data types for CodePipeline. Some functionality for your pipeline can only be configured through the API. For more information, see the [CodePipeline User Guide](https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html).
 #' 
-#' You can use the CodePipeline API to work with pipelines, stages,
-#' actions, and transitions.
+#' You can use the CodePipeline API to work with pipelines, stages, actions, and transitions.
 #' 
-#' *Pipelines* are models of automated release processes. Each pipeline is
-#' uniquely named, and consists of stages, actions, and transitions.
+#' *Pipelines* are models of automated release processes. Each pipeline is uniquely named, and consists of stages, actions, and transitions.
 #' 
 #' You can work with pipelines by calling:
 #' 
-#' -   `create_pipeline`, which creates a
-#'     uniquely named pipeline.
+#' -   `create_pipeline`, which creates a uniquely named pipeline.
 #' 
-#' -   `delete_pipeline`, which deletes the
-#'     specified pipeline.
+#' -   `delete_pipeline`, which deletes the specified pipeline.
 #' 
-#' -   `get_pipeline`, which returns
-#'     information about the pipeline structure and pipeline metadata,
-#'     including the pipeline Amazon Resource Name (ARN).
+#' -   `get_pipeline`, which returns information about the pipeline structure and pipeline metadata, including the pipeline Amazon Resource Name (ARN).
 #' 
-#' -   `get_pipeline_execution`,
-#'     which returns information about a specific execution of a pipeline.
+#' -   `get_pipeline_execution`, which returns information about a specific execution of a pipeline.
 #' 
-#' -   `get_pipeline_state`, which
-#'     returns information about the current state of the stages and
-#'     actions of a pipeline.
+#' -   `get_pipeline_state`, which returns information about the current state of the stages and actions of a pipeline.
 #' 
-#' -   `list_action_executions`,
-#'     which returns action-level details for past executions. The details
-#'     include full stage and action-level details, including individual
-#'     action duration, status, any errors that occurred during the
-#'     execution, and input and output artifact location details.
+#' -   `list_action_executions`, which returns action-level details for past executions. The details include full stage and action-level details, including individual action duration, status, any errors that occurred during the execution, and input and output artifact location details.
 #' 
-#' -   `list_pipelines`, which gets a
-#'     summary of all of the pipelines associated with your account.
+#' -   `list_pipelines`, which gets a summary of all of the pipelines associated with your account.
 #' 
-#' -   `list_pipeline_executions`,
-#'     which gets a summary of the most recent executions for a pipeline.
+#' -   `list_pipeline_executions`, which gets a summary of the most recent executions for a pipeline.
 #' 
-#' -   `start_pipeline_execution`,
-#'     which runs the most recent revision of an artifact through the
-#'     pipeline.
+#' -   `start_pipeline_execution`, which runs the most recent revision of an artifact through the pipeline.
 #' 
-#' -   `stop_pipeline_execution`,
-#'     which stops the specified pipeline execution from continuing through
-#'     the pipeline.
+#' -   `stop_pipeline_execution`, which stops the specified pipeline execution from continuing through the pipeline.
 #' 
-#' -   `update_pipeline`, which updates a
-#'     pipeline with edits or changes to the structure of the pipeline.
+#' -   `update_pipeline`, which updates a pipeline with edits or changes to the structure of the pipeline.
 #' 
-#' Pipelines include *stages*. Each stage contains one or more actions that
-#' must complete before the next stage begins. A stage results in success
-#' or failure. If a stage fails, the pipeline stops at that stage and
-#' remains stopped until either a new version of an artifact appears in the
-#' source location, or a user takes action to rerun the most recent
-#' artifact through the pipeline. You can call
-#' `get_pipeline_state`, which displays
-#' the status of a pipeline, including the status of stages in the
-#' pipeline, or `get_pipeline`, which returns
-#' the entire structure of the pipeline, including the stages of that
-#' pipeline. For more information about the structure of stages and
-#' actions, see [CodePipeline Pipeline Structure
-#' Reference](https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html).
+#' Pipelines include *stages*. Each stage contains one or more actions that must complete before the next stage begins. A stage results in success or failure. If a stage fails, the pipeline stops at that stage and remains stopped until either a new version of an artifact appears in the source location, or a user takes action to rerun the most recent artifact through the pipeline. You can call `get_pipeline_state`, which displays the status of a pipeline, including the status of stages in the pipeline, or `get_pipeline`, which returns the entire structure of the pipeline, including the stages of that pipeline. For more information about the structure of stages and actions, see [CodePipeline Pipeline Structure Reference](https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html).
 #' 
-#' Pipeline stages include *actions* that are categorized into categories
-#' such as source or build actions performed in a stage of a pipeline. For
-#' example, you can use a source action to import artifacts into a pipeline
-#' from a source such as Amazon S3. Like stages, you do not work with
-#' actions directly in most cases, but you do define and interact with
-#' actions when working with pipeline operations such as
-#' `create_pipeline` and
-#' `get_pipeline_state`. Valid action
-#' categories are:
+#' Pipeline stages include *actions* that are categorized into categories such as source or build actions performed in a stage of a pipeline. For example, you can use a source action to import artifacts into a pipeline from a source such as Amazon S3. Like stages, you do not work with actions directly in most cases, but you do define and interact with actions when working with pipeline operations such as `create_pipeline` and `get_pipeline_state`. Valid action categories are:
 #' 
 #' -   Source
 #' 
@@ -16686,66 +15344,45 @@ codegurusecurity <- function(config = list(), credentials = list(), endpoint = N
 #' 
 #' -   Compute
 #' 
-#' Pipelines also include *transitions*, which allow the transition of
-#' artifacts from one stage to the next in a pipeline after the actions in
-#' one stage complete.
+#' Pipelines also include *transitions*, which allow the transition of artifacts from one stage to the next in a pipeline after the actions in one stage complete.
 #' 
 #' You can work with transitions by calling:
 #' 
-#' -   `disable_stage_transition`,
-#'     which prevents artifacts from transitioning to the next stage in a
-#'     pipeline.
+#' -   `disable_stage_transition`, which prevents artifacts from transitioning to the next stage in a pipeline.
 #' 
-#' -   `enable_stage_transition`,
-#'     which enables transition of artifacts between stages in a pipeline.
+#' -   `enable_stage_transition`, which enables transition of artifacts between stages in a pipeline.
 #' 
 #' **Using the API to integrate with CodePipeline**
 #' 
-#' For third-party integrators or developers who want to create their own
-#' integrations with CodePipeline, the expected sequence varies from the
-#' standard API user. To integrate with CodePipeline, developers need to
-#' work with the following items:
+#' For third-party integrators or developers who want to create their own integrations with CodePipeline, the expected sequence varies from the standard API user. To integrate with CodePipeline, developers need to work with the following items:
 #' 
-#' **Jobs**, which are instances of an action. For example, a job for a
-#' source action might import a revision of an artifact from a source.
+#' **Jobs**, which are instances of an action. For example, a job for a source action might import a revision of an artifact from a source.
 #' 
 #' You can work with jobs by calling:
 #' 
-#' -   `acknowledge_job`, which confirms
-#'     whether a job worker has received the specified job.
+#' -   `acknowledge_job`, which confirms whether a job worker has received the specified job.
 #' 
-#' -   `get_job_details`, which returns the
-#'     details of a job.
+#' -   `get_job_details`, which returns the details of a job.
 #' 
-#' -   `poll_for_jobs`, which determines
-#'     whether there are any jobs to act on.
+#' -   `poll_for_jobs`, which determines whether there are any jobs to act on.
 #' 
-#' -   `put_job_failure_result`,
-#'     which provides details of a job failure.
+#' -   `put_job_failure_result`, which provides details of a job failure.
 #' 
-#' -   `put_job_success_result`,
-#'     which provides details of a job success.
+#' -   `put_job_success_result`, which provides details of a job success.
 #' 
-#' **Third party jobs**, which are instances of an action created by a
-#' partner action and integrated into CodePipeline. Partner actions are
-#' created by members of the Amazon Web Services Partner Network.
+#' **Third party jobs**, which are instances of an action created by a partner action and integrated into CodePipeline. Partner actions are created by members of the Amazon Web Services Partner Network.
 #' 
 #' You can work with third party jobs by calling:
 #' 
-#' -   `acknowledge_third_party_job`,
-#'     which confirms whether a job worker has received the specified job.
+#' -   `acknowledge_third_party_job`, which confirms whether a job worker has received the specified job.
 #' 
-#' -   `get_third_party_job_details`,
-#'     which requests the details of a job for a partner action.
+#' -   `get_third_party_job_details`, which requests the details of a job for a partner action.
 #' 
-#' -   `poll_for_third_party_jobs`,
-#'     which determines whether there are any jobs to act on.
+#' -   `poll_for_third_party_jobs`, which determines whether there are any jobs to act on.
 #' 
-#' -   `put_third_party_job_failure_result`,
-#'     which provides details of a job failure.
+#' -   `put_third_party_job_failure_result`, which provides details of a job failure.
 #' 
-#' -   `put_third_party_job_success_result`,
-#'     which provides details of a job success.
+#' -   `put_third_party_job_success_result`, which provides details of a job success.
 #'
 #' @param
 #' config
@@ -16896,75 +15533,43 @@ codepipeline <- function(config = list(), credentials = list(), endpoint = NULL,
 #' AWS CodeConnections
 #'
 #' @description
-#' This Amazon Web Services CodeConnections API Reference provides
-#' descriptions and usage examples of the operations and data types for the
-#' Amazon Web Services CodeConnections API. You can use the connections API
-#' to work with connections and installations.
+#' This Amazon Web Services CodeConnections API Reference provides descriptions and usage examples of the operations and data types for the Amazon Web Services CodeConnections API. You can use the connections API to work with connections and installations.
 #' 
-#' *Connections* are configurations that you use to connect Amazon Web
-#' Services resources to external code repositories. Each connection is a
-#' resource that can be given to services such as CodePipeline to connect
-#' to a third-party repository such as Bitbucket. For example, you can add
-#' the connection in CodePipeline so that it triggers your pipeline when a
-#' code change is made to your third-party code repository. Each connection
-#' is named and associated with a unique ARN that is used to reference the
-#' connection.
+#' *Connections* are configurations that you use to connect Amazon Web Services resources to external code repositories. Each connection is a resource that can be given to services such as CodePipeline to connect to a third-party repository such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers your pipeline when a code change is made to your third-party code repository. Each connection is named and associated with a unique ARN that is used to reference the connection.
 #' 
-#' When you create a connection, the console initiates a third-party
-#' connection handshake. *Installations* are the apps that are used to
-#' conduct this handshake. For example, the installation for the Bitbucket
-#' provider type is the Bitbucket app. When you create a connection, you
-#' can choose an existing installation or create one.
+#' When you create a connection, the console initiates a third-party connection handshake. *Installations* are the apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the Bitbucket app. When you create a connection, you can choose an existing installation or create one.
 #' 
-#' When you want to create a connection to an installed provider type such
-#' as GitHub Enterprise Server, you create a *host* for your connections.
+#' When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a *host* for your connections.
 #' 
 #' You can work with connections by calling:
 #' 
-#' -   `create_connection`, which
-#'     creates a uniquely named connection that can be referenced by
-#'     services such as CodePipeline.
+#' -   `create_connection`, which creates a uniquely named connection that can be referenced by services such as CodePipeline.
 #' 
-#' -   `delete_connection`, which
-#'     deletes the specified connection.
+#' -   `delete_connection`, which deletes the specified connection.
 #' 
-#' -   `get_connection`, which returns
-#'     information about the connection, including the connection status.
+#' -   `get_connection`, which returns information about the connection, including the connection status.
 #' 
-#' -   `list_connections`, which lists
-#'     the connections associated with your account.
+#' -   `list_connections`, which lists the connections associated with your account.
 #' 
 #' You can work with hosts by calling:
 #' 
-#' -   `create_host`, which creates a host
-#'     that represents the infrastructure where your provider is installed.
+#' -   `create_host`, which creates a host that represents the infrastructure where your provider is installed.
 #' 
-#' -   `delete_host`, which deletes the
-#'     specified host.
+#' -   `delete_host`, which deletes the specified host.
 #' 
-#' -   `get_host`, which returns information
-#'     about the host, including the setup status.
+#' -   `get_host`, which returns information about the host, including the setup status.
 #' 
-#' -   `list_hosts`, which lists the hosts
-#'     associated with your account.
+#' -   `list_hosts`, which lists the hosts associated with your account.
 #' 
-#' You can work with tags in Amazon Web Services CodeConnections by calling
-#' the following:
+#' You can work with tags in Amazon Web Services CodeConnections by calling the following:
 #' 
-#' -   `list_tags_for_resource`,
-#'     which gets information about Amazon Web Services tags for a
-#'     specified Amazon Resource Name (ARN) in Amazon Web Services
-#'     CodeConnections.
+#' -   `list_tags_for_resource`, which gets information about Amazon Web Services tags for a specified Amazon Resource Name (ARN) in Amazon Web Services CodeConnections.
 #' 
-#' -   `tag_resource`, which adds or
-#'     updates tags for a resource in Amazon Web Services CodeConnections.
+#' -   `tag_resource`, which adds or updates tags for a resource in Amazon Web Services CodeConnections.
 #' 
-#' -   `untag_resource`, which removes
-#'     tags for a resource in Amazon Web Services CodeConnections.
+#' -   `untag_resource`, which removes tags for a resource in Amazon Web Services CodeConnections.
 #' 
-#' For information about how to use Amazon Web Services CodeConnections,
-#' see the [Developer Tools User
-#' Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html).
+#' For information about how to use Amazon Web Services CodeConnections, see the [Developer Tools User Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html).
 #'
 #' @param
 #' config
@@ -17100,79 +15705,43 @@ codeconnections <- function(config = list(), credentials = list(), endpoint = NU
 #' @description
 #' AWS CodeStar Connections
 #' 
-#' This Amazon Web Services CodeStar Connections API Reference provides
-#' descriptions and usage examples of the operations and data types for the
-#' Amazon Web Services CodeStar Connections API. You can use the
-#' connections API to work with connections and installations.
+#' This Amazon Web Services CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types for the Amazon Web Services CodeStar Connections API. You can use the connections API to work with connections and installations.
 #' 
-#' *Connections* are configurations that you use to connect Amazon Web
-#' Services resources to external code repositories. Each connection is a
-#' resource that can be given to services such as CodePipeline to connect
-#' to a third-party repository such as Bitbucket. For example, you can add
-#' the connection in CodePipeline so that it triggers your pipeline when a
-#' code change is made to your third-party code repository. Each connection
-#' is named and associated with a unique ARN that is used to reference the
-#' connection.
+#' *Connections* are configurations that you use to connect Amazon Web Services resources to external code repositories. Each connection is a resource that can be given to services such as CodePipeline to connect to a third-party repository such as Bitbucket. For example, you can add the connection in CodePipeline so that it triggers your pipeline when a code change is made to your third-party code repository. Each connection is named and associated with a unique ARN that is used to reference the connection.
 #' 
-#' When you create a connection, the console initiates a third-party
-#' connection handshake. *Installations* are the apps that are used to
-#' conduct this handshake. For example, the installation for the Bitbucket
-#' provider type is the Bitbucket app. When you create a connection, you
-#' can choose an existing installation or create one.
+#' When you create a connection, the console initiates a third-party connection handshake. *Installations* are the apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the Bitbucket app. When you create a connection, you can choose an existing installation or create one.
 #' 
-#' When you want to create a connection to an installed provider type such
-#' as GitHub Enterprise Server, you create a *host* for your connections.
+#' When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a *host* for your connections.
 #' 
 #' You can work with connections by calling:
 #' 
-#' -   `create_connection`, which
-#'     creates a uniquely named connection that can be referenced by
-#'     services such as CodePipeline.
+#' -   `create_connection`, which creates a uniquely named connection that can be referenced by services such as CodePipeline.
 #' 
-#' -   `delete_connection`, which
-#'     deletes the specified connection.
+#' -   `delete_connection`, which deletes the specified connection.
 #' 
-#' -   `get_connection`, which
-#'     returns information about the connection, including the connection
-#'     status.
+#' -   `get_connection`, which returns information about the connection, including the connection status.
 #' 
-#' -   `list_connections`, which
-#'     lists the connections associated with your account.
+#' -   `list_connections`, which lists the connections associated with your account.
 #' 
 #' You can work with hosts by calling:
 #' 
-#' -   `create_host`, which creates a
-#'     host that represents the infrastructure where your provider is
-#'     installed.
+#' -   `create_host`, which creates a host that represents the infrastructure where your provider is installed.
 #' 
-#' -   `delete_host`, which deletes the
-#'     specified host.
+#' -   `delete_host`, which deletes the specified host.
 #' 
-#' -   `get_host`, which returns
-#'     information about the host, including the setup status.
+#' -   `get_host`, which returns information about the host, including the setup status.
 #' 
-#' -   `list_hosts`, which lists the
-#'     hosts associated with your account.
+#' -   `list_hosts`, which lists the hosts associated with your account.
 #' 
-#' You can work with tags in Amazon Web Services CodeStar Connections by
-#' calling the following:
+#' You can work with tags in Amazon Web Services CodeStar Connections by calling the following:
 #' 
-#' -   `list_tags_for_resource`,
-#'     which gets information about Amazon Web Services tags for a
-#'     specified Amazon Resource Name (ARN) in Amazon Web Services CodeStar
-#'     Connections.
+#' -   `list_tags_for_resource`, which gets information about Amazon Web Services tags for a specified Amazon Resource Name (ARN) in Amazon Web Services CodeStar Connections.
 #' 
-#' -   `tag_resource`, which adds or
-#'     updates tags for a resource in Amazon Web Services CodeStar
-#'     Connections.
+#' -   `tag_resource`, which adds or updates tags for a resource in Amazon Web Services CodeStar Connections.
 #' 
-#' -   `untag_resource`, which
-#'     removes tags for a resource in Amazon Web Services CodeStar
-#'     Connections.
+#' -   `untag_resource`, which removes tags for a resource in Amazon Web Services CodeStar Connections.
 #' 
-#' For information about how to use Amazon Web Services CodeStar
-#' Connections, see the [Developer Tools User
-#' Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html).
+#' For information about how to use Amazon Web Services CodeStar Connections, see the [Developer Tools User Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html).
 #'
 #' @param
 #' config
@@ -17306,64 +15875,43 @@ codestarconnections <- function(config = list(), credentials = list(), endpoint 
 #' AWS CodeStar Notifications
 #'
 #' @description
-#' This CodeStar Notifications API Reference provides descriptions and
-#' usage examples of the operations and data types for the CodeStar
-#' Notifications API. You can use the CodeStar Notifications API to work
-#' with the following objects:
+#' This CodeStar Notifications API Reference provides descriptions and usage examples of the operations and data types for the CodeStar Notifications API. You can use the CodeStar Notifications API to work with the following objects:
 #' 
 #' Notification rules, by calling the following:
 #' 
-#' -   `create_notification_rule`,
-#'     which creates a notification rule for a resource in your account.
+#' -   `create_notification_rule`, which creates a notification rule for a resource in your account.
 #' 
-#' -   `delete_notification_rule`,
-#'     which deletes a notification rule.
+#' -   `delete_notification_rule`, which deletes a notification rule.
 #' 
-#' -   `describe_notification_rule`,
-#'     which provides information about a notification rule.
+#' -   `describe_notification_rule`, which provides information about a notification rule.
 #' 
-#' -   `list_notification_rules`,
-#'     which lists the notification rules associated with your account.
+#' -   `list_notification_rules`, which lists the notification rules associated with your account.
 #' 
-#' -   `update_notification_rule`,
-#'     which changes the name, events, or targets associated with a
-#'     notification rule.
+#' -   `update_notification_rule`, which changes the name, events, or targets associated with a notification rule.
 #' 
-#' -   `subscribe`, which subscribes a
-#'     target to a notification rule.
+#' -   `subscribe`, which subscribes a target to a notification rule.
 #' 
-#' -   `unsubscribe`, which removes a
-#'     target from a notification rule.
+#' -   `unsubscribe`, which removes a target from a notification rule.
 #' 
 #' Targets, by calling the following:
 #' 
-#' -   `delete_target`, which
-#'     removes a notification rule target from a notification rule.
+#' -   `delete_target`, which removes a notification rule target from a notification rule.
 #' 
-#' -   `list_targets`, which lists
-#'     the targets associated with a notification rule.
+#' -   `list_targets`, which lists the targets associated with a notification rule.
 #' 
 #' Events, by calling the following:
 #' 
-#' -   `list_event_types`, which
-#'     lists the event types you can include in a notification rule.
+#' -   `list_event_types`, which lists the event types you can include in a notification rule.
 #' 
 #' Tags, by calling the following:
 #' 
-#' -   `list_tags_for_resource`,
-#'     which lists the tags already associated with a notification rule in
-#'     your account.
+#' -   `list_tags_for_resource`, which lists the tags already associated with a notification rule in your account.
 #' 
-#' -   `tag_resource`, which
-#'     associates a tag you provide with a notification rule in your
-#'     account.
+#' -   `tag_resource`, which associates a tag you provide with a notification rule in your account.
 #' 
-#' -   `untag_resource`, which
-#'     removes a tag from a notification rule in your account.
+#' -   `untag_resource`, which removes a tag from a notification rule in your account.
 #' 
-#' For information about how to use CodeStar Notifications, see the [Amazon
-#' Web Services Developer Tools Console User
-#' Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html).
+#' For information about how to use CodeStar Notifications, see the [Amazon Web Services Developer Tools Console User Guide](https://docs.aws.amazon.com/dtconsole/latest/userguide/what-is-dtconsole.html).
 #'
 #' @param
 #' config
@@ -17640,27 +16188,11 @@ drs <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon DevOps Guru
 #'
 #' @description
-#' Amazon DevOps Guru is a fully managed service that helps you identify
-#' anomalous behavior in business critical operational applications. You
-#' specify the Amazon Web Services resources that you want DevOps Guru to
-#' cover, then the Amazon CloudWatch metrics and Amazon Web Services
-#' CloudTrail events related to those resources are analyzed. When
-#' anomalous behavior is detected, DevOps Guru creates an *insight* that
-#' includes recommendations, related events, and related metrics that can
-#' help you improve your operational applications. For more information,
-#' see [What is Amazon DevOps
-#' Guru](https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html).
+#' Amazon DevOps Guru is a fully managed service that helps you identify anomalous behavior in business critical operational applications. You specify the Amazon Web Services resources that you want DevOps Guru to cover, then the Amazon CloudWatch metrics and Amazon Web Services CloudTrail events related to those resources are analyzed. When anomalous behavior is detected, DevOps Guru creates an *insight* that includes recommendations, related events, and related metrics that can help you improve your operational applications. For more information, see [What is Amazon DevOps Guru](https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html).
 #' 
-#' You can specify 1 or 2 Amazon Simple Notification Service topics so you
-#' are notified every time a new insight is created. You can also enable
-#' DevOps Guru to generate an OpsItem in Amazon Web Services Systems
-#' Manager for each insight to help you manage and track your work
-#' addressing insights.
+#' You can specify 1 or 2 Amazon Simple Notification Service topics so you are notified every time a new insight is created. You can also enable DevOps Guru to generate an OpsItem in Amazon Web Services Systems Manager for each insight to help you manage and track your work addressing insights.
 #' 
-#' To learn about the DevOps Guru workflow, see [How DevOps Guru
-#' works](https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html#how-it-works).
-#' To learn about DevOps Guru concepts, see [Concepts in DevOps
-#' Guru](https://docs.aws.amazon.com/devops-guru/latest/userguide/concepts.html).
+#' To learn about the DevOps Guru workflow, see [How DevOps Guru works](https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html#how-it-works). To learn about DevOps Guru concepts, see [Concepts in DevOps Guru](https://docs.aws.amazon.com/devops-guru/latest/userguide/concepts.html).
 #'
 #' @param
 #' config
@@ -17798,10 +16330,7 @@ devopsguru <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' AWS Fault Injection Simulator
 #'
 #' @description
-#' Amazon Web Services Fault Injection Service is a managed service that
-#' enables you to perform fault injection experiments on your Amazon Web
-#' Services workloads. For more information, see the [Fault Injection
-#' Service User Guide](https://docs.aws.amazon.com/fis/latest/userguide/).
+#' Amazon Web Services Fault Injection Service is a managed service that enables you to perform fault injection experiments on your Amazon Web Services workloads. For more information, see the [Fault Injection Service User Guide](https://docs.aws.amazon.com/fis/latest/userguide/).
 #'
 #' @param
 #' config
@@ -17936,12 +16465,7 @@ fis <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' @description
 #' Well-Architected Tool
 #' 
-#' This is the *Well-Architected Tool API Reference*. The WA Tool API
-#' provides programmatic access to the [Well-Architected
-#' Tool](https://aws.amazon.com/well-architected-tool/) in the Amazon Web
-#' Services Management Console. For information about the Well-Architected
-#' Tool, see the [Well-Architected Tool User
-#' Guide](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
+#' This is the *Well-Architected Tool API Reference*. The WA Tool API provides programmatic access to the [Well-Architected Tool](https://aws.amazon.com/well-architected-tool/) in the Amazon Web Services Management Console. For information about the Well-Architected Tool, see the [Well-Architected Tool User Guide](https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html).
 #'
 #' @param
 #' config
@@ -18120,9 +16644,7 @@ wellarchitected <- function(config = list(), credentials = list(), endpoint = NU
 #' AWS X-Ray
 #'
 #' @description
-#' Amazon Web Services X-Ray provides APIs for managing debug traces and
-#' retrieving service maps and other data created by processing those
-#' traces.
+#' Amazon Web Services X-Ray provides APIs for managing debug traces and retrieving service maps and other data created by processing those traces.
 #'
 #' @param
 #' config
@@ -18267,29 +16789,15 @@ xray <- function(config = list(), credentials = list(), endpoint = NULL, region 
 #' Amazon Prometheus Service
 #'
 #' @description
-#' Amazon Managed Service for Prometheus is a serverless,
-#' Prometheus-compatible monitoring service for container metrics that
-#' makes it easier to securely monitor container environments at scale.
-#' With Amazon Managed Service for Prometheus, you can use the same
-#' open-source Prometheus data model and query language that you use today
-#' to monitor the performance of your containerized workloads, and also
-#' enjoy improved scalability, availability, and security without having to
-#' manage the underlying infrastructure.
+#' Amazon Managed Service for Prometheus is a serverless, Prometheus-compatible monitoring service for container metrics that makes it easier to securely monitor container environments at scale. With Amazon Managed Service for Prometheus, you can use the same open-source Prometheus data model and query language that you use today to monitor the performance of your containerized workloads, and also enjoy improved scalability, availability, and security without having to manage the underlying infrastructure.
 #' 
-#' For more information about Amazon Managed Service for Prometheus, see
-#' the [Amazon Managed Service for
-#' Prometheus](https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html)
-#' User Guide.
+#' For more information about Amazon Managed Service for Prometheus, see the [Amazon Managed Service for Prometheus](https://docs.aws.amazon.com/prometheus/latest/userguide/what-is-Amazon-Managed-Service-Prometheus.html) User Guide.
 #' 
 #' Amazon Managed Service for Prometheus includes two APIs.
 #' 
-#' -   Use the Amazon Web Services API described in this guide to manage
-#'     Amazon Managed Service for Prometheus resources, such as workspaces,
-#'     rule groups, and alert managers.
+#' -   Use the Amazon Web Services API described in this guide to manage Amazon Managed Service for Prometheus resources, such as workspaces, rule groups, and alert managers.
 #' 
-#' -   Use the [Prometheus-compatible
-#'     API](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-Prometheus-Compatible-Apis)
-#'     to work within your Prometheus workspace.
+#' -   Use the [Prometheus-compatible API](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-APIReference.html#AMP-APIReference-Prometheus-Compatible-Apis) to work within your Prometheus workspace.
 #'
 #' @param
 #' config
@@ -18440,23 +16948,19 @@ prometheusservice <- function(config = list(), credentials = list(), endpoint = 
 #' Application Auto Scaling
 #'
 #' @description
-#' With Application Auto Scaling, you can configure automatic scaling for
-#' the following resources:
+#' With Application Auto Scaling, you can configure automatic scaling for the following resources:
 #' 
 #' -   Amazon AppStream 2.0 fleets
 #' 
 #' -   Amazon Aurora Replicas
 #' 
-#' -   Amazon Comprehend document classification and entity recognizer
-#'     endpoints
+#' -   Amazon Comprehend document classification and entity recognizer endpoints
 #' 
-#' -   Amazon DynamoDB tables and global secondary indexes throughput
-#'     capacity
+#' -   Amazon DynamoDB tables and global secondary indexes throughput capacity
 #' 
 #' -   Amazon ECS services
 #' 
-#' -   Amazon ElastiCache replication groups (Redis OSS and Valkey) and
-#'     Memcached clusters
+#' -   Amazon ElastiCache replication groups (Redis OSS and Valkey) and Memcached clusters
 #' 
 #' -   Amazon EMR clusters
 #' 
@@ -18480,33 +16984,17 @@ prometheusservice <- function(config = list(), credentials = list(), endpoint = 
 #' 
 #' -   Custom resources provided by your own applications or services
 #' 
-#' To learn more about Application Auto Scaling, see the [Application Auto
-#' Scaling User
-#' Guide](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html).
+#' To learn more about Application Auto Scaling, see the [Application Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html).
 #' 
 #' **API Summary**
 #' 
-#' The Application Auto Scaling service API includes three key sets of
-#' actions:
+#' The Application Auto Scaling service API includes three key sets of actions:
 #' 
-#' -   Register and manage scalable targets - Register Amazon Web Services
-#'     or custom resources as scalable targets (a resource that Application
-#'     Auto Scaling can scale), set minimum and maximum capacity limits,
-#'     and retrieve information on existing scalable targets.
+#' -   Register and manage scalable targets - Register Amazon Web Services or custom resources as scalable targets (a resource that Application Auto Scaling can scale), set minimum and maximum capacity limits, and retrieve information on existing scalable targets.
 #' 
-#' -   Configure and manage automatic scaling - Define scaling policies to
-#'     dynamically scale your resources in response to CloudWatch alarms,
-#'     schedule one-time or recurring scaling actions, and retrieve your
-#'     recent scaling activity history.
+#' -   Configure and manage automatic scaling - Define scaling policies to dynamically scale your resources in response to CloudWatch alarms, schedule one-time or recurring scaling actions, and retrieve your recent scaling activity history.
 #' 
-#' -   Suspend and resume scaling - Temporarily suspend and later resume
-#'     automatic scaling by calling the
-#'     `register_scalable_target`
-#'     API action for any Application Auto Scaling scalable target. You can
-#'     suspend and resume (individually or in combination) scale-out
-#'     activities that are triggered by a scaling policy, scale-in
-#'     activities that are triggered by a scaling policy, and scheduled
-#'     scaling.
+#' -   Suspend and resume scaling - Temporarily suspend and later resume automatic scaling by calling the `register_scalable_target` API action for any Application Auto Scaling scalable target. You can suspend and resume (individually or in combination) scale-out activities that are triggered by a scaling policy, scale-in activities that are triggered by a scaling policy, and scheduled scaling.
 #'
 #' @param
 #' config
@@ -18632,20 +17120,9 @@ applicationautoscaling <- function(config = list(), credentials = list(), endpoi
 #' Amazon CloudWatch Application Insights
 #'
 #' @description
-#' Amazon CloudWatch Application Insights is a service that helps you
-#' detect common problems with your applications. It enables you to
-#' pinpoint the source of issues in your applications (built with
-#' technologies such as Microsoft IIS, .NET, and Microsoft SQL Server), by
-#' providing key insights into detected problems.
+#' Amazon CloudWatch Application Insights is a service that helps you detect common problems with your applications. It enables you to pinpoint the source of issues in your applications (built with technologies such as Microsoft IIS, .NET, and Microsoft SQL Server), by providing key insights into detected problems.
 #' 
-#' After you onboard your application, CloudWatch Application Insights
-#' identifies, recommends, and sets up metrics and logs. It continuously
-#' analyzes and correlates your metrics and logs for unusual behavior to
-#' surface actionable problems with your application. For example, if your
-#' application is slow and unresponsive and leading to HTTP 500 errors in
-#' your Application Load Balancer (ALB), Application Insights informs you
-#' that a memory pressure problem with your SQL Server database is
-#' occurring. It bases this analysis on impactful metrics and log errors.
+#' After you onboard your application, CloudWatch Application Insights identifies, recommends, and sets up metrics and logs. It continuously analyzes and correlates your metrics and logs for unusual behavior to surface actionable problems with your application. For example, if your application is slow and unresponsive and leading to HTTP 500 errors in your Application Load Balancer (ALB), Application Insights informs you that a memory pressure problem with your SQL Server database is occurring. It bases this analysis on impactful metrics and log errors.
 #'
 #' @param
 #' config
@@ -18785,30 +17262,17 @@ applicationinsights <- function(config = list(), credentials = list(), endpoint 
 #' Amazon CloudWatch Application Signals
 #'
 #' @description
-#' Use CloudWatch Application Signals for comprehensive observability of
-#' your cloud-based applications. It enables real-time service health
-#' dashboards and helps you track long-term performance trends against your
-#' business goals. The application-centric view provides you with unified
-#' visibility across your applications, services, and dependencies, so you
-#' can proactively monitor and efficiently triage any issues that may
-#' arise, ensuring optimal customer experience.
+#' Use CloudWatch Application Signals for comprehensive observability of your cloud-based applications. It enables real-time service health dashboards and helps you track long-term performance trends against your business goals. The application-centric view provides you with unified visibility across your applications, services, and dependencies, so you can proactively monitor and efficiently triage any issues that may arise, ensuring optimal customer experience.
 #' 
 #' Application Signals provides the following benefits:
 #' 
-#' -   Automatically collect metrics and traces from your applications, and
-#'     display key metrics such as call volume, availability, latency,
-#'     faults, and errors.
+#' -   Automatically collect metrics and traces from your applications, and display key metrics such as call volume, availability, latency, faults, and errors.
 #' 
 #' -   Create and monitor service level objectives (SLOs).
 #' 
-#' -   See a map of your application topology that Application Signals
-#'     automatically discovers, that gives you a visual representation of
-#'     your applications, dependencies, and their connectivity.
+#' -   See a map of your application topology that Application Signals automatically discovers, that gives you a visual representation of your applications, dependencies, and their connectivity.
 #' 
-#' Application Signals works with CloudWatch RUM, CloudWatch Synthetics
-#' canaries, and Amazon Web Services Service Catalog AppRegistry, to
-#' display your client pages, Synthetics canaries, and application names
-#' within dashboards and maps.
+#' Application Signals works with CloudWatch RUM, CloudWatch Synthetics canaries, and Amazon Web Services Service Catalog AppRegistry, to display your client pages, Synthetics canaries, and application names within dashboards and maps.
 #'
 #' @param
 #' config
@@ -18938,16 +17402,11 @@ cloudwatchapplicationsignals <- function(config = list(), credentials = list(), 
 #' AWS Application Cost Profiler
 #'
 #' @description
-#' This reference provides descriptions of the AWS Application Cost
-#' Profiler API.
+#' This reference provides descriptions of the AWS Application Cost Profiler API.
 #' 
-#' The AWS Application Cost Profiler API provides programmatic access to
-#' view, create, update, and delete application cost report definitions, as
-#' well as to import your usage data into the Application Cost Profiler
-#' service.
+#' The AWS Application Cost Profiler API provides programmatic access to view, create, update, and delete application cost report definitions, as well as to import your usage data into the Application Cost Profiler service.
 #' 
-#' For more information about using this service, see the AWS Application
-#' Cost Profiler User Guide.
+#' For more information about using this service, see the AWS Application Cost Profiler User Guide.
 #'
 #' @param
 #' config
@@ -19060,43 +17519,23 @@ applicationcostprofiler <- function(config = list(), credentials = list(), endpo
 #' AWS Audit Manager
 #'
 #' @description
-#' Welcome to the Audit Manager API reference. This guide is for developers
-#' who need detailed information about the Audit Manager API operations,
-#' data types, and errors.
+#' Welcome to the Audit Manager API reference. This guide is for developers who need detailed information about the Audit Manager API operations, data types, and errors.
 #' 
-#' Audit Manager is a service that provides automated evidence collection
-#' so that you can continually audit your Amazon Web Services usage. You
-#' can use it to assess the effectiveness of your controls, manage risk,
-#' and simplify compliance.
+#' Audit Manager is a service that provides automated evidence collection so that you can continually audit your Amazon Web Services usage. You can use it to assess the effectiveness of your controls, manage risk, and simplify compliance.
 #' 
-#' Audit Manager provides prebuilt frameworks that structure and automate
-#' assessments for a given compliance standard. Frameworks include a
-#' prebuilt collection of controls with descriptions and testing
-#' procedures. These controls are grouped according to the requirements of
-#' the specified compliance standard or regulation. You can also customize
-#' frameworks and controls to support internal audits with specific
-#' requirements.
+#' Audit Manager provides prebuilt frameworks that structure and automate assessments for a given compliance standard. Frameworks include a prebuilt collection of controls with descriptions and testing procedures. These controls are grouped according to the requirements of the specified compliance standard or regulation. You can also customize frameworks and controls to support internal audits with specific requirements.
 #' 
 #' Use the following links to get started with the Audit Manager API:
 #' 
-#' -   [Actions](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Operations.html):
-#'     An alphabetical list of all Audit Manager API operations.
+#' -   [Actions](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Operations.html): An alphabetical list of all Audit Manager API operations.
 #' 
-#' -   [Data
-#'     types](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Types.html):
-#'     An alphabetical list of all Audit Manager data types.
+#' -   [Data types](https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Types.html): An alphabetical list of all Audit Manager data types.
 #' 
-#' -   [Common
-#'     parameters](https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonParameters.html):
-#'     Parameters that all operations can use.
+#' -   [Common parameters](https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonParameters.html): Parameters that all operations can use.
 #' 
-#' -   [Common
-#'     errors](https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonErrors.html):
-#'     Client and server errors that all operations can return.
+#' -   [Common errors](https://docs.aws.amazon.com/audit-manager/latest/APIReference/CommonErrors.html): Client and server errors that all operations can return.
 #' 
-#' If you're new to Audit Manager, we recommend that you review the [Audit
-#' Manager User
-#' Guide](https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html).
+#' If you're new to Audit Manager, we recommend that you review the [Audit Manager User Guide](https://docs.aws.amazon.com/audit-manager/latest/userguide/what-is.html).
 #'
 #' @param
 #' config
@@ -19267,22 +17706,11 @@ auditmanager <- function(config = list(), credentials = list(), endpoint = NULL,
 #' @description
 #' Amazon EC2 Auto Scaling
 #' 
-#' The
-#' `describe_auto_scaling_groups`
-#' API operation might be throttled when retrieving details for an Auto
-#' Scaling group that contains many instances. By default, this operation
-#' returns details for all instances in the group. To help prevent
-#' throttling, you can set the `IncludeInstances` parameter to `false` to
-#' exclude instance details from the response.
+#' The `describe_auto_scaling_groups` API operation might be throttled when retrieving details for an Auto Scaling group that contains many instances. By default, this operation returns details for all instances in the group. To help prevent throttling, you can set the `IncludeInstances` parameter to `false` to exclude instance details from the response.
 #' 
-#' Amazon EC2 Auto Scaling is designed to automatically launch and
-#' terminate EC2 instances based on user-defined scaling policies,
-#' scheduled actions, and health checks.
+#' Amazon EC2 Auto Scaling is designed to automatically launch and terminate EC2 instances based on user-defined scaling policies, scheduled actions, and health checks.
 #' 
-#' For more information, see the [Amazon EC2 Auto Scaling User
-#' Guide](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)
-#' and the [Amazon EC2 Auto Scaling API
-#' Reference](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html).
+#' For more information, see the [Amazon EC2 Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html) and the [Amazon EC2 Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html).
 #'
 #' @param
 #' config
@@ -19462,33 +17890,25 @@ autoscaling <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' @description
 #' AWS Auto Scaling
 #' 
-#' Use AWS Auto Scaling to create scaling plans for your applications to
-#' automatically scale your scalable AWS resources.
+#' Use AWS Auto Scaling to create scaling plans for your applications to automatically scale your scalable AWS resources.
 #' 
 #' **API Summary**
 #' 
-#' You can use the AWS Auto Scaling service API to accomplish the following
-#' tasks:
+#' You can use the AWS Auto Scaling service API to accomplish the following tasks:
 #' 
 #' -   Create and manage scaling plans
 #' 
-#' -   Define target tracking scaling policies to dynamically scale your
-#'     resources based on utilization
+#' -   Define target tracking scaling policies to dynamically scale your resources based on utilization
 #' 
-#' -   Scale Amazon EC2 Auto Scaling groups using predictive scaling and
-#'     dynamic scaling to scale your Amazon EC2 capacity faster
+#' -   Scale Amazon EC2 Auto Scaling groups using predictive scaling and dynamic scaling to scale your Amazon EC2 capacity faster
 #' 
 #' -   Set minimum and maximum capacity limits
 #' 
 #' -   Retrieve information on existing scaling plans
 #' 
-#' -   Access current forecast data and historical forecast data for up to
-#'     56 days previous
+#' -   Access current forecast data and historical forecast data for up to 56 days previous
 #' 
-#' To learn more about AWS Auto Scaling, including information about
-#' granting IAM users required permissions for AWS Auto Scaling actions,
-#' see the [AWS Auto Scaling User
-#' Guide](https://docs.aws.amazon.com/autoscaling/plans/userguide/migrate-scaling-plan.html).
+#' To learn more about AWS Auto Scaling, including information about granting IAM users required permissions for AWS Auto Scaling actions, see the [AWS Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/plans/userguide/migrate-scaling-plan.html).
 #'
 #' @param
 #' config
@@ -19603,27 +18023,13 @@ autoscalingplans <- function(config = list(), credentials = list(), endpoint = N
 #' @description
 #' CloudFormation
 #' 
-#' CloudFormation allows you to create and manage Amazon Web Services
-#' infrastructure deployments predictably and repeatedly. You can use
-#' CloudFormation to leverage Amazon Web Services products, such as Amazon
-#' Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple
-#' Notification Service, ELB, and Amazon EC2 Auto Scaling to build highly
-#' reliable, highly scalable, cost-effective applications without creating
-#' or configuring the underlying Amazon Web Services infrastructure.
+#' CloudFormation allows you to create and manage Amazon Web Services infrastructure deployments predictably and repeatedly. You can use CloudFormation to leverage Amazon Web Services products, such as Amazon Elastic Compute Cloud, Amazon Elastic Block Store, Amazon Simple Notification Service, ELB, and Amazon EC2 Auto Scaling to build highly reliable, highly scalable, cost-effective applications without creating or configuring the underlying Amazon Web Services infrastructure.
 #' 
-#' With CloudFormation, you declare all your resources and dependencies in
-#' a template file. The template defines a collection of resources as a
-#' single unit called a stack. CloudFormation creates and deletes all
-#' member resources of the stack together and manages all dependencies
-#' between the resources for you.
+#' With CloudFormation, you declare all your resources and dependencies in a template file. The template defines a collection of resources as a single unit called a stack. CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the resources for you.
 #' 
-#' For more information about CloudFormation, see the [CloudFormation
-#' product page](https://aws.amazon.com/cloudformation/).
+#' For more information about CloudFormation, see the [CloudFormation product page](https://aws.amazon.com/cloudformation/).
 #' 
-#' CloudFormation makes use of other Amazon Web Services products. If you
-#' need additional technical information about a specific Amazon Web
-#' Services product, you can find the product's technical documentation at
-#' [docs.aws.amazon.com](https://docs.aws.amazon.com/).
+#' CloudFormation makes use of other Amazon Web Services products. If you need additional technical information about a specific Amazon Web Services product, you can find the product's technical documentation at [docs.aws.amazon.com](https://docs.aws.amazon.com/).
 #'
 #' @param
 #' config
@@ -19822,30 +18228,13 @@ cloudformation <- function(config = list(), credentials = list(), endpoint = NUL
 #' @description
 #' CloudTrail
 #' 
-#' This is the CloudTrail API Reference. It provides descriptions of
-#' actions, data types, common parameters, and common errors for
-#' CloudTrail.
+#' This is the CloudTrail API Reference. It provides descriptions of actions, data types, common parameters, and common errors for CloudTrail.
 #' 
-#' CloudTrail is a web service that records Amazon Web Services API calls
-#' for your Amazon Web Services account and delivers log files to an Amazon
-#' S3 bucket. The recorded information includes the identity of the user,
-#' the start time of the Amazon Web Services API call, the source IP
-#' address, the request parameters, and the response elements returned by
-#' the service.
+#' CloudTrail is a web service that records Amazon Web Services API calls for your Amazon Web Services account and delivers log files to an Amazon S3 bucket. The recorded information includes the identity of the user, the start time of the Amazon Web Services API call, the source IP address, the request parameters, and the response elements returned by the service.
 #' 
-#' As an alternative to the API, you can use one of the Amazon Web Services
-#' SDKs, which consist of libraries and sample code for various programming
-#' languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs
-#' provide programmatic access to CloudTrail. For example, the SDKs handle
-#' cryptographically signing requests, managing errors, and retrying
-#' requests automatically. For more information about the Amazon Web
-#' Services SDKs, including how to download and install them, see [Tools to
-#' Build on Amazon Web Services](https://builder.aws.com/build/tools).
+#' As an alternative to the API, you can use one of the Amazon Web Services SDKs, which consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .NET, iOS, Android, etc.). The SDKs provide programmatic access to CloudTrail. For example, the SDKs handle cryptographically signing requests, managing errors, and retrying requests automatically. For more information about the Amazon Web Services SDKs, including how to download and install them, see [Tools to Build on Amazon Web Services](https://builder.aws.com/build/tools).
 #' 
-#' See the [CloudTrail User
-#' Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html)
-#' for information about the data that is included with each Amazon Web
-#' Services API call listed in the log files.
+#' See the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html) for information about the data that is included with each Amazon Web Services API call listed in the log files.
 #'
 #' @param
 #' config
@@ -20012,16 +18401,7 @@ cloudtrail <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' AWS CloudTrail Data Service
 #'
 #' @description
-#' The CloudTrail Data Service lets you ingest events into CloudTrail from
-#' any source in your hybrid environments, such as in-house or SaaS
-#' applications hosted on-premises or in the cloud, virtual machines, or
-#' containers. You can store, access, analyze, troubleshoot and take action
-#' on this data without maintaining multiple log aggregators and reporting
-#' tools. After you run
-#' `put_audit_events` to ingest
-#' your application activity into CloudTrail, you can use CloudTrail Lake
-#' to search, query, and analyze the data that is logged from your
-#' applications.
+#' The CloudTrail Data Service lets you ingest events into CloudTrail from any source in your hybrid environments, such as in-house or SaaS applications hosted on-premises or in the cloud, virtual machines, or containers. You can store, access, analyze, troubleshoot and take action on this data without maintaining multiple log aggregators and reporting tools. After you run `put_audit_events` to ingest your application activity into CloudTrail, you can use CloudTrail Lake to search, query, and analyze the data that is logged from your applications.
 #'
 #' @param
 #' config
@@ -20131,31 +18511,9 @@ cloudtraildataservice <- function(config = list(), credentials = list(), endpoin
 #' @description
 #' Config
 #' 
-#' Config provides a way to keep track of the configurations of all the
-#' Amazon Web Services resources associated with your Amazon Web Services
-#' account. You can use Config to get the current and historical
-#' configurations of each Amazon Web Services resource and also to get
-#' information about the relationship between the resources. An Amazon Web
-#' Services resource can be an Amazon Compute Cloud (Amazon EC2) instance,
-#' an Elastic Block Store (EBS) volume, an elastic network Interface (ENI),
-#' or a security group. For a complete list of resources currently
-#' supported by Config, see [Supported Amazon Web Services
-#' resources](https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources).
+#' Config provides a way to keep track of the configurations of all the Amazon Web Services resources associated with your Amazon Web Services account. You can use Config to get the current and historical configurations of each Amazon Web Services resource and also to get information about the relationship between the resources. An Amazon Web Services resource can be an Amazon Compute Cloud (Amazon EC2) instance, an Elastic Block Store (EBS) volume, an elastic network Interface (ENI), or a security group. For a complete list of resources currently supported by Config, see [Supported Amazon Web Services resources](https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources).
 #' 
-#' You can access and manage Config through the Amazon Web Services
-#' Management Console, the Amazon Web Services Command Line Interface
-#' (Amazon Web Services CLI), the Config API, or the Amazon Web Services
-#' SDKs for Config. This reference guide contains documentation for the
-#' Config API and the Amazon Web Services CLI commands that you can use to
-#' manage Config. The Config API uses the Signature Version 4 protocol for
-#' signing requests. For more information about how to sign a request with
-#' this protocol, see [Signature Version 4 Signing
-#' Process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
-#' For detailed information about Config features and their associated
-#' actions or commands, as well as how to work with Amazon Web Services
-#' Management Console, see [What Is
-#' Config](https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html)
-#' in the *Config Developer Guide*.
+#' You can access and manage Config through the Amazon Web Services Management Console, the Amazon Web Services Command Line Interface (Amazon Web Services CLI), the Config API, or the Amazon Web Services SDKs for Config. This reference guide contains documentation for the Config API and the Amazon Web Services CLI commands that you can use to manage Config. The Config API uses the Signature Version 4 protocol for signing requests. For more information about how to sign a request with this protocol, see [Signature Version 4 Signing Process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html). For detailed information about Config features and their associated actions or commands, as well as how to work with Amazon Web Services Management Console, see [What Is Config](https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html) in the *Config Developer Guide*.
 #'
 #' @param
 #' config
@@ -20359,9 +18717,7 @@ configservice <- function(config = list(), credentials = list(), endpoint = NULL
 #' AWS Control Tower
 #'
 #' @description
-#' Amazon Web Services Control Tower offers application programming
-#' interface (API) operations that support programmatic interaction with
-#' these types of resources:
+#' Amazon Web Services Control Tower offers application programming interface (API) operations that support programmatic interaction with these types of resources:
 #' 
 #' -   [*Controls*](https://docs.aws.amazon.com/controltower/latest/controlreference/controls.html)
 #' 
@@ -20381,8 +18737,7 @@ configservice <- function(config = list(), credentials = list(), endpoint = NULL
 #' 
 #'     -   `update_enabled_control`
 #' 
-#' -   [*Landing
-#'     zones*](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html)
+#' -   [*Landing zones*](https://docs.aws.amazon.com/controltower/latest/userguide/lz-api-launch.html)
 #' 
 #'     -   `create_landing_zone`
 #' 
@@ -20428,84 +18783,49 @@ configservice <- function(config = list(), credentials = list(), endpoint = NULL
 #' 
 #'     -   `untag_resource`
 #' 
-#' For more information about these types of resources, see the [*Amazon
-#' Web Services Control Tower User
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html)
-#' .
+#' For more information about these types of resources, see the [*Amazon Web Services Control Tower User Guide*](https://docs.aws.amazon.com/controltower/latest/userguide/what-is-control-tower.html) .
 #' 
 #' **About control APIs**
 #' 
-#' These interfaces allow you to apply the Amazon Web Services library of
-#' pre-defined *controls* to your organizational units, programmatically.
-#' In Amazon Web Services Control Tower, the terms "control" and
-#' "guardrail" are synonyms.
+#' These interfaces allow you to apply the Amazon Web Services library of pre-defined *controls* to your organizational units, programmatically. In Amazon Web Services Control Tower, the terms "control" and "guardrail" are synonyms.
 #' 
 #' To call these APIs, you'll need to know:
 #' 
-#' -   the `controlIdentifier` for the control--or guardrail--you are
-#'     targeting.
+#' -   the `controlIdentifier` for the control--or guardrail--you are targeting.
 #' 
-#' -   the ARN associated with the target organizational unit (OU), which
-#'     we call the `targetIdentifier`.
+#' -   the ARN associated with the target organizational unit (OU), which we call the `targetIdentifier`.
 #' 
 #' -   the ARN associated with a resource that you wish to tag or untag.
 #' 
-#' **To get the `controlIdentifier` for your Amazon Web Services Control
-#' Tower control:**
+#' **To get the `controlIdentifier` for your Amazon Web Services Control Tower control:**
 #' 
-#' The `controlIdentifier` is an ARN that is specified for each control.
-#' You can view the `controlIdentifier` in the console on the **Control
-#' details** page, as well as in the documentation.
+#' The `controlIdentifier` is an ARN that is specified for each control. You can view the `controlIdentifier` in the console on the **Control details** page, as well as in the documentation.
 #' 
 #' **About identifiers for Amazon Web Services Control Tower**
 #' 
-#' The Amazon Web Services Control Tower `controlIdentifier` is unique in
-#' each Amazon Web Services Region for each control. You can find the
-#' `controlIdentifier` for each Region and control in the [Tables of
-#' control
-#' metadata](https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html)
-#' or the [Control availability by Region
-#' tables](https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html)
-#' in the *Amazon Web Services Control Tower Controls Reference Guide*.
+#' The Amazon Web Services Control Tower `controlIdentifier` is unique in each Amazon Web Services Region for each control. You can find the `controlIdentifier` for each Region and control in the [Tables of control metadata](https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html) or the [Control availability by Region tables](https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html) in the *Amazon Web Services Control Tower Controls Reference Guide*.
 #' 
-#' A quick-reference list of control identifers for the Amazon Web Services
-#' Control Tower legacy *Strongly recommended* and *Elective* controls is
-#' given in [Resource identifiers for APIs and
-#' controls](https://docs.aws.amazon.com/controltower/latest/controlreference/)
-#' in the [*Amazon Web Services Control Tower Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html)
-#' . Remember that *Mandatory* controls cannot be added or removed.
+#' A quick-reference list of control identifers for the Amazon Web Services Control Tower legacy *Strongly recommended* and *Elective* controls is given in [Resource identifiers for APIs and controls](https://docs.aws.amazon.com/controltower/latest/controlreference/) in the [*Amazon Web Services Control Tower Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html) . Remember that *Mandatory* controls cannot be added or removed.
 #' 
 #' **Some controls have two identifiers**
 #' 
-#' -   **ARN format for Amazon Web Services Control Tower:**
-#'     `arn:aws:controltower:{REGION}::control/{CONTROL_TOWER_OPAQUE_ID}`
+#' -   **ARN format for Amazon Web Services Control Tower:** `arn:aws:controltower:{REGION}::control/{CONTROL_TOWER_OPAQUE_ID}`
 #' 
 #'     **Example:**
 #' 
 #'     `arn:aws:controltower:us-west-2::control/AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED`
 #' 
-#' -   **ARN format for Amazon Web Services Control Catalog:**
-#'     `arn:{PARTITION}:controlcatalog:::control/{CONTROL_CATALOG_OPAQUE_ID}`
+#' -   **ARN format for Amazon Web Services Control Catalog:** `arn:{PARTITION}:controlcatalog:::control/{CONTROL_CATALOG_OPAQUE_ID}`
 #' 
-#' You can find the `{CONTROL_CATALOG_OPAQUE_ID}` in the [*Amazon Web
-#' Services Control Tower Controls Reference
-#' Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/all-global-identifiers.html)
-#' , or in the Amazon Web Services Control Tower console, on the **Control
-#' details** page.
+#' You can find the `{CONTROL_CATALOG_OPAQUE_ID}` in the [*Amazon Web Services Control Tower Controls Reference Guide*](https://docs.aws.amazon.com/controltower/latest/controlreference/all-global-identifiers.html) , or in the Amazon Web Services Control Tower console, on the **Control details** page.
 #' 
-#' The Amazon Web Services Control Tower APIs for enabled controls, such as
-#' `get_enabled_control` and
-#' `list_enabled_controls` always
-#' return an ARN of the same type given when the control was enabled.
+#' The Amazon Web Services Control Tower APIs for enabled controls, such as `get_enabled_control` and `list_enabled_controls` always return an ARN of the same type given when the control was enabled.
 #' 
 #' **To get the `targetIdentifier`:**
 #' 
 #' The `targetIdentifier` is the ARN for an OU.
 #' 
-#' In the Amazon Web Services Organizations console, you can find the ARN
-#' for the OU on the **Organizational unit details** page associated with
-#' that OU.
+#' In the Amazon Web Services Organizations console, you can find the ARN for the OU on the **Organizational unit details** page associated with that OU.
 #' 
 #' **OU ARN format:**
 #' 
@@ -20513,110 +18833,53 @@ configservice <- function(config = list(), credentials = list(), endpoint = NULL
 #' 
 #' **About landing zone APIs**
 #' 
-#' You can configure and launch an Amazon Web Services Control Tower
-#' landing zone with APIs. For an introduction and steps, see [Getting
-#' started with Amazon Web Services Control Tower using
-#' APIs](https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-apis.html).
+#' You can configure and launch an Amazon Web Services Control Tower landing zone with APIs. For an introduction and steps, see [Getting started with Amazon Web Services Control Tower using APIs](https://docs.aws.amazon.com/controltower/latest/userguide/getting-started-apis.html).
 #' 
-#' For an overview of landing zone API operations, see [Amazon Web Services
-#' Control Tower supports landing zone
-#' APIs](https://docs.aws.amazon.com/controltower/latest/userguide/2023-all.html#landing-zone-apis).
-#' The individual API operations for landing zones are detailed in this
-#' document, the [API reference
-#' manual](https://docs.aws.amazon.com/controltower/latest/APIReference/API_Operations.html),
-#' in the "Actions" section.
+#' For an overview of landing zone API operations, see [Amazon Web Services Control Tower supports landing zone APIs](https://docs.aws.amazon.com/controltower/latest/userguide/2023-all.html#landing-zone-apis). The individual API operations for landing zones are detailed in this document, the [API reference manual](https://docs.aws.amazon.com/controltower/latest/APIReference/API_Operations.html), in the "Actions" section.
 #' 
 #' **About baseline APIs**
 #' 
-#' You can apply the `AWSControlTowerBaseline` baseline to an
-#' organizational unit (OU) as a way to register the OU with Amazon Web
-#' Services Control Tower, programmatically. For a general overview of this
-#' capability, see [Amazon Web Services Control Tower supports APIs for OU
-#' registration and configuration with
-#' baselines](https://docs.aws.amazon.com/controltower/latest/userguide/2024-all.html#baseline-apis).
+#' You can apply the `AWSControlTowerBaseline` baseline to an organizational unit (OU) as a way to register the OU with Amazon Web Services Control Tower, programmatically. For a general overview of this capability, see [Amazon Web Services Control Tower supports APIs for OU registration and configuration with baselines](https://docs.aws.amazon.com/controltower/latest/userguide/2024-all.html#baseline-apis).
 #' 
-#' You can call the baseline API operations to view the baselines that
-#' Amazon Web Services Control Tower enables for your landing zone, on your
-#' behalf, when setting up the landing zone. These baselines are read-only
-#' baselines.
+#' You can call the baseline API operations to view the baselines that Amazon Web Services Control Tower enables for your landing zone, on your behalf, when setting up the landing zone. These baselines are read-only baselines.
 #' 
-#' The individual API operations for baselines are detailed in this
-#' document, the [API reference
-#' manual](https://docs.aws.amazon.com/controltower/latest/APIReference/API_Operations.html),
-#' in the "Actions" section. For usage examples, see [Baseline API input
-#' and output examples with
-#' CLI](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html).
+#' The individual API operations for baselines are detailed in this document, the [API reference manual](https://docs.aws.amazon.com/controltower/latest/APIReference/API_Operations.html), in the "Actions" section. For usage examples, see [Baseline API input and output examples with CLI](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html).
 #' 
 #' **About Amazon Web Services Control Catalog identifiers**
 #' 
-#' -   The `enable_control` and
-#'     `disable_control` API operations can
-#'     be called by specifying either the Amazon Web Services Control Tower
-#'     identifer or the Amazon Web Services Control Catalog identifier. The
-#'     API response returns the same type of identifier that you specified
-#'     when calling the API.
+#' -   The `enable_control` and `disable_control` API operations can be called by specifying either the Amazon Web Services Control Tower identifer or the Amazon Web Services Control Catalog identifier. The API response returns the same type of identifier that you specified when calling the API.
 #' 
-#' -   If you use an Amazon Web Services Control Tower identifier to call
-#'     the `enable_control` API, and then
-#'     call `enable_control` again with an
-#'     Amazon Web Services Control Catalog identifier, Amazon Web Services
-#'     Control Tower returns an error message stating that the control is
-#'     already enabled. Similar behavior applies to the
-#'     `disable_control` API operation.
+#' -   If you use an Amazon Web Services Control Tower identifier to call the `enable_control` API, and then call `enable_control` again with an Amazon Web Services Control Catalog identifier, Amazon Web Services Control Tower returns an error message stating that the control is already enabled. Similar behavior applies to the `disable_control` API operation.
 #' 
-#' -   Mandatory controls and the landing-zone-level Region deny control
-#'     have Amazon Web Services Control Tower identifiers only.
+#' -   Mandatory controls and the landing-zone-level Region deny control have Amazon Web Services Control Tower identifiers only.
 #' 
 #' **Details and examples**
 #' 
-#' -   [Control API input and output examples with
-#'     CLI](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
+#' -   [Control API input and output examples with CLI](https://docs.aws.amazon.com/controltower/latest/controlreference/control-api-examples-short.html)
 #' 
-#' -   [Baseline API input and output examples with
-#'     CLI](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
+#' -   [Baseline API input and output examples with CLI](https://docs.aws.amazon.com/controltower/latest/userguide/baseline-api-examples.html)
 #' 
-#' -   [Enable controls with
-#'     CloudFormation](https://docs.aws.amazon.com/controltower/latest/controlreference/enable-controls.html)
+#' -   [Enable controls with CloudFormation](https://docs.aws.amazon.com/controltower/latest/controlreference/enable-controls.html)
 #' 
-#' -   [Launch a landing zone with
-#'     CloudFormation](https://docs.aws.amazon.com/controltower/latest/userguide/lz-apis-cfn-setup.html)
+#' -   [Launch a landing zone with CloudFormation](https://docs.aws.amazon.com/controltower/latest/userguide/lz-apis-cfn-setup.html)
 #' 
-#' -   [Control metadata tables (large
-#'     page)](https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html)
+#' -   [Control metadata tables (large page)](https://docs.aws.amazon.com/controltower/latest/controlreference/control-metadata-tables.html)
 #' 
-#' -   [Control availability by Region tables (large
-#'     page)](https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html)
+#' -   [Control availability by Region tables (large page)](https://docs.aws.amazon.com/controltower/latest/controlreference/control-region-tables.html)
 #' 
-#' -   [List of identifiers for legacy
-#'     controls](https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html)
+#' -   [List of identifiers for legacy controls](https://docs.aws.amazon.com/controltower/latest/controlreference/control-identifiers.html)
 #' 
-#' -   [Controls reference
-#'     guide](https://docs.aws.amazon.com/controltower/latest/controlreference/controls.html)
+#' -   [Controls reference guide](https://docs.aws.amazon.com/controltower/latest/controlreference/controls.html)
 #' 
-#' -   [Controls library
-#'     groupings](https://docs.aws.amazon.com/controltower/latest/controlreference/controls-reference.html)
+#' -   [Controls library groupings](https://docs.aws.amazon.com/controltower/latest/controlreference/controls-reference.html)
 #' 
-#' -   [Creating Amazon Web Services Control Tower resources with Amazon
-#'     Web Services
-#'     CloudFormation](https://docs.aws.amazon.com/controltower/latest/userguide/creating-resources-with-cloudformation.html)
+#' -   [Creating Amazon Web Services Control Tower resources with Amazon Web Services CloudFormation](https://docs.aws.amazon.com/controltower/latest/userguide/creating-resources-with-cloudformation.html)
 #' 
-#' To view the open source resource repository on GitHub, see
-#' [aws-cloudformation/aws-cloudformation-resource-providers-controltower](https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-controltower)
+#' To view the open source resource repository on GitHub, see [aws-cloudformation/aws-cloudformation-resource-providers-controltower](https://github.com/aws-cloudformation/aws-cloudformation-resource-providers-controltower)
 #' 
 #' **Recording API Requests**
 #' 
-#' Amazon Web Services Control Tower supports Amazon Web Services
-#' CloudTrail, a service that records Amazon Web Services API calls for
-#' your Amazon Web Services account and delivers log files to an Amazon S3
-#' bucket. By using information collected by CloudTrail, you can determine
-#' which requests the Amazon Web Services Control Tower service received,
-#' who made the request and when, and so on. For more about Amazon Web
-#' Services Control Tower and its support for CloudTrail, see [Logging
-#' Amazon Web Services Control Tower Actions with Amazon Web Services
-#' CloudTrail](https://docs.aws.amazon.com/controltower/latest/userguide/logging-using-cloudtrail.html)
-#' in the Amazon Web Services Control Tower User Guide. To learn more about
-#' CloudTrail, including how to turn it on and find your log files, see the
-#' Amazon Web Services CloudTrail User Guide.
+#' Amazon Web Services Control Tower supports Amazon Web Services CloudTrail, a service that records Amazon Web Services API calls for your Amazon Web Services account and delivers log files to an Amazon S3 bucket. By using information collected by CloudTrail, you can determine which requests the Amazon Web Services Control Tower service received, who made the request and when, and so on. For more about Amazon Web Services Control Tower and its support for CloudTrail, see [Logging Amazon Web Services Control Tower Actions with Amazon Web Services CloudTrail](https://docs.aws.amazon.com/controltower/latest/userguide/logging-using-cloudtrail.html) in the Amazon Web Services Control Tower User Guide. To learn more about CloudTrail, including how to turn it on and find your log files, see the Amazon Web Services CloudTrail User Guide.
 #'
 #' @param
 #' config
@@ -20751,8 +19014,7 @@ controltower <- function(config = list(), credentials = list(), endpoint = NULL,
 #' FinSpace User Environment Management service
 #'
 #' @description
-#' The FinSpace management service provides the APIs for managing FinSpace
-#' environments.
+#' The FinSpace management service provides the APIs for managing FinSpace environments.
 #'
 #' @param
 #' config
@@ -20909,18 +19171,9 @@ finspace <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' Amazon Managed Grafana
 #'
 #' @description
-#' Amazon Managed Grafana is a fully managed and secure data visualization
-#' service that you can use to instantly query, correlate, and visualize
-#' operational metrics, logs, and traces from multiple sources. Amazon
-#' Managed Grafana makes it easy to deploy, operate, and scale Grafana, a
-#' widely deployed data visualization tool that is popular for its
-#' extensible data support.
+#' Amazon Managed Grafana is a fully managed and secure data visualization service that you can use to instantly query, correlate, and visualize operational metrics, logs, and traces from multiple sources. Amazon Managed Grafana makes it easy to deploy, operate, and scale Grafana, a widely deployed data visualization tool that is popular for its extensible data support.
 #' 
-#' With Amazon Managed Grafana, you create logically isolated Grafana
-#' servers called *workspaces*. In a workspace, you can create Grafana
-#' dashboards and visualizations to analyze your metrics, logs, and traces
-#' without having to build, package, or deploy any hardware to run Grafana
-#' servers.
+#' With Amazon Managed Grafana, you create logically isolated Grafana servers called *workspaces*. In a workspace, you can create Grafana dashboards and visualizations to analyze your metrics, logs, and traces without having to build, package, or deploy any hardware to run Grafana servers.
 #'
 #' @param
 #' config
@@ -21054,65 +19307,23 @@ managedgrafana <- function(config = list(), credentials = list(), endpoint = NUL
 #' @description
 #' Health
 #' 
-#' The Health API provides access to the Health information that appears in
-#' the Health Dashboard. You can use the API operations to get information
-#' about events that might affect your Amazon Web Services services and
-#' resources.
+#' The Health API provides access to the Health information that appears in the Health Dashboard. You can use the API operations to get information about events that might affect your Amazon Web Services services and resources.
 #' 
-#' You must have a Business, Enterprise On-Ramp, or Enterprise Support plan
-#' from [Amazon Web Services
-#' Support](https://aws.amazon.com/premiumsupport/) to use the Health API.
-#' If you call the Health API from an Amazon Web Services account that
-#' doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan,
-#' you receive a `SubscriptionRequiredException` error.
+#' You must have a Business, Enterprise On-Ramp, or Enterprise Support plan from [Amazon Web Services Support](https://aws.amazon.com/premiumsupport/) to use the Health API. If you call the Health API from an Amazon Web Services account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, you receive a `SubscriptionRequiredException` error.
 #' 
-#' For API access, you need an access key ID and a secret access key. Use
-#' temporary credentials instead of long-term access keys when possible.
-#' Temporary credentials include an access key ID, a secret access key, and
-#' a security token that indicates when the credentials expire. For more
-#' information, see [Best practices for managing Amazon Web Services access
-#' keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html#securing_access-keys)
-#' in the *Amazon Web Services General Reference*.
+#' For API access, you need an access key ID and a secret access key. Use temporary credentials instead of long-term access keys when possible. Temporary credentials include an access key ID, a secret access key, and a security token that indicates when the credentials expire. For more information, see [Best practices for managing Amazon Web Services access keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in the *Amazon Web Services General Reference*.
 #' 
-#' You can use the Health endpoint health.us-east-1.amazonaws.com (HTTPS)
-#' to call the Health API operations. Health supports a multi-Region
-#' application architecture and has two regional endpoints in an
-#' active-passive configuration. You can use the high availability endpoint
-#' example to determine which Amazon Web Services Region is active, so that
-#' you can get the latest information from the API. For more information,
-#' see [Accessing the Health
-#' API](https://docs.aws.amazon.com/health/latest/ug/health-api.html) in
-#' the *Health User Guide*.
+#' You can use the Health endpoint health.us-east-1.amazonaws.com (HTTPS) to call the Health API operations. Health supports a multi-Region application architecture and has two regional endpoints in an active-passive configuration. You can use the high availability endpoint example to determine which Amazon Web Services Region is active, so that you can get the latest information from the API. For more information, see [Accessing the Health API](https://docs.aws.amazon.com/health/latest/ug/health-api.html) in the *Health User Guide*.
 #' 
-#' For authentication of requests, Health uses the [Signature Version 4
-#' Signing
-#' Process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
+#' For authentication of requests, Health uses the [Signature Version 4 Signing Process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
 #' 
-#' If your Amazon Web Services account is part of Organizations, you can
-#' use the Health organizational view feature. This feature provides a
-#' centralized view of Health events across all accounts in your
-#' organization. You can aggregate Health events in real time to identify
-#' accounts in your organization that are affected by an operational event
-#' or get notified of security vulnerabilities. Use the organizational view
-#' API operations to enable this feature and return event information. For
-#' more information, see [Aggregating Health
-#' events](https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html)
-#' in the *Health User Guide*.
+#' If your Amazon Web Services account is part of Organizations, you can use the Health organizational view feature. This feature provides a centralized view of Health events across all accounts in your organization. You can aggregate Health events in real time to identify accounts in your organization that are affected by an operational event or get notified of security vulnerabilities. Use the organizational view API operations to enable this feature and return event information. For more information, see [Aggregating Health events](https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html) in the *Health User Guide*.
 #' 
-#' When you use the Health API operations to return Health events, see the
-#' following recommendations:
+#' When you use the Health API operations to return Health events, see the following recommendations:
 #' 
-#' -   Use the
-#'     [eventScopeCode](https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode)
-#'     parameter to specify whether to return Health events that are public
-#'     or account-specific.
+#' -   Use the [eventScopeCode](https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html#AWSHealth-Type-Event-eventScopeCode) parameter to specify whether to return Health events that are public or account-specific.
 #' 
-#' -   Use pagination to view all events from the response. For example, if
-#'     you call the
-#'     `describe_events_for_organization`
-#'     operation to get all events in your organization, you might receive
-#'     several page results. Specify the `nextToken` in the next request to
-#'     return more results.
+#' -   Use pagination to view all events from the response. For example, if you call the `describe_events_for_organization` operation to get all events in your organization, you might receive several page results. Specify the `nextToken` in the next request to return more results.
 #'
 #' @param
 #' config
@@ -21233,8 +19444,7 @@ health <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' AWS License Manager
 #'
 #' @description
-#' License Manager makes it easier to manage licenses from software vendors
-#' across multiple Amazon Web Services accounts and on-premises servers.
+#' License Manager makes it easier to manage licenses from software vendors across multiple Amazon Web Services accounts and on-premises servers.
 #'
 #' @param
 #' config
@@ -21403,9 +19613,7 @@ licensemanager <- function(config = list(), credentials = list(), endpoint = NUL
 #' AWS License Manager User Subscriptions
 #'
 #' @description
-#' With License Manager, you can create user-based subscriptions to utilize
-#' licensed software with a per user subscription fee on Amazon EC2
-#' instances.
+#' With License Manager, you can create user-based subscriptions to utilize licensed software with a per user subscription fee on Amazon EC2 instances.
 #'
 #' @param
 #' config
@@ -21529,8 +19737,7 @@ licensemanagerusersubscriptions <- function(config = list(), credentials = list(
 #' AWS License Manager Linux Subscriptions
 #'
 #' @description
-#' With License Manager, you can discover and track your commercial Linux
-#' subscriptions on running Amazon EC2 instances.
+#' With License Manager, you can discover and track your commercial Linux subscriptions on running Amazon EC2 instances.
 #'
 #' @param
 #' config
@@ -21648,41 +19855,15 @@ licensemanagerlinuxsubscriptions <- function(config = list(), credentials = list
 #' Amazon CloudWatch Logs
 #'
 #' @description
-#' You can use Amazon CloudWatch Logs to monitor, store, and access your
-#' log files from EC2 instances, CloudTrail, and other sources. You can
-#' then retrieve the associated log data from CloudWatch Logs using the
-#' CloudWatch console. Alternatively, you can use CloudWatch Logs commands
-#' in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs
-#' SDK.
+#' You can use Amazon CloudWatch Logs to monitor, store, and access your log files from EC2 instances, CloudTrail, and other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console. Alternatively, you can use CloudWatch Logs commands in the Amazon Web Services CLI, CloudWatch Logs API, or CloudWatch Logs SDK.
 #' 
 #' You can use CloudWatch Logs to:
 #' 
-#' -   **Monitor logs from EC2 instances in real time**: You can use
-#'     CloudWatch Logs to monitor applications and systems using log data.
-#'     For example, CloudWatch Logs can track the number of errors that
-#'     occur in your application logs. Then, it can send you a notification
-#'     whenever the rate of errors exceeds a threshold that you specify.
-#'     CloudWatch Logs uses your log data for monitoring so no code changes
-#'     are required. For example, you can monitor application logs for
-#'     specific literal terms (such as "NullReferenceException"). You can
-#'     also count the number of occurrences of a literal term at a
-#'     particular position in log data (such as "404" status codes in an
-#'     Apache access log). When the term you are searching for is found,
-#'     CloudWatch Logs reports the data to a CloudWatch metric that you
-#'     specify.
+#' -   **Monitor logs from EC2 instances in real time**: You can use CloudWatch Logs to monitor applications and systems using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs. Then, it can send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your log data for monitoring so no code changes are required. For example, you can monitor application logs for specific literal terms (such as "NullReferenceException"). You can also count the number of occurrences of a literal term at a particular position in log data (such as "404" status codes in an Apache access log). When the term you are searching for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.
 #' 
-#' -   **Monitor CloudTrail logged events**: You can create alarms in
-#'     CloudWatch and receive notifications of particular API activity as
-#'     captured by CloudTrail. You can use the notification to perform
-#'     troubleshooting.
+#' -   **Monitor CloudTrail logged events**: You can create alarms in CloudWatch and receive notifications of particular API activity as captured by CloudTrail. You can use the notification to perform troubleshooting.
 #' 
-#' -   **Archive log data**: You can use CloudWatch Logs to store your log
-#'     data in highly durable storage. You can change the log retention
-#'     setting so that any log events earlier than this setting are
-#'     automatically deleted. The CloudWatch Logs agent helps to quickly
-#'     send both rotated and non-rotated log data off of a host and into
-#'     the log service. You can then access the raw log data when you need
-#'     it.
+#' -   **Archive log data**: You can use CloudWatch Logs to store your log data in highly durable storage. You can change the log retention setting so that any log events earlier than this setting are automatically deleted. The CloudWatch Logs agent helps to quickly send both rotated and non-rotated log data off of a host and into the log service. You can then access the raw log data when you need it.
 #'
 #' @param
 #' config
@@ -21902,39 +20083,13 @@ cloudwatchlogs <- function(config = list(), credentials = list(), endpoint = NUL
 #' Amazon CloudWatch Internet Monitor
 #'
 #' @description
-#' Amazon CloudWatch Internet Monitor provides visibility into how internet
-#' issues impact the performance and availability between your applications
-#' hosted on Amazon Web Services and your end users. It can reduce the time
-#' it takes for you to diagnose internet issues from days to minutes.
-#' Internet Monitor uses the connectivity data that Amazon Web Services
-#' captures from its global networking footprint to calculate a baseline of
-#' performance and availability for internet traffic. This is the same data
-#' that Amazon Web Services uses to monitor internet uptime and
-#' availability. With those measurements as a baseline, Internet Monitor
-#' raises awareness for you when there are significant problems for your
-#' end users in the different geographic locations where your application
-#' runs.
+#' Amazon CloudWatch Internet Monitor provides visibility into how internet issues impact the performance and availability between your applications hosted on Amazon Web Services and your end users. It can reduce the time it takes for you to diagnose internet issues from days to minutes. Internet Monitor uses the connectivity data that Amazon Web Services captures from its global networking footprint to calculate a baseline of performance and availability for internet traffic. This is the same data that Amazon Web Services uses to monitor internet uptime and availability. With those measurements as a baseline, Internet Monitor raises awareness for you when there are significant problems for your end users in the different geographic locations where your application runs.
 #' 
-#' Internet Monitor publishes internet measurements to CloudWatch Logs and
-#' CloudWatch Metrics, to easily support using CloudWatch tools with health
-#' information for geographies and networks specific to your application.
-#' Internet Monitor sends health events to Amazon EventBridge so that you
-#' can set up notifications. If an issue is caused by the Amazon Web
-#' Services network, you also automatically receive an Amazon Web Services
-#' Health Dashboard notification with the steps that Amazon Web Services is
-#' taking to mitigate the problem.
+#' Internet Monitor publishes internet measurements to CloudWatch Logs and CloudWatch Metrics, to easily support using CloudWatch tools with health information for geographies and networks specific to your application. Internet Monitor sends health events to Amazon EventBridge so that you can set up notifications. If an issue is caused by the Amazon Web Services network, you also automatically receive an Amazon Web Services Health Dashboard notification with the steps that Amazon Web Services is taking to mitigate the problem.
 #' 
-#' To use Internet Monitor, you create a *monitor* and associate your
-#' application's resources with it - VPCs, NLBs, CloudFront distributions,
-#' or WorkSpaces directories - so Internet Monitor can determine where your
-#' application's internet traffic is. Internet Monitor then provides
-#' internet measurements from Amazon Web Services that are specific to the
-#' locations and ASNs (typically, internet service providers or ISPs) that
-#' communicate with your application.
+#' To use Internet Monitor, you create a *monitor* and associate your application's resources with it - VPCs, NLBs, CloudFront distributions, or WorkSpaces directories - so Internet Monitor can determine where your application's internet traffic is. Internet Monitor then provides internet measurements from Amazon Web Services that are specific to the locations and ASNs (typically, internet service providers or ISPs) that communicate with your application.
 #' 
-#' For more information, see [Using Amazon CloudWatch Internet
-#' Monitor](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html)
-#' in the *Amazon CloudWatch User Guide*.
+#' For more information, see [Using Amazon CloudWatch Internet Monitor](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html) in the *Amazon CloudWatch User Guide*.
 #'
 #' @param
 #' config
@@ -22057,23 +20212,11 @@ cloudwatchinternetmonitor <- function(config = list(), credentials = list(), end
 #' Amazon CloudWatch
 #'
 #' @description
-#' Amazon CloudWatch monitors your Amazon Web Services (Amazon Web
-#' Services) resources and the applications you run on Amazon Web Services
-#' in real time. You can use CloudWatch to collect and track metrics, which
-#' are the variables you want to measure for your resources and
-#' applications.
+#' Amazon CloudWatch monitors your Amazon Web Services (Amazon Web Services) resources and the applications you run on Amazon Web Services in real time. You can use CloudWatch to collect and track metrics, which are the variables you want to measure for your resources and applications.
 #' 
-#' CloudWatch alarms send notifications or automatically change the
-#' resources you are monitoring based on rules that you define. For
-#' example, you can monitor the CPU usage and disk reads and writes of your
-#' Amazon EC2 instances. Then, use this data to determine whether you
-#' should launch additional instances to handle increased load. You can
-#' also use this data to stop under-used instances to save money.
+#' CloudWatch alarms send notifications or automatically change the resources you are monitoring based on rules that you define. For example, you can monitor the CPU usage and disk reads and writes of your Amazon EC2 instances. Then, use this data to determine whether you should launch additional instances to handle increased load. You can also use this data to stop under-used instances to save money.
 #' 
-#' In addition to monitoring the built-in metrics that come with Amazon Web
-#' Services, you can monitor your own custom metrics. With CloudWatch, you
-#' gain system-wide visibility into resource utilization, application
-#' performance, and operational health.
+#' In addition to monitoring the built-in metrics that come with Amazon Web Services, you can monitor your own custom metrics. With CloudWatch, you gain system-wide visibility into resource utilization, application performance, and operational health.
 #'
 #' @param
 #' config
@@ -22226,32 +20369,11 @@ cloudwatch <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' CloudWatch Observability Access Manager
 #'
 #' @description
-#' Use Amazon CloudWatch Observability Access Manager to create and manage
-#' links between source accounts and monitoring accounts by using
-#' *CloudWatch cross-account observability*. With CloudWatch cross-account
-#' observability, you can monitor and troubleshoot applications that span
-#' multiple accounts within a Region. Seamlessly search, visualize, and
-#' analyze your metrics, logs, traces, Application Signals services and
-#' service level objectives (SLOs), Application Insights applications, and
-#' internet monitors in any of the linked accounts without account
-#' boundaries.
+#' Use Amazon CloudWatch Observability Access Manager to create and manage links between source accounts and monitoring accounts by using *CloudWatch cross-account observability*. With CloudWatch cross-account observability, you can monitor and troubleshoot applications that span multiple accounts within a Region. Seamlessly search, visualize, and analyze your metrics, logs, traces, Application Signals services and service level objectives (SLOs), Application Insights applications, and internet monitors in any of the linked accounts without account boundaries.
 #' 
-#' Set up one or more Amazon Web Services accounts as *monitoring accounts*
-#' and link them with multiple *source accounts*. A monitoring account is a
-#' central Amazon Web Services account that can view and interact with
-#' observability data generated from source accounts. A source account is
-#' an individual Amazon Web Services account that generates observability
-#' data for the resources that reside in it. Source accounts share their
-#' observability data with the monitoring account. The shared observability
-#' data can include metrics in Amazon CloudWatch, logs in Amazon CloudWatch
-#' Logs, traces in X-Ray, Application Signals services and service level
-#' objectives (SLOs), applications in Amazon CloudWatch Application
-#' Insights, and internet monitors in CloudWatch Internet Monitor.
+#' Set up one or more Amazon Web Services accounts as *monitoring accounts* and link them with multiple *source accounts*. A monitoring account is a central Amazon Web Services account that can view and interact with observability data generated from source accounts. A source account is an individual Amazon Web Services account that generates observability data for the resources that reside in it. Source accounts share their observability data with the monitoring account. The shared observability data can include metrics in Amazon CloudWatch, logs in Amazon CloudWatch Logs, traces in X-Ray, Application Signals services and service level objectives (SLOs), applications in Amazon CloudWatch Application Insights, and internet monitors in CloudWatch Internet Monitor.
 #' 
-#' When you set up a link, you can choose to share the metrics from all
-#' namespaces with the monitoring account, or filter to a subset of
-#' namespaces. And for CloudWatch Logs, you can choose to share all log
-#' groups with the monitoring account, or filter to a subset of log groups.
+#' When you set up a link, you can choose to share the metrics from all namespaces with the monitoring account, or filter to a subset of namespaces. And for CloudWatch Logs, you can choose to share all log groups with the monitoring account, or filter to a subset of log groups.
 #'
 #' @param
 #' config
@@ -22373,75 +20495,45 @@ cloudwatchobservabilityaccessmanager <- function(config = list(), credentials = 
 #' AWS Organizations
 #'
 #' @description
-#' Organizations is a web service that enables you to consolidate your
-#' multiple Amazon Web Services accounts into an *organization* and
-#' centrally manage your accounts and their resources.
+#' Organizations is a web service that enables you to consolidate your multiple Amazon Web Services accounts into an *organization* and centrally manage your accounts and their resources.
 #' 
-#' This guide provides descriptions of the Organizations operations. For
-#' more information about using this service, see the [Organizations User
-#' Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html).
+#' This guide provides descriptions of the Organizations operations. For more information about using this service, see the [Organizations User Guide](https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html).
 #' 
 #' **Support and feedback for Organizations**
 #' 
-#' We welcome your feedback. You can post your feedback and questions in
-#' the Organizations support forum. For more information about the Amazon
-#' Web Services Support forums, see Forums Help.
+#' We welcome your feedback. You can post your feedback and questions in the Organizations support forum. For more information about the Amazon Web Services Support forums, see Forums Help.
 #' 
 #' **Endpoint to call When using the CLI or the Amazon Web Services SDK**
 #' 
-#' For the current release of Organizations, specify the `us-east-1` region
-#' for all Amazon Web Services API and CLI calls made from the commercial
-#' Amazon Web Services Regions outside of China. If calling from one of the
-#' Amazon Web Services Regions in China, then specify `cn-northwest-1`. You
-#' can do this in the CLI by using these parameters and commands:
+#' For the current release of Organizations, specify the `us-east-1` region for all Amazon Web Services API and CLI calls made from the commercial Amazon Web Services Regions outside of China. If calling from one of the Amazon Web Services Regions in China, then specify `cn-northwest-1`. You can do this in the CLI by using these parameters and commands:
 #' 
-#' -   Use the following parameter with each command to specify both the
-#'     endpoint and its region:
+#' -   Use the following parameter with each command to specify both the endpoint and its region:
 #' 
-#'     `--endpoint-url https://organizations.us-east-1.amazonaws.com`
-#'     *(from commercial Amazon Web Services Regions outside of China)*
+#'     `--endpoint-url https://organizations.us-east-1.amazonaws.com` *(from commercial Amazon Web Services Regions outside of China)*
 #' 
 #'     or
 #' 
-#'     `--endpoint-url https://organizations.cn-northwest-1.amazonaws.com.cn`
-#'     *(from Amazon Web Services Regions in China)*
+#'     `--endpoint-url https://organizations.cn-northwest-1.amazonaws.com.cn` *(from Amazon Web Services Regions in China)*
 #' 
-#' -   Use the default endpoint, but configure your default region with
-#'     this command:
+#' -   Use the default endpoint, but configure your default region with this command:
 #' 
-#'     `aws configure set default.region us-east-1` *(from commercial
-#'     Amazon Web Services Regions outside of China)*
+#'     `aws configure set default.region us-east-1` *(from commercial Amazon Web Services Regions outside of China)*
 #' 
 #'     or
 #' 
-#'     `aws configure set default.region cn-northwest-1` *(from Amazon Web
-#'     Services Regions in China)*
+#'     `aws configure set default.region cn-northwest-1` *(from Amazon Web Services Regions in China)*
 #' 
-#' -   Use the following parameter with each command to specify the
-#'     endpoint:
+#' -   Use the following parameter with each command to specify the endpoint:
 #' 
-#'     `--region us-east-1` *(from commercial Amazon Web Services Regions
-#'     outside of China)*
+#'     `--region us-east-1` *(from commercial Amazon Web Services Regions outside of China)*
 #' 
 #'     or
 #' 
-#'     `--region cn-northwest-1` *(from Amazon Web Services Regions in
-#'     China)*
+#'     `--region cn-northwest-1` *(from Amazon Web Services Regions in China)*
 #' 
 #' **Recording API Requests**
 #' 
-#' Organizations supports CloudTrail, a service that records Amazon Web
-#' Services API calls for your Amazon Web Services account and delivers log
-#' files to an Amazon S3 bucket. By using information collected by
-#' CloudTrail, you can determine which requests the Organizations service
-#' received, who made the request and when, and so on. For more about
-#' Organizations and its support for CloudTrail, see [Logging Organizations
-#' API calls with
-#' CloudTrail](https://docs.aws.amazon.com/organizations/latest/userguide/#orgs_cloudtrail-integration)
-#' in the *Organizations User Guide*. To learn more about CloudTrail,
-#' including how to turn it on and find your log files, see the [CloudTrail
-#' User
-#' Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html).
+#' Organizations supports CloudTrail, a service that records Amazon Web Services API calls for your Amazon Web Services account and delivers log files to an Amazon S3 bucket. By using information collected by CloudTrail, you can determine which requests the Organizations service received, who made the request and when, and so on. For more about Organizations and its support for CloudTrail, see [Logging Organizations API calls with CloudTrail](https://docs.aws.amazon.com/organizations/latest/userguide/#orgs_cloudtrail-integration) in the *Organizations User Guide*. To learn more about CloudTrail, including how to turn it on and find your log files, see the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html).
 #'
 #' @param
 #' config
@@ -22617,32 +20709,17 @@ organizations <- function(config = list(), credentials = list(), endpoint = NULL
 #' @description
 #' Amazon RDS Performance Insights
 #' 
-#' Amazon RDS Performance Insights enables you to monitor and explore
-#' different dimensions of database load based on data captured from a
-#' running DB instance. The guide provides detailed information about
-#' Performance Insights data types, parameters and errors.
+#' Amazon RDS Performance Insights enables you to monitor and explore different dimensions of database load based on data captured from a running DB instance. The guide provides detailed information about Performance Insights data types, parameters and errors.
 #' 
-#' When Performance Insights is enabled, the Amazon RDS Performance
-#' Insights API provides visibility into the performance of your DB
-#' instance. Amazon CloudWatch provides the authoritative source for Amazon
-#' Web Services service-vended monitoring metrics. Performance Insights
-#' offers a domain-specific view of DB load.
+#' When Performance Insights is enabled, the Amazon RDS Performance Insights API provides visibility into the performance of your DB instance. Amazon CloudWatch provides the authoritative source for Amazon Web Services service-vended monitoring metrics. Performance Insights offers a domain-specific view of DB load.
 #' 
-#' DB load is measured as average active sessions. Performance Insights
-#' provides the data to API consumers as a two-dimensional time-series
-#' dataset. The time dimension provides DB load data for each time point in
-#' the queried time range. Each time point decomposes overall load in
-#' relation to the requested dimensions, measured at that time point.
-#' Examples include SQL, Wait event, User, and Host.
+#' DB load is measured as average active sessions. Performance Insights provides the data to API consumers as a two-dimensional time-series dataset. The time dimension provides DB load data for each time point in the queried time range. Each time point decomposes overall load in relation to the requested dimensions, measured at that time point. Examples include SQL, Wait event, User, and Host.
 #' 
-#' -   To learn more about Performance Insights and Amazon Aurora DB
-#'     instances, go to the *\href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html}{ Amazon Aurora User Guide}* .
+#' -   To learn more about Performance Insights and Amazon Aurora DB instances, go to the *\href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html}{ Amazon Aurora User Guide}* .
 #' 
-#' -   To learn more about Performance Insights and Amazon RDS DB
-#'     instances, go to the *\href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html}{ Amazon RDS User Guide}* .
+#' -   To learn more about Performance Insights and Amazon RDS DB instances, go to the *\href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html}{ Amazon RDS User Guide}* .
 #' 
-#' -   To learn more about Performance Insights and Amazon DocumentDB
-#'     clusters, go to the *\href{https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html}{ Amazon DocumentDB Developer Guide}* .
+#' -   To learn more about Performance Insights and Amazon DocumentDB clusters, go to the *\href{https://docs.aws.amazon.com/documentdb/latest/developerguide/performance-insights.html}{ Amazon DocumentDB Developer Guide}* .
 #'
 #' @param
 #' config
@@ -22736,6 +20813,7 @@ organizations <- function(config = list(), credentials = list(), endpoint = NULL
 #'  \link[paws.management:pi_get_resource_metrics]{get_resource_metrics} \tab Retrieve Performance Insights metrics for a set of data sources over a time period\cr
 #'  \link[paws.management:pi_list_available_resource_dimensions]{list_available_resource_dimensions} \tab Retrieve the dimensions that can be queried for each specified metric type on a specified DB instance\cr
 #'  \link[paws.management:pi_list_available_resource_metrics]{list_available_resource_metrics} \tab Retrieve metrics of the specified types that can be queried for a specified DB instance\cr
+#'  \link[paws.management:pi_list_performance_analysis_report_recommendations]{list_performance_analysis_report_recommendations} \tab Retrieves recommendations for a performance analysis report\cr
 #'  \link[paws.management:pi_list_performance_analysis_reports]{list_performance_analysis_reports} \tab Lists all the analysis reports created for the DB instance\cr
 #'  \link[paws.management:pi_list_tags_for_resource]{list_tags_for_resource} \tab Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource\cr
 #'  \link[paws.management:pi_tag_resource]{tag_resource} \tab Adds metadata tags to the Amazon RDS Performance Insights resource\cr
@@ -22762,13 +20840,7 @@ pi <- function(config = list(), credentials = list(), endpoint = NULL, region = 
 #' AWS Resilience Hub
 #'
 #' @description
-#' Resilience Hub helps you proactively prepare and protect your Amazon Web
-#' Services applications from disruptions. It offers continual resiliency
-#' assessment and validation that integrates into your software development
-#' lifecycle. This enables you to uncover resiliency weaknesses, ensure
-#' recovery time objective (RTO) and recovery point objective (RPO) targets
-#' for your applications are met, and resolve issues before they are
-#' released into production.
+#' Resilience Hub helps you proactively prepare and protect your Amazon Web Services applications from disruptions. It offers continual resiliency assessment and validation that integrates into your software development lifecycle. This enables you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective (RPO) targets for your applications are met, and resolve issues before they are released into production.
 #'
 #' @param
 #' config
@@ -22938,38 +21010,19 @@ resiliencehub <- function(config = list(), credentials = list(), endpoint = NULL
 #' AWS Resource Groups
 #'
 #' @description
-#' Resource Groups lets you organize Amazon Web Services resources such as
-#' Amazon Elastic Compute Cloud instances, Amazon Relational Database
-#' Service databases, and Amazon Simple Storage Service buckets into groups
-#' using criteria that you define as tags. A resource group is a collection
-#' of resources that match the resource types specified in a query, and
-#' share one or more tags or portions of tags. You can create a group of
-#' resources based on their roles in your cloud infrastructure, lifecycle
-#' stages, regions, application layers, or virtually any criteria. Resource
-#' Groups enable you to automate management tasks, such as those in Amazon
-#' Web Services Systems Manager Automation documents, on tag-related
-#' resources in Amazon Web Services Systems Manager. Groups of tagged
-#' resources also let you quickly view a custom console in Amazon Web
-#' Services Systems Manager that shows Config compliance and other
-#' monitoring data about member resources.
+#' Resource Groups lets you organize Amazon Web Services resources such as Amazon Elastic Compute Cloud instances, Amazon Relational Database Service databases, and Amazon Simple Storage Service buckets into groups using criteria that you define as tags. A resource group is a collection of resources that match the resource types specified in a query, and share one or more tags or portions of tags. You can create a group of resources based on their roles in your cloud infrastructure, lifecycle stages, regions, application layers, or virtually any criteria. Resource Groups enable you to automate management tasks, such as those in Amazon Web Services Systems Manager Automation documents, on tag-related resources in Amazon Web Services Systems Manager. Groups of tagged resources also let you quickly view a custom console in Amazon Web Services Systems Manager that shows Config compliance and other monitoring data about member resources.
 #' 
-#' To create a resource group, build a resource query, and specify tags
-#' that identify the criteria that members of the group have in common.
-#' Tags are key-value pairs.
+#' To create a resource group, build a resource query, and specify tags that identify the criteria that members of the group have in common. Tags are key-value pairs.
 #' 
-#' For more information about Resource Groups, see the [Resource Groups
-#' User Guide](https://docs.aws.amazon.com/ARG/latest/userguide/).
+#' For more information about Resource Groups, see the [Resource Groups User Guide](https://docs.aws.amazon.com/ARG/latest/userguide/).
 #' 
-#' Resource Groups uses a REST-compliant API that you can use to perform
-#' the following types of operations.
+#' Resource Groups uses a REST-compliant API that you can use to perform the following types of operations.
 #' 
-#' -   Create, Read, Update, and Delete (CRUD) operations on resource
-#'     groups and resource query entities
+#' -   Create, Read, Update, and Delete (CRUD) operations on resource groups and resource query entities
 #' 
 #' -   Applying, editing, and removing tags from resource groups
 #' 
-#' -   Resolving resource group member Amazon resource names (ARN)s so they
-#'     can be returned as search results
+#' -   Resolving resource group member Amazon resource names (ARN)s so they can be returned as search results
 #' 
 #' -   Getting data about resources that are members of a group
 #' 
@@ -23219,19 +21272,9 @@ resourcegroupstaggingapi <- function(config = list(), credentials = list(), endp
 #' CloudWatch RUM
 #'
 #' @description
-#' With Amazon CloudWatch RUM, you can perform real-user monitoring to
-#' collect client-side data about your web application performance from
-#' actual user sessions in real time. The data collected includes page load
-#' times, client-side errors, and user behavior. When you view this data,
-#' you can see it all aggregated together and also see breakdowns by the
-#' browsers and devices that your customers use.
+#' With Amazon CloudWatch RUM, you can perform real-user monitoring to collect client-side data about your web application performance from actual user sessions in real time. The data collected includes page load times, client-side errors, and user behavior. When you view this data, you can see it all aggregated together and also see breakdowns by the browsers and devices that your customers use.
 #' 
-#' You can use the collected data to quickly identify and debug client-side
-#' performance issues. CloudWatch RUM helps you visualize anomalies in your
-#' application performance and find relevant debugging data such as error
-#' messages, stack traces, and user sessions. You can also use RUM to
-#' understand the range of end-user impact including the number of users,
-#' geolocations, and browsers used.
+#' You can use the collected data to quickly identify and debug client-side performance issues. CloudWatch RUM helps you visualize anomalies in your application performance and find relevant debugging data such as error messages, stack traces, and user sessions. You can also use RUM to understand the range of end-user impact including the number of users, geolocations, and browsers used.
 #'
 #' @param
 #' config
@@ -23358,15 +21401,9 @@ cloudwatchrum <- function(config = list(), credentials = list(), endpoint = NULL
 #' Service Quotas
 #'
 #' @description
-#' With Service Quotas, you can view and manage your quotas easily as your
-#' Amazon Web Services workloads grow. Quotas, also referred to as limits,
-#' are the maximum number of resources that you can create in your Amazon
-#' Web Services account. For more information, see the [Service Quotas User
-#' Guide](https://docs.aws.amazon.com/servicequotas/latest/userguide/).
+#' With Service Quotas, you can view and manage your quotas easily as your Amazon Web Services workloads grow. Quotas, also referred to as limits, are the maximum number of resources that you can create in your Amazon Web Services account. For more information, see the [Service Quotas User Guide](https://docs.aws.amazon.com/servicequotas/latest/userguide/).
 #' 
-#' You need Amazon Web Services CLI version 2.13.20 or higher to view and
-#' manage resource-level quotas such as `Instances per domain` for Amazon
-#' OpenSearch Service.
+#' You need Amazon Web Services CLI version 2.13.20 or higher to view and manage resource-level quotas such as `Instances per domain` for Amazon OpenSearch Service.
 #'
 #' @param
 #' config
@@ -23501,12 +21538,7 @@ servicequotas <- function(config = list(), credentials = list(), endpoint = NULL
 #' @description
 #' Service Catalog
 #' 
-#' [Service Catalog](https://aws.amazon.com/servicecatalog/) enables
-#' organizations to create and manage catalogs of IT services that are
-#' approved for Amazon Web Services. To get the most out of this
-#' documentation, you should be familiar with the terminology discussed in
-#' [Service Catalog
-#' Concepts](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html).
+#' [Service Catalog](https://aws.amazon.com/servicecatalog/) enables organizations to create and manage catalogs of IT services that are approved for Amazon Web Services. To get the most out of this documentation, you should be familiar with the terminology discussed in [Service Catalog Concepts](https://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html).
 #'
 #' @param
 #' config
@@ -23703,11 +21735,7 @@ servicecatalog <- function(config = list(), credentials = list(), endpoint = NUL
 #' AWS Service Catalog App Registry
 #'
 #' @description
-#' Amazon Web Services Service Catalog AppRegistry enables organizations to
-#' understand the application context of their Amazon Web Services
-#' resources. AppRegistry provides a repository of your applications, their
-#' resources, and the application metadata that you use within your
-#' enterprise.
+#' Amazon Web Services Service Catalog AppRegistry enables organizations to understand the application context of their Amazon Web Services resources. AppRegistry provides a repository of your applications, their resources, and the application metadata that you use within your enterprise.
 #'
 #' @param
 #' config
@@ -23838,34 +21866,19 @@ appregistry <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon Simple Systems Manager (SSM)
 #'
 #' @description
-#' Amazon Web Services Systems Manager is the operations hub for your
-#' Amazon Web Services applications and resources and a secure end-to-end
-#' management solution for hybrid cloud environments that enables safe and
-#' secure operations at scale.
+#' Amazon Web Services Systems Manager is the operations hub for your Amazon Web Services applications and resources and a secure end-to-end management solution for hybrid cloud environments that enables safe and secure operations at scale.
 #' 
-#' This reference is intended to be used with the [Amazon Web Services
-#' Systems Manager User
-#' Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/).
-#' To get started, see [Setting up Amazon Web Services Systems
-#' Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-console.html).
+#' This reference is intended to be used with the [Amazon Web Services Systems Manager User Guide](https://docs.aws.amazon.com/systems-manager/latest/userguide/). To get started, see [Setting up Amazon Web Services Systems Manager](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up-console.html).
 #' 
 #' **Related resources**
 #' 
-#' -   For information about each of the tools that comprise Systems
-#'     Manager, see [Using Systems Manager
-#'     tools](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html)
-#'     in the *Amazon Web Services Systems Manager User Guide*.
+#' -   For information about each of the tools that comprise Systems Manager, see [Using Systems Manager tools](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-tools.html) in the *Amazon Web Services Systems Manager User Guide*.
 #' 
-#' -   For details about predefined runbooks for Automation, a tool in
-#'     Amazon Web Services Systems Manager, see the *\href{https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html}{Systems Manager Automation Runbook Reference}* .
+#' -   For details about predefined runbooks for Automation, a tool in Amazon Web Services Systems Manager, see the *\href{https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html}{Systems Manager Automation Runbook Reference}* .
 #' 
-#' -   For information about AppConfig, a tool in Systems Manager, see the
-#'     *\href{https://docs.aws.amazon.com/appconfig/latest/userguide/}{AppConfig User Guide}* and the *
-#'     \href{https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/}{AppConfig API Reference}* .
+#' -   For information about AppConfig, a tool in Systems Manager, see the *\href{https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/}{AppConfig API Reference}* .
 #' 
-#' -   For information about Incident Manager, a tool in Systems Manager,
-#'     see the *\href{https://docs.aws.amazon.com/incident-manager/latest/userguide/}{Systems Manager Incident Manager User Guide}* and the *
-#'     \href{https://docs.aws.amazon.com/incident-manager/latest/APIReference/}{Systems Manager Incident Manager API Reference}* .
+#' -   For information about Incident Manager, a tool in Systems Manager, see the *\href{https://docs.aws.amazon.com/incident-manager/latest/APIReference/}{Systems Manager Incident Manager API Reference}* .
 #'
 #' @param
 #' config
@@ -24118,17 +22131,9 @@ ssm <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' AWS Systems Manager Incident Manager Contacts
 #'
 #' @description
-#' Systems Manager Incident Manager is an incident management console
-#' designed to help users mitigate and recover from incidents affecting
-#' their Amazon Web Services-hosted applications. An incident is any
-#' unplanned interruption or reduction in quality of services.
+#' Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services.
 #' 
-#' Incident Manager increases incident resolution by notifying responders
-#' of impact, highlighting relevant troubleshooting data, and providing
-#' collaboration tools to get services back up and running. To achieve the
-#' primary goal of reducing the time-to-resolution of critical incidents,
-#' Incident Manager automates response plans and enables responder team
-#' escalation.
+#' Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation.
 #'
 #' @param
 #' config
@@ -24278,17 +22283,9 @@ ssmcontacts <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' AWS Systems Manager Incident Manager
 #'
 #' @description
-#' Systems Manager Incident Manager is an incident management console
-#' designed to help users mitigate and recover from incidents affecting
-#' their Amazon Web Services-hosted applications. An incident is any
-#' unplanned interruption or reduction in quality of services.
+#' Systems Manager Incident Manager is an incident management console designed to help users mitigate and recover from incidents affecting their Amazon Web Services-hosted applications. An incident is any unplanned interruption or reduction in quality of services.
 #' 
-#' Incident Manager increases incident resolution by notifying responders
-#' of impact, highlighting relevant troubleshooting data, and providing
-#' collaboration tools to get services back up and running. To achieve the
-#' primary goal of reducing the time-to-resolution of critical incidents,
-#' Incident Manager automates response plans and enables responder team
-#' escalation.
+#' Incident Manager increases incident resolution by notifying responders of impact, highlighting relevant troubleshooting data, and providing collaboration tools to get services back up and running. To achieve the primary goal of reducing the time-to-resolution of critical incidents, Incident Manager automates response plans and enables responder team escalation.
 #'
 #' @param
 #' config
@@ -24426,10 +22423,7 @@ ssmincidents <- function(config = list(), credentials = list(), endpoint = NULL,
 #' AWS Systems Manager for SAP
 #'
 #' @description
-#' This API reference provides descriptions, syntax, and other details
-#' about each of the actions and data types for AWS Systems Manager for
-#' SAP. The topic for each action shows the API request parameters and
-#' responses.
+#' This API reference provides descriptions, syntax, and other details about each of the actions and data types for AWS Systems Manager for SAP. The topic for each action shows the API request parameters and responses.
 #'
 #' @param
 #' config
@@ -24565,64 +22559,27 @@ ssmsap <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' @description
 #' Amazon Web Services Support
 #' 
-#' The *Amazon Web Services Support API Reference* is intended for
-#' programmers who need detailed information about the Amazon Web Services
-#' Support operations and data types. You can use the API to manage your
-#' support cases programmatically. The Amazon Web Services Support API uses
-#' HTTP methods that return results in JSON format.
+#' The *Amazon Web Services Support API Reference* is intended for programmers who need detailed information about the Amazon Web Services Support operations and data types. You can use the API to manage your support cases programmatically. The Amazon Web Services Support API uses HTTP methods that return results in JSON format.
 #' 
-#' -   You must have a Business, Enterprise On-Ramp, or Enterprise Support
-#'     plan to use the Amazon Web Services Support API.
+#' -   You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the Amazon Web Services Support API.
 #' 
-#' -   If you call the Amazon Web Services Support API from an account that
-#'     doesn't have a Business, Enterprise On-Ramp, or Enterprise Support
-#'     plan, the `SubscriptionRequiredException` error message appears. For
-#'     information about changing your support plan, see [Amazon Web
-#'     Services Support](https://aws.amazon.com/premiumsupport/).
+#' -   If you call the Amazon Web Services Support API from an account that doesn't have a Business, Enterprise On-Ramp, or Enterprise Support plan, the `SubscriptionRequiredException` error message appears. For information about changing your support plan, see [Amazon Web Services Support](https://aws.amazon.com/premiumsupport/).
 #' 
-#' You can also use the Amazon Web Services Support API to access features
-#' for [Trusted
-#' Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/).
-#' You can return a list of checks and their descriptions, get check
-#' results, specify checks to refresh, and get the refresh status of
-#' checks.
+#' You can also use the Amazon Web Services Support API to access features for [Trusted Advisor](https://aws.amazon.com/premiumsupport/technology/trusted-advisor/). You can return a list of checks and their descriptions, get check results, specify checks to refresh, and get the refresh status of checks.
 #' 
-#' You can manage your support cases with the following Amazon Web Services
-#' Support API operations:
+#' You can manage your support cases with the following Amazon Web Services Support API operations:
 #' 
-#' -   The `create_case`,
-#'     `describe_cases`,
-#'     `describe_attachment`, and
-#'     `resolve_case` operations create Amazon Web
-#'     Services Support cases, retrieve information about cases, and
-#'     resolve cases.
+#' -   The `create_case`, `describe_cases`, `describe_attachment`, and `resolve_case` operations create Amazon Web Services Support cases, retrieve information about cases, and resolve cases.
 #' 
-#' -   The `describe_communications`,
-#'     `add_communication_to_case`,
-#'     and `add_attachments_to_set`
-#'     operations retrieve and add communications and attachments to Amazon
-#'     Web Services Support cases.
+#' -   The `describe_communications`, `add_communication_to_case`, and `add_attachments_to_set` operations retrieve and add communications and attachments to Amazon Web Services Support cases.
 #' 
-#' -   The `describe_services` and
-#'     `describe_severity_levels`
-#'     operations return Amazon Web Services service names, service codes,
-#'     service categories, and problem severity levels. You use these
-#'     values when you call the `create_case`
-#'     operation.
+#' -   The `describe_services` and `describe_severity_levels` operations return Amazon Web Services service names, service codes, service categories, and problem severity levels. You use these values when you call the `create_case` operation.
 #' 
-#' You can also use the Amazon Web Services Support API to call the Trusted
-#' Advisor operations. For more information, see [Trusted
-#' Advisor](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html)
-#' in the *Amazon Web Services Support User Guide*.
+#' You can also use the Amazon Web Services Support API to call the Trusted Advisor operations. For more information, see [Trusted Advisor](https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html) in the *Amazon Web Services Support User Guide*.
 #' 
-#' For authentication of requests, Amazon Web Services Support uses
-#' [Signature Version 4 Signing
-#' Process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
+#' For authentication of requests, Amazon Web Services Support uses [Signature Version 4 Signing Process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
 #' 
-#' For more information about this service and the endpoints to use, see
-#' [About the Amazon Web Services Support
-#' API](https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html)
-#' in the *Amazon Web Services Support User Guide*.
+#' For more information about this service and the endpoints to use, see [About the Amazon Web Services Support API](https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html) in the *Amazon Web Services Support User Guide*.
 #'
 #' @param
 #' config
@@ -24747,48 +22704,29 @@ support <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' @description
 #' Amazon Web Services Support App in Slack
 #' 
-#' You can use the Amazon Web Services Support App in Slack API to manage
-#' your support cases in Slack for your Amazon Web Services account. After
-#' you configure your Slack workspace and channel with the Amazon Web
-#' Services Support App, you can perform the following tasks directly in
-#' your Slack channel:
+#' You can use the Amazon Web Services Support App in Slack API to manage your support cases in Slack for your Amazon Web Services account. After you configure your Slack workspace and channel with the Amazon Web Services Support App, you can perform the following tasks directly in your Slack channel:
 #' 
 #' -   Create, search, update, and resolve your support cases
 #' 
 #' -   Request service quota increases for your account
 #' 
-#' -   Invite Amazon Web Services Support agents to your channel so that
-#'     you can chat directly about your support cases
+#' -   Invite Amazon Web Services Support agents to your channel so that you can chat directly about your support cases
 #' 
-#' For more information about how to perform these actions in Slack, see
-#' the following documentation in the *Amazon Web Services Support User
-#' Guide*:
+#' For more information about how to perform these actions in Slack, see the following documentation in the *Amazon Web Services Support User Guide*:
 #' 
-#' -   [Amazon Web Services Support App in
-#'     Slack](https://docs.aws.amazon.com/awssupport/latest/user/aws-support-app-for-slack.html)
+#' -   [Amazon Web Services Support App in Slack](https://docs.aws.amazon.com/awssupport/latest/user/aws-support-app-for-slack.html)
 #' 
-#' -   [Joining a live chat session with Amazon Web Services
-#'     Support](https://docs.aws.amazon.com/awssupport/latest/user/joining-a-live-chat-session.html)
+#' -   [Joining a live chat session with Amazon Web Services Support](https://docs.aws.amazon.com/awssupport/latest/user/joining-a-live-chat-session.html)
 #' 
-#' -   [Requesting service quota
-#'     increases](https://docs.aws.amazon.com/awssupport/latest/user/)
+#' -   [Requesting service quota increases](https://docs.aws.amazon.com/awssupport/latest/user/)
 #' 
-#' -   [Amazon Web Services Support App commands in
-#'     Slack](https://docs.aws.amazon.com/awssupport/latest/user/support-app-commands.html)
+#' -   [Amazon Web Services Support App commands in Slack](https://docs.aws.amazon.com/awssupport/latest/user/support-app-commands.html)
 #' 
-#' You can also use the Amazon Web Services Management Console instead of
-#' the Amazon Web Services Support App API to manage your Slack
-#' configurations. For more information, see [Authorize a Slack workspace
-#' to enable the Amazon Web Services Support
-#' App](https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html).
+#' You can also use the Amazon Web Services Management Console instead of the Amazon Web Services Support App API to manage your Slack configurations. For more information, see [Authorize a Slack workspace to enable the Amazon Web Services Support App](https://docs.aws.amazon.com/awssupport/latest/user/authorize-slack-workspace.html).
 #' 
-#' -   You must have a Business or Enterprise Support plan to use the
-#'     Amazon Web Services Support App API.
+#' -   You must have a Business or Enterprise Support plan to use the Amazon Web Services Support App API.
 #' 
-#' -   For more information about the Amazon Web Services Support App
-#'     endpoints, see the [Amazon Web Services Support App in Slack
-#'     endpoints](https://docs.aws.amazon.com/general/latest/gr/awssupport.html#awssupport_app_region)
-#'     in the *Amazon Web Services General Reference*.
+#' -   For more information about the Amazon Web Services Support App endpoints, see the [Amazon Web Services Support App in Slack endpoints](https://docs.aws.amazon.com/general/latest/gr/awssupport.html#awssupport_app_region) in the *Amazon Web Services General Reference*.
 #'
 #' @param
 #' config
@@ -24907,23 +22845,9 @@ supportapp <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' @description
 #' Amazon CloudWatch Synthetics
 #' 
-#' You can use Amazon CloudWatch Synthetics to continually monitor your
-#' services. You can create and manage *canaries*, which are modular,
-#' lightweight scripts that monitor your endpoints and APIs from the
-#' outside-in. You can set up your canaries to run 24 hours a day, once per
-#' minute. The canaries help you check the availability and latency of your
-#' web services and troubleshoot anomalies by investigating load time data,
-#' screenshots of the UI, logs, and metrics. The canaries seamlessly
-#' integrate with CloudWatch ServiceLens to help you trace the causes of
-#' impacted nodes in your applications. For more information, see [Using
-#' ServiceLens to Monitor the Health of Your
-#' Applications](https://docs.aws.amazon.com/xray/latest/devguide/xray-console-servicemap.html)
-#' in the *Amazon CloudWatch User Guide*.
+#' You can use Amazon CloudWatch Synthetics to continually monitor your services. You can create and manage *canaries*, which are modular, lightweight scripts that monitor your endpoints and APIs from the outside-in. You can set up your canaries to run 24 hours a day, once per minute. The canaries help you check the availability and latency of your web services and troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics. The canaries seamlessly integrate with CloudWatch ServiceLens to help you trace the causes of impacted nodes in your applications. For more information, see [Using ServiceLens to Monitor the Health of Your Applications](https://docs.aws.amazon.com/xray/latest/devguide/xray-console-servicemap.html) in the *Amazon CloudWatch User Guide*.
 #' 
-#' Before you create and manage canaries, be aware of the security
-#' considerations. For more information, see [Security Considerations for
-#' Synthetics
-#' Canaries](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html).
+#' Before you create and manage canaries, be aware of the security considerations. For more information, see [Security Considerations for Synthetics Canaries](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html).
 #'
 #' @param
 #' config
@@ -25052,10 +22976,7 @@ synthetics <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' Amazon Comprehend
 #'
 #' @description
-#' Amazon Comprehend is an Amazon Web Services service for gaining insight
-#' into the content of documents. Use these actions to determine the topics
-#' contained in your documents, the topics they discuss, the predominant
-#' sentiment expressed in them, the predominant language used, and more.
+#' Amazon Comprehend is an Amazon Web Services service for gaining insight into the content of documents. Use these actions to determine the topics contained in your documents, the topics they discuss, the predominant sentiment expressed in them, the predominant language used, and more.
 #'
 #' @param
 #' config
@@ -25247,14 +23168,7 @@ comprehend <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' AWS Comprehend Medical
 #'
 #' @description
-#' Amazon Comprehend Medical extracts structured information from
-#' unstructured clinical text. Use these actions to gain insight in your
-#' documents. Amazon Comprehend Medical only detects entities in English
-#' language texts. Amazon Comprehend Medical places limits on the sizes of
-#' files allowed for different API operations. To learn more, see
-#' [Guidelines and
-#' quotas](https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html)
-#' in the *Amazon Comprehend Medical Developer Guide*.
+#' Amazon Comprehend Medical extracts structured information from unstructured clinical text. Use these actions to gain insight in your documents. Amazon Comprehend Medical only detects entities in English language texts. Amazon Comprehend Medical places limits on the sizes of files allowed for different API operations. To learn more, see [Guidelines and quotas](https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-quotas.html) in the *Amazon Comprehend Medical Developer Guide*.
 #'
 #' @param
 #' config
@@ -25666,26 +23580,11 @@ forecastservice <- function(config = list(), credentials = list(), endpoint = NU
 #' Amazon Fraud Detector
 #'
 #' @description
-#' This is the Amazon Fraud Detector API Reference. This guide is for
-#' developers who need detailed information about Amazon Fraud Detector API
-#' actions, data types, and errors. For more information about Amazon Fraud
-#' Detector features, see the [Amazon Fraud Detector User
-#' Guide](https://docs.aws.amazon.com/frauddetector/latest/ug/).
+#' This is the Amazon Fraud Detector API Reference. This guide is for developers who need detailed information about Amazon Fraud Detector API actions, data types, and errors. For more information about Amazon Fraud Detector features, see the [Amazon Fraud Detector User Guide](https://docs.aws.amazon.com/frauddetector/latest/ug/).
 #' 
-#' We provide the Query API as well as AWS software development kits (SDK)
-#' for Amazon Fraud Detector in Java and Python programming languages.
+#' We provide the Query API as well as AWS software development kits (SDK) for Amazon Fraud Detector in Java and Python programming languages.
 #' 
-#' The Amazon Fraud Detector Query API provides HTTPS requests that use the
-#' HTTP verb GET or POST and a Query parameter `Action`. AWS SDK provides
-#' libraries, sample code, tutorials, and other resources for software
-#' developers who prefer to build applications using language-specific APIs
-#' instead of submitting a request over HTTP or HTTPS. These libraries
-#' provide basic functions that automatically take care of tasks such as
-#' cryptographically signing your requests, retrying requests, and handling
-#' error responses, so that it is easier for you to get started. For more
-#' information about the AWS SDKs, go to [Tools to build on
-#' AWS](https://builder.aws.com/build/tools) page, scroll down to the
-#' **SDK** section, and choose plus (+) sign to expand the section.
+#' The Amazon Fraud Detector Query API provides HTTPS requests that use the HTTP verb GET or POST and a Query parameter `Action`. AWS SDK provides libraries, sample code, tutorials, and other resources for software developers who prefer to build applications using language-specific APIs instead of submitting a request over HTTP or HTTPS. These libraries provide basic functions that automatically take care of tasks such as cryptographically signing your requests, retrying requests, and handling error responses, so that it is easier for you to get started. For more information about the AWS SDKs, go to [Tools to build on AWS](https://builder.aws.com/build/tools) page, scroll down to the **SDK** section, and choose plus (+) sign to expand the section.
 #'
 #' @param
 #' config
@@ -25867,9 +23766,7 @@ frauddetector <- function(config = list(), credentials = list(), endpoint = NULL
 #' @description
 #' Amazon Lex Build-Time Actions
 #' 
-#' Amazon Lex is an AWS service for building conversational voice and text
-#' interfaces. Use these actions to create, update, and delete
-#' conversational bots for new and existing client applications.
+#' Amazon Lex is an AWS service for building conversational voice and text interfaces. Use these actions to create, update, and delete conversational bots for new and existing client applications.
 #'
 #' @param
 #' config
@@ -26020,8 +23917,7 @@ lexmodelbuildingservice <- function(config = list(), credentials = list(), endpo
 #' Amazon Lex Model Building V2
 #'
 #' @description
-#' Amazon Lex Model Building Service provides APIs for creating, managing,
-#' and deploying conversational bots and their components.
+#' Amazon Lex Model Building Service provides APIs for creating, managing, and deploying conversational bots and their components.
 #'
 #' @param
 #' config
@@ -26235,18 +24131,7 @@ lexmodelsv2 <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon Lex Runtime Service
 #'
 #' @description
-#' Amazon Lex provides both build and runtime endpoints. Each endpoint
-#' provides a set of operations (API). Your conversational bot uses the
-#' runtime API to understand user utterances (user input text or voice).
-#' For example, suppose a user says "I want pizza", your bot sends this
-#' input to Amazon Lex using the runtime API. Amazon Lex recognizes that
-#' the user request is for the OrderPizza intent (one of the intents
-#' defined in the bot). Then Amazon Lex engages in user conversation on
-#' behalf of the bot to elicit required information (slot values, such as
-#' pizza size and crust type), and then performs fulfillment activity (that
-#' you configured when you created the bot). You use the build-time API to
-#' create and manage your Amazon Lex bot. For a list of build-time
-#' operations, see the build-time API, .
+#' Amazon Lex provides both build and runtime endpoints. Each endpoint provides a set of operations (API). Your conversational bot uses the runtime API to understand user utterances (user input text or voice). For example, suppose a user says "I want pizza", your bot sends this input to Amazon Lex using the runtime API. Amazon Lex recognizes that the user request is for the OrderPizza intent (one of the intents defined in the bot). Then Amazon Lex engages in user conversation on behalf of the bot to elicit required information (slot values, such as pizza size and crust type), and then performs fulfillment activity (that you configured when you created the bot). You use the build-time API to create and manage your Amazon Lex bot. For a list of build-time operations, see the build-time API, .
 #'
 #' @param
 #' config
@@ -26358,8 +24243,7 @@ lexruntimeservice <- function(config = list(), credentials = list(), endpoint = 
 #' Amazon Lex Runtime V2
 #'
 #' @description
-#' This section contains documentation for the Amazon Lex V2 Runtime V2 API
-#' operations.
+#' This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
 #'
 #' @param
 #' config
@@ -26472,9 +24356,7 @@ lexruntimev2 <- function(config = list(), credentials = list(), endpoint = NULL,
 #' Amazon Lookout for Equipment
 #'
 #' @description
-#' Amazon Lookout for Equipment is a machine learning service that uses
-#' advanced analytics to identify anomalies in machines from sensor data
-#' for use in predictive maintenance.
+#' Amazon Lookout for Equipment is a machine learning service that uses advanced analytics to identify anomalies in machines from sensor data for use in predictive maintenance.
 #'
 #' @param
 #' config
@@ -26767,10 +24649,7 @@ machinelearning <- function(config = list(), credentials = list(), endpoint = NU
 #' @description
 #' **Overview**
 #' 
-#' This is the *AWS Panorama API Reference*. For an introduction to the
-#' service, see [What is AWS
-#' Panorama?](https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html)
-#' in the *AWS Panorama Developer Guide*.
+#' This is the *AWS Panorama API Reference*. For an introduction to the service, see [What is AWS Panorama?](https://docs.aws.amazon.com/panorama/latest/dev/panorama-welcome.html) in the *AWS Panorama Developer Guide*.
 #'
 #' @param
 #' config
@@ -26911,8 +24790,7 @@ panorama <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' Amazon Personalize
 #'
 #' @description
-#' Amazon Personalize is a machine learning service that makes it easy to
-#' add individualized recommendations to customers.
+#' Amazon Personalize is a machine learning service that makes it easy to add individualized recommendations to customers.
 #'
 #' @param
 #' config
@@ -27090,11 +24968,7 @@ personalize <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon Personalize Events
 #'
 #' @description
-#' Amazon Personalize can consume real-time user event data, such as
-#' *stream* or *click* data, and use it for model training either alone or
-#' combined with historical data. For more information see [Recording item
-#' interaction
-#' events](https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html).
+#' Amazon Personalize can consume real-time user event data, such as *stream* or *click* data, and use it for model training either alone or combined with historical data. For more information see [Recording item interaction events](https://docs.aws.amazon.com/personalize/latest/dg/recording-item-interaction-events.html).
 #'
 #' @param
 #' config
@@ -27315,13 +25189,9 @@ personalizeruntime <- function(config = list(), credentials = list(), endpoint =
 #' Amazon Polly
 #'
 #' @description
-#' Amazon Polly is a web service that makes it easy to synthesize speech
-#' from text.
+#' Amazon Polly is a web service that makes it easy to synthesize speech from text.
 #' 
-#' The Amazon Polly service provides API operations for synthesizing
-#' high-quality speech from plain text and Speech Synthesis Markup Language
-#' (SSML), along with managing pronunciations lexicons that enable you to
-#' get the best results for your application domain.
+#' The Amazon Polly service provides API operations for synthesizing high-quality speech from plain text and Speech Synthesis Markup Language (SSML), along with managing pronunciations lexicons that enable you to get the best results for your application domain.
 #'
 #' @param
 #' config
@@ -27439,16 +25309,7 @@ polly <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' Amazon Rekognition
 #'
 #' @description
-#' This is the API Reference for [Amazon Rekognition
-#' Image](https://docs.aws.amazon.com/rekognition/latest/dg/images.html),
-#' [Amazon Rekognition Custom
-#' Labels](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html),
-#' [Amazon Rekognition Stored
-#' Video](https://docs.aws.amazon.com/rekognition/latest/dg/video.html),
-#' [Amazon Rekognition Streaming
-#' Video](https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html).
-#' It provides descriptions of actions, data types, common parameters, and
-#' common errors.
+#' This is the API Reference for [Amazon Rekognition Image](https://docs.aws.amazon.com/rekognition/latest/dg/images.html), [Amazon Rekognition Custom Labels](https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/what-is.html), [Amazon Rekognition Stored Video](https://docs.aws.amazon.com/rekognition/latest/dg/video.html), [Amazon Rekognition Streaming Video](https://docs.aws.amazon.com/rekognition/latest/dg/streaming-video.html). It provides descriptions of actions, data types, common parameters, and common errors.
 #' 
 #' **Amazon Rekognition Image**
 #' 
@@ -27796,11 +25657,9 @@ rekognition <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' 
 #' Other Resources:
 #' 
-#' -   [SageMaker Developer
-#'     Guide](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user)
+#' -   [SageMaker Developer Guide](https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html#first-time-user)
 #' 
-#' -   [Amazon Augmented AI Runtime API
-#'     Reference](https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/Welcome.html)
+#' -   [Amazon Augmented AI Runtime API Reference](https://docs.aws.amazon.com/augmented-ai/2019-11-07/APIReference/Welcome.html)
 #'
 #' @param
 #' config
@@ -28303,43 +26162,17 @@ sagemaker <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' Amazon Augmented AI Runtime
 #'
 #' @description
-#' Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to
-#' any machine learning application. When an AI application can't evaluate
-#' data with a high degree of confidence, human reviewers can take over.
-#' This human review is called a human review workflow. To create and start
-#' a human review workflow, you need three resources: a *worker task
-#' template*, a *flow definition*, and a *human loop*.
+#' Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is called a human review workflow. To create and start a human review workflow, you need three resources: a *worker task template*, a *flow definition*, and a *human loop*.
 #' 
-#' For information about these resources and prerequisites for using Amazon
-#' A2I, see [Get Started with Amazon Augmented
-#' AI](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html)
-#' in the Amazon SageMaker Developer Guide.
+#' For information about these resources and prerequisites for using Amazon A2I, see [Get Started with Amazon Augmented AI](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-getting-started.html) in the Amazon SageMaker Developer Guide.
 #' 
-#' This API reference includes information about API actions and data types
-#' that you can use to interact with Amazon A2I programmatically. Use this
-#' guide to:
+#' This API reference includes information about API actions and data types that you can use to interact with Amazon A2I programmatically. Use this guide to:
 #' 
-#' -   Start a human loop with the
-#'     `start_human_loop` operation
-#'     when using Amazon A2I with a *custom task type*. To learn more about
-#'     the difference between custom and built-in task types, see [Use Task
-#'     Types](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html)
-#'     . To learn how to start a human loop using this API, see [Create and
-#'     Start a Human Loop for a Custom Task
-#'     Type](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop)
-#'     in the Amazon SageMaker Developer Guide.
+#' -   Start a human loop with the `start_human_loop` operation when using Amazon A2I with a *custom task type*. To learn more about the difference between custom and built-in task types, see [Use Task Types](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html) . To learn how to start a human loop using this API, see [Create and Start a Human Loop for a Custom Task Type](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop) in the Amazon SageMaker Developer Guide.
 #' 
-#' -   Manage your human loops. You can list all human loops that you have
-#'     created, describe individual human loops, and stop and delete human
-#'     loops. To learn more, see [Monitor and Manage Your Human
-#'     Loop](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-monitor-humanloop-results.html)
-#'     in the Amazon SageMaker Developer Guide.
+#' -   Manage your human loops. You can list all human loops that you have created, describe individual human loops, and stop and delete human loops. To learn more, see [Monitor and Manage Your Human Loop](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-monitor-humanloop-results.html) in the Amazon SageMaker Developer Guide.
 #' 
-#' Amazon A2I integrates APIs from various AWS services to create and start
-#' human review workflows for those services. To learn how Amazon A2I uses
-#' these APIs, see [Use APIs in Amazon
-#' A2I](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html)
-#' in the Amazon SageMaker Developer Guide.
+#' Amazon A2I integrates APIs from various AWS services to create and start human review workflows for those services. To learn how Amazon A2I uses these APIs, see [Use APIs in Amazon A2I](https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-api-references.html) in the Amazon SageMaker Developer Guide.
 #'
 #' @param
 #' config
@@ -28451,8 +26284,7 @@ augmentedairuntime <- function(config = list(), credentials = list(), endpoint =
 #' Amazon Sagemaker Edge Manager
 #'
 #' @description
-#' SageMaker Edge Manager dataplane service for communicating with active
-#' agents.
+#' SageMaker Edge Manager dataplane service for communicating with active agents.
 #'
 #' @param
 #' config
@@ -28562,12 +26394,9 @@ sagemakeredgemanager <- function(config = list(), credentials = list(), endpoint
 #' Amazon SageMaker Feature Store Runtime
 #'
 #' @description
-#' Contains all data plane API operations and data types for the Amazon
-#' SageMaker Feature Store. Use this API to put, delete, and retrieve (get)
-#' features from a feature store.
+#' Contains all data plane API operations and data types for the Amazon SageMaker Feature Store. Use this API to put, delete, and retrieve (get) features from a feature store.
 #' 
-#' Use the following operations to configure your `OnlineStore` and
-#' `OfflineStore` features, and to create and manage feature groups:
+#' Use the following operations to configure your `OnlineStore` and `OfflineStore` features, and to create and manage feature groups:
 #' 
 #' -   [CreateFeatureGroup](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateFeatureGroup.html)
 #' 
@@ -28812,9 +26641,7 @@ sagemakergeospatialcapabilities <- function(config = list(), credentials = list(
 #' Amazon SageMaker Metrics Service
 #'
 #' @description
-#' Contains all data plane API operations and data types for Amazon
-#' SageMaker Metrics. Use these APIs to put and retrieve (get) features
-#' related to your training run.
+#' Contains all data plane API operations and data types for Amazon SageMaker Metrics. Use these APIs to put and retrieve (get) features related to your training run.
 #' 
 #' -   `batch_put_metrics`
 #'
@@ -29035,9 +26862,7 @@ sagemakerruntime <- function(config = list(), credentials = list(), endpoint = N
 #' Amazon Textract
 #'
 #' @description
-#' Amazon Textract detects and analyzes text in documents and converts it
-#' into machine-readable text. This is the API reference documentation for
-#' Amazon Textract.
+#' Amazon Textract detects and analyzes text in documents and converts it into machine-readable text. This is the API reference documentation for Amazon Textract.
 #'
 #' @param
 #' config
@@ -29169,21 +26994,13 @@ textract <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' Amazon Transcribe Service
 #'
 #' @description
-#' Amazon Transcribe offers three main types of batch transcription:
-#' **Standard**, **Medical**, and **Call Analytics**.
+#' Amazon Transcribe offers three main types of batch transcription: **Standard**, **Medical**, and **Call Analytics**.
 #' 
-#' -   **Standard transcriptions** are the most common option. Refer to for
-#'     details.
+#' -   **Standard transcriptions** are the most common option. Refer to for details.
 #' 
-#' -   **Medical transcriptions** are tailored to medical professionals and
-#'     incorporate medical terms. A common use case for this service is
-#'     transcribing doctor-patient dialogue into after-visit notes. Refer
-#'     to for details.
+#' -   **Medical transcriptions** are tailored to medical professionals and incorporate medical terms. A common use case for this service is transcribing doctor-patient dialogue into after-visit notes. Refer to for details.
 #' 
-#' -   **Call Analytics transcriptions** are designed for use with call
-#'     center audio on two different channels; if you're looking for
-#'     insight into customer service calls, use this option. Refer to for
-#'     details.
+#' -   **Call Analytics transcriptions** are designed for use with call center audio on two different channels; if you're looking for insight into customer service calls, use this option. Refer to for details.
 #'
 #' @param
 #' config
@@ -29333,8 +27150,7 @@ transcribeservice <- function(config = list(), credentials = list(), endpoint = 
 #' Amazon Translate
 #'
 #' @description
-#' Provides translation of the input content from the source language to
-#' the target language.
+#' Provides translation of the input content from the source language to the target language.
 #'
 #' @param
 #' config
@@ -29460,9 +27276,7 @@ translate <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' Amazon Voice ID
 #'
 #' @description
-#' Amazon Connect Voice ID provides real-time caller authentication and
-#' fraud risk detection, which make voice interactions in contact centers
-#' more secure and efficient.
+#' Amazon Connect Voice ID provides real-time caller authentication and fraud risk detection, which make voice interactions in contact centers more secure and efficient.
 #'
 #' @param
 #' config
@@ -29598,8 +27412,7 @@ voiceid <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' Amazon Bedrock
 #'
 #' @description
-#' Describes the API operations for creating, managing, fine-turning, and
-#' evaluating Amazon Bedrock models.
+#' Describes the API operations for creating, managing, fine-turning, and evaluating Amazon Bedrock models.
 #'
 #' @param
 #' config
@@ -29677,15 +27490,17 @@ voiceid <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' @examples
 #' \dontrun{
 #' svc <- bedrock()
-#' svc$batch_delete_evaluation_job(
+#' svc$batch_delete_advanced_prompt_optimization_job(
 #'   Foo = 123
 #' )
 #' }
 #'
 #' @section Operations:
 #' \tabular{ll}{
+#'  \link[paws.machine.learning:bedrock_batch_delete_advanced_prompt_optimization_job]{batch_delete_advanced_prompt_optimization_job} \tab Batch delete the specified advanced prompt optimization jobs\cr
 #'  \link[paws.machine.learning:bedrock_batch_delete_evaluation_job]{batch_delete_evaluation_job} \tab Deletes a batch of evaluation jobs\cr
 #'  \link[paws.machine.learning:bedrock_cancel_automated_reasoning_policy_build_workflow]{cancel_automated_reasoning_policy_build_workflow} \tab Cancels a running Automated Reasoning policy build workflow\cr
+#'  \link[paws.machine.learning:bedrock_create_advanced_prompt_optimization_job]{create_advanced_prompt_optimization_job} \tab Creates an asynchronous batch job for advanced prompt optimization\cr
 #'  \link[paws.machine.learning:bedrock_create_automated_reasoning_policy]{create_automated_reasoning_policy} \tab Creates an Automated Reasoning policy for Amazon Bedrock Guardrails\cr
 #'  \link[paws.machine.learning:bedrock_create_automated_reasoning_policy_test_case]{create_automated_reasoning_policy_test_case} \tab Creates a test for an Automated Reasoning policy\cr
 #'  \link[paws.machine.learning:bedrock_create_automated_reasoning_policy_version]{create_automated_reasoning_policy_version} \tab Creates a new version of an existing Automated Reasoning policy\cr
@@ -29720,6 +27535,7 @@ voiceid <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #'  \link[paws.machine.learning:bedrock_delete_resource_policy]{delete_resource_policy} \tab Deletes a previously created Bedrock resource policy\cr
 #'  \link[paws.machine.learning:bedrock_deregister_marketplace_model_endpoint]{deregister_marketplace_model_endpoint} \tab Deregisters an endpoint for a model from Amazon Bedrock Marketplace\cr
 #'  \link[paws.machine.learning:bedrock_export_automated_reasoning_policy_version]{export_automated_reasoning_policy_version} \tab Exports the policy definition for an Automated Reasoning policy version\cr
+#'  \link[paws.machine.learning:bedrock_get_advanced_prompt_optimization_job]{get_advanced_prompt_optimization_job} \tab Retrieves the details and status of an advanced prompt optimization job\cr
 #'  \link[paws.machine.learning:bedrock_get_automated_reasoning_policy]{get_automated_reasoning_policy} \tab Retrieves details about an Automated Reasoning policy or policy version\cr
 #'  \link[paws.machine.learning:bedrock_get_automated_reasoning_policy_annotations]{get_automated_reasoning_policy_annotations} \tab Retrieves the current annotations for an Automated Reasoning policy build workflow\cr
 #'  \link[paws.machine.learning:bedrock_get_automated_reasoning_policy_build_workflow]{get_automated_reasoning_policy_build_workflow} \tab Retrieves detailed information about an Automated Reasoning policy build workflow, including its status, configuration, and metadata\cr
@@ -29745,6 +27561,7 @@ voiceid <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #'  \link[paws.machine.learning:bedrock_get_provisioned_model_throughput]{get_provisioned_model_throughput} \tab Returns details for a Provisioned Throughput\cr
 #'  \link[paws.machine.learning:bedrock_get_resource_policy]{get_resource_policy} \tab Gets the resource policy document for a Bedrock resource\cr
 #'  \link[paws.machine.learning:bedrock_get_use_case_for_model_access]{get_use_case_for_model_access} \tab Get usecase for model access\cr
+#'  \link[paws.machine.learning:bedrock_list_advanced_prompt_optimization_jobs]{list_advanced_prompt_optimization_jobs} \tab Lists all advanced prompt optimization jobs for the account\cr
 #'  \link[paws.machine.learning:bedrock_list_automated_reasoning_policies]{list_automated_reasoning_policies} \tab Lists all Automated Reasoning policies in your account, with optional filtering by policy ARN\cr
 #'  \link[paws.machine.learning:bedrock_list_automated_reasoning_policy_build_workflows]{list_automated_reasoning_policy_build_workflows} \tab Lists all build workflows for an Automated Reasoning policy, showing the history of policy creation and modification attempts\cr
 #'  \link[paws.machine.learning:bedrock_list_automated_reasoning_policy_test_cases]{list_automated_reasoning_policy_test_cases} \tab Lists tests for an Automated Reasoning policy\cr
@@ -29773,6 +27590,7 @@ voiceid <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #'  \link[paws.machine.learning:bedrock_register_marketplace_model_endpoint]{register_marketplace_model_endpoint} \tab Registers an existing Amazon SageMaker endpoint with Amazon Bedrock Marketplace, allowing it to be used with Amazon Bedrock APIs\cr
 #'  \link[paws.machine.learning:bedrock_start_automated_reasoning_policy_build_workflow]{start_automated_reasoning_policy_build_workflow} \tab Starts a new build workflow for an Automated Reasoning policy\cr
 #'  \link[paws.machine.learning:bedrock_start_automated_reasoning_policy_test_workflow]{start_automated_reasoning_policy_test_workflow} \tab Initiates a test workflow to validate Automated Reasoning policy tests\cr
+#'  \link[paws.machine.learning:bedrock_stop_advanced_prompt_optimization_job]{stop_advanced_prompt_optimization_job} \tab Stops an in-progress advanced prompt optimization job\cr
 #'  \link[paws.machine.learning:bedrock_stop_evaluation_job]{stop_evaluation_job} \tab Stops an evaluation job that is current being created or running\cr
 #'  \link[paws.machine.learning:bedrock_stop_model_customization_job]{stop_model_customization_job} \tab Stops an active model customization job\cr
 #'  \link[paws.machine.learning:bedrock_stop_model_invocation_job]{stop_model_invocation_job} \tab Stops a batch inference job\cr
@@ -29807,8 +27625,7 @@ bedrock <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' Agents for Amazon Bedrock
 #'
 #' @description
-#' Describes the API operations for creating and managing Amazon Bedrock
-#' agents.
+#' Describes the API operations for creating and managing Amazon Bedrock agents.
 #'
 #' @param
 #' config
@@ -29987,9 +27804,7 @@ bedrockagent <- function(config = list(), credentials = list(), endpoint = NULL,
 #' Amazon Bedrock AgentCore
 #'
 #' @description
-#' Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data
-#' Plane actions process and handle data or workloads within Amazon Web
-#' Services services.
+#' Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data Plane actions process and handle data or workloads within Amazon Web Services services.
 #'
 #' @param
 #' config
@@ -30081,13 +27896,13 @@ bedrockagent <- function(config = list(), credentials = list(), endpoint = NULL,
 #'  \link[paws.machine.learning:bedrockagentcore_create_ab_test]{create_ab_test} \tab Creates an A/B test for comparing agent configurations\cr
 #'  \link[paws.machine.learning:bedrockagentcore_create_event]{create_event} \tab Creates an event in an AgentCore Memory resource\cr
 #'  \link[paws.machine.learning:bedrockagentcore_create_payment_instrument]{create_payment_instrument} \tab Create a new payment instrument for a connector\cr
-#'  \link[paws.machine.learning:bedrockagentcore_create_payment_session]{create_payment_session} \tab Create a new payment manager session\cr
+#'  \link[paws.machine.learning:bedrockagentcore_create_payment_session]{create_payment_session} \tab Create a new payment session\cr
 #'  \link[paws.machine.learning:bedrockagentcore_delete_ab_test]{delete_ab_test} \tab Deletes an A/B test and its associated gateway rules\cr
 #'  \link[paws.machine.learning:bedrockagentcore_delete_batch_evaluation]{delete_batch_evaluation} \tab Deletes a batch evaluation and its associated results\cr
 #'  \link[paws.machine.learning:bedrockagentcore_delete_event]{delete_event} \tab Deletes an event from an AgentCore Memory resource\cr
 #'  \link[paws.machine.learning:bedrockagentcore_delete_memory_record]{delete_memory_record} \tab Deletes a memory record from an AgentCore Memory resource\cr
-#'  \link[paws.machine.learning:bedrockagentcore_delete_payment_instrument]{delete_payment_instrument} \tab Delete a payment instrument\cr
-#'  \link[paws.machine.learning:bedrockagentcore_delete_payment_session]{delete_payment_session} \tab Delete a payment manager session\cr
+#'  \link[paws.machine.learning:bedrockagentcore_delete_payment_instrument]{delete_payment_instrument} \tab Deletes a payment instrument\cr
+#'  \link[paws.machine.learning:bedrockagentcore_delete_payment_session]{delete_payment_session} \tab Deletes a payment session\cr
 #'  \link[paws.machine.learning:bedrockagentcore_delete_recommendation]{delete_recommendation} \tab Deletes a recommendation and its associated results\cr
 #'  \link[paws.machine.learning:bedrockagentcore_evaluate]{evaluate} \tab Performs on-demand evaluation of agent traces using a specified evaluator\cr
 #'  \link[paws.machine.learning:bedrockagentcore_get_ab_test]{get_ab_test} \tab Retrieves detailed information about an A/B test, including its configuration, status, and statistical results\cr
@@ -30121,10 +27936,10 @@ bedrockagent <- function(config = list(), credentials = list(), endpoint = NULL,
 #'  \link[paws.machine.learning:bedrockagentcore_list_memory_extraction_jobs]{list_memory_extraction_jobs} \tab Lists all long-term memory extraction jobs that are eligible to be started with optional filtering\cr
 #'  \link[paws.machine.learning:bedrockagentcore_list_memory_records]{list_memory_records} \tab Lists memory records in an AgentCore Memory resource based on specified criteria\cr
 #'  \link[paws.machine.learning:bedrockagentcore_list_payment_instruments]{list_payment_instruments} \tab List payment instruments for a manager\cr
-#'  \link[paws.machine.learning:bedrockagentcore_list_payment_sessions]{list_payment_sessions} \tab List payment manager sessions\cr
+#'  \link[paws.machine.learning:bedrockagentcore_list_payment_sessions]{list_payment_sessions} \tab List payment sessions\cr
 #'  \link[paws.machine.learning:bedrockagentcore_list_recommendations]{list_recommendations} \tab Lists all recommendations in the account, with optional filtering by status\cr
 #'  \link[paws.machine.learning:bedrockagentcore_list_sessions]{list_sessions} \tab Lists sessions in an AgentCore Memory resource based on specified criteria\cr
-#'  \link[paws.machine.learning:bedrockagentcore_process_payment]{process_payment} \tab Process a payment transaction\cr
+#'  \link[paws.machine.learning:bedrockagentcore_process_payment]{process_payment} \tab Processes a payment using a payment instrument within a payment session\cr
 #'  \link[paws.machine.learning:bedrockagentcore_retrieve_memory_records]{retrieve_memory_records} \tab Searches for and retrieves memory records from an AgentCore Memory resource based on specified search criteria\cr
 #'  \link[paws.machine.learning:bedrockagentcore_save_browser_session_profile]{save_browser_session_profile} \tab Saves the current state of a browser session as a reusable profile in Amazon Bedrock AgentCore\cr
 #'  \link[paws.machine.learning:bedrockagentcore_search_registry_records]{search_registry_records} \tab Searches for registry records using semantic, lexical, or hybrid queries\cr
@@ -30161,9 +27976,7 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #' Amazon Bedrock AgentCore Control
 #'
 #' @description
-#' Welcome to the Amazon Bedrock AgentCore Control plane API reference.
-#' Control plane actions configure, create, modify, and monitor Amazon Web
-#' Services resources.
+#' Welcome to the Amazon Bedrock AgentCore Control plane API reference. Control plane actions configure, create, modify, and monitor Amazon Web Services resources.
 #'
 #' @param
 #' config
@@ -30241,13 +28054,14 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #' @examples
 #' \dontrun{
 #' svc <- bedrockagentcorecontrol()
-#' svc$create_agent_runtime(
+#' svc$add_dataset_examples(
 #'   Foo = 123
 #' )
 #' }
 #'
 #' @section Operations:
 #' \tabular{ll}{
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_add_dataset_examples]{add_dataset_examples} \tab Adds examples to the dataset's DRAFT\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_agent_runtime]{create_agent_runtime} \tab Creates an Amazon Bedrock AgentCore Runtime\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_agent_runtime_endpoint]{create_agent_runtime_endpoint} \tab Creates an AgentCore Runtime endpoint\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_api_key_credential_provider]{create_api_key_credential_provider} \tab Creates a new API key credential provider\cr
@@ -30255,6 +28069,8 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_browser_profile]{create_browser_profile} \tab Creates a browser profile in Amazon Bedrock AgentCore\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_code_interpreter]{create_code_interpreter} \tab Creates a custom code interpreter\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_configuration_bundle]{create_configuration_bundle} \tab Creates a new configuration bundle resource\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_create_dataset]{create_dataset} \tab Creates a new Dataset resource asynchronously\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_create_dataset_version]{create_dataset_version} \tab Publishes the current DRAFT as a new numbered version\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_evaluator]{create_evaluator} \tab Creates a custom evaluator for agent quality assessment\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_gateway]{create_gateway} \tab Creates a gateway for Amazon Bedrock Agent\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_create_gateway_rule]{create_gateway_rule} \tab Creates a rule for a gateway\cr
@@ -30278,6 +28094,8 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_delete_browser_profile]{delete_browser_profile} \tab Deletes a browser profile\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_delete_code_interpreter]{delete_code_interpreter} \tab Deletes a custom code interpreter\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_delete_configuration_bundle]{delete_configuration_bundle} \tab Deletes a configuration bundle and all of its versions\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_delete_dataset]{delete_dataset} \tab Deletes a dataset version or an entire dataset (all versions + name claim)\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_delete_dataset_examples]{delete_dataset_examples} \tab Deletes specific examples by ID from DRAFT\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_delete_evaluator]{delete_evaluator} \tab Deletes a custom evaluator\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_delete_gateway]{delete_gateway} \tab Deletes a gateway\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_delete_gateway_rule]{delete_gateway_rule} \tab Deletes a gateway rule\cr
@@ -30303,6 +28121,7 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_code_interpreter]{get_code_interpreter} \tab Gets information about a custom code interpreter\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_configuration_bundle]{get_configuration_bundle} \tab Gets the latest version of a configuration bundle\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_configuration_bundle_version]{get_configuration_bundle_version} \tab Gets a specific version of a configuration bundle by its version identifier\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_get_dataset]{get_dataset} \tab Retrieves dataset metadata only\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_evaluator]{get_evaluator} \tab Retrieves detailed information about an evaluator, including its configuration, status, and metadata\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_gateway]{get_gateway} \tab Retrieves information about a specific Gateway\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_gateway_rule]{get_gateway_rule} \tab Retrieves detailed information about a specific gateway rule\cr
@@ -30316,7 +28135,10 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_payment_manager]{get_payment_manager} \tab Retrieves information about a specific payment manager\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_policy]{get_policy} \tab Retrieves detailed information about a specific policy within the AgentCore Policy system\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_policy_engine]{get_policy_engine} \tab Retrieves detailed information about a specific policy engine within the AgentCore Policy system\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_get_policy_engine_summary]{get_policy_engine_summary} \tab Retrieves a metadata-only summary of a specific policy engine without decrypting customer content\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_policy_generation]{get_policy_generation} \tab Retrieves information about a policy generation request within the AgentCore Policy system\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_get_policy_generation_summary]{get_policy_generation_summary} \tab Retrieves a metadata-only summary of a specific policy generation request without decrypting customer content\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_get_policy_summary]{get_policy_summary} \tab Retrieves a metadata-only summary of a specific policy without decrypting customer content\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_registry]{get_registry} \tab Retrieves information about a specific registry\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_registry_record]{get_registry_record} \tab Retrieves information about a specific registry record\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_get_resource_policy]{get_resource_policy} \tab Retrieves the resource-based policy for a specified resource\cr
@@ -30331,6 +28153,9 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_code_interpreters]{list_code_interpreters} \tab Lists all custom code interpreters in your account\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_configuration_bundles]{list_configuration_bundles} \tab Lists all configuration bundles in the account\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_configuration_bundle_versions]{list_configuration_bundle_versions} \tab Lists all versions of a configuration bundle, with optional filtering by branch name or creation source\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_list_dataset_examples]{list_dataset_examples} \tab Returns paginated examples from the dataset\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_list_datasets]{list_datasets} \tab Lists all datasets in the caller's account, paginated\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_list_dataset_versions]{list_dataset_versions} \tab Lists all published versions of a dataset, sorted by version number descending (newest first)\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_evaluators]{list_evaluators} \tab Lists all available evaluators, including both builtin evaluators provided by the service and custom evaluators created by the user\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_gateway_rules]{list_gateway_rules} \tab Lists all rules for a gateway\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_gateways]{list_gateways} \tab Lists all gateways in the account\cr
@@ -30344,8 +28169,11 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_payment_managers]{list_payment_managers} \tab Lists all payment managers in the account\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_policies]{list_policies} \tab Retrieves a list of policies within the AgentCore Policy engine\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_policy_engines]{list_policy_engines} \tab Retrieves a list of policy engines within the AgentCore Policy system\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_list_policy_engine_summaries]{list_policy_engine_summaries} \tab Retrieves a paginated list of metadata-only policy engine summaries without decrypting customer content\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_policy_generation_assets]{list_policy_generation_assets} \tab Retrieves a list of generated policy assets from a policy generation request within the AgentCore Policy system\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_policy_generations]{list_policy_generations} \tab Retrieves a list of policy generation requests within the AgentCore Policy system\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_list_policy_generation_summaries]{list_policy_generation_summaries} \tab Retrieves a paginated list of metadata-only policy generation summaries within a policy engine without decrypting customer content\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_list_policy_summaries]{list_policy_summaries} \tab Retrieves a paginated list of metadata-only policy summaries within a policy engine without decrypting customer content\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_registries]{list_registries} \tab Lists all registries in the account\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_registry_records]{list_registry_records} \tab Lists registry records within a registry\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_list_tags_for_resource]{list_tags_for_resource} \tab Lists the tags associated with the specified resource\cr
@@ -30361,6 +28189,8 @@ bedrockagentcore <- function(config = list(), credentials = list(), endpoint = N
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_update_agent_runtime_endpoint]{update_agent_runtime_endpoint} \tab Updates an existing Amazon Bedrock AgentCore Runtime endpoint\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_update_api_key_credential_provider]{update_api_key_credential_provider} \tab Updates an existing API key credential provider\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_update_configuration_bundle]{update_configuration_bundle} \tab Updates a configuration bundle by creating a new version with the specified changes\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_update_dataset]{update_dataset} \tab Updates a dataset's metadata\cr
+#'  \link[paws.machine.learning:bedrockagentcorecontrol_update_dataset_examples]{update_dataset_examples} \tab Updates multiple existing examples in-place on DRAFT\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_update_evaluator]{update_evaluator} \tab Updates a custom evaluator's configuration, description, or evaluation level\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_update_gateway]{update_gateway} \tab Updates an existing gateway\cr
 #'  \link[paws.machine.learning:bedrockagentcorecontrol_update_gateway_rule]{update_gateway_rule} \tab Updates a gateway rule's priority, conditions, actions, or description\cr
@@ -30400,8 +28230,7 @@ bedrockagentcorecontrol <- function(config = list(), credentials = list(), endpo
 #' Agents for Amazon Bedrock Runtime
 #'
 #' @description
-#' Contains APIs related to model invocation and querying of knowledge
-#' bases.
+#' Contains APIs related to model invocation and querying of knowledge bases.
 #'
 #' @param
 #' config
@@ -30786,8 +28615,7 @@ bedrockdataautomationruntime <- function(config = list(), credentials = list(), 
 #' Amazon Bedrock Runtime
 #'
 #' @description
-#' Describes the API operations for running inference using Amazon Bedrock
-#' models.
+#' Describes the API operations for running inference using Amazon Bedrock models.
 #'
 #' @param
 #' config
@@ -30904,22 +28732,9 @@ bedrockruntime <- function(config = list(), credentials = list(), endpoint = NUL
 #' Amazon Athena
 #'
 #' @description
-#' Amazon Athena is an interactive query service that lets you use standard
-#' SQL to analyze data directly in Amazon S3. You can point Athena at your
-#' data in Amazon S3 and run ad-hoc queries and get results in seconds.
-#' Athena is serverless, so there is no infrastructure to set up or manage.
-#' You pay only for the queries you run. Athena scales
-#' automatically—executing queries in parallel—so results are fast, even
-#' with large datasets and complex queries. For more information, see [What
-#' is Amazon
-#' Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html) in
-#' the *Amazon Athena User Guide*.
+#' Amazon Athena is an interactive query service that lets you use standard SQL to analyze data directly in Amazon S3. You can point Athena at your data in Amazon S3 and run ad-hoc queries and get results in seconds. Athena is serverless, so there is no infrastructure to set up or manage. You pay only for the queries you run. Athena scales automatically—executing queries in parallel—so results are fast, even with large datasets and complex queries. For more information, see [What is Amazon Athena](https://docs.aws.amazon.com/athena/latest/ug/what-is.html) in the *Amazon Athena User Guide*.
 #' 
-#' If you connect to Athena using the JDBC driver, use version 1.1.0 of the
-#' driver or later with the Amazon Athena API. Earlier version drivers do
-#' not support the API. For more information and to download the driver,
-#' see [Accessing Amazon Athena with
-#' JDBC](https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html).
+#' If you connect to Athena using the JDBC driver, use version 1.1.0 of the driver or later with the Amazon Athena API. Earlier version drivers do not support the API. For more information and to download the driver, see [Accessing Amazon Athena with JDBC](https://docs.aws.amazon.com/athena/latest/ug/connect-with-jdbc.html).
 #'
 #' @param
 #' config
@@ -31098,18 +28913,9 @@ athena <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' @description
 #' Amazon CloudSearch Configuration Service
 #' 
-#' You use the Amazon CloudSearch configuration service to create,
-#' configure, and manage search domains. Configuration service requests are
-#' submitted using the AWS Query protocol. AWS Query requests are HTTP or
-#' HTTPS requests submitted via HTTP GET or POST with a query parameter
-#' named Action.
+#' You use the Amazon CloudSearch configuration service to create, configure, and manage search domains. Configuration service requests are submitted using the AWS Query protocol. AWS Query requests are HTTP or HTTPS requests submitted via HTTP GET or POST with a query parameter named Action.
 #' 
-#' The endpoint for configuration service requests is region-specific:
-#' cloudsearch.*region*.amazonaws.com. For example,
-#' cloudsearch.us-east-1.amazonaws.com. For a current list of supported
-#' regions and endpoints, see <a
-#' href="https://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region"
-#' target="_blank">Regions and Endpoints</a>.
+#' The endpoint for configuration service requests is region-specific: cloudsearch.*region*.amazonaws.com. For example, cloudsearch.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#cloudsearch_region" target="_blank">Regions and Endpoints</a>.
 #'
 #' @param
 #' config
@@ -31242,20 +29048,11 @@ cloudsearch <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon CloudSearch Domain
 #'
 #' @description
-#' You use the AmazonCloudSearch2013 API to upload documents to a search
-#' domain and search those documents.
+#' You use the AmazonCloudSearch2013 API to upload documents to a search domain and search those documents.
 #' 
-#' The endpoints for submitting
-#' `upload_documents`,
-#' `search`, and
-#' `suggest` requests are domain-specific. To
-#' get the endpoints for your domain, use the Amazon CloudSearch
-#' configuration service `DescribeDomains` action. The domain endpoints are
-#' also displayed on the domain dashboard in the Amazon CloudSearch
-#' console. You submit suggest requests to the search endpoint.
+#' The endpoints for submitting `upload_documents`, `search`, and `suggest` requests are domain-specific. To get the endpoints for your domain, use the Amazon CloudSearch configuration service `DescribeDomains` action. The domain endpoints are also displayed on the domain dashboard in the Amazon CloudSearch console. You submit suggest requests to the search endpoint.
 #' 
-#' For more information, see the [Amazon CloudSearch Developer
-#' Guide](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/).
+#' For more information, see the [Amazon CloudSearch Developer Guide](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/).
 #'
 #' @param
 #' config
@@ -31365,29 +29162,11 @@ cloudsearchdomain <- function(config = list(), credentials = list(), endpoint = 
 #' AWS Data Pipeline
 #'
 #' @description
-#' AWS Data Pipeline configures and manages a data-driven workflow called a
-#' pipeline. AWS Data Pipeline handles the details of scheduling and
-#' ensuring that data dependencies are met so that your application can
-#' focus on processing the data.
+#' AWS Data Pipeline configures and manages a data-driven workflow called a pipeline. AWS Data Pipeline handles the details of scheduling and ensuring that data dependencies are met so that your application can focus on processing the data.
 #' 
-#' AWS Data Pipeline provides a JAR implementation of a task runner called
-#' AWS Data Pipeline Task Runner. AWS Data Pipeline Task Runner provides
-#' logic for common data management scenarios, such as performing database
-#' queries and running data analysis using Amazon Elastic MapReduce (Amazon
-#' EMR). You can use AWS Data Pipeline Task Runner as your task runner, or
-#' you can write your own task runner to provide custom data management.
+#' AWS Data Pipeline provides a JAR implementation of a task runner called AWS Data Pipeline Task Runner. AWS Data Pipeline Task Runner provides logic for common data management scenarios, such as performing database queries and running data analysis using Amazon Elastic MapReduce (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write your own task runner to provide custom data management.
 #' 
-#' AWS Data Pipeline implements two main sets of functionality. Use the
-#' first set to create a pipeline and define data sources, schedules,
-#' dependencies, and the transforms to be performed on the data. Use the
-#' second set in your task runner application to receive the next task
-#' ready for processing. The logic for performing the task, such as
-#' querying the data, running data analysis, or converting the data from
-#' one format to another, is contained within the task runner. The task
-#' runner performs the task assigned to it by the web service, reporting
-#' progress to the web service as it does so. When the task is done, the
-#' task runner reports the final success or failure of the task to the web
-#' service.
+#' AWS Data Pipeline implements two main sets of functionality. Use the first set to create a pipeline and define data sources, schedules, dependencies, and the transforms to be performed on the data. Use the second set in your task runner application to receive the next task ready for processing. The logic for performing the task, such as querying the data, running data analysis, or converting the data from one format to another, is contained within the task runner. The task runner performs the task assigned to it by the web service, reporting progress to the web service as it does so. When the task is done, the task runner reports the final success or failure of the task to the web service.
 #'
 #' @param
 #' config
@@ -31513,13 +29292,7 @@ datapipeline <- function(config = list(), credentials = list(), endpoint = NULL,
 #' Amazon DataZone
 #'
 #' @description
-#' Amazon DataZone is a data management service that enables you to
-#' catalog, discover, govern, share, and analyze your data. With Amazon
-#' DataZone, you can share and access your data across accounts and
-#' supported regions. Amazon DataZone simplifies your experience across
-#' Amazon Web Services services, including, but not limited to, Amazon
-#' Redshift, Amazon Athena, Amazon Web Services Glue, and Amazon Web
-#' Services Lake Formation.
+#' Amazon DataZone is a data management service that enables you to catalog, discover, govern, share, and analyze your data. With Amazon DataZone, you can share and access your data across accounts and supported regions. Amazon DataZone simplifies your experience across Amazon Web Services services, including, but not limited to, Amazon Redshift, Amazon Athena, Amazon Web Services Glue, and Amazon Web Services Lake Formation.
 #'
 #' @param
 #' config
@@ -31634,6 +29407,7 @@ datapipeline <- function(config = list(), credentials = list(), endpoint = NULL,
 #'  \link[paws.analytics:datazone_create_glossary_term]{create_glossary_term} \tab Creates a business glossary term\cr
 #'  \link[paws.analytics:datazone_create_group_profile]{create_group_profile} \tab Creates a group profile in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_create_listing_change_set]{create_listing_change_set} \tab Publishes a listing (a record of an asset at a given time) or removes a listing from the catalog\cr
+#'  \link[paws.analytics:datazone_create_notebook]{create_notebook} \tab Creates a notebook in Amazon SageMaker Unified Studio\cr
 #'  \link[paws.analytics:datazone_create_project]{create_project} \tab Creates an Amazon DataZone project\cr
 #'  \link[paws.analytics:datazone_create_project_membership]{create_project_membership} \tab Creates a project membership in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_create_project_profile]{create_project_profile} \tab Creates a project profile\cr
@@ -31661,6 +29435,7 @@ datapipeline <- function(config = list(), credentials = list(), endpoint = NULL,
 #'  \link[paws.analytics:datazone_delete_glossary]{delete_glossary} \tab Deletes a business glossary in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_delete_glossary_term]{delete_glossary_term} \tab Deletes a business glossary term in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_delete_listing]{delete_listing} \tab Deletes a listing (a record of an asset at a given time)\cr
+#'  \link[paws.analytics:datazone_delete_notebook]{delete_notebook} \tab Deletes a notebook in Amazon SageMaker Unified Studio\cr
 #'  \link[paws.analytics:datazone_delete_project]{delete_project} \tab Deletes a project in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_delete_project_membership]{delete_project_membership} \tab Deletes project membership in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_delete_project_profile]{delete_project_profile} \tab Deletes a project profile\cr
@@ -31698,7 +29473,9 @@ datapipeline <- function(config = list(), credentials = list(), endpoint = NULL,
 #'  \link[paws.analytics:datazone_get_lineage_node]{get_lineage_node} \tab Gets the data lineage node\cr
 #'  \link[paws.analytics:datazone_get_listing]{get_listing} \tab Gets a listing (a record of an asset at a given time)\cr
 #'  \link[paws.analytics:datazone_get_metadata_generation_run]{get_metadata_generation_run} \tab Gets a metadata generation run in Amazon DataZone\cr
-#'  \link[paws.analytics:datazone_get_notebook_run]{get_notebook_run} \tab Gets the details of a notebook run in an Amazon DataZone domain\cr
+#'  \link[paws.analytics:datazone_get_notebook]{get_notebook} \tab Gets the details of a notebook in Amazon SageMaker Unified Studio\cr
+#'  \link[paws.analytics:datazone_get_notebook_export]{get_notebook_export} \tab Gets the details of a notebook export in Amazon SageMaker Unified Studio\cr
+#'  \link[paws.analytics:datazone_get_notebook_run]{get_notebook_run} \tab Gets the details of a notebook run in Amazon SageMaker Unified Studio\cr
 #'  \link[paws.analytics:datazone_get_project]{get_project} \tab Gets a project in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_get_project_profile]{get_project_profile} \tab The details of the project profile\cr
 #'  \link[paws.analytics:datazone_get_rule]{get_rule} \tab Gets the details of a rule in Amazon DataZone\cr
@@ -31729,7 +29506,8 @@ datapipeline <- function(config = list(), credentials = list(), endpoint = NULL,
 #'  \link[paws.analytics:datazone_list_lineage_events]{list_lineage_events} \tab Lists lineage events\cr
 #'  \link[paws.analytics:datazone_list_lineage_node_history]{list_lineage_node_history} \tab Lists the history of the specified data lineage node\cr
 #'  \link[paws.analytics:datazone_list_metadata_generation_runs]{list_metadata_generation_runs} \tab Lists all metadata generation runs\cr
-#'  \link[paws.analytics:datazone_list_notebook_runs]{list_notebook_runs} \tab Lists notebook runs in an Amazon DataZone domain\cr
+#'  \link[paws.analytics:datazone_list_notebook_runs]{list_notebook_runs} \tab Lists notebook runs in Amazon SageMaker Unified Studio\cr
+#'  \link[paws.analytics:datazone_list_notebooks]{list_notebooks} \tab Lists notebooks in Amazon SageMaker Unified Studio\cr
 #'  \link[paws.analytics:datazone_list_notifications]{list_notifications} \tab Lists all Amazon DataZone notifications\cr
 #'  \link[paws.analytics:datazone_list_policy_grants]{list_policy_grants} \tab Lists policy grants\cr
 #'  \link[paws.analytics:datazone_list_project_memberships]{list_project_memberships} \tab Lists all members of the specified project\cr
@@ -31759,8 +29537,10 @@ datapipeline <- function(config = list(), credentials = list(), endpoint = NULL,
 #'  \link[paws.analytics:datazone_search_user_profiles]{search_user_profiles} \tab Searches user profiles in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_start_data_source_run]{start_data_source_run} \tab Start the run of the specified data source in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_start_metadata_generation_run]{start_metadata_generation_run} \tab Starts the metadata generation run\cr
-#'  \link[paws.analytics:datazone_start_notebook_run]{start_notebook_run} \tab Starts a notebook run in an Amazon DataZone domain\cr
-#'  \link[paws.analytics:datazone_stop_notebook_run]{stop_notebook_run} \tab Stops a running notebook run in an Amazon DataZone domain\cr
+#'  \link[paws.analytics:datazone_start_notebook_export]{start_notebook_export} \tab Starts a notebook export in Amazon SageMaker Unified Studio\cr
+#'  \link[paws.analytics:datazone_start_notebook_import]{start_notebook_import} \tab Starts a notebook import in Amazon SageMaker Unified Studio\cr
+#'  \link[paws.analytics:datazone_start_notebook_run]{start_notebook_run} \tab Starts a notebook run in Amazon SageMaker Unified Studio\cr
+#'  \link[paws.analytics:datazone_stop_notebook_run]{stop_notebook_run} \tab Stops a running notebook run in Amazon SageMaker Unified Studio\cr
 #'  \link[paws.analytics:datazone_tag_resource]{tag_resource} \tab Tags a resource in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_untag_resource]{untag_resource} \tab Untags a resource in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_update_account_pool]{update_account_pool} \tab Updates the account pool\cr
@@ -31776,6 +29556,7 @@ datapipeline <- function(config = list(), credentials = list(), endpoint = NULL,
 #'  \link[paws.analytics:datazone_update_glossary]{update_glossary} \tab Updates the business glossary in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_update_glossary_term]{update_glossary_term} \tab Updates a business glossary term in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_update_group_profile]{update_group_profile} \tab Updates the specified group profile in Amazon DataZone\cr
+#'  \link[paws.analytics:datazone_update_notebook]{update_notebook} \tab Updates a notebook in Amazon SageMaker Unified Studio\cr
 #'  \link[paws.analytics:datazone_update_project]{update_project} \tab Updates the specified project in Amazon DataZone\cr
 #'  \link[paws.analytics:datazone_update_project_profile]{update_project_profile} \tab Updates a project profile\cr
 #'  \link[paws.analytics:datazone_update_root_domain_unit_owner]{update_root_domain_unit_owner} \tab Updates the owner of the root domain unit\cr
@@ -31808,21 +29589,11 @@ datazone <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' @description
 #' Amazon Elasticsearch Configuration Service
 #' 
-#' Use the Amazon Elasticsearch Configuration API to create, configure, and
-#' manage Elasticsearch domains.
+#' Use the Amazon Elasticsearch Configuration API to create, configure, and manage Elasticsearch domains.
 #' 
-#' For sample code that uses the Configuration API, see the [Amazon
-#' Elasticsearch Service Developer
-#' Guide](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-samples.html).
-#' The guide also contains [sample code for sending signed HTTP requests to
-#' the Elasticsearch
-#' APIs](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/).
+#' For sample code that uses the Configuration API, see the [Amazon Elasticsearch Service Developer Guide](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/configuration-samples.html). The guide also contains [sample code for sending signed HTTP requests to the Elasticsearch APIs](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/).
 #' 
-#' The endpoint for configuration service requests is region-specific:
-#' es.*region*.amazonaws.com. For example, es.us-east-1.amazonaws.com. For
-#' a current list of supported regions and endpoints, see <a
-#' href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions"
-#' target="_blank">Regions and Endpoints</a>.
+#' The endpoint for configuration service requests is region-specific: es.*region*.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions" target="_blank">Regions and Endpoints</a>.
 #'
 #' @param
 #' config
@@ -31980,11 +29751,7 @@ elasticsearchservice <- function(config = list(), credentials = list(), endpoint
 #' Amazon EMR
 #'
 #' @description
-#' Amazon EMR is a web service that makes it easier to process large
-#' amounts of data efficiently. Amazon EMR uses Hadoop processing combined
-#' with several Amazon Web Services services to do tasks such as web
-#' indexing, data mining, log file analysis, machine learning, scientific
-#' simulation, and data warehouse management.
+#' Amazon EMR is a web service that makes it easier to process large amounts of data efficiently. Amazon EMR uses Hadoop processing combined with several Amazon Web Services services to do tasks such as web indexing, data mining, log file analysis, machine learning, scientific simulation, and data warehouse management.
 #'
 #' @param
 #' config
@@ -32153,21 +29920,11 @@ emr <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' @description
 #' Welcome to the *Entity Resolution API Reference*.
 #' 
-#' Entity Resolution is an Amazon Web Services service that provides
-#' pre-configured entity resolution capabilities that enable developers and
-#' analysts at advertising and marketing companies to build an accurate and
-#' complete view of their consumers.
+#' Entity Resolution is an Amazon Web Services service that provides pre-configured entity resolution capabilities that enable developers and analysts at advertising and marketing companies to build an accurate and complete view of their consumers.
 #' 
-#' With Entity Resolution, you can match source records containing consumer
-#' identifiers, such as name, email address, and phone number. This is true
-#' even when these records have incomplete or conflicting identifiers. For
-#' example, Entity Resolution can effectively match a source record from a
-#' customer relationship management (CRM) system with a source record from
-#' a marketing system containing campaign information.
+#' With Entity Resolution, you can match source records containing consumer identifiers, such as name, email address, and phone number. This is true even when these records have incomplete or conflicting identifiers. For example, Entity Resolution can effectively match a source record from a customer relationship management (CRM) system with a source record from a marketing system containing campaign information.
 #' 
-#' To learn more about Entity Resolution concepts, procedures, and best
-#' practices, see the [Entity Resolution User
-#' Guide](https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html).
+#' To learn more about Entity Resolution concepts, procedures, and best practices, see the [Entity Resolution User Guide](https://docs.aws.amazon.com/entityresolution/latest/userguide/what-is-service.html).
 #'
 #' @param
 #' config
@@ -32314,13 +30071,9 @@ entityresolution <- function(config = list(), credentials = list(), endpoint = N
 #' @description
 #' Amazon Data Firehose
 #' 
-#' Amazon Data Firehose was previously known as Amazon Kinesis Data
-#' Firehose.
+#' Amazon Data Firehose was previously known as Amazon Kinesis Data Firehose.
 #' 
-#' Amazon Data Firehose is a fully managed service that delivers real-time
-#' streaming data to destinations such as Amazon Simple Storage Service
-#' (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and
-#' various other supported destinations.
+#' Amazon Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch Service, Amazon Redshift, Splunk, and various other supported destinations.
 #'
 #' @param
 #' config
@@ -32813,11 +30566,7 @@ glue <- function(config = list(), credentials = list(), endpoint = NULL, region 
 #' AWS Glue DataBrew
 #'
 #' @description
-#' Glue DataBrew is a visual, cloud-scale data-preparation service.
-#' DataBrew simplifies data preparation tasks, targeting data issues that
-#' are hard to spot and time-consuming to fix. DataBrew empowers users of
-#' all technical levels to visualize the data and perform one-click data
-#' transformations, with no coding required.
+#' Glue DataBrew is a visual, cloud-scale data-preparation service. DataBrew simplifies data preparation tasks, targeting data issues that are hard to spot and time-consuming to fix. DataBrew empowers users of all technical levels to visualize the data and perform one-click data transformations, with no coding required.
 #'
 #' @param
 #' config
@@ -32968,10 +30717,7 @@ gluedatabrew <- function(config = list(), credentials = list(), endpoint = NULL,
 #' Amazon HealthLake
 #'
 #' @description
-#' This is the *AWS HealthLake API Reference*. For an introduction to the
-#' service, see [What is AWS
-#' HealthLake?](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html)
-#' in the *AWS HealthLake Developer Guide*.
+#' This is the *AWS HealthLake API Reference*. For an introduction to the service, see [What is AWS HealthLake?](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html) in the *AWS HealthLake Developer Guide*.
 #'
 #' @param
 #' config
@@ -33093,22 +30839,13 @@ healthlake <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' @description
 #' **Introduction**
 #' 
-#' The Amazon Interactive Video Service (IVS) API is REST compatible, using
-#' a standard HTTP API and an Amazon Web Services EventBridge event stream
-#' for responses. JSON is used for both requests and responses, including
-#' errors.
+#' The Amazon Interactive Video Service (IVS) API is REST compatible, using a standard HTTP API and an Amazon Web Services EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
 #' 
-#' The API is an Amazon Web Services regional service. For a list of
-#' supported regions and Amazon IVS HTTPS service endpoints, see the
-#' [Amazon IVS
-#' page](https://docs.aws.amazon.com/general/latest/gr/ivs.html) in the
-#' *Amazon Web Services General Reference*.
+#' The API is an Amazon Web Services regional service. For a list of supported regions and Amazon IVS HTTPS service endpoints, see the [Amazon IVS page](https://docs.aws.amazon.com/general/latest/gr/ivs.html) in the *Amazon Web Services General Reference*.
 #' 
 #' *All API request parameters and URLs are case sensitive. *
 #' 
-#' For a summary of notable documentation changes in each release, see
-#' [Document
-#' History](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/doc-history.html).
+#' For a summary of notable documentation changes in each release, see [Document History](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/doc-history.html).
 #' 
 #' **Allowed Header Values**
 #' 
@@ -33120,55 +30857,25 @@ healthlake <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' 
 #' **Key Concepts**
 #' 
-#' -   **Channel** — Stores configuration data related to your live stream.
-#'     You first create a channel and then use the channel’s stream key to
-#'     start your live stream.
+#' -   **Channel** — Stores configuration data related to your live stream. You first create a channel and then use the channel’s stream key to start your live stream.
 #' 
-#' -   **Stream key** — An identifier assigned by Amazon IVS when you
-#'     create a channel, which is then used to authorize streaming. *Treat
-#'     the stream key like a secret, since it allows anyone to stream to
-#'     the channel.*
+#' -   **Stream key** — An identifier assigned by Amazon IVS when you create a channel, which is then used to authorize streaming. *Treat the stream key like a secret, since it allows anyone to stream to the channel.*
 #' 
-#' -   **Playback key pair** — Video playback may be restricted using
-#'     playback-authorization tokens, which use public-key encryption. A
-#'     playback key pair is the public-private pair of keys used to sign
-#'     and validate the playback-authorization token.
+#' -   **Playback key pair** — Video playback may be restricted using playback-authorization tokens, which use public-key encryption. A playback key pair is the public-private pair of keys used to sign and validate the playback-authorization token.
 #' 
-#' -   **Recording configuration** — Stores configuration related to
-#'     recording a live stream and where to store the recorded content.
-#'     Multiple channels can reference the same recording configuration.
+#' -   **Recording configuration** — Stores configuration related to recording a live stream and where to store the recorded content. Multiple channels can reference the same recording configuration.
 #' 
-#' -   **Playback restriction policy** — Restricts playback by countries
-#'     and/or origin sites.
+#' -   **Playback restriction policy** — Restricts playback by countries and/or origin sites.
 #' 
-#' For more information about your IVS live stream, also see [Getting
-#' Started with IVS Low-Latency
-#' Streaming](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started.html).
+#' For more information about your IVS live stream, also see [Getting Started with IVS Low-Latency Streaming](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/getting-started.html).
 #' 
 #' **Tagging**
 #' 
-#' A *tag* is a metadata label that you assign to an Amazon Web Services
-#' resource. A tag comprises a *key* and a *value*, both set by you. For
-#' example, you might set a tag as `topic:nature` to label a particular
-#' video category. See [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS has no service-specific constraints beyond
-#' what is documented there.
+#' A *tag* is a metadata label that you assign to an Amazon Web Services resource. A tag comprises a *key* and a *value*, both set by you. For example, you might set a tag as `topic:nature` to label a particular video category. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific constraints beyond what is documented there.
 #' 
-#' Tags can help you identify and organize your Amazon Web Services
-#' resources. For example, you can use the same tag for different resources
-#' to indicate that they are related. You can also use tags to manage
-#' access (see [Access
-#' Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
+#' Tags can help you identify and organize your Amazon Web Services resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see [Access Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
 #' 
-#' The Amazon IVS API has these tag-related operations:
-#' `tag_resource`,
-#' `untag_resource`, and
-#' `list_tags_for_resource`. The following
-#' resources support tagging: Channels, Stream Keys, Playback Key Pairs,
-#' and Recording Configurations.
+#' The Amazon IVS API has these tag-related operations: `tag_resource`, `untag_resource`, and `list_tags_for_resource`. The following resources support tagging: Channels, Stream Keys, Playback Key Pairs, and Recording Configurations.
 #' 
 #' At most 50 tags can be applied to a resource.
 #' 
@@ -33176,47 +30883,25 @@ healthlake <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' 
 #' Note the differences between these concepts:
 #' 
-#' -   *Authentication* is about verifying identity. You need to be
-#'     authenticated to sign Amazon IVS API requests.
+#' -   *Authentication* is about verifying identity. You need to be authenticated to sign Amazon IVS API requests.
 #' 
-#' -   *Authorization* is about granting permissions. Your IAM roles need
-#'     to have permissions for Amazon IVS API requests. In addition,
-#'     authorization is needed to view [Amazon IVS private
-#'     channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html).
-#'     (Private channels are channels that are enabled for "playback
-#'     authorization.")
+#' -   *Authorization* is about granting permissions. Your IAM roles need to have permissions for Amazon IVS API requests. In addition, authorization is needed to view [Amazon IVS private channels](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/private-channels.html). (Private channels are channels that are enabled for "playback authorization.")
 #' 
 #' **Authentication**
 #' 
-#' All Amazon IVS API requests must be authenticated with a signature. The
-#' Amazon Web Services Command-Line Interface (CLI) and Amazon IVS Player
-#' SDKs take care of signing the underlying API calls for you. However, if
-#' your application calls the Amazon IVS API directly, it’s your
-#' responsibility to sign the requests.
+#' All Amazon IVS API requests must be authenticated with a signature. The Amazon Web Services Command-Line Interface (CLI) and Amazon IVS Player SDKs take care of signing the underlying API calls for you. However, if your application calls the Amazon IVS API directly, it’s your responsibility to sign the requests.
 #' 
-#' You generate a signature using valid Amazon Web Services credentials
-#' that have permission to perform the requested action. For example, you
-#' must sign PutMetadata requests with a signature generated from a user
-#' account that has the `ivs:PutMetadata` permission.
+#' You generate a signature using valid Amazon Web Services credentials that have permission to perform the requested action. For example, you must sign PutMetadata requests with a signature generated from a user account that has the `ivs:PutMetadata` permission.
 #' 
 #' For more information:
 #' 
-#' -   Authentication and generating signatures — See [Authenticating
-#'     Requests (Amazon Web Services Signature Version
-#'     4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
-#'     in the *Amazon Web Services General Reference*.
+#' -   Authentication and generating signatures — See [Authenticating Requests (Amazon Web Services Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) in the *Amazon Web Services General Reference*.
 #' 
-#' -   Managing Amazon IVS permissions — See [Identity and Access
-#'     Management](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/security-iam.html)
-#'     on the Security page of the *Amazon IVS User Guide*.
+#' -   Managing Amazon IVS permissions — See [Identity and Access Management](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/security-iam.html) on the Security page of the *Amazon IVS User Guide*.
 #' 
 #' **Amazon Resource Names (ARNs)**
 #' 
-#' ARNs uniquely identify AWS resources. An ARN is required when you need
-#' to specify a resource unambiguously across all of AWS, such as in IAM
-#' policies and API calls. For more information, see [Amazon Resource
-#' Names](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' in the *AWS General Reference*.
+#' ARNs uniquely identify AWS resources. An ARN is required when you need to specify a resource unambiguously across all of AWS, such as in IAM policies and API calls. For more information, see [Amazon Resource Names](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) in the *AWS General Reference*.
 #'
 #' @param
 #' config
@@ -33363,75 +31048,41 @@ ivs <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon Interactive Video Service RealTime
 #'
 #' @description
-#' The Amazon Interactive Video Service (IVS) real-time API is REST
-#' compatible, using a standard HTTP API and an AWS EventBridge event
-#' stream for responses. JSON is used for both requests and responses,
-#' including errors.
+#' The Amazon Interactive Video Service (IVS) real-time API is REST compatible, using a standard HTTP API and an AWS EventBridge event stream for responses. JSON is used for both requests and responses, including errors.
 #' 
 #' **Key Concepts**
 #' 
-#' -   **Stage** — A virtual space where participants can exchange video in
-#'     real time.
+#' -   **Stage** — A virtual space where participants can exchange video in real time.
 #' 
-#' -   **Participant token** — A token that authenticates a participant
-#'     when they join a stage.
+#' -   **Participant token** — A token that authenticates a participant when they join a stage.
 #' 
-#' -   **Participant object** — Represents participants (people) in the
-#'     stage and contains information about them. When a token is created,
-#'     it includes a participant ID; when a participant uses that token to
-#'     join a stage, the participant is associated with that participant
-#'     ID. There is a 1:1 mapping between participant tokens and
-#'     participants.
+#' -   **Participant object** — Represents participants (people) in the stage and contains information about them. When a token is created, it includes a participant ID; when a participant uses that token to join a stage, the participant is associated with that participant ID. There is a 1:1 mapping between participant tokens and participants.
 #' 
 #' For server-side composition:
 #' 
-#' -   **Composition process** — Composites participants of a stage into a
-#'     single video and forwards it to a set of outputs (e.g., IVS
-#'     channels). Composition operations support this process.
+#' -   **Composition process** — Composites participants of a stage into a single video and forwards it to a set of outputs (e.g., IVS channels). Composition operations support this process.
 #' 
-#' -   **Composition** — Controls the look of the outputs, including how
-#'     participants are positioned in the video.
+#' -   **Composition** — Controls the look of the outputs, including how participants are positioned in the video.
 #' 
 #' For participant replication:
 #' 
-#' -   **Source stage** — The stage where the participant originally
-#'     joined, which is used as the source for replication.
+#' -   **Source stage** — The stage where the participant originally joined, which is used as the source for replication.
 #' 
-#' -   **Destination stage** — The stage to which the participant is
-#'     replicated.
+#' -   **Destination stage** — The stage to which the participant is replicated.
 #' 
-#' -   **Replicated participant** — A participant in a stage that is
-#'     replicated to one or more destination stages.
+#' -   **Replicated participant** — A participant in a stage that is replicated to one or more destination stages.
 #' 
-#' -   **Replica participant** — A participant in a destination stage that
-#'     is replicated from another stage (the source stage).
+#' -   **Replica participant** — A participant in a destination stage that is replicated from another stage (the source stage).
 #' 
-#' For more information about your IVS live stream, also see [Getting
-#' Started with Amazon IVS Real-Time
-#' Streaming](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html).
+#' For more information about your IVS live stream, also see [Getting Started with Amazon IVS Real-Time Streaming](https://docs.aws.amazon.com/ivs/latest/RealTimeUserGuide/getting-started.html).
 #' 
 #' **Tagging**
 #' 
-#' A *tag* is a metadata label that you assign to an AWS resource. A tag
-#' comprises a *key* and a *value*, both set by you. For example, you might
-#' set a tag as `topic:nature` to label a particular video category. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging AWS Resources and Tag Editor* for details, including
-#' restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS stages has no service-specific constraints
-#' beyond what is documented there.
+#' A *tag* is a metadata label that you assign to an AWS resource. A tag comprises a *key* and a *value*, both set by you. For example, you might set a tag as `topic:nature` to label a particular video category. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging AWS Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS stages has no service-specific constraints beyond what is documented there.
 #' 
-#' Tags can help you identify and organize your AWS resources. For example,
-#' you can use the same tag for different resources to indicate that they
-#' are related. You can also use tags to manage access (see [Access
-#' Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
+#' Tags can help you identify and organize your AWS resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see [Access Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
 #' 
-#' The Amazon IVS real-time API has these tag-related operations:
-#' `tag_resource`,
-#' `untag_resource`, and
-#' `list_tags_for_resource`. The
-#' following resource supports tagging: Stage.
+#' The Amazon IVS real-time API has these tag-related operations: `tag_resource`, `untag_resource`, and `list_tags_for_resource`. The following resource supports tagging: Stage.
 #' 
 #' At most 50 tags can be applied to a resource.
 #'
@@ -34042,8 +31693,7 @@ kendra <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' Amazon Kendra Intelligent Ranking
 #'
 #' @description
-#' Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search
-#' capabilities to intelligently re-rank a search service's results.
+#' Amazon Kendra Intelligent Ranking uses Amazon Kendra semantic search capabilities to intelligently re-rank a search service's results.
 #'
 #' @param
 #' config
@@ -34161,8 +31811,7 @@ kendraranking <- function(config = list(), credentials = list(), endpoint = NULL
 #' @description
 #' Amazon Kinesis Data Streams Service API Reference
 #' 
-#' Amazon Kinesis Data Streams is a managed service that scales elastically
-#' for real-time processing of streaming big data.
+#' Amazon Kinesis Data Streams is a managed service that scales elastically for real-time processing of streaming big data.
 #'
 #' @param
 #' config
@@ -34310,13 +31959,9 @@ kinesis <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' @description
 #' **Overview**
 #' 
-#' This documentation is for version 1 of the Amazon Kinesis Data Analytics
-#' API, which only supports SQL applications. Version 2 of the API supports
-#' SQL and Java applications. For more information about version 2, see
-#' Amazon Kinesis Data Analytics API V2 Documentation.
+#' This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see Amazon Kinesis Data Analytics API V2 Documentation.
 #' 
-#' This is the *Amazon Kinesis Analytics v1 API Reference*. The Amazon
-#' Kinesis Analytics Developer Guide provides additional information.
+#' This is the *Amazon Kinesis Analytics v1 API Reference*. The Amazon Kinesis Analytics Developer Guide provides additional information.
 #'
 #' @param
 #' config
@@ -34443,14 +32088,9 @@ kinesisanalytics <- function(config = list(), credentials = list(), endpoint = N
 #' Amazon Kinesis Analytics
 #'
 #' @description
-#' Amazon Managed Service for Apache Flink was previously known as Amazon
-#' Kinesis Data Analytics for Apache Flink.
+#' Amazon Managed Service for Apache Flink was previously known as Amazon Kinesis Data Analytics for Apache Flink.
 #' 
-#' Amazon Managed Service for Apache Flink is a fully managed service that
-#' you can use to process and analyze streaming data using Java, Python,
-#' SQL, or Scala. The service enables you to quickly author and run Java,
-#' SQL, or Scala code against streaming sources to perform time series
-#' analytics, feed real-time dashboards, and create real-time metrics.
+#' Amazon Managed Service for Apache Flink is a fully managed service that you can use to process and analyze streaming data using Java, Python, SQL, or Scala. The service enables you to quickly author and run Java, SQL, or Scala code against streaming sources to perform time series analytics, feed real-time dashboards, and create real-time metrics.
 #'
 #' @param
 #' config
@@ -34736,13 +32376,7 @@ mturk <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' Amazon OpenSearch Service
 #'
 #' @description
-#' Use the Amazon OpenSearch Service configuration API to create,
-#' configure, and manage OpenSearch Service domains. The endpoint for
-#' configuration service requests is Region specific:
-#' es.*region*.amazonaws.com. For example, es.us-east-1.amazonaws.com. For
-#' a current list of supported Regions and endpoints, see [Amazon Web
-#' Services service
-#' endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions).
+#' Use the Amazon OpenSearch Service configuration API to create, configure, and manage OpenSearch Service domains. The endpoint for configuration service requests is Region specific: es.*region*.amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported Regions and endpoints, see [Amazon Web Services service endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#service-regions).
 #'
 #' @param
 #' config
@@ -34937,19 +32571,11 @@ opensearchservice <- function(config = list(), credentials = list(), endpoint = 
 #' OpenSearch Service Serverless
 #'
 #' @description
-#' Use the Amazon OpenSearch Serverless API to create, configure, and
-#' manage OpenSearch Serverless collections and security policies.
+#' Use the Amazon OpenSearch Serverless API to create, configure, and manage OpenSearch Serverless collections and security policies.
 #' 
-#' OpenSearch Serverless is an on-demand, pre-provisioned serverless
-#' configuration for Amazon OpenSearch Service. OpenSearch Serverless
-#' removes the operational complexities of provisioning, configuring, and
-#' tuning your OpenSearch clusters. It enables you to easily search and
-#' analyze petabytes of data without having to worry about the underlying
-#' infrastructure and data management.
+#' OpenSearch Serverless is an on-demand, pre-provisioned serverless configuration for Amazon OpenSearch Service. OpenSearch Serverless removes the operational complexities of provisioning, configuring, and tuning your OpenSearch clusters. It enables you to easily search and analyze petabytes of data without having to worry about the underlying infrastructure and data management.
 #' 
-#' To learn more about OpenSearch Serverless, see [What is Amazon
-#' OpenSearch
-#' Serverless?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html)
+#' To learn more about OpenSearch Serverless, see [What is Amazon OpenSearch Serverless?](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html)
 #'
 #' @param
 #' config
@@ -35102,11 +32728,7 @@ opensearchserviceserverless <- function(config = list(), credentials = list(), e
 #' Amazon OpenSearch Ingestion
 #'
 #' @description
-#' Use the Amazon OpenSearch Ingestion API to create and manage ingestion
-#' pipelines. OpenSearch Ingestion is a fully managed data collector that
-#' delivers real-time log and trace data to OpenSearch Service domains. For
-#' more information, see [Getting data into your cluster using OpenSearch
-#' Ingestion](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ingestion.html).
+#' Use the Amazon OpenSearch Ingestion API to create and manage ingestion pipelines. OpenSearch Ingestion is a fully managed data collector that delivers real-time log and trace data to OpenSearch Service domains. For more information, see [Getting data into your cluster using OpenSearch Ingestion](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ingestion.html).
 #'
 #' @param
 #' config
@@ -35237,11 +32859,7 @@ opensearchingestion <- function(config = list(), credentials = list(), endpoint 
 #' @description
 #' Amazon Quick API Reference
 #' 
-#' Amazon Quick Sight is a fully managed, serverless business intelligence
-#' service for the Amazon Web Services Cloud that makes it easy to extend
-#' data and insights to every user in your organization. This API reference
-#' contains documentation for a programming interface that you can use to
-#' manage Amazon Quick Sight.
+#' Amazon Quick Sight is a fully managed, serverless business intelligence service for the Amazon Web Services Cloud that makes it easy to extend data and insights to every user in your organization. This API reference contains documentation for a programming interface that you can use to manage Amazon Quick Sight.
 #'
 #' @param
 #' config
@@ -35580,45 +33198,17 @@ quicksight <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' Access Analyzer
 #'
 #' @description
-#' Identity and Access Management Access Analyzer helps you to set, verify,
-#' and refine your IAM policies by providing a suite of capabilities. Its
-#' features include findings for external, internal, and unused access,
-#' basic and custom policy checks for validating policies, and policy
-#' generation to generate fine-grained policies. To start using IAM Access
-#' Analyzer to identify external, internal, or unused access, you first
-#' need to create an analyzer.
+#' Identity and Access Management Access Analyzer helps you to set, verify, and refine your IAM policies by providing a suite of capabilities. Its features include findings for external, internal, and unused access, basic and custom policy checks for validating policies, and policy generation to generate fine-grained policies. To start using IAM Access Analyzer to identify external, internal, or unused access, you first need to create an analyzer.
 #' 
-#' **External access analyzers** help you identify potential risks of
-#' accessing resources by enabling you to identify any resource policies
-#' that grant access to an external principal. It does this by using
-#' logic-based reasoning to analyze resource-based policies in your Amazon
-#' Web Services environment. An external principal can be another Amazon
-#' Web Services account, a root user, an IAM user or role, a federated
-#' user, an Amazon Web Services service, or an anonymous user. You can also
-#' use IAM Access Analyzer to preview public and cross-account access to
-#' your resources before deploying permissions changes.
+#' **External access analyzers** help you identify potential risks of accessing resources by enabling you to identify any resource policies that grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies in your Amazon Web Services environment. An external principal can be another Amazon Web Services account, a root user, an IAM user or role, a federated user, an Amazon Web Services service, or an anonymous user. You can also use IAM Access Analyzer to preview public and cross-account access to your resources before deploying permissions changes.
 #' 
-#' **Internal access analyzers** help you identify which principals within
-#' your organization or account have access to selected resources. This
-#' analysis supports implementing the principle of least privilege by
-#' ensuring that your specified resources can only be accessed by the
-#' intended principals within your organization.
+#' **Internal access analyzers** help you identify which principals within your organization or account have access to selected resources. This analysis supports implementing the principle of least privilege by ensuring that your specified resources can only be accessed by the intended principals within your organization.
 #' 
-#' **Unused access analyzers** help you identify potential identity access
-#' risks by enabling you to identify unused IAM roles, unused access keys,
-#' unused console passwords, and IAM principals with unused service and
-#' action-level permissions.
+#' **Unused access analyzers** help you identify potential identity access risks by enabling you to identify unused IAM roles, unused access keys, unused console passwords, and IAM principals with unused service and action-level permissions.
 #' 
-#' Beyond findings, IAM Access Analyzer provides basic and custom policy
-#' checks to validate IAM policies before deploying permissions changes.
-#' You can use policy generation to refine permissions by attaching a
-#' policy generated using access activity logged in CloudTrail logs.
+#' Beyond findings, IAM Access Analyzer provides basic and custom policy checks to validate IAM policies before deploying permissions changes. You can use policy generation to refine permissions by attaching a policy generated using access activity logged in CloudTrail logs.
 #' 
-#' This guide describes the IAM Access Analyzer operations that you can
-#' call programmatically. For general information about IAM Access
-#' Analyzer, see [Using Identity and Access Management Access
-#' Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html)
-#' in the **IAM User Guide**.
+#' This guide describes the IAM Access Analyzer operations that you can call programmatically. For general information about IAM Access Analyzer, see [Using Identity and Access Management Access Analyzer](https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html) in the **IAM User Guide**.
 #'
 #' @param
 #' config
@@ -35711,8 +33301,10 @@ quicksight <- function(config = list(), credentials = list(), endpoint = NULL, r
 #'  \link[paws.security.identity:accessanalyzer_create_access_preview]{create_access_preview} \tab Creates an access preview that allows you to preview IAM Access Analyzer findings for your resource before deploying resource permissions\cr
 #'  \link[paws.security.identity:accessanalyzer_create_analyzer]{create_analyzer} \tab Creates an analyzer for your account\cr
 #'  \link[paws.security.identity:accessanalyzer_create_archive_rule]{create_archive_rule} \tab Creates an archive rule for the specified analyzer\cr
+#'  \link[paws.security.identity:accessanalyzer_create_service_linked_analyzer]{create_service_linked_analyzer} \tab Creates a service-linked analyzer managed by an Amazon Web Services service\cr
 #'  \link[paws.security.identity:accessanalyzer_delete_analyzer]{delete_analyzer} \tab Deletes the specified analyzer\cr
 #'  \link[paws.security.identity:accessanalyzer_delete_archive_rule]{delete_archive_rule} \tab Deletes the specified archive rule\cr
+#'  \link[paws.security.identity:accessanalyzer_delete_service_linked_analyzer]{delete_service_linked_analyzer} \tab Deletes a service-linked analyzer\cr
 #'  \link[paws.security.identity:accessanalyzer_generate_finding_recommendation]{generate_finding_recommendation} \tab Creates a recommendation for an unused permissions finding\cr
 #'  \link[paws.security.identity:accessanalyzer_get_access_preview]{get_access_preview} \tab Retrieves information about an access preview for the specified analyzer\cr
 #'  \link[paws.security.identity:accessanalyzer_get_analyzed_resource]{get_analyzed_resource} \tab Retrieves information about a resource that was analyzed\cr
@@ -35886,10 +33478,7 @@ account <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' @description
 #' Certificate Manager
 #' 
-#' You can use Certificate Manager (ACM) to manage SSL/TLS certificates for
-#' your Amazon Web Services-based websites and applications. For more
-#' information about using ACM, see the [Certificate Manager User
-#' Guide](https://docs.aws.amazon.com/acm/latest/userguide/).
+#' You can use Certificate Manager (ACM) to manage SSL/TLS certificates for your Amazon Web Services-based websites and applications. For more information about using ACM, see the [Certificate Manager User Guide](https://docs.aws.amazon.com/acm/latest/userguide/).
 #'
 #' @param
 #' config
@@ -36013,31 +33602,13 @@ acm <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' AWS Certificate Manager Private Certificate Authority
 #'
 #' @description
-#' This is the *Amazon Web Services Private Certificate Authority API
-#' Reference*. It provides descriptions, syntax, and usage examples for
-#' each of the actions and data types involved in creating and managing a
-#' private certificate authority (CA) for your organization.
+#' This is the *Amazon Web Services Private Certificate Authority API Reference*. It provides descriptions, syntax, and usage examples for each of the actions and data types involved in creating and managing a private certificate authority (CA) for your organization.
 #' 
-#' The documentation for each action shows the API request parameters and
-#' the JSON response. Alternatively, you can use one of the Amazon Web
-#' Services SDKs to access an API that is tailored to the programming
-#' language or platform that you prefer. For more information, see [Amazon
-#' Web Services SDKs](https://builder.aws.com/build/tools#SDKs).
+#' The documentation for each action shows the API request parameters and the JSON response. Alternatively, you can use one of the Amazon Web Services SDKs to access an API that is tailored to the programming language or platform that you prefer. For more information, see [Amazon Web Services SDKs](https://builder.aws.com/build/tools#SDKs).
 #' 
-#' Each Amazon Web Services Private CA API operation has a quota that
-#' determines the number of times the operation can be called per second.
-#' Amazon Web Services Private CA throttles API requests at different rates
-#' depending on the operation. Throttling means that Amazon Web Services
-#' Private CA rejects an otherwise valid request because the request
-#' exceeds the operation's quota for the number of requests per second.
-#' When a request is throttled, Amazon Web Services Private CA returns a
-#' [ThrottlingException](https://docs.aws.amazon.com/privateca/latest/APIReference/CommonErrors.html)
-#' error. Amazon Web Services Private CA does not guarantee a minimum
-#' request rate for APIs.
+#' Each Amazon Web Services Private CA API operation has a quota that determines the number of times the operation can be called per second. Amazon Web Services Private CA throttles API requests at different rates depending on the operation. Throttling means that Amazon Web Services Private CA rejects an otherwise valid request because the request exceeds the operation's quota for the number of requests per second. When a request is throttled, Amazon Web Services Private CA returns a [ThrottlingException](https://docs.aws.amazon.com/privateca/latest/APIReference/CommonErrors.html) error. Amazon Web Services Private CA does not guarantee a minimum request rate for APIs.
 #' 
-#' To see an up-to-date list of your Amazon Web Services Private CA quotas,
-#' or to request a quota increase, log into your Amazon Web Services
-#' account and visit the Service Quotas console.
+#' To see an up-to-date list of your Amazon Web Services Private CA quotas, or to request a quota increase, log into your Amazon Web Services account and visit the Service Quotas console.
 #'
 #' @param
 #' config
@@ -36169,21 +33740,11 @@ acmpca <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' @description
 #' Welcome to the *Amazon Web Services Clean Rooms ML API Reference*.
 #' 
-#' Amazon Web Services Clean Rooms ML provides a privacy-enhancing method
-#' for two parties to identify similar users in their data without the need
-#' to share their data with each other. The first party brings the training
-#' data to Clean Rooms so that they can create and configure an audience
-#' model (lookalike model) and associate it with a collaboration. The
-#' second party then brings their seed data to Clean Rooms and generates an
-#' audience (lookalike segment) that resembles the training data.
+#' Amazon Web Services Clean Rooms ML provides a privacy-enhancing method for two parties to identify similar users in their data without the need to share their data with each other. The first party brings the training data to Clean Rooms so that they can create and configure an audience model (lookalike model) and associate it with a collaboration. The second party then brings their seed data to Clean Rooms and generates an audience (lookalike segment) that resembles the training data.
 #' 
-#' To learn more about Amazon Web Services Clean Rooms ML concepts,
-#' procedures, and best practices, see the [Clean Rooms User
-#' Guide](https://docs.aws.amazon.com/clean-rooms/latest/userguide/machine-learning.html).
+#' To learn more about Amazon Web Services Clean Rooms ML concepts, procedures, and best practices, see the [Clean Rooms User Guide](https://docs.aws.amazon.com/clean-rooms/latest/userguide/machine-learning.html).
 #' 
-#' To learn more about SQL commands, functions, and conditions supported in
-#' Clean Rooms, see the [Clean Rooms SQL
-#' Reference](https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html).
+#' To learn more about SQL commands, functions, and conditions supported in Clean Rooms, see the [Clean Rooms SQL Reference](https://docs.aws.amazon.com/clean-rooms/latest/sql-reference/sql-reference.html).
 #'
 #' @param
 #' config
@@ -36351,15 +33912,7 @@ cleanroomsml <- function(config = list(), credentials = list(), endpoint = NULL,
 #' @description
 #' Amazon Cloud Directory
 #' 
-#' Amazon Cloud Directory is a component of the AWS Directory Service that
-#' simplifies the development and management of cloud-scale web, mobile,
-#' and IoT applications. This guide describes the Cloud Directory
-#' operations that you can call programmatically and includes detailed
-#' information on data types and errors. For information about Cloud
-#' Directory features, see [AWS Directory
-#' Service](https://aws.amazon.com/directoryservice/) and the [Amazon Cloud
-#' Directory Developer
-#' Guide](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html).
+#' Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call programmatically and includes detailed information on data types and errors. For information about Cloud Directory features, see [AWS Directory Service](https://aws.amazon.com/directoryservice/) and the [Amazon Cloud Directory Developer Guide](https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html).
 #'
 #' @param
 #' config
@@ -36534,16 +34087,9 @@ clouddirectory <- function(config = list(), credentials = list(), endpoint = NUL
 #' @description
 #' AWS CloudHSM Service
 #' 
-#' This is documentation for **AWS CloudHSM Classic**. For more
-#' information, see [AWS CloudHSM Classic
-#' FAQs](https://aws.amazon.com/cloudhsm/faqs/), the AWS CloudHSM Classic
-#' User Guide, and the AWS CloudHSM Classic API Reference.
+#' This is documentation for **AWS CloudHSM Classic**. For more information, see [AWS CloudHSM Classic FAQs](https://aws.amazon.com/cloudhsm/faqs/), the AWS CloudHSM Classic User Guide, and the AWS CloudHSM Classic API Reference.
 #' 
-#' **For information about the current version of AWS CloudHSM**, see [AWS
-#' CloudHSM](https://aws.amazon.com/cloudhsm/), the [AWS CloudHSM User
-#' Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/), and the
-#' [AWS CloudHSM API
-#' Reference](https://docs.aws.amazon.com/cloudhsm/latest/APIReference/).
+#' **For information about the current version of AWS CloudHSM**, see [AWS CloudHSM](https://aws.amazon.com/cloudhsm/), the [AWS CloudHSM User Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/), and the [AWS CloudHSM API Reference](https://docs.aws.amazon.com/cloudhsm/latest/APIReference/).
 #'
 #' @param
 #' config
@@ -36670,9 +34216,7 @@ cloudhsm <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' AWS CloudHSM V2
 #'
 #' @description
-#' For more information about CloudHSM, see
-#' [CloudHSM](https://aws.amazon.com/cloudhsm/) and the [CloudHSM User
-#' Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/).
+#' For more information about CloudHSM, see [CloudHSM](https://aws.amazon.com/cloudhsm/) and the [CloudHSM User Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/).
 #'
 #' @param
 #' config
@@ -36799,25 +34343,13 @@ cloudhsmv2 <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' @description
 #' Amazon Cognito Federated Identities
 #' 
-#' Amazon Cognito Federated Identities is a web service that delivers
-#' scoped temporary credentials to mobile devices and other untrusted
-#' environments. It uniquely identifies a device and supplies the user with
-#' a consistent identity over the lifetime of an application.
+#' Amazon Cognito Federated Identities is a web service that delivers scoped temporary credentials to mobile devices and other untrusted environments. It uniquely identifies a device and supplies the user with a consistent identity over the lifetime of an application.
 #' 
-#' Using Amazon Cognito Federated Identities, you can enable authentication
-#' with one or more third-party identity providers (Facebook, Google, or
-#' Login with Amazon) or an Amazon Cognito user pool, and you can also
-#' choose to support unauthenticated access from your app. Cognito delivers
-#' a unique identifier for each user and acts as an OpenID token provider
-#' trusted by Security Token Service (STS) to access temporary,
-#' limited-privilege Amazon Web Services credentials.
+#' Using Amazon Cognito Federated Identities, you can enable authentication with one or more third-party identity providers (Facebook, Google, or Login with Amazon) or an Amazon Cognito user pool, and you can also choose to support unauthenticated access from your app. Cognito delivers a unique identifier for each user and acts as an OpenID token provider trusted by Security Token Service (STS) to access temporary, limited-privilege Amazon Web Services credentials.
 #' 
-#' For a description of the authentication flow from the Amazon Cognito
-#' Developer Guide see [Authentication
-#' Flow](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html).
+#' For a description of the authentication flow from the Amazon Cognito Developer Guide see [Authentication Flow](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html).
 #' 
-#' For more information see [Amazon Cognito Federated
-#' Identities](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html).
+#' For more information see [Amazon Cognito Federated Identities](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html).
 #'
 #' @param
 #' config
@@ -36947,53 +34479,23 @@ cognitoidentity <- function(config = list(), credentials = list(), endpoint = NU
 #' Amazon Cognito Identity Provider
 #'
 #' @description
-#' With the Amazon Cognito user pools API, you can configure user pools and
-#' authenticate users. To authenticate users from third-party identity
-#' providers (IdPs) in this API, you can [link IdP users to native user
-#' profiles](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html).
-#' Learn more about the authentication and authorization of federated users
-#' at [Adding user pool sign-in through a third
-#' party](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html)
-#' and in the [User pool federation endpoints and managed login
-#' reference](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html).
+#' With the Amazon Cognito user pools API, you can configure user pools and authenticate users. To authenticate users from third-party identity providers (IdPs) in this API, you can [link IdP users to native user profiles](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html). Learn more about the authentication and authorization of federated users at [Adding user pool sign-in through a third party](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html) and in the [User pool federation endpoints and managed login reference](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-userpools-server-contract-reference.html).
 #' 
-#' This API reference provides detailed information about API operations
-#' and object types in Amazon Cognito.
+#' This API reference provides detailed information about API operations and object types in Amazon Cognito.
 #' 
-#' Along with resource management operations, the Amazon Cognito user pools
-#' API includes classes of operations and authorization models for
-#' client-side and server-side authentication of users. You can interact
-#' with operations in the Amazon Cognito user pools API as any of the
-#' following subjects.
+#' Along with resource management operations, the Amazon Cognito user pools API includes classes of operations and authorization models for client-side and server-side authentication of users. You can interact with operations in the Amazon Cognito user pools API as any of the following subjects.
 #' 
-#' 1.  An administrator who wants to configure user pools, app clients,
-#'     users, groups, or other user pool functions.
+#' 1.  An administrator who wants to configure user pools, app clients, users, groups, or other user pool functions.
 #' 
-#' 2.  A server-side app, like a web application, that wants to use its
-#'     Amazon Web Services privileges to manage, authenticate, or authorize
-#'     a user.
+#' 2.  A server-side app, like a web application, that wants to use its Amazon Web Services privileges to manage, authenticate, or authorize a user.
 #' 
-#' 3.  A client-side app, like a mobile app, that wants to make
-#'     unauthenticated requests to manage, authenticate, or authorize a
-#'     user.
+#' 3.  A client-side app, like a mobile app, that wants to make unauthenticated requests to manage, authenticate, or authorize a user.
 #' 
-#' For more information, see [Understanding API, OIDC, and managed login
-#' pages
-#' authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html#user-pools-API-operations)
-#' in the *Amazon Cognito Developer Guide*.
+#' For more information, see [Understanding API, OIDC, and managed login pages authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html#user-pools-API-operations) in the *Amazon Cognito Developer Guide*.
 #' 
-#' With your Amazon Web Services SDK, you can build the logic to support
-#' operational flows in every use case for this API. You can also make
-#' direct REST API requests to [Amazon Cognito user pools service
-#' endpoints](https://docs.aws.amazon.com/general/latest/gr/cognito.html#cognito_identity_your_user_pools_region).
-#' The following links can get you started with the
-#' `CognitoIdentityProvider` client in supported Amazon Web Services SDKs.
+#' With your Amazon Web Services SDK, you can build the logic to support operational flows in every use case for this API. You can also make direct REST API requests to [Amazon Cognito user pools service endpoints](https://docs.aws.amazon.com/general/latest/gr/cognito.html#cognito_identity_your_user_pools_region). The following links can get you started with the `CognitoIdentityProvider` client in supported Amazon Web Services SDKs.
 #' 
-#' To get started with an Amazon Web Services SDK, see [Tools to Build on
-#' Amazon Web Services](https://builder.aws.com/build/tools). For example
-#' actions and scenarios, see [Code examples for Amazon Cognito Identity
-#' Provider using Amazon Web Services
-#' SDKs](https://docs.aws.amazon.com/cognito/latest/developerguide/service_code_examples_cognito-identity-provider.html).
+#' To get started with an Amazon Web Services SDK, see [Tools to Build on Amazon Web Services](https://builder.aws.com/build/tools). For example actions and scenarios, see [Code examples for Amazon Cognito Identity Provider using Amazon Web Services SDKs](https://docs.aws.amazon.com/cognito/latest/developerguide/service_code_examples_cognito-identity-provider.html).
 #'
 #' @param
 #' config
@@ -37222,27 +34724,11 @@ cognitoidentityprovider <- function(config = list(), credentials = list(), endpo
 #' Amazon Cognito Sync
 #'
 #' @description
-#' Amazon Cognito Sync provides an AWS service and client library that
-#' enable cross-device syncing of application-related user data. High-level
-#' client libraries are available for both iOS and Android. You can use
-#' these libraries to persist data locally so that it's available even if
-#' the device is offline. Developer credentials don't need to be stored on
-#' the mobile device to access the service. You can use Amazon Cognito to
-#' obtain a normalized user ID and credentials. User data is persisted in a
-#' dataset that can store up to 1 MB of key-value pairs, and you can have
-#' up to 20 datasets per user identity.
+#' Amazon Cognito Sync provides an AWS service and client library that enable cross-device syncing of application-related user data. High-level client libraries are available for both iOS and Android. You can use these libraries to persist data locally so that it's available even if the device is offline. Developer credentials don't need to be stored on the mobile device to access the service. You can use Amazon Cognito to obtain a normalized user ID and credentials. User data is persisted in a dataset that can store up to 1 MB of key-value pairs, and you can have up to 20 datasets per user identity.
 #' 
-#' With Amazon Cognito Sync, the data stored for each identity is
-#' accessible only to credentials assigned to that identity. In order to
-#' use the Cognito Sync service, you need to make API calls using
-#' credentials retrieved with [Amazon Cognito Identity
-#' service](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html).
+#' With Amazon Cognito Sync, the data stored for each identity is accessible only to credentials assigned to that identity. In order to use the Cognito Sync service, you need to make API calls using credentials retrieved with [Amazon Cognito Identity service](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/Welcome.html).
 #' 
-#' If you want to use Cognito Sync in an Android or iOS application, you
-#' will probably want to make API calls via the AWS Mobile SDK. To learn
-#' more, see the [Developer Guide for
-#' Android](https://docs.amplify.aws/android/) and the [Developer Guide for
-#' iOS](https://docs.amplify.aws/swift/).
+#' If you want to use Cognito Sync in an Android or iOS application, you will probably want to make API calls via the AWS Mobile SDK. To learn more, see the [Developer Guide for Android](https://docs.amplify.aws/android/) and the [Developer Guide for iOS](https://docs.amplify.aws/swift/).
 #'
 #' @param
 #' config
@@ -37366,42 +34852,21 @@ cognitosync <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon Detective
 #'
 #' @description
-#' Detective uses machine learning and purpose-built visualizations to help
-#' you to analyze and investigate security issues across your Amazon Web
-#' Services (Amazon Web Services) workloads. Detective automatically
-#' extracts time-based events such as login attempts, API calls, and
-#' network traffic from CloudTrail and Amazon Virtual Private Cloud (Amazon
-#' VPC) flow logs. It also extracts findings detected by Amazon GuardDuty.
+#' Detective uses machine learning and purpose-built visualizations to help you to analyze and investigate security issues across your Amazon Web Services (Amazon Web Services) workloads. Detective automatically extracts time-based events such as login attempts, API calls, and network traffic from CloudTrail and Amazon Virtual Private Cloud (Amazon VPC) flow logs. It also extracts findings detected by Amazon GuardDuty.
 #' 
-#' The Detective API primarily supports the creation and management of
-#' behavior graphs. A behavior graph contains the extracted data from a set
-#' of member accounts, and is created and managed by an administrator
-#' account.
+#' The Detective API primarily supports the creation and management of behavior graphs. A behavior graph contains the extracted data from a set of member accounts, and is created and managed by an administrator account.
 #' 
-#' To add a member account to the behavior graph, the administrator account
-#' sends an invitation to the account. When the account accepts the
-#' invitation, it becomes a member account in the behavior graph.
+#' To add a member account to the behavior graph, the administrator account sends an invitation to the account. When the account accepts the invitation, it becomes a member account in the behavior graph.
 #' 
-#' Detective is also integrated with Organizations. The organization
-#' management account designates the Detective administrator account for
-#' the organization. That account becomes the administrator account for the
-#' organization behavior graph. The Detective administrator account is also
-#' the delegated administrator account for Detective in Organizations.
+#' Detective is also integrated with Organizations. The organization management account designates the Detective administrator account for the organization. That account becomes the administrator account for the organization behavior graph. The Detective administrator account is also the delegated administrator account for Detective in Organizations.
 #' 
-#' The Detective administrator account can enable any organization account
-#' as a member account in the organization behavior graph. The organization
-#' accounts do not receive invitations. The Detective administrator account
-#' can also invite other accounts to the organization behavior graph.
+#' The Detective administrator account can enable any organization account as a member account in the organization behavior graph. The organization accounts do not receive invitations. The Detective administrator account can also invite other accounts to the organization behavior graph.
 #' 
-#' Every behavior graph is specific to a Region. You can only use the API
-#' to manage behavior graphs that belong to the Region that is associated
-#' with the currently selected endpoint.
+#' Every behavior graph is specific to a Region. You can only use the API to manage behavior graphs that belong to the Region that is associated with the currently selected endpoint.
 #' 
-#' The administrator account for a behavior graph can use the Detective API
-#' to do the following:
+#' The administrator account for a behavior graph can use the Detective API to do the following:
 #' 
-#' -   Enable and disable Detective. Enabling Detective creates a new
-#'     behavior graph.
+#' -   Enable and disable Detective. Enabling Detective creates a new behavior graph.
 #' 
 #' -   View the list of member accounts in a behavior graph.
 #' 
@@ -37411,16 +34876,13 @@ cognitosync <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' 
 #' -   Apply tags to a behavior graph.
 #' 
-#' The organization management account can use the Detective API to select
-#' the delegated administrator for Detective.
+#' The organization management account can use the Detective API to select the delegated administrator for Detective.
 #' 
-#' The Detective administrator account for an organization can use the
-#' Detective API to do the following:
+#' The Detective administrator account for an organization can use the Detective API to do the following:
 #' 
 #' -   Perform all of the functions of an administrator account.
 #' 
-#' -   Determine whether to automatically enable new organization accounts
-#'     as member accounts in the organization behavior graph.
+#' -   Determine whether to automatically enable new organization accounts as member accounts in the organization behavior graph.
 #' 
 #' An invited member account can use the Detective API to do the following:
 #' 
@@ -37432,14 +34894,9 @@ cognitosync <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' 
 #' -   Remove their account from a behavior graph.
 #' 
-#' All API actions are logged as CloudTrail events. See [Logging Detective
-#' API Calls with
-#' CloudTrail](https://docs.aws.amazon.com/detective/latest/userguide/logging-using-cloudtrail.html).
+#' All API actions are logged as CloudTrail events. See [Logging Detective API Calls with CloudTrail](https://docs.aws.amazon.com/detective/latest/userguide/logging-using-cloudtrail.html).
 #' 
-#' We replaced the term "master account" with the term "administrator
-#' account". An administrator account is used to centrally manage multiple
-#' accounts. In the case of Detective, the administrator account manages
-#' the accounts in their behavior graph.
+#' We replaced the term "master account" with the term "administrator account". An administrator account is used to centrally manage multiple accounts. In the case of Detective, the administrator account manages the accounts in their behavior graph.
 #'
 #' @param
 #' config
@@ -37577,23 +35034,9 @@ detective <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' @description
 #' Directory Service
 #' 
-#' Directory Service is a web service that makes it easy for you to setup
-#' and run directories in the Amazon Web Services cloud, or connect your
-#' Amazon Web Services resources with an existing self-managed Microsoft
-#' Active Directory. This guide provides detailed information about
-#' Directory Service operations, data types, parameters, and errors. For
-#' information about Directory Services features, see [Directory
-#' Service](https://aws.amazon.com/directoryservice/) and the [Directory
-#' Service Administration
-#' Guide](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html).
+#' Directory Service is a web service that makes it easy for you to setup and run directories in the Amazon Web Services cloud, or connect your Amazon Web Services resources with an existing self-managed Microsoft Active Directory. This guide provides detailed information about Directory Service operations, data types, parameters, and errors. For information about Directory Services features, see [Directory Service](https://aws.amazon.com/directoryservice/) and the [Directory Service Administration Guide](https://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html).
 #' 
-#' Amazon Web Services provides SDKs that consist of libraries and sample
-#' code for various programming languages and platforms (Java, Ruby, .Net,
-#' iOS, Android, etc.). The SDKs provide a convenient way to create
-#' programmatic access to Directory Service and other Amazon Web Services
-#' services. For more information about the Amazon Web Services SDKs,
-#' including how to download and install them, see [Tools for Amazon Web
-#' Services](https://builder.aws.com/build/tools).
+#' Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to Directory Service and other Amazon Web Services services. For more information about the Amazon Web Services SDKs, including how to download and install them, see [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
 #'
 #' @param
 #' config
@@ -37780,15 +35223,9 @@ directoryservice <- function(config = list(), credentials = list(), endpoint = N
 #' Firewall Management Service
 #'
 #' @description
-#' This is the *Firewall Manager API Reference*. This guide is for
-#' developers who need detailed information about the Firewall Manager API
-#' actions, data types, and errors. For detailed information about Firewall
-#' Manager features, see the [Firewall Manager Developer
-#' Guide](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html).
+#' This is the *Firewall Manager API Reference*. This guide is for developers who need detailed information about the Firewall Manager API actions, data types, and errors. For detailed information about Firewall Manager features, see the [Firewall Manager Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html).
 #' 
-#' Some API actions require explicit resource permissions. For information,
-#' see the developer guide topic [Service roles for Firewall
-#' Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service).
+#' Some API actions require explicit resource permissions. For information, see the developer guide topic [Service roles for Firewall Manager](https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service).
 #'
 #' @param
 #' config
@@ -37937,32 +35374,11 @@ fms <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon GuardDuty
 #'
 #' @description
-#' Amazon GuardDuty is a continuous security monitoring service that
-#' analyzes and processes the following foundational data sources - VPC
-#' flow logs, Amazon Web Services CloudTrail management event logs,
-#' CloudTrail S3 data event logs, EKS audit logs, DNS logs, Amazon EBS
-#' volume data, runtime activity belonging to container workloads, such as
-#' Amazon EKS, Amazon ECS (including Amazon Web Services Fargate), and
-#' Amazon EC2 instances. It uses threat intelligence feeds, such as lists
-#' of malicious IPs and domains, and machine learning to identify
-#' unexpected, potentially unauthorized, and malicious activity within your
-#' Amazon Web Services environment. This can include issues like
-#' escalations of privileges, uses of exposed credentials, or communication
-#' with malicious IPs, domains, or presence of malware on your Amazon EC2
-#' instances and container workloads. For example, GuardDuty can detect
-#' compromised EC2 instances and container workloads serving malware, or
-#' mining bitcoin.
+#' Amazon GuardDuty is a continuous security monitoring service that analyzes and processes the following foundational data sources - VPC flow logs, Amazon Web Services CloudTrail management event logs, CloudTrail S3 data event logs, EKS audit logs, DNS logs, Amazon EBS volume data, runtime activity belonging to container workloads, such as Amazon EKS, Amazon ECS (including Amazon Web Services Fargate), and Amazon EC2 instances. It uses threat intelligence feeds, such as lists of malicious IPs and domains, and machine learning to identify unexpected, potentially unauthorized, and malicious activity within your Amazon Web Services environment. This can include issues like escalations of privileges, uses of exposed credentials, or communication with malicious IPs, domains, or presence of malware on your Amazon EC2 instances and container workloads. For example, GuardDuty can detect compromised EC2 instances and container workloads serving malware, or mining bitcoin.
 #' 
-#' GuardDuty also monitors Amazon Web Services account access behavior for
-#' signs of compromise, such as unauthorized infrastructure deployments
-#' like EC2 instances deployed in a Region that has never been used, or
-#' unusual API calls like a password policy change to reduce password
-#' strength.
+#' GuardDuty also monitors Amazon Web Services account access behavior for signs of compromise, such as unauthorized infrastructure deployments like EC2 instances deployed in a Region that has never been used, or unusual API calls like a password policy change to reduce password strength.
 #' 
-#' GuardDuty informs you about the status of your Amazon Web Services
-#' environment by producing security findings that you can view in the
-#' GuardDuty console or through Amazon EventBridge. For more information,
-#' see the *\href{https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html}{Amazon GuardDuty User Guide}* .
+#' GuardDuty informs you about the status of your Amazon Web Services environment by producing security findings that you can view in the GuardDuty console or through Amazon EventBridge. For more information, see the *\href{https://docs.aws.amazon.com/guardduty/latest/ug/what-is-guardduty.html}{Amazon GuardDuty User Guide}* .
 #'
 #' @param
 #' config
@@ -38158,69 +35574,27 @@ guardduty <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' @description
 #' Identity and Access Management
 #' 
-#' Identity and Access Management (IAM) is a web service for securely
-#' controlling access to Amazon Web Services services. With IAM, you can
-#' centrally manage users, security credentials such as access keys, and
-#' permissions that control which Amazon Web Services resources users and
-#' applications can access. For more information about IAM, see [Identity
-#' and Access Management (IAM)](https://aws.amazon.com/iam/) and the
-#' [Identity and Access Management User
-#' Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/).
+#' Identity and Access Management (IAM) is a web service for securely controlling access to Amazon Web Services services. With IAM, you can centrally manage users, security credentials such as access keys, and permissions that control which Amazon Web Services resources users and applications can access. For more information about IAM, see [Identity and Access Management (IAM)](https://aws.amazon.com/iam/) and the [Identity and Access Management User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/).
 #' 
 #' **Programmatic access to IAM**
 #' 
-#' We recommend that you use the Amazon Web Services SDKs to make
-#' programmatic API calls to IAM. The Amazon Web Services SDKs consist of
-#' libraries and sample code for various programming languages and
-#' platforms (for example, Java, Ruby, .NET, iOS, and Android). The SDKs
-#' provide a convenient way to create programmatic access to IAM and Amazon
-#' Web Services. For example, the SDKs take care of tasks such as
-#' cryptographically signing requests, managing errors, and retrying
-#' requests automatically. For more information, see [Tools to build on
-#' Amazon Web Services](https://builder.aws.com/build/tools).
+#' We recommend that you use the Amazon Web Services SDKs to make programmatic API calls to IAM. The Amazon Web Services SDKs consist of libraries and sample code for various programming languages and platforms (for example, Java, Ruby, .NET, iOS, and Android). The SDKs provide a convenient way to create programmatic access to IAM and Amazon Web Services. For example, the SDKs take care of tasks such as cryptographically signing requests, managing errors, and retrying requests automatically. For more information, see [Tools to build on Amazon Web Services](https://builder.aws.com/build/tools).
 #' 
-#' Alternatively, you can also use the IAM Query API to make direct calls
-#' to the IAM service. For more information about calling the IAM Query
-#' API, see [Making query
-#' requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html)
-#' in the *Identity and Access Management User Guide*. IAM supports GET and
-#' POST requests for all actions. That is, the API does not require you to
-#' use GET for some actions and POST for others. However, GET requests are
-#' subject to the limitation size of a URL. Therefore, for operations that
-#' require larger sizes, use a POST request.
+#' Alternatively, you can also use the IAM Query API to make direct calls to the IAM service. For more information about calling the IAM Query API, see [Making query requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/programming.html) in the *Identity and Access Management User Guide*. IAM supports GET and POST requests for all actions. That is, the API does not require you to use GET for some actions and POST for others. However, GET requests are subject to the limitation size of a URL. Therefore, for operations that require larger sizes, use a POST request.
 #' 
 #' **Signing requests**
 #' 
-#' Requests must be signed using an access key ID and a secret access key.
-#' We strongly recommend that you do not use your Amazon Web Services
-#' account access key ID and secret access key for everyday work with IAM.
-#' You can use the access key ID and secret access key for an IAM user or
-#' you can use the Security Token Service to generate temporary security
-#' credentials and use those to sign requests.
+#' Requests must be signed using an access key ID and a secret access key. We strongly recommend that you do not use your Amazon Web Services account access key ID and secret access key for everyday work with IAM. You can use the access key ID and secret access key for an IAM user or you can use the Security Token Service to generate temporary security credentials and use those to sign requests.
 #' 
-#' To sign requests, we recommend that you use [Signature Version
-#' 4](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
-#' If you have an existing application that uses Signature Version 2, you
-#' do not have to update it to use Signature Version 4. However, some
-#' operations now require Signature Version 4. The documentation for
-#' operations that require version 4 indicate this requirement.
+#' To sign requests, we recommend that you use [Signature Version 4](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html). If you have an existing application that uses Signature Version 2, you do not have to update it to use Signature Version 4. However, some operations now require Signature Version 4. The documentation for operations that require version 4 indicate this requirement.
 #' 
 #' **Additional resources**
 #' 
-#' -   [Amazon Web Services security
-#'     credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html).
-#'     This topic provides general information about the types of
-#'     credentials used for accessing Amazon Web Services.
+#' -   [Amazon Web Services security credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html). This topic provides general information about the types of credentials used for accessing Amazon Web Services.
 #' 
-#' -   [IAM best
-#'     practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html).
-#'     This topic presents a list of suggestions for using the IAM service
-#'     to help secure your Amazon Web Services resources.
+#' -   [IAM best practices](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html). This topic presents a list of suggestions for using the IAM service to help secure your Amazon Web Services resources.
 #' 
-#' -   [Signing Amazon Web Services API
-#'     requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
-#'     This set of topics walk you through the process of signing a request
-#'     using an access key ID and secret access key.
+#' -   [Signing Amazon Web Services API requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html). This set of topics walk you through the process of signing a request using an access key ID and secret access key.
 #'
 #' @param
 #' config
@@ -38507,20 +35881,11 @@ iam <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' AWS SSO Identity Store
 #'
 #' @description
-#' The Identity Store service used by IAM Identity Center provides a single
-#' place to retrieve all of your identities (users and groups). For more
-#' information, see the [IAM Identity Center User
-#' Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
+#' The Identity Store service used by IAM Identity Center provides a single place to retrieve all of your identities (users and groups). For more information, see the [IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
 #' 
-#' This reference guide describes the identity store operations that you
-#' can call programmatically and includes detailed information about data
-#' types and errors.
+#' This reference guide describes the identity store operations that you can call programmatically and includes detailed information about data types and errors.
 #' 
-#' IAM Identity Center uses the `sso`, `sso-directory`, and `identitystore`
-#' API namespaces. The `sso-directory` and `identitystore` namespaces
-#' authorize access to data in the Identity Store. Make sure your policies
-#' with IAM actions from these two namespaces are consistent to avoid
-#' conflicting authorization to the same data.
+#' IAM Identity Center uses the `sso`, `sso-directory`, and `identitystore` API namespaces. The `sso-directory` and `identitystore` namespaces authorize access to data in the Identity Store. Make sure your policies with IAM actions from these two namespaces are consistent to avoid conflicting authorization to the same data.
 #'
 #' @param
 #' config
@@ -38646,10 +36011,7 @@ identitystore <- function(config = list(), credentials = list(), endpoint = NULL
 #' Amazon Inspector
 #'
 #' @description
-#' Amazon Inspector enables you to analyze the behavior of your AWS
-#' resources and to identify potential security issues. For more
-#' information, see [Amazon Inspector User
-#' Guide](https://docs.aws.amazon.com/inspector/v1/userguide/inspector_introduction.html).
+#' Amazon Inspector enables you to analyze the behavior of your AWS resources and to identify potential security issues. For more information, see [Amazon Inspector User Guide](https://docs.aws.amazon.com/inspector/v1/userguide/inspector_introduction.html).
 #'
 #' @param
 #' config
@@ -38803,9 +36165,7 @@ inspector <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' Inspector2
 #'
 #' @description
-#' Amazon Inspector is a vulnerability discovery service that automates
-#' continuous scanning for security vulnerabilities within your Amazon EC2,
-#' Amazon ECR, and Amazon Web Services Lambda environments.
+#' Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2, Amazon ECR, and Amazon Web Services Lambda environments.
 #'
 #' @param
 #' config
@@ -38989,96 +36349,41 @@ inspector2 <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' @description
 #' Key Management Service
 #' 
-#' Key Management Service (KMS) is an encryption and key management web
-#' service. This guide describes the KMS operations that you can call
-#' programmatically. For general information about KMS, see the [*Key
-#' Management Service Developer
-#' Guide*](https://docs.aws.amazon.com/kms/latest/developerguide/) .
+#' Key Management Service (KMS) is an encryption and key management web service. This guide describes the KMS operations that you can call programmatically. For general information about KMS, see the [*Key Management Service Developer Guide*](https://docs.aws.amazon.com/kms/latest/developerguide/) .
 #' 
-#' KMS has replaced the term *customer master key (CMK)* with *Key
-#' Management Service key* and *KMS key*. The concept has not changed. To
-#' prevent breaking changes, KMS is keeping some variations of this term.
+#' KMS has replaced the term *customer master key (CMK)* with *Key Management Service key* and *KMS key*. The concept has not changed. To prevent breaking changes, KMS is keeping some variations of this term.
 #' 
-#' Amazon Web Services provides SDKs that consist of libraries and sample
-#' code for various programming languages and platforms (Java, Rust,
-#' Python, Ruby, .Net, macOS, Android, etc.). The SDKs provide a convenient
-#' way to create programmatic access to KMS and other Amazon Web Services
-#' services. For example, the SDKs take care of tasks such as signing
-#' requests (see below), managing errors, and retrying requests
-#' automatically. For more information about the Amazon Web Services SDKs,
-#' including how to download and install them, see [Tools for Amazon Web
-#' Services](https://builder.aws.com/build/tools).
+#' Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Rust, Python, Ruby, .Net, macOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to KMS and other Amazon Web Services services. For example, the SDKs take care of tasks such as signing requests (see below), managing errors, and retrying requests automatically. For more information about the Amazon Web Services SDKs, including how to download and install them, see [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
 #' 
-#' We recommend that you use the Amazon Web Services SDKs to make
-#' programmatic API calls to KMS.
+#' We recommend that you use the Amazon Web Services SDKs to make programmatic API calls to KMS.
 #' 
-#' If you need to use FIPS 140-2 validated cryptographic modules when
-#' communicating with Amazon Web Services, use one of the FIPS endpoints in
-#' your preferred Amazon Web Services Region. If you need communicate over
-#' IPv6, use the dual-stack endpoint in your preferred Amazon Web Services
-#' Region. For more information see [Service
-#' endpoints](https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region)
-#' in the Key Management Service topic of the *Amazon Web Services General
-#' Reference* and [Dual-stack endpoint
-#' support](https://docs.aws.amazon.com/kms/latest/developerguide/ipv6-kms.html)
-#' in the KMS Developer Guide.
+#' If you need to use FIPS 140-2 validated cryptographic modules when communicating with Amazon Web Services, use one of the FIPS endpoints in your preferred Amazon Web Services Region. If you need communicate over IPv6, use the dual-stack endpoint in your preferred Amazon Web Services Region. For more information see [Service endpoints](https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region) in the Key Management Service topic of the *Amazon Web Services General Reference* and [Dual-stack endpoint support](https://docs.aws.amazon.com/kms/latest/developerguide/ipv6-kms.html) in the KMS Developer Guide.
 #' 
-#' All KMS API calls must be signed and be transmitted using Transport
-#' Layer Security (TLS). KMS recommends you always use the latest supported
-#' TLS version. Clients must also support cipher suites with Perfect
-#' Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic
-#' Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java
-#' 7 and later support these modes.
+#' All KMS API calls must be signed and be transmitted using Transport Layer Security (TLS). KMS recommends you always use the latest supported TLS version. Clients must also support cipher suites with Perfect Forward Secrecy (PFS) such as Ephemeral Diffie-Hellman (DHE) or Elliptic Curve Ephemeral Diffie-Hellman (ECDHE). Most modern systems such as Java 7 and later support these modes.
 #' 
 #' **Signing Requests**
 #' 
-#' Requests must be signed using an access key ID and a secret access key.
-#' We strongly recommend that you do not use your Amazon Web Services
-#' account root access key ID and secret access key for everyday work. You
-#' can use the access key ID and secret access key for an IAM user or you
-#' can use the Security Token Service (STS) to generate temporary security
-#' credentials and use those to sign requests.
+#' Requests must be signed using an access key ID and a secret access key. We strongly recommend that you do not use your Amazon Web Services account root access key ID and secret access key for everyday work. You can use the access key ID and secret access key for an IAM user or you can use the Security Token Service (STS) to generate temporary security credentials and use those to sign requests.
 #' 
-#' All KMS requests must be signed with [Signature Version
-#' 4](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
+#' All KMS requests must be signed with [Signature Version 4](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html).
 #' 
 #' **Logging API Requests**
 #' 
-#' KMS supports CloudTrail, a service that logs Amazon Web Services API
-#' calls and related events for your Amazon Web Services account and
-#' delivers them to an Amazon S3 bucket that you specify. By using the
-#' information collected by CloudTrail, you can determine what requests
-#' were made to KMS, who made the request, when it was made, and so on. To
-#' learn more about CloudTrail, including how to turn it on and find your
-#' log files, see the [CloudTrail User
-#' Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/).
+#' KMS supports CloudTrail, a service that logs Amazon Web Services API calls and related events for your Amazon Web Services account and delivers them to an Amazon S3 bucket that you specify. By using the information collected by CloudTrail, you can determine what requests were made to KMS, who made the request, when it was made, and so on. To learn more about CloudTrail, including how to turn it on and find your log files, see the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/).
 #' 
 #' **Additional Resources**
 #' 
-#' For more information about credentials and request signing, see the
-#' following:
+#' For more information about credentials and request signing, see the following:
 #' 
-#' -   [Amazon Web Services Security
-#'     Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html) -
-#'     This topic provides general information about the types of
-#'     credentials used to access Amazon Web Services.
+#' -   [Amazon Web Services Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/security-creds.html) - This topic provides general information about the types of credentials used to access Amazon Web Services.
 #' 
-#' -   [Temporary Security
-#'     Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) -
-#'     This section of the *IAM User Guide* describes how to create and use
-#'     temporary security credentials.
+#' -   [Temporary Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) - This section of the *IAM User Guide* describes how to create and use temporary security credentials.
 #' 
-#' -   [Signature Version 4 Signing
-#'     Process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html) -
-#'     This set of topics walks you through the process of signing a
-#'     request using an access key ID and a secret access key.
+#' -   [Signature Version 4 Signing Process](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html) - This set of topics walks you through the process of signing a request using an access key ID and a secret access key.
 #' 
 #' **Commonly Used API Operations**
 #' 
-#' Of the API operations discussed in this guide, the following will prove
-#' the most useful for most applications. You will likely perform
-#' operations other than these, such as creating keys and assigning
-#' policies, by using the console.
+#' Of the API operations discussed in this guide, the following will prove the most useful for most applications. You will likely perform operations other than these, such as creating keys and assigning policies, by using the console.
 #' 
 #' -   `encrypt`
 #' 
@@ -39209,7 +36514,7 @@ inspector2 <- function(config = list(), credentials = list(), endpoint = NULL, r
 #'  \link[paws.security.identity:kms_list_key_rotations]{list_key_rotations} \tab Returns information about the key materials associated with the specified KMS key\cr
 #'  \link[paws.security.identity:kms_list_keys]{list_keys} \tab Gets a list of all KMS keys in the caller's Amazon Web Services account and Region\cr
 #'  \link[paws.security.identity:kms_list_resource_tags]{list_resource_tags} \tab Returns all tags on the specified KMS key\cr
-#'  \link[paws.security.identity:kms_list_retirable_grants]{list_retirable_grants} \tab Returns information about all grants in the Amazon Web Services account and Region that have the specified retiring principal\cr
+#'  \link[paws.security.identity:kms_list_retirable_grants]{list_retirable_grants} \tab Returns information about all grants in the Amazon Web Services account and Region that have the specified retiring principal or retiring service principal\cr
 #'  \link[paws.security.identity:kms_put_key_policy]{put_key_policy} \tab Attaches a key policy to the specified KMS key\cr
 #'  \link[paws.security.identity:kms_re_encrypt]{re_encrypt} \tab Decrypts ciphertext and then reencrypts it entirely within KMS\cr
 #'  \link[paws.security.identity:kms_replicate_key]{replicate_key} \tab Replicates a multi-Region key into the specified Region\cr
@@ -39436,12 +36741,7 @@ macie2 <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' PcaConnectorAd
 #'
 #' @description
-#' Amazon Web Services Private CA Connector for Active Directory creates a
-#' connector between Amazon Web Services Private CA and Active Directory
-#' (AD) that enables you to provision security certificates for AD signed
-#' by a private CA that you own. For more information, see [Amazon Web
-#' Services Private CA Connector for Active
-#' Directory](https://docs.aws.amazon.com/privateca/latest/userguide/).
+#' Amazon Web Services Private CA Connector for Active Directory creates a connector between Amazon Web Services Private CA and Active Directory (AD) that enables you to provision security certificates for AD signed by a private CA that you own. For more information, see [Amazon Web Services Private CA Connector for Active Directory](https://docs.aws.amazon.com/privateca/latest/userguide/).
 #'
 #' @param
 #' config
@@ -39573,21 +36873,13 @@ pcaconnectorad <- function(config = list(), credentials = list(), endpoint = NUL
 #' AWS Resource Access Manager
 #'
 #' @description
-#' This is the *Resource Access Manager API Reference*. This documentation
-#' provides descriptions and syntax for each of the actions and data types
-#' in RAM. RAM is a service that helps you securely share your Amazon Web
-#' Services resources to other Amazon Web Services accounts. If you use
-#' Organizations to manage your accounts, then you can share your resources
-#' with your entire organization or to organizational units (OUs). For
-#' supported resource types, you can also share resources with individual
-#' Identity and Access Management (IAM) roles and users.
+#' This is the *Resource Access Manager API Reference*. This documentation provides descriptions and syntax for each of the actions and data types in RAM. RAM is a service that helps you securely share your Amazon Web Services resources to other Amazon Web Services accounts. If you use Organizations to manage your accounts, then you can share your resources with your entire organization or to organizational units (OUs). For supported resource types, you can also share resources with individual Identity and Access Management (IAM) roles and users.
 #' 
 #' To learn more about RAM, see the following resources:
 #' 
 #' -   [Resource Access Manager product page](https://aws.amazon.com/ram/)
 #' 
-#' -   [Resource Access Manager User
-#'     Guide](https://docs.aws.amazon.com/ram/latest/userguide/)
+#' -   [Resource Access Manager User Guide](https://docs.aws.amazon.com/ram/latest/userguide/)
 #'
 #' @param
 #' config
@@ -39729,26 +37021,11 @@ ram <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' IAM Roles Anywhere
 #'
 #' @description
-#' Identity and Access Management Roles Anywhere provides a secure way for
-#' your workloads such as servers, containers, and applications that run
-#' outside of Amazon Web Services to obtain temporary Amazon Web Services
-#' credentials. Your workloads can use the same IAM policies and roles you
-#' have for native Amazon Web Services applications to access Amazon Web
-#' Services resources. Using IAM Roles Anywhere eliminates the need to
-#' manage long-term credentials for workloads running outside of Amazon Web
-#' Services.
+#' Identity and Access Management Roles Anywhere provides a secure way for your workloads such as servers, containers, and applications that run outside of Amazon Web Services to obtain temporary Amazon Web Services credentials. Your workloads can use the same IAM policies and roles you have for native Amazon Web Services applications to access Amazon Web Services resources. Using IAM Roles Anywhere eliminates the need to manage long-term credentials for workloads running outside of Amazon Web Services.
 #' 
-#' To use IAM Roles Anywhere, your workloads must use X.509 certificates
-#' issued by their certificate authority (CA). You register the CA with IAM
-#' Roles Anywhere as a trust anchor to establish trust between your public
-#' key infrastructure (PKI) and IAM Roles Anywhere. If you don't manage
-#' your own PKI system, you can use Private Certificate Authority to create
-#' a CA and then use that to establish trust with IAM Roles Anywhere.
+#' To use IAM Roles Anywhere, your workloads must use X.509 certificates issued by their certificate authority (CA). You register the CA with IAM Roles Anywhere as a trust anchor to establish trust between your public key infrastructure (PKI) and IAM Roles Anywhere. If you don't manage your own PKI system, you can use Private Certificate Authority to create a CA and then use that to establish trust with IAM Roles Anywhere.
 #' 
-#' This guide describes the IAM Roles Anywhere operations that you can call
-#' programmatically. For more information about IAM Roles Anywhere, see the
-#' [IAM Roles Anywhere User
-#' Guide](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html).
+#' This guide describes the IAM Roles Anywhere operations that you can call programmatically. For more information about IAM Roles Anywhere, see the [IAM Roles Anywhere User Guide](https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html).
 #'
 #' @param
 #' config
@@ -39887,46 +37164,23 @@ iamrolesanywhere <- function(config = list(), credentials = list(), endpoint = N
 #' @description
 #' Amazon Web Services Secrets Manager
 #' 
-#' Amazon Web Services Secrets Manager provides a service to enable you to
-#' store, manage, and retrieve, secrets.
+#' Amazon Web Services Secrets Manager provides a service to enable you to store, manage, and retrieve, secrets.
 #' 
-#' This guide provides descriptions of the Secrets Manager API. For more
-#' information about using this service, see the [Amazon Web Services
-#' Secrets Manager User
-#' Guide](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
+#' This guide provides descriptions of the Secrets Manager API. For more information about using this service, see the [Amazon Web Services Secrets Manager User Guide](https://docs.aws.amazon.com/secretsmanager/latest/userguide/).
 #' 
 #' **API Version**
 #' 
-#' This version of the Secrets Manager API Reference documents the Secrets
-#' Manager API version 2017-10-17.
+#' This version of the Secrets Manager API Reference documents the Secrets Manager API version 2017-10-17.
 #' 
-#' For a list of endpoints, see [Amazon Web Services Secrets Manager
-#' endpoints](https://docs.aws.amazon.com/secretsmanager/latest/userguide/asm_access.html#endpoints).
+#' For a list of endpoints, see [Amazon Web Services Secrets Manager endpoints](https://docs.aws.amazon.com/secretsmanager/latest/userguide/asm_access.html#endpoints).
 #' 
 #' **Support and Feedback for Amazon Web Services Secrets Manager**
 #' 
-#' We welcome your feedback. Send your comments to
-#' <awssecretsmanager-feedback@@amazon.com>, or post your feedback and
-#' questions in the Amazon Web Services Secrets Manager Discussion Forum.
-#' For more information about the Amazon Web Services Discussion Forums,
-#' see Forums Help.
+#' We welcome your feedback. Send your comments to <awssecretsmanager-feedback@@amazon.com>, or post your feedback and questions in the Amazon Web Services Secrets Manager Discussion Forum. For more information about the Amazon Web Services Discussion Forums, see Forums Help.
 #' 
 #' **Logging API Requests**
 #' 
-#' Amazon Web Services Secrets Manager supports Amazon Web Services
-#' CloudTrail, a service that records Amazon Web Services API calls for
-#' your Amazon Web Services account and delivers log files to an Amazon S3
-#' bucket. By using information that's collected by Amazon Web Services
-#' CloudTrail, you can determine the requests successfully made to Secrets
-#' Manager, who made the request, when it was made, and so on. For more
-#' about Amazon Web Services Secrets Manager and support for Amazon Web
-#' Services CloudTrail, see [Logging Amazon Web Services Secrets Manager
-#' Events with Amazon Web Services
-#' CloudTrail](https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html#monitoring_cloudtrail)
-#' in the *Amazon Web Services Secrets Manager User Guide*. To learn more
-#' about CloudTrail, including enabling it and find your log files, see the
-#' [Amazon Web Services CloudTrail User
-#' Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html).
+#' Amazon Web Services Secrets Manager supports Amazon Web Services CloudTrail, a service that records Amazon Web Services API calls for your Amazon Web Services account and delivers log files to an Amazon S3 bucket. By using information that's collected by Amazon Web Services CloudTrail, you can determine the requests successfully made to Secrets Manager, who made the request, when it was made, and so on. For more about Amazon Web Services Secrets Manager and support for Amazon Web Services CloudTrail, see [Logging Amazon Web Services Secrets Manager Events with Amazon Web Services CloudTrail](https://docs.aws.amazon.com/secretsmanager/latest/userguide/monitoring.html#monitoring_cloudtrail) in the *Amazon Web Services Secrets Manager User Guide*. To learn more about CloudTrail, including enabling it and find your log files, see the [Amazon Web Services CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html).
 #'
 #' @param
 #' config
@@ -40060,100 +37314,35 @@ secretsmanager <- function(config = list(), credentials = list(), endpoint = NUL
 #' AWS SecurityHub
 #'
 #' @description
-#' Security Hub CSPM provides you with a comprehensive view of your
-#' security state in Amazon Web Services and helps you assess your Amazon
-#' Web Services environment against security industry standards and best
-#' practices.
+#' Security Hub CSPM provides you with a comprehensive view of your security state in Amazon Web Services and helps you assess your Amazon Web Services environment against security industry standards and best practices.
 #' 
-#' Security Hub CSPM collects security data across Amazon Web Services
-#' accounts, Amazon Web Services services, and supported third-party
-#' products and helps you analyze your security trends and identify the
-#' highest priority security issues.
+#' Security Hub CSPM collects security data across Amazon Web Services accounts, Amazon Web Services services, and supported third-party products and helps you analyze your security trends and identify the highest priority security issues.
 #' 
-#' To help you manage the security state of your organization, Security Hub
-#' CSPM supports multiple security standards. These include the Amazon Web
-#' Services Foundational Security Best Practices (FSBP) standard developed
-#' by Amazon Web Services, and external compliance frameworks such as the
-#' Center for Internet Security (CIS), the Payment Card Industry Data
-#' Security Standard (PCI DSS), and the National Institute of Standards and
-#' Technology (NIST). Each standard includes several security controls,
-#' each of which represents a security best practice. Security Hub CSPM
-#' runs checks against security controls and generates control findings to
-#' help you assess your compliance against security best practices.
+#' To help you manage the security state of your organization, Security Hub CSPM supports multiple security standards. These include the Amazon Web Services Foundational Security Best Practices (FSBP) standard developed by Amazon Web Services, and external compliance frameworks such as the Center for Internet Security (CIS), the Payment Card Industry Data Security Standard (PCI DSS), and the National Institute of Standards and Technology (NIST). Each standard includes several security controls, each of which represents a security best practice. Security Hub CSPM runs checks against security controls and generates control findings to help you assess your compliance against security best practices.
 #' 
-#' In addition to generating control findings, Security Hub CSPM also
-#' receives findings from other Amazon Web Services services, such as
-#' Amazon GuardDuty and Amazon Inspector, and supported third-party
-#' products. This gives you a single pane of glass into a variety of
-#' security-related issues. You can also send Security Hub CSPM findings to
-#' other Amazon Web Services services and supported third-party products.
+#' In addition to generating control findings, Security Hub CSPM also receives findings from other Amazon Web Services services, such as Amazon GuardDuty and Amazon Inspector, and supported third-party products. This gives you a single pane of glass into a variety of security-related issues. You can also send Security Hub CSPM findings to other Amazon Web Services services and supported third-party products.
 #' 
-#' Security Hub CSPM offers automation features that help you triage and
-#' remediate security issues. For example, you can use automation rules to
-#' automatically update critical findings when a security check fails. You
-#' can also leverage the integration with Amazon EventBridge to trigger
-#' automatic responses to specific findings.
+#' Security Hub CSPM offers automation features that help you triage and remediate security issues. For example, you can use automation rules to automatically update critical findings when a security check fails. You can also leverage the integration with Amazon EventBridge to trigger automatic responses to specific findings.
 #' 
-#' This guide, the *Security Hub CSPM API Reference*, provides information
-#' about the Security Hub CSPM API. This includes supported resources, HTTP
-#' methods, parameters, and schemas. If you're new to Security Hub CSPM,
-#' you might find it helpful to also review the [*Security Hub CSPM User
-#' Guide*](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html)
-#' . The user guide explains key concepts and provides procedures that
-#' demonstrate how to use Security Hub CSPM features. It also provides
-#' information about topics such as integrating Security Hub CSPM with
-#' other Amazon Web Services services.
+#' This guide, the *Security Hub CSPM API Reference*, provides information about the Security Hub CSPM API. This includes supported resources, HTTP methods, parameters, and schemas. If you're new to Security Hub CSPM, you might find it helpful to also review the [*Security Hub CSPM User Guide*](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html) . The user guide explains key concepts and provides procedures that demonstrate how to use Security Hub CSPM features. It also provides information about topics such as integrating Security Hub CSPM with other Amazon Web Services services.
 #' 
-#' In addition to interacting with Security Hub CSPM by making calls to the
-#' Security Hub CSPM API, you can use a current version of an Amazon Web
-#' Services command line tool or SDK. Amazon Web Services provides tools
-#' and SDKs that consist of libraries and sample code for various languages
-#' and platforms, such as PowerShell, Java, Go, Python, C++, and .NET.
-#' These tools and SDKs provide convenient, programmatic access to Security
-#' Hub CSPM and other Amazon Web Services services . They also handle tasks
-#' such as signing requests, managing errors, and retrying requests
-#' automatically. For information about installing and using the Amazon Web
-#' Services tools and SDKs, see [Tools to Build on Amazon Web
-#' Services](https://builder.aws.com/build/tools).
+#' In addition to interacting with Security Hub CSPM by making calls to the Security Hub CSPM API, you can use a current version of an Amazon Web Services command line tool or SDK. Amazon Web Services provides tools and SDKs that consist of libraries and sample code for various languages and platforms, such as PowerShell, Java, Go, Python, C++, and .NET. These tools and SDKs provide convenient, programmatic access to Security Hub CSPM and other Amazon Web Services services . They also handle tasks such as signing requests, managing errors, and retrying requests automatically. For information about installing and using the Amazon Web Services tools and SDKs, see [Tools to Build on Amazon Web Services](https://builder.aws.com/build/tools).
 #' 
-#' With the exception of operations that are related to central
-#' configuration, Security Hub CSPM API requests are executed only in the
-#' Amazon Web Services Region that is currently active or in the specific
-#' Amazon Web Services Region that you specify in your request. Any
-#' configuration or settings change that results from the operation is
-#' applied only to that Region. To make the same change in other Regions,
-#' call the same API operation in each Region in which you want to apply
-#' the change. When you use central configuration, API requests for
-#' enabling Security Hub CSPM, standards, and controls are executed in the
-#' home Region and all linked Regions. For a list of central configuration
-#' operations, see the [Central configuration terms and
-#' concepts](https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html#central-configuration-concepts)
-#' section of the *Security Hub CSPM User Guide*.
+#' With the exception of operations that are related to central configuration, Security Hub CSPM API requests are executed only in the Amazon Web Services Region that is currently active or in the specific Amazon Web Services Region that you specify in your request. Any configuration or settings change that results from the operation is applied only to that Region. To make the same change in other Regions, call the same API operation in each Region in which you want to apply the change. When you use central configuration, API requests for enabling Security Hub CSPM, standards, and controls are executed in the home Region and all linked Regions. For a list of central configuration operations, see the [Central configuration terms and concepts](https://docs.aws.amazon.com/securityhub/latest/userguide/central-configuration-intro.html#central-configuration-concepts) section of the *Security Hub CSPM User Guide*.
 #' 
-#' The following throttling limits apply to Security Hub CSPM API
-#' operations.
+#' The following throttling limits apply to Security Hub CSPM API operations.
 #' 
-#' -   `batch_enable_standards` -
-#'     `RateLimit` of 1 request per second. `BurstLimit` of 1 request per
-#'     second.
+#' -   `batch_enable_standards` - `RateLimit` of 1 request per second. `BurstLimit` of 1 request per second.
 #' 
-#' -   `get_findings` - `RateLimit` of 3
-#'     requests per second. `BurstLimit` of 6 requests per second.
+#' -   `get_findings` - `RateLimit` of 3 requests per second. `BurstLimit` of 6 requests per second.
 #' 
-#' -   `batch_import_findings` -
-#'     `RateLimit` of 10 requests per second. `BurstLimit` of 30 requests
-#'     per second.
+#' -   `batch_import_findings` - `RateLimit` of 10 requests per second. `BurstLimit` of 30 requests per second.
 #' 
-#' -   `batch_update_findings` -
-#'     `RateLimit` of 10 requests per second. `BurstLimit` of 30 requests
-#'     per second.
+#' -   `batch_update_findings` - `RateLimit` of 10 requests per second. `BurstLimit` of 30 requests per second.
 #' 
-#' -   `update_standards_control` -
-#'     `RateLimit` of 1 request per second. `BurstLimit` of 5 requests per
-#'     second.
+#' -   `update_standards_control` - `RateLimit` of 1 request per second. `BurstLimit` of 5 requests per second.
 #' 
-#' -   All other operations - `RateLimit` of 10 requests per second.
-#'     `BurstLimit` of 30 requests per second.
+#' -   All other operations - `RateLimit` of 10 requests per second. `BurstLimit` of 30 requests per second.
 #'
 #' @param
 #' config
@@ -40369,46 +37558,15 @@ securityhub <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon Security Lake
 #'
 #' @description
-#' Amazon Security Lake is a fully managed security data lake service. You
-#' can use Security Lake to automatically centralize security data from
-#' cloud, on-premises, and custom sources into a data lake that's stored in
-#' your Amazon Web Services account. Amazon Web Services Organizations is
-#' an account management service that lets you consolidate multiple Amazon
-#' Web Services accounts into an organization that you create and centrally
-#' manage. With Organizations, you can create member accounts and invite
-#' existing accounts to join your organization. Security Lake helps you
-#' analyze security data for a more complete understanding of your security
-#' posture across the entire organization. It can also help you improve the
-#' protection of your workloads, applications, and data.
+#' Amazon Security Lake is a fully managed security data lake service. You can use Security Lake to automatically centralize security data from cloud, on-premises, and custom sources into a data lake that's stored in your Amazon Web Services account. Amazon Web Services Organizations is an account management service that lets you consolidate multiple Amazon Web Services accounts into an organization that you create and centrally manage. With Organizations, you can create member accounts and invite existing accounts to join your organization. Security Lake helps you analyze security data for a more complete understanding of your security posture across the entire organization. It can also help you improve the protection of your workloads, applications, and data.
 #' 
-#' The data lake is backed by Amazon Simple Storage Service (Amazon S3)
-#' buckets, and you retain ownership over your data.
+#' The data lake is backed by Amazon Simple Storage Service (Amazon S3) buckets, and you retain ownership over your data.
 #' 
-#' Amazon Security Lake integrates with CloudTrail, a service that provides
-#' a record of actions taken by a user, role, or an Amazon Web Services
-#' service. In Security Lake, CloudTrail captures API calls for Security
-#' Lake as events. The calls captured include calls from the Security Lake
-#' console and code calls to the Security Lake API operations. If you
-#' create a trail, you can enable continuous delivery of CloudTrail events
-#' to an Amazon S3 bucket, including events for Security Lake. If you don't
-#' configure a trail, you can still view the most recent events in the
-#' CloudTrail console in Event history. Using the information collected by
-#' CloudTrail you can determine the request that was made to Security Lake,
-#' the IP address from which the request was made, who made the request,
-#' when it was made, and additional details. To learn more about Security
-#' Lake information in CloudTrail, see the [Amazon Security Lake User
-#' Guide](https://docs.aws.amazon.com/security-lake/latest/userguide/securitylake-cloudtrail.html).
+#' Amazon Security Lake integrates with CloudTrail, a service that provides a record of actions taken by a user, role, or an Amazon Web Services service. In Security Lake, CloudTrail captures API calls for Security Lake as events. The calls captured include calls from the Security Lake console and code calls to the Security Lake API operations. If you create a trail, you can enable continuous delivery of CloudTrail events to an Amazon S3 bucket, including events for Security Lake. If you don't configure a trail, you can still view the most recent events in the CloudTrail console in Event history. Using the information collected by CloudTrail you can determine the request that was made to Security Lake, the IP address from which the request was made, who made the request, when it was made, and additional details. To learn more about Security Lake information in CloudTrail, see the [Amazon Security Lake User Guide](https://docs.aws.amazon.com/security-lake/latest/userguide/securitylake-cloudtrail.html).
 #' 
-#' Security Lake automates the collection of security-related log and event
-#' data from integrated Amazon Web Services services and third-party
-#' services. It also helps you manage the lifecycle of data with
-#' customizable retention and replication settings. Security Lake converts
-#' ingested data into Apache Parquet format and a standard open-source
-#' schema called the Open Cybersecurity Schema Framework (OCSF).
+#' Security Lake automates the collection of security-related log and event data from integrated Amazon Web Services services and third-party services. It also helps you manage the lifecycle of data with customizable retention and replication settings. Security Lake converts ingested data into Apache Parquet format and a standard open-source schema called the Open Cybersecurity Schema Framework (OCSF).
 #' 
-#' Other Amazon Web Services services and third-party services can
-#' subscribe to the data that's stored in Security Lake for incident
-#' response and security data analytics.
+#' Other Amazon Web Services services and third-party services can subscribe to the data that's stored in Security Lake for incident response and security data analytics.
 #'
 #' @param
 #' config
@@ -40548,12 +37706,7 @@ securitylake <- function(config = list(), credentials = list(), endpoint = NULL,
 #' @description
 #' Shield Advanced
 #' 
-#' This is the *Shield Advanced API Reference*. This guide is for
-#' developers who need detailed information about the Shield Advanced API
-#' actions, data types, and errors. For detailed information about WAF and
-#' Shield Advanced features and an overview of how to use the WAF and
-#' Shield Advanced APIs, see the [WAF and Shield Developer
-#' Guide](https://docs.aws.amazon.com/waf/latest/developerguide/).
+#' This is the *Shield Advanced API Reference*. This guide is for developers who need detailed information about the Shield Advanced API actions, data types, and errors. For detailed information about WAF and Shield Advanced features and an overview of how to use the WAF and Shield Advanced APIs, see the [WAF and Shield Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/).
 #'
 #' @param
 #' config
@@ -40696,27 +37849,13 @@ shield <- function(config = list(), credentials = list(), endpoint = NULL, regio
 #' AWS Single Sign-On
 #'
 #' @description
-#' AWS IAM Identity Center (successor to AWS Single Sign-On) Portal is a
-#' web service that makes it easy for you to assign user access to IAM
-#' Identity Center resources such as the AWS access portal. Users can get
-#' AWS account applications and roles assigned to them and get federated
-#' into the application.
+#' AWS IAM Identity Center (successor to AWS Single Sign-On) Portal is a web service that makes it easy for you to assign user access to IAM Identity Center resources such as the AWS access portal. Users can get AWS account applications and roles assigned to them and get federated into the application.
 #' 
-#' Although AWS Single Sign-On was renamed, the `sso` and `identitystore`
-#' API namespaces will continue to retain their original name for backward
-#' compatibility purposes. For more information, see [IAM Identity Center
-#' rename](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed).
+#' Although AWS Single Sign-On was renamed, the `sso` and `identitystore` API namespaces will continue to retain their original name for backward compatibility purposes. For more information, see [IAM Identity Center rename](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed).
 #' 
-#' This reference guide describes the IAM Identity Center Portal operations
-#' that you can call programatically and includes detailed information on
-#' data types and errors.
+#' This reference guide describes the IAM Identity Center Portal operations that you can call programatically and includes detailed information on data types and errors.
 #' 
-#' AWS provides SDKs that consist of libraries and sample code for various
-#' programming languages and platforms, such as Java, Ruby, .Net, iOS, or
-#' Android. The SDKs provide a convenient way to create programmatic access
-#' to IAM Identity Center and other AWS services. For more information
-#' about the AWS SDKs, including how to download and install them, see
-#' [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
+#' AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms, such as Java, Ruby, .Net, iOS, or Android. The SDKs provide a convenient way to create programmatic access to IAM Identity Center and other AWS services. For more information about the AWS SDKs, including how to download and install them, see [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
 #'
 #' @param
 #' config
@@ -40827,38 +37966,19 @@ sso <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' AWS Single Sign-On Admin
 #'
 #' @description
-#' IAM Identity Center is the Amazon Web Services solution for connecting
-#' your workforce users to Amazon Web Services managed applications and
-#' other Amazon Web Services resources. You can connect your existing
-#' identity provider and synchronize users and groups from your directory,
-#' or create and manage your users directly in IAM Identity Center. You can
-#' then use IAM Identity Center for either or both of the following:
+#' IAM Identity Center is the Amazon Web Services solution for connecting your workforce users to Amazon Web Services managed applications and other Amazon Web Services resources. You can connect your existing identity provider and synchronize users and groups from your directory, or create and manage your users directly in IAM Identity Center. You can then use IAM Identity Center for either or both of the following:
 #' 
 #' -   User access to applications
 #' 
 #' -   User access to Amazon Web Services accounts
 #' 
-#' This guide provides information about single sign-on operations that you
-#' can use for access to applications and Amazon Web Services accounts. For
-#' information about IAM Identity Center features, see the [IAM Identity
-#' Center User
-#' Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
+#' This guide provides information about single sign-on operations that you can use for access to applications and Amazon Web Services accounts. For information about IAM Identity Center features, see the [IAM Identity Center User Guide](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html).
 #' 
 #' IAM Identity Center uses the `sso` and `identitystore` API namespaces.
 #' 
-#' Many API operations for IAM Identity Center rely on identifiers for
-#' users and groups, known as principals. For more information about how to
-#' work with principals and principal IDs in IAM Identity Center, see the
-#' [Identity Store API
-#' Reference](https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/).
+#' Many API operations for IAM Identity Center rely on identifiers for users and groups, known as principals. For more information about how to work with principals and principal IDs in IAM Identity Center, see the [Identity Store API Reference](https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/).
 #' 
-#' Amazon Web Services provides SDKs that consist of libraries and sample
-#' code for various programming languages and platforms (Java, Ruby, .Net,
-#' iOS, Android, and more). The SDKs provide a convenient way to create
-#' programmatic access to IAM Identity Center and other Amazon Web Services
-#' services. For more information about the Amazon Web Services SDKs,
-#' including how to download and install them, see [Tools for Amazon Web
-#' Services](https://builder.aws.com/build/tools).
+#' Amazon Web Services provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, and more). The SDKs provide a convenient way to create programmatic access to IAM Identity Center and other Amazon Web Services services. For more information about the Amazon Web Services SDKs, including how to download and install them, see [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
 #'
 #' @param
 #' config
@@ -41044,55 +38164,25 @@ ssoadmin <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' AWS SSO OIDC
 #'
 #' @description
-#' IAM Identity Center OpenID Connect (OIDC) is a web service that enables
-#' a client (such as CLI or a native application) to register with IAM
-#' Identity Center. The service also enables the client to fetch the user’s
-#' access token upon successful authentication and authorization with IAM
-#' Identity Center.
+#' IAM Identity Center OpenID Connect (OIDC) is a web service that enables a client (such as CLI or a native application) to register with IAM Identity Center. The service also enables the client to fetch the user’s access token upon successful authentication and authorization with IAM Identity Center.
 #' 
 #' **API namespaces**
 #' 
-#' IAM Identity Center uses the `sso` and `identitystore` API namespaces.
-#' IAM Identity Center OpenID Connect uses the `sso-oauth` namespace.
+#' IAM Identity Center uses the `sso` and `identitystore` API namespaces. IAM Identity Center OpenID Connect uses the `sso-oauth` namespace.
 #' 
 #' **Considerations for using this guide**
 #' 
-#' Before you begin using this guide, we recommend that you first review
-#' the following important information about how the IAM Identity Center
-#' OIDC service works.
+#' Before you begin using this guide, we recommend that you first review the following important information about how the IAM Identity Center OIDC service works.
 #' 
-#' -   The IAM Identity Center OIDC service currently implements only the
-#'     portions of the OAuth 2.0 Device Authorization Grant standard
-#'     ([https://tools.ietf.org/html/rfc8628](https://datatracker.ietf.org/doc/html/rfc8628))
-#'     that are necessary to enable single sign-on authentication with the
-#'     CLI.
+#' -   The IAM Identity Center OIDC service currently implements only the portions of the OAuth 2.0 Device Authorization Grant standard ([https://tools.ietf.org/html/rfc8628](https://datatracker.ietf.org/doc/html/rfc8628)) that are necessary to enable single sign-on authentication with the CLI.
 #' 
-#' -   With older versions of the CLI, the service only emits OIDC access
-#'     tokens, so to obtain a new token, users must explicitly
-#'     re-authenticate. To access the OIDC flow that supports token refresh
-#'     and doesn’t require re-authentication, update to the latest CLI
-#'     version (1.27.10 for CLI V1 and 2.9.0 for CLI V2) with support for
-#'     OIDC token refresh and configurable IAM Identity Center session
-#'     durations. For more information, see [Configure Amazon Web Services
-#'     access portal session
-#'     duration](https://docs.aws.amazon.com/singlesignon/latest/userguide/configure-user-session.html)
-#'     .
+#' -   With older versions of the CLI, the service only emits OIDC access tokens, so to obtain a new token, users must explicitly re-authenticate. To access the OIDC flow that supports token refresh and doesn’t require re-authentication, update to the latest CLI version (1.27.10 for CLI V1 and 2.9.0 for CLI V2) with support for OIDC token refresh and configurable IAM Identity Center session durations. For more information, see [Configure Amazon Web Services access portal session duration](https://docs.aws.amazon.com/singlesignon/latest/userguide/configure-user-session.html) .
 #' 
-#' -   The access tokens provided by this service grant access to all
-#'     Amazon Web Services account entitlements assigned to an IAM Identity
-#'     Center user, not just a particular application.
+#' -   The access tokens provided by this service grant access to all Amazon Web Services account entitlements assigned to an IAM Identity Center user, not just a particular application.
 #' 
-#' -   The documentation in this guide does not describe the mechanism to
-#'     convert the access token into Amazon Web Services Auth (“sigv4”)
-#'     credentials for use with IAM-protected Amazon Web Services service
-#'     endpoints. For more information, see
-#'     [GetRoleCredentials](https://docs.aws.amazon.com/singlesignon/latest/PortalAPIReference/API_GetRoleCredentials.html)
-#'     in the *IAM Identity Center Portal API Reference Guide*.
+#' -   The documentation in this guide does not describe the mechanism to convert the access token into Amazon Web Services Auth (“sigv4”) credentials for use with IAM-protected Amazon Web Services service endpoints. For more information, see [GetRoleCredentials](https://docs.aws.amazon.com/singlesignon/latest/PortalAPIReference/API_GetRoleCredentials.html) in the *IAM Identity Center Portal API Reference Guide*.
 #' 
-#' For general information about IAM Identity Center, see [What is IAM
-#' Identity
-#' Center?](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)
-#' in the *IAM Identity Center User Guide*.
+#' For general information about IAM Identity Center, see [What is IAM Identity Center?](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html) in the *IAM Identity Center User Guide*.
 #'
 #' @param
 #' config
@@ -41205,11 +38295,7 @@ ssooidc <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' @description
 #' Security Token Service
 #' 
-#' Security Token Service (STS) enables you to request temporary,
-#' limited-privilege credentials for users. This guide provides
-#' descriptions of the STS API. For more information about using this
-#' service, see [Temporary Security
-#' Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html).
+#' Security Token Service (STS) enables you to request temporary, limited-privilege credentials for users. This guide provides descriptions of the STS API. For more information about using this service, see [Temporary Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html).
 #'
 #' @param
 #' config
@@ -41349,72 +38435,31 @@ sts <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon Verified Permissions
 #'
 #' @description
-#' Amazon Verified Permissions is a permissions management service from
-#' Amazon Web Services. You can use Verified Permissions to manage
-#' permissions for your application, and authorize user access based on
-#' those permissions. Using Verified Permissions, application developers
-#' can grant access based on information about the users, resources, and
-#' requested actions. You can also evaluate additional information like
-#' group membership, attributes of the resources, and session context, such
-#' as time of request and IP addresses. Verified Permissions manages these
-#' permissions by letting you create and store authorization policies for
-#' your applications, such as consumer-facing web sites and enterprise
-#' business systems.
+#' Amazon Verified Permissions is a permissions management service from Amazon Web Services. You can use Verified Permissions to manage permissions for your application, and authorize user access based on those permissions. Using Verified Permissions, application developers can grant access based on information about the users, resources, and requested actions. You can also evaluate additional information like group membership, attributes of the resources, and session context, such as time of request and IP addresses. Verified Permissions manages these permissions by letting you create and store authorization policies for your applications, such as consumer-facing web sites and enterprise business systems.
 #' 
-#' Verified Permissions uses Cedar as the policy language to express your
-#' permission requirements. Cedar supports both role-based access control
-#' (RBAC) and attribute-based access control (ABAC) authorization models.
+#' Verified Permissions uses Cedar as the policy language to express your permission requirements. Cedar supports both role-based access control (RBAC) and attribute-based access control (ABAC) authorization models.
 #' 
-#' For more information about configuring, administering, and using Amazon
-#' Verified Permissions in your applications, see the [Amazon Verified
-#' Permissions User
-#' Guide](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/).
+#' For more information about configuring, administering, and using Amazon Verified Permissions in your applications, see the [Amazon Verified Permissions User Guide](https://docs.aws.amazon.com/verifiedpermissions/latest/userguide/).
 #' 
-#' For more information about the Cedar policy language, see the [Cedar
-#' Policy Language Guide](https://docs.cedarpolicy.com/).
+#' For more information about the Cedar policy language, see the [Cedar Policy Language Guide](https://docs.cedarpolicy.com/).
 #' 
-#' When you write Cedar policies that reference principals, resources and
-#' actions, you can define the unique identifiers used for each of those
-#' elements. We strongly recommend that you follow these best practices:
+#' When you write Cedar policies that reference principals, resources and actions, you can define the unique identifiers used for each of those elements. We strongly recommend that you follow these best practices:
 #' 
-#' -   **Use values like universally unique identifiers (UUIDs) for all
-#'     principal and resource identifiers.**
+#' -   **Use values like universally unique identifiers (UUIDs) for all principal and resource identifiers.**
 #' 
-#'     For example, if user `jane` leaves the company, and you later let
-#'     someone else use the name `jane`, then that new user automatically
-#'     gets access to everything granted by policies that still reference
-#'     `User::"jane"`. Cedar can’t distinguish between the new user and the
-#'     old. This applies to both principal and resource identifiers. Always
-#'     use identifiers that are guaranteed unique and never reused to
-#'     ensure that you don’t unintentionally grant access because of the
-#'     presence of an old identifier in a policy.
+#'     For example, if user `jane` leaves the company, and you later let someone else use the name `jane`, then that new user automatically gets access to everything granted by policies that still reference `User::"jane"`. Cedar can’t distinguish between the new user and the old. This applies to both principal and resource identifiers. Always use identifiers that are guaranteed unique and never reused to ensure that you don’t unintentionally grant access because of the presence of an old identifier in a policy.
 #' 
-#'     Where you use a UUID for an entity, we recommend that you follow it
-#'     with the // comment specifier and the ‘friendly’ name of your
-#'     entity. This helps to make your policies easier to understand. For
-#'     example: principal == User::"a1b2c3d4-e5f6-a1b2-c3d4-EXAMPLE11111",
-#'     // alice
+#'     Where you use a UUID for an entity, we recommend that you follow it with the // comment specifier and the ‘friendly’ name of your entity. This helps to make your policies easier to understand. For example: principal == User::"a1b2c3d4-e5f6-a1b2-c3d4-EXAMPLE11111", // alice
 #' 
-#' -   **Do not include personally identifying, confidential, or sensitive
-#'     information as part of the unique identifier for your principals or
-#'     resources.** These identifiers are included in log entries shared in
-#'     CloudTrail trails.
+#' -   **Do not include personally identifying, confidential, or sensitive information as part of the unique identifier for your principals or resources.** These identifiers are included in log entries shared in CloudTrail trails.
 #' 
-#' Several operations return structures that appear similar, but have
-#' different purposes. As new functionality is added to the product, the
-#' structure used in a parameter of one operation might need to change in a
-#' way that wouldn't make sense for the same parameter in a different
-#' operation. To help you understand the purpose of each, the following
-#' naming convention is used for the structures:
+#' Several operations return structures that appear similar, but have different purposes. As new functionality is added to the product, the structure used in a parameter of one operation might need to change in a way that wouldn't make sense for the same parameter in a different operation. To help you understand the purpose of each, the following naming convention is used for the structures:
 #' 
-#' -   Parameter type structures that end in `Detail` are used in `Get`
-#'     operations.
+#' -   Parameter type structures that end in `Detail` are used in `Get` operations.
 #' 
-#' -   Parameter type structures that end in `Item` are used in `List`
-#'     operations.
+#' -   Parameter type structures that end in `Item` are used in `List` operations.
 #' 
-#' -   Parameter type structures that use neither suffix are used in the
-#'     mutating (create and update) operations.
+#' -   Parameter type structures that use neither suffix are used in the mutating (create and update) operations.
 #'
 #' @param
 #' config
@@ -41555,27 +38600,11 @@ verifiedpermissions <- function(config = list(), credentials = list(), endpoint 
 #' AWS WAF
 #'
 #' @description
-#' This is **AWS WAF Classic** documentation. For more information, see
-#' [AWS WAF
-#' Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html)
-#' in the developer guide.
+#' This is **AWS WAF Classic** documentation. For more information, see [AWS WAF Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html) in the developer guide.
 #' 
-#' **For the latest version of AWS WAF**, use the AWS WAFV2 API and see the
-#' [AWS WAF Developer
-#' Guide](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html).
-#' With the latest version, AWS WAF has a single set of endpoints for
-#' regional and global use.
+#' **For the latest version of AWS WAF**, use the AWS WAFV2 API and see the [AWS WAF Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html). With the latest version, AWS WAF has a single set of endpoints for regional and global use.
 #' 
-#' This is the *AWS WAF Classic API Reference* for using AWS WAF Classic
-#' with Amazon CloudFront. The AWS WAF Classic actions and data types
-#' listed in the reference are available for protecting Amazon CloudFront
-#' distributions. You can use these actions and data types via the endpoint
-#' *waf.amazonaws.com*. This guide is for developers who need detailed
-#' information about the AWS WAF Classic API actions, data types, and
-#' errors. For detailed information about AWS WAF Classic features and an
-#' overview of how to use the AWS WAF Classic API, see the [AWS WAF
-#' Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html)
-#' in the developer guide.
+#' This is the *AWS WAF Classic API Reference* for using AWS WAF Classic with Amazon CloudFront. The AWS WAF Classic actions and data types listed in the reference are available for protecting Amazon CloudFront distributions. You can use these actions and data types via the endpoint *waf.amazonaws.com*. This guide is for developers who need detailed information about the AWS WAF Classic API actions, data types, and errors. For detailed information about AWS WAF Classic features and an overview of how to use the AWS WAF Classic API, see the [AWS WAF Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html) in the developer guide.
 #'
 #' @param
 #' config
@@ -41761,31 +38790,11 @@ waf <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' AWS WAF Regional
 #'
 #' @description
-#' This is **AWS WAF Classic Regional** documentation. For more
-#' information, see [AWS WAF
-#' Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html)
-#' in the developer guide.
+#' This is **AWS WAF Classic Regional** documentation. For more information, see [AWS WAF Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html) in the developer guide.
 #' 
-#' **For the latest version of AWS WAF**, use the AWS WAFV2 API and see the
-#' [AWS WAF Developer
-#' Guide](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html).
-#' With the latest version, AWS WAF has a single set of endpoints for
-#' regional and global use.
+#' **For the latest version of AWS WAF**, use the AWS WAFV2 API and see the [AWS WAF Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html). With the latest version, AWS WAF has a single set of endpoints for regional and global use.
 #' 
-#' This is the *AWS WAF Regional Classic API Reference* for using AWS WAF
-#' Classic with the AWS resources, Elastic Load Balancing (ELB) Application
-#' Load Balancers and API Gateway APIs. The AWS WAF Classic actions and
-#' data types listed in the reference are available for protecting Elastic
-#' Load Balancing (ELB) Application Load Balancers and API Gateway APIs.
-#' You can use these actions and data types by means of the endpoints
-#' listed in [AWS Regions and
-#' Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region).
-#' This guide is for developers who need detailed information about the AWS
-#' WAF Classic API actions, data types, and errors. For detailed
-#' information about AWS WAF Classic features and an overview of how to use
-#' the AWS WAF Classic API, see the [AWS WAF
-#' Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html)
-#' in the developer guide.
+#' This is the *AWS WAF Regional Classic API Reference* for using AWS WAF Classic with the AWS resources, Elastic Load Balancing (ELB) Application Load Balancers and API Gateway APIs. The AWS WAF Classic actions and data types listed in the reference are available for protecting Elastic Load Balancing (ELB) Application Load Balancers and API Gateway APIs. You can use these actions and data types by means of the endpoints listed in [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#waf_region). This guide is for developers who need detailed information about the AWS WAF Classic API actions, data types, and errors. For detailed information about AWS WAF Classic features and an overview of how to use the AWS WAF Classic API, see the [AWS WAF Classic](https://docs.aws.amazon.com/waf/latest/developerguide/classic-waf-chapter.html) in the developer guide.
 #'
 #' @param
 #' config
@@ -41977,55 +38986,23 @@ wafregional <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' @description
 #' WAF
 #' 
-#' This is the latest version of the **WAF** API, released in November,
-#' 2019. The names of the entities that you use to access this API, like
-#' endpoints and namespaces, all have the versioning information added,
-#' like "V2" or "v2", to distinguish from the prior version. We recommend
-#' migrating your resources to this version, because it has a number of
-#' significant improvements.
+#' This is the latest version of the **WAF** API, released in November, 2019. The names of the entities that you use to access this API, like endpoints and namespaces, all have the versioning information added, like "V2" or "v2", to distinguish from the prior version. We recommend migrating your resources to this version, because it has a number of significant improvements.
 #' 
-#' If you used WAF prior to this release, you can't use this WAFV2 API to
-#' access any WAF resources that you created before. WAF Classic support
-#' will end on September 30, 2025.
+#' If you used WAF prior to this release, you can't use this WAFV2 API to access any WAF resources that you created before. WAF Classic support will end on September 30, 2025.
 #' 
-#' For information about WAF, including how to migrate your WAF Classic
-#' resources to this version, see the [WAF Developer
-#' Guide](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html).
+#' For information about WAF, including how to migrate your WAF Classic resources to this version, see the [WAF Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html).
 #' 
-#' WAF is a web application firewall that lets you monitor the HTTP and
-#' HTTPS requests that are forwarded to a protected resource. Protected
-#' resource types include Amazon CloudFront distribution, Amazon API
-#' Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon
-#' Cognito user pool, App Runner service, Amplify application, and Amazon
-#' Web Services Verified Access instance. WAF also lets you control access
-#' to your content, to protect the Amazon Web Services resource that WAF is
-#' monitoring. Based on conditions that you specify, such as the IP
-#' addresses that requests originate from or the values of query strings,
-#' the protected resource responds to requests with either the requested
-#' content, an HTTP 403 status code (Forbidden), or with a custom response.
+#' WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to a protected resource. Protected resource types include Amazon CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, App Runner service, Amplify application, and Amazon Web Services Verified Access instance. WAF also lets you control access to your content, to protect the Amazon Web Services resource that WAF is monitoring. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of query strings, the protected resource responds to requests with either the requested content, an HTTP 403 status code (Forbidden), or with a custom response.
 #' 
-#' This API guide is for developers who need detailed information about WAF
-#' API actions, data types, and errors. For detailed information about WAF
-#' features and guidance for configuring and using WAF, see the [WAF
-#' Developer
-#' Guide](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html).
+#' This API guide is for developers who need detailed information about WAF API actions, data types, and errors. For detailed information about WAF features and guidance for configuring and using WAF, see the [WAF Developer Guide](https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html).
 #' 
-#' You can make calls using the endpoints listed in [WAF endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/waf.html).
+#' You can make calls using the endpoints listed in [WAF endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/waf.html).
 #' 
-#' -   For regional resources, you can use any of the endpoints in the
-#'     list. A regional application can be an Application Load Balancer
-#'     (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-#'     Amazon Cognito user pool, an App Runner service, or an Amazon Web
-#'     Services Verified Access instance.
+#' -   For regional resources, you can use any of the endpoints in the list. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance.
 #' 
-#' -   For Amazon CloudFront and Amplify, you must use the API endpoint
-#'     listed for US East (N. Virginia): us-east-1.
+#' -   For Amazon CloudFront and Amplify, you must use the API endpoint listed for US East (N. Virginia): us-east-1.
 #' 
-#' Alternatively, you can use one of the Amazon Web Services SDKs to access
-#' an API that's tailored to the programming language or platform that
-#' you're using. For more information, see [Amazon Web Services
-#' SDKs](https://builder.aws.com/build/tools#SDKs).
+#' Alternatively, you can use one of the Amazon Web Services SDKs to access an API that's tailored to the programming language or platform that you're using. For more information, see [Amazon Web Services SDKs](https://builder.aws.com/build/tools#SDKs).
 #'
 #' @param
 #' config
@@ -42187,27 +39164,15 @@ wafv2 <- function(config = list(), credentials = list(), endpoint = NULL, region
 #' Amazon EventBridge
 #'
 #' @description
-#' Amazon EventBridge helps you to respond to state changes in your Amazon
-#' Web Services resources. When your resources change state, they
-#' automatically send events to an event stream. You can create rules that
-#' match selected events in the stream and route them to targets to take
-#' action. You can also use rules to take action on a predetermined
-#' schedule. For example, you can configure rules to:
+#' Amazon EventBridge helps you to respond to state changes in your Amazon Web Services resources. When your resources change state, they automatically send events to an event stream. You can create rules that match selected events in the stream and route them to targets to take action. You can also use rules to take action on a predetermined schedule. For example, you can configure rules to:
 #' 
-#' -   Automatically invoke an Lambda function to update DNS entries when
-#'     an event notifies you that Amazon EC2 instance enters the running
-#'     state.
+#' -   Automatically invoke an Lambda function to update DNS entries when an event notifies you that Amazon EC2 instance enters the running state.
 #' 
-#' -   Direct specific API records from CloudTrail to an Amazon Kinesis
-#'     data stream for detailed analysis of potential security or
-#'     availability risks.
+#' -   Direct specific API records from CloudTrail to an Amazon Kinesis data stream for detailed analysis of potential security or availability risks.
 #' 
-#' -   Periodically invoke a built-in target to create a snapshot of an
-#'     Amazon EBS volume.
+#' -   Periodically invoke a built-in target to create a snapshot of an Amazon EBS volume.
 #' 
-#' For more information about the features of Amazon EventBridge, see the
-#' [Amazon EventBridge User
-#' Guide](https://docs.aws.amazon.com/eventbridge/latest/userguide/).
+#' For more information about the features of Amazon EventBridge, see the [Amazon EventBridge User Guide](https://docs.aws.amazon.com/eventbridge/latest/userguide/).
 #'
 #' @param
 #' config
@@ -42371,8 +39336,7 @@ eventbridge <- function(config = list(), credentials = list(), endpoint = NULL, 
 #' Amazon Location Service
 #'
 #' @description
-#' "Suite of geospatial services including Maps, Places, Routes, Tracking,
-#' and Geofencing"
+#' "Suite of geospatial services including Maps, Places, Routes, Tracking, and Geofencing"
 #'
 #' @param
 #' config
@@ -42543,11 +39507,7 @@ locationservice <- function(config = list(), credentials = list(), endpoint = NU
 #' AmazonMQ
 #'
 #' @description
-#' Amazon MQ is a managed message broker service for Apache ActiveMQ and
-#' RabbitMQ that makes it easy to set up and operate message brokers in the
-#' cloud. A message broker allows software applications and components to
-#' communicate using various programming languages, operating systems, and
-#' formal messaging protocols.
+#' Amazon MQ is a managed message broker service for Apache ActiveMQ and RabbitMQ that makes it easy to set up and operate message brokers in the cloud. A message broker allows software applications and components to communicate using various programming languages, operating systems, and formal messaging protocols.
 #'
 #' @param
 #' config
@@ -42680,16 +39640,11 @@ mq <- function(config = list(), credentials = list(), endpoint = NULL, region = 
 #' @description
 #' Amazon Managed Workflows for Apache Airflow
 #' 
-#' This section contains the Amazon Managed Workflows for Apache Airflow
-#' (MWAA) API reference documentation. For more information, see [What is
-#' Amazon
-#' MWAA?](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html).
+#' This section contains the Amazon Managed Workflows for Apache Airflow (MWAA) API reference documentation. For more information, see [What is Amazon MWAA?](https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html).
 #' 
 #' **Endpoints**
 #' 
-#' -   `api.airflow.{region}.amazonaws.com` (use
-#'     `api.airflow.{region}.api.aws` for IPv6) - This endpoint is used for
-#'     environment management.
+#' -   `api.airflow.{region}.amazonaws.com` (use `api.airflow.{region}.api.aws` for IPv6) - This endpoint is used for environment management.
 #' 
 #'     -   `create_environment`
 #' 
@@ -42707,9 +39662,7 @@ mq <- function(config = list(), credentials = list(), endpoint = NULL, region = 
 #' 
 #'     -   `update_environment`
 #' 
-#' -   `env.airflow.{region}.amazonaws.com` (use
-#'     `env.airflow.{region}.api.aws` for IPv6) - This endpoint is used to
-#'     operate the Airflow environment.
+#' -   `env.airflow.{region}.amazonaws.com` (use `env.airflow.{region}.api.aws` for IPv6) - This endpoint is used to operate the Airflow environment.
 #' 
 #'     -   `create_cli_token`
 #' 
@@ -42719,9 +39672,7 @@ mq <- function(config = list(), credentials = list(), endpoint = NULL, region = 
 #' 
 #' **Regions**
 #' 
-#' For a list of supported regions, see [Amazon MWAA endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/mwaa.html) in the
-#' *Amazon Web Services General Reference*.
+#' For a list of supported regions, see [Amazon MWAA endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/mwaa.html) in the *Amazon Web Services General Reference*.
 #'
 #' @param
 #' config
@@ -42840,13 +39791,7 @@ mwaa <- function(config = list(), credentials = list(), endpoint = NULL, region 
 #' Amazon EventBridge Pipes
 #'
 #' @description
-#' Amazon EventBridge Pipes connects event sources to targets. Pipes
-#' reduces the need for specialized knowledge and integration code when
-#' developing event driven architectures. This helps ensures consistency
-#' across your company’s applications. With Pipes, the target can be any
-#' available EventBridge target. To set up a pipe, you select the event
-#' source, add optional event filtering, define optional enrichment, and
-#' select the target for the event data.
+#' Amazon EventBridge Pipes connects event sources to targets. Pipes reduces the need for specialized knowledge and integration code when developing event driven architectures. This helps ensures consistency across your company’s applications. With Pipes, the target can be any available EventBridge target. To set up a pipe, you select the event source, add optional event filtering, define optional enrichment, and select the target for the event data.
 #'
 #' @param
 #' config
@@ -42963,39 +39908,13 @@ eventbridgepipes <- function(config = list(), credentials = list(), endpoint = N
 #' AWS Resource Explorer
 #'
 #' @description
-#' Amazon Web Services Resource Explorer is a resource search and discovery
-#' service. By using Resource Explorer, you can explore your resources
-#' using an internet search engine-like experience. Examples of resources
-#' include Amazon Relational Database Service (Amazon RDS) instances,
-#' Amazon Simple Storage Service (Amazon S3) buckets, or Amazon DynamoDB
-#' tables. You can search for your resources using resource metadata like
-#' names, tags, and IDs. Resource Explorer can search across all of the
-#' Amazon Web Services Regions in your account in which you turn the
-#' service on, to simplify your cross-Region workloads.
+#' Amazon Web Services Resource Explorer is a resource search and discovery service. By using Resource Explorer, you can explore your resources using an internet search engine-like experience. Examples of resources include Amazon Relational Database Service (Amazon RDS) instances, Amazon Simple Storage Service (Amazon S3) buckets, or Amazon DynamoDB tables. You can search for your resources using resource metadata like names, tags, and IDs. Resource Explorer can search across all of the Amazon Web Services Regions in your account in which you turn the service on, to simplify your cross-Region workloads.
 #' 
-#' Resource Explorer scans the resources in each of the Amazon Web Services
-#' Regions in your Amazon Web Services account in which you turn on
-#' Resource Explorer. Resource Explorer [creates and maintains an
-#' index](https://docs.aws.amazon.com/resource-explorer/latest/userguide/getting-started-terms-and-concepts.html#term-index)
-#' in each Region, with the details of that Region's resources.
+#' Resource Explorer scans the resources in each of the Amazon Web Services Regions in your Amazon Web Services account in which you turn on Resource Explorer. Resource Explorer [creates and maintains an index](https://docs.aws.amazon.com/resource-explorer/latest/userguide/getting-started-terms-and-concepts.html#term-index) in each Region, with the details of that Region's resources.
 #' 
-#' You can [search across all of the indexed Regions in your
-#' account](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html)
-#' by designating one of your Amazon Web Services Regions to contain the
-#' aggregator index for the account. When you [promote a local index in a
-#' Region to become the aggregator index for the
-#' account](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region-turn-on.html),
-#' Resource Explorer automatically replicates the index information from
-#' all local indexes in the other Regions to the aggregator index.
-#' Therefore, the Region with the aggregator index has a copy of all
-#' resource information for all Regions in the account where you turned on
-#' Resource Explorer. As a result, views in the aggregator index Region
-#' include resources from all of the indexed Regions in your account.
+#' You can [search across all of the indexed Regions in your account](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html) by designating one of your Amazon Web Services Regions to contain the aggregator index for the account. When you [promote a local index in a Region to become the aggregator index for the account](https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region-turn-on.html), Resource Explorer automatically replicates the index information from all local indexes in the other Regions to the aggregator index. Therefore, the Region with the aggregator index has a copy of all resource information for all Regions in the account where you turned on Resource Explorer. As a result, views in the aggregator index Region include resources from all of the indexed Regions in your account.
 #' 
-#' For more information about Amazon Web Services Resource Explorer,
-#' including how to enable and configure the service, see the [Amazon Web
-#' Services Resource Explorer User
-#' Guide](https://docs.aws.amazon.com/resource-explorer/latest/userguide/).
+#' For more information about Amazon Web Services Resource Explorer, including how to enable and configure the service, see the [Amazon Web Services Resource Explorer User Guide](https://docs.aws.amazon.com/resource-explorer/latest/userguide/).
 #'
 #' @param
 #' config
@@ -43272,12 +40191,7 @@ schemas <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' Amazon EventBridge Scheduler
 #'
 #' @description
-#' Amazon EventBridge Scheduler is a serverless scheduler that allows you
-#' to create, run, and manage tasks from one central, managed service.
-#' EventBridge Scheduler delivers your tasks reliably, with built-in
-#' mechanisms that adjust your schedules based on the availability of
-#' downstream targets. The following reference lists the available API
-#' actions, and data types for EventBridge Scheduler.
+#' Amazon EventBridge Scheduler is a serverless scheduler that allows you to create, run, and manage tasks from one central, managed service. EventBridge Scheduler delivers your tasks reliably, with built-in mechanisms that adjust your schedules based on the availability of downstream targets. The following reference lists the available API actions, and data types for EventBridge Scheduler.
 #'
 #' @param
 #' config
@@ -43398,27 +40312,15 @@ eventbridgescheduler <- function(config = list(), credentials = list(), endpoint
 #' @description
 #' Step Functions
 #' 
-#' With Step Functions, you can create workflows, also called *state
-#' machines*, to build distributed applications, automate processes,
-#' orchestrate microservices, and create data and machine learning
-#' pipelines.
+#' With Step Functions, you can create workflows, also called *state machines*, to build distributed applications, automate processes, orchestrate microservices, and create data and machine learning pipelines.
 #' 
-#' Through the Step Functions API, you can create, list, update, and delete
-#' state machines, activities, and other data types. You can start, stop,
-#' and redrive your state machines. Your activity workers can send task
-#' success, heartbeat, and failure responses.
+#' Through the Step Functions API, you can create, list, update, and delete state machines, activities, and other data types. You can start, stop, and redrive your state machines. Your activity workers can send task success, heartbeat, and failure responses.
 #' 
-#' With API calls, you can also manage other aspects of your workflow, such
-#' as tags, versions, and aliases.
+#' With API calls, you can also manage other aspects of your workflow, such as tags, versions, and aliases.
 #' 
-#' For more information about developing solutions with Step Functions, see
-#' the *\href{https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html}{Step Functions Developer Guide}* .
+#' For more information about developing solutions with Step Functions, see the *\href{https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html}{Step Functions Developer Guide}* .
 #' 
-#' If you use the Step Functions API actions using Amazon Web Services SDK
-#' integrations, make sure the API actions are in camel case and parameter
-#' names are in Pascal case. For example, you might use Step Functions API
-#' action `startSyncExecution` and specify its parameter as
-#' `StateMachineArn`.
+#' If you use the Step Functions API actions using Amazon Web Services SDK integrations, make sure the API actions are in camel case and parameter names are in Pascal case. For example, you might use Step Functions API action `startSyncExecution` and specify its parameter as `StateMachineArn`.
 #'
 #' @param
 #' config
@@ -43562,26 +40464,11 @@ sfn <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon Simple Notification Service
 #'
 #' @description
-#' Amazon Simple Notification Service (Amazon SNS) is a web service that
-#' enables you to build distributed web-enabled applications. Applications
-#' can use Amazon SNS to easily push real-time notification messages to
-#' interested subscribers over multiple delivery protocols. For more
-#' information about this product see the [Amazon SNS product
-#' page](https://aws.amazon.com/sns/). For detailed information about
-#' Amazon SNS features and their associated API calls, see the [Amazon SNS
-#' Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/).
+#' Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product see the [Amazon SNS product page](https://aws.amazon.com/sns/). For detailed information about Amazon SNS features and their associated API calls, see the [Amazon SNS Developer Guide](https://docs.aws.amazon.com/sns/latest/dg/).
 #' 
-#' For information on the permissions you need to use this API, see
-#' [Identity and access management in Amazon
-#' SNS](https://docs.aws.amazon.com/sns/latest/dg/) in the *Amazon SNS
-#' Developer Guide.*
+#' For information on the permissions you need to use this API, see [Identity and access management in Amazon SNS](https://docs.aws.amazon.com/sns/latest/dg/) in the *Amazon SNS Developer Guide.*
 #' 
-#' We also provide SDKs that enable you to access Amazon SNS from your
-#' preferred programming language. The SDKs contain functionality that
-#' automatically takes care of tasks such as: cryptographically signing
-#' your service requests, retrying requests, and handling error responses.
-#' For a list of available SDKs, go to [Tools for Amazon Web
-#' Services](https://builder.aws.com/build/tools).
+#' We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain functionality that automatically takes care of tasks such as: cryptographically signing your service requests, retrying requests, and handling error responses. For a list of available SDKs, go to [Tools for Amazon Web Services](https://builder.aws.com/build/tools).
 #'
 #' @param
 #' config
@@ -43732,20 +40619,11 @@ sns <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' @description
 #' Welcome to the *Amazon SQS API Reference*.
 #' 
-#' Amazon SQS is a reliable, highly-scalable hosted queue for storing
-#' messages as they travel between applications or microservices. Amazon
-#' SQS moves data between distributed application components and helps you
-#' decouple these components.
+#' Amazon SQS is a reliable, highly-scalable hosted queue for storing messages as they travel between applications or microservices. Amazon SQS moves data between distributed application components and helps you decouple these components.
 #' 
-#' For information on the permissions you need to use this API, see
-#' [Identity and access
-#' management](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/)
-#' in the *Amazon SQS Developer Guide.*
+#' For information on the permissions you need to use this API, see [Identity and access management](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/) in the *Amazon SQS Developer Guide.*
 #' 
-#' You can use [Amazon Web Services
-#' SDKs](https://builder.aws.com/build/tools#sdk) to access Amazon SQS
-#' using your favorite programming language. The SDKs perform tasks such as
-#' the following automatically:
+#' You can use [Amazon Web Services SDKs](https://builder.aws.com/build/tools#sdk) to access Amazon SQS using your favorite programming language. The SDKs perform tasks such as the following automatically:
 #' 
 #' -   Cryptographically sign your service requests
 #' 
@@ -43759,22 +40637,17 @@ sns <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' 
 #' -   *Amazon SQS Developer Guide*
 #' 
-#'     -   [Making API
-#'         Requests](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests-xml.html)
+#'     -   [Making API Requests](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests-xml.html)
 #' 
-#'     -   [Amazon SQS Message
-#'         Attributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes)
+#'     -   [Amazon SQS Message Attributes](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes)
 #' 
-#'     -   [Amazon SQS Dead-Letter
-#'         Queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html)
+#'     -   [Amazon SQS Dead-Letter Queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html)
 #' 
-#' -   [Amazon SQS in the Command Line
-#'     Interface](https://docs.aws.amazon.com/cli/latest/reference/sqs/)
+#' -   [Amazon SQS in the Command Line Interface](https://docs.aws.amazon.com/cli/latest/reference/sqs/)
 #' 
 #' -   *Amazon Web Services General Reference*
 #' 
-#'     -   [Regions and
-#'         Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region)
+#'     -   [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#sqs_region)
 #'
 #' @param
 #' config
@@ -43904,20 +40777,11 @@ sqs <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' Amazon Simple Workflow Service
 #'
 #' @description
-#' The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build
-#' applications that use Amazon's cloud to coordinate work across
-#' distributed components. In Amazon SWF, a *task* represents a logical
-#' unit of work that is performed by a component of your workflow.
-#' Coordinating tasks in a workflow involves managing intertask
-#' dependencies, scheduling, and concurrency in accordance with the logical
-#' flow of the application.
+#' The Amazon Simple Workflow Service (Amazon SWF) makes it easy to build applications that use Amazon's cloud to coordinate work across distributed components. In Amazon SWF, a *task* represents a logical unit of work that is performed by a component of your workflow. Coordinating tasks in a workflow involves managing intertask dependencies, scheduling, and concurrency in accordance with the logical flow of the application.
 #' 
-#' Amazon SWF gives you full control over implementing tasks and
-#' coordinating them without worrying about underlying complexities such as
-#' tracking their progress and maintaining their state.
+#' Amazon SWF gives you full control over implementing tasks and coordinating them without worrying about underlying complexities such as tracking their progress and maintaining their state.
 #' 
-#' This documentation serves as reference only. For a broader overview of
-#' the Amazon SWF programming model, see the *\href{https://docs.aws.amazon.com/amazonswf/latest/developerguide/}{Amazon SWF Developer Guide}* .
+#' This documentation serves as reference only. For a broader overview of the Amazon SWF programming model, see the *\href{https://docs.aws.amazon.com/amazonswf/latest/developerguide/}{Amazon SWF Developer Guide}* .
 #'
 #' @param
 #' config
@@ -44063,24 +40927,9 @@ swf <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' AWSBillingConductor
 #'
 #' @description
-#' Billing Conductor is a fully managed service that you can use to
-#' customize a [pro
-#' forma](https://docs.aws.amazon.com/billingconductor/latest/userguide/#eb-other-definitions)
-#' version of your billing data each month, to accurately show or
-#' chargeback your end customers. Billing Conductor doesn't change the way
-#' you're billed by Amazon Web Services each month by design. Instead, it
-#' provides you with a mechanism to configure, generate, and display rates
-#' to certain customers over a given billing period. You can also analyze
-#' the difference between the rates you apply to your accounting groupings
-#' relative to your actual rates from Amazon Web Services. As a result of
-#' your Billing Conductor configuration, the payer account can also see the
-#' custom rate applied on the billing details page of the Billing console,
-#' or configure a cost and usage report per billing group.
+#' Billing Conductor is a fully managed service that you can use to customize a [pro forma](https://docs.aws.amazon.com/billingconductor/latest/userguide/#eb-other-definitions) version of your billing data each month, to accurately show or chargeback your end customers. Billing Conductor doesn't change the way you're billed by Amazon Web Services each month by design. Instead, it provides you with a mechanism to configure, generate, and display rates to certain customers over a given billing period. You can also analyze the difference between the rates you apply to your accounting groupings relative to your actual rates from Amazon Web Services. As a result of your Billing Conductor configuration, the payer account can also see the custom rate applied on the billing details page of the Billing console, or configure a cost and usage report per billing group.
 #' 
-#' This documentation shows how you can configure Billing Conductor by
-#' using its API. For more information about using the Billing Conductor
-#' user interface, see the [Billing Conductor User
-#' Guide](https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html).
+#' This documentation shows how you can configure Billing Conductor by using its API. For more information about using the Billing Conductor user interface, see the [Billing Conductor User Guide](https://docs.aws.amazon.com/billingconductor/latest/userguide/what-is-billingconductor.html).
 #'
 #' @param
 #' config
@@ -44219,9 +41068,7 @@ billingconductor <- function(config = list(), credentials = list(), endpoint = N
 #' AWS Billing
 #'
 #' @description
-#' You can use the Billing API to programatically list the billing views
-#' available to you for a given time period. A billing view represents a
-#' set of billing data.
+#' You can use the Billing API to programatically list the billing views available to you for a given time period. A billing view represents a set of billing data.
 #' 
 #' The Billing API provides the following endpoint:
 #' 
@@ -44344,42 +41191,27 @@ billing <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' AWS Budgets
 #'
 #' @description
-#' Use the Amazon Web Services Budgets API to plan your service usage,
-#' service costs, and instance reservations. This API reference provides
-#' descriptions, syntax, and usage examples for each of the actions and
-#' data types for the Amazon Web Services Budgets feature.
+#' Use the Amazon Web Services Budgets API to plan your service usage, service costs, and instance reservations. This API reference provides descriptions, syntax, and usage examples for each of the actions and data types for the Amazon Web Services Budgets feature.
 #' 
 #' Budgets provide you with a way to see the following information:
 #' 
-#' -   How close your plan is to your budgeted amount or to the free tier
-#'     limits
+#' -   How close your plan is to your budgeted amount or to the free tier limits
 #' 
-#' -   Your usage-to-date, including how much you've used of your Reserved
-#'     Instances (RIs)
+#' -   Your usage-to-date, including how much you've used of your Reserved Instances (RIs)
 #' 
-#' -   Your current estimated charges from Amazon Web Services, and how
-#'     much your predicted usage will accrue in charges by the end of the
-#'     month
+#' -   Your current estimated charges from Amazon Web Services, and how much your predicted usage will accrue in charges by the end of the month
 #' 
 #' -   How much of your budget has been used
 #' 
-#' Amazon Web Services updates your budget status several times a day.
-#' Budgets track your unblended costs, subscriptions, refunds, and RIs. You
-#' can create the following types of budgets:
+#' Amazon Web Services updates your budget status several times a day. Budgets track your unblended costs, subscriptions, refunds, and RIs. You can create the following types of budgets:
 #' 
 #' -   **Cost budgets** - Plan how much you want to spend on a service.
 #' 
-#' -   **Usage budgets** - Plan how much you want to use one or more
-#'     services.
+#' -   **Usage budgets** - Plan how much you want to use one or more services.
 #' 
-#' -   **RI utilization budgets** - Define a utilization threshold, and
-#'     receive alerts when your RI usage falls below that threshold. This
-#'     lets you see if your RIs are unused or under-utilized.
+#' -   **RI utilization budgets** - Define a utilization threshold, and receive alerts when your RI usage falls below that threshold. This lets you see if your RIs are unused or under-utilized.
 #' 
-#' -   **RI coverage budgets** - Define a coverage threshold, and receive
-#'     alerts when the number of your instance hours that are covered by
-#'     RIs fall below that threshold. This lets you see how much of your
-#'     instance usage is covered by a reservation.
+#' -   **RI coverage budgets** - Define a coverage threshold, and receive alerts when the number of your instance hours that are covered by RIs fall below that threshold. This lets you see how much of your instance usage is covered by a reservation.
 #' 
 #' Service Endpoint
 #' 
@@ -44387,9 +41219,7 @@ billing <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' 
 #' -   https://budgets.amazonaws.com
 #' 
-#' For information about costs that are associated with the Amazon Web
-#' Services Budgets API, see [Amazon Web Services Cost Management
-#' Pricing](https://aws.amazon.com/aws-cost-management/).
+#' For information about costs that are associated with the Amazon Web Services Budgets API, see [Amazon Web Services Cost Management Pricing](https://aws.amazon.com/aws-cost-management/).
 #'
 #' @param
 #' config
@@ -44522,22 +41352,13 @@ budgets <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' AWS Cost and Usage Report Service
 #'
 #' @description
-#' You can use the Amazon Web Services Cost and Usage Report API to
-#' programmatically create, query, and delete Amazon Web Services Cost and
-#' Usage Report definitions.
+#' You can use the Amazon Web Services Cost and Usage Report API to programmatically create, query, and delete Amazon Web Services Cost and Usage Report definitions.
 #' 
-#' Amazon Web Services Cost and Usage Report track the monthly Amazon Web
-#' Services costs and usage associated with your Amazon Web Services
-#' account. The report contains line items for each unique combination of
-#' Amazon Web Services product, usage type, and operation that your Amazon
-#' Web Services account uses. You can configure the Amazon Web Services
-#' Cost and Usage Report to show only the data that you want, using the
-#' Amazon Web Services Cost and Usage Report API.
+#' Amazon Web Services Cost and Usage Report track the monthly Amazon Web Services costs and usage associated with your Amazon Web Services account. The report contains line items for each unique combination of Amazon Web Services product, usage type, and operation that your Amazon Web Services account uses. You can configure the Amazon Web Services Cost and Usage Report to show only the data that you want, using the Amazon Web Services Cost and Usage Report API.
 #' 
 #' Service Endpoint
 #' 
-#' The Amazon Web Services Cost and Usage Report API provides the following
-#' endpoint:
+#' The Amazon Web Services Cost and Usage Report API provides the following endpoint:
 #' 
 #' -   cur.us-east-1.amazonaws.com
 #'
@@ -44655,11 +41476,7 @@ costandusagereportservice <- function(config = list(), credentials = list(), end
 #' AWS Cost Explorer Service
 #'
 #' @description
-#' You can use the Cost Explorer API to programmatically query your cost
-#' and usage data. You can query for aggregated data such as total monthly
-#' costs or total daily usage. You can also query for granular data. This
-#' might include the number of daily write operations for Amazon DynamoDB
-#' database tables in your production environment.
+#' You can use the Cost Explorer API to programmatically query your cost and usage data. You can query for aggregated data such as total monthly costs or total daily usage. You can also query for granular data. This might include the number of daily write operations for Amazon DynamoDB database tables in your production environment.
 #' 
 #' Service Endpoint
 #' 
@@ -44667,9 +41484,7 @@ costandusagereportservice <- function(config = list(), credentials = list(), end
 #' 
 #' -   `https://ce.us-east-1.amazonaws.com`
 #' 
-#' For information about the costs that are associated with the Cost
-#' Explorer API, see [Amazon Web Services Cost Management
-#' Pricing](https://aws.amazon.com/aws-cost-management/).
+#' For information about the costs that are associated with the Cost Explorer API, see [Amazon Web Services Cost Management Pricing](https://aws.amazon.com/aws-cost-management/).
 #'
 #' @param
 #' config
@@ -44823,14 +41638,9 @@ costexplorer <- function(config = list(), credentials = list(), endpoint = NULL,
 #' AWS Marketplace Catalog Service
 #'
 #' @description
-#' Catalog API actions allow you to manage your entities through list,
-#' describe, and update capabilities. An *entity* can be a product or an
-#' offer on AWS Marketplace.
+#' Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An *entity* can be a product or an offer on AWS Marketplace.
 #' 
-#' You can automate your entity update process by integrating the AWS
-#' Marketplace Catalog API with your AWS Marketplace product build or
-#' deployment pipelines. You can also create your own applications on top
-#' of the Catalog API to manage your products on AWS Marketplace.
+#' You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.
 #'
 #' @param
 #' config
@@ -45059,14 +41869,9 @@ marketplacecommerceanalytics <- function(config = list(), credentials = list(), 
 #' AWS Marketplace Entitlement Service
 #'
 #' @description
-#' This reference provides descriptions of the AWS Marketplace Entitlement
-#' Service API.
+#' This reference provides descriptions of the AWS Marketplace Entitlement Service API.
 #' 
-#' AWS Marketplace Entitlement Service is used to determine the entitlement
-#' of a customer to a given product. An entitlement represents capacity in
-#' a product owned by the customer. For example, a customer might own some
-#' number of users or seats in an SaaS application or some amount of data
-#' capacity in a multi-tenant database.
+#' AWS Marketplace Entitlement Service is used to determine the entitlement of a customer to a given product. An entitlement represents capacity in a product owned by the customer. For example, a customer might own some number of users or seats in an SaaS application or some amount of data capacity in a multi-tenant database.
 #' 
 #' **Getting Entitlement Records**
 #' 
@@ -45180,27 +41985,19 @@ marketplaceentitlementservice <- function(config = list(), credentials = list(),
 #' @description
 #' Amazon Web Services Marketplace Metering Service
 #' 
-#' This reference provides descriptions of the low-level Marketplace
-#' Metering Service API.
+#' This reference provides descriptions of the low-level Marketplace Metering Service API.
 #' 
-#' Amazon Web Services Marketplace sellers can use this API to submit usage
-#' data for custom usage dimensions.
+#' Amazon Web Services Marketplace sellers can use this API to submit usage data for custom usage dimensions.
 #' 
-#' For information about the permissions that you need to use this API, see
-#' [Amazon Web Services Marketplace metering and entitlement API
-#' permissions](https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html)
-#' in the *Amazon Web Services Marketplace Seller Guide.*
+#' For information about the permissions that you need to use this API, see [Amazon Web Services Marketplace metering and entitlement API permissions](https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html) in the *Amazon Web Services Marketplace Seller Guide.*
 #' 
 #' **Submitting metering records**
 #' 
 #' *MeterUsage*
 #' 
-#' -   Submits the metering record for an Amazon Web Services Marketplace
-#'     product.
+#' -   Submits the metering record for an Amazon Web Services Marketplace product.
 #' 
-#' -   Called from: Amazon Elastic Compute Cloud (Amazon EC2) instance or a
-#'     container running on either Amazon Elastic Kubernetes Service
-#'     (Amazon EKS) or Amazon Elastic Container Service (Amazon ECS)
+#' -   Called from: Amazon Elastic Compute Cloud (Amazon EC2) instance or a container running on either Amazon Elastic Kubernetes Service (Amazon EKS) or Amazon Elastic Container Service (Amazon ECS)
 #' 
 #' -   Supported product types: Amazon Machine Images (AMIs) and containers
 #' 
@@ -45208,15 +42005,7 @@ marketplaceentitlementservice <- function(config = list(), credentials = list(),
 #' 
 #' *BatchMeterUsage*
 #' 
-#' -   Submits the metering record for a set of customers.
-#'     `batch_meter_usage` API
-#'     calls are captured by CloudTrail. You can use CloudTrail to verify
-#'     that the software as a subscription (SaaS) metering records that you
-#'     sent are accurate by searching for records with the `eventName` of
-#'     `batch_meter_usage`. You
-#'     can also use CloudTrail to audit records over time. For more
-#'     information, see the [CloudTrail User
-#'     Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html).
+#' -   Submits the metering record for a set of customers. `batch_meter_usage` API calls are captured by CloudTrail. You can use CloudTrail to verify that the software as a subscription (SaaS) metering records that you sent are accurate by searching for records with the `eventName` of `batch_meter_usage`. You can also use CloudTrail to audit records over time. For more information, see the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html).
 #' 
 #' -   Called from: SaaS applications
 #' 
@@ -45228,10 +42017,7 @@ marketplaceentitlementservice <- function(config = list(), credentials = list(),
 #' 
 #' *ResolveCustomer*
 #' 
-#' -   Resolves the registration token that the buyer submits through the
-#'     browser during the registration process. Obtains a
-#'     `CustomerIdentifier` along with the `CustomerAWSAccountId`,
-#'     `ProductCode`, and `LicenseArn`.
+#' -   Resolves the registration token that the buyer submits through the browser during the registration process. Obtains a `CustomerIdentifier` along with the `CustomerAWSAccountId`, `ProductCode`, and `LicenseArn`.
 #' 
 #' -   Called from: SaaS application during the registration process
 #' 
@@ -45243,18 +42029,7 @@ marketplaceentitlementservice <- function(config = list(), credentials = list(),
 #' 
 #' *RegisteredUsage*
 #' 
-#' -   Provides software entitlement and metering. Paid container software
-#'     products sold through Amazon Web Services Marketplace must integrate
-#'     with the Marketplace Metering Service and call the
-#'     `register_usage` operation.
-#'     Free and Bring Your Own License model (BYOL) products for Amazon ECS
-#'     or Amazon EKS aren't required to call
-#'     `register_usage`. However, you
-#'     can do so if you want to receive usage data in your seller reports.
-#'     For more information about using the
-#'     `register_usage` operation,
-#'     see [Container-based
-#'     products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
+#' -   Provides software entitlement and metering. Paid container software products sold through Amazon Web Services Marketplace must integrate with the Marketplace Metering Service and call the `register_usage` operation. Free and Bring Your Own License model (BYOL) products for Amazon ECS or Amazon EKS aren't required to call `register_usage`. However, you can do so if you want to receive usage data in your seller reports. For more information about using the `register_usage` operation, see [Container-based products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
 #' 
 #' -   Called from: Paid container software products
 #' 
@@ -45264,33 +42039,17 @@ marketplaceentitlementservice <- function(config = list(), credentials = list(),
 #' 
 #' **Entitlement custom metering for container products**
 #' 
-#' -   MeterUsage API is available in GovCloud Regions but only supports
-#'     AMI FCP products in GovCloud Regions. Flexible Consumption Pricing
-#'     (FCP) Container products aren’t supported in GovCloud Regions:
-#'     us-gov-west-1 and us-gov-east-1. For more information, see
-#'     [Container-based
-#'     products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
+#' -   MeterUsage API is available in GovCloud Regions but only supports AMI FCP products in GovCloud Regions. Flexible Consumption Pricing (FCP) Container products aren’t supported in GovCloud Regions: us-gov-west-1 and us-gov-east-1. For more information, see [Container-based products](https://docs.aws.amazon.com/marketplace/latest/userguide/container-based-products.html).
 #' 
-#' -   Custom metering for container products are called using the
-#'     MeterUsage API. The API is used for FCP AMI and FCP Container
-#'     product metering.
+#' -   Custom metering for container products are called using the MeterUsage API. The API is used for FCP AMI and FCP Container product metering.
 #' 
-#' **Custom metering for Amazon EKS is available in 17 Amazon Web Services
-#' Regions**
+#' **Custom metering for Amazon EKS is available in 17 Amazon Web Services Regions**
 #' 
-#' -   The metering service supports Amazon ECS and EKS for Flexible
-#'     Consumption Pricing (FCP) products using MeterUsage API. Amazon ECS
-#'     is supported in all Amazon Web Services Regions that MeterUsage API
-#'     is available except for GovCloud.
+#' -   The metering service supports Amazon ECS and EKS for Flexible Consumption Pricing (FCP) products using MeterUsage API. Amazon ECS is supported in all Amazon Web Services Regions that MeterUsage API is available except for GovCloud.
 #' 
-#' -   Amazon EKS is supported in the following: us-east-1, us-east-2,
-#'     us-west-1, us-west-2, eu-west-1, eu-central-1, eu-west-2, eu-west-3,
-#'     eu-north-1, ap-east-1, ap-southeast-1, ap-northeast-1,
-#'     ap-southeast-2, ap-northeast-2, ap-south-1, ca-central-1, sa-east-1.
+#' -   Amazon EKS is supported in the following: us-east-1, us-east-2, us-west-1, us-west-2, eu-west-1, eu-central-1, eu-west-2, eu-west-3, eu-north-1, ap-east-1, ap-southeast-1, ap-northeast-1, ap-southeast-2, ap-northeast-2, ap-south-1, ca-central-1, sa-east-1.
 #' 
-#'     For questions about adding Amazon Web Services Regions for metering,
-#'     contact [Amazon Web Services Marketplace Seller
-#'     Operations](mailto://aws.amazon.com/marketplace/management/contact-us/).
+#'     For questions about adding Amazon Web Services Regions for metering, contact [Amazon Web Services Marketplace Seller Operations](mailto://aws.amazon.com/marketplace/management/contact-us/).
 #'
 #' @param
 #' config
@@ -45401,13 +42160,7 @@ marketplacemetering <- function(config = list(), credentials = list(), endpoint 
 #' AWS Price List Service
 #'
 #' @description
-#' The Amazon Web Services Price List API is a centralized and convenient
-#' way to programmatically query Amazon Web Services for services,
-#' products, and pricing information. The Amazon Web Services Price List
-#' uses standardized product attributes such as `Location`,
-#' `Storage Class`, and `Operating System`, and provides prices at the SKU
-#' level. You can use the Amazon Web Services Price List to do the
-#' following:
+#' The Amazon Web Services Price List API is a centralized and convenient way to programmatically query Amazon Web Services for services, products, and pricing information. The Amazon Web Services Price List uses standardized product attributes such as `Location`, `Storage Class`, and `Operating System`, and provides prices at the SKU level. You can use the Amazon Web Services Price List to do the following:
 #' 
 #' -   Build cost control and scenario planning tools
 #' 
@@ -45415,23 +42168,11 @@ marketplacemetering <- function(config = list(), credentials = list(), endpoint 
 #' 
 #' -   Forecast future spend for budgeting purposes
 #' 
-#' -   Provide cost benefit analysis that compare your internal workloads
-#'     with Amazon Web Services
+#' -   Provide cost benefit analysis that compare your internal workloads with Amazon Web Services
 #' 
-#' Use `GetServices` without a service code to retrieve the service codes
-#' for all Amazon Web Services services, then `GetServices` with a service
-#' code to retrieve the attribute names for that service. After you have
-#' the service code and attribute names, you can use
-#' `get_attribute_values` to see what
-#' values are available for an attribute. With the service code and an
-#' attribute name and value, you can use
-#' `get_products` to find specific products that
-#' you're interested in, such as an `AmazonEC2` instance, with a
-#' `Provisioned IOPS` `volumeType`.
+#' Use `GetServices` without a service code to retrieve the service codes for all Amazon Web Services services, then `GetServices` with a service code to retrieve the attribute names for that service. After you have the service code and attribute names, you can use `get_attribute_values` to see what values are available for an attribute. With the service code and an attribute name and value, you can use `get_products` to find specific products that you're interested in, such as an `AmazonEC2` instance, with a `Provisioned IOPS` `volumeType`.
 #' 
-#' For more information, see [Using the Amazon Web Services Price List
-#' API](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html)
-#' in the *Billing User Guide*.
+#' For more information, see [Using the Amazon Web Services Price List API](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html) in the *Billing User Guide*.
 #'
 #' @param
 #' config
@@ -45546,13 +42287,7 @@ pricing <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' AWS Savings Plans
 #'
 #' @description
-#' Savings Plans are a pricing model that offer significant savings on
-#' Amazon Web Services usage (for example, on Amazon EC2 instances). You
-#' commit to a consistent amount of usage per hour, in the specified
-#' currency, for a term of one or three years, and receive a lower price
-#' for that usage. For more information, see the [Amazon Web Services
-#' Savings Plans User
-#' Guide](https://docs.aws.amazon.com/savingsplans/latest/userguide/).
+#' Savings Plans are a pricing model that offer significant savings on Amazon Web Services usage (for example, on Amazon EC2 instances). You commit to a consistent amount of usage per hour, in the specified currency, for a term of one or three years, and receive a lower price for that usage. For more information, see the [Amazon Web Services Savings Plans User Guide](https://docs.aws.amazon.com/savingsplans/latest/userguide/).
 #'
 #' @param
 #' config
@@ -45669,35 +42404,13 @@ savingsplans <- function(config = list(), credentials = list(), endpoint = NULL,
 #' Payment Cryptography Control Plane
 #'
 #' @description
-#' Amazon Web Services Payment Cryptography Control Plane APIs manage
-#' encryption keys for use during payment-related cryptographic operations.
-#' You can create, import, export, share, manage, and delete keys. You can
-#' also manage Identity and Access Management (IAM) policies for keys. For
-#' more information, see [Identity and access
-#' management](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide.*
+#' Amazon Web Services Payment Cryptography Control Plane APIs manage encryption keys for use during payment-related cryptographic operations. You can create, import, export, share, manage, and delete keys. You can also manage Identity and Access Management (IAM) policies for keys. For more information, see [Identity and access management](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/security-iam.html) in the *Amazon Web Services Payment Cryptography User Guide.*
 #' 
-#' To use encryption keys for payment-related transaction processing and
-#' associated cryptographic operations, you use the [Amazon Web Services
-#' Payment Cryptography Data
-#' Plane](https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/Welcome.html).
-#' You can perform actions like encrypt, decrypt, generate, and verify
-#' payment-related data.
+#' To use encryption keys for payment-related transaction processing and associated cryptographic operations, you use the [Amazon Web Services Payment Cryptography Data Plane](https://docs.aws.amazon.com/payment-cryptography/latest/DataAPIReference/Welcome.html). You can perform actions like encrypt, decrypt, generate, and verify payment-related data.
 #' 
-#' All Amazon Web Services Payment Cryptography API calls must be signed
-#' and transmitted using Transport Layer Security (TLS). We recommend you
-#' always use the latest supported TLS version for logging API requests.
+#' All Amazon Web Services Payment Cryptography API calls must be signed and transmitted using Transport Layer Security (TLS). We recommend you always use the latest supported TLS version for logging API requests.
 #' 
-#' Amazon Web Services Payment Cryptography supports CloudTrail for control
-#' plane operations, a service that logs Amazon Web Services API calls and
-#' related events for your Amazon Web Services account and delivers them to
-#' an Amazon S3 bucket you specify. By using the information collected by
-#' CloudTrail, you can determine what requests were made to Amazon Web
-#' Services Payment Cryptography, who made the request, when it was made,
-#' and so on. If you don't configure a trail, you can still view the most
-#' recent events in the CloudTrail console. For more information, see the
-#' [CloudTrail User
-#' Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/).
+#' Amazon Web Services Payment Cryptography supports CloudTrail for control plane operations, a service that logs Amazon Web Services API calls and related events for your Amazon Web Services account and delivers them to an Amazon S3 bucket you specify. By using the information collected by CloudTrail, you can determine what requests were made to Amazon Web Services Payment Cryptography, who made the request, when it was made, and so on. If you don't configure a trail, you can still view the most recent events in the CloudTrail console. For more information, see the [CloudTrail User Guide](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/).
 #'
 #' @param
 #' config
@@ -45836,20 +42549,9 @@ paymentcryptographycontrolplane <- function(config = list(), credentials = list(
 #' Payment Cryptography Data Plane
 #'
 #' @description
-#' You use the Amazon Web Services Payment Cryptography Data Plane to
-#' manage how encryption keys are used for payment-related transaction
-#' processing and associated cryptographic operations. You can encrypt,
-#' decrypt, generate, verify, and translate payment-related cryptographic
-#' operations in Amazon Web Services Payment Cryptography. For more
-#' information, see [Data
-#' operations](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*.
+#' You use the Amazon Web Services Payment Cryptography Data Plane to manage how encryption keys are used for payment-related transaction processing and associated cryptographic operations. You can encrypt, decrypt, generate, verify, and translate payment-related cryptographic operations in Amazon Web Services Payment Cryptography. For more information, see [Data operations](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.html) in the *Amazon Web Services Payment Cryptography User Guide*.
 #' 
-#' To manage your encryption keys, you use the [Amazon Web Services Payment
-#' Cryptography Control
-#' Plane](https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/Welcome.html).
-#' You can create, import, export, share, manage, and delete keys. You can
-#' also manage Identity and Access Management (IAM) policies for keys.
+#' To manage your encryption keys, you use the [Amazon Web Services Payment Cryptography Control Plane](https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/Welcome.html). You can create, import, export, share, manage, and delete keys. You can also manage Identity and Access Management (IAM) policies for keys.
 #'
 #' @param
 #' config
@@ -45936,7 +42638,8 @@ paymentcryptographycontrolplane <- function(config = list(), credentials = list(
 #' \tabular{ll}{
 #'  \link[paws.cost.management:paymentcryptographydataplane_decrypt_data]{decrypt_data} \tab Decrypts ciphertext data to plaintext using a symmetric (TDES, AES), asymmetric (RSA), or derived (DUKPT or EMV) encryption key scheme\cr
 #'  \link[paws.cost.management:paymentcryptographydataplane_encrypt_data]{encrypt_data} \tab Encrypts plaintext data to ciphertext using a symmetric (TDES, AES), asymmetric (RSA), or derived (DUKPT or EMV) encryption key scheme\cr
-#'  \link[paws.cost.management:paymentcryptographydataplane_generate_as_2805_kek_validation]{generate_as_2805_kek_validation} \tab Establishes node-to-node initialization between payment processing nodes such as an acquirer, issuer or payment network using Australian Standard 2805 (AS2805)\cr
+#'  \link[paws.cost.management:paymentcryptographydataplane_generate_as_2805_kek_validation]{generate_as_2805_kek_validation} \tab Generates a KekValidationRequest or a KekValidationResponse for node-to-node initialization between payment processing nodes using Australian Standard 2805 (AS2805)\cr
+#'  \link[paws.cost.management:paymentcryptographydataplane_generate_auth_request_cryptogram]{generate_auth_request_cryptogram} \tab Generates an Authorization Request Cryptogram (ARQC) for an EMV chip payment card authorization\cr
 #'  \link[paws.cost.management:paymentcryptographydataplane_generate_card_validation_data]{generate_card_validation_data} \tab Generates card-related validation data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2), or Card Security Codes (CSC)\cr
 #'  \link[paws.cost.management:paymentcryptographydataplane_generate_mac]{generate_mac} \tab Generates a Message Authentication Code (MAC) cryptogram within Amazon Web Services Payment Cryptography\cr
 #'  \link[paws.cost.management:paymentcryptographydataplane_generate_mac_emv_pin_change]{generate_mac_emv_pin_change} \tab Generates an issuer script mac for EMV payment cards that use offline PINs as the cardholder verification method (CVM)\cr
@@ -45970,30 +42673,17 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #' Amazon Connect Service
 #'
 #' @description
-#' -   [Amazon Connect
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html)
+#' -   [Connect Customer actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Service.html)
 #' 
-#' -   [Amazon Connect data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html)
+#' -   [Connect Customer data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Service.html)
 #' 
-#' Amazon Connect is a cloud-based contact center solution that you use to
-#' set up and manage a customer contact center and provide reliable
-#' customer engagement at any scale.
+#' Connect Customer is a cloud-based contact center solution that you use to set up and manage a customer contact center and provide reliable customer engagement at any scale.
 #' 
-#' Amazon Connect provides metrics and real-time reporting that enable you
-#' to optimize contact routing. You can also resolve customer issues more
-#' efficiently by getting customers in touch with the appropriate agents.
+#' Connect Customer provides metrics and real-time reporting that enable you to optimize contact routing. You can also resolve customer issues more efficiently by getting customers in touch with the appropriate agents.
 #' 
-#' There are limits to the number of Amazon Connect resources that you can
-#' create. There are also limits to the number of requests that you can
-#' make per second. For more information, see [Amazon Connect Service
-#' Quotas](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html)
-#' in the *Amazon Connect Administrator Guide*.
+#' There are limits to the number of Connect Customer resources that you can create. There are also limits to the number of requests that you can make per second. For more information, see [Connect Customer Service Quotas](https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html) in the *Connect Customer Administrator Guide*.
 #' 
-#' You can use an endpoint to connect programmatically to an Amazon Web
-#' Services service. For a list of Amazon Connect endpoints, see [Amazon
-#' Connect
-#' Endpoints](https://docs.aws.amazon.com/general/latest/gr/connect_region.html).
+#' You can use an endpoint to connect programmatically to an Amazon Web Services service. For a list of Connect Customer endpoints, see [Connect Customer Endpoints](https://docs.aws.amazon.com/general/latest/gr/connect_region.html).
 #'
 #' @param
 #' config
@@ -46078,105 +42768,105 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'
 #' @section Operations:
 #' \tabular{ll}{
-#'  \link[paws.customer.engagement:connect_activate_evaluation_form]{activate_evaluation_form} \tab Activates an evaluation form in the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_associate_analytics_data_set]{associate_analytics_data_set} \tab Associates the specified dataset for a Amazon Connect instance with the target account\cr
-#'  \link[paws.customer.engagement:connect_associate_approved_origin]{associate_approved_origin} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_associate_bot]{associate_bot} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_activate_evaluation_form]{activate_evaluation_form} \tab Activates an evaluation form in the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_associate_analytics_data_set]{associate_analytics_data_set} \tab Associates the specified dataset for a Connect Customer instance with the target account\cr
+#'  \link[paws.customer.engagement:connect_associate_approved_origin]{associate_approved_origin} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_associate_bot]{associate_bot} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_associate_contact_with_user]{associate_contact_with_user} \tab Associates a queued contact with an agent\cr
 #'  \link[paws.customer.engagement:connect_associate_default_vocabulary]{associate_default_vocabulary} \tab Associates an existing vocabulary as the default\cr
-#'  \link[paws.customer.engagement:connect_associate_email_address_alias]{associate_email_address_alias} \tab Associates an email address alias with an existing email address in an Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_associate_email_address_alias]{associate_email_address_alias} \tab Associates an email address alias with an existing email address in an Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_associate_flow]{associate_flow} \tab Associates a connect resource to a flow\cr
 #'  \link[paws.customer.engagement:connect_associate_hours_of_operations]{associate_hours_of_operations} \tab Associates a set of hours of operations with another hours of operation\cr
-#'  \link[paws.customer.engagement:connect_associate_instance_storage_config]{associate_instance_storage_config} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_associate_lambda_function]{associate_lambda_function} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_associate_lex_bot]{associate_lex_bot} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_associate_phone_number_contact_flow]{associate_phone_number_contact_flow} \tab Associates a flow with a phone number claimed to your Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_associate_instance_storage_config]{associate_instance_storage_config} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_associate_lambda_function]{associate_lambda_function} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_associate_lex_bot]{associate_lex_bot} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_associate_phone_number_contact_flow]{associate_phone_number_contact_flow} \tab Associates a flow with a phone number claimed to your Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_associate_queue_email_addresses]{associate_queue_email_addresses} \tab Associates a set of email addresses with a queue to enable agents to select different "From" (system) email addresses when replying to inbound email contacts or initiating outbound email contacts\cr
 #'  \link[paws.customer.engagement:connect_associate_queue_quick_connects]{associate_queue_quick_connects} \tab Associates a set of quick connects with a queue\cr
 #'  \link[paws.customer.engagement:connect_associate_routing_profile_queues]{associate_routing_profile_queues} \tab Associates a set of queues with a routing profile\cr
-#'  \link[paws.customer.engagement:connect_associate_security_key]{associate_security_key} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_associate_security_key]{associate_security_key} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_associate_security_profiles]{associate_security_profiles} \tab Associate security profiles with an Entity in an Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_associate_traffic_distribution_group_user]{associate_traffic_distribution_group_user} \tab Associates an agent with a traffic distribution group\cr
 #'  \link[paws.customer.engagement:connect_associate_user_proficiencies]{associate_user_proficiencies} \tab Associates a set of proficiencies with a user\cr
 #'  \link[paws.customer.engagement:connect_associate_workspace]{associate_workspace} \tab Associates a workspace with one or more users or routing profiles, allowing them to access the workspace's configured views and pages\cr
-#'  \link[paws.customer.engagement:connect_batch_associate_analytics_data_set]{batch_associate_analytics_data_set} \tab Associates a list of analytics datasets for a given Amazon Connect instance to a target account\cr
+#'  \link[paws.customer.engagement:connect_batch_associate_analytics_data_set]{batch_associate_analytics_data_set} \tab Associates a list of analytics datasets for a given Connect Customer instance to a target account\cr
 #'  \link[paws.customer.engagement:connect_batch_create_data_table_value]{batch_create_data_table_value} \tab Creates values for attributes in a data table\cr
 #'  \link[paws.customer.engagement:connect_batch_delete_data_table_value]{batch_delete_data_table_value} \tab Deletes multiple values from a data table\cr
 #'  \link[paws.customer.engagement:connect_batch_describe_data_table_value]{batch_describe_data_table_value} \tab Retrieves multiple values from a data table without evaluating expressions\cr
-#'  \link[paws.customer.engagement:connect_batch_disassociate_analytics_data_set]{batch_disassociate_analytics_data_set} \tab Removes a list of analytics datasets associated with a given Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_batch_disassociate_analytics_data_set]{batch_disassociate_analytics_data_set} \tab Removes a list of analytics datasets associated with a given Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_batch_get_attached_file_metadata]{batch_get_attached_file_metadata} \tab Allows you to retrieve metadata about multiple attached files on an associated resource\cr
 #'  \link[paws.customer.engagement:connect_batch_get_flow_association]{batch_get_flow_association} \tab Retrieve the flow associations for the given resources\cr
-#'  \link[paws.customer.engagement:connect_batch_put_contact]{batch_put_contact} \tab Only the Amazon Connect outbound campaigns service principal is allowed to assume a role in your account and call this API\cr
+#'  \link[paws.customer.engagement:connect_batch_put_contact]{batch_put_contact} \tab Only the Connect Customer outbound campaigns service principal is allowed to assume a role in your account and call this API\cr
 #'  \link[paws.customer.engagement:connect_batch_update_data_table_value]{batch_update_data_table_value} \tab Updates multiple data table values using all properties from BatchCreateDataTableValue\cr
-#'  \link[paws.customer.engagement:connect_claim_phone_number]{claim_phone_number} \tab Claims an available phone number to your Amazon Connect instance or traffic distribution group\cr
+#'  \link[paws.customer.engagement:connect_claim_phone_number]{claim_phone_number} \tab Claims an available phone number to your Connect Customer instance or traffic distribution group\cr
 #'  \link[paws.customer.engagement:connect_complete_attached_file_upload]{complete_attached_file_upload} \tab Allows you to confirm that the attached file has been uploaded using the pre-signed URL provided in the StartAttachedFileUpload API\cr
-#'  \link[paws.customer.engagement:connect_create_agent_status]{create_agent_status} \tab Creates an agent status for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_agent_status]{create_agent_status} \tab Creates an agent status for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_contact]{create_contact} \tab Only the VOICE, EMAIL, and TASK channels are supported\cr
-#'  \link[paws.customer.engagement:connect_create_contact_flow]{create_contact_flow} \tab Creates a flow for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_create_contact_flow_module]{create_contact_flow_module} \tab Creates a flow module for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_contact_flow]{create_contact_flow} \tab Creates a flow for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_create_contact_flow_module]{create_contact_flow_module} \tab Creates a flow module for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_contact_flow_module_alias]{create_contact_flow_module_alias} \tab Creates a named alias that points to a specific version of a contact flow module\cr
 #'  \link[paws.customer.engagement:connect_create_contact_flow_module_version]{create_contact_flow_module_version} \tab Creates an immutable snapshot of a contact flow module, preserving its content and settings at a specific point in time for version control and rollback capabilities\cr
 #'  \link[paws.customer.engagement:connect_create_contact_flow_version]{create_contact_flow_version} \tab Publishes a new version of the flow provided\cr
 #'  \link[paws.customer.engagement:connect_create_data_table]{create_data_table} \tab Creates a new data table with the specified properties\cr
 #'  \link[paws.customer.engagement:connect_create_data_table_attribute]{create_data_table_attribute} \tab Adds an attribute to an existing data table\cr
-#'  \link[paws.customer.engagement:connect_create_email_address]{create_email_address} \tab Create new email address in the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_create_evaluation_form]{create_evaluation_form} \tab Creates an evaluation form in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_email_address]{create_email_address} \tab Create new email address in the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_create_evaluation_form]{create_evaluation_form} \tab Creates an evaluation form in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_hours_of_operation]{create_hours_of_operation} \tab Creates hours of operation\cr
-#'  \link[paws.customer.engagement:connect_create_hours_of_operation_override]{create_hours_of_operation_override} \tab Creates an hours of operation override in an Amazon Connect hours of operation resource\cr
-#'  \link[paws.customer.engagement:connect_create_instance]{create_instance} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_create_integration_association]{create_integration_association} \tab Creates an Amazon Web Services resource association with an Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_hours_of_operation_override]{create_hours_of_operation_override} \tab Creates an hours of operation override in an Connect Customer hours of operation resource\cr
+#'  \link[paws.customer.engagement:connect_create_instance]{create_instance} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_create_integration_association]{create_integration_association} \tab Creates an Amazon Web Services resource association with an Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_notification]{create_notification} \tab Creates a new notification to be delivered to specified recipients\cr
 #'  \link[paws.customer.engagement:connect_create_participant]{create_participant} \tab Adds a new participant into an on-going chat contact or webRTC call\cr
 #'  \link[paws.customer.engagement:connect_create_persistent_contact_association]{create_persistent_contact_association} \tab Enables rehydration of chats for the lifespan of a contact\cr
-#'  \link[paws.customer.engagement:connect_create_predefined_attribute]{create_predefined_attribute} \tab Creates a new predefined attribute for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_predefined_attribute]{create_predefined_attribute} \tab Creates a new predefined attribute for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_prompt]{create_prompt} \tab Creates a prompt\cr
 #'  \link[paws.customer.engagement:connect_create_push_notification_registration]{create_push_notification_registration} \tab Creates registration for a device token and a chat contact to receive real-time push notifications\cr
-#'  \link[paws.customer.engagement:connect_create_queue]{create_queue} \tab Creates a new queue for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_create_quick_connect]{create_quick_connect} \tab Creates a quick connect for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_queue]{create_queue} \tab Creates a new queue for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_create_quick_connect]{create_quick_connect} \tab Creates a quick connect for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_routing_profile]{create_routing_profile} \tab Creates a new routing profile\cr
-#'  \link[paws.customer.engagement:connect_create_rule]{create_rule} \tab Creates a rule for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_rule]{create_rule} \tab Creates a rule for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_security_profile]{create_security_profile} \tab Creates a security profile\cr
-#'  \link[paws.customer.engagement:connect_create_task_template]{create_task_template} \tab Creates a new task template in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_task_template]{create_task_template} \tab Creates a new task template in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_test_case]{create_test_case} \tab Creates a test case with its content and metadata for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_create_traffic_distribution_group]{create_traffic_distribution_group} \tab Creates a traffic distribution group given an Amazon Connect instance that has been replicated\cr
+#'  \link[paws.customer.engagement:connect_create_traffic_distribution_group]{create_traffic_distribution_group} \tab Creates a traffic distribution group given an Connect Customer instance that has been replicated\cr
 #'  \link[paws.customer.engagement:connect_create_use_case]{create_use_case} \tab Creates a use case for an integration association\cr
-#'  \link[paws.customer.engagement:connect_create_user]{create_user} \tab Creates a user account for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_user]{create_user} \tab Creates a user account for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_user_hierarchy_group]{create_user_hierarchy_group} \tab Creates a new user hierarchy group\cr
 #'  \link[paws.customer.engagement:connect_create_view]{create_view} \tab Creates a new view with the possible status of SAVED or PUBLISHED\cr
 #'  \link[paws.customer.engagement:connect_create_view_version]{create_view_version} \tab Publishes a new version of the view identifier\cr
-#'  \link[paws.customer.engagement:connect_create_vocabulary]{create_vocabulary} \tab Creates a custom vocabulary associated with your Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_create_vocabulary]{create_vocabulary} \tab Creates a custom vocabulary associated with your Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_create_workspace]{create_workspace} \tab Creates a workspace that defines the user experience by mapping views to pages\cr
 #'  \link[paws.customer.engagement:connect_create_workspace_page]{create_workspace_page} \tab Associates a view with a page in a workspace, defining what users see when they navigate to that page\cr
-#'  \link[paws.customer.engagement:connect_deactivate_evaluation_form]{deactivate_evaluation_form} \tab Deactivates an evaluation form in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_deactivate_evaluation_form]{deactivate_evaluation_form} \tab Deactivates an evaluation form in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_delete_attached_file]{delete_attached_file} \tab Deletes an attached file along with the underlying S3 Object\cr
-#'  \link[paws.customer.engagement:connect_delete_contact_evaluation]{delete_contact_evaluation} \tab Deletes a contact evaluation in the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_delete_contact_flow]{delete_contact_flow} \tab Deletes a flow for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_delete_contact_evaluation]{delete_contact_evaluation} \tab Deletes a contact evaluation in the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_delete_contact_flow]{delete_contact_flow} \tab Deletes a flow for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_delete_contact_flow_module]{delete_contact_flow_module} \tab Deletes the specified flow module\cr
 #'  \link[paws.customer.engagement:connect_delete_contact_flow_module_alias]{delete_contact_flow_module_alias} \tab Removes an alias reference, breaking the named connection to the underlying module version without affecting the version itself\cr
 #'  \link[paws.customer.engagement:connect_delete_contact_flow_module_version]{delete_contact_flow_module_version} \tab Removes a specific version of a contact flow module\cr
 #'  \link[paws.customer.engagement:connect_delete_contact_flow_version]{delete_contact_flow_version} \tab Deletes the particular version specified in flow version identifier\cr
 #'  \link[paws.customer.engagement:connect_delete_data_table]{delete_data_table} \tab Deletes a data table and all associated attributes, versions, audits, and values\cr
 #'  \link[paws.customer.engagement:connect_delete_data_table_attribute]{delete_data_table_attribute} \tab Deletes an attribute and all its values from a data table\cr
-#'  \link[paws.customer.engagement:connect_delete_email_address]{delete_email_address} \tab Deletes email address from the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_delete_evaluation_form]{delete_evaluation_form} \tab Deletes an evaluation form in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_delete_email_address]{delete_email_address} \tab Deletes email address from the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_delete_evaluation_form]{delete_evaluation_form} \tab Deletes an evaluation form in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_delete_hours_of_operation]{delete_hours_of_operation} \tab Deletes an hours of operation\cr
-#'  \link[paws.customer.engagement:connect_delete_hours_of_operation_override]{delete_hours_of_operation_override} \tab Deletes an hours of operation override in an Amazon Connect hours of operation resource\cr
-#'  \link[paws.customer.engagement:connect_delete_instance]{delete_instance} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_delete_integration_association]{delete_integration_association} \tab Deletes an Amazon Web Services resource association from an Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_delete_hours_of_operation_override]{delete_hours_of_operation_override} \tab Deletes an hours of operation override in an Connect Customer hours of operation resource\cr
+#'  \link[paws.customer.engagement:connect_delete_instance]{delete_instance} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_delete_integration_association]{delete_integration_association} \tab Deletes an Amazon Web Services resource association from an Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_delete_notification]{delete_notification} \tab Deletes a notification\cr
-#'  \link[paws.customer.engagement:connect_delete_predefined_attribute]{delete_predefined_attribute} \tab Deletes a predefined attribute from the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_delete_predefined_attribute]{delete_predefined_attribute} \tab Deletes a predefined attribute from the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_delete_prompt]{delete_prompt} \tab Deletes a prompt\cr
 #'  \link[paws.customer.engagement:connect_delete_push_notification_registration]{delete_push_notification_registration} \tab Deletes registration for a device token and a chat contact\cr
 #'  \link[paws.customer.engagement:connect_delete_queue]{delete_queue} \tab Deletes a queue\cr
 #'  \link[paws.customer.engagement:connect_delete_quick_connect]{delete_quick_connect} \tab Deletes a quick connect\cr
 #'  \link[paws.customer.engagement:connect_delete_routing_profile]{delete_routing_profile} \tab Deletes a routing profile\cr
-#'  \link[paws.customer.engagement:connect_delete_rule]{delete_rule} \tab Deletes a rule for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_delete_rule]{delete_rule} \tab Deletes a rule for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_delete_security_profile]{delete_security_profile} \tab Deletes a security profile\cr
 #'  \link[paws.customer.engagement:connect_delete_task_template]{delete_task_template} \tab Deletes the task template\cr
 #'  \link[paws.customer.engagement:connect_delete_test_case]{delete_test_case} \tab Deletes the test case that has already been created for the specified Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_delete_traffic_distribution_group]{delete_traffic_distribution_group} \tab Deletes a traffic distribution group\cr
 #'  \link[paws.customer.engagement:connect_delete_use_case]{delete_use_case} \tab Deletes a use case from an integration association\cr
-#'  \link[paws.customer.engagement:connect_delete_user]{delete_user} \tab Deletes a user account from the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_delete_user]{delete_user} \tab Deletes a user account from the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_delete_user_hierarchy_group]{delete_user_hierarchy_group} \tab Deletes an existing user hierarchy group\cr
 #'  \link[paws.customer.engagement:connect_delete_view]{delete_view} \tab Deletes the view entirely\cr
 #'  \link[paws.customer.engagement:connect_delete_view_version]{delete_view_version} \tab Deletes the particular version specified in ViewVersion identifier\cr
@@ -46185,53 +42875,53 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'  \link[paws.customer.engagement:connect_delete_workspace_media]{delete_workspace_media} \tab Deletes a media asset (such as a logo) from a workspace\cr
 #'  \link[paws.customer.engagement:connect_delete_workspace_page]{delete_workspace_page} \tab Removes the association between a view and a page in a workspace\cr
 #'  \link[paws.customer.engagement:connect_describe_agent_status]{describe_agent_status} \tab Describes an agent status\cr
-#'  \link[paws.customer.engagement:connect_describe_attached_files_configuration]{describe_attached_files_configuration} \tab Describes the attached files configuration for the specified Amazon Connect instance and attachment scope\cr
-#'  \link[paws.customer.engagement:connect_describe_authentication_profile]{describe_authentication_profile} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_describe_contact]{describe_contact} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_describe_contact_evaluation]{describe_contact_evaluation} \tab Describes a contact evaluation in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_describe_attached_files_configuration]{describe_attached_files_configuration} \tab Describes the attached files configuration for the specified Connect Customer instance and attachment scope\cr
+#'  \link[paws.customer.engagement:connect_describe_authentication_profile]{describe_authentication_profile} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_describe_contact]{describe_contact} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_describe_contact_evaluation]{describe_contact_evaluation} \tab Describes a contact evaluation in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_describe_contact_flow]{describe_contact_flow} \tab Describes the specified flow\cr
 #'  \link[paws.customer.engagement:connect_describe_contact_flow_module]{describe_contact_flow_module} \tab Describes the specified flow module\cr
 #'  \link[paws.customer.engagement:connect_describe_contact_flow_module_alias]{describe_contact_flow_module_alias} \tab Retrieves detailed information about a specific alias, including which version it currently points to and its metadata\cr
 #'  \link[paws.customer.engagement:connect_describe_data_table]{describe_data_table} \tab Returns all properties for a data table except for attributes and values\cr
 #'  \link[paws.customer.engagement:connect_describe_data_table_attribute]{describe_data_table_attribute} \tab Returns detailed information for a specific data table attribute including its configuration, validation rules, and metadata\cr
-#'  \link[paws.customer.engagement:connect_describe_email_address]{describe_email_address} \tab Describe email address form the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_describe_evaluation_form]{describe_evaluation_form} \tab Describes an evaluation form in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_describe_email_address]{describe_email_address} \tab Describe email address form the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_describe_evaluation_form]{describe_evaluation_form} \tab Describes an evaluation form in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_describe_hours_of_operation]{describe_hours_of_operation} \tab Describes the hours of operation\cr
 #'  \link[paws.customer.engagement:connect_describe_hours_of_operation_override]{describe_hours_of_operation_override} \tab Describes the hours of operation override\cr
-#'  \link[paws.customer.engagement:connect_describe_instance]{describe_instance} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_describe_instance_attribute]{describe_instance_attribute} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_describe_instance_storage_config]{describe_instance_storage_config} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_describe_instance]{describe_instance} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_describe_instance_attribute]{describe_instance_attribute} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_describe_instance_storage_config]{describe_instance_storage_config} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_describe_notification]{describe_notification} \tab Retrieves detailed information about a specific notification, including its content, priority, recipients, and metadata\cr
-#'  \link[paws.customer.engagement:connect_describe_phone_number]{describe_phone_number} \tab Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution group\cr
-#'  \link[paws.customer.engagement:connect_describe_predefined_attribute]{describe_predefined_attribute} \tab Describes a predefined attribute for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_describe_phone_number]{describe_phone_number} \tab Gets details and status of a phone number that’s claimed to your Connect Customer instance or traffic distribution group\cr
+#'  \link[paws.customer.engagement:connect_describe_predefined_attribute]{describe_predefined_attribute} \tab Describes a predefined attribute for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_describe_prompt]{describe_prompt} \tab Describes the prompt\cr
 #'  \link[paws.customer.engagement:connect_describe_queue]{describe_queue} \tab Describes the specified queue\cr
 #'  \link[paws.customer.engagement:connect_describe_quick_connect]{describe_quick_connect} \tab Describes the quick connect\cr
 #'  \link[paws.customer.engagement:connect_describe_routing_profile]{describe_routing_profile} \tab Describes the specified routing profile\cr
-#'  \link[paws.customer.engagement:connect_describe_rule]{describe_rule} \tab Describes a rule for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_describe_rule]{describe_rule} \tab Describes a rule for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_describe_security_profile]{describe_security_profile} \tab Gets basic information about the security profile\cr
 #'  \link[paws.customer.engagement:connect_describe_test_case]{describe_test_case} \tab Describes the specified test case and allows you to get the content and metadata of the test case for the specified Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_describe_traffic_distribution_group]{describe_traffic_distribution_group} \tab Gets details and status of a traffic distribution group\cr
 #'  \link[paws.customer.engagement:connect_describe_user]{describe_user} \tab Describes the specified user\cr
 #'  \link[paws.customer.engagement:connect_describe_user_hierarchy_group]{describe_user_hierarchy_group} \tab Describes the specified hierarchy group\cr
-#'  \link[paws.customer.engagement:connect_describe_user_hierarchy_structure]{describe_user_hierarchy_structure} \tab Describes the hierarchy structure of the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_describe_view]{describe_view} \tab Retrieves the view for the specified Amazon Connect instance and view identifier\cr
+#'  \link[paws.customer.engagement:connect_describe_user_hierarchy_structure]{describe_user_hierarchy_structure} \tab Describes the hierarchy structure of the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_describe_view]{describe_view} \tab Retrieves the view for the specified Connect Customer instance and view identifier\cr
 #'  \link[paws.customer.engagement:connect_describe_vocabulary]{describe_vocabulary} \tab Describes the specified vocabulary\cr
 #'  \link[paws.customer.engagement:connect_describe_workspace]{describe_workspace} \tab Retrieves details about a workspace, including its configuration and metadata\cr
-#'  \link[paws.customer.engagement:connect_disassociate_analytics_data_set]{disassociate_analytics_data_set} \tab Removes the dataset ID associated with a given Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_disassociate_approved_origin]{disassociate_approved_origin} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_disassociate_bot]{disassociate_bot} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_disassociate_email_address_alias]{disassociate_email_address_alias} \tab Removes the alias association between two email addresses in an Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_disassociate_analytics_data_set]{disassociate_analytics_data_set} \tab Removes the dataset ID associated with a given Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_disassociate_approved_origin]{disassociate_approved_origin} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_disassociate_bot]{disassociate_bot} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_disassociate_email_address_alias]{disassociate_email_address_alias} \tab Removes the alias association between two email addresses in an Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_disassociate_flow]{disassociate_flow} \tab Disassociates a connect resource from a flow\cr
 #'  \link[paws.customer.engagement:connect_disassociate_hours_of_operations]{disassociate_hours_of_operations} \tab Disassociates a set of hours of operations with another hours of operation\cr
-#'  \link[paws.customer.engagement:connect_disassociate_instance_storage_config]{disassociate_instance_storage_config} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_disassociate_lambda_function]{disassociate_lambda_function} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_disassociate_lex_bot]{disassociate_lex_bot} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_disassociate_phone_number_contact_flow]{disassociate_phone_number_contact_flow} \tab Removes the flow association from a phone number claimed to your Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_disassociate_instance_storage_config]{disassociate_instance_storage_config} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_disassociate_lambda_function]{disassociate_lambda_function} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_disassociate_lex_bot]{disassociate_lex_bot} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_disassociate_phone_number_contact_flow]{disassociate_phone_number_contact_flow} \tab Removes the flow association from a phone number claimed to your Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_disassociate_queue_email_addresses]{disassociate_queue_email_addresses} \tab Removes the association between a set of email addresses and a queue\cr
 #'  \link[paws.customer.engagement:connect_disassociate_queue_quick_connects]{disassociate_queue_quick_connects} \tab Disassociates a set of quick connects from a queue\cr
 #'  \link[paws.customer.engagement:connect_disassociate_routing_profile_queues]{disassociate_routing_profile_queues} \tab Disassociates a set of queues from a routing profile\cr
-#'  \link[paws.customer.engagement:connect_disassociate_security_key]{disassociate_security_key} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_disassociate_security_key]{disassociate_security_key} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_disassociate_security_profiles]{disassociate_security_profiles} \tab Disassociates a security profile attached to a Q in Connect AI Agent Entity in an Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_disassociate_traffic_distribution_group_user]{disassociate_traffic_distribution_group_user} \tab Disassociates an agent from a traffic distribution group\cr
 #'  \link[paws.customer.engagement:connect_disassociate_user_proficiencies]{disassociate_user_proficiencies} \tab Disassociates a set of proficiencies from a user\cr
@@ -46241,126 +42931,126 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'  \link[paws.customer.engagement:connect_get_attached_file]{get_attached_file} \tab Provides a pre-signed URL for download of an approved attached file\cr
 #'  \link[paws.customer.engagement:connect_get_contact_attributes]{get_contact_attributes} \tab Retrieves the contact attributes for the specified contact\cr
 #'  \link[paws.customer.engagement:connect_get_contact_metrics]{get_contact_metrics} \tab Retrieves contact metric data for a specified contact\cr
-#'  \link[paws.customer.engagement:connect_get_current_metric_data]{get_current_metric_data} \tab Gets the real-time metric data from the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_get_current_user_data]{get_current_user_data} \tab Gets the real-time active user data from the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_get_current_metric_data]{get_current_metric_data} \tab Gets the real-time metric data from the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_get_current_user_data]{get_current_user_data} \tab Gets the real-time active user data from the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_get_effective_hours_of_operations]{get_effective_hours_of_operations} \tab Get the hours of operations with the effective override applied\cr
-#'  \link[paws.customer.engagement:connect_get_federation_token]{get_federation_token} \tab Supports SAML sign-in for Amazon Connect\cr
+#'  \link[paws.customer.engagement:connect_get_federation_token]{get_federation_token} \tab Supports SAML sign-in for Connect Customer\cr
 #'  \link[paws.customer.engagement:connect_get_flow_association]{get_flow_association} \tab Retrieves the flow associated for a given resource\cr
-#'  \link[paws.customer.engagement:connect_get_metric_data]{get_metric_data} \tab Gets historical metric data from the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_get_metric_data_v2]{get_metric_data_v2} \tab Gets metric data from the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_get_metric_data]{get_metric_data} \tab Gets historical metric data from the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_get_metric_data_v2]{get_metric_data_v2} \tab Gets metric data from the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_get_prompt_file]{get_prompt_file} \tab Gets the prompt file\cr
-#'  \link[paws.customer.engagement:connect_get_task_template]{get_task_template} \tab Gets details about a specific task template in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_get_task_template]{get_task_template} \tab Gets details about a specific task template in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_get_test_case_execution_summary]{get_test_case_execution_summary} \tab Retrieves an overview of a test execution that includes the status of the execution, start and end time, and observation summary\cr
 #'  \link[paws.customer.engagement:connect_get_traffic_distribution]{get_traffic_distribution} \tab Retrieves the current traffic distribution for a given traffic distribution group\cr
-#'  \link[paws.customer.engagement:connect_import_phone_number]{import_phone_number} \tab Imports a claimed phone number from an external service, such as Amazon Web Services End User Messaging, into an Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_import_phone_number]{import_phone_number} \tab Imports a claimed phone number from an external service, such as Amazon Web Services End User Messaging, into an Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_import_workspace_media]{import_workspace_media} \tab Imports a media asset (such as a logo) for use in a workspace\cr
 #'  \link[paws.customer.engagement:connect_list_agent_statuses]{list_agent_statuses} \tab Lists agent statuses\cr
-#'  \link[paws.customer.engagement:connect_list_analytics_data_associations]{list_analytics_data_associations} \tab Lists the association status of requested dataset ID for a given Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_analytics_data_lake_data_sets]{list_analytics_data_lake_data_sets} \tab Lists the data lake datasets available to associate with for a given Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_approved_origins]{list_approved_origins} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_analytics_data_associations]{list_analytics_data_associations} \tab Lists the association status of requested dataset ID for a given Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_analytics_data_lake_data_sets]{list_analytics_data_lake_data_sets} \tab Lists the data lake datasets available to associate with for a given Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_approved_origins]{list_approved_origins} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_list_associated_contacts]{list_associated_contacts} \tab Provides information about contact tree, a list of associated contacts with a unique identifier\cr
-#'  \link[paws.customer.engagement:connect_list_attached_files_configurations]{list_attached_files_configurations} \tab Provides summary information about the attached files configurations for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_authentication_profiles]{list_authentication_profiles} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_list_bots]{list_bots} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_attached_files_configurations]{list_attached_files_configurations} \tab Provides summary information about the attached files configurations for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_authentication_profiles]{list_authentication_profiles} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_bots]{list_bots} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_list_child_hours_of_operations]{list_child_hours_of_operations} \tab Provides information about the child hours of operations for the specified parent hours of operation\cr
-#'  \link[paws.customer.engagement:connect_list_contact_evaluations]{list_contact_evaluations} \tab Lists contact evaluations in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_contact_evaluations]{list_contact_evaluations} \tab Lists contact evaluations in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_contact_flow_module_aliases]{list_contact_flow_module_aliases} \tab Lists all aliases associated with a contact flow module, showing their current version mappings and metadata\cr
-#'  \link[paws.customer.engagement:connect_list_contact_flow_modules]{list_contact_flow_modules} \tab Provides information about the flow modules for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_contact_flow_modules]{list_contact_flow_modules} \tab Provides information about the flow modules for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_contact_flow_module_versions]{list_contact_flow_module_versions} \tab Retrieves a paginated list of all versions for a specific contact flow module\cr
-#'  \link[paws.customer.engagement:connect_list_contact_flows]{list_contact_flows} \tab Provides information about the flows for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_contact_flow_versions]{list_contact_flow_versions} \tab Returns all the available versions for the specified Amazon Connect instance and flow identifier\cr
-#'  \link[paws.customer.engagement:connect_list_contact_references]{list_contact_references} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_contact_flows]{list_contact_flows} \tab Provides information about the flows for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_contact_flow_versions]{list_contact_flow_versions} \tab Returns all the available versions for the specified Connect Customer instance and flow identifier\cr
+#'  \link[paws.customer.engagement:connect_list_contact_references]{list_contact_references} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_list_data_table_attributes]{list_data_table_attributes} \tab Returns all attributes for a specified data table\cr
 #'  \link[paws.customer.engagement:connect_list_data_table_primary_values]{list_data_table_primary_values} \tab Lists all primary value combinations for a given data table\cr
 #'  \link[paws.customer.engagement:connect_list_data_tables]{list_data_tables} \tab Lists all data tables for the specified Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_list_data_table_values]{list_data_table_values} \tab Lists values stored in a data table with optional filtering by record IDs or primary attribute values\cr
-#'  \link[paws.customer.engagement:connect_list_default_vocabularies]{list_default_vocabularies} \tab Lists the default vocabularies for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_default_vocabularies]{list_default_vocabularies} \tab Lists the default vocabularies for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_entity_security_profiles]{list_entity_security_profiles} \tab Lists all security profiles attached to a Q in Connect AIAgent Entity in an Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_evaluation_forms]{list_evaluation_forms} \tab Lists evaluation forms in the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_evaluation_form_versions]{list_evaluation_form_versions} \tab Lists versions of an evaluation form in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_evaluation_forms]{list_evaluation_forms} \tab Lists evaluation forms in the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_evaluation_form_versions]{list_evaluation_form_versions} \tab Lists versions of an evaluation form in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_flow_associations]{list_flow_associations} \tab List the flow association based on the filters\cr
 #'  \link[paws.customer.engagement:connect_list_hours_of_operation_overrides]{list_hours_of_operation_overrides} \tab List the hours of operation overrides\cr
-#'  \link[paws.customer.engagement:connect_list_hours_of_operations]{list_hours_of_operations} \tab Provides information about the hours of operation for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_instance_attributes]{list_instance_attributes} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_list_instances]{list_instances} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_list_instance_storage_configs]{list_instance_storage_configs} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_list_integration_associations]{list_integration_associations} \tab Provides summary information about the Amazon Web Services resource associations for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_lambda_functions]{list_lambda_functions} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_list_lex_bots]{list_lex_bots} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_hours_of_operations]{list_hours_of_operations} \tab Provides information about the hours of operation for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_instance_attributes]{list_instance_attributes} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_instances]{list_instances} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_instance_storage_configs]{list_instance_storage_configs} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_integration_associations]{list_integration_associations} \tab Provides summary information about the Amazon Web Services resource associations for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_lambda_functions]{list_lambda_functions} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_lex_bots]{list_lex_bots} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_list_notifications]{list_notifications} \tab Retrieves a paginated list of all notifications in the Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_phone_numbers]{list_phone_numbers} \tab Provides information about the phone numbers for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_phone_numbers_v2]{list_phone_numbers_v2} \tab Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group\cr
-#'  \link[paws.customer.engagement:connect_list_predefined_attributes]{list_predefined_attributes} \tab Lists predefined attributes for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_prompts]{list_prompts} \tab Provides information about the prompts for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_phone_numbers]{list_phone_numbers} \tab Provides information about the phone numbers for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_phone_numbers_v2]{list_phone_numbers_v2} \tab Lists phone numbers claimed to your Connect Customer instance or traffic distribution group\cr
+#'  \link[paws.customer.engagement:connect_list_predefined_attributes]{list_predefined_attributes} \tab Lists predefined attributes for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_prompts]{list_prompts} \tab Provides information about the prompts for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_queue_email_addresses]{list_queue_email_addresses} \tab Lists all email addresses that are currently associated with a specific queue, providing details about which "From" email addresses agents can select when handling email contacts\cr
 #'  \link[paws.customer.engagement:connect_list_queue_quick_connects]{list_queue_quick_connects} \tab Lists the quick connects associated with a queue\cr
-#'  \link[paws.customer.engagement:connect_list_queues]{list_queues} \tab Provides information about the queues for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_quick_connects]{list_quick_connects} \tab Provides information about the quick connects for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_queues]{list_queues} \tab Provides information about the queues for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_quick_connects]{list_quick_connects} \tab Provides information about the quick connects for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_realtime_contact_analysis_segments_v2]{list_realtime_contact_analysis_segments_v2} \tab Provides a list of analysis segments for a real-time chat analysis session\cr
 #'  \link[paws.customer.engagement:connect_list_routing_profile_manual_assignment_queues]{list_routing_profile_manual_assignment_queues} \tab Lists the manual assignment queues associated with a routing profile\cr
 #'  \link[paws.customer.engagement:connect_list_routing_profile_queues]{list_routing_profile_queues} \tab Lists the queues associated with a routing profile\cr
-#'  \link[paws.customer.engagement:connect_list_routing_profiles]{list_routing_profiles} \tab Provides summary information about the routing profiles for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_rules]{list_rules} \tab List all rules for the specified Amazon Connect instance\cr
-#'  \link[paws.customer.engagement:connect_list_security_keys]{list_security_keys} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_list_routing_profiles]{list_routing_profiles} \tab Provides summary information about the routing profiles for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_rules]{list_rules} \tab List all rules for the specified Connect Customer instance\cr
+#'  \link[paws.customer.engagement:connect_list_security_keys]{list_security_keys} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_list_security_profile_applications]{list_security_profile_applications} \tab Returns a list of third-party applications or MCP Servers in a specific security profile\cr
 #'  \link[paws.customer.engagement:connect_list_security_profile_flow_modules]{list_security_profile_flow_modules} \tab A list of Flow Modules an AI Agent can invoke as a tool\cr
 #'  \link[paws.customer.engagement:connect_list_security_profile_permissions]{list_security_profile_permissions} \tab Lists the permissions granted to a security profile\cr
-#'  \link[paws.customer.engagement:connect_list_security_profiles]{list_security_profiles} \tab Provides summary information about the security profiles for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_security_profiles]{list_security_profiles} \tab Provides summary information about the security profiles for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_tags_for_resource]{list_tags_for_resource} \tab Lists the tags for the specified resource\cr
-#'  \link[paws.customer.engagement:connect_list_task_templates]{list_task_templates} \tab Lists task templates for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_task_templates]{list_task_templates} \tab Lists task templates for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_test_case_execution_records]{list_test_case_execution_records} \tab Lists detailed steps of test case execution that includes all observations along with actions taken and data associated in the specified Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_list_test_case_executions]{list_test_case_executions} \tab Lists all test case executions and allows filtering by test case id, test case name, start time, end time or status of the execution for the specified Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_list_test_cases]{list_test_cases} \tab Lists the test cases present in the specific Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_list_traffic_distribution_groups]{list_traffic_distribution_groups} \tab Lists traffic distribution groups\cr
 #'  \link[paws.customer.engagement:connect_list_traffic_distribution_group_users]{list_traffic_distribution_group_users} \tab Lists traffic distribution group users\cr
 #'  \link[paws.customer.engagement:connect_list_use_cases]{list_use_cases} \tab Lists the use cases for the integration association\cr
-#'  \link[paws.customer.engagement:connect_list_user_hierarchy_groups]{list_user_hierarchy_groups} \tab Provides summary information about the hierarchy groups for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_user_hierarchy_groups]{list_user_hierarchy_groups} \tab Provides summary information about the hierarchy groups for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_user_notifications]{list_user_notifications} \tab Retrieves a paginated list of notifications for a specific user, including the notification status for that user\cr
 #'  \link[paws.customer.engagement:connect_list_user_proficiencies]{list_user_proficiencies} \tab Lists proficiencies associated with a user\cr
-#'  \link[paws.customer.engagement:connect_list_users]{list_users} \tab Provides summary information about the users for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_list_users]{list_users} \tab Provides summary information about the users for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_list_views]{list_views} \tab Returns views in the given instance\cr
-#'  \link[paws.customer.engagement:connect_list_view_versions]{list_view_versions} \tab Returns all the available versions for the specified Amazon Connect instance and view identifier\cr
+#'  \link[paws.customer.engagement:connect_list_view_versions]{list_view_versions} \tab Returns all the available versions for the specified Connect Customer instance and view identifier\cr
 #'  \link[paws.customer.engagement:connect_list_workspace_media]{list_workspace_media} \tab Lists media assets (such as logos) associated with a workspace\cr
 #'  \link[paws.customer.engagement:connect_list_workspace_pages]{list_workspace_pages} \tab Lists the page configurations in a workspace, including the views assigned to each page\cr
 #'  \link[paws.customer.engagement:connect_list_workspaces]{list_workspaces} \tab Lists the workspaces in an Amazon Connect instance\cr
 #'  \link[paws.customer.engagement:connect_monitor_contact]{monitor_contact} \tab Initiates silent monitoring of a contact\cr
 #'  \link[paws.customer.engagement:connect_pause_contact]{pause_contact} \tab Allows pausing an ongoing task contact\cr
-#'  \link[paws.customer.engagement:connect_put_user_status]{put_user_status} \tab Changes the current status of a user or agent in Amazon Connect\cr
-#'  \link[paws.customer.engagement:connect_release_phone_number]{release_phone_number} \tab Releases a phone number previously claimed to an Amazon Connect instance or traffic distribution group\cr
-#'  \link[paws.customer.engagement:connect_replicate_instance]{replicate_instance} \tab Replicates an Amazon Connect instance in the specified Amazon Web Services Region and copies configuration information for Amazon Connect resources across Amazon Web Services Regions\cr
+#'  \link[paws.customer.engagement:connect_put_user_status]{put_user_status} \tab Changes the current status of a user or agent in Connect Customer\cr
+#'  \link[paws.customer.engagement:connect_release_phone_number]{release_phone_number} \tab Releases a phone number previously claimed to an Connect Customer instance or traffic distribution group\cr
+#'  \link[paws.customer.engagement:connect_replicate_instance]{replicate_instance} \tab Replicates an Connect Customer instance in the specified Amazon Web Services Region and copies configuration information for Connect Customer resources across Amazon Web Services Regions\cr
 #'  \link[paws.customer.engagement:connect_resume_contact]{resume_contact} \tab Allows resuming a task contact in a paused state\cr
 #'  \link[paws.customer.engagement:connect_resume_contact_recording]{resume_contact_recording} \tab When a contact is being recorded, and the recording has been suspended using SuspendContactRecording, this API resumes recording whatever recording is selected in the flow configuration: call, screen, or both\cr
-#'  \link[paws.customer.engagement:connect_search_agent_statuses]{search_agent_statuses} \tab Searches AgentStatuses in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_available_phone_numbers]{search_available_phone_numbers} \tab Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group\cr
-#'  \link[paws.customer.engagement:connect_search_contact_evaluations]{search_contact_evaluations} \tab Searches contact evaluations in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_contact_flow_modules]{search_contact_flow_modules} \tab Searches the flow modules in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_contact_flows]{search_contact_flows} \tab Searches the flows in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_contacts]{search_contacts} \tab Searches contacts in an Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_search_agent_statuses]{search_agent_statuses} \tab Searches AgentStatuses in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_available_phone_numbers]{search_available_phone_numbers} \tab Searches for available phone numbers that you can claim to your Connect Customer instance or traffic distribution group\cr
+#'  \link[paws.customer.engagement:connect_search_contact_evaluations]{search_contact_evaluations} \tab Searches contact evaluations in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_contact_flow_modules]{search_contact_flow_modules} \tab Searches the flow modules in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_contact_flows]{search_contact_flows} \tab Searches the flows in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_contacts]{search_contacts} \tab Searches contacts in an Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_search_data_tables]{search_data_tables} \tab Searches for data tables based on the table's ID, name, and description\cr
 #'  \link[paws.customer.engagement:connect_search_email_addresses]{search_email_addresses} \tab Searches email address in an instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_evaluation_forms]{search_evaluation_forms} \tab Searches evaluation forms in an Amazon Connect instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_evaluation_forms]{search_evaluation_forms} \tab Searches evaluation forms in an Connect Customer instance, with optional filtering\cr
 #'  \link[paws.customer.engagement:connect_search_hours_of_operation_overrides]{search_hours_of_operation_overrides} \tab Searches the hours of operation overrides\cr
-#'  \link[paws.customer.engagement:connect_search_hours_of_operations]{search_hours_of_operations} \tab Searches the hours of operation in an Amazon Connect instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_hours_of_operations]{search_hours_of_operations} \tab Searches the hours of operation in an Connect Customer instance, with optional filtering\cr
 #'  \link[paws.customer.engagement:connect_search_notifications]{search_notifications} \tab Searches for notifications based on specified criteria and filters\cr
 #'  \link[paws.customer.engagement:connect_search_predefined_attributes]{search_predefined_attributes} \tab Searches predefined attributes that meet certain criteria\cr
-#'  \link[paws.customer.engagement:connect_search_prompts]{search_prompts} \tab Searches prompts in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_queues]{search_queues} \tab Searches queues in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_quick_connects]{search_quick_connects} \tab Searches quick connects in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_resource_tags]{search_resource_tags} \tab Searches tags used in an Amazon Connect instance using optional search criteria\cr
-#'  \link[paws.customer.engagement:connect_search_routing_profiles]{search_routing_profiles} \tab Searches routing profiles in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_security_profiles]{search_security_profiles} \tab Searches security profiles in an Amazon Connect instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_prompts]{search_prompts} \tab Searches prompts in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_queues]{search_queues} \tab Searches queues in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_quick_connects]{search_quick_connects} \tab Searches quick connects in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_resource_tags]{search_resource_tags} \tab Searches tags used in an Connect Customer instance using optional search criteria\cr
+#'  \link[paws.customer.engagement:connect_search_routing_profiles]{search_routing_profiles} \tab Searches routing profiles in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_security_profiles]{search_security_profiles} \tab Searches security profiles in an Connect Customer instance, with optional filtering\cr
 #'  \link[paws.customer.engagement:connect_search_test_cases]{search_test_cases} \tab Searches for test cases in the specified Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_user_hierarchy_groups]{search_user_hierarchy_groups} \tab Searches UserHierarchyGroups in an Amazon Connect instance, with optional filtering\cr
-#'  \link[paws.customer.engagement:connect_search_users]{search_users} \tab Searches users in an Amazon Connect instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_user_hierarchy_groups]{search_user_hierarchy_groups} \tab Searches UserHierarchyGroups in an Connect Customer instance, with optional filtering\cr
+#'  \link[paws.customer.engagement:connect_search_users]{search_users} \tab Searches users in an Connect Customer instance, with optional filtering\cr
 #'  \link[paws.customer.engagement:connect_search_views]{search_views} \tab Searches views based on name, description, or tags\cr
-#'  \link[paws.customer.engagement:connect_search_vocabularies]{search_vocabularies} \tab Searches for vocabularies within a specific Amazon Connect instance using State, NameStartsWith, and LanguageCode\cr
+#'  \link[paws.customer.engagement:connect_search_vocabularies]{search_vocabularies} \tab Searches for vocabularies within a specific Connect Customer instance using State, NameStartsWith, and LanguageCode\cr
 #'  \link[paws.customer.engagement:connect_search_workspace_associations]{search_workspace_associations} \tab Searches for workspace associations with users or routing profiles based on various criteria\cr
 #'  \link[paws.customer.engagement:connect_search_workspaces]{search_workspaces} \tab Searches workspaces based on name, description, visibility, or tags\cr
-#'  \link[paws.customer.engagement:connect_send_chat_integration_event]{send_chat_integration_event} \tab Processes chat integration events from Amazon Web Services or external integrations to Amazon Connect\cr
+#'  \link[paws.customer.engagement:connect_send_chat_integration_event]{send_chat_integration_event} \tab Processes chat integration events from Amazon Web Services or external integrations to Connect Customer\cr
 #'  \link[paws.customer.engagement:connect_send_outbound_email]{send_outbound_email} \tab Send outbound email for outbound campaigns\cr
 #'  \link[paws.customer.engagement:connect_start_attached_file_upload]{start_attached_file_upload} \tab Provides a pre-signed Amazon S3 URL in response for uploading your content\cr
 #'  \link[paws.customer.engagement:connect_start_chat_contact]{start_chat_contact} \tab Initiates a flow to start a new chat for the customer\cr
-#'  \link[paws.customer.engagement:connect_start_contact_evaluation]{start_contact_evaluation} \tab Starts an empty evaluation in the specified Amazon Connect instance, using the given evaluation form for the particular contact\cr
+#'  \link[paws.customer.engagement:connect_start_contact_evaluation]{start_contact_evaluation} \tab Starts an empty evaluation in the specified Connect Customer instance, using the given evaluation form for the particular contact\cr
 #'  \link[paws.customer.engagement:connect_start_contact_media_processing]{start_contact_media_processing} \tab Enables in-flight message processing for an ongoing chat session\cr
 #'  \link[paws.customer.engagement:connect_start_contact_recording]{start_contact_recording} \tab Starts recording the contact:\cr
 #'  \link[paws.customer.engagement:connect_start_contact_streaming]{start_contact_streaming} \tab Initiates real-time message streaming for a new chat contact\cr
@@ -46377,7 +43067,7 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'  \link[paws.customer.engagement:connect_stop_contact_recording]{stop_contact_recording} \tab Stops recording a call when a contact is being recorded\cr
 #'  \link[paws.customer.engagement:connect_stop_contact_streaming]{stop_contact_streaming} \tab Ends message streaming on a specified contact\cr
 #'  \link[paws.customer.engagement:connect_stop_test_case_execution]{stop_test_case_execution} \tab Stops a running test execution\cr
-#'  \link[paws.customer.engagement:connect_submit_contact_evaluation]{submit_contact_evaluation} \tab Submits a contact evaluation in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_submit_contact_evaluation]{submit_contact_evaluation} \tab Submits a contact evaluation in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_suspend_contact_recording]{suspend_contact_recording} \tab When a contact is being recorded, this API suspends recording whatever is selected in the flow configuration: call (IVR or agent), screen, or both\cr
 #'  \link[paws.customer.engagement:connect_tag_contact]{tag_contact} \tab Adds the specified tags to the contact resource\cr
 #'  \link[paws.customer.engagement:connect_tag_resource]{tag_resource} \tab Adds the specified tags to the specified resource\cr
@@ -46385,15 +43075,15 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'  \link[paws.customer.engagement:connect_untag_contact]{untag_contact} \tab Removes the specified tags from the contact resource\cr
 #'  \link[paws.customer.engagement:connect_untag_resource]{untag_resource} \tab Removes the specified tags from the specified resource\cr
 #'  \link[paws.customer.engagement:connect_update_agent_status]{update_agent_status} \tab Updates agent status\cr
-#'  \link[paws.customer.engagement:connect_update_attached_files_configuration]{update_attached_files_configuration} \tab Updates the attached files configuration for the specified Amazon Connect instance and attachment scope\cr
-#'  \link[paws.customer.engagement:connect_update_authentication_profile]{update_authentication_profile} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_update_contact]{update_contact} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_update_attached_files_configuration]{update_attached_files_configuration} \tab Updates the attached files configuration for the specified Connect Customer instance and attachment scope\cr
+#'  \link[paws.customer.engagement:connect_update_authentication_profile]{update_authentication_profile} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_update_contact]{update_contact} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_update_contact_attributes]{update_contact_attributes} \tab Creates or updates user-defined contact attributes associated with the specified contact\cr
-#'  \link[paws.customer.engagement:connect_update_contact_evaluation]{update_contact_evaluation} \tab Updates details about a contact evaluation in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_update_contact_evaluation]{update_contact_evaluation} \tab Updates details about a contact evaluation in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_update_contact_flow_content]{update_contact_flow_content} \tab Updates the specified flow\cr
 #'  \link[paws.customer.engagement:connect_update_contact_flow_metadata]{update_contact_flow_metadata} \tab Updates metadata about specified flow\cr
 #'  \link[paws.customer.engagement:connect_update_contact_flow_module_alias]{update_contact_flow_module_alias} \tab Updates a specific Aliases metadata, including the version it’s tied to, it’s name, and description\cr
-#'  \link[paws.customer.engagement:connect_update_contact_flow_module_content]{update_contact_flow_module_content} \tab Updates specified flow module for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_update_contact_flow_module_content]{update_contact_flow_module_content} \tab Updates specified flow module for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_update_contact_flow_module_metadata]{update_contact_flow_module_metadata} \tab Updates metadata about specified flow module\cr
 #'  \link[paws.customer.engagement:connect_update_contact_flow_name]{update_contact_flow_name} \tab The name of the flow\cr
 #'  \link[paws.customer.engagement:connect_update_contact_routing_data]{update_contact_routing_data} \tab Updates routing priority and age on the contact (QueuePriority and QueueTimeAdjustmentInSeconds)\cr
@@ -46402,17 +43092,17 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'  \link[paws.customer.engagement:connect_update_data_table_metadata]{update_data_table_metadata} \tab Updates the metadata properties of a data table\cr
 #'  \link[paws.customer.engagement:connect_update_data_table_primary_values]{update_data_table_primary_values} \tab Updates the primary values for a record\cr
 #'  \link[paws.customer.engagement:connect_update_email_address_metadata]{update_email_address_metadata} \tab Updates an email address metadata\cr
-#'  \link[paws.customer.engagement:connect_update_evaluation_form]{update_evaluation_form} \tab Updates details about a specific evaluation form version in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_update_evaluation_form]{update_evaluation_form} \tab Updates details about a specific evaluation form version in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_update_hours_of_operation]{update_hours_of_operation} \tab Updates the hours of operation\cr
 #'  \link[paws.customer.engagement:connect_update_hours_of_operation_override]{update_hours_of_operation_override} \tab Update the hours of operation override\cr
-#'  \link[paws.customer.engagement:connect_update_instance_attribute]{update_instance_attribute} \tab This API is in preview release for Amazon Connect and is subject to change\cr
-#'  \link[paws.customer.engagement:connect_update_instance_storage_config]{update_instance_storage_config} \tab This API is in preview release for Amazon Connect and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_update_instance_attribute]{update_instance_attribute} \tab This API is in preview release for Connect Customer and is subject to change\cr
+#'  \link[paws.customer.engagement:connect_update_instance_storage_config]{update_instance_storage_config} \tab This API is in preview release for Connect Customer and is subject to change\cr
 #'  \link[paws.customer.engagement:connect_update_notification_content]{update_notification_content} \tab Updates the localized content of an existing notification\cr
-#'  \link[paws.customer.engagement:connect_update_participant_authentication]{update_participant_authentication} \tab Instructs Amazon Connect to resume the authentication process\cr
+#'  \link[paws.customer.engagement:connect_update_participant_authentication]{update_participant_authentication} \tab Instructs Connect Customer to resume the authentication process\cr
 #'  \link[paws.customer.engagement:connect_update_participant_role_config]{update_participant_role_config} \tab Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically disconnected from a chat due to idleness\cr
-#'  \link[paws.customer.engagement:connect_update_phone_number]{update_phone_number} \tab Updates your claimed phone number from its current Amazon Connect instance or traffic distribution group to another Amazon Connect instance or traffic distribution group in the same Amazon Web Services Region\cr
+#'  \link[paws.customer.engagement:connect_update_phone_number]{update_phone_number} \tab Updates your claimed phone number from its current Connect Customer instance or traffic distribution group to another Connect Customer instance or traffic distribution group in the same Amazon Web Services Region\cr
 #'  \link[paws.customer.engagement:connect_update_phone_number_metadata]{update_phone_number_metadata} \tab Updates a phone number’s metadata\cr
-#'  \link[paws.customer.engagement:connect_update_predefined_attribute]{update_predefined_attribute} \tab Updates a predefined attribute for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_update_predefined_attribute]{update_predefined_attribute} \tab Updates a predefined attribute for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_update_prompt]{update_prompt} \tab Updates a prompt\cr
 #'  \link[paws.customer.engagement:connect_update_queue_hours_of_operation]{update_queue_hours_of_operation} \tab Updates the hours of operation for the specified queue\cr
 #'  \link[paws.customer.engagement:connect_update_queue_max_contacts]{update_queue_max_contacts} \tab Updates the maximum number of contacts allowed in a queue before it is considered full\cr
@@ -46427,9 +43117,9 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'  \link[paws.customer.engagement:connect_update_routing_profile_default_outbound_queue]{update_routing_profile_default_outbound_queue} \tab Updates the default outbound queue of a routing profile\cr
 #'  \link[paws.customer.engagement:connect_update_routing_profile_name]{update_routing_profile_name} \tab Updates the name and description of a routing profile\cr
 #'  \link[paws.customer.engagement:connect_update_routing_profile_queues]{update_routing_profile_queues} \tab Updates the properties associated with a set of queues for a routing profile\cr
-#'  \link[paws.customer.engagement:connect_update_rule]{update_rule} \tab Updates a rule for the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_update_rule]{update_rule} \tab Updates a rule for the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_update_security_profile]{update_security_profile} \tab Updates a security profile\cr
-#'  \link[paws.customer.engagement:connect_update_task_template]{update_task_template} \tab Updates details about a specific task template in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_update_task_template]{update_task_template} \tab Updates details about a specific task template in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_update_test_case]{update_test_case} \tab Updates any of the metadata for a test case, such as the name, description, and status or content of an existing test case\cr
 #'  \link[paws.customer.engagement:connect_update_traffic_distribution]{update_traffic_distribution} \tab Updates the traffic distribution for a given traffic distribution group\cr
 #'  \link[paws.customer.engagement:connect_update_user_config]{update_user_config} \tab Updates the configuration settings for the specified user, including per-channel auto-accept and after contact work (ACW) timeout settings\cr
@@ -46442,7 +43132,7 @@ paymentcryptographydataplane <- function(config = list(), credentials = list(), 
 #'  \link[paws.customer.engagement:connect_update_user_proficiencies]{update_user_proficiencies} \tab Updates the properties associated with the proficiencies of a user\cr
 #'  \link[paws.customer.engagement:connect_update_user_routing_profile]{update_user_routing_profile} \tab Assigns the specified routing profile to the specified user\cr
 #'  \link[paws.customer.engagement:connect_update_user_security_profiles]{update_user_security_profiles} \tab Assigns the specified security profiles to the specified user\cr
-#'  \link[paws.customer.engagement:connect_update_view_content]{update_view_content} \tab Updates the view content of the given view identifier in the specified Amazon Connect instance\cr
+#'  \link[paws.customer.engagement:connect_update_view_content]{update_view_content} \tab Updates the view content of the given view identifier in the specified Connect Customer instance\cr
 #'  \link[paws.customer.engagement:connect_update_view_metadata]{update_view_metadata} \tab Updates the view metadata\cr
 #'  \link[paws.customer.engagement:connect_update_workspace_metadata]{update_workspace_metadata} \tab Updates the metadata of a workspace, such as its name and description\cr
 #'  \link[paws.customer.engagement:connect_update_workspace_page]{update_workspace_page} \tab Updates the configuration of a page in a workspace, including the associated view and input data\cr
@@ -46743,19 +43433,11 @@ connectcampaignservicev2 <- function(config = list(), credentials = list(), endp
 #' Amazon Connect Cases
 #'
 #' @description
-#' -   [Cases
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html)
+#' -   [Cases actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Cases.html)
 #' 
-#' -   [Cases data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html)
+#' -   [Cases data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html)
 #' 
-#' With Amazon Connect Cases, your agents can track and manage customer
-#' issues that require multiple interactions, follow-up tasks, and teams in
-#' your contact center. A case represents a customer issue. It records the
-#' issue, the steps and interactions taken to resolve the issue, and the
-#' outcome. For more information, see [Amazon Connect
-#' Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html)
-#' in the *Amazon Connect Administrator Guide*.
+#' With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the steps and interactions taken to resolve the issue, and the outcome. For more information, see [Amazon Connect Cases](https://docs.aws.amazon.com/connect/latest/adminguide/cases.html) in the *Amazon Connect Administrator Guide*.
 #'
 #' @param
 #' config
@@ -46905,23 +43587,13 @@ connectcases <- function(config = list(), credentials = list(), endpoint = NULL,
 #' Amazon Connect Contact Lens
 #'
 #' @description
-#' -   [Contact Lens
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Contact_Lens.html)
+#' -   [Contact Lens actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Contact_Lens.html)
 #' 
-#' -   [Contact Lens data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Contact_Lens.html)
+#' -   [Contact Lens data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Contact_Lens.html)
 #' 
-#' Amazon Connect Contact Lens enables you to analyze conversations between
-#' customer and agents, by using speech transcription, natural language
-#' processing, and intelligent search capabilities. It performs sentiment
-#' analysis, detects issues, and enables you to automatically categorize
-#' contacts.
+#' Amazon Connect Contact Lens enables you to analyze conversations between customer and agents, by using speech transcription, natural language processing, and intelligent search capabilities. It performs sentiment analysis, detects issues, and enables you to automatically categorize contacts.
 #' 
-#' Amazon Connect Contact Lens provides both real-time and post-call
-#' analytics of customer-agent conversations. For more information, see
-#' [Analyze conversations using speech
-#' analytics](https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html)
-#' in the *Amazon Connect Administrator Guide*.
+#' Amazon Connect Contact Lens provides both real-time and post-call analytics of customer-agent conversations. For more information, see [Analyze conversations using speech analytics](https://docs.aws.amazon.com/connect/latest/adminguide/analyze-conversations.html) in the *Amazon Connect Administrator Guide*.
 #'
 #' @param
 #' config
@@ -47029,24 +43701,13 @@ connectcontactlens <- function(config = list(), credentials = list(), endpoint =
 #' Amazon Connect Participant Service
 #'
 #' @description
-#' -   [Participant Service
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html)
+#' -   [Participant Service actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Participant_Service.html)
 #' 
-#' -   [Participant Service data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Participant_Service.html)
+#' -   [Participant Service data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Participant_Service.html)
 #' 
-#' Amazon Connect is an easy-to-use omnichannel cloud contact center
-#' service that enables companies of any size to deliver superior customer
-#' service at a lower cost. Amazon Connect communications capabilities make
-#' it easy for companies to deliver personalized interactions across
-#' communication channels, including chat.
+#' Amazon Connect is an easy-to-use omnichannel cloud contact center service that enables companies of any size to deliver superior customer service at a lower cost. Amazon Connect communications capabilities make it easy for companies to deliver personalized interactions across communication channels, including chat.
 #' 
-#' Use the Amazon Connect Participant Service to manage participants (for
-#' example, agents, customers, and managers listening in), and to send
-#' messages and events within a chat contact. The APIs in the service
-#' enable the following: sending chat messages, attachment sharing,
-#' managing a participant's connection state and message events, and
-#' retrieving chat transcripts.
+#' Use the Amazon Connect Participant Service to manage participants (for example, agents, customers, and managers listening in), and to send messages and events within a chat contact. The APIs in the service enable the following: sending chat messages, attachment sharing, managing a participant's connection state and message events, and retrieving chat transcripts.
 #'
 #' @param
 #' config
@@ -47164,12 +43825,7 @@ connectparticipant <- function(config = list(), credentials = list(), endpoint =
 #' Amazon Connect Wisdom Service
 #'
 #' @description
-#' Amazon Connect Wisdom delivers agents the information they need to solve
-#' customer issues as they're actively speaking with customers. Agents can
-#' search across connected repositories from within their agent desktop to
-#' find answers quickly. Use Amazon Connect Wisdom to create an assistant
-#' and a knowledge base, for example, or manage content by uploading custom
-#' files.
+#' Amazon Connect Wisdom delivers agents the information they need to solve customer issues as they're actively speaking with customers. Agents can search across connected repositories from within their agent desktop to find answers quickly. Use Amazon Connect Wisdom to create an assistant and a knowledge base, for example, or manage content by uploading custom files.
 #'
 #' @param
 #' config
@@ -47317,23 +43973,15 @@ connectwisdomservice <- function(config = list(), credentials = list(), endpoint
 #' Amazon Connect Customer Profiles
 #'
 #' @description
-#' -   [Customer Profiles
-#'     actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html)
+#' Connect Customer Customer Profiles
 #' 
-#' -   [Customer Profiles data
-#'     types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html)
+#' -   [Customer Profiles actions](https://docs.aws.amazon.com/connect/latest/APIReference/API_Operations_Amazon_Connect_Customer_Profiles.html)
 #' 
-#' Amazon Connect Customer Profiles is a unified customer profile for your
-#' contact center that has pre-built connectors powered by AppFlow that
-#' make it easy to combine customer information from third party
-#' applications, such as Salesforce (CRM), ServiceNow (ITSM), and your
-#' enterprise resource planning (ERP), with contact history from your
-#' Amazon Connect contact center.
+#' -   [Customer Profiles data types](https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Customer_Profiles.html)
 #' 
-#' For more information about the Amazon Connect Customer Profiles feature,
-#' see [Use Customer
-#' Profiles](https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html)
-#' in the *Amazon Connect Administrator's Guide*.
+#' Connect Customer Customer Profiles is a unified customer profile for your contact center that has pre-built connectors powered by AppFlow that make it easy to combine customer information from third party applications, such as Salesforce (CRM), ServiceNow (ITSM), and your enterprise resource planning (ERP), with contact history from your Connect Customer contact center.
+#' 
+#' For more information about the Connect Customer Customer Profiles feature, see [Use Customer Profiles](https://docs.aws.amazon.com/connect/latest/adminguide/customer-profiles.html) in the *Connect Customer Administrator's Guide*.
 #'
 #' @param
 #' config
@@ -47424,7 +44072,7 @@ connectwisdomservice <- function(config = list(), credentials = list(), endpoint
 #'  \link[paws.customer.engagement:customerprofiles_create_calculated_attribute_definition]{create_calculated_attribute_definition} \tab Creates a new calculated attribute definition\cr
 #'  \link[paws.customer.engagement:customerprofiles_create_domain]{create_domain} \tab Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys\cr
 #'  \link[paws.customer.engagement:customerprofiles_create_domain_layout]{create_domain_layout} \tab Creates the layout to view data for a specific domain\cr
-#'  \link[paws.customer.engagement:customerprofiles_create_event_stream]{create_event_stream} \tab Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles\cr
+#'  \link[paws.customer.engagement:customerprofiles_create_event_stream]{create_event_stream} \tab Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Connect Customer Customer Profiles\cr
 #'  \link[paws.customer.engagement:customerprofiles_create_event_trigger]{create_event_trigger} \tab Creates an event trigger, which specifies the rules when to perform action based on customer's ingested data\cr
 #'  \link[paws.customer.engagement:customerprofiles_create_integration_workflow]{create_integration_workflow} \tab Creates an integration workflow\cr
 #'  \link[paws.customer.engagement:customerprofiles_create_profile]{create_profile} \tab Creates a standard profile\cr
@@ -47775,45 +44423,15 @@ pinpoint <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' Amazon Pinpoint Email Service
 #'
 #' @description
-#' Welcome to the *Amazon Pinpoint Email API Reference*. This guide
-#' provides information about the Amazon Pinpoint Email API (version 1.0),
-#' including supported operations, data types, parameters, and schemas.
+#' Welcome to the *Amazon Pinpoint Email API Reference*. This guide provides information about the Amazon Pinpoint Email API (version 1.0), including supported operations, data types, parameters, and schemas.
 #' 
-#' [Amazon Pinpoint](https://aws.amazon.com/pinpoint/) is an AWS service
-#' that you can use to engage with your customers across multiple messaging
-#' channels. You can use Amazon Pinpoint to send email, SMS text messages,
-#' voice messages, and push notifications. The Amazon Pinpoint Email API
-#' provides programmatic access to options that are unique to the email
-#' channel and supplement the options provided by the Amazon Pinpoint API.
+#' [Amazon Pinpoint](https://aws.amazon.com/pinpoint/) is an AWS service that you can use to engage with your customers across multiple messaging channels. You can use Amazon Pinpoint to send email, SMS text messages, voice messages, and push notifications. The Amazon Pinpoint Email API provides programmatic access to options that are unique to the email channel and supplement the options provided by the Amazon Pinpoint API.
 #' 
-#' If you're new to Amazon Pinpoint, you might find it helpful to also
-#' review the [Amazon Pinpoint Developer
-#' Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html).
-#' The *Amazon Pinpoint Developer Guide* provides tutorials, code samples,
-#' and procedures that demonstrate how to use Amazon Pinpoint features
-#' programmatically and how to integrate Amazon Pinpoint functionality into
-#' mobile apps and other types of applications. The guide also provides
-#' information about key topics such as Amazon Pinpoint integration with
-#' other AWS services and the limits that apply to using the service.
+#' If you're new to Amazon Pinpoint, you might find it helpful to also review the [Amazon Pinpoint Developer Guide](https://docs.aws.amazon.com/pinpoint/latest/developerguide/welcome.html). The *Amazon Pinpoint Developer Guide* provides tutorials, code samples, and procedures that demonstrate how to use Amazon Pinpoint features programmatically and how to integrate Amazon Pinpoint functionality into mobile apps and other types of applications. The guide also provides information about key topics such as Amazon Pinpoint integration with other AWS services and the limits that apply to using the service.
 #' 
-#' The Amazon Pinpoint Email API is available in several AWS Regions and it
-#' provides an endpoint for each of these Regions. For a list of all the
-#' Regions and endpoints where the API is currently available, see [AWS
-#' Service
-#' Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region)
-#' in the *Amazon Web Services General Reference*. To learn more about AWS
-#' Regions, see [Managing AWS
-#' Regions](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html)
-#' in the *Amazon Web Services General Reference*.
+#' The Amazon Pinpoint Email API is available in several AWS Regions and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is currently available, see [AWS Service Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#pinpoint_region) in the *Amazon Web Services General Reference*. To learn more about AWS Regions, see [Managing AWS Regions](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html) in the *Amazon Web Services General Reference*.
 #' 
-#' In each Region, AWS maintains multiple Availability Zones. These
-#' Availability Zones are physically isolated from each other, but are
-#' united by private, low-latency, high-throughput, and highly redundant
-#' network connections. These Availability Zones enable us to provide very
-#' high levels of availability and redundancy, while also minimizing
-#' latency. To learn more about the number of Availability Zones that are
-#' available in each Region, see [AWS Global
-#' Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/).
+#' In each Region, AWS maintains multiple Availability Zones. These Availability Zones are physically isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see [AWS Global Infrastructure](https://aws.amazon.com/about-aws/global-infrastructure/).
 #'
 #' @param
 #' config
@@ -47962,48 +44580,17 @@ pinpointemail <- function(config = list(), credentials = list(), endpoint = NULL
 #' Amazon Pinpoint SMS Voice V2
 #'
 #' @description
-#' Welcome to the *End User Messaging SMS, version 2 API Reference*. This
-#' guide provides information about End User Messaging SMS, version 2 API
-#' resources, including supported HTTP methods, parameters, and schemas.
+#' Welcome to the *End User Messaging SMS, version 2 API Reference*. This guide provides information about End User Messaging SMS, version 2 API resources, including supported HTTP methods, parameters, and schemas.
 #' 
-#' Amazon Pinpoint is an Amazon Web Services service that you can use to
-#' engage with your recipients across multiple messaging channels. The End
-#' User Messaging SMS, version 2 API provides programmatic access to
-#' options that are unique to the SMS and voice channels. End User
-#' Messaging SMS, version 2 resources such as phone numbers, sender IDs,
-#' and opt-out lists can be used by the Amazon Pinpoint API.
+#' Amazon Pinpoint is an Amazon Web Services service that you can use to engage with your recipients across multiple messaging channels. The End User Messaging SMS, version 2 API provides programmatic access to options that are unique to the SMS and voice channels. End User Messaging SMS, version 2 resources such as phone numbers, sender IDs, and opt-out lists can be used by the Amazon Pinpoint API.
 #' 
-#' If you're new to End User Messaging SMS, it's also helpful to review the
-#' [End User Messaging SMS User
-#' Guide](https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-sms-mms.html),
-#' where you'll find tutorials, code samples, and procedures that
-#' demonstrate how to use End User Messaging SMS features programmatically
-#' and how to integrate functionality into mobile apps and other types of
-#' applications. The guide also provides key information, such as End User
-#' Messaging SMS integration with other Amazon Web Services services, and
-#' the quotas that apply to use of the service.
+#' If you're new to End User Messaging SMS, it's also helpful to review the [End User Messaging SMS User Guide](https://docs.aws.amazon.com/sms-voice/latest/userguide/what-is-sms-mms.html), where you'll find tutorials, code samples, and procedures that demonstrate how to use End User Messaging SMS features programmatically and how to integrate functionality into mobile apps and other types of applications. The guide also provides key information, such as End User Messaging SMS integration with other Amazon Web Services services, and the quotas that apply to use of the service.
 #' 
 #' **Regional availability**
 #' 
-#' The *End User Messaging SMS version 2 API Reference* is available in
-#' several Amazon Web Services Regions and it provides an endpoint for each
-#' of these Regions. For a list of all the Regions and endpoints where the
-#' API is currently available, see Amazon Web Services Service Endpoints
-#' and [Amazon Pinpoint endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/pinpoint.html) in
-#' the Amazon Web Services General Reference. To learn more about Amazon
-#' Web Services Regions, see [Managing Amazon Web Services
-#' Regions](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html)
-#' in the Amazon Web Services General Reference.
+#' The *End User Messaging SMS version 2 API Reference* is available in several Amazon Web Services Regions and it provides an endpoint for each of these Regions. For a list of all the Regions and endpoints where the API is currently available, see Amazon Web Services Service Endpoints and [Amazon Pinpoint endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/pinpoint.html) in the Amazon Web Services General Reference. To learn more about Amazon Web Services Regions, see [Managing Amazon Web Services Regions](https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html) in the Amazon Web Services General Reference.
 #' 
-#' In each Region, Amazon Web Services maintains multiple Availability
-#' Zones. These Availability Zones are physically isolated from each other,
-#' but are united by private, low-latency, high-throughput, and highly
-#' redundant network connections. These Availability Zones enable us to
-#' provide very high levels of availability and redundancy, while also
-#' minimizing latency. To learn more about the number of Availability Zones
-#' that are available in each Region, see [Amazon Web Services Global
-#' Infrastructure.](https://aws.amazon.com/about-aws/global-infrastructure/)
+#' In each Region, Amazon Web Services maintains multiple Availability Zones. These Availability Zones are physically isolated from each other, but are united by private, low-latency, high-throughput, and highly redundant network connections. These Availability Zones enable us to provide very high levels of availability and redundancy, while also minimizing latency. To learn more about the number of Availability Zones that are available in each Region, see [Amazon Web Services Global Infrastructure.](https://aws.amazon.com/about-aws/global-infrastructure/)
 #'
 #' @param
 #' config
@@ -48216,32 +44803,19 @@ pinpointsmsvoicev2 <- function(config = list(), credentials = list(), endpoint =
 #' Amazon Simple Email Service
 #'
 #' @description
-#' This document contains reference information for the [Amazon Simple
-#' Email Service](https://aws.amazon.com/ses/) (Amazon SES) API, version
-#' 2010-12-01. This document is best used in conjunction with the [Amazon
-#' SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html).
+#' This document contains reference information for the [Amazon Simple Email Service](https://aws.amazon.com/ses/) (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html).
 #' 
-#' For a list of Amazon SES endpoints to use in service requests, see
-#' [Regions and Amazon
-#' SES](https://docs.aws.amazon.com/ses/latest/dg/regions.html) in the
-#' [Amazon SES Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html).
+#' For a list of Amazon SES endpoints to use in service requests, see [Regions and Amazon SES](https://docs.aws.amazon.com/ses/latest/dg/regions.html) in the [Amazon SES Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html).
 #' 
-#' This documentation contains reference information related to the
-#' following:
+#' This documentation contains reference information related to the following:
 #' 
-#' -   [Amazon SES API
-#'     Actions](https://docs.aws.amazon.com/ses/latest/APIReference/API_Operations.html)
+#' -   [Amazon SES API Actions](https://docs.aws.amazon.com/ses/latest/APIReference/API_Operations.html)
 #' 
-#' -   [Amazon SES API Data
-#'     Types](https://docs.aws.amazon.com/ses/latest/APIReference/API_Types.html)
+#' -   [Amazon SES API Data Types](https://docs.aws.amazon.com/ses/latest/APIReference/API_Types.html)
 #' 
-#' -   [Common
-#'     Parameters](https://docs.aws.amazon.com/ses/latest/APIReference/CommonParameters.html)
+#' -   [Common Parameters](https://docs.aws.amazon.com/ses/latest/APIReference/CommonParameters.html)
 #' 
-#' -   [Common
-#'     Errors](https://docs.aws.amazon.com/ses/latest/APIReference/CommonErrors.html)
+#' -   [Common Errors](https://docs.aws.amazon.com/ses/latest/APIReference/CommonErrors.html)
 #'
 #' @param
 #' config
@@ -48424,14 +44998,9 @@ ses <- function(config = list(), credentials = list(), endpoint = NULL, region =
 #' @description
 #' Amazon SES API v2
 #' 
-#' [Amazon SES](https://aws.amazon.com/ses/) is an Amazon Web Services
-#' service that you can use to send email messages to your customers.
+#' [Amazon SES](https://aws.amazon.com/ses/) is an Amazon Web Services service that you can use to send email messages to your customers.
 #' 
-#' If you're new to Amazon SES API v2, you might find it helpful to review
-#' the [Amazon Simple Email Service Developer
-#' Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html). The
-#' *Amazon SES Developer Guide* provides information and code samples that
-#' demonstrate how to use Amazon SES API v2 features programmatically.
+#' If you're new to Amazon SES API v2, you might find it helpful to review the [Amazon Simple Email Service Developer Guide](https://docs.aws.amazon.com/ses/latest/dg/Welcome.html). The *Amazon SES Developer Guide* provides information and code samples that demonstrate how to use Amazon SES API v2 features programmatically.
 #'
 #' @param
 #' config
@@ -48765,30 +45334,15 @@ pinpointsmsvoice <- function(config = list(), credentials = list(), endpoint = N
 #' @description
 #' Amazon WorkSpaces Applications
 #' 
-#' This is the *Amazon WorkSpaces Applications API Reference*. This
-#' documentation provides descriptions and syntax for each of the actions
-#' and data types in WorkSpaces Applications. WorkSpaces Applications is a
-#' fully managed, secure application streaming service that lets you stream
-#' desktop applications to users without rewriting applications. WorkSpaces
-#' Applications manages the AWS resources that are required to host and run
-#' your applications, scales automatically, and provides access to your
-#' users on demand.
+#' This is the *Amazon WorkSpaces Applications API Reference*. This documentation provides descriptions and syntax for each of the actions and data types in WorkSpaces Applications. WorkSpaces Applications is a fully managed, secure application streaming service that lets you stream desktop applications to users without rewriting applications. WorkSpaces Applications manages the AWS resources that are required to host and run your applications, scales automatically, and provides access to your users on demand.
 #' 
-#' You can call the WorkSpaces Applications API operations by using an
-#' interface VPC endpoint (interface endpoint). For more information, see
-#' [Access WorkSpaces Applications API Operations and CLI Commands Through
-#' an Interface VPC
-#' Endpoint](https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html)
-#' in the *Amazon WorkSpaces Applications Administration Guide*.
+#' You can call the WorkSpaces Applications API operations by using an interface VPC endpoint (interface endpoint). For more information, see [Access WorkSpaces Applications API Operations and CLI Commands Through an Interface VPC Endpoint](https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html) in the *Amazon WorkSpaces Applications Administration Guide*.
 #' 
-#' To learn more about WorkSpaces Applications, see the following
-#' resources:
+#' To learn more about WorkSpaces Applications, see the following resources:
 #' 
-#' -   [Amazon WorkSpaces Applications product
-#'     page](https://aws.amazon.com/workspaces/applications/)
+#' -   [Amazon WorkSpaces Applications product page](https://aws.amazon.com/workspaces/applications/)
 #' 
-#' -   [Amazon WorkSpaces Applications
-#'     documentation](https://docs.aws.amazon.com/appstream2/)
+#' -   [Amazon WorkSpaces Applications documentation](https://docs.aws.amazon.com/appstream2/)
 #'
 #' @param
 #' config
@@ -48984,9 +45538,7 @@ appstream <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' AWS Chatbot
 #'
 #' @description
-#' The *AWS Chatbot API Reference* provides descriptions, API request
-#' parameters, and the XML response for each of the AWS Chatbot API
-#' actions.
+#' The *AWS Chatbot API Reference* provides descriptions, API request parameters, and the XML response for each of the AWS Chatbot API actions.
 #' 
 #' AWS Chatbot APIs are currently available in the following Regions:
 #' 
@@ -48998,12 +45550,9 @@ appstream <- function(config = list(), credentials = list(), endpoint = NULL, re
 #' 
 #' -   Europe (Ireland) - `eu-west-1`
 #' 
-#' The AWS Chatbot console can only be used in US East (Ohio). Your
-#' configuration data however, is stored in each of the relevant available
-#' Regions.
+#' The AWS Chatbot console can only be used in US East (Ohio). Your configuration data however, is stored in each of the relevant available Regions.
 #' 
-#' Your AWS CloudTrail events are logged in whatever Region you call from,
-#' not US East (N. Virginia) by default.
+#' Your AWS CloudTrail events are logged in whatever Region you call from, not US East (N. Virginia) by default.
 #'
 #' @param
 #' config
@@ -49146,117 +45695,61 @@ chatbot <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' @description
 #' **Introduction**
 #' 
-#' The Amazon IVS Chat control-plane API enables you to create and manage
-#' Amazon IVS Chat resources. You also need to integrate with the [Amazon
-#' IVS Chat Messaging
-#' API](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/), to
-#' enable users to interact with chat rooms in real time.
+#' The Amazon IVS Chat control-plane API enables you to create and manage Amazon IVS Chat resources. You also need to integrate with the [Amazon IVS Chat Messaging API](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/), to enable users to interact with chat rooms in real time.
 #' 
-#' The API is an AWS regional service. For a list of supported regions and
-#' Amazon IVS Chat HTTPS service endpoints, see the Amazon IVS Chat
-#' information on the [Amazon IVS
-#' page](https://docs.aws.amazon.com/general/latest/gr/ivs.html) in the
-#' *AWS General Reference*.
+#' The API is an AWS regional service. For a list of supported regions and Amazon IVS Chat HTTPS service endpoints, see the Amazon IVS Chat information on the [Amazon IVS page](https://docs.aws.amazon.com/general/latest/gr/ivs.html) in the *AWS General Reference*.
 #' 
-#' This document describes HTTP operations. There is a separate *messaging*
-#' API for managing Chat resources; see the [Amazon IVS Chat Messaging API
-#' Reference](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/).
+#' This document describes HTTP operations. There is a separate *messaging* API for managing Chat resources; see the [Amazon IVS Chat Messaging API Reference](https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/).
 #' 
 #' **Notes on terminology:**
 #' 
-#' -   You create service applications using the Amazon IVS Chat API. We
-#'     refer to these as *applications*.
+#' -   You create service applications using the Amazon IVS Chat API. We refer to these as *applications*.
 #' 
-#' -   You create front-end client applications (browser and Android/iOS
-#'     apps) using the Amazon IVS Chat Messaging API. We refer to these as
-#'     *clients*.
+#' -   You create front-end client applications (browser and Android/iOS apps) using the Amazon IVS Chat Messaging API. We refer to these as *clients*.
 #' 
 #' **Resources**
 #' 
 #' The following resources are part of Amazon IVS Chat:
 #' 
-#' -   **LoggingConfiguration** — A configuration that allows customers to
-#'     store and record sent messages in a chat room. See the Logging
-#'     Configuration endpoints for more information.
+#' -   **LoggingConfiguration** — A configuration that allows customers to store and record sent messages in a chat room. See the Logging Configuration endpoints for more information.
 #' 
-#' -   **Room** — The central Amazon IVS Chat resource through which
-#'     clients connect to and exchange chat messages. See the Room
-#'     endpoints for more information.
+#' -   **Room** — The central Amazon IVS Chat resource through which clients connect to and exchange chat messages. See the Room endpoints for more information.
 #' 
 #' **Tagging**
 #' 
-#' A *tag* is a metadata label that you assign to an AWS resource. A tag
-#' comprises a *key* and a *value*, both set by you. For example, you might
-#' set a tag as `topic:nature` to label a particular video category. See
-#' [Best practices and
-#' strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html)
-#' in *Tagging Amazon Web Services Resources and Tag Editor* for details,
-#' including restrictions that apply to tags and "Tag naming limits and
-#' requirements"; Amazon IVS Chat has no service-specific constraints
-#' beyond what is documented there.
+#' A *tag* is a metadata label that you assign to an AWS resource. A tag comprises a *key* and a *value*, both set by you. For example, you might set a tag as `topic:nature` to label a particular video category. See [Best practices and strategies](https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html) in *Tagging Amazon Web Services Resources and Tag Editor* for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no service-specific constraints beyond what is documented there.
 #' 
-#' Tags can help you identify and organize your AWS resources. For example,
-#' you can use the same tag for different resources to indicate that they
-#' are related. You can also use tags to manage access (see [Access
-#' Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
+#' Tags can help you identify and organize your AWS resources. For example, you can use the same tag for different resources to indicate that they are related. You can also use tags to manage access (see [Access Tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html)).
 #' 
-#' The Amazon IVS Chat API has these tag-related operations:
-#' `tag_resource`,
-#' `untag_resource`, and
-#' `list_tags_for_resource`. The
-#' following resource supports tagging: Room.
+#' The Amazon IVS Chat API has these tag-related operations: `tag_resource`, `untag_resource`, and `list_tags_for_resource`. The following resource supports tagging: Room.
 #' 
 #' At most 50 tags can be applied to a resource.
 #' 
 #' **API Access Security**
 #' 
-#' Your Amazon IVS Chat applications (service applications and clients)
-#' must be authenticated and authorized to access Amazon IVS Chat
-#' resources. Note the differences between these concepts:
+#' Your Amazon IVS Chat applications (service applications and clients) must be authenticated and authorized to access Amazon IVS Chat resources. Note the differences between these concepts:
 #' 
-#' -   *Authentication* is about verifying identity. Requests to the Amazon
-#'     IVS Chat API must be signed to verify your identity.
+#' -   *Authentication* is about verifying identity. Requests to the Amazon IVS Chat API must be signed to verify your identity.
 #' 
-#' -   *Authorization* is about granting permissions. Your IAM roles need
-#'     to have permissions for Amazon IVS Chat API requests.
+#' -   *Authorization* is about granting permissions. Your IAM roles need to have permissions for Amazon IVS Chat API requests.
 #' 
-#' Users (viewers) connect to a room using secure access tokens that you
-#' create using the `create_chat_token`
-#' operation through the AWS SDK. You call CreateChatToken for every user’s
-#' chat session, passing identity and authorization information about the
-#' user.
+#' Users (viewers) connect to a room using secure access tokens that you create using the `create_chat_token` operation through the AWS SDK. You call CreateChatToken for every user’s chat session, passing identity and authorization information about the user.
 #' 
 #' **Signing API Requests**
 #' 
-#' HTTP API requests must be signed with an AWS SigV4 signature using your
-#' AWS security credentials. The AWS Command Line Interface (CLI) and the
-#' AWS SDKs take care of signing the underlying API calls for you. However,
-#' if your application calls the Amazon IVS Chat HTTP API directly, it’s
-#' your responsibility to sign the requests.
+#' HTTP API requests must be signed with an AWS SigV4 signature using your AWS security credentials. The AWS Command Line Interface (CLI) and the AWS SDKs take care of signing the underlying API calls for you. However, if your application calls the Amazon IVS Chat HTTP API directly, it’s your responsibility to sign the requests.
 #' 
-#' You generate a signature using valid AWS credentials for an IAM role
-#' that has permission to perform the requested action. For example,
-#' DeleteMessage requests must be made using an IAM role that has the
-#' `ivschat:DeleteMessage` permission.
+#' You generate a signature using valid AWS credentials for an IAM role that has permission to perform the requested action. For example, DeleteMessage requests must be made using an IAM role that has the `ivschat:DeleteMessage` permission.
 #' 
 #' For more information:
 #' 
-#' -   Authentication and generating signatures — See [Authenticating
-#'     Requests (Amazon Web Services Signature Version
-#'     4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
-#'     in the *Amazon Web Services General Reference*.
+#' -   Authentication and generating signatures — See [Authenticating Requests (Amazon Web Services Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) in the *Amazon Web Services General Reference*.
 #' 
-#' -   Managing Amazon IVS permissions — See [Identity and Access
-#'     Management](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/security-iam.html)
-#'     on the Security page of the *Amazon IVS User Guide*.
+#' -   Managing Amazon IVS permissions — See [Identity and Access Management](https://docs.aws.amazon.com/ivs/latest/LowLatencyUserGuide/security-iam.html) on the Security page of the *Amazon IVS User Guide*.
 #' 
 #' **Amazon Resource Names (ARNs)**
 #' 
-#' ARNs uniquely identify AWS resources. An ARN is required when you need
-#' to specify a resource unambiguously across all of AWS, such as in IAM
-#' policies and API calls. For more information, see [Amazon Resource
-#' Names](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html)
-#' in the *AWS General Reference*.
+#' ARNs uniquely identify AWS resources. An ARN is required when you need to specify a resource unambiguously across all of AWS, such as in IAM policies and API calls. For more information, see [Amazon Resource Names](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html) in the *AWS General Reference*.
 #'
 #' @param
 #' config
@@ -49382,40 +45875,15 @@ ivschat <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' @description
 #' The Amazon WorkDocs API is designed for the following use cases:
 #' 
-#' -   File Migration: File migration applications are supported for users
-#'     who want to migrate their files from an on-premises or off-premises
-#'     file system or service. Users can insert files into a user directory
-#'     structure, as well as allow for basic metadata changes, such as
-#'     modifications to the permissions of files.
+#' -   File Migration: File migration applications are supported for users who want to migrate their files from an on-premises or off-premises file system or service. Users can insert files into a user directory structure, as well as allow for basic metadata changes, such as modifications to the permissions of files.
 #' 
-#' -   Security: Support security applications are supported for users who
-#'     have additional security needs, such as antivirus or data loss
-#'     prevention. The API actions, along with CloudTrail, allow these
-#'     applications to detect when changes occur in Amazon WorkDocs. Then,
-#'     the application can take the necessary actions and replace the
-#'     target file. If the target file violates the policy, the application
-#'     can also choose to email the user.
+#' -   Security: Support security applications are supported for users who have additional security needs, such as antivirus or data loss prevention. The API actions, along with CloudTrail, allow these applications to detect when changes occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the target file violates the policy, the application can also choose to email the user.
 #' 
-#' -   eDiscovery/Analytics: General administrative applications are
-#'     supported, such as eDiscovery and analytics. These applications can
-#'     choose to mimic or record the actions in an Amazon WorkDocs site,
-#'     along with CloudTrail, to replicate data for eDiscovery, backup, or
-#'     analytical applications.
+#' -   eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with CloudTrail, to replicate data for eDiscovery, backup, or analytical applications.
 #' 
-#' All Amazon WorkDocs API actions are Amazon authenticated and
-#' certificate-signed. They not only require the use of the Amazon Web
-#' Services SDK, but also allow for the exclusive use of IAM users and
-#' roles to help facilitate access, trust, and permission policies. By
-#' creating a role and allowing an IAM user to access the Amazon WorkDocs
-#' site, the IAM user gains full administrative visibility into the entire
-#' Amazon WorkDocs site (or as set in the IAM policy). This includes, but
-#' is not limited to, the ability to modify file permissions and upload any
-#' file to any user. This allows developers to perform the three use cases
-#' above, as well as give users the ability to grant access on a selective
-#' basis using the IAM model.
+#' All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the Amazon Web Services SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to perform the three use cases above, as well as give users the ability to grant access on a selective basis using the IAM model.
 #' 
-#' The pricing for Amazon WorkDocs APIs varies depending on the API call
-#' type for these actions:
+#' The pricing for Amazon WorkDocs APIs varies depending on the API call type for these actions:
 #' 
 #' -   `READ (Get*)`
 #' 
@@ -49425,8 +45893,7 @@ ivschat <- function(config = list(), credentials = list(), endpoint = NULL, regi
 #' 
 #' -   `DELETE*, CANCEL`
 #' 
-#' For information about Amazon WorkDocs API pricing, see [Amazon WorkDocs
-#' Pricing](https://aws.amazon.com/).
+#' For information about Amazon WorkDocs API pricing, see [Amazon WorkDocs Pricing](https://aws.amazon.com/).
 #'
 #' @param
 #' config
@@ -49577,13 +46044,7 @@ workdocs <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' Amazon WorkMail
 #'
 #' @description
-#' WorkMail is a secure, managed business email and calendaring service
-#' with support for existing desktop and mobile email clients. You can
-#' access your email, contacts, and calendars using Microsoft Outlook, your
-#' browser, or other native iOS and Android email applications. You can
-#' integrate WorkMail with your existing corporate directory and control
-#' both the keys that encrypt your data and the location in which your data
-#' is stored.
+#' WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or other native iOS and Android email applications. You can integrate WorkMail with your existing corporate directory and control both the keys that encrypt your data and the location in which your data is stored.
 #' 
 #' The WorkMail API is designed for the following scenarios:
 #' 
@@ -49598,17 +46059,7 @@ workdocs <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' 
 #' -   Managing resources
 #' 
-#' All WorkMail API operations are Amazon-authenticated and
-#' certificate-signed. They not only require the use of the AWS SDK, but
-#' also allow for the exclusive use of AWS Identity and Access Management
-#' users and roles to help facilitate access, trust, and permission
-#' policies. By creating a role and allowing an IAM user to access the
-#' WorkMail site, the IAM user gains full administrative visibility into
-#' the entire WorkMail organization (or as set in the IAM policy). This
-#' includes, but is not limited to, the ability to create, update, and
-#' delete users, groups, and resources. This allows developers to perform
-#' the scenarios listed above, as well as give users the ability to grant
-#' access on a selective basis using the IAM model.
+#' All WorkMail API operations are Amazon-authenticated and certificate-signed. They not only require the use of the AWS SDK, but also allow for the exclusive use of AWS Identity and Access Management users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the WorkMail site, the IAM user gains full administrative visibility into the entire WorkMail organization (or as set in the IAM policy). This includes, but is not limited to, the ability to create, update, and delete users, groups, and resources. This allows developers to perform the scenarios listed above, as well as give users the ability to grant access on a selective basis using the IAM model.
 #'
 #' @param
 #' config
@@ -49807,8 +46258,7 @@ workmail <- function(config = list(), credentials = list(), endpoint = NULL, reg
 #' Amazon WorkMail Message Flow
 #'
 #' @description
-#' The WorkMail Message Flow API provides access to email messages as they
-#' are being sent and received by a WorkMail organization.
+#' The WorkMail Message Flow API provides access to email messages as they are being sent and received by a WorkMail organization.
 #'
 #' @param
 #' config
@@ -49919,32 +46369,11 @@ workmailmessageflow <- function(config = list(), credentials = list(), endpoint 
 #' @description
 #' Amazon WorkSpaces Service
 #' 
-#' Amazon WorkSpaces enables you to provision virtual, cloud-based
-#' Microsoft Windows or Amazon Linux desktops for your users, known as
-#' *WorkSpaces*. WorkSpaces eliminates the need to procure and deploy
-#' hardware or install complex software. You can quickly add or remove
-#' users as your needs change. Users can access their virtual desktops from
-#' multiple devices or web browsers.
+#' Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows or Amazon Linux desktops for your users, known as *WorkSpaces*. WorkSpaces eliminates the need to procure and deploy hardware or install complex software. You can quickly add or remove users as your needs change. Users can access their virtual desktops from multiple devices or web browsers.
 #' 
-#' This API Reference provides detailed information about the actions, data
-#' types, parameters, and errors of the WorkSpaces service. For more
-#' information about the supported Amazon Web Services Regions, endpoints,
-#' and service quotas of the Amazon WorkSpaces service, see [WorkSpaces
-#' endpoints and
-#' quotas](https://docs.aws.amazon.com/general/latest/gr/wsp.html) in the
-#' *Amazon Web Services General Reference*.
+#' This API Reference provides detailed information about the actions, data types, parameters, and errors of the WorkSpaces service. For more information about the supported Amazon Web Services Regions, endpoints, and service quotas of the Amazon WorkSpaces service, see [WorkSpaces endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/wsp.html) in the *Amazon Web Services General Reference*.
 #' 
-#' You can also manage your WorkSpaces resources using the WorkSpaces
-#' console, Command Line Interface (CLI), and SDKs. For more information
-#' about administering WorkSpaces, see the [Amazon WorkSpaces
-#' Administration
-#' Guide](https://docs.aws.amazon.com/workspaces/latest/adminguide/). For
-#' more information about using the Amazon WorkSpaces client application or
-#' web browser to access provisioned WorkSpaces, see the [Amazon WorkSpaces
-#' User Guide](https://docs.aws.amazon.com/workspaces/latest/userguide/).
-#' For more information about using the CLI to manage your WorkSpaces
-#' resources, see the [WorkSpaces section of the CLI
-#' Reference](https://docs.aws.amazon.com/cli/latest/reference/workspaces/).
+#' You can also manage your WorkSpaces resources using the WorkSpaces console, Command Line Interface (CLI), and SDKs. For more information about administering WorkSpaces, see the [Amazon WorkSpaces Administration Guide](https://docs.aws.amazon.com/workspaces/latest/adminguide/). For more information about using the Amazon WorkSpaces client application or web browser to access provisioned WorkSpaces, see the [Amazon WorkSpaces User Guide](https://docs.aws.amazon.com/workspaces/latest/userguide/). For more information about using the CLI to manage your WorkSpaces resources, see the [WorkSpaces section of the CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/workspaces/).
 #'
 #' @param
 #' config
@@ -50142,14 +46571,7 @@ workspaces <- function(config = list(), credentials = list(), endpoint = NULL, r
 #' Amazon WorkSpaces Web
 #'
 #' @description
-#' Amazon WorkSpaces Secure Browser is a low cost, fully managed WorkSpace
-#' built specifically to facilitate secure, web-based workloads. WorkSpaces
-#' Secure Browser makes it easy for customers to safely provide their
-#' employees with access to internal websites and SaaS web applications
-#' without the administrative burden of appliances or specialized client
-#' software. WorkSpaces Secure Browser provides simple policy tools
-#' tailored for user interactions, while offloading common tasks like
-#' capacity management, scaling, and maintaining browser images.
+#' Amazon WorkSpaces Secure Browser is a low cost, fully managed WorkSpace built specifically to facilitate secure, web-based workloads. WorkSpaces Secure Browser makes it easy for customers to safely provide their employees with access to internal websites and SaaS web applications without the administrative burden of appliances or specialized client software. WorkSpaces Secure Browser provides simple policy tools tailored for user interactions, while offloading common tasks like capacity management, scaling, and maintaining browser images.
 #'
 #' @param
 #' config

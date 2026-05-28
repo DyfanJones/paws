@@ -16,8 +16,7 @@ route53_list_cidr_blocks(
 
 \item{LocationName}{The name of the CIDR collection location.}
 
-\item{NextToken}{An opaque pagination token to indicate where the service is to begin
-enumerating results.}
+\item{NextToken}{An opaque pagination token to indicate where the service is to begin enumerating results.}
 
 \item{MaxResults}{Maximum number of results you want returned.}
 }

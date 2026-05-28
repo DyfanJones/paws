@@ -15,30 +15,19 @@ ec2_create_capacity_manager_data_export(
 )
 }
 \arguments{
-\item{S3BucketName}{[required] The name of the S3 bucket where the capacity data export files will be
-delivered. The bucket must exist and you must have write permissions to
-it.}
+\item{S3BucketName}{[required] The name of the S3 bucket where the capacity data export files will be delivered. The bucket must exist and you must have write permissions to it.}
 
-\item{S3BucketPrefix}{The S3 key prefix for the exported data files. This allows you to
-organize exports in a specific folder structure within your bucket. If
-not specified, files are placed at the bucket root.}
+\item{S3BucketPrefix}{The S3 key prefix for the exported data files. This allows you to organize exports in a specific folder structure within your bucket. If not specified, files are placed at the bucket root.}
 
 \item{Schedule}{[required] The frequency at which data exports are generated.}
 
-\item{OutputFormat}{[required] The file format for the exported data. Parquet format is recommended for
-large datasets and better compression.}
+\item{OutputFormat}{[required] The file format for the exported data. Parquet format is recommended for large datasets and better compression.}
 
-\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. For more information, see Ensure
-Idempotency.}
+\item{ClientToken}{Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see Ensure Idempotency.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
-\item{TagSpecifications}{The tags to apply to the data export configuration. You can tag the
-export for organization and cost tracking purposes.}
+\item{TagSpecifications}{The tags to apply to the data export configuration. You can tag the export for organization and cost tracking purposes.}
 }
 \description{
 Creates a new data export configuration for EC2 Capacity Manager. This allows you to automatically export capacity usage data to an S3 bucket on a scheduled basis. The exported data includes metrics for On-Demand, Spot, and Capacity Reservations usage across your organization.

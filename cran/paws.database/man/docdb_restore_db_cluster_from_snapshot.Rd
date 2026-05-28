@@ -24,11 +24,9 @@ docdb_restore_db_cluster_from_snapshot(
 )
 }
 \arguments{
-\item{AvailabilityZones}{Provides the list of Amazon EC2 Availability Zones that instances in the
-restored DB cluster can be created in.}
+\item{AvailabilityZones}{Provides the list of Amazon EC2 Availability Zones that instances in the restored DB cluster can be created in.}
 
-\item{DBClusterIdentifier}{[required] The name of the cluster to create from the snapshot or cluster snapshot.
-This parameter isn't case sensitive.
+\item{DBClusterIdentifier}{[required] The name of the cluster to create from the snapshot or cluster snapshot. This parameter isn't case sensitive.
 
 Constraints:
 \itemize{
@@ -41,9 +39,7 @@ Example: \code{my-snapshot-id}}
 
 \item{SnapshotIdentifier}{[required] The identifier for the snapshot or cluster snapshot to restore from.
 
-You can use either the name or the Amazon Resource Name (ARN) to specify
-a cluster snapshot. However, you can use only the ARN to specify a
-snapshot.
+You can use either the name or the Amazon Resource Name (ARN) to specify a cluster snapshot. However, you can use only the ARN to specify a snapshot.
 
 Constraints:
 \itemize{
@@ -66,62 +62,39 @@ Default: The same port as the original cluster.}
 
 \item{DBSubnetGroupName}{The name of the subnet group to use for the new cluster.
 
-Constraints: If provided, must match the name of an existing
-\code{DBSubnetGroup}.
+Constraints: If provided, must match the name of an existing \code{DBSubnetGroup}.
 
 Example: \code{mySubnetgroup}}
 
-\item{VpcSecurityGroupIds}{A list of virtual private cloud (VPC) security groups that the new
-cluster will belong to.}
+\item{VpcSecurityGroupIds}{A list of virtual private cloud (VPC) security groups that the new cluster will belong to.}
 
 \item{Tags}{The tags to be assigned to the restored cluster.}
 
-\item{KmsKeyId}{The KMS key identifier to use when restoring an encrypted cluster from a
-DB snapshot or cluster snapshot.
+\item{KmsKeyId}{The KMS key identifier to use when restoring an encrypted cluster from a DB snapshot or cluster snapshot.
 
-The KMS key identifier is the Amazon Resource Name (ARN) for the KMS
-encryption key. If you are restoring a cluster with the same Amazon Web
-Services account that owns the KMS encryption key used to encrypt the
-new cluster, then you can use the KMS key alias instead of the ARN for
-the KMS encryption key.
+The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are restoring a cluster with the same Amazon Web Services account that owns the KMS encryption key used to encrypt the new cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
 
-If you do not specify a value for the \code{KmsKeyId} parameter, then the
-following occurs:
+If you do not specify a value for the \code{KmsKeyId} parameter, then the following occurs:
 \itemize{
-\item If the snapshot or cluster snapshot in \code{SnapshotIdentifier} is
-encrypted, then the restored cluster is encrypted using the KMS key
-that was used to encrypt the snapshot or the cluster snapshot.
-\item If the snapshot or the cluster snapshot in \code{SnapshotIdentifier} is
-not encrypted, then the restored DB cluster is not encrypted.
+\item If the snapshot or cluster snapshot in \code{SnapshotIdentifier} is encrypted, then the restored cluster is encrypted using the KMS key that was used to encrypt the snapshot or the cluster snapshot.
+\item If the snapshot or the cluster snapshot in \code{SnapshotIdentifier} is not encrypted, then the restored DB cluster is not encrypted.
 }}
 
-\item{EnableCloudwatchLogsExports}{A list of log types that must be enabled for exporting to Amazon
-CloudWatch Logs.}
+\item{EnableCloudwatchLogsExports}{A list of log types that must be enabled for exporting to Amazon CloudWatch Logs.}
 
-\item{DeletionProtection}{Specifies whether this cluster can be deleted. If \code{DeletionProtection}
-is enabled, the cluster cannot be deleted unless it is modified and
-\code{DeletionProtection} is disabled. \code{DeletionProtection} protects clusters
-from being accidentally deleted.}
+\item{DeletionProtection}{Specifies whether this cluster can be deleted. If \code{DeletionProtection} is enabled, the cluster cannot be deleted unless it is modified and \code{DeletionProtection} is disabled. \code{DeletionProtection} protects clusters from being accidentally deleted.}
 
-\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with this DB
-cluster.
+\item{DBClusterParameterGroupName}{The name of the DB cluster parameter group to associate with this DB cluster.
 
 \emph{Type:} String.       \emph{Required:} No.
 
-If this argument is omitted, the default DB cluster parameter group is
-used. If supplied, must match the name of an existing default DB cluster
-parameter group. The string must consist of from 1 to 255 letters,
-numbers or hyphens. Its first character must be a letter, and it cannot
-end with a hyphen or contain two consecutive hyphens.}
+If this argument is omitted, the default DB cluster parameter group is used. If supplied, must match the name of an existing default DB cluster parameter group. The string must consist of from 1 to 255 letters, numbers or hyphens. Its first character must be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.}
 
-\item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of an Amazon DocumentDB Serverless
-cluster.}
+\item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of an Amazon DocumentDB Serverless cluster.}
 
 \item{StorageType}{The storage type to associate with the DB cluster.
 
-For information on storage types for Amazon DocumentDB clusters, see
-Cluster storage configurations in the \emph{Amazon DocumentDB Developer
-Guide}.
+For information on storage types for Amazon DocumentDB clusters, see Cluster storage configurations in the \emph{Amazon DocumentDB Developer Guide}.
 
 Valid values for storage type - \code{standard | iopt1}
 
@@ -129,12 +102,9 @@ Default value is \code{standard }}
 
 \item{NetworkType}{The network type of the cluster.
 
-The network type is determined by the \code{DBSubnetGroup} specified for the
-cluster. A \code{DBSubnetGroup} can support only the IPv4 protocol or the
-IPv4 and the IPv6 protocols (\code{DUAL}).
+The network type is determined by the \code{DBSubnetGroup} specified for the cluster. A \code{DBSubnetGroup} can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (\code{DUAL}).
 
-For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/developerguide/vpc-clusters.html}{DocumentDB clusters in a VPC}
-in the Amazon DocumentDB Developer Guide.
+For more information, see \href{https://docs.aws.amazon.com/documentdb/latest/devguide/vpc-clusters.html}{DocumentDB clusters in a VPC} in the Amazon DocumentDB Developer Guide.
 
 Valid Values: \code{IPV4} | \code{DUAL}}
 }

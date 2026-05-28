@@ -27,6 +27,8 @@ The following is the format of the ARN:
 \item{startTime}{[required] The timestamp of the first projected metrics data point to return.}
 
 \item{endTime}{[required] The timestamp of the last projected metrics data point to return.}
+
+\item{recommendationPreferences}{Describes the recommendation preferences to return in the response of a \code{\link[=computeoptimizer_get_auto_scaling_group_recommendations]{get_auto_scaling_group_recommendations}}, \code{\link[=computeoptimizer_get_ec2_instance_recommendations]{get_ec2_instance_recommendations}}, \code{\link[=computeoptimizer_get_ec2_recommendation_projected_metrics]{get_ec2_recommendation_projected_metrics}}, \code{\link[=computeoptimizer_get_rds_database_recommendations]{get_rds_database_recommendations}}, and \code{\link[=computeoptimizer_get_rds_database_recommendation_projected_metrics]{get_rds_database_recommendation_projected_metrics}} request.}
 }
 \description{
 Returns the projected metrics of Aurora and RDS database recommendations.

@@ -23,40 +23,29 @@ sagemaker_list_monitoring_schedules(
 \arguments{
 \item{EndpointName}{Name of a specific endpoint to fetch schedules for.}
 
-\item{SortBy}{Whether to sort the results by the \code{Status}, \code{CreationTime}, or
-\code{ScheduledTime} field. The default is \code{CreationTime}.}
+\item{SortBy}{Whether to sort the results by the \code{Status}, \code{CreationTime}, or \code{ScheduledTime} field. The default is \code{CreationTime}.}
 
-\item{SortOrder}{Whether to sort the results in \code{Ascending} or \code{Descending} order. The
-default is \code{Descending}.}
+\item{SortOrder}{Whether to sort the results in \code{Ascending} or \code{Descending} order. The default is \code{Descending}.}
 
-\item{NextToken}{The token returned if the response is truncated. To retrieve the next
-set of job executions, use it in the next request.}
+\item{NextToken}{The token returned if the response is truncated. To retrieve the next set of job executions, use it in the next request.}
 
-\item{MaxResults}{The maximum number of jobs to return in the response. The default value
-is 10.}
+\item{MaxResults}{The maximum number of jobs to return in the response. The default value is 10.}
 
 \item{NameContains}{Filter for monitoring schedules whose name contains a specified string.}
 
-\item{CreationTimeBefore}{A filter that returns only monitoring schedules created before a
-specified time.}
+\item{CreationTimeBefore}{A filter that returns only monitoring schedules created before a specified time.}
 
-\item{CreationTimeAfter}{A filter that returns only monitoring schedules created after a
-specified time.}
+\item{CreationTimeAfter}{A filter that returns only monitoring schedules created after a specified time.}
 
-\item{LastModifiedTimeBefore}{A filter that returns only monitoring schedules modified before a
-specified time.}
+\item{LastModifiedTimeBefore}{A filter that returns only monitoring schedules modified before a specified time.}
 
-\item{LastModifiedTimeAfter}{A filter that returns only monitoring schedules modified after a
-specified time.}
+\item{LastModifiedTimeAfter}{A filter that returns only monitoring schedules modified after a specified time.}
 
-\item{StatusEquals}{A filter that returns only monitoring schedules modified before a
-specified time.}
+\item{StatusEquals}{A filter that returns only monitoring schedules modified before a specified time.}
 
-\item{MonitoringJobDefinitionName}{Gets a list of the monitoring schedules for the specified monitoring job
-definition.}
+\item{MonitoringJobDefinitionName}{Gets a list of the monitoring schedules for the specified monitoring job definition.}
 
-\item{MonitoringTypeEquals}{A filter that returns only the monitoring schedules for the specified
-monitoring type.}
+\item{MonitoringTypeEquals}{A filter that returns only the monitoring schedules for the specified monitoring type.}
 }
 \description{
 Returns list of all monitoring schedules.

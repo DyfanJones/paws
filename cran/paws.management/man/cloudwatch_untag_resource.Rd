@@ -9,20 +9,15 @@ cloudwatch_untag_resource(ResourceARN, TagKeys)
 \arguments{
 \item{ResourceARN}{[required] The ARN of the CloudWatch resource that you're removing tags from.
 
-The ARN format of an alarm is
-\code{arn:aws:cloudwatch:Region:account-id:alarm:alarm-name }
+The ARN format of an alarm is \code{arn:aws:cloudwatch:Region:account-id:alarm:alarm-name }
 
-The ARN format of a Contributor Insights rule is
-\code{arn:aws:cloudwatch:Region:account-id:insight-rule/insight-rule-name }
+The ARN format of a Contributor Insights rule is \code{arn:aws:cloudwatch:Region:account-id:insight-rule/insight-rule-name }
 
-The ARN format of a dashboard is
-\code{arn:aws:cloudwatch::account-id:dashboard/dashboard-name }
+The ARN format of a dashboard is \code{arn:aws:cloudwatch::account-id:dashboard/dashboard-name }
 
-The ARN format of a metric stream is
-\code{arn:aws:cloudwatch:Region:account-id:metric-stream/metric-stream-name }
+The ARN format of a metric stream is \code{arn:aws:cloudwatch:Region:account-id:metric-stream/metric-stream-name }
 
-For more information about ARN format, see \href{https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies}{Resource Types Defined by Amazon CloudWatch}
-in the \emph{Amazon Web Services General Reference}.}
+For more information about ARN format, see \href{https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazoncloudwatch.html#amazoncloudwatch-resources-for-iam-policies}{Resource Types Defined by Amazon CloudWatch} in the \emph{Amazon Web Services General Reference}.}
 
 \item{TagKeys}{[required] The list of tag keys to remove from the resource.}
 }

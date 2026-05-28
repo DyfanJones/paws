@@ -11,13 +11,9 @@ quicksight_delete_default_q_business_application(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Quick Sight account that you want to disconnect from a
-Amazon Q Business application.}
+\item{AwsAccountId}{[required] The ID of the Quick Sight account that you want to disconnect from a Amazon Q Business application.}
 
-\item{Namespace}{The Quick Sight namespace that you want to delete a linked Amazon Q
-Business application from. If this field is left blank, the Amazon Q
-Business application is deleted from the default namespace. Currently,
-the default namespace is the only valid value for this parameter.}
+\item{Namespace}{The Quick Sight namespace that you want to delete a linked Amazon Q Business application from. If this field is left blank, the Amazon Q Business application is deleted from the default namespace. Currently, the default namespace is the only valid value for this parameter.}
 }
 \description{
 Deletes a linked Amazon Q Business application from an Quick Sight account

@@ -7,8 +7,7 @@
 lexmodelsv2_describe_resource_policy(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the bot or bot alias that the resource
-policy is attached to.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.}
 }
 \description{
 Gets the resource policy and policy revision for a bot or bot alias.

@@ -25,8 +25,7 @@ customerprofiles_create_recommender(
 
 \item{Description}{The description of the domain object type.}
 
-\item{RecommenderSchemaName}{The name of the recommender schema to use for this recommender. If not
-specified, the default schema is used.}
+\item{RecommenderSchemaName}{The name of the recommender schema to use for this recommender. If not specified, the default schema is used.}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 }

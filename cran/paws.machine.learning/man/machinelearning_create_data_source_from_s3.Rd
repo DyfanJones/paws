@@ -20,20 +20,13 @@ machinelearning_create_data_source_from_s3(
 \itemize{
 \item DataLocationS3 - The Amazon S3 location of the observation data.
 \item DataSchemaLocationS3 - The Amazon S3 location of the \code{DataSchema}.
-\item DataSchema - A JSON string representing the schema. This is not
-required if \code{DataSchemaUri} is specified.
-\item DataRearrangement - A JSON string that represents the splitting and
-rearrangement requirements for the \code{Datasource}.
+\item DataSchema - A JSON string representing the schema. This is not required if \code{DataSchemaUri} is specified.
+\item DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the \code{Datasource}.
 
-Sample -
-\verb{ "\{\\"splitting\\":\{\\"percentBegin\\":10,\\"percentEnd\\":60\}\}"}
+Sample - \verb{ "\{\\"splitting\\":\{\\"percentBegin\\":10,\\"percentEnd\\":60\}\}"}
 }}
 
-\item{ComputeStatistics}{The compute statistics for a \code{DataSource}. The statistics are generated
-from the observation data referenced by a \code{DataSource}. Amazon ML uses
-the statistics internally during \code{MLModel} training. This parameter must
-be set to \code{true} if the \code{DataSource} needs to be used for \code{MLModel}
-training.}
+\item{ComputeStatistics}{The compute statistics for a \code{DataSource}. The statistics are generated from the observation data referenced by a \code{DataSource}. Amazon ML uses the statistics internally during \code{MLModel} training. This parameter must be set to \code{true} if the \code{DataSource} needs to be used for \code{MLModel} training.}
 }
 \description{
 Creates a \code{DataSource} object. A \code{DataSource} references data that can be used to perform \code{\link[=machinelearning_create_ml_model]{create_ml_model}}, \code{\link[=machinelearning_create_evaluation]{create_evaluation}}, or \code{\link[=machinelearning_create_batch_prediction]{create_batch_prediction}} operations.

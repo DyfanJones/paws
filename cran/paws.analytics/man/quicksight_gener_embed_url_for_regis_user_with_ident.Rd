@@ -17,7 +17,9 @@ quicksight_generate_embed_url_for_registered_user_with_identity(
 
 \item{SessionLifetimeInMinutes}{The validity of the session in minutes.}
 
-\item{ExperienceConfiguration}{[required]}
+\item{ExperienceConfiguration}{[required] The type of experience you want to embed. For registered users, you can embed Quick dashboards or the Amazon Quick Sight console.
+
+Exactly one of the experience configurations is required. You can choose \code{Dashboard} or \code{QuickSightConsole}. You cannot choose more than one experience configuration.}
 
 \item{AllowedDomains}{A list of domains to be allowed to generate the embed URL.}
 }

@@ -7,8 +7,7 @@
 appfabric_batch_get_user_access_tasks(appBundleIdentifier, taskIdList)
 }
 \arguments{
-\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of
-the app bundle to use for the request.}
+\item{appBundleIdentifier}{[required] The Amazon Resource Name (ARN) or Universal Unique Identifier (UUID) of the app bundle to use for the request.}
 
 \item{taskIdList}{[required] The tasks IDs to use for the request.}
 }

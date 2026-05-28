@@ -8,11 +8,9 @@ Services Glue Data Catalog}
 redshift_deregister_namespace(NamespaceIdentifier, ConsumerIdentifiers)
 }
 \arguments{
-\item{NamespaceIdentifier}{[required] The unique identifier of the cluster or serverless namespace that you
-want to deregister.}
+\item{NamespaceIdentifier}{[required] The unique identifier of the cluster or serverless namespace that you want to deregister.}
 
-\item{ConsumerIdentifiers}{[required] An array containing the ID of the consumer account that you want to
-deregister the cluster or serverless namespace from.}
+\item{ConsumerIdentifiers}{[required] An array containing the ID of the consumer account that you want to deregister the cluster or serverless namespace from.}
 }
 \description{
 Deregisters a cluster or serverless namespace from the Amazon Web Services Glue Data Catalog.

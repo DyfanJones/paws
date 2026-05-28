@@ -75,22 +75,14 @@ xray_cancel_trace_retrieval <- function(RetrievalToken) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/xray_create_group/](https://www.paws-r-sdk.com/docs/xray_create_group/) for full documentation.
 #'
-#' @param GroupName &#91;required&#93; The case-sensitive name of the new group. Default is a reserved name and
-#' names must be unique.
+#' @param GroupName &#91;required&#93; The case-sensitive name of the new group. Default is a reserved name and names must be unique.
 #' @param FilterExpression The filter expression defining criteria by which to group traces.
 #' @param InsightsConfiguration The structure containing configurations related to insights.
 #' 
-#' -   The InsightsEnabled boolean can be set to true to enable insights
-#'     for the new group or false to disable insights for the new group.
+#' -   The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.
 #' 
-#' -   The NotificationsEnabled boolean can be set to true to enable
-#'     insights notifications for the new group. Notifications may only be
-#'     enabled on a group with InsightsEnabled set to true.
-#' @param Tags A map that contains one or more tag keys and tag values to attach to an
-#' X-Ray group. For more information about ways to use tags, see [Tagging
-#' Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' in the *Amazon Web Services General Reference*.
+#' -   The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.
+#' @param Tags A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) in the *Amazon Web Services General Reference*.
 #' 
 #' The following restrictions apply to tags:
 #' 
@@ -100,13 +92,11 @@ xray_cancel_trace_retrieval <- function(RetrievalToken) {
 #' 
 #' -   Maximum tag value length: 256 Unicode characters
 #' 
-#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the
-#'     following characters: _ . : / = + - and @@
+#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @@
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web
-#'     Services use.
+#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web Services use.
 #'
 #' @keywords internal
 #'
@@ -139,11 +129,7 @@ xray_create_group <- function(GroupName, FilterExpression = NULL, InsightsConfig
 #' See [https://www.paws-r-sdk.com/docs/xray_create_sampling_rule/](https://www.paws-r-sdk.com/docs/xray_create_sampling_rule/) for full documentation.
 #'
 #' @param SamplingRule &#91;required&#93; The rule definition.
-#' @param Tags A map that contains one or more tag keys and tag values to attach to an
-#' X-Ray sampling rule. For more information about ways to use tags, see
-#' [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' in the *Amazon Web Services General Reference*.
+#' @param Tags A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) in the *Amazon Web Services General Reference*.
 #' 
 #' The following restrictions apply to tags:
 #' 
@@ -153,13 +139,11 @@ xray_create_group <- function(GroupName, FilterExpression = NULL, InsightsConfig
 #' 
 #' -   Maximum tag value length: 256 Unicode characters
 #' 
-#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the
-#'     following characters: _ . : / = + - and @@
+#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @@
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web
-#'     Services use.
+#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web Services use.
 #'
 #' @keywords internal
 #'
@@ -223,10 +207,7 @@ xray_delete_group <- function(GroupName = NULL, GroupARN = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/xray_delete_resource_policy/](https://www.paws-r-sdk.com/docs/xray_delete_resource_policy/) for full documentation.
 #'
 #' @param PolicyName &#91;required&#93; The name of the resource policy to delete.
-#' @param PolicyRevisionId Specifies a specific policy revision to delete. Provide a
-#' `PolicyRevisionId` to ensure an atomic delete operation. If the provided
-#' revision id does not match the latest policy revision id, an
-#' `InvalidPolicyRevisionIdException` exception is returned.
+#' @param PolicyRevisionId Specifies a specific policy revision to delete. Provide a `PolicyRevisionId` to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an `InvalidPolicyRevisionIdException` exception is returned.
 #'
 #' @keywords internal
 #'
@@ -257,10 +238,8 @@ xray_delete_resource_policy <- function(PolicyName, PolicyRevisionId = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/xray_delete_sampling_rule/](https://www.paws-r-sdk.com/docs/xray_delete_sampling_rule/) for full documentation.
 #'
-#' @param RuleName The name of the sampling rule. Specify a rule by either name or ARN, but
-#' not both.
-#' @param RuleARN The ARN of the sampling rule. Specify a rule by either name or ARN, but
-#' not both.
+#' @param RuleName The name of the sampling rule. Specify a rule by either name or ARN, but not both.
+#' @param RuleARN The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
 #'
 #' @keywords internal
 #'
@@ -385,8 +364,7 @@ xray_get_groups <- function(NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/xray_get_indexing_rules/](https://www.paws-r-sdk.com/docs/xray_get_indexing_rules/) for full documentation.
 #'
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of indexes.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of indexes.
 #'
 #' @keywords internal
 #'
@@ -417,8 +395,7 @@ xray_get_indexing_rules <- function(NextToken = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/xray_get_insight/](https://www.paws-r-sdk.com/docs/xray_get_insight/) for full documentation.
 #'
-#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to
-#' retrieve an InsightId.
+#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.
 #'
 #' @keywords internal
 #'
@@ -450,11 +427,9 @@ xray_get_insight <- function(InsightId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/xray_get_insight_events/](https://www.paws-r-sdk.com/docs/xray_get_insight_events/) for full documentation.
 #'
-#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to
-#' retrieve an InsightId.
+#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.
 #' @param MaxResults Used to retrieve at most the specified value of events.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of events.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of events.
 #'
 #' @keywords internal
 #'
@@ -485,16 +460,10 @@ xray_get_insight_events <- function(InsightId, MaxResults = NULL, NextToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/xray_get_insight_impact_graph/](https://www.paws-r-sdk.com/docs/xray_get_insight_impact_graph/) for full documentation.
 #'
-#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to
-#' retrieve an InsightId.
-#' @param StartTime &#91;required&#93; The estimated start time of the insight, in Unix time seconds. The
-#' StartTime is inclusive of the value provided and can't be more than 30
-#' days old.
-#' @param EndTime &#91;required&#93; The estimated end time of the insight, in Unix time seconds. The EndTime
-#' is exclusive of the value provided. The time range between the start
-#' time and end time can't be more than six hours.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of results.
+#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.
+#' @param StartTime &#91;required&#93; The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.
+#' @param EndTime &#91;required&#93; The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -527,13 +496,10 @@ xray_get_insight_impact_graph <- function(InsightId, StartTime, EndTime, NextTok
 #' See [https://www.paws-r-sdk.com/docs/xray_get_insight_summaries/](https://www.paws-r-sdk.com/docs/xray_get_insight_summaries/) for full documentation.
 #'
 #' @param States The list of insight states.
-#' @param GroupARN The Amazon Resource Name (ARN) of the group. Required if the GroupName
-#' isn't provided.
+#' @param GroupARN The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.
 #' @param GroupName The name of the group. Required if the GroupARN isn't provided.
-#' @param StartTime &#91;required&#93; The beginning of the time frame in which the insights started. The start
-#' time can't be more than 30 days old.
-#' @param EndTime &#91;required&#93; The end of the time frame in which the insights ended. The end time
-#' can't be more than 30 days old.
+#' @param StartTime &#91;required&#93; The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.
+#' @param EndTime &#91;required&#93; The end of the time frame in which the insights ended. The end time can't be more than 30 days old.
 #' @param MaxResults The maximum number of results to display.
 #' @param NextToken Pagination token.
 #'
@@ -569,8 +535,7 @@ xray_get_insight_summaries <- function(States = NULL, GroupARN = NULL, GroupName
 #' See [https://www.paws-r-sdk.com/docs/xray_get_retrieved_traces_graph/](https://www.paws-r-sdk.com/docs/xray_get_retrieved_traces_graph/) for full documentation.
 #'
 #' @param RetrievalToken &#91;required&#93; Retrieval token.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of indexes.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of indexes.
 #'
 #' @keywords internal
 #'
@@ -666,8 +631,7 @@ xray_get_sampling_statistic_summaries <- function(NextToken = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/xray_get_sampling_targets/](https://www.paws-r-sdk.com/docs/xray_get_sampling_targets/) for full documentation.
 #'
 #' @param SamplingStatisticsDocuments &#91;required&#93; Information about rules that the service is using to sample requests.
-#' @param SamplingBoostStatisticsDocuments Information about rules that the service is using to boost sampling
-#' rate.
+#' @param SamplingBoostStatisticsDocuments Information about rules that the service is using to boost sampling rate.
 #'
 #' @keywords internal
 #'
@@ -702,8 +666,7 @@ xray_get_sampling_targets <- function(SamplingStatisticsDocuments, SamplingBoost
 #' @param StartTime &#91;required&#93; The start of the time frame for which to generate a graph.
 #' @param EndTime &#91;required&#93; The end of the timeframe for which to generate a graph.
 #' @param GroupName The name of a group based on which you want to generate a graph.
-#' @param GroupARN The Amazon Resource Name (ARN) of a group based on which you want to
-#' generate a graph.
+#' @param GroupARN The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.
 #' @param NextToken Pagination token.
 #'
 #' @keywords internal
@@ -739,14 +702,10 @@ xray_get_service_graph <- function(StartTime, EndTime, GroupName = NULL, GroupAR
 #' @param StartTime &#91;required&#93; The start of the time frame for which to aggregate statistics.
 #' @param EndTime &#91;required&#93; The end of the time frame for which to aggregate statistics.
 #' @param GroupName The case-sensitive name of the group for which to pull statistics from.
-#' @param GroupARN The Amazon Resource Name (ARN) of the group for which to pull statistics
-#' from.
-#' @param EntitySelectorExpression A filter expression defining entities that will be aggregated for
-#' statistics. Supports ID, service, and edge functions. If no selector
-#' expression is specified, edge statistics are returned.
+#' @param GroupARN The Amazon Resource Name (ARN) of the group for which to pull statistics from.
+#' @param EntitySelectorExpression A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.
 #' @param Period Aggregation period in seconds.
-#' @param ForecastStatistics The forecasted high and low fault count values. Forecast enabled
-#' requests require the EntitySelectorExpression ID be provided.
+#' @param ForecastStatistics The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.
 #' @param NextToken Pagination token.
 #'
 #' @keywords internal
@@ -845,15 +804,11 @@ xray_get_trace_segment_destination <- function() {
 #'
 #' @param StartTime &#91;required&#93; The start of the time frame for which to retrieve traces.
 #' @param EndTime &#91;required&#93; The end of the time frame for which to retrieve traces.
-#' @param TimeRangeType Query trace summaries by TraceId (trace start time), Event (trace update
-#' time), or Service (trace segment end time).
+#' @param TimeRangeType Query trace summaries by TraceId (trace start time), Event (trace update time), or Service (trace segment end time).
 #' @param Sampling Set to `true` to get summaries for only a subset of available traces.
-#' @param SamplingStrategy A parameter to indicate whether to enable sampling on trace summaries.
-#' Input parameters are Name and Value.
-#' @param FilterExpression Specify a filter expression to retrieve trace summaries for services or
-#' requests that meet certain requirements.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of results.
+#' @param SamplingStrategy A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.
+#' @param FilterExpression Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of results.
 #'
 #' @keywords internal
 #'
@@ -919,8 +874,7 @@ xray_list_resource_policies <- function(NextToken = NULL) {
 #'
 #' @param RetrievalToken &#91;required&#93; Retrieval token.
 #' @param TraceFormat Format of the requested traces.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of indexes.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of indexes.
 #'
 #' @keywords internal
 #'
@@ -953,9 +907,7 @@ xray_list_retrieved_traces <- function(RetrievalToken, TraceFormat = NULL, NextT
 #' See [https://www.paws-r-sdk.com/docs/xray_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/xray_list_tags_for_resource/) for full documentation.
 #'
 #' @param ResourceARN &#91;required&#93; The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
-#' @param NextToken A pagination token. If multiple pages of results are returned, use the
-#' `NextToken` value returned with the current page of results as the value
-#' of this parameter to get the next page of results.
+#' @param NextToken A pagination token. If multiple pages of results are returned, use the `NextToken` value returned with the current page of results as the value of this parameter to get the next page of results.
 #'
 #' @keywords internal
 #'
@@ -990,18 +942,12 @@ xray_list_tags_for_resource <- function(ResourceARN, NextToken = NULL) {
 #' 
 #' -   **Alias** - The name of the key. For example, `alias/MyKey`.
 #' 
-#' -   **Key ID** - The KMS key ID of the key. For example,
-#'     `ae4aa6d49-a4d8-9df9-a475-4ff6d7898456`. Amazon Web Services X-Ray
-#'     does not support asymmetric KMS keys.
+#' -   **Key ID** - The KMS key ID of the key. For example, `ae4aa6d49-a4d8-9df9-a475-4ff6d7898456`. Amazon Web Services X-Ray does not support asymmetric KMS keys.
 #' 
-#' -   **ARN** - The full Amazon Resource Name of the key ID or alias. For
-#'     example,
-#'     `arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456`.
-#'     Use this format to specify a key in a different account.
+#' -   **ARN** - The full Amazon Resource Name of the key ID or alias. For example, `arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456`. Use this format to specify a key in a different account.
 #' 
 #' Omit this key if you set `Type` to `NONE`.
-#' @param Type &#91;required&#93; The type of encryption. Set to `KMS` to use your own key for encryption.
-#' Set to `NONE` for default encryption.
+#' @param Type &#91;required&#93; The type of encryption. Set to `KMS` to use your own key for encryption. Set to `NONE` for default encryption.
 #'
 #' @keywords internal
 #'
@@ -1033,28 +979,16 @@ xray_put_encryption_config <- function(KeyId = NULL, Type) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/xray_put_resource_policy/](https://www.paws-r-sdk.com/docs/xray_put_resource_policy/) for full documentation.
 #'
-#' @param PolicyName &#91;required&#93; The name of the resource policy. Must be unique within a specific Amazon
-#' Web Services account.
+#' @param PolicyName &#91;required&#93; The name of the resource policy. Must be unique within a specific Amazon Web Services account.
 #' @param PolicyDocument &#91;required&#93; The resource policy document, which can be up to 5kb in size.
-#' @param PolicyRevisionId Specifies a specific policy revision, to ensure an atomic create
-#' operation. By default the resource policy is created if it does not
-#' exist, or updated with an incremented revision id. The revision id is
-#' unique to each policy in the account.
+#' @param PolicyRevisionId Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.
 #' 
-#' If the policy revision id does not match the latest revision id, the
-#' operation will fail with an `InvalidPolicyRevisionIdException`
-#' exception. You can also provide a `PolicyRevisionId` of 0. In this case,
-#' the operation will fail with an `InvalidPolicyRevisionIdException`
-#' exception if a resource policy with the same name already exists.
-#' @param BypassPolicyLockoutCheck A flag to indicate whether to bypass the resource policy lockout safety
-#' check.
+#' If the policy revision id does not match the latest revision id, the operation will fail with an `InvalidPolicyRevisionIdException` exception. You can also provide a `PolicyRevisionId` of 0. In this case, the operation will fail with an `InvalidPolicyRevisionIdException` exception if a resource policy with the same name already exists.
+#' @param BypassPolicyLockoutCheck A flag to indicate whether to bypass the resource policy lockout safety check.
 #' 
-#' Setting this value to true increases the risk that the policy becomes
-#' unmanageable. Do not set this value to true indiscriminately.
+#' Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.
 #' 
-#' Use this parameter only when you include a policy in the request and you
-#' intend to prevent the principal that is making the request from making a
-#' subsequent [`put_resource_policy`][xray_put_resource_policy] request.
+#' Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent [`put_resource_policy`][xray_put_resource_policy] request.
 #' 
 #' The default value is false.
 #'
@@ -1121,8 +1055,7 @@ xray_put_telemetry_records <- function(TelemetryRecords, EC2InstanceId = NULL, H
 #'
 #' See [https://www.paws-r-sdk.com/docs/xray_put_trace_segments/](https://www.paws-r-sdk.com/docs/xray_put_trace_segments/) for full documentation.
 #'
-#' @param TraceSegmentDocuments &#91;required&#93; A string containing a JSON document defining one or more segments or
-#' subsegments.
+#' @param TraceSegmentDocuments &#91;required&#93; A string containing a JSON document defining one or more segments or subsegments.
 #'
 #' @keywords internal
 #'
@@ -1156,12 +1089,8 @@ xray_put_trace_segments <- function(TraceSegmentDocuments) {
 #' See [https://www.paws-r-sdk.com/docs/xray_start_trace_retrieval/](https://www.paws-r-sdk.com/docs/xray_start_trace_retrieval/) for full documentation.
 #'
 #' @param TraceIds &#91;required&#93; Specify the trace IDs of the traces to be retrieved.
-#' @param StartTime &#91;required&#93; The start of the time range to retrieve traces. The range is inclusive,
-#' so the specified start time is included in the query. Specified as epoch
-#' time, the number of seconds since January 1, 1970, 00:00:00 UTC.
-#' @param EndTime &#91;required&#93; The end of the time range to retrieve traces. The range is inclusive, so
-#' the specified end time is included in the query. Specified as epoch
-#' time, the number of seconds since January 1, 1970, 00:00:00 UTC.
+#' @param StartTime &#91;required&#93; The start of the time range to retrieve traces. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
+#' @param EndTime &#91;required&#93; The end of the time range to retrieve traces. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
 #'
 #' @keywords internal
 #'
@@ -1194,11 +1123,7 @@ xray_start_trace_retrieval <- function(TraceIds, StartTime, EndTime) {
 #' See [https://www.paws-r-sdk.com/docs/xray_tag_resource/](https://www.paws-r-sdk.com/docs/xray_tag_resource/) for full documentation.
 #'
 #' @param ResourceARN &#91;required&#93; The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
-#' @param Tags &#91;required&#93; A map that contains one or more tag keys and tag values to attach to an
-#' X-Ray group or sampling rule. For more information about ways to use
-#' tags, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' in the *Amazon Web Services General Reference*.
+#' @param Tags &#91;required&#93; A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) in the *Amazon Web Services General Reference*.
 #' 
 #' The following restrictions apply to tags:
 #' 
@@ -1208,13 +1133,11 @@ xray_start_trace_retrieval <- function(TraceIds, StartTime, EndTime) {
 #' 
 #' -   Maximum tag value length: 256 Unicode characters
 #' 
-#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the
-#'     following characters: _ . : / = + - and @@
+#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @@
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web
-#'     Services use. You cannot edit or delete system tags.
+#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.
 #'
 #' @keywords internal
 #'
@@ -1246,8 +1169,7 @@ xray_tag_resource <- function(ResourceARN, Tags) {
 #' See [https://www.paws-r-sdk.com/docs/xray_untag_resource/](https://www.paws-r-sdk.com/docs/xray_untag_resource/) for full documentation.
 #'
 #' @param ResourceARN &#91;required&#93; The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
-#' @param TagKeys &#91;required&#93; Keys for one or more tags that you want to remove from an X-Ray group or
-#' sampling rule.
+#' @param TagKeys &#91;required&#93; Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
 #'
 #' @keywords internal
 #'
@@ -1280,16 +1202,12 @@ xray_untag_resource <- function(ResourceARN, TagKeys) {
 #'
 #' @param GroupName The case-sensitive name of the group.
 #' @param GroupARN The ARN that was generated upon creation.
-#' @param FilterExpression The updated filter expression defining criteria by which to group
-#' traces.
+#' @param FilterExpression The updated filter expression defining criteria by which to group traces.
 #' @param InsightsConfiguration The structure containing configurations related to insights.
 #' 
-#' -   The InsightsEnabled boolean can be set to true to enable insights
-#'     for the group or false to disable insights for the group.
+#' -   The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.
 #' 
-#' -   The NotificationsEnabled boolean can be set to true to enable
-#'     insights notifications for the group. Notifications can only be
-#'     enabled on a group with InsightsEnabled set to true.
+#' -   The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.
 #'
 #' @keywords internal
 #'

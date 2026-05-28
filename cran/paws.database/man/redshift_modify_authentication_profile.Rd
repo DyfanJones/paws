@@ -12,9 +12,7 @@ redshift_modify_authentication_profile(
 \arguments{
 \item{AuthenticationProfileName}{[required] The name of the authentication profile to replace.}
 
-\item{AuthenticationProfileContent}{[required] The new content of the authentication profile in JSON format. The
-maximum length of the JSON string is determined by a quota for your
-account.}
+\item{AuthenticationProfileContent}{[required] The new content of the authentication profile in JSON format. The maximum length of the JSON string is determined by a quota for your account.}
 }
 \description{
 Modifies an authentication profile.

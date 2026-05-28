@@ -13,17 +13,11 @@ paymentcryptographycontrolplane_list_tags_for_resource(
 \arguments{
 \item{ResourceArn}{[required] The \code{KeyARN} of the key whose tags you are getting.}
 
-\item{NextToken}{Use this parameter in a subsequent request after you receive a response
-with truncated results. Set it to the value of \code{NextToken} from the
-truncated response you just received.}
+\item{NextToken}{Use this parameter in a subsequent request after you receive a response with truncated results. Set it to the value of \code{NextToken} from the truncated response you just received.}
 
-\item{MaxResults}{Use this parameter to specify the maximum number of items to return.
-When this value is present, Amazon Web Services Payment Cryptography
-does not return more than the specified number of items, but it might
-return fewer.
+\item{MaxResults}{Use this parameter to specify the maximum number of items to return. When this value is present, Amazon Web Services Payment Cryptography does not return more than the specified number of items, but it might return fewer.
 
-This value is optional. If you include a value, it must be between 1 and
-100, inclusive. If you do not include a value, it defaults to 50.}
+This value is optional. If you include a value, it must be between 1 and 100, inclusive. If you do not include a value, it defaults to 50.}
 }
 \description{
 Lists the tags for an Amazon Web Services resource.

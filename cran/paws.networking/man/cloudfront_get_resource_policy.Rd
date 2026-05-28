@@ -8,8 +8,7 @@ you own and have shared}
 cloudfront_get_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the CloudFront resource that is
-associated with the resource policy.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the CloudFront resource that is associated with the resource policy.}
 }
 \description{
 Retrieves the resource policy for the specified CloudFront resource that you own and have shared.

@@ -7,8 +7,7 @@
 s3control_delete_access_point_scope(AccountId, Name)
 }
 \arguments{
-\item{AccountId}{[required] The Amazon Web Services account ID that owns the access point with the
-scope that you want to delete.}
+\item{AccountId}{[required] The Amazon Web Services account ID that owns the access point with the scope that you want to delete.}
 
 \item{Name}{[required] The name of the access point with the scope that you want to delete.}
 }

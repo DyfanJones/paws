@@ -22,8 +22,7 @@ vpclattice_update_rule(
 
 \item{match}{The rule match.}
 
-\item{priority}{The rule priority. A listener can't have multiple rules with the same
-priority.}
+\item{priority}{The rule priority. A listener can't have multiple rules with the same priority.}
 
 \item{action}{Information about the action for the specified listener rule.}
 }

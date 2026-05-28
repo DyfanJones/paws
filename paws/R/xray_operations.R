@@ -7,13 +7,9 @@ NULL
 #' since trace is not indexed in X-Ray
 #'
 #' @description
-#' You cannot find traces through this API if Transaction Search is enabled
-#' since trace is not indexed in X-Ray.
+#' You cannot find traces through this API if Transaction Search is enabled since trace is not indexed in X-Ray.
 #' 
-#' Retrieves a list of traces specified by ID. Each trace is a collection
-#' of segment documents that originates from a single request. Use
-#' [`get_trace_summaries`][xray_get_trace_summaries] to get a list of trace
-#' IDs.
+#' Retrieves a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use [`get_trace_summaries`][xray_get_trace_summaries] to get a list of trace IDs.
 #'
 #' @usage
 #' xray_batch_get_traces(TraceIds, NextToken)
@@ -83,10 +79,7 @@ xray_batch_get_traces <- function(TraceIds, NextToken = NULL) {
 #' using the provided RetrievalToken
 #'
 #' @description
-#' Cancels an ongoing trace retrieval job initiated by
-#' [`start_trace_retrieval`][xray_start_trace_retrieval] using the provided
-#' `RetrievalToken`. A successful cancellation will return an HTTP 200
-#' response.
+#' Cancels an ongoing trace retrieval job initiated by [`start_trace_retrieval`][xray_start_trace_retrieval] using the provided `RetrievalToken`. A successful cancellation will return an HTTP 200 response.
 #'
 #' @usage
 #' xray_cancel_trace_retrieval(RetrievalToken)
@@ -136,22 +129,14 @@ xray_cancel_trace_retrieval <- function(RetrievalToken) {
 #' xray_create_group(GroupName, FilterExpression, InsightsConfiguration,
 #'   Tags)
 #'
-#' @param GroupName &#91;required&#93; The case-sensitive name of the new group. Default is a reserved name and
-#' names must be unique.
+#' @param GroupName &#91;required&#93; The case-sensitive name of the new group. Default is a reserved name and names must be unique.
 #' @param FilterExpression The filter expression defining criteria by which to group traces.
 #' @param InsightsConfiguration The structure containing configurations related to insights.
 #' 
-#' -   The InsightsEnabled boolean can be set to true to enable insights
-#'     for the new group or false to disable insights for the new group.
+#' -   The InsightsEnabled boolean can be set to true to enable insights for the new group or false to disable insights for the new group.
 #' 
-#' -   The NotificationsEnabled boolean can be set to true to enable
-#'     insights notifications for the new group. Notifications may only be
-#'     enabled on a group with InsightsEnabled set to true.
-#' @param Tags A map that contains one or more tag keys and tag values to attach to an
-#' X-Ray group. For more information about ways to use tags, see [Tagging
-#' Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' in the *Amazon Web Services General Reference*.
+#' -   The NotificationsEnabled boolean can be set to true to enable insights notifications for the new group. Notifications may only be enabled on a group with InsightsEnabled set to true.
+#' @param Tags A map that contains one or more tag keys and tag values to attach to an X-Ray group. For more information about ways to use tags, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) in the *Amazon Web Services General Reference*.
 #' 
 #' The following restrictions apply to tags:
 #' 
@@ -161,13 +146,11 @@ xray_cancel_trace_retrieval <- function(RetrievalToken) {
 #' 
 #' -   Maximum tag value length: 256 Unicode characters
 #' 
-#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the
-#'     following characters: _ . : / = + - and @@
+#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @@
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web
-#'     Services use.
+#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web Services use.
 #'
 #' @return
 #' A list with the following syntax:
@@ -231,25 +214,13 @@ xray_create_group <- function(GroupName, FilterExpression = NULL, InsightsConfig
 #' applications
 #'
 #' @description
-#' Creates a rule to control sampling behavior for instrumented
-#' applications. Services retrieve rules with
-#' [`get_sampling_rules`][xray_get_sampling_rules], and evaluate each rule
-#' in ascending order of *priority* for each request. If a rule matches,
-#' the service records a trace, borrowing it from the reservoir size. After
-#' 10 seconds, the service reports back to X-Ray with
-#' [`get_sampling_targets`][xray_get_sampling_targets] to get updated
-#' versions of each in-use rule. The updated rule contains a trace quota
-#' that the service can use instead of borrowing from the reservoir.
+#' Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with [`get_sampling_rules`][xray_get_sampling_rules], and evaluate each rule in ascending order of *priority* for each request. If a rule matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports back to X-Ray with [`get_sampling_targets`][xray_get_sampling_targets] to get updated versions of each in-use rule. The updated rule contains a trace quota that the service can use instead of borrowing from the reservoir.
 #'
 #' @usage
 #' xray_create_sampling_rule(SamplingRule, Tags)
 #'
 #' @param SamplingRule &#91;required&#93; The rule definition.
-#' @param Tags A map that contains one or more tag keys and tag values to attach to an
-#' X-Ray sampling rule. For more information about ways to use tags, see
-#' [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' in the *Amazon Web Services General Reference*.
+#' @param Tags A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) in the *Amazon Web Services General Reference*.
 #' 
 #' The following restrictions apply to tags:
 #' 
@@ -259,13 +230,11 @@ xray_create_group <- function(GroupName, FilterExpression = NULL, InsightsConfig
 #' 
 #' -   Maximum tag value length: 256 Unicode characters
 #' 
-#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the
-#'     following characters: _ . : / = + - and @@
+#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @@
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web
-#'     Services use.
+#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web Services use.
 #'
 #' @return
 #' A list with the following syntax:
@@ -415,10 +384,7 @@ xray_delete_group <- function(GroupName = NULL, GroupARN = NULL) {
 #' xray_delete_resource_policy(PolicyName, PolicyRevisionId)
 #'
 #' @param PolicyName &#91;required&#93; The name of the resource policy to delete.
-#' @param PolicyRevisionId Specifies a specific policy revision to delete. Provide a
-#' `PolicyRevisionId` to ensure an atomic delete operation. If the provided
-#' revision id does not match the latest policy revision id, an
-#' `InvalidPolicyRevisionIdException` exception is returned.
+#' @param PolicyRevisionId Specifies a specific policy revision to delete. Provide a `PolicyRevisionId` to ensure an atomic delete operation. If the provided revision id does not match the latest policy revision id, an `InvalidPolicyRevisionIdException` exception is returned.
 #'
 #' @return
 #' An empty list.
@@ -463,10 +429,8 @@ xray_delete_resource_policy <- function(PolicyName, PolicyRevisionId = NULL) {
 #' @usage
 #' xray_delete_sampling_rule(RuleName, RuleARN)
 #'
-#' @param RuleName The name of the sampling rule. Specify a rule by either name or ARN, but
-#' not both.
-#' @param RuleARN The ARN of the sampling rule. Specify a rule by either name or ARN, but
-#' not both.
+#' @param RuleName The name of the sampling rule. Specify a rule by either name or ARN, but not both.
+#' @param RuleARN The ARN of the sampling rule. Specify a rule by either name or ARN, but not both.
 #'
 #' @return
 #' A list with the following syntax:
@@ -711,16 +675,12 @@ xray_get_groups <- function(NextToken = NULL) {
 #' @description
 #' Retrieves all indexing rules.
 #' 
-#' Indexing rules are used to determine the server-side sampling rate for
-#' spans ingested through the CloudWatchLogs destination and indexed by
-#' X-Ray. For more information, see [Transaction
-#' Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html).
+#' Indexing rules are used to determine the server-side sampling rate for spans ingested through the CloudWatchLogs destination and indexed by X-Ray. For more information, see [Transaction Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html).
 #'
 #' @usage
 #' xray_get_indexing_rules(NextToken)
 #'
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of indexes.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of indexes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -778,16 +738,12 @@ xray_get_indexing_rules <- function(NextToken = NULL) {
 #' Retrieves the summary information of an insight
 #'
 #' @description
-#' Retrieves the summary information of an insight. This includes impact to
-#' clients and root cause services, the top anomalous services, the
-#' category, the state of the insight, and the start and end time of the
-#' insight.
+#' Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top anomalous services, the category, the state of the insight, and the start and end time of the insight.
 #'
 #' @usage
 #' xray_get_insight(InsightId)
 #'
-#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to
-#' retrieve an InsightId.
+#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.
 #'
 #' @return
 #' A list with the following syntax:
@@ -877,18 +833,14 @@ xray_get_insight <- function(InsightId) {
 #' records each intermediate state as an event
 #'
 #' @description
-#' X-Ray reevaluates insights periodically until they're resolved, and
-#' records each intermediate state as an event. You can review an insight's
-#' events in the Impact Timeline on the Inspect page in the X-Ray console.
+#' X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event. You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.
 #'
 #' @usage
 #' xray_get_insight_events(InsightId, MaxResults, NextToken)
 #'
-#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to
-#' retrieve an InsightId.
+#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.
 #' @param MaxResults Used to retrieve at most the specified value of events.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of events.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of events.
 #'
 #' @return
 #' A list with the following syntax:
@@ -964,23 +916,15 @@ xray_get_insight_events <- function(InsightId, MaxResults = NULL, NextToken = NU
 #' Retrieves a service graph structure filtered by the specified insight
 #'
 #' @description
-#' Retrieves a service graph structure filtered by the specified insight.
-#' The service graph is limited to only structural information. For a
-#' complete service graph, use this API with the GetServiceGraph API.
+#' Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only structural information. For a complete service graph, use this API with the GetServiceGraph API.
 #'
 #' @usage
 #' xray_get_insight_impact_graph(InsightId, StartTime, EndTime, NextToken)
 #'
-#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to
-#' retrieve an InsightId.
-#' @param StartTime &#91;required&#93; The estimated start time of the insight, in Unix time seconds. The
-#' StartTime is inclusive of the value provided and can't be more than 30
-#' days old.
-#' @param EndTime &#91;required&#93; The estimated end time of the insight, in Unix time seconds. The EndTime
-#' is exclusive of the value provided. The time range between the start
-#' time and end time can't be more than six hours.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of results.
+#' @param InsightId &#91;required&#93; The insight's unique identifier. Use the GetInsightSummaries action to retrieve an InsightId.
+#' @param StartTime &#91;required&#93; The estimated start time of the insight, in Unix time seconds. The StartTime is inclusive of the value provided and can't be more than 30 days old.
+#' @param EndTime &#91;required&#93; The estimated end time of the insight, in Unix time seconds. The EndTime is exclusive of the value provided. The time range between the start time and end time can't be more than six hours.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1061,21 +1005,17 @@ xray_get_insight_impact_graph <- function(InsightId, StartTime, EndTime, NextTok
 #' the provided filter values
 #'
 #' @description
-#' Retrieves the summaries of all insights in the specified group matching
-#' the provided filter values.
+#' Retrieves the summaries of all insights in the specified group matching the provided filter values.
 #'
 #' @usage
 #' xray_get_insight_summaries(States, GroupARN, GroupName, StartTime,
 #'   EndTime, MaxResults, NextToken)
 #'
 #' @param States The list of insight states.
-#' @param GroupARN The Amazon Resource Name (ARN) of the group. Required if the GroupName
-#' isn't provided.
+#' @param GroupARN The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.
 #' @param GroupName The name of the group. Required if the GroupARN isn't provided.
-#' @param StartTime &#91;required&#93; The beginning of the time frame in which the insights started. The start
-#' time can't be more than 30 days old.
-#' @param EndTime &#91;required&#93; The end of the time frame in which the insights ended. The end time
-#' can't be more than 30 days old.
+#' @param StartTime &#91;required&#93; The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.
+#' @param EndTime &#91;required&#93; The end of the time frame in which the insights ended. The end time can't be more than 30 days old.
 #' @param MaxResults The maximum number of results to display.
 #' @param NextToken Pagination token.
 #'
@@ -1186,34 +1126,21 @@ xray_get_insight_summaries <- function(States = NULL, GroupARN = NULL, GroupName
 #' Search
 #'
 #' @description
-#' Retrieves a service graph for traces based on the specified
-#' `RetrievalToken` from the CloudWatch log group generated by Transaction
-#' Search. This API does not initiate a retrieval job. You must first
-#' execute [`start_trace_retrieval`][xray_start_trace_retrieval] to obtain
-#' the required `RetrievalToken`.
+#' Retrieves a service graph for traces based on the specified `RetrievalToken` from the CloudWatch log group generated by Transaction Search. This API does not initiate a retrieval job. You must first execute [`start_trace_retrieval`][xray_start_trace_retrieval] to obtain the required `RetrievalToken`.
 #' 
-#' The trace graph describes services that process incoming requests and
-#' any downstream services they call, which may include Amazon Web Services
-#' resources, external APIs, or databases.
+#' The trace graph describes services that process incoming requests and any downstream services they call, which may include Amazon Web Services resources, external APIs, or databases.
 #' 
-#' The response is empty until the `RetrievalStatus` is *COMPLETE*. Retry
-#' the request after the status changes from *RUNNING* or *SCHEDULED* to
-#' *COMPLETE* to access the full service graph.
+#' The response is empty until the `RetrievalStatus` is *COMPLETE*. Retry the request after the status changes from *RUNNING* or *SCHEDULED* to *COMPLETE* to access the full service graph.
 #' 
-#' When CloudWatch log is the destination, this API can support
-#' cross-account observability and service graph retrieval across linked
-#' accounts.
+#' When CloudWatch log is the destination, this API can support cross-account observability and service graph retrieval across linked accounts.
 #' 
-#' For retrieving graphs from X-Ray directly as opposed to the
-#' Transaction-Search Log group, see
-#' [`get_trace_graph`][xray_get_trace_graph].
+#' For retrieving graphs from X-Ray directly as opposed to the Transaction-Search Log group, see [`get_trace_graph`][xray_get_trace_graph].
 #'
 #' @usage
 #' xray_get_retrieved_traces_graph(RetrievalToken, NextToken)
 #'
 #' @param RetrievalToken &#91;required&#93; Retrieval token.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of indexes.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of indexes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1443,8 +1370,7 @@ xray_get_sampling_rules <- function(NextToken = NULL) {
 #' rules
 #'
 #' @description
-#' Retrieves information about recent sampling results for all sampling
-#' rules.
+#' Retrieves information about recent sampling results for all sampling rules.
 #'
 #' @usage
 #' xray_get_sampling_statistic_summaries(NextToken)
@@ -1505,16 +1431,14 @@ xray_get_sampling_statistic_summaries <- function(NextToken = NULL) {
 #' requests
 #'
 #' @description
-#' Requests a sampling quota for rules that the service is using to sample
-#' requests.
+#' Requests a sampling quota for rules that the service is using to sample requests.
 #'
 #' @usage
 #' xray_get_sampling_targets(SamplingStatisticsDocuments,
 #'   SamplingBoostStatisticsDocuments)
 #'
 #' @param SamplingStatisticsDocuments &#91;required&#93; Information about rules that the service is using to sample requests.
-#' @param SamplingBoostStatisticsDocuments Information about rules that the service is using to boost sampling
-#' rate.
+#' @param SamplingBoostStatisticsDocuments Information about rules that the service is using to boost sampling rate.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1615,13 +1539,7 @@ xray_get_sampling_targets <- function(SamplingStatisticsDocuments, SamplingBoost
 #' requests, and downstream services that they call as a result
 #'
 #' @description
-#' Retrieves a document that describes services that process incoming
-#' requests, and downstream services that they call as a result. Root
-#' services process incoming requests and make calls to downstream
-#' services. Root services are applications that use the [Amazon Web
-#' Services X-Ray SDK](https://docs.aws.amazon.com/xray/). Downstream
-#' services can be other applications, Amazon Web Services resources, HTTP
-#' web APIs, or SQL databases.
+#' Retrieves a document that describes services that process incoming requests, and downstream services that they call as a result. Root services process incoming requests and make calls to downstream services. Root services are applications that use the [Amazon Web Services X-Ray SDK](https://docs.aws.amazon.com/xray/). Downstream services can be other applications, Amazon Web Services resources, HTTP web APIs, or SQL databases.
 #'
 #' @usage
 #' xray_get_service_graph(StartTime, EndTime, GroupName, GroupARN,
@@ -1630,8 +1548,7 @@ xray_get_sampling_targets <- function(SamplingStatisticsDocuments, SamplingBoost
 #' @param StartTime &#91;required&#93; The start of the time frame for which to generate a graph.
 #' @param EndTime &#91;required&#93; The end of the timeframe for which to generate a graph.
 #' @param GroupName The name of a group based on which you want to generate a graph.
-#' @param GroupARN The Amazon Resource Name (ARN) of a group based on which you want to
-#' generate a graph.
+#' @param GroupARN The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.
 #' @param NextToken Pagination token.
 #'
 #' @return
@@ -1784,8 +1701,7 @@ xray_get_service_graph <- function(StartTime, EndTime, GroupName = NULL, GroupAR
 #' range
 #'
 #' @description
-#' Get an aggregation of service statistics defined by a specific time
-#' range.
+#' Get an aggregation of service statistics defined by a specific time range.
 #'
 #' @usage
 #' xray_get_time_series_service_statistics(StartTime, EndTime, GroupName,
@@ -1795,14 +1711,10 @@ xray_get_service_graph <- function(StartTime, EndTime, GroupName = NULL, GroupAR
 #' @param StartTime &#91;required&#93; The start of the time frame for which to aggregate statistics.
 #' @param EndTime &#91;required&#93; The end of the time frame for which to aggregate statistics.
 #' @param GroupName The case-sensitive name of the group for which to pull statistics from.
-#' @param GroupARN The Amazon Resource Name (ARN) of the group for which to pull statistics
-#' from.
-#' @param EntitySelectorExpression A filter expression defining entities that will be aggregated for
-#' statistics. Supports ID, service, and edge functions. If no selector
-#' expression is specified, edge statistics are returned.
+#' @param GroupARN The Amazon Resource Name (ARN) of the group for which to pull statistics from.
+#' @param EntitySelectorExpression A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.
 #' @param Period Aggregation period in seconds.
-#' @param ForecastStatistics The forecasted high and low fault count values. Forecast enabled
-#' requests require the EntitySelectorExpression ID be provided.
+#' @param ForecastStatistics The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided.
 #' @param NextToken Pagination token.
 #'
 #' @return
@@ -2050,13 +1962,7 @@ xray_get_trace_graph <- function(TraceIds, NextToken = NULL) {
 #' OpenTelemetry protocol (OTLP) endpoint
 #'
 #' @description
-#' Retrieves the current destination of data sent to
-#' [`put_trace_segments`][xray_put_trace_segments] and *OpenTelemetry
-#' protocol (OTLP)* endpoint. The Transaction Search feature requires a
-#' CloudWatchLogs destination. For more information, see [Transaction
-#' Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html)
-#' and
-#' [OpenTelemetry](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OpenTelemetry-Sections.html).
+#' Retrieves the current destination of data sent to [`put_trace_segments`][xray_put_trace_segments] and *OpenTelemetry protocol (OTLP)* endpoint. The Transaction Search feature requires a CloudWatchLogs destination. For more information, see [Transaction Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html) and [OpenTelemetry](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-OpenTelemetry-Sections.html).
 #'
 #' @usage
 #' xray_get_trace_segment_destination()
@@ -2105,26 +2011,17 @@ xray_get_trace_segment_destination <- function() {
 #' frame using an optional filter
 #'
 #' @description
-#' Retrieves IDs and annotations for traces available for a specified time
-#' frame using an optional filter. To get the full traces, pass the trace
-#' IDs to [`batch_get_traces`][xray_batch_get_traces].
+#' Retrieves IDs and annotations for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to [`batch_get_traces`][xray_batch_get_traces].
 #' 
-#' A filter expression can target traced requests that hit specific service
-#' nodes or edges, have errors, or come from a known user. For example, the
-#' following filter expression targets traces that pass through
-#' `api.example.com`:
+#' A filter expression can target traced requests that hit specific service nodes or edges, have errors, or come from a known user. For example, the following filter expression targets traces that pass through `api.example.com`:
 #' 
 #' `service("api.example.com")`
 #' 
-#' This filter expression finds traces that have an annotation named
-#' `account` with the value `12345`:
+#' This filter expression finds traces that have an annotation named `account` with the value `12345`:
 #' 
 #' `annotation.account = "12345"`
 #' 
-#' For a full list of indexed fields and keywords that you can use in
-#' filter expressions, see [Use filter
-#' expressions](https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-console.html#xray-console-filters)
-#' in the *Amazon Web Services X-Ray Developer Guide*.
+#' For a full list of indexed fields and keywords that you can use in filter expressions, see [Use filter expressions](https://docs.aws.amazon.com/xray/latest/devguide/aws-xray-interface-console.html#xray-console-filters) in the *Amazon Web Services X-Ray Developer Guide*.
 #'
 #' @usage
 #' xray_get_trace_summaries(StartTime, EndTime, TimeRangeType, Sampling,
@@ -2132,15 +2029,11 @@ xray_get_trace_segment_destination <- function() {
 #'
 #' @param StartTime &#91;required&#93; The start of the time frame for which to retrieve traces.
 #' @param EndTime &#91;required&#93; The end of the time frame for which to retrieve traces.
-#' @param TimeRangeType Query trace summaries by TraceId (trace start time), Event (trace update
-#' time), or Service (trace segment end time).
+#' @param TimeRangeType Query trace summaries by TraceId (trace start time), Event (trace update time), or Service (trace segment end time).
 #' @param Sampling Set to `true` to get summaries for only a subset of available traces.
-#' @param SamplingStrategy A parameter to indicate whether to enable sampling on trace summaries.
-#' Input parameters are Name and Value.
-#' @param FilterExpression Specify a filter expression to retrieve trace summaries for services or
-#' requests that meet certain requirements.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of results.
+#' @param SamplingStrategy A parameter to indicate whether to enable sampling on trace summaries. Input parameters are Name and Value.
+#' @param FilterExpression Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2375,8 +2268,7 @@ xray_get_trace_summaries <- function(StartTime, EndTime, TimeRangeType = NULL, S
 #' account
 #'
 #' @description
-#' Returns the list of resource policies in the target Amazon Web Services
-#' account.
+#' Returns the list of resource policies in the target Amazon Web Services account.
 #'
 #' @usage
 #' xray_list_resource_policies(NextToken)
@@ -2436,35 +2328,22 @@ xray_list_resource_policies <- function(NextToken = NULL) {
 #' CloudWatch log group generated by Transaction Search
 #'
 #' @description
-#' Retrieves a list of traces for a given `RetrievalToken` from the
-#' CloudWatch log group generated by Transaction Search. For information on
-#' what each trace returns, see
-#' [`batch_get_traces`][xray_batch_get_traces].
+#' Retrieves a list of traces for a given `RetrievalToken` from the CloudWatch log group generated by Transaction Search. For information on what each trace returns, see [`batch_get_traces`][xray_batch_get_traces].
 #' 
-#' This API does not initiate a retrieval process. To start a trace
-#' retrieval, use [`start_trace_retrieval`][xray_start_trace_retrieval],
-#' which generates the required `RetrievalToken`.
+#' This API does not initiate a retrieval process. To start a trace retrieval, use [`start_trace_retrieval`][xray_start_trace_retrieval], which generates the required `RetrievalToken`.
 #' 
-#' When the `RetrievalStatus` is not *COMPLETE*, the API will return an
-#' empty response. Retry the request once the retrieval has completed to
-#' access the full list of traces.
+#' When the `RetrievalStatus` is not *COMPLETE*, the API will return an empty response. Retry the request once the retrieval has completed to access the full list of traces.
 #' 
-#' For cross-account observability, this API can retrieve traces from
-#' linked accounts when CloudWatch log is set as the destination across
-#' relevant accounts. For more details, see [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' For cross-account observability, this API can retrieve traces from linked accounts when CloudWatch log is set as the destination across relevant accounts. For more details, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #' 
-#' For retrieving data from X-Ray directly as opposed to the Transaction
-#' Search generated log group, see
-#' [`batch_get_traces`][xray_batch_get_traces].
+#' For retrieving data from X-Ray directly as opposed to the Transaction Search generated log group, see [`batch_get_traces`][xray_batch_get_traces].
 #'
 #' @usage
 #' xray_list_retrieved_traces(RetrievalToken, TraceFormat, NextToken)
 #'
 #' @param RetrievalToken &#91;required&#93; Retrieval token.
 #' @param TraceFormat Format of the requested traces.
-#' @param NextToken Specify the pagination token returned by a previous request to retrieve
-#' the next page of indexes.
+#' @param NextToken Specify the pagination token returned by a previous request to retrieve the next page of indexes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2525,16 +2404,13 @@ xray_list_retrieved_traces <- function(RetrievalToken, TraceFormat = NULL, NextT
 #' Services X-Ray group or sampling rule
 #'
 #' @description
-#' Returns a list of tags that are applied to the specified Amazon Web
-#' Services X-Ray group or sampling rule.
+#' Returns a list of tags that are applied to the specified Amazon Web Services X-Ray group or sampling rule.
 #'
 #' @usage
 #' xray_list_tags_for_resource(ResourceARN, NextToken)
 #'
 #' @param ResourceARN &#91;required&#93; The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
-#' @param NextToken A pagination token. If multiple pages of results are returned, use the
-#' `NextToken` value returned with the current page of results as the value
-#' of this parameter to get the next page of results.
+#' @param NextToken A pagination token. If multiple pages of results are returned, use the `NextToken` value returned with the current page of results as the value of this parameter to get the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2594,18 +2470,12 @@ xray_list_tags_for_resource <- function(ResourceARN, NextToken = NULL) {
 #' 
 #' -   **Alias** - The name of the key. For example, `alias/MyKey`.
 #' 
-#' -   **Key ID** - The KMS key ID of the key. For example,
-#'     `ae4aa6d49-a4d8-9df9-a475-4ff6d7898456`. Amazon Web Services X-Ray
-#'     does not support asymmetric KMS keys.
+#' -   **Key ID** - The KMS key ID of the key. For example, `ae4aa6d49-a4d8-9df9-a475-4ff6d7898456`. Amazon Web Services X-Ray does not support asymmetric KMS keys.
 #' 
-#' -   **ARN** - The full Amazon Resource Name of the key ID or alias. For
-#'     example,
-#'     `arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456`.
-#'     Use this format to specify a key in a different account.
+#' -   **ARN** - The full Amazon Resource Name of the key ID or alias. For example, `arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456`. Use this format to specify a key in a different account.
 #' 
 #' Omit this key if you set `Type` to `NONE`.
-#' @param Type &#91;required&#93; The type of encryption. Set to `KMS` to use your own key for encryption.
-#' Set to `NONE` for default encryption.
+#' @param Type &#91;required&#93; The type of encryption. Set to `KMS` to use your own key for encryption. Set to `NONE` for default encryption.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2655,39 +2525,22 @@ xray_put_encryption_config <- function(KeyId = NULL, Type) {
 #' services and accounts permissions to access X-Ray
 #'
 #' @description
-#' Sets the resource policy to grant one or more Amazon Web Services
-#' services and accounts permissions to access X-Ray. Each resource policy
-#' will be associated with a specific Amazon Web Services account. Each
-#' Amazon Web Services account can have a maximum of 5 resource policies,
-#' and each policy name must be unique within that account. The maximum
-#' size of each resource policy is 5KB.
+#' Sets the resource policy to grant one or more Amazon Web Services services and accounts permissions to access X-Ray. Each resource policy will be associated with a specific Amazon Web Services account. Each Amazon Web Services account can have a maximum of 5 resource policies, and each policy name must be unique within that account. The maximum size of each resource policy is 5KB.
 #'
 #' @usage
 #' xray_put_resource_policy(PolicyName, PolicyDocument, PolicyRevisionId,
 #'   BypassPolicyLockoutCheck)
 #'
-#' @param PolicyName &#91;required&#93; The name of the resource policy. Must be unique within a specific Amazon
-#' Web Services account.
+#' @param PolicyName &#91;required&#93; The name of the resource policy. Must be unique within a specific Amazon Web Services account.
 #' @param PolicyDocument &#91;required&#93; The resource policy document, which can be up to 5kb in size.
-#' @param PolicyRevisionId Specifies a specific policy revision, to ensure an atomic create
-#' operation. By default the resource policy is created if it does not
-#' exist, or updated with an incremented revision id. The revision id is
-#' unique to each policy in the account.
+#' @param PolicyRevisionId Specifies a specific policy revision, to ensure an atomic create operation. By default the resource policy is created if it does not exist, or updated with an incremented revision id. The revision id is unique to each policy in the account.
 #' 
-#' If the policy revision id does not match the latest revision id, the
-#' operation will fail with an `InvalidPolicyRevisionIdException`
-#' exception. You can also provide a `PolicyRevisionId` of 0. In this case,
-#' the operation will fail with an `InvalidPolicyRevisionIdException`
-#' exception if a resource policy with the same name already exists.
-#' @param BypassPolicyLockoutCheck A flag to indicate whether to bypass the resource policy lockout safety
-#' check.
+#' If the policy revision id does not match the latest revision id, the operation will fail with an `InvalidPolicyRevisionIdException` exception. You can also provide a `PolicyRevisionId` of 0. In this case, the operation will fail with an `InvalidPolicyRevisionIdException` exception if a resource policy with the same name already exists.
+#' @param BypassPolicyLockoutCheck A flag to indicate whether to bypass the resource policy lockout safety check.
 #' 
-#' Setting this value to true increases the risk that the policy becomes
-#' unmanageable. Do not set this value to true indiscriminately.
+#' Setting this value to true increases the risk that the policy becomes unmanageable. Do not set this value to true indiscriminately.
 #' 
-#' Use this parameter only when you include a policy in the request and you
-#' intend to prevent the principal that is making the request from making a
-#' subsequent [`put_resource_policy`][xray_put_resource_policy] request.
+#' Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent [`put_resource_policy`][xray_put_resource_policy] request.
 #' 
 #' The default value is false.
 #'
@@ -2812,70 +2665,40 @@ xray_put_telemetry_records <- function(TelemetryRecords, EC2InstanceId = NULL, H
 #' Uploads segment documents to Amazon Web Services X-Ray
 #'
 #' @description
-#' Uploads segment documents to Amazon Web Services X-Ray. A segment
-#' document can be a completed segment, an in-progress segment, or an array
-#' of subsegments.
+#' Uploads segment documents to Amazon Web Services X-Ray. A segment document can be a completed segment, an in-progress segment, or an array of subsegments.
 #' 
-#' Segments must include the following fields. For the full segment
-#' document schema, see [Amazon Web Services X-Ray Segment
-#' Documents](https://docs.aws.amazon.com/xray/latest/devguide/xray-api.html#xray-api-segmentdocuments.html)
-#' in the *Amazon Web Services X-Ray Developer Guide*.
+#' Segments must include the following fields. For the full segment document schema, see [Amazon Web Services X-Ray Segment Documents](https://docs.aws.amazon.com/xray/latest/devguide/xray-api.html#xray-api-segmentdocuments.html) in the *Amazon Web Services X-Ray Developer Guide*.
 #' 
 #' **Required segment document fields**
 #' 
 #' -   `name` - The name of the service that handled the request.
 #' 
-#' -   `id` - A 64-bit identifier for the segment, unique among segments in
-#'     the same trace, in 16 hexadecimal digits.
+#' -   `id` - A 64-bit identifier for the segment, unique among segments in the same trace, in 16 hexadecimal digits.
 #' 
-#' -   `trace_id` - A unique identifier that connects all segments and
-#'     subsegments originating from a single client request.
+#' -   `trace_id` - A unique identifier that connects all segments and subsegments originating from a single client request.
 #' 
-#' -   `start_time` - Time the segment or subsegment was created, in
-#'     floating point seconds in epoch time, accurate to milliseconds. For
-#'     example, `1480615200.010` or `1.480615200010E9`.
+#' -   `start_time` - Time the segment or subsegment was created, in floating point seconds in epoch time, accurate to milliseconds. For example, `1480615200.010` or `1.480615200010E9`.
 #' 
-#' -   `end_time` - Time the segment or subsegment was closed. For example,
-#'     `1480615200.090` or `1.480615200090E9`. Specify either an `end_time`
-#'     or `in_progress`.
+#' -   `end_time` - Time the segment or subsegment was closed. For example, `1480615200.090` or `1.480615200090E9`. Specify either an `end_time` or `in_progress`.
 #' 
-#' -   `in_progress` - Set to `true` instead of specifying an `end_time` to
-#'     record that a segment has been started, but is not complete. Send an
-#'     in-progress segment when your application receives a request that
-#'     will take a long time to serve, to trace that the request was
-#'     received. When the response is sent, send the complete segment to
-#'     overwrite the in-progress segment.
+#' -   `in_progress` - Set to `true` instead of specifying an `end_time` to record that a segment has been started, but is not complete. Send an in-progress segment when your application receives a request that will take a long time to serve, to trace that the request was received. When the response is sent, send the complete segment to overwrite the in-progress segment.
 #' 
-#' A `trace_id` consists of three numbers separated by hyphens. For
-#' example, 1-58406520-a006649127e371903a2de979. For trace IDs created by
-#' an X-Ray SDK, or by Amazon Web Services services integrated with X-Ray,
-#' a trace ID includes:
+#' A `trace_id` consists of three numbers separated by hyphens. For example, 1-58406520-a006649127e371903a2de979. For trace IDs created by an X-Ray SDK, or by Amazon Web Services services integrated with X-Ray, a trace ID includes:
 #' 
 #' **Trace ID Format**
 #' 
 #' -   The version number, for instance, `1`.
 #' 
-#' -   The time of the original request, in Unix epoch time, in 8
-#'     hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST in
-#'     epoch time is `1480615200` seconds, or `58406520` in hexadecimal.
+#' -   The time of the original request, in Unix epoch time, in 8 hexadecimal digits. For example, 10:00AM December 2nd, 2016 PST in epoch time is `1480615200` seconds, or `58406520` in hexadecimal.
 #' 
-#' -   A 96-bit identifier for the trace, globally unique, in 24
-#'     hexadecimal digits.
+#' -   A 96-bit identifier for the trace, globally unique, in 24 hexadecimal digits.
 #' 
-#' Trace IDs created via OpenTelemetry have a different format based on the
-#' [W3C Trace Context specification](https://www.w3.org/TR/trace-context/).
-#' A W3C trace ID must be formatted in the X-Ray trace ID format when
-#' sending to X-Ray. For example, a W3C trace ID
-#' `4efaaf4d1e8720b39541901950019ee5` should be formatted as
-#' `1-4efaaf4d-1e8720b39541901950019ee5` when sending to X-Ray. While X-Ray
-#' trace IDs include the original request timestamp in Unix epoch time,
-#' this is not required or validated.
+#' Trace IDs created via OpenTelemetry have a different format based on the [W3C Trace Context specification](https://www.w3.org/TR/trace-context/). A W3C trace ID must be formatted in the X-Ray trace ID format when sending to X-Ray. For example, a W3C trace ID `4efaaf4d1e8720b39541901950019ee5` should be formatted as `1-4efaaf4d-1e8720b39541901950019ee5` when sending to X-Ray. While X-Ray trace IDs include the original request timestamp in Unix epoch time, this is not required or validated.
 #'
 #' @usage
 #' xray_put_trace_segments(TraceSegmentDocuments)
 #'
-#' @param TraceSegmentDocuments &#91;required&#93; A string containing a JSON document defining one or more segments or
-#' subsegments.
+#' @param TraceSegmentDocuments &#91;required&#93; A string containing a JSON document defining one or more segments or subsegments.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2929,37 +2752,20 @@ xray_put_trace_segments <- function(TraceSegmentDocuments) {
 #' log group
 #'
 #' @description
-#' Initiates a trace retrieval process using the specified time range and
-#' for the given trace IDs in the Transaction Search generated CloudWatch
-#' log group. For more information, see [Transaction
-#' Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html).
+#' Initiates a trace retrieval process using the specified time range and for the given trace IDs in the Transaction Search generated CloudWatch log group. For more information, see [Transaction Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html).
 #' 
-#' API returns a `RetrievalToken`, which can be used with
-#' [`list_retrieved_traces`][xray_list_retrieved_traces] or
-#' [`get_retrieved_traces_graph`][xray_get_retrieved_traces_graph] to fetch
-#' results. Retrievals will time out after 60 minutes. To execute long time
-#' ranges, consider segmenting into multiple retrievals.
+#' API returns a `RetrievalToken`, which can be used with [`list_retrieved_traces`][xray_list_retrieved_traces] or [`get_retrieved_traces_graph`][xray_get_retrieved_traces_graph] to fetch results. Retrievals will time out after 60 minutes. To execute long time ranges, consider segmenting into multiple retrievals.
 #' 
-#' If you are using [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html),
-#' you can use this operation in a monitoring account to retrieve data from
-#' a linked source account, as long as both accounts have transaction
-#' search enabled.
+#' If you are using [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html), you can use this operation in a monitoring account to retrieve data from a linked source account, as long as both accounts have transaction search enabled.
 #' 
-#' For retrieving data from X-Ray directly as opposed to the
-#' Transaction-Search Log group, see
-#' [`batch_get_traces`][xray_batch_get_traces].
+#' For retrieving data from X-Ray directly as opposed to the Transaction-Search Log group, see [`batch_get_traces`][xray_batch_get_traces].
 #'
 #' @usage
 #' xray_start_trace_retrieval(TraceIds, StartTime, EndTime)
 #'
 #' @param TraceIds &#91;required&#93; Specify the trace IDs of the traces to be retrieved.
-#' @param StartTime &#91;required&#93; The start of the time range to retrieve traces. The range is inclusive,
-#' so the specified start time is included in the query. Specified as epoch
-#' time, the number of seconds since January 1, 1970, 00:00:00 UTC.
-#' @param EndTime &#91;required&#93; The end of the time range to retrieve traces. The range is inclusive, so
-#' the specified end time is included in the query. Specified as epoch
-#' time, the number of seconds since January 1, 1970, 00:00:00 UTC.
+#' @param StartTime &#91;required&#93; The start of the time range to retrieve traces. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
+#' @param EndTime &#91;required&#93; The end of the time range to retrieve traces. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3012,18 +2818,13 @@ xray_start_trace_retrieval <- function(TraceIds, StartTime, EndTime) {
 #' rule
 #'
 #' @description
-#' Applies tags to an existing Amazon Web Services X-Ray group or sampling
-#' rule.
+#' Applies tags to an existing Amazon Web Services X-Ray group or sampling rule.
 #'
 #' @usage
 #' xray_tag_resource(ResourceARN, Tags)
 #'
 #' @param ResourceARN &#91;required&#93; The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
-#' @param Tags &#91;required&#93; A map that contains one or more tag keys and tag values to attach to an
-#' X-Ray group or sampling rule. For more information about ways to use
-#' tags, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' in the *Amazon Web Services General Reference*.
+#' @param Tags &#91;required&#93; A map that contains one or more tag keys and tag values to attach to an X-Ray group or sampling rule. For more information about ways to use tags, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html) in the *Amazon Web Services General Reference*.
 #' 
 #' The following restrictions apply to tags:
 #' 
@@ -3033,13 +2834,11 @@ xray_start_trace_retrieval <- function(TraceIds, StartTime, EndTime) {
 #' 
 #' -   Maximum tag value length: 256 Unicode characters
 #' 
-#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the
-#'     following characters: _ . : / = + - and @@
+#' -   Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @@
 #' 
 #' -   Tag keys and values are case sensitive.
 #' 
-#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web
-#'     Services use. You cannot edit or delete system tags.
+#' -   Don't use `aws:` as a prefix for keys; it's reserved for Amazon Web Services use. You cannot edit or delete system tags.
 #'
 #' @return
 #' An empty list.
@@ -3084,15 +2883,13 @@ xray_tag_resource <- function(ResourceARN, Tags) {
 #' Removes tags from an Amazon Web Services X-Ray group or sampling rule
 #'
 #' @description
-#' Removes tags from an Amazon Web Services X-Ray group or sampling rule.
-#' You cannot edit or delete system tags (those with an `aws:` prefix).
+#' Removes tags from an Amazon Web Services X-Ray group or sampling rule. You cannot edit or delete system tags (those with an `aws:` prefix).
 #'
 #' @usage
 #' xray_untag_resource(ResourceARN, TagKeys)
 #'
 #' @param ResourceARN &#91;required&#93; The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
-#' @param TagKeys &#91;required&#93; Keys for one or more tags that you want to remove from an X-Ray group or
-#' sampling rule.
+#' @param TagKeys &#91;required&#93; Keys for one or more tags that you want to remove from an X-Ray group or sampling rule.
 #'
 #' @return
 #' An empty list.
@@ -3142,16 +2939,12 @@ xray_untag_resource <- function(ResourceARN, TagKeys) {
 #'
 #' @param GroupName The case-sensitive name of the group.
 #' @param GroupARN The ARN that was generated upon creation.
-#' @param FilterExpression The updated filter expression defining criteria by which to group
-#' traces.
+#' @param FilterExpression The updated filter expression defining criteria by which to group traces.
 #' @param InsightsConfiguration The structure containing configurations related to insights.
 #' 
-#' -   The InsightsEnabled boolean can be set to true to enable insights
-#'     for the group or false to disable insights for the group.
+#' -   The InsightsEnabled boolean can be set to true to enable insights for the group or false to disable insights for the group.
 #' 
-#' -   The NotificationsEnabled boolean can be set to true to enable
-#'     insights notifications for the group. Notifications can only be
-#'     enabled on a group with InsightsEnabled set to true.
+#' -   The NotificationsEnabled boolean can be set to true to enable insights notifications for the group. Notifications can only be enabled on a group with InsightsEnabled set to true.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3211,9 +3004,7 @@ xray_update_group <- function(GroupName = NULL, GroupARN = NULL, FilterExpressio
 #' @description
 #' Modifies an indexing rule’s configuration.
 #' 
-#' Indexing rules are used for determining the sampling rate for spans
-#' indexed from CloudWatch Logs. For more information, see [Transaction
-#' Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html).
+#' Indexing rules are used for determining the sampling rate for spans indexed from CloudWatch Logs. For more information, see [Transaction Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html).
 #'
 #' @usage
 #' xray_update_indexing_rule(Name, Rule)
@@ -3375,11 +3166,7 @@ xray_update_sampling_rule <- function(SamplingRuleUpdate) {
 #' Modifies the destination of data sent to PutTraceSegments
 #'
 #' @description
-#' Modifies the destination of data sent to
-#' [`put_trace_segments`][xray_put_trace_segments]. The Transaction Search
-#' feature requires the CloudWatchLogs destination. For more information,
-#' see [Transaction
-#' Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html).
+#' Modifies the destination of data sent to [`put_trace_segments`][xray_put_trace_segments]. The Transaction Search feature requires the CloudWatchLogs destination. For more information, see [Transaction Search](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html).
 #'
 #' @usage
 #' xray_update_trace_segment_destination(Destination)

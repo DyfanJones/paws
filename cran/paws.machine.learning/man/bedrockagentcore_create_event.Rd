@@ -16,27 +16,19 @@ bedrockagentcore_create_event(
 )
 }
 \arguments{
-\item{memoryId}{[required] The identifier of the AgentCore Memory resource in which to create the
-event.}
+\item{memoryId}{[required] The identifier of the AgentCore Memory resource in which to create the event.}
 
-\item{actorId}{[required] The identifier of the actor associated with this event. An actor
-represents an entity that participates in sessions and generates events.}
+\item{actorId}{[required] The identifier of the actor associated with this event. An actor represents an entity that participates in sessions and generates events.}
 
-\item{sessionId}{The identifier of the session in which this event occurs. A session
-represents a sequence of related events.}
+\item{sessionId}{The identifier of the session in which this event occurs. A session represents a sequence of related events.}
 
-\item{eventTimestamp}{[required] The timestamp when the event occurred. If not specified, the current
-time is used.}
+\item{eventTimestamp}{[required] The timestamp when the event occurred. If not specified, the current time is used.}
 
-\item{payload}{[required] The content payload of the event. This can include conversational data
-or binary content.}
+\item{payload}{[required] The content payload of the event. This can include conversational data or binary content.}
 
-\item{branch}{The branch information for this event. Branches allow for organizing
-events into different conversation threads or paths.}
+\item{branch}{The branch information for this event. Branches allow for organizing events into different conversation threads or paths.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, AgentCore ignores the request, but does not return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, AgentCore ignores the request, but does not return an error.}
 
 \item{metadata}{The key-value metadata to attach to the event.}
 }

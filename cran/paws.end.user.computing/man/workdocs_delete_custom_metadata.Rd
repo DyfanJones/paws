@@ -13,18 +13,15 @@ workdocs_delete_custom_metadata(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
 \item{ResourceId}{[required] The ID of the resource, either a document or folder.}
 
-\item{VersionId}{The ID of the version, if the custom metadata is being deleted from a
-document version.}
+\item{VersionId}{The ID of the version, if the custom metadata is being deleted from a document version.}
 
 \item{Keys}{List of properties to remove.}
 
-\item{DeleteAll}{Flag to indicate removal of all custom metadata properties from the
-specified resource.}
+\item{DeleteAll}{Flag to indicate removal of all custom metadata properties from the specified resource.}
 }
 \description{
 Deletes custom metadata from the specified resource.

@@ -17,12 +17,9 @@ comprehend_update_endpoint(
 
 \item{DesiredModelArn}{The ARN of the new model to use when updating an existing endpoint.}
 
-\item{DesiredInferenceUnits}{The desired number of inference units to be used by the model using this
-endpoint. Each inference unit represents of a throughput of 100
-characters per second.}
+\item{DesiredInferenceUnits}{The desired number of inference units to be used by the model using this endpoint. Each inference unit represents of a throughput of 100 characters per second.}
 
-\item{DesiredDataAccessRoleArn}{Data access role ARN to use in case the new model is encrypted with a
-customer CMK.}
+\item{DesiredDataAccessRoleArn}{Data access role ARN to use in case the new model is encrypted with a customer CMK.}
 
 \item{FlywheelArn}{The Amazon Resource Number (ARN) of the flywheel}
 }

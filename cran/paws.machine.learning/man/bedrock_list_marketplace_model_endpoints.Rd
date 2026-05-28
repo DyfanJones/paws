@@ -12,16 +12,11 @@ bedrock_list_marketplace_model_endpoints(
 )
 }
 \arguments{
-\item{maxResults}{The maximum number of results to return in a single call. If more
-results are available, the operation returns a \code{NextToken} value.}
+\item{maxResults}{The maximum number of results to return in a single call. If more results are available, the operation returns a \code{NextToken} value.}
 
-\item{nextToken}{The token for the next set of results. You receive this token from a
-previous
-\code{\link[=bedrock_list_marketplace_model_endpoints]{list_marketplace_model_endpoints}}
-call.}
+\item{nextToken}{The token for the next set of results. You receive this token from a previous \code{\link[=bedrock_list_marketplace_model_endpoints]{list_marketplace_model_endpoints}} call.}
 
-\item{modelSourceEquals}{If specified, only endpoints for the given model source identifier are
-returned.}
+\item{modelSourceEquals}{If specified, only endpoints for the given model source identifier are returned.}
 }
 \description{
 Lists the endpoints for models from Amazon Bedrock Marketplace in your Amazon Web Services account.

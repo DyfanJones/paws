@@ -29,19 +29,15 @@ datazone_create_project(
 
 \item{glossaryTerms}{The glossary terms that can be used in this Amazon DataZone project.}
 
-\item{domainUnitId}{The ID of the domain unit. This parameter is not required and if it is
-not specified, then the project is created at the root domain unit
-level.}
+\item{domainUnitId}{The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.}
 
 \item{projectProfileId}{The ID of the project profile.}
 
 \item{userParameters}{The user parameters of the project.}
 
-\item{projectCategory}{The category of the project. Set to 'ADMIN' designates this as an
-administrative project for the Amazon DataZone domain.}
+\item{projectCategory}{The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.}
 
-\item{projectExecutionRole}{The default project IAM role that is used to access project resources
-and run computes such as Glue and Sagemaker.}
+\item{projectExecutionRole}{The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.}
 
 \item{membershipAssignments}{The members to be assigned to the project.}
 }

@@ -12,17 +12,13 @@ glue_update_user_defined_function(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the function to be updated is located.
-If none is provided, the Amazon Web Services account ID is used by
-default.}
+\item{CatalogId}{The ID of the Data Catalog where the function to be updated is located. If none is provided, the Amazon Web Services account ID is used by default.}
 
-\item{DatabaseName}{[required] The name of the catalog database where the function to be updated is
-located.}
+\item{DatabaseName}{[required] The name of the catalog database where the function to be updated is located.}
 
 \item{FunctionName}{[required] The name of the function.}
 
-\item{FunctionInput}{[required] A \code{FunctionInput} object that redefines the function in the Data
-Catalog.}
+\item{FunctionInput}{[required] A \code{FunctionInput} object that redefines the function in the Data Catalog.}
 }
 \description{
 Updates an existing function definition in the Data Catalog.

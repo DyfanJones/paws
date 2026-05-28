@@ -18,15 +18,13 @@ elbv2_create_rule(
 
 \item{Conditions}{[required] The conditions.}
 
-\item{Priority}{[required] The rule priority. A listener can't have multiple rules with the same
-priority.}
+\item{Priority}{[required] The rule priority. A listener can't have multiple rules with the same priority.}
 
 \item{Actions}{[required] The actions.}
 
 \item{Tags}{The tags to assign to the rule.}
 
-\item{Transforms}{The transforms to apply to requests that match this rule. You can add
-one host header rewrite transform and one URL rewrite transform.}
+\item{Transforms}{The transforms to apply to requests that match this rule. You can add one host header rewrite transform and one URL rewrite transform.}
 }
 \description{
 Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.

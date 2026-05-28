@@ -13,6 +13,8 @@ bedrockdataautomation_list_data_automation_library_ingestion_jobs(
 \arguments{
 \item{libraryArn}{[required] ARN generated at the server side when a DataAutomationLibrary is created}
 
+\item{maxResults}{Max Results}
+
 \item{nextToken}{Pagination token for retrieving the next set of results}
 }
 \description{

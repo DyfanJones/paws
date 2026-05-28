@@ -17,8 +17,7 @@ elbv2_describe_trust_store_revocations(
 
 \item{RevocationIds}{The revocation IDs of the revocation files you want to describe.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
 \item{PageSize}{The maximum number of results to return with this call.}
 }

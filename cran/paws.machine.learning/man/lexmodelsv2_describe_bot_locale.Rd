@@ -11,8 +11,7 @@ lexmodelsv2_describe_bot_locale(botId, botVersion, localeId)
 
 \item{botVersion}{[required] The version of the bot associated with the locale.}
 
-\item{localeId}{[required] The unique identifier of the locale to describe. The string must match
-one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 }
 \description{
 Describes the settings that a bot has for a specific locale.

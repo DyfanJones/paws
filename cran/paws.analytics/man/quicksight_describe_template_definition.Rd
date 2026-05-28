@@ -12,19 +12,13 @@ quicksight_describe_template_definition(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template.
-You must be using the Amazon Web Services account that the template is
-in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the template. You must be using the Amazon Web Services account that the template is in.}
 
 \item{TemplateId}{[required] The ID of the template that you're describing.}
 
 \item{VersionNumber}{The version number of the template.}
 
-\item{AliasName}{The alias of the template that you want to describe. If you name a
-specific alias, you describe the version that the alias points to. You
-can specify the latest version of the template by providing the keyword
-\verb{$LATEST} in the \code{AliasName} parameter. The keyword \verb{$PUBLISHED} doesn't
-apply to templates.}
+\item{AliasName}{The alias of the template that you want to describe. If you name a specific alias, you describe the version that the alias points to. You can specify the latest version of the template by providing the keyword \verb{$LATEST} in the \code{AliasName} parameter. The keyword \verb{$PUBLISHED} doesn't apply to templates.}
 }
 \description{
 Provides a detailed description of the definition of a template.

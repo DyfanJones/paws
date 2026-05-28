@@ -11,8 +11,7 @@ dynamodb_update_kinesis_streaming_destination(
 )
 }
 \arguments{
-\item{TableName}{[required] The table name for the Kinesis streaming destination input. You can also
-provide the ARN of the table in this parameter.}
+\item{TableName}{[required] The table name for the Kinesis streaming destination input. You can also provide the ARN of the table in this parameter.}
 
 \item{StreamArn}{[required] The Amazon Resource Name (ARN) for the Kinesis stream input.}
 

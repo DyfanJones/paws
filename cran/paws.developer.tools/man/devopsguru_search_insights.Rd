@@ -13,18 +13,13 @@ devopsguru_search_insights(
 )
 }
 \arguments{
-\item{StartTimeRange}{[required] The start of the time range passed in. Returned insights occurred after
-this time.}
+\item{StartTimeRange}{[required] The start of the time range passed in. Returned insights occurred after this time.}
 
-\item{Filters}{A \code{SearchInsightsFilters} object that is used to set the severity and
-status filters on your insight search.}
+\item{Filters}{A \code{SearchInsightsFilters} object that is used to set the severity and status filters on your insight search.}
 
-\item{MaxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{MaxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 
 \item{Type}{[required] The type of insights you are searching for (\code{REACTIVE} or \code{PROACTIVE}).}
 }

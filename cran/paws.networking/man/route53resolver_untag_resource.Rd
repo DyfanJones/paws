@@ -7,9 +7,7 @@
 route53resolver_untag_resource(ResourceArn, TagKeys)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) for the resource that you want to remove
-tags from. To get the ARN for a resource, use the applicable \code{Get} or
-\code{List} command:
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) for the resource that you want to remove tags from. To get the ARN for a resource, use the applicable \code{Get} or \code{List} command:
 \itemize{
 \item \code{\link[=route53resolver_get_resolver_endpoint]{get_resolver_endpoint}}
 \item \code{\link[=route53resolver_get_resolver_rule]{get_resolver_rule}}

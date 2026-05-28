@@ -13,12 +13,21 @@ wellarchitected_list_lens_shares(
 )
 }
 \arguments{
-\item{LensAlias}{[required]}
+\item{LensAlias}{[required] The alias of the lens.
 
-\item{SharedWithPrefix}{The Amazon Web Services account ID, organization ID, or organizational
-unit (OU) ID with which the lens is shared.}
+For Amazon Web Services official lenses, this is either the lens alias, such as \code{serverless}, or the lens ARN, such as \verb{arn:aws:wellarchitected:us-east-1::lens/serverless}. Note that some operations (such as ExportLens and CreateLensShare) are not permitted on Amazon Web Services official lenses.
+
+For custom lenses, this is the lens ARN, such as \verb{arn:aws:wellarchitected:us-west-2:123456789012:lens/0123456789abcdef01234567890abcdef}.
+
+Each lens is identified by its LensSummary$LensAlias.}
+
+\item{SharedWithPrefix}{The Amazon Web Services account ID, organization ID, or organizational unit (OU) ID with which the lens is shared.}
+
+\item{NextToken}{The token to use to retrieve the next set of results.}
 
 \item{MaxResults}{The maximum number of results to return for this request.}
+
+\item{Status}{The status of the share request.}
 }
 \description{
 List the lens shares associated with the lens.

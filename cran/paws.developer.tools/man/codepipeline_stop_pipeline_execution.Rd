@@ -14,17 +14,13 @@ codepipeline_stop_pipeline_execution(
 \arguments{
 \item{pipelineName}{[required] The name of the pipeline to stop.}
 
-\item{pipelineExecutionId}{[required] The ID of the pipeline execution to be stopped in the current stage. Use
-the \code{\link[=codepipeline_get_pipeline_state]{get_pipeline_state}} action to
-retrieve the current pipelineExecutionId.}
+\item{pipelineExecutionId}{[required] The ID of the pipeline execution to be stopped in the current stage. Use the \code{\link[=codepipeline_get_pipeline_state]{get_pipeline_state}} action to retrieve the current pipelineExecutionId.}
 
-\item{abandon}{Use this option to stop the pipeline execution by abandoning, rather
-than finishing, in-progress actions.
+\item{abandon}{Use this option to stop the pipeline execution by abandoning, rather than finishing, in-progress actions.
 
 This option can lead to failed or out-of-sequence tasks.}
 
-\item{reason}{Use this option to enter comments, such as the reason the pipeline was
-stopped.}
+\item{reason}{Use this option to enter comments, such as the reason the pipeline was stopped.}
 }
 \description{
 Stops the specified pipeline execution. You choose to either stop the pipeline execution by completing in-progress actions without starting subsequent actions, or by abandoning in-progress actions. While completing or abandoning in-progress actions, the pipeline execution is in a \code{Stopping} state. After all in-progress actions are completed or abandoned, the pipeline execution is in a \code{Stopped} state.

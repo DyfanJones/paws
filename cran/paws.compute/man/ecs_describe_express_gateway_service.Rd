@@ -9,13 +9,9 @@ revisions}
 ecs_describe_express_gateway_service(serviceArn, include = NULL)
 }
 \arguments{
-\item{serviceArn}{[required] The Amazon Resource Name (ARN) of the Express service to describe. The
-ARN uniquely identifies the service within your Amazon Web Services
-account and region.}
+\item{serviceArn}{[required] The Amazon Resource Name (ARN) of the Express service to describe. The ARN uniquely identifies the service within your Amazon Web Services account and region.}
 
-\item{include}{Specifies additional information to include in the response. Valid
-values are \code{TAGS} to include resource tags associated with the Express
-service.}
+\item{include}{Specifies additional information to include in the response. Valid values are \code{TAGS} to include resource tags associated with the Express service.}
 }
 \description{
 Retrieves detailed information about an Express service, including current status, configuration, managed infrastructure, and service revisions.

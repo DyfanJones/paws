@@ -7,8 +7,7 @@
 rekognition_get_media_analysis_job(JobId)
 }
 \arguments{
-\item{JobId}{[required] Unique identifier for the media analysis job for which you want to
-retrieve results.}
+\item{JobId}{[required] Unique identifier for the media analysis job for which you want to retrieve results.}
 }
 \description{
 Retrieves the results for a given media analysis job. Takes a \code{JobId} returned by StartMediaAnalysisJob.

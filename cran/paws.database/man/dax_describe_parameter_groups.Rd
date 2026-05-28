@@ -13,16 +13,11 @@ dax_describe_parameter_groups(
 \arguments{
 \item{ParameterGroupNames}{The names of the parameter groups.}
 
-\item{MaxResults}{The maximum number of results to include in the response. If more
-results exist than the specified \code{MaxResults} value, a token is included
-in the response so that the remaining results can be retrieved.
+\item{MaxResults}{The maximum number of results to include in the response. If more results exist than the specified \code{MaxResults} value, a token is included in the response so that the remaining results can be retrieved.
 
 The value for \code{MaxResults} must be between 20 and 100.}
 
-\item{NextToken}{An optional token returned from a prior request. Use this token for
-pagination of results from this action. If this parameter is specified,
-the response includes only results beyond the token, up to the value
-specified by \code{MaxResults}.}
+\item{NextToken}{An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by \code{MaxResults}.}
 }
 \description{
 Returns a list of parameter group descriptions. If a parameter group name is specified, the list will contain only the descriptions for that group.

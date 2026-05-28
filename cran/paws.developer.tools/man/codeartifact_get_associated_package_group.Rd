@@ -14,21 +14,15 @@ codeartifact_get_associated_package_group(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the package from which to get the
-associated package group.}
+\item{domain}{[required] The name of the domain that contains the package from which to get the associated package group.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
-\item{format}{[required] The format of the package from which to get the associated package
-group.}
+\item{format}{[required] The format of the package from which to get the associated package group.}
 
-\item{namespace}{The namespace of the package from which to get the associated package
-group. The package component that specifies its namespace depends on its
-type. For example:
+\item{namespace}{The namespace of the package from which to get the associated package group. The package component that specifies its namespace depends on its type. For example:
 
-The namespace is required when getting associated package groups from
-packages of the following formats:
+The namespace is required when getting associated package groups from packages of the following formats:
 \itemize{
 \item Maven
 \item Swift
@@ -36,9 +30,7 @@ packages of the following formats:
 \item The namespace of a Maven package version is its \code{groupId}.
 \item The namespace of an npm or Swift package version is its \code{scope}.
 \item The namespace of a generic package is its \code{namespace}.
-\item Python, NuGet, Ruby, and Cargo package versions do not contain a
-corresponding component, package versions of those formats do not
-have a namespace.
+\item Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 }}
 
 \item{package}{[required] The package from which to get the associated package group.}

@@ -14,21 +14,15 @@ quicksight_update_theme(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the theme that
-you're updating.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the theme that you're updating.}
 
 \item{ThemeId}{[required] The ID for the theme.}
 
 \item{Name}{The name for the theme.}
 
-\item{BaseThemeId}{[required] The theme ID, defined by Amazon Quick Sight, that a custom theme
-inherits from. All themes initially inherit from a default Quick Sight
-theme.}
+\item{BaseThemeId}{[required] The theme ID, defined by Amazon Quick Sight, that a custom theme inherits from. All themes initially inherit from a default Quick Sight theme.}
 
-\item{VersionDescription}{A description of the theme version that you're updating Every time that
-you call \code{\link[=quicksight_update_theme]{update_theme}}, you create a new
-version of the theme. Each version of the theme maintains a description
-of the version in \code{VersionDescription}.}
+\item{VersionDescription}{A description of the theme version that you're updating Every time that you call \code{\link[=quicksight_update_theme]{update_theme}}, you create a new version of the theme. Each version of the theme maintains a description of the version in \code{VersionDescription}.}
 
 \item{Configuration}{The theme configuration, which contains the theme display properties.}
 }

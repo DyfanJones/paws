@@ -7,8 +7,7 @@
 apigateway_get_vpc_link(vpcLinkId)
 }
 \arguments{
-\item{vpcLinkId}{[required] The identifier of the VpcLink. It is used in an Integration to reference
-this VpcLink.}
+\item{vpcLinkId}{[required] The identifier of the VpcLink. It is used in an Integration to reference this VpcLink.}
 }
 \description{
 Gets a specified VPC link under the caller's account in a region.

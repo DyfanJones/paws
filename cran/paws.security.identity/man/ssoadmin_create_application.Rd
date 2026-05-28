@@ -16,10 +16,7 @@ ssoadmin_create_application(
 )
 }
 \arguments{
-\item{InstanceArn}{[required] The ARN of the instance of IAM Identity Center under which the operation
-will run. For more information about ARNs, see Amazon Resource Names
-(ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon Web
-Services General Reference}.}
+\item{InstanceArn}{[required] The ARN of the instance of IAM Identity Center under which the operation will run. For more information about ARNs, see Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces in the \emph{Amazon Web Services General Reference}.}
 
 \item{ApplicationProviderArn}{[required] The ARN of the application provider under which the operation will run.}
 
@@ -27,26 +24,17 @@ Services General Reference}.}
 
 \item{Description}{The description of the .}
 
-\item{PortalOptions}{A structure that describes the options for the portal associated with an
-application.}
+\item{PortalOptions}{A structure that describes the options for the portal associated with an application.}
 
 \item{Tags}{Specifies tags to be attached to the application.}
 
 \item{Status}{Specifies whether the application is enabled or disabled.}
 
-\item{ClientToken}{Specifies a unique, case-sensitive ID that you provide to ensure the
-idempotency of the request. This lets you safely retry the request
-without accidentally performing the same operation a second time.
-Passing the same value to a later call to an operation requires that you
-also pass the same value for all other parameters. We recommend that you
-use a \href{https://en.wikipedia.org/wiki/Universally_unique_identifier}{UUID type of value}.
+\item{ClientToken}{Specifies a unique, case-sensitive ID that you provide to ensure the idempotency of the request. This lets you safely retry the request without accidentally performing the same operation a second time. Passing the same value to a later call to an operation requires that you also pass the same value for all other parameters. We recommend that you use a \href{https://en.wikipedia.org/wiki/Universally_unique_identifier}{UUID type of value}.
 
-If you don't provide this value, then Amazon Web Services generates a
-random one for you.
+If you don't provide this value, then Amazon Web Services generates a random one for you.
 
-If you retry the operation with the same \code{ClientToken}, but with
-different parameters, the retry fails with an
-\code{IdempotentParameterMismatch} error.}
+If you retry the operation with the same \code{ClientToken}, but with different parameters, the retry fails with an \code{IdempotentParameterMismatch} error.}
 }
 \description{
 Creates an OAuth 2.0 customer managed application in IAM Identity Center for the given application provider.

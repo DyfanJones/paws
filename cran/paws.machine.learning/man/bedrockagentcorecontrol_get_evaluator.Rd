@@ -8,15 +8,9 @@ configuration, status, and metadata}
 bedrockagentcorecontrol_get_evaluator(evaluatorId, includedData = NULL)
 }
 \arguments{
-\item{evaluatorId}{[required] The unique identifier of the evaluator to retrieve. Can be a built-in
-evaluator ID (e.g., Builtin.Helpfulness) or a custom evaluator ID.}
+\item{evaluatorId}{[required] The unique identifier of the evaluator to retrieve. Can be a built-in evaluator ID (e.g., Builtin.Helpfulness) or a custom evaluator ID.}
 
-\item{includedData}{Controls which data is returned in the response. \code{ALL_DATA} (default)
-returns the full evaluator including decrypted instructions and rating
-scale. For evaluators encrypted with a customer managed KMS key, this
-requires \code{kms:Decrypt} permission on the key. \code{METADATA_ONLY} returns
-evaluator metadata and model configuration without instructions or
-rating scale, and does not require any KMS permissions.}
+\item{includedData}{Controls which data is returned in the response. \code{ALL_DATA} (default) returns the full evaluator including decrypted instructions and rating scale. For evaluators encrypted with a customer managed KMS key, this requires \code{kms:Decrypt} permission on the key. \code{METADATA_ONLY} returns evaluator metadata and model configuration without instructions or rating scale, and does not require any KMS permissions.}
 }
 \description{
 Retrieves detailed information about an evaluator, including its configuration, status, and metadata. Works with both built-in and custom evaluators.

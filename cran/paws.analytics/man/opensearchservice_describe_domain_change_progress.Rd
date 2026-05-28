@@ -10,9 +10,7 @@ opensearchservice_describe_domain_change_progress(DomainName, ChangeId = NULL)
 \arguments{
 \item{DomainName}{[required] The name of the domain to get progress information for.}
 
-\item{ChangeId}{The specific change ID for which you want to get progress information.
-If omitted, the request returns information about the most recent
-configuration change.}
+\item{ChangeId}{The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.}
 }
 \description{
 Returns information about the current blue/green deployment happening on an Amazon OpenSearch Service domain. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html}{Making configuration changes in Amazon OpenSearch Service}.

@@ -20,18 +20,13 @@ frauddetector_send_event(
 
 \item{eventTypeName}{[required] The event type name of the event.}
 
-\item{eventTimestamp}{[required] The timestamp that defines when the event under evaluation occurred. The
-timestamp must be specified using ISO 8601 standard in UTC.}
+\item{eventTimestamp}{[required] The timestamp that defines when the event under evaluation occurred. The timestamp must be specified using ISO 8601 standard in UTC.}
 
-\item{eventVariables}{[required] Names of the event type's variables you defined in Amazon Fraud Detector
-to represent data elements and their corresponding values for the event
-you are sending for evaluation.}
+\item{eventVariables}{[required] Names of the event type's variables you defined in Amazon Fraud Detector to represent data elements and their corresponding values for the event you are sending for evaluation.}
 
-\item{assignedLabel}{The label to associate with the event. Required if specifying
-\code{labelTimestamp}.}
+\item{assignedLabel}{The label to associate with the event. Required if specifying \code{labelTimestamp}.}
 
-\item{labelTimestamp}{The timestamp associated with the label. Required if specifying
-\code{assignedLabel}.}
+\item{labelTimestamp}{The timestamp associated with the label. Required if specifying \code{assignedLabel}.}
 
 \item{entities}{[required] An array of entities.}
 }

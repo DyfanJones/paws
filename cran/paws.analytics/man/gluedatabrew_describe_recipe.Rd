@@ -10,8 +10,7 @@ gluedatabrew_describe_recipe(Name, RecipeVersion = NULL)
 \arguments{
 \item{Name}{[required] The name of the recipe to be described.}
 
-\item{RecipeVersion}{The recipe version identifier. If this parameter isn't specified, then
-the latest published version is returned.}
+\item{RecipeVersion}{The recipe version identifier. If this parameter isn't specified, then the latest published version is returned.}
 }
 \description{
 Returns the definition of a specific DataBrew recipe corresponding to a particular version.

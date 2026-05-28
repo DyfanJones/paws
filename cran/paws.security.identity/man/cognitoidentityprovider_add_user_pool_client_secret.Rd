@@ -16,8 +16,7 @@ cognitoidentityprovider_add_user_pool_client_secret(
 
 \item{ClientId}{[required] The ID of the app client for which you want to create a new secret.}
 
-\item{ClientSecret}{The client secret value you want to use. If you don't provide this
-parameter, Amazon Cognito generates a secure secret for you.}
+\item{ClientSecret}{The client secret value you want to use. If you don't provide this parameter, Amazon Cognito generates a secure secret for you.}
 }
 \description{
 Creates a new client secret for an existing confidential user pool app client. Supports up to 2 active secrets per app client for zero-downtime credential rotation workflows.

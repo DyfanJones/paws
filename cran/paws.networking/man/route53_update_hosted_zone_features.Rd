@@ -10,11 +10,9 @@ route53_update_hosted_zone_features(
 )
 }
 \arguments{
-\item{HostedZoneId}{[required] The ID of the hosted zone for which you want to update features. This is
-the unique identifier for your hosted zone.}
+\item{HostedZoneId}{[required] The ID of the hosted zone for which you want to update features. This is the unique identifier for your hosted zone.}
 
-\item{EnableAcceleratedRecovery}{Specifies whether to enable accelerated recovery for the hosted zone.
-Set to \code{true} to enable accelerated recovery, or \code{false} to disable it.}
+\item{EnableAcceleratedRecovery}{Specifies whether to enable accelerated recovery for the hosted zone. Set to \code{true} to enable accelerated recovery, or \code{false} to disable it.}
 }
 \description{
 Updates the features configuration for a hosted zone. This operation allows you to enable or disable specific features for your hosted zone, such as accelerated recovery.

@@ -10,14 +10,9 @@ bedrockagentcorecontrol_list_policy_engines(
 )
 }
 \arguments{
-\item{nextToken}{A pagination token returned from a previous
-\code{\link[=bedrockagentcorecontrol_list_policy_engines]{list_policy_engines}}
-call. Use this token to retrieve the next page of results when the
-response is paginated.}
+\item{nextToken}{A pagination token returned from a previous \code{\link[=bedrockagentcorecontrol_list_policy_engines]{list_policy_engines}} call. Use this token to retrieve the next page of results when the response is paginated.}
 
-\item{maxResults}{The maximum number of policy engines to return in a single response. If
-not specified, the default is 10 policy engines per page, with a maximum
-of 100 per page.}
+\item{maxResults}{The maximum number of policy engines to return in a single response. If not specified, the default is 10 policy engines per page, with a maximum of 100 per page.}
 }
 \description{
 Retrieves a list of policy engines within the AgentCore Policy system. This operation supports pagination to help administrators discover and manage policy engines across their account. Each policy engine serves as a container for related policies.

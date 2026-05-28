@@ -18,12 +18,9 @@ ivsrealtime_list_participant_events(
 
 \item{sessionId}{[required] ID of a session within the stage.}
 
-\item{participantId}{[required] Unique identifier for this participant. This is assigned by IVS and
-returned by
-\code{\link[=ivsrealtime_create_participant_token]{create_participant_token}}.}
+\item{participantId}{[required] Unique identifier for this participant. This is assigned by IVS and returned by \code{\link[=ivsrealtime_create_participant_token]{create_participant_token}}.}
 
-\item{nextToken}{The first participant event to retrieve. This is used for pagination;
-see the \code{nextToken} response field.}
+\item{nextToken}{The first participant event to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of results to return. Default: 50.}
 }

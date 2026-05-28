@@ -16,20 +16,13 @@ bedrockagentcorecontrol_create_gateway_rule(
 \arguments{
 \item{gatewayIdentifier}{[required] The identifier of the gateway to create a rule for.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If you don't specify this field, a
-value is randomly generated for you. If this token matches a previous
-request, the service ignores the request, but doesn't return an error.
-For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If you don't specify this field, a value is randomly generated for you. If this token matches a previous request, the service ignores the request, but doesn't return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{priority}{[required] The priority of the rule. Rules are evaluated in order of priority, with
-lower numbers evaluated first. Must be between 1 and 1,000,000.}
+\item{priority}{[required] The priority of the rule. Rules are evaluated in order of priority, with lower numbers evaluated first. Must be between 1 and 1,000,000.}
 
-\item{conditions}{The conditions that must be met for the rule to apply. Conditions can
-match on principals (IAM ARNs) or request paths.}
+\item{conditions}{The conditions that must be met for the rule to apply. Conditions can match on principals (IAM ARNs) or request paths.}
 
-\item{actions}{[required] The actions to take when the rule conditions are met. Actions can route
-to a specific target or apply a configuration bundle override.}
+\item{actions}{[required] The actions to take when the rule conditions are met. Actions can route to a specific target or apply a configuration bundle override.}
 
 \item{description}{The description of the gateway rule.}
 }

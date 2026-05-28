@@ -13,29 +13,15 @@ bedrockagentcorecontrol_update_policy(
 )
 }
 \arguments{
-\item{policyEngineId}{[required] The identifier of the policy engine that manages the policy to be
-updated. This ensures the policy is updated within the correct policy
-engine context.}
+\item{policyEngineId}{[required] The identifier of the policy engine that manages the policy to be updated. This ensures the policy is updated within the correct policy engine context.}
 
-\item{policyId}{[required] The unique identifier of the policy to be updated. This must be a valid
-policy ID that exists within the specified policy engine.}
+\item{policyId}{[required] The unique identifier of the policy to be updated. This must be a valid policy ID that exists within the specified policy engine.}
 
-\item{description}{The new human-readable description for the policy. This optional field
-allows updating the policy's documentation while keeping the same policy
-logic.}
+\item{description}{The new human-readable description for the policy. This optional field allows updating the policy's documentation while keeping the same policy logic.}
 
-\item{definition}{The new Cedar policy statement that defines the access control rules.
-This replaces the existing policy definition with new logic while
-maintaining the policy's identity.}
+\item{definition}{The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.}
 
-\item{validationMode}{The validation mode for the policy update. Determines how Cedar analyzer
-validation results are handled during policy updates.
-FAIL_ON_ANY_FINDINGS runs the Cedar analyzer and fails the update if
-validation issues are detected, ensuring the policy conforms to the
-Cedar schema and tool context. IGNORE_ALL_FINDINGS runs the Cedar
-analyzer but allows updates despite validation warnings. Use
-FAIL_ON_ANY_FINDINGS to ensure policy correctness during updates,
-especially when modifying policy logic or conditions.}
+\item{validationMode}{The validation mode for the policy update. Determines how Cedar analyzer validation results are handled during policy updates. FAIL_ON_ANY_FINDINGS runs the Cedar analyzer and fails the update if validation issues are detected, ensuring the policy conforms to the Cedar schema and tool context. IGNORE_ALL_FINDINGS runs the Cedar analyzer but allows updates despite validation warnings. Use FAIL_ON_ANY_FINDINGS to ensure policy correctness during updates, especially when modifying policy logic or conditions.}
 }
 \description{
 Updates an existing policy within the AgentCore Policy system. This operation allows modification of the policy description and definition while maintaining the policy's identity. The updated policy is validated against the Cedar schema before being applied. This is an asynchronous operation. Use the \code{\link[=bedrockagentcorecontrol_get_policy]{get_policy}} operation to poll the \code{status} field to track completion.

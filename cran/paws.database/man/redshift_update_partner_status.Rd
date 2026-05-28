@@ -16,11 +16,9 @@ redshift_update_partner_status(
 \arguments{
 \item{AccountId}{[required] The Amazon Web Services account ID that owns the cluster.}
 
-\item{ClusterIdentifier}{[required] The cluster identifier of the cluster whose partner integration status
-is being updated.}
+\item{ClusterIdentifier}{[required] The cluster identifier of the cluster whose partner integration status is being updated.}
 
-\item{DatabaseName}{[required] The name of the database whose partner integration status is being
-updated.}
+\item{DatabaseName}{[required] The name of the database whose partner integration status is being updated.}
 
 \item{PartnerName}{[required] The name of the partner whose integration status is being updated.}
 

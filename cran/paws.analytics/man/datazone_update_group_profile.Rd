@@ -7,8 +7,7 @@
 datazone_update_group_profile(domainIdentifier, groupIdentifier, status)
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a group profile is
-updated.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a group profile is updated.}
 
 \item{groupIdentifier}{[required] The identifier of the group profile that is updated.}
 

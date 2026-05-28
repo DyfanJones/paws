@@ -14,12 +14,9 @@ quicksight_list_user_groups(
 )
 }
 \arguments{
-\item{UserName}{[required] The Amazon Quick Sight user name that you want to list group memberships
-for.}
+\item{UserName}{[required] The Amazon Quick Sight user name that you want to list group memberships for.}
 
-\item{AwsAccountId}{[required] The Amazon Web Services account ID that the user is in. Currently, you
-use the ID for the Amazon Web Services account that contains your Amazon
-Quick Sight account.}
+\item{AwsAccountId}{[required] The Amazon Web Services account ID that the user is in. Currently, you use the ID for the Amazon Web Services account that contains your Amazon Quick Sight account.}
 
 \item{Namespace}{[required] The namespace. Currently, you should set this to \code{default}.}
 

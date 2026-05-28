@@ -2,20 +2,18 @@
 % Please edit documentation in R/connect_operations.R
 \name{connect_describe_attached_files_configuration}
 \alias{connect_describe_attached_files_configuration}
-\title{Describes the attached files configuration for the specified Amazon
-Connect instance and attachment scope}
+\title{Describes the attached files configuration for the specified Connect
+Customer instance and attachment scope}
 \usage{
 connect_describe_attached_files_configuration(InstanceId, AttachmentScope)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Connect Customer instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
-\item{AttachmentScope}{[required] The scope of the attachment. Valid values are \code{EMAIL}, \code{CHAT}, \code{CASE},
-and \code{TASK}.}
+\item{AttachmentScope}{[required] The scope of the attachment. Valid values are \code{EMAIL}, \code{CHAT}, \code{CASE}, and \code{TASK}.}
 }
 \description{
-Describes the attached files configuration for the specified Amazon Connect instance and attachment scope.
+Describes the attached files configuration for the specified Connect Customer instance and attachment scope.
 
 See \url{https://www.paws-r-sdk.com/docs/connect_describe_attached_files_configuration/} for full documentation.
 }

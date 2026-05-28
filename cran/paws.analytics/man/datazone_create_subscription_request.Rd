@@ -16,18 +16,15 @@ datazone_create_subscription_request(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription request
-is created.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription request is created.}
 
-\item{subscribedPrincipals}{[required] The Amazon DataZone principals for whom the subscription request is
-created.}
+\item{subscribedPrincipals}{[required] The Amazon DataZone principals for whom the subscription request is created.}
 
 \item{subscribedListings}{[required] The published asset for which the subscription grant is to be created.}
 
 \item{requestReason}{[required] The reason for the subscription request.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 
 \item{metadataForms}{The metadata form included in the subscription request.}
 

@@ -14,8 +14,7 @@ drs_start_source_network_recovery(
 \arguments{
 \item{sourceNetworks}{[required] The Source Networks that we want to start a Recovery Job for.}
 
-\item{deployAsNew}{Don't update existing CloudFormation Stack, recover the network using a
-new stack.}
+\item{deployAsNew}{Don't update existing CloudFormation Stack, recover the network using a new stack.}
 
 \item{tags}{The tags to be associated with the Source Network recovery Job.}
 }

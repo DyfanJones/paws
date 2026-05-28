@@ -9,9 +9,7 @@ codedeploy_stop_deployment(deploymentId, autoRollbackEnabled = NULL)
 \arguments{
 \item{deploymentId}{[required] The unique ID of a deployment.}
 
-\item{autoRollbackEnabled}{Indicates, when a deployment is stopped, whether instances that have
-been updated should be rolled back to the previous version of the
-application revision.}
+\item{autoRollbackEnabled}{Indicates, when a deployment is stopped, whether instances that have been updated should be rolled back to the previous version of the application revision.}
 }
 \description{
 Attempts to stop an ongoing deployment.

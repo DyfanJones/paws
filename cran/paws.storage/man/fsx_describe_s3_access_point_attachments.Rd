@@ -12,11 +12,13 @@ fsx_describe_s3_access_point_attachments(
 )
 }
 \arguments{
-\item{Names}{The names of the S3 access point attachments whose descriptions you want
-to retrieve.}
+\item{Names}{The names of the S3 access point attachments whose descriptions you want to retrieve.}
 
-\item{Filters}{Enter a filter Name and Values pair to view a select set of S3 access
-point attachments.}
+\item{Filters}{Enter a filter Name and Values pair to view a select set of S3 access point attachments.}
+
+\item{MaxResults}{The maximum number of resources to return in the response. This value must be an integer greater than zero.}
+
+\item{NextToken}{(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous \code{NextToken} value left off.}
 }
 \description{
 Describes one or more S3 access points attached to Amazon FSx volumes.

@@ -48,15 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-An Amazon S3 table represents a structured dataset consisting of tabular
-data in \href{https://parquet.apache.org/docs/}{Apache Parquet} format and
-related metadata. This data is stored inside an S3 table as a
-subresource. All tables in a table bucket are stored in the \href{https://iceberg.apache.org/docs/latest/}{Apache Iceberg} table format. Through
-integration with the Amazon Web Services Glue Data Catalog you can
-interact with your tables using Amazon Web Services analytics services,
-such as Amazon Athena and Amazon Redshift. Amazon S3 manages maintenance
-of your tables through automatic file compaction and snapshot
-management. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html}{Amazon S3 table buckets}.
+An Amazon S3 table represents a structured dataset consisting of tabular data in \href{https://parquet.apache.org/docs/}{Apache Parquet} format and related metadata. This data is stored inside an S3 table as a subresource. All tables in a table bucket are stored in the \href{https://iceberg.apache.org/docs/latest/}{Apache Iceberg} table format. Through integration with the Amazon Web Services Glue Data Catalog you can interact with your tables using Amazon Web Services analytics services, such as Amazon Athena and Amazon Redshift. Amazon S3 manages maintenance of your tables through automatic file compaction and snapshot management. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html}{Amazon S3 table buckets}.
 }
 \section{Service syntax}{
 

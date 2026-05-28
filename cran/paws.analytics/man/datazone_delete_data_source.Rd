@@ -12,16 +12,13 @@ datazone_delete_data_source(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the data source is
-deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the data source is deleted.}
 
 \item{identifier}{[required] The identifier of the data source that is deleted.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 
-\item{retainPermissionsOnRevokeFailure}{Specifies that the granted permissions are retained in case of a
-self-subscribe functionality failure for a data source.}
+\item{retainPermissionsOnRevokeFailure}{Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.}
 }
 \description{
 Deletes a data source in Amazon DataZone.

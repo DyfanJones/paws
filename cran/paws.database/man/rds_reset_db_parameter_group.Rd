@@ -19,30 +19,21 @@ Constraints:
 \item Must match the name of an existing \code{DBParameterGroup}.
 }}
 
-\item{ResetAllParameters}{Specifies whether to reset all parameters in the DB parameter group to
-default values. By default, all parameters in the DB parameter group are
-reset to default values.}
+\item{ResetAllParameters}{Specifies whether to reset all parameters in the DB parameter group to default values. By default, all parameters in the DB parameter group are reset to default values.}
 
-\item{Parameters}{To reset the entire DB parameter group, specify the \code{DBParameterGroup}
-name and \code{ResetAllParameters} parameters. To reset specific parameters,
-provide a list of the following: \code{ParameterName} and \code{ApplyMethod}. A
-maximum of 20 parameters can be modified in a single request.
+\item{Parameters}{To reset the entire DB parameter group, specify the \code{DBParameterGroup} name and \code{ResetAllParameters} parameters. To reset specific parameters, provide a list of the following: \code{ParameterName} and \code{ApplyMethod}. A maximum of 20 parameters can be modified in a single request.
 
 \strong{MySQL}
 
 Valid Values (for Apply method): \code{immediate} | \code{pending-reboot}
 
-You can use the immediate value with dynamic parameters only. You can
-use the \code{pending-reboot} value for both dynamic and static parameters,
-and changes are applied when DB instance reboots.
+You can use the immediate value with dynamic parameters only. You can use the \code{pending-reboot} value for both dynamic and static parameters, and changes are applied when DB instance reboots.
 
 \strong{MariaDB}
 
 Valid Values (for Apply method): \code{immediate} | \code{pending-reboot}
 
-You can use the immediate value with dynamic parameters only. You can
-use the \code{pending-reboot} value for both dynamic and static parameters,
-and changes are applied when DB instance reboots.
+You can use the immediate value with dynamic parameters only. You can use the \code{pending-reboot} value for both dynamic and static parameters, and changes are applied when DB instance reboots.
 
 \strong{Oracle}
 

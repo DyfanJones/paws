@@ -12,15 +12,13 @@ codepipeline_override_stage_condition(
 )
 }
 \arguments{
-\item{pipelineName}{[required] The name of the pipeline with the stage that will override the
-condition.}
+\item{pipelineName}{[required] The name of the pipeline with the stage that will override the condition.}
 
 \item{stageName}{[required] The name of the stage for the override.}
 
 \item{pipelineExecutionId}{[required] The ID of the pipeline execution for the override.}
 
-\item{conditionType}{[required] The type of condition to override for the stage, such as entry
-conditions, failure conditions, or success conditions.}
+\item{conditionType}{[required] The type of condition to override for the stage, such as entry conditions, failure conditions, or success conditions.}
 }
 \description{
 Used to override a stage condition. For more information about conditions, see \href{https://docs.aws.amazon.com/codepipeline/latest/userguide/stage-conditions.html}{Stage conditions} and \href{https://docs.aws.amazon.com/codepipeline/latest/userguide/concepts-how-it-works-conditions.html}{How do stage conditions work?}.

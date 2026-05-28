@@ -7,8 +7,7 @@
 bedrock_delete_custom_model_deployment(customModelDeploymentIdentifier)
 }
 \arguments{
-\item{customModelDeploymentIdentifier}{[required] The Amazon Resource Name (ARN) or name of the custom model deployment to
-delete.}
+\item{customModelDeploymentIdentifier}{[required] The Amazon Resource Name (ARN) or name of the custom model deployment to delete.}
 }
 \description{
 Deletes a custom model deployment. This operation stops the deployment and removes it from your account. After deletion, the deployment ARN can no longer be used for inference requests.

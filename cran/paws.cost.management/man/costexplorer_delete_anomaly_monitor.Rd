@@ -7,8 +7,7 @@
 costexplorer_delete_anomaly_monitor(MonitorArn)
 }
 \arguments{
-\item{MonitorArn}{[required] The unique identifier of the cost anomaly monitor that you want to
-delete.}
+\item{MonitorArn}{[required] The unique identifier of the cost anomaly monitor that you want to delete.}
 }
 \description{
 Deletes a cost anomaly monitor.

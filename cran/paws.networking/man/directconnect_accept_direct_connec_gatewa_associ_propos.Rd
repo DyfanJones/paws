@@ -17,14 +17,11 @@ directconnect_accept_direct_connect_gateway_association_proposal(
 
 \item{proposalId}{[required] The ID of the request proposal.}
 
-\item{associatedGatewayOwnerAccount}{[required] The ID of the Amazon Web Services account that owns the virtual private
-gateway or transit gateway.}
+\item{associatedGatewayOwnerAccount}{[required] The ID of the Amazon Web Services account that owns the virtual private gateway or transit gateway.}
 
-\item{overrideAllowedPrefixesToDirectConnectGateway}{Overrides the Amazon VPC prefixes advertised to the Direct Connect
-gateway.
+\item{overrideAllowedPrefixesToDirectConnectGateway}{Overrides the Amazon VPC prefixes advertised to the Direct Connect gateway.
 
-For information about how to set the prefixes, see \href{https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes}{Allowed Prefixes}
-in the \emph{Direct Connect User Guide}.}
+For information about how to set the prefixes, see \href{https://docs.aws.amazon.com/directconnect/latest/UserGuide/multi-account-associate-vgw.html#allowed-prefixes}{Allowed Prefixes} in the \emph{Direct Connect User Guide}.}
 }
 \description{
 Accepts a proposal request to attach a virtual private gateway or transit gateway to a Direct Connect gateway.

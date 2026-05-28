@@ -7,8 +7,7 @@
 panorama_delete_package(ForceDelete = NULL, PackageId)
 }
 \arguments{
-\item{ForceDelete}{Delete the package even if it has artifacts stored in its access point.
-Deletes the package's artifacts from Amazon S3.}
+\item{ForceDelete}{Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.}
 
 \item{PackageId}{[required] The package's ID.}
 }

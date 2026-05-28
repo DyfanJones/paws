@@ -13,11 +13,9 @@ cloudfront_update_origin_access_control(
 \arguments{
 \item{OriginAccessControlConfig}{[required] An origin access control.}
 
-\item{Id}{[required] The unique identifier of the origin access control that you are
-updating.}
+\item{Id}{[required] The unique identifier of the origin access control that you are updating.}
 
-\item{IfMatch}{The current version (\code{ETag} value) of the origin access control that you
-are updating.}
+\item{IfMatch}{The current version (\code{ETag} value) of the origin access control that you are updating.}
 }
 \description{
 Updates a CloudFront origin access control.

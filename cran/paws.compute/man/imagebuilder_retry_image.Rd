@@ -9,9 +9,7 @@ imagebuilder_retry_image(imageBuildVersionArn, clientToken)
 \arguments{
 \item{imageBuildVersionArn}{[required] The source image Amazon Resource Name (ARN) to retry.}
 
-\item{clientToken}{[required] Unique, case-sensitive identifier you provide to ensure idempotency of
-the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}
-in the \emph{Amazon EC2 API Reference}.}
+\item{clientToken}{[required] Unique, case-sensitive identifier you provide to ensure idempotency of the request. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency} in the \emph{Amazon EC2 API Reference}.}
 }
 \description{
 RetryImage retries an image distribution without rebuilding the image.

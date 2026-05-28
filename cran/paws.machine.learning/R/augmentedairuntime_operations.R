@@ -72,18 +72,12 @@ augmentedairuntime_describe_human_loop <- function(HumanLoopName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/augmentedairuntime_list_human_loops/](https://www.paws-r-sdk.com/docs/augmentedairuntime_list_human_loops/) for full documentation.
 #'
-#' @param CreationTimeAfter (Optional) The timestamp of the date when you want the human loops to
-#' begin in ISO 8601 format. For example, `2020-02-24`.
-#' @param CreationTimeBefore (Optional) The timestamp of the date before which you want the human
-#' loops to begin in ISO 8601 format. For example, `2020-02-24`.
+#' @param CreationTimeAfter (Optional) The timestamp of the date when you want the human loops to begin in ISO 8601 format. For example, `2020-02-24`.
+#' @param CreationTimeBefore (Optional) The timestamp of the date before which you want the human loops to begin in ISO 8601 format. For example, `2020-02-24`.
 #' @param FlowDefinitionArn &#91;required&#93; The Amazon Resource Name (ARN) of a flow definition.
-#' @param SortOrder Optional. The order for displaying results. Valid values: `Ascending`
-#' and `Descending`.
+#' @param SortOrder Optional. The order for displaying results. Valid values: `Ascending` and `Descending`.
 #' @param NextToken A token to display the next page of results.
-#' @param MaxResults The total number of items to return. If the total number of available
-#' items is more than the value specified in `MaxResults`, then a
-#' `NextToken` is returned in the output. You can use this token to display
-#' the next page of results.
+#' @param MaxResults The total number of items to return. If the total number of available items is more than the value specified in `MaxResults`, then a `NextToken` is returned in the output. You can use this token to display the next page of results.
 #'
 #' @keywords internal
 #'
@@ -116,12 +110,9 @@ augmentedairuntime_list_human_loops <- function(CreationTimeAfter = NULL, Creati
 #' See [https://www.paws-r-sdk.com/docs/augmentedairuntime_start_human_loop/](https://www.paws-r-sdk.com/docs/augmentedairuntime_start_human_loop/) for full documentation.
 #'
 #' @param HumanLoopName &#91;required&#93; The name of the human loop.
-#' @param FlowDefinitionArn &#91;required&#93; The Amazon Resource Name (ARN) of the flow definition associated with
-#' this human loop.
+#' @param FlowDefinitionArn &#91;required&#93; The Amazon Resource Name (ARN) of the flow definition associated with this human loop.
 #' @param HumanLoopInput &#91;required&#93; An object that contains information about the human loop.
-#' @param DataAttributes Attributes of the specified data. Use `DataAttributes` to specify if
-#' your data is free of personally identifiable information and/or free of
-#' adult content.
+#' @param DataAttributes Attributes of the specified data. Use `DataAttributes` to specify if your data is free of personally identifiable information and/or free of adult content.
 #'
 #' @keywords internal
 #'

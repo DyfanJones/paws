@@ -11,13 +11,9 @@ xray_start_trace_retrieval(TraceIds, StartTime, EndTime)
 \arguments{
 \item{TraceIds}{[required] Specify the trace IDs of the traces to be retrieved.}
 
-\item{StartTime}{[required] The start of the time range to retrieve traces. The range is inclusive,
-so the specified start time is included in the query. Specified as epoch
-time, the number of seconds since January 1, 1970, 00:00:00 UTC.}
+\item{StartTime}{[required] The start of the time range to retrieve traces. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.}
 
-\item{EndTime}{[required] The end of the time range to retrieve traces. The range is inclusive, so
-the specified end time is included in the query. Specified as epoch
-time, the number of seconds since January 1, 1970, 00:00:00 UTC.}
+\item{EndTime}{[required] The end of the time range to retrieve traces. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since January 1, 1970, 00:00:00 UTC.}
 }
 \description{
 Initiates a trace retrieval process using the specified time range and for the given trace IDs in the Transaction Search generated CloudWatch log group. For more information, see \href{https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Transaction-Search.html}{Transaction Search}.

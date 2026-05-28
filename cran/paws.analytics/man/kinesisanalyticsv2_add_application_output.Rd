@@ -12,21 +12,11 @@ kinesisanalyticsv2_add_application_output(
 )
 }
 \arguments{
-\item{ApplicationName}{[required] The name of the application to which you want to add the output
-configuration.}
+\item{ApplicationName}{[required] The name of the application to which you want to add the output configuration.}
 
-\item{CurrentApplicationVersionId}{[required] The version of the application to which you want to add the output
-configuration. You can use the
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}
-operation to get the current application version. If the version
-specified is not the current version, the
-\code{ConcurrentModificationException} is returned.}
+\item{CurrentApplicationVersionId}{[required] The version of the application to which you want to add the output configuration. You can use the \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}} operation to get the current application version. If the version specified is not the current version, the \code{ConcurrentModificationException} is returned.}
 
-\item{Output}{[required] An array of objects, each describing one output configuration. In the
-output configuration, you specify the name of an in-application stream,
-a destination (that is, a Kinesis data stream, a Kinesis Data Firehose
-delivery stream, or an Amazon Lambda function), and record the formation
-to use when writing to the destination.}
+\item{Output}{[required] An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, a Kinesis data stream, a Kinesis Data Firehose delivery stream, or an Amazon Lambda function), and record the formation to use when writing to the destination.}
 }
 \description{
 Adds an external destination to your SQL-based Kinesis Data Analytics application.

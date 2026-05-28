@@ -24,8 +24,7 @@ apigateway_get_usage(
 
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 }
 \description{
 Gets the usage data of a usage plan in a specified time interval.

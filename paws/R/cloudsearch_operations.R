@@ -6,14 +6,12 @@ NULL
 #' Indexes the search suggestions
 #'
 #' @description
-#' Indexes the search suggestions. For more information, see [Configuring
-#' Suggesters](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters)
-#' in the *Amazon CloudSearch Developer Guide*.
+#' Indexes the search suggestions. For more information, see [Configuring Suggesters](https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters) in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_build_suggesters(DomainName)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #'
 #' @return
 #' A list with the following syntax:
@@ -59,18 +57,12 @@ cloudsearch_build_suggesters <- function(DomainName) {
 #' Creates a new search domain
 #'
 #' @description
-#' Creates a new search domain. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html"
-#' target="_blank">Creating a Search Domain</a> in the *Amazon CloudSearch
-#' Developer Guide*.
+#' Creates a new search domain. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html" target="_blank">Creating a Search Domain</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_create_domain(DomainName)
 #'
-#' @param DomainName &#91;required&#93; A name for the domain you are creating. Allowed characters are a-z
-#' (lower-case letters), 0-9, and hyphen (-). Domain names must start with
-#' a letter or number and be at least 3 and no more than 28 characters
-#' long.
+#' @param DomainName &#91;required&#93; A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.
 #'
 #' @return
 #' A list with the following syntax:
@@ -136,18 +128,13 @@ cloudsearch_create_domain <- function(DomainName) {
 #' text-array field to define language-specific text processing options
 #'
 #' @description
-#' Configures an analysis scheme that can be applied to a `text` or
-#' `text-array` field to define language-specific text processing options.
-#' For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
-#' target="_blank">Configuring Analysis Schemes</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Configures an analysis scheme that can be applied to a `text` or `text-array` field to define language-specific text processing options. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_define_analysis_scheme(DomainName, AnalysisScheme)
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param AnalysisScheme &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param AnalysisScheme &#91;required&#93; Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: `Synonyms`, `Stopwords`, `StemmingDictionary`, `JapaneseTokenizationDictionary` and `AlgorithmicStemming`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -225,18 +212,13 @@ cloudsearch_define_analysis_scheme <- function(DomainName, AnalysisScheme) {
 #' Configures an Expression for the search domain
 #'
 #' @description
-#' Configures an `Expression` for the search domain. Used to create new
-#' expressions and modify existing ones. If the expression exists, the new
-#' configuration replaces the old one. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
-#' target="_blank">Configuring Expressions</a> in the *Amazon CloudSearch
-#' Developer Guide*.
+#' Configures an `Expression` for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_define_expression(DomainName, Expression)
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param Expression &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param Expression &#91;required&#93; A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -300,21 +282,12 @@ cloudsearch_define_expression <- function(DomainName, Expression) {
 #' Configures an IndexField for the search domain
 #'
 #' @description
-#' Configures an `IndexField` for the search domain. Used to create new
-#' fields and modify existing ones. You must specify the name of the domain
-#' you are configuring and an index field configuration. The index field
-#' configuration specifies a unique name, the index field type, and the
-#' options you want to configure for the field. The options you can specify
-#' depend on the `IndexFieldType`. If the field exists, the new
-#' configuration replaces the old one. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
-#' target="_blank">Configuring Index Fields</a> in the *Amazon CloudSearch
-#' Developer Guide*.
+#' Configures an `IndexField` for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the `IndexFieldType`. If the field exists, the new configuration replaces the old one. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_define_index_field(DomainName, IndexField)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param IndexField &#91;required&#93; The index field and field options you want to configure.
 #'
 #' @return
@@ -545,20 +518,13 @@ cloudsearch_define_index_field <- function(DomainName, IndexField) {
 #' Configures a suggester for a domain
 #'
 #' @description
-#' Configures a suggester for a domain. A suggester enables you to display
-#' possible matches before users finish typing their queries. When you
-#' configure a suggester, you must specify the name of the text field you
-#' want to search for possible matches and a unique name for the suggester.
-#' For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
-#' target="_blank">Getting Search Suggestions</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_define_suggester(DomainName, Suggester)
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param Suggester &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param Suggester &#91;required&#93; Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: `FuzzyMatching`, `SortExpression`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -630,15 +596,12 @@ cloudsearch_define_suggester <- function(DomainName, Suggester) {
 #' Deletes an analysis scheme
 #'
 #' @description
-#' Deletes an analysis scheme. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
-#' target="_blank">Configuring Analysis Schemes</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Deletes an analysis scheme. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_delete_analysis_scheme(DomainName, AnalysisSchemeName)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param AnalysisSchemeName &#91;required&#93; The name of the analysis scheme you want to delete.
 #'
 #' @return
@@ -707,11 +670,7 @@ cloudsearch_delete_analysis_scheme <- function(DomainName, AnalysisSchemeName) {
 #' Permanently deletes a search domain and all of its data
 #'
 #' @description
-#' Permanently deletes a search domain and all of its data. Once a domain
-#' has been deleted, it cannot be recovered. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html"
-#' target="_blank">Deleting a Search Domain</a> in the *Amazon CloudSearch
-#' Developer Guide*.
+#' Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html" target="_blank">Deleting a Search Domain</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_delete_domain(DomainName)
@@ -781,16 +740,12 @@ cloudsearch_delete_domain <- function(DomainName) {
 #' Removes an Expression from the search domain
 #'
 #' @description
-#' Removes an `Expression` from the search domain. For more information,
-#' see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
-#' target="_blank">Configuring Expressions</a> in the *Amazon CloudSearch
-#' Developer Guide*.
+#' Removes an `Expression` from the search domain. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_delete_expression(DomainName, ExpressionName)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param ExpressionName &#91;required&#93; The name of the `Expression` to delete.
 #'
 #' @return
@@ -852,18 +807,13 @@ cloudsearch_delete_expression <- function(DomainName, ExpressionName) {
 #' Removes an IndexField from the search domain
 #'
 #' @description
-#' Removes an `IndexField` from the search domain. For more information,
-#' see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
-#' target="_blank">Configuring Index Fields</a> in the *Amazon CloudSearch
-#' Developer Guide*.
+#' Removes an `IndexField` from the search domain. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_delete_index_field(DomainName, IndexFieldName)
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param IndexFieldName &#91;required&#93; The name of the index field your want to remove from the domain's
-#' indexing options.
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param IndexFieldName &#91;required&#93; The name of the index field your want to remove from the domain's indexing options.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1007,15 +957,12 @@ cloudsearch_delete_index_field <- function(DomainName, IndexFieldName) {
 #' Deletes a suggester
 #'
 #' @description
-#' Deletes a suggester. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
-#' target="_blank">Getting Search Suggestions</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Deletes a suggester. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_delete_suggester(DomainName, SuggesterName)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param SuggesterName &#91;required&#93; Specifies the name of the suggester you want to delete.
 #'
 #' @return
@@ -1081,15 +1028,7 @@ cloudsearch_delete_suggester <- function(DomainName, SuggesterName) {
 #' Gets the analysis schemes configured for a domain
 #'
 #' @description
-#' Gets the analysis schemes configured for a domain. An analysis scheme
-#' defines language-specific text processing options for a `text` field.
-#' Can be limited to specific analysis schemes by name. By default, shows
-#' all analysis schemes and includes any pending changes to the
-#' configuration. Set the `Deployed` option to `true` to show the active
-#' configuration and exclude pending changes. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
-#' target="_blank">Configuring Analysis Schemes</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a `text` field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the `Deployed` option to `true` to show the active configuration and exclude pending changes. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_analysis_schemes(DomainName, AnalysisSchemeNames,
@@ -1097,8 +1036,7 @@ cloudsearch_delete_suggester <- function(DomainName, SuggesterName) {
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
 #' @param AnalysisSchemeNames The analysis schemes you want to describe.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1171,20 +1109,13 @@ cloudsearch_describe_analysis_schemes <- function(DomainName, AnalysisSchemeName
 #' Gets the availability options configured for a domain
 #'
 #' @description
-#' Gets the availability options configured for a domain. By default, shows
-#' the configuration with any pending changes. Set the `Deployed` option to
-#' `true` to show the active configuration and exclude pending changes. For
-#' more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
-#' target="_blank">Configuring Availability Options</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the `Deployed` option to `true` to show the active configuration and exclude pending changes. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_availability_options(DomainName, Deployed)
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1243,19 +1174,13 @@ cloudsearch_describe_availability_options <- function(DomainName, Deployed = NUL
 #' to the domain must arrive over HTTPS
 #'
 #' @description
-#' Returns the domain's endpoint options, specifically whether all requests
-#' to the domain must arrive over HTTPS. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
-#' target="_blank">Configuring Domain Endpoint Options</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_domain_endpoint_options(DomainName, Deployed)
 #'
 #' @param DomainName &#91;required&#93; A string that represents the name of a domain.
-#' @param Deployed Whether to retrieve the latest configuration (which might be in a
-#' Processing state) or the current, active configuration. Defaults to
-#' `false`.
+#' @param Deployed Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1316,15 +1241,7 @@ cloudsearch_describe_domain_endpoint_options <- function(DomainName, Deployed = 
 #' Gets information about the search domains owned by this account
 #'
 #' @description
-#' Gets information about the search domains owned by this account. Can be
-#' limited to specific domains. Shows all domains by default. To get the
-#' number of searchable documents in a domain, use the console or submit a
-#' `matchall` request to your domain's search endpoint:
-#' `q=matchall&amp;q.parser=structured&amp;size=0`. For more information,
-#' see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
-#' target="_blank">Getting Information about a Search Domain</a> in the
-#' *Amazon CloudSearch Developer Guide*.
+#' Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default. To get the number of searchable documents in a domain, use the console or submit a `matchall` request to your domain's search endpoint: `q=matchall&amp;q.parser=structured&amp;size=0`. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Information about a Search Domain</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_domains(DomainNames)
@@ -1398,24 +1315,14 @@ cloudsearch_describe_domains <- function(DomainNames = NULL) {
 #' Gets the expressions configured for the search domain
 #'
 #' @description
-#' Gets the expressions configured for the search domain. Can be limited to
-#' specific expressions by name. By default, shows all expressions and
-#' includes any pending changes to the configuration. Set the `Deployed`
-#' option to `true` to show the active configuration and exclude pending
-#' changes. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
-#' target="_blank">Configuring Expressions</a> in the *Amazon CloudSearch
-#' Developer Guide*.
+#' Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the `Deployed` option to `true` to show the active configuration and exclude pending changes. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_expressions(DomainName, ExpressionNames, Deployed)
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
-#' @param ExpressionNames Limits the [`describe_expressions`][cloudsearch_describe_expressions]
-#' response to the specified expressions. If not specified, all expressions
-#' are shown.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param ExpressionNames Limits the [`describe_expressions`][cloudsearch_describe_expressions] response to the specified expressions. If not specified, all expressions are shown.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1481,23 +1388,14 @@ cloudsearch_describe_expressions <- function(DomainName, ExpressionNames = NULL,
 #' Gets information about the index fields configured for the search domain
 #'
 #' @description
-#' Gets information about the index fields configured for the search
-#' domain. Can be limited to specific fields by name. By default, shows all
-#' fields and includes any pending changes to the configuration. Set the
-#' `Deployed` option to `true` to show the active configuration and exclude
-#' pending changes. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
-#' target="_blank">Getting Domain Information</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the `Deployed` option to `true` to show the active configuration and exclude pending changes. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Domain Information</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_index_fields(DomainName, FieldNames, Deployed)
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
-#' @param FieldNames A list of the index fields you want to describe. If not specified,
-#' information is returned for all configured index fields.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param FieldNames A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1646,17 +1544,12 @@ cloudsearch_describe_index_fields <- function(DomainName, FieldNames = NULL, Dep
 #' Gets the scaling parameters configured for a domain
 #'
 #' @description
-#' Gets the scaling parameters configured for a domain. A domain's scaling
-#' parameters specify the desired search instance type and replication
-#' count. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
-#' target="_blank">Configuring Scaling Options</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_scaling_parameters(DomainName)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1718,21 +1611,13 @@ cloudsearch_describe_scaling_parameters <- function(DomainName) {
 #' domain's document and search endpoints
 #'
 #' @description
-#' Gets information about the access policies that control access to the
-#' domain's document and search endpoints. By default, shows the
-#' configuration with any pending changes. Set the `Deployed` option to
-#' `true` to show the active configuration and exclude pending changes. For
-#' more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
-#' target="_blank">Configuring Access for a Search Domain</a> in the
-#' *Amazon CloudSearch Developer Guide*.
+#' Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the `Deployed` option to `true` to show the active configuration and exclude pending changes. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_service_access_policies(DomainName, Deployed)
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1790,23 +1675,14 @@ cloudsearch_describe_service_access_policies <- function(DomainName, Deployed = 
 #' Gets the suggesters configured for a domain
 #'
 #' @description
-#' Gets the suggesters configured for a domain. A suggester enables you to
-#' display possible matches before users finish typing their queries. Can
-#' be limited to specific suggesters by name. By default, shows all
-#' suggesters and includes any pending changes to the configuration. Set
-#' the `Deployed` option to `true` to show the active configuration and
-#' exclude pending changes. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
-#' target="_blank">Getting Search Suggestions</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the `Deployed` option to `true` to show the active configuration and exclude pending changes. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_describe_suggesters(DomainName, SuggesterNames, Deployed)
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
 #' @param SuggesterNames The suggesters you want to describe.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1877,14 +1753,12 @@ cloudsearch_describe_suggesters <- function(DomainName, SuggesterNames = NULL, D
 #' indexing options
 #'
 #' @description
-#' Tells the search domain to start indexing its documents using the latest
-#' indexing options. This operation must be invoked to activate options
-#' whose OptionStatus is `RequiresIndexDocuments`.
+#' Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose OptionStatus is `RequiresIndexDocuments`.
 #'
 #' @usage
 #' cloudsearch_index_documents(DomainName)
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1976,23 +1850,13 @@ cloudsearch_list_domain_names <- function() {
 #' Configures the availability options for a domain
 #'
 #' @description
-#' Configures the availability options for a domain. Enabling the Multi-AZ
-#' option expands an Amazon CloudSearch domain to an additional
-#' Availability Zone in the same Region to increase fault tolerance in the
-#' event of a service disruption. Changes to the Multi-AZ option can take
-#' about half an hour to become active. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
-#' target="_blank">Configuring Availability Options</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_update_availability_options(DomainName, MultiAZ)
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param MultiAZ &#91;required&#93; You expand an existing search domain to a second Availability Zone by
-#' setting the Multi-AZ option to true. Similarly, you can turn off the
-#' Multi-AZ option to downgrade the domain to a single Availability Zone by
-#' setting the Multi-AZ option to `false`.
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param MultiAZ &#91;required&#93; You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to `false`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2051,21 +1915,14 @@ cloudsearch_update_availability_options <- function(DomainName, MultiAZ) {
 #' to the domain must arrive over HTTPS
 #'
 #' @description
-#' Updates the domain's endpoint options, specifically whether all requests
-#' to the domain must arrive over HTTPS. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html"
-#' target="_blank">Configuring Domain Endpoint Options</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Updates the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_update_domain_endpoint_options(DomainName,
 #'   DomainEndpointOptions)
 #'
 #' @param DomainName &#91;required&#93; A string that represents the name of a domain.
-#' @param DomainEndpointOptions &#91;required&#93; Whether to require that all requests to the domain arrive over HTTPS. We
-#' recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For
-#' compatibility with older clients, the default is
-#' Policy-Min-TLS-1-0-2019-07.
+#' @param DomainEndpointOptions &#91;required&#93; Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2129,22 +1986,13 @@ cloudsearch_update_domain_endpoint_options <- function(DomainName, DomainEndpoin
 #' Configures scaling parameters for a domain
 #'
 #' @description
-#' Configures scaling parameters for a domain. A domain's scaling
-#' parameters specify the desired search instance type and replication
-#' count. Amazon CloudSearch will still automatically scale your domain
-#' based on the volume of data and traffic, but not below the desired
-#' instance type and replication count. If the Multi-AZ option is enabled,
-#' these values control the resources used per Availability Zone. For more
-#' information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html"
-#' target="_blank">Configuring Scaling Options</a> in the *Amazon
-#' CloudSearch Developer Guide*.
+#' Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the *Amazon CloudSearch Developer Guide*.
 #'
 #' @usage
 #' cloudsearch_update_scaling_parameters(DomainName, ScalingParameters)
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param ScalingParameters &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param ScalingParameters &#91;required&#93; The desired instance type and desired number of replicas of each index partition.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2211,17 +2059,13 @@ cloudsearch_update_scaling_parameters <- function(DomainName, ScalingParameters)
 #' and search endpoints
 #'
 #' @description
-#' Configures the access rules that control access to the domain's document
-#' and search endpoints. For more information, see <a
-#' href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
-#' target="_blank">Configuring Access for an Amazon CloudSearch Domain</a>.
+#' Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for an Amazon CloudSearch Domain</a>.
 #'
 #' @usage
 #' cloudsearch_update_service_access_policies(DomainName, AccessPolicies)
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param AccessPolicies &#91;required&#93; The access rules you want to configure. These rules replace any existing
-#' rules.
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param AccessPolicies &#91;required&#93; The access rules you want to configure. These rules replace any existing rules.
 #'
 #' @return
 #' A list with the following syntax:

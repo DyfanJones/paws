@@ -10,12 +10,9 @@ workmail_delete_alias(OrganizationId, EntityId, Alias)
 \arguments{
 \item{OrganizationId}{[required] The identifier for the organization under which the user exists.}
 
-\item{EntityId}{[required] The identifier for the member (user or group) from which to have the
-aliases removed.}
+\item{EntityId}{[required] The identifier for the member (user or group) from which to have the aliases removed.}
 
-\item{Alias}{[required] The aliases to be removed from the user's set of aliases. Duplicate
-entries in the list are collapsed into single entries (the list is
-transformed into a set).}
+\item{Alias}{[required] The aliases to be removed from the user's set of aliases. Duplicate entries in the list are collapsed into single entries (the list is transformed into a set).}
 }
 \description{
 Remove one or more specified aliases from a set of aliases for a given user.

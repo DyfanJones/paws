@@ -17,11 +17,9 @@ appstream_update_application(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the application. This name is visible to users when display
-name is not specified.}
+\item{Name}{[required] The name of the application. This name is visible to users when display name is not specified.}
 
-\item{DisplayName}{The display name of the application. This name is visible to users in
-the application catalog.}
+\item{DisplayName}{The display name of the application. This name is visible to users in the application catalog.}
 
 \item{Description}{The description of the application.}
 

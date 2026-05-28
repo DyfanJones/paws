@@ -16,16 +16,11 @@ costexplorer_get_cost_forecast(
 )
 }
 \arguments{
-\item{TimePeriod}{[required] The period of time that you want the forecast to cover. The start date
-must be equal to or no later than the current date to avoid a validation
-error.}
+\item{TimePeriod}{[required] The period of time that you want the forecast to cover. The start date must be equal to or no later than the current date to avoid a validation error.}
 
-\item{Metric}{[required] Which metric Cost Explorer uses to create your forecast. For more
-information about blended and unblended rates, see Why does the
-"blended" annotation appear on some line items in my bill?.
+\item{Metric}{[required] Which metric Cost Explorer uses to create your forecast. For more information about blended and unblended rates, see Why does the "blended" annotation appear on some line items in my bill?.
 
-Valid values for a \code{\link[=costexplorer_get_cost_forecast]{get_cost_forecast}}
-call are the following:
+Valid values for a \code{\link[=costexplorer_get_cost_forecast]{get_cost_forecast}} call are the following:
 \itemize{
 \item AMORTIZED_COST
 \item BLENDED_COST
@@ -34,15 +29,11 @@ call are the following:
 \item UNBLENDED_COST
 }}
 
-\item{Granularity}{[required] How granular you want the forecast to be. You can get 3 months of
-\code{DAILY} forecasts or 18 months of \code{MONTHLY} forecasts.
+\item{Granularity}{[required] How granular you want the forecast to be. You can get 3 months of \code{DAILY} forecasts or 18 months of \code{MONTHLY} forecasts.
 
-The \code{\link[=costexplorer_get_cost_forecast]{get_cost_forecast}} operation
-supports only \code{DAILY} and \code{MONTHLY} granularities.}
+The \code{\link[=costexplorer_get_cost_forecast]{get_cost_forecast}} operation supports only \code{DAILY} and \code{MONTHLY} granularities.}
 
-\item{Filter}{The filters that you want to use to filter your forecast. The
-\code{\link[=costexplorer_get_cost_forecast]{get_cost_forecast}} API supports
-filtering by the following dimensions:
+\item{Filter}{The filters that you want to use to filter your forecast. The \code{\link[=costexplorer_get_cost_forecast]{get_cost_forecast}} API supports filtering by the following dimensions:
 \itemize{
 \item \code{AZ}
 \item \code{INSTANCE_TYPE}
@@ -68,18 +59,9 @@ filtering by the following dimensions:
 \item \code{SAVINGS_PLAN_ARN}
 }}
 
-\item{BillingViewArn}{The Amazon Resource Name (ARN) that uniquely identifies a specific
-billing view. The ARN is used to specify which particular billing view
-you want to interact with or retrieve information from when making API
-calls related to Amazon Web Services Billing and Cost Management
-features. The BillingViewArn can be retrieved by calling the
-ListBillingViews API.}
+\item{BillingViewArn}{The Amazon Resource Name (ARN) that uniquely identifies a specific billing view. The ARN is used to specify which particular billing view you want to interact with or retrieve information from when making API calls related to Amazon Web Services Billing and Cost Management features. The BillingViewArn can be retrieved by calling the ListBillingViews API.}
 
-\item{PredictionIntervalLevel}{Cost Explorer always returns the mean forecast as a single point. You
-can request a prediction interval around the mean by specifying a
-confidence level. The higher the confidence level, the more confident
-Cost Explorer is about the actual value falling in the prediction
-interval. Higher confidence levels result in wider prediction intervals.}
+\item{PredictionIntervalLevel}{Cost Explorer always returns the mean forecast as a single point. You can request a prediction interval around the mean by specifying a confidence level. The higher the confidence level, the more confident Cost Explorer is about the actual value falling in the prediction interval. Higher confidence levels result in wider prediction intervals.}
 }
 \description{
 Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs.

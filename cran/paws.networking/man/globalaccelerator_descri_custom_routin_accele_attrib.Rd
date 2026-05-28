@@ -9,8 +9,7 @@ globalaccelerator_describe_custom_routing_accelerator_attributes(
 )
 }
 \arguments{
-\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the custom routing accelerator to
-describe the attributes for.}
+\item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.}
 }
 \description{
 Describe the attributes of a custom routing accelerator.

@@ -7,25 +7,11 @@
 codeartifact_create_domain(domain, encryptionKey = NULL, tags = NULL)
 }
 \arguments{
-\item{domain}{[required] The name of the domain to create. All domain names in an Amazon Web
-Services Region that are in the same Amazon Web Services account must be
-unique. The domain name is used as the prefix in DNS hostnames. Do not
-use sensitive information in a domain name because it is publicly
-discoverable.}
+\item{domain}{[required] The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable.}
 
-\item{encryptionKey}{The encryption key for the domain. This is used to encrypt content
-stored in a domain. An encryption key can be a key ID, a key Amazon
-Resource Name (ARN), a key alias, or a key alias ARN. To specify an
-\code{encryptionKey}, your IAM role must have \code{kms:DescribeKey} and
-\code{kms:CreateGrant} permissions on the encryption key that is used. For
-more information, see
-\href{https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax}{DescribeKey}
-in the \emph{Key Management Service API Reference} and \href{https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html}{Key Management Service API Permissions Reference}
-in the \emph{Key Management Service Developer Guide}.
+\item{encryptionKey}{The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an \code{encryptionKey}, your IAM role must have \code{kms:DescribeKey} and \code{kms:CreateGrant} permissions on the encryption key that is used. For more information, see \href{https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax}{DescribeKey} in the \emph{Key Management Service API Reference} and \href{https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html}{Key Management Service API Permissions Reference} in the \emph{Key Management Service Developer Guide}.
 
-CodeArtifact supports only symmetric CMKs. Do not associate an
-asymmetric CMK with your domain. For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html}{Using symmetric and asymmetric keys}
-in the \emph{Key Management Service Developer Guide}.}
+CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see \href{https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html}{Using symmetric and asymmetric keys} in the \emph{Key Management Service Developer Guide}.}
 
 \item{tags}{One or more tag key-value pairs for the domain.}
 }

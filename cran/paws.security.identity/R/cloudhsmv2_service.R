@@ -5,9 +5,7 @@ NULL
 #' AWS CloudHSM V2
 #'
 #' @description
-#' For more information about CloudHSM, see
-#' [CloudHSM](https://aws.amazon.com/cloudhsm/) and the [CloudHSM User
-#' Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/).
+#' For more information about CloudHSM, see [CloudHSM](https://aws.amazon.com/cloudhsm/) and the [CloudHSM User Guide](https://docs.aws.amazon.com/cloudhsm/latest/userguide/).
 #'
 #' @param
 #' config

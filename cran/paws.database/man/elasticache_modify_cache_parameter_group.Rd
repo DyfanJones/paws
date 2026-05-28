@@ -12,9 +12,7 @@ elasticache_modify_cache_parameter_group(
 \arguments{
 \item{CacheParameterGroupName}{[required] The name of the cache parameter group to modify.}
 
-\item{ParameterNameValues}{[required] An array of parameter names and values for the parameter update. You
-must supply at least one parameter name and value; subsequent arguments
-are optional. A maximum of 20 parameters may be modified per request.}
+\item{ParameterNameValues}{[required] An array of parameter names and values for the parameter update. You must supply at least one parameter name and value; subsequent arguments are optional. A maximum of 20 parameters may be modified per request.}
 }
 \description{
 Modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.

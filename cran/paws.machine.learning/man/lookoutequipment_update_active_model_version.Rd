@@ -7,11 +7,9 @@
 lookoutequipment_update_active_model_version(ModelName, ModelVersion)
 }
 \arguments{
-\item{ModelName}{[required] The name of the machine learning model for which the active model
-version is being set.}
+\item{ModelName}{[required] The name of the machine learning model for which the active model version is being set.}
 
-\item{ModelVersion}{[required] The version of the machine learning model for which the active model
-version is being set.}
+\item{ModelVersion}{[required] The version of the machine learning model for which the active model version is being set.}
 }
 \description{
 Sets the active model version for a given machine learning model.

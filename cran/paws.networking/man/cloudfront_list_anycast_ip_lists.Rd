@@ -7,13 +7,9 @@
 cloudfront_list_anycast_ip_lists(Marker = NULL, MaxItems = NULL)
 }
 \arguments{
-\item{Marker}{Use this field when paginating results to indicate where to begin in
-your list. The response includes items in the list that occur after the
-marker. To get the next page of the list, set this field's value to the
-value of \code{NextMarker} from the current page's response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in your list. The response includes items in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
-\item{MaxItems}{The maximum number of Anycast static IP lists that you want returned in
-the response.}
+\item{MaxItems}{The maximum number of Anycast static IP lists that you want returned in the response.}
 }
 \description{
 Lists your Anycast static IP lists.

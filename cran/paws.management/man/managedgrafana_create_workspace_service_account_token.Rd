@@ -15,8 +15,7 @@ managedgrafana_create_workspace_service_account_token(
 \arguments{
 \item{name}{[required] A name for the token to create.}
 
-\item{secondsToLive}{[required] Sets how long the token will be valid, in seconds. You can set the time
-up to 30 days in the future.}
+\item{secondsToLive}{[required] Sets how long the token will be valid, in seconds. You can set the time up to 30 days in the future.}
 
 \item{serviceAccountId}{[required] The ID of the service account for which to create a token.}
 

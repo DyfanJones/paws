@@ -15,12 +15,9 @@ kafka_update_monitoring(
 \arguments{
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the cluster.}
 
-\item{CurrentVersion}{[required] The version of the MSK cluster to update. Cluster versions aren't simple
-numbers. You can describe an MSK cluster to find its version. When this
-update operation is successful, it generates a new cluster version.}
+\item{CurrentVersion}{[required] The version of the MSK cluster to update. Cluster versions aren't simple numbers. You can describe an MSK cluster to find its version. When this update operation is successful, it generates a new cluster version.}
 
-\item{EnhancedMonitoring}{Specifies which Apache Kafka metrics Amazon MSK gathers and sends to
-Amazon CloudWatch for this cluster.}
+\item{EnhancedMonitoring}{Specifies which Apache Kafka metrics Amazon MSK gathers and sends to Amazon CloudWatch for this cluster.}
 
 \item{OpenMonitoring}{The settings for open monitoring.}
 }

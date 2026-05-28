@@ -7,8 +7,7 @@
 opensearchservice_deregister_capability(applicationId, capabilityName)
 }
 \arguments{
-\item{applicationId}{[required] The unique identifier of the OpenSearch UI application to deregister the
-capability from.}
+\item{applicationId}{[required] The unique identifier of the OpenSearch UI application to deregister the capability from.}
 
 \item{capabilityName}{[required] The name of the capability to deregister.}
 }

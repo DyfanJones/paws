@@ -13,20 +13,11 @@ ec2_enable_instance_sql_ha_standby_detections(
 )
 }
 \arguments{
-\item{InstanceIds}{[required] The IDs of the instances to enable for SQL Server High Availability
-standby detection monitoring.}
+\item{InstanceIds}{[required] The IDs of the instances to enable for SQL Server High Availability standby detection monitoring.}
 
-\item{SqlServerCredentials}{The ARN of the Secrets Manager secret containing the SQL Server access
-credentials. The specified secret must contain valid SQL Server
-credentials for the specified instances. If not specified, deafult local
-user credentials will be used by the Amazon Web Services Systems Manager
-agent. To enable instances with different credentials, you must make
-separate requests.}
+\item{SqlServerCredentials}{The ARN of the Secrets Manager secret containing the SQL Server access credentials. The specified secret must contain valid SQL Server credentials for the specified instances. If not specified, deafult local user credentials will be used by the Amazon Web Services Systems Manager agent. To enable instances with different credentials, you must make separate requests.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Enable Amazon EC2 instances running in an SQL Server High Availability cluster for SQL Server High Availability instance standby detection monitoring. Once enabled, Amazon Web Services monitors the metadata for the instances to determine whether they are active or standby nodes in the SQL Server High Availability cluster. If the instances are determined to be standby failover nodes, Amazon Web Services automatically applies SQL Server licensing fee waiver for those instances.

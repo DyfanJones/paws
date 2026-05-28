@@ -13,28 +13,14 @@ ec2_modify_public_ip_dns_name_options(
 \arguments{
 \item{NetworkInterfaceId}{[required] A network interface ID.}
 
-\item{HostnameType}{[required] The public hostname type. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html}{EC2 instance hostnames, DNS names, and domains}
-in the \emph{Amazon EC2 User Guide}.
+\item{HostnameType}{[required] The public hostname type. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html}{EC2 instance hostnames, DNS names, and domains} in the \emph{Amazon EC2 User Guide}.
 \itemize{
-\item \code{public-dual-stack-dns-name}: A dual-stack public hostname for a
-network interface. Requests from within the VPC resolve to both the
-private IPv4 address and the IPv6 Global Unicast Address of the
-network interface. Requests from the internet resolve to both the
-public IPv4 and the IPv6 GUA address of the network interface.
-\item \code{public-ipv4-dns-name}: An IPv4-enabled public hostname for a
-network interface. Requests from within the VPC resolve to the
-private primary IPv4 address of the network interface. Requests from
-the internet resolve to the public IPv4 address of the network
-interface.
-\item \code{public-ipv6-dns-name}: An IPv6-enabled public hostname for a
-network interface. Requests from within the VPC or from the internet
-resolve to the IPv6 GUA of the network interface.
+\item \code{public-dual-stack-dns-name}: A dual-stack public hostname for a network interface. Requests from within the VPC resolve to both the private IPv4 address and the IPv6 Global Unicast Address of the network interface. Requests from the internet resolve to both the public IPv4 and the IPv6 GUA address of the network interface.
+\item \code{public-ipv4-dns-name}: An IPv4-enabled public hostname for a network interface. Requests from within the VPC resolve to the private primary IPv4 address of the network interface. Requests from the internet resolve to the public IPv4 address of the network interface.
+\item \code{public-ipv6-dns-name}: An IPv6-enabled public hostname for a network interface. Requests from within the VPC or from the internet resolve to the IPv6 GUA of the network interface.
 }}
 
-\item{DryRun}{Checks whether you have the required permissions for the operation,
-without actually making the request, and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Modify public hostname options for a network interface. For more information, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-naming.html}{EC2 instance hostnames, DNS names, and domains} in the \emph{Amazon EC2 User Guide}.

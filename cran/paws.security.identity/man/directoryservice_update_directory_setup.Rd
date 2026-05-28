@@ -18,15 +18,13 @@ directoryservice_update_directory_setup(
 
 \item{UpdateType}{[required] The type of update to perform on the directory.}
 
-\item{OSUpdateSettings}{Operating system configuration to apply during the directory update
-operation.}
+\item{OSUpdateSettings}{Operating system configuration to apply during the directory update operation.}
 
 \item{DirectorySizeUpdateSettings}{Directory size configuration to apply during the update operation.}
 
 \item{NetworkUpdateSettings}{Network configuration to apply during the directory update operation.}
 
-\item{CreateSnapshotBeforeUpdate}{Specifies whether to create a directory snapshot before performing the
-update.}
+\item{CreateSnapshotBeforeUpdate}{Specifies whether to create a directory snapshot before performing the update.}
 }
 \description{
 Updates directory configuration for the specified update type.

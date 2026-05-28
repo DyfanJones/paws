@@ -19,15 +19,9 @@ lexmodelsv2_delete_slot_type(
 
 \item{botVersion}{[required] The version of the bot associated with the slot type.}
 
-\item{localeId}{[required] The identifier of the language and locale that the slot type will be
-deleted from. The string must match one of the supported locales. For
-more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
-\item{skipResourceInUseCheck}{By default, the \code{\link[=lexmodelsv2_delete_slot_type]{delete_slot_type}}
-operations throws a \code{ResourceInUseException} exception if you try to
-delete a slot type used by a slot. Set the \code{skipResourceInUseCheck}
-parameter to \code{true} to skip this check and remove the slot type even if
-a slot uses it.}
+\item{skipResourceInUseCheck}{By default, the \code{\link[=lexmodelsv2_delete_slot_type]{delete_slot_type}} operations throws a \code{ResourceInUseException} exception if you try to delete a slot type used by a slot. Set the \code{skipResourceInUseCheck} parameter to \code{true} to skip this check and remove the slot type even if a slot uses it.}
 }
 \description{
 Deletes a slot type from a bot locale.

@@ -7,11 +7,9 @@
 cloudfront_delete_origin_access_control(Id, IfMatch = NULL)
 }
 \arguments{
-\item{Id}{[required] The unique identifier of the origin access control that you are
-deleting.}
+\item{Id}{[required] The unique identifier of the origin access control that you are deleting.}
 
-\item{IfMatch}{The current version (\code{ETag} value) of the origin access control that you
-are deleting.}
+\item{IfMatch}{The current version (\code{ETag} value) of the origin access control that you are deleting.}
 }
 \description{
 Deletes a CloudFront origin access control.

@@ -9,8 +9,7 @@ costexplorer_provide_anomaly_feedback(AnomalyId, Feedback)
 \arguments{
 \item{AnomalyId}{[required] A cost anomaly ID.}
 
-\item{Feedback}{[required] Describes whether the cost anomaly was a planned activity or you
-considered it an anomaly.}
+\item{Feedback}{[required] Describes whether the cost anomaly was a planned activity or you considered it an anomaly.}
 }
 \description{
 Modifies the feedback property of a given cost anomaly.

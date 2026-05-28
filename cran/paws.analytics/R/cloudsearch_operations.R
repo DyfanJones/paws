@@ -10,7 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_build_suggesters/](https://www.paws-r-sdk.com/docs/cloudsearch_build_suggesters/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #'
 #' @keywords internal
 #'
@@ -41,10 +41,7 @@ cloudsearch_build_suggesters <- function(DomainName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_create_domain/](https://www.paws-r-sdk.com/docs/cloudsearch_create_domain/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; A name for the domain you are creating. Allowed characters are a-z
-#' (lower-case letters), 0-9, and hyphen (-). Domain names must start with
-#' a letter or number and be at least 3 and no more than 28 characters
-#' long.
+#' @param DomainName &#91;required&#93; A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.
 #'
 #' @keywords internal
 #'
@@ -76,8 +73,8 @@ cloudsearch_create_domain <- function(DomainName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_define_analysis_scheme/](https://www.paws-r-sdk.com/docs/cloudsearch_define_analysis_scheme/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param AnalysisScheme &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param AnalysisScheme &#91;required&#93; Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: `Synonyms`, `Stopwords`, `StemmingDictionary`, `JapaneseTokenizationDictionary` and `AlgorithmicStemming`.
 #'
 #' @keywords internal
 #'
@@ -108,8 +105,8 @@ cloudsearch_define_analysis_scheme <- function(DomainName, AnalysisScheme) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_define_expression/](https://www.paws-r-sdk.com/docs/cloudsearch_define_expression/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param Expression &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param Expression &#91;required&#93; A named expression that can be evaluated at search time. Can be used to sort the search results, define other expressions, or return computed information in the search results.
 #'
 #' @keywords internal
 #'
@@ -140,7 +137,7 @@ cloudsearch_define_expression <- function(DomainName, Expression) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_define_index_field/](https://www.paws-r-sdk.com/docs/cloudsearch_define_index_field/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param IndexField &#91;required&#93; The index field and field options you want to configure.
 #'
 #' @keywords internal
@@ -172,8 +169,8 @@ cloudsearch_define_index_field <- function(DomainName, IndexField) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_define_suggester/](https://www.paws-r-sdk.com/docs/cloudsearch_define_suggester/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param Suggester &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param Suggester &#91;required&#93; Configuration information for a search suggester. Each suggester has a unique name and specifies the text field you want to use for suggestions. The following options can be configured for a suggester: `FuzzyMatching`, `SortExpression`.
 #'
 #' @keywords internal
 #'
@@ -204,7 +201,7 @@ cloudsearch_define_suggester <- function(DomainName, Suggester) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_delete_analysis_scheme/](https://www.paws-r-sdk.com/docs/cloudsearch_delete_analysis_scheme/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param AnalysisSchemeName &#91;required&#93; The name of the analysis scheme you want to delete.
 #'
 #' @keywords internal
@@ -267,7 +264,7 @@ cloudsearch_delete_domain <- function(DomainName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_delete_expression/](https://www.paws-r-sdk.com/docs/cloudsearch_delete_expression/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param ExpressionName &#91;required&#93; The name of the `Expression` to delete.
 #'
 #' @keywords internal
@@ -299,9 +296,8 @@ cloudsearch_delete_expression <- function(DomainName, ExpressionName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_delete_index_field/](https://www.paws-r-sdk.com/docs/cloudsearch_delete_index_field/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param IndexFieldName &#91;required&#93; The name of the index field your want to remove from the domain's
-#' indexing options.
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param IndexFieldName &#91;required&#93; The name of the index field your want to remove from the domain's indexing options.
 #'
 #' @keywords internal
 #'
@@ -332,7 +328,7 @@ cloudsearch_delete_index_field <- function(DomainName, IndexFieldName) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_delete_suggester/](https://www.paws-r-sdk.com/docs/cloudsearch_delete_suggester/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #' @param SuggesterName &#91;required&#93; Specifies the name of the suggester you want to delete.
 #'
 #' @keywords internal
@@ -366,8 +362,7 @@ cloudsearch_delete_suggester <- function(DomainName, SuggesterName) {
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
 #' @param AnalysisSchemeNames The analysis schemes you want to describe.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @keywords internal
 #'
@@ -399,8 +394,7 @@ cloudsearch_describe_analysis_schemes <- function(DomainName, AnalysisSchemeName
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_describe_availability_options/](https://www.paws-r-sdk.com/docs/cloudsearch_describe_availability_options/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @keywords internal
 #'
@@ -433,9 +427,7 @@ cloudsearch_describe_availability_options <- function(DomainName, Deployed = NUL
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_describe_domain_endpoint_options/](https://www.paws-r-sdk.com/docs/cloudsearch_describe_domain_endpoint_options/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; A string that represents the name of a domain.
-#' @param Deployed Whether to retrieve the latest configuration (which might be in a
-#' Processing state) or the current, active configuration. Defaults to
-#' `false`.
+#' @param Deployed Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to `false`.
 #'
 #' @keywords internal
 #'
@@ -498,11 +490,8 @@ cloudsearch_describe_domains <- function(DomainNames = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_describe_expressions/](https://www.paws-r-sdk.com/docs/cloudsearch_describe_expressions/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
-#' @param ExpressionNames Limits the [`describe_expressions`][cloudsearch_describe_expressions]
-#' response to the specified expressions. If not specified, all expressions
-#' are shown.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param ExpressionNames Limits the [`describe_expressions`][cloudsearch_describe_expressions] response to the specified expressions. If not specified, all expressions are shown.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @keywords internal
 #'
@@ -534,10 +523,8 @@ cloudsearch_describe_expressions <- function(DomainName, ExpressionNames = NULL,
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_describe_index_fields/](https://www.paws-r-sdk.com/docs/cloudsearch_describe_index_fields/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
-#' @param FieldNames A list of the index fields you want to describe. If not specified,
-#' information is returned for all configured index fields.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param FieldNames A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @keywords internal
 #'
@@ -568,7 +555,7 @@ cloudsearch_describe_index_fields <- function(DomainName, FieldNames = NULL, Dep
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_describe_scaling_parameters/](https://www.paws-r-sdk.com/docs/cloudsearch_describe_scaling_parameters/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #'
 #' @keywords internal
 #'
@@ -601,8 +588,7 @@ cloudsearch_describe_scaling_parameters <- function(DomainName) {
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_describe_service_access_policies/](https://www.paws-r-sdk.com/docs/cloudsearch_describe_service_access_policies/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @keywords internal
 #'
@@ -635,8 +621,7 @@ cloudsearch_describe_service_access_policies <- function(DomainName, Deployed = 
 #'
 #' @param DomainName &#91;required&#93; The name of the domain you want to describe.
 #' @param SuggesterNames The suggesters you want to describe.
-#' @param Deployed Whether to display the deployed configuration (`true`) or include any
-#' pending changes (`false`). Defaults to `false`.
+#' @param Deployed Whether to display the deployed configuration (`true`) or include any pending changes (`false`). Defaults to `false`.
 #'
 #' @keywords internal
 #'
@@ -668,7 +653,7 @@ cloudsearch_describe_suggesters <- function(DomainName, SuggesterNames = NULL, D
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_index_documents/](https://www.paws-r-sdk.com/docs/cloudsearch_index_documents/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 #'
 #' @keywords internal
 #'
@@ -730,11 +715,8 @@ cloudsearch_list_domain_names <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_update_availability_options/](https://www.paws-r-sdk.com/docs/cloudsearch_update_availability_options/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param MultiAZ &#91;required&#93; You expand an existing search domain to a second Availability Zone by
-#' setting the Multi-AZ option to true. Similarly, you can turn off the
-#' Multi-AZ option to downgrade the domain to a single Availability Zone by
-#' setting the Multi-AZ option to `false`.
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param MultiAZ &#91;required&#93; You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to `false`.
 #'
 #' @keywords internal
 #'
@@ -767,10 +749,7 @@ cloudsearch_update_availability_options <- function(DomainName, MultiAZ) {
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_update_domain_endpoint_options/](https://www.paws-r-sdk.com/docs/cloudsearch_update_domain_endpoint_options/) for full documentation.
 #'
 #' @param DomainName &#91;required&#93; A string that represents the name of a domain.
-#' @param DomainEndpointOptions &#91;required&#93; Whether to require that all requests to the domain arrive over HTTPS. We
-#' recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For
-#' compatibility with older clients, the default is
-#' Policy-Min-TLS-1-0-2019-07.
+#' @param DomainEndpointOptions &#91;required&#93; Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07.
 #'
 #' @keywords internal
 #'
@@ -801,8 +780,8 @@ cloudsearch_update_domain_endpoint_options <- function(DomainName, DomainEndpoin
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_update_scaling_parameters/](https://www.paws-r-sdk.com/docs/cloudsearch_update_scaling_parameters/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param ScalingParameters &#91;required&#93; 
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param ScalingParameters &#91;required&#93; The desired instance type and desired number of replicas of each index partition.
 #'
 #' @keywords internal
 #'
@@ -834,9 +813,8 @@ cloudsearch_update_scaling_parameters <- function(DomainName, ScalingParameters)
 #'
 #' See [https://www.paws-r-sdk.com/docs/cloudsearch_update_service_access_policies/](https://www.paws-r-sdk.com/docs/cloudsearch_update_service_access_policies/) for full documentation.
 #'
-#' @param DomainName &#91;required&#93; 
-#' @param AccessPolicies &#91;required&#93; The access rules you want to configure. These rules replace any existing
-#' rules.
+#' @param DomainName &#91;required&#93; A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
+#' @param AccessPolicies &#91;required&#93; The access rules you want to configure. These rules replace any existing rules.
 #'
 #' @keywords internal
 #'

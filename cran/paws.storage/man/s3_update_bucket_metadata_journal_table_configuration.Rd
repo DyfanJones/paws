@@ -14,9 +14,7 @@ s3_update_bucket_metadata_journal_table_configuration(
 )
 }
 \arguments{
-\item{Bucket}{[required] The general purpose bucket that corresponds to the metadata
-configuration that you want to enable or disable journal table record
-expiration for.}
+\item{Bucket}{[required] The general purpose bucket that corresponds to the metadata configuration that you want to enable or disable journal table record expiration for.}
 
 \item{ContentMD5}{The \code{Content-MD5} header for the journal table configuration.}
 
@@ -24,9 +22,7 @@ expiration for.}
 
 \item{JournalTableConfiguration}{[required] The contents of your journal table configuration.}
 
-\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that corresponds to the
-metadata table configuration that you want to enable or disable journal
-table record expiration for.}
+\item{ExpectedBucketOwner}{The expected owner of the general purpose bucket that corresponds to the metadata table configuration that you want to enable or disable journal table record expiration for.}
 }
 \description{
 Enables or disables journal table record expiration for an S3 Metadata configuration on a general purpose bucket. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/metadata-tables-overview.html}{Accelerating data discovery with S3 Metadata} in the \emph{Amazon S3 User Guide}.

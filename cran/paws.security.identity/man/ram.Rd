@@ -48,14 +48,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-This is the \emph{Resource Access Manager API Reference}. This documentation
-provides descriptions and syntax for each of the actions and data types
-in RAM. RAM is a service that helps you securely share your Amazon Web
-Services resources to other Amazon Web Services accounts. If you use
-Organizations to manage your accounts, then you can share your resources
-with your entire organization or to organizational units (OUs). For
-supported resource types, you can also share resources with individual
-Identity and Access Management (IAM) roles and users.
+This is the \emph{Resource Access Manager API Reference}. This documentation provides descriptions and syntax for each of the actions and data types in RAM. RAM is a service that helps you securely share your Amazon Web Services resources to other Amazon Web Services accounts. If you use Organizations to manage your accounts, then you can share your resources with your entire organization or to organizational units (OUs). For supported resource types, you can also share resources with individual Identity and Access Management (IAM) roles and users.
 
 To learn more about RAM, see the following resources:
 \itemize{

@@ -15,16 +15,9 @@ sagemaker_list_apps(
 )
 }
 \arguments{
-\item{NextToken}{If the previous response was truncated, you will receive this token. Use
-it in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you will receive this token. Use it in your next request to receive the next set of results.}
 
-\item{MaxResults}{This parameter defines the maximum number of results that can be return
-in a single response. The \code{MaxResults} parameter is an upper bound, not
-a target. If there are more results available than the value specified,
-a \code{NextToken} is provided in the response. The \code{NextToken} indicates
-that the user should get the next set of results by providing this token
-as a part of a subsequent call. The default value for \code{MaxResults} is
-10.}
+\item{MaxResults}{This parameter defines the maximum number of results that can be return in a single response. The \code{MaxResults} parameter is an upper bound, not a target. If there are more results available than the value specified, a \code{NextToken} is provided in the response. The \code{NextToken} indicates that the user should get the next set of results by providing this token as a part of a subsequent call. The default value for \code{MaxResults} is 10.}
 
 \item{SortOrder}{The sort order for the results. The default is Ascending.}
 
@@ -32,11 +25,9 @@ as a part of a subsequent call. The default value for \code{MaxResults} is
 
 \item{DomainIdEquals}{A parameter to search for the domain ID.}
 
-\item{UserProfileNameEquals}{A parameter to search by user profile name. If \code{SpaceNameEquals} is set,
-then this value cannot be set.}
+\item{UserProfileNameEquals}{A parameter to search by user profile name. If \code{SpaceNameEquals} is set, then this value cannot be set.}
 
-\item{SpaceNameEquals}{A parameter to search by space name. If \code{UserProfileNameEquals} is set,
-then this value cannot be set.}
+\item{SpaceNameEquals}{A parameter to search by space name. If \code{UserProfileNameEquals} is set, then this value cannot be set.}
 }
 \description{
 Lists apps.

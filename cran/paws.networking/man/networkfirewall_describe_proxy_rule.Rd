@@ -12,11 +12,9 @@ networkfirewall_describe_proxy_rule(
 )
 }
 \arguments{
-\item{ProxyRuleName}{[required] The descriptive name of the proxy rule. You can't change the name of a
-proxy rule after you create it.}
+\item{ProxyRuleName}{[required] The descriptive name of the proxy rule. You can't change the name of a proxy rule after you create it.}
 
-\item{ProxyRuleGroupName}{The descriptive name of the proxy rule group. You can't change the name
-of a proxy rule group after you create it.
+\item{ProxyRuleGroupName}{The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 

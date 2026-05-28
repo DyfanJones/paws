@@ -21,38 +21,27 @@ backup_list_scan_jobs(
 )
 }
 \arguments{
-\item{ByAccountId}{The account ID to list the jobs from. Returns only backup jobs
-associated with the specified account ID.
+\item{ByAccountId}{The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
 
-If used from an Amazon Web Services Organizations management account,
-passing \code{*} returns all jobs across the organization.
+If used from an Amazon Web Services Organizations management account, passing \code{*} returns all jobs across the organization.
 
 Pattern: \verb{^[0-9]\{12\}$}}
 
-\item{ByBackupVaultName}{Returns only scan jobs that will be stored in the specified backup
-vault. Backup vaults are identified by names that are unique to the
-account used to create them and the Amazon Web Services Region where
-they are created.
+\item{ByBackupVaultName}{Returns only scan jobs that will be stored in the specified backup vault. Backup vaults are identified by names that are unique to the account used to create them and the Amazon Web Services Region where they are created.
 
 Pattern: \verb{^[a-zA-Z0-9\\-_\\.]\{2,50\}$}}
 
-\item{ByCompleteAfter}{Returns only scan jobs completed after a date expressed in Unix format
-and Coordinated Universal Time (UTC).}
+\item{ByCompleteAfter}{Returns only scan jobs completed after a date expressed in Unix format and Coordinated Universal Time (UTC).}
 
-\item{ByCompleteBefore}{Returns only backup jobs completed before a date expressed in Unix
-format and Coordinated Universal Time (UTC).}
+\item{ByCompleteBefore}{Returns only backup jobs completed before a date expressed in Unix format and Coordinated Universal Time (UTC).}
 
-\item{ByMalwareScanner}{Returns only the scan jobs for the specified malware scanner. Currently
-only supports \code{GUARDDUTY}.}
+\item{ByMalwareScanner}{Returns only the scan jobs for the specified malware scanner. Currently only supports \code{GUARDDUTY}.}
 
-\item{ByRecoveryPointArn}{Returns only the scan jobs that are ran against the specified recovery
-point.}
+\item{ByRecoveryPointArn}{Returns only the scan jobs that are ran against the specified recovery point.}
 
-\item{ByResourceArn}{Returns only scan jobs that match the specified resource Amazon Resource
-Name (ARN).}
+\item{ByResourceArn}{Returns only scan jobs that match the specified resource Amazon Resource Name (ARN).}
 
-\item{ByResourceType}{Returns restore testing selections by the specified restore testing plan
-name.
+\item{ByResourceType}{Returns restore testing selections by the specified restore testing plan name.
 \itemize{
 \item \code{EBS}for Amazon Elastic Block Store
 \item \code{EC2}for Amazon Elastic Compute Cloud
@@ -73,10 +62,7 @@ Pattern: \verb{^[a-zA-Z0-9\\-_\\.]\{1,50\}$}}
 
 Valid Range: Minimum value of 1. Maximum value of 1000.}
 
-\item{NextToken}{The next item following a partial list of returned items. For example,
-if a request is made to return \code{MaxResults} number of items, \code{NextToken}
-allows you to return more items in your list starting at the location
-pointed to by the next token.}
+\item{NextToken}{The next item following a partial list of returned items. For example, if a request is made to return \code{MaxResults} number of items, \code{NextToken} allows you to return more items in your list starting at the location pointed to by the next token.}
 }
 \description{
 Returns a list of existing scan jobs for an authenticated account for the last 30 days.

@@ -10,13 +10,11 @@ notifications when the events described in the rule are triggered}
 codestarnotifications_subscribe(Arn, Target, ClientRequestToken = NULL)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the notification rule for which you
-want to create the association.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.}
 
-\item{Target}{[required]}
+\item{Target}{[required] Information about the Amazon Q Developer in chat applications topics or Amazon Q Developer in chat applications clients associated with a notification rule.}
 
-\item{ClientRequestToken}{An enumeration token that, when provided in a request, returns the next
-batch of the results.}
+\item{ClientRequestToken}{An enumeration token that, when provided in a request, returns the next batch of the results.}
 }
 \description{
 Creates an association between a notification rule and an Amazon Q Developer in chat applications topic or Amazon Q Developer in chat applications client so that the associated target can receive notifications when the events described in the rule are triggered.

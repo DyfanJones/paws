@@ -14,9 +14,9 @@ bedrockagentcorecontrol_update_payment_credential_provider(
 \arguments{
 \item{name}{[required] The name of the payment credential provider to update.}
 
-\item{credentialProviderVendor}{[required]}
+\item{credentialProviderVendor}{[required] The vendor type for the payment credential provider (e.g., CoinbaseCDP, StripePrivy).}
 
-\item{providerConfigurationInput}{[required] Configuration specific to the vendor, including API credentials}
+\item{providerConfigurationInput}{[required] Configuration specific to the vendor, including API credentials.}
 }
 \description{
 Updates an existing payment credential provider with new authentication credentials.

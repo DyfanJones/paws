@@ -8,8 +8,7 @@ invitations to manage your member accounts}
 securityhub_invite_members(AccountIds)
 }
 \arguments{
-\item{AccountIds}{[required] The list of account IDs of the Amazon Web Services accounts to invite to
-Security Hub CSPM as members.}
+\item{AccountIds}{[required] The list of account IDs of the Amazon Web Services accounts to invite to Security Hub CSPM as members.}
 }
 \description{
 We recommend using Organizations instead of Security Hub CSPM invitations to manage your member accounts. For information, see \href{https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-accounts-orgs.html}{Managing Security Hub CSPM administrator and member accounts with Organizations} in the \emph{Security Hub CSPM User Guide}.

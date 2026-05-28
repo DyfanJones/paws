@@ -6,8 +6,7 @@ NULL
 #' Creates a campaign for the specified Amazon Connect account
 #'
 #' @description
-#' Creates a campaign for the specified Amazon Connect account. This API is
-#' idempotent.
+#' Creates a campaign for the specified Amazon Connect account. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_create_campaign(name, connectInstanceId,
@@ -15,17 +14,17 @@ NULL
 #'   entryLimitsConfig, communicationTimeConfig, communicationLimitsOverride,
 #'   tags)
 #'
-#' @param name &#91;required&#93; 
-#' @param connectInstanceId &#91;required&#93; 
-#' @param channelSubtypeConfig 
-#' @param type 
-#' @param source 
-#' @param connectCampaignFlowArn 
-#' @param schedule 
-#' @param entryLimitsConfig 
-#' @param communicationTimeConfig 
-#' @param communicationLimitsOverride 
-#' @param tags 
+#' @param name &#91;required&#93; The name of an Amazon Connect Campaign name.
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param channelSubtypeConfig Campaign Channel Subtype config
+#' @param type The type of campaign externally exposed in APIs.
+#' @param source Source of the campaign
+#' @param connectCampaignFlowArn Amazon Resource Names(ARN)
+#' @param schedule Campaign schedule
+#' @param entryLimitsConfig Campaign entry limits config
+#' @param communicationTimeConfig Campaign communication time config
+#' @param communicationLimitsOverride Communication limits config
+#' @param tags Tag map with key and value.
 #'
 #' @return
 #' A list with the following syntax:
@@ -134,7 +133,8 @@ NULL
 #'       defaultTimeZone = "string",
 #'       localTimeZoneDetection = list(
 #'         "ZIP_CODE"|"AREA_CODE"
-#'       )
+#'       ),
+#'       localTimeZoneDetectionScope = "PRIMARY_ONLY"|"ALL_AVAILABLE"
 #'     ),
 #'     telephony = list(
 #'       openHours = list(
@@ -271,7 +271,7 @@ connectcampaignservicev2_create_campaign <- function(name, connectInstanceId, ch
 #' @usage
 #' connectcampaignservicev2_delete_campaign(id)
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @return
 #' An empty list.
@@ -310,15 +310,14 @@ connectcampaignservicev2_delete_campaign <- function(id) {
 #' Deletes the channel subtype config of a campaign
 #'
 #' @description
-#' Deletes the channel subtype config of a campaign. This API is
-#' idempotent.
+#' Deletes the channel subtype config of a campaign. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_delete_campaign_channel_subtype_config(id,
 #'   channelSubtype)
 #'
-#' @param id &#91;required&#93; 
-#' @param channelSubtype &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param channelSubtype &#91;required&#93; The type of campaign channel subtype.
 #'
 #' @return
 #' An empty list.
@@ -358,15 +357,14 @@ connectcampaignservicev2_delete_campaign_channel_subtype_config <- function(id, 
 #' Deletes the communication limits config for a campaign
 #'
 #' @description
-#' Deletes the communication limits config for a campaign. This API is
-#' idempotent.
+#' Deletes the communication limits config for a campaign. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_delete_campaign_communication_limits(id,
 #'   config)
 #'
-#' @param id &#91;required&#93; 
-#' @param config &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param config &#91;required&#93; The type of campaign communication limits config.
 #'
 #' @return
 #' An empty list.
@@ -406,14 +404,13 @@ connectcampaignservicev2_delete_campaign_communication_limits <- function(id, co
 #' Deletes the communication time config for a campaign
 #'
 #' @description
-#' Deletes the communication time config for a campaign. This API is
-#' idempotent.
+#' Deletes the communication time config for a campaign. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_delete_campaign_communication_time(id, config)
 #'
-#' @param id &#91;required&#93; 
-#' @param config &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param config &#91;required&#93; The type of campaign communication time config
 #'
 #' @return
 #' An empty list.
@@ -458,7 +455,7 @@ connectcampaignservicev2_delete_campaign_communication_time <- function(id, conf
 #' @usage
 #' connectcampaignservicev2_delete_campaign_entry_limits(id)
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @return
 #' An empty list.
@@ -503,8 +500,8 @@ connectcampaignservicev2_delete_campaign_entry_limits <- function(id) {
 #' connectcampaignservicev2_delete_connect_instance_config(
 #'   connectInstanceId, campaignDeletionPolicy)
 #'
-#' @param connectInstanceId &#91;required&#93; 
-#' @param campaignDeletionPolicy 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param campaignDeletionPolicy Enumeration of the policies to enact on existing campaigns during instance config deletion
 #'
 #' @return
 #' An empty list.
@@ -550,8 +547,8 @@ connectcampaignservicev2_delete_connect_instance_config <- function(connectInsta
 #' connectcampaignservicev2_delete_connect_instance_integration(
 #'   connectInstanceId, integrationIdentifier)
 #'
-#' @param connectInstanceId &#91;required&#93; 
-#' @param integrationIdentifier &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param integrationIdentifier &#91;required&#93; Integration identifier for Connect instance
 #'
 #' @return
 #' An empty list.
@@ -602,14 +599,13 @@ connectcampaignservicev2_delete_connect_instance_integration <- function(connect
 #' Connect instance
 #'
 #' @description
-#' Delete the Connect Campaigns onboarding job for the specified Amazon
-#' Connect instance.
+#' Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance.
 #'
 #' @usage
 #' connectcampaignservicev2_delete_instance_onboarding_job(
 #'   connectInstanceId)
 #'
-#' @param connectInstanceId &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
 #'
 #' @return
 #' An empty list.
@@ -653,7 +649,7 @@ connectcampaignservicev2_delete_instance_onboarding_job <- function(connectInsta
 #' @usage
 #' connectcampaignservicev2_describe_campaign(id)
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @return
 #' A list with the following syntax:
@@ -754,7 +750,8 @@ connectcampaignservicev2_delete_instance_onboarding_job <- function(connectInsta
 #'         defaultTimeZone = "string",
 #'         localTimeZoneDetection = list(
 #'           "ZIP_CODE"|"AREA_CODE"
-#'         )
+#'         ),
+#'         localTimeZoneDetectionScope = "PRIMARY_ONLY"|"ALL_AVAILABLE"
 #'       ),
 #'       telephony = list(
 #'         openHours = list(
@@ -899,7 +896,7 @@ connectcampaignservicev2_describe_campaign <- function(id) {
 #' @usage
 #' connectcampaignservicev2_get_campaign_state(id)
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @return
 #' A list with the following syntax:
@@ -948,7 +945,7 @@ connectcampaignservicev2_get_campaign_state <- function(id) {
 #' @usage
 #' connectcampaignservicev2_get_campaign_state_batch(campaignIds)
 #'
-#' @param campaignIds &#91;required&#93; 
+#' @param campaignIds &#91;required&#93; List of CampaignId
 #'
 #' @return
 #' A list with the following syntax:
@@ -1010,7 +1007,7 @@ connectcampaignservicev2_get_campaign_state_batch <- function(campaignIds) {
 #' @usage
 #' connectcampaignservicev2_get_connect_instance_config(connectInstanceId)
 #'
-#' @param connectInstanceId &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
 #'
 #' @return
 #' A list with the following syntax:
@@ -1068,7 +1065,7 @@ connectcampaignservicev2_get_connect_instance_config <- function(connectInstance
 #' connectcampaignservicev2_get_instance_communication_limits(
 #'   connectInstanceId)
 #'
-#' @param connectInstanceId &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
 #'
 #' @return
 #' A list with the following syntax:
@@ -1128,7 +1125,7 @@ connectcampaignservicev2_get_instance_communication_limits <- function(connectIn
 #' connectcampaignservicev2_get_instance_onboarding_job_status(
 #'   connectInstanceId)
 #'
-#' @param connectInstanceId &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
 #'
 #' @return
 #' A list with the following syntax:
@@ -1177,15 +1174,14 @@ connectcampaignservicev2_get_instance_onboarding_job_status <- function(connectI
 #' Amazon Connect account
 #'
 #' @description
-#' Provides summary information about the campaigns under the specified
-#' Amazon Connect account.
+#' Provides summary information about the campaigns under the specified Amazon Connect account.
 #'
 #' @usage
 #' connectcampaignservicev2_list_campaigns(maxResults, nextToken, filters)
 #'
-#' @param maxResults 
-#' @param nextToken 
-#' @param filters 
+#' @param maxResults The maximum number of results to return per page.
+#' @param nextToken The token for the next set of results.
+#' @param filters Filter model by type
 #'
 #' @return
 #' A list with the following syntax:
@@ -1263,16 +1259,15 @@ connectcampaignservicev2_list_campaigns <- function(maxResults = NULL, nextToken
 #' Connect instance
 #'
 #' @description
-#' Provides summary information about the integration under the specified
-#' Connect instance.
+#' Provides summary information about the integration under the specified Connect instance.
 #'
 #' @usage
 #' connectcampaignservicev2_list_connect_instance_integrations(
 #'   connectInstanceId, maxResults, nextToken)
 #'
-#' @param connectInstanceId &#91;required&#93; 
-#' @param maxResults 
-#' @param nextToken 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param maxResults The maximum number of results to return per page.
+#' @param nextToken The token for the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1339,7 +1334,7 @@ connectcampaignservicev2_list_connect_instance_integrations <- function(connectI
 #' @usage
 #' connectcampaignservicev2_list_tags_for_resource(arn)
 #'
-#' @param arn &#91;required&#93; 
+#' @param arn &#91;required&#93; Amazon Resource Names(ARN)
 #'
 #' @return
 #' A list with the following syntax:
@@ -1390,7 +1385,7 @@ connectcampaignservicev2_list_tags_for_resource <- function(arn) {
 #' @usage
 #' connectcampaignservicev2_pause_campaign(id)
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @return
 #' An empty list.
@@ -1435,8 +1430,8 @@ connectcampaignservicev2_pause_campaign <- function(id) {
 #' connectcampaignservicev2_put_connect_instance_integration(
 #'   connectInstanceId, integrationConfig)
 #'
-#' @param connectInstanceId &#91;required&#93; 
-#' @param integrationConfig &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param integrationConfig &#91;required&#93; Integration config for Connect Instance
 #'
 #' @return
 #' An empty list.
@@ -1495,8 +1490,8 @@ connectcampaignservicev2_put_connect_instance_integration <- function(connectIns
 #' connectcampaignservicev2_put_instance_communication_limits(
 #'   connectInstanceId, communicationLimitsConfig)
 #'
-#' @param connectInstanceId &#91;required&#93; 
-#' @param communicationLimitsConfig &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param communicationLimitsConfig &#91;required&#93; Instance Communication limits config
 #'
 #' @return
 #' An empty list.
@@ -1547,15 +1542,14 @@ connectcampaignservicev2_put_instance_communication_limits <- function(connectIn
 #' account
 #'
 #' @description
-#' Creates outbound requests for the specified campaign Amazon Connect
-#' account. This API is idempotent.
+#' Creates outbound requests for the specified campaign Amazon Connect account. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_put_outbound_request_batch(id,
 #'   outboundRequests)
 #'
-#' @param id &#91;required&#93; 
-#' @param outboundRequests &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param outboundRequests &#91;required&#93; A list of outbound requests.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1658,15 +1652,14 @@ connectcampaignservicev2_put_outbound_request_batch <- function(id, outboundRequ
 #' outbound campaign
 #'
 #' @description
-#' Takes in a list of profile outbound requests to be placed as part of an
-#' outbound campaign. This API is idempotent.
+#' Takes in a list of profile outbound requests to be placed as part of an outbound campaign. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_put_profile_outbound_request_batch(id,
 #'   profileOutboundRequests)
 #'
-#' @param id &#91;required&#93; 
-#' @param profileOutboundRequests &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param profileOutboundRequests &#91;required&#93; List of profile outbound requests
 #'
 #' @return
 #' A list with the following syntax:
@@ -1736,7 +1729,7 @@ connectcampaignservicev2_put_profile_outbound_request_batch <- function(id, prof
 #' @usage
 #' connectcampaignservicev2_resume_campaign(id)
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @return
 #' An empty list.
@@ -1780,7 +1773,7 @@ connectcampaignservicev2_resume_campaign <- function(id) {
 #' @usage
 #' connectcampaignservicev2_start_campaign(id)
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @return
 #' An empty list.
@@ -1825,8 +1818,8 @@ connectcampaignservicev2_start_campaign <- function(id) {
 #' connectcampaignservicev2_start_instance_onboarding_job(
 #'   connectInstanceId, encryptionConfig)
 #'
-#' @param connectInstanceId &#91;required&#93; 
-#' @param encryptionConfig &#91;required&#93; 
+#' @param connectInstanceId &#91;required&#93; Amazon Connect Instance Id
+#' @param encryptionConfig &#91;required&#93; Encryption config for Connect Instance. Note that sensitive data will always be encrypted. If disabled, service will perform encryption with its own key. If enabled, a KMS key id needs to be provided and KMS charges will apply. KMS is only type supported
 #'
 #' @return
 #' A list with the following syntax:
@@ -1884,7 +1877,7 @@ connectcampaignservicev2_start_instance_onboarding_job <- function(connectInstan
 #' @usage
 #' connectcampaignservicev2_stop_campaign(id)
 #'
-#' @param id &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
 #'
 #' @return
 #' An empty list.
@@ -1928,8 +1921,8 @@ connectcampaignservicev2_stop_campaign <- function(id) {
 #' @usage
 #' connectcampaignservicev2_tag_resource(arn, tags)
 #'
-#' @param arn &#91;required&#93; 
-#' @param tags &#91;required&#93; 
+#' @param arn &#91;required&#93; Amazon Resource Names(ARN)
+#' @param tags &#91;required&#93; Tag map with key and value.
 #'
 #' @return
 #' An empty list.
@@ -1976,8 +1969,8 @@ connectcampaignservicev2_tag_resource <- function(arn, tags) {
 #' @usage
 #' connectcampaignservicev2_untag_resource(arn, tagKeys)
 #'
-#' @param arn &#91;required&#93; 
-#' @param tagKeys &#91;required&#93; 
+#' @param arn &#91;required&#93; Amazon Resource Names(ARN)
+#' @param tagKeys &#91;required&#93; List of tag keys.
 #'
 #' @return
 #' An empty list.
@@ -2019,15 +2012,14 @@ connectcampaignservicev2_untag_resource <- function(arn, tagKeys) {
 #' Updates the channel subtype config of a campaign
 #'
 #' @description
-#' Updates the channel subtype config of a campaign. This API is
-#' idempotent.
+#' Updates the channel subtype config of a campaign. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_update_campaign_channel_subtype_config(id,
 #'   channelSubtypeConfig)
 #'
-#' @param id &#91;required&#93; 
-#' @param channelSubtypeConfig &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param channelSubtypeConfig &#91;required&#93; Campaign Channel Subtype config
 #'
 #' @return
 #' An empty list.
@@ -2130,15 +2122,14 @@ connectcampaignservicev2_update_campaign_channel_subtype_config <- function(id, 
 #' Updates the communication limits config for a campaign
 #'
 #' @description
-#' Updates the communication limits config for a campaign. This API is
-#' idempotent.
+#' Updates the communication limits config for a campaign. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_update_campaign_communication_limits(id,
 #'   communicationLimitsOverride)
 #'
-#' @param id &#91;required&#93; 
-#' @param communicationLimitsOverride &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param communicationLimitsOverride &#91;required&#93; Communication limits config
 #'
 #' @return
 #' An empty list.
@@ -2189,15 +2180,14 @@ connectcampaignservicev2_update_campaign_communication_limits <- function(id, co
 #' Updates the communication time config for a campaign
 #'
 #' @description
-#' Updates the communication time config for a campaign. This API is
-#' idempotent.
+#' Updates the communication time config for a campaign. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_update_campaign_communication_time(id,
 #'   communicationTimeConfig)
 #'
-#' @param id &#91;required&#93; 
-#' @param communicationTimeConfig &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param communicationTimeConfig &#91;required&#93; Campaign communication time config
 #'
 #' @return
 #' An empty list.
@@ -2211,7 +2201,8 @@ connectcampaignservicev2_update_campaign_communication_limits <- function(id, co
 #'       defaultTimeZone = "string",
 #'       localTimeZoneDetection = list(
 #'         "ZIP_CODE"|"AREA_CODE"
-#'       )
+#'       ),
+#'       localTimeZoneDetectionScope = "PRIMARY_ONLY"|"ALL_AVAILABLE"
 #'     ),
 #'     telephony = list(
 #'       openHours = list(
@@ -2334,8 +2325,8 @@ connectcampaignservicev2_update_campaign_communication_time <- function(id, comm
 #' connectcampaignservicev2_update_campaign_entry_limits(id,
 #'   entryLimitsConfig)
 #'
-#' @param id &#91;required&#93; 
-#' @param entryLimitsConfig &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param entryLimitsConfig &#91;required&#93; Campaign entry limits config
 #'
 #' @return
 #' An empty list.
@@ -2378,15 +2369,14 @@ connectcampaignservicev2_update_campaign_entry_limits <- function(id, entryLimit
 #' Updates the campaign flow associated with a campaign
 #'
 #' @description
-#' Updates the campaign flow associated with a campaign. This API is
-#' idempotent.
+#' Updates the campaign flow associated with a campaign. This API is idempotent.
 #'
 #' @usage
 #' connectcampaignservicev2_update_campaign_flow_association(id,
 #'   connectCampaignFlowArn)
 #'
-#' @param id &#91;required&#93; 
-#' @param connectCampaignFlowArn &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param connectCampaignFlowArn &#91;required&#93; Amazon Resource Names(ARN)
 #'
 #' @return
 #' An empty list.
@@ -2431,8 +2421,8 @@ connectcampaignservicev2_update_campaign_flow_association <- function(id, connec
 #' @usage
 #' connectcampaignservicev2_update_campaign_name(id, name)
 #'
-#' @param id &#91;required&#93; 
-#' @param name &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param name &#91;required&#93; The name of an Amazon Connect Campaign name.
 #'
 #' @return
 #' An empty list.
@@ -2477,8 +2467,8 @@ connectcampaignservicev2_update_campaign_name <- function(id, name) {
 #' @usage
 #' connectcampaignservicev2_update_campaign_schedule(id, schedule)
 #'
-#' @param id &#91;required&#93; 
-#' @param schedule &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param schedule &#91;required&#93; Campaign schedule
 #'
 #' @return
 #' An empty list.
@@ -2531,8 +2521,8 @@ connectcampaignservicev2_update_campaign_schedule <- function(id, schedule) {
 #' @usage
 #' connectcampaignservicev2_update_campaign_source(id, source)
 #'
-#' @param id &#91;required&#93; 
-#' @param source &#91;required&#93; 
+#' @param id &#91;required&#93; Identifier representing a Campaign
+#' @param source &#91;required&#93; Source of the campaign
 #'
 #' @return
 #' An empty list.

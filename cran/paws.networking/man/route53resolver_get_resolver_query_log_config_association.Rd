@@ -10,8 +10,7 @@ route53resolver_get_resolver_query_log_config_association(
 )
 }
 \arguments{
-\item{ResolverQueryLogConfigAssociationId}{[required] The ID of the Resolver query logging configuration association that you
-want to get information about.}
+\item{ResolverQueryLogConfigAssociationId}{[required] The ID of the Resolver query logging configuration association that you want to get information about.}
 }
 \description{
 Gets information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC with a query logging configuration, Resolver logs DNS queries that originate in that VPC.

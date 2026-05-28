@@ -11,15 +11,11 @@ elasticsearchservice_describe_reserved_elasticsearch_instance_offerings(
 )
 }
 \arguments{
-\item{ReservedElasticsearchInstanceOfferingId}{The offering identifier filter value. Use this parameter to show only
-the available offering that matches the specified reservation
-identifier.}
+\item{ReservedElasticsearchInstanceOfferingId}{The offering identifier filter value. Use this parameter to show only the available offering that matches the specified reservation identifier.}
 
-\item{MaxResults}{Set this value to limit the number of results returned. If not
-specified, defaults to 100.}
+\item{MaxResults}{Set this value to limit the number of results returned. If not specified, defaults to 100.}
 
-\item{NextToken}{NextToken should be sent in case if earlier API call produced result
-containing NextToken. It is used for pagination.}
+\item{NextToken}{NextToken should be sent in case if earlier API call produced result containing NextToken. It is used for pagination.}
 }
 \description{
 Lists available reserved Elasticsearch instance offerings.

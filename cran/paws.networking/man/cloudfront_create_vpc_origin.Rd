@@ -8,6 +8,8 @@ cloudfront_create_vpc_origin(VpcOriginEndpointConfig, Tags = NULL)
 }
 \arguments{
 \item{VpcOriginEndpointConfig}{[required] The VPC origin endpoint configuration.}
+
+\item{Tags}{A complex type that contains zero or more \code{Tag} elements.}
 }
 \description{
 Create an Amazon CloudFront VPC origin.

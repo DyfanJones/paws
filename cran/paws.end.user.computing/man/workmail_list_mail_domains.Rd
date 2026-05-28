@@ -11,8 +11,7 @@ workmail_list_mail_domains(OrganizationId, MaxResults = NULL, NextToken = NULL)
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 
-\item{NextToken}{The token to use to retrieve the next page of results. The first call
-does not require a token.}
+\item{NextToken}{The token to use to retrieve the next page of results. The first call does not require a token.}
 }
 \description{
 Lists the mail domains in a given WorkMail organization.

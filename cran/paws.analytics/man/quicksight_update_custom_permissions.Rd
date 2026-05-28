@@ -11,8 +11,7 @@ quicksight_update_custom_permissions(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the custom
-permissions profile that you want to update.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the custom permissions profile that you want to update.}
 
 \item{CustomPermissionsName}{[required] The name of the custom permissions profile that you want to update.}
 

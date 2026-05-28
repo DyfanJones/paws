@@ -15,16 +15,11 @@ codecommit_list_file_commit_history(
 \arguments{
 \item{repositoryName}{[required] The name of the repository that contains the file.}
 
-\item{commitSpecifier}{The fully quaified reference that identifies the commit that contains
-the file. For example, you can specify a full commit ID, a tag, a branch
-name, or a reference such as \code{refs/heads/main}. If none is provided, the
-head commit is used.}
+\item{commitSpecifier}{The fully quaified reference that identifies the commit that contains the file. For example, you can specify a full commit ID, a tag, a branch name, or a reference such as \code{refs/heads/main}. If none is provided, the head commit is used.}
 
-\item{filePath}{[required] The full path of the file whose history you want to retrieve, including
-the name of the file.}
+\item{filePath}{[required] The full path of the file whose history you want to retrieve, including the name of the file.}
 
-\item{maxResults}{A non-zero, non-negative integer used to limit the number of returned
-results.}
+\item{maxResults}{A non-zero, non-negative integer used to limit the number of returned results.}
 
 \item{nextToken}{An enumeration token that allows the operation to batch the results.}
 }

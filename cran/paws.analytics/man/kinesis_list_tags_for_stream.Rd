@@ -15,14 +15,9 @@ kinesis_list_tags_for_stream(
 \arguments{
 \item{StreamName}{The name of the stream.}
 
-\item{ExclusiveStartTagKey}{The key to use as the starting point for the list of tags. If this
-parameter is set, \code{\link[=kinesis_list_tags_for_stream]{list_tags_for_stream}}
-gets all tags that occur after \code{ExclusiveStartTagKey}.}
+\item{ExclusiveStartTagKey}{The key to use as the starting point for the list of tags. If this parameter is set, \code{\link[=kinesis_list_tags_for_stream]{list_tags_for_stream}} gets all tags that occur after \code{ExclusiveStartTagKey}.}
 
-\item{Limit}{The number of tags to return. If this number is less than the total
-number of tags associated with the stream, \code{HasMoreTags} is set to
-\code{true}. To list additional tags, set \code{ExclusiveStartTagKey} to the last
-key in the response.}
+\item{Limit}{The number of tags to return. If this number is less than the total number of tags associated with the stream, \code{HasMoreTags} is set to \code{true}. To list additional tags, set \code{ExclusiveStartTagKey} to the last key in the response.}
 
 \item{StreamARN}{The ARN of the stream.}
 

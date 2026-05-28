@@ -9,8 +9,7 @@ athena_get_data_catalog(Name, WorkGroup = NULL)
 \arguments{
 \item{Name}{[required] The name of the data catalog to return.}
 
-\item{WorkGroup}{The name of the workgroup. Required if making an IAM Identity Center
-request.}
+\item{WorkGroup}{The name of the workgroup. Required if making an IAM Identity Center request.}
 }
 \description{
 Returns the specified data catalog.

@@ -7,11 +7,9 @@
 connect_list_data_tables(InstanceId, NextToken = NULL, MaxResults = NULL)
 }
 \arguments{
-\item{InstanceId}{[required] The unique identifier for the Amazon Connect instance whose data tables
-should be listed.}
+\item{InstanceId}{[required] The unique identifier for the Amazon Connect instance whose data tables should be listed.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{MaxResults}{The maximum number of data tables to return in one page of results.}
 }

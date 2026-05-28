@@ -12,8 +12,7 @@ directconnect_describe_router_configuration(
 \arguments{
 \item{virtualInterfaceId}{[required] The ID of the virtual interface.}
 
-\item{routerTypeIdentifier}{Identifies the router by a combination of vendor, platform, and software
-version. For example, \verb{CiscoSystemsInc-2900SeriesRouters-IOS124}.}
+\item{routerTypeIdentifier}{Identifies the router by a combination of vendor, platform, and software version. For example, \verb{CiscoSystemsInc-2900SeriesRouters-IOS124}.}
 }
 \description{
 Details about the router.

@@ -18,14 +18,9 @@ lookoutequipment_list_model_versions(
 )
 }
 \arguments{
-\item{ModelName}{[required] Then name of the machine learning model for which the model versions are
-to be listed.}
+\item{ModelName}{[required] Then name of the machine learning model for which the model versions are to be listed.}
 
-\item{NextToken}{If the total number of results exceeds the limit that the response can
-display, the response returns an opaque pagination token indicating
-where to continue the listing of machine learning model versions. Use
-this token in the \code{NextToken} field in the request to list the next page
-of results.}
+\item{NextToken}{If the total number of results exceeds the limit that the response can display, the response returns an opaque pagination token indicating where to continue the listing of machine learning model versions. Use this token in the \code{NextToken} field in the request to list the next page of results.}
 
 \item{MaxResults}{Specifies the maximum number of machine learning model versions to list.}
 
@@ -33,8 +28,7 @@ of results.}
 
 \item{SourceType}{Filter the results based on the way the model version was generated.}
 
-\item{CreatedAtEndTime}{Filter results to return all the model versions created before this
-time.}
+\item{CreatedAtEndTime}{Filter results to return all the model versions created before this time.}
 
 \item{CreatedAtStartTime}{Filter results to return all the model versions created after this time.}
 

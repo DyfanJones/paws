@@ -9,9 +9,7 @@ administrator account}
 securityhub_create_members(AccountDetails)
 }
 \arguments{
-\item{AccountDetails}{[required] The list of accounts to associate with the Security Hub CSPM
-administrator account. For each account, the list includes the account
-ID and optionally the email address.}
+\item{AccountDetails}{[required] The list of accounts to associate with the Security Hub CSPM administrator account. For each account, the list includes the account ID and optionally the email address.}
 }
 \description{
 Creates a member association in Security Hub CSPM between the specified accounts and the account used to make the request, which is the administrator account. If you are integrated with Organizations, then the administrator account is designated by the organization management account.

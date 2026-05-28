@@ -7,13 +7,9 @@
 codepipeline_list_pipelines(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{An identifier that was returned from the previous list pipelines call.
-It can be used to return the next set of pipelines in the list.}
+\item{nextToken}{An identifier that was returned from the previous list pipelines call. It can be used to return the next set of pipelines in the list.}
 
-\item{maxResults}{The maximum number of pipelines to return in a single call. To retrieve
-the remaining pipelines, make another call with the returned nextToken
-value. The minimum value you can specify is 1. The maximum accepted
-value is 1000.}
+\item{maxResults}{The maximum number of pipelines to return in a single call. To retrieve the remaining pipelines, make another call with the returned nextToken value. The minimum value you can specify is 1. The maximum accepted value is 1000.}
 }
 \description{
 Gets a summary of all of the pipelines associated with your account.

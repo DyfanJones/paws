@@ -14,8 +14,7 @@ NULL
 #'
 #' @param applicationId &#91;required&#93; The ID of the application on which the job run will be canceled.
 #' @param jobRunId &#91;required&#93; The ID of the job run to cancel.
-#' @param shutdownGracePeriodInSeconds The duration in seconds to wait before forcefully terminating the job
-#' after cancellation is requested.
+#' @param shutdownGracePeriodInSeconds The duration in seconds to wait before forcefully terminating the job after cancellation is requested.
 #'
 #' @return
 #' A list with the following syntax:
@@ -76,45 +75,22 @@ emrserverless_cancel_job_run <- function(applicationId, jobRunId, shutdownGraceP
 #' @param name The name of the application.
 #' @param releaseLabel &#91;required&#93; The Amazon EMR release associated with the application.
 #' @param type &#91;required&#93; The type of application you want to start, such as Spark or Hive.
-#' @param clientToken &#91;required&#93; The client idempotency token of the application to create. Its value
-#' must be unique for each request.
+#' @param clientToken &#91;required&#93; The client idempotency token of the application to create. Its value must be unique for each request.
 #' @param initialCapacity The capacity to initialize when the application is created.
-#' @param maximumCapacity The maximum capacity to allocate when the application is created. This
-#' is cumulative across all workers at any given point in time, not just
-#' when an application is created. No new resources will be created once
-#' any one of the defined limits is hit.
+#' @param maximumCapacity The maximum capacity to allocate when the application is created. This is cumulative across all workers at any given point in time, not just when an application is created. No new resources will be created once any one of the defined limits is hit.
 #' @param tags The tags assigned to the application.
-#' @param autoStartConfiguration The configuration for an application to automatically start on job
-#' submission.
-#' @param autoStopConfiguration The configuration for an application to automatically stop after a
-#' certain amount of time being idle.
+#' @param autoStartConfiguration The configuration for an application to automatically start on job submission.
+#' @param autoStopConfiguration The configuration for an application to automatically stop after a certain amount of time being idle.
 #' @param networkConfiguration The network configuration for customer VPC connectivity.
 #' @param architecture The CPU architecture of an application.
-#' @param imageConfiguration The image configuration for all worker types. You can either set this
-#' parameter or `imageConfiguration` for each worker type in
-#' `workerTypeSpecifications`.
-#' @param workerTypeSpecifications The key-value pairs that specify worker type to
-#' `WorkerTypeSpecificationInput`. This parameter must contain all valid
-#' worker types for a Spark or Hive application. Valid worker types include
-#' `Driver` and `Executor` for Spark applications and `HiveDriver` and
-#' `TezTask` for Hive applications. You can either set image details in
-#' this parameter for each worker type, or in `imageConfiguration` for all
-#' worker types.
-#' @param runtimeConfiguration The
-#' [Configuration](https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html)
-#' specifications to use when creating an application. Each configuration
-#' consists of a classification and properties. This configuration is
-#' applied to all the job runs submitted under the application.
+#' @param imageConfiguration The image configuration for all worker types. You can either set this parameter or `imageConfiguration` for each worker type in `workerTypeSpecifications`.
+#' @param workerTypeSpecifications The key-value pairs that specify worker type to `WorkerTypeSpecificationInput`. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include `Driver` and `Executor` for Spark applications and `HiveDriver` and `TezTask` for Hive applications. You can either set image details in this parameter for each worker type, or in `imageConfiguration` for all worker types.
+#' @param runtimeConfiguration The [Configuration](https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html) specifications to use when creating an application. Each configuration consists of a classification and properties. This configuration is applied to all the job runs submitted under the application.
 #' @param monitoringConfiguration The configuration setting for monitoring.
 #' @param diskEncryptionConfiguration The configuration object that allows encrypting local disks.
-#' @param interactiveConfiguration The interactive configuration object that enables the interactive use
-#' cases to use when running an application.
-#' @param schedulerConfiguration The scheduler configuration for batch and streaming jobs running on this
-#' application. Supported with release labels emr-7.0.0 and above.
-#' @param identityCenterConfiguration The IAM Identity Center Configuration accepts the Identity Center
-#' instance parameter required to enable trusted identity propagation. This
-#' configuration allows identity propagation between integrated services
-#' and the Identity Center instance.
+#' @param interactiveConfiguration The interactive configuration object that enables the interactive use cases to use when running an application.
+#' @param schedulerConfiguration The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.
+#' @param identityCenterConfiguration The IAM Identity Center Configuration accepts the Identity Center instance parameter required to enable trusted identity propagation. This configuration allows identity propagation between integrated services and the Identity Center instance.
 #' @param jobLevelCostAllocationConfiguration The configuration object that enables job level cost allocation.
 #'
 #' @return
@@ -264,8 +240,7 @@ emrserverless_create_application <- function(name = NULL, releaseLabel, type, cl
 #' Deletes an application
 #'
 #' @description
-#' Deletes an application. An application has to be in a stopped or created
-#' state in order to be deleted.
+#' Deletes an application. An application has to be in a stopped or created state in order to be deleted.
 #'
 #' @usage
 #' emrserverless_delete_application(applicationId)
@@ -476,17 +451,11 @@ emrserverless_get_application <- function(applicationId) {
 #' for a job run
 #'
 #' @description
-#' Creates and returns a URL that you can use to access the application UIs
-#' for a job run.
+#' Creates and returns a URL that you can use to access the application UIs for a job run.
 #' 
-#' For jobs in a running state, the application UI is a live user interface
-#' such as the Spark or Tez web UI. For completed jobs, the application UI
-#' is a persistent application user interface such as the Spark History
-#' Server or persistent Tez UI.
+#' For jobs in a running state, the application UI is a live user interface such as the Spark or Tez web UI. For completed jobs, the application UI is a persistent application user interface such as the Spark History Server or persistent Tez UI.
 #' 
-#' The URL is valid for one hour after you generate it. To access the
-#' application UI after that hour elapses, you must invoke the API again to
-#' generate a new URL.
+#' The URL is valid for one hour after you generate it. To access the application UI after that hour elapses, you must invoke the API again to generate a new URL.
 #'
 #' @usage
 #' emrserverless_get_dashboard_for_job_run(applicationId, jobRunId,
@@ -494,10 +463,8 @@ emrserverless_get_application <- function(applicationId) {
 #'
 #' @param applicationId &#91;required&#93; The ID of the application.
 #' @param jobRunId &#91;required&#93; The ID of the job run.
-#' @param attempt An optimal parameter that indicates the amount of attempts for the job.
-#' If not specified, this value defaults to the attempt of the latest job.
-#' @param accessSystemProfileLogs Allows access to system profile logs for Lake Formation-enabled jobs.
-#' Default is false.
+#' @param attempt An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.
+#' @param accessSystemProfileLogs Allows access to system profile logs for Lake Formation-enabled jobs. Default is false.
 #'
 #' @return
 #' A list with the following syntax:
@@ -551,8 +518,7 @@ emrserverless_get_dashboard_for_job_run <- function(applicationId, jobRunId, att
 #'
 #' @param applicationId &#91;required&#93; The ID of the application on which the job run is submitted.
 #' @param jobRunId &#91;required&#93; The ID of the job run.
-#' @param attempt An optimal parameter that indicates the amount of attempts for the job.
-#' If not specified, this value defaults to the attempt of the latest job.
+#' @param attempt An optimal parameter that indicates the amount of attempts for the job. If not specified, this value defaults to the attempt of the latest job.
 #'
 #' @return
 #' A list with the following syntax:
@@ -718,17 +684,11 @@ emrserverless_get_job_run <- function(applicationId, jobRunId, attempt = NULL) {
 #' specified resource, such as a session
 #'
 #' @description
-#' Returns a URL that you can use to access the application UIs for a
-#' specified resource, such as a session.
+#' Returns a URL that you can use to access the application UIs for a specified resource, such as a session.
 #' 
-#' For resources in a running state, the application UI is a live user
-#' interface such as the Spark web UI. For terminated resources, the
-#' application UI is a persistent application user interface such as the
-#' Spark History Server.
+#' For resources in a running state, the application UI is a live user interface such as the Spark web UI. For terminated resources, the application UI is a persistent application user interface such as the Spark History Server.
 #' 
-#' The URL is valid for one hour after you generate it. To access the
-#' application UI after that hour elapses, you must invoke the API again to
-#' generate a new URL.
+#' The URL is valid for one hour after you generate it. To access the application UI after that hour elapses, you must invoke the API again to generate a new URL.
 #'
 #' @usage
 #' emrserverless_get_resource_dashboard(applicationId, resourceId,
@@ -736,8 +696,7 @@ emrserverless_get_job_run <- function(applicationId, jobRunId, attempt = NULL) {
 #'
 #' @param applicationId &#91;required&#93; The ID of the application that the resource belongs to.
 #' @param resourceId &#91;required&#93; The ID of the resource.
-#' @param resourceType &#91;required&#93; The type of resource to access the dashboard for. Currently, only
-#' `Session` is supported.
+#' @param resourceType &#91;required&#93; The type of resource to access the dashboard for. Currently, only `Session` is supported.
 #'
 #' @return
 #' A list with the following syntax:
@@ -894,10 +853,7 @@ emrserverless_get_session <- function(applicationId, sessionId) {
 #' for the specified session
 #'
 #' @description
-#' Returns the session endpoint URL and a time-limited authentication token
-#' for the specified session. Use the endpoint and token to connect a
-#' client to the session. Call this operation again when the authentication
-#' token expires to obtain a new token.
+#' Returns the session endpoint URL and a time-limited authentication token for the specified session. Use the endpoint and token to connect a client to the session. Call this operation again when the authentication token expires to obtain a new token.
 #'
 #' @usage
 #' emrserverless_get_session_endpoint(applicationId, sessionId)
@@ -961,9 +917,7 @@ emrserverless_get_session_endpoint <- function(applicationId, sessionId) {
 #'
 #' @param nextToken The token for the next set of application results.
 #' @param maxResults The maximum number of applications that can be listed.
-#' @param states An optional filter for application states. Note that if this filter
-#' contains multiple states, the resulting list will be grouped by the
-#' state.
+#' @param states An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1121,8 +1075,7 @@ emrserverless_list_job_run_attempts <- function(applicationId, jobRunId, nextTok
 #' @param maxResults The maximum number of job runs that can be listed.
 #' @param createdAtAfter The lower bound of the option to filter by creation date and time.
 #' @param createdAtBefore The upper bound of the option to filter by creation date and time.
-#' @param states An optional filter for job run states. Note that if this filter contains
-#' multiple states, the resulting list will be grouped by the state.
+#' @param states An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.
 #' @param mode The mode of the job runs to list.
 #'
 #' @return
@@ -1207,8 +1160,7 @@ emrserverless_list_job_runs <- function(applicationId, nextToken = NULL, maxResu
 #' Lists sessions for the specified application
 #'
 #' @description
-#' Lists sessions for the specified application. You can filter sessions by
-#' state and creation time.
+#' Lists sessions for the specified application. You can filter sessions by state and creation time.
 #'
 #' @usage
 #' emrserverless_list_sessions(applicationId, nextToken, maxResults,
@@ -1217,8 +1169,7 @@ emrserverless_list_job_runs <- function(applicationId, nextToken = NULL, maxResu
 #' @param applicationId &#91;required&#93; The ID of the application to list sessions for.
 #' @param nextToken The token for the next set of session results.
 #' @param maxResults The maximum number of sessions to return in each page of results.
-#' @param states An optional filter for session states. Note that if this filter contains
-#' multiple states, the resulting list will be grouped by the state.
+#' @param states An optional filter for session states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.
 #' @param createdAtAfter The lower bound of the option to filter by creation date and time.
 #' @param createdAtBefore The upper bound of the option to filter by creation date and time.
 #'
@@ -1299,9 +1250,7 @@ emrserverless_list_sessions <- function(applicationId, nextToken = NULL, maxResu
 #' @usage
 #' emrserverless_list_tags_for_resource(resourceArn)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the
-#' tags for. Currently, the supported resources are Amazon EMR Serverless
-#' applications and job runs.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1348,8 +1297,7 @@ emrserverless_list_tags_for_resource <- function(resourceArn) {
 #' configured
 #'
 #' @description
-#' Starts a specified application and initializes initial capacity if
-#' configured.
+#' Starts a specified application and initializes initial capacity if configured.
 #'
 #' @usage
 #' emrserverless_start_application(applicationId)
@@ -1401,17 +1349,13 @@ emrserverless_start_application <- function(applicationId) {
 #'   tags, executionTimeoutMinutes, name, mode, retryPolicy)
 #'
 #' @param applicationId &#91;required&#93; The ID of the application on which to run the job.
-#' @param clientToken &#91;required&#93; The client idempotency token of the job run to start. Its value must be
-#' unique for each request.
+#' @param clientToken &#91;required&#93; The client idempotency token of the job run to start. Its value must be unique for each request.
 #' @param executionRoleArn &#91;required&#93; The execution role ARN for the job run.
-#' @param executionIamPolicy You can pass an optional IAM policy. The resulting job IAM role
-#' permissions will be an intersection of this policy and the policy
-#' associated with your job execution role.
+#' @param executionIamPolicy You can pass an optional IAM policy. The resulting job IAM role permissions will be an intersection of this policy and the policy associated with your job execution role.
 #' @param jobDriver The job driver for the job run.
 #' @param configurationOverrides The configuration overrides for the job run.
 #' @param tags The tags assigned to the job run.
-#' @param executionTimeoutMinutes The maximum duration for the job run to run. If the job run runs beyond
-#' this duration, it will be automatically cancelled.
+#' @param executionTimeoutMinutes The maximum duration for the job run to run. If the job run runs beyond this duration, it will be automatically cancelled.
 #' @param name The optional job run name. This doesn't have to be unique.
 #' @param mode The mode of the job run when it starts.
 #' @param retryPolicy The retry policy when job run starts.
@@ -1533,10 +1477,7 @@ emrserverless_start_job_run <- function(applicationId, clientToken, executionRol
 #' Creates and starts a new session on the specified application
 #'
 #' @description
-#' Creates and starts a new session on the specified application. The
-#' application must be in the `STARTED` state or have `AutoStart` enabled,
-#' and have interactive sessions enabled. This operation is supported for
-#' EMR release 7.13.0 and later.
+#' Creates and starts a new session on the specified application. The application must be in the `STARTED` state or have `AutoStart` enabled, and have interactive sessions enabled. This operation is supported for EMR release 7.13.0 and later.
 #'
 #' @usage
 #' emrserverless_start_session(applicationId, clientToken,
@@ -1544,19 +1485,11 @@ emrserverless_start_job_run <- function(applicationId, clientToken, executionRol
 #'   name)
 #'
 #' @param applicationId &#91;required&#93; The ID of the application on which to start the session.
-#' @param clientToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request. If you retry a request that completed
-#' successfully using the same client token, the server returns the
-#' successful response without performing the operation again.
-#' @param executionRoleArn &#91;required&#93; The execution role ARN for the session. Amazon EMR Serverless uses this
-#' role to access Amazon Web Services resources on your behalf during
-#' session execution.
-#' @param configurationOverrides The configuration overrides for the session. Only runtime configuration
-#' overrides are supported.
+#' @param clientToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token, the server returns the successful response without performing the operation again.
+#' @param executionRoleArn &#91;required&#93; The execution role ARN for the session. Amazon EMR Serverless uses this role to access Amazon Web Services resources on your behalf during session execution.
+#' @param configurationOverrides The configuration overrides for the session. Only runtime configuration overrides are supported.
 #' @param tags The tags to assign to the session.
-#' @param idleTimeoutMinutes The idle timeout in minutes for the session. After the session remains
-#' idle for this duration, Amazon EMR Serverless automatically terminates
-#' it.
+#' @param idleTimeoutMinutes The idle timeout in minutes for the session. After the session remains idle for this duration, Amazon EMR Serverless automatically terminates it.
 #' @param name The optional name for the session.
 #'
 #' @return
@@ -1622,9 +1555,7 @@ emrserverless_start_session <- function(applicationId, clientToken, executionRol
 #' configured
 #'
 #' @description
-#' Stops a specified application and releases initial capacity if
-#' configured. All scheduled and running jobs must be completed or
-#' cancelled before stopping an application.
+#' Stops a specified application and releases initial capacity if configured. All scheduled and running jobs must be completed or cancelled before stopping an application.
 #'
 #' @usage
 #' emrserverless_stop_application(applicationId)
@@ -1668,19 +1599,12 @@ emrserverless_stop_application <- function(applicationId) {
 #' Assigns tags to resources
 #'
 #' @description
-#' Assigns tags to resources. A tag is a label that you assign to an Amazon
-#' Web Services resource. Each tag consists of a key and an optional value,
-#' both of which you define. Tags enable you to categorize your Amazon Web
-#' Services resources by attributes such as purpose, owner, or environment.
-#' When you have many resources of the same type, you can quickly identify
-#' a specific resource based on the tags you've assigned to it.
+#' Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it.
 #'
 #' @usage
 #' emrserverless_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the
-#' tags for. Currently, the supported resources are Amazon EMR Serverless
-#' applications and job runs.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
 #' @param tags &#91;required&#93; The tags to add to the resource. A tag is an array of key-value pairs.
 #'
 #' @return
@@ -1723,11 +1647,7 @@ emrserverless_tag_resource <- function(resourceArn, tags) {
 #' Terminates the specified session
 #'
 #' @description
-#' Terminates the specified session. After you terminate a session, it
-#' enters the `TERMINATING` state and then the `TERMINATED` state. You can
-#' still access the Spark History Server for a terminated session through
-#' the [`get_resource_dashboard`][emrserverless_get_resource_dashboard]
-#' operation.
+#' Terminates the specified session. After you terminate a session, it enters the `TERMINATING` state and then the `TERMINATED` state. You can still access the Spark History Server for a terminated session through the [`get_resource_dashboard`][emrserverless_get_resource_dashboard] operation.
 #'
 #' @usage
 #' emrserverless_terminate_session(applicationId, sessionId)
@@ -1784,9 +1704,7 @@ emrserverless_terminate_session <- function(applicationId, sessionId) {
 #' @usage
 #' emrserverless_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the
-#' tags for. Currently, the supported resources are Amazon EMR Serverless
-#' applications and job runs.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
 #' @param tagKeys &#91;required&#93; The keys of the tags to be removed.
 #'
 #' @return
@@ -1829,8 +1747,7 @@ emrserverless_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates a specified application
 #'
 #' @description
-#' Updates a specified application. An application has to be in a stopped
-#' or created state in order to be updated.
+#' Updates a specified application. An application has to be in a stopped or created state in order to be updated.
 #'
 #' @usage
 #' emrserverless_update_application(applicationId, clientToken,
@@ -1842,46 +1759,22 @@ emrserverless_untag_resource <- function(resourceArn, tagKeys) {
 #'   identityCenterConfiguration, jobLevelCostAllocationConfiguration)
 #'
 #' @param applicationId &#91;required&#93; The ID of the application to update.
-#' @param clientToken &#91;required&#93; The client idempotency token of the application to update. Its value
-#' must be unique for each request.
+#' @param clientToken &#91;required&#93; The client idempotency token of the application to update. Its value must be unique for each request.
 #' @param initialCapacity The capacity to initialize when the application is updated.
-#' @param maximumCapacity The maximum capacity to allocate when the application is updated. This
-#' is cumulative across all workers at any given point in time during the
-#' lifespan of the application. No new resources will be created once any
-#' one of the defined limits is hit.
-#' @param autoStartConfiguration The configuration for an application to automatically start on job
-#' submission.
-#' @param autoStopConfiguration The configuration for an application to automatically stop after a
-#' certain amount of time being idle.
-#' @param networkConfiguration 
+#' @param maximumCapacity The maximum capacity to allocate when the application is updated. This is cumulative across all workers at any given point in time during the lifespan of the application. No new resources will be created once any one of the defined limits is hit.
+#' @param autoStartConfiguration The configuration for an application to automatically start on job submission.
+#' @param autoStopConfiguration The configuration for an application to automatically stop after a certain amount of time being idle.
+#' @param networkConfiguration The network configuration for customer VPC connectivity.
 #' @param architecture The CPU architecture of an application.
-#' @param imageConfiguration The image configuration to be used for all worker types. You can either
-#' set this parameter or `imageConfiguration` for each worker type in
-#' `WorkerTypeSpecificationInput`.
-#' @param workerTypeSpecifications The key-value pairs that specify worker type to
-#' `WorkerTypeSpecificationInput`. This parameter must contain all valid
-#' worker types for a Spark or Hive application. Valid worker types include
-#' `Driver` and `Executor` for Spark applications and `HiveDriver` and
-#' `TezTask` for Hive applications. You can either set image details in
-#' this parameter for each worker type, or in `imageConfiguration` for all
-#' worker types.
-#' @param interactiveConfiguration The interactive configuration object that contains new interactive use
-#' cases when the application is updated.
-#' @param releaseLabel The Amazon EMR release label for the application. You can change the
-#' release label to use a different release of Amazon EMR.
-#' @param runtimeConfiguration The
-#' [Configuration](https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html)
-#' specifications to use when updating an application. Each configuration
-#' consists of a classification and properties. This configuration is
-#' applied across all the job runs submitted under the application.
+#' @param imageConfiguration The image configuration to be used for all worker types. You can either set this parameter or `imageConfiguration` for each worker type in `WorkerTypeSpecificationInput`.
+#' @param workerTypeSpecifications The key-value pairs that specify worker type to `WorkerTypeSpecificationInput`. This parameter must contain all valid worker types for a Spark or Hive application. Valid worker types include `Driver` and `Executor` for Spark applications and `HiveDriver` and `TezTask` for Hive applications. You can either set image details in this parameter for each worker type, or in `imageConfiguration` for all worker types.
+#' @param interactiveConfiguration The interactive configuration object that contains new interactive use cases when the application is updated.
+#' @param releaseLabel The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.
+#' @param runtimeConfiguration The [Configuration](https://docs.aws.amazon.com/emr-serverless/latest/APIReference/API_Configuration.html) specifications to use when updating an application. Each configuration consists of a classification and properties. This configuration is applied across all the job runs submitted under the application.
 #' @param monitoringConfiguration The configuration setting for monitoring.
 #' @param diskEncryptionConfiguration The configuration object that allows encrypting local disks.
-#' @param schedulerConfiguration The scheduler configuration for batch and streaming jobs running on this
-#' application. Supported with release labels emr-7.0.0 and above.
-#' @param identityCenterConfiguration Specifies the IAM Identity Center configuration used to enable or
-#' disable trusted identity propagation. When provided, this configuration
-#' determines how the application interacts with IAM Identity Center for
-#' user authentication and access control.
+#' @param schedulerConfiguration The scheduler configuration for batch and streaming jobs running on this application. Supported with release labels emr-7.0.0 and above.
+#' @param identityCenterConfiguration Specifies the IAM Identity Center configuration used to enable or disable trusted identity propagation. When provided, this configuration determines how the application interacts with IAM Identity Center for user authentication and access control.
 #' @param jobLevelCostAllocationConfiguration The configuration object that enables job level cost allocation.
 #'
 #' @return

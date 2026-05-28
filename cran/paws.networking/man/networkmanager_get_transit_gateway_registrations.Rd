@@ -15,8 +15,7 @@ networkmanager_get_transit_gateway_registrations(
 \arguments{
 \item{GlobalNetworkId}{[required] The ID of the global network.}
 
-\item{TransitGatewayArns}{The Amazon Resource Names (ARNs) of one or more transit gateways. The
-maximum is 10.}
+\item{TransitGatewayArns}{The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.}
 
 \item{MaxResults}{The maximum number of results to return.}
 

@@ -13,44 +13,25 @@ ecs_create_capacity_provider(
 )
 }
 \arguments{
-\item{name}{[required] The name of the capacity provider. Up to 255 characters are allowed.
-They include letters (both upper and lowercase letters), numbers,
-underscores (_), and hyphens (-). The name can't be prefixed with
-"\code{aws}", "\code{ecs}", or "\code{fargate}".}
+\item{name}{[required] The name of the capacity provider. Up to 255 characters are allowed. They include letters (both upper and lowercase letters), numbers, underscores (_), and hyphens (-). The name can't be prefixed with "\code{aws}", "\code{ecs}", or "\code{fargate}".}
 
-\item{cluster}{The name of the cluster to associate with the capacity provider. When
-you create a capacity provider with Amazon ECS Managed Instances, it
-becomes available only within the specified cluster.}
+\item{cluster}{The name of the cluster to associate with the capacity provider. When you create a capacity provider with Amazon ECS Managed Instances, it becomes available only within the specified cluster.}
 
 \item{autoScalingGroupProvider}{The details of the Auto Scaling group for the capacity provider.}
 
-\item{managedInstancesProvider}{The configuration for the Amazon ECS Managed Instances provider. This
-configuration specifies how Amazon ECS manages Amazon EC2 instances on
-your behalf, including the infrastructure role, instance launch
-template, and tag propagation settings.}
+\item{managedInstancesProvider}{The configuration for the Amazon ECS Managed Instances provider. This configuration specifies how Amazon ECS manages Amazon EC2 instances on your behalf, including the infrastructure role, instance launch template, and tag propagation settings.}
 
-\item{tags}{The metadata that you apply to the capacity provider to categorize and
-organize them more conveniently. Each tag consists of a key and an
-optional value. You define both of them.
+\item{tags}{The metadata that you apply to the capacity provider to categorize and organize them more conveniently. Each tag consists of a key and an optional value. You define both of them.
 
 The following basic restrictions apply to tags:
 \itemize{
 \item Maximum number of tags per resource - 50
-\item For each resource, each tag key must be unique, and each tag key can
-have only one value.
+\item For each resource, each tag key must be unique, and each tag key can have only one value.
 \item Maximum key length - 128 Unicode characters in UTF-8
 \item Maximum value length - 256 Unicode characters in UTF-8
-\item If your tagging schema is used across multiple services and
-resources, remember that other services may have restrictions on
-allowed characters. Generally allowed characters are: letters,
-numbers, and spaces representable in UTF-8, and the following
-characters: + - = . _ : / @.
+\item If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
 \item Tag keys and values are case-sensitive.
-\item Do not use \verb{aws:}, \verb{AWS:}, or any upper or lowercase combination of
-such as a prefix for either keys or values as it is reserved for
-Amazon Web Services use. You cannot edit or delete tag keys or
-values with this prefix. Tags with this prefix do not count against
-your tags per resource limit.
+\item Do not use \verb{aws:}, \verb{AWS:}, or any upper or lowercase combination of such as a prefix for either keys or values as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with this prefix do not count against your tags per resource limit.
 }}
 }
 \description{

@@ -16,32 +16,21 @@ redshift_create_scheduled_action(
 )
 }
 \arguments{
-\item{ScheduledActionName}{[required] The name of the scheduled action. The name must be unique within an
-account. For more information about this parameter, see ScheduledAction.}
+\item{ScheduledActionName}{[required] The name of the scheduled action. The name must be unique within an account. For more information about this parameter, see ScheduledAction.}
 
-\item{TargetAction}{[required] A JSON format string of the Amazon Redshift API operation with input
-parameters. For more information about this parameter, see
-ScheduledAction.}
+\item{TargetAction}{[required] A JSON format string of the Amazon Redshift API operation with input parameters. For more information about this parameter, see ScheduledAction.}
 
-\item{Schedule}{[required] The schedule in \code{at( )} or \code{cron( )} format. For more information about
-this parameter, see ScheduledAction.}
+\item{Schedule}{[required] The schedule in \code{at( )} or \code{cron( )} format. For more information about this parameter, see ScheduledAction.}
 
-\item{IamRole}{[required] The IAM role to assume to run the target action. For more information
-about this parameter, see ScheduledAction.}
+\item{IamRole}{[required] The IAM role to assume to run the target action. For more information about this parameter, see ScheduledAction.}
 
 \item{ScheduledActionDescription}{The description of the scheduled action.}
 
-\item{StartTime}{The start time in UTC of the scheduled action. Before this time, the
-scheduled action does not trigger. For more information about this
-parameter, see ScheduledAction.}
+\item{StartTime}{The start time in UTC of the scheduled action. Before this time, the scheduled action does not trigger. For more information about this parameter, see ScheduledAction.}
 
-\item{EndTime}{The end time in UTC of the scheduled action. After this time, the
-scheduled action does not trigger. For more information about this
-parameter, see ScheduledAction.}
+\item{EndTime}{The end time in UTC of the scheduled action. After this time, the scheduled action does not trigger. For more information about this parameter, see ScheduledAction.}
 
-\item{Enable}{If true, the schedule is enabled. If false, the scheduled action does
-not trigger. For more information about \code{state} of the scheduled action,
-see ScheduledAction.}
+\item{Enable}{If true, the schedule is enabled. If false, the scheduled action does not trigger. For more information about \code{state} of the scheduled action, see ScheduledAction.}
 }
 \description{
 Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the \code{\link[=redshift_resize_cluster]{resize_cluster}} API operation.

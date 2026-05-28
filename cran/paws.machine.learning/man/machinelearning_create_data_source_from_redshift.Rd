@@ -23,42 +23,25 @@ machinelearning_create_data_source_from_redshift(
 \item DatabaseInformation -
 \itemize{
 \item \code{DatabaseName} - The name of the Amazon Redshift database.
-\item \code{ ClusterIdentifier} - The unique ID for the Amazon Redshift
-cluster.
+\item \code{ ClusterIdentifier} - The unique ID for the Amazon Redshift cluster.
 }
-\item DatabaseCredentials - The AWS Identity and Access Management (IAM)
-credentials that are used to connect to the Amazon Redshift
-database.
-\item SelectSqlQuery - The query that is used to retrieve the observation
-data for the \code{Datasource}.
-\item S3StagingLocation - The Amazon Simple Storage Service (Amazon S3)
-location for staging Amazon Redshift data. The data retrieved from
-Amazon Redshift using the \code{SelectSqlQuery} query is stored in this
-location.
+\item DatabaseCredentials - The AWS Identity and Access Management (IAM) credentials that are used to connect to the Amazon Redshift database.
+\item SelectSqlQuery - The query that is used to retrieve the observation data for the \code{Datasource}.
+\item S3StagingLocation - The Amazon Simple Storage Service (Amazon S3) location for staging Amazon Redshift data. The data retrieved from Amazon Redshift using the \code{SelectSqlQuery} query is stored in this location.
 \item DataSchemaUri - The Amazon S3 location of the \code{DataSchema}.
-\item DataSchema - A JSON string representing the schema. This is not
-required if \code{DataSchemaUri} is specified.
-\item DataRearrangement - A JSON string that represents the splitting and
-rearrangement requirements for the \code{DataSource}.
+\item DataSchema - A JSON string representing the schema. This is not required if \code{DataSchemaUri} is specified.
+\item DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the \code{DataSource}.
 
-Sample -
-\verb{ "\{\\"splitting\\":\{\\"percentBegin\\":10,\\"percentEnd\\":60\}\}"}
+Sample - \verb{ "\{\\"splitting\\":\{\\"percentBegin\\":10,\\"percentEnd\\":60\}\}"}
 }}
 
-\item{RoleARN}{[required] A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the
-role on behalf of the user to create the following:
+\item{RoleARN}{[required] A fully specified role Amazon Resource Name (ARN). Amazon ML assumes the role on behalf of the user to create the following:
 \itemize{
-\item A security group to allow Amazon ML to execute the \code{SelectSqlQuery}
-query on an Amazon Redshift cluster
-\item An Amazon S3 bucket policy to grant Amazon ML read/write permissions
-on the \code{S3StagingLocation}
+\item A security group to allow Amazon ML to execute the \code{SelectSqlQuery} query on an Amazon Redshift cluster
+\item An Amazon S3 bucket policy to grant Amazon ML read/write permissions on the \code{S3StagingLocation}
 }}
 
-\item{ComputeStatistics}{The compute statistics for a \code{DataSource}. The statistics are generated
-from the observation data referenced by a \code{DataSource}. Amazon ML uses
-the statistics internally during \code{MLModel} training. This parameter must
-be set to \code{true} if the \code{DataSource} needs to be used for \code{MLModel}
-training.}
+\item{ComputeStatistics}{The compute statistics for a \code{DataSource}. The statistics are generated from the observation data referenced by a \code{DataSource}. Amazon ML uses the statistics internally during \code{MLModel} training. This parameter must be set to \code{true} if the \code{DataSource} needs to be used for \code{MLModel} training.}
 }
 \description{
 Creates a \code{DataSource} from a database hosted on an Amazon Redshift cluster. A \code{DataSource} references data that can be used to perform either \code{\link[=machinelearning_create_ml_model]{create_ml_model}}, \code{\link[=machinelearning_create_evaluation]{create_evaluation}}, or \code{\link[=machinelearning_create_batch_prediction]{create_batch_prediction}} operations.

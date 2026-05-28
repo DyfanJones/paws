@@ -14,11 +14,9 @@ glue_delete_partition_index(
 \arguments{
 \item{CatalogId}{The catalog ID where the table resides.}
 
-\item{DatabaseName}{[required] Specifies the name of a database from which you want to delete a
-partition index.}
+\item{DatabaseName}{[required] Specifies the name of a database from which you want to delete a partition index.}
 
-\item{TableName}{[required] Specifies the name of a table from which you want to delete a partition
-index.}
+\item{TableName}{[required] Specifies the name of a table from which you want to delete a partition index.}
 
 \item{IndexName}{[required] The name of the partition index to be deleted.}
 }

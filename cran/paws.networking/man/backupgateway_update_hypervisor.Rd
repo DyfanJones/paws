@@ -17,8 +17,7 @@ backupgateway_update_hypervisor(
 \arguments{
 \item{HypervisorArn}{[required] The Amazon Resource Name (ARN) of the hypervisor to update.}
 
-\item{Host}{The updated host of the hypervisor. This can be either an IP address or
-a fully-qualified domain name (FQDN).}
+\item{Host}{The updated host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).}
 
 \item{Username}{The updated username for the hypervisor.}
 
@@ -26,8 +25,7 @@ a fully-qualified domain name (FQDN).}
 
 \item{Name}{The updated name for the hypervisor}
 
-\item{LogGroupArn}{The Amazon Resource Name (ARN) of the group of gateways within the
-requested log.}
+\item{LogGroupArn}{The Amazon Resource Name (ARN) of the group of gateways within the requested log.}
 }
 \description{
 Updates a hypervisor metadata, including its host, username, and password. Specify which hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your request.

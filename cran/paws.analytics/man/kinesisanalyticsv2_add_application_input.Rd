@@ -12,13 +12,9 @@ kinesisanalyticsv2_add_application_input(
 )
 }
 \arguments{
-\item{ApplicationName}{[required] The name of your existing application to which you want to add the
-streaming source.}
+\item{ApplicationName}{[required] The name of your existing application to which you want to add the streaming source.}
 
-\item{CurrentApplicationVersionId}{[required] The current version of your application. You must provide the
-\code{ApplicationVersionID} or the \code{ConditionalToken}.You can use the
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}
-operation to find the current application version.}
+\item{CurrentApplicationVersionId}{[required] The current version of your application. You must provide the \code{ApplicationVersionID} or the \code{ConditionalToken}.You can use the \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}} operation to find the current application version.}
 
 \item{Input}{[required] The Input to add.}
 }

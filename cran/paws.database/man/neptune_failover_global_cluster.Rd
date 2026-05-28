@@ -12,30 +12,21 @@ neptune_failover_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] Identifier of the Neptune global database that should be failed over.
-The identifier is the unique key assigned by the user when the Neptune
-global database was created. In other words, it's the name of the global
-database that you want to fail over.
+\item{GlobalClusterIdentifier}{[required] Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.
 
-Constraints: Must match the identifier of an existing Neptune global
-database.}
+Constraints: Must match the identifier of an existing Neptune global database.}
 
-\item{TargetDbClusterIdentifier}{[required] The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that
-you want to promote to primary for the global database.}
+\item{TargetDbClusterIdentifier}{[required] The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.}
 
-\item{AllowDataLoss}{Specifies whether to allow data loss for this global database cluster
-operation. Allowing data loss triggers a global failover operation.
+\item{AllowDataLoss}{Specifies whether to allow data loss for this global database cluster operation. Allowing data loss triggers a global failover operation.
 
-If you don't specify \code{AllowDataLoss}, the global database cluster
-operation defaults to a switchover.
+If you don't specify \code{AllowDataLoss}, the global database cluster operation defaults to a switchover.
 
-Constraints: Can't be specified together with the \code{Switchover}
-parameter.}
+Constraints: Can't be specified together with the \code{Switchover} parameter.}
 
 \item{Switchover}{Specifies whether to switch over this global database cluster.
 
-Constraints: Can't be specified together with the \code{AllowDataLoss}
-parameter.}
+Constraints: Can't be specified together with the \code{AllowDataLoss} parameter.}
 }
 \description{
 Initiates the failover process for a Neptune global database.

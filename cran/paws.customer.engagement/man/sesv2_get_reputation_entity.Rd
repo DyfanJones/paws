@@ -9,11 +9,9 @@ Services Amazon SES-managed status, and aggregate sending status}
 sesv2_get_reputation_entity(ReputationEntityReference, ReputationEntityType)
 }
 \arguments{
-\item{ReputationEntityReference}{[required] The unique identifier for the reputation entity. For resource-type
-entities, this is the Amazon Resource Name (ARN) of the resource.}
+\item{ReputationEntityReference}{[required] The unique identifier for the reputation entity. For resource-type entities, this is the Amazon Resource Name (ARN) of the resource.}
 
-\item{ReputationEntityType}{[required] The type of reputation entity. Currently, only \code{RESOURCE} type entities
-are supported.}
+\item{ReputationEntityType}{[required] The type of reputation entity. Currently, only \code{RESOURCE} type entities are supported.}
 }
 \description{
 Retrieve information about a specific reputation entity, including its reputation management policy, customer-managed status, Amazon Web Services Amazon SES-managed status, and aggregate sending status.

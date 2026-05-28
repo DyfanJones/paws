@@ -15,26 +15,21 @@ rds_create_db_proxy_endpoint(
 )
 }
 \arguments{
-\item{DBProxyName}{[required] The name of the DB proxy associated with the DB proxy endpoint that you
-create.}
+\item{DBProxyName}{[required] The name of the DB proxy associated with the DB proxy endpoint that you create.}
 
 \item{DBProxyEndpointName}{[required] The name of the DB proxy endpoint to create.}
 
-\item{VpcSubnetIds}{[required] The VPC subnet IDs for the DB proxy endpoint that you create. You can
-specify a different set of subnet IDs than for the original DB proxy.}
+\item{VpcSubnetIds}{[required] The VPC subnet IDs for the DB proxy endpoint that you create. You can specify a different set of subnet IDs than for the original DB proxy.}
 
-\item{VpcSecurityGroupIds}{The VPC security group IDs for the DB proxy endpoint that you create.
-You can specify a different set of security group IDs than for the
-original DB proxy. The default is the default security group for the
-VPC.}
+\item{VpcSecurityGroupIds}{The VPC security group IDs for the DB proxy endpoint that you create. You can specify a different set of security group IDs than for the original DB proxy. The default is the default security group for the VPC.}
 
-\item{TargetRole}{The role of the DB proxy endpoint. The role determines whether the
-endpoint can be used for read/write or only read operations. The default
-is \code{READ_WRITE}. The only role that proxies for RDS for Microsoft SQL
-Server support is \code{READ_WRITE}.}
+\item{TargetRole}{The role of the DB proxy endpoint. The role determines whether the endpoint can be used for read/write or only read operations. The default is \code{READ_WRITE}. The only role that proxies for RDS for Microsoft SQL Server support is \code{READ_WRITE}.}
 
-\item{EndpointNetworkType}{The network type of the DB proxy endpoint. The network type determines
-the IP version that the proxy endpoint supports.
+\item{Tags}{A list of tags.
+
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
+
+\item{EndpointNetworkType}{The network type of the DB proxy endpoint. The network type determines the IP version that the proxy endpoint supports.
 
 Valid values:
 \itemize{
@@ -47,10 +42,8 @@ Default: \code{IPV4}
 
 Constraints:
 \itemize{
-\item If you specify \code{IPV6} or \code{DUAL}, the VPC and all subnets must have
-an IPv6 CIDR block.
-\item If you specify \code{IPV6} or \code{DUAL}, the VPC tenancy cannot be
-\code{dedicated}.
+\item If you specify \code{IPV6} or \code{DUAL}, the VPC and all subnets must have an IPv6 CIDR block.
+\item If you specify \code{IPV6} or \code{DUAL}, the VPC tenancy cannot be \code{dedicated}.
 }}
 }
 \description{

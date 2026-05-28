@@ -12,10 +12,7 @@ rds_describe_db_instances(
 )
 }
 \arguments{
-\item{DBInstanceIdentifier}{The user-supplied instance identifier or the Amazon Resource Name (ARN)
-of the DB instance. If this parameter is specified, information from
-only the specific DB instance is returned. This parameter isn't
-case-sensitive.
+\item{DBInstanceIdentifier}{The user-supplied instance identifier or the Amazon Resource Name (ARN) of the DB instance. If this parameter is specified, information from only the specific DB instance is returned. This parameter isn't case-sensitive.
 
 Constraints:
 \itemize{
@@ -26,36 +23,20 @@ Constraints:
 
 Supported Filters:
 \itemize{
-\item \code{db-cluster-id} - Accepts DB cluster identifiers and DB cluster
-Amazon Resource Names (ARNs). The results list only includes
-information about the DB instances associated with the DB clusters
-identified by these ARNs.
-\item \code{db-instance-id} - Accepts DB instance identifiers and DB instance
-Amazon Resource Names (ARNs). The results list only includes
-information about the DB instances identified by these ARNs.
-\item \code{dbi-resource-id} - Accepts DB instance resource identifiers. The
-results list only includes information about the DB instances
-identified by these DB instance resource identifiers.
-\item \code{domain} - Accepts Active Directory directory IDs. The results list
-only includes information about the DB instances associated with
-these domains.
-\item \code{engine} - Accepts engine names. The results list only includes
-information about the DB instances for these engines.
+\item \code{db-cluster-id} - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs). The results list only includes information about the DB instances associated with the DB clusters identified by these ARNs.
+\item \code{db-instance-id} - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs). The results list only includes information about the DB instances identified by these ARNs.
+\item \code{dbi-resource-id} - Accepts DB instance resource identifiers. The results list only includes information about the DB instances identified by these DB instance resource identifiers.
+\item \code{domain} - Accepts Active Directory directory IDs. The results list only includes information about the DB instances associated with these domains.
+\item \code{engine} - Accepts engine names. The results list only includes information about the DB instances for these engines.
 }}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so that you can retrieve the
-remaining results.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so that you can retrieve the remaining results.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=rds_describe_db_instances]{describe_db_instances}} request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=rds_describe_db_instances]{describe_db_instances}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Describes provisioned RDS instances. This API supports pagination.

@@ -14,25 +14,25 @@ textract_start_lending_analysis(
 )
 }
 \arguments{
-\item{DocumentLocation}{[required]}
+\item{DocumentLocation}{[required] The Amazon S3 bucket that contains the document to be processed. It's used by asynchronous operations.
 
-\item{ClientRequestToken}{The idempotent token that you use to identify the start request. If you
-use the same token with multiple
-\code{\link[=textract_start_lending_analysis]{start_lending_analysis}} requests,
-the same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the
-same job from being accidentally started more than once. For more
-information, see \href{https://docs.aws.amazon.com/textract/latest/dg/}{Calling Amazon Textract Asynchronous Operations}.}
+The input document can be an image file in JPEG or PNG format. It can also be a file in PDF format.}
 
-\item{JobTag}{An identifier that you specify to be included in the completion
-notification published to the Amazon SNS topic. For example, you can use
-\code{JobTag} to identify the type of document that the completion
-notification corresponds to (such as a tax form or a receipt).}
+\item{ClientRequestToken}{The idempotent token that you use to identify the start request. If you use the same token with multiple \code{\link[=textract_start_lending_analysis]{start_lending_analysis}} requests, the same \code{JobId} is returned. Use \code{ClientRequestToken} to prevent the same job from being accidentally started more than once. For more information, see \href{https://docs.aws.amazon.com/textract/latest/dg/}{Calling Amazon Textract Asynchronous Operations}.}
 
-\item{KMSKeyId}{The KMS key used to encrypt the inference results. This can be in either
-Key ID or Key Alias format. When a KMS key is provided, the KMS key will
-be used for server-side encryption of the objects in the customer
-bucket. When this parameter is not enabled, the result will be encrypted
-server side, using SSE-S3.}
+\item{JobTag}{An identifier that you specify to be included in the completion notification published to the Amazon SNS topic. For example, you can use \code{JobTag} to identify the type of document that the completion notification corresponds to (such as a tax form or a receipt).}
+
+\item{NotificationChannel}{The Amazon Simple Notification Service (Amazon SNS) topic to which Amazon Textract publishes the completion status of an asynchronous document operation.}
+
+\item{OutputConfig}{Sets whether or not your output will go to a user created bucket. Used to set the name of the bucket, and the prefix on the output file.
+
+\code{OutputConfig} is an optional parameter which lets you adjust where your output will be placed. By default, Amazon Textract will store the results internally and can only be accessed by the Get API operations. With \code{OutputConfig} enabled, you can set the name of the bucket the output will be sent to the file prefix of the results where you can download your results. Additionally, you can set the \code{KMSKeyID} parameter to a customer master key (CMK) to encrypt your output. Without this parameter set Amazon Textract will encrypt server-side using the AWS managed CMK for Amazon S3.
+
+Decryption of Customer Content is necessary for processing of the documents by Amazon Textract. If your account is opted out under an AI services opt out policy then all unencrypted Customer Content is immediately and permanently deleted after the Customer Content has been processed by the service. No copy of of the output is retained by Amazon Textract. For information about how to opt out, see \href{https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html}{Managing AI services opt-out policy.}
+
+For more information on data privacy, see the \href{https://aws.amazon.com/compliance/data-privacy-faq/}{Data Privacy FAQ}.}
+
+\item{KMSKeyId}{The KMS key used to encrypt the inference results. This can be in either Key ID or Key Alias format. When a KMS key is provided, the KMS key will be used for server-side encryption of the objects in the customer bucket. When this parameter is not enabled, the result will be encrypted server side, using SSE-S3.}
 }
 \description{
 Starts the classification and analysis of an input document. \code{\link[=textract_start_lending_analysis]{start_lending_analysis}} initiates the classification and analysis of a packet of lending documents. \code{\link[=textract_start_lending_analysis]{start_lending_analysis}} operates on a document file located in an Amazon S3 bucket.

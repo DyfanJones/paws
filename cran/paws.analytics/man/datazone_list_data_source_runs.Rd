@@ -13,28 +13,15 @@ datazone_list_data_source_runs(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which to invoke the
-\code{\link[=datazone_list_data_source_runs]{list_data_source_runs}} action.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which to invoke the \code{\link[=datazone_list_data_source_runs]{list_data_source_runs}} action.}
 
 \item{dataSourceIdentifier}{[required] The identifier of the data source.}
 
 \item{status}{The status of the data source.}
 
-\item{nextToken}{When the number of runs is greater than the default value for the
-\code{MaxResults} parameter, or if you explicitly specify a value for
-\code{MaxResults} that is less than the number of runs, the response includes
-a pagination token named \code{NextToken}. You can specify this \code{NextToken}
-value in a subsequent call to
-\code{\link[=datazone_list_data_source_runs]{list_data_source_runs}} to list the
-next set of runs.}
+\item{nextToken}{When the number of runs is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of runs, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_data_source_runs]{list_data_source_runs}} to list the next set of runs.}
 
-\item{maxResults}{The maximum number of runs to return in a single call to
-\code{\link[=datazone_list_data_source_runs]{list_data_source_runs}}. When the
-number of runs to be listed is greater than the value of \code{MaxResults},
-the response contains a \code{NextToken} value that you can use in a
-subsequent call to
-\code{\link[=datazone_list_data_source_runs]{list_data_source_runs}} to list the
-next set of runs.}
+\item{maxResults}{The maximum number of runs to return in a single call to \code{\link[=datazone_list_data_source_runs]{list_data_source_runs}}. When the number of runs to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_data_source_runs]{list_data_source_runs}} to list the next set of runs.}
 }
 \description{
 Lists data source runs in Amazon DataZone.

@@ -7,9 +7,7 @@
 codecatalyst_delete_access_token(id)
 }
 \arguments{
-\item{id}{[required] The ID of the personal access token to delete. You can find the IDs of
-all PATs associated with your Amazon Web Services Builder ID in a space
-by calling \code{\link[=codecatalyst_list_access_tokens]{list_access_tokens}}.}
+\item{id}{[required] The ID of the personal access token to delete. You can find the IDs of all PATs associated with your Amazon Web Services Builder ID in a space by calling \code{\link[=codecatalyst_list_access_tokens]{list_access_tokens}}.}
 }
 \description{
 Deletes a specified personal access token (PAT). A personal access token can only be deleted by the user who created it.

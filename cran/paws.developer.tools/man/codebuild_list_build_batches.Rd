@@ -18,16 +18,11 @@ codebuild_list_build_batches(
 
 \item{sortOrder}{Specifies the sort order of the returned items. Valid values include:
 \itemize{
-\item \code{ASCENDING}: List the batch build identifiers in ascending order by
-identifier.
-\item \code{DESCENDING}: List the batch build identifiers in descending order
-by identifier.
+\item \code{ASCENDING}: List the batch build identifiers in ascending order by identifier.
+\item \code{DESCENDING}: List the batch build identifiers in descending order by identifier.
 }}
 
-\item{nextToken}{The \code{nextToken} value returned from a previous call to
-\code{\link[=codebuild_list_build_batches]{list_build_batches}}. This specifies the
-next item to return. To return the beginning of the list, exclude this
-parameter.}
+\item{nextToken}{The \code{nextToken} value returned from a previous call to \code{\link[=codebuild_list_build_batches]{list_build_batches}}. This specifies the next item to return. To return the beginning of the list, exclude this parameter.}
 }
 \description{
 Retrieves the identifiers of your build batches in the current region.

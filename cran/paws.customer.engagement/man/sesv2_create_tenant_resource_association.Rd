@@ -9,8 +9,7 @@ sesv2_create_tenant_resource_association(TenantName, ResourceArn)
 \arguments{
 \item{TenantName}{[required] The name of the tenant to associate the resource with.}
 
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to associate with the
-tenant.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource to associate with the tenant.}
 }
 \description{
 Associate a resource with a tenant.

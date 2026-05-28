@@ -9,7 +9,7 @@ opensearchservice_dissociate_packages(PackageList, DomainName)
 \arguments{
 \item{PackageList}{[required] A list of package IDs to be dissociated from a domain.}
 
-\item{DomainName}{[required]}
+\item{DomainName}{[required] The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.}
 }
 \description{
 Dissociates multiple packages from a domain simultaneously.

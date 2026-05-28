@@ -7,9 +7,11 @@
 budgets_execute_budget_action(AccountId, BudgetName, ActionId, ExecutionType)
 }
 \arguments{
-\item{AccountId}{[required]}
+\item{AccountId}{[required] The account ID of the user. It's a 12-digit number.}
 
-\item{BudgetName}{[required]}
+\item{BudgetName}{[required] A string that represents the budget name. The ":" and "\\" characters, and the "/action/" substring, aren't allowed.
+
+Budget names are validated for content. Names that contain phone numbers, URLs, or email addresses combined with certain terms may be rejected.}
 
 \item{ActionId}{[required] A system-generated universally unique identifier (UUID) for the action.}
 

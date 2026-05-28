@@ -16,48 +16,31 @@ redshift_get_cluster_credentials(
 )
 }
 \arguments{
-\item{DbUser}{[required] The name of a database user. If a user name matching \code{DbUser} exists in
-the database, the temporary user credentials have the same permissions
-as the existing user. If \code{DbUser} doesn't exist in the database and
-\code{Autocreate} is \code{True}, a new user is created using the value for
-\code{DbUser} with PUBLIC permissions. If a database user matching the value
-for \code{DbUser} doesn't exist and \code{Autocreate} is \code{False}, then the command
-succeeds but the connection attempt will fail because the user doesn't
-exist in the database.
+\item{DbUser}{[required] The name of a database user. If a user name matching \code{DbUser} exists in the database, the temporary user credentials have the same permissions as the existing user. If \code{DbUser} doesn't exist in the database and \code{Autocreate} is \code{True}, a new user is created using the value for \code{DbUser} with PUBLIC permissions. If a database user matching the value for \code{DbUser} doesn't exist and \code{Autocreate} is \code{False}, then the command succeeds but the connection attempt will fail because the user doesn't exist in the database.
 
-For more information, see \href{https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html}{CREATE USER}
-in the Amazon Redshift Database Developer Guide.
+For more information, see \href{https://docs.aws.amazon.com/redshift/latest/dg/r_CREATE_USER.html}{CREATE USER} in the Amazon Redshift Database Developer Guide.
 
 Constraints:
 \itemize{
-\item Must be 1 to 64 alphanumeric characters or hyphens. The user name
-can't be \code{PUBLIC}.
-\item Must contain uppercase or lowercase letters, numbers, underscore,
-plus sign, period (dot), at symbol (@), or hyphen.
+\item Must be 1 to 64 alphanumeric characters or hyphens. The user name can't be \code{PUBLIC}.
+\item Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
 \item First character must be a letter.
 \item Must not contain a colon ( : ) or slash ( / ).
-\item Cannot be a reserved word. A list of reserved words can be found in
-\href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words}
-in the Amazon Redshift Database Developer Guide.
+\item Cannot be a reserved word. A list of reserved words can be found in \href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words} in the Amazon Redshift Database Developer Guide.
 }}
 
-\item{DbName}{The name of a database that \code{DbUser} is authorized to log on to. If
-\code{DbName} is not specified, \code{DbUser} can log on to any existing database.
+\item{DbName}{The name of a database that \code{DbUser} is authorized to log on to. If \code{DbName} is not specified, \code{DbUser} can log on to any existing database.
 
 Constraints:
 \itemize{
 \item Must be 1 to 64 alphanumeric characters or hyphens
-\item Must contain uppercase or lowercase letters, numbers, underscore,
-plus sign, period (dot), at symbol (@), or hyphen.
+\item Must contain uppercase or lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
 \item First character must be a letter.
 \item Must not contain a colon ( : ) or slash ( / ).
-\item Cannot be a reserved word. A list of reserved words can be found in
-\href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words}
-in the Amazon Redshift Database Developer Guide.
+\item Cannot be a reserved word. A list of reserved words can be found in \href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words} in the Amazon Redshift Database Developer Guide.
 }}
 
-\item{ClusterIdentifier}{The unique identifier of the cluster that contains the database for
-which you are requesting credentials. This parameter is case sensitive.}
+\item{ClusterIdentifier}{The unique identifier of the cluster that contains the database for which you are requesting credentials. This parameter is case sensitive.}
 
 \item{DurationSeconds}{The number of seconds until the returned temporary password expires.
 
@@ -65,24 +48,17 @@ Constraint: minimum 900, maximum 3600.
 
 Default: 900}
 
-\item{AutoCreate}{Create a database user with the name specified for the user named in
-\code{DbUser} if one does not exist.}
+\item{AutoCreate}{Create a database user with the name specified for the user named in \code{DbUser} if one does not exist.}
 
-\item{DbGroups}{A list of the names of existing database groups that the user named in
-\code{DbUser} will join for the current session, in addition to any group
-memberships for an existing user. If not specified, a new user is added
-only to PUBLIC.
+\item{DbGroups}{A list of the names of existing database groups that the user named in \code{DbUser} will join for the current session, in addition to any group memberships for an existing user. If not specified, a new user is added only to PUBLIC.
 
 Database group name constraints
 \itemize{
 \item Must be 1 to 64 alphanumeric characters or hyphens
-\item Must contain only lowercase letters, numbers, underscore, plus sign,
-period (dot), at symbol (@), or hyphen.
+\item Must contain only lowercase letters, numbers, underscore, plus sign, period (dot), at symbol (@), or hyphen.
 \item First character must be a letter.
 \item Must not contain a colon ( : ) or slash ( / ).
-\item Cannot be a reserved word. A list of reserved words can be found in
-\href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words}
-in the Amazon Redshift Database Developer Guide.
+\item Cannot be a reserved word. A list of reserved words can be found in \href{https://docs.aws.amazon.com/redshift/latest/dg/r_pg_keywords.html}{Reserved Words} in the Amazon Redshift Database Developer Guide.
 }}
 
 \item{CustomDomainName}{The custom domain name for the cluster credentials.}

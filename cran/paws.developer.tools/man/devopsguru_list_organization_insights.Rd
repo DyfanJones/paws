@@ -13,18 +13,15 @@ devopsguru_list_organization_insights(
 )
 }
 \arguments{
-\item{StatusFilter}{[required]}
+\item{StatusFilter}{[required] A filter used by \code{\link[=devopsguru_list_insights]{list_insights}} to specify which insights to return.}
 
-\item{MaxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{MaxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
 \item{AccountIds}{The ID of the Amazon Web Services account.}
 
 \item{OrganizationalUnitIds}{The ID of the organizational unit.}
 
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 }
 \description{
 Returns a list of insights associated with the account or OU Id.

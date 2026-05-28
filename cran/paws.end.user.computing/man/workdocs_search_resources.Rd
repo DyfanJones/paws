@@ -18,22 +18,15 @@ workdocs_search_resources(
 )
 }
 \arguments{
-\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web
-Services administrator credentials to access the API.}
+\item{AuthenticationToken}{Amazon WorkDocs authentication token. Not required when using Amazon Web Services administrator credentials to access the API.}
 
-\item{QueryText}{The String to search for. Searches across different text fields based on
-request parameters. Use double quotes around the query string for exact
-phrase matches.}
+\item{QueryText}{The String to search for. Searches across different text fields based on request parameters. Use double quotes around the query string for exact phrase matches.}
 
-\item{QueryScopes}{Filter based on the text field type. A Folder has only a name and no
-content. A Comment has only content and no name. A Document or Document
-Version has a name and content}
+\item{QueryScopes}{Filter based on the text field type. A Folder has only a name and no content. A Comment has only content and no name. A Document or Document Version has a name and content}
 
-\item{OrganizationId}{Filters based on the resource owner OrgId. This is a mandatory parameter
-when using Admin SigV4 credentials.}
+\item{OrganizationId}{Filters based on the resource owner OrgId. This is a mandatory parameter when using Admin SigV4 credentials.}
 
-\item{AdditionalResponseFields}{A list of attributes to include in the response. Used to request fields
-that are not normally returned in a standard response.}
+\item{AdditionalResponseFields}{A list of attributes to include in the response. Used to request fields that are not normally returned in a standard response.}
 
 \item{Filters}{Filters results based on entity metadata.}
 

@@ -28,16 +28,14 @@ neptune_modify_db_cluster(
 )
 }
 \arguments{
-\item{DBClusterIdentifier}{[required] The DB cluster identifier for the cluster being modified. This parameter
-is not case-sensitive.
+\item{DBClusterIdentifier}{[required] The DB cluster identifier for the cluster being modified. This parameter is not case-sensitive.
 
 Constraints:
 \itemize{
 \item Must match the identifier of an existing DBCluster.
 }}
 
-\item{NewDBClusterIdentifier}{The new DB cluster identifier for the DB cluster when renaming a DB
-cluster. This value is stored as a lowercase string.
+\item{NewDBClusterIdentifier}{The new DB cluster identifier for the DB cluster when renaming a DB cluster. This value is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -48,22 +46,13 @@ Constraints:
 
 Example: \code{my-cluster2}}
 
-\item{ApplyImmediately}{A value that specifies whether the modifications in this request and any
-pending modifications are asynchronously applied as soon as possible,
-regardless of the \code{PreferredMaintenanceWindow} setting for the DB
-cluster. If this parameter is set to \code{false}, changes to the DB cluster
-are applied during the next maintenance window.
+\item{ApplyImmediately}{A value that specifies whether the modifications in this request and any pending modifications are asynchronously applied as soon as possible, regardless of the \code{PreferredMaintenanceWindow} setting for the DB cluster. If this parameter is set to \code{false}, changes to the DB cluster are applied during the next maintenance window.
 
-The \code{ApplyImmediately} parameter only affects \code{NewDBClusterIdentifier}
-values. If you set the \code{ApplyImmediately} parameter value to false, then
-changes to \code{NewDBClusterIdentifier} values are applied during the next
-maintenance window. All other changes are applied immediately,
-regardless of the value of the \code{ApplyImmediately} parameter.
+The \code{ApplyImmediately} parameter only affects \code{NewDBClusterIdentifier} values. If you set the \code{ApplyImmediately} parameter value to false, then changes to \code{NewDBClusterIdentifier} values are applied during the next maintenance window. All other changes are applied immediately, regardless of the value of the \code{ApplyImmediately} parameter.
 
 Default: \code{false}}
 
-\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. You must
-specify a minimum value of 1.
+\item{BackupRetentionPeriod}{The number of days for which automated backups are retained. You must specify a minimum value of 1.
 
 Default: 1
 
@@ -86,12 +75,9 @@ Default: The same port as the original DB cluster.}
 
 \item{OptionGroupName}{\emph{Not supported by Neptune.}}
 
-\item{PreferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled, using the \code{BackupRetentionPeriod}
-parameter.
+\item{PreferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled, using the \code{BackupRetentionPeriod} parameter.
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Region.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
 
 Constraints:
 \itemize{
@@ -101,85 +87,58 @@ Constraints:
 \item Must be at least 30 minutes.
 }}
 
-\item{PreferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in
-Universal Coordinated Time (UTC).
+\item{PreferredMaintenanceWindow}{The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).
 
 Format: \code{ddd:hh24:mi-ddd:hh24:mi}
 
-The default is a 30-minute window selected at random from an 8-hour
-block of time for each Amazon Region, occurring on a random day of the
-week.
+The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region, occurring on a random day of the week.
 
 Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun.
 
 Constraints: Minimum 30-minute window.}
 
-\item{EnableIAMDatabaseAuthentication}{True to enable mapping of Amazon Identity and Access Management (IAM)
-accounts to database accounts, and otherwise false.
+\item{EnableIAMDatabaseAuthentication}{True to enable mapping of Amazon Identity and Access Management (IAM) accounts to database accounts, and otherwise false.
 
 Default: \code{false}}
 
-\item{CloudwatchLogsExportConfiguration}{The configuration setting for the log types to be enabled for export to
-CloudWatch Logs for a specific DB cluster. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli}{Using the CLI to publish Neptune audit logs to CloudWatch Logs}.}
+\item{CloudwatchLogsExportConfiguration}{The configuration setting for the log types to be enabled for export to CloudWatch Logs for a specific DB cluster. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html#cloudwatch-logs-cli}{Using the CLI to publish Neptune audit logs to CloudWatch Logs}.}
 
-\item{EngineVersion}{The version number of the database engine to which you want to upgrade.
-Changing this parameter results in an outage. The change is applied
-during the next maintenance window unless the \code{ApplyImmediately}
-parameter is set to true.
+\item{EngineVersion}{The version number of the database engine to which you want to upgrade. Changing this parameter results in an outage. The change is applied during the next maintenance window unless the \code{ApplyImmediately} parameter is set to true.
 
-For a list of valid engine versions, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html}{Engine Releases for Amazon Neptune},
-or call
-\code{\link[=neptune_describe_db_engine_versions]{describe_db_engine_versions}}.}
+For a list of valid engine versions, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/engine-releases.html}{Engine Releases for Amazon Neptune}, or call \code{\link[=neptune_describe_db_engine_versions]{describe_db_engine_versions}}.}
 
-\item{AllowMajorVersionUpgrade}{A value that indicates whether upgrades between different major versions
-are allowed.
+\item{AllowMajorVersionUpgrade}{A value that indicates whether upgrades between different major versions are allowed.
 
-Constraints: You must set the allow-major-version-upgrade flag when
-providing an \code{EngineVersion} parameter that uses a different major
-version than the DB cluster's current version.}
+Constraints: You must set the allow-major-version-upgrade flag when providing an \code{EngineVersion} parameter that uses a different major version than the DB cluster's current version.}
 
-\item{DBInstanceParameterGroupName}{The name of the DB parameter group to apply to all instances of the DB
-cluster.
+\item{DBInstanceParameterGroupName}{The name of the DB parameter group to apply to all instances of the DB cluster.
 
-When you apply a parameter group using \code{DBInstanceParameterGroupName},
-parameter changes aren't applied during the next maintenance window but
-instead are applied immediately.
+When you apply a parameter group using \code{DBInstanceParameterGroupName}, parameter changes aren't applied during the next maintenance window but instead are applied immediately.
 
 Default: The existing name setting
 
 Constraints:
 \itemize{
-\item The DB parameter group must be in the same DB parameter group family
-as the target DB cluster version.
-\item The \code{DBInstanceParameterGroupName} parameter is only valid in
-combination with the \code{AllowMajorVersionUpgrade} parameter.
+\item The DB parameter group must be in the same DB parameter group family as the target DB cluster version.
+\item The \code{DBInstanceParameterGroupName} parameter is only valid in combination with the \code{AllowMajorVersionUpgrade} parameter.
 }}
 
-\item{DeletionProtection}{A value that indicates whether the DB cluster has deletion protection
-enabled. The database can't be deleted when deletion protection is
-enabled. By default, deletion protection is disabled.}
+\item{DeletionProtection}{A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is disabled.}
 
-\item{CopyTagsToSnapshot}{\emph{If set to true, tags are copied to any snapshot of the DB cluster that
-is created.}}
+\item{CopyTagsToSnapshot}{\emph{If set to true, tags are copied to any snapshot of the DB cluster that is created.}}
 
 \item{ServerlessV2ScalingConfiguration}{Contains the scaling configuration of a Neptune Serverless DB cluster.
 
-For more information, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html}{Using Amazon Neptune Serverless}
-in the \emph{Amazon Neptune User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/neptune/latest/userguide/neptune-serverless-using.html}{Using Amazon Neptune Serverless} in the \emph{Amazon Neptune User Guide}.}
 
 \item{StorageType}{The storage type to associate with the DB cluster.
 
 Valid Values:
 \itemize{
-\item \strong{\code{standard}}   –   ( \emph{the default} ) Configures cost-effective
-database storage for applications with moderate to small I/O usage.
-\item \strong{\code{iopt1}}   –   Enables \href{https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage}{I/O-Optimized storage}
-that's designed to meet the needs of I/O-intensive graph workloads
-that require predictable pricing with low I/O latency and consistent
-I/O throughput.
+\item \strong{\code{standard}}   –   ( \emph{the default} ) Configures cost-effective database storage for applications with moderate to small I/O usage.
+\item \strong{\code{iopt1}}   –   Enables \href{https://docs.aws.amazon.com/neptune/latest/userguide/storage-types.html#provisioned-iops-storage}{I/O-Optimized storage} that's designed to meet the needs of I/O-intensive graph workloads that require predictable pricing with low I/O latency and consistent I/O throughput.
 
-Neptune I/O-Optimized storage is only available starting with engine
-release 1.3.0.0.
+Neptune I/O-Optimized storage is only available starting with engine release 1.3.0.0.
 }}
 }
 \description{

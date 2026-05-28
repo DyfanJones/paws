@@ -7,8 +7,7 @@
 comprehend_stop_training_document_classifier(DocumentClassifierArn)
 }
 \arguments{
-\item{DocumentClassifierArn}{[required] The Amazon Resource Name (ARN) that identifies the document classifier
-currently being trained.}
+\item{DocumentClassifierArn}{[required] The Amazon Resource Name (ARN) that identifies the document classifier currently being trained.}
 }
 \description{
 Stops a document classifier training job while in progress.

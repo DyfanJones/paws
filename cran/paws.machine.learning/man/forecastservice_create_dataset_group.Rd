@@ -14,45 +14,23 @@ forecastservice_create_dataset_group(
 \arguments{
 \item{DatasetGroupName}{[required] A name for the dataset group.}
 
-\item{Domain}{[required] The domain associated with the dataset group. When you add a dataset to
-a dataset group, this value and the value specified for the \code{Domain}
-parameter of the \code{\link[=forecastservice_create_dataset]{create_dataset}}
-operation must match.
+\item{Domain}{[required] The domain associated with the dataset group. When you add a dataset to a dataset group, this value and the value specified for the \code{Domain} parameter of the \code{\link[=forecastservice_create_dataset]{create_dataset}} operation must match.
 
-The \code{Domain} and \code{DatasetType} that you choose determine the fields that
-must be present in training data that you import to a dataset. For
-example, if you choose the \code{RETAIL} domain and \code{TARGET_TIME_SERIES} as
-the \code{DatasetType}, Amazon Forecast requires that \code{item_id}, \code{timestamp},
-and \code{demand} fields are present in your data. For more information, see
-\href{https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html}{Dataset groups}.}
+The \code{Domain} and \code{DatasetType} that you choose determine the fields that must be present in training data that you import to a dataset. For example, if you choose the \code{RETAIL} domain and \code{TARGET_TIME_SERIES} as the \code{DatasetType}, Amazon Forecast requires that \code{item_id}, \code{timestamp}, and \code{demand} fields are present in your data. For more information, see \href{https://docs.aws.amazon.com/forecast/latest/dg/howitworks-datasets-groups.html}{Dataset groups}.}
 
-\item{DatasetArns}{An array of Amazon Resource Names (ARNs) of the datasets that you want
-to include in the dataset group.}
+\item{DatasetArns}{An array of Amazon Resource Names (ARNs) of the datasets that you want to include in the dataset group.}
 
-\item{Tags}{The optional metadata that you apply to the dataset group to help you
-categorize and organize them. Each tag consists of a key and an optional
-value, both of which you define.
+\item{Tags}{The optional metadata that you apply to the dataset group to help you categorize and organize them. Each tag consists of a key and an optional value, both of which you define.
 
 The following basic restrictions apply to tags:
 \itemize{
 \item Maximum number of tags per resource - 50.
-\item For each resource, each tag key must be unique, and each tag key can
-have only one value.
+\item For each resource, each tag key must be unique, and each tag key can have only one value.
 \item Maximum key length - 128 Unicode characters in UTF-8.
 \item Maximum value length - 256 Unicode characters in UTF-8.
-\item If your tagging schema is used across multiple services and
-resources, remember that other services may have restrictions on
-allowed characters. Generally allowed characters are: letters,
-numbers, and spaces representable in UTF-8, and the following
-characters: + - = . _ : / @.
+\item If your tagging schema is used across multiple services and resources, remember that other services may have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable in UTF-8, and the following characters: + - = . _ : / @.
 \item Tag keys and values are case sensitive.
-\item Do not use \verb{aws:}, \verb{AWS:}, or any upper or lowercase combination of
-such as a prefix for keys as it is reserved for Amazon Web Services
-use. You cannot edit or delete tag keys with this prefix. Values can
-have this prefix. If a tag value has \code{aws} as its prefix but the key
-does not, then Forecast considers it to be a user tag and will count
-against the limit of 50 tags. Tags with only the key prefix of \code{aws}
-do not count against your tags per resource limit.
+\item Do not use \verb{aws:}, \verb{AWS:}, or any upper or lowercase combination of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit or delete tag keys with this prefix. Values can have this prefix. If a tag value has \code{aws} as its prefix but the key does not, then Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix of \code{aws} do not count against your tags per resource limit.
 }}
 }
 \description{

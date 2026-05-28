@@ -7,8 +7,7 @@
 redshift_put_resource_policy(ResourceArn, Policy)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource of which its resource
-policy is updated.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource of which its resource policy is updated.}
 
 \item{Policy}{[required] The content of the resource policy being updated.}
 }

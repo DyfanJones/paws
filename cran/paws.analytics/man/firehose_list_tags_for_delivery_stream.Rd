@@ -13,15 +13,9 @@ firehose_list_tags_for_delivery_stream(
 \arguments{
 \item{DeliveryStreamName}{[required] The name of the Firehose stream whose tags you want to list.}
 
-\item{ExclusiveStartTagKey}{The key to use as the starting point for the list of tags. If you set
-this parameter,
-\code{\link[=firehose_list_tags_for_delivery_stream]{list_tags_for_delivery_stream}}
-gets all tags that occur after \code{ExclusiveStartTagKey}.}
+\item{ExclusiveStartTagKey}{The key to use as the starting point for the list of tags. If you set this parameter, \code{\link[=firehose_list_tags_for_delivery_stream]{list_tags_for_delivery_stream}} gets all tags that occur after \code{ExclusiveStartTagKey}.}
 
-\item{Limit}{The number of tags to return. If this number is less than the total
-number of tags associated with the Firehose stream, \code{HasMoreTags} is set
-to \code{true} in the response. To list additional tags, set
-\code{ExclusiveStartTagKey} to the last key in the response.}
+\item{Limit}{The number of tags to return. If this number is less than the total number of tags associated with the Firehose stream, \code{HasMoreTags} is set to \code{true} in the response. To list additional tags, set \code{ExclusiveStartTagKey} to the last key in the response.}
 }
 \description{
 Lists the tags for the specified Firehose stream. This operation has a limit of five transactions per second per account.

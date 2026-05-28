@@ -8,8 +8,7 @@ resource}
 opensearchingestion_get_resource_policy(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which to retrieve the
-policy.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which to retrieve the policy.}
 }
 \description{
 Retrieves the resource-based policy attached to an OpenSearch Ingestion resource.

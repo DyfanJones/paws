@@ -8,8 +8,7 @@ versions}
 glue_delete_schema(SchemaId)
 }
 \arguments{
-\item{SchemaId}{[required] This is a wrapper structure that may contain the schema name and Amazon
-Resource Name (ARN).}
+\item{SchemaId}{[required] This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).}
 }
 \description{
 Deletes the entire schema set, including the schema set and all of its versions. To get the status of the delete operation, you can call \code{\link[=glue_get_schema]{get_schema}} API after the asynchronous call. Deleting a registry will deactivate all online operations for the schema, such as the \code{\link[=glue_get_schema_by_definition]{get_schema_by_definition}}, and \code{\link[=glue_register_schema_version]{register_schema_version}} APIs.

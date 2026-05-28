@@ -20,30 +20,21 @@ iamrolesanywhere_create_profile(
 \arguments{
 \item{name}{[required] The name of the profile.}
 
-\item{requireInstanceProperties}{Unused, saved for future use. Will likely specify whether instance
-properties are required in temporary credential requests with this
-profile.}
+\item{requireInstanceProperties}{Unused, saved for future use. Will likely specify whether instance properties are required in temporary credential requests with this profile.}
 
-\item{sessionPolicy}{A session policy that applies to the trust boundary of the vended
-session credentials.}
+\item{sessionPolicy}{A session policy that applies to the trust boundary of the vended session credentials.}
 
-\item{roleArns}{[required] A list of IAM roles that this profile can assume in a temporary
-credential request.}
+\item{roleArns}{[required] A list of IAM roles that this profile can assume in a temporary credential request.}
 
-\item{managedPolicyArns}{A list of managed policy ARNs that apply to the vended session
-credentials.}
+\item{managedPolicyArns}{A list of managed policy ARNs that apply to the vended session credentials.}
 
-\item{durationSeconds}{Used to determine how long sessions vended using this profile are valid
-for. See the \code{Expiration} section of the \href{https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object}{CreateSession API documentation}
-page for more details. In requests, if this value is not provided, the
-default value will be 3600.}
+\item{durationSeconds}{Used to determine how long sessions vended using this profile are valid for. See the \code{Expiration} section of the \href{https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object}{CreateSession API documentation} page for more details. In requests, if this value is not provided, the default value will be 3600.}
 
 \item{enabled}{Specifies whether the profile is enabled.}
 
 \item{tags}{The tags to attach to the profile.}
 
-\item{acceptRoleSessionName}{Used to determine if a custom role session name will be accepted in a
-temporary credential request.}
+\item{acceptRoleSessionName}{Used to determine if a custom role session name will be accepted in a temporary credential request.}
 }
 \description{
 Creates a \emph{profile}, a list of the roles that Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.

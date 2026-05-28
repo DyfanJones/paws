@@ -7,8 +7,7 @@
 gluedatabrew_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) string that uniquely identifies the
-DataBrew resource.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) string that uniquely identifies the DataBrew resource.}
 }
 \description{
 Lists all the tags for a DataBrew resource.

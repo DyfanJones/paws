@@ -13,17 +13,11 @@ glue_get_connections(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog in which the connections reside. If none is
-provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog in which the connections reside. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{Filter}{A filter that controls which connections are returned.}
 
-\item{HidePassword}{Allows you to retrieve the connection metadata without returning the
-password. For instance, the Glue console uses this flag to retrieve the
-connection, and does not display the password. Set this parameter when
-the caller might not have permission to use the KMS key to decrypt the
-password, but it does have permission to access the rest of the
-connection properties.}
+\item{HidePassword}{Allows you to retrieve the connection metadata without returning the password. For instance, the Glue console uses this flag to retrieve the connection, and does not display the password. Set this parameter when the caller might not have permission to use the KMS key to decrypt the password, but it does have permission to access the rest of the connection properties.}
 
 \item{NextToken}{A continuation token, if this is a continuation call.}
 

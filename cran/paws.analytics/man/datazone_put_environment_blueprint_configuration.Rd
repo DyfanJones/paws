@@ -13,6 +13,8 @@ datazone_put_environment_blueprint_configuration(
   environmentRolePermissionBoundary = NULL,
   enabledRegions,
   regionalParameters = NULL,
+  resourceConfigurations = NULL,
+  allowUserProvidedConfigurations = NULL,
   globalParameters = NULL,
   provisioningConfigurations = NULL
 )
@@ -31,6 +33,10 @@ datazone_put_environment_blueprint_configuration(
 \item{enabledRegions}{[required] Specifies the enabled Amazon Web Services Regions.}
 
 \item{regionalParameters}{The regional parameters in the environment blueprint.}
+
+\item{resourceConfigurations}{The resource configurations of the environment blueprint.}
+
+\item{allowUserProvidedConfigurations}{Specifies whether user-provided resource configurations are allowed for the environment blueprint.}
 
 \item{globalParameters}{Region-agnostic environment blueprint parameters.}
 

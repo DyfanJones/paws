@@ -29,13 +29,25 @@ NULL
 
 .paymentcryptographydataplane$generate_as_2805_kek_validation_input <- function(...) {
   args <- c(as.list(environment()), list(...))
-  shape <- structure(list(KeyIdentifier = structure(logical(0), tags = list(type = "string")), KekValidationType = structure(list(KekValidationRequest = structure(list(DeriveKeyAlgorithm = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), KekValidationResponse = structure(list(RandomKeySend = structure(logical(0), tags = list(type = "string", sensitive = TRUE))), tags = list(type = "structure"))), tags = list(type = "structure", union = TRUE)), RandomKeySendVariantMask = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))
+  shape <- structure(list(KeyIdentifier = structure(logical(0), tags = list(type = "string")), KekValidationType = structure(list(KekValidationRequest = structure(list(DeriveKeyAlgorithm = structure(logical(0), tags = list(type = "string")), RandomKeyMaxLength = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), KekValidationResponse = structure(list(RandomKeySend = structure(logical(0), tags = list(type = "string", sensitive = TRUE))), tags = list(type = "structure"))), tags = list(type = "structure", union = TRUE)), RandomKeySendVariantMask = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))
   return(populate(args, shape))
 }
 
 .paymentcryptographydataplane$generate_as_2805_kek_validation_output <- function(...) {
   args <- c(as.list(environment()), list(...))
   shape <- structure(list(KeyArn = structure(logical(0), tags = list(type = "string")), KeyCheckValue = structure(logical(0), tags = list(type = "string")), RandomKeySend = structure(logical(0), tags = list(type = "string", sensitive = TRUE)), RandomKeyReceive = structure(logical(0), tags = list(type = "string", sensitive = TRUE))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.paymentcryptographydataplane$generate_auth_request_cryptogram_input <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(KeyIdentifier = structure(logical(0), tags = list(type = "string")), TransactionData = structure(logical(0), tags = list(type = "string", sensitive = TRUE)), MajorKeyDerivationMode = structure(logical(0), tags = list(type = "string")), SessionKeyDerivationAttributes = structure(list(EmvCommon = structure(list(PrimaryAccountNumber = structure(logical(0), tags = list(type = "string", sensitive = TRUE)), PanSequenceNumber = structure(logical(0), tags = list(type = "string")), ApplicationTransactionCounter = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), Mastercard = structure(list(PrimaryAccountNumber = structure(logical(0), tags = list(type = "string", sensitive = TRUE)), PanSequenceNumber = structure(logical(0), tags = list(type = "string")), ApplicationTransactionCounter = structure(logical(0), tags = list(type = "string")), UnpredictableNumber = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), Emv2000 = structure(list(PrimaryAccountNumber = structure(logical(0), tags = list(type = "string", sensitive = TRUE)), PanSequenceNumber = structure(logical(0), tags = list(type = "string")), ApplicationTransactionCounter = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), Amex = structure(list(PrimaryAccountNumber = structure(logical(0), tags = list(type = "string", sensitive = TRUE)), PanSequenceNumber = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure")), Visa = structure(list(PrimaryAccountNumber = structure(logical(0), tags = list(type = "string", sensitive = TRUE)), PanSequenceNumber = structure(logical(0), tags = list(type = "string"))), tags = list(type = "structure"))), tags = list(type = "structure", union = TRUE))), tags = list(type = "structure"))
+  return(populate(args, shape))
+}
+
+.paymentcryptographydataplane$generate_auth_request_cryptogram_output <- function(...) {
+  args <- c(as.list(environment()), list(...))
+  shape <- structure(list(KeyArn = structure(logical(0), tags = list(type = "string")), KeyCheckValue = structure(logical(0), tags = list(type = "string")), AuthRequestCryptogram = structure(logical(0), tags = list(type = "string", sensitive = TRUE))), tags = list(type = "structure"))
   return(populate(args, shape))
 }
 

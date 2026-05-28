@@ -16,8 +16,7 @@ sagemaker_create_device_fleet(
 \arguments{
 \item{DeviceFleetName}{[required] The name of the fleet that the device belongs to.}
 
-\item{RoleArn}{The Amazon Resource Name (ARN) that has access to Amazon Web Services
-Internet of Things (IoT).}
+\item{RoleArn}{The Amazon Resource Name (ARN) that has access to Amazon Web Services Internet of Things (IoT).}
 
 \item{Description}{A description of the fleet.}
 
@@ -25,12 +24,9 @@ Internet of Things (IoT).}
 
 \item{Tags}{Creates tags for the specified fleet.}
 
-\item{EnableIotRoleAlias}{Whether to create an Amazon Web Services IoT Role Alias during device
-fleet creation. The name of the role alias generated will match this
-pattern: "SageMakerEdge-\{DeviceFleetName\}".
+\item{EnableIotRoleAlias}{Whether to create an Amazon Web Services IoT Role Alias during device fleet creation. The name of the role alias generated will match this pattern: "SageMakerEdge-\{DeviceFleetName\}".
 
-For example, if your device fleet is called "demo-fleet", the name of
-the role alias will be "SageMakerEdge-demo-fleet".}
+For example, if your device fleet is called "demo-fleet", the name of the role alias will be "SageMakerEdge-demo-fleet".}
 }
 \description{
 Creates a device fleet.

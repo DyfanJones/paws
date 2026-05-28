@@ -11,8 +11,7 @@ gluedatabrew_update_ruleset(Name, Description = NULL, Rules)
 
 \item{Description}{The description of the ruleset.}
 
-\item{Rules}{[required] A list of rules that are defined with the ruleset. A rule includes one
-or more checks to be validated on a DataBrew dataset.}
+\item{Rules}{[required] A list of rules that are defined with the ruleset. A rule includes one or more checks to be validated on a DataBrew dataset.}
 }
 \description{
 Updates specified ruleset.

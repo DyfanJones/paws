@@ -16,8 +16,7 @@ backupgateway_import_hypervisor_configuration(
 \arguments{
 \item{Name}{[required] The name of the hypervisor.}
 
-\item{Host}{[required] The server host of the hypervisor. This can be either an IP address or a
-fully-qualified domain name (FQDN).}
+\item{Host}{[required] The server host of the hypervisor. This can be either an IP address or a fully-qualified domain name (FQDN).}
 
 \item{Username}{The username for the hypervisor.}
 

@@ -8,16 +8,13 @@ user}
 workmail_update_mailbox_quota(OrganizationId, UserId, MailboxQuota)
 }
 \arguments{
-\item{OrganizationId}{[required] The identifier for the organization that contains the user for whom to
-update the mailbox quota.}
+\item{OrganizationId}{[required] The identifier for the organization that contains the user for whom to update the mailbox quota.}
 
 \item{UserId}{[required] The identifer for the user for whom to update the mailbox quota.
 
-The identifier can be the \emph{UserId}, \emph{Username}, or \emph{email}. The
-following identity formats are available:
+The identifier can be the \emph{UserId}, \emph{Username}, or \emph{email}. The following identity formats are available:
 \itemize{
-\item User ID: 12345678-1234-1234-1234-123456789012 or
-S-1-1-12-1234567890-123456789-123456789-1234
+\item User ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 \item Email address: user@domain.tld
 \item User name: user
 }}

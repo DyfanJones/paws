@@ -18,12 +18,7 @@ kinesisanalyticsv2_update_application(
 \arguments{
 \item{ApplicationName}{[required] The name of the application to update.}
 
-\item{CurrentApplicationVersionId}{The current application version ID. You must provide the
-\code{CurrentApplicationVersionId} or the \code{ConditionalToken}.You can retrieve
-the application version ID using
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}. For
-better concurrency support, use the \code{ConditionalToken} parameter instead
-of \code{CurrentApplicationVersionId}.}
+\item{CurrentApplicationVersionId}{The current application version ID. You must provide the \code{CurrentApplicationVersionId} or the \code{ConditionalToken}.You can retrieve the application version ID using \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}. For better concurrency support, use the \code{ConditionalToken} parameter instead of \code{CurrentApplicationVersionId}.}
 
 \item{ApplicationConfigurationUpdate}{Describes application configuration updates.}
 
@@ -31,25 +26,14 @@ of \code{CurrentApplicationVersionId}.}
 
 \item{RunConfigurationUpdate}{Describes updates to the application's starting parameters.}
 
-\item{CloudWatchLoggingOptionUpdates}{Describes application Amazon CloudWatch logging option updates. You can
-only update existing CloudWatch logging options with this action. To add
-a new CloudWatch logging option, use
-\code{\link[=kinesisanalyticsv2_add_application_cloud_watch_logging_option]{add_application_cloud_watch_logging_option}}.}
+\item{CloudWatchLoggingOptionUpdates}{Describes application Amazon CloudWatch logging option updates. You can only update existing CloudWatch logging options with this action. To add a new CloudWatch logging option, use \code{\link[=kinesisanalyticsv2_add_application_cloud_watch_logging_option]{add_application_cloud_watch_logging_option}}.}
 
-\item{ConditionalToken}{A value you use to implement strong concurrency for application updates.
-You must provide the \code{CurrentApplicationVersionId} or the
-\code{ConditionalToken}. You get the application's current \code{ConditionalToken}
-using \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}.
-For better concurrency support, use the \code{ConditionalToken} parameter
-instead of \code{CurrentApplicationVersionId}.}
+\item{ConditionalToken}{A value you use to implement strong concurrency for application updates. You must provide the \code{CurrentApplicationVersionId} or the \code{ConditionalToken}. You get the application's current \code{ConditionalToken} using \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}. For better concurrency support, use the \code{ConditionalToken} parameter instead of \code{CurrentApplicationVersionId}.}
 
-\item{RuntimeEnvironmentUpdate}{Updates the Managed Service for Apache Flink runtime environment used to
-run your code. To avoid issues you must:
+\item{RuntimeEnvironmentUpdate}{Updates the Managed Service for Apache Flink runtime environment used to run your code. To avoid issues you must:
 \itemize{
-\item Ensure your new jar and dependencies are compatible with the new
-runtime selected.
-\item Ensure your new code's state is compatible with the snapshot from
-which your application will start
+\item Ensure your new jar and dependencies are compatible with the new runtime selected.
+\item Ensure your new code's state is compatible with the snapshot from which your application will start
 }}
 }
 \description{

@@ -8,8 +8,7 @@ environment}
 cloud9_list_tags_for_resource(ResourceARN)
 }
 \arguments{
-\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Cloud9 development environment to
-get the tags for.}
+\item{ResourceARN}{[required] The Amazon Resource Name (ARN) of the Cloud9 development environment to get the tags for.}
 }
 \description{
 Gets a list of the tags associated with an Cloud9 development environment.

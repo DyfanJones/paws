@@ -12,23 +12,19 @@ route53resolver_delete_firewall_rule(
 )
 }
 \arguments{
-\item{FirewallRuleGroupId}{[required] The unique identifier of the firewall rule group that you want to delete
-the rule from.}
+\item{FirewallRuleGroupId}{[required] The unique identifier of the firewall rule group that you want to delete the rule from.}
 
 \item{FirewallDomainListId}{The ID of the domain list that's used in the rule.}
 
 \item{FirewallThreatProtectionId}{The ID that is created for a DNS Firewall Advanced rule.}
 
-\item{Qtype}{The DNS query type that the rule you are deleting evaluates. Allowed
-values are;
+\item{Qtype}{The DNS query type that the rule you are deleting evaluates. Allowed values are;
 \itemize{
 \item A: Returns an IPv4 address.
 \item AAAA: Returns an Ipv6 address.
-\item CAA: Restricts CAs that can create SSL/TLS certifications for the
-domain.
+\item CAA: Restricts CAs that can create SSL/TLS certifications for the domain.
 \item CNAME: Returns another domain name.
-\item DS: Record that identifies the DNSSEC signing key of a delegated
-zone.
+\item DS: Record that identifies the DNSSEC signing key of a delegated zone.
 \item MX: Specifies mail servers.
 \item NAPTR: Regular-expression-based rewriting of domain names.
 \item NS: Authoritative name servers.
@@ -37,9 +33,7 @@ zone.
 \item SPF: Lists the servers authorized to send emails from a domain.
 \item SRV: Application specific values that identify servers.
 \item TXT: Verifies email senders and application-specific values.
-\item A query type you define by using the DNS type ID, for example 28 for
-AAAA. The values must be defined as TYPENUMBER, where the NUMBER can
-be 1-65334, for example, TYPE28. For more information, see \href{https://en.wikipedia.org/wiki/List_of_DNS_record_types}{List of DNS record types}.
+\item A query type you define by using the DNS type ID, for example 28 for AAAA. The values must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28. For more information, see \href{https://en.wikipedia.org/wiki/List_of_DNS_record_types}{List of DNS record types}.
 }}
 }
 \description{

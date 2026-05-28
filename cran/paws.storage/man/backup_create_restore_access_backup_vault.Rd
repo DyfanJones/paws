@@ -15,18 +15,15 @@ backup_create_restore_access_backup_vault(
 )
 }
 \arguments{
-\item{SourceBackupVaultArn}{[required] The ARN of the source backup vault containing the recovery points to
-which temporary access is requested.}
+\item{SourceBackupVaultArn}{[required] The ARN of the source backup vault containing the recovery points to which temporary access is requested.}
 
 \item{BackupVaultName}{The name of the backup vault to associate with an MPA approval team.}
 
 \item{BackupVaultTags}{Optional tags to assign to the restore access backup vault.}
 
-\item{CreatorRequestId}{A unique string that identifies the request and allows failed requests
-to be retried without the risk of executing the operation twice.}
+\item{CreatorRequestId}{A unique string that identifies the request and allows failed requests to be retried without the risk of executing the operation twice.}
 
-\item{RequesterComment}{A comment explaining the reason for requesting restore access to the
-backup vault.}
+\item{RequesterComment}{A comment explaining the reason for requesting restore access to the backup vault.}
 }
 \description{
 Creates a restore access backup vault that provides temporary access to recovery points in a logically air-gapped backup vault, subject to MPA approval.

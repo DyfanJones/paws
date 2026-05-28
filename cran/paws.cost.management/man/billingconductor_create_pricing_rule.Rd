@@ -21,52 +21,33 @@ billingconductor_create_pricing_rule(
 )
 }
 \arguments{
-\item{ClientToken}{A unique, case-sensitive identifier that you specify to ensure
-idempotency of the request. Idempotency ensures that an API request
-completes no more than one time. With an idempotent request, if the
-original request completes successfully, any subsequent retries complete
-successfully without performing any further actions.}
+\item{ClientToken}{A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.}
 
 \item{Name}{[required] The pricing rule name. The names must be unique to each pricing rule.}
 
 \item{Description}{The pricing rule description.}
 
-\item{Scope}{[required] The scope of pricing rule that indicates if it's globally applicable, or
-it's service-specific.}
+\item{Scope}{[required] The scope of pricing rule that indicates if it's globally applicable, or it's service-specific.}
 
 \item{Type}{[required] The type of pricing rule.}
 
-\item{ModifierPercentage}{A percentage modifier that's applied on the public pricing rates. Your
-entry will be rounded to the nearest 2 decimal places.}
+\item{ModifierPercentage}{A percentage modifier that's applied on the public pricing rates. Your entry will be rounded to the nearest 2 decimal places.}
 
-\item{Service}{If the \code{Scope} attribute is set to \code{SERVICE} or \code{SKU}, the attribute
-indicates which service the \code{PricingRule} is applicable for.}
+\item{Service}{If the \code{Scope} attribute is set to \code{SERVICE} or \code{SKU}, the attribute indicates which service the \code{PricingRule} is applicable for.}
 
-\item{Tags}{A map that contains tag keys and tag values that are attached to a
-pricing rule.}
+\item{Tags}{A map that contains tag keys and tag values that are attached to a pricing rule.}
 
-\item{BillingEntity}{The seller of services provided by Amazon Web Services, their
-affiliates, or third-party providers selling services via Amazon Web
-Services Marketplace.}
+\item{BillingEntity}{The seller of services provided by Amazon Web Services, their affiliates, or third-party providers selling services via Amazon Web Services Marketplace.}
 
 \item{Tiering}{The set of tiering configurations for the pricing rule.}
 
-\item{UsageType}{Usage type is the unit that each service uses to measure the usage of a
-specific type of resource.
+\item{UsageType}{Usage type is the unit that each service uses to measure the usage of a specific type of resource.
 
-If the \code{Scope} attribute is set to \code{SKU}, this attribute indicates which
-usage type the \code{PricingRule} is modifying. For example,
-\code{USW2-BoxUsage:m2.2xlarge} describes
-an\verb{ M2 High Memory Double Extra Large} instance in the US West (Oregon)
-Region.}
+If the \code{Scope} attribute is set to \code{SKU}, this attribute indicates which usage type the \code{PricingRule} is modifying. For example, \code{USW2-BoxUsage:m2.2xlarge} describes an\verb{ M2 High Memory Double Extra Large} instance in the US West (Oregon) Region.}
 
-\item{Operation}{Operation is the specific Amazon Web Services action covered by this
-line item. This describes the specific usage of the line item.
+\item{Operation}{Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.
 
-If the \code{Scope} attribute is set to \code{SKU}, this attribute indicates which
-operation the \code{PricingRule} is modifying. For example, a value of
-\code{RunInstances:0202} indicates the operation of running an Amazon EC2
-instance.}
+If the \code{Scope} attribute is set to \code{SKU}, this attribute indicates which operation the \code{PricingRule} is modifying. For example, a value of \code{RunInstances:0202} indicates the operation of running an Amazon EC2 instance.}
 }
 \description{
 Creates a pricing rule can be associated to a pricing plan, or a set of pricing plans.

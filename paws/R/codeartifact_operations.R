@@ -6,22 +6,18 @@ NULL
 #' Adds an existing external connection to a repository
 #'
 #' @description
-#' Adds an existing external connection to a repository. One external
-#' connection is allowed per repository.
+#' Adds an existing external connection to a repository. One external connection is allowed per repository.
 #' 
-#' A repository can have one or more upstream repositories, or an external
-#' connection.
+#' A repository can have one or more upstream repositories, or an external connection.
 #'
 #' @usage
 #' codeartifact_associate_external_connection(domain, domainOwner,
 #'   repository, externalConnection)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the repository.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository to which the external connection is added.
-#' @param externalConnection &#91;required&#93; The name of the external connection to add to the repository. The
-#' following values are supported:
+#' @param externalConnection &#91;required&#93; The name of the external connection to add to the repository. The following values are supported:
 #' 
 #' -   `public:npmjs` - for the npm public repository.
 #' 
@@ -111,30 +107,23 @@ codeartifact_associate_external_connection <- function(domain, domainOwner = NUL
 #' same domain
 #'
 #' @description
-#' Copies package versions from one repository to another repository in the
-#' same domain.
+#' Copies package versions from one repository to another repository in the same domain.
 #' 
-#' You must specify `versions` or `versionRevisions`. You cannot specify
-#' both.
+#' You must specify `versions` or `versionRevisions`. You cannot specify both.
 #'
 #' @usage
 #' codeartifact_copy_package_versions(domain, domainOwner,
 #'   sourceRepository, destinationRepository, format, namespace, package,
 #'   versions, versionRevisions, allowOverwrite, includeFromUpstream)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the source and destination
-#' repositories.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param sourceRepository &#91;required&#93; The name of the repository that contains the package versions to be
-#' copied.
+#' @param domain &#91;required&#93; The name of the domain that contains the source and destination repositories.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param sourceRepository &#91;required&#93; The name of the repository that contains the package versions to be copied.
 #' @param destinationRepository &#91;required&#93; The name of the repository into which package versions are copied.
 #' @param format &#91;required&#93; The format of the package versions to be copied.
-#' @param namespace The namespace of the package versions to be copied. The package
-#' component that specifies its namespace depends on its type. For example:
+#' @param namespace The namespace of the package versions to be copied. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when copying package versions of the following
-#' formats:
+#' The namespace is required when copying package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -149,30 +138,16 @@ codeartifact_associate_external_connection <- function(domain, domainOwner = NUL
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package that contains the versions to be copied.
 #' @param versions The versions of the package to be copied.
 #' 
-#' You must specify `versions` or `versionRevisions`. You cannot specify
-#' both.
-#' @param versionRevisions A list of key-value pairs. The keys are package versions and the values
-#' are package version revisions. A `CopyPackageVersion` operation succeeds
-#' if the specified versions in the source repository match the specified
-#' package version revision.
+#' You must specify `versions` or `versionRevisions`. You cannot specify both.
+#' @param versionRevisions A list of key-value pairs. The keys are package versions and the values are package version revisions. A `CopyPackageVersion` operation succeeds if the specified versions in the source repository match the specified package version revision.
 #' 
-#' You must specify `versions` or `versionRevisions`. You cannot specify
-#' both.
-#' @param allowOverwrite Set to true to overwrite a package version that already exists in the
-#' destination repository. If set to false and the package version already
-#' exists in the destination repository, the package version is returned in
-#' the `failedVersions` field of the response with an `ALREADY_EXISTS`
-#' error code.
-#' @param includeFromUpstream Set to true to copy packages from repositories that are upstream from
-#' the source repository to the destination repository. The default setting
-#' is false. For more information, see [Working with upstream
-#' repositories](https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html).
+#' You must specify `versions` or `versionRevisions`. You cannot specify both.
+#' @param allowOverwrite Set to true to overwrite a package version that already exists in the destination repository. If set to false and the package version already exists in the destination repository, the package version is returned in the `failedVersions` field of the response with an `ALREADY_EXISTS` error code.
+#' @param includeFromUpstream Set to true to copy packages from repositories that are upstream from the source repository to the destination repository. The default setting is false. For more information, see [Working with upstream repositories](https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -241,42 +216,17 @@ codeartifact_copy_package_versions <- function(domain, domainOwner = NULL, sourc
 #' Creates a domain
 #'
 #' @description
-#' Creates a domain. CodeArtifact *domains* make it easier to manage
-#' multiple repositories across an organization. You can use a domain to
-#' apply permissions across many repositories owned by different Amazon Web
-#' Services accounts. An asset is stored only once in a domain, even if
-#' it's in multiple repositories.
+#' Creates a domain. CodeArtifact *domains* make it easier to manage multiple repositories across an organization. You can use a domain to apply permissions across many repositories owned by different Amazon Web Services accounts. An asset is stored only once in a domain, even if it's in multiple repositories.
 #' 
-#' Although you can have multiple domains, we recommend a single production
-#' domain that contains all published artifacts so that your development
-#' teams can find and share packages. You can use a second pre-production
-#' domain to test changes to the production domain configuration.
+#' Although you can have multiple domains, we recommend a single production domain that contains all published artifacts so that your development teams can find and share packages. You can use a second pre-production domain to test changes to the production domain configuration.
 #'
 #' @usage
 #' codeartifact_create_domain(domain, encryptionKey, tags)
 #'
-#' @param domain &#91;required&#93; The name of the domain to create. All domain names in an Amazon Web
-#' Services Region that are in the same Amazon Web Services account must be
-#' unique. The domain name is used as the prefix in DNS hostnames. Do not
-#' use sensitive information in a domain name because it is publicly
-#' discoverable.
-#' @param encryptionKey The encryption key for the domain. This is used to encrypt content
-#' stored in a domain. An encryption key can be a key ID, a key Amazon
-#' Resource Name (ARN), a key alias, or a key alias ARN. To specify an
-#' `encryptionKey`, your IAM role must have `kms:DescribeKey` and
-#' `kms:CreateGrant` permissions on the encryption key that is used. For
-#' more information, see
-#' [DescribeKey](https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax)
-#' in the *Key Management Service API Reference* and [Key Management
-#' Service API Permissions
-#' Reference](https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html)
-#' in the *Key Management Service Developer Guide*.
+#' @param domain &#91;required&#93; The name of the domain to create. All domain names in an Amazon Web Services Region that are in the same Amazon Web Services account must be unique. The domain name is used as the prefix in DNS hostnames. Do not use sensitive information in a domain name because it is publicly discoverable.
+#' @param encryptionKey The encryption key for the domain. This is used to encrypt content stored in a domain. An encryption key can be a key ID, a key Amazon Resource Name (ARN), a key alias, or a key alias ARN. To specify an `encryptionKey`, your IAM role must have `kms:DescribeKey` and `kms:CreateGrant` permissions on the encryption key that is used. For more information, see [DescribeKey](https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestSyntax) in the *Key Management Service API Reference* and [Key Management Service API Permissions Reference](https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html) in the *Key Management Service Developer Guide*.
 #' 
-#' CodeArtifact supports only symmetric CMKs. Do not associate an
-#' asymmetric CMK with your domain. For more information, see [Using
-#' symmetric and asymmetric
-#' keys](https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html)
-#' in the *Key Management Service Developer Guide*.
+#' CodeArtifact supports only symmetric CMKs. Do not associate an asymmetric CMK with your domain. For more information, see [Using symmetric and asymmetric keys](https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html) in the *Key Management Service Developer Guide*.
 #' @param tags One or more tag key-value pairs for the domain.
 #'
 #' @return
@@ -340,20 +290,15 @@ codeartifact_create_domain <- function(domain, encryptionKey = NULL, tags = NULL
 #' Creates a package group
 #'
 #' @description
-#' Creates a package group. For more information about creating package
-#' groups, including example CLI commands, see [Create a package
-#' group](https://docs.aws.amazon.com/codeartifact/latest/ug/create-package-group.html)
-#' in the *CodeArtifact User Guide*.
+#' Creates a package group. For more information about creating package groups, including example CLI commands, see [Create a package group](https://docs.aws.amazon.com/codeartifact/latest/ug/create-package-group.html) in the *CodeArtifact User Guide*.
 #'
 #' @usage
 #' codeartifact_create_package_group(domain, domainOwner, packageGroup,
 #'   contactInfo, description, tags)
 #'
 #' @param domain &#91;required&#93; The name of the domain in which you want to create a package group.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param packageGroup &#91;required&#93; The pattern of the package group to create. The pattern is also the
-#' identifier of the package group.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param packageGroup &#91;required&#93; The pattern of the package group to create. The pattern is also the identifier of the package group.
 #' @param contactInfo The contact information for the created package group.
 #' @param description A description of the package group.
 #' @param tags One or more tag key-value pairs for the package group.
@@ -444,15 +389,10 @@ codeartifact_create_package_group <- function(domain, domainOwner = NULL, packag
 #'   description, upstreams, tags)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the created repository.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository to create.
 #' @param description A description of the created repository.
-#' @param upstreams A list of upstream repositories to associate with the repository. The
-#' order of the upstream repositories in the list determines their priority
-#' order when CodeArtifact looks for a requested package version. For more
-#' information, see [Working with upstream
-#' repositories](https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html).
+#' @param upstreams A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see [Working with upstream repositories](https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html).
 #' @param tags One or more tag key-value pairs for the repository.
 #'
 #' @return
@@ -533,16 +473,13 @@ codeartifact_create_repository <- function(domain, domainOwner = NULL, repositor
 #' Deletes a domain
 #'
 #' @description
-#' Deletes a domain. You cannot delete a domain that contains repositories.
-#' If you want to delete a domain with repositories, first delete its
-#' repositories.
+#' Deletes a domain. You cannot delete a domain that contains repositories. If you want to delete a domain with repositories, first delete its repositories.
 #'
 #' @usage
 #' codeartifact_delete_domain(domain, domainOwner)
 #'
 #' @param domain &#91;required&#93; The name of the domain to delete.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #'
 #' @return
 #' A list with the following syntax:
@@ -605,13 +542,9 @@ codeartifact_delete_domain <- function(domain, domainOwner = NULL) {
 #' codeartifact_delete_domain_permissions_policy(domain, domainOwner,
 #'   policyRevision)
 #'
-#' @param domain &#91;required&#93; The name of the domain associated with the resource policy to be
-#' deleted.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param policyRevision The current revision of the resource policy to be deleted. This revision
-#' is used for optimistic locking, which prevents others from overwriting
-#' your changes to the domain's resource policy.
+#' @param domain &#91;required&#93; The name of the domain associated with the resource policy to be deleted.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param policyRevision The current revision of the resource policy to be deleted. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy.
 #'
 #' @return
 #' A list with the following syntax:
@@ -661,24 +594,19 @@ codeartifact_delete_domain_permissions_policy <- function(domain, domainOwner = 
 #' Deletes a package and all associated package versions
 #'
 #' @description
-#' Deletes a package and all associated package versions. A deleted package
-#' cannot be restored. To delete one or more package versions, use the
-#' [`delete_package_versions`][codeartifact_delete_package_versions] API.
+#' Deletes a package and all associated package versions. A deleted package cannot be restored. To delete one or more package versions, use the [`delete_package_versions`][codeartifact_delete_package_versions] API.
 #'
 #' @usage
 #' codeartifact_delete_package(domain, domainOwner, repository, format,
 #'   namespace, package)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the package to delete.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository that contains the package to delete.
 #' @param format &#91;required&#93; The format of the requested package to delete.
-#' @param namespace The namespace of the package to delete. The package component that
-#' specifies its namespace depends on its type. For example:
+#' @param namespace The namespace of the package to delete. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when deleting packages of the following
-#' formats:
+#' The namespace is required when deleting packages of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -693,9 +621,7 @@ codeartifact_delete_domain_permissions_policy <- function(domain, domainOwner = 
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package to delete.
 #'
 #' @return
@@ -755,19 +681,13 @@ codeartifact_delete_package <- function(domain, domainOwner = NULL, repository, 
 #' Deletes a package group
 #'
 #' @description
-#' Deletes a package group. Deleting a package group does not delete
-#' packages or package versions associated with the package group. When a
-#' package group is deleted, the direct child package groups will become
-#' children of the package group's direct parent package group. Therefore,
-#' if any of the child groups are inheriting any settings from the parent,
-#' those settings could change.
+#' Deletes a package group. Deleting a package group does not delete packages or package versions associated with the package group. When a package group is deleted, the direct child package groups will become children of the package group's direct parent package group. Therefore, if any of the child groups are inheriting any settings from the parent, those settings could change.
 #'
 #' @usage
 #' codeartifact_delete_package_group(domain, domainOwner, packageGroup)
 #'
 #' @param domain &#91;required&#93; The domain that contains the package group to be deleted.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param packageGroup &#91;required&#93; The pattern of the package group to be deleted.
 #'
 #' @return
@@ -841,29 +761,19 @@ codeartifact_delete_package_group <- function(domain, domainOwner = NULL, packag
 #' Deletes one or more versions of a package
 #'
 #' @description
-#' Deletes one or more versions of a package. A deleted package version
-#' cannot be restored in your repository. If you want to remove a package
-#' version from your repository and be able to restore it later, set its
-#' status to `Archived`. Archived packages cannot be downloaded from a
-#' repository and don't show up with list package APIs (for example,
-#' [`list_package_versions`][codeartifact_list_package_versions]), but you
-#' can restore them using
-#' [`update_package_versions_status`][codeartifact_update_package_versions_status].
+#' Deletes one or more versions of a package. A deleted package version cannot be restored in your repository. If you want to remove a package version from your repository and be able to restore it later, set its status to `Archived`. Archived packages cannot be downloaded from a repository and don't show up with list package APIs (for example, [`list_package_versions`][codeartifact_list_package_versions]), but you can restore them using [`update_package_versions_status`][codeartifact_update_package_versions_status].
 #'
 #' @usage
 #' codeartifact_delete_package_versions(domain, domainOwner, repository,
 #'   format, namespace, package, versions, expectedStatus)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the package to delete.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository that contains the package versions to delete.
 #' @param format &#91;required&#93; The format of the package versions to delete.
-#' @param namespace The namespace of the package versions to be deleted. The package
-#' component that specifies its namespace depends on its type. For example:
+#' @param namespace The namespace of the package versions to be deleted. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when deleting package versions of the
-#' following formats:
+#' The namespace is required when deleting package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -878,9 +788,7 @@ codeartifact_delete_package_group <- function(domain, domainOwner = NULL, packag
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package with the versions to delete.
 #' @param versions &#91;required&#93; An array of strings that specify the versions of the package to delete.
 #' @param expectedStatus The expected status of the package version to delete.
@@ -953,8 +861,7 @@ codeartifact_delete_package_versions <- function(domain, domainOwner = NULL, rep
 #' codeartifact_delete_repository(domain, domainOwner, repository)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the repository to delete.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository to delete.
 #'
 #' @return
@@ -1023,31 +930,18 @@ codeartifact_delete_repository <- function(domain, domainOwner = NULL, repositor
 #' Deletes the resource policy that is set on a repository
 #'
 #' @description
-#' Deletes the resource policy that is set on a repository. After a
-#' resource policy is deleted, the permissions allowed and denied by the
-#' deleted policy are removed. The effect of deleting a resource policy
-#' might not be immediate.
+#' Deletes the resource policy that is set on a repository. After a resource policy is deleted, the permissions allowed and denied by the deleted policy are removed. The effect of deleting a resource policy might not be immediate.
 #' 
-#' Use
-#' [`delete_repository_permissions_policy`][codeartifact_delete_repository_permissions_policy]
-#' with caution. After a policy is deleted, Amazon Web Services users,
-#' roles, and accounts lose permissions to perform the repository actions
-#' granted by the deleted policy.
+#' Use [`delete_repository_permissions_policy`][codeartifact_delete_repository_permissions_policy] with caution. After a policy is deleted, Amazon Web Services users, roles, and accounts lose permissions to perform the repository actions granted by the deleted policy.
 #'
 #' @usage
 #' codeartifact_delete_repository_permissions_policy(domain, domainOwner,
 #'   repository, policyRevision)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository associated with the
-#' resource policy to be deleted.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param repository &#91;required&#93; The name of the repository that is associated with the resource policy
-#' to be deleted
-#' @param policyRevision The revision of the repository's resource policy to be deleted. This
-#' revision is used for optimistic locking, which prevents others from
-#' accidentally overwriting your changes to the repository's resource
-#' policy.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository associated with the resource policy to be deleted.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param repository &#91;required&#93; The name of the repository that is associated with the resource policy to be deleted
+#' @param policyRevision The revision of the repository's resource policy to be deleted. This revision is used for optimistic locking, which prevents others from accidentally overwriting your changes to the repository's resource policy.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1099,16 +993,13 @@ codeartifact_delete_repository_permissions_policy <- function(domain, domainOwne
 #' requested domain
 #'
 #' @description
-#' Returns a
-#' [DomainDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html)
-#' object that contains information about the requested domain.
+#' Returns a [DomainDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DomainDescription.html) object that contains information about the requested domain.
 #'
 #' @usage
 #' codeartifact_describe_domain(domain, domainOwner)
 #'
 #' @param domain &#91;required&#93; A string that specifies the name of the requested domain.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1166,25 +1057,19 @@ codeartifact_describe_domain <- function(domain, domainOwner = NULL) {
 #' requested package
 #'
 #' @description
-#' Returns a
-#' [PackageDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html)
-#' object that contains information about the requested package.
+#' Returns a [PackageDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html) object that contains information about the requested package.
 #'
 #' @usage
 #' codeartifact_describe_package(domain, domainOwner, repository, format,
 #'   namespace, package)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' package.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the package.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository that contains the requested package.
 #' @param format &#91;required&#93; A format that specifies the type of the requested package.
-#' @param namespace The namespace of the requested package. The package component that
-#' specifies its namespace depends on its type. For example:
+#' @param namespace The namespace of the requested package. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when requesting packages of the following
-#' formats:
+#' The namespace is required when requesting packages of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -1199,9 +1084,7 @@ codeartifact_describe_domain <- function(domain, domainOwner = NULL) {
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the requested package.
 #'
 #' @return
@@ -1262,16 +1145,13 @@ codeartifact_describe_package <- function(domain, domainOwner = NULL, repository
 #' the requested package group
 #'
 #' @description
-#' Returns a
-#' [PackageGroupDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroupDescription.html)
-#' object that contains information about the requested package group.
+#' Returns a [PackageGroupDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroupDescription.html) object that contains information about the requested package group.
 #'
 #' @usage
 #' codeartifact_describe_package_group(domain, domainOwner, packageGroup)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the package group.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param packageGroup &#91;required&#93; The pattern of the requested package group.
 #'
 #' @return
@@ -1346,25 +1226,19 @@ codeartifact_describe_package_group <- function(domain, domainOwner = NULL, pack
 #' about the requested package version
 #'
 #' @description
-#' Returns a
-#' [PackageVersionDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html)
-#' object that contains information about the requested package version.
+#' Returns a [PackageVersionDescription](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html) object that contains information about the requested package version.
 #'
 #' @usage
 #' codeartifact_describe_package_version(domain, domainOwner, repository,
 #'   format, namespace, package, packageVersion)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' package version.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the package version.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository that contains the package version.
 #' @param format &#91;required&#93; A format that specifies the type of the requested package version.
-#' @param namespace The namespace of the requested package version. The package component
-#' that specifies its namespace depends on its type. For example:
+#' @param namespace The namespace of the requested package version. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when requesting package versions of the
-#' following formats:
+#' The namespace is required when requesting package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -1379,9 +1253,7 @@ codeartifact_describe_package_group <- function(domain, domainOwner = NULL, pack
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the requested package version.
 #' @param packageVersion &#91;required&#93; A string that contains the package version (for example, `3.5.2`).
 #'
@@ -1461,15 +1333,13 @@ codeartifact_describe_package_version <- function(domain, domainOwner = NULL, re
 #' information about the requested repository
 #'
 #' @description
-#' Returns a `RepositoryDescription` object that contains detailed
-#' information about the requested repository.
+#' Returns a `RepositoryDescription` object that contains detailed information about the requested repository.
 #'
 #' @usage
 #' codeartifact_describe_repository(domain, domainOwner, repository)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the repository to describe.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; A string that specifies the name of the requested repository.
 #'
 #' @return
@@ -1544,12 +1414,9 @@ codeartifact_describe_repository <- function(domain, domainOwner = NULL, reposit
 #' codeartifact_disassociate_external_connection(domain, domainOwner,
 #'   repository, externalConnection)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository from which to remove
-#' the external repository.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param repository &#91;required&#93; The name of the repository from which the external connection will be
-#' removed.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository from which to remove the external repository.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param repository &#91;required&#93; The name of the repository from which the external connection will be removed.
 #' @param externalConnection &#91;required&#93; The name of the external connection to be removed from the repository.
 #'
 #' @return
@@ -1620,35 +1487,23 @@ codeartifact_disassociate_external_connection <- function(domain, domainOwner = 
 #' status to Disposed
 #'
 #' @description
-#' Deletes the assets in package versions and sets the package versions'
-#' status to `Disposed`. A disposed package version cannot be restored in
-#' your repository because its assets are deleted.
+#' Deletes the assets in package versions and sets the package versions' status to `Disposed`. A disposed package version cannot be restored in your repository because its assets are deleted.
 #' 
-#' To view all disposed package versions in a repository, use
-#' [`list_package_versions`][codeartifact_list_package_versions] and set
-#' the
-#' [status](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax)
-#' parameter to `Disposed`.
+#' To view all disposed package versions in a repository, use [`list_package_versions`][codeartifact_list_package_versions] and set the [status](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax) parameter to `Disposed`.
 #' 
-#' To view information about a disposed package version, use
-#' [`describe_package_version`][codeartifact_describe_package_version].
+#' To view information about a disposed package version, use [`describe_package_version`][codeartifact_describe_package_version].
 #'
 #' @usage
 #' codeartifact_dispose_package_versions(domain, domainOwner, repository,
 #'   format, namespace, package, versions, versionRevisions, expectedStatus)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the repository you want to dispose.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param repository &#91;required&#93; The name of the repository that contains the package versions you want
-#' to dispose.
-#' @param format &#91;required&#93; A format that specifies the type of package versions you want to
-#' dispose.
-#' @param namespace The namespace of the package versions to be disposed. The package
-#' component that specifies its namespace depends on its type. For example:
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param repository &#91;required&#93; The name of the repository that contains the package versions you want to dispose.
+#' @param format &#91;required&#93; A format that specifies the type of package versions you want to dispose.
+#' @param namespace The namespace of the package versions to be disposed. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when disposing package versions of the
-#' following formats:
+#' The namespace is required when disposing package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -1663,9 +1518,7 @@ codeartifact_disassociate_external_connection <- function(domain, domainOwner = 
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package with the versions you want to dispose.
 #' @param versions &#91;required&#93; The versions of the package you want to dispose.
 #' @param versionRevisions The revisions of the package versions you want to dispose.
@@ -1737,35 +1590,20 @@ codeartifact_dispose_package_versions <- function(domain, domainOwner = NULL, re
 #' package
 #'
 #' @description
-#' Returns the most closely associated package group to the specified
-#' package. This API does not require that the package exist in any
-#' repository in the domain. As such,
-#' [`get_associated_package_group`][codeartifact_get_associated_package_group]
-#' can be used to see which package group's origin configuration applies to
-#' a package before that package is in a repository. This can be helpful to
-#' check if public packages are blocked without ingesting them.
+#' Returns the most closely associated package group to the specified package. This API does not require that the package exist in any repository in the domain. As such, [`get_associated_package_group`][codeartifact_get_associated_package_group] can be used to see which package group's origin configuration applies to a package before that package is in a repository. This can be helpful to check if public packages are blocked without ingesting them.
 #' 
-#' For information package group association and matching, see [Package
-#' group definition syntax and matching
-#' behavior](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html)
-#' in the *CodeArtifact User Guide*.
+#' For information package group association and matching, see [Package group definition syntax and matching behavior](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html) in the *CodeArtifact User Guide*.
 #'
 #' @usage
 #' codeartifact_get_associated_package_group(domain, domainOwner, format,
 #'   namespace, package)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the package from which to get the
-#' associated package group.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param format &#91;required&#93; The format of the package from which to get the associated package
-#' group.
-#' @param namespace The namespace of the package from which to get the associated package
-#' group. The package component that specifies its namespace depends on its
-#' type. For example:
+#' @param domain &#91;required&#93; The name of the domain that contains the package from which to get the associated package group.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param format &#91;required&#93; The format of the package from which to get the associated package group.
+#' @param namespace The namespace of the package from which to get the associated package group. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when getting associated package groups from
-#' packages of the following formats:
+#' The namespace is required when getting associated package groups from packages of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -1780,9 +1618,7 @@ codeartifact_dispose_package_versions <- function(domain, domainOwner = NULL, re
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The package from which to get the associated package group.
 #'
 #' @return
@@ -1860,47 +1696,21 @@ codeartifact_get_associated_package_group <- function(domain, domainOwner = NULL
 #' the domain
 #'
 #' @description
-#' Generates a temporary authorization token for accessing repositories in
-#' the domain. This API requires the `codeartifact:GetAuthorizationToken`
-#' and `sts:GetServiceBearerToken` permissions. For more information about
-#' authorization tokens, see [CodeArtifact authentication and
-#' tokens](https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html).
+#' Generates a temporary authorization token for accessing repositories in the domain. This API requires the `codeartifact:GetAuthorizationToken` and `sts:GetServiceBearerToken` permissions. For more information about authorization tokens, see [CodeArtifact authentication and tokens](https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html).
 #' 
-#' CodeArtifact authorization tokens are valid for a period of 12 hours
-#' when created with the `login` command. You can call `login` periodically
-#' to refresh the token. When you create an authorization token with the
-#' [`get_authorization_token`][codeartifact_get_authorization_token] API,
-#' you can set a custom authorization period, up to a maximum of 12 hours,
-#' with the `durationSeconds` parameter.
+#' CodeArtifact authorization tokens are valid for a period of 12 hours when created with the `login` command. You can call `login` periodically to refresh the token. When you create an authorization token with the [`get_authorization_token`][codeartifact_get_authorization_token] API, you can set a custom authorization period, up to a maximum of 12 hours, with the `durationSeconds` parameter.
 #' 
-#' The authorization period begins after `login` or
-#' [`get_authorization_token`][codeartifact_get_authorization_token] is
-#' called. If `login` or
-#' [`get_authorization_token`][codeartifact_get_authorization_token] is
-#' called while assuming a role, the token lifetime is independent of the
-#' maximum session duration of the role. For example, if you call
-#' `sts assume-role` and specify a session duration of 15 minutes, then
-#' generate a CodeArtifact authorization token, the token will be valid for
-#' the full authorization period even though this is longer than the
-#' 15-minute session duration.
+#' The authorization period begins after `login` or [`get_authorization_token`][codeartifact_get_authorization_token] is called. If `login` or [`get_authorization_token`][codeartifact_get_authorization_token] is called while assuming a role, the token lifetime is independent of the maximum session duration of the role. For example, if you call `sts assume-role` and specify a session duration of 15 minutes, then generate a CodeArtifact authorization token, the token will be valid for the full authorization period even though this is longer than the 15-minute session duration.
 #' 
-#' See [Using IAM
-#' Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage-assume.html)
-#' for more information on controlling session duration.
+#' See [Using IAM Roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage-assume.html) for more information on controlling session duration.
 #'
 #' @usage
 #' codeartifact_get_authorization_token(domain, domainOwner,
 #'   durationSeconds)
 #'
-#' @param domain &#91;required&#93; The name of the domain that is in scope for the generated authorization
-#' token.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param durationSeconds The time, in seconds, that the generated authorization token is valid.
-#' Valid values are `0` and any number between `900` (15 minutes) and
-#' `43200` (12 hours). A value of `0` will set the expiration of the
-#' authorization token to the same expiration of the user's role's
-#' temporary credentials.
+#' @param domain &#91;required&#93; The name of the domain that is in scope for the generated authorization token.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param durationSeconds The time, in seconds, that the generated authorization token is valid. Valid values are `0` and any number between `900` (15 minutes) and `43200` (12 hours). A value of `0` will set the expiration of the authorization token to the same expiration of the user's role's temporary credentials.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1951,17 +1761,13 @@ codeartifact_get_authorization_token <- function(domain, domainOwner = NULL, dur
 #' @description
 #' Returns the resource policy attached to the specified domain.
 #' 
-#' The policy is a resource-based policy, not an identity-based policy. For
-#' more information, see [Identity-based policies and resource-based
-#' policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html)
-#' in the *IAM User Guide*.
+#' The policy is a resource-based policy, not an identity-based policy. For more information, see [Identity-based policies and resource-based policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html) in the *IAM User Guide*.
 #'
 #' @usage
 #' codeartifact_get_domain_permissions_policy(domain, domainOwner)
 #'
 #' @param domain &#91;required&#93; The name of the domain to which the resource policy is attached.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2010,31 +1816,20 @@ codeartifact_get_domain_permissions_policy <- function(domain, domainOwner = NUL
 #' Returns an asset (or file) that is in a package
 #'
 #' @description
-#' Returns an asset (or file) that is in a package. For example, for a
-#' Maven package version, use
-#' [`get_package_version_asset`][codeartifact_get_package_version_asset] to
-#' download a `JAR` file, a `POM` file, or any other assets in the package
-#' version.
+#' Returns an asset (or file) that is in a package. For example, for a Maven package version, use [`get_package_version_asset`][codeartifact_get_package_version_asset] to download a `JAR` file, a `POM` file, or any other assets in the package version.
 #'
 #' @usage
 #' codeartifact_get_package_version_asset(domain, domainOwner, repository,
 #'   format, namespace, package, packageVersion, asset,
 #'   packageVersionRevision)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' package version with the requested asset.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param repository &#91;required&#93; The repository that contains the package version with the requested
-#' asset.
-#' @param format &#91;required&#93; A format that specifies the type of the package version with the
-#' requested asset file.
-#' @param namespace The namespace of the package version with the requested asset file. The
-#' package component that specifies its namespace depends on its type. For
-#' example:
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the package version with the requested asset.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param repository &#91;required&#93; The repository that contains the package version with the requested asset.
+#' @param format &#91;required&#93; A format that specifies the type of the package version with the requested asset file.
+#' @param namespace The namespace of the package version with the requested asset file. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when requesting assets from package versions
-#' of the following formats:
+#' The namespace is required when requesting assets from package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -2049,14 +1844,11 @@ codeartifact_get_domain_permissions_policy <- function(domain, domainOwner = NUL
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package that contains the requested asset.
 #' @param packageVersion &#91;required&#93; A string that contains the package version (for example, `3.5.2`).
 #' @param asset &#91;required&#93; The name of the requested asset.
-#' @param packageVersionRevision The name of the package version revision that contains the requested
-#' asset.
+#' @param packageVersionRevision The name of the package version revision that contains the requested asset.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2113,26 +1905,19 @@ codeartifact_get_package_version_asset <- function(domain, domainOwner = NULL, r
 #' @description
 #' Gets the readme file or descriptive text for a package version.
 #' 
-#' The returned text might contain formatting. For example, it might
-#' contain formatting for Markdown or reStructuredText.
+#' The returned text might contain formatting. For example, it might contain formatting for Markdown or reStructuredText.
 #'
 #' @usage
 #' codeartifact_get_package_version_readme(domain, domainOwner, repository,
 #'   format, namespace, package, packageVersion)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' package version with the requested readme file.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the package version with the requested readme file.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The repository that contains the package with the requested readme file.
-#' @param format &#91;required&#93; A format that specifies the type of the package version with the
-#' requested readme file.
-#' @param namespace The namespace of the package version with the requested readme file. The
-#' package component that specifies its namespace depends on its type. For
-#' example:
+#' @param format &#91;required&#93; A format that specifies the type of the package version with the requested readme file.
+#' @param namespace The namespace of the package version with the requested readme file. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when requesting the readme from package
-#' versions of the following formats:
+#' The namespace is required when requesting the readme from package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -2147,9 +1932,7 @@ codeartifact_get_package_version_asset <- function(domain, domainOwner = NULL, r
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package version that contains the requested readme file.
 #' @param packageVersion &#91;required&#93; A string that contains the package version (for example, `3.5.2`).
 #'
@@ -2206,8 +1989,7 @@ codeartifact_get_package_version_readme <- function(domain, domainOwner = NULL, 
 #' Returns the endpoint of a repository for a specific package format
 #'
 #' @description
-#' Returns the endpoint of a repository for a specific package format. A
-#' repository has one endpoint for each package format:
+#' Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each package format:
 #' 
 #' -   `cargo`
 #' 
@@ -2230,12 +2012,9 @@ codeartifact_get_package_version_readme <- function(domain, domainOwner = NULL, 
 #'   format, endpointType)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the repository.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain that contains the repository. It does not include dashes or
-#' spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain that contains the repository. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository.
-#' @param format &#91;required&#93; Returns which endpoint of a repository to return. A repository has one
-#' endpoint for each package format.
+#' @param format &#91;required&#93; Returns which endpoint of a repository to return. A repository has one endpoint for each package format.
 #' @param endpointType A string that specifies the type of endpoint.
 #'
 #' @return
@@ -2290,12 +2069,9 @@ codeartifact_get_repository_endpoint <- function(domain, domainOwner = NULL, rep
 #' codeartifact_get_repository_permissions_policy(domain, domainOwner,
 #'   repository)
 #'
-#' @param domain &#91;required&#93; The name of the domain containing the repository whose associated
-#' resource policy is to be retrieved.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param repository &#91;required&#93; The name of the repository whose associated resource policy is to be
-#' retrieved.
+#' @param domain &#91;required&#93; The name of the domain containing the repository whose associated resource policy is to be retrieved.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param repository &#91;required&#93; The name of the repository whose associated resource policy is to be retrieved.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2346,28 +2122,18 @@ codeartifact_get_repository_permissions_policy <- function(domain, domainOwner =
 #' restriction type for a package group
 #'
 #' @description
-#' Lists the repositories in the added repositories list of the specified
-#' restriction type for a package group. For more information about
-#' restriction types and added repository lists, see [Package group origin
-#' controls](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html)
-#' in the *CodeArtifact User Guide*.
+#' Lists the repositories in the added repositories list of the specified restriction type for a package group. For more information about restriction types and added repository lists, see [Package group origin controls](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html) in the *CodeArtifact User Guide*.
 #'
 #' @usage
 #' codeartifact_list_allowed_repositories_for_group(domain, domainOwner,
 #'   packageGroup, originRestrictionType, maxResults, nextToken)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the package group from which to
-#' list allowed repositories.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param packageGroup &#91;required&#93; The pattern of the package group from which to list allowed
-#' repositories.
-#' @param originRestrictionType &#91;required&#93; The origin configuration restriction type of which to list allowed
-#' repositories.
+#' @param domain &#91;required&#93; The name of the domain that contains the package group from which to list allowed repositories.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param packageGroup &#91;required&#93; The pattern of the package group from which to list allowed repositories.
+#' @param originRestrictionType &#91;required&#93; The origin configuration restriction type of which to list allowed repositories.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2419,29 +2185,18 @@ codeartifact_list_allowed_repositories_for_group <- function(domain, domainOwner
 #' Returns a list of packages associated with the requested package group
 #'
 #' @description
-#' Returns a list of packages associated with the requested package group.
-#' For information package group association and matching, see [Package
-#' group definition syntax and matching
-#' behavior](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html)
-#' in the *CodeArtifact User Guide*.
+#' Returns a list of packages associated with the requested package group. For information package group association and matching, see [Package group definition syntax and matching behavior](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html) in the *CodeArtifact User Guide*.
 #'
 #' @usage
 #' codeartifact_list_associated_packages(domain, domainOwner, packageGroup,
 #'   maxResults, nextToken, preview)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the package group from which to
-#' list associated packages.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain that contains the package group from which to list associated packages.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param packageGroup &#91;required&#93; The pattern of the package group from which to list associated packages.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param preview When this flag is included,
-#' [`list_associated_packages`][codeartifact_list_associated_packages] will
-#' return a list of packages that would be associated with a package group,
-#' even if it does not exist.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param preview When this flag is included, [`list_associated_packages`][codeartifact_list_associated_packages] will return a list of packages that would be associated with a package group, even if it does not exist.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2499,19 +2254,13 @@ codeartifact_list_associated_packages <- function(domain, domainOwner = NULL, pa
 #' Amazon Web Services account that makes this call
 #'
 #' @description
-#' Returns a list of
-#' [DomainSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html)
-#' objects for all domains owned by the Amazon Web Services account that
-#' makes this call. Each returned `DomainSummary` object contains
-#' information about a domain.
+#' Returns a list of [DomainSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html) objects for all domains owned by the Amazon Web Services account that makes this call. Each returned `DomainSummary` object contains information about a domain.
 #'
 #' @usage
 #' codeartifact_list_domains(maxResults, nextToken)
 #'
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2575,15 +2324,10 @@ codeartifact_list_domains <- function(maxResults = NULL, nextToken = NULL) {
 #'   nextToken, prefix)
 #'
 #' @param domain &#91;required&#93; The domain for which you want to list package groups.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param prefix A prefix for which to search package groups. When included,
-#' [`list_package_groups`][codeartifact_list_package_groups] will return
-#' only package groups with patterns that match the prefix.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param prefix A prefix for which to search package groups. When included, [`list_package_groups`][codeartifact_list_package_groups] will return only package groups with patterns that match the prefix.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2661,29 +2405,20 @@ codeartifact_list_package_groups <- function(domain, domainOwner = NULL, maxResu
 #' Returns a list of AssetSummary objects for assets in a package version
 #'
 #' @description
-#' Returns a list of
-#' [AssetSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html)
-#' objects for assets in a package version.
+#' Returns a list of [AssetSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html) objects for assets in a package version.
 #'
 #' @usage
 #' codeartifact_list_package_version_assets(domain, domainOwner,
 #'   repository, format, namespace, package, packageVersion, maxResults,
 #'   nextToken)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository associated with the
-#' package version assets.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param repository &#91;required&#93; The name of the repository that contains the package that contains the
-#' requested package version assets.
-#' @param format &#91;required&#93; The format of the package that contains the requested package version
-#' assets.
-#' @param namespace The namespace of the package version that contains the requested package
-#' version assets. The package component that specifies its namespace
-#' depends on its type. For example:
+#' @param domain &#91;required&#93; The name of the domain that contains the repository associated with the package version assets.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param repository &#91;required&#93; The name of the repository that contains the package that contains the requested package version assets.
+#' @param format &#91;required&#93; The format of the package that contains the requested package version assets.
+#' @param namespace The namespace of the package version that contains the requested package version assets. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required requesting assets from package versions of the
-#' following formats:
+#' The namespace is required requesting assets from package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -2698,16 +2433,11 @@ codeartifact_list_package_groups <- function(domain, domainOwner = NULL, maxResu
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
-#' @param package &#91;required&#93; The name of the package that contains the requested package version
-#' assets.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
+#' @param package &#91;required&#93; The name of the package that contains the requested package version assets.
 #' @param packageVersion &#91;required&#93; A string that contains the package version (for example, `3.5.2`).
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2773,31 +2503,19 @@ codeartifact_list_package_version_assets <- function(domain, domainOwner = NULL,
 #' Returns the direct dependencies for a package version
 #'
 #' @description
-#' Returns the direct dependencies for a package version. The dependencies
-#' are returned as
-#' [PackageDependency](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html)
-#' objects. CodeArtifact extracts the dependencies for a package version
-#' from the metadata file for the package format (for example, the
-#' `package.json` file for npm packages and the `pom.xml` file for Maven).
-#' Any package version dependencies that are not listed in the
-#' configuration file are not returned.
+#' Returns the direct dependencies for a package version. The dependencies are returned as [PackageDependency](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html) objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the `package.json` file for npm packages and the `pom.xml` file for Maven). Any package version dependencies that are not listed in the configuration file are not returned.
 #'
 #' @usage
 #' codeartifact_list_package_version_dependencies(domain, domainOwner,
 #'   repository, format, namespace, package, packageVersion, nextToken)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' requested package version dependencies.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the requested package version dependencies.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository that contains the requested package version.
 #' @param format &#91;required&#93; The format of the package with the requested dependencies.
-#' @param namespace The namespace of the package version with the requested dependencies.
-#' The package component that specifies its namespace depends on its type.
-#' For example:
+#' @param namespace The namespace of the package version with the requested dependencies. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when listing dependencies from package
-#' versions of the following formats:
+#' The namespace is required when listing dependencies from package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -2806,14 +2524,10 @@ codeartifact_list_package_version_assets <- function(domain, domainOwner = NULL,
 #' 
 #' -   The namespace of an npm package version is its `scope`.
 #' 
-#' -   Python and NuGet package versions do not contain a corresponding
-#'     component, package versions of those formats do not have a
-#'     namespace.
+#' -   Python and NuGet package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package versions' package.
 #' @param packageVersion &#91;required&#93; A string that contains the package version (for example, `3.5.2`).
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2878,29 +2592,20 @@ codeartifact_list_package_version_dependencies <- function(domain, domainOwner =
 #' a repository that match the request parameters
 #'
 #' @description
-#' Returns a list of
-#' [PackageVersionSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html)
-#' objects for package versions in a repository that match the request
-#' parameters. Package versions of all statuses will be returned by default
-#' when calling `list-package-versions` with no `--status` parameter.
+#' Returns a list of [PackageVersionSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html) objects for package versions in a repository that match the request parameters. Package versions of all statuses will be returned by default when calling `list-package-versions` with no `--status` parameter.
 #'
 #' @usage
 #' codeartifact_list_package_versions(domain, domainOwner, repository,
 #'   format, namespace, package, status, sortBy, maxResults, nextToken,
 #'   originType)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' requested package versions.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the requested package versions.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository that contains the requested package versions.
 #' @param format &#91;required&#93; The format of the package versions you want to list.
-#' @param namespace The namespace of the package that contains the requested package
-#' versions. The package component that specifies its namespace depends on
-#' its type. For example:
+#' @param namespace The namespace of the package that contains the requested package versions. The package component that specifies its namespace depends on its type. For example:
 #' 
-#' The namespace is required when deleting package versions of the
-#' following formats:
+#' The namespace is required when deleting package versions of the following formats:
 #' 
 #' -   Maven
 #' 
@@ -2915,18 +2620,13 @@ codeartifact_list_package_version_dependencies <- function(domain, domainOwner =
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package for which you want to request package versions.
 #' @param status A string that filters the requested package versions by status.
 #' @param sortBy How to sort the requested list of package versions.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param originType The `originType` used to filter package versions. Only package versions
-#' with the provided `originType` will be returned.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param originType The `originType` used to filter package versions. Only package versions with the provided `originType` will be returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2999,25 +2699,17 @@ codeartifact_list_package_versions <- function(domain, domainOwner = NULL, repos
 #' that match the request parameters
 #'
 #' @description
-#' Returns a list of
-#' [PackageSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html)
-#' objects for packages in a repository that match the request parameters.
+#' Returns a list of [PackageSummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html) objects for packages in a repository that match the request parameters.
 #'
 #' @usage
 #' codeartifact_list_packages(domain, domainOwner, repository, format,
 #'   namespace, packagePrefix, maxResults, nextToken, publish, upstream)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' requested packages.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the requested packages.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository that contains the requested packages.
-#' @param format The format used to filter requested packages. Only packages from the
-#' provided format will be returned.
-#' @param namespace The namespace prefix used to filter requested packages. Only packages
-#' with a namespace that starts with the provided string value are
-#' returned. Note that although this option is called `--namespace` and not
-#' `--namespace-prefix`, it has prefix-matching behavior.
+#' @param format The format used to filter requested packages. Only packages from the provided format will be returned.
+#' @param namespace The namespace prefix used to filter requested packages. Only packages with a namespace that starts with the provided string value are returned. Note that although this option is called `--namespace` and not `--namespace-prefix`, it has prefix-matching behavior.
 #' 
 #' Each package format uses namespace as follows:
 #' 
@@ -3027,23 +2719,12 @@ codeartifact_list_package_versions <- function(domain, domainOwner = NULL, repos
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
-#' @param packagePrefix A prefix used to filter requested packages. Only packages with names
-#' that start with `packagePrefix` are returned.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
+#' @param packagePrefix A prefix used to filter requested packages. Only packages with names that start with `packagePrefix` are returned.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
-#' @param publish The value of the `Publish` package origin control restriction used to
-#' filter requested packages. Only packages with the provided restriction
-#' are returned. For more information, see
-#' [PackageOriginRestrictions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html).
-#' @param upstream The value of the `Upstream` package origin control restriction used to
-#' filter requested packages. Only packages with the provided restriction
-#' are returned. For more information, see
-#' [PackageOriginRestrictions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html).
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+#' @param publish The value of the `Publish` package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see [PackageOriginRestrictions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html).
+#' @param upstream The value of the `Upstream` package origin control restriction used to filter requested packages. Only packages with the provided restriction are returned. For more information, see [PackageOriginRestrictions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -3109,21 +2790,14 @@ codeartifact_list_packages <- function(domain, domainOwner = NULL, repository, f
 #' Returns a list of RepositorySummary objects
 #'
 #' @description
-#' Returns a list of
-#' [RepositorySummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html)
-#' objects. Each `RepositorySummary` contains information about a
-#' repository in the specified Amazon Web Services account and that matches
-#' the input parameters.
+#' Returns a list of [RepositorySummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html) objects. Each `RepositorySummary` contains information about a repository in the specified Amazon Web Services account and that matches the input parameters.
 #'
 #' @usage
 #' codeartifact_list_repositories(repositoryPrefix, maxResults, nextToken)
 #'
-#' @param repositoryPrefix A prefix used to filter returned repositories. Only repositories with
-#' names that start with `repositoryPrefix` are returned.
+#' @param repositoryPrefix A prefix used to filter returned repositories. Only repositories with names that start with `repositoryPrefix` are returned.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3182,27 +2856,18 @@ codeartifact_list_repositories <- function(repositoryPrefix = NULL, maxResults =
 #' Returns a list of RepositorySummary objects
 #'
 #' @description
-#' Returns a list of
-#' [RepositorySummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html)
-#' objects. Each `RepositorySummary` contains information about a
-#' repository in the specified domain and that matches the input
-#' parameters.
+#' Returns a list of [RepositorySummary](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html) objects. Each `RepositorySummary` contains information about a repository in the specified domain and that matches the input parameters.
 #'
 #' @usage
 #' codeartifact_list_repositories_in_domain(domain, domainOwner,
 #'   administratorAccount, repositoryPrefix, maxResults, nextToken)
 #'
 #' @param domain &#91;required&#93; The name of the domain that contains the returned list of repositories.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param administratorAccount Filter the list of repositories to only include those that are managed
-#' by the Amazon Web Services account ID.
-#' @param repositoryPrefix A prefix used to filter returned repositories. Only repositories with
-#' names that start with `repositoryPrefix` are returned.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param administratorAccount Filter the list of repositories to only include those that are managed by the Amazon Web Services account ID.
+#' @param repositoryPrefix A prefix used to filter returned repositories. Only repositories with names that start with `repositoryPrefix` are returned.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3266,24 +2931,17 @@ codeartifact_list_repositories_in_domain <- function(domain, domainOwner = NULL,
 #' @description
 #' Returns a list of direct children of the specified package group.
 #' 
-#' For information package group hierarchy, see [Package group definition
-#' syntax and matching
-#' behavior](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html)
-#' in the *CodeArtifact User Guide*.
+#' For information package group hierarchy, see [Package group definition syntax and matching behavior](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html) in the *CodeArtifact User Guide*.
 #'
 #' @usage
 #' codeartifact_list_sub_package_groups(domain, domainOwner, packageGroup,
 #'   maxResults, nextToken)
 #'
-#' @param domain &#91;required&#93; The name of the domain which contains the package group from which to
-#' list sub package groups.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain which contains the package group from which to list sub package groups.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param packageGroup &#91;required&#93; The pattern of the package group from which to list sub package groups.
 #' @param maxResults The maximum number of results to return per page.
-#' @param nextToken The token for the next set of results. Use the value returned in the
-#' previous response in the next request to retrieve the next set of
-#' results.
+#' @param nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3362,8 +3020,7 @@ codeartifact_list_sub_package_groups <- function(domain, domainOwner = NULL, pac
 #' Resource Name (ARN) in CodeArtifact
 #'
 #' @description
-#' Gets information about Amazon Web Services tags for a specified Amazon
-#' Resource Name (ARN) in CodeArtifact.
+#' Gets information about Amazon Web Services tags for a specified Amazon Resource Name (ARN) in CodeArtifact.
 #'
 #' @usage
 #' codeartifact_list_tags_for_resource(resourceArn)
@@ -3419,57 +3076,30 @@ codeartifact_list_tags_for_resource <- function(resourceArn) {
 #' @description
 #' Creates a new package version containing one or more assets (or files).
 #' 
-#' The `unfinished` flag can be used to keep the package version in the
-#' `Unfinished` state until all of its assets have been uploaded (see
-#' [Package version
-#' status](https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status)
-#' in the *CodeArtifact user guide*). To set the package version’s status
-#' to `Published`, omit the `unfinished` flag when uploading the final
-#' asset, or set the status using
-#' [UpdatePackageVersionStatus](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html).
-#' Once a package version’s status is set to `Published`, it cannot change
-#' back to `Unfinished`.
+#' The `unfinished` flag can be used to keep the package version in the `Unfinished` state until all of its assets have been uploaded (see [Package version status](https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html%23package-version-status) in the *CodeArtifact user guide*). To set the package version’s status to `Published`, omit the `unfinished` flag when uploading the final asset, or set the status using [UpdatePackageVersionStatus](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html). Once a package version’s status is set to `Published`, it cannot change back to `Unfinished`.
 #' 
-#' Only generic packages can be published using this API. For more
-#' information, see [Using generic
-#' packages](https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html)
-#' in the *CodeArtifact User Guide*.
+#' Only generic packages can be published using this API. For more information, see [Using generic packages](https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html) in the *CodeArtifact User Guide*.
 #'
 #' @usage
 #' codeartifact_publish_package_version(domain, domainOwner, repository,
 #'   format, namespace, package, packageVersion, assetContent, assetName,
 #'   assetSHA256, unfinished)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' package version to publish.
-#' @param domainOwner The 12-digit account number of the AWS account that owns the domain. It
-#' does not include dashes or spaces.
-#' @param repository &#91;required&#93; The name of the repository that the package version will be published
-#' to.
-#' @param format &#91;required&#93; A format that specifies the type of the package version with the
-#' requested asset file.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the package version to publish.
+#' @param domainOwner The 12-digit account number of the AWS account that owns the domain. It does not include dashes or spaces.
+#' @param repository &#91;required&#93; The name of the repository that the package version will be published to.
+#' @param format &#91;required&#93; A format that specifies the type of the package version with the requested asset file.
 #' 
 #' The only supported value is `generic`.
 #' @param namespace The namespace of the package version to publish.
 #' @param package &#91;required&#93; The name of the package version to publish.
 #' @param packageVersion &#91;required&#93; The package version to publish (for example, `3.5.2`).
 #' @param assetContent &#91;required&#93; The content of the asset to publish.
-#' @param assetName &#91;required&#93; The name of the asset to publish. Asset names can include Unicode
-#' letters and numbers, and the following special characters:
-#' `` ~ ! @@ ^ & ( ) - ` _ + [ ] { } ; , . ` ``
-#' @param assetSHA256 &#91;required&#93; The SHA256 hash of the `assetContent` to publish. This value must be
-#' calculated by the caller and provided with the request (see [Publishing
-#' a generic
-#' package](https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages)
-#' in the *CodeArtifact User Guide*).
+#' @param assetName &#91;required&#93; The name of the asset to publish. Asset names can include Unicode letters and numbers, and the following special characters: `` ~ ! @@ ^ & ( ) - ` _ + [ ] { } ; , . ` ``
+#' @param assetSHA256 &#91;required&#93; The SHA256 hash of the `assetContent` to publish. This value must be calculated by the caller and provided with the request (see [Publishing a generic package](https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages) in the *CodeArtifact User Guide*).
 #' 
-#' This value is used as an integrity check to verify that the
-#' `assetContent` has not changed after it was originally sent.
-#' @param unfinished Specifies whether the package version should remain in the `unfinished`
-#' state. If omitted, the package version status will be set to `Published`
-#' (see [Package version
-#' status](https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status)
-#' in the *CodeArtifact User Guide*).
+#' This value is used as an integrity check to verify that the `assetContent` has not changed after it was originally sent.
+#' @param unfinished Specifies whether the package version should remain in the `unfinished` state. If omitted, the package version status will be set to `Published` (see [Package version status](https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status) in the *CodeArtifact User Guide*).
 #' 
 #' Valid values: `unfinished`
 #'
@@ -3538,28 +3168,18 @@ codeartifact_publish_package_version <- function(domain, domainOwner = NULL, rep
 #' it
 #'
 #' @description
-#' Sets a resource policy on a domain that specifies permissions to access
-#' it.
+#' Sets a resource policy on a domain that specifies permissions to access it.
 #' 
-#' When you call
-#' [`put_domain_permissions_policy`][codeartifact_put_domain_permissions_policy],
-#' the resource policy on the domain is ignored when evaluting permissions.
-#' This ensures that the owner of a domain cannot lock themselves out of
-#' the domain, which would prevent them from being able to update the
-#' resource policy.
+#' When you call [`put_domain_permissions_policy`][codeartifact_put_domain_permissions_policy], the resource policy on the domain is ignored when evaluting permissions. This ensures that the owner of a domain cannot lock themselves out of the domain, which would prevent them from being able to update the resource policy.
 #'
 #' @usage
 #' codeartifact_put_domain_permissions_policy(domain, domainOwner,
 #'   policyRevision, policyDocument)
 #'
 #' @param domain &#91;required&#93; The name of the domain on which to set the resource policy.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param policyRevision The current revision of the resource policy to be set. This revision is
-#' used for optimistic locking, which prevents others from overwriting your
-#' changes to the domain's resource policy.
-#' @param policyDocument &#91;required&#93; A valid displayable JSON Aspen policy string to be set as the access
-#' control resource policy on the provided domain.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param policyRevision The current revision of the resource policy to be set. This revision is used for optimistic locking, which prevents others from overwriting your changes to the domain's resource policy.
+#' @param policyDocument &#91;required&#93; A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided domain.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3612,37 +3232,19 @@ codeartifact_put_domain_permissions_policy <- function(domain, domainOwner = NUL
 #' @description
 #' Sets the package origin configuration for a package.
 #' 
-#' The package origin configuration determines how new versions of a
-#' package can be added to a repository. You can allow or block direct
-#' publishing of new package versions, or ingestion and retaining of new
-#' package versions from an external connection or upstream source. For
-#' more information about package origin controls and configuration, see
-#' [Editing package origin
-#' controls](https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html)
-#' in the *CodeArtifact User Guide*.
+#' The package origin configuration determines how new versions of a package can be added to a repository. You can allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from an external connection or upstream source. For more information about package origin controls and configuration, see [Editing package origin controls](https://docs.aws.amazon.com/codeartifact/latest/ug/package-origin-controls.html) in the *CodeArtifact User Guide*.
 #' 
-#' [`put_package_origin_configuration`][codeartifact_put_package_origin_configuration]
-#' can be called on a package that doesn't yet exist in the repository.
-#' When called on a package that does not exist, a package is created in
-#' the repository with no versions and the requested restrictions are set
-#' on the package. This can be used to preemptively block ingesting or
-#' retaining any versions from external connections or upstream
-#' repositories, or to block publishing any versions of the package into
-#' the repository before connecting any package managers or publishers to
-#' the repository.
+#' [`put_package_origin_configuration`][codeartifact_put_package_origin_configuration] can be called on a package that doesn't yet exist in the repository. When called on a package that does not exist, a package is created in the repository with no versions and the requested restrictions are set on the package. This can be used to preemptively block ingesting or retaining any versions from external connections or upstream repositories, or to block publishing any versions of the package into the repository before connecting any package managers or publishers to the repository.
 #'
 #' @usage
 #' codeartifact_put_package_origin_configuration(domain, domainOwner,
 #'   repository, format, namespace, package, restrictions)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' package.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the package.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository that contains the package.
 #' @param format &#91;required&#93; A format that specifies the type of the package to be updated.
-#' @param namespace The namespace of the package to be updated. The package component that
-#' specifies its namespace depends on its type. For example:
+#' @param namespace The namespace of the package to be updated. The package component that specifies its namespace depends on its type. For example:
 #' 
 #' -   The namespace of a Maven package version is its `groupId`.
 #' 
@@ -3650,18 +3252,9 @@ codeartifact_put_domain_permissions_policy <- function(domain, domainOwner = NUL
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package to be updated.
-#' @param restrictions &#91;required&#93; A
-#' [PackageOriginRestrictions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html)
-#' object that contains information about the `upstream` and `publish`
-#' package origin restrictions. The `upstream` restriction determines if
-#' new package versions can be ingested or retained from external
-#' connections or upstream repositories. The `publish` restriction
-#' determines if new package versions can be published directly to the
-#' repository.
+#' @param restrictions &#91;required&#93; A [PackageOriginRestrictions](https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html) object that contains information about the `upstream` and `publish` package origin restrictions. The `upstream` restriction determines if new package versions can be ingested or retained from external connections or upstream repositories. The `publish` restriction determines if new package versions can be published directly to the repository.
 #' 
 #' You must include both the desired `upstream` and `publish` restrictions.
 #'
@@ -3722,31 +3315,19 @@ codeartifact_put_package_origin_configuration <- function(domain, domainOwner = 
 #' access it
 #'
 #' @description
-#' Sets the resource policy on a repository that specifies permissions to
-#' access it.
+#' Sets the resource policy on a repository that specifies permissions to access it.
 #' 
-#' When you call
-#' [`put_repository_permissions_policy`][codeartifact_put_repository_permissions_policy],
-#' the resource policy on the repository is ignored when evaluting
-#' permissions. This ensures that the owner of a repository cannot lock
-#' themselves out of the repository, which would prevent them from being
-#' able to update the resource policy.
+#' When you call [`put_repository_permissions_policy`][codeartifact_put_repository_permissions_policy], the resource policy on the repository is ignored when evaluting permissions. This ensures that the owner of a repository cannot lock themselves out of the repository, which would prevent them from being able to update the resource policy.
 #'
 #' @usage
 #' codeartifact_put_repository_permissions_policy(domain, domainOwner,
 #'   repository, policyRevision, policyDocument)
 #'
-#' @param domain &#91;required&#93; The name of the domain containing the repository to set the resource
-#' policy on.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domain &#91;required&#93; The name of the domain containing the repository to set the resource policy on.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository to set the resource policy on.
-#' @param policyRevision Sets the revision of the resource policy that specifies permissions to
-#' access the repository. This revision is used for optimistic locking,
-#' which prevents others from overwriting your changes to the repository's
-#' resource policy.
-#' @param policyDocument &#91;required&#93; A valid displayable JSON Aspen policy string to be set as the access
-#' control resource policy on the provided repository.
+#' @param policyRevision Sets the revision of the resource policy that specifies permissions to access the repository. This revision is used for optimistic locking, which prevents others from overwriting your changes to the repository's resource policy.
+#' @param policyDocument &#91;required&#93; A valid displayable JSON Aspen policy string to be set as the access control resource policy on the provided repository.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3803,8 +3384,7 @@ codeartifact_put_repository_permissions_policy <- function(domain, domainOwner =
 #' @usage
 #' codeartifact_tag_resource(resourceArn, tags)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to add or
-#' update tags for.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to add or update tags for.
 #' @param tags &#91;required&#93; The tags you want to modify or add to the resource.
 #'
 #' @return
@@ -3855,8 +3435,7 @@ codeartifact_tag_resource <- function(resourceArn, tags) {
 #' @usage
 #' codeartifact_untag_resource(resourceArn, tagKeys)
 #'
-#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove
-#' tags from.
+#' @param resourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
 #' @param tagKeys &#91;required&#93; The tag key for each tag that you want to remove from the resource.
 #'
 #' @return
@@ -3899,21 +3478,16 @@ codeartifact_untag_resource <- function(resourceArn, tagKeys) {
 #' Updates a package group
 #'
 #' @description
-#' Updates a package group. This API cannot be used to update a package
-#' group's origin configuration or pattern. To update a package group's
-#' origin configuration, use
-#' [`update_package_group_origin_configuration`][codeartifact_update_package_group_origin_configuration].
+#' Updates a package group. This API cannot be used to update a package group's origin configuration or pattern. To update a package group's origin configuration, use [`update_package_group_origin_configuration`][codeartifact_update_package_group_origin_configuration].
 #'
 #' @usage
 #' codeartifact_update_package_group(domain, domainOwner, packageGroup,
 #'   contactInfo, description)
 #'
 #' @param domain &#91;required&#93; The name of the domain which contains the package group to be updated.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param packageGroup &#91;required&#93; The pattern of the package group to be updated.
-#' @param contactInfo Contact information which you want to update the requested package group
-#' with.
+#' @param contactInfo Contact information which you want to update the requested package group with.
 #' @param description The description you want to update the requested package group with.
 #'
 #' @return
@@ -3991,32 +3565,19 @@ codeartifact_update_package_group <- function(domain, domainOwner = NULL, packag
 #' @description
 #' Updates the package origin configuration for a package group.
 #' 
-#' The package origin configuration determines how new versions of a
-#' package can be added to a repository. You can allow or block direct
-#' publishing of new package versions, or ingestion and retaining of new
-#' package versions from an external connection or upstream source. For
-#' more information about package group origin controls and configuration,
-#' see [Package group origin
-#' controls](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html)
-#' in the *CodeArtifact User Guide*.
+#' The package origin configuration determines how new versions of a package can be added to a repository. You can allow or block direct publishing of new package versions, or ingestion and retaining of new package versions from an external connection or upstream source. For more information about package group origin controls and configuration, see [Package group origin controls](https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html) in the *CodeArtifact User Guide*.
 #'
 #' @usage
 #' codeartifact_update_package_group_origin_configuration(domain,
 #'   domainOwner, packageGroup, restrictions, addAllowedRepositories,
 #'   removeAllowedRepositories)
 #'
-#' @param domain &#91;required&#93; The name of the domain which contains the package group for which to
-#' update the origin configuration.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param packageGroup &#91;required&#93; The pattern of the package group for which to update the origin
-#' configuration.
-#' @param restrictions The origin configuration settings that determine how package versions
-#' can enter repositories.
-#' @param addAllowedRepositories The repository name and restrictions to add to the allowed repository
-#' list of the specified package group.
-#' @param removeAllowedRepositories The repository name and restrictions to remove from the allowed
-#' repository list of the specified package group.
+#' @param domain &#91;required&#93; The name of the domain which contains the package group for which to update the origin configuration.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param packageGroup &#91;required&#93; The pattern of the package group for which to update the origin configuration.
+#' @param restrictions The origin configuration settings that determine how package versions can enter repositories.
+#' @param addAllowedRepositories The repository name and restrictions to add to the allowed repository list of the specified package group.
+#' @param removeAllowedRepositories The repository name and restrictions to remove from the allowed repository list of the specified package group.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4111,28 +3672,18 @@ codeartifact_update_package_group_origin_configuration <- function(domain, domai
 #' Updates the status of one or more versions of a package
 #'
 #' @description
-#' Updates the status of one or more versions of a package. Using
-#' [`update_package_versions_status`][codeartifact_update_package_versions_status],
-#' you can update the status of package versions to `Archived`,
-#' `Published`, or `Unlisted`. To set the status of a package version to
-#' `Disposed`, use
-#' [`dispose_package_versions`][codeartifact_dispose_package_versions].
+#' Updates the status of one or more versions of a package. Using [`update_package_versions_status`][codeartifact_update_package_versions_status], you can update the status of package versions to `Archived`, `Published`, or `Unlisted`. To set the status of a package version to `Disposed`, use [`dispose_package_versions`][codeartifact_dispose_package_versions].
 #'
 #' @usage
 #' codeartifact_update_package_versions_status(domain, domainOwner,
 #'   repository, format, namespace, package, versions, versionRevisions,
 #'   expectedStatus, targetStatus)
 #'
-#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the
-#' package versions with a status to be updated.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
-#' @param repository &#91;required&#93; The repository that contains the package versions with the status you
-#' want to update.
-#' @param format &#91;required&#93; A format that specifies the type of the package with the statuses to
-#' update.
-#' @param namespace The namespace of the package version to be updated. The package
-#' component that specifies its namespace depends on its type. For example:
+#' @param domain &#91;required&#93; The name of the domain that contains the repository that contains the package versions with a status to be updated.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
+#' @param repository &#91;required&#93; The repository that contains the package versions with the status you want to update.
+#' @param format &#91;required&#93; A format that specifies the type of the package with the statuses to update.
+#' @param namespace The namespace of the package version to be updated. The package component that specifies its namespace depends on its type. For example:
 #' 
 #' -   The namespace of a Maven package version is its `groupId`.
 #' 
@@ -4140,20 +3691,11 @@ codeartifact_update_package_group_origin_configuration <- function(domain, domai
 #' 
 #' -   The namespace of a generic package is its `namespace`.
 #' 
-#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a
-#'     corresponding component, package versions of those formats do not
-#'     have a namespace.
+#' -   Python, NuGet, Ruby, and Cargo package versions do not contain a corresponding component, package versions of those formats do not have a namespace.
 #' @param package &#91;required&#93; The name of the package with the version statuses to update.
-#' @param versions &#91;required&#93; An array of strings that specify the versions of the package with the
-#' statuses to update.
-#' @param versionRevisions A map of package versions and package version revisions. The map `key`
-#' is the package version (for example, `3.5.2`), and the map `value` is
-#' the package version revision.
-#' @param expectedStatus The package version’s expected status before it is updated. If
-#' `expectedStatus` is provided, the package version's status is updated
-#' only if its status at the time
-#' [`update_package_versions_status`][codeartifact_update_package_versions_status]
-#' is called matches `expectedStatus`.
+#' @param versions &#91;required&#93; An array of strings that specify the versions of the package with the statuses to update.
+#' @param versionRevisions A map of package versions and package version revisions. The map `key` is the package version (for example, `3.5.2`), and the map `value` is the package version revision.
+#' @param expectedStatus The package version’s expected status before it is updated. If `expectedStatus` is provided, the package version's status is updated only if its status at the time [`update_package_versions_status`][codeartifact_update_package_versions_status] is called matches `expectedStatus`.
 #' @param targetStatus &#91;required&#93; The status you want to change the package version status to.
 #'
 #' @return
@@ -4229,15 +3771,10 @@ codeartifact_update_package_versions_status <- function(domain, domainOwner = NU
 #'   description, upstreams)
 #'
 #' @param domain &#91;required&#93; The name of the domain associated with the repository to update.
-#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns
-#' the domain. It does not include dashes or spaces.
+#' @param domainOwner The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.
 #' @param repository &#91;required&#93; The name of the repository to update.
 #' @param description An updated repository description.
-#' @param upstreams A list of upstream repositories to associate with the repository. The
-#' order of the upstream repositories in the list determines their priority
-#' order when CodeArtifact looks for a requested package version. For more
-#' information, see [Working with upstream
-#' repositories](https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html).
+#' @param upstreams A list of upstream repositories to associate with the repository. The order of the upstream repositories in the list determines their priority order when CodeArtifact looks for a requested package version. For more information, see [Working with upstream repositories](https://docs.aws.amazon.com/codeartifact/latest/ug/repos-upstream.html).
 #'
 #' @return
 #' A list with the following syntax:

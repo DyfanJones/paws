@@ -20,32 +20,25 @@ paymentcryptographydataplane_verify_pin_data(
 \arguments{
 \item{VerificationKeyIdentifier}{[required] The \code{keyARN} of the PIN verification key.}
 
-\item{EncryptionKeyIdentifier}{[required] The \code{keyARN} of the encryption key under which the PIN block data is
-encrypted. This key type can be PEK or BDK.}
+\item{EncryptionKeyIdentifier}{[required] The \code{keyARN} of the encryption key under which the PIN block data is encrypted. This key type can be PEK or BDK.}
 
 \item{VerificationAttributes}{[required] The attributes and values for PIN data verification.}
 
-\item{EncryptedPinBlock}{[required] The encrypted PIN block data that Amazon Web Services Payment
-Cryptography verifies.}
+\item{EncryptedPinBlock}{[required] The encrypted PIN block data that Amazon Web Services Payment Cryptography verifies.}
 
-\item{PrimaryAccountNumber}{The Primary Account Number (PAN), a unique identifier for a payment
-credit or debit card that associates the card with a specific account
-holder.}
+\item{PrimaryAccountNumber}{The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.}
 
-\item{PinBlockFormat}{[required] The PIN encoding format for pin data generation as specified in ISO
-9564. Amazon Web Services Payment Cryptography supports \code{ISO_Format_0}
-and \code{ISO_Format_3}.
+\item{PinBlockFormat}{[required] The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports \code{ISO_Format_0} and \code{ISO_Format_3}.
 
-The \code{ISO_Format_0} PIN block format is equivalent to the ANSI X9.8,
-VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block
-format. It supports a PIN from 4 to 12 digits in length.
+The \code{ISO_Format_0} PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.
 
-The \code{ISO_Format_3} PIN block format is the same as \code{ISO_Format_0} except
-that the fill digits are random values from 10 to 15.}
+The \code{ISO_Format_3} PIN block format is the same as \code{ISO_Format_0} except that the fill digits are random values from 10 to 15.}
 
 \item{PinDataLength}{The length of PIN being verified.}
 
 \item{DukptAttributes}{The attributes and values for the DUKPT encrypted PIN block data.}
+
+\item{EncryptionWrappedKey}{Parameter information of a WrappedKeyBlock for encryption key exchange.}
 }
 \description{
 Verifies pin-related data such as PIN and PIN Offset using algorithms including VISA PVV and IBM3624. For more information, see \href{https://docs.aws.amazon.com/payment-cryptography/latest/userguide/verify-pin-data.html}{Verify PIN data} in the \emph{Amazon Web Services Payment Cryptography User Guide}.

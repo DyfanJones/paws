@@ -19,32 +19,21 @@ sagemaker_list_studio_lifecycle_configs(
 )
 }
 \arguments{
-\item{MaxResults}{The total number of items to return in the response. If the total number
-of items available is more than the value specified, a \code{NextToken} is
-provided in the response. To resume pagination, provide the \code{NextToken}
-value in the as part of a subsequent call. The default value is 10.}
+\item{MaxResults}{The total number of items to return in the response. If the total number of items available is more than the value specified, a \code{NextToken} is provided in the response. To resume pagination, provide the \code{NextToken} value in the as part of a subsequent call. The default value is 10.}
 
-\item{NextToken}{If the previous call to ListStudioLifecycleConfigs didn't return the
-full set of Lifecycle Configurations, the call returns a token for
-getting the next set of Lifecycle Configurations.}
+\item{NextToken}{If the previous call to ListStudioLifecycleConfigs didn't return the full set of Lifecycle Configurations, the call returns a token for getting the next set of Lifecycle Configurations.}
 
-\item{NameContains}{A string in the Lifecycle Configuration name. This filter returns only
-Lifecycle Configurations whose name contains the specified string.}
+\item{NameContains}{A string in the Lifecycle Configuration name. This filter returns only Lifecycle Configurations whose name contains the specified string.}
 
-\item{AppTypeEquals}{A parameter to search for the App Type to which the Lifecycle
-Configuration is attached.}
+\item{AppTypeEquals}{A parameter to search for the App Type to which the Lifecycle Configuration is attached.}
 
-\item{CreationTimeBefore}{A filter that returns only Lifecycle Configurations created on or before
-the specified time.}
+\item{CreationTimeBefore}{A filter that returns only Lifecycle Configurations created on or before the specified time.}
 
-\item{CreationTimeAfter}{A filter that returns only Lifecycle Configurations created on or after
-the specified time.}
+\item{CreationTimeAfter}{A filter that returns only Lifecycle Configurations created on or after the specified time.}
 
-\item{ModifiedTimeBefore}{A filter that returns only Lifecycle Configurations modified before the
-specified time.}
+\item{ModifiedTimeBefore}{A filter that returns only Lifecycle Configurations modified before the specified time.}
 
-\item{ModifiedTimeAfter}{A filter that returns only Lifecycle Configurations modified after the
-specified time.}
+\item{ModifiedTimeAfter}{A filter that returns only Lifecycle Configurations modified after the specified time.}
 
 \item{SortBy}{The property used to sort results. The default value is CreationTime.}
 

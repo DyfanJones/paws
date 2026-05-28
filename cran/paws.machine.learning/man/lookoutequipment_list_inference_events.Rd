@@ -14,18 +14,15 @@ lookoutequipment_list_inference_events(
 )
 }
 \arguments{
-\item{NextToken}{An opaque pagination token indicating where to continue the listing of
-inference events.}
+\item{NextToken}{An opaque pagination token indicating where to continue the listing of inference events.}
 
 \item{MaxResults}{Specifies the maximum number of inference events to list.}
 
 \item{InferenceSchedulerName}{[required] The name of the inference scheduler for the inference events listed.}
 
-\item{IntervalStartTime}{[required] Lookout for Equipment will return all the inference events with an end
-time equal to or greater than the start time given.}
+\item{IntervalStartTime}{[required] Lookout for Equipment will return all the inference events with an end time equal to or greater than the start time given.}
 
-\item{IntervalEndTime}{[required] Returns all the inference events with an end start time equal to or
-greater than less than the end time given.}
+\item{IntervalEndTime}{[required] Returns all the inference events with an end start time equal to or greater than less than the end time given.}
 }
 \description{
 Lists all inference events that have been found for the specified inference scheduler.

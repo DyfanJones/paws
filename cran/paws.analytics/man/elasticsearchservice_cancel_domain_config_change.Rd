@@ -10,8 +10,7 @@ elasticsearchservice_cancel_domain_config_change(DomainName, DryRun = NULL)
 \arguments{
 \item{DomainName}{[required] Name of the OpenSearch Service domain configuration request to cancel.}
 
-\item{DryRun}{When set to \strong{True}, returns the list of change IDs and properties that
-will be cancelled without actually cancelling the change.}
+\item{DryRun}{When set to \strong{True}, returns the list of change IDs and properties that will be cancelled without actually cancelling the change.}
 }
 \description{
 Cancels a pending configuration change on an Amazon OpenSearch Service domain.

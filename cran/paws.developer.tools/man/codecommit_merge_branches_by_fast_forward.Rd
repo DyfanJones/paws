@@ -14,11 +14,9 @@ codecommit_merge_branches_by_fast_forward(
 \arguments{
 \item{repositoryName}{[required] The name of the repository where you want to merge two branches.}
 
-\item{sourceCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to
-identify a commit (for example, a branch name or a full commit ID).}
+\item{sourceCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).}
 
-\item{destinationCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to
-identify a commit (for example, a branch name or a full commit ID).}
+\item{destinationCommitSpecifier}{[required] The branch, tag, HEAD, or other fully qualified reference used to identify a commit (for example, a branch name or a full commit ID).}
 
 \item{targetBranch}{The branch where the merge is applied.}
 }

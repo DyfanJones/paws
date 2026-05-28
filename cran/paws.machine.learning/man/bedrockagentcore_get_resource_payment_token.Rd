@@ -12,13 +12,11 @@ bedrockagentcore_get_resource_payment_token(
 )
 }
 \arguments{
-\item{workloadIdentityToken}{[required] Workload access token for authorization. Named workloadIdentityToken for
-consistency with APIKey and OAuth2CredentialProvider.}
+\item{workloadIdentityToken}{[required] Workload access token for authorization.}
 
-\item{resourceCredentialProviderName}{[required] Name of the payment credential provider to use}
+\item{resourceCredentialProviderName}{[required] Name of the payment credential provider to use.}
 
-\item{paymentTokenRequest}{[required] Vendor-specific token request input Contains all request parameters in a
-type-safe, vendor-specific structure}
+\item{paymentTokenRequest}{[required] Vendor-specific token request input. Contains all request parameters in a type-safe, vendor-specific structure.}
 }
 \description{
 Generates authentication tokens for payment providers that use vendor-specific authentication mechanisms.

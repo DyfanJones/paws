@@ -16,23 +16,15 @@ personalize_create_dataset_export_job(
 \arguments{
 \item{jobName}{[required] The name for the dataset export job.}
 
-\item{datasetArn}{[required] The Amazon Resource Name (ARN) of the dataset that contains the data to
-export.}
+\item{datasetArn}{[required] The Amazon Resource Name (ARN) of the dataset that contains the data to export.}
 
-\item{ingestionMode}{The data to export, based on how you imported the data. You can choose
-to export only \code{BULK} data that you imported using a dataset import job,
-only \code{PUT} data that you imported incrementally (using the console,
-PutEvents, PutUsers and PutItems operations), or \code{ALL} for both types.
-The default value is \code{PUT}.}
+\item{ingestionMode}{The data to export, based on how you imported the data. You can choose to export only \code{BULK} data that you imported using a dataset import job, only \code{PUT} data that you imported incrementally (using the console, PutEvents, PutUsers and PutItems operations), or \code{ALL} for both types. The default value is \code{PUT}.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of the IAM service role that has
-permissions to add data to your output Amazon S3 bucket.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your output Amazon S3 bucket.}
 
 \item{jobOutput}{[required] The path to the Amazon S3 bucket where the job's output is stored.}
 
-\item{tags}{A list of
-\href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags}
-to apply to the dataset export job.}
+\item{tags}{A list of \href{https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html}{tags} to apply to the dataset export job.}
 }
 \description{
 Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export the training data, you must specify an service-linked IAM role that gives Amazon Personalize \code{PutObject} permissions for your Amazon S3 bucket. For information, see \href{https://docs.aws.amazon.com/personalize/latest/dg/export-data.html}{Exporting a dataset} in the Amazon Personalize developer guide.

@@ -14,18 +14,13 @@ guardduty_create_publishing_destination(
 )
 }
 \arguments{
-\item{DetectorId}{[required] The ID of the GuardDuty detector associated with the publishing
-destination.
+\item{DetectorId}{[required] The ID of the GuardDuty detector associated with the publishing destination.
 
-To find the \code{detectorId} in the current Region, see the Settings page in
-the GuardDuty console, or run the
-\code{\link[=guardduty_list_detectors]{list_detectors}} API.}
+To find the \code{detectorId} in the current Region, see the Settings page in the GuardDuty console, or run the \code{\link[=guardduty_list_detectors]{list_detectors}} API.}
 
-\item{DestinationType}{[required] The type of resource for the publishing destination. Currently only
-Amazon S3 buckets are supported.}
+\item{DestinationType}{[required] The type of resource for the publishing destination. Currently only Amazon S3 buckets are supported.}
 
-\item{DestinationProperties}{[required] The properties of the publishing destination, including the ARNs for the
-destination and the KMS key used for encryption.}
+\item{DestinationProperties}{[required] The properties of the publishing destination, including the ARNs for the destination and the KMS key used for encryption.}
 
 \item{ClientToken}{The idempotency token for the request.}
 

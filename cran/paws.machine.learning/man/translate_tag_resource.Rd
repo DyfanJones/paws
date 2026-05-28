@@ -7,12 +7,9 @@
 translate_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the given Amazon Translate resource to
-which you want to associate the tags.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the given Amazon Translate resource to which you want to associate the tags.}
 
-\item{Tags}{[required] Tags being associated with a specific Amazon Translate resource. There
-can be a maximum of 50 tags (both existing and pending) associated with
-a specific resource.}
+\item{Tags}{[required] Tags being associated with a specific Amazon Translate resource. There can be a maximum of 50 tags (both existing and pending) associated with a specific resource.}
 }
 \description{
 Associates a specific tag with a resource. A tag is a key-value pair that adds as a metadata to a resource. For more information, see \href{https://docs.aws.amazon.com/translate/latest/dg/tagging.html}{Tagging your resources}.

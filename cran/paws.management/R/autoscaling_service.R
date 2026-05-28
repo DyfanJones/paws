@@ -7,22 +7,11 @@ NULL
 #' @description
 #' Amazon EC2 Auto Scaling
 #' 
-#' The
-#' [`describe_auto_scaling_groups`][autoscaling_describe_auto_scaling_groups]
-#' API operation might be throttled when retrieving details for an Auto
-#' Scaling group that contains many instances. By default, this operation
-#' returns details for all instances in the group. To help prevent
-#' throttling, you can set the `IncludeInstances` parameter to `false` to
-#' exclude instance details from the response.
+#' The [`describe_auto_scaling_groups`][autoscaling_describe_auto_scaling_groups] API operation might be throttled when retrieving details for an Auto Scaling group that contains many instances. By default, this operation returns details for all instances in the group. To help prevent throttling, you can set the `IncludeInstances` parameter to `false` to exclude instance details from the response.
 #' 
-#' Amazon EC2 Auto Scaling is designed to automatically launch and
-#' terminate EC2 instances based on user-defined scaling policies,
-#' scheduled actions, and health checks.
+#' Amazon EC2 Auto Scaling is designed to automatically launch and terminate EC2 instances based on user-defined scaling policies, scheduled actions, and health checks.
 #' 
-#' For more information, see the [Amazon EC2 Auto Scaling User
-#' Guide](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html)
-#' and the [Amazon EC2 Auto Scaling API
-#' Reference](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html).
+#' For more information, see the [Amazon EC2 Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html) and the [Amazon EC2 Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/ec2/APIReference/Welcome.html).
 #'
 #' @param
 #' config

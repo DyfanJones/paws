@@ -19,8 +19,7 @@ appstream_describe_application_fleet_associations(
 
 \item{MaxResults}{The maximum size of each page of results.}
 
-\item{NextToken}{The pagination token used to retrieve the next page of results for this
-operation.}
+\item{NextToken}{The pagination token used to retrieve the next page of results for this operation.}
 }
 \description{
 Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName must be specified.

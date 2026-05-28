@@ -16,26 +16,17 @@ glue_register_connection_type(
 )
 }
 \arguments{
-\item{ConnectionType}{[required] The name of the connection type. Must be between 1 and 255 characters
-and must be prefixed with "REST-" to indicate it is a REST-based
-connector.}
+\item{ConnectionType}{[required] The name of the connection type. Must be between 1 and 255 characters and must be prefixed with "REST-" to indicate it is a REST-based connector.}
 
-\item{IntegrationType}{[required] The integration type for the connection. Currently only "REST" protocol
-is supported.}
+\item{IntegrationType}{[required] The integration type for the connection. Currently only "REST" protocol is supported.}
 
-\item{Description}{A description of the connection type. Can be up to 2048 characters and
-provides details about the purpose and functionality of the connection
-type.}
+\item{Description}{A description of the connection type. Can be up to 2048 characters and provides details about the purpose and functionality of the connection type.}
 
-\item{ConnectionProperties}{[required] Defines the base URL and additional request parameters needed during
-connection creation for this connection type.}
+\item{ConnectionProperties}{[required] Defines the base URL and additional request parameters needed during connection creation for this connection type.}
 
-\item{ConnectorAuthenticationConfiguration}{[required] Defines the supported authentication types and required properties for
-this connection type, including Basic, OAuth2, and Custom authentication
-methods.}
+\item{ConnectorAuthenticationConfiguration}{[required] Defines the supported authentication types and required properties for this connection type, including Basic, OAuth2, and Custom authentication methods.}
 
-\item{RestConfiguration}{[required] Defines the HTTP request and response configuration, validation
-endpoint, and entity configurations for REST API interactions.}
+\item{RestConfiguration}{[required] Defines the HTTP request and response configuration, validation endpoint, and entity configurations for REST API interactions.}
 
 \item{Tags}{The tags you assign to the connection type.}
 }

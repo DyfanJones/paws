@@ -13,22 +13,15 @@ ec2_describe_ipam_prefix_list_resolvers(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{Filters}{One or more filters to limit the results.}
 
-\item{MaxResults}{The maximum number of items to return for this request. To get the next
-page of items, make another request with the token returned in the
-output. For more information, see
-\href{https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination}{Pagination}.}
+\item{MaxResults}{The maximum number of items to return for this request. To get the next page of items, make another request with the token returned in the output. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/Query-Requests.html#api-pagination}{Pagination}.}
 
 \item{NextToken}{The token for the next page of results.}
 
-\item{IpamPrefixListResolverIds}{The IDs of the IPAM prefix list resolvers to describe. If not specified,
-all resolvers in your account are described.}
+\item{IpamPrefixListResolverIds}{The IDs of the IPAM prefix list resolvers to describe. If not specified, all resolvers in your account are described.}
 }
 \description{
 Describes one or more IPAM prefix list resolvers. Use this operation to view the configuration, status, and properties of your resolvers.

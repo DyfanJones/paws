@@ -16,6 +16,10 @@ fsx_describe_volumes(
 \item{VolumeIds}{The IDs of the volumes whose descriptions you want to retrieve.}
 
 \item{Filters}{Enter a filter \code{Name} and \code{Values} pair to view a select set of volumes.}
+
+\item{MaxResults}{The maximum number of resources to return in the response. This value must be an integer greater than zero.}
+
+\item{NextToken}{(Optional) Opaque pagination token returned from a previous operation (String). If present, this token indicates from what point you can continue processing the request, where the previous \code{NextToken} value left off.}
 }
 \description{
 Describes one or more Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volumes.

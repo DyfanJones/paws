@@ -15,9 +15,7 @@ bedrockagent_delete_flow_version(
 
 \item{flowVersion}{[required] The version of the flow that you want to delete.}
 
-\item{skipResourceInUseCheck}{By default, this value is \code{false} and deletion is stopped if the
-resource is in use. If you set it to \code{true}, the resource will be
-deleted even if the resource is in use.}
+\item{skipResourceInUseCheck}{By default, this value is \code{false} and deletion is stopped if the resource is in use. If you set it to \code{true}, the resource will be deleted even if the resource is in use.}
 }
 \description{
 Deletes a version of a flow.

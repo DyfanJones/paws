@@ -16,17 +16,13 @@ lexmodelsv2_list_bot_analyzer_history(
 \arguments{
 \item{botId}{[required] The unique identifier of the bot.}
 
-\item{localeId}{The locale identifier to filter the history. If not specified, returns
-history for all locales.}
+\item{localeId}{The locale identifier to filter the history. If not specified, returns history for all locales.}
 
-\item{botVersion}{The bot version to filter the history. If not specified, defaults to
-\code{DRAFT}.}
+\item{botVersion}{The bot version to filter the history. If not specified, defaults to \code{DRAFT}.}
 
-\item{nextToken}{If the response from a previous request was truncated, the \code{nextToken}
-value is used to retrieve the next page of history entries.}
+\item{nextToken}{If the response from a previous request was truncated, the \code{nextToken} value is used to retrieve the next page of history entries.}
 
-\item{maxResults}{The maximum number of history entries to return in the response. The
-default is 10.}
+\item{maxResults}{The maximum number of history entries to return in the response. The default is 10.}
 }
 \description{
 Retrieves a list of historical bot analysis executions for a specific bot. You can filter the results by locale and bot version.

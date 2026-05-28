@@ -9,10 +9,7 @@ ec2_restore_volume_from_recycle_bin(VolumeId, DryRun = NULL)
 \arguments{
 \item{VolumeId}{[required] The ID of the volume to restore.}
 
-\item{DryRun}{Checks whether you have the required permissions for the action, without
-actually making the request, and provides an error response. If you have
-the required permissions, the error response is \code{DryRunOperation}.
-Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 }
 \description{
 Restores a volume from the Recycle Bin. For more information, see \href{https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-volumes.html#recycle-bin-restore-volumes}{Restore volumes from the Recycle Bin} in the \emph{Amazon EBS User Guide}.

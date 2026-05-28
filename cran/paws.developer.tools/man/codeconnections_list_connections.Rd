@@ -12,19 +12,13 @@ codeconnections_list_connections(
 )
 }
 \arguments{
-\item{ProviderTypeFilter}{Filters the list of connections to those associated with a specified
-provider, such as Bitbucket.}
+\item{ProviderTypeFilter}{Filters the list of connections to those associated with a specified provider, such as Bitbucket.}
 
-\item{HostArnFilter}{Filters the list of connections to those associated with a specified
-host.}
+\item{HostArnFilter}{Filters the list of connections to those associated with a specified host.}
 
-\item{MaxResults}{The maximum number of results to return in a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{MaxResults}{The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
-\item{NextToken}{The token that was returned from the previous
-\code{\link[=codeconnections_list_connections]{list_connections}} call, which can
-be used to return the next set of connections in the list.}
+\item{NextToken}{The token that was returned from the previous \code{\link[=codeconnections_list_connections]{list_connections}} call, which can be used to return the next set of connections in the list.}
 }
 \description{
 Lists the connections associated with your account.

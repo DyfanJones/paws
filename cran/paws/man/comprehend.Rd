@@ -53,10 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Comprehend is an Amazon Web Services service for gaining insight
-into the content of documents. Use these actions to determine the topics
-contained in your documents, the topics they discuss, the predominant
-sentiment expressed in them, the predominant language used, and more.
+Amazon Comprehend is an Amazon Web Services service for gaining insight into the content of documents. Use these actions to determine the topics contained in your documents, the topics they discuss, the predominant sentiment expressed in them, the predominant language used, and more.
 }
 \section{Service syntax}{
 

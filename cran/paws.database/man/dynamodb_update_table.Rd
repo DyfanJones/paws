@@ -24,116 +24,69 @@ dynamodb_update_table(
 )
 }
 \arguments{
-\item{AttributeDefinitions}{An array of attributes that describe the key schema for the table and
-indexes. If you are adding a new global secondary index to the table,
-\code{AttributeDefinitions} must include the key element(s) of the new index.}
+\item{AttributeDefinitions}{An array of attributes that describe the key schema for the table and indexes. If you are adding a new global secondary index to the table, \code{AttributeDefinitions} must include the key element(s) of the new index.}
 
-\item{TableName}{[required] The name of the table to be updated. You can also provide the Amazon
-Resource Name (ARN) of the table in this parameter.}
+\item{TableName}{[required] The name of the table to be updated. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.}
 
-\item{BillingMode}{Controls how you are charged for read and write throughput and how you
-manage capacity. When switching from pay-per-request to provisioned
-capacity, initial provisioned capacity values must be set. The initial
-provisioned capacity values are estimated based on the consumed read and
-write capacity of your table and global secondary indexes over the past
-30 minutes.
+\item{BillingMode}{Controls how you are charged for read and write throughput and how you manage capacity. When switching from pay-per-request to provisioned capacity, initial provisioned capacity values must be set. The initial provisioned capacity values are estimated based on the consumed read and write capacity of your table and global secondary indexes over the past 30 minutes.
 \itemize{
-\item \code{PAY_PER_REQUEST} - We recommend using \code{PAY_PER_REQUEST} for most
-DynamoDB workloads. \code{PAY_PER_REQUEST} sets the billing mode to
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html}{On-demand capacity mode}.
-\item \code{PROVISIONED} - We recommend using \code{PROVISIONED} for steady
-workloads with predictable growth where capacity requirements can be
-reliably forecasted. \code{PROVISIONED} sets the billing mode to
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html}{Provisioned capacity mode}.
+\item \code{PAY_PER_REQUEST} - We recommend using \code{PAY_PER_REQUEST} for most DynamoDB workloads. \code{PAY_PER_REQUEST} sets the billing mode to \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/on-demand-capacity-mode.html}{On-demand capacity mode}.
+\item \code{PROVISIONED} - We recommend using \code{PROVISIONED} for steady workloads with predictable growth where capacity requirements can be reliably forecasted. \code{PROVISIONED} sets the billing mode to \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/provisioned-capacity-mode.html}{Provisioned capacity mode}.
 }}
 
-\item{ProvisionedThroughput}{The new provisioned throughput settings for the specified table or
-index.}
+\item{ProvisionedThroughput}{The new provisioned throughput settings for the specified table or index.}
 
-\item{GlobalSecondaryIndexUpdates}{An array of one or more global secondary indexes for the table. For each
-index in the array, you can request one action:
+\item{GlobalSecondaryIndexUpdates}{An array of one or more global secondary indexes for the table. For each index in the array, you can request one action:
 \itemize{
 \item \code{Create} - add a new global secondary index to the table.
-\item \code{Update} - modify the provisioned throughput settings of an existing
-global secondary index.
+\item \code{Update} - modify the provisioned throughput settings of an existing global secondary index.
 \item \code{Delete} - remove a global secondary index from the table.
 }
 
-You can create or delete only one global secondary index per
-\code{\link[=dynamodb_update_table]{update_table}} operation.
+You can create or delete only one global secondary index per \code{\link[=dynamodb_update_table]{update_table}} operation.
 
-For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html}{Managing Global Secondary Indexes}
-in the \emph{Amazon DynamoDB Developer Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/GSI.OnlineOps.html}{Managing Global Secondary Indexes} in the \emph{Amazon DynamoDB Developer Guide}.}
 
 \item{StreamSpecification}{Represents the DynamoDB Streams configuration for the table.
 
-You receive a \code{ValidationException} if you try to enable a stream on a
-table that already has a stream, or if you try to disable a stream on a
-table that doesn't have a stream.}
+You receive a \code{ValidationException} if you try to enable a stream on a table that already has a stream, or if you try to disable a stream on a table that doesn't have a stream.}
 
 \item{SSESpecification}{The new server-side encryption settings for the specified table.}
 
-\item{ReplicaUpdates}{A list of replica update actions (create, delete, or update) for the
-table.}
+\item{ReplicaUpdates}{A list of replica update actions (create, delete, or update) for the table.}
 
-\item{TableClass}{The table class of the table to be updated. Valid values are \code{STANDARD}
-and \code{STANDARD_INFREQUENT_ACCESS}.}
+\item{TableClass}{The table class of the table to be updated. Valid values are \code{STANDARD} and \code{STANDARD_INFREQUENT_ACCESS}.}
 
-\item{DeletionProtectionEnabled}{Indicates whether deletion protection is to be enabled (true) or
-disabled (false) on the table.}
+\item{DeletionProtectionEnabled}{Indicates whether deletion protection is to be enabled (true) or disabled (false) on the table.}
 
-\item{MultiRegionConsistency}{Specifies the consistency mode for a new global table. This parameter is
-only valid when you create a global table by specifying one or more
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create}{Create}
-actions in the
-\href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates}{ReplicaUpdates}
-action list.
+\item{MultiRegionConsistency}{Specifies the consistency mode for a new global table. This parameter is only valid when you create a global table by specifying one or more \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ReplicationGroupUpdate.html#DDB-Type-ReplicationGroupUpdate-Create}{Create} actions in the \href{https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_UpdateTable.html#DDB-UpdateTable-request-ReplicaUpdates}{ReplicaUpdates} action list.
 
 You can specify one of the following consistency modes:
 \itemize{
-\item \code{EVENTUAL}: Configures a new global table for multi-Region eventual
-consistency (MREC). This is the default consistency mode for global
-tables.
-\item \code{STRONG}: Configures a new global table for multi-Region strong
-consistency (MRSC).
+\item \code{EVENTUAL}: Configures a new global table for multi-Region eventual consistency (MREC). This is the default consistency mode for global tables.
+\item \code{STRONG}: Configures a new global table for multi-Region strong consistency (MRSC).
 }
 
-If you don't specify this field, the global table consistency mode
-defaults to \code{EVENTUAL}. For more information about global tables
-consistency modes, see Consistency modes in DynamoDB developer guide.}
+If you don't specify this field, the global table consistency mode defaults to \code{EVENTUAL}. For more information about global tables consistency modes, see Consistency modes in DynamoDB developer guide.}
 
-\item{GlobalTableWitnessUpdates}{A list of witness updates for a MRSC global table. A witness provides a
-cost-effective alternative to a full replica in a MRSC global table by
-maintaining replicated change data written to global table replicas. You
-cannot perform read or write operations on a witness. For each witness,
-you can request one action:
+\item{GlobalTableWitnessUpdates}{A list of witness updates for a MRSC global table. A witness provides a cost-effective alternative to a full replica in a MRSC global table by maintaining replicated change data written to global table replicas. You cannot perform read or write operations on a witness. For each witness, you can request one action:
 \itemize{
 \item \code{Create} - add a new witness to the global table.
 \item \code{Delete} - remove a witness from the global table.
 }
 
-You can create or delete only one witness per
-\code{\link[=dynamodb_update_table]{update_table}} operation.
+You can create or delete only one witness per \code{\link[=dynamodb_update_table]{update_table}} operation.
 
-For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes}{Multi-Region strong consistency (MRSC)}
-in the Amazon DynamoDB Developer Guide}
+For more information, see \href{https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/V2globaltables_HowItWorks.html#V2globaltables_HowItWorks.consistency-modes}{Multi-Region strong consistency (MRSC)} in the Amazon DynamoDB Developer Guide}
 
-\item{OnDemandThroughput}{Updates the maximum number of read and write units for the specified
-table in on-demand capacity mode. If you use this parameter, you must
-specify \code{MaxReadRequestUnits}, \code{MaxWriteRequestUnits}, or both.}
+\item{OnDemandThroughput}{Updates the maximum number of read and write units for the specified table in on-demand capacity mode. If you use this parameter, you must specify \code{MaxReadRequestUnits}, \code{MaxWriteRequestUnits}, or both.}
 
-\item{WarmThroughput}{Represents the warm throughput (in read units per second and write units
-per second) for updating a table.}
+\item{WarmThroughput}{Represents the warm throughput (in read units per second and write units per second) for updating a table.}
 
-\item{GlobalTableSettingsReplicationMode}{Controls the settings replication mode for a global table replica. This
-attribute can be defined using UpdateTable operation only on a regional
-table with values:
+\item{GlobalTableSettingsReplicationMode}{Controls the settings replication mode for a global table replica. This attribute can be defined using UpdateTable operation only on a regional table with values:
 \itemize{
-\item \code{ENABLED}: Defines settings replication on a regional table to be
-used as a source table for creating Multi-Account Global Table.
-\item \code{DISABLED}: Remove settings replication on a regional table.
-Settings replication needs to be defined to ENABLED again in order
-to create a Multi-Account Global Table using this table.
+\item \code{ENABLED}: Defines settings replication on a regional table to be used as a source table for creating Multi-Account Global Table.
+\item \code{DISABLED}: Remove settings replication on a regional table. Settings replication needs to be defined to ENABLED again in order to create a Multi-Account Global Table using this table.
 }}
 }
 \description{

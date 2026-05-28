@@ -14,19 +14,14 @@ codeguruprofiler_post_agent_profile(
 \arguments{
 \item{agentProfile}{[required] The submitted profiling data.}
 
-\item{contentType}{[required] The format of the submitted profiling data. The format maps to the
-\code{Accept} and \code{Content-Type} headers of the HTTP request. You can specify
-one of the following: or the default .
+\item{contentType}{[required] The format of the submitted profiling data. The format maps to the \code{Accept} and \code{Content-Type} headers of the HTTP request. You can specify one of the following: or the default .
 
 \if{html}{\out{<div class="sourceCode">}}\preformatted{ <ul> <li> <p> <code>application/json</code> — standard JSON format </p> </li> <li> <p> <code>application/x-amzn-ion</code> — the Amazon Ion data format. For more information, see <a href="http://amzn.github.io/ion-docs/">Amazon Ion</a>. </p> </li> </ul>
 }\if{html}{\out{</div>}}}
 
-\item{profileToken}{Amazon CodeGuru Profiler uses this universally unique identifier (UUID)
-to prevent the accidental submission of duplicate profiling data if
-there are failures and retries.}
+\item{profileToken}{Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries.}
 
-\item{profilingGroupName}{[required] The name of the profiling group with the aggregated profile that
-receives the submitted profiling data.}
+\item{profilingGroupName}{[required] The name of the profiling group with the aggregated profile that receives the submitted profiling data.}
 }
 \description{
 Submits profiling data to an aggregated profile of a profiling group. To get an aggregated profile that is created with this profiling data, use \href{https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html}{\code{get_profile}} .

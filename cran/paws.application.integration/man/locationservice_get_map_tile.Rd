@@ -15,8 +15,7 @@ locationservice_get_map_tile(MapName, Z, X, Y, Key = NULL)
 
 \item{Y}{[required] The Y axis value for the map tile.}
 
-\item{Key}{The optional \href{https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html}{API key}
-to authorize the request.}
+\item{Key}{The optional \href{https://docs.aws.amazon.com/location/previous/developerguide/using-apikeys.html}{API key} to authorize the request.}
 }
 \description{
 This operation is no longer current and may be deprecated in the future. We recommend upgrading to \href{https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html}{\code{GetTile}} unless you require \code{Grab} data.

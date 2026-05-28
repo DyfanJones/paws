@@ -13,8 +13,7 @@ datazone_create_user_profile(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a user profile is
-created.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a user profile is created.}
 
 \item{userIdentifier}{[required] The identifier of the user for which the user profile is created.}
 
@@ -22,8 +21,7 @@ created.}
 
 \item{sessionName}{The session name for IAM role sessions.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates a user profile in Amazon DataZone.

@@ -13,29 +13,19 @@ ec2_modify_instance_connect_endpoint(
 )
 }
 \arguments{
-\item{DryRun}{Checks whether you have the required permissions for the operation,
-without actually making the request, and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{Checks whether you have the required permissions for the operation, without actually making the request, and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{InstanceConnectEndpointId}{[required] The ID of the EC2 Instance Connect Endpoint to modify.}
 
 \item{IpAddressType}{The new IP address type for the EC2 Instance Connect Endpoint.
 
-\code{PreserveClientIp} is only supported on IPv4 EC2 Instance Connect
-Endpoints. To use \code{PreserveClientIp}, the value for \code{IpAddressType} must
-be \code{ipv4}.}
+\code{PreserveClientIp} is only supported on IPv4 EC2 Instance Connect Endpoints. To use \code{PreserveClientIp}, the value for \code{IpAddressType} must be \code{ipv4}.}
 
-\item{SecurityGroupIds}{Changes the security groups for the EC2 Instance Connect Endpoint. The
-new set of groups you specify replaces the current set. You must specify
-at least one group, even if it's just the default security group in the
-VPC. You must specify the ID of the security group, not the name.}
+\item{SecurityGroupIds}{Changes the security groups for the EC2 Instance Connect Endpoint. The new set of groups you specify replaces the current set. You must specify at least one group, even if it's just the default security group in the VPC. You must specify the ID of the security group, not the name.}
 
-\item{PreserveClientIp}{Indicates whether the client IP address is preserved as the source when
-you connect to a resource. The following are the possible values.
+\item{PreserveClientIp}{Indicates whether the client IP address is preserved as the source when you connect to a resource. The following are the possible values.
 \itemize{
-\item \code{true} - Use the IP address of the client. Your instance must have
-an IPv4 address.
+\item \code{true} - Use the IP address of the client. Your instance must have an IPv4 address.
 \item \code{false} - Use the IP address of the network interface.
 }}
 }

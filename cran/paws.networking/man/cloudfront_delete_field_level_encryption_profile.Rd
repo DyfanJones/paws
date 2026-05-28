@@ -9,8 +9,7 @@ cloudfront_delete_field_level_encryption_profile(Id, IfMatch = NULL)
 \arguments{
 \item{Id}{[required] Request the ID of the profile you want to delete from CloudFront.}
 
-\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the
-profile to delete. For example: \code{E2QWRUHAPOMQZL}.}
+\item{IfMatch}{The value of the \code{ETag} header that you received when retrieving the profile to delete. For example: \code{E2QWRUHAPOMQZL}.}
 }
 \description{
 Remove a field-level encryption profile.

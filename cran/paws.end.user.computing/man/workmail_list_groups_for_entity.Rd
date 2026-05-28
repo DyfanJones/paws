@@ -17,19 +17,16 @@ workmail_list_groups_for_entity(
 
 \item{EntityId}{[required] The identifier for the entity.
 
-The entity ID can accept \emph{UserId or GroupID}, \emph{Username or Groupname},
-or \emph{email}.
+The entity ID can accept \emph{UserId or GroupID}, \emph{Username or Groupname}, or \emph{email}.
 \itemize{
-\item Entity ID: 12345678-1234-1234-1234-123456789012 or
-S-1-1-12-1234567890-123456789-123456789-1234
+\item Entity ID: 12345678-1234-1234-1234-123456789012 or S-1-1-12-1234567890-123456789-123456789-1234
 \item Email address: entity@domain.tld
 \item Entity name: entity
 }}
 
 \item{Filters}{Limit the search results based on the filter criteria.}
 
-\item{NextToken}{The token to use to retrieve the next page of results. The first call
-does not contain any tokens.}
+\item{NextToken}{The token to use to retrieve the next page of results. The first call does not contain any tokens.}
 
 \item{MaxResults}{The maximum number of results to return in a single call.}
 }

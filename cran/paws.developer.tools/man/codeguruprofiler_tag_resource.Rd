@@ -7,8 +7,7 @@
 codeguruprofiler_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that the tags are added
-to.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource that the tags are added to.}
 
 \item{tags}{[required] The list of tags that are added to the specified resource.}
 }

@@ -11,8 +11,7 @@ networkfirewall_describe_rule_group_summary(
 )
 }
 \arguments{
-\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a
-rule group after you create it.
+\item{RuleGroupName}{The descriptive name of the rule group. You can't change the name of a rule group after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
@@ -24,8 +23,7 @@ You must specify the ARN or the name, and you can specify both.}
 
 Valid value: \code{STATEFUL}
 
-Note that \code{STATELESS} exists but is not currently supported. If you
-provide \code{STATELESS}, an exception is returned.}
+Note that \code{STATELESS} exists but is not currently supported. If you provide \code{STATELESS}, an exception is returned.}
 }
 \description{
 Returns detailed information for a stateful rule group.

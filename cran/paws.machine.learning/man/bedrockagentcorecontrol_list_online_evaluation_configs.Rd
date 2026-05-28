@@ -11,11 +11,9 @@ bedrockagentcorecontrol_list_online_evaluation_configs(
 )
 }
 \arguments{
-\item{nextToken}{The pagination token from a previous request to retrieve the next page
-of results.}
+\item{nextToken}{The pagination token from a previous request to retrieve the next page of results.}
 
-\item{maxResults}{The maximum number of online evaluation configurations to return in a
-single response.}
+\item{maxResults}{The maximum number of online evaluation configurations to return in a single response.}
 }
 \description{
 Lists all online evaluation configurations in the account, providing summary information about each configuration's status and settings.

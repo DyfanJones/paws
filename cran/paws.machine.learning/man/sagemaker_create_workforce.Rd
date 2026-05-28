@@ -15,27 +15,23 @@ sagemaker_create_workforce(
 )
 }
 \arguments{
-\item{CognitoConfig}{Use this parameter to configure an Amazon Cognito private workforce. A
-single Cognito workforce is created using and corresponds to a single
-\href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html}{Amazon Cognito user pool}.
+\item{CognitoConfig}{Use this parameter to configure an Amazon Cognito private workforce. A single Cognito workforce is created using and corresponds to a single \href{https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools.html}{Amazon Cognito user pool}.
 
 Do not use \code{OidcConfig} if you specify values for \code{CognitoConfig}.}
 
-\item{OidcConfig}{Use this parameter to configure a private workforce using your own OIDC
-Identity Provider.
+\item{OidcConfig}{Use this parameter to configure a private workforce using your own OIDC Identity Provider.
 
 Do not use \code{CognitoConfig} if you specify values for \code{OidcConfig}.}
 
+\item{SourceIpConfig}{A list of IP address ranges (\href{https://docs.aws.amazon.com/vpc/latest/userguide/how-it-works.html}{CIDRs}). Used to create an allow list of IP addresses for a private workforce. Workers will only be able to log in to their worker portal from an IP address within this range. By default, a workforce isn't restricted to specific IP addresses.}
+
 \item{WorkforceName}{[required] The name of the private workforce.}
 
-\item{Tags}{An array of key-value pairs that contain metadata to help you categorize
-and organize our workforce. Each tag consists of a key and a value, both
-of which you define.}
+\item{Tags}{An array of key-value pairs that contain metadata to help you categorize and organize our workforce. Each tag consists of a key and a value, both of which you define.}
 
 \item{WorkforceVpcConfig}{Use this parameter to configure a workforce using VPC.}
 
-\item{IpAddressType}{Use this parameter to specify whether you want \code{IPv4} only or
-\code{dualstack} (\code{IPv4} and \code{IPv6}) to support your labeling workforce.}
+\item{IpAddressType}{Use this parameter to specify whether you want \code{IPv4} only or \code{dualstack} (\code{IPv4} and \code{IPv6}) to support your labeling workforce.}
 }
 \description{
 Use this operation to create a workforce. This operation will return an error if a workforce already exists in the Amazon Web Services Region that you specify. You can only create one workforce in each Amazon Web Services Region per Amazon Web Services account.

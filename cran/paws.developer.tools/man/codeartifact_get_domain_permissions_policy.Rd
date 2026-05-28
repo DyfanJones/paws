@@ -9,8 +9,7 @@ codeartifact_get_domain_permissions_policy(domain, domainOwner = NULL)
 \arguments{
 \item{domain}{[required] The name of the domain to which the resource policy is attached.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 }
 \description{
 Returns the resource policy attached to the specified domain.

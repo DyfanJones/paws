@@ -11,8 +11,7 @@ cloudfront_update_key_group(KeyGroupConfig, Id, IfMatch = NULL)
 
 \item{Id}{[required] The identifier of the key group that you are updating.}
 
-\item{IfMatch}{The version of the key group that you are updating. The version is the
-key group's \code{ETag} value.}
+\item{IfMatch}{The version of the key group that you are updating. The version is the key group's \code{ETag} value.}
 }
 \description{
 Updates a key group.

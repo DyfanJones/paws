@@ -9,8 +9,7 @@ neptunedata_cancel_open_cypher_query(queryId, silent = NULL)
 \arguments{
 \item{queryId}{[required] The unique ID of the openCypher query to cancel.}
 
-\item{silent}{If set to \code{TRUE}, causes the cancelation of the openCypher query to
-happen silently.}
+\item{silent}{If set to \code{TRUE}, causes the cancelation of the openCypher query to happen silently.}
 }
 \description{
 Cancels a specified openCypher query. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-status.html}{Neptune openCypher status endpoint} for more information.

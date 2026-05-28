@@ -9,9 +9,7 @@ elasticache_complete_migration(ReplicationGroupId, Force = NULL)
 \arguments{
 \item{ReplicationGroupId}{[required] The ID of the replication group to which data is being migrated.}
 
-\item{Force}{Forces the migration to stop without ensuring that data is in sync. It
-is recommended to use this option only to abort the migration and not
-recommended when application wants to continue migration to ElastiCache.}
+\item{Force}{Forces the migration to stop without ensuring that data is in sync. It is recommended to use this option only to abort the migration and not recommended when application wants to continue migration to ElastiCache.}
 }
 \description{
 Complete the migration of data.

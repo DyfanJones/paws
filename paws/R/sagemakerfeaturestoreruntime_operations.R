@@ -12,15 +12,8 @@ NULL
 #' sagemakerfeaturestoreruntime_batch_get_record(Identifiers,
 #'   ExpirationTimeResponse)
 #'
-#' @param Identifiers &#91;required&#93; A list containing the name or Amazon Resource Name (ARN) of the
-#' `FeatureGroup`, the list of names of `Feature`s to be retrieved, and the
-#' corresponding `RecordIdentifier` values as strings.
-#' @param ExpirationTimeResponse Parameter to request `ExpiresAt` in response. If `Enabled`,
-#' [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record] will
-#' return the value of `ExpiresAt`, if it is not null. If `Disabled` and
-#' null,
-#' [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record] will
-#' return null.
+#' @param Identifiers &#91;required&#93; A list containing the name or Amazon Resource Name (ARN) of the `FeatureGroup`, the list of names of `Feature`s to be retrieved, and the corresponding `RecordIdentifier` values as strings.
+#' @param ExpirationTimeResponse Parameter to request `ExpiresAt` in response. If `Enabled`, [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record] will return the value of `ExpiresAt`, if it is not null. If `Disabled` and null, [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record] will return null.
 #'
 #' @return
 #' A list with the following syntax:
@@ -109,55 +102,25 @@ sagemakerfeaturestoreruntime_batch_get_record <- function(Identifiers, Expiratio
 #' Deletes a Record from a FeatureGroup in the OnlineStore
 #'
 #' @description
-#' Deletes a `Record` from a `FeatureGroup` in the `OnlineStore`. Feature
-#' Store supports both `SoftDelete` and `HardDelete`. For `SoftDelete`
-#' (default), feature columns are set to `null` and the record is no longer
-#' retrievable by [`get_record`][sagemakerfeaturestoreruntime_get_record]
-#' or [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record].
-#' For `HardDelete`, the complete `Record` is removed from the
-#' `OnlineStore`. In both cases, Feature Store appends the deleted record
-#' marker to the `OfflineStore`. The deleted record marker is a record with
-#' the same `RecordIdentifer` as the original, but with `is_deleted` value
-#' set to `True`, `EventTime` set to the delete input `EventTime`, and
-#' other feature values set to `null`.
+#' Deletes a `Record` from a `FeatureGroup` in the `OnlineStore`. Feature Store supports both `SoftDelete` and `HardDelete`. For `SoftDelete` (default), feature columns are set to `null` and the record is no longer retrievable by [`get_record`][sagemakerfeaturestoreruntime_get_record] or [`batch_get_record`][sagemakerfeaturestoreruntime_batch_get_record]. For `HardDelete`, the complete `Record` is removed from the `OnlineStore`. In both cases, Feature Store appends the deleted record marker to the `OfflineStore`. The deleted record marker is a record with the same `RecordIdentifer` as the original, but with `is_deleted` value set to `True`, `EventTime` set to the delete input `EventTime`, and other feature values set to `null`.
 #' 
-#' Note that the `EventTime` specified in
-#' [`delete_record`][sagemakerfeaturestoreruntime_delete_record] should be
-#' set later than the `EventTime` of the existing record in the
-#' `OnlineStore` for that `RecordIdentifer`. If it is not, the deletion
-#' does not occur:
+#' Note that the `EventTime` specified in [`delete_record`][sagemakerfeaturestoreruntime_delete_record] should be set later than the `EventTime` of the existing record in the `OnlineStore` for that `RecordIdentifer`. If it is not, the deletion does not occur:
 #' 
-#' -   For `SoftDelete`, the existing (not deleted) record remains in the
-#'     `OnlineStore`, though the delete record marker is still written to
-#'     the `OfflineStore`.
+#' -   For `SoftDelete`, the existing (not deleted) record remains in the `OnlineStore`, though the delete record marker is still written to the `OfflineStore`.
 #' 
-#' -   `HardDelete` returns `EventTime`: `400 ValidationException` to
-#'     indicate that the delete operation failed. No delete record marker
-#'     is written to the `OfflineStore`.
+#' -   `HardDelete` returns `EventTime`: `400 ValidationException` to indicate that the delete operation failed. No delete record marker is written to the `OfflineStore`.
 #' 
-#' When a record is deleted from the `OnlineStore`, the deleted record
-#' marker is appended to the `OfflineStore`. If you have the Iceberg table
-#' format enabled for your `OfflineStore`, you can remove all history of a
-#' record from the `OfflineStore` using Amazon Athena or Apache Spark. For
-#' information on how to hard delete a record from the `OfflineStore` with
-#' the Iceberg table format enabled, see [Delete records from the offline
-#' store](https://docs.aws.amazon.com/sagemaker/latest/dg/#feature-store-delete-records-offline-store).
+#' When a record is deleted from the `OnlineStore`, the deleted record marker is appended to the `OfflineStore`. If you have the Iceberg table format enabled for your `OfflineStore`, you can remove all history of a record from the `OfflineStore` using Amazon Athena or Apache Spark. For information on how to hard delete a record from the `OfflineStore` with the Iceberg table format enabled, see [Delete records from the offline store](https://docs.aws.amazon.com/sagemaker/latest/dg/#feature-store-delete-records-offline-store).
 #'
 #' @usage
 #' sagemakerfeaturestoreruntime_delete_record(FeatureGroupName,
 #'   RecordIdentifierValueAsString, EventTime, TargetStores, DeletionMode)
 #'
-#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group to delete
-#' the record from.
-#' @param RecordIdentifierValueAsString &#91;required&#93; The value for the `RecordIdentifier` that uniquely identifies the
-#' record, in string format.
-#' @param EventTime &#91;required&#93; Timestamp indicating when the deletion event occurred. `EventTime` can
-#' be used to query data at a certain point in time.
-#' @param TargetStores A list of stores from which you're deleting the record. By default,
-#' Feature Store deletes the record from all of the stores that you're
-#' using for the `FeatureGroup`.
-#' @param DeletionMode The name of the deletion mode for deleting the record. By default, the
-#' deletion mode is set to `SoftDelete`.
+#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group to delete the record from.
+#' @param RecordIdentifierValueAsString &#91;required&#93; The value for the `RecordIdentifier` that uniquely identifies the record, in string format.
+#' @param EventTime &#91;required&#93; Timestamp indicating when the deletion event occurred. `EventTime` can be used to query data at a certain point in time.
+#' @param TargetStores A list of stores from which you're deleting the record. By default, Feature Store deletes the record from all of the stores that you're using for the `FeatureGroup`.
+#' @param DeletionMode The name of the deletion mode for deleting the record. By default, the deletion mode is set to `SoftDelete`.
 #'
 #' @return
 #' An empty list.
@@ -202,25 +165,16 @@ sagemakerfeaturestoreruntime_delete_record <- function(FeatureGroupName, RecordI
 #' Use for OnlineStore serving from a FeatureStore
 #'
 #' @description
-#' Use for `OnlineStore` serving from a `FeatureStore`. Only the latest
-#' records stored in the `OnlineStore` can be retrieved. If no Record with
-#' `RecordIdentifierValue` is found, then an empty result is returned.
+#' Use for `OnlineStore` serving from a `FeatureStore`. Only the latest records stored in the `OnlineStore` can be retrieved. If no Record with `RecordIdentifierValue` is found, then an empty result is returned.
 #'
 #' @usage
 #' sagemakerfeaturestoreruntime_get_record(FeatureGroupName,
 #'   RecordIdentifierValueAsString, FeatureNames, ExpirationTimeResponse)
 #'
-#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group from which
-#' you want to retrieve a record.
-#' @param RecordIdentifierValueAsString &#91;required&#93; The value that corresponds to `RecordIdentifier` type and uniquely
-#' identifies the record in the `FeatureGroup`.
-#' @param FeatureNames List of names of Features to be retrieved. If not specified, the latest
-#' value for all the Features are returned.
-#' @param ExpirationTimeResponse Parameter to request `ExpiresAt` in response. If `Enabled`,
-#' [`get_record`][sagemakerfeaturestoreruntime_get_record] will return the
-#' value of `ExpiresAt`, if it is not null. If `Disabled` and null,
-#' [`get_record`][sagemakerfeaturestoreruntime_get_record] will return
-#' null.
+#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group from which you want to retrieve a record.
+#' @param RecordIdentifierValueAsString &#91;required&#93; The value that corresponds to `RecordIdentifier` type and uniquely identifies the record in the `FeatureGroup`.
+#' @param FeatureNames List of names of Features to be retrieved. If not specified, the latest value for all the Features are returned.
+#' @param ExpirationTimeResponse Parameter to request `ExpiresAt` in response. If `Enabled`, [`get_record`][sagemakerfeaturestoreruntime_get_record] will return the value of `ExpiresAt`, if it is not null. If `Disabled` and null, [`get_record`][sagemakerfeaturestoreruntime_get_record] will return null.
 #'
 #' @return
 #' A list with the following syntax:
@@ -279,50 +233,28 @@ sagemakerfeaturestoreruntime_get_record <- function(FeatureGroupName, RecordIden
 #' group
 #'
 #' @description
-#' The [`put_record`][sagemakerfeaturestoreruntime_put_record] API is used
-#' to ingest a list of `Records` into your feature group.
+#' The [`put_record`][sagemakerfeaturestoreruntime_put_record] API is used to ingest a list of `Records` into your feature group.
 #' 
-#' If a new record’s `EventTime` is greater, the new record is written to
-#' both the `OnlineStore` and `OfflineStore`. Otherwise, the record is a
-#' historic record and it is written only to the `OfflineStore`.
+#' If a new record’s `EventTime` is greater, the new record is written to both the `OnlineStore` and `OfflineStore`. Otherwise, the record is a historic record and it is written only to the `OfflineStore`.
 #' 
-#' You can specify the ingestion to be applied to the `OnlineStore`,
-#' `OfflineStore`, or both by using the `TargetStores` request parameter.
+#' You can specify the ingestion to be applied to the `OnlineStore`, `OfflineStore`, or both by using the `TargetStores` request parameter.
 #' 
-#' You can set the ingested record to expire at a given time to live (TTL)
-#' duration after the record’s event time, `ExpiresAt` = `EventTime` +
-#' `TtlDuration`, by specifying the `TtlDuration` parameter. A record level
-#' `TtlDuration` is set when specifying the `TtlDuration` parameter using
-#' the [`put_record`][sagemakerfeaturestoreruntime_put_record] API call. If
-#' the input `TtlDuration` is `null` or unspecified, `TtlDuration` is set
-#' to the default feature group level `TtlDuration`. A record level
-#' `TtlDuration` supersedes the group level `TtlDuration`.
+#' You can set the ingested record to expire at a given time to live (TTL) duration after the record’s event time, `ExpiresAt` = `EventTime` + `TtlDuration`, by specifying the `TtlDuration` parameter. A record level `TtlDuration` is set when specifying the `TtlDuration` parameter using the [`put_record`][sagemakerfeaturestoreruntime_put_record] API call. If the input `TtlDuration` is `null` or unspecified, `TtlDuration` is set to the default feature group level `TtlDuration`. A record level `TtlDuration` supersedes the group level `TtlDuration`.
 #'
 #' @usage
 #' sagemakerfeaturestoreruntime_put_record(FeatureGroupName, Record,
 #'   TargetStores, TtlDuration)
 #'
-#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group that you
-#' want to insert the record into.
-#' @param Record &#91;required&#93; List of FeatureValues to be inserted. This will be a full over-write. If
-#' you only want to update few of the feature values, do the following:
+#' @param FeatureGroupName &#91;required&#93; The name or Amazon Resource Name (ARN) of the feature group that you want to insert the record into.
+#' @param Record &#91;required&#93; List of FeatureValues to be inserted. This will be a full over-write. If you only want to update few of the feature values, do the following:
 #' 
-#' -   Use [`get_record`][sagemakerfeaturestoreruntime_get_record] to
-#'     retrieve the latest record.
+#' -   Use [`get_record`][sagemakerfeaturestoreruntime_get_record] to retrieve the latest record.
 #' 
-#' -   Update the record returned from
-#'     [`get_record`][sagemakerfeaturestoreruntime_get_record].
+#' -   Update the record returned from [`get_record`][sagemakerfeaturestoreruntime_get_record].
 #' 
-#' -   Use [`put_record`][sagemakerfeaturestoreruntime_put_record] to
-#'     update feature values.
-#' @param TargetStores A list of stores to which you're adding the record. By default, Feature
-#' Store adds the record to all of the stores that you're using for the
-#' `FeatureGroup`.
-#' @param TtlDuration Time to live duration, where the record is hard deleted after the
-#' expiration time is reached; `ExpiresAt` = `EventTime` + `TtlDuration`.
-#' For information on HardDelete, see the
-#' [`delete_record`][sagemakerfeaturestoreruntime_delete_record] API in the
-#' Amazon SageMaker API Reference guide.
+#' -   Use [`put_record`][sagemakerfeaturestoreruntime_put_record] to update feature values.
+#' @param TargetStores A list of stores to which you're adding the record. By default, Feature Store adds the record to all of the stores that you're using for the `FeatureGroup`.
+#' @param TtlDuration Time to live duration, where the record is hard deleted after the expiration time is reached; `ExpiresAt` = `EventTime` + `TtlDuration`. For information on HardDelete, see the [`delete_record`][sagemakerfeaturestoreruntime_delete_record] API in the Amazon SageMaker API Reference guide.
 #'
 #' @return
 #' An empty list.

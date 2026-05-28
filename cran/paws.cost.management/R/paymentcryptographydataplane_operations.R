@@ -11,16 +11,12 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_decrypt_data/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_decrypt_data/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the encryption key that Amazon Web Services Payment
-#' Cryptography uses for ciphertext decryption.
+#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the encryption key that Amazon Web Services Payment Cryptography uses for ciphertext decryption.
 #' 
-#' When a WrappedKeyBlock is provided, this value will be the identifier to
-#' the key wrapping key. Otherwise, it is the key identifier used to
-#' perform the operation.
+#' When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.
 #' @param CipherText &#91;required&#93; The ciphertext to decrypt.
 #' @param DecryptionAttributes &#91;required&#93; The encryption key type and attributes for ciphertext decryption.
-#' @param WrappedKey The WrappedKeyBlock containing the encryption key for ciphertext
-#' decryption.
+#' @param WrappedKey The WrappedKeyBlock containing the encryption key for ciphertext decryption.
 #'
 #' @keywords internal
 #'
@@ -52,23 +48,14 @@ paymentcryptographydataplane_decrypt_data <- function(KeyIdentifier, CipherText,
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_encrypt_data/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_encrypt_data/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the encryption key that Amazon Web Services Payment
-#' Cryptography uses for plaintext encryption.
+#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the encryption key that Amazon Web Services Payment Cryptography uses for plaintext encryption.
 #' 
-#' When a WrappedKeyBlock is provided, this value will be the identifier to
-#' the key wrapping key. Otherwise, it is the key identifier used to
-#' perform the operation.
+#' When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.
 #' @param PlainText &#91;required&#93; The plaintext to be encrypted.
 #' 
-#' For encryption using asymmetric keys, plaintext data length is
-#' constrained by encryption key strength that you define in `KeyAlgorithm`
-#' and padding type that you define in `AsymmetricEncryptionAttributes`.
-#' For more information, see [Encrypt
-#' data](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html)
-#' in the *Amazon Web Services Payment Cryptography User Guide*.
+#' For encryption using asymmetric keys, plaintext data length is constrained by encryption key strength that you define in `KeyAlgorithm` and padding type that you define in `AsymmetricEncryptionAttributes`. For more information, see [Encrypt data](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html) in the *Amazon Web Services Payment Cryptography User Guide*.
 #' @param EncryptionAttributes &#91;required&#93; The encryption key type and attributes for plaintext encryption.
-#' @param WrappedKey The WrappedKeyBlock containing the encryption key for plaintext
-#' encryption.
+#' @param WrappedKey The WrappedKeyBlock containing the encryption key for plaintext encryption.
 #'
 #' @keywords internal
 #'
@@ -92,21 +79,18 @@ paymentcryptographydataplane_encrypt_data <- function(KeyIdentifier, PlainText, 
 }
 .paymentcryptographydataplane$operations$encrypt_data <- paymentcryptographydataplane_encrypt_data
 
-#' Establishes node-to-node initialization between payment processing nodes
-#' such as an acquirer, issuer or payment network using Australian Standard
-#' 2805 (AS2805)
+#' Generates a KekValidationRequest or a KekValidationResponse for
+#' node-to-node initialization between payment processing nodes using
+#' Australian Standard 2805 (AS2805)
 #'
 #' @description
-#' Establishes node-to-node initialization between payment processing nodes such as an acquirer, issuer or payment network using Australian Standard 2805 (AS2805).
+#' Generates a `KekValidationRequest` or a `KekValidationResponse` for node-to-node initialization between payment processing nodes using [Australian Standard 2805 (AS2805)](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/).
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_as_2805_kek_validation/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_as_2805_kek_validation/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The `keyARN` of sending KEK that Amazon Web Services Payment
-#' Cryptography uses for node-to-node initialization
-#' @param KekValidationType &#91;required&#93; Parameter information for generating a random key for KEK validation to
-#' perform node-to-node initialization.
-#' @param RandomKeySendVariantMask &#91;required&#93; The key variant to use for generating a random key for KEK validation
-#' during node-to-node initialization.
+#' @param KeyIdentifier &#91;required&#93; The `keyARN` of sending KEK that Amazon Web Services Payment Cryptography uses for node-to-node initialization
+#' @param KekValidationType &#91;required&#93; Defines whether to generate a KEK validation request or KEK validation response for node-to-node initialization.
+#' @param RandomKeySendVariantMask &#91;required&#93; The key variant to use for generating a random key for KEK validation during node-to-node initialization.
 #'
 #' @keywords internal
 #'
@@ -130,6 +114,41 @@ paymentcryptographydataplane_generate_as_2805_kek_validation <- function(KeyIden
 }
 .paymentcryptographydataplane$operations$generate_as_2805_kek_validation <- paymentcryptographydataplane_generate_as_2805_kek_validation
 
+#' Generates an Authorization Request Cryptogram (ARQC) for an EMV chip
+#' payment card authorization
+#'
+#' @description
+#' Generates an Authorization Request Cryptogram (ARQC) for an EMV chip payment card authorization. For more information, see [Generate auth request cryptogram](https://docs.aws.amazon.com/payment-cryptography/latest/userguide/) in the *Amazon Web Services Payment Cryptography User Guide*.
+#'
+#' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_auth_request_cryptogram/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_auth_request_cryptogram/) for full documentation.
+#'
+#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the IMK-AC (TR31_E0_EMV_MKEY_APP_CRYPTOGRAMS) that Amazon Web Services Payment Cryptography uses to generate the ARQC.
+#' @param TransactionData &#91;required&#93; The transaction data that Amazon Web Services Payment Cryptography uses for ARQC generation. The same transaction data is used for ARQC verification by the issuer using [`verify_auth_request_cryptogram`][paymentcryptographydataplane_verify_auth_request_cryptogram].
+#' @param MajorKeyDerivationMode &#91;required&#93; The method to use when deriving the major encryption key for ARQC generation within Amazon Web Services Payment Cryptography.
+#' @param SessionKeyDerivationAttributes &#91;required&#93; The attributes and values to use for deriving a session key for ARQC generation within Amazon Web Services Payment Cryptography.
+#'
+#' @keywords internal
+#'
+#' @rdname paymentcryptographydataplane_gene_auth_requ_cryp
+paymentcryptographydataplane_generate_auth_request_cryptogram <- function(KeyIdentifier, TransactionData, MajorKeyDerivationMode, SessionKeyDerivationAttributes) {
+  op <- new_operation(
+    name = "GenerateAuthRequestCryptogram",
+    http_method = "POST",
+    http_path = "/cryptogram/generate",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .paymentcryptographydataplane$generate_auth_request_cryptogram_input(KeyIdentifier = KeyIdentifier, TransactionData = TransactionData, MajorKeyDerivationMode = MajorKeyDerivationMode, SessionKeyDerivationAttributes = SessionKeyDerivationAttributes)
+  output <- .paymentcryptographydataplane$generate_auth_request_cryptogram_output()
+  config <- get_config()
+  svc <- .paymentcryptographydataplane$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.paymentcryptographydataplane$operations$generate_auth_request_cryptogram <- paymentcryptographydataplane_generate_auth_request_cryptogram
+
 #' Generates card-related validation data using algorithms such as Card
 #' Verification Values (CVV/CVV2), Dynamic Card Verification Values
 #' (dCVV/dCVV2), or Card Security Codes (CSC)
@@ -139,13 +158,9 @@ paymentcryptographydataplane_generate_as_2805_kek_validation <- function(KeyIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_card_validation_data/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_card_validation_data/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the CVK encryption key that Amazon Web Services Payment
-#' Cryptography uses to generate card data.
-#' @param PrimaryAccountNumber &#91;required&#93; The Primary Account Number (PAN), a unique identifier for a payment
-#' credit or debit card that associates the card with a specific account
-#' holder.
-#' @param GenerationAttributes &#91;required&#93; The algorithm for generating CVV or CSC values for the card within
-#' Amazon Web Services Payment Cryptography.
+#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the CVK encryption key that Amazon Web Services Payment Cryptography uses to generate card data.
+#' @param PrimaryAccountNumber &#91;required&#93; The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
+#' @param GenerationAttributes &#91;required&#93; The algorithm for generating CVV or CSC values for the card within Amazon Web Services Payment Cryptography.
 #' @param ValidationDataLength The length of the CVV or CSC to be generated. The default value is 3.
 #'
 #' @keywords internal
@@ -179,10 +194,8 @@ paymentcryptographydataplane_generate_card_validation_data <- function(KeyIdenti
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_mac/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_mac/) for full documentation.
 #'
 #' @param KeyIdentifier &#91;required&#93; The `keyARN` of the MAC generation encryption key.
-#' @param MessageData &#91;required&#93; The data for which a MAC is under generation. This value must be
-#' hexBinary.
-#' @param GenerationAttributes &#91;required&#93; The attributes and data values to use for MAC generation within Amazon
-#' Web Services Payment Cryptography.
+#' @param MessageData &#91;required&#93; The data for which a MAC is under generation. This value must be hexBinary.
+#' @param GenerationAttributes &#91;required&#93; The attributes and data values to use for MAC generation within Amazon Web Services Payment Cryptography.
 #' @param MacLength The length of a MAC under generation.
 #'
 #' @keywords internal
@@ -216,19 +229,12 @@ paymentcryptographydataplane_generate_mac <- function(KeyIdentifier, MessageData
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_mac_emv_pin_change/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_mac_emv_pin_change/) for full documentation.
 #'
 #' @param NewPinPekIdentifier &#91;required&#93; The `keyARN` of the PEK protecting the incoming new encrypted PIN block.
-#' @param NewEncryptedPinBlock &#91;required&#93; The incoming new encrypted PIN block data for offline pin change on an
-#' EMV card.
-#' @param PinBlockFormat &#91;required&#93; The PIN encoding format of the incoming new encrypted PIN block as
-#' specified in ISO 9564.
-#' @param SecureMessagingIntegrityKeyIdentifier &#91;required&#93; The `keyARN` of the issuer master key (IMK-SMI) used to authenticate the
-#' issuer script response.
-#' @param SecureMessagingConfidentialityKeyIdentifier &#91;required&#93; The `keyARN` of the issuer master key (IMK-SMC) used to protect the PIN
-#' block data in the issuer script response.
-#' @param MessageData &#91;required&#93; The message data is the APDU command from the card reader or terminal.
-#' The target encrypted PIN block, after translation to ISO2 format, is
-#' appended to this message data to generate an issuer script response.
-#' @param DerivationMethodAttributes &#91;required&#93; The attributes and data values to derive payment card specific
-#' confidentiality and integrity keys.
+#' @param NewEncryptedPinBlock &#91;required&#93; The incoming new encrypted PIN block data for offline pin change on an EMV card.
+#' @param PinBlockFormat &#91;required&#93; The PIN encoding format of the incoming new encrypted PIN block as specified in ISO 9564.
+#' @param SecureMessagingIntegrityKeyIdentifier &#91;required&#93; The `keyARN` of the issuer master key (IMK-SMI) used to authenticate the issuer script response.
+#' @param SecureMessagingConfidentialityKeyIdentifier &#91;required&#93; The `keyARN` of the issuer master key (IMK-SMC) used to protect the PIN block data in the issuer script response.
+#' @param MessageData &#91;required&#93; The message data is the APDU command from the card reader or terminal. The target encrypted PIN block, after translation to ISO2 format, is appended to this message data to generate an issuer script response.
+#' @param DerivationMethodAttributes &#91;required&#93; The attributes and data values to derive payment card specific confidentiality and integrity keys.
 #'
 #' @keywords internal
 #'
@@ -260,30 +266,19 @@ paymentcryptographydataplane_generate_mac_emv_pin_change <- function(NewPinPekId
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_pin_data/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_generate_pin_data/) for full documentation.
 #'
-#' @param GenerationKeyIdentifier &#91;required&#93; The `keyARN` of the PEK that Amazon Web Services Payment Cryptography
-#' uses for pin data generation.
-#' @param EncryptionKeyIdentifier &#91;required&#93; The `keyARN` of the PEK that Amazon Web Services Payment Cryptography
-#' uses to encrypt the PIN Block. For ECDH, it is the `keyARN` of the
-#' asymmetric ECC key.
+#' @param GenerationKeyIdentifier &#91;required&#93; The `keyARN` of the PEK that Amazon Web Services Payment Cryptography uses for pin data generation.
+#' @param EncryptionKeyIdentifier &#91;required&#93; The `keyARN` of the PEK that Amazon Web Services Payment Cryptography uses to encrypt the PIN Block. For ECDH, it is the `keyARN` of the asymmetric ECC key.
 #' @param GenerationAttributes &#91;required&#93; The attributes and values to use for PIN, PVV, or PIN Offset generation.
 #' @param PinDataLength The length of PIN under generation.
-#' @param PrimaryAccountNumber The Primary Account Number (PAN), a unique identifier for a payment
-#' credit or debit card that associates the card with a specific account
-#' holder.
-#' @param PinBlockFormat &#91;required&#93; The PIN encoding format for pin data generation as specified in ISO
-#' 9564. Amazon Web Services Payment Cryptography supports `ISO_Format_0`,
-#' `ISO_Format_3` and `ISO_Format_4`.
+#' @param PrimaryAccountNumber The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
+#' @param PinBlockFormat &#91;required&#93; The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports `ISO_Format_0`, `ISO_Format_3` and `ISO_Format_4`.
 #' 
-#' The `ISO_Format_0` PIN block format is equivalent to the ANSI X9.8,
-#' VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block
-#' format. It supports a PIN from 4 to 12 digits in length.
+#' The `ISO_Format_0` PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.
 #' 
-#' The `ISO_Format_3` PIN block format is the same as `ISO_Format_0` except
-#' that the fill digits are random values from 10 to 15.
+#' The `ISO_Format_3` PIN block format is the same as `ISO_Format_0` except that the fill digits are random values from 10 to 15.
 #' 
-#' The `ISO_Format_4` PIN block format is the only one supporting AES
-#' encryption.
-#' @param EncryptionWrappedKey 
+#' The `ISO_Format_4` PIN block format is the only one supporting AES encryption.
+#' @param EncryptionWrappedKey Parameter information of a WrappedKeyBlock for encryption key exchange.
 #'
 #' @keywords internal
 #'
@@ -316,20 +311,13 @@ paymentcryptographydataplane_generate_pin_data <- function(GenerationKeyIdentifi
 #'
 #' @param IncomingKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key of incoming ciphertext data.
 #' 
-#' When a WrappedKeyBlock is provided, this value will be the identifier to
-#' the key wrapping key. Otherwise, it is the key identifier used to
-#' perform the operation.
-#' @param OutgoingKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key of outgoing ciphertext data after
-#' encryption by Amazon Web Services Payment Cryptography.
-#' @param CipherText &#91;required&#93; Ciphertext to be encrypted. The minimum allowed length is 16 bytes and
-#' maximum allowed length is 4096 bytes.
+#' When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.
+#' @param OutgoingKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.
+#' @param CipherText &#91;required&#93; Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.
 #' @param IncomingEncryptionAttributes &#91;required&#93; The attributes and values for incoming ciphertext.
-#' @param OutgoingEncryptionAttributes &#91;required&#93; The attributes and values for outgoing ciphertext data after encryption
-#' by Amazon Web Services Payment Cryptography.
-#' @param IncomingWrappedKey The WrappedKeyBlock containing the encryption key of incoming ciphertext
-#' data.
-#' @param OutgoingWrappedKey The WrappedKeyBlock containing the encryption key of outgoing ciphertext
-#' data after encryption by Amazon Web Services Payment Cryptography.
+#' @param OutgoingEncryptionAttributes &#91;required&#93; The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.
+#' @param IncomingWrappedKey The WrappedKeyBlock containing the encryption key of incoming ciphertext data.
+#' @param OutgoingWrappedKey The WrappedKeyBlock containing the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.
 #'
 #' @keywords internal
 #'
@@ -361,12 +349,9 @@ paymentcryptographydataplane_re_encrypt_data <- function(IncomingKeyIdentifier, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_translate_key_material/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_translate_key_material/) for full documentation.
 #'
-#' @param IncomingKeyMaterial &#91;required&#93; Parameter information of the TR31WrappedKeyBlock containing the
-#' transaction key.
-#' @param OutgoingKeyMaterial &#91;required&#93; Parameter information of the wrapping key used to wrap the transaction
-#' key in the outgoing TR31WrappedKeyBlock.
-#' @param KeyCheckValueAlgorithm The key check value (KCV) algorithm used for calculating the KCV of the
-#' derived key.
+#' @param IncomingKeyMaterial &#91;required&#93; Parameter information of the TR31WrappedKeyBlock containing the transaction key.
+#' @param OutgoingKeyMaterial &#91;required&#93; Parameter information of the wrapping key used to wrap the transaction key in the outgoing TR31WrappedKeyBlock.
+#' @param KeyCheckValueAlgorithm The key check value (KCV) algorithm used for calculating the KCV of the derived key.
 #'
 #' @keywords internal
 #'
@@ -397,31 +382,20 @@ paymentcryptographydataplane_translate_key_material <- function(IncomingKeyMater
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_translate_pin_data/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_translate_pin_data/) for full documentation.
 #'
-#' @param IncomingKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key under which incoming PIN block data
-#' is encrypted. This key type can be PEK or BDK.
+#' @param IncomingKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key under which incoming PIN block data is encrypted. This key type can be PEK or BDK.
 #' 
-#' For dynamic keys, it is the `keyARN` of KEK of the TR-31 wrapped PEK.
-#' For ECDH, it is the `keyARN` of the asymmetric ECC key.
-#' @param OutgoingKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key for encrypting outgoing PIN block
-#' data. This key type can be PEK or BDK.
+#' For dynamic keys, it is the `keyARN` of KEK of the TR-31 wrapped PEK. For ECDH, it is the `keyARN` of the asymmetric ECC key.
+#' @param OutgoingKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key for encrypting outgoing PIN block data. This key type can be PEK or BDK.
 #' 
 #' For ECDH, it is the `keyARN` of the asymmetric ECC key.
-#' @param IncomingTranslationAttributes &#91;required&#93; The format of the incoming PIN block data for translation within Amazon
-#' Web Services Payment Cryptography.
-#' @param OutgoingTranslationAttributes &#91;required&#93; The format of the outgoing PIN block data after translation by Amazon
-#' Web Services Payment Cryptography.
-#' @param EncryptedPinBlock &#91;required&#93; The encrypted PIN block data that Amazon Web Services Payment
-#' Cryptography translates.
-#' @param IncomingDukptAttributes The attributes and values to use for incoming DUKPT encryption key for
-#' PIN block translation.
-#' @param OutgoingDukptAttributes The attributes and values to use for outgoing DUKPT encryption key after
-#' PIN block translation.
-#' @param IncomingWrappedKey The WrappedKeyBlock containing the encryption key under which incoming
-#' PIN block data is encrypted.
-#' @param OutgoingWrappedKey The WrappedKeyBlock containing the encryption key for encrypting
-#' outgoing PIN block data.
-#' @param IncomingAs2805Attributes The attributes and values to use for incoming AS2805 encryption key for
-#' PIN block translation.
+#' @param IncomingTranslationAttributes &#91;required&#93; The format of the incoming PIN block data for translation within Amazon Web Services Payment Cryptography.
+#' @param OutgoingTranslationAttributes &#91;required&#93; The format of the outgoing PIN block data after translation by Amazon Web Services Payment Cryptography.
+#' @param EncryptedPinBlock &#91;required&#93; The encrypted PIN block data that Amazon Web Services Payment Cryptography translates.
+#' @param IncomingDukptAttributes The attributes and values to use for incoming DUKPT encryption key for PIN block translation.
+#' @param OutgoingDukptAttributes The attributes and values to use for outgoing DUKPT encryption key after PIN block translation.
+#' @param IncomingWrappedKey The WrappedKeyBlock containing the encryption key under which incoming PIN block data is encrypted.
+#' @param OutgoingWrappedKey The WrappedKeyBlock containing the encryption key for encrypting outgoing PIN block data.
+#' @param IncomingAs2805Attributes The attributes and values to use for incoming AS2805 encryption key for PIN block translation.
 #'
 #' @keywords internal
 #'
@@ -453,25 +427,12 @@ paymentcryptographydataplane_translate_pin_data <- function(IncomingKeyIdentifie
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_verify_auth_request_cryptogram/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_verify_auth_request_cryptogram/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the major encryption key that Amazon Web Services
-#' Payment Cryptography uses for ARQC verification.
-#' @param TransactionData &#91;required&#93; The transaction data that Amazon Web Services Payment Cryptography uses
-#' for ARQC verification. The same transaction is used for ARQC generation
-#' outside of Amazon Web Services Payment Cryptography.
-#' @param AuthRequestCryptogram &#91;required&#93; The auth request cryptogram imported into Amazon Web Services Payment
-#' Cryptography for ARQC verification using a major encryption key and
-#' transaction data.
-#' @param MajorKeyDerivationMode &#91;required&#93; The method to use when deriving the major encryption key for ARQC
-#' verification within Amazon Web Services Payment Cryptography. The same
-#' key derivation mode was used for ARQC generation outside of Amazon Web
-#' Services Payment Cryptography.
-#' @param SessionKeyDerivationAttributes &#91;required&#93; The attributes and values to use for deriving a session key for ARQC
-#' verification within Amazon Web Services Payment Cryptography. The same
-#' attributes were used for ARQC generation outside of Amazon Web Services
-#' Payment Cryptography.
-#' @param AuthResponseAttributes The attributes and values for auth request cryptogram verification.
-#' These parameters are required in case using ARPC Method 1 or Method 2
-#' for ARQC verification.
+#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the major encryption key that Amazon Web Services Payment Cryptography uses for ARQC verification.
+#' @param TransactionData &#91;required&#93; The transaction data that Amazon Web Services Payment Cryptography uses for ARQC verification. The same transaction is used for ARQC generation outside of Amazon Web Services Payment Cryptography.
+#' @param AuthRequestCryptogram &#91;required&#93; The auth request cryptogram imported into Amazon Web Services Payment Cryptography for ARQC verification using a major encryption key and transaction data.
+#' @param MajorKeyDerivationMode &#91;required&#93; The method to use when deriving the major encryption key for ARQC verification within Amazon Web Services Payment Cryptography. The same key derivation mode was used for ARQC generation outside of Amazon Web Services Payment Cryptography.
+#' @param SessionKeyDerivationAttributes &#91;required&#93; The attributes and values to use for deriving a session key for ARQC verification within Amazon Web Services Payment Cryptography. The same attributes were used for ARQC generation outside of Amazon Web Services Payment Cryptography.
+#' @param AuthResponseAttributes The attributes and values for auth request cryptogram verification. These parameters are required in case using ARPC Method 1 or Method 2 for ARQC verification.
 #'
 #' @keywords internal
 #'
@@ -504,15 +465,10 @@ paymentcryptographydataplane_verify_auth_request_cryptogram <- function(KeyIdent
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_verify_card_validation_data/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_verify_card_validation_data/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the CVK encryption key that Amazon Web Services Payment
-#' Cryptography uses to verify card data.
-#' @param PrimaryAccountNumber &#91;required&#93; The Primary Account Number (PAN), a unique identifier for a payment
-#' credit or debit card that associates the card with a specific account
-#' holder.
-#' @param VerificationAttributes &#91;required&#93; The algorithm to use for verification of card data within Amazon Web
-#' Services Payment Cryptography.
-#' @param ValidationData &#91;required&#93; The CVV or CSC value for use for card data verification within Amazon
-#' Web Services Payment Cryptography.
+#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the CVK encryption key that Amazon Web Services Payment Cryptography uses to verify card data.
+#' @param PrimaryAccountNumber &#91;required&#93; The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
+#' @param VerificationAttributes &#91;required&#93; The algorithm to use for verification of card data within Amazon Web Services Payment Cryptography.
+#' @param ValidationData &#91;required&#93; The CVV or CSC value for use for card data verification within Amazon Web Services Payment Cryptography.
 #'
 #' @keywords internal
 #'
@@ -543,13 +499,10 @@ paymentcryptographydataplane_verify_card_validation_data <- function(KeyIdentifi
 #'
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_verify_mac/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_verify_mac/) for full documentation.
 #'
-#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the encryption key that Amazon Web Services Payment
-#' Cryptography uses to verify MAC data.
-#' @param MessageData &#91;required&#93; The data on for which MAC is under verification. This value must be
-#' hexBinary.
+#' @param KeyIdentifier &#91;required&#93; The `keyARN` of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.
+#' @param MessageData &#91;required&#93; The data on for which MAC is under verification. This value must be hexBinary.
 #' @param Mac &#91;required&#93; The MAC being verified.
-#' @param VerificationAttributes &#91;required&#93; The attributes and data values to use for MAC verification within Amazon
-#' Web Services Payment Cryptography.
+#' @param VerificationAttributes &#91;required&#93; The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.
 #' @param MacLength The length of the MAC.
 #'
 #' @keywords internal
@@ -583,27 +536,18 @@ paymentcryptographydataplane_verify_mac <- function(KeyIdentifier, MessageData, 
 #' See [https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_verify_pin_data/](https://www.paws-r-sdk.com/docs/paymentcryptographydataplane_verify_pin_data/) for full documentation.
 #'
 #' @param VerificationKeyIdentifier &#91;required&#93; The `keyARN` of the PIN verification key.
-#' @param EncryptionKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key under which the PIN block data is
-#' encrypted. This key type can be PEK or BDK.
+#' @param EncryptionKeyIdentifier &#91;required&#93; The `keyARN` of the encryption key under which the PIN block data is encrypted. This key type can be PEK or BDK.
 #' @param VerificationAttributes &#91;required&#93; The attributes and values for PIN data verification.
-#' @param EncryptedPinBlock &#91;required&#93; The encrypted PIN block data that Amazon Web Services Payment
-#' Cryptography verifies.
-#' @param PrimaryAccountNumber The Primary Account Number (PAN), a unique identifier for a payment
-#' credit or debit card that associates the card with a specific account
-#' holder.
-#' @param PinBlockFormat &#91;required&#93; The PIN encoding format for pin data generation as specified in ISO
-#' 9564. Amazon Web Services Payment Cryptography supports `ISO_Format_0`
-#' and `ISO_Format_3`.
+#' @param EncryptedPinBlock &#91;required&#93; The encrypted PIN block data that Amazon Web Services Payment Cryptography verifies.
+#' @param PrimaryAccountNumber The Primary Account Number (PAN), a unique identifier for a payment credit or debit card that associates the card with a specific account holder.
+#' @param PinBlockFormat &#91;required&#93; The PIN encoding format for pin data generation as specified in ISO 9564. Amazon Web Services Payment Cryptography supports `ISO_Format_0` and `ISO_Format_3`.
 #' 
-#' The `ISO_Format_0` PIN block format is equivalent to the ANSI X9.8,
-#' VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block
-#' format. It supports a PIN from 4 to 12 digits in length.
+#' The `ISO_Format_0` PIN block format is equivalent to the ANSI X9.8, VISA-1, and ECI-1 PIN block formats. It is similar to a VISA-4 PIN block format. It supports a PIN from 4 to 12 digits in length.
 #' 
-#' The `ISO_Format_3` PIN block format is the same as `ISO_Format_0` except
-#' that the fill digits are random values from 10 to 15.
+#' The `ISO_Format_3` PIN block format is the same as `ISO_Format_0` except that the fill digits are random values from 10 to 15.
 #' @param PinDataLength The length of PIN being verified.
 #' @param DukptAttributes The attributes and values for the DUKPT encrypted PIN block data.
-#' @param EncryptionWrappedKey 
+#' @param EncryptionWrappedKey Parameter information of a WrappedKeyBlock for encryption key exchange.
 #'
 #' @keywords internal
 #'

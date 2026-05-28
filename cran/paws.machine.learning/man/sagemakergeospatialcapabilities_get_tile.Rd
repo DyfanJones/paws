@@ -30,13 +30,11 @@ sagemakergeospatialcapabilities_get_tile(
 
 \item{OutputDataType}{The output data type of the tile operation.}
 
-\item{OutputFormat}{The data format of the output tile. The formats include .npy, .png and
-.jpg.}
+\item{OutputFormat}{The data format of the output tile. The formats include .npy, .png and .jpg.}
 
 \item{PropertyFilters}{Property filters for the imagery to tile.}
 
-\item{Target}{[required] Determines what part of the Earth Observation job to tile. 'INPUT' or
-'OUTPUT' are the valid options.}
+\item{Target}{[required] Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.}
 
 \item{TimeRangeFilter}{Time range filter applied to imagery to find the images to tile.}
 

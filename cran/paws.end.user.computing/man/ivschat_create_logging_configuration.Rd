@@ -14,16 +14,9 @@ ivschat_create_logging_configuration(
 \arguments{
 \item{name}{Logging-configuration name. The value does not need to be unique.}
 
-\item{destinationConfiguration}{[required] A complex type that contains a destination configuration for where chat
-content will be logged. There can be only one type of destination
-(\code{cloudWatchLogs}, \code{firehose}, or \code{s3}) in a \code{destinationConfiguration}.}
+\item{destinationConfiguration}{[required] A complex type that contains a destination configuration for where chat content will be logged. There can be only one type of destination (\code{cloudWatchLogs}, \code{firehose}, or \code{s3}) in a \code{destinationConfiguration}.}
 
-\item{tags}{Tags to attach to the resource. Array of maps, each of the form
-\code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies}
-in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details,
-including restrictions that apply to tags and "Tag naming limits and
-requirements"; Amazon IVS Chat has no constraints on tags beyond what is
-documented there.}
+\item{tags}{Tags to attach to the resource. Array of maps, each of the form \code{string:string (key:value)}. See \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/best-practices-and-strats.html}{Best practices and strategies} in \emph{Tagging Amazon Web Services Resources and Tag Editor} for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond what is documented there.}
 }
 \description{
 Creates a logging configuration that allows clients to store and record sent messages.

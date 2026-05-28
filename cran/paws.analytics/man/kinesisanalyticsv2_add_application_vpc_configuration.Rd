@@ -14,24 +14,11 @@ kinesisanalyticsv2_add_application_vpc_configuration(
 \arguments{
 \item{ApplicationName}{[required] The name of an existing application.}
 
-\item{CurrentApplicationVersionId}{The version of the application to which you want to add the VPC
-configuration. You must provide the \code{CurrentApplicationVersionId} or the
-\code{ConditionalToken}. You can use the
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}
-operation to get the current application version. If the version
-specified is not the current version, the
-\code{ConcurrentModificationException} is returned. For better concurrency
-support, use the \code{ConditionalToken} parameter instead of
-\code{CurrentApplicationVersionId}.}
+\item{CurrentApplicationVersionId}{The version of the application to which you want to add the VPC configuration. You must provide the \code{CurrentApplicationVersionId} or the \code{ConditionalToken}. You can use the \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}} operation to get the current application version. If the version specified is not the current version, the \code{ConcurrentModificationException} is returned. For better concurrency support, use the \code{ConditionalToken} parameter instead of \code{CurrentApplicationVersionId}.}
 
 \item{VpcConfiguration}{[required] Description of the VPC to add to the application.}
 
-\item{ConditionalToken}{A value you use to implement strong concurrency for application updates.
-You must provide the \code{ApplicationVersionID} or the \code{ConditionalToken}.
-You get the application's current \code{ConditionalToken} using
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}. For
-better concurrency support, use the \code{ConditionalToken} parameter instead
-of \code{CurrentApplicationVersionId}.}
+\item{ConditionalToken}{A value you use to implement strong concurrency for application updates. You must provide the \code{ApplicationVersionID} or the \code{ConditionalToken}. You get the application's current \code{ConditionalToken} using \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}. For better concurrency support, use the \code{ConditionalToken} parameter instead of \code{CurrentApplicationVersionId}.}
 }
 \description{
 Adds a Virtual Private Cloud (VPC) configuration to the application. Applications can use VPCs to store and access resources securely.

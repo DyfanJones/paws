@@ -13,16 +13,11 @@ lakeformation_get_effective_permissions_for_path(
 )
 }
 \arguments{
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, and other control information to manage
-your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.}
 
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to get
-permissions.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which you want to get permissions.}
 
-\item{NextToken}{A continuation token, if this is not the first call to retrieve this
-list.}
+\item{NextToken}{A continuation token, if this is not the first call to retrieve this list.}
 
 \item{MaxResults}{The maximum number of results to return.}
 }

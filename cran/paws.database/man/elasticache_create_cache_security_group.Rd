@@ -11,18 +11,15 @@ elasticache_create_cache_security_group(
 )
 }
 \arguments{
-\item{CacheSecurityGroupName}{[required] A name for the cache security group. This value is stored as a lowercase
-string.
+\item{CacheSecurityGroupName}{[required] A name for the cache security group. This value is stored as a lowercase string.
 
-Constraints: Must contain no more than 255 alphanumeric characters.
-Cannot be the word "Default".
+Constraints: Must contain no more than 255 alphanumeric characters. Cannot be the word "Default".
 
 Example: \code{mysecuritygroup}}
 
 \item{Description}{[required] A description for the cache security group.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Creates a new cache security group. Use a cache security group to control access to one or more clusters.

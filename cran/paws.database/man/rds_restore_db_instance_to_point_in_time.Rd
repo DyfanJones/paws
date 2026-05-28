@@ -82,26 +82,19 @@ Constraints:
 \itemize{
 \item Must be a time in Universal Coordinated Time (UTC) format.
 \item Must be before the latest restorable time for the DB instance.
-\item Can't be specified if the \code{UseLatestRestorableTime} parameter is
-enabled.
+\item Can't be specified if the \code{UseLatestRestorableTime} parameter is enabled.
 }
 
 Example: \verb{2009-09-07T23:45:00Z}}
 
-\item{UseLatestRestorableTime}{Specifies whether the DB instance is restored from the latest backup
-time. By default, the DB instance isn't restored from the latest backup
-time.
+\item{UseLatestRestorableTime}{Specifies whether the DB instance is restored from the latest backup time. By default, the DB instance isn't restored from the latest backup time.
 
 Constraints:
 \itemize{
 \item Can't be specified if the \code{RestoreTime} parameter is provided.
 }}
 
-\item{DBInstanceClass}{The compute and memory capacity of the Amazon RDS DB instance, for
-example db.m4.large. Not all DB instance classes are available in all
-Amazon Web Services Regions, or for all database engines. For the full
-list of DB instance classes, and availability for your engine, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html}{DB Instance Class}
-in the \emph{Amazon RDS User Guide}.
+\item{DBInstanceClass}{The compute and memory capacity of the Amazon RDS DB instance, for example db.m4.large. Not all DB instance classes are available in all Amazon Web Services Regions, or for all database engines. For the full list of DB instance classes, and availability for your engine, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html}{DB Instance Class} in the \emph{Amazon RDS User Guide}.
 
 Default: The same DB instance class as the original DB instance.}
 
@@ -120,8 +113,7 @@ Default: A random, system-chosen Availability Zone.
 
 Constraints:
 \itemize{
-\item You can't specify the \code{AvailabilityZone} parameter if the DB
-instance is a Multi-AZ deployment.
+\item You can't specify the \code{AvailabilityZone} parameter if the DB instance is a Multi-AZ deployment.
 }
 
 Example: \verb{us-east-1a}}
@@ -141,42 +133,26 @@ This setting doesn't apply to RDS Custom.
 
 Constraints:
 \itemize{
-\item You can't specify the \code{AvailabilityZone} parameter if the DB
-instance is a Multi-AZ deployment.
+\item You can't specify the \code{AvailabilityZone} parameter if the DB instance is a Multi-AZ deployment.
 }}
 
 \item{PubliclyAccessible}{Specifies whether the DB instance is publicly accessible.
 
-When the DB cluster is publicly accessible, its Domain Name System (DNS)
-endpoint resolves to the private IP address from within the DB cluster's
-virtual private cloud (VPC). It resolves to the public IP address from
-outside of the DB cluster's VPC. Access to the DB cluster is ultimately
-controlled by the security group it uses. That public access isn't
-permitted if the security group assigned to the DB cluster doesn't
-permit it.
+When the DB cluster is publicly accessible, its Domain Name System (DNS) endpoint resolves to the private IP address from within the DB cluster's virtual private cloud (VPC). It resolves to the public IP address from outside of the DB cluster's VPC. Access to the DB cluster is ultimately controlled by the security group it uses. That public access isn't permitted if the security group assigned to the DB cluster doesn't permit it.
 
-When the DB instance isn't publicly accessible, it is an internal DB
-instance with a DNS name that resolves to a private IP address.
+When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a private IP address.
 
-For more information, see
-\code{\link[=rds_create_db_instance]{create_db_instance}}.}
+For more information, see \code{\link[=rds_create_db_instance]{create_db_instance}}.}
 
-\item{AutoMinorVersionUpgrade}{Specifies whether minor version upgrades are applied automatically to
-the DB instance during the maintenance window.
+\item{AutoMinorVersionUpgrade}{Specifies whether minor version upgrades are applied automatically to the DB instance during the maintenance window.
 
 This setting doesn't apply to RDS Custom.
 
-For more information about automatic minor version upgrades, see
-\href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades}{Automatically upgrading the minor engine version}.}
+For more information about automatic minor version upgrades, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Upgrading.html#USER_UpgradeDBInstance.Upgrading.AutoMinorVersionUpgrades}{Automatically upgrading the minor engine version}.}
 
 \item{LicenseModel}{The license model information for the restored DB instance.
 
-License models for RDS for Db2 require additional configuration. The
-bring your own license (BYOL) model requires a custom parameter group
-and an Amazon Web Services License Manager self-managed license. The Db2
-license through Amazon Web Services Marketplace model requires an Amazon
-Web Services Marketplace subscription. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html}{Amazon RDS for Db2 licensing options}
-in the \emph{Amazon RDS User Guide}.
+License models for RDS for Db2 require additional configuration. The bring your own license (BYOL) model requires a custom parameter group and an Amazon Web Services License Manager self-managed license. The Db2 license through Amazon Web Services Marketplace model requires an Amazon Web Services Marketplace subscription. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/db2-licensing.html}{Amazon RDS for Db2 licensing options} in the \emph{Amazon RDS User Guide}.
 
 This setting doesn't apply to Amazon Aurora or RDS Custom DB instances.
 
@@ -230,8 +206,7 @@ Constraints:
 \item Must be compatible with the engine of the source.
 }}
 
-\item{Iops}{The amount of Provisioned IOPS (input/output operations per second) to
-initially allocate for the DB instance.
+\item{Iops}{The amount of Provisioned IOPS (input/output operations per second) to initially allocate for the DB instance.
 
 This setting doesn't apply to SQL Server.
 
@@ -246,14 +221,15 @@ This setting doesn't apply to RDS Custom or Amazon Aurora.}
 
 \item{OptionGroupName}{The name of the option group to use for the restored DB instance.
 
-Permanent options, such as the TDE option for Oracle Advanced Security
-TDE, can't be removed from an option group, and that option group can't
-be removed from a DB instance after it is associated with a DB instance
+Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option group, and that option group can't be removed from a DB instance after it is associated with a DB instance
 
 This setting doesn't apply to RDS Custom.}
 
-\item{CopyTagsToSnapshot}{Specifies whether to copy all tags from the restored DB instance to
-snapshots of the DB instance. By default, tags are not copied.}
+\item{CopyTagsToSnapshot}{Specifies whether to copy all tags from the restored DB instance to snapshots of the DB instance. By default, tags are not copied.}
+
+\item{Tags}{A list of tags.
+
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
 
 \item{StorageType}{The storage type to associate with the DB instance.
 
@@ -263,37 +239,28 @@ Default: \code{io1}, if the \code{Iops} parameter is specified. Otherwise, \code
 
 Constraints:
 \itemize{
-\item If you specify \code{io1}, \code{io2}, or \code{gp3}, you must also include a value
-for the \code{Iops} parameter.
+\item If you specify \code{io1}, \code{io2}, or \code{gp3}, you must also include a value for the \code{Iops} parameter.
 }}
 
-\item{TdeCredentialArn}{The ARN from the key store with which to associate the instance for TDE
-encryption.
+\item{TdeCredentialArn}{The ARN from the key store with which to associate the instance for TDE encryption.
 
 This setting doesn't apply to RDS Custom.}
 
-\item{TdeCredentialPassword}{The password for the given ARN from the key store in order to access the
-device.
+\item{TdeCredentialPassword}{The password for the given ARN from the key store in order to access the device.
 
 This setting doesn't apply to RDS Custom.}
 
 \item{VpcSecurityGroupIds}{A list of EC2 VPC security groups to associate with this DB instance.
 
-Default: The default EC2 VPC security group for the DB subnet group's
-VPC.}
+Default: The default EC2 VPC security group for the DB subnet group's VPC.}
 
-\item{Domain}{The Active Directory directory ID to restore the DB instance in. Create
-the domain before running this command. Currently, you can create only
-the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in
-an Active Directory Domain.
+\item{Domain}{The Active Directory directory ID to restore the DB instance in. Create the domain before running this command. Currently, you can create only the MySQL, Microsoft SQL Server, Oracle, and PostgreSQL DB instances in an Active Directory Domain.
 
 This setting doesn't apply to RDS Custom.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/database-authentication.html}{Kerberos Authentication}
-in the \emph{Amazon RDS User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/database-authentication.html}{Kerberos Authentication} in the \emph{Amazon RDS User Guide}.}
 
-\item{DomainIAMRoleName}{The name of the IAM role to use when making API calls to the Directory
-Service.
+\item{DomainIAMRoleName}{The name of the IAM role to use when making API calls to the Directory Service.
 
 This setting doesn't apply to RDS Custom DB instances.}
 
@@ -314,62 +281,47 @@ Constraints:
 \item Can't be longer than 64 characters.
 }
 
-Example:
-\verb{OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain}}
+Example: \verb{OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain}}
 
-\item{DomainAuthSecretArn}{The ARN for the Secrets Manager secret with the credentials for the user
-joining the domain.
+\item{DomainAuthSecretArn}{The ARN for the Secrets Manager secret with the credentials for the user joining the domain.
 
 Constraints:
 \itemize{
 \item Can't be longer than 64 characters.
 }
 
-Example:
-\code{arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456}}
+Example: \code{arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456}}
 
-\item{DomainDnsIps}{The IPv4 DNS IP addresses of your primary and secondary Active Directory
-domain controllers.
+\item{DomainDnsIps}{The IPv4 DNS IP addresses of your primary and secondary Active Directory domain controllers.
 
 Constraints:
 \itemize{
-\item Two IP addresses must be provided. If there isn't a secondary domain
-controller, use the IP address of the primary domain controller for
-both entries in the list.
+\item Two IP addresses must be provided. If there isn't a secondary domain controller, use the IP address of the primary domain controller for both entries in the list.
 }
 
 Example: \verb{123.124.125.126,234.235.236.237}}
 
-\item{EnableIAMDatabaseAuthentication}{Specifies whether to enable mapping of Amazon Web Services Identity and
-Access Management (IAM) accounts to database accounts. By default,
-mapping isn't enabled.
+\item{EnableIAMDatabaseAuthentication}{Specifies whether to enable mapping of Amazon Web Services Identity and Access Management (IAM) accounts to database accounts. By default, mapping isn't enabled.
 
 This setting doesn't apply to RDS Custom.
 
-For more information about IAM database authentication, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html}{IAM Database Authentication for MySQL and PostgreSQL}
-in the \emph{Amazon RDS User Guide.}}
+For more information about IAM database authentication, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html}{IAM Database Authentication for MySQL and PostgreSQL} in the \emph{Amazon RDS User Guide.}}
 
-\item{EnableCloudwatchLogsExports}{The list of logs that the restored DB instance is to export to
-CloudWatch Logs. The values in the list depend on the DB engine being
-used. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch}{Publishing Database Logs to Amazon CloudWatch Logs}
-in the \emph{Amazon RDS User Guide}.
+\item{EnableCloudwatchLogsExports}{The list of logs that the restored DB instance is to export to CloudWatch Logs. The values in the list depend on the DB engine being used. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch}{Publishing Database Logs to Amazon CloudWatch Logs} in the \emph{Amazon RDS User Guide}.
 
 This setting doesn't apply to RDS Custom.}
 
-\item{ProcessorFeatures}{The number of CPU cores and the number of threads per core for the DB
-instance class of the DB instance.
+\item{ProcessorFeatures}{The number of CPU cores and the number of threads per core for the DB instance class of the DB instance.
 
 This setting doesn't apply to RDS Custom.}
 
-\item{UseDefaultProcessorFeatures}{Specifies whether the DB instance class of the DB instance uses its
-default processor features.
+\item{UseDefaultProcessorFeatures}{Specifies whether the DB instance class of the DB instance uses its default processor features.
 
 This setting doesn't apply to RDS Custom.}
 
 \item{DBParameterGroupName}{The name of the DB parameter group to associate with this DB instance.
 
-If you do not specify a value for \code{DBParameterGroupName}, then the
-default \code{DBParameterGroup} for the specified DB engine is used.
+If you do not specify a value for \code{DBParameterGroupName}, then the default \code{DBParameterGroup} for the specified DB engine is used.
 
 This setting doesn't apply to RDS Custom.
 
@@ -381,46 +333,31 @@ Constraints:
 \item Can't end with a hyphen or contain two consecutive hyphens.
 }}
 
-\item{DeletionProtection}{Specifies whether the DB instance has deletion protection enabled. The
-database can't be deleted when deletion protection is enabled. By
-default, deletion protection isn't enabled. For more information, see
-\href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html}{Deleting a DB Instance}.}
+\item{DeletionProtection}{Specifies whether the DB instance has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection isn't enabled. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html}{Deleting a DB Instance}.}
 
 \item{SourceDbiResourceId}{The resource ID of the source DB instance from which to restore.}
 
-\item{MaxAllocatedStorage}{The upper limit in gibibytes (GiB) to which Amazon RDS can automatically
-scale the storage of the DB instance.
+\item{MaxAllocatedStorage}{The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.
 
-For more information about this setting, including limitations that
-apply to it, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling}{Managing capacity automatically with Amazon RDS storage autoscaling}
-in the \emph{Amazon RDS User Guide}.
+For more information about this setting, including limitations that apply to it, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling}{Managing capacity automatically with Amazon RDS storage autoscaling} in the \emph{Amazon RDS User Guide}.
 
 This setting doesn't apply to RDS Custom.}
 
-\item{EnableCustomerOwnedIp}{Specifies whether to enable a customer-owned IP address (CoIP) for an
-RDS on Outposts DB instance.
+\item{EnableCustomerOwnedIp}{Specifies whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
 
-A \emph{CoIP} provides local or external connectivity to resources in your
-Outpost subnets through your on-premises network. For some use cases, a
-CoIP can provide lower latency for connections to the DB instance from
-outside of its virtual private cloud (VPC) on your local network.
+A \emph{CoIP} provides local or external connectivity to resources in your Outpost subnets through your on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from outside of its virtual private cloud (VPC) on your local network.
 
 This setting doesn't apply to RDS Custom.
 
-For more information about RDS on Outposts, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html}{Working with Amazon RDS on Amazon Web Services Outposts}
-in the \emph{Amazon RDS User Guide}.
+For more information about RDS on Outposts, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html}{Working with Amazon RDS on Amazon Web Services Outposts} in the \emph{Amazon RDS User Guide}.
 
-For more information about CoIPs, see \href{https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing}{Customer-owned IP addresses}
-in the \emph{Amazon Web Services Outposts User Guide}.}
+For more information about CoIPs, see \href{https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing}{Customer-owned IP addresses} in the \emph{Amazon Web Services Outposts User Guide}.}
 
 \item{NetworkType}{The network type of the DB instance.
 
-The network type is determined by the \code{DBSubnetGroup} specified for the
-DB instance. A \code{DBSubnetGroup} can support only the IPv4 protocol or the
-IPv4 and the IPv6 protocols (\code{DUAL}).
+The network type is determined by the \code{DBSubnetGroup} specified for the DB instance. A \code{DBSubnetGroup} can support only the IPv4 protocol or the IPv4 and the IPv6 protocols (\code{DUAL}).
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html}{Working with a DB instance in a VPC}
-in the \emph{Amazon RDS User Guide.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html}{Working with a DB instance in a VPC} in the \emph{Amazon RDS User Guide.}
 
 Valid Values:
 \itemize{
@@ -428,14 +365,11 @@ Valid Values:
 \item \code{DUAL}
 }}
 
-\item{SourceDBInstanceAutomatedBackupsArn}{The Amazon Resource Name (ARN) of the replicated automated backups from
-which to restore, for example,
-\code{arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE}.
+\item{SourceDBInstanceAutomatedBackupsArn}{The Amazon Resource Name (ARN) of the replicated automated backups from which to restore, for example, \code{arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE}.
 
 This setting doesn't apply to RDS Custom.}
 
-\item{BackupTarget}{The location for storing automated backups and manual snapshots for the
-restored DB instance.
+\item{BackupTarget}{The location for storing automated backups and manual snapshots for the restored DB instance.
 
 Valid Values:
 \itemize{
@@ -446,46 +380,30 @@ Valid Values:
 
 Default: \code{region}
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html}{Working with Amazon RDS on Amazon Web Services Outposts}
-in the \emph{Amazon RDS User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html}{Working with Amazon RDS on Amazon Web Services Outposts} in the \emph{Amazon RDS User Guide}.}
 
-\item{CustomIamInstanceProfile}{The instance profile associated with the underlying Amazon EC2 instance
-of an RDS Custom DB instance. The instance profile must meet the
-following requirements:
+\item{CustomIamInstanceProfile}{The instance profile associated with the underlying Amazon EC2 instance of an RDS Custom DB instance. The instance profile must meet the following requirements:
 \itemize{
 \item The profile must exist in your account.
-\item The profile must have an IAM role that Amazon EC2 has permissions to
-assume.
-\item The instance profile name and the associated IAM role name must
-start with the prefix \code{AWSRDSCustom}.
+\item The profile must have an IAM role that Amazon EC2 has permissions to assume.
+\item The instance profile name and the associated IAM role name must start with the prefix \code{AWSRDSCustom}.
 }
 
-For the list of permissions required for the IAM role, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc}{Configure IAM and your VPC}
-in the \emph{Amazon RDS User Guide}.
+For the list of permissions required for the IAM role, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc}{Configure IAM and your VPC} in the \emph{Amazon RDS User Guide}.
 
 This setting is required for RDS Custom.}
 
-\item{AllocatedStorage}{The amount of storage (in gibibytes) to allocate initially for the DB
-instance. Follow the allocation rules specified in
-\code{\link[=rds_create_db_instance]{create_db_instance}}.
+\item{AllocatedStorage}{The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow the allocation rules specified in \code{\link[=rds_create_db_instance]{create_db_instance}}.
 
 This setting isn't valid for RDS for SQL Server.
 
-Be sure to allocate enough storage for your new DB instance so that the
-restore operation can succeed. You can also allocate additional storage
-for future growth.}
+Be sure to allocate enough storage for your new DB instance so that the restore operation can succeed. You can also allocate additional storage for future growth.}
 
-\item{BackupRetentionPeriod}{The number of days to retain automated backups. Setting this parameter
-to a positive number enables backups. Setting this parameter to 0
-disables automated backups.
+\item{BackupRetentionPeriod}{The number of days to retain automated backups. Setting this parameter to a positive number enables backups. Setting this parameter to 0 disables automated backups.
 
-Enabling and disabling backups can result in a brief I/O suspension that
-lasts from a few seconds to a few minutes, depending on the size and
-class of your DB instance.
+Enabling and disabling backups can result in a brief I/O suspension that lasts from a few seconds to a few minutes, depending on the size and class of your DB instance.
 
-This setting doesn't apply to Amazon Aurora DB instances. The retention
-period for automated backups is managed by the DB cluster. For more
-information, see \code{\link[=rds_modify_db_cluster]{modify_db_cluster}}.
+This setting doesn't apply to Amazon Aurora DB instances. The retention period for automated backups is managed by the DB cluster. For more information, see \code{\link[=rds_modify_db_cluster]{modify_db_cluster}}.
 
 Default: Uses existing setting
 
@@ -496,18 +414,9 @@ Constraints:
 \item Can't be set to 0 for an RDS Custom for Oracle DB instance.
 }}
 
-\item{PreferredBackupWindow}{The daily time range during which automated backups are created if
-automated backups are enabled, as determined by the
-\code{BackupRetentionPeriod} parameter. Changing this parameter doesn't
-result in an outage and the change is asynchronously applied as soon as
-possible. The default is a 30-minute window selected at random from an
-8-hour block of time for each Amazon Web Services Region. For more
-information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow}{Backup window}
-in the \emph{Amazon RDS User Guide}.
+\item{PreferredBackupWindow}{The daily time range during which automated backups are created if automated backups are enabled, as determined by the \code{BackupRetentionPeriod} parameter. Changing this parameter doesn't result in an outage and the change is asynchronously applied as soon as possible. The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow}{Backup window} in the \emph{Amazon RDS User Guide}.
 
-This setting doesn't apply to Amazon Aurora DB instances. The daily time
-range for creating automated backups is managed by the DB cluster. For
-more information, see \code{\link[=rds_modify_db_cluster]{modify_db_cluster}}.
+This setting doesn't apply to Amazon Aurora DB instances. The daily time range for creating automated backups is managed by the DB cluster. For more information, see \code{\link[=rds_modify_db_cluster]{modify_db_cluster}}.
 
 Constraints:
 \itemize{
@@ -517,48 +426,27 @@ Constraints:
 \item Must be at least 30 minutes.
 }}
 
-\item{DedicatedLogVolume}{Specifies whether to enable a dedicated log volume (DLV) for the DB
-instance.}
+\item{DedicatedLogVolume}{Specifies whether to enable a dedicated log volume (DLV) for the DB instance.}
 
-\item{CACertificateIdentifier}{The CA certificate identifier to use for the DB instance's server
-certificate.
+\item{CACertificateIdentifier}{The CA certificate identifier to use for the DB instance's server certificate.
 
 This setting doesn't apply to RDS Custom DB instances.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB instance}
-in the \emph{Amazon RDS User Guide} and \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB cluster}
-in the \emph{Amazon Aurora User Guide}.}
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB instance} in the \emph{Amazon RDS User Guide} and \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.SSL.html}{Using SSL/TLS to encrypt a connection to a DB cluster} in the \emph{Amazon Aurora User Guide}.}
 
 \item{EngineLifecycleSupport}{The life cycle type for this DB instance.
 
-By default, this value is set to \code{open-source-rds-extended-support},
-which enrolls your DB instance into Amazon RDS Extended Support. At the
-end of standard support, you can avoid charges for Extended Support by
-setting the value to \code{open-source-rds-extended-support-disabled}. In
-this case, RDS automatically upgrades your restored DB instance to a
-higher engine version, if the major engine version is past its end of
-standard support date.
+By default, this value is set to \code{open-source-rds-extended-support}, which enrolls your DB instance into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to \code{open-source-rds-extended-support-disabled}. In this case, RDS automatically upgrades your restored DB instance to a higher engine version, if the major engine version is past its end of standard support date.
 
-You can use this setting to enroll your DB instance into Amazon RDS
-Extended Support. With RDS Extended Support, you can run the selected
-major engine version on your DB instance past the end of standard
-support for that engine version. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html}{Amazon RDS Extended Support with Amazon RDS}
-in the \emph{Amazon RDS User Guide}.
+You can use this setting to enroll your DB instance into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your DB instance past the end of standard support for that engine version. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html}{Amazon RDS Extended Support with Amazon RDS} in the \emph{Amazon RDS User Guide}.
 
-This setting applies only to RDS for MySQL and RDS for PostgreSQL. For
-Amazon Aurora DB instances, the life cycle type is managed by the DB
-cluster.
+This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora DB instances, the life cycle type is managed by the DB cluster.
 
-Valid Values:
-\code{open-source-rds-extended-support | open-source-rds-extended-support-disabled}
+Valid Values: \code{open-source-rds-extended-support | open-source-rds-extended-support-disabled}
 
 Default: \code{open-source-rds-extended-support}}
 
-\item{AdditionalStorageVolumes}{A list of additional storage volumes to restore to the DB instance. You
-can restore up to three additional storage volumes using the names
-\code{rdsdbdata2}, \code{rdsdbdata3}, and \code{rdsdbdata4}. Additional storage volumes
-are supported for RDS for Oracle and RDS for SQL Server DB instances
-only.}
+\item{AdditionalStorageVolumes}{A list of additional storage volumes to restore to the DB instance. You can restore up to three additional storage volumes using the names \code{rdsdbdata2}, \code{rdsdbdata3}, and \code{rdsdbdata4}. Additional storage volumes are supported for RDS for Oracle and RDS for SQL Server DB instances only.}
 
 \item{TagSpecifications}{Tags to assign to resources associated with the DB instance.
 
@@ -567,37 +455,24 @@ Valid Values:
 \item \code{auto-backup} - The DB instance's automated backup.
 }}
 
-\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web
-Services Secrets Manager in the restored DB instance.
+\item{ManageMasterUserPassword}{Specifies whether to manage the master user password with Amazon Web Services Secrets Manager in the restored DB instance.
 
-For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager}
-in the \emph{Amazon RDS User Guide}.
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-secrets-manager.html}{Password management with Amazon Web Services Secrets Manager} in the \emph{Amazon RDS User Guide}.
 
 Constraints:
 \itemize{
 \item Applies to RDS for Oracle only.
 }}
 
-\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is
-automatically generated and managed in Amazon Web Services Secrets
-Manager.
+\item{MasterUserSecretKmsKeyId}{The Amazon Web Services KMS key identifier to encrypt a secret that is automatically generated and managed in Amazon Web Services Secrets Manager.
 
-This setting is valid only if the master user password is managed by RDS
-in Amazon Web Services Secrets Manager for the DB instance.
+This setting is valid only if the master user password is managed by RDS in Amazon Web Services Secrets Manager for the DB instance.
 
-The Amazon Web Services KMS key identifier is the key ARN, key ID, alias
-ARN, or alias name for the KMS key. To use a KMS key in a different
-Amazon Web Services account, specify the key ARN or alias ARN.
+The Amazon Web Services KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the KMS key. To use a KMS key in a different Amazon Web Services account, specify the key ARN or alias ARN.
 
-If you don't specify \code{MasterUserSecretKmsKeyId}, then the
-\code{aws/secretsmanager} KMS key is used to encrypt the secret. If the
-secret is in a different Amazon Web Services account, then you can't use
-the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use
-a customer managed KMS key.
+If you don't specify \code{MasterUserSecretKmsKeyId}, then the \code{aws/secretsmanager} KMS key is used to encrypt the secret. If the secret is in a different Amazon Web Services account, then you can't use the \code{aws/secretsmanager} KMS key to encrypt the secret, and you must use a customer managed KMS key.
 
-There is a default KMS key for your Amazon Web Services account. Your
-Amazon Web Services account has a different default KMS key for each
-Amazon Web Services Region.}
+There is a default KMS key for your Amazon Web Services account. Your Amazon Web Services account has a different default KMS key for each Amazon Web Services Region.}
 }
 \description{
 Restores a DB instance to an arbitrary point in time. You can restore to any point in time before the time identified by the \code{LatestRestorableTime} property. You can restore to a point up to the number of days specified by the \code{BackupRetentionPeriod} property.

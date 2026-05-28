@@ -16,14 +16,11 @@ customerprofiles_create_recommender_filter(
 \arguments{
 \item{DomainName}{[required] The unique name of the domain.}
 
-\item{RecommenderFilterName}{[required] The name of the recommender filter. The name must be unique within the
-domain.}
+\item{RecommenderFilterName}{[required] The name of the recommender filter. The name must be unique within the domain.}
 
-\item{RecommenderFilterExpression}{[required] The filter expression that defines which items to include or exclude
-from recommendations.}
+\item{RecommenderFilterExpression}{[required] The filter expression that defines which items to include or exclude from recommendations.}
 
-\item{RecommenderSchemaName}{The name of the recommender schema to use for this recommender filter.
-If not specified, the default schema is used.}
+\item{RecommenderSchemaName}{The name of the recommender schema to use for this recommender filter. If not specified, the default schema is used.}
 
 \item{Description}{A description of the recommender filter.}
 

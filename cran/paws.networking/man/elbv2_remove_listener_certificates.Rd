@@ -10,8 +10,7 @@ elbv2_remove_listener_certificates(ListenerArn, Certificates)
 \arguments{
 \item{ListenerArn}{[required] The Amazon Resource Name (ARN) of the listener.}
 
-\item{Certificates}{[required] The certificate to remove. You can specify one certificate per call. Set
-\code{CertificateArn} to the certificate ARN but do not set \code{IsDefault}.}
+\item{Certificates}{[required] The certificate to remove. You can specify one certificate per call. Set \code{CertificateArn} to the certificate ARN but do not set \code{IsDefault}.}
 }
 \description{
 Removes the specified certificate from the certificate list for the specified HTTPS or TLS listener.

@@ -7,14 +7,11 @@
 dynamodb_list_imports(TableArn = NULL, PageSize = NULL, NextToken = NULL)
 }
 \arguments{
-\item{TableArn}{The Amazon Resource Name (ARN) associated with the table that was
-imported to.}
+\item{TableArn}{The Amazon Resource Name (ARN) associated with the table that was imported to.}
 
 \item{PageSize}{The number of \code{ImportSummary }objects returned in a single page.}
 
-\item{NextToken}{An optional string that, if supplied, must be copied from the output of
-a previous call to \code{\link[=dynamodb_list_imports]{list_imports}}. When
-provided in this manner, the API fetches the next page of results.}
+\item{NextToken}{An optional string that, if supplied, must be copied from the output of a previous call to \code{\link[=dynamodb_list_imports]{list_imports}}. When provided in this manner, the API fetches the next page of results.}
 }
 \description{
 Lists completed imports within the past 90 days.

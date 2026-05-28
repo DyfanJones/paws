@@ -10,8 +10,7 @@ frauddetector_put_kms_encryption_key(kmsEncryptionKeyArn)
 \arguments{
 \item{kmsEncryptionKeyArn}{[required] The KMS encryption key ARN.
 
-The KMS key must be single-Region key. Amazon Fraud Detector does not
-support multi-Region KMS key.}
+The KMS key must be single-Region key. Amazon Fraud Detector does not support multi-Region KMS key.}
 }
 \description{
 Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.

@@ -7,9 +7,7 @@
 fis_list_experiment_templates(maxResults = NULL, nextToken = NULL)
 }
 \arguments{
-\item{maxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned \code{nextToken}
-value.}
+\item{maxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned \code{nextToken} value.}
 
 \item{nextToken}{The token for the next page of results.}
 }

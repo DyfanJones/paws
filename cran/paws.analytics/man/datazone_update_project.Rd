@@ -22,16 +22,13 @@ datazone_update_project(
 
 \item{identifier}{[required] The identifier of the project that is to be updated.}
 
-\item{name}{The name to be updated as part of the
-\code{\link[=datazone_update_project]{update_project}} action.}
+\item{name}{The name to be updated as part of the \code{\link[=datazone_update_project]{update_project}} action.}
 
-\item{description}{The description to be updated as part of the
-\code{\link[=datazone_update_project]{update_project}} action.}
+\item{description}{The description to be updated as part of the \code{\link[=datazone_update_project]{update_project}} action.}
 
 \item{resourceTags}{The resource tags of the project.}
 
-\item{glossaryTerms}{The glossary terms to be updated as part of the
-\code{\link[=datazone_update_project]{update_project}} action.}
+\item{glossaryTerms}{The glossary terms to be updated as part of the \code{\link[=datazone_update_project]{update_project}} action.}
 
 \item{domainUnitId}{The ID of the domain unit.}
 
@@ -39,8 +36,7 @@ datazone_update_project(
 
 \item{userParameters}{The user parameters of the project.}
 
-\item{projectProfileVersion}{The project profile version to which the project should be updated. You
-can only specify the following string for this parameter: \code{latest}.}
+\item{projectProfileVersion}{The project profile version to which the project should be updated. You can only specify the following string for this parameter: \code{latest}.}
 }
 \description{
 Updates the specified project in Amazon DataZone.

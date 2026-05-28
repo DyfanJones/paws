@@ -11,8 +11,7 @@ cloudfrontkeyvaluestore_delete_key(KvsARN, Key, IfMatch)
 
 \item{Key}{[required] The key to delete.}
 
-\item{IfMatch}{[required] The current version (ETag) of the Key Value Store that you are deleting
-keys from, which you can get using DescribeKeyValueStore.}
+\item{IfMatch}{[required] The current version (ETag) of the Key Value Store that you are deleting keys from, which you can get using DescribeKeyValueStore.}
 }
 \description{
 Deletes the key value pair specified by the key.

@@ -28,31 +28,23 @@ lexmodelsv2_update_slot(
 
 \item{slotTypeId}{The unique identifier of the new slot type to associate with this slot.}
 
-\item{valueElicitationSetting}{[required] A new set of prompts that Amazon Lex sends to the user to elicit a
-response the provides a value for the slot.}
+\item{valueElicitationSetting}{[required] A new set of prompts that Amazon Lex sends to the user to elicit a response the provides a value for the slot.}
 
-\item{obfuscationSetting}{New settings that determine how slot values are formatted in Amazon
-CloudWatch logs.}
+\item{obfuscationSetting}{New settings that determine how slot values are formatted in Amazon CloudWatch logs.}
 
 \item{botId}{[required] The unique identifier of the bot that contains the slot.}
 
 \item{botVersion}{[required] The version of the bot that contains the slot. Must always be \code{DRAFT}.}
 
-\item{localeId}{[required] The identifier of the language and locale that contains the slot. The
-string must match one of the supported locales. For more information,
-see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
+\item{localeId}{[required] The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}.}
 
 \item{intentId}{[required] The identifier of the intent that contains the slot.}
 
-\item{multipleValuesSetting}{Determines whether the slot accepts multiple values in one response.
-Multiple value slots are only available in the en-US locale. If you set
-this value to \code{true} in any other locale, Amazon Lex throws a
-\code{ValidationException}.
+\item{multipleValuesSetting}{Determines whether the slot accepts multiple values in one response. Multiple value slots are only available in the en-US locale. If you set this value to \code{true} in any other locale, Amazon Lex throws a \code{ValidationException}.
 
 If the \code{multipleValuesSetting} is not set, the default value is \code{false}.}
 
-\item{subSlotSetting}{Specifications for the constituent sub slots and the expression for the
-composite slot.}
+\item{subSlotSetting}{Specifications for the constituent sub slots and the expression for the composite slot.}
 }
 \description{
 Updates the settings for a slot.

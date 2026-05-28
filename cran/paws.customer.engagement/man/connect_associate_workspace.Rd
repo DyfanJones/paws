@@ -8,13 +8,11 @@ allowing them to access the workspace's configured views and pages}
 connect_associate_workspace(InstanceId, WorkspaceId, ResourceArns)
 }
 \arguments{
-\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID}
-in the Amazon Resource Name (ARN) of the instance.}
+\item{InstanceId}{[required] The identifier of the Amazon Connect instance. You can \href{https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html}{find the instance ID} in the Amazon Resource Name (ARN) of the instance.}
 
 \item{WorkspaceId}{[required] The identifier of the workspace.}
 
-\item{ResourceArns}{[required] The Amazon Resource Names (ARNs) of the resources to associate with the
-workspace. Valid resource types are users and routing profiles.}
+\item{ResourceArns}{[required] The Amazon Resource Names (ARNs) of the resources to associate with the workspace. Valid resource types are users and routing profiles.}
 }
 \description{
 Associates a workspace with one or more users or routing profiles, allowing them to access the workspace's configured views and pages.

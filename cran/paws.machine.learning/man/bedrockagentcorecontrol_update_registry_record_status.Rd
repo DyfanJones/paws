@@ -12,16 +12,13 @@ bedrockagentcorecontrol_update_registry_record_status(
 )
 }
 \arguments{
-\item{registryId}{[required] The identifier of the registry containing the record. You can specify
-either the Amazon Resource Name (ARN) or the ID of the registry.}
+\item{registryId}{[required] The identifier of the registry containing the record. You can specify either the Amazon Resource Name (ARN) or the ID of the registry.}
 
-\item{recordId}{[required] The identifier of the registry record to update the status for. You can
-specify either the Amazon Resource Name (ARN) or the ID of the record.}
+\item{recordId}{[required] The identifier of the registry record to update the status for. You can specify either the Amazon Resource Name (ARN) or the ID of the record.}
 
 \item{status}{[required] The target status for the registry record.}
 
-\item{statusReason}{[required] The reason for the status change, such as why the record was approved or
-rejected.}
+\item{statusReason}{[required] The reason for the status change, such as why the record was approved or rejected.}
 }
 \description{
 Updates the status of a registry record. Use this operation to approve, reject, or deprecate a registry record.

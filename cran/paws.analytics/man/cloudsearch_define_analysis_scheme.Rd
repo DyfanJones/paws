@@ -8,9 +8,9 @@ text-array field to define language-specific text processing options}
 cloudsearch_define_analysis_scheme(DomainName, AnalysisScheme)
 }
 \arguments{
-\item{DomainName}{[required]}
+\item{DomainName}{[required] A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 
-\item{AnalysisScheme}{[required]}
+\item{AnalysisScheme}{[required] Configuration information for an analysis scheme. Each analysis scheme has a unique name and specifies the language of the text to be processed. The following options can be configured for an analysis scheme: \code{Synonyms}, \code{Stopwords}, \code{StemmingDictionary}, \code{JapaneseTokenizationDictionary} and \code{AlgorithmicStemming}.}
 }
 \description{
 Configures an analysis scheme that can be applied to a \code{text} or \code{text-array} field to define language-specific text processing options. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">}}Configuring Analysis Schemes\if{html}{\out{</a>}} in the \emph{Amazon CloudSearch Developer Guide}.

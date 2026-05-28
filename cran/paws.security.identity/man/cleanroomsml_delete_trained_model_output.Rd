@@ -11,15 +11,11 @@ cleanroomsml_delete_trained_model_output(
 )
 }
 \arguments{
-\item{trainedModelArn}{[required] The Amazon Resource Name (ARN) of the trained model whose output you
-want to delete.}
+\item{trainedModelArn}{[required] The Amazon Resource Name (ARN) of the trained model whose output you want to delete.}
 
-\item{membershipIdentifier}{[required] The membership ID of the member that is deleting the trained model
-output.}
+\item{membershipIdentifier}{[required] The membership ID of the member that is deleting the trained model output.}
 
-\item{versionIdentifier}{The version identifier of the trained model to delete. If not specified,
-the operation will delete the base version of the trained model. When
-specified, only the particular version will be deleted.}
+\item{versionIdentifier}{The version identifier of the trained model to delete. If not specified, the operation will delete the base version of the trained model. When specified, only the particular version will be deleted.}
 }
 \description{
 Deletes the model artifacts stored by the service.

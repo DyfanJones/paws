@@ -11,8 +11,7 @@ securityhub_create_action_target(Name, Description, Id)
 
 \item{Description}{[required] The description for the custom action target.}
 
-\item{Id}{[required] The ID for the custom action target. Can contain up to 20 alphanumeric
-characters.}
+\item{Id}{[required] The ID for the custom action target. Can contain up to 20 alphanumeric characters.}
 }
 \description{
 Creates a custom action target in Security Hub CSPM.

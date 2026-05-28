@@ -16,32 +16,21 @@ guardduty_create_trusted_entity_set(
 )
 }
 \arguments{
-\item{DetectorId}{[required] The unique ID of the detector of the GuardDuty account for which you
-want to create a trusted entity set.
+\item{DetectorId}{[required] The unique ID of the detector of the GuardDuty account for which you want to create a trusted entity set.
 
-To find the \code{detectorId} in the current Region, see the Settings page in
-the GuardDuty console, or run the
-\code{\link[=guardduty_list_detectors]{list_detectors}} API.}
+To find the \code{detectorId} in the current Region, see the Settings page in the GuardDuty console, or run the \code{\link[=guardduty_list_detectors]{list_detectors}} API.}
 
 \item{Name}{[required] A user-friendly name to identify the trusted entity set.
 
-The name of your list can include lowercase letters, uppercase letters,
-numbers, dash (-), and underscore (_).}
+The name of your list can include lowercase letters, uppercase letters, numbers, dash (-), and underscore (_).}
 
 \item{Format}{[required] The format of the file that contains the trusted entity set.}
 
-\item{Location}{[required] The URI of the file that contains the threat entity set. The format of
-the \code{Location} URL must be a valid Amazon S3 URL format. Invalid URL
-formats will result in an error, regardless of whether you activate the
-entity set or not. For more information about format of the location
-URLs, see \href{https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html}{Format of location URL under Step 2: Adding trusted or threat intelligence data}
-in the \emph{Amazon GuardDuty User Guide}.}
+\item{Location}{[required] The URI of the file that contains the threat entity set. The format of the \code{Location} URL must be a valid Amazon S3 URL format. Invalid URL formats will result in an error, regardless of whether you activate the entity set or not. For more information about format of the location URLs, see \href{https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-lists-create-activate.html}{Format of location URL under Step 2: Adding trusted or threat intelligence data} in the \emph{Amazon GuardDuty User Guide}.}
 
-\item{ExpectedBucketOwner}{The Amazon Web Services account ID that owns the Amazon S3 bucket
-specified in the \strong{location} parameter.}
+\item{ExpectedBucketOwner}{The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the \strong{location} parameter.}
 
-\item{Activate}{[required] A boolean value that indicates whether GuardDuty is to start using the
-uploaded trusted entity set.}
+\item{Activate}{[required] A boolean value that indicates whether GuardDuty is to start using the uploaded trusted entity set.}
 
 \item{ClientToken}{The idempotency token for the create request.}
 

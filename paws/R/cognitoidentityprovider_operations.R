@@ -6,68 +6,50 @@ NULL
 #' Adds additional user attributes to the user pool schema
 #'
 #' @description
-#' Adds additional user attributes to the user pool schema. Custom
-#' attributes can be mutable or immutable and have a `custom:` or `dev:`
-#' prefix. For more information, see [Custom
-#' attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-custom-attributes).
+#' Adds additional user attributes to the user pool schema. Custom attributes can be mutable or immutable and have a `custom:` or `dev:` prefix. For more information, see [Custom attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-custom-attributes).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_add_custom_attributes(UserPoolId,
 #'   CustomAttributes)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to add custom attributes.
-#' @param CustomAttributes &#91;required&#93; An array of custom attribute names and other properties. Sets the
-#' following characteristics:
+#' @param CustomAttributes &#91;required&#93; An array of custom attribute names and other properties. Sets the following characteristics:
 #' 
 #' **AttributeDataType**
 #' 
-#' The expected data type. Can be a string, a number, a date and time, or a
-#' boolean.
+#' The expected data type. Can be a string, a number, a date and time, or a boolean.
 #' 
 #' **Mutable**
 #' 
-#' If true, you can grant app clients write access to the attribute value.
-#' If false, the attribute value can only be set up on sign-up or
-#' administrator creation of users.
+#' If true, you can grant app clients write access to the attribute value. If false, the attribute value can only be set up on sign-up or administrator creation of users.
 #' 
 #' **Name**
 #' 
-#' The attribute name. For an attribute like `custom:myAttribute`, enter
-#' `myAttribute` for this field.
+#' The attribute name. For an attribute like `custom:myAttribute`, enter `myAttribute` for this field.
 #' 
 #' **Required**
 #' 
-#' When true, users who sign up or are created must set a value for the
-#' attribute.
+#' When true, users who sign up or are created must set a value for the attribute.
 #' 
 #' **NumberAttributeConstraints**
 #' 
-#' The minimum and maximum length of accepted values for a `Number`-type
-#' attribute.
+#' The minimum and maximum length of accepted values for a `Number`-type attribute.
 #' 
 #' **StringAttributeConstraints**
 #' 
-#' The minimum and maximum length of accepted values for a `String`-type
-#' attribute.
+#' The minimum and maximum length of accepted values for a `String`-type attribute.
 #' 
 #' **DeveloperOnlyAttribute**
 #' 
-#' This legacy option creates an attribute with a `dev:` prefix. You can
-#' only set the value of a developer-only attribute with administrative IAM
-#' credentials.
+#' This legacy option creates an attribute with a `dev:` prefix. You can only set the value of a developer-only attribute with administrative IAM credentials.
 #'
 #' @return
 #' An empty list.
@@ -124,9 +106,7 @@ cognitoidentityprovider_add_custom_attributes <- function(UserPoolId, CustomAttr
 #' client
 #'
 #' @description
-#' Creates a new client secret for an existing confidential user pool app
-#' client. Supports up to 2 active secrets per app client for zero-downtime
-#' credential rotation workflows.
+#' Creates a new client secret for an existing confidential user pool app client. Supports up to 2 active secrets per app client for zero-downtime credential rotation workflows.
 #'
 #' @usage
 #' cognitoidentityprovider_add_user_pool_client_secret(UserPoolId,
@@ -134,8 +114,7 @@ cognitoidentityprovider_add_custom_attributes <- function(UserPoolId, CustomAttr
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the app client.
 #' @param ClientId &#91;required&#93; The ID of the app client for which you want to create a new secret.
-#' @param ClientSecret The client secret value you want to use. If you don't provide this
-#' parameter, Amazon Cognito generates a secure secret for you.
+#' @param ClientSecret The client secret value you want to use. If you don't provide this parameter, Amazon Cognito generates a secure secret for you.
 #'
 #' @return
 #' A list with the following syntax:
@@ -187,34 +166,22 @@ cognitoidentityprovider_add_user_pool_client_secret <- function(UserPoolId, Clie
 #' Adds a user to a group
 #'
 #' @description
-#' Adds a user to a group. A user who is in a group can present a
-#' preferred-role claim to an identity pool, and populates a
-#' `cognito:groups` claim to their access and identity tokens.
+#' Adds a user to a group. A user who is in a group can present a preferred-role claim to an identity pool, and populates a `cognito:groups` claim to their access and identity tokens.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_add_user_to_group(UserPoolId, Username,
 #'   GroupName)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the group that you want to add the
-#' user to.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the group that you want to add the user to.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #' @param GroupName &#91;required&#93; The name of the group that you want to add your user to.
 #'
 #' @return
@@ -258,70 +225,37 @@ cognitoidentityprovider_admin_add_user_to_group <- function(UserPoolId, Username
 #' @description
 #' Confirms user sign-up as an administrator.
 #' 
-#' This request sets a user account active in a user pool that [requires
-#' confirmation of new user
-#' accounts](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#signing-up-users-in-your-app-and-confirming-them-as-admin)
-#' before they can sign in. You can configure your user pool to not send
-#' confirmation codes to new users and instead confirm them with this API
-#' operation on the back end.
+#' This request sets a user account active in a user pool that [requires confirmation of new user accounts](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#signing-up-users-in-your-app-and-confirming-them-as-admin) before they can sign in. You can configure your user pool to not send confirmation codes to new users and instead confirm them with this API operation on the back end.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #' 
-#' To configure your user pool to require administrative confirmation of
-#' users, set `AllowAdminCreateUserOnly` to `true` in a
-#' [`create_user_pool`][cognitoidentityprovider_create_user_pool] or
-#' [`update_user_pool`][cognitoidentityprovider_update_user_pool] request.
+#' To configure your user pool to require administrative confirmation of users, set `AllowAdminCreateUserOnly` to `true` in a [`create_user_pool`][cognitoidentityprovider_create_user_pool] or [`update_user_pool`][cognitoidentityprovider_update_user_pool] request.
 #'
 #' @usage
 #' cognitoidentityprovider_admin_confirm_sign_up(UserPoolId, Username,
 #'   ClientMetadata)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to confirm a user's sign-up
-#' request.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to confirm a user's sign-up request.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' An empty list.
@@ -366,58 +300,25 @@ cognitoidentityprovider_admin_confirm_sign_up <- function(UserPoolId, Username, 
 #' @description
 #' Creates a new user in the specified user pool.
 #' 
-#' If `MessageAction` isn't set, the default is to send a welcome message
-#' via email or phone (SMS).
+#' If `MessageAction` isn't set, the default is to send a welcome message via email or phone (SMS).
 #' 
-#' This message is based on a template that you configured in your call to
-#' create or update a user pool. This template includes your custom sign-up
-#' instructions and placeholders for user name and temporary password.
+#' This message is based on a template that you configured in your call to create or update a user pool. This template includes your custom sign-up instructions and placeholders for user name and temporary password.
 #' 
-#' Alternatively, you can call
-#' [`admin_create_user`][cognitoidentityprovider_admin_create_user] with
-#' `SUPPRESS` for the `MessageAction` parameter, and Amazon Cognito won't
-#' send any email.
+#' Alternatively, you can call [`admin_create_user`][cognitoidentityprovider_admin_create_user] with `SUPPRESS` for the `MessageAction` parameter, and Amazon Cognito won't send any email.
 #' 
-#' In either case, if the user has a password, they will be in the
-#' `FORCE_CHANGE_PASSWORD` state until they sign in and set their password.
-#' Your invitation message template must have the `{####}` password
-#' placeholder if your users have passwords. If your template doesn't have
-#' this placeholder, Amazon Cognito doesn't deliver the invitation message.
-#' In this case, you must update your message template and resend the
-#' password with a new
-#' [`admin_create_user`][cognitoidentityprovider_admin_create_user] request
-#' with a `MessageAction` value of `RESEND`.
+#' In either case, if the user has a password, they will be in the `FORCE_CHANGE_PASSWORD` state until they sign in and set their password. Your invitation message template must have the `{####}` password placeholder if your users have passwords. If your template doesn't have this placeholder, Amazon Cognito doesn't deliver the invitation message. In this case, you must update your message template and resend the password with a new [`admin_create_user`][cognitoidentityprovider_admin_create_user] request with a `MessageAction` value of `RESEND`.
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_create_user(UserPoolId, Username,
@@ -425,140 +326,64 @@ cognitoidentityprovider_admin_confirm_sign_up <- function(UserPoolId, Username, 
 #'   MessageAction, DesiredDeliveryMediums, ClientMetadata)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to create a user.
-#' @param Username &#91;required&#93; The value that you want to set as the username sign-in attribute. The
-#' following conditions apply to the username parameter.
+#' @param Username &#91;required&#93; The value that you want to set as the username sign-in attribute. The following conditions apply to the username parameter.
 #' 
-#' -   The username can't be a duplicate of another username in the same
-#'     user pool.
+#' -   The username can't be a duplicate of another username in the same user pool.
 #' 
 #' -   You can't change the value of a username after you create it.
 #' 
-#' -   You can only provide a value if usernames are a valid sign-in
-#'     attribute for your user pool. If your user pool only supports phone
-#'     numbers or email addresses as sign-in attributes, Amazon Cognito
-#'     automatically generates a username value. For more information, see
-#'     [Customizing sign-in
-#'     attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases).
-#' @param UserAttributes An array of name-value pairs that contain user attributes and attribute
-#' values to be set for the user to be created. You can create a user
-#' without specifying any attributes other than `Username`. However, any
-#' attributes that you specify as required (when creating a user pool or in
-#' the **Attributes** tab of the console) either you should supply (in your
-#' call to
-#' [`admin_create_user`][cognitoidentityprovider_admin_create_user]) or the
-#' user should supply (when they sign up in response to your welcome
-#' message).
+#' -   You can only provide a value if usernames are a valid sign-in attribute for your user pool. If your user pool only supports phone numbers or email addresses as sign-in attributes, Amazon Cognito automatically generates a username value. For more information, see [Customizing sign-in attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases).
+#' @param UserAttributes An array of name-value pairs that contain user attributes and attribute values to be set for the user to be created. You can create a user without specifying any attributes other than `Username`. However, any attributes that you specify as required (when creating a user pool or in the **Attributes** tab of the console) either you should supply (in your call to [`admin_create_user`][cognitoidentityprovider_admin_create_user]) or the user should supply (when they sign up in response to your welcome message).
 #' 
-#' For custom attributes, you must prepend the `custom:` prefix to the
-#' attribute name.
+#' For custom attributes, you must prepend the `custom:` prefix to the attribute name.
 #' 
-#' To send a message inviting the user to sign up, you must specify the
-#' user's email address or phone number. You can do this in your call to
-#' AdminCreateUser or in the **Users** tab of the Amazon Cognito console
-#' for managing your user pools.
+#' To send a message inviting the user to sign up, you must specify the user's email address or phone number. You can do this in your call to AdminCreateUser or in the **Users** tab of the Amazon Cognito console for managing your user pools.
 #' 
-#' You must also provide an email address or phone number when you expect
-#' the user to do passwordless sign-in with an email or SMS OTP. These
-#' attributes must be provided when passwordless options are the only
-#' available, or when you don't submit a `TemporaryPassword`.
+#' You must also provide an email address or phone number when you expect the user to do passwordless sign-in with an email or SMS OTP. These attributes must be provided when passwordless options are the only available, or when you don't submit a `TemporaryPassword`.
 #' 
-#' In your [`admin_create_user`][cognitoidentityprovider_admin_create_user]
-#' request, you can set the `email_verified` and `phone_number_verified`
-#' attributes to `true`. The following conditions apply:
+#' In your [`admin_create_user`][cognitoidentityprovider_admin_create_user] request, you can set the `email_verified` and `phone_number_verified` attributes to `true`. The following conditions apply:
 #' 
 #' **email**
 #' 
-#' The email address where you want the user to receive their confirmation
-#' code and username. You must provide a value for `email` when you want to
-#' set `email_verified` to `true`, or if you set `EMAIL` in the
-#' `DesiredDeliveryMediums` parameter.
+#' The email address where you want the user to receive their confirmation code and username. You must provide a value for `email` when you want to set `email_verified` to `true`, or if you set `EMAIL` in the `DesiredDeliveryMediums` parameter.
 #' 
 #' **phone_number**
 #' 
-#' The phone number where you want the user to receive their confirmation
-#' code and username. You must provide a value for `phone_number` when you
-#' want to set `phone_number_verified` to `true`, or if you set `SMS` in
-#' the `DesiredDeliveryMediums` parameter.
-#' @param ValidationData Temporary user attributes that contribute to the outcomes of your pre
-#' sign-up Lambda trigger. This set of key-value pairs are for custom
-#' validation of information that you collect from your users but don't
-#' need to retain.
+#' The phone number where you want the user to receive their confirmation code and username. You must provide a value for `phone_number` when you want to set `phone_number_verified` to `true`, or if you set `SMS` in the `DesiredDeliveryMediums` parameter.
+#' @param ValidationData Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.
 #' 
-#' Your Lambda function can analyze this additional data and act on it.
-#' Your function can automatically confirm and verify select users or
-#' perform external API operations like logging user attributes and
-#' validation data to Amazon CloudWatch Logs.
+#' Your Lambda function can analyze this additional data and act on it. Your function can automatically confirm and verify select users or perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs.
 #' 
-#' For more information about the pre sign-up Lambda trigger, see [Pre
-#' sign-up Lambda
-#' trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html).
-#' @param TemporaryPassword The user's temporary password. This password must conform to the
-#' password policy that you specified when you created the user pool.
+#' For more information about the pre sign-up Lambda trigger, see [Pre sign-up Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html).
+#' @param TemporaryPassword The user's temporary password. This password must conform to the password policy that you specified when you created the user pool.
 #' 
-#' The exception to the requirement for a password is when your user pool
-#' supports passwordless sign-in with email or SMS OTPs. To create a user
-#' with no password, omit this parameter or submit a blank value. You can
-#' only create a passwordless user when passwordless sign-in is available.
+#' The exception to the requirement for a password is when your user pool supports passwordless sign-in with email or SMS OTPs. To create a user with no password, omit this parameter or submit a blank value. You can only create a passwordless user when passwordless sign-in is available.
 #' 
-#' The temporary password is valid only once. To complete the Admin Create
-#' User flow, the user must enter the temporary password in the sign-in
-#' page, along with a new password to be used in all future sign-ins.
+#' The temporary password is valid only once. To complete the Admin Create User flow, the user must enter the temporary password in the sign-in page, along with a new password to be used in all future sign-ins.
 #' 
-#' If you don't specify a value, Amazon Cognito generates one for you
-#' unless you have passwordless options active for your user pool.
+#' If you don't specify a value, Amazon Cognito generates one for you unless you have passwordless options active for your user pool.
 #' 
-#' The temporary password can only be used until the user account
-#' expiration limit that you set for your user pool. To reset the account
-#' after that time limit, you must call
-#' [`admin_create_user`][cognitoidentityprovider_admin_create_user] again
-#' and specify `RESEND` for the `MessageAction` parameter.
-#' @param ForceAliasCreation This parameter is used only if the `phone_number_verified` or
-#' `email_verified` attribute is set to `True`. Otherwise, it is ignored.
+#' The temporary password can only be used until the user account expiration limit that you set for your user pool. To reset the account after that time limit, you must call [`admin_create_user`][cognitoidentityprovider_admin_create_user] again and specify `RESEND` for the `MessageAction` parameter.
+#' @param ForceAliasCreation This parameter is used only if the `phone_number_verified` or `email_verified` attribute is set to `True`. Otherwise, it is ignored.
 #' 
-#' If this parameter is set to `True` and the phone number or email address
-#' specified in the `UserAttributes` parameter already exists as an alias
-#' with a different user, this request migrates the alias from the previous
-#' user to the newly-created user. The previous user will no longer be able
-#' to log in using that alias.
+#' If this parameter is set to `True` and the phone number or email address specified in the `UserAttributes` parameter already exists as an alias with a different user, this request migrates the alias from the previous user to the newly-created user. The previous user will no longer be able to log in using that alias.
 #' 
-#' If this parameter is set to `False`, the API throws an
-#' `AliasExistsException` error if the alias already exists. The default
-#' value is `False`.
-#' @param MessageAction Set to `RESEND` to resend the invitation message to a user that already
-#' exists, and to reset the temporary-password duration with a new
-#' temporary password. Set to `SUPPRESS` to suppress sending the message.
-#' You can specify only one value.
-#' @param DesiredDeliveryMediums Specify `EMAIL` if email will be used to send the welcome message.
-#' Specify `SMS` if the phone number will be used. The default value is
-#' `SMS`. You can specify more than one value.
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' If this parameter is set to `False`, the API throws an `AliasExistsException` error if the alias already exists. The default value is `False`.
+#' @param MessageAction Set to `RESEND` to resend the invitation message to a user that already exists, and to reset the temporary-password duration with a new temporary password. Set to `SUPPRESS` to suppress sending the message. You can specify only one value.
+#' @param DesiredDeliveryMediums Specify `EMAIL` if email will be used to send the welcome message. Specify `SMS` if the phone number will be used. The default value is `SMS`. You can specify more than one value.
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -648,28 +473,19 @@ cognitoidentityprovider_admin_create_user <- function(UserPoolId, Username, User
 #' @description
 #' Deletes a user profile in your user pool.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_delete_user(UserPoolId, Username)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to delete the user.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #'
 #' @return
 #' An empty list.
@@ -709,38 +525,25 @@ cognitoidentityprovider_admin_delete_user <- function(UserPoolId, Username) {
 #' Deletes attribute values from a user
 #'
 #' @description
-#' Deletes attribute values from a user. This operation doesn't affect
-#' tokens for existing user sessions. The next ID token that the user
-#' receives will no longer have the deleted attributes.
+#' Deletes attribute values from a user. This operation doesn't affect tokens for existing user sessions. The next ID token that the user receives will no longer have the deleted attributes.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_delete_user_attributes(UserPoolId,
 #'   Username, UserAttributeNames)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to delete user attributes.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param UserAttributeNames &#91;required&#93; An array of strings representing the user attribute names you want to
-#' delete.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param UserAttributeNames &#91;required&#93; An array of strings representing the user attribute names you want to delete.
 #' 
-#' For custom attributes, you must prepend the `custom:` prefix to the
-#' attribute name.
+#' For custom attributes, you must prepend the `custom:` prefix to the attribute name.
 #'
 #' @return
 #' An empty list.
@@ -784,55 +587,29 @@ cognitoidentityprovider_admin_delete_user_attributes <- function(UserPoolId, Use
 #' social) identity provider (IdP)
 #'
 #' @description
-#' Prevents the user from signing in with the specified external (SAML or
-#' social) identity provider (IdP). If the user that you want to deactivate
-#' is a Amazon Cognito user pools native username + password user, they
-#' can't use their password to sign in. If the user to deactivate is a
-#' linked external IdP user, any link between that user and an existing
-#' user is removed. When the external user signs in again, and the user is
-#' no longer attached to the previously linked `DestinationUser`, the user
-#' must create a new user account.
+#' Prevents the user from signing in with the specified external (SAML or social) identity provider (IdP). If the user that you want to deactivate is a Amazon Cognito user pools native username + password user, they can't use their password to sign in. If the user to deactivate is a linked external IdP user, any link between that user and an existing user is removed. When the external user signs in again, and the user is no longer attached to the previously linked `DestinationUser`, the user must create a new user account.
 #' 
 #' The value of `ProviderName` must match the name of a user pool IdP.
 #' 
-#' To deactivate a local user, set `ProviderName` to `Cognito` and the
-#' `ProviderAttributeName` to `Cognito_Subject`. The
-#' `ProviderAttributeValue` must be user's local username.
+#' To deactivate a local user, set `ProviderName` to `Cognito` and the `ProviderAttributeName` to `Cognito_Subject`. The `ProviderAttributeValue` must be user's local username.
 #' 
-#' The `ProviderAttributeName` must always be `Cognito_Subject` for social
-#' IdPs. The `ProviderAttributeValue` must always be the exact subject that
-#' was used when the user was originally linked as a source user.
+#' The `ProviderAttributeName` must always be `Cognito_Subject` for social IdPs. The `ProviderAttributeValue` must always be the exact subject that was used when the user was originally linked as a source user.
 #' 
-#' For de-linking a SAML identity, there are two scenarios. If the linked
-#' identity has not yet been used to sign in, the `ProviderAttributeName`
-#' and `ProviderAttributeValue` must be the same values that were used for
-#' the `SourceUser` when the identities were originally linked using
-#' [`admin_link_provider_for_user`][cognitoidentityprovider_admin_link_provider_for_user]
-#' call. This is also true if the linking was done with
-#' `ProviderAttributeName` set to `Cognito_Subject`. If the user has
-#' already signed in, the `ProviderAttributeName` must be `Cognito_Subject`
-#' and `ProviderAttributeValue` must be the `NameID` from their SAML
-#' assertion.
+#' For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign in, the `ProviderAttributeName` and `ProviderAttributeValue` must be the same values that were used for the `SourceUser` when the identities were originally linked using [`admin_link_provider_for_user`][cognitoidentityprovider_admin_link_provider_for_user] call. This is also true if the linking was done with `ProviderAttributeName` set to `Cognito_Subject`. If the user has already signed in, the `ProviderAttributeName` must be `Cognito_Subject` and `ProviderAttributeValue` must be the `NameID` from their SAML assertion.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_disable_provider_for_user(UserPoolId,
 #'   User)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to delete the user's linked
-#' identities.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to delete the user's linked identities.
 #' @param User &#91;required&#93; The user profile that you want to delete a linked identity from.
 #'
 #' @return
@@ -877,32 +654,21 @@ cognitoidentityprovider_admin_disable_provider_for_user <- function(UserPoolId, 
 #' Deactivates a user profile and revokes all access tokens for the user
 #'
 #' @description
-#' Deactivates a user profile and revokes all access tokens for the user. A
-#' deactivated user can't sign in, but still appears in the responses to
-#' [`list_users`][cognitoidentityprovider_list_users] API requests.
+#' Deactivates a user profile and revokes all access tokens for the user. A deactivated user can't sign in, but still appears in the responses to [`list_users`][cognitoidentityprovider_list_users] API requests.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_disable_user(UserPoolId, Username)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to disable the user.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #'
 #' @return
 #' An empty list.
@@ -943,31 +709,21 @@ cognitoidentityprovider_admin_disable_user <- function(UserPoolId, Username) {
 #' disabled
 #'
 #' @description
-#' Activates sign-in for a user profile that previously had sign-in access
-#' disabled.
+#' Activates sign-in for a user profile that previously had sign-in access disabled.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_enable_user(UserPoolId, Username)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to activate sign-in for the user.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #'
 #' @return
 #' An empty list.
@@ -1007,35 +763,22 @@ cognitoidentityprovider_admin_enable_user <- function(UserPoolId, Username) {
 #' Forgets, or deletes, a remembered device from a user's profile
 #'
 #' @description
-#' Forgets, or deletes, a remembered device from a user's profile. After
-#' you forget the device, the user can no longer complete device
-#' authentication with that device and when applicable, must submit MFA
-#' codes again. For more information, see [Working with
-#' devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Forgets, or deletes, a remembered device from a user's profile. After you forget the device, the user can no longer complete device authentication with that device and when applicable, must submit MFA codes again. For more information, see [Working with devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_forget_device(UserPoolId, Username,
 #'   DeviceKey)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where the device owner is a user.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #' @param DeviceKey &#91;required&#93; The key ID of the device that you want to delete.
 #'
 #' @return
@@ -1077,22 +820,15 @@ cognitoidentityprovider_admin_forget_device <- function(UserPoolId, Username, De
 #' Given the device key, returns details for a user's device
 #'
 #' @description
-#' Given the device key, returns details for a user's device. For more
-#' information, see [Working with
-#' devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Given the device key, returns details for a user's device. For more information, see [Working with devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_get_device(DeviceKey, UserPoolId,
@@ -1100,11 +836,7 @@ cognitoidentityprovider_admin_forget_device <- function(UserPoolId, Username, De
 #'
 #' @param DeviceKey &#91;required&#93; The key of the device that you want to delete.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where the device owner is a user.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1167,35 +899,23 @@ cognitoidentityprovider_admin_get_device <- function(DeviceKey, UserPoolId, User
 #' Given a username, returns details about a user profile in a user pool
 #'
 #' @description
-#' Given a username, returns details about a user profile in a user pool.
-#' You can specify alias attributes in the `Username` request parameter.
+#' Given a username, returns details about a user profile in a user pool. You can specify alias attributes in the `Username` request parameter.
 #' 
-#' This operation contributes to your monthly active user (MAU) count for
-#' the purpose of billing.
+#' This operation contributes to your monthly active user (MAU) count for the purpose of billing.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_get_user(UserPoolId, Username)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to get information about the
-#' user.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to get information about the user.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1265,43 +985,19 @@ cognitoidentityprovider_admin_get_user <- function(UserPoolId, Username) {
 #' example a traditional web application
 #'
 #' @description
-#' Starts sign-in for applications with a server-side component, for
-#' example a traditional web application. This operation specifies the
-#' authentication flow that you'd like to begin. The authentication flow
-#' that you specify must be supported in your app client configuration. For
-#' more information about authentication flows, see [Authentication
-#' flows](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html).
+#' Starts sign-in for applications with a server-side component, for example a traditional web application. This operation specifies the authentication flow that you'd like to begin. The authentication flow that you specify must be supported in your app client configuration. For more information about authentication flows, see [Authentication flows](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_initiate_auth(UserPoolId, ClientId,
@@ -1310,65 +1006,36 @@ cognitoidentityprovider_admin_get_user <- function(UserPoolId, Username) {
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where the user wants to sign in.
 #' @param ClientId &#91;required&#93; The ID of the app client where the user wants to sign in.
-#' @param AuthFlow &#91;required&#93; The authentication flow that you want to initiate. Each `AuthFlow` has
-#' linked `AuthParameters` that you must submit. The following are some
-#' example flows.
+#' @param AuthFlow &#91;required&#93; The authentication flow that you want to initiate. Each `AuthFlow` has linked `AuthParameters` that you must submit. The following are some example flows.
 #' 
 #' **USER_AUTH**
 #' 
-#' The entry point for [choice-based
-#' authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice)
-#' with passwords, one-time passwords, and WebAuthn authenticators. Request
-#' a preferred authentication type or review available authentication
-#' types. From the offered authentication types, select one in a challenge
-#' response and then authenticate with that method in an additional
-#' challenge response. To activate this setting, your user pool must be in
-#' the [Essentials
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#' or higher.
+#' The entry point for [choice-based authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice) with passwords, one-time passwords, and WebAuthn authenticators. Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response. To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
 #' 
 #' **USER_SRP_AUTH**
 #' 
-#' Username-password authentication with the Secure Remote Password (SRP)
-#' protocol. For more information, see [Use SRP password verification in
-#' custom authentication
-#' flow](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication.html#Using-SRP-password-verification-in-custom-authentication-flow).
+#' Username-password authentication with the Secure Remote Password (SRP) protocol. For more information, see [Use SRP password verification in custom authentication flow](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication.html#Using-SRP-password-verification-in-custom-authentication-flow).
 #' 
 #' **REFRESH_TOKEN_AUTH and REFRESH_TOKEN**
 #' 
-#' Receive new ID and access tokens when you pass a `REFRESH_TOKEN`
-#' parameter with a valid refresh token as the value. For more information,
-#' see [Using the refresh
-#' token](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html).
+#' Receive new ID and access tokens when you pass a `REFRESH_TOKEN` parameter with a valid refresh token as the value. For more information, see [Using the refresh token](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html).
 #' 
 #' **CUSTOM_AUTH**
 #' 
-#' Custom authentication with Lambda triggers. For more information, see
-#' [Custom authentication challenge Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html).
+#' Custom authentication with Lambda triggers. For more information, see [Custom authentication challenge Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html).
 #' 
 #' **ADMIN_USER_PASSWORD_AUTH**
 #' 
-#' Server-side username-password authentication with the password sent
-#' directly in the request. For more information about client-side and
-#' server-side authentication, see [SDK authorization
-#' models](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
-#' @param AuthParameters The authentication parameters. These are inputs corresponding to the
-#' `AuthFlow` that you're invoking.
+#' Server-side username-password authentication with the password sent directly in the request. For more information about client-side and server-side authentication, see [SDK authorization models](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' @param AuthParameters The authentication parameters. These are inputs corresponding to the `AuthFlow` that you're invoking.
 #' 
-#' The following are some authentication flows and their parameters. Add a
-#' `SECRET_HASH` parameter if your app client has a client secret. Add
-#' `DEVICE_KEY` if you want to bypass multi-factor authentication with a
-#' remembered device.
+#' The following are some authentication flows and their parameters. Add a `SECRET_HASH` parameter if your app client has a client secret. Add `DEVICE_KEY` if you want to bypass multi-factor authentication with a remembered device.
 #' 
 #' **USER_AUTH**
 #' 
 #' -   `USERNAME` (required)
 #' 
-#' -   `PREFERRED_CHALLENGE`. If you don't provide a value for
-#'     `PREFERRED_CHALLENGE`, Amazon Cognito responds with the
-#'     `AvailableChallenges` parameter that specifies the available sign-in
-#'     methods.
+#' -   `PREFERRED_CHALLENGE`. If you don't provide a value for `PREFERRED_CHALLENGE`, Amazon Cognito responds with the `AvailableChallenges` parameter that specifies the available sign-in methods.
 #' 
 #' **USER_SRP_AUTH**
 #' 
@@ -1390,35 +1057,18 @@ cognitoidentityprovider_admin_get_user <- function(UserPoolId, Username) {
 #' 
 #' -   `USERNAME` (required)
 #' 
-#' -   `ChallengeName: SRP_A` (when preceding custom authentication with
-#'     SRP authentication)
+#' -   `ChallengeName: SRP_A` (when preceding custom authentication with SRP authentication)
 #' 
-#' -   `SRP_A: (An SRP_A value)` (when preceding custom authentication with
-#'     SRP authentication)
+#' -   `SRP_A: (An SRP_A value)` (when preceding custom authentication with SRP authentication)
 #' 
-#' For more information about `SECRET_HASH`, see [Computing secret hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' For information about `DEVICE_KEY`, see [Working with user devices in
-#' your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information about `SECRET_HASH`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash). For information about `DEVICE_KEY`, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' The `ClientMetadata` value is passed as input to the functions for only
-#' the following triggers:
+#' The `ClientMetadata` value is passed as input to the functions for only the following triggers:
 #' 
 #' -   Pre signup
 #' 
@@ -1426,8 +1076,7 @@ cognitoidentityprovider_admin_get_user <- function(UserPoolId, Username) {
 #' 
 #' -   User migration
 #' 
-#' This request also invokes the functions for the following triggers, but
-#' doesn't pass `ClientMetadata`:
+#' This request also invokes the functions for the following triggers, but doesn't pass `ClientMetadata`:
 #' 
 #' -   Post authentication
 #' 
@@ -1443,35 +1092,18 @@ cognitoidentityprovider_admin_get_user <- function(UserPoolId, Username) {
 #' 
 #' -   Custom SMS sender
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param ContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param ContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param Session The optional session ID from a
-#' [`confirm_sign_up`][cognitoidentityprovider_confirm_sign_up] API
-#' request. You can sign in a user directly from the sign-up process with
-#' an `AuthFlow` of `USER_AUTH` and `AuthParameters` of `EMAIL_OTP` or
-#' `SMS_OTP`, depending on how your user pool sent the confirmation-code
-#' message.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param Session The optional session ID from a [`confirm_sign_up`][cognitoidentityprovider_confirm_sign_up] API request. You can sign in a user directly from the sign-up process with an `AuthFlow` of `USER_AUTH` and `AuthParameters` of `EMAIL_OTP` or `SMS_OTP`, depending on how your user pool sent the confirmation-code message.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1559,92 +1191,47 @@ cognitoidentityprovider_admin_initiate_auth <- function(UserPoolId, ClientId, Au
 #' attribute name and value from the external IdP
 #'
 #' @description
-#' Links an existing user account in a user pool, or `DestinationUser`, to
-#' an identity from an external IdP, or `SourceUser`, based on a specified
-#' attribute name and value from the external IdP.
+#' Links an existing user account in a user pool, or `DestinationUser`, to an identity from an external IdP, or `SourceUser`, based on a specified attribute name and value from the external IdP.
 #' 
-#' This operation connects a local user profile with a user identity who
-#' hasn't yet signed in from their third-party IdP. When the user signs in
-#' with their IdP, they get access-control configuration from the local
-#' user profile. Linked local users can also sign in with SDK-based API
-#' operations like [`initiate_auth`][cognitoidentityprovider_initiate_auth]
-#' after they sign in at least once through their IdP. For more
-#' information, see [Linking federated
-#' users](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html).
+#' This operation connects a local user profile with a user identity who hasn't yet signed in from their third-party IdP. When the user signs in with their IdP, they get access-control configuration from the local user profile. Linked local users can also sign in with SDK-based API operations like [`initiate_auth`][cognitoidentityprovider_initiate_auth] after they sign in at least once through their IdP. For more information, see [Linking federated users](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html).
 #' 
 #' The maximum number of federated identities linked to a user is five.
 #' 
-#' Because this API allows a user with an external federated identity to
-#' sign in as a local user, it is critical that it only be used with
-#' external IdPs and linked attributes that you trust.
+#' Because this API allows a user with an external federated identity to sign in as a local user, it is critical that it only be used with external IdPs and linked attributes that you trust.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_link_provider_for_user(UserPoolId,
 #'   DestinationUser, SourceUser)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to link a federated identity.
-#' @param DestinationUser &#91;required&#93; The existing user in the user pool that you want to assign to the
-#' external IdP user account. This user can be a local (Username +
-#' Password) Amazon Cognito user pools user or a federated user (for
-#' example, a SAML or Facebook user). If the user doesn't exist, Amazon
-#' Cognito generates an exception. Amazon Cognito returns this user when
-#' the new user (with the linked IdP attribute) signs in.
+#' @param DestinationUser &#91;required&#93; The existing user in the user pool that you want to assign to the external IdP user account. This user can be a local (Username + Password) Amazon Cognito user pools user or a federated user (for example, a SAML or Facebook user). If the user doesn't exist, Amazon Cognito generates an exception. Amazon Cognito returns this user when the new user (with the linked IdP attribute) signs in.
 #' 
-#' For a native username + password user, the `ProviderAttributeValue` for
-#' the `DestinationUser` should be the username in the user pool. For a
-#' federated user, it should be the provider-specific `user_id`.
+#' For a native username + password user, the `ProviderAttributeValue` for the `DestinationUser` should be the username in the user pool. For a federated user, it should be the provider-specific `user_id`.
 #' 
 #' The `ProviderAttributeName` of the `DestinationUser` is ignored.
 #' 
-#' The `ProviderName` should be set to `Cognito` for users in Cognito user
-#' pools.
+#' The `ProviderName` should be set to `Cognito` for users in Cognito user pools.
 #' 
-#' All attributes in the DestinationUser profile must be mutable. If you
-#' have assigned the user any immutable custom attributes, the operation
-#' won't succeed.
-#' @param SourceUser &#91;required&#93; An external IdP account for a user who doesn't exist yet in the user
-#' pool. This user must be a federated user (for example, a SAML or
-#' Facebook user), not another native user.
+#' All attributes in the DestinationUser profile must be mutable. If you have assigned the user any immutable custom attributes, the operation won't succeed.
+#' @param SourceUser &#91;required&#93; An external IdP account for a user who doesn't exist yet in the user pool. This user must be a federated user (for example, a SAML or Facebook user), not another native user.
 #' 
-#' If the `SourceUser` is using a federated social IdP, such as Facebook,
-#' Google, or Login with Amazon, you must set the `ProviderAttributeName`
-#' to `Cognito_Subject`. For social IdPs, the `ProviderName` will be
-#' `Facebook`, `Google`, or `LoginWithAmazon`, and Amazon Cognito will
-#' automatically parse the Facebook, Google, and Login with Amazon tokens
-#' for `id`, `sub`, and `user_id`, respectively. The
-#' `ProviderAttributeValue` for the user must be the same value as the
-#' `id`, `sub`, or `user_id` value found in the social IdP token.
+#' If the `SourceUser` is using a federated social IdP, such as Facebook, Google, or Login with Amazon, you must set the `ProviderAttributeName` to `Cognito_Subject`. For social IdPs, the `ProviderName` will be `Facebook`, `Google`, or `LoginWithAmazon`, and Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon tokens for `id`, `sub`, and `user_id`, respectively. The `ProviderAttributeValue` for the user must be the same value as the `id`, `sub`, or `user_id` value found in the social IdP token.
 #' 
-#' For OIDC, the `ProviderAttributeName` can be any mapped value from a
-#' claim in the ID token, or that your app retrieves from the `userInfo`
-#' endpoint. For SAML, the `ProviderAttributeName` can be any mapped value
-#' from a claim in the SAML assertion.
+#' For OIDC, the `ProviderAttributeName` can be any mapped value from a claim in the ID token, or that your app retrieves from the `userInfo` endpoint. For SAML, the `ProviderAttributeName` can be any mapped value from a claim in the SAML assertion.
 #' 
-#' The following additional considerations apply to `SourceUser` for OIDC
-#' and SAML providers.
+#' The following additional considerations apply to `SourceUser` for OIDC and SAML providers.
 #' 
-#' -   You must map the claim to a user pool attribute in your IdP
-#'     configuration, and set the user pool attribute name as the value of
-#'     `ProviderAttributeName` in your
-#'     [`admin_link_provider_for_user`][cognitoidentityprovider_admin_link_provider_for_user]
-#'     request. For example, `email`.
+#' -   You must map the claim to a user pool attribute in your IdP configuration, and set the user pool attribute name as the value of `ProviderAttributeName` in your [`admin_link_provider_for_user`][cognitoidentityprovider_admin_link_provider_for_user] request. For example, `email`.
 #' 
-#' -   When you set `ProviderAttributeName` to `Cognito_Subject`, Amazon
-#'     Cognito will automatically parse the default unique identifier found
-#'     in the subject from the IdP token.
+#' -   When you set `ProviderAttributeName` to `Cognito_Subject`, Amazon Cognito will automatically parse the default unique identifier found in the subject from the IdP token.
 #'
 #' @return
 #' An empty list.
@@ -1693,44 +1280,24 @@ cognitoidentityprovider_admin_link_provider_for_user <- function(UserPoolId, Des
 #' Lists a user's registered devices
 #'
 #' @description
-#' Lists a user's registered devices. Remembered devices are used in
-#' authentication services where you offer a "Remember me" option for users
-#' who you want to permit to sign in without MFA from a trusted device.
-#' Users can bypass MFA while your application performs device SRP
-#' authentication on the back end. For more information, see [Working with
-#' devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Lists a user's registered devices. Remembered devices are used in authentication services where you offer a "Remember me" option for users who you want to permit to sign in without MFA from a trusted device. Users can bypass MFA while your application performs device SRP authentication on the back end. For more information, see [Working with devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_list_devices(UserPoolId, Username, Limit,
 #'   PaginationToken)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where the device owner is a user.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param Limit The maximum number of devices that you want Amazon Cognito to return in
-#' the response.
-#' @param PaginationToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param Limit The maximum number of devices that you want Amazon Cognito to return in the response.
+#' @param PaginationToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1797,43 +1364,24 @@ cognitoidentityprovider_admin_list_devices <- function(UserPoolId, Username, Lim
 #' Lists the groups that a user belongs to
 #'
 #' @description
-#' Lists the groups that a user belongs to. User pool groups are
-#' identifiers that you can reference from the contents of ID and access
-#' tokens, and set preferred IAM roles for identity-pool authentication.
-#' For more information, see [Adding groups to a user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
+#' Lists the groups that a user belongs to. User pool groups are identifiers that you can reference from the contents of ID and access tokens, and set preferred IAM roles for identity-pool authentication. For more information, see [Adding groups to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_list_groups_for_user(Username, UserPoolId,
 #'   Limit, NextToken)
 #'
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to view a user's groups.
-#' @param Limit The maximum number of groups that you want Amazon Cognito to return in
-#' the response.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param Limit The maximum number of groups that you want Amazon Cognito to return in the response.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1896,44 +1444,24 @@ cognitoidentityprovider_admin_list_groups_for_user <- function(Username, UserPoo
 #' Amazon Cognito threat protection
 #'
 #' @description
-#' Requests a history of user activity and any risks detected as part of
-#' Amazon Cognito threat protection. For more information, see [Viewing
-#' user event
-#' history](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-event-user-history).
+#' Requests a history of user activity and any risks detected as part of Amazon Cognito threat protection. For more information, see [Viewing user event history](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-event-user-history).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_list_user_auth_events(UserPoolId,
 #'   Username, MaxResults, NextToken)
 #'
-#' @param UserPoolId &#91;required&#93; The Id of the user pool that contains the user profile with the logged
-#' events.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param MaxResults The maximum number of authentication events to return. Returns 60 events
-#' if you set `MaxResults` to 0, or if you don't include a `MaxResults`
-#' parameter.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param UserPoolId &#91;required&#93; The Id of the user pool that contains the user profile with the logged events.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param MaxResults The maximum number of authentication events to return. Returns 60 events if you set `MaxResults` to 0, or if you don't include a `MaxResults` parameter.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2015,38 +1543,23 @@ cognitoidentityprovider_admin_list_user_auth_events <- function(UserPoolId, User
 #' Given a username and a group name, removes them from the group
 #'
 #' @description
-#' Given a username and a group name, removes them from the group. User
-#' pool groups are identifiers that you can reference from the contents of
-#' ID and access tokens, and set preferred IAM roles for identity-pool
-#' authentication. For more information, see [Adding groups to a user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
+#' Given a username and a group name, removes them from the group. User pool groups are identifiers that you can reference from the contents of ID and access tokens, and set preferred IAM roles for identity-pool authentication. For more information, see [Adding groups to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_remove_user_from_group(UserPoolId,
 #'   Username, GroupName)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the group and the user that you
-#' want to remove.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param GroupName &#91;required&#93; The name of the group that you want to remove the user from, for example
-#' `MyTestGroup`.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the group and the user that you want to remove.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param GroupName &#91;required&#93; The name of the group that you want to remove the user from, for example `MyTestGroup`.
 #'
 #' @return
 #' An empty list.
@@ -2087,85 +1600,41 @@ cognitoidentityprovider_admin_remove_user_from_group <- function(UserPoolId, Use
 #' Begins the password reset process
 #'
 #' @description
-#' Begins the password reset process. Sets the requested user’s account
-#' into a `RESET_REQUIRED` status, and sends them a password-reset code.
-#' Your user pool also sends the user a notification with a reset code and
-#' the information that their password has been reset. At sign-in, your
-#' application or the managed login session receives a challenge to
-#' complete the reset by confirming the code and setting a new password.
+#' Begins the password reset process. Sets the requested user’s account into a `RESET_REQUIRED` status, and sends them a password-reset code. Your user pool also sends the user a notification with a reset code and the information that their password has been reset. At sign-in, your application or the managed login session receives a challenge to complete the reset by confirming the code and setting a new password.
 #' 
-#' To use this API operation, your user pool must have self-service account
-#' recovery configured.
+#' To use this API operation, your user pool must have self-service account recovery configured.
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_reset_user_password(UserPoolId, Username,
 #'   ClientMetadata)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to reset the user's password.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' An empty list.
@@ -2210,187 +1679,91 @@ cognitoidentityprovider_admin_reset_user_password <- function(UserPoolId, Userna
 #' custom authentication challenge
 #'
 #' @description
-#' Some API operations in a user pool generate a challenge, like a prompt
-#' for an MFA code, for device authentication that bypasses MFA, or for a
-#' custom authentication challenge. An
-#' [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#' API request provides the answer to that challenge, like a code or a
-#' secure remote password (SRP). The parameters of a response to an
-#' authentication challenge vary with the type of challenge.
+#' Some API operations in a user pool generate a challenge, like a prompt for an MFA code, for device authentication that bypasses MFA, or for a custom authentication challenge. An [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] API request provides the answer to that challenge, like a code or a secure remote password (SRP). The parameters of a response to an authentication challenge vary with the type of challenge.
 #' 
-#' For more information about custom authentication challenges, see [Custom
-#' authentication challenge Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html).
+#' For more information about custom authentication challenges, see [Custom authentication challenge Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_respond_to_auth_challenge(UserPoolId,
 #'   ClientId, ChallengeName, ChallengeResponses, Session, AnalyticsMetadata,
 #'   ContextData, ClientMetadata)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to respond to an authentication
-#' challenge.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to respond to an authentication challenge.
 #' @param ClientId &#91;required&#93; The ID of the app client where you initiated sign-in.
 #' @param ChallengeName &#91;required&#93; The name of the challenge that you are responding to.
 #' 
 #' Possible challenges include the following:
 #' 
-#' All of the following challenges require `USERNAME` and, when the app
-#' client has a client secret, `SECRET_HASH` in the parameters. Include a
-#' `DEVICE_KEY` for device authentication.
+#' All of the following challenges require `USERNAME` and, when the app client has a client secret, `SECRET_HASH` in the parameters. Include a `DEVICE_KEY` for device authentication.
 #' 
-#' -   `WEB_AUTHN`: Respond to the challenge with the results of a
-#'     successful authentication with a WebAuthn authenticator, or passkey,
-#'     as `CREDENTIAL`. Examples of WebAuthn authenticators include
-#'     biometric devices and security keys.
+#' -   `WEB_AUTHN`: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey, as `CREDENTIAL`. Examples of WebAuthn authenticators include biometric devices and security keys.
 #' 
 #' -   `PASSWORD`: Respond with the user's password as `PASSWORD`.
 #' 
 #' -   `PASSWORD_SRP`: Respond with the initial SRP secret as `SRP_A`.
 #' 
-#' -   `SELECT_CHALLENGE`: Respond with a challenge selection as `ANSWER`.
-#'     It must be one of the challenge types in the `AvailableChallenges`
-#'     response parameter. Add the parameters of the selected challenge,
-#'     for example `USERNAME` and `SMS_OTP`.
+#' -   `SELECT_CHALLENGE`: Respond with a challenge selection as `ANSWER`. It must be one of the challenge types in the `AvailableChallenges` response parameter. Add the parameters of the selected challenge, for example `USERNAME` and `SMS_OTP`.
 #' 
-#' -   `SMS_MFA`: Respond with the code that your user pool delivered in an
-#'     SMS message, as `SMS_MFA_CODE`
+#' -   `SMS_MFA`: Respond with the code that your user pool delivered in an SMS message, as `SMS_MFA_CODE`
 #' 
-#' -   `EMAIL_MFA`: Respond with the code that your user pool delivered in
-#'     an email message, as `EMAIL_MFA_CODE`
+#' -   `EMAIL_MFA`: Respond with the code that your user pool delivered in an email message, as `EMAIL_MFA_CODE`
 #' 
-#' -   `EMAIL_OTP`: Respond with the code that your user pool delivered in
-#'     an email message, as `EMAIL_OTP_CODE` .
+#' -   `EMAIL_OTP`: Respond with the code that your user pool delivered in an email message, as `EMAIL_OTP_CODE` .
 #' 
-#' -   `SMS_OTP`: Respond with the code that your user pool delivered in an
-#'     SMS message, as `SMS_OTP_CODE`.
+#' -   `SMS_OTP`: Respond with the code that your user pool delivered in an SMS message, as `SMS_OTP_CODE`.
 #' 
-#' -   `PASSWORD_VERIFIER`: Respond with the second stage of SRP secrets as
-#'     `PASSWORD_CLAIM_SIGNATURE`, `PASSWORD_CLAIM_SECRET_BLOCK`, and
-#'     `TIMESTAMP`.
+#' -   `PASSWORD_VERIFIER`: Respond with the second stage of SRP secrets as `PASSWORD_CLAIM_SIGNATURE`, `PASSWORD_CLAIM_SECRET_BLOCK`, and `TIMESTAMP`.
 #' 
-#' -   `CUSTOM_CHALLENGE`: This is returned if your custom authentication
-#'     flow determines that the user should pass another challenge before
-#'     tokens are issued. The parameters of the challenge are determined by
-#'     your Lambda function and issued in the `ChallengeParameters` of a
-#'     challenge response.
+#' -   `CUSTOM_CHALLENGE`: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function and issued in the `ChallengeParameters` of a challenge response.
 #' 
-#' -   `DEVICE_SRP_AUTH`: Respond with the initial parameters of device SRP
-#'     authentication. For more information, see [Signing in with a
-#'     device](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device).
+#' -   `DEVICE_SRP_AUTH`: Respond with the initial parameters of device SRP authentication. For more information, see [Signing in with a device](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device).
 #' 
-#' -   `DEVICE_PASSWORD_VERIFIER`: Respond with `PASSWORD_CLAIM_SIGNATURE`,
-#'     `PASSWORD_CLAIM_SECRET_BLOCK`, and `TIMESTAMP` after client-side SRP
-#'     calculations. For more information, see [Signing in with a
-#'     device](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device).
+#' -   `DEVICE_PASSWORD_VERIFIER`: Respond with `PASSWORD_CLAIM_SIGNATURE`, `PASSWORD_CLAIM_SECRET_BLOCK`, and `TIMESTAMP` after client-side SRP calculations. For more information, see [Signing in with a device](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device).
 #' 
-#' -   `NEW_PASSWORD_REQUIRED`: For users who are required to change their
-#'     passwords after successful first login. Respond to this challenge
-#'     with `NEW_PASSWORD` and any required attributes that Amazon Cognito
-#'     returned in the `requiredAttributes` parameter. You can also set
-#'     values for attributes that aren't required by your user pool and
-#'     that your app client can write.
+#' -   `NEW_PASSWORD_REQUIRED`: For users who are required to change their passwords after successful first login. Respond to this challenge with `NEW_PASSWORD` and any required attributes that Amazon Cognito returned in the `requiredAttributes` parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write.
 #' 
-#'     Amazon Cognito only returns this challenge for users who have
-#'     temporary passwords. When you create passwordless users, you must
-#'     provide values for all required attributes.
+#'     Amazon Cognito only returns this challenge for users who have temporary passwords. When you create passwordless users, you must provide values for all required attributes.
 #' 
-#'     In a `NEW_PASSWORD_REQUIRED` challenge response, you can't modify a
-#'     required attribute that already has a value. In
-#'     [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#'     or
-#'     [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge],
-#'     set a value for any keys that Amazon Cognito returned in the
-#'     `requiredAttributes` parameter, then use the
-#'     [`admin_update_user_attributes`][cognitoidentityprovider_admin_update_user_attributes]
-#'     or
-#'     [`update_user_attributes`][cognitoidentityprovider_update_user_attributes]
-#'     API operation to modify the value of any additional attributes.
+#'     In a `NEW_PASSWORD_REQUIRED` challenge response, you can't modify a required attribute that already has a value. In [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] or [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge], set a value for any keys that Amazon Cognito returned in the `requiredAttributes` parameter, then use the [`admin_update_user_attributes`][cognitoidentityprovider_admin_update_user_attributes] or [`update_user_attributes`][cognitoidentityprovider_update_user_attributes] API operation to modify the value of any additional attributes.
 #' 
-#' -   `MFA_SETUP`: For users who are required to setup an MFA factor
-#'     before they can sign in. The MFA types activated for the user pool
-#'     will be listed in the challenge parameters `MFAS_CAN_SETUP` value.
+#' -   `MFA_SETUP`: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters `MFAS_CAN_SETUP` value.
 #' 
-#'     To set up time-based one-time password (TOTP) MFA, use the session
-#'     returned in this challenge from
-#'     [`initiate_auth`][cognitoidentityprovider_initiate_auth] or
-#'     [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth]
-#'     as an input to
-#'     [`associate_software_token`][cognitoidentityprovider_associate_software_token].
-#'     Then, use the session returned by
-#'     [`verify_software_token`][cognitoidentityprovider_verify_software_token]
-#'     as an input to
-#'     [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge]
-#'     or
-#'     [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#'     with challenge name `MFA_SETUP` to complete sign-in.
+#'     To set up time-based one-time password (TOTP) MFA, use the session returned in this challenge from [`initiate_auth`][cognitoidentityprovider_initiate_auth] or [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] as an input to [`associate_software_token`][cognitoidentityprovider_associate_software_token]. Then, use the session returned by [`verify_software_token`][cognitoidentityprovider_verify_software_token] as an input to [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge] or [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] with challenge name `MFA_SETUP` to complete sign-in.
 #' 
-#'     To set up SMS or email MFA, collect a `phone_number` or `email`
-#'     attribute for the user. Then restart the authentication flow with an
-#'     [`initiate_auth`][cognitoidentityprovider_initiate_auth] or
-#'     [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth]
-#'     request.
-#' @param ChallengeResponses The responses to the challenge that you received in the previous
-#' request. Each challenge has its own required response parameters. The
-#' following examples are partial JSON request bodies that highlight
-#' challenge-response parameters.
+#'     To set up SMS or email MFA, collect a `phone_number` or `email` attribute for the user. Then restart the authentication flow with an [`initiate_auth`][cognitoidentityprovider_initiate_auth] or [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] request.
+#' @param ChallengeResponses The responses to the challenge that you received in the previous request. Each challenge has its own required response parameters. The following examples are partial JSON request bodies that highlight challenge-response parameters.
 #' 
-#' You must provide a SECRET_HASH parameter in all challenge responses to
-#' an app client that has a client secret. Include a `DEVICE_KEY` for
-#' device authentication.
+#' You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret. Include a `DEVICE_KEY` for device authentication.
 #' 
 #' **SELECT_CHALLENGE**
 #' 
 #' `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "USERNAME": "[username]", "ANSWER": "[Challenge name]"}`
 #' 
-#' Available challenges are `PASSWORD`, `PASSWORD_SRP`, `EMAIL_OTP`,
-#' `SMS_OTP`, and `WEB_AUTHN`.
+#' Available challenges are `PASSWORD`, `PASSWORD_SRP`, `EMAIL_OTP`, `SMS_OTP`, and `WEB_AUTHN`.
 #' 
-#' Complete authentication in the `SELECT_CHALLENGE` response for
-#' `PASSWORD`, `PASSWORD_SRP`, and `WEB_AUTHN`:
+#' Complete authentication in the `SELECT_CHALLENGE` response for `PASSWORD`, `PASSWORD_SRP`, and `WEB_AUTHN`:
 #' 
 #' -   `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN", "USERNAME": "[username]", "CREDENTIAL": "[AuthenticationResponseJSON]"}`
 #' 
-#'     See
-#'     [AuthenticationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson).
+#'     See [AuthenticationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson).
 #' 
 #' -   `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD", "USERNAME": "[username]", "PASSWORD": "[password]"}`
 #' 
 #' -   `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD_SRP", "USERNAME": "[username]", "SRP_A": "[SRP_A]"}`
 #' 
-#' For `SMS_OTP` and `EMAIL_OTP`, respond with the username and answer.
-#' Your user pool will send a code for the user to submit in the next
-#' challenge response.
+#' For `SMS_OTP` and `EMAIL_OTP`, respond with the username and answer. Your user pool will send a code for the user to submit in the next challenge response.
 #' 
 #' -   `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP", "USERNAME": "[username]"}`
 #' 
@@ -2400,8 +1773,7 @@ cognitoidentityprovider_admin_reset_user_password <- function(UserPoolId, Userna
 #' 
 #' `"ChallengeName": "WEB_AUTHN", "ChallengeResponses": { "USERNAME": "[username]", "CREDENTIAL": "[AuthenticationResponseJSON]"}`
 #' 
-#' See
-#' [AuthenticationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson).
+#' See [AuthenticationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson).
 #' 
 #' **PASSWORD**
 #' 
@@ -2425,10 +1797,7 @@ cognitoidentityprovider_admin_reset_user_password <- function(UserPoolId, Userna
 #' 
 #' **PASSWORD_VERIFIER**
 #' 
-#' This challenge response is part of the SRP flow. Amazon Cognito requires
-#' that your application respond to this challenge within a few seconds.
-#' When the response time exceeds this period, your user pool returns a
-#' `NotAuthorizedException` error.
+#' This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a `NotAuthorizedException` error.
 #' 
 #' `"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}`
 #' 
@@ -2440,24 +1809,9 @@ cognitoidentityprovider_admin_reset_user_password <- function(UserPoolId, Userna
 #' 
 #' `"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "[new_password]", "USERNAME": "[username]"}`
 #' 
-#' To set any required attributes that
-#' [`initiate_auth`][cognitoidentityprovider_initiate_auth] returned in an
-#' `requiredAttributes` parameter, add
-#' `"userAttributes.[attribute_name]": "[attribute_value]"`. This parameter
-#' can also set values for writable attributes that aren't required by your
-#' user pool.
+#' To set any required attributes that [`initiate_auth`][cognitoidentityprovider_initiate_auth] returned in an `requiredAttributes` parameter, add `"userAttributes.[attribute_name]": "[attribute_value]"`. This parameter can also set values for writable attributes that aren't required by your user pool.
 #' 
-#' In a `NEW_PASSWORD_REQUIRED` challenge response, you can't modify a
-#' required attribute that already has a value. In
-#' [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#' or
-#' [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge],
-#' set a value for any keys that Amazon Cognito returned in the
-#' `requiredAttributes` parameter, then use the
-#' [`admin_update_user_attributes`][cognitoidentityprovider_admin_update_user_attributes]
-#' or
-#' [`update_user_attributes`][cognitoidentityprovider_update_user_attributes]
-#' API operation to modify the value of any additional attributes.
+#' In a `NEW_PASSWORD_REQUIRED` challenge response, you can't modify a required attribute that already has a value. In [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] or [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge], set a value for any keys that Amazon Cognito returned in the `requiredAttributes` parameter, then use the [`admin_update_user_attributes`][cognitoidentityprovider_admin_update_user_attributes] or [`update_user_attributes`][cognitoidentityprovider_update_user_attributes] API operation to modify the value of any additional attributes.
 #' 
 #' **SOFTWARE_TOKEN_MFA**
 #' 
@@ -2479,59 +1833,25 @@ cognitoidentityprovider_admin_reset_user_password <- function(UserPoolId, Userna
 #' 
 #' `"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER": "[SMS_MFA|EMAIL_MFA|SOFTWARE_TOKEN_MFA]"}`
 #' 
-#' For more information about `SECRET_HASH`, see [Computing secret hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' For information about `DEVICE_KEY`, see [Working with user devices in
-#' your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' @param Session The session identifier that maintains the state of authentication
-#' requests and challenge responses. If an
-#' [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] or
-#' [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#' API request results in a determination that your application must pass
-#' another challenge, Amazon Cognito returns a session with other challenge
-#' parameters. Send this session identifier, unmodified, to the next
-#' [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#' request.
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param ContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' For more information about `SECRET_HASH`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash). For information about `DEVICE_KEY`, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' @param Session The session identifier that maintains the state of authentication requests and challenge responses. If an [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] or [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] request.
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param ContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2615,56 +1935,26 @@ cognitoidentityprovider_admin_respond_to_auth_challenge <- function(UserPoolId, 
 #' which MFA options are activated, and if any are preferred
 #'
 #' @description
-#' Sets the user's multi-factor authentication (MFA) preference, including
-#' which MFA options are activated, and if any are preferred. Only one
-#' factor can be set as preferred. The preferred MFA factor will be used to
-#' authenticate a user if multiple factors are activated. If multiple
-#' options are activated and no preference is set, a challenge to choose an
-#' MFA option will be returned during sign-in.
+#' Sets the user's multi-factor authentication (MFA) preference, including which MFA options are activated, and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_set_user_mfa_preference(SMSMfaSettings,
 #'   SoftwareTokenMfaSettings, EmailMfaSettings, WebAuthnMfaSettings,
 #'   Username, UserPoolId)
 #'
-#' @param SMSMfaSettings User preferences for SMS message MFA. Activates or deactivates SMS MFA
-#' and sets it as the preferred MFA method when multiple methods are
-#' available.
-#' @param SoftwareTokenMfaSettings User preferences for time-based one-time password (TOTP) MFA. Activates
-#' or deactivates TOTP MFA and sets it as the preferred MFA method when
-#' multiple methods are available.
-#' @param EmailMfaSettings User preferences for email message MFA. Activates or deactivates email
-#' MFA and sets it as the preferred MFA method when multiple methods are
-#' available. To activate this setting, your user pool must be in the
-#' [Essentials
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#' or higher.
-#' @param WebAuthnMfaSettings User preferences for passkey MFA. Activates or deactivates passkey MFA
-#' for the user. When activated, passkey authentication requires user
-#' verification, and passkey sign-in is available when MFA is required. To
-#' activate this setting, the `FactorConfiguration` of your user pool
-#' `WebAuthnConfiguration` must be `MULTI_FACTOR_WITH_USER_VERIFICATION`.
-#' To activate this setting, your user pool must be in the [Essentials
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#' or higher.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param SMSMfaSettings User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.
+#' @param SoftwareTokenMfaSettings User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available.
+#' @param EmailMfaSettings User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
+#' @param WebAuthnMfaSettings User preferences for passkey MFA. Activates or deactivates passkey MFA for the user. When activated, passkey authentication requires user verification, and passkey sign-in is available when MFA is required. To activate this setting, the `FactorConfiguration` of your user pool `WebAuthnConfiguration` must be `MULTI_FACTOR_WITH_USER_VERIFICATION`. To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to set a user's MFA preferences.
 #'
 #' @return
@@ -2720,73 +2010,32 @@ cognitoidentityprovider_admin_set_user_mfa_preference <- function(SMSMfaSettings
 #' Sets the specified user's password in a user pool
 #'
 #' @description
-#' Sets the specified user's password in a user pool. This operation
-#' administratively sets a temporary or permanent password for a user. With
-#' this operation, you can bypass self-service password changes and permit
-#' immediate sign-in with the password that you set. To do this, set
-#' `Permanent` to `true`.
+#' Sets the specified user's password in a user pool. This operation administratively sets a temporary or permanent password for a user. With this operation, you can bypass self-service password changes and permit immediate sign-in with the password that you set. To do this, set `Permanent` to `true`.
 #' 
-#' You can also set a new temporary password in this request, send it to a
-#' user, and require them to choose a new password on their next sign-in.
-#' To do this, set `Permanent` to `false`.
+#' You can also set a new temporary password in this request, send it to a user, and require them to choose a new password on their next sign-in. To do this, set `Permanent` to `false`.
 #' 
-#' If the password is temporary, the user's `Status` becomes
-#' `FORCE_CHANGE_PASSWORD`. When the user next tries to sign in, the
-#' [`initiate_auth`][cognitoidentityprovider_initiate_auth] or
-#' [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth]
-#' response includes the `NEW_PASSWORD_REQUIRED` challenge. If the user
-#' doesn't sign in before the temporary password expires, they can no
-#' longer sign in and you must repeat this operation to set a temporary or
-#' permanent password for them.
+#' If the password is temporary, the user's `Status` becomes `FORCE_CHANGE_PASSWORD`. When the user next tries to sign in, the [`initiate_auth`][cognitoidentityprovider_initiate_auth] or [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] response includes the `NEW_PASSWORD_REQUIRED` challenge. If the user doesn't sign in before the temporary password expires, they can no longer sign in and you must repeat this operation to set a temporary or permanent password for them.
 #' 
-#' After the user sets a new password, or if you set a permanent password,
-#' their status becomes `Confirmed`.
+#' After the user sets a new password, or if you set a permanent password, their status becomes `Confirmed`.
 #' 
-#' [`admin_set_user_password`][cognitoidentityprovider_admin_set_user_password]
-#' can set a password for the user profile that Amazon Cognito creates for
-#' third-party federated users. When you set a password, the federated
-#' user's status changes from `EXTERNAL_PROVIDER` to `CONFIRMED`. A user in
-#' this state can sign in as a federated user, and initiate authentication
-#' flows in the API like a linked native user. They can also modify their
-#' password and attributes in token-authenticated API requests like
-#' [`change_password`][cognitoidentityprovider_change_password] and
-#' [`update_user_attributes`][cognitoidentityprovider_update_user_attributes].
-#' As a best security practice and to keep users in sync with your external
-#' IdP, don't set passwords on federated user profiles. To set up a
-#' federated user for native sign-in with a linked native user, refer to
-#' [Linking federated users to an existing user
-#' profile](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html).
+#' [`admin_set_user_password`][cognitoidentityprovider_admin_set_user_password] can set a password for the user profile that Amazon Cognito creates for third-party federated users. When you set a password, the federated user's status changes from `EXTERNAL_PROVIDER` to `CONFIRMED`. A user in this state can sign in as a federated user, and initiate authentication flows in the API like a linked native user. They can also modify their password and attributes in token-authenticated API requests like [`change_password`][cognitoidentityprovider_change_password] and [`update_user_attributes`][cognitoidentityprovider_update_user_attributes]. As a best security practice and to keep users in sync with your external IdP, don't set passwords on federated user profiles. To set up a federated user for native sign-in with a linked native user, refer to [Linking federated users to an existing user profile](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_set_user_password(UserPoolId, Username,
 #'   Password, Permanent)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to set the user's password.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param Password &#91;required&#93; The new temporary or permanent password that you want to set for the
-#' user. You can't remove the password for a user who already has a
-#' password so that they can only sign in with passwordless methods. In
-#' this scenario, you must create a new user without a password.
-#' @param Permanent Set to `true` to set a password that the user can immediately sign in
-#' with. Set to `false` to set a temporary password that the user must
-#' change on their next sign-in.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param Password &#91;required&#93; The new temporary or permanent password that you want to set for the user. You can't remove the password for a user who already has a password so that they can only sign in with passwordless methods. In this scenario, you must create a new user without a password.
+#' @param Permanent Set to `true` to set a password that the user can immediately sign in with. Set to `false` to set a temporary password that the user must change on their next sign-in.
 #'
 #' @return
 #' An empty list.
@@ -2828,36 +2077,23 @@ cognitoidentityprovider_admin_set_user_password <- function(UserPoolId, Username
 #' This action is no longer supported
 #'
 #' @description
-#' *This action is no longer supported.* You can use it to configure only
-#' SMS MFA. You can't use it to configure time-based one-time password
-#' (TOTP) software token MFA.
+#' *This action is no longer supported.* You can use it to configure only SMS MFA. You can't use it to configure time-based one-time password (TOTP) software token MFA.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_set_user_settings(UserPoolId, Username,
 #'   MFAOptions)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the user whose options you're
-#' setting.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param MFAOptions &#91;required&#93; You can use this parameter only to set an SMS configuration that uses
-#' SMS for delivery.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the user whose options you're setting.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param MFAOptions &#91;required&#93; You can use this parameter only to set an SMS configuration that uses SMS for delivery.
 #'
 #' @return
 #' An empty list.
@@ -2904,52 +2140,26 @@ cognitoidentityprovider_admin_set_user_settings <- function(UserPoolId, Username
 #' protection features
 #'
 #' @description
-#' Provides the feedback for an authentication event generated by threat
-#' protection features. Your response indicates that you think that the
-#' event either was from a valid user or was an unwanted authentication
-#' attempt. This feedback improves the risk evaluation decision for the
-#' user pool as part of Amazon Cognito threat protection. To activate this
-#' setting, your user pool must be on the [Plus
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
+#' Provides the feedback for an authentication event generated by threat protection features. Your response indicates that you think that the event either was from a valid user or was an unwanted authentication attempt. This feedback improves the risk evaluation decision for the user pool as part of Amazon Cognito threat protection. To activate this setting, your user pool must be on the [Plus tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
 #' 
-#' To train the threat-protection model to recognize trusted and untrusted
-#' sign-in characteristics, configure threat protection in audit-only mode
-#' and provide a mechanism for users or administrators to submit feedback.
-#' Your feedback can tell Amazon Cognito that a risk rating was assigned at
-#' a level you don't agree with.
+#' To train the threat-protection model to recognize trusted and untrusted sign-in characteristics, configure threat protection in audit-only mode and provide a mechanism for users or administrators to submit feedback. Your feedback can tell Amazon Cognito that a risk rating was assigned at a level you don't agree with.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_update_auth_event_feedback(UserPoolId,
 #'   Username, EventId, FeedbackValue)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to submit authentication-event
-#' feedback.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param EventId &#91;required&#93; The ID of the threat protection authentication event that you want to
-#' update.
-#' @param FeedbackValue &#91;required&#93; Your feedback to the authentication event. When you provide a
-#' `FeedbackValue` value of `valid`, you tell Amazon Cognito that you trust
-#' a user session where Amazon Cognito has evaluated some level of risk.
-#' When you provide a `FeedbackValue` value of `invalid`, you tell Amazon
-#' Cognito that you don't trust a user session, or you don't believe that
-#' Amazon Cognito evaluated a high-enough risk level.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to submit authentication-event feedback.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param EventId &#91;required&#93; The ID of the threat protection authentication event that you want to update.
+#' @param FeedbackValue &#91;required&#93; Your feedback to the authentication event. When you provide a `FeedbackValue` value of `valid`, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a `FeedbackValue` value of `invalid`, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.
 #'
 #' @return
 #' An empty list.
@@ -2992,42 +2202,24 @@ cognitoidentityprovider_admin_update_auth_event_feedback <- function(UserPoolId,
 #' or not remembered for the purpose of device authentication
 #'
 #' @description
-#' Updates the status of a user's device so that it is marked as remembered
-#' or not remembered for the purpose of device authentication. Device
-#' authentication is a "remember me" mechanism that silently completes
-#' sign-in from trusted devices with a device key instead of a
-#' user-provided MFA code. This operation changes the status of a device
-#' without deleting it, so you can enable it again later. For more
-#' information about device authentication, see [Working with
-#' devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Updates the status of a user's device so that it is marked as remembered or not remembered for the purpose of device authentication. Device authentication is a "remember me" mechanism that silently completes sign-in from trusted devices with a device key instead of a user-provided MFA code. This operation changes the status of a device without deleting it, so you can enable it again later. For more information about device authentication, see [Working with devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_update_device_status(UserPoolId, Username,
 #'   DeviceKey, DeviceRememberedStatus)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to change a user's device status.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param DeviceKey &#91;required&#93; The unique identifier, or device key, of the device that you want to
-#' update the status for.
-#' @param DeviceRememberedStatus To enable device authentication with the specified device, set to
-#' `remembered`.To disable, set to `not_remembered`.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param DeviceKey &#91;required&#93; The unique identifier, or device key, of the device that you want to update the status for.
+#' @param DeviceRememberedStatus To enable device authentication with the specified device, set to `remembered`.To disable, set to `not_remembered`.
 #'
 #' @return
 #' An empty list.
@@ -3069,105 +2261,50 @@ cognitoidentityprovider_admin_update_device_status <- function(UserPoolId, Usern
 #' Updates the specified user's attributes
 #'
 #' @description
-#' Updates the specified user's attributes. To delete an attribute from
-#' your user, submit the attribute in your API request with a blank value.
+#' Updates the specified user's attributes. To delete an attribute from your user, submit the attribute in your API request with a blank value.
 #' 
-#' For custom attributes, you must add a `custom:` prefix to the attribute
-#' name, for example `custom:department`.
+#' For custom attributes, you must add a `custom:` prefix to the attribute name, for example `custom:department`.
 #' 
-#' This operation can set a user's email address or phone number as
-#' verified and permit immediate sign-in in user pools that require
-#' verification of these attributes. To do this, set the `email_verified`
-#' or `phone_number_verified` attribute to `true`.
+#' This operation can set a user's email address or phone number as verified and permit immediate sign-in in user pools that require verification of these attributes. To do this, set the `email_verified` or `phone_number_verified` attribute to `true`.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #'
 #' @usage
 #' cognitoidentityprovider_admin_update_user_attributes(UserPoolId,
 #'   Username, UserAttributes, ClientMetadata)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to update user attributes.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #' @param UserAttributes &#91;required&#93; An array of name-value pairs representing user attributes.
 #' 
-#' For custom attributes, you must prepend the `custom:` prefix to the
-#' attribute name.
+#' For custom attributes, you must prepend the `custom:` prefix to the attribute name.
 #' 
-#' If your user pool requires verification before Amazon Cognito updates an
-#' attribute value that you specify in this request, Amazon Cognito doesn’t
-#' immediately update the value of that attribute. After your user receives
-#' and responds to a verification message to verify the new value, Amazon
-#' Cognito updates the attribute value. Your user can sign in and receive
-#' messages with the original attribute value until they verify the new
-#' value.
+#' If your user pool requires verification before Amazon Cognito updates an attribute value that you specify in this request, Amazon Cognito doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.
 #' 
-#' To skip the verification message and update the value of an attribute
-#' that requires verification in the same API request, include the
-#' `email_verified` or `phone_number_verified` attribute, with a value of
-#' `true`. If you set the `email_verified` or `phone_number_verified` value
-#' for an `email` or `phone_number` attribute that requires verification to
-#' `true`, Amazon Cognito doesn’t send a verification message to your user.
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' To skip the verification message and update the value of an attribute that requires verification in the same API request, include the `email_verified` or `phone_number_verified` attribute, with a value of `true`. If you set the `email_verified` or `phone_number_verified` value for an `email` or `phone_number` attribute that requires verification to `true`, Amazon Cognito doesn’t send a verification message to your user.
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' An empty list.
@@ -3217,61 +2354,31 @@ cognitoidentityprovider_admin_update_user_attributes <- function(UserPoolId, Use
 #' issued to a user
 #'
 #' @description
-#' Invalidates the identity, access, and refresh tokens that Amazon Cognito
-#' issued to a user. Call this operation with your administrative
-#' credentials when your user signs out of your app. This results in the
-#' following behavior.
+#' Invalidates the identity, access, and refresh tokens that Amazon Cognito issued to a user. Call this operation with your administrative credentials when your user signs out of your app. This results in the following behavior.
 #' 
-#' -   Amazon Cognito no longer accepts *token-authorized* user operations
-#'     that you authorize with a signed-out user's access tokens. For more
-#'     information, see [Using the Amazon Cognito user pools API and user
-#'     pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' -   Amazon Cognito no longer accepts *token-authorized* user operations that you authorize with a signed-out user's access tokens. For more information, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#'     Amazon Cognito returns an `Access Token has been revoked` error when
-#'     your app attempts to authorize a user pools API request with a
-#'     revoked access token that contains the scope
-#'     `aws.cognito.signin.user.admin`.
+#'     Amazon Cognito returns an `Access Token has been revoked` error when your app attempts to authorize a user pools API request with a revoked access token that contains the scope `aws.cognito.signin.user.admin`.
 #' 
-#' -   Amazon Cognito no longer accepts a signed-out user's ID token in a
-#'     [GetId](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html)
-#'     request to an identity pool with `ServerSideTokenCheck` enabled for
-#'     its user pool IdP configuration in
-#'     [CognitoIdentityProvider](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html).
+#' -   Amazon Cognito no longer accepts a signed-out user's ID token in a [GetId](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html) request to an identity pool with `ServerSideTokenCheck` enabled for its user pool IdP configuration in [CognitoIdentityProvider](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html).
 #' 
-#' -   Amazon Cognito no longer accepts a signed-out user's refresh tokens
-#'     in refresh requests.
+#' -   Amazon Cognito no longer accepts a signed-out user's refresh tokens in refresh requests.
 #' 
-#' Other requests might be valid until your user's token expires. This
-#' operation doesn't clear the [managed
-#' login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html)
-#' session cookie. To clear the session for a user who signed in with
-#' managed login or the classic hosted UI, direct their browser session to
-#' the [logout
-#' endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html).
+#' Other requests might be valid until your user's token expires. This operation doesn't clear the [managed login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html) session cookie. To clear the session for a user who signed in with managed login or the classic hosted UI, direct their browser session to the [logout endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_admin_user_global_sign_out(UserPoolId, Username)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to sign out a user.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #'
 #' @return
 #' An empty list.
@@ -3313,37 +2420,19 @@ cognitoidentityprovider_admin_user_global_sign_out <- function(UserPoolId, Usern
 #' Cognito generates and returns in the API response
 #'
 #' @description
-#' Begins setup of time-based one-time password (TOTP) multi-factor
-#' authentication (MFA) for a user, with a unique private key that Amazon
-#' Cognito generates and returns in the API response. You can authorize an
-#' [`associate_software_token`][cognitoidentityprovider_associate_software_token]
-#' request with either the user's access token, or a session string from a
-#' challenge response that you received from Amazon Cognito.
+#' Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA) for a user, with a unique private key that Amazon Cognito generates and returns in the API response. You can authorize an [`associate_software_token`][cognitoidentityprovider_associate_software_token] request with either the user's access token, or a session string from a challenge response that you received from Amazon Cognito.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #'
 #' @usage
 #' cognitoidentityprovider_associate_software_token(AccessToken, Session)
 #'
-#' @param AccessToken A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #' 
 #' You can provide either an access token or a session ID in the request.
-#' @param Session The session identifier that maintains the state of authentication
-#' requests and challenge responses. In
-#' [`associate_software_token`][cognitoidentityprovider_associate_software_token],
-#' this is the session ID from a successful sign-in. You can provide either
-#' an access token or a session ID in the request.
+#' @param Session The session identifier that maintains the state of authentication requests and challenge responses. In [`associate_software_token`][cognitoidentityprovider_associate_software_token], this is the session ID from a successful sign-in. You can provide either an access token or a session ID in the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3391,27 +2480,17 @@ cognitoidentityprovider_associate_software_token <- function(AccessToken = NULL,
 #' @description
 #' Changes the password for the currently signed-in user.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_change_password(PreviousPassword,
 #'   ProposedPassword, AccessToken)
 #'
-#' @param PreviousPassword The user's previous password. Required if the user has a password. If
-#' the user has no password and only signs in with passwordless
-#' authentication options, you can omit this parameter.
+#' @param PreviousPassword The user's previous password. Required if the user has a password. If the user has no password and only signs in with passwordless authentication options, you can omit this parameter.
 #' @param ProposedPassword &#91;required&#93; A new password that you prompted the user to enter in your application.
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the user whose
-#' password you want to change.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the user whose password you want to change.
 #'
 #' @return
 #' An empty list.
@@ -3453,22 +2532,16 @@ cognitoidentityprovider_change_password <- function(PreviousPassword = NULL, Pro
 #' signed-in user
 #'
 #' @description
-#' Completes registration of a passkey authenticator for the currently
-#' signed-in user.
+#' Completes registration of a passkey authenticator for the currently signed-in user.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #'
 #' @usage
 #' cognitoidentityprovider_complete_web_authn_registration(AccessToken,
 #'   Credential)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param Credential &#91;required&#93; A
-#' [RegistrationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson)
-#' public-key credential response from the user's passkey provider.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param Credential &#91;required&#93; A [RegistrationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-registrationresponsejson) public-key credential response from the user's passkey provider.
 #'
 #' @return
 #' An empty list.
@@ -3508,33 +2581,18 @@ cognitoidentityprovider_complete_web_authn_registration <- function(AccessToken,
 #' Confirms a device that a user wants to remember
 #'
 #' @description
-#' Confirms a device that a user wants to remember. A remembered device is
-#' a "Remember me on this device" option for user pools that perform
-#' authentication with the device key of a trusted device in the back end,
-#' instead of a user-provided MFA code. For more information about device
-#' authentication, see [Working with user devices in your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Confirms a device that a user wants to remember. A remembered device is a "Remember me on this device" option for user pools that perform authentication with the device key of a trusted device in the back end, instead of a user-provided MFA code. For more information about device authentication, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_confirm_device(AccessToken, DeviceKey,
 #'   DeviceSecretVerifierConfig, DeviceName)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param DeviceKey &#91;required&#93; The unique identifier, or device key, of the device that you want to
-#' update the status for.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param DeviceKey &#91;required&#93; The unique identifier, or device key, of the device that you want to update the status for.
 #' @param DeviceSecretVerifierConfig The configuration of the device secret verifier.
 #' @param DeviceName A friendly name for the device, for example `MyMobilePhone`.
 #'
@@ -3587,78 +2645,37 @@ cognitoidentityprovider_confirm_device <- function(AccessToken, DeviceKey, Devic
 #' Cognito sent to a user and accepts a new password for that user
 #'
 #' @description
-#' This public API operation accepts a confirmation code that Amazon
-#' Cognito sent to a user and accepts a new password for that user.
+#' This public API operation accepts a confirmation code that Amazon Cognito sent to a user and accepts a new password for that user.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_confirm_forgot_password(ClientId, SecretHash,
 #'   Username, ConfirmationCode, Password, AnalyticsMetadata,
 #'   UserContextData, ClientMetadata)
 #'
-#' @param ClientId &#91;required&#93; The ID of the app client where the user wants to reset their password.
-#' This parameter is an identifier of the client application that users are
-#' resetting their password from, but this operation resets users'
-#' irrespective of the app clients they sign in to.
-#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the
-#' secret key of a user pool client and username plus the client ID in the
-#' message. For more information about `SecretHash`, see [Computing secret
-#' hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param ConfirmationCode &#91;required&#93; The confirmation code that your user pool delivered when your user
-#' requested to reset their password.
+#' @param ClientId &#91;required&#93; The ID of the app client where the user wants to reset their password. This parameter is an identifier of the client application that users are resetting their password from, but this operation resets users' irrespective of the app clients they sign in to.
+#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about `SecretHash`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param ConfirmationCode &#91;required&#93; The confirmation code that your user pool delivered when your user requested to reset their password.
 #' @param Password &#91;required&#93; The new password that your user wants to set.
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param UserContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param UserContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' An empty list.
@@ -3711,25 +2728,11 @@ cognitoidentityprovider_confirm_forgot_password <- function(ClientId, SecretHash
 #' Confirms the account of a new user
 #'
 #' @description
-#' Confirms the account of a new user. This public API operation submits a
-#' code that Amazon Cognito sent to your user when they signed up in your
-#' user pool. After your user enters their code, they confirm ownership of
-#' the email address or phone number that they provided, and their user
-#' account becomes active. Depending on your user pool configuration, your
-#' users will receive their confirmation code in an email or SMS message.
+#' Confirms the account of a new user. This public API operation submits a code that Amazon Cognito sent to your user when they signed up in your user pool. After your user enters their code, they confirm ownership of the email address or phone number that they provided, and their user account becomes active. Depending on your user pool configuration, your users will receive their confirmation code in an email or SMS message.
 #' 
-#' Local users who signed up in your user pool are the only type of user
-#' who can confirm sign-up with a code. Users who federate through an
-#' external identity provider (IdP) have already been confirmed by their
-#' IdP.
+#' Local users who signed up in your user pool are the only type of user who can confirm sign-up with a code. Users who federate through an external identity provider (IdP) have already been confirmed by their IdP.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_confirm_sign_up(ClientId, SecretHash, Username,
@@ -3737,78 +2740,34 @@ cognitoidentityprovider_confirm_forgot_password <- function(ClientId, SecretHash
 #'   UserContextData, ClientMetadata, Session)
 #'
 #' @param ClientId &#91;required&#93; The ID of the app client associated with the user pool.
-#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the
-#' secret key of a user pool client and username plus the client ID in the
-#' message. For more information about `SecretHash`, see [Computing secret
-#' hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param ConfirmationCode &#91;required&#93; The confirmation code that your user pool sent in response to the
-#' [`sign_up`][cognitoidentityprovider_sign_up] request.
-#' @param ForceAliasCreation When `true`, forces user confirmation despite any existing aliases.
-#' Defaults to `false`. A value of `true` migrates the alias from an
-#' existing user to the new user if an existing user already has the phone
-#' number or email address as an alias.
+#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about `SecretHash`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param ConfirmationCode &#91;required&#93; The confirmation code that your user pool sent in response to the [`sign_up`][cognitoidentityprovider_sign_up] request.
+#' @param ForceAliasCreation When `true`, forces user confirmation despite any existing aliases. Defaults to `false`. A value of `true` migrates the alias from an existing user to the new user if an existing user already has the phone number or email address as an alias.
 #' 
-#' Say, for example, that an existing user has an `email` attribute of
-#' `bob@@example.com` and email is an alias in your user pool. If the new
-#' user also has an email of `bob@@example.com` and your
-#' [`confirm_sign_up`][cognitoidentityprovider_confirm_sign_up] response
-#' sets `ForceAliasCreation` to `true`, the new user can sign in with a
-#' username of `bob@@example.com` and the existing user can no longer do so.
+#' Say, for example, that an existing user has an `email` attribute of `bob@@example.com` and email is an alias in your user pool. If the new user also has an email of `bob@@example.com` and your [`confirm_sign_up`][cognitoidentityprovider_confirm_sign_up] response sets `ForceAliasCreation` to `true`, the new user can sign in with a username of `bob@@example.com` and the existing user can no longer do so.
 #' 
-#' If `false` and an attribute belongs to an existing alias, this request
-#' returns an **AliasExistsException** error.
+#' If `false` and an attribute belongs to an existing alias, this request returns an **AliasExistsException** error.
 #' 
-#' For more information about sign-in aliases, see [Customizing sign-in
-#' attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases).
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param UserContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' For more information about sign-in aliases, see [Customizing sign-in attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases).
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param UserContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
-#' @param Session The optional session ID from a
-#' [`sign_up`][cognitoidentityprovider_sign_up] API request. You can sign
-#' in a user directly from the sign-up process with the `USER_AUTH`
-#' authentication flow.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
+#' @param Session The optional session ID from a [`sign_up`][cognitoidentityprovider_sign_up] API request. You can sign in a user directly from the sign-up process with the `USER_AUTH` authentication flow.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3867,22 +2826,15 @@ cognitoidentityprovider_confirm_sign_up <- function(ClientId, SecretHash = NULL,
 #' Creates a new group in the specified user pool
 #'
 #' @description
-#' Creates a new group in the specified user pool. For more information
-#' about user pool groups, see [Adding groups to a user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
+#' Creates a new group in the specified user pool. For more information about user pool groups, see [Adding groups to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_group(GroupName, UserPoolId, Description,
@@ -3891,30 +2843,12 @@ cognitoidentityprovider_confirm_sign_up <- function(ClientId, SecretHash = NULL,
 #' @param GroupName &#91;required&#93; A name for the group. This name must be unique in your user pool.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to create a user group.
 #' @param Description A description of the group that you're creating.
-#' @param RoleArn The Amazon Resource Name (ARN) for the IAM role that you want to
-#' associate with the group. A group role primarily declares a preferred
-#' role for the credentials that you get from an identity pool. Amazon
-#' Cognito ID tokens have a `cognito:preferred_role` claim that presents
-#' the highest-precedence group that a user belongs to. Both ID and access
-#' tokens also contain a `cognito:groups` claim that list all the groups
-#' that a user is a member of.
-#' @param Precedence A non-negative integer value that specifies the precedence of this group
-#' relative to the other groups that a user can belong to in the user pool.
-#' Zero is the highest precedence value. Groups with lower `Precedence`
-#' values take precedence over groups with higher or null `Precedence`
-#' values. If a user belongs to two or more groups, it is the group with
-#' the lowest precedence value whose role ARN is given in the user's tokens
-#' for the `cognito:roles` and `cognito:preferred_role` claims.
+#' @param RoleArn The Amazon Resource Name (ARN) for the IAM role that you want to associate with the group. A group role primarily declares a preferred role for the credentials that you get from an identity pool. Amazon Cognito ID tokens have a `cognito:preferred_role` claim that presents the highest-precedence group that a user belongs to. Both ID and access tokens also contain a `cognito:groups` claim that list all the groups that a user is a member of.
+#' @param Precedence A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower `Precedence` values take precedence over groups with higher or null `Precedence` values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the `cognito:roles` and `cognito:preferred_role` claims.
 #' 
-#' Two groups can have the same `Precedence` value. If this happens,
-#' neither group takes precedence over the other. If two groups with the
-#' same `Precedence` have the same role ARN, that role is used in the
-#' `cognito:preferred_role` claim in tokens for users in each group. If the
-#' two groups have different role ARNs, the `cognito:preferred_role` claim
-#' isn't set in users' tokens.
+#' Two groups can have the same `Precedence` value. If this happens, neither group takes precedence over the other. If two groups with the same `Precedence` have the same role ARN, that role is used in the `cognito:preferred_role` claim in tokens for users in each group. If the two groups have different role ARNs, the `cognito:preferred_role` claim isn't set in users' tokens.
 #' 
-#' The default `Precedence` value is null. The maximum `Precedence` value
-#' is `2^31-1`.
+#' The default `Precedence` value is null. The maximum `Precedence` value is `2^31-1`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3975,24 +2909,15 @@ cognitoidentityprovider_create_group <- function(GroupName, UserPoolId, Descript
 #' identity provider (IdP) and a user pool
 #'
 #' @description
-#' Adds a configuration and trust relationship between a third-party
-#' identity provider (IdP) and a user pool. Amazon Cognito accepts sign-in
-#' with third-party identity providers through managed login and OIDC
-#' relying-party libraries. For more information, see [Third-party IdP
-#' sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
+#' Adds a configuration and trust relationship between a third-party identity provider (IdP) and a user pool. Amazon Cognito accepts sign-in with third-party identity providers through managed login and OIDC relying-party libraries. For more information, see [Third-party IdP sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_identity_provider(UserPoolId,
@@ -4000,86 +2925,53 @@ cognitoidentityprovider_create_group <- function(GroupName, UserPoolId, Descript
 #'   IdpIdentifiers)
 #'
 #' @param UserPoolId &#91;required&#93; The Id of the user pool where you want to create an IdP.
-#' @param ProviderName &#91;required&#93; The name that you want to assign to the IdP. You can pass the identity
-#' provider name in the `identity_provider` query parameter of requests to
-#' the [Authorize
-#' endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html)
-#' to silently redirect to sign-in with the associated IdP.
-#' @param ProviderType &#91;required&#93; The type of IdP that you want to add. Amazon Cognito supports OIDC, SAML
-#' 2.0, Login With Amazon, Sign In With Apple, Google, and Facebook IdPs.
-#' @param ProviderDetails &#91;required&#93; The scopes, URLs, and identifiers for your external identity provider.
-#' The following examples describe the provider detail keys for each IdP
-#' type. These values and their schema are subject to change. Social IdP
-#' `authorize_scopes` values must match the values listed here.
+#' @param ProviderName &#91;required&#93; The name that you want to assign to the IdP. You can pass the identity provider name in the `identity_provider` query parameter of requests to the [Authorize endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html) to silently redirect to sign-in with the associated IdP.
+#' @param ProviderType &#91;required&#93; The type of IdP that you want to add. Amazon Cognito supports OIDC, SAML 2.0, Login With Amazon, Sign In With Apple, Google, and Facebook IdPs.
+#' @param ProviderDetails &#91;required&#93; The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP `authorize_scopes` values must match the values listed here.
 #' 
 #' **OpenID Connect (OIDC)**
 #' 
-#' Amazon Cognito accepts the following elements when it can't discover
-#' endpoint URLs from `oidc_issuer`: `attributes_url`, `authorize_url`,
-#' `jwks_uri`, `token_url`.
+#' Amazon Cognito accepts the following elements when it can't discover endpoint URLs from `oidc_issuer`: `attributes_url`, `authorize_url`, `jwks_uri`, `token_url`.
 #' 
-#' Create or update request:
-#' `"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }`
+#' Create or update request: `"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }`
+#' Describe response: `"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }`
 #' 
 #' **SAML**
 #' 
-#' Create or update request with Metadata URL:
-#' `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }`
+#' Create or update request with Metadata URL: `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }`
 #' 
-#' Create or update request with Metadata file:
-#' `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }`
+#' Create or update request with Metadata file: `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }`
 #' 
-#' The value of `MetadataFile` must be the plaintext metadata document with
-#' all quote (") characters escaped by backslashes.
+#' The value of `MetadataFile` must be the plaintext metadata document with all quote (") characters escaped by backslashes.
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }`
+#' Describe response: `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }`
 #' 
 #' **LoginWithAmazon**
 #' 
-#' Create or update request:
-#' `"ProviderDetails": \{ "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"`
+#' Create or update request: `"ProviderDetails": \{ "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }`
+#' Describe response: `"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }`
 #' 
 #' **Google**
 #' 
-#' Create or update request:
-#' `"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }`
+#' Create or update request: `"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }`
+#' Describe response: `"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }`
 #' 
 #' **SignInWithApple**
 #' 
-#' Create or update request:
-#' `"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }`
+#' Create or update request: `"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }`
+#' Describe response: `"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }`
 #' 
 #' **Facebook**
 #' 
-#' Create or update request:
-#' `"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }`
+#' Create or update request: `"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }`
-#' @param AttributeMapping A mapping of IdP attributes to standard and custom user pool attributes.
-#' Specify a user pool attribute as the key of the key-value pair, and the
-#' IdP attribute claim name as the value.
-#' @param IdpIdentifiers An array of IdP identifiers, for example
-#' `"IdPIdentifiers": [ "MyIdP", "MyIdP2" ]`. Identifiers are friendly
-#' names that you can pass in the `idp_identifier` query parameter of
-#' requests to the [Authorize
-#' endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html)
-#' to silently redirect to sign-in with the associated IdP. Identifiers in
-#' a domain format also enable the use of [email-address matching with SAML
-#' providers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html).
+#' Describe response: `"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }`
+#' @param AttributeMapping A mapping of IdP attributes to standard and custom user pool attributes. Specify a user pool attribute as the key of the key-value pair, and the IdP attribute claim name as the value.
+#' @param IdpIdentifiers An array of IdP identifiers, for example `"IdPIdentifiers": [ "MyIdP", "MyIdP2" ]`. Identifiers are friendly names that you can pass in the `idp_identifier` query parameter of requests to the [Authorize endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html) to silently redirect to sign-in with the associated IdP. Identifiers in a domain format also enable the use of [email-address matching with SAML providers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -4154,55 +3046,32 @@ cognitoidentityprovider_create_identity_provider <- function(UserPoolId, Provide
 #' associates it with an app client
 #'
 #' @description
-#' Creates a new set of branding settings for a user pool style and
-#' associates it with an app client. This operation is the programmatic
-#' option for the creation of a new style in the branding editor.
+#' Creates a new set of branding settings for a user pool style and associates it with an app client. This operation is the programmatic option for the creation of a new style in the branding editor.
 #' 
-#' Provides values for UI customization in a `Settings` JSON object and
-#' image files in an `Assets` array. To send the JSON object `Document`
-#' type parameter in `Settings`, you might need to update to the most
-#' recent version of your Amazon Web Services SDK. To create a new style
-#' with default settings, set `UseCognitoProvidedValues` to `true` and
-#' don't provide values for any other options.
+#' Provides values for UI customization in a `Settings` JSON object and image files in an `Assets` array. To send the JSON object `Document` type parameter in `Settings`, you might need to update to the most recent version of your Amazon Web Services SDK. To create a new style with default settings, set `UseCognitoProvidedValues` to `true` and don't provide values for any other options.
 #' 
-#' This operation has a 2-megabyte request-size limit and include the CSS
-#' settings and image assets for your app client. Your branding settings
-#' might exceed 2MB in size. Amazon Cognito doesn't require that you pass
-#' all parameters in one request and preserves existing style settings that
-#' you don't specify. If your request is larger than 2MB, separate it into
-#' multiple requests, each with a size smaller than the limit.
+#' This operation has a 2-megabyte request-size limit and include the CSS settings and image assets for your app client. Your branding settings might exceed 2MB in size. Amazon Cognito doesn't require that you pass all parameters in one request and preserves existing style settings that you don't specify. If your request is larger than 2MB, separate it into multiple requests, each with a size smaller than the limit.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_managed_login_branding(UserPoolId,
 #'   ClientId, UseCognitoProvidedValues, Settings, Assets)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to create a new branding style.
-#' @param ClientId &#91;required&#93; The app client that you want to create the branding style for. Each
-#' style is linked to an app client until you delete it.
-#' @param UseCognitoProvidedValues When true, applies the default branding style options. These default
-#' options are managed by Amazon Cognito. You can modify them later in the
-#' branding editor.
+#' @param ClientId &#91;required&#93; The app client that you want to create the branding style for. Each style is linked to an app client until you delete it.
+#' @param UseCognitoProvidedValues When true, applies the default branding style options. These default options are managed by Amazon Cognito. You can modify them later in the branding editor.
 #' 
-#' When you specify `true` for this option, you must also omit values for
-#' `Settings` and `Assets` in the request.
-#' @param Settings A JSON file, encoded as a `Document` type, with the the settings that
-#' you want to apply to your style.
+#' When you specify `true` for this option, you must also omit values for `Settings` and `Assets` in the request.
+#' @param Settings A JSON file, encoded as a `Document` type, with the the settings that you want to apply to your style.
 #' 
-#' The following components are not currently implemented and reserved for
-#' future use:
+#' The following components are not currently implemented and reserved for future use:
 #' 
 #' -   `signUp`
 #' 
@@ -4210,11 +3079,8 @@ cognitoidentityprovider_create_identity_provider <- function(UserPoolId, Provide
 #' 
 #' -   `sessionTimerDisplay`
 #' 
-#' -   `languageSelector` (for localization, see [Managed login
-#'     localization)](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization)
-#' @param Assets An array of image files that you want to apply to functions like
-#' backgrounds, logos, and icons. Each object must also indicate whether it
-#' is for dark mode, light mode, or browser-adaptive mode.
+#' -   `languageSelector` (for localization, see [Managed login localization)](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization)
+#' @param Assets An array of image files that you want to apply to functions like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4290,43 +3156,26 @@ cognitoidentityprovider_create_managed_login_branding <- function(UserPoolId, Cl
 #' Creates a new OAuth2
 #'
 #' @description
-#' Creates a new OAuth2.0 resource server and defines custom scopes within
-#' it. Resource servers are associated with custom scopes and
-#' machine-to-machine (M2M) authorization. For more information, see
-#' [Access control with resource
-#' servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
+#' Creates a new OAuth2.0 resource server and defines custom scopes within it. Resource servers are associated with custom scopes and machine-to-machine (M2M) authorization. For more information, see [Access control with resource servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_resource_server(UserPoolId, Identifier,
 #'   Name, Scopes)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to create a resource server.
-#' @param Identifier &#91;required&#93; A unique resource server identifier for the resource server. The
-#' identifier can be an API friendly name like `solar-system-data`. You can
-#' also set an API URL like `https://solar-system-data-api.example.com` as
-#' your identifier.
+#' @param Identifier &#91;required&#93; A unique resource server identifier for the resource server. The identifier can be an API friendly name like `solar-system-data`. You can also set an API URL like `https://solar-system-data-api.example.com` as your identifier.
 #' 
-#' Amazon Cognito represents scopes in the access token in the format
-#' `$resource-server-identifier/$scope`. Longer scope-identifier strings
-#' increase the size of your access tokens.
+#' Amazon Cognito represents scopes in the access token in the format `$resource-server-identifier/$scope`. Longer scope-identifier strings increase the size of your access tokens.
 #' @param Name &#91;required&#93; A friendly name for the resource server.
-#' @param Scopes A list of custom scopes. Each scope is a key-value map with the keys
-#' `ScopeName` and `ScopeDescription`. The name of a custom scope is a
-#' combination of `ScopeName` and the resource server `Name` in this
-#' request, for example `MyResourceServerName/MyScopeName`.
+#' @param Scopes A list of custom scopes. Each scope is a key-value map with the keys `ScopeName` and `ScopeDescription`. The name of a custom scope is a combination of `ScopeName` and the resource server `Name` in this request, for example `MyResourceServerName/MyScopeName`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4388,61 +3237,34 @@ cognitoidentityprovider_create_resource_server <- function(UserPoolId, Identifie
 #' Creates terms documents for the requested app client
 #'
 #' @description
-#' Creates terms documents for the requested app client. When Terms and
-#' conditions and Privacy policy documents are configured, the app client
-#' displays links to them in the sign-up page of managed login for the app
-#' client.
+#' Creates terms documents for the requested app client. When Terms and conditions and Privacy policy documents are configured, the app client displays links to them in the sign-up page of managed login for the app client.
 #' 
-#' You can provide URLs for terms documents in the languages that are
-#' supported by [managed login
-#' localization](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization).
-#' Amazon Cognito directs users to the terms documents for their current
-#' language, with fallback to `default` if no document exists for the
-#' language.
+#' You can provide URLs for terms documents in the languages that are supported by [managed login localization](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization). Amazon Cognito directs users to the terms documents for their current language, with fallback to `default` if no document exists for the language.
 #' 
-#' Each request accepts one type of terms document and a map of
-#' language-to-link for that document type. You must provide both types of
-#' terms documents in at least one language before Amazon Cognito displays
-#' your terms documents. Supply each type in separate requests.
+#' Each request accepts one type of terms document and a map of language-to-link for that document type. You must provide both types of terms documents in at least one language before Amazon Cognito displays your terms documents. Supply each type in separate requests.
 #' 
-#' For more information, see [Terms
-#' documents](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents).
+#' For more information, see [Terms documents](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_terms(UserPoolId, ClientId, TermsName,
 #'   TermsSource, Enforcement, Links)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to create terms documents.
-#' @param ClientId &#91;required&#93; The ID of the app client where you want to create terms documents. Must
-#' be an app client in the requested user pool.
-#' @param TermsName &#91;required&#93; A friendly name for the document that you want to create in the current
-#' request. Must begin with `terms-of-use` or `privacy-policy` as
-#' identification of the document type. Provide URLs for both
-#' `terms-of-use` and `privacy-policy` in separate requests.
-#' @param TermsSource &#91;required&#93; This parameter is reserved for future use and currently accepts only one
-#' value.
-#' @param Enforcement &#91;required&#93; This parameter is reserved for future use and currently accepts only one
-#' value.
-#' @param Links A map of URLs to languages. For each localized language that will view
-#' the requested `TermsName`, assign a URL. A selection of
-#' `cognito:default` displays for all languages that don't have a
-#' language-specific URL.
+#' @param ClientId &#91;required&#93; The ID of the app client where you want to create terms documents. Must be an app client in the requested user pool.
+#' @param TermsName &#91;required&#93; A friendly name for the document that you want to create in the current request. Must begin with `terms-of-use` or `privacy-policy` as identification of the document type. Provide URLs for both `terms-of-use` and `privacy-policy` in separate requests.
+#' @param TermsSource &#91;required&#93; This parameter is reserved for future use and currently accepts only one value.
+#' @param Enforcement &#91;required&#93; This parameter is reserved for future use and currently accepts only one value.
+#' @param Links A map of URLs to languages. For each localized language that will view the requested `TermsName`, assign a URL. A selection of `cognito:default` displays for all languages that don't have a language-specific URL.
 #' 
-#' For example,
-#' `"cognito:default": "https://terms.example.com", "cognito:spanish": "https://terms.example.com/es"`.
+#' For example, `"cognito:default": "https://terms.example.com", "cognito:spanish": "https://terms.example.com/es"`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4509,22 +3331,15 @@ cognitoidentityprovider_create_terms <- function(UserPoolId, ClientId, TermsName
 #' Creates a user import job
 #'
 #' @description
-#' Creates a user import job. You can import users into user pools from a
-#' comma-separated values (CSV) file without adding Amazon Cognito MAU
-#' costs to your Amazon Web Services bill.
+#' Creates a user import job. You can import users into user pools from a comma-separated values (CSV) file without adding Amazon Cognito MAU costs to your Amazon Web Services bill.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_user_import_job(JobName, UserPoolId,
@@ -4532,9 +3347,7 @@ cognitoidentityprovider_create_terms <- function(UserPoolId, ClientId, TermsName
 #'
 #' @param JobName &#91;required&#93; A friendly name for the user import job.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool that you want to import users into.
-#' @param CloudWatchLogsRoleArn &#91;required&#93; You must specify an IAM role that has permission to log import-job
-#' results to Amazon CloudWatch Logs. This parameter is the ARN of that
-#' role.
+#' @param CloudWatchLogsRoleArn &#91;required&#93; You must specify an IAM role that has permission to log import-job results to Amazon CloudWatch Logs. This parameter is the ARN of that role.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4600,42 +3413,21 @@ cognitoidentityprovider_create_user_import_job <- function(JobName, UserPoolId, 
 #' Creates a new Amazon Cognito user pool
 #'
 #' @description
-#' Creates a new Amazon Cognito user pool. This operation sets basic and
-#' advanced configuration options.
+#' Creates a new Amazon Cognito user pool. This operation sets basic and advanced configuration options.
 #' 
-#' If you don't provide a value for an attribute, Amazon Cognito sets it to
-#' its default value.
+#' If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_user_pool(PoolName, Policies,
@@ -4649,142 +3441,45 @@ cognitoidentityprovider_create_user_import_job <- function(JobName, UserPoolId, 
 #'   UserPoolTier)
 #'
 #' @param PoolName &#91;required&#93; A friendly name for your user pool.
-#' @param Policies The password policy and sign-in policy in the user pool. The password
-#' policy sets options like password complexity requirements and password
-#' history. The sign-in policy sets the options available to applications
-#' in [choice-based
-#' authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice).
-#' @param DeletionProtection When active, `DeletionProtection` prevents accidental deletion of your
-#' user pool. Before you can delete a user pool that you have protected
-#' against deletion, you must deactivate this feature.
+#' @param Policies The password policy and sign-in policy in the user pool. The password policy sets options like password complexity requirements and password history. The sign-in policy sets the options available to applications in [choice-based authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice).
+#' @param DeletionProtection When active, `DeletionProtection` prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.
 #' 
-#' When you try to delete a protected user pool in a
-#' [`delete_user_pool`][cognitoidentityprovider_delete_user_pool] API
-#' request, Amazon Cognito returns an `InvalidParameterException` error. To
-#' delete a protected user pool, send a new
-#' [`delete_user_pool`][cognitoidentityprovider_delete_user_pool] request
-#' after you deactivate deletion protection in an
-#' [`update_user_pool`][cognitoidentityprovider_update_user_pool] API
-#' request.
-#' @param LambdaConfig A collection of user pool Lambda triggers. Amazon Cognito invokes
-#' triggers at several possible stages of authentication operations.
-#' Triggers can modify the outcome of the operations that invoked them.
-#' @param AutoVerifiedAttributes The attributes that you want your user pool to automatically verify. For
-#' more information, see [Verifying contact information at
-#' sign-up](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves).
-#' @param AliasAttributes Attributes supported as an alias for this user pool. For more
-#' information about alias attributes, see [Customizing sign-in
-#' attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases).
-#' @param UsernameAttributes Specifies whether a user can use an email address or phone number as a
-#' username when they sign up. For more information, see [Customizing
-#' sign-in
-#' attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases).
+#' When you try to delete a protected user pool in a [`delete_user_pool`][cognitoidentityprovider_delete_user_pool] API request, Amazon Cognito returns an `InvalidParameterException` error. To delete a protected user pool, send a new [`delete_user_pool`][cognitoidentityprovider_delete_user_pool] request after you deactivate deletion protection in an [`update_user_pool`][cognitoidentityprovider_update_user_pool] API request.
+#' @param LambdaConfig A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several possible stages of authentication operations. Triggers can modify the outcome of the operations that invoked them.
+#' @param AutoVerifiedAttributes The attributes that you want your user pool to automatically verify. For more information, see [Verifying contact information at sign-up](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves).
+#' @param AliasAttributes Attributes supported as an alias for this user pool. For more information about alias attributes, see [Customizing sign-in attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases).
+#' @param UsernameAttributes Specifies whether a user can use an email address or phone number as a username when they sign up. For more information, see [Customizing sign-in attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html#user-pool-settings-aliases).
 #' @param SmsVerificationMessage This parameter is no longer used.
 #' @param EmailVerificationMessage This parameter is no longer used.
 #' @param EmailVerificationSubject This parameter is no longer used.
-#' @param VerificationMessageTemplate The template for the verification message that your user pool delivers
-#' to users who set an email address or phone number attribute.
+#' @param VerificationMessageTemplate The template for the verification message that your user pool delivers to users who set an email address or phone number attribute.
 #' 
-#' Set the email message type that corresponds to your `DefaultEmailOption`
-#' selection. For `CONFIRM_WITH_LINK`, specify an `EmailMessageByLink` and
-#' leave `EmailMessage` blank. For `CONFIRM_WITH_CODE`, specify an
-#' `EmailMessage` and leave `EmailMessageByLink` blank. When you supply
-#' both parameters with either choice, Amazon Cognito returns an error.
-#' @param SmsAuthenticationMessage The contents of the SMS message that your user pool sends to users in
-#' SMS OTP and MFA authentication.
-#' @param MfaConfiguration Sets multi-factor authentication (MFA) to be on, off, or optional. When
-#' `ON`, all users must set up MFA before they can sign in. When
-#' `OPTIONAL`, your application must make a client-side determination of
-#' whether a user wants to register an MFA device. For user pools with
-#' adaptive authentication with threat protection, choose `OPTIONAL`.
+#' Set the email message type that corresponds to your `DefaultEmailOption` selection. For `CONFIRM_WITH_LINK`, specify an `EmailMessageByLink` and leave `EmailMessage` blank. For `CONFIRM_WITH_CODE`, specify an `EmailMessage` and leave `EmailMessageByLink` blank. When you supply both parameters with either choice, Amazon Cognito returns an error.
+#' @param SmsAuthenticationMessage The contents of the SMS message that your user pool sends to users in SMS OTP and MFA authentication.
+#' @param MfaConfiguration Sets multi-factor authentication (MFA) to be on, off, or optional. When `ON`, all users must set up MFA before they can sign in. When `OPTIONAL`, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose `OPTIONAL`.
 #' 
-#' When `MfaConfiguration` is `OPTIONAL`, managed login doesn't
-#' automatically prompt users to set up MFA. Amazon Cognito generates MFA
-#' prompts in API responses and in managed login for users who have chosen
-#' and configured a preferred MFA factor.
-#' @param UserAttributeUpdateSettings The settings for updates to user attributes. These settings include the
-#' property `AttributesRequireVerificationBeforeUpdate`, a user-pool
-#' setting that tells Amazon Cognito how to handle changes to the value of
-#' your users' email address and phone number attributes. For more
-#' information, see [Verifying updates to email addresses and phone
-#' numbers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates).
-#' @param DeviceConfiguration The device-remembering configuration for a user pool. Device remembering
-#' or device tracking is a "Remember me on this device" option for user
-#' pools that perform authentication with the device key of a trusted
-#' device in the back end, instead of a user-provided MFA code. For more
-#' information about device authentication, see [Working with user devices
-#' in your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' A null value indicates that you have deactivated device remembering in
-#' your user pool.
+#' When `MfaConfiguration` is `OPTIONAL`, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.
+#' @param UserAttributeUpdateSettings The settings for updates to user attributes. These settings include the property `AttributesRequireVerificationBeforeUpdate`, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see [Verifying updates to email addresses and phone numbers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates).
+#' @param DeviceConfiguration The device-remembering configuration for a user pool. Device remembering or device tracking is a "Remember me on this device" option for user pools that perform authentication with the device key of a trusted device in the back end, instead of a user-provided MFA code. For more information about device authentication, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html). A null value indicates that you have deactivated device remembering in your user pool.
 #' 
-#' When you provide a value for any `DeviceConfiguration` field, you
-#' activate the Amazon Cognito device-remembering feature. For more
-#' information, see [Working with
-#' devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' @param EmailConfiguration The email configuration of your user pool. The email configuration type
-#' sets your preferred sending method, Amazon Web Services Region, and
-#' sender for messages from your user pool.
-#' @param SmsConfiguration The settings for your Amazon Cognito user pool to send SMS messages with
-#' Amazon Simple Notification Service. To send SMS messages with Amazon SNS
-#' in the Amazon Web Services Region that you want, the Amazon Cognito user
-#' pool uses an Identity and Access Management (IAM) role in your Amazon
-#' Web Services account. For more information see [SMS message
-#' settings](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html).
-#' @param UserPoolTags The tag keys and values to assign to the user pool. A tag is a label
-#' that you can use to categorize and manage user pools in different ways,
-#' such as by purpose, owner, environment, or other criteria.
-#' @param AdminCreateUserConfig The configuration for administrative creation of users. Includes the
-#' template for the invitation message for new users, the duration of
-#' temporary passwords, and permitting self-service sign-up.
-#' @param Schema An array of attributes for the new user pool. You can add custom
-#' attributes and modify the properties of default attributes. The
-#' specifications in this parameter set the required attributes in your
-#' user pool. For more information, see [Working with user
-#' attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html).
-#' @param UserPoolAddOns Contains settings for activation of threat protection, including the
-#' operating mode and additional authentication types. To log user security
-#' information but take no action, set to `AUDIT`. To configure automatic
-#' security responses to potentially unwanted traffic to your user pool,
-#' set to `ENFORCED`.
+#' When you provide a value for any `DeviceConfiguration` field, you activate the Amazon Cognito device-remembering feature. For more information, see [Working with devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' @param EmailConfiguration The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for messages from your user pool.
+#' @param SmsConfiguration The settings for your Amazon Cognito user pool to send SMS messages with Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account. For more information see [SMS message settings](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html).
+#' @param UserPoolTags The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
+#' @param AdminCreateUserConfig The configuration for administrative creation of users. Includes the template for the invitation message for new users, the duration of temporary passwords, and permitting self-service sign-up.
+#' @param Schema An array of attributes for the new user pool. You can add custom attributes and modify the properties of default attributes. The specifications in this parameter set the required attributes in your user pool. For more information, see [Working with user attributes](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html).
+#' @param UserPoolAddOns Contains settings for activation of threat protection, including the operating mode and additional authentication types. To log user security information but take no action, set to `AUDIT`. To configure automatic security responses to potentially unwanted traffic to your user pool, set to `ENFORCED`.
 #' 
-#' For more information, see [Adding advanced security to a user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html).
-#' To activate this setting, your user pool must be on the [Plus
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
-#' @param UsernameConfiguration Sets the case sensitivity option for sign-in usernames. When
-#' `CaseSensitive` is `false` (case insensitive), users can sign in with
-#' any combination of capital and lowercase letters. For example,
-#' `username`, `USERNAME`, or `UserName`, or for email, `email@@example.com`
-#' or `EMaiL@@eXamplE.Com`. For most use cases, set case sensitivity to
-#' `false` as a best practice. When usernames and email addresses are case
-#' insensitive, Amazon Cognito treats any variation in case as the same
-#' user, and prevents a case variation from being assigned to the same
-#' attribute for a different user.
+#' For more information, see [Adding advanced security to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html). To activate this setting, your user pool must be on the [Plus tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
+#' @param UsernameConfiguration Sets the case sensitivity option for sign-in usernames. When `CaseSensitive` is `false` (case insensitive), users can sign in with any combination of capital and lowercase letters. For example, `username`, `USERNAME`, or `UserName`, or for email, `email@@example.com` or `EMaiL@@eXamplE.Com`. For most use cases, set case sensitivity to `false` as a best practice. When usernames and email addresses are case insensitive, Amazon Cognito treats any variation in case as the same user, and prevents a case variation from being assigned to the same attribute for a different user.
 #' 
-#' When `CaseSensitive` is `true` (case sensitive), Amazon Cognito
-#' interprets `USERNAME` and `UserName` as distinct users.
+#' When `CaseSensitive` is `true` (case sensitive), Amazon Cognito interprets `USERNAME` and `UserName` as distinct users.
 #' 
 #' This configuration is immutable after you set it.
-#' @param AccountRecoverySetting The available verified method a user can use to recover their password
-#' when they call
-#' [`forgot_password`][cognitoidentityprovider_forgot_password]. You can
-#' use this setting to define a preferred method when a user has more than
-#' one method available. With this setting, SMS doesn't qualify for a valid
-#' password recovery mechanism if the user also has SMS multi-factor
-#' authentication (MFA) activated. Email MFA is also disqualifying for
-#' account recovery with email. In the absence of this setting, Amazon
-#' Cognito uses the legacy behavior to determine the recovery method where
-#' SMS is preferred over email.
+#' @param AccountRecoverySetting The available verified method a user can use to recover their password when they call [`forgot_password`][cognitoidentityprovider_forgot_password]. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. Email MFA is also disqualifying for account recovery with email. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred over email.
 #' 
-#' As a best practice, configure both `verified_email` and
-#' `verified_phone_number`, with one having a higher priority than the
-#' other.
-#' @param UserPoolTier The user pool [feature
-#' plan](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html),
-#' or tier. This parameter determines the eligibility of the user pool for
-#' features like managed login, access-token customization, and threat
-#' protection. Defaults to `ESSENTIALS`.
+#' As a best practice, configure both `verified_email` and `verified_phone_number`, with one having a higher priority than the other.
+#' @param UserPoolTier The user pool [feature plan](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html), or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to `ESSENTIALS`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5116,29 +3811,19 @@ cognitoidentityprovider_create_user_pool <- function(PoolName, Policies = NULL, 
 #' Creates an app client in a user pool
 #'
 #' @description
-#' Creates an app client in a user pool. This operation sets basic and
-#' advanced configuration options.
+#' Creates an app client in a user pool. This operation sets basic and advanced configuration options.
 #' 
-#' Unlike app clients created in the console, Amazon Cognito doesn't
-#' automatically assign a branding style to app clients that you configure
-#' with this API operation. Managed login and classic hosted UI pages
-#' aren't available for your client until after you apply a branding style.
+#' Unlike app clients created in the console, Amazon Cognito doesn't automatically assign a branding style to app clients that you configure with this API operation. Managed login and classic hosted UI pages aren't available for your client until after you apply a branding style.
 #' 
-#' If you don't provide a value for an attribute, Amazon Cognito sets it to
-#' its default value.
+#' If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_user_pool_client(UserPoolId, ClientName,
@@ -5153,226 +3838,96 @@ cognitoidentityprovider_create_user_pool <- function(PoolName, Policies = NULL, 
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to create an app client.
 #' @param ClientName &#91;required&#93; A friendly name for the app client that you want to create.
-#' @param GenerateSecret When `true`, generates a client secret for the app client. Client
-#' secrets are used with server-side and machine-to-machine applications.
-#' Client secrets are automatically generated; you can't specify a secret
-#' value. For more information, see [App client
-#' types](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types).
-#' @param ClientSecret A custom client secret that you want to use for the app client. You
-#' cannot specify both GenerateSecret as true and provide a ClientSecret
-#' value.
-#' @param RefreshTokenValidity The refresh token time limit. After this limit expires, your user can't
-#' use their refresh token. To specify the time unit for
-#' `RefreshTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set
-#' a `TokenValidityUnits` value in your API request.
+#' @param GenerateSecret When `true`, generates a client secret for the app client. Client secrets are used with server-side and machine-to-machine applications. Client secrets are automatically generated; you can't specify a secret value. For more information, see [App client types](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html#user-pool-settings-client-app-client-types).
+#' @param ClientSecret A custom client secret that you want to use for the app client. You cannot specify both GenerateSecret as true and provide a ClientSecret value.
+#' @param RefreshTokenValidity The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for `RefreshTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set a `TokenValidityUnits` value in your API request.
 #' 
-#' For example, when you set `RefreshTokenValidity` as `10` and
-#' `TokenValidityUnits` as `days`, your user can refresh their session and
-#' retrieve new access and ID tokens for 10 days.
+#' For example, when you set `RefreshTokenValidity` as `10` and `TokenValidityUnits` as `days`, your user can refresh their session and retrieve new access and ID tokens for 10 days.
 #' 
-#' The default time unit for `RefreshTokenValidity` in an API request is
-#' days. You can't set `RefreshTokenValidity` to 0. If you do, Amazon
-#' Cognito overrides the value with the default value of 30 days. *Valid
-#' range* is displayed below in seconds.
+#' The default time unit for `RefreshTokenValidity` in an API request is days. You can't set `RefreshTokenValidity` to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. *Valid range* is displayed below in seconds.
 #' 
-#' If you don't specify otherwise in the configuration of your app client,
-#' your refresh tokens are valid for 30 days.
-#' @param AccessTokenValidity The access token time limit. After this limit expires, your user can't
-#' use their access token. To specify the time unit for
-#' `AccessTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set a
-#' `TokenValidityUnits` value in your API request.
+#' If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.
+#' @param AccessTokenValidity The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for `AccessTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set a `TokenValidityUnits` value in your API request.
 #' 
-#' For example, when you set `AccessTokenValidity` to `10` and
-#' `TokenValidityUnits` to `hours`, your user can authorize access with
-#' their access token for 10 hours.
+#' For example, when you set `AccessTokenValidity` to `10` and `TokenValidityUnits` to `hours`, your user can authorize access with their access token for 10 hours.
 #' 
-#' The default time unit for `AccessTokenValidity` in an API request is
-#' hours. *Valid range* is displayed below in seconds.
+#' The default time unit for `AccessTokenValidity` in an API request is hours. *Valid range* is displayed below in seconds.
 #' 
-#' If you don't specify otherwise in the configuration of your app client,
-#' your access tokens are valid for one hour.
-#' @param IdTokenValidity The ID token time limit. After this limit expires, your user can't use
-#' their ID token. To specify the time unit for `IdTokenValidity` as
-#' `seconds`, `minutes`, `hours`, or `days`, set a `TokenValidityUnits`
-#' value in your API request.
+#' If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.
+#' @param IdTokenValidity The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for `IdTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set a `TokenValidityUnits` value in your API request.
 #' 
-#' For example, when you set `IdTokenValidity` as `10` and
-#' `TokenValidityUnits` as `hours`, your user can authenticate their
-#' session with their ID token for 10 hours.
+#' For example, when you set `IdTokenValidity` as `10` and `TokenValidityUnits` as `hours`, your user can authenticate their session with their ID token for 10 hours.
 #' 
-#' The default time unit for `IdTokenValidity` in an API request is hours.
-#' *Valid range* is displayed below in seconds.
+#' The default time unit for `IdTokenValidity` in an API request is hours. *Valid range* is displayed below in seconds.
 #' 
-#' If you don't specify otherwise in the configuration of your app client,
-#' your ID tokens are valid for one hour.
-#' @param TokenValidityUnits The units that validity times are represented in. The default unit for
-#' refresh tokens is days, and the default for ID and access tokens are
-#' hours.
-#' @param ReadAttributes The list of user attributes that you want your app client to have read
-#' access to. After your user authenticates in your app, their access token
-#' authorizes them to read their own attribute value for any attribute in
-#' this list.
+#' If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.
+#' @param TokenValidityUnits The units that validity times are represented in. The default unit for refresh tokens is days, and the default for ID and access tokens are hours.
+#' @param ReadAttributes The list of user attributes that you want your app client to have read access to. After your user authenticates in your app, their access token authorizes them to read their own attribute value for any attribute in this list.
 #' 
-#' When you don't specify the `ReadAttributes` for your app client, your
-#' app can read the values of `email_verified`, `phone_number_verified`,
-#' and the standard attributes of your user pool. When your user pool app
-#' client has read access to these default attributes, `ReadAttributes`
-#' doesn't return any information. Amazon Cognito only populates
-#' `ReadAttributes` in the API response if you have specified your own
-#' custom set of read attributes.
-#' @param WriteAttributes The list of user attributes that you want your app client to have write
-#' access to. After your user authenticates in your app, their access token
-#' authorizes them to set or modify their own attribute value for any
-#' attribute in this list.
+#' When you don't specify the `ReadAttributes` for your app client, your app can read the values of `email_verified`, `phone_number_verified`, and the standard attributes of your user pool. When your user pool app client has read access to these default attributes, `ReadAttributes` doesn't return any information. Amazon Cognito only populates `ReadAttributes` in the API response if you have specified your own custom set of read attributes.
+#' @param WriteAttributes The list of user attributes that you want your app client to have write access to. After your user authenticates in your app, their access token authorizes them to set or modify their own attribute value for any attribute in this list.
 #' 
-#' When you don't specify the `WriteAttributes` for your app client, your
-#' app can write the values of the Standard attributes of your user pool.
-#' When your user pool has write access to these default attributes,
-#' `WriteAttributes` doesn't return any information. Amazon Cognito only
-#' populates `WriteAttributes` in the API response if you have specified
-#' your own custom set of write attributes.
+#' When you don't specify the `WriteAttributes` for your app client, your app can write the values of the Standard attributes of your user pool. When your user pool has write access to these default attributes, `WriteAttributes` doesn't return any information. Amazon Cognito only populates `WriteAttributes` in the API response if you have specified your own custom set of write attributes.
 #' 
-#' If your app client allows users to sign in through an IdP, this array
-#' must include all attributes that you have mapped to IdP attributes.
-#' Amazon Cognito updates mapped attributes when users sign in to your
-#' application through an IdP. If your app client does not have write
-#' access to a mapped attribute, Amazon Cognito throws an error when it
-#' tries to update the attribute. For more information, see [Specifying IdP
-#' Attribute Mappings for Your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html).
-#' @param ExplicitAuthFlows The [authentication
-#' flows](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html)
-#' that you want your user pool client to support. For each app client in
-#' your user pool, you can sign in your users with any combination of one
-#' or more flows, including with a user name and Secure Remote Password
-#' (SRP), a user name and password, or a custom authentication process that
-#' you define with Lambda functions.
+#' If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see [Specifying IdP Attribute Mappings for Your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html).
+#' @param ExplicitAuthFlows The [authentication flows](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html) that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.
 #' 
-#' If you don't specify a value for `ExplicitAuthFlows`, your app client
-#' supports `ALLOW_REFRESH_TOKEN_AUTH`, `ALLOW_USER_SRP_AUTH`, and
-#' `ALLOW_CUSTOM_AUTH`.
+#' If you don't specify a value for `ExplicitAuthFlows`, your app client supports `ALLOW_REFRESH_TOKEN_AUTH`, `ALLOW_USER_SRP_AUTH`, and `ALLOW_CUSTOM_AUTH`.
 #' 
 #' The values for authentication flow options include the following.
 #' 
-#' -   `ALLOW_USER_AUTH`: Enable selection-based sign-in with `USER_AUTH`.
-#'     This setting covers username-password, secure remote password (SRP),
-#'     passwordless, and passkey authentication. This authentiation flow
-#'     can do username-password and SRP authentication without other
-#'     `ExplicitAuthFlows` permitting them. For example users can complete
-#'     an SRP challenge through `USER_AUTH` without the flow
-#'     `USER_SRP_AUTH` being active for the app client. This flow doesn't
-#'     include `CUSTOM_AUTH`.
+#' -   `ALLOW_USER_AUTH`: Enable selection-based sign-in with `USER_AUTH`. This setting covers username-password, secure remote password (SRP), passwordless, and passkey authentication. This authentiation flow can do username-password and SRP authentication without other `ExplicitAuthFlows` permitting them. For example users can complete an SRP challenge through `USER_AUTH` without the flow `USER_SRP_AUTH` being active for the app client. This flow doesn't include `CUSTOM_AUTH`.
 #' 
-#'     To activate this setting, your user pool must be in the [Essentials
-#'     tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#'     or higher.
+#'     To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
 #' 
-#' -   `ALLOW_ADMIN_USER_PASSWORD_AUTH`: Enable admin based user password
-#'     authentication flow `ADMIN_USER_PASSWORD_AUTH`. This setting
-#'     replaces the `ADMIN_NO_SRP_AUTH` setting. With this authentication
-#'     flow, your app passes a user name and password to Amazon Cognito in
-#'     the request, instead of using the Secure Remote Password (SRP)
-#'     protocol to securely transmit the password.
+#' -   `ALLOW_ADMIN_USER_PASSWORD_AUTH`: Enable admin based user password authentication flow `ADMIN_USER_PASSWORD_AUTH`. This setting replaces the `ADMIN_NO_SRP_AUTH` setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.
 #' 
 #' -   `ALLOW_CUSTOM_AUTH`: Enable Lambda trigger based authentication.
 #' 
-#' -   `ALLOW_USER_PASSWORD_AUTH`: Enable user password-based
-#'     authentication. In this flow, Amazon Cognito receives the password
-#'     in the request instead of using the SRP protocol to verify
-#'     passwords.
+#' -   `ALLOW_USER_PASSWORD_AUTH`: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.
 #' 
 #' -   `ALLOW_USER_SRP_AUTH`: Enable SRP-based authentication.
 #' 
 #' -   `ALLOW_REFRESH_TOKEN_AUTH`: Enable authflow to refresh tokens.
 #' 
-#' In some environments, you will see the values `ADMIN_NO_SRP_AUTH`,
-#' `CUSTOM_AUTH_FLOW_ONLY`, or `USER_PASSWORD_AUTH`. You can't assign these
-#' legacy `ExplicitAuthFlows` values to user pool clients at the same time
-#' as values that begin with `ALLOW_`, like `ALLOW_USER_SRP_AUTH`.
-#' @param SupportedIdentityProviders A list of provider names for the identity providers (IdPs) that are
-#' supported on this client. The following are supported: `COGNITO`,
-#' `Facebook`, `Google`, `SignInWithApple`, and `LoginWithAmazon`. You can
-#' also specify the names that you configured for the SAML and OIDC IdPs in
-#' your user pool, for example `MySAMLIdP` or `MyOIDCIdP`.
+#' In some environments, you will see the values `ADMIN_NO_SRP_AUTH`, `CUSTOM_AUTH_FLOW_ONLY`, or `USER_PASSWORD_AUTH`. You can't assign these legacy `ExplicitAuthFlows` values to user pool clients at the same time as values that begin with `ALLOW_`, like `ALLOW_USER_SRP_AUTH`.
+#' @param SupportedIdentityProviders A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: `COGNITO`, `Facebook`, `Google`, `SignInWithApple`, and `LoginWithAmazon`. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example `MySAMLIdP` or `MyOIDCIdP`.
 #' 
-#' This parameter sets the IdPs that [managed
-#' login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html)
-#' will display on the login page for your app client. The removal of
-#' `COGNITO` from this list doesn't prevent authentication operations for
-#' local users with the user pools API in an Amazon Web Services SDK. The
-#' only way to prevent SDK-based authentication is to block access with a
-#' [WAF
-#' rule](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html).
-#' @param CallbackURLs A list of allowed redirect, or callback, URLs for managed login
-#' authentication. These URLs are the paths where you want to send your
-#' users' browsers after they complete authentication with managed login or
-#' a third-party IdP. Typically, callback URLs are the home of an
-#' application that uses OAuth or OIDC libraries to process authentication
-#' outcomes.
+#' This parameter sets the IdPs that [managed login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html) will display on the login page for your app client. The removal of `COGNITO` from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent SDK-based authentication is to block access with a [WAF rule](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html).
+#' @param CallbackURLs A list of allowed redirect, or callback, URLs for managed login authentication. These URLs are the paths where you want to send your users' browsers after they complete authentication with managed login or a third-party IdP. Typically, callback URLs are the home of an application that uses OAuth or OIDC libraries to process authentication outcomes.
 #' 
 #' A redirect URI must meet the following requirements:
 #' 
 #' -   Be an absolute URI.
 #' 
-#' -   Be registered with the authorization server. Amazon Cognito doesn't
-#'     accept authorization requests with `redirect_uri` values that aren't
-#'     in the list of `CallbackURLs` that you provide in this parameter.
+#' -   Be registered with the authorization server. Amazon Cognito doesn't accept authorization requests with `redirect_uri` values that aren't in the list of `CallbackURLs` that you provide in this parameter.
 #' 
 #' -   Not include a fragment component.
 #' 
-#' See [OAuth 2.0 - Redirection
-#' Endpoint](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.2).
+#' See [OAuth 2.0 - Redirection Endpoint](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.2).
 #' 
-#' Amazon Cognito requires HTTPS over HTTP except for callback URLs to
-#' `http://localhost`, `http://127.0.0.1` and `http://[::1]`. These
-#' callback URLs are for testing purposes only. You can specify custom TCP
-#' ports for your callback URLs.
+#' Amazon Cognito requires HTTPS over HTTP except for callback URLs to `http://localhost`, `http://127.0.0.1` and `http://[::1]`. These callback URLs are for testing purposes only. You can specify custom TCP ports for your callback URLs.
 #' 
 #' App callback URLs such as `myapp://example` are also supported.
-#' @param LogoutURLs A list of allowed logout URLs for managed login authentication. When you
-#' pass `logout_uri` and `client_id` parameters to `/logout`, Amazon
-#' Cognito signs out your user and redirects them to the logout URL. This
-#' parameter describes the URLs that you want to be the permitted targets
-#' of `logout_uri`. A typical use of these URLs is when a user selects
-#' "Sign out" and you redirect them to your public homepage. For more
-#' information, see [Logout
-#' endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html).
-#' @param DefaultRedirectURI The default redirect URI. In app clients with one assigned IdP, replaces
-#' `redirect_uri` in authentication requests. Must be in the `CallbackURLs`
-#' list.
-#' @param AllowedOAuthFlows The OAuth grant types that you want your app client to generate for
-#' clients in managed login authentication. To create an app client that
-#' generates client credentials grants, you must add `client_credentials`
-#' as the only allowed OAuth flow.
+#' @param LogoutURLs A list of allowed logout URLs for managed login authentication. When you pass `logout_uri` and `client_id` parameters to `/logout`, Amazon Cognito signs out your user and redirects them to the logout URL. This parameter describes the URLs that you want to be the permitted targets of `logout_uri`. A typical use of these URLs is when a user selects "Sign out" and you redirect them to your public homepage. For more information, see [Logout endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html).
+#' @param DefaultRedirectURI The default redirect URI. In app clients with one assigned IdP, replaces `redirect_uri` in authentication requests. Must be in the `CallbackURLs` list.
+#' @param AllowedOAuthFlows The OAuth grant types that you want your app client to generate for clients in managed login authentication. To create an app client that generates client credentials grants, you must add `client_credentials` as the only allowed OAuth flow.
 #' 
 #' **code**
 #' 
-#' Use a code grant flow, which provides an authorization code as the
-#' response. This code can be exchanged for access tokens with the
-#' `/oauth2/token` endpoint.
+#' Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the `/oauth2/token` endpoint.
 #' 
 #' **implicit**
 #' 
-#' Issue the access token, and the ID token when scopes like `openid` and
-#' `profile` are requested, directly to your user.
+#' Issue the access token, and the ID token when scopes like `openid` and `profile` are requested, directly to your user.
 #' 
 #' **client_credentials**
 #' 
-#' Issue the access token from the `/oauth2/token` endpoint directly to a
-#' non-person user, authorized by a combination of the client ID and client
-#' secret.
-#' @param AllowedOAuthScopes The OAuth, OpenID Connect (OIDC), and custom scopes that you want to
-#' permit your app client to authorize access with. Scopes govern access
-#' control to user pool self-service API operations, user data from the
-#' `userInfo` endpoint, and third-party APIs. Scope values include `phone`,
-#' `email`, `openid`, and `profile`. The `aws.cognito.signin.user.admin`
-#' scope authorizes user self-service operations. Custom scopes with
-#' resource servers authorize access to external APIs.
-#' @param AllowedOAuthFlowsUserPoolClient Set to `true` to use OAuth 2.0 authorization server features in your app
-#' client.
+#' Issue the access token from the `/oauth2/token` endpoint directly to a non-person user, authorized by a combination of the client ID and client secret.
+#' @param AllowedOAuthScopes The OAuth, OpenID Connect (OIDC), and custom scopes that you want to permit your app client to authorize access with. Scopes govern access control to user pool self-service API operations, user data from the `userInfo` endpoint, and third-party APIs. Scope values include `phone`, `email`, `openid`, and `profile`. The `aws.cognito.signin.user.admin` scope authorizes user self-service operations. Custom scopes with resource servers authorize access to external APIs.
+#' @param AllowedOAuthFlowsUserPoolClient Set to `true` to use OAuth 2.0 authorization server features in your app client.
 #' 
-#' This parameter must have a value of `true` before you can configure the
-#' following features in your app client.
+#' This parameter must have a value of `true` before you can configure the following features in your app client.
 #' 
 #' -   `CallBackURLs`: Callback URLs.
 #' 
@@ -5380,64 +3935,21 @@ cognitoidentityprovider_create_user_pool <- function(PoolName, Policies = NULL, 
 #' 
 #' -   `AllowedOAuthScopes`: OAuth 2.0 scopes.
 #' 
-#' -   `AllowedOAuthFlows`: Support for authorization code, implicit, and
-#'     client credentials OAuth 2.0 grants.
+#' -   `AllowedOAuthFlows`: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.
 #' 
-#' To use authorization server features, configure one of these features in
-#' the Amazon Cognito console or set `AllowedOAuthFlowsUserPoolClient` to
-#' `true` in a
-#' [`create_user_pool_client`][cognitoidentityprovider_create_user_pool_client]
-#' or
-#' [`update_user_pool_client`][cognitoidentityprovider_update_user_pool_client]
-#' API request. If you don't set a value for
-#' `AllowedOAuthFlowsUserPoolClient` in a request with the CLI or SDKs, it
-#' defaults to `false`. When `false`, only SDK-based API sign-in is
-#' permitted.
-#' @param AnalyticsConfiguration The user pool analytics configuration for collecting metrics and sending
-#' them to your Amazon Pinpoint campaign.
+#' To use authorization server features, configure one of these features in the Amazon Cognito console or set `AllowedOAuthFlowsUserPoolClient` to `true` in a [`create_user_pool_client`][cognitoidentityprovider_create_user_pool_client] or [`update_user_pool_client`][cognitoidentityprovider_update_user_pool_client] API request. If you don't set a value for `AllowedOAuthFlowsUserPoolClient` in a request with the CLI or SDKs, it defaults to `false`. When `false`, only SDK-based API sign-in is permitted.
+#' @param AnalyticsConfiguration The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.
 #' 
-#' In Amazon Web Services Regions where Amazon Pinpoint isn't available,
-#' user pools might not have access to analytics or might be configurable
-#' with campaigns in the US East (N. Virginia) Region. For more
-#' information, see [Using Amazon Pinpoint
-#' analytics](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html).
-#' @param PreventUserExistenceErrors When `ENABLED`, suppresses messages that might indicate a valid user
-#' exists when someone attempts sign-in. This parameters sets your
-#' preference for the errors and responses that you want Amazon Cognito
-#' APIs to return during authentication, account confirmation, and password
-#' recovery when the user doesn't exist in the user pool. When set to
-#' `ENABLED` and the user doesn't exist, authentication returns an error
-#' indicating either the username or password was incorrect. Account
-#' confirmation and password recovery return a response indicating a code
-#' was sent to a simulated destination. When set to `LEGACY`, those APIs
-#' return a `UserNotFoundException` exception if the user doesn't exist in
-#' the user pool.
+#' In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools might not have access to analytics or might be configurable with campaigns in the US East (N. Virginia) Region. For more information, see [Using Amazon Pinpoint analytics](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html).
+#' @param PreventUserExistenceErrors When `ENABLED`, suppresses messages that might indicate a valid user exists when someone attempts sign-in. This parameters sets your preference for the errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to `ENABLED` and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to `LEGACY`, those APIs return a `UserNotFoundException` exception if the user doesn't exist in the user pool.
 #' 
 #' Defaults to `LEGACY`.
-#' @param EnableTokenRevocation Activates or deactivates [token
-#' revocation](https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html)
-#' in the target app client.
+#' @param EnableTokenRevocation Activates or deactivates [token revocation](https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html) in the target app client.
 #' 
-#' If you don't include this parameter, token revocation is automatically
-#' activated for the new user pool client.
-#' @param EnablePropagateAdditionalUserContextData When `true`, your application can include additional `UserContextData`
-#' in authentication requests. This data includes the IP address, and
-#' contributes to analysis by threat protection features. For more
-#' information about propagation of user context data, see [Adding session
-#' data to API
-#' requests](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint).
-#' If you don’t include this parameter, you can't send the source IP
-#' address to Amazon Cognito threat protection features. You can only
-#' activate `EnablePropagateAdditionalUserContextData` in an app client
-#' that has a client secret.
-#' @param AuthSessionValidity Amazon Cognito creates a session token for each API request in an
-#' authentication flow. `AuthSessionValidity` is the duration, in minutes,
-#' of that session token. Your user pool native user must respond to each
-#' authentication challenge before the session expires.
-#' @param RefreshTokenRotation The configuration of your app client for refresh token rotation. When
-#' enabled, your app client issues new ID, access, and refresh tokens when
-#' users renew their sessions with refresh tokens. When disabled, token
-#' refresh issues only ID and access tokens.
+#' If you don't include this parameter, token revocation is automatically activated for the new user pool client.
+#' @param EnablePropagateAdditionalUserContextData When `true`, your application can include additional `UserContextData` in authentication requests. This data includes the IP address, and contributes to analysis by threat protection features. For more information about propagation of user context data, see [Adding session data to API requests](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint). If you don’t include this parameter, you can't send the source IP address to Amazon Cognito threat protection features. You can only activate `EnablePropagateAdditionalUserContextData` in an app client that has a client secret.
+#' @param AuthSessionValidity Amazon Cognito creates a session token for each API request in an authentication flow. `AuthSessionValidity` is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.
+#' @param RefreshTokenRotation The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5594,68 +4106,34 @@ cognitoidentityprovider_create_user_pool_client <- function(UserPoolId, ClientNa
 #' server for authentication in your application
 #'
 #' @description
-#' A user pool domain hosts managed login, an authorization server and web
-#' server for authentication in your application. This operation creates a
-#' new user pool prefix domain or custom domain and sets the managed login
-#' branding version. Set the branding version to `1` for hosted UI
-#' (classic) or `2` for managed login. When you choose a custom domain, you
-#' must provide an SSL certificate in the US East (N. Virginia) Amazon Web
-#' Services Region in your request.
+#' A user pool domain hosts managed login, an authorization server and web server for authentication in your application. This operation creates a new user pool prefix domain or custom domain and sets the managed login branding version. Set the branding version to `1` for hosted UI (classic) or `2` for managed login. When you choose a custom domain, you must provide an SSL certificate in the US East (N. Virginia) Amazon Web Services Region in your request.
 #' 
-#' Your prefix domain might take up to one minute to take effect. Your
-#' custom domain is online within five minutes, but it can take up to one
-#' hour to distribute your SSL certificate.
+#' Your prefix domain might take up to one minute to take effect. Your custom domain is online within five minutes, but it can take up to one hour to distribute your SSL certificate.
 #' 
-#' For more information about adding a custom domain to your user pool, see
-#' [Configuring a user pool
-#' domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html).
+#' For more information about adding a custom domain to your user pool, see [Configuring a user pool domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_create_user_pool_domain(Domain, UserPoolId,
 #'   ManagedLoginVersion, CustomDomainConfig)
 #'
-#' @param Domain &#91;required&#93; The domain string. For custom domains, this is the fully-qualified
-#' domain name, such as `auth.example.com`. For prefix domains, this is the
-#' prefix alone, such as `myprefix`. A prefix value of `myprefix` for a
-#' user pool in the `us-east-1` Region results in a domain of
-#' `myprefix.auth.us-east-1.amazoncognito.com`.
+#' @param Domain &#91;required&#93; The domain string. For custom domains, this is the fully-qualified domain name, such as `auth.example.com`. For prefix domains, this is the prefix alone, such as `myprefix`. A prefix value of `myprefix` for a user pool in the `us-east-1` Region results in a domain of `myprefix.auth.us-east-1.amazoncognito.com`.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to add a domain.
-#' @param ManagedLoginVersion The version of managed login branding that you want to apply to your
-#' domain. A value of `1` indicates hosted UI (classic) and a version of
-#' `2` indicates managed login.
+#' @param ManagedLoginVersion The version of managed login branding that you want to apply to your domain. A value of `1` indicates hosted UI (classic) and a version of `2` indicates managed login.
 #' 
-#' Managed login requires that your user pool be configured for any
-#' [feature
-#' plan](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html)
-#' other than `Lite`.
-#' @param CustomDomainConfig The configuration for a custom domain. Configures your domain with an
-#' Certificate Manager certificate in the `us-east-1` Region.
+#' Managed login requires that your user pool be configured for any [feature plan](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html) other than `Lite`.
+#' @param CustomDomainConfig The configuration for a custom domain. Configures your domain with an Certificate Manager certificate in the `us-east-1` Region.
 #' 
-#' Provide this parameter only if you want to use a [custom
-#' domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html)
-#' for your user pool. Otherwise, you can omit this parameter and use a
-#' [prefix
-#' domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain-prefix.html)
-#' instead.
+#' Provide this parameter only if you want to use a [custom domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html) for your user pool. Otherwise, you can omit this parameter and use a [prefix domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain-prefix.html) instead.
 #' 
-#' When you create a custom domain, the passkey RP ID defaults to the
-#' custom domain. If you had a prefix domain active, this will cause
-#' passkey integration for your prefix domain to stop working due to a
-#' mismatch in RP ID. To keep the prefix domain passkey integration
-#' working, you can explicitly set RP ID to the prefix domain.
+#' When you create a custom domain, the passkey RP ID defaults to the custom domain. If you had a prefix domain active, this will cause passkey integration for your prefix domain to stop working due to a mismatch in RP ID. To keep the prefix domain passkey integration working, you can explicitly set RP ID to the prefix domain.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5705,25 +4183,15 @@ cognitoidentityprovider_create_user_pool_domain <- function(Domain, UserPoolId, 
 #' Deletes a group from the specified user pool
 #'
 #' @description
-#' Deletes a group from the specified user pool. When you delete a group,
-#' that group no longer contributes to users' `cognito:preferred_group` or
-#' `cognito:groups` claims, and no longer influence access-control decision
-#' that are based on group membership. For more information about user pool
-#' groups, see [Adding groups to a user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
+#' Deletes a group from the specified user pool. When you delete a group, that group no longer contributes to users' `cognito:preferred_group` or `cognito:groups` claims, and no longer influence access-control decision that are based on group membership. For more information about user pool groups, see [Adding groups to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_delete_group(GroupName, UserPoolId)
@@ -5769,23 +4237,15 @@ cognitoidentityprovider_delete_group <- function(GroupName, UserPoolId) {
 #' Deletes a user pool identity provider (IdP)
 #'
 #' @description
-#' Deletes a user pool identity provider (IdP). After you delete an IdP,
-#' users can no longer sign in to your user pool through that IdP. For more
-#' information about user pool IdPs, see [Third-party IdP
-#' sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
+#' Deletes a user pool identity provider (IdP). After you delete an IdP, users can no longer sign in to your user pool through that IdP. For more information about user pool IdPs, see [Third-party IdP sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_delete_identity_provider(UserPoolId,
@@ -5832,32 +4292,22 @@ cognitoidentityprovider_delete_identity_provider <- function(UserPoolId, Provide
 #' Deletes a managed login branding style
 #'
 #' @description
-#' Deletes a managed login branding style. When you delete a style, you
-#' delete the branding association for an app client. When an app client
-#' doesn't have a style assigned, your managed login pages for that app
-#' client are nonfunctional until you create a new style or switch the
-#' domain branding version.
+#' Deletes a managed login branding style. When you delete a style, you delete the branding association for an app client. When an app client doesn't have a style assigned, your managed login pages for that app client are nonfunctional until you create a new style or switch the domain branding version.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_delete_managed_login_branding(
 #'   ManagedLoginBrandingId, UserPoolId)
 #'
 #' @param ManagedLoginBrandingId &#91;required&#93; The ID of the managed login branding style that you want to delete.
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the managed login branding style
-#' that you want to delete.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the managed login branding style that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -5897,27 +4347,17 @@ cognitoidentityprovider_delete_managed_login_branding <- function(ManagedLoginBr
 #' Deletes a resource server
 #'
 #' @description
-#' Deletes a resource server. After you delete a resource server, users can
-#' no longer generate access tokens with scopes that are associate with
-#' that resource server.
+#' Deletes a resource server. After you delete a resource server, users can no longer generate access tokens with scopes that are associate with that resource server.
 #' 
-#' Resource servers are associated with custom scopes and
-#' machine-to-machine (M2M) authorization. For more information, see
-#' [Access control with resource
-#' servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
+#' Resource servers are associated with custom scopes and machine-to-machine (M2M) authorization. For more information, see [Access control with resource servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_delete_resource_server(UserPoolId, Identifier)
@@ -5965,25 +4405,19 @@ cognitoidentityprovider_delete_resource_server <- function(UserPoolId, Identifie
 #' @description
 #' Deletes the terms documents with the requested ID from your app client.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_delete_terms(TermsId, UserPoolId)
 #'
 #' @param TermsId &#91;required&#93; The ID of the terms documents that you want to delete.
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the terms documents that you want
-#' to delete.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the terms documents that you want to delete.
 #'
 #' @return
 #' An empty list.
@@ -6023,26 +4457,16 @@ cognitoidentityprovider_delete_terms <- function(TermsId, UserPoolId) {
 #' Deletes the profile of the currently signed-in user
 #'
 #' @description
-#' Deletes the profile of the currently signed-in user. A deleted user
-#' profile can no longer be used to sign in and can't be restored.
+#' Deletes the profile of the currently signed-in user. A deleted user profile can no longer be used to sign in and can't be restored.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_delete_user(AccessToken)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #'
 #' @return
 #' An empty list.
@@ -6081,33 +4505,20 @@ cognitoidentityprovider_delete_user <- function(AccessToken) {
 #' Deletes attributes from the currently signed-in user
 #'
 #' @description
-#' Deletes attributes from the currently signed-in user. For example, your
-#' application can submit a request to this operation when a user wants to
-#' remove their `birthdate` attribute value.
+#' Deletes attributes from the currently signed-in user. For example, your application can submit a request to this operation when a user wants to remove their `birthdate` attribute value.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_delete_user_attributes(UserAttributeNames,
 #'   AccessToken)
 #'
-#' @param UserAttributeNames &#91;required&#93; An array of strings representing the user attribute names you want to
-#' delete.
+#' @param UserAttributeNames &#91;required&#93; An array of strings representing the user attribute names you want to delete.
 #' 
-#' For custom attributes, you must prepend the `custom:` prefix to the
-#' attribute name, for example `custom:department`.
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' For custom attributes, you must prepend the `custom:` prefix to the attribute name, for example `custom:department`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #'
 #' @return
 #' An empty list.
@@ -6149,20 +4560,11 @@ cognitoidentityprovider_delete_user_attributes <- function(UserAttributeNames, A
 #' Deletes a user pool
 #'
 #' @description
-#' Deletes a user pool. After you delete a user pool, users can no longer
-#' sign in to any associated applications.
+#' Deletes a user pool. After you delete a user pool, users can no longer sign in to any associated applications.
 #' 
-#' When you delete a user pool, it's no longer visible or operational in
-#' your Amazon Web Services account. Amazon Cognito retains deleted user
-#' pools in an inactive state for 14 days, then begins a cleanup process
-#' that fully removes them from Amazon Web Services systems. In case of
-#' accidental deletion, contact Amazon Web Services Support within 14 days
-#' for restoration assistance.
+#' When you delete a user pool, it's no longer visible or operational in your Amazon Web Services account. Amazon Cognito retains deleted user pools in an inactive state for 14 days, then begins a cleanup process that fully removes them from Amazon Web Services systems. In case of accidental deletion, contact Amazon Web Services Support within 14 days for restoration assistance.
 #' 
-#' Amazon Cognito begins full deletion of all resources from deleted user
-#' pools after 14 days. In the case of large user pools, the cleanup
-#' process might take significant additional time before all user data is
-#' permanently deleted.
+#' Amazon Cognito begins full deletion of all resources from deleted user pools after 14 days. In the case of large user pools, the cleanup process might take significant additional time before all user data is permanently deleted.
 #'
 #' @usage
 #' cognitoidentityprovider_delete_user_pool(UserPoolId)
@@ -6206,8 +4608,7 @@ cognitoidentityprovider_delete_user_pool <- function(UserPoolId) {
 #' Deletes a user pool app client
 #'
 #' @description
-#' Deletes a user pool app client. After you delete an app client, users
-#' can no longer sign in to the associated application.
+#' Deletes a user pool app client. After you delete an app client, users can no longer sign in to the associated application.
 #'
 #' @usage
 #' cognitoidentityprovider_delete_user_pool_client(UserPoolId, ClientId)
@@ -6253,8 +4654,7 @@ cognitoidentityprovider_delete_user_pool_client <- function(UserPoolId, ClientId
 #' Deletes a specific client secret from a user pool app client
 #'
 #' @description
-#' Deletes a specific client secret from a user pool app client. You cannot
-#' delete the last remaining secret for an app client.
+#' Deletes a specific client secret from a user pool app client. You cannot delete the last remaining secret for an app client.
 #'
 #' @usage
 #' cognitoidentityprovider_delete_user_pool_client_secret(UserPoolId,
@@ -6303,16 +4703,12 @@ cognitoidentityprovider_delete_user_pool_client_secret <- function(UserPoolId, C
 #' Given a user pool ID and domain identifier, deletes a user pool domain
 #'
 #' @description
-#' Given a user pool ID and domain identifier, deletes a user pool domain.
-#' After you delete a user pool domain, your managed login pages and
-#' authorization server are no longer available.
+#' Given a user pool ID and domain identifier, deletes a user pool domain. After you delete a user pool domain, your managed login pages and authorization server are no longer available.
 #'
 #' @usage
 #' cognitoidentityprovider_delete_user_pool_domain(Domain, UserPoolId)
 #'
-#' @param Domain &#91;required&#93; The domain that you want to delete. For custom domains, this is the
-#' fully-qualified domain name like `auth.example.com`. For Amazon Cognito
-#' prefix domains, this is the prefix alone, like `myprefix`.
+#' @param Domain &#91;required&#93; The domain that you want to delete. For custom domains, this is the fully-qualified domain name like `auth.example.com`. For Amazon Cognito prefix domains, this is the prefix alone, like `myprefix`.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to delete the domain.
 #'
 #' @return
@@ -6354,27 +4750,17 @@ cognitoidentityprovider_delete_user_pool_domain <- function(Domain, UserPoolId) 
 #' currently signed-in user
 #'
 #' @description
-#' Deletes a registered passkey, or WebAuthn, authenticator for the
-#' currently signed-in user.
+#' Deletes a registered passkey, or WebAuthn, authenticator for the currently signed-in user.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_delete_web_authn_credential(AccessToken,
 #'   CredentialId)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #' @param CredentialId &#91;required&#93; The unique identifier of the passkey that you want to delete.
 #'
 #' @return
@@ -6416,8 +4802,7 @@ cognitoidentityprovider_delete_web_authn_credential <- function(AccessToken, Cre
 #' about the IdP
 #'
 #' @description
-#' Given a user pool ID and identity provider (IdP) name, returns details
-#' about the IdP.
+#' Given a user pool ID and identity provider (IdP) name, returns details about the IdP.
 #'
 #' @usage
 #' cognitoidentityprovider_describe_identity_provider(UserPoolId,
@@ -6489,20 +4874,15 @@ cognitoidentityprovider_describe_identity_provider <- function(UserPoolId, Provi
 #' information about the style
 #'
 #' @description
-#' Given the ID of a managed login branding style, returns detailed
-#' information about the style.
+#' Given the ID of a managed login branding style, returns detailed information about the style.
 #'
 #' @usage
 #' cognitoidentityprovider_describe_managed_login_branding(UserPoolId,
 #'   ManagedLoginBrandingId, ReturnMergedResources)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the managed login branding style
-#' that you want to get information about.
-#' @param ManagedLoginBrandingId &#91;required&#93; The ID of the managed login branding style that you want to get more
-#' information about.
-#' @param ReturnMergedResources When `true`, returns values for branding options that are unchanged from
-#' Amazon Cognito defaults. When `false` or when you omit this parameter,
-#' returns only values that you customized in your branding style.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the managed login branding style that you want to get information about.
+#' @param ManagedLoginBrandingId &#91;required&#93; The ID of the managed login branding style that you want to get more information about.
+#' @param ReturnMergedResources When `true`, returns values for branding options that are unchanged from Amazon Cognito defaults. When `false` or when you omit this parameter, returns only values that you customized in your branding style.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6569,20 +4949,15 @@ cognitoidentityprovider_describe_managed_login_branding <- function(UserPoolId, 
 #' about the style assigned to the app client
 #'
 #' @description
-#' Given the ID of a user pool app client, returns detailed information
-#' about the style assigned to the app client.
+#' Given the ID of a user pool app client, returns detailed information about the style assigned to the app client.
 #'
 #' @usage
 #' cognitoidentityprovider_describe_managed_login_branding_by_client(
 #'   UserPoolId, ClientId, ReturnMergedResources)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the app client where you want more
-#' information about the managed login branding style.
-#' @param ClientId &#91;required&#93; The app client that's assigned to the branding style that you want more
-#' information about.
-#' @param ReturnMergedResources When `true`, returns values for branding options that are unchanged from
-#' Amazon Cognito defaults. When `false` or when you omit this parameter,
-#' returns only values that you customized in your branding style.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the app client where you want more information about the managed login branding style.
+#' @param ClientId &#91;required&#93; The app client that's assigned to the branding style that you want more information about.
+#' @param ReturnMergedResources When `true`, returns values for branding options that are unchanged from Amazon Cognito defaults. When `false` or when you omit this parameter, returns only values that you customized in your branding style.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6648,22 +5023,15 @@ cognitoidentityprovider_describe_managed_login_branding_by_client <- function(Us
 #' Describes a resource server
 #'
 #' @description
-#' Describes a resource server. For more information about resource
-#' servers, see [Access control with resource
-#' servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
+#' Describes a resource server. For more information about resource servers, see [Access control with resource servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
 #'
 #' @usage
 #' cognitoidentityprovider_describe_resource_server(UserPoolId, Identifier)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool that hosts the resource server.
-#' @param Identifier &#91;required&#93; A unique resource server identifier for the resource server. The
-#' identifier can be an API friendly name like `solar-system-data`. You can
-#' also set an API URL like `https://solar-system-data-api.example.com` as
-#' your identifier.
+#' @param Identifier &#91;required&#93; A unique resource server identifier for the resource server. The identifier can be an API friendly name like `solar-system-data`. You can also set an API URL like `https://solar-system-data-api.example.com` as your identifier.
 #' 
-#' Amazon Cognito represents scopes in the access token in the format
-#' `$resource-server-identifier/$scope`. Longer scope-identifier strings
-#' increase the size of your access tokens.
+#' Amazon Cognito represents scopes in the access token in the format `$resource-server-identifier/$scope`. Longer scope-identifier strings increase the size of your access tokens.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6719,27 +5087,14 @@ cognitoidentityprovider_describe_resource_server <- function(UserPoolId, Identif
 #' configured, describes the risk configuration
 #'
 #' @description
-#' Given an app client or user pool ID where threat protection is
-#' configured, describes the risk configuration. This operation returns
-#' details about adaptive authentication, compromised credentials, and
-#' IP-address allow- and denylists. For more information about threat
-#' protection, see [Threat
-#' protection](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html).
+#' Given an app client or user pool ID where threat protection is configured, describes the risk configuration. This operation returns details about adaptive authentication, compromised credentials, and IP-address allow- and denylists. For more information about threat protection, see [Threat protection](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html).
 #'
 #' @usage
 #' cognitoidentityprovider_describe_risk_configuration(UserPoolId,
 #'   ClientId)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool with the risk configuration that you want to
-#' inspect. You can apply default risk configuration at the user pool level
-#' and further customize it from user pool defaults at the app-client
-#' level. Specify `ClientId` to inspect client-level configuration, or
-#' `UserPoolId` to inspect pool-level configuration.
-#' @param ClientId The ID of the app client with the risk configuration that you want to
-#' inspect. You can apply default risk configuration at the user pool level
-#' and further customize it from user pool defaults at the app-client
-#' level. Specify `ClientId` to inspect client-level configuration, or
-#' `UserPoolId` to inspect pool-level configuration.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool with the risk configuration that you want to inspect. You can apply default risk configuration at the user pool level and further customize it from user pool defaults at the app-client level. Specify `ClientId` to inspect client-level configuration, or `UserPoolId` to inspect pool-level configuration.
+#' @param ClientId The ID of the app client with the risk configuration that you want to inspect. You can apply default risk configuration at the user pool level and further customize it from user pool defaults at the app-client level. Specify `ClientId` to inspect client-level configuration, or `UserPoolId` to inspect pool-level configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6842,29 +5197,21 @@ cognitoidentityprovider_describe_risk_configuration <- function(UserPoolId, Clie
 #' Returns details for the requested terms documents ID
 #'
 #' @description
-#' Returns details for the requested terms documents ID. For more
-#' information, see [Terms
-#' documents](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents).
+#' Returns details for the requested terms documents ID. For more information, see [Terms documents](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_describe_terms(TermsId, UserPoolId)
 #'
 #' @param TermsId &#91;required&#93; The ID of the terms documents that you want to describe.
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the terms documents that you want
-#' to describe.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the terms documents that you want to describe.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6925,9 +5272,7 @@ cognitoidentityprovider_describe_terms <- function(TermsId, UserPoolId) {
 #' Describes a user import job
 #'
 #' @description
-#' Describes a user import job. For more information about user CSV import,
-#' see [Importing users from a CSV
-#' file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
+#' Describes a user import job. For more information about user CSV import, see [Importing users from a CSV file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
 #'
 #' @usage
 #' cognitoidentityprovider_describe_user_import_job(UserPoolId, JobId)
@@ -6998,22 +5343,15 @@ cognitoidentityprovider_describe_user_import_job <- function(UserPoolId, JobId) 
 #' Given a user pool ID, returns configuration information
 #'
 #' @description
-#' Given a user pool ID, returns configuration information. This operation
-#' is useful when you want to inspect an existing user pool and
-#' programmatically replicate the configuration to another user pool.
+#' Given a user pool ID, returns configuration information. This operation is useful when you want to inspect an existing user pool and programmatically replicate the configuration to another user pool.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_describe_user_pool(UserPoolId)
@@ -7214,30 +5552,20 @@ cognitoidentityprovider_describe_user_pool <- function(UserPoolId) {
 #' Given an app client ID, returns configuration information
 #'
 #' @description
-#' Given an app client ID, returns configuration information. This
-#' operation is useful when you want to inspect an existing app client and
-#' programmatically replicate the configuration to another app client. For
-#' more information about app clients, see [App
-#' clients](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html).
+#' Given an app client ID, returns configuration information. This operation is useful when you want to inspect an existing app client and programmatically replicate the configuration to another app client. For more information about app clients, see [App clients](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_describe_user_pool_client(UserPoolId, ClientId)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the app client you want to
-#' describe.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the app client you want to describe.
 #' @param ClientId &#91;required&#93; The ID of the app client that you want to describe.
 #'
 #' @return
@@ -7344,28 +5672,20 @@ cognitoidentityprovider_describe_user_pool_client <- function(UserPoolId, Client
 #' configuration
 #'
 #' @description
-#' Given a user pool domain name, returns information about the domain
-#' configuration.
+#' Given a user pool domain name, returns information about the domain configuration.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_describe_user_pool_domain(Domain)
 #'
-#' @param Domain &#91;required&#93; The domain that you want to describe. For custom domains, this is the
-#' fully-qualified domain name, such as `auth.example.com`. For Amazon
-#' Cognito prefix domains, this is the prefix alone, such as `auth`.
+#' @param Domain &#91;required&#93; The domain that you want to describe. For custom domains, this is the fully-qualified domain name, such as `auth.example.com`. For Amazon Cognito prefix domains, this is the prefix alone, such as `auth`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7422,30 +5742,17 @@ cognitoidentityprovider_describe_user_pool_domain <- function(Domain) {
 #' signed-in user
 #'
 #' @description
-#' Given a device key, deletes a remembered device as the currently
-#' signed-in user. For more information about device authentication, see
-#' [Working with user devices in your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Given a device key, deletes a remembered device as the currently signed-in user. For more information about device authentication, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_forget_device(AccessToken, DeviceKey)
 #'
-#' @param AccessToken A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param DeviceKey &#91;required&#93; The unique identifier, or device key, of the device that the user wants
-#' to forget.
+#' @param AccessToken A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param DeviceKey &#91;required&#93; The unique identifier, or device key, of the device that the user wants to forget.
 #'
 #' @return
 #' An empty list.
@@ -7486,100 +5793,42 @@ cognitoidentityprovider_forget_device <- function(AccessToken = NULL, DeviceKey)
 #' number of the requested username
 #'
 #' @description
-#' Sends a password-reset confirmation code to the email address or phone
-#' number of the requested username. The message delivery method is
-#' determined by the user's available attributes and the
-#' `AccountRecoverySetting` configuration of the user pool.
+#' Sends a password-reset confirmation code to the email address or phone number of the requested username. The message delivery method is determined by the user's available attributes and the `AccountRecoverySetting` configuration of the user pool.
 #' 
-#' For the `Username` parameter, you can use the username or an email,
-#' phone, or preferred username alias.
+#' For the `Username` parameter, you can use the username or an email, phone, or preferred username alias.
 #' 
-#' If neither a verified phone number nor a verified email exists, Amazon
-#' Cognito responds with an `InvalidParameterException` error . If your app
-#' client has a client secret and you don't provide a `SECRET_HASH`
-#' parameter, this API returns `NotAuthorizedException`.
+#' If neither a verified phone number nor a verified email exists, Amazon Cognito responds with an `InvalidParameterException` error . If your app client has a client secret and you don't provide a `SECRET_HASH` parameter, this API returns `NotAuthorizedException`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #'
 #' @usage
 #' cognitoidentityprovider_forgot_password(ClientId, SecretHash,
 #'   UserContextData, Username, AnalyticsMetadata, ClientMetadata)
 #'
-#' @param ClientId &#91;required&#93; The ID of the user pool app client associated with the current signed-in
-#' user.
-#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the
-#' secret key of a user pool client and username plus the client ID in the
-#' message. For more information about `SecretHash`, see [Computing secret
-#' hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' @param UserContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' @param ClientId &#91;required&#93; The ID of the user pool app client associated with the current signed-in user.
+#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about `SecretHash`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
+#' @param UserContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7640,27 +5889,15 @@ cognitoidentityprovider_forgot_password <- function(ClientId, SecretHash = NULL,
 #' populated with available user attributes in the user pool
 #'
 #' @description
-#' Given a user pool ID, generates a comma-separated value (CSV) list
-#' populated with available user attributes in the user pool. This list is
-#' the header for the CSV file that determines the users in a user import
-#' job. Save the content of `CSVHeader` in the response as a `.csv` file
-#' and populate it with the usernames and attributes of users that you want
-#' to import. For more information about CSV user import, see [Importing
-#' users from a CSV
-#' file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
+#' Given a user pool ID, generates a comma-separated value (CSV) list populated with available user attributes in the user pool. This list is the header for the CSV file that determines the users in a user import job. Save the content of `CSVHeader` in the response as a `.csv` file and populate it with the usernames and attributes of users that you want to import. For more information about CSV user import, see [Importing users from a CSV file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_get_csv_header(UserPoolId)
@@ -7713,29 +5950,17 @@ cognitoidentityprovider_get_csv_header <- function(UserPoolId) {
 #' the current user
 #'
 #' @description
-#' Given a device key, returns information about a remembered device for
-#' the current user. For more information about device authentication, see
-#' [Working with user devices in your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Given a device key, returns information about a remembered device for the current user. For more information about device authentication, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_get_device(DeviceKey, AccessToken)
 #'
 #' @param DeviceKey &#91;required&#93; The key of the device that you want to get information about.
-#' @param AccessToken A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7798,25 +6023,17 @@ cognitoidentityprovider_get_device <- function(DeviceKey, AccessToken = NULL) {
 #' user group
 #'
 #' @description
-#' Given a user pool ID and a group name, returns information about the
-#' user group.
+#' Given a user pool ID and a group name, returns information about the user group.
 #' 
-#' For more information about user pool groups, see [Adding groups to a
-#' user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
+#' For more information about user pool groups, see [Adding groups to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_get_group(GroupName, UserPoolId)
@@ -7881,20 +6098,14 @@ cognitoidentityprovider_get_group <- function(GroupName, UserPoolId) {
 #' that IdP
 #'
 #' @description
-#' Given the identifier of an identity provider (IdP), for example
-#' `examplecorp`, returns information about the user pool configuration for
-#' that IdP. For more information about IdPs, see [Third-party IdP
-#' sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
+#' Given the identifier of an identity provider (IdP), for example `examplecorp`, returns information about the user pool configuration for that IdP. For more information about IdPs, see [Third-party IdP sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
 #'
 #' @usage
 #' cognitoidentityprovider_get_identity_provider_by_identifier(UserPoolId,
 #'   IdpIdentifier)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to get information about the IdP.
-#' @param IdpIdentifier &#91;required&#93; The identifier that you assigned to your user pool. The identifier is an
-#' alternative name for an IdP that is distinct from the IdP name. For
-#' example, an IdP with a name of `MyIdP` might have an identifier of the
-#' email domain `example.com`.
+#' @param IdpIdentifier &#91;required&#93; The identifier that you assigned to your user pool. The identifier is an alternative name for an IdP that is distinct from the IdP name. For example, an IdP with a name of `MyIdP` might have an identifier of the email domain `example.com`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7958,30 +6169,20 @@ cognitoidentityprovider_get_identity_provider_by_identifier <- function(UserPool
 #' Given a user pool ID, returns the logging configuration
 #'
 #' @description
-#' Given a user pool ID, returns the logging configuration. User pools can
-#' export message-delivery error and threat-protection activity logs to
-#' external Amazon Web Services services. For more information, see
-#' [Exporting user pool
-#' logs](https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html).
+#' Given a user pool ID, returns the logging configuration. User pools can export message-delivery error and threat-protection activity logs to external Amazon Web Services services. For more information, see [Exporting user pool logs](https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_get_log_delivery_configuration(UserPoolId)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that has the logging configuration that you want
-#' to view.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that has the logging configuration that you want to view.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8042,30 +6243,19 @@ cognitoidentityprovider_get_log_delivery_configuration <- function(UserPoolId) {
 #' Given a user pool ID, returns the signing certificate for SAML 2
 #'
 #' @description
-#' Given a user pool ID, returns the signing certificate for SAML 2.0
-#' federation.
+#' Given a user pool ID, returns the signing certificate for SAML 2.0 federation.
 #' 
-#' Issued certificates are valid for 10 years from the date of issue.
-#' Amazon Cognito issues and assigns a new signing certificate annually.
-#' This renewal process returns a new value in the response to
-#' [`get_signing_certificate`][cognitoidentityprovider_get_signing_certificate],
-#' but doesn't invalidate the original certificate.
+#' Issued certificates are valid for 10 years from the date of issue. Amazon Cognito issues and assigns a new signing certificate annually. This renewal process returns a new value in the response to [`get_signing_certificate`][cognitoidentityprovider_get_signing_certificate], but doesn't invalidate the original certificate.
 #' 
-#' For more information, see [Signing SAML
-#' requests](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-SAML-signing-encryption.html#cognito-user-pools-SAML-signing).
+#' For more information, see [Signing SAML requests](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-SAML-signing-encryption.html#cognito-user-pools-SAML-signing).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_get_signing_certificate(UserPoolId)
@@ -8115,64 +6305,31 @@ cognitoidentityprovider_get_signing_certificate <- function(UserPoolId) {
 #' tokens for the user who owns the submitted token
 #'
 #' @description
-#' Given a refresh token, issues new ID, access, and optionally refresh
-#' tokens for the user who owns the submitted token. This operation issues
-#' a new refresh token and invalidates the original refresh token after an
-#' optional grace period when refresh token rotation is enabled. If refresh
-#' token rotation is disabled, issues new ID and access tokens only.
+#' Given a refresh token, issues new ID, access, and optionally refresh tokens for the user who owns the submitted token. This operation issues a new refresh token and invalidates the original refresh token after an optional grace period when refresh token rotation is enabled. If refresh token rotation is disabled, issues new ID and access tokens only.
 #'
 #' @usage
 #' cognitoidentityprovider_get_tokens_from_refresh_token(RefreshToken,
 #'   ClientId, ClientSecret, DeviceKey, ClientMetadata)
 #'
-#' @param RefreshToken &#91;required&#93; A valid refresh token that can authorize the request for new tokens.
-#' When refresh token rotation is active in the requested app client, this
-#' token is invalidated after the request is complete and after an optional
-#' grace period.
-#' @param ClientId &#91;required&#93; The app client that issued the refresh token to the user who wants to
-#' request new tokens.
-#' @param ClientSecret The client secret of the requested app client, if the client has a
-#' secret.
-#' @param DeviceKey When you enable device remembering, Amazon Cognito issues a device key
-#' that you can use for device authentication that bypasses multi-factor
-#' authentication (MFA). To implement
-#' [`get_tokens_from_refresh_token`][cognitoidentityprovider_get_tokens_from_refresh_token]
-#' in a user pool with device remembering, you must capture the device key
-#' from the initial authentication request. If your application doesn't
-#' provide the key of a registered device, Amazon Cognito issues a new one.
-#' You must provide the confirmed device key in this request if device
-#' remembering is enabled in your user pool.
+#' @param RefreshToken &#91;required&#93; A valid refresh token that can authorize the request for new tokens. When refresh token rotation is active in the requested app client, this token is invalidated after the request is complete and after an optional grace period.
+#' @param ClientId &#91;required&#93; The app client that issued the refresh token to the user who wants to request new tokens.
+#' @param ClientSecret The client secret of the requested app client, if the client has a secret.
+#' @param DeviceKey When you enable device remembering, Amazon Cognito issues a device key that you can use for device authentication that bypasses multi-factor authentication (MFA). To implement [`get_tokens_from_refresh_token`][cognitoidentityprovider_get_tokens_from_refresh_token] in a user pool with device remembering, you must capture the device key from the initial authentication request. If your application doesn't provide the key of a registered device, Amazon Cognito issues a new one. You must provide the confirmed device key in this request if device remembering is enabled in your user pool.
 #' 
-#' For more information about device remembering, see [Working with
-#' devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information about device remembering, see [Working with devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8233,13 +6390,7 @@ cognitoidentityprovider_get_tokens_from_refresh_token <- function(RefreshToken, 
 #' hosted UI branding that you applied, if any
 #'
 #' @description
-#' Given a user pool ID or app client, returns information about classic
-#' hosted UI branding that you applied, if any. Returns user-pool level
-#' branding information if no app client branding is applied, or if you
-#' don't specify an app client ID. Returns an empty object if you haven't
-#' applied hosted UI branding to either the client or the user pool. For
-#' more information, see [Hosted UI (classic)
-#' branding](https://docs.aws.amazon.com/cognito/latest/developerguide/hosted-ui-classic-branding.html).
+#' Given a user pool ID or app client, returns information about classic hosted UI branding that you applied, if any. Returns user-pool level branding information if no app client branding is applied, or if you don't specify an app client ID. Returns an empty object if you haven't applied hosted UI branding to either the client or the user pool. For more information, see [Hosted UI (classic) branding](https://docs.aws.amazon.com/cognito/latest/developerguide/hosted-ui-classic-branding.html).
 #'
 #' @usage
 #' cognitoidentityprovider_get_ui_customization(UserPoolId, ClientId)
@@ -8303,26 +6454,16 @@ cognitoidentityprovider_get_ui_customization <- function(UserPoolId, ClientId = 
 #' user
 #'
 #' @description
-#' Gets user attributes and and MFA settings for the currently signed-in
-#' user.
+#' Gets user attributes and and MFA settings for the currently signed-in user.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_get_user(AccessToken)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8383,75 +6524,35 @@ cognitoidentityprovider_get_user <- function(AccessToken) {
 #' the specified attribute name to the currently signed-in user
 #'
 #' @description
-#' Given an attribute name, sends a user attribute verification code for
-#' the specified attribute name to the currently signed-in user.
+#' Given an attribute name, sends a user attribute verification code for the specified attribute name to the currently signed-in user.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #'
 #' @usage
 #' cognitoidentityprovider_get_user_attribute_verification_code(
 #'   AccessToken, AttributeName, ClientMetadata)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param AttributeName &#91;required&#93; The name of the attribute that the user wants to verify, for example
-#' `email`.
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param AttributeName &#91;required&#93; The name of the attribute that the user wants to verify, for example `email`.
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8503,31 +6604,20 @@ cognitoidentityprovider_get_user_attribute_verification_code <- function(AccessT
 #' Lists the authentication options for the currently signed-in user
 #'
 #' @description
-#' Lists the authentication options for the currently signed-in user.
-#' Returns the following:
+#' Lists the authentication options for the currently signed-in user. Returns the following:
 #' 
 #' 1.  The user's multi-factor authentication (MFA) preferences.
 #' 
-#' 2.  The user's options for choice-based authentication with the
-#'     `USER_AUTH` flow.
+#' 2.  The user's options for choice-based authentication with the `USER_AUTH` flow.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_get_user_auth_factors(AccessToken)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8579,38 +6669,28 @@ cognitoidentityprovider_get_user_auth_factors <- function(AccessToken) {
 #' authenticators and for multi-factor authentication (MFA)
 #'
 #' @description
-#' Given a user pool ID, returns configuration for sign-in with WebAuthn
-#' authenticators and for multi-factor authentication (MFA). This operation
-#' describes the following:
+#' Given a user pool ID, returns configuration for sign-in with WebAuthn authenticators and for multi-factor authentication (MFA). This operation describes the following:
 #' 
 #' -   The WebAuthn relying party (RP) ID and user-verification settings.
 #' 
-#' -   The required, optional, or disabled state of MFA for all user pool
-#'     users.
+#' -   The required, optional, or disabled state of MFA for all user pool users.
 #' 
 #' -   The message templates for email and SMS MFA.
 #' 
-#' -   The enabled or disabled state of time-based one-time password (TOTP)
-#'     MFA.
+#' -   The enabled or disabled state of time-based one-time password (TOTP) MFA.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_get_user_pool_mfa_config(UserPoolId)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to query WebAuthn and MFA
-#' configuration.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to query WebAuthn and MFA configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8675,55 +6755,26 @@ cognitoidentityprovider_get_user_pool_mfa_config <- function(UserPoolId) {
 #' issued to a user
 #'
 #' @description
-#' Invalidates the identity, access, and refresh tokens that Amazon Cognito
-#' issued to a user. Call this operation when your user signs out of your
-#' app. This results in the following behavior.
+#' Invalidates the identity, access, and refresh tokens that Amazon Cognito issued to a user. Call this operation when your user signs out of your app. This results in the following behavior.
 #' 
-#' -   Amazon Cognito no longer accepts *token-authorized* user operations
-#'     that you authorize with a signed-out user's access tokens. For more
-#'     information, see [Using the Amazon Cognito user pools API and user
-#'     pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' -   Amazon Cognito no longer accepts *token-authorized* user operations that you authorize with a signed-out user's access tokens. For more information, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#'     Amazon Cognito returns an `Access Token has been revoked` error when
-#'     your app attempts to authorize a user pools API request with a
-#'     revoked access token that contains the scope
-#'     `aws.cognito.signin.user.admin`.
+#'     Amazon Cognito returns an `Access Token has been revoked` error when your app attempts to authorize a user pools API request with a revoked access token that contains the scope `aws.cognito.signin.user.admin`.
 #' 
-#' -   Amazon Cognito no longer accepts a signed-out user's ID token in a
-#'     [GetId](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html)
-#'     request to an identity pool with `ServerSideTokenCheck` enabled for
-#'     its user pool IdP configuration in
-#'     [CognitoIdentityProvider](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html).
+#' -   Amazon Cognito no longer accepts a signed-out user's ID token in a [GetId](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html) request to an identity pool with `ServerSideTokenCheck` enabled for its user pool IdP configuration in [CognitoIdentityProvider](https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html).
 #' 
-#' -   Amazon Cognito no longer accepts a signed-out user's refresh tokens
-#'     in refresh requests.
+#' -   Amazon Cognito no longer accepts a signed-out user's refresh tokens in refresh requests.
 #' 
-#' Other requests might be valid until your user's token expires. This
-#' operation doesn't clear the [managed
-#' login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html)
-#' session cookie. To clear the session for a user who signed in with
-#' managed login or the classic hosted UI, direct their browser session to
-#' the [logout
-#' endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html).
+#' Other requests might be valid until your user's token expires. This operation doesn't clear the [managed login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html) session cookie. To clear the session for a user who signed in with managed login or the classic hosted UI, direct their browser session to the [logout endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html).
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_global_sign_out(AccessToken)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #'
 #' @return
 #' An empty list.
@@ -8763,109 +6814,50 @@ cognitoidentityprovider_global_sign_out <- function(AccessToken) {
 #' Amazon Cognito user directory
 #'
 #' @description
-#' Declares an authentication flow and initiates sign-in for a user in the
-#' Amazon Cognito user directory. Amazon Cognito might respond with an
-#' additional challenge or an `AuthenticationResult` that contains the
-#' outcome of a successful authentication. You can't sign in a user with a
-#' federated IdP with
-#' [`initiate_auth`][cognitoidentityprovider_initiate_auth]. For more
-#' information, see
-#' [Authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication.html).
+#' Declares an authentication flow and initiates sign-in for a user in the Amazon Cognito user directory. Amazon Cognito might respond with an additional challenge or an `AuthenticationResult` that contains the outcome of a successful authentication. You can't sign in a user with a federated IdP with [`initiate_auth`][cognitoidentityprovider_initiate_auth]. For more information, see [Authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication.html).
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #'
 #' @usage
 #' cognitoidentityprovider_initiate_auth(AuthFlow, AuthParameters,
 #'   ClientMetadata, ClientId, AnalyticsMetadata, UserContextData, Session)
 #'
-#' @param AuthFlow &#91;required&#93; The authentication flow that you want to initiate. Each `AuthFlow` has
-#' linked `AuthParameters` that you must submit. The following are some
-#' example flows.
+#' @param AuthFlow &#91;required&#93; The authentication flow that you want to initiate. Each `AuthFlow` has linked `AuthParameters` that you must submit. The following are some example flows.
 #' 
 #' **USER_AUTH**
 #' 
-#' The entry point for [choice-based
-#' authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice)
-#' with passwords, one-time passwords, and WebAuthn authenticators. Request
-#' a preferred authentication type or review available authentication
-#' types. From the offered authentication types, select one in a challenge
-#' response and then authenticate with that method in an additional
-#' challenge response. To activate this setting, your user pool must be in
-#' the [Essentials
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#' or higher.
+#' The entry point for [choice-based authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice) with passwords, one-time passwords, and WebAuthn authenticators. Request a preferred authentication type or review available authentication types. From the offered authentication types, select one in a challenge response and then authenticate with that method in an additional challenge response. To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
 #' 
 #' **USER_SRP_AUTH**
 #' 
-#' Username-password authentication with the Secure Remote Password (SRP)
-#' protocol. For more information, see [Use SRP password verification in
-#' custom authentication
-#' flow](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication.html#Using-SRP-password-verification-in-custom-authentication-flow).
+#' Username-password authentication with the Secure Remote Password (SRP) protocol. For more information, see [Use SRP password verification in custom authentication flow](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication.html#Using-SRP-password-verification-in-custom-authentication-flow).
 #' 
 #' **REFRESH_TOKEN_AUTH and REFRESH_TOKEN**
 #' 
-#' Receive new ID and access tokens when you pass a `REFRESH_TOKEN`
-#' parameter with a valid refresh token as the value. For more information,
-#' see [Using the refresh
-#' token](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html).
+#' Receive new ID and access tokens when you pass a `REFRESH_TOKEN` parameter with a valid refresh token as the value. For more information, see [Using the refresh token](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-the-refresh-token.html).
 #' 
 #' **CUSTOM_AUTH**
 #' 
-#' Custom authentication with Lambda triggers. For more information, see
-#' [Custom authentication challenge Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html).
+#' Custom authentication with Lambda triggers. For more information, see [Custom authentication challenge Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html).
 #' 
 #' **USER_PASSWORD_AUTH**
 #' 
-#' Client-side username-password authentication with the password sent
-#' directly in the request. For more information about client-side and
-#' server-side authentication, see [SDK authorization
-#' models](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Client-side username-password authentication with the password sent directly in the request. For more information about client-side and server-side authentication, see [SDK authorization models](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' `ADMIN_USER_PASSWORD_AUTH` is a flow type of
-#' [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] and
-#' isn't valid for InitiateAuth. `ADMIN_NO_SRP_AUTH` is a legacy
-#' server-side username-password flow and isn't valid for InitiateAuth.
-#' @param AuthParameters The authentication parameters. These are inputs corresponding to the
-#' `AuthFlow` that you're invoking.
+#' `ADMIN_USER_PASSWORD_AUTH` is a flow type of [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] and isn't valid for InitiateAuth. `ADMIN_NO_SRP_AUTH` is a legacy server-side username-password flow and isn't valid for InitiateAuth.
+#' @param AuthParameters The authentication parameters. These are inputs corresponding to the `AuthFlow` that you're invoking.
 #' 
-#' The following are some authentication flows and their parameters. Add a
-#' `SECRET_HASH` parameter if your app client has a client secret. Add
-#' `DEVICE_KEY` if you want to bypass multi-factor authentication with a
-#' remembered device.
+#' The following are some authentication flows and their parameters. Add a `SECRET_HASH` parameter if your app client has a client secret. Add `DEVICE_KEY` if you want to bypass multi-factor authentication with a remembered device.
 #' 
 #' **USER_AUTH**
 #' 
 #' -   `USERNAME` (required)
 #' 
-#' -   `PREFERRED_CHALLENGE`. If you don't provide a value for
-#'     `PREFERRED_CHALLENGE`, Amazon Cognito responds with the
-#'     `AvailableChallenges` parameter that specifies the available sign-in
-#'     methods.
+#' -   `PREFERRED_CHALLENGE`. If you don't provide a value for `PREFERRED_CHALLENGE`, Amazon Cognito responds with the `AvailableChallenges` parameter that specifies the available sign-in methods.
 #' 
 #' **USER_SRP_AUTH**
 #' 
@@ -8887,35 +6879,18 @@ cognitoidentityprovider_global_sign_out <- function(AccessToken) {
 #' 
 #' -   `USERNAME` (required)
 #' 
-#' -   `ChallengeName: SRP_A` (when doing SRP authentication before custom
-#'     challenges)
+#' -   `ChallengeName: SRP_A` (when doing SRP authentication before custom challenges)
 #' 
-#' -   `SRP_A: (An SRP_A value)` (when doing SRP authentication before
-#'     custom challenges)
+#' -   `SRP_A: (An SRP_A value)` (when doing SRP authentication before custom challenges)
 #' 
-#' For more information about `SECRET_HASH`, see [Computing secret hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' For information about `DEVICE_KEY`, see [Working with user devices in
-#' your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information about `SECRET_HASH`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash). For information about `DEVICE_KEY`, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' The `ClientMetadata` value is passed as input to the functions for only
-#' the following triggers:
+#' The `ClientMetadata` value is passed as input to the functions for only the following triggers:
 #' 
 #' -   Pre signup
 #' 
@@ -8923,8 +6898,7 @@ cognitoidentityprovider_global_sign_out <- function(AccessToken) {
 #' 
 #' -   User migration
 #' 
-#' This request also invokes the functions for the following triggers, but
-#' doesn't pass `ClientMetadata`:
+#' This request also invokes the functions for the following triggers, but doesn't pass `ClientMetadata`:
 #' 
 #' -   Post authentication
 #' 
@@ -8940,41 +6914,19 @@ cognitoidentityprovider_global_sign_out <- function(AccessToken) {
 #' 
 #' -   Custom SMS sender
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #' @param ClientId &#91;required&#93; The ID of the app client that your user wants to sign in to.
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param UserContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param UserContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param Session The optional session ID from a
-#' [`confirm_sign_up`][cognitoidentityprovider_confirm_sign_up] API
-#' request. You can sign in a user directly from the sign-up process with
-#' the `USER_AUTH` authentication flow. When you pass the session ID to
-#' [`initiate_auth`][cognitoidentityprovider_initiate_auth], Amazon Cognito
-#' assumes the SMS or email message one-time verification password from
-#' [`confirm_sign_up`][cognitoidentityprovider_confirm_sign_up] as the
-#' primary authentication factor. You're not required to submit this code a
-#' second time. This option is only valid for users who have confirmed
-#' their sign-up and are signing in for the first time within the
-#' authentication flow session duration of the session ID.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param Session The optional session ID from a [`confirm_sign_up`][cognitoidentityprovider_confirm_sign_up] API request. You can sign in a user directly from the sign-up process with the `USER_AUTH` authentication flow. When you pass the session ID to [`initiate_auth`][cognitoidentityprovider_initiate_auth], Amazon Cognito assumes the SMS or email message one-time verification password from [`confirm_sign_up`][cognitoidentityprovider_confirm_sign_up] as the primary authentication factor. You're not required to submit this code a second time. This option is only valid for users who have confirmed their sign-up and are signing in for the first time within the authentication flow session duration of the session ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9052,37 +7004,19 @@ cognitoidentityprovider_initiate_auth <- function(AuthFlow, AuthParameters = NUL
 #' signed-in user
 #'
 #' @description
-#' Lists the devices that Amazon Cognito has registered to the currently
-#' signed-in user. For more information about device authentication, see
-#' [Working with user devices in your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Lists the devices that Amazon Cognito has registered to the currently signed-in user. For more information about device authentication, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_list_devices(AccessToken, Limit,
 #'   PaginationToken)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param Limit The maximum number of devices that you want Amazon Cognito to return in
-#' the response.
-#' @param PaginationToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param Limit The maximum number of devices that you want Amazon Cognito to return in the response.
+#' @param PaginationToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9150,31 +7084,20 @@ cognitoidentityprovider_list_devices <- function(AccessToken, Limit = NULL, Pagi
 #' @description
 #' Given a user pool ID, returns user pool groups and their details.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_groups(UserPoolId, Limit, NextToken)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to list user groups.
-#' @param Limit The maximum number of groups that you want Amazon Cognito to return in
-#' the response.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param Limit The maximum number of groups that you want Amazon Cognito to return in the response.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9236,36 +7159,23 @@ cognitoidentityprovider_list_groups <- function(UserPoolId, Limit = NULL, NextTo
 #' providers (IdPs)
 #'
 #' @description
-#' Given a user pool ID, returns information about configured identity
-#' providers (IdPs). For more information about IdPs, see [Third-party IdP
-#' sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
+#' Given a user pool ID, returns information about configured identity providers (IdPs). For more information about IdPs, see [Third-party IdP sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_identity_providers(UserPoolId, MaxResults,
 #'   NextToken)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to list IdPs.
-#' @param MaxResults The maximum number of IdPs that you want Amazon Cognito to return in the
-#' response.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param MaxResults The maximum number of IdPs that you want Amazon Cognito to return in the response.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9323,37 +7233,23 @@ cognitoidentityprovider_list_identity_providers <- function(UserPoolId, MaxResul
 #' Given a user pool ID, returns all resource servers and their details
 #'
 #' @description
-#' Given a user pool ID, returns all resource servers and their details.
-#' For more information about resource servers, see [Access control with
-#' resource
-#' servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
+#' Given a user pool ID, returns all resource servers and their details. For more information about resource servers, see [Access control with resource servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_resource_servers(UserPoolId, MaxResults,
 #'   NextToken)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to list resource servers.
-#' @param MaxResults The maximum number of resource servers that you want Amazon Cognito to
-#' return in the response.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param MaxResults The maximum number of resource servers that you want Amazon Cognito to return in the response.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9412,15 +7308,12 @@ cognitoidentityprovider_list_resource_servers <- function(UserPoolId, MaxResults
 #' Lists the tags that are assigned to an Amazon Cognito user pool
 #'
 #' @description
-#' Lists the tags that are assigned to an Amazon Cognito user pool. For
-#' more information, see [Tagging
-#' resources](https://docs.aws.amazon.com/cognito/latest/developerguide/tagging.html).
+#' Lists the tags that are assigned to an Amazon Cognito user pool. For more information, see [Tagging resources](https://docs.aws.amazon.com/cognito/latest/developerguide/tagging.html).
 #'
 #' @usage
 #' cognitoidentityprovider_list_tags_for_resource(ResourceArn)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the user pool that the tags are
-#' assigned to.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9468,31 +7361,20 @@ cognitoidentityprovider_list_tags_for_resource <- function(ResourceArn) {
 #' @description
 #' Returns details about all terms documents for the requested user pool.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_terms(UserPoolId, MaxResults, NextToken)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to list terms documents.
-#' @param MaxResults The maximum number of terms documents that you want Amazon Cognito to
-#' return in the response.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param MaxResults The maximum number of terms documents that you want Amazon Cognito to return in the response.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9551,38 +7433,23 @@ cognitoidentityprovider_list_terms <- function(UserPoolId, MaxResults = NULL, Ne
 #' Given a user pool ID, returns user import jobs and their details
 #'
 #' @description
-#' Given a user pool ID, returns user import jobs and their details. Import
-#' jobs are retained in user pool configuration so that you can stage,
-#' stop, start, review, and delete them. For more information about user
-#' import, see [Importing users from a CSV
-#' file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
+#' Given a user pool ID, returns user import jobs and their details. Import jobs are retained in user pool configuration so that you can stage, stop, start, review, and delete them. For more information about user import, see [Importing users from a CSV file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_user_import_jobs(UserPoolId, MaxResults,
 #'   PaginationToken)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to list import jobs.
-#' @param MaxResults &#91;required&#93; The maximum number of import jobs that you want Amazon Cognito to return
-#' in the response.
-#' @param PaginationToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param MaxResults &#91;required&#93; The maximum number of import jobs that you want Amazon Cognito to return in the response.
+#' @param PaginationToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9651,11 +7518,7 @@ cognitoidentityprovider_list_user_import_jobs <- function(UserPoolId, MaxResults
 #' Lists all client secrets associated with a user pool app client
 #'
 #' @description
-#' Lists all client secrets associated with a user pool app client. Returns
-#' metadata about the secrets. The response does not include pagination
-#' tokens as there are only 2 secrets at any given time and we return both
-#' with every ListUserPoolClientSecrets call. For security reasons, the
-#' response never reveals the actual secret value in ClientSecretValue.
+#' Lists all client secrets associated with a user pool app client. Returns metadata about the secrets. The response does not include pagination tokens as there are only 2 secrets at any given time and we return both with every ListUserPoolClientSecrets call. For security reasons, the response never reveals the actual secret value in ClientSecretValue.
 #'
 #' @usage
 #' cognitoidentityprovider_list_user_pool_client_secrets(UserPoolId,
@@ -9663,12 +7526,7 @@ cognitoidentityprovider_list_user_import_jobs <- function(UserPoolId, MaxResults
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the app client.
 #' @param ClientId &#91;required&#93; The ID of the app client whose secrets you want to list.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9723,37 +7581,23 @@ cognitoidentityprovider_list_user_pool_client_secrets <- function(UserPoolId, Cl
 #' Given a user pool ID, lists app clients
 #'
 #' @description
-#' Given a user pool ID, lists app clients. App clients are sets of rules
-#' for the access that you want a user pool to grant to one application.
-#' For more information, see [App
-#' clients](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html).
+#' Given a user pool ID, lists app clients. App clients are sets of rules for the access that you want a user pool to grant to one application. For more information, see [App clients](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-client-apps.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_user_pool_clients(UserPoolId, MaxResults,
 #'   NextToken)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to list user pool clients.
-#' @param MaxResults The maximum number of app clients that you want Amazon Cognito to return
-#' in the response.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param MaxResults The maximum number of app clients that you want Amazon Cognito to return in the response.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9807,33 +7651,21 @@ cognitoidentityprovider_list_user_pool_clients <- function(UserPoolId, MaxResult
 #' account
 #'
 #' @description
-#' Lists user pools and their details in the current Amazon Web Services
-#' account.
+#' Lists user pools and their details in the current Amazon Web Services account.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_user_pools(NextToken, MaxResults)
 #'
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
-#' @param MaxResults &#91;required&#93; The maximum number of user pools that you want Amazon Cognito to return
-#' in the response.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
+#' @param MaxResults &#91;required&#93; The maximum number of user pools that you want Amazon Cognito to return in the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9921,72 +7753,37 @@ cognitoidentityprovider_list_user_pools <- function(NextToken = NULL, MaxResults
 #' a user pool
 #'
 #' @description
-#' Given a user pool ID, returns a list of users and their basic details in
-#' a user pool.
+#' Given a user pool ID, returns a list of users and their basic details in a user pool.
 #' 
-#' This operation is eventually consistent. You might experience a delay
-#' before results are up-to-date. To validate the existence or
-#' configuration of an individual user, use
-#' [`admin_get_user`][cognitoidentityprovider_admin_get_user].
+#' This operation is eventually consistent. You might experience a delay before results are up-to-date. To validate the existence or configuration of an individual user, use [`admin_get_user`][cognitoidentityprovider_admin_get_user].
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_users(UserPoolId, AttributesToGet, Limit,
 #'   PaginationToken, Filter)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to display or search for users.
-#' @param AttributesToGet A JSON array of user attribute names, for example `given_name`, that you
-#' want Amazon Cognito to include in the response for each user. When you
-#' don't provide an `AttributesToGet` parameter, Amazon Cognito returns all
-#' attributes for each user.
+#' @param AttributesToGet A JSON array of user attribute names, for example `given_name`, that you want Amazon Cognito to include in the response for each user. When you don't provide an `AttributesToGet` parameter, Amazon Cognito returns all attributes for each user.
 #' 
-#' Use `AttributesToGet` with required attributes in your user pool, or in
-#' conjunction with `Filter`. Amazon Cognito returns an error if not all
-#' users in the results have set a value for the attribute you request.
-#' Attributes that you can't filter on, including custom attributes, must
-#' have a value set in every user profile before an `AttributesToGet`
-#' parameter returns results.
-#' @param Limit The maximum number of users that you want Amazon Cognito to return in
-#' the response. In some SDK contexts, this operation might return fewer
-#' items than you specify in the `Limit` parameter without having reached
-#' the end of the full list. If the response contains a `PaginationToken`,
-#' then there are more results.
-#' @param PaginationToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
-#' @param Filter A filter string of the form
-#' `\"AttributeName Filter-Type \"AttributeValue\"`. Quotation marks within
-#' the filter string must be escaped using the backslash (`\`) character.
-#' For example, `"family_name = \"Reddy\""`.
+#' Use `AttributesToGet` with required attributes in your user pool, or in conjunction with `Filter`. Amazon Cognito returns an error if not all users in the results have set a value for the attribute you request. Attributes that you can't filter on, including custom attributes, must have a value set in every user profile before an `AttributesToGet` parameter returns results.
+#' @param Limit The maximum number of users that you want Amazon Cognito to return in the response. In some SDK contexts, this operation might return fewer items than you specify in the `Limit` parameter without having reached the end of the full list. If the response contains a `PaginationToken`, then there are more results.
+#' @param PaginationToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
+#' @param Filter A filter string of the form `\"AttributeName Filter-Type \"AttributeValue\"`. Quotation marks within the filter string must be escaped using the backslash (`\`) character. For example, `"family_name = \"Reddy\""`.
 #' 
-#' -   *AttributeName*: The name of the attribute to search for. You can
-#'     only search for one attribute at a time.
+#' -   *AttributeName*: The name of the attribute to search for. You can only search for one attribute at a time.
 #' 
-#' -   *Filter-Type*: For an exact match, use `=`, for example,
-#'     "`given_name = \"Jon\"`". For a prefix ("starts with") match, use
-#'     `^=`, for example, "`given_name ^= \"Jon\"`".
+#' -   *Filter-Type*: For an exact match, use `=`, for example, "`given_name = \"Jon\"`". For a prefix ("starts with") match, use `^=`, for example, "`given_name ^= \"Jon\"`".
 #' 
-#' -   *AttributeValue*: The attribute value that must be matched for each
-#'     user.
+#' -   *AttributeValue*: The attribute value that must be matched for each user.
 #' 
-#' If the filter string is empty,
-#' [`list_users`][cognitoidentityprovider_list_users] returns all users in
-#' the user pool.
+#' If the filter string is empty, [`list_users`][cognitoidentityprovider_list_users] returns all users in the user pool.
 #' 
 #' You can only search for the following standard attributes:
 #' 
@@ -10004,8 +7801,7 @@ cognitoidentityprovider_list_user_pools <- function(NextToken = NULL, MaxResults
 #' 
 #' -   `preferred_username`
 #' 
-#' -   `cognito:user_status` (called **Status** in the Console)
-#'     (case-insensitive)
+#' -   `cognito:user_status` (called **Status** in the Console) (case-insensitive)
 #' 
 #' -   `status (called Enabled in the Console) (case-sensitive)`
 #' 
@@ -10013,26 +7809,11 @@ cognitoidentityprovider_list_user_pools <- function(NextToken = NULL, MaxResults
 #' 
 #' Custom attributes aren't searchable.
 #' 
-#' You can also list users with a client-side filter. The server-side
-#' filter matches no more than one attribute. For an advanced search, use a
-#' client-side filter with the `--query` parameter of the `list-users`
-#' action in the CLI. When you use a client-side filter, ListUsers returns
-#' a paginated list of zero or more users. You can receive multiple pages
-#' in a row with zero results. Repeat the query with each pagination token
-#' that is returned until you receive a null pagination token value, and
-#' then review the combined result.
+#' You can also list users with a client-side filter. The server-side filter matches no more than one attribute. For an advanced search, use a client-side filter with the `--query` parameter of the `list-users` action in the CLI. When you use a client-side filter, ListUsers returns a paginated list of zero or more users. You can receive multiple pages in a row with zero results. Repeat the query with each pagination token that is returned until you receive a null pagination token value, and then review the combined result.
 #' 
-#' For more information about server-side and client-side filtering, see
-#' [FilteringCLI
-#' output](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html)
-#' in the [Command Line Interface User
-#' Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html).
+#' For more information about server-side and client-side filtering, see [FilteringCLI output](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html) in the [Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html).
 #' 
-#' For more information, see [Searching for Users Using the ListUsers
-#' API](https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api)
-#' and [Examples of Using the ListUsers
-#' API](https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples)
-#' in the *Amazon Cognito Developer Guide*.
+#' For more information, see [Searching for Users Using the ListUsers API](https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-using-listusers-api) and [Examples of Using the ListUsers API](https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples) in the *Amazon Cognito Developer Guide*.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10108,42 +7889,24 @@ cognitoidentityprovider_list_users <- function(UserPoolId, AttributesToGet = NUL
 #' group
 #'
 #' @description
-#' Given a user pool ID and a group name, returns a list of users in the
-#' group. For more information about user pool groups, see [Adding groups
-#' to a user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
+#' Given a user pool ID and a group name, returns a list of users in the group. For more information about user pool groups, see [Adding groups to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_list_users_in_group(UserPoolId, GroupName,
 #'   Limit, NextToken)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to view the membership of the
-#' requested group.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to view the membership of the requested group.
 #' @param GroupName &#91;required&#93; The name of the group that you want to query for user membership.
-#' @param Limit The maximum number of groups that you want Amazon Cognito to return in
-#' the response. In some SDK contexts, this operation might return fewer
-#' items than you specify in the `Limit` parameter without having reached
-#' the end of the full list. If the response contains a `PaginationToken`,
-#' then there are more results.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
+#' @param Limit The maximum number of groups that you want Amazon Cognito to return in the response. In some SDK contexts, this operation might return fewer items than you specify in the `Limit` parameter without having reached the end of the full list. If the response contains a `PaginationToken`, then there are more results.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10216,35 +7979,19 @@ cognitoidentityprovider_list_users_in_group <- function(UserPoolId, GroupName, L
 #' or WebAuthn, credentials
 #'
 #' @description
-#' Generates a list of the currently signed-in user's registered passkey,
-#' or WebAuthn, credentials.
+#' Generates a list of the currently signed-in user's registered passkey, or WebAuthn, credentials.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_list_web_authn_credentials(AccessToken,
 #'   NextToken, MaxResults)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param NextToken This API operation returns a limited number of results. The pagination
-#' token is an identifier that you can present in an additional API request
-#' with the same parameters. When you include the pagination token, Amazon
-#' Cognito returns the next set of items after the current list. Subsequent
-#' requests return a new pagination token. By use of this token, you can
-#' paginate through the full list of items.
-#' @param MaxResults The maximum number of the user's passkey credentials that you want to
-#' return.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param NextToken This API operation returns a limited number of results. The pagination token is an identifier that you can present in an additional API request with the same parameters. When you include the pagination token, Amazon Cognito returns the next set of items after the current list. Subsequent requests return a new pagination token. By use of this token, you can paginate through the full list of items.
+#' @param MaxResults The maximum number of the user's passkey credentials that you want to return.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10305,92 +8052,38 @@ cognitoidentityprovider_list_web_authn_credentials <- function(AccessToken, Next
 #' up in your user pool
 #'
 #' @description
-#' Resends the code that confirms a new account for a user who has signed
-#' up in your user pool. Amazon Cognito sends confirmation codes to the
-#' user attribute in the `AutoVerifiedAttributes` property of your user
-#' pool. When you prompt new users for the confirmation code, include a
-#' "Resend code" option that generates a call to this API operation.
+#' Resends the code that confirms a new account for a user who has signed up in your user pool. Amazon Cognito sends confirmation codes to the user attribute in the `AutoVerifiedAttributes` property of your user pool. When you prompt new users for the confirmation code, include a "Resend code" option that generates a call to this API operation.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #'
 #' @usage
 #' cognitoidentityprovider_resend_confirmation_code(ClientId, SecretHash,
 #'   UserContextData, Username, AnalyticsMetadata, ClientMetadata)
 #'
 #' @param ClientId &#91;required&#93; The ID of the user pool app client where the user signed up.
-#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the
-#' secret key of a user pool client and username plus the client ID in the
-#' message. For more information about `SecretHash`, see [Computing secret
-#' hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' @param UserContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about `SecretHash`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
+#' @param UserContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10452,43 +8145,15 @@ cognitoidentityprovider_resend_confirmation_code <- function(ClientId, SecretHas
 #' custom authentication challenge
 #'
 #' @description
-#' Some API operations in a user pool generate a challenge, like a prompt
-#' for an MFA code, for device authentication that bypasses MFA, or for a
-#' custom authentication challenge. A
-#' [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge]
-#' API request provides the answer to that challenge, like a code or a
-#' secure remote password (SRP). The parameters of a response to an
-#' authentication challenge vary with the type of challenge.
+#' Some API operations in a user pool generate a challenge, like a prompt for an MFA code, for device authentication that bypasses MFA, or for a custom authentication challenge. A [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge] API request provides the answer to that challenge, like a code or a secure remote password (SRP). The parameters of a response to an authentication challenge vary with the type of challenge.
 #' 
-#' For more information about custom authentication challenges, see [Custom
-#' authentication challenge Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html).
+#' For more information about custom authentication challenges, see [Custom authentication challenge Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-challenge.html).
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #'
 #' @usage
 #' cognitoidentityprovider_respond_to_auth_challenge(ClientId,
@@ -10498,146 +8163,69 @@ cognitoidentityprovider_resend_confirmation_code <- function(ClientId, SecretHas
 #' @param ClientId &#91;required&#93; The ID of the app client where the user is signing in.
 #' @param ChallengeName &#91;required&#93; The name of the challenge that you are responding to.
 #' 
-#' You can't respond to an `ADMIN_NO_SRP_AUTH` challenge with this
-#' operation.
+#' You can't respond to an `ADMIN_NO_SRP_AUTH` challenge with this operation.
 #' 
 #' Possible challenges include the following:
 #' 
-#' All of the following challenges require `USERNAME` and, when the app
-#' client has a client secret, `SECRET_HASH` in the parameters. Include a
-#' `DEVICE_KEY` for device authentication.
+#' All of the following challenges require `USERNAME` and, when the app client has a client secret, `SECRET_HASH` in the parameters. Include a `DEVICE_KEY` for device authentication.
 #' 
-#' -   `WEB_AUTHN`: Respond to the challenge with the results of a
-#'     successful authentication with a WebAuthn authenticator, or passkey,
-#'     as `CREDENTIAL`. Examples of WebAuthn authenticators include
-#'     biometric devices and security keys.
+#' -   `WEB_AUTHN`: Respond to the challenge with the results of a successful authentication with a WebAuthn authenticator, or passkey, as `CREDENTIAL`. Examples of WebAuthn authenticators include biometric devices and security keys.
 #' 
 #' -   `PASSWORD`: Respond with the user's password as `PASSWORD`.
 #' 
 #' -   `PASSWORD_SRP`: Respond with the initial SRP secret as `SRP_A`.
 #' 
-#' -   `SELECT_CHALLENGE`: Respond with a challenge selection as `ANSWER`.
-#'     It must be one of the challenge types in the `AvailableChallenges`
-#'     response parameter. Add the parameters of the selected challenge,
-#'     for example `USERNAME` and `SMS_OTP`.
+#' -   `SELECT_CHALLENGE`: Respond with a challenge selection as `ANSWER`. It must be one of the challenge types in the `AvailableChallenges` response parameter. Add the parameters of the selected challenge, for example `USERNAME` and `SMS_OTP`.
 #' 
-#' -   `SMS_MFA`: Respond with the code that your user pool delivered in an
-#'     SMS message, as `SMS_MFA_CODE`
+#' -   `SMS_MFA`: Respond with the code that your user pool delivered in an SMS message, as `SMS_MFA_CODE`
 #' 
-#' -   `EMAIL_MFA`: Respond with the code that your user pool delivered in
-#'     an email message, as `EMAIL_MFA_CODE`
+#' -   `EMAIL_MFA`: Respond with the code that your user pool delivered in an email message, as `EMAIL_MFA_CODE`
 #' 
-#' -   `EMAIL_OTP`: Respond with the code that your user pool delivered in
-#'     an email message, as `EMAIL_OTP_CODE` .
+#' -   `EMAIL_OTP`: Respond with the code that your user pool delivered in an email message, as `EMAIL_OTP_CODE` .
 #' 
-#' -   `SMS_OTP`: Respond with the code that your user pool delivered in an
-#'     SMS message, as `SMS_OTP_CODE`.
+#' -   `SMS_OTP`: Respond with the code that your user pool delivered in an SMS message, as `SMS_OTP_CODE`.
 #' 
-#' -   `PASSWORD_VERIFIER`: Respond with the second stage of SRP secrets as
-#'     `PASSWORD_CLAIM_SIGNATURE`, `PASSWORD_CLAIM_SECRET_BLOCK`, and
-#'     `TIMESTAMP`.
+#' -   `PASSWORD_VERIFIER`: Respond with the second stage of SRP secrets as `PASSWORD_CLAIM_SIGNATURE`, `PASSWORD_CLAIM_SECRET_BLOCK`, and `TIMESTAMP`.
 #' 
-#' -   `CUSTOM_CHALLENGE`: This is returned if your custom authentication
-#'     flow determines that the user should pass another challenge before
-#'     tokens are issued. The parameters of the challenge are determined by
-#'     your Lambda function and issued in the `ChallengeParameters` of a
-#'     challenge response.
+#' -   `CUSTOM_CHALLENGE`: This is returned if your custom authentication flow determines that the user should pass another challenge before tokens are issued. The parameters of the challenge are determined by your Lambda function and issued in the `ChallengeParameters` of a challenge response.
 #' 
-#' -   `DEVICE_SRP_AUTH`: Respond with the initial parameters of device SRP
-#'     authentication. For more information, see [Signing in with a
-#'     device](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device).
+#' -   `DEVICE_SRP_AUTH`: Respond with the initial parameters of device SRP authentication. For more information, see [Signing in with a device](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device).
 #' 
-#' -   `DEVICE_PASSWORD_VERIFIER`: Respond with `PASSWORD_CLAIM_SIGNATURE`,
-#'     `PASSWORD_CLAIM_SECRET_BLOCK`, and `TIMESTAMP` after client-side SRP
-#'     calculations. For more information, see [Signing in with a
-#'     device](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device).
+#' -   `DEVICE_PASSWORD_VERIFIER`: Respond with `PASSWORD_CLAIM_SIGNATURE`, `PASSWORD_CLAIM_SECRET_BLOCK`, and `TIMESTAMP` after client-side SRP calculations. For more information, see [Signing in with a device](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html#user-pools-remembered-devices-signing-in-with-a-device).
 #' 
-#' -   `NEW_PASSWORD_REQUIRED`: For users who are required to change their
-#'     passwords after successful first login. Respond to this challenge
-#'     with `NEW_PASSWORD` and any required attributes that Amazon Cognito
-#'     returned in the `requiredAttributes` parameter. You can also set
-#'     values for attributes that aren't required by your user pool and
-#'     that your app client can write.
+#' -   `NEW_PASSWORD_REQUIRED`: For users who are required to change their passwords after successful first login. Respond to this challenge with `NEW_PASSWORD` and any required attributes that Amazon Cognito returned in the `requiredAttributes` parameter. You can also set values for attributes that aren't required by your user pool and that your app client can write.
 #' 
-#'     Amazon Cognito only returns this challenge for users who have
-#'     temporary passwords. When you create passwordless users, you must
-#'     provide values for all required attributes.
+#'     Amazon Cognito only returns this challenge for users who have temporary passwords. When you create passwordless users, you must provide values for all required attributes.
 #' 
-#'     In a `NEW_PASSWORD_REQUIRED` challenge response, you can't modify a
-#'     required attribute that already has a value. In
-#'     [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#'     or
-#'     [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge],
-#'     set a value for any keys that Amazon Cognito returned in the
-#'     `requiredAttributes` parameter, then use the
-#'     [`admin_update_user_attributes`][cognitoidentityprovider_admin_update_user_attributes]
-#'     or
-#'     [`update_user_attributes`][cognitoidentityprovider_update_user_attributes]
-#'     API operation to modify the value of any additional attributes.
+#'     In a `NEW_PASSWORD_REQUIRED` challenge response, you can't modify a required attribute that already has a value. In [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] or [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge], set a value for any keys that Amazon Cognito returned in the `requiredAttributes` parameter, then use the [`admin_update_user_attributes`][cognitoidentityprovider_admin_update_user_attributes] or [`update_user_attributes`][cognitoidentityprovider_update_user_attributes] API operation to modify the value of any additional attributes.
 #' 
-#' -   `MFA_SETUP`: For users who are required to setup an MFA factor
-#'     before they can sign in. The MFA types activated for the user pool
-#'     will be listed in the challenge parameters `MFAS_CAN_SETUP` value.
+#' -   `MFA_SETUP`: For users who are required to setup an MFA factor before they can sign in. The MFA types activated for the user pool will be listed in the challenge parameters `MFAS_CAN_SETUP` value.
 #' 
-#'     To set up time-based one-time password (TOTP) MFA, use the session
-#'     returned in this challenge from
-#'     [`initiate_auth`][cognitoidentityprovider_initiate_auth] or
-#'     [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth]
-#'     as an input to
-#'     [`associate_software_token`][cognitoidentityprovider_associate_software_token].
-#'     Then, use the session returned by
-#'     [`verify_software_token`][cognitoidentityprovider_verify_software_token]
-#'     as an input to
-#'     [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge]
-#'     or
-#'     [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#'     with challenge name `MFA_SETUP` to complete sign-in.
+#'     To set up time-based one-time password (TOTP) MFA, use the session returned in this challenge from [`initiate_auth`][cognitoidentityprovider_initiate_auth] or [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] as an input to [`associate_software_token`][cognitoidentityprovider_associate_software_token]. Then, use the session returned by [`verify_software_token`][cognitoidentityprovider_verify_software_token] as an input to [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge] or [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] with challenge name `MFA_SETUP` to complete sign-in.
 #' 
-#'     To set up SMS or email MFA, collect a `phone_number` or `email`
-#'     attribute for the user. Then restart the authentication flow with an
-#'     [`initiate_auth`][cognitoidentityprovider_initiate_auth] or
-#'     [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth]
-#'     request.
-#' @param Session The session identifier that maintains the state of authentication
-#' requests and challenge responses. If an
-#' [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] or
-#' [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#' API request results in a determination that your application must pass
-#' another challenge, Amazon Cognito returns a session with other challenge
-#' parameters. Send this session identifier, unmodified, to the next
-#' [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#' request.
-#' @param ChallengeResponses The responses to the challenge that you received in the previous
-#' request. Each challenge has its own required response parameters. The
-#' following examples are partial JSON request bodies that highlight
-#' challenge-response parameters.
+#'     To set up SMS or email MFA, collect a `phone_number` or `email` attribute for the user. Then restart the authentication flow with an [`initiate_auth`][cognitoidentityprovider_initiate_auth] or [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] request.
+#' @param Session The session identifier that maintains the state of authentication requests and challenge responses. If an [`admin_initiate_auth`][cognitoidentityprovider_admin_initiate_auth] or [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] API request results in a determination that your application must pass another challenge, Amazon Cognito returns a session with other challenge parameters. Send this session identifier, unmodified, to the next [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] request.
+#' @param ChallengeResponses The responses to the challenge that you received in the previous request. Each challenge has its own required response parameters. The following examples are partial JSON request bodies that highlight challenge-response parameters.
 #' 
-#' You must provide a SECRET_HASH parameter in all challenge responses to
-#' an app client that has a client secret. Include a `DEVICE_KEY` for
-#' device authentication.
+#' You must provide a SECRET_HASH parameter in all challenge responses to an app client that has a client secret. Include a `DEVICE_KEY` for device authentication.
 #' 
 #' **SELECT_CHALLENGE**
 #' 
 #' `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "USERNAME": "[username]", "ANSWER": "[Challenge name]"}`
 #' 
-#' Available challenges are `PASSWORD`, `PASSWORD_SRP`, `EMAIL_OTP`,
-#' `SMS_OTP`, and `WEB_AUTHN`.
+#' Available challenges are `PASSWORD`, `PASSWORD_SRP`, `EMAIL_OTP`, `SMS_OTP`, and `WEB_AUTHN`.
 #' 
-#' Complete authentication in the `SELECT_CHALLENGE` response for
-#' `PASSWORD`, `PASSWORD_SRP`, and `WEB_AUTHN`:
+#' Complete authentication in the `SELECT_CHALLENGE` response for `PASSWORD`, `PASSWORD_SRP`, and `WEB_AUTHN`:
 #' 
 #' -   `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "WEB_AUTHN", "USERNAME": "[username]", "CREDENTIAL": "[AuthenticationResponseJSON]"}`
 #' 
-#'     See
-#'     [AuthenticationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson).
+#'     See [AuthenticationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson).
 #' 
 #' -   `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD", "USERNAME": "[username]", "PASSWORD": "[password]"}`
 #' 
 #' -   `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "PASSWORD_SRP", "USERNAME": "[username]", "SRP_A": "[SRP_A]"}`
 #' 
-#' For `SMS_OTP` and `EMAIL_OTP`, respond with the username and answer.
-#' Your user pool will send a code for the user to submit in the next
-#' challenge response.
+#' For `SMS_OTP` and `EMAIL_OTP`, respond with the username and answer. Your user pool will send a code for the user to submit in the next challenge response.
 #' 
 #' -   `"ChallengeName": "SELECT_CHALLENGE", "ChallengeResponses": { "ANSWER": "SMS_OTP", "USERNAME": "[username]"}`
 #' 
@@ -10647,8 +8235,7 @@ cognitoidentityprovider_resend_confirmation_code <- function(ClientId, SecretHas
 #' 
 #' `"ChallengeName": "WEB_AUTHN", "ChallengeResponses": { "USERNAME": "[username]", "CREDENTIAL": "[AuthenticationResponseJSON]"}`
 #' 
-#' See
-#' [AuthenticationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson).
+#' See [AuthenticationResponseJSON](https://www.w3.org/TR/webauthn-3/#dictdef-authenticationresponsejson).
 #' 
 #' **PASSWORD**
 #' 
@@ -10672,10 +8259,7 @@ cognitoidentityprovider_resend_confirmation_code <- function(ClientId, SecretHas
 #' 
 #' **PASSWORD_VERIFIER**
 #' 
-#' This challenge response is part of the SRP flow. Amazon Cognito requires
-#' that your application respond to this challenge within a few seconds.
-#' When the response time exceeds this period, your user pool returns a
-#' `NotAuthorizedException` error.
+#' This challenge response is part of the SRP flow. Amazon Cognito requires that your application respond to this challenge within a few seconds. When the response time exceeds this period, your user pool returns a `NotAuthorizedException` error.
 #' 
 #' `"ChallengeName": "PASSWORD_VERIFIER", "ChallengeResponses": {"PASSWORD_CLAIM_SIGNATURE": "[claim_signature]", "PASSWORD_CLAIM_SECRET_BLOCK": "[secret_block]", "TIMESTAMP": [timestamp], "USERNAME": "[username]"}`
 #' 
@@ -10687,24 +8271,9 @@ cognitoidentityprovider_resend_confirmation_code <- function(ClientId, SecretHas
 #' 
 #' `"ChallengeName": "NEW_PASSWORD_REQUIRED", "ChallengeResponses": {"NEW_PASSWORD": "[new_password]", "USERNAME": "[username]"}`
 #' 
-#' To set any required attributes that
-#' [`initiate_auth`][cognitoidentityprovider_initiate_auth] returned in an
-#' `requiredAttributes` parameter, add
-#' `"userAttributes.[attribute_name]": "[attribute_value]"`. This parameter
-#' can also set values for writable attributes that aren't required by your
-#' user pool.
+#' To set any required attributes that [`initiate_auth`][cognitoidentityprovider_initiate_auth] returned in an `requiredAttributes` parameter, add `"userAttributes.[attribute_name]": "[attribute_value]"`. This parameter can also set values for writable attributes that aren't required by your user pool.
 #' 
-#' In a `NEW_PASSWORD_REQUIRED` challenge response, you can't modify a
-#' required attribute that already has a value. In
-#' [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge]
-#' or
-#' [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge],
-#' set a value for any keys that Amazon Cognito returned in the
-#' `requiredAttributes` parameter, then use the
-#' [`admin_update_user_attributes`][cognitoidentityprovider_admin_update_user_attributes]
-#' or
-#' [`update_user_attributes`][cognitoidentityprovider_update_user_attributes]
-#' API operation to modify the value of any additional attributes.
+#' In a `NEW_PASSWORD_REQUIRED` challenge response, you can't modify a required attribute that already has a value. In [`admin_respond_to_auth_challenge`][cognitoidentityprovider_admin_respond_to_auth_challenge] or [`respond_to_auth_challenge`][cognitoidentityprovider_respond_to_auth_challenge], set a value for any keys that Amazon Cognito returned in the `requiredAttributes` parameter, then use the [`admin_update_user_attributes`][cognitoidentityprovider_admin_update_user_attributes] or [`update_user_attributes`][cognitoidentityprovider_update_user_attributes] API operation to modify the value of any additional attributes.
 #' 
 #' **SOFTWARE_TOKEN_MFA**
 #' 
@@ -10726,50 +8295,24 @@ cognitoidentityprovider_resend_confirmation_code <- function(ClientId, SecretHas
 #' 
 #' `"ChallengeName": "SELECT_MFA_TYPE", "ChallengeResponses": {"USERNAME": "[username]", "ANSWER": "[SMS_MFA|EMAIL_MFA|SOFTWARE_TOKEN_MFA]"}`
 #' 
-#' For more information about `SECRET_HASH`, see [Computing secret hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' For information about `DEVICE_KEY`, see [Working with user devices in
-#' your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param UserContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' For more information about `SECRET_HASH`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash). For information about `DEVICE_KEY`, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param UserContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10844,27 +8387,16 @@ cognitoidentityprovider_respond_to_auth_challenge <- function(ClientId, Challeng
 #' the specified refresh token
 #'
 #' @description
-#' Revokes all of the access tokens generated by, and at the same time as,
-#' the specified refresh token. After a token is revoked, you can't use the
-#' revoked token to access Amazon Cognito user APIs, or to authorize access
-#' to your resource server.
+#' Revokes all of the access tokens generated by, and at the same time as, the specified refresh token. After a token is revoked, you can't use the revoked token to access Amazon Cognito user APIs, or to authorize access to your resource server.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_revoke_token(Token, ClientId, ClientSecret)
 #'
 #' @param Token &#91;required&#93; The refresh token that you want to revoke.
-#' @param ClientId &#91;required&#93; The ID of the app client where the token that you want to revoke was
-#' issued.
-#' @param ClientSecret The client secret of the requested app client, if the client has a
-#' secret.
+#' @param ClientId &#91;required&#93; The ID of the app client where the token that you want to revoke was issued.
+#' @param ClientSecret The client secret of the requested app client, if the client has a secret.
 #'
 #' @return
 #' An empty list.
@@ -10905,10 +8437,7 @@ cognitoidentityprovider_revoke_token <- function(Token, ClientId, ClientSecret =
 #' Sets up or modifies the logging configuration of a user pool
 #'
 #' @description
-#' Sets up or modifies the logging configuration of a user pool. User pools
-#' can export user notification logs and, when threat protection is active,
-#' user-activity logs. For more information, see [Exporting user pool
-#' logs](https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html).
+#' Sets up or modifies the logging configuration of a user pool. User pools can export user notification logs and, when threat protection is active, user-activity logs. For more information, see [Exporting user pool logs](https://docs.aws.amazon.com/cognito/latest/developerguide/exporting-quotas-and-usage.html).
 #'
 #' @usage
 #' cognitoidentityprovider_set_log_delivery_configuration(UserPoolId,
@@ -10991,54 +8520,30 @@ cognitoidentityprovider_set_log_delivery_configuration <- function(UserPoolId, L
 #' Configures threat protection for a user pool or app client
 #'
 #' @description
-#' Configures threat protection for a user pool or app client. Sets
-#' configuration for the following.
+#' Configures threat protection for a user pool or app client. Sets configuration for the following.
 #' 
 #' -   Responses to risks with adaptive authentication
 #' 
-#' -   Responses to vulnerable passwords with compromised-credentials
-#'     detection
+#' -   Responses to vulnerable passwords with compromised-credentials detection
 #' 
 #' -   Notifications to users who have had risky activity detected
 #' 
 #' -   IP-address denylist and allowlist
 #' 
-#' To set the risk configuration for the user pool to defaults, send this
-#' request with only the `UserPoolId` parameter. To reset the threat
-#' protection settings of an app client to be inherited from the user pool,
-#' send `UserPoolId` and `ClientId` parameters only. To change threat
-#' protection to audit-only or off, update the value of `UserPoolAddOns` in
-#' an [`update_user_pool`][cognitoidentityprovider_update_user_pool]
-#' request. To activate this setting, your user pool must be on the [Plus
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
+#' To set the risk configuration for the user pool to defaults, send this request with only the `UserPoolId` parameter. To reset the threat protection settings of an app client to be inherited from the user pool, send `UserPoolId` and `ClientId` parameters only. To change threat protection to audit-only or off, update the value of `UserPoolAddOns` in an [`update_user_pool`][cognitoidentityprovider_update_user_pool] request. To activate this setting, your user pool must be on the [Plus tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
 #'
 #' @usage
 #' cognitoidentityprovider_set_risk_configuration(UserPoolId, ClientId,
 #'   CompromisedCredentialsRiskConfiguration,
 #'   AccountTakeoverRiskConfiguration, RiskExceptionConfiguration)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to set a risk configuration. If
-#' you include `UserPoolId` in your request, don't include `ClientId`. When
-#' the client ID is null, the same risk configuration is applied to all the
-#' clients in the userPool. When you include both `ClientId` and
-#' `UserPoolId`, Amazon Cognito maps the configuration to the app client
-#' only.
-#' @param ClientId The ID of the app client where you want to set a risk configuration. If
-#' `ClientId` is null, then the risk configuration is mapped to
-#' `UserPoolId`. When the client ID is null, the same risk configuration is
-#' applied to all the clients in the userPool.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to set a risk configuration. If you include `UserPoolId` in your request, don't include `ClientId`. When the client ID is null, the same risk configuration is applied to all the clients in the userPool. When you include both `ClientId` and `UserPoolId`, Amazon Cognito maps the configuration to the app client only.
+#' @param ClientId The ID of the app client where you want to set a risk configuration. If `ClientId` is null, then the risk configuration is mapped to `UserPoolId`. When the client ID is null, the same risk configuration is applied to all the clients in the userPool.
 #' 
-#' When you include a `ClientId` parameter, Amazon Cognito maps the
-#' configuration to the app client. When you include both `ClientId` and
-#' `UserPoolId`, Amazon Cognito maps the configuration to the app client
-#' only.
-#' @param CompromisedCredentialsRiskConfiguration The configuration of automated reactions to detected compromised
-#' credentials. Includes settings for blocking future sign-in requests and
-#' for the types of password-submission events you want to monitor.
-#' @param AccountTakeoverRiskConfiguration The settings for automated responses and notification templates for
-#' adaptive authentication with threat protection.
-#' @param RiskExceptionConfiguration A set of IP-address overrides to threat protection. You can set up
-#' IP-address always-block and always-allow lists.
+#' When you include a `ClientId` parameter, Amazon Cognito maps the configuration to the app client. When you include both `ClientId` and `UserPoolId`, Amazon Cognito maps the configuration to the app client only.
+#' @param CompromisedCredentialsRiskConfiguration The configuration of automated reactions to detected compromised credentials. Includes settings for blocking future sign-in requests and for the types of password-submission events you want to monitor.
+#' @param AccountTakeoverRiskConfiguration The settings for automated responses and notification templates for adaptive authentication with threat protection.
+#' @param RiskExceptionConfiguration A set of IP-address overrides to threat protection. You can set up IP-address always-block and always-allow lists.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11194,44 +8699,26 @@ cognitoidentityprovider_set_risk_configuration <- function(UserPoolId, ClientId 
 #' branding version
 #'
 #' @description
-#' Configures UI branding settings for domains with the hosted UI (classic)
-#' branding version. Your user pool must have a domain. Configure a domain
-#' with .
+#' Configures UI branding settings for domains with the hosted UI (classic) branding version. Your user pool must have a domain. Configure a domain with .
 #' 
-#' Set the default configuration for all clients with a `ClientId` of
-#' `ALL`. When the `ClientId` value is an app client ID, the settings you
-#' pass in this request apply to that app client and override the default
-#' `ALL` configuration.
+#' Set the default configuration for all clients with a `ClientId` of `ALL`. When the `ClientId` value is an app client ID, the settings you pass in this request apply to that app client and override the default `ALL` configuration.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_set_ui_customization(UserPoolId, ClientId, CSS,
 #'   ImageFile)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to apply branding to the classic
-#' hosted UI.
-#' @param ClientId The ID of the app client that you want to customize. To apply a default
-#' style to all app clients not configured with client-level branding, set
-#' this parameter value to `ALL`.
-#' @param CSS A plaintext CSS file that contains the custom fields that you want to
-#' apply to your user pool or app client. To download a template, go to the
-#' Amazon Cognito console. Navigate to your user pool *App clients* tab,
-#' select *Login pages*, edit *Hosted UI (classic) style*, and select the
-#' link to `CSS template.css`.
-#' @param ImageFile The image that you want to set as your login in the classic hosted UI,
-#' as a Base64-formatted binary object.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to apply branding to the classic hosted UI.
+#' @param ClientId The ID of the app client that you want to customize. To apply a default style to all app clients not configured with client-level branding, set this parameter value to `ALL`.
+#' @param CSS A plaintext CSS file that contains the custom fields that you want to apply to your user pool or app client. To download a template, go to the Amazon Cognito console. Navigate to your user pool *App clients* tab, select *Login pages*, edit *Hosted UI (classic) style*, and select the link to `CSS template.css`.
+#' @param ImageFile The image that you want to set as your login in the classic hosted UI, as a Base64-formatted binary object.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11291,58 +8778,22 @@ cognitoidentityprovider_set_ui_customization <- function(UserPoolId, ClientId = 
 #' including which MFA factors are activated and if any are preferred
 #'
 #' @description
-#' Set the user's multi-factor authentication (MFA) method preference,
-#' including which MFA factors are activated and if any are preferred. Only
-#' one factor can be set as preferred. The preferred MFA factor will be
-#' used to authenticate a user if multiple factors are activated. If
-#' multiple options are activated and no preference is set, a challenge to
-#' choose an MFA option will be returned during sign-in. If an MFA type is
-#' activated for a user, the user will be prompted for MFA during all
-#' sign-in attempts unless device tracking is turned on and the device has
-#' been trusted. If you want MFA to be applied selectively based on the
-#' assessed risk level of sign-in attempts, deactivate MFA for users and
-#' turn on Adaptive Authentication for the user pool.
+#' Set the user's multi-factor authentication (MFA) method preference, including which MFA factors are activated and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_set_user_mfa_preference(SMSMfaSettings,
 #'   SoftwareTokenMfaSettings, EmailMfaSettings, WebAuthnMfaSettings,
 #'   AccessToken)
 #'
-#' @param SMSMfaSettings User preferences for SMS message MFA. Activates or deactivates SMS MFA
-#' and sets it as the preferred MFA method when multiple methods are
-#' available.
-#' @param SoftwareTokenMfaSettings User preferences for time-based one-time password (TOTP) MFA. Activates
-#' or deactivates TOTP MFA and sets it as the preferred MFA method when
-#' multiple methods are available. Users must register a TOTP authenticator
-#' before they set this as their preferred MFA method.
-#' @param EmailMfaSettings User preferences for email message MFA. Activates or deactivates email
-#' MFA and sets it as the preferred MFA method when multiple methods are
-#' available. To activate this setting, your user pool must be in the
-#' [Essentials
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#' or higher.
-#' @param WebAuthnMfaSettings User preferences for passkey MFA. Activates or deactivates passkey MFA
-#' for the user. When activated, passkey authentication requires user
-#' verification, and passkey sign-in is available when MFA is required. To
-#' activate this setting, the `FactorConfiguration` of your user pool
-#' `WebAuthnConfiguration` must be `MULTI_FACTOR_WITH_USER_VERIFICATION`.
-#' To activate this setting, your user pool must be in the [Essentials
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#' or higher.
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param SMSMfaSettings User preferences for SMS message MFA. Activates or deactivates SMS MFA and sets it as the preferred MFA method when multiple methods are available.
+#' @param SoftwareTokenMfaSettings User preferences for time-based one-time password (TOTP) MFA. Activates or deactivates TOTP MFA and sets it as the preferred MFA method when multiple methods are available. Users must register a TOTP authenticator before they set this as their preferred MFA method.
+#' @param EmailMfaSettings User preferences for email message MFA. Activates or deactivates email MFA and sets it as the preferred MFA method when multiple methods are available. To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
+#' @param WebAuthnMfaSettings User preferences for passkey MFA. Activates or deactivates passkey MFA for the user. When activated, passkey authentication requires user verification, and passkey sign-in is available when MFA is required. To activate this setting, the `FactorConfiguration` of your user pool `WebAuthnConfiguration` must be `MULTI_FACTOR_WITH_USER_VERIFICATION`. To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #'
 #' @return
 #' An empty list.
@@ -11397,29 +8848,11 @@ cognitoidentityprovider_set_user_mfa_preference <- function(SMSMfaSettings = NUL
 #' configuration
 #'
 #' @description
-#' Sets user pool multi-factor authentication (MFA) and passkey
-#' configuration. For more information about user pool MFA, see [Adding
-#' MFA](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html).
-#' For more information about WebAuthn passkeys see [Authentication
-#' flows](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html#amazon-cognito-user-pools-authentication-flow-methods-passkey).
+#' Sets user pool multi-factor authentication (MFA) and passkey configuration. For more information about user pool MFA, see [Adding MFA](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-mfa.html). For more information about WebAuthn passkeys see [Authentication flows](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html#amazon-cognito-user-pools-authentication-flow-methods-passkey).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #'
 #' @usage
 #' cognitoidentityprovider_set_user_pool_mfa_config(UserPoolId,
@@ -11427,30 +8860,13 @@ cognitoidentityprovider_set_user_mfa_preference <- function(SMSMfaSettings = NUL
 #'   EmailMfaConfiguration, MfaConfiguration, WebAuthnConfiguration)
 #'
 #' @param UserPoolId &#91;required&#93; The user pool ID.
-#' @param SmsMfaConfiguration Configures user pool SMS messages for MFA. Sets the message template and
-#' the SMS message sending configuration for Amazon SNS.
-#' @param SoftwareTokenMfaConfiguration Configures a user pool for time-based one-time password (TOTP) MFA.
-#' Enables or disables TOTP.
-#' @param EmailMfaConfiguration Sets configuration for user pool email message MFA and sign-in with
-#' one-time passwords (OTPs). Includes the subject and body of the email
-#' message template for sign-in and MFA messages. To activate this setting,
-#' your user pool must be in the [Essentials
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#' or higher.
-#' @param MfaConfiguration Sets multi-factor authentication (MFA) to be on, off, or optional. When
-#' `ON`, all users must set up MFA before they can sign in. When
-#' `OPTIONAL`, your application must make a client-side determination of
-#' whether a user wants to register an MFA device. For user pools with
-#' adaptive authentication with threat protection, choose `OPTIONAL`.
+#' @param SmsMfaConfiguration Configures user pool SMS messages for MFA. Sets the message template and the SMS message sending configuration for Amazon SNS.
+#' @param SoftwareTokenMfaConfiguration Configures a user pool for time-based one-time password (TOTP) MFA. Enables or disables TOTP.
+#' @param EmailMfaConfiguration Sets configuration for user pool email message MFA and sign-in with one-time passwords (OTPs). Includes the subject and body of the email message template for sign-in and MFA messages. To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
+#' @param MfaConfiguration Sets multi-factor authentication (MFA) to be on, off, or optional. When `ON`, all users must set up MFA before they can sign in. When `OPTIONAL`, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose `OPTIONAL`.
 #' 
-#' When `MfaConfiguration` is `OPTIONAL`, managed login doesn't
-#' automatically prompt users to set up MFA. Amazon Cognito generates MFA
-#' prompts in API responses and in managed login for users who have chosen
-#' and configured a preferred MFA factor.
-#' @param WebAuthnConfiguration The configuration of your user pool for passkey, or WebAuthn,
-#' authentication and registration. Includes relying-party configuration,
-#' user-verification requirements, and whether passkeys can satisfy MFA
-#' requirements.
+#' When `MfaConfiguration` is `OPTIONAL`, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.
+#' @param WebAuthnConfiguration The configuration of your user pool for passkey, or WebAuthn, authentication and registration. Includes relying-party configuration, user-verification requirements, and whether passkeys can satisfy MFA requirements.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11535,29 +8951,17 @@ cognitoidentityprovider_set_user_pool_mfa_config <- function(UserPoolId, SmsMfaC
 #' This action is no longer supported
 #'
 #' @description
-#' *This action is no longer supported.* You can use it to configure only
-#' SMS MFA. You can't use it to configure time-based one-time password
-#' (TOTP) software token or email MFA.
+#' *This action is no longer supported.* You can use it to configure only SMS MFA. You can't use it to configure time-based one-time password (TOTP) software token or email MFA.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_set_user_settings(AccessToken, MFAOptions)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param MFAOptions &#91;required&#93; You can use this parameter only to set an SMS configuration that uses
-#' SMS for delivery.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param MFAOptions &#91;required&#93; You can use this parameter only to set an SMS configuration that uses SMS for delivery.
 #'
 #' @return
 #' An empty list.
@@ -11603,40 +9007,15 @@ cognitoidentityprovider_set_user_settings <- function(AccessToken, MFAOptions) {
 #' and user attributes in the user pool
 #'
 #' @description
-#' Registers a user with an app client and requests a user name, password,
-#' and user attributes in the user pool.
+#' Registers a user with an app client and requests a user name, password, and user attributes in the user pool.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #' 
-#' You might receive a `LimitExceeded` exception in response to this
-#' request if you have exceeded a rate quota for email or SMS messages, and
-#' if your user pool automatically verifies email addresses or phone
-#' numbers. When you get this exception in the response, the user is
-#' successfully created and is in an `UNCONFIRMED` state.
+#' You might receive a `LimitExceeded` exception in response to this request if you have exceeded a rate quota for email or SMS messages, and if your user pool automatically verifies email addresses or phone numbers. When you get this exception in the response, the user is successfully created and is in an `UNCONFIRMED` state.
 #'
 #' @usage
 #' cognitoidentityprovider_sign_up(ClientId, SecretHash, Username,
@@ -11644,79 +9023,36 @@ cognitoidentityprovider_set_user_settings <- function(AccessToken, MFAOptions) {
 #'   UserContextData, ClientMetadata)
 #'
 #' @param ClientId &#91;required&#93; The ID of the app client where the user wants to sign up.
-#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the
-#' secret key of a user pool client and username plus the client ID in the
-#' message. For more information about `SecretHash`, see [Computing secret
-#' hash
-#' values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
-#' @param Username &#91;required&#93; The username of the user that you want to sign up. The value of this
-#' parameter is typically a username, but can be any alias attribute in
-#' your user pool.
-#' @param Password The user's proposed password. The password must comply with the
-#' [password
-#' requirements](https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html)
-#' of your user pool.
+#' @param SecretHash A keyed-hash message authentication code (HMAC) calculated using the secret key of a user pool client and username plus the client ID in the message. For more information about `SecretHash`, see [Computing secret hash values](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash).
+#' @param Username &#91;required&#93; The username of the user that you want to sign up. The value of this parameter is typically a username, but can be any alias attribute in your user pool.
+#' @param Password The user's proposed password. The password must comply with the [password requirements](https://docs.aws.amazon.com/cognito/latest/developerguide/managing-users-passwords.html) of your user pool.
 #' 
-#' Users can sign up without a password when your user pool supports
-#' passwordless sign-in with email or SMS OTPs. To create a user with no
-#' password, omit this parameter or submit a blank value. You can only
-#' create a passwordless user when passwordless sign-in is available.
+#' Users can sign up without a password when your user pool supports passwordless sign-in with email or SMS OTPs. To create a user with no password, omit this parameter or submit a blank value. You can only create a passwordless user when passwordless sign-in is available.
 #' @param UserAttributes An array of name-value pairs representing user attributes.
 #' 
-#' For custom attributes, include a `custom:` prefix in the attribute name,
-#' for example `custom:department`.
-#' @param ValidationData Temporary user attributes that contribute to the outcomes of your pre
-#' sign-up Lambda trigger. This set of key-value pairs are for custom
-#' validation of information that you collect from your users but don't
-#' need to retain.
+#' For custom attributes, include a `custom:` prefix in the attribute name, for example `custom:department`.
+#' @param ValidationData Temporary user attributes that contribute to the outcomes of your pre sign-up Lambda trigger. This set of key-value pairs are for custom validation of information that you collect from your users but don't need to retain.
 #' 
-#' Your Lambda function can analyze this additional data and act on it.
-#' Your function can automatically confirm and verify select users or
-#' perform external API operations like logging user attributes and
-#' validation data to Amazon CloudWatch Logs.
+#' Your Lambda function can analyze this additional data and act on it. Your function can automatically confirm and verify select users or perform external API operations like logging user attributes and validation data to Amazon CloudWatch Logs.
 #' 
-#' For more information about the pre sign-up Lambda trigger, see [Pre
-#' sign-up Lambda
-#' trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html).
-#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint,
-#' including the user's endpoint ID. The endpoint ID is a destination for
-#' Amazon Pinpoint push notifications, for example a device identifier,
-#' email address, or phone number.
-#' @param UserContextData Contextual data about your user session like the device fingerprint, IP
-#' address, or location. Amazon Cognito threat protection evaluates the
-#' risk of an authentication event based on the context that your app
-#' generates and passes to Amazon Cognito when it makes API requests.
+#' For more information about the pre sign-up Lambda trigger, see [Pre sign-up Lambda trigger](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-sign-up.html).
+#' @param AnalyticsMetadata Information that supports analytics outcomes with Amazon Pinpoint, including the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint push notifications, for example a device identifier, email address, or phone number.
+#' @param UserContextData Contextual data about your user session like the device fingerprint, IP address, or location. Amazon Cognito threat protection evaluates the risk of an authentication event based on the context that your app generates and passes to Amazon Cognito when it makes API requests.
 #' 
-#' For more information, see [Collecting data for threat protection in
-#' applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' For more information, see [Collecting data for threat protection in applications](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html).
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11793,10 +9129,7 @@ cognitoidentityprovider_sign_up <- function(ClientId, SecretHash = NULL, Usernam
 #' contains their usernames and attributes
 #'
 #' @description
-#' Instructs your user pool to start importing users from a CSV file that
-#' contains their usernames and attributes. For more information about
-#' importing users from a CSV file, see [Importing users from a CSV
-#' file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
+#' Instructs your user pool to start importing users from a CSV file that contains their usernames and attributes. For more information about importing users from a CSV file, see [Importing users from a CSV file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
 #'
 #' @usage
 #' cognitoidentityprovider_start_user_import_job(UserPoolId, JobId)
@@ -11868,21 +9201,14 @@ cognitoidentityprovider_start_user_import_job <- function(UserPoolId, JobId) {
 #' currently signed-in user
 #'
 #' @description
-#' Requests credential creation options from your user pool for the
-#' currently signed-in user. Returns information about the user pool, the
-#' user profile, and authentication requirements. Users must provide this
-#' information in their request to enroll your application with their
-#' passkey provider.
+#' Requests credential creation options from your user pool for the currently signed-in user. Returns information about the user pool, the user profile, and authentication requirements. Users must provide this information in their request to enroll your application with their passkey provider.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #'
 #' @usage
 #' cognitoidentityprovider_start_web_authn_registration(AccessToken)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -11927,11 +9253,7 @@ cognitoidentityprovider_start_web_authn_registration <- function(AccessToken) {
 #' from a CSV file that contains their usernames and attributes
 #'
 #' @description
-#' Instructs your user pool to stop a running job that's importing users
-#' from a CSV file that contains their usernames and attributes. For more
-#' information about importing users from a CSV file, see [Importing users
-#' from a CSV
-#' file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
+#' Instructs your user pool to stop a running job that's importing users from a CSV file that contains their usernames and attributes. For more information about importing users from a CSV file, see [Importing users from a CSV file](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-using-import-tool.html).
 #'
 #' @usage
 #' cognitoidentityprovider_stop_user_import_job(UserPoolId, JobId)
@@ -12002,32 +9324,19 @@ cognitoidentityprovider_stop_user_import_job <- function(UserPoolId, JobId) {
 #' Assigns a set of tags to an Amazon Cognito user pool
 #'
 #' @description
-#' Assigns a set of tags to an Amazon Cognito user pool. A tag is a label
-#' that you can use to categorize and manage user pools in different ways,
-#' such as by purpose, owner, environment, or other criteria.
+#' Assigns a set of tags to an Amazon Cognito user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
 #' 
-#' Each tag consists of a key and value, both of which you define. A key is
-#' a general category for more specific values. For example, if you have
-#' two versions of a user pool, one for testing and another for production,
-#' you might assign an `Environment` tag key to both user pools. The value
-#' of this key might be `Test` for one user pool, and `Production` for the
-#' other.
+#' Each tag consists of a key and value, both of which you define. A key is a general category for more specific values. For example, if you have two versions of a user pool, one for testing and another for production, you might assign an `Environment` tag key to both user pools. The value of this key might be `Test` for one user pool, and `Production` for the other.
 #' 
-#' Tags are useful for cost tracking and access control. You can activate
-#' your tags so that they appear on the Billing and Cost Management
-#' console, where you can track the costs associated with your user pools.
-#' In an Identity and Access Management policy, you can constrain
-#' permissions for user pools based on specific tags or tag values.
+#' Tags are useful for cost tracking and access control. You can activate your tags so that they appear on the Billing and Cost Management console, where you can track the costs associated with your user pools. In an Identity and Access Management policy, you can constrain permissions for user pools based on specific tags or tag values.
 #' 
-#' You can use this action up to 5 times per second, per account. A user
-#' pool can have as many as 50 tags.
+#' You can use this action up to 5 times per second, per account. A user pool can have as many as 50 tags.
 #'
 #' @usage
 #' cognitoidentityprovider_tag_resource(ResourceArn, Tags)
 #'
 #' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the user pool to assign the tags to.
-#' @param Tags &#91;required&#93; An array of tag keys and values that you want to assign to the user
-#' pool.
+#' @param Tags &#91;required&#93; An array of tag keys and values that you want to assign to the user pool.
 #'
 #' @return
 #' An empty list.
@@ -12074,8 +9383,7 @@ cognitoidentityprovider_tag_resource <- function(ResourceArn, Tags) {
 #' @usage
 #' cognitoidentityprovider_untag_resource(ResourceArn, TagKeys)
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the user pool that the tags are
-#' assigned to.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the user pool that the tags are assigned to.
 #' @param TagKeys &#91;required&#93; An array of tag keys that you want to remove from the user pool.
 #'
 #' @return
@@ -12119,50 +9427,21 @@ cognitoidentityprovider_untag_resource <- function(ResourceArn, TagKeys) {
 #' protection features
 #'
 #' @description
-#' Provides the feedback for an authentication event generated by threat
-#' protection features. The user's response indicates that you think that
-#' the event either was from a valid user or was an unwanted authentication
-#' attempt. This feedback improves the risk evaluation decision for the
-#' user pool as part of Amazon Cognito threat protection. To activate this
-#' setting, your user pool must be on the [Plus
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
+#' Provides the feedback for an authentication event generated by threat protection features. The user's response indicates that you think that the event either was from a valid user or was an unwanted authentication attempt. This feedback improves the risk evaluation decision for the user pool as part of Amazon Cognito threat protection. To activate this setting, your user pool must be on the [Plus tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
 #' 
-#' This operation requires a `FeedbackToken` that Amazon Cognito generates
-#' and adds to notification emails when users have potentially suspicious
-#' authentication events. Users invoke this operation when they select the
-#' link that corresponds to `{one-click-link-valid}` or
-#' `{one-click-link-invalid}` in your notification template. Because
-#' `FeedbackToken` is a required parameter, you can't make requests to
-#' [`update_auth_event_feedback`][cognitoidentityprovider_update_auth_event_feedback]
-#' without the contents of the notification email message.
+#' This operation requires a `FeedbackToken` that Amazon Cognito generates and adds to notification emails when users have potentially suspicious authentication events. Users invoke this operation when they select the link that corresponds to `{one-click-link-valid}` or `{one-click-link-invalid}` in your notification template. Because `FeedbackToken` is a required parameter, you can't make requests to [`update_auth_event_feedback`][cognitoidentityprovider_update_auth_event_feedback] without the contents of the notification email message.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_update_auth_event_feedback(UserPoolId, Username,
 #'   EventId, FeedbackToken, FeedbackValue)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to update auth event feedback.
-#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this
-#' parameter is typically your user's username, but it can be any of their
-#' alias attributes. If `username` isn't an alias attribute in your user
-#' pool, this value must be the `sub` of a local user or the username of a
-#' user from a third-party IdP.
+#' @param Username &#91;required&#93; The name of the user that you want to query or modify. The value of this parameter is typically your user's username, but it can be any of their alias attributes. If `username` isn't an alias attribute in your user pool, this value must be the `sub` of a local user or the username of a user from a third-party IdP.
 #' @param EventId &#91;required&#93; The ID of the authentication event that you want to submit feedback for.
-#' @param FeedbackToken &#91;required&#93; The feedback token, an encrypted object generated by Amazon Cognito and
-#' passed to your user in the notification email message from the event.
-#' @param FeedbackValue &#91;required&#93; Your feedback to the authentication event. When you provide a
-#' `FeedbackValue` value of `valid`, you tell Amazon Cognito that you trust
-#' a user session where Amazon Cognito has evaluated some level of risk.
-#' When you provide a `FeedbackValue` value of `invalid`, you tell Amazon
-#' Cognito that you don't trust a user session, or you don't believe that
-#' Amazon Cognito evaluated a high-enough risk level.
+#' @param FeedbackToken &#91;required&#93; The feedback token, an encrypted object generated by Amazon Cognito and passed to your user in the notification email message from the event.
+#' @param FeedbackValue &#91;required&#93; Your feedback to the authentication event. When you provide a `FeedbackValue` value of `valid`, you tell Amazon Cognito that you trust a user session where Amazon Cognito has evaluated some level of risk. When you provide a `FeedbackValue` value of `invalid`, you tell Amazon Cognito that you don't trust a user session, or you don't believe that Amazon Cognito evaluated a high-enough risk level.
 #'
 #' @return
 #' An empty list.
@@ -12207,37 +9486,19 @@ cognitoidentityprovider_update_auth_event_feedback <- function(UserPoolId, Usern
 #' authentication
 #'
 #' @description
-#' Updates the status of a the currently signed-in user's device so that it
-#' is marked as remembered or not remembered for the purpose of device
-#' authentication. Device authentication is a "remember me" mechanism that
-#' silently completes sign-in from trusted devices with a device key
-#' instead of a user-provided MFA code. This operation changes the status
-#' of a device without deleting it, so you can enable it again later. For
-#' more information about device authentication, see [Working with
-#' devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' Updates the status of a the currently signed-in user's device so that it is marked as remembered or not remembered for the purpose of device authentication. Device authentication is a "remember me" mechanism that silently completes sign-in from trusted devices with a device key instead of a user-provided MFA code. This operation changes the status of a device without deleting it, so you can enable it again later. For more information about device authentication, see [Working with devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_update_device_status(AccessToken, DeviceKey,
 #'   DeviceRememberedStatus)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param DeviceKey &#91;required&#93; The device key of the device you want to update, for example
-#' `us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111`.
-#' @param DeviceRememberedStatus To enable device authentication with the specified device, set to
-#' `remembered`.To disable, set to `not_remembered`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param DeviceKey &#91;required&#93; The device key of the device you want to update, for example `us-west-2_a1b2c3d4-5678-90ab-cdef-EXAMPLE11111`.
+#' @param DeviceRememberedStatus To enable device authentication with the specified device, set to `remembered`.To disable, set to `not_remembered`.
 #'
 #' @return
 #' An empty list.
@@ -12279,23 +9540,15 @@ cognitoidentityprovider_update_device_status <- function(AccessToken, DeviceKey,
 #' precedence, IAM role, or description
 #'
 #' @description
-#' Given the name of a user pool group, updates any of the properties for
-#' precedence, IAM role, or description. For more information about user
-#' pool groups, see [Adding groups to a user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
+#' Given the name of a user pool group, updates any of the properties for precedence, IAM role, or description. For more information about user pool groups, see [Adding groups to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-user-groups.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_update_group(GroupName, UserPoolId, Description,
@@ -12304,26 +9557,12 @@ cognitoidentityprovider_update_device_status <- function(AccessToken, DeviceKey,
 #' @param GroupName &#91;required&#93; The name of the group that you want to update.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the group you want to update.
 #' @param Description A new description of the existing group.
-#' @param RoleArn The Amazon Resource Name (ARN) of an IAM role that you want to associate
-#' with the group. The role assignment contributes to the `cognito:roles`
-#' and `cognito:preferred_role` claims in group members' tokens.
-#' @param Precedence A non-negative integer value that specifies the precedence of this group
-#' relative to the other groups that a user can belong to in the user pool.
-#' Zero is the highest precedence value. Groups with lower `Precedence`
-#' values take precedence over groups with higher or null `Precedence`
-#' values. If a user belongs to two or more groups, it is the group with
-#' the lowest precedence value whose role ARN is given in the user's tokens
-#' for the `cognito:roles` and `cognito:preferred_role` claims.
+#' @param RoleArn The Amazon Resource Name (ARN) of an IAM role that you want to associate with the group. The role assignment contributes to the `cognito:roles` and `cognito:preferred_role` claims in group members' tokens.
+#' @param Precedence A non-negative integer value that specifies the precedence of this group relative to the other groups that a user can belong to in the user pool. Zero is the highest precedence value. Groups with lower `Precedence` values take precedence over groups with higher or null `Precedence` values. If a user belongs to two or more groups, it is the group with the lowest precedence value whose role ARN is given in the user's tokens for the `cognito:roles` and `cognito:preferred_role` claims.
 #' 
-#' Two groups can have the same `Precedence` value. If this happens,
-#' neither group takes precedence over the other. If two groups with the
-#' same `Precedence` have the same role ARN, that role is used in the
-#' `cognito:preferred_role` claim in tokens for users in each group. If the
-#' two groups have different role ARNs, the `cognito:preferred_role` claim
-#' isn't set in users' tokens.
+#' Two groups can have the same `Precedence` value. If this happens, neither group takes precedence over the other. If two groups with the same `Precedence` have the same role ARN, that role is used in the `cognito:preferred_role` claim in tokens for users in each group. If the two groups have different role ARNs, the `cognito:preferred_role` claim isn't set in users' tokens.
 #' 
-#' The default `Precedence` value is null. The maximum `Precedence` value
-#' is `2^31-1`.
+#' The default `Precedence` value is null. The maximum `Precedence` value is `2^31-1`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12384,108 +9623,67 @@ cognitoidentityprovider_update_group <- function(GroupName, UserPoolId, Descript
 #' identity provider (IdP) and a user pool
 #'
 #' @description
-#' Modifies the configuration and trust relationship between a third-party
-#' identity provider (IdP) and a user pool. Amazon Cognito accepts sign-in
-#' with third-party identity providers through managed login and OIDC
-#' relying-party libraries. For more information, see [Third-party IdP
-#' sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
+#' Modifies the configuration and trust relationship between a third-party identity provider (IdP) and a user pool. Amazon Cognito accepts sign-in with third-party identity providers through managed login and OIDC relying-party libraries. For more information, see [Third-party IdP sign-in](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_update_identity_provider(UserPoolId,
 #'   ProviderName, ProviderDetails, AttributeMapping, IdpIdentifiers)
 #'
 #' @param UserPoolId &#91;required&#93; The Id of the user pool where you want to update your IdP.
-#' @param ProviderName &#91;required&#93; The name of the IdP that you want to update. You can pass the identity
-#' provider name in the `identity_provider` query parameter of requests to
-#' the [Authorize
-#' endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html)
-#' to silently redirect to sign-in with the associated IdP.
-#' @param ProviderDetails The scopes, URLs, and identifiers for your external identity provider.
-#' The following examples describe the provider detail keys for each IdP
-#' type. These values and their schema are subject to change. Social IdP
-#' `authorize_scopes` values must match the values listed here.
+#' @param ProviderName &#91;required&#93; The name of the IdP that you want to update. You can pass the identity provider name in the `identity_provider` query parameter of requests to the [Authorize endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html) to silently redirect to sign-in with the associated IdP.
+#' @param ProviderDetails The scopes, URLs, and identifiers for your external identity provider. The following examples describe the provider detail keys for each IdP type. These values and their schema are subject to change. Social IdP `authorize_scopes` values must match the values listed here.
 #' 
 #' **OpenID Connect (OIDC)**
 #' 
-#' Amazon Cognito accepts the following elements when it can't discover
-#' endpoint URLs from `oidc_issuer`: `attributes_url`, `authorize_url`,
-#' `jwks_uri`, `token_url`.
+#' Amazon Cognito accepts the following elements when it can't discover endpoint URLs from `oidc_issuer`: `attributes_url`, `authorize_url`, `jwks_uri`, `token_url`.
 #' 
-#' Create or update request:
-#' `"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }`
+#' Create or update request: `"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }`
+#' Describe response: `"ProviderDetails": { "attributes_request_method": "GET", "attributes_url": "https://auth.example.com/userInfo", "attributes_url_add_attributes": "false", "authorize_scopes": "openid profile email", "authorize_url": "https://auth.example.com/authorize", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "jwks_uri": "https://auth.example.com/.well-known/jwks.json", "oidc_issuer": "https://auth.example.com", "token_url": "https://example.com/token" }`
 #' 
 #' **SAML**
 #' 
-#' Create or update request with Metadata URL:
-#' `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }`
+#' Create or update request with Metadata URL: `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256" }`
 #' 
-#' Create or update request with Metadata file:
-#' `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }`
+#' Create or update request with Metadata file: `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "MetadataFile": "[metadata XML]", "RequestSigningAlgorithm": "rsa-sha256" }`
 #' 
-#' The value of `MetadataFile` must be the plaintext metadata document with
-#' all quote (") characters escaped by backslashes.
+#' The value of `MetadataFile` must be the plaintext metadata document with all quote (") characters escaped by backslashes.
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }`
+#' Describe response: `"ProviderDetails": { "IDPInit": "true", "IDPSignout": "true", "EncryptedResponses" : "true", "ActiveEncryptionCertificate": "[certificate]", "MetadataURL": "https://auth.example.com/sso/saml/metadata", "RequestSigningAlgorithm": "rsa-sha256", "SLORedirectBindingURI": "https://auth.example.com/slo/saml", "SSORedirectBindingURI": "https://auth.example.com/sso/saml" }`
 #' 
 #' **LoginWithAmazon**
 #' 
-#' Create or update request:
-#' `"ProviderDetails": \{ "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"`
+#' Create or update request: `"ProviderDetails": \{ "authorize_scopes": "profile postal_code", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret"`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }`
+#' Describe response: `"ProviderDetails": { "attributes_url": "https://api.amazon.com/user/profile", "attributes_url_add_attributes": "false", "authorize_scopes": "profile postal_code", "authorize_url": "https://www.amazon.com/ap/oa", "client_id": "amzn1.application-oa2-client.1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "POST", "token_url": "https://api.amazon.com/auth/o2/token" }`
 #' 
 #' **Google**
 #' 
-#' Create or update request:
-#' `"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }`
+#' Create or update request: `"ProviderDetails": { "authorize_scopes": "email profile openid", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret" }`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }`
+#' Describe response: `"ProviderDetails": { "attributes_url": "https://people.googleapis.com/v1/people/me?personFields=", "attributes_url_add_attributes": "true", "authorize_scopes": "email profile openid", "authorize_url": "https://accounts.google.com/o/oauth2/v2/auth", "client_id": "1example23456789.apps.googleusercontent.com", "client_secret": "provider-app-client-secret", "oidc_issuer": "https://accounts.google.com", "token_request_method": "POST", "token_url": "https://www.googleapis.com/oauth2/v4/token" }`
 #' 
 #' **SignInWithApple**
 #' 
-#' Create or update request:
-#' `"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }`
+#' Create or update request: `"ProviderDetails": { "authorize_scopes": "email name", "client_id": "com.example.cognito", "private_key": "1EXAMPLE", "key_id": "2EXAMPLE", "team_id": "3EXAMPLE" }`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }`
+#' Describe response: `"ProviderDetails": { "attributes_url_add_attributes": "false", "authorize_scopes": "email name", "authorize_url": "https://appleid.apple.com/auth/authorize", "client_id": "com.example.cognito", "key_id": "1EXAMPLE", "oidc_issuer": "https://appleid.apple.com", "team_id": "2EXAMPLE", "token_request_method": "POST", "token_url": "https://appleid.apple.com/auth/token" }`
 #' 
 #' **Facebook**
 #' 
-#' Create or update request:
-#' `"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }`
+#' Create or update request: `"ProviderDetails": { "api_version": "v17.0", "authorize_scopes": "public_profile, email", "client_id": "1example23456789", "client_secret": "provider-app-client-secret" }`
 #' 
-#' Describe response:
-#' `"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }`
-#' @param AttributeMapping A mapping of IdP attributes to standard and custom user pool attributes.
-#' Specify a user pool attribute as the key of the key-value pair, and the
-#' IdP attribute claim name as the value.
-#' @param IdpIdentifiers An array of IdP identifiers, for example
-#' `"IdPIdentifiers": [ "MyIdP", "MyIdP2" ]`. Identifiers are friendly
-#' names that you can pass in the `idp_identifier` query parameter of
-#' requests to the [Authorize
-#' endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html)
-#' to silently redirect to sign-in with the associated IdP. Identifiers in
-#' a domain format also enable the use of [email-address matching with SAML
-#' providers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html).
+#' Describe response: `"ProviderDetails": { "api_version": "v17.0", "attributes_url": "https://graph.facebook.com/v17.0/me?fields=", "attributes_url_add_attributes": "true", "authorize_scopes": "public_profile, email", "authorize_url": "https://www.facebook.com/v17.0/dialog/oauth", "client_id": "1example23456789", "client_secret": "provider-app-client-secret", "token_request_method": "GET", "token_url": "https://graph.facebook.com/v17.0/oauth/access_token" }`
+#' @param AttributeMapping A mapping of IdP attributes to standard and custom user pool attributes. Specify a user pool attribute as the key of the key-value pair, and the IdP attribute claim name as the value.
+#' @param IdpIdentifiers An array of IdP identifiers, for example `"IdPIdentifiers": [ "MyIdP", "MyIdP2" ]`. Identifiers are friendly names that you can pass in the `idp_identifier` query parameter of requests to the [Authorize endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html) to silently redirect to sign-in with the associated IdP. Identifiers in a domain format also enable the use of [email-address matching with SAML providers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -12558,51 +9756,32 @@ cognitoidentityprovider_update_identity_provider <- function(UserPoolId, Provide
 #' Configures the branding settings for a user pool style
 #'
 #' @description
-#' Configures the branding settings for a user pool style. This operation
-#' is the programmatic option for the configuration of a style in the
-#' branding editor.
+#' Configures the branding settings for a user pool style. This operation is the programmatic option for the configuration of a style in the branding editor.
 #' 
-#' Provides values for UI customization in a `Settings` JSON object and
-#' image files in an `Assets` array.
+#' Provides values for UI customization in a `Settings` JSON object and image files in an `Assets` array.
 #' 
-#' This operation has a 2-megabyte request-size limit and include the CSS
-#' settings and image assets for your app client. Your branding settings
-#' might exceed 2MB in size. Amazon Cognito doesn't require that you pass
-#' all parameters in one request and preserves existing style settings that
-#' you don't specify. If your request is larger than 2MB, separate it into
-#' multiple requests, each with a size smaller than the limit.
+#' This operation has a 2-megabyte request-size limit and include the CSS settings and image assets for your app client. Your branding settings might exceed 2MB in size. Amazon Cognito doesn't require that you pass all parameters in one request and preserves existing style settings that you don't specify. If your request is larger than 2MB, separate it into multiple requests, each with a size smaller than the limit.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_update_managed_login_branding(UserPoolId,
 #'   ManagedLoginBrandingId, UseCognitoProvidedValues, Settings, Assets)
 #'
-#' @param UserPoolId The ID of the user pool that contains the managed login branding style
-#' that you want to update.
+#' @param UserPoolId The ID of the user pool that contains the managed login branding style that you want to update.
 #' @param ManagedLoginBrandingId The ID of the managed login branding style that you want to update.
-#' @param UseCognitoProvidedValues When `true`, applies the default branding style options. This option
-#' reverts to default style options that are managed by Amazon Cognito. You
-#' can modify them later in the branding editor.
+#' @param UseCognitoProvidedValues When `true`, applies the default branding style options. This option reverts to default style options that are managed by Amazon Cognito. You can modify them later in the branding editor.
 #' 
-#' When you specify `true` for this option, you must also omit values for
-#' `Settings` and `Assets` in the request.
-#' @param Settings A JSON file, encoded as a `Document` type, with the the settings that
-#' you want to apply to your style.
+#' When you specify `true` for this option, you must also omit values for `Settings` and `Assets` in the request.
+#' @param Settings A JSON file, encoded as a `Document` type, with the the settings that you want to apply to your style.
 #' 
-#' The following components are not currently implemented and reserved for
-#' future use:
+#' The following components are not currently implemented and reserved for future use:
 #' 
 #' -   `signUp`
 #' 
@@ -12610,11 +9789,8 @@ cognitoidentityprovider_update_identity_provider <- function(UserPoolId, Provide
 #' 
 #' -   `sessionTimerDisplay`
 #' 
-#' -   `languageSelector` (for localization, see [Managed login
-#'     localization)](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization)
-#' @param Assets An array of image files that you want to apply to roles like
-#' backgrounds, logos, and icons. Each object must also indicate whether it
-#' is for dark mode, light mode, or browser-adaptive mode.
+#' -   `languageSelector` (for localization, see [Managed login localization)](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization)
+#' @param Assets An array of image files that you want to apply to roles like backgrounds, logos, and icons. Each object must also indicate whether it is for dark mode, light mode, or browser-adaptive mode.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12690,44 +9866,28 @@ cognitoidentityprovider_update_managed_login_branding <- function(UserPoolId = N
 #' Updates the name and scopes of a resource server
 #'
 #' @description
-#' Updates the name and scopes of a resource server. All other fields are
-#' read-only. For more information about resource servers, see [Access
-#' control with resource
-#' servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
+#' Updates the name and scopes of a resource server. All other fields are read-only. For more information about resource servers, see [Access control with resource servers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html).
 #' 
-#' If you don't provide a value for an attribute, it is set to the default
-#' value.
+#' If you don't provide a value for an attribute, it is set to the default value.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_update_resource_server(UserPoolId, Identifier,
 #'   Name, Scopes)
 #'
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the resource server that you want
-#' to update.
-#' @param Identifier &#91;required&#93; A unique resource server identifier for the resource server. The
-#' identifier can be an API friendly name like `solar-system-data`. You can
-#' also set an API URL like `https://solar-system-data-api.example.com` as
-#' your identifier.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the resource server that you want to update.
+#' @param Identifier &#91;required&#93; A unique resource server identifier for the resource server. The identifier can be an API friendly name like `solar-system-data`. You can also set an API URL like `https://solar-system-data-api.example.com` as your identifier.
 #' 
-#' Amazon Cognito represents scopes in the access token in the format
-#' `$resource-server-identifier/$scope`. Longer scope-identifier strings
-#' increase the size of your access tokens.
+#' Amazon Cognito represents scopes in the access token in the format `$resource-server-identifier/$scope`. Longer scope-identifier strings increase the size of your access tokens.
 #' @param Name &#91;required&#93; The updated name of the resource server.
-#' @param Scopes An array of updated custom scope names and descriptions that you want to
-#' associate with your resource server.
+#' @param Scopes An array of updated custom scope names and descriptions that you want to associate with your resource server.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12789,38 +9949,21 @@ cognitoidentityprovider_update_resource_server <- function(UserPoolId, Identifie
 #' Modifies existing terms documents for the requested app client
 #'
 #' @description
-#' Modifies existing terms documents for the requested app client. When
-#' Terms and conditions and Privacy policy documents are configured, the
-#' app client displays links to them in the sign-up page of managed login
-#' for the app client.
+#' Modifies existing terms documents for the requested app client. When Terms and conditions and Privacy policy documents are configured, the app client displays links to them in the sign-up page of managed login for the app client.
 #' 
-#' You can provide URLs for terms documents in the languages that are
-#' supported by [managed login
-#' localization](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization).
-#' Amazon Cognito directs users to the terms documents for their current
-#' language, with fallback to `default` if no document exists for the
-#' language.
+#' You can provide URLs for terms documents in the languages that are supported by [managed login localization](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-localization). Amazon Cognito directs users to the terms documents for their current language, with fallback to `default` if no document exists for the language.
 #' 
-#' Each request accepts one type of terms document and a map of
-#' language-to-link for that document type. You must provide both types of
-#' terms documents in at least one language before Amazon Cognito displays
-#' your terms documents. Supply each type in separate requests.
+#' Each request accepts one type of terms document and a map of language-to-link for that document type. You must provide both types of terms documents in at least one language before Amazon Cognito displays your terms documents. Supply each type in separate requests.
 #' 
-#' For more information, see [Terms
-#' documents](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents).
+#' For more information, see [Terms documents](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_update_terms(TermsId, UserPoolId, TermsName,
@@ -12829,17 +9972,11 @@ cognitoidentityprovider_update_resource_server <- function(UserPoolId, Identifie
 #' @param TermsId &#91;required&#93; The ID of the terms document that you want to update.
 #' @param UserPoolId &#91;required&#93; The ID of the user pool that contains the terms that you want to update.
 #' @param TermsName The new name that you want to apply to the requested terms documents.
-#' @param TermsSource This parameter is reserved for future use and currently accepts only one
-#' value.
-#' @param Enforcement This parameter is reserved for future use and currently accepts only one
-#' value.
-#' @param Links A map of URLs to languages. For each localized language that will view
-#' the requested `TermsName`, assign a URL. A selection of
-#' `cognito:default` displays for all languages that don't have a
-#' language-specific URL.
+#' @param TermsSource This parameter is reserved for future use and currently accepts only one value.
+#' @param Enforcement This parameter is reserved for future use and currently accepts only one value.
+#' @param Links A map of URLs to languages. For each localized language that will view the requested `TermsName`, assign a URL. A selection of `cognito:default` displays for all languages that don't have a language-specific URL.
 #' 
-#' For example,
-#' `"cognito:default": "https://terms.example.com", "cognito:spanish": "https://terms.example.com/es"`.
+#' For example, `"cognito:default": "https://terms.example.com", "cognito:spanish": "https://terms.example.com/es"`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -12906,41 +10043,17 @@ cognitoidentityprovider_update_terms <- function(TermsId, UserPoolId, TermsName 
 #' Updates the currently signed-in user's attributes
 #'
 #' @description
-#' Updates the currently signed-in user's attributes. To delete an
-#' attribute from the user, submit the attribute in your API request with a
-#' blank value.
+#' Updates the currently signed-in user's attributes. To delete an attribute from the user, submit the attribute in your API request with a blank value.
 #' 
-#' For custom attributes, you must add a `custom:` prefix to the attribute
-#' name, for example `custom:department`.
+#' For custom attributes, you must add a `custom:` prefix to the attribute name, for example `custom:department`.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #'
 #' @usage
 #' cognitoidentityprovider_update_user_attributes(UserAttributes,
@@ -12948,46 +10061,23 @@ cognitoidentityprovider_update_terms <- function(TermsId, UserPoolId, TermsName 
 #'
 #' @param UserAttributes &#91;required&#93; An array of name-value pairs representing user attributes.
 #' 
-#' For custom attributes, you must add a `custom:` prefix to the attribute
-#' name.
+#' For custom attributes, you must add a `custom:` prefix to the attribute name.
 #' 
-#' If you have set an attribute to require verification before Amazon
-#' Cognito updates its value, this request doesn’t immediately update the
-#' value of that attribute. After your user receives and responds to a
-#' verification message to verify the new value, Amazon Cognito updates the
-#' attribute value. Your user can sign in and receive messages with the
-#' original attribute value until they verify the new value.
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any
-#' custom workflows that this action triggers. You create custom workflows
-#' by assigning Lambda functions to user pool triggers.
+#' If you have set an attribute to require verification before Amazon Cognito updates its value, this request doesn’t immediately update the value of that attribute. After your user receives and responds to a verification message to verify the new value, Amazon Cognito updates the attribute value. Your user can sign in and receive messages with the original attribute value until they verify the new value.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param ClientMetadata A map of custom key-value pairs that you can provide as input for any custom workflows that this action triggers. You create custom workflows by assigning Lambda functions to user pool triggers.
 #' 
-#' When Amazon Cognito invokes any of these functions, it passes a JSON
-#' payload, which the function receives as input. This payload contains a
-#' `clientMetadata` attribute that provides the data that you assigned to
-#' the ClientMetadata parameter in your request. In your function code, you
-#' can process the `clientMetadata` value to enhance your workflow for your
-#' specific needs.
+#' When Amazon Cognito invokes any of these functions, it passes a JSON payload, which the function receives as input. This payload contains a `clientMetadata` attribute that provides the data that you assigned to the ClientMetadata parameter in your request. In your function code, you can process the `clientMetadata` value to enhance your workflow for your specific needs.
 #' 
-#' To review the Lambda trigger types that Amazon Cognito invokes at
-#' runtime with API requests, see [Connecting API actions to Lambda
-#' triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event)
-#' in the *Amazon Cognito Developer Guide*.
+#' To review the Lambda trigger types that Amazon Cognito invokes at runtime with API requests, see [Connecting API actions to Lambda triggers](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event) in the *Amazon Cognito Developer Guide*.
 #' 
-#' When you use the `ClientMetadata` parameter, note that Amazon Cognito
-#' won't do the following:
+#' When you use the `ClientMetadata` parameter, note that Amazon Cognito won't do the following:
 #' 
-#' -   Store the `ClientMetadata` value. This data is available only to
-#'     Lambda triggers that are assigned to a user pool to support custom
-#'     workflows. If your user pool configuration doesn't include triggers,
-#'     the `ClientMetadata` parameter serves no purpose.
+#' -   Store the `ClientMetadata` value. This data is available only to Lambda triggers that are assigned to a user pool to support custom workflows. If your user pool configuration doesn't include triggers, the `ClientMetadata` parameter serves no purpose.
 #' 
 #' -   Validate the `ClientMetadata` value.
 #' 
-#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information
-#'     in this parameter.
+#' -   Encrypt the `ClientMetadata` value. Don't send sensitive information in this parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13046,44 +10136,21 @@ cognitoidentityprovider_update_user_attributes <- function(UserAttributes, Acces
 #' Updates the configuration of a user pool
 #'
 #' @description
-#' Updates the configuration of a user pool. To avoid setting parameters to
-#' Amazon Cognito defaults, construct this API request to pass the existing
-#' configuration of your user pool, modified to include the changes that
-#' you want to make.
+#' Updates the configuration of a user pool. To avoid setting parameters to Amazon Cognito defaults, construct this API request to pass the existing configuration of your user pool, modified to include the changes that you want to make.
 #' 
-#' With the exception of `UserPoolTier`, if you don't provide a value for
-#' an attribute, Amazon Cognito sets it to its default value.
+#' With the exception of `UserPoolTier`, if you don't provide a value for an attribute, Amazon Cognito sets it to its default value.
 #' 
-#' This action might generate an SMS text message. Starting June 1, 2021,
-#' US telecom carriers require you to register an origination phone number
-#' before you can send SMS messages to US phone numbers. If you use SMS
-#' text messages in Amazon Cognito, you must register a phone number with
-#' Amazon Pinpoint. Amazon Cognito uses the registered number
-#' automatically. Otherwise, Amazon Cognito users who must receive SMS
-#' messages might not be able to sign up, activate their accounts, or sign
-#' in.
+#' This action might generate an SMS text message. Starting June 1, 2021, US telecom carriers require you to register an origination phone number before you can send SMS messages to US phone numbers. If you use SMS text messages in Amazon Cognito, you must register a phone number with Amazon Pinpoint. Amazon Cognito uses the registered number automatically. Otherwise, Amazon Cognito users who must receive SMS messages might not be able to sign up, activate their accounts, or sign in.
 #' 
-#' If you have never used SMS text messages with Amazon Cognito or any
-#' other Amazon Web Services service, Amazon Simple Notification Service
-#' might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers.
-#' After you test your app while in the sandbox environment, you can move
-#' out of the sandbox and into production. For more information, see [SMS
-#' message settings for Amazon Cognito user
-#' pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html)
-#' in the *Amazon Cognito Developer Guide*.
+#' If you have never used SMS text messages with Amazon Cognito or any other Amazon Web Services service, Amazon Simple Notification Service might place your account in the SMS sandbox. In *\href{https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html}{sandbox mode}* , you can send messages only to verified phone numbers. After you test your app while in the sandbox environment, you can move out of the sandbox and into production. For more information, see [SMS message settings for Amazon Cognito user pools](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html) in the *Amazon Cognito Developer Guide*.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_update_user_pool(UserPoolId, Policies,
@@ -13096,115 +10163,36 @@ cognitoidentityprovider_update_user_attributes <- function(UserAttributes, Acces
 #'   UserPoolTier)
 #'
 #' @param UserPoolId &#91;required&#93; The ID of the user pool you want to update.
-#' @param Policies The password policy and sign-in policy in the user pool. The password
-#' policy sets options like password complexity requirements and password
-#' history. The sign-in policy sets the options available to applications
-#' in [choice-based
-#' authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice).
-#' @param DeletionProtection When active, `DeletionProtection` prevents accidental deletion of your
-#' user pool. Before you can delete a user pool that you have protected
-#' against deletion, you must deactivate this feature.
+#' @param Policies The password policy and sign-in policy in the user pool. The password policy sets options like password complexity requirements and password history. The sign-in policy sets the options available to applications in [choice-based authentication](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-selection-sdk.html#authentication-flows-selection-choice).
+#' @param DeletionProtection When active, `DeletionProtection` prevents accidental deletion of your user pool. Before you can delete a user pool that you have protected against deletion, you must deactivate this feature.
 #' 
-#' When you try to delete a protected user pool in a
-#' [`delete_user_pool`][cognitoidentityprovider_delete_user_pool] API
-#' request, Amazon Cognito returns an `InvalidParameterException` error. To
-#' delete a protected user pool, send a new
-#' [`delete_user_pool`][cognitoidentityprovider_delete_user_pool] request
-#' after you deactivate deletion protection in an
-#' [`update_user_pool`][cognitoidentityprovider_update_user_pool] API
-#' request.
-#' @param LambdaConfig A collection of user pool Lambda triggers. Amazon Cognito invokes
-#' triggers at several possible stages of authentication operations.
-#' Triggers can modify the outcome of the operations that invoked them.
-#' @param AutoVerifiedAttributes The attributes that you want your user pool to automatically verify.
-#' Possible values: **email**, **phone_number**. For more information see
-#' [Verifying contact information at
-#' sign-up](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves).
+#' When you try to delete a protected user pool in a [`delete_user_pool`][cognitoidentityprovider_delete_user_pool] API request, Amazon Cognito returns an `InvalidParameterException` error. To delete a protected user pool, send a new [`delete_user_pool`][cognitoidentityprovider_delete_user_pool] request after you deactivate deletion protection in an [`update_user_pool`][cognitoidentityprovider_update_user_pool] API request.
+#' @param LambdaConfig A collection of user pool Lambda triggers. Amazon Cognito invokes triggers at several possible stages of authentication operations. Triggers can modify the outcome of the operations that invoked them.
+#' @param AutoVerifiedAttributes The attributes that you want your user pool to automatically verify. Possible values: **email**, **phone_number**. For more information see [Verifying contact information at sign-up](https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#allowing-users-to-sign-up-and-confirm-themselves).
 #' @param SmsVerificationMessage This parameter is no longer used.
 #' @param EmailVerificationMessage This parameter is no longer used.
 #' @param EmailVerificationSubject This parameter is no longer used.
-#' @param VerificationMessageTemplate The template for the verification message that your user pool delivers
-#' to users who set an email address or phone number attribute.
+#' @param VerificationMessageTemplate The template for the verification message that your user pool delivers to users who set an email address or phone number attribute.
 #' 
-#' Set the email message type that corresponds to your `DefaultEmailOption`
-#' selection. For `CONFIRM_WITH_LINK`, specify an `EmailMessageByLink` and
-#' leave `EmailMessage` blank. For `CONFIRM_WITH_CODE`, specify an
-#' `EmailMessage` and leave `EmailMessageByLink` blank. When you supply
-#' both parameters with either choice, Amazon Cognito returns an error.
-#' @param SmsAuthenticationMessage The contents of the SMS message that your user pool sends to users in
-#' SMS authentication.
-#' @param UserAttributeUpdateSettings The settings for updates to user attributes. These settings include the
-#' property `AttributesRequireVerificationBeforeUpdate`, a user-pool
-#' setting that tells Amazon Cognito how to handle changes to the value of
-#' your users' email address and phone number attributes. For more
-#' information, see [Verifying updates to email addresses and phone
-#' numbers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates).
-#' @param MfaConfiguration Sets multi-factor authentication (MFA) to be on, off, or optional. When
-#' `ON`, all users must set up MFA before they can sign in. When
-#' `OPTIONAL`, your application must make a client-side determination of
-#' whether a user wants to register an MFA device. For user pools with
-#' adaptive authentication with threat protection, choose `OPTIONAL`.
+#' Set the email message type that corresponds to your `DefaultEmailOption` selection. For `CONFIRM_WITH_LINK`, specify an `EmailMessageByLink` and leave `EmailMessage` blank. For `CONFIRM_WITH_CODE`, specify an `EmailMessage` and leave `EmailMessageByLink` blank. When you supply both parameters with either choice, Amazon Cognito returns an error.
+#' @param SmsAuthenticationMessage The contents of the SMS message that your user pool sends to users in SMS authentication.
+#' @param UserAttributeUpdateSettings The settings for updates to user attributes. These settings include the property `AttributesRequireVerificationBeforeUpdate`, a user-pool setting that tells Amazon Cognito how to handle changes to the value of your users' email address and phone number attributes. For more information, see [Verifying updates to email addresses and phone numbers](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates).
+#' @param MfaConfiguration Sets multi-factor authentication (MFA) to be on, off, or optional. When `ON`, all users must set up MFA before they can sign in. When `OPTIONAL`, your application must make a client-side determination of whether a user wants to register an MFA device. For user pools with adaptive authentication with threat protection, choose `OPTIONAL`.
 #' 
-#' When `MfaConfiguration` is `OPTIONAL`, managed login doesn't
-#' automatically prompt users to set up MFA. Amazon Cognito generates MFA
-#' prompts in API responses and in managed login for users who have chosen
-#' and configured a preferred MFA factor.
-#' @param DeviceConfiguration The device-remembering configuration for a user pool. Device remembering
-#' or device tracking is a "Remember me on this device" option for user
-#' pools that perform authentication with the device key of a trusted
-#' device in the back end, instead of a user-provided MFA code. For more
-#' information about device authentication, see [Working with user devices
-#' in your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' A null value indicates that you have deactivated device remembering in
-#' your user pool.
+#' When `MfaConfiguration` is `OPTIONAL`, managed login doesn't automatically prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses and in managed login for users who have chosen and configured a preferred MFA factor.
+#' @param DeviceConfiguration The device-remembering configuration for a user pool. Device remembering or device tracking is a "Remember me on this device" option for user pools that perform authentication with the device key of a trusted device in the back end, instead of a user-provided MFA code. For more information about device authentication, see [Working with user devices in your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html). A null value indicates that you have deactivated device remembering in your user pool.
 #' 
-#' When you provide a value for any `DeviceConfiguration` field, you
-#' activate the Amazon Cognito device-remembering feature. For more
-#' information, see [Working with
-#' devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
-#' @param EmailConfiguration The email configuration of your user pool. The email configuration type
-#' sets your preferred sending method, Amazon Web Services Region, and
-#' sender for email invitation and verification messages from your user
-#' pool.
-#' @param SmsConfiguration The SMS configuration with the settings for your Amazon Cognito user
-#' pool to send SMS message with Amazon Simple Notification Service. To
-#' send SMS messages with Amazon SNS in the Amazon Web Services Region that
-#' you want, the Amazon Cognito user pool uses an Identity and Access
-#' Management (IAM) role in your Amazon Web Services account. For more
-#' information see [SMS message
-#' settings](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html).
-#' @param UserPoolTags The tag keys and values to assign to the user pool. A tag is a label
-#' that you can use to categorize and manage user pools in different ways,
-#' such as by purpose, owner, environment, or other criteria.
-#' @param AdminCreateUserConfig The configuration for administrative creation of users. Includes the
-#' template for the invitation message for new users, the duration of
-#' temporary passwords, and permitting self-service sign-up.
-#' @param UserPoolAddOns Contains settings for activation of threat protection, including the
-#' operating mode and additional authentication types. To log user security
-#' information but take no action, set to `AUDIT`. To configure automatic
-#' security responses to potentially unwanted traffic to your user pool,
-#' set to `ENFORCED`.
+#' When you provide a value for any `DeviceConfiguration` field, you activate the Amazon Cognito device-remembering feature. For more information, see [Working with devices](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html).
+#' @param EmailConfiguration The email configuration of your user pool. The email configuration type sets your preferred sending method, Amazon Web Services Region, and sender for email invitation and verification messages from your user pool.
+#' @param SmsConfiguration The SMS configuration with the settings for your Amazon Cognito user pool to send SMS message with Amazon Simple Notification Service. To send SMS messages with Amazon SNS in the Amazon Web Services Region that you want, the Amazon Cognito user pool uses an Identity and Access Management (IAM) role in your Amazon Web Services account. For more information see [SMS message settings](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-sms-settings.html).
+#' @param UserPoolTags The tag keys and values to assign to the user pool. A tag is a label that you can use to categorize and manage user pools in different ways, such as by purpose, owner, environment, or other criteria.
+#' @param AdminCreateUserConfig The configuration for administrative creation of users. Includes the template for the invitation message for new users, the duration of temporary passwords, and permitting self-service sign-up.
+#' @param UserPoolAddOns Contains settings for activation of threat protection, including the operating mode and additional authentication types. To log user security information but take no action, set to `AUDIT`. To configure automatic security responses to potentially unwanted traffic to your user pool, set to `ENFORCED`.
 #' 
-#' For more information, see [Adding advanced security to a user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html).
-#' To activate this setting, your user pool must be on the [Plus
-#' tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
-#' @param AccountRecoverySetting The available verified method a user can use to recover their password
-#' when they call
-#' [`forgot_password`][cognitoidentityprovider_forgot_password]. You can
-#' use this setting to define a preferred method when a user has more than
-#' one method available. With this setting, SMS doesn't qualify for a valid
-#' password recovery mechanism if the user also has SMS multi-factor
-#' authentication (MFA) activated. In the absence of this setting, Amazon
-#' Cognito uses the legacy behavior to determine the recovery method where
-#' SMS is preferred through email.
+#' For more information, see [Adding advanced security to a user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-threat-protection.html). To activate this setting, your user pool must be on the [Plus tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html).
+#' @param AccountRecoverySetting The available verified method a user can use to recover their password when they call [`forgot_password`][cognitoidentityprovider_forgot_password]. You can use this setting to define a preferred method when a user has more than one method available. With this setting, SMS doesn't qualify for a valid password recovery mechanism if the user also has SMS multi-factor authentication (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior to determine the recovery method where SMS is preferred through email.
 #' @param PoolName The updated name of your user pool.
-#' @param UserPoolTier The user pool [feature
-#' plan](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html),
-#' or tier. This parameter determines the eligibility of the user pool for
-#' features like managed login, access-token customization, and threat
-#' protection. Defaults to `ESSENTIALS`.
+#' @param UserPoolTier The user pool [feature plan](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-sign-in-feature-plans.html), or tier. This parameter determines the eligibility of the user pool for features like managed login, access-token customization, and threat protection. Defaults to `ESSENTIALS`.
 #'
 #' @return
 #' An empty list.
@@ -13354,31 +10342,19 @@ cognitoidentityprovider_update_user_pool <- function(UserPoolId, Policies = NULL
 #' Given a user pool app client ID, updates the configuration
 #'
 #' @description
-#' Given a user pool app client ID, updates the configuration. To avoid
-#' setting parameters to Amazon Cognito defaults, construct this API
-#' request to pass the existing configuration of your app client, modified
-#' to include the changes that you want to make.
+#' Given a user pool app client ID, updates the configuration. To avoid setting parameters to Amazon Cognito defaults, construct this API request to pass the existing configuration of your app client, modified to include the changes that you want to make.
 #' 
-#' If you don't provide a value for an attribute, Amazon Cognito sets it to
-#' its default value.
+#' If you don't provide a value for an attribute, Amazon Cognito sets it to its default value.
 #' 
-#' Unlike app clients created in the console, Amazon Cognito doesn't
-#' automatically assign a branding style to app clients that you configure
-#' with this API operation. Managed login and classic hosted UI pages
-#' aren't available for your client until after you apply a branding style.
+#' Unlike app clients created in the console, Amazon Cognito doesn't automatically assign a branding style to app clients that you configure with this API operation. Managed login and classic hosted UI pages aren't available for your client until after you apply a branding style.
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_update_user_pool_client(UserPoolId, ClientId,
@@ -13394,214 +10370,94 @@ cognitoidentityprovider_update_user_pool <- function(UserPoolId, Policies = NULL
 #' @param UserPoolId &#91;required&#93; The ID of the user pool where you want to update the app client.
 #' @param ClientId &#91;required&#93; The ID of the app client that you want to update.
 #' @param ClientName A friendly name for the app client.
-#' @param RefreshTokenValidity The refresh token time limit. After this limit expires, your user can't
-#' use their refresh token. To specify the time unit for
-#' `RefreshTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set
-#' a `TokenValidityUnits` value in your API request.
+#' @param RefreshTokenValidity The refresh token time limit. After this limit expires, your user can't use their refresh token. To specify the time unit for `RefreshTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set a `TokenValidityUnits` value in your API request.
 #' 
-#' For example, when you set `RefreshTokenValidity` as `10` and
-#' `TokenValidityUnits` as `days`, your user can refresh their session and
-#' retrieve new access and ID tokens for 10 days.
+#' For example, when you set `RefreshTokenValidity` as `10` and `TokenValidityUnits` as `days`, your user can refresh their session and retrieve new access and ID tokens for 10 days.
 #' 
-#' The default time unit for `RefreshTokenValidity` in an API request is
-#' days. You can't set `RefreshTokenValidity` to 0. If you do, Amazon
-#' Cognito overrides the value with the default value of 30 days. *Valid
-#' range* is displayed below in seconds.
+#' The default time unit for `RefreshTokenValidity` in an API request is days. You can't set `RefreshTokenValidity` to 0. If you do, Amazon Cognito overrides the value with the default value of 30 days. *Valid range* is displayed below in seconds.
 #' 
-#' If you don't specify otherwise in the configuration of your app client,
-#' your refresh tokens are valid for 30 days.
-#' @param AccessTokenValidity The access token time limit. After this limit expires, your user can't
-#' use their access token. To specify the time unit for
-#' `AccessTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set a
-#' `TokenValidityUnits` value in your API request.
+#' If you don't specify otherwise in the configuration of your app client, your refresh tokens are valid for 30 days.
+#' @param AccessTokenValidity The access token time limit. After this limit expires, your user can't use their access token. To specify the time unit for `AccessTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set a `TokenValidityUnits` value in your API request.
 #' 
-#' For example, when you set `AccessTokenValidity` to `10` and
-#' `TokenValidityUnits` to `hours`, your user can authorize access with
-#' their access token for 10 hours.
+#' For example, when you set `AccessTokenValidity` to `10` and `TokenValidityUnits` to `hours`, your user can authorize access with their access token for 10 hours.
 #' 
-#' The default time unit for `AccessTokenValidity` in an API request is
-#' hours. *Valid range* is displayed below in seconds.
+#' The default time unit for `AccessTokenValidity` in an API request is hours. *Valid range* is displayed below in seconds.
 #' 
-#' If you don't specify otherwise in the configuration of your app client,
-#' your access tokens are valid for one hour.
-#' @param IdTokenValidity The ID token time limit. After this limit expires, your user can't use
-#' their ID token. To specify the time unit for `IdTokenValidity` as
-#' `seconds`, `minutes`, `hours`, or `days`, set a `TokenValidityUnits`
-#' value in your API request.
+#' If you don't specify otherwise in the configuration of your app client, your access tokens are valid for one hour.
+#' @param IdTokenValidity The ID token time limit. After this limit expires, your user can't use their ID token. To specify the time unit for `IdTokenValidity` as `seconds`, `minutes`, `hours`, or `days`, set a `TokenValidityUnits` value in your API request.
 #' 
-#' For example, when you set `IdTokenValidity` as `10` and
-#' `TokenValidityUnits` as `hours`, your user can authenticate their
-#' session with their ID token for 10 hours.
+#' For example, when you set `IdTokenValidity` as `10` and `TokenValidityUnits` as `hours`, your user can authenticate their session with their ID token for 10 hours.
 #' 
-#' The default time unit for `IdTokenValidity` in an API request is hours.
-#' *Valid range* is displayed below in seconds.
+#' The default time unit for `IdTokenValidity` in an API request is hours. *Valid range* is displayed below in seconds.
 #' 
-#' If you don't specify otherwise in the configuration of your app client,
-#' your ID tokens are valid for one hour.
-#' @param TokenValidityUnits The units that validity times are represented in. The default unit for
-#' refresh tokens is days, and the default for ID and access tokens are
-#' hours.
-#' @param ReadAttributes The list of user attributes that you want your app client to have read
-#' access to. After your user authenticates in your app, their access token
-#' authorizes them to read their own attribute value for any attribute in
-#' this list.
+#' If you don't specify otherwise in the configuration of your app client, your ID tokens are valid for one hour.
+#' @param TokenValidityUnits The units that validity times are represented in. The default unit for refresh tokens is days, and the default for ID and access tokens are hours.
+#' @param ReadAttributes The list of user attributes that you want your app client to have read access to. After your user authenticates in your app, their access token authorizes them to read their own attribute value for any attribute in this list.
 #' 
-#' When you don't specify the `ReadAttributes` for your app client, your
-#' app can read the values of `email_verified`, `phone_number_verified`,
-#' and the standard attributes of your user pool. When your user pool app
-#' client has read access to these default attributes, `ReadAttributes`
-#' doesn't return any information. Amazon Cognito only populates
-#' `ReadAttributes` in the API response if you have specified your own
-#' custom set of read attributes.
-#' @param WriteAttributes The list of user attributes that you want your app client to have write
-#' access to. After your user authenticates in your app, their access token
-#' authorizes them to set or modify their own attribute value for any
-#' attribute in this list.
+#' When you don't specify the `ReadAttributes` for your app client, your app can read the values of `email_verified`, `phone_number_verified`, and the standard attributes of your user pool. When your user pool app client has read access to these default attributes, `ReadAttributes` doesn't return any information. Amazon Cognito only populates `ReadAttributes` in the API response if you have specified your own custom set of read attributes.
+#' @param WriteAttributes The list of user attributes that you want your app client to have write access to. After your user authenticates in your app, their access token authorizes them to set or modify their own attribute value for any attribute in this list.
 #' 
-#' When you don't specify the `WriteAttributes` for your app client, your
-#' app can write the values of the Standard attributes of your user pool.
-#' When your user pool has write access to these default attributes,
-#' `WriteAttributes` doesn't return any information. Amazon Cognito only
-#' populates `WriteAttributes` in the API response if you have specified
-#' your own custom set of write attributes.
+#' When you don't specify the `WriteAttributes` for your app client, your app can write the values of the Standard attributes of your user pool. When your user pool has write access to these default attributes, `WriteAttributes` doesn't return any information. Amazon Cognito only populates `WriteAttributes` in the API response if you have specified your own custom set of write attributes.
 #' 
-#' If your app client allows users to sign in through an IdP, this array
-#' must include all attributes that you have mapped to IdP attributes.
-#' Amazon Cognito updates mapped attributes when users sign in to your
-#' application through an IdP. If your app client does not have write
-#' access to a mapped attribute, Amazon Cognito throws an error when it
-#' tries to update the attribute. For more information, see [Specifying IdP
-#' Attribute Mappings for Your user
-#' pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html).
-#' @param ExplicitAuthFlows The [authentication
-#' flows](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html)
-#' that you want your user pool client to support. For each app client in
-#' your user pool, you can sign in your users with any combination of one
-#' or more flows, including with a user name and Secure Remote Password
-#' (SRP), a user name and password, or a custom authentication process that
-#' you define with Lambda functions.
+#' If your app client allows users to sign in through an IdP, this array must include all attributes that you have mapped to IdP attributes. Amazon Cognito updates mapped attributes when users sign in to your application through an IdP. If your app client does not have write access to a mapped attribute, Amazon Cognito throws an error when it tries to update the attribute. For more information, see [Specifying IdP Attribute Mappings for Your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html).
+#' @param ExplicitAuthFlows The [authentication flows](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html) that you want your user pool client to support. For each app client in your user pool, you can sign in your users with any combination of one or more flows, including with a user name and Secure Remote Password (SRP), a user name and password, or a custom authentication process that you define with Lambda functions.
 #' 
-#' If you don't specify a value for `ExplicitAuthFlows`, your app client
-#' supports `ALLOW_REFRESH_TOKEN_AUTH`, `ALLOW_USER_SRP_AUTH`, and
-#' `ALLOW_CUSTOM_AUTH`.
+#' If you don't specify a value for `ExplicitAuthFlows`, your app client supports `ALLOW_REFRESH_TOKEN_AUTH`, `ALLOW_USER_SRP_AUTH`, and `ALLOW_CUSTOM_AUTH`.
 #' 
 #' The values for authentication flow options include the following.
 #' 
-#' -   `ALLOW_USER_AUTH`: Enable selection-based sign-in with `USER_AUTH`.
-#'     This setting covers username-password, secure remote password (SRP),
-#'     passwordless, and passkey authentication. This authentiation flow
-#'     can do username-password and SRP authentication without other
-#'     `ExplicitAuthFlows` permitting them. For example users can complete
-#'     an SRP challenge through `USER_AUTH` without the flow
-#'     `USER_SRP_AUTH` being active for the app client. This flow doesn't
-#'     include `CUSTOM_AUTH`.
+#' -   `ALLOW_USER_AUTH`: Enable selection-based sign-in with `USER_AUTH`. This setting covers username-password, secure remote password (SRP), passwordless, and passkey authentication. This authentiation flow can do username-password and SRP authentication without other `ExplicitAuthFlows` permitting them. For example users can complete an SRP challenge through `USER_AUTH` without the flow `USER_SRP_AUTH` being active for the app client. This flow doesn't include `CUSTOM_AUTH`.
 #' 
-#'     To activate this setting, your user pool must be in the [Essentials
-#'     tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html)
-#'     or higher.
+#'     To activate this setting, your user pool must be in the [Essentials tier](https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html) or higher.
 #' 
-#' -   `ALLOW_ADMIN_USER_PASSWORD_AUTH`: Enable admin based user password
-#'     authentication flow `ADMIN_USER_PASSWORD_AUTH`. This setting
-#'     replaces the `ADMIN_NO_SRP_AUTH` setting. With this authentication
-#'     flow, your app passes a user name and password to Amazon Cognito in
-#'     the request, instead of using the Secure Remote Password (SRP)
-#'     protocol to securely transmit the password.
+#' -   `ALLOW_ADMIN_USER_PASSWORD_AUTH`: Enable admin based user password authentication flow `ADMIN_USER_PASSWORD_AUTH`. This setting replaces the `ADMIN_NO_SRP_AUTH` setting. With this authentication flow, your app passes a user name and password to Amazon Cognito in the request, instead of using the Secure Remote Password (SRP) protocol to securely transmit the password.
 #' 
 #' -   `ALLOW_CUSTOM_AUTH`: Enable Lambda trigger based authentication.
 #' 
-#' -   `ALLOW_USER_PASSWORD_AUTH`: Enable user password-based
-#'     authentication. In this flow, Amazon Cognito receives the password
-#'     in the request instead of using the SRP protocol to verify
-#'     passwords.
+#' -   `ALLOW_USER_PASSWORD_AUTH`: Enable user password-based authentication. In this flow, Amazon Cognito receives the password in the request instead of using the SRP protocol to verify passwords.
 #' 
 #' -   `ALLOW_USER_SRP_AUTH`: Enable SRP-based authentication.
 #' 
 #' -   `ALLOW_REFRESH_TOKEN_AUTH`: Enable authflow to refresh tokens.
 #' 
-#' In some environments, you will see the values `ADMIN_NO_SRP_AUTH`,
-#' `CUSTOM_AUTH_FLOW_ONLY`, or `USER_PASSWORD_AUTH`. You can't assign these
-#' legacy `ExplicitAuthFlows` values to user pool clients at the same time
-#' as values that begin with `ALLOW_`, like `ALLOW_USER_SRP_AUTH`.
-#' @param SupportedIdentityProviders A list of provider names for the identity providers (IdPs) that are
-#' supported on this client. The following are supported: `COGNITO`,
-#' `Facebook`, `Google`, `SignInWithApple`, and `LoginWithAmazon`. You can
-#' also specify the names that you configured for the SAML and OIDC IdPs in
-#' your user pool, for example `MySAMLIdP` or `MyOIDCIdP`.
+#' In some environments, you will see the values `ADMIN_NO_SRP_AUTH`, `CUSTOM_AUTH_FLOW_ONLY`, or `USER_PASSWORD_AUTH`. You can't assign these legacy `ExplicitAuthFlows` values to user pool clients at the same time as values that begin with `ALLOW_`, like `ALLOW_USER_SRP_AUTH`.
+#' @param SupportedIdentityProviders A list of provider names for the identity providers (IdPs) that are supported on this client. The following are supported: `COGNITO`, `Facebook`, `Google`, `SignInWithApple`, and `LoginWithAmazon`. You can also specify the names that you configured for the SAML and OIDC IdPs in your user pool, for example `MySAMLIdP` or `MyOIDCIdP`.
 #' 
-#' This parameter sets the IdPs that [managed
-#' login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html)
-#' will display on the login page for your app client. The removal of
-#' `COGNITO` from this list doesn't prevent authentication operations for
-#' local users with the user pools API in an Amazon Web Services SDK. The
-#' only way to prevent SDK-based authentication is to block access with a
-#' [WAF
-#' rule](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html).
-#' @param CallbackURLs A list of allowed redirect, or callback, URLs for managed login
-#' authentication. These URLs are the paths where you want to send your
-#' users' browsers after they complete authentication with managed login or
-#' a third-party IdP. Typically, callback URLs are the home of an
-#' application that uses OAuth or OIDC libraries to process authentication
-#' outcomes.
+#' This parameter sets the IdPs that [managed login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html) will display on the login page for your app client. The removal of `COGNITO` from this list doesn't prevent authentication operations for local users with the user pools API in an Amazon Web Services SDK. The only way to prevent SDK-based authentication is to block access with a [WAF rule](https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-waf.html).
+#' @param CallbackURLs A list of allowed redirect, or callback, URLs for managed login authentication. These URLs are the paths where you want to send your users' browsers after they complete authentication with managed login or a third-party IdP. Typically, callback URLs are the home of an application that uses OAuth or OIDC libraries to process authentication outcomes.
 #' 
 #' A redirect URI must meet the following requirements:
 #' 
 #' -   Be an absolute URI.
 #' 
-#' -   Be registered with the authorization server. Amazon Cognito doesn't
-#'     accept authorization requests with `redirect_uri` values that aren't
-#'     in the list of `CallbackURLs` that you provide in this parameter.
+#' -   Be registered with the authorization server. Amazon Cognito doesn't accept authorization requests with `redirect_uri` values that aren't in the list of `CallbackURLs` that you provide in this parameter.
 #' 
 #' -   Not include a fragment component.
 #' 
-#' See [OAuth 2.0 - Redirection
-#' Endpoint](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.2).
+#' See [OAuth 2.0 - Redirection Endpoint](https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.2).
 #' 
-#' Amazon Cognito requires HTTPS over HTTP except for http://localhost for
-#' testing purposes only.
+#' Amazon Cognito requires HTTPS over HTTP except for http://localhost for testing purposes only.
 #' 
 #' App callback URLs such as `myapp://example` are also supported.
-#' @param LogoutURLs A list of allowed logout URLs for managed login authentication. When you
-#' pass `logout_uri` and `client_id` parameters to `/logout`, Amazon
-#' Cognito signs out your user and redirects them to the logout URL. This
-#' parameter describes the URLs that you want to be the permitted targets
-#' of `logout_uri`. A typical use of these URLs is when a user selects
-#' "Sign out" and you redirect them to your public homepage. For more
-#' information, see [Logout
-#' endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html).
-#' @param DefaultRedirectURI The default redirect URI. In app clients with one assigned IdP, replaces
-#' `redirect_uri` in authentication requests. Must be in the `CallbackURLs`
-#' list.
-#' @param AllowedOAuthFlows The OAuth grant types that you want your app client to generate. To
-#' create an app client that generates client credentials grants, you must
-#' add `client_credentials` as the only allowed OAuth flow.
+#' @param LogoutURLs A list of allowed logout URLs for managed login authentication. When you pass `logout_uri` and `client_id` parameters to `/logout`, Amazon Cognito signs out your user and redirects them to the logout URL. This parameter describes the URLs that you want to be the permitted targets of `logout_uri`. A typical use of these URLs is when a user selects "Sign out" and you redirect them to your public homepage. For more information, see [Logout endpoint](https://docs.aws.amazon.com/cognito/latest/developerguide/logout-endpoint.html).
+#' @param DefaultRedirectURI The default redirect URI. In app clients with one assigned IdP, replaces `redirect_uri` in authentication requests. Must be in the `CallbackURLs` list.
+#' @param AllowedOAuthFlows The OAuth grant types that you want your app client to generate. To create an app client that generates client credentials grants, you must add `client_credentials` as the only allowed OAuth flow.
 #' 
 #' **code**
 #' 
-#' Use a code grant flow, which provides an authorization code as the
-#' response. This code can be exchanged for access tokens with the
-#' `/oauth2/token` endpoint.
+#' Use a code grant flow, which provides an authorization code as the response. This code can be exchanged for access tokens with the `/oauth2/token` endpoint.
 #' 
 #' **implicit**
 #' 
-#' Issue the access token (and, optionally, ID token, based on scopes)
-#' directly to your user.
+#' Issue the access token (and, optionally, ID token, based on scopes) directly to your user.
 #' 
 #' **client_credentials**
 #' 
-#' Issue the access token from the `/oauth2/token` endpoint directly to a
-#' non-person user using a combination of the client ID and client secret.
-#' @param AllowedOAuthScopes The OAuth, OpenID Connect (OIDC), and custom scopes that you want to
-#' permit your app client to authorize access with. Scopes govern access
-#' control to user pool self-service API operations, user data from the
-#' `userInfo` endpoint, and third-party APIs. Scope values include `phone`,
-#' `email`, `openid`, and `profile`. The `aws.cognito.signin.user.admin`
-#' scope authorizes user self-service operations. Custom scopes with
-#' resource servers authorize access to external APIs.
-#' @param AllowedOAuthFlowsUserPoolClient Set to `true` to use OAuth 2.0 authorization server features in your app
-#' client.
+#' Issue the access token from the `/oauth2/token` endpoint directly to a non-person user using a combination of the client ID and client secret.
+#' @param AllowedOAuthScopes The OAuth, OpenID Connect (OIDC), and custom scopes that you want to permit your app client to authorize access with. Scopes govern access control to user pool self-service API operations, user data from the `userInfo` endpoint, and third-party APIs. Scope values include `phone`, `email`, `openid`, and `profile`. The `aws.cognito.signin.user.admin` scope authorizes user self-service operations. Custom scopes with resource servers authorize access to external APIs.
+#' @param AllowedOAuthFlowsUserPoolClient Set to `true` to use OAuth 2.0 authorization server features in your app client.
 #' 
-#' This parameter must have a value of `true` before you can configure the
-#' following features in your app client.
+#' This parameter must have a value of `true` before you can configure the following features in your app client.
 #' 
 #' -   `CallBackURLs`: Callback URLs.
 #' 
@@ -13609,61 +10465,19 @@ cognitoidentityprovider_update_user_pool <- function(UserPoolId, Policies = NULL
 #' 
 #' -   `AllowedOAuthScopes`: OAuth 2.0 scopes.
 #' 
-#' -   `AllowedOAuthFlows`: Support for authorization code, implicit, and
-#'     client credentials OAuth 2.0 grants.
+#' -   `AllowedOAuthFlows`: Support for authorization code, implicit, and client credentials OAuth 2.0 grants.
 #' 
-#' To use authorization server features, configure one of these features in
-#' the Amazon Cognito console or set `AllowedOAuthFlowsUserPoolClient` to
-#' `true` in a
-#' [`create_user_pool_client`][cognitoidentityprovider_create_user_pool_client]
-#' or
-#' [`update_user_pool_client`][cognitoidentityprovider_update_user_pool_client]
-#' API request. If you don't set a value for
-#' `AllowedOAuthFlowsUserPoolClient` in a request with the CLI or SDKs, it
-#' defaults to `false`. When `false`, only SDK-based API sign-in is
-#' permitted.
-#' @param AnalyticsConfiguration The user pool analytics configuration for collecting metrics and sending
-#' them to your Amazon Pinpoint campaign.
+#' To use authorization server features, configure one of these features in the Amazon Cognito console or set `AllowedOAuthFlowsUserPoolClient` to `true` in a [`create_user_pool_client`][cognitoidentityprovider_create_user_pool_client] or [`update_user_pool_client`][cognitoidentityprovider_update_user_pool_client] API request. If you don't set a value for `AllowedOAuthFlowsUserPoolClient` in a request with the CLI or SDKs, it defaults to `false`. When `false`, only SDK-based API sign-in is permitted.
+#' @param AnalyticsConfiguration The user pool analytics configuration for collecting metrics and sending them to your Amazon Pinpoint campaign.
 #' 
-#' In Amazon Web Services Regions where Amazon Pinpoint isn't available,
-#' user pools might not have access to analytics or might be configurable
-#' with campaigns in the US East (N. Virginia) Region. For more
-#' information, see [Using Amazon Pinpoint
-#' analytics](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html).
-#' @param PreventUserExistenceErrors When `ENABLED`, suppresses messages that might indicate a valid user
-#' exists when someone attempts sign-in. This parameters sets your
-#' preference for the errors and responses that you want Amazon Cognito
-#' APIs to return during authentication, account confirmation, and password
-#' recovery when the user doesn't exist in the user pool. When set to
-#' `ENABLED` and the user doesn't exist, authentication returns an error
-#' indicating either the username or password was incorrect. Account
-#' confirmation and password recovery return a response indicating a code
-#' was sent to a simulated destination. When set to `LEGACY`, those APIs
-#' return a `UserNotFoundException` exception if the user doesn't exist in
-#' the user pool.
+#' In Amazon Web Services Regions where Amazon Pinpoint isn't available, user pools might not have access to analytics or might be configurable with campaigns in the US East (N. Virginia) Region. For more information, see [Using Amazon Pinpoint analytics](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-pinpoint-integration.html).
+#' @param PreventUserExistenceErrors When `ENABLED`, suppresses messages that might indicate a valid user exists when someone attempts sign-in. This parameters sets your preference for the errors and responses that you want Amazon Cognito APIs to return during authentication, account confirmation, and password recovery when the user doesn't exist in the user pool. When set to `ENABLED` and the user doesn't exist, authentication returns an error indicating either the username or password was incorrect. Account confirmation and password recovery return a response indicating a code was sent to a simulated destination. When set to `LEGACY`, those APIs return a `UserNotFoundException` exception if the user doesn't exist in the user pool.
 #' 
 #' Defaults to `LEGACY`.
-#' @param EnableTokenRevocation Activates or deactivates [token
-#' revocation](https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html)
-#' in the target app client.
-#' @param EnablePropagateAdditionalUserContextData When `true`, your application can include additional `UserContextData`
-#' in authentication requests. This data includes the IP address, and
-#' contributes to analysis by threat protection features. For more
-#' information about propagation of user context data, see [Adding session
-#' data to API
-#' requests](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint).
-#' If you don’t include this parameter, you can't send the source IP
-#' address to Amazon Cognito threat protection features. You can only
-#' activate `EnablePropagateAdditionalUserContextData` in an app client
-#' that has a client secret.
-#' @param AuthSessionValidity Amazon Cognito creates a session token for each API request in an
-#' authentication flow. `AuthSessionValidity` is the duration, in minutes,
-#' of that session token. Your user pool native user must respond to each
-#' authentication challenge before the session expires.
-#' @param RefreshTokenRotation The configuration of your app client for refresh token rotation. When
-#' enabled, your app client issues new ID, access, and refresh tokens when
-#' users renew their sessions with refresh tokens. When disabled, token
-#' refresh issues only ID and access tokens.
+#' @param EnableTokenRevocation Activates or deactivates [token revocation](https://docs.aws.amazon.com/cognito/latest/developerguide/token-revocation.html) in the target app client.
+#' @param EnablePropagateAdditionalUserContextData When `true`, your application can include additional `UserContextData` in authentication requests. This data includes the IP address, and contributes to analysis by threat protection features. For more information about propagation of user context data, see [Adding session data to API requests](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-adaptive-authentication.html#user-pool-settings-adaptive-authentication-device-fingerprint). If you don’t include this parameter, you can't send the source IP address to Amazon Cognito threat protection features. You can only activate `EnablePropagateAdditionalUserContextData` in an app client that has a client secret.
+#' @param AuthSessionValidity Amazon Cognito creates a session token for each API request in an authentication flow. `AuthSessionValidity` is the duration, in minutes, of that session token. Your user pool native user must respond to each authentication challenge before the session expires.
+#' @param RefreshTokenRotation The configuration of your app client for refresh token rotation. When enabled, your app client issues new ID, access, and refresh tokens when users renew their sessions with refresh tokens. When disabled, token refresh issues only ID and access tokens.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13819,75 +10633,36 @@ cognitoidentityprovider_update_user_pool_client <- function(UserPoolId, ClientId
 #' server for authentication in your application
 #'
 #' @description
-#' A user pool domain hosts managed login, an authorization server and web
-#' server for authentication in your application. This operation updates
-#' the branding version for user pool domains between `1` for hosted UI
-#' (classic) and `2` for managed login. It also updates the SSL certificate
-#' for user pool custom domains.
+#' A user pool domain hosts managed login, an authorization server and web server for authentication in your application. This operation updates the branding version for user pool domains between `1` for hosted UI (classic) and `2` for managed login. It also updates the SSL certificate for user pool custom domains.
 #' 
-#' Changes to the domain branding version take up to one minute to take
-#' effect for a prefix domain and up to five minutes for a custom domain.
+#' Changes to the domain branding version take up to one minute to take effect for a prefix domain and up to five minutes for a custom domain.
 #' 
-#' This operation doesn't change the name of your user pool domain. To
-#' change your domain, delete it with
-#' [`delete_user_pool_domain`][cognitoidentityprovider_delete_user_pool_domain]
-#' and create a new domain with
-#' [`create_user_pool_domain`][cognitoidentityprovider_create_user_pool_domain].
+#' This operation doesn't change the name of your user pool domain. To change your domain, delete it with [`delete_user_pool_domain`][cognitoidentityprovider_delete_user_pool_domain] and create a new domain with [`create_user_pool_domain`][cognitoidentityprovider_create_user_pool_domain].
 #' 
-#' You can pass the ARN of a new Certificate Manager certificate in this
-#' request. Typically, ACM certificates automatically renew and you user
-#' pool can continue to use the same ARN. But if you generate a new
-#' certificate for your custom domain name, replace the original
-#' configuration with the new ARN in this request.
+#' You can pass the ARN of a new Certificate Manager certificate in this request. Typically, ACM certificates automatically renew and you user pool can continue to use the same ARN. But if you generate a new certificate for your custom domain name, replace the original configuration with the new ARN in this request.
 #' 
-#' ACM certificates for custom domains must be in the US East (N. Virginia)
-#' Amazon Web Services Region. After you submit your request, Amazon
-#' Cognito requires up to 1 hour to distribute your new certificate to your
-#' custom domain.
+#' ACM certificates for custom domains must be in the US East (N. Virginia) Amazon Web Services Region. After you submit your request, Amazon Cognito requires up to 1 hour to distribute your new certificate to your custom domain.
 #' 
-#' For more information about adding a custom domain to your user pool, see
-#' [Configuring a user pool
-#' domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html).
+#' For more information about adding a custom domain to your user pool, see [Configuring a user pool domain](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html).
 #' 
-#' Amazon Cognito evaluates Identity and Access Management (IAM) policies
-#' in requests for this API operation. For this operation, you must use IAM
-#' credentials to authorize requests, and you must grant yourself the
-#' corresponding IAM permission in a policy.
+#' Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you must use IAM credentials to authorize requests, and you must grant yourself the corresponding IAM permission in a policy.
 #' 
 #' **Learn more**
 #' 
-#' -   [Signing Amazon Web Services API
-#'     Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
+#' -   [Signing Amazon Web Services API Requests](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html)
 #' 
-#' -   [Using the Amazon Cognito user pools API and user pool
-#'     endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
+#' -   [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html)
 #'
 #' @usage
 #' cognitoidentityprovider_update_user_pool_domain(Domain, UserPoolId,
 #'   ManagedLoginVersion, CustomDomainConfig)
 #'
-#' @param Domain &#91;required&#93; The name of the domain that you want to update. For custom domains, this
-#' is the fully-qualified domain name, for example `auth.example.com`. For
-#' prefix domains, this is the prefix alone, such as `myprefix`.
-#' @param UserPoolId &#91;required&#93; The ID of the user pool that is associated with the domain you're
-#' updating.
-#' @param ManagedLoginVersion A version number that indicates the state of managed login for your
-#' domain. Version `1` is hosted UI (classic). Version `2` is the newer
-#' managed login with the branding editor. For more information, see
-#' [Managed
-#' login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html).
-#' @param CustomDomainConfig The configuration for a custom domain that hosts managed login for your
-#' application. In an
-#' [`update_user_pool_domain`][cognitoidentityprovider_update_user_pool_domain]
-#' request, this parameter specifies an SSL certificate for the managed
-#' login hosted webserver. The certificate must be an ACM ARN in
-#' `us-east-1`.
+#' @param Domain &#91;required&#93; The name of the domain that you want to update. For custom domains, this is the fully-qualified domain name, for example `auth.example.com`. For prefix domains, this is the prefix alone, such as `myprefix`.
+#' @param UserPoolId &#91;required&#93; The ID of the user pool that is associated with the domain you're updating.
+#' @param ManagedLoginVersion A version number that indicates the state of managed login for your domain. Version `1` is hosted UI (classic). Version `2` is the newer managed login with the branding editor. For more information, see [Managed login](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html).
+#' @param CustomDomainConfig The configuration for a custom domain that hosts managed login for your application. In an [`update_user_pool_domain`][cognitoidentityprovider_update_user_pool_domain] request, this parameter specifies an SSL certificate for the managed login hosted webserver. The certificate must be an ACM ARN in `us-east-1`.
 #' 
-#' When you create a custom domain, the passkey RP ID defaults to the
-#' custom domain. If you had a prefix domain active, this will cause
-#' passkey integration for your prefix domain to stop working due to a
-#' mismatch in RP ID. To keep the prefix domain passkey integration
-#' working, you can explicitly set RP ID to the prefix domain.
+#' When you create a custom domain, the passkey RP ID defaults to the custom domain. If you had a prefix domain active, this will cause passkey integration for your prefix domain to stop working due to a mismatch in RP ID. To keep the prefix domain passkey integration working, you can explicitly set RP ID to the prefix domain.
 #'
 #' @return
 #' A list with the following syntax:
@@ -13939,30 +10714,16 @@ cognitoidentityprovider_update_user_pool_domain <- function(Domain, UserPoolId, 
 #' private key that's supplied by your user pool
 #'
 #' @description
-#' Registers the current user's time-based one-time password (TOTP)
-#' authenticator with a code generated in their authenticator app from a
-#' private key that's supplied by your user pool. Marks the user's software
-#' token MFA status as "verified" if successful. The request takes an
-#' access token or a session string, but not both.
+#' Registers the current user's time-based one-time password (TOTP) authenticator with a code generated in their authenticator app from a private key that's supplied by your user pool. Marks the user's software token MFA status as "verified" if successful. The request takes an access token or a session string, but not both.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_verify_software_token(AccessToken, Session,
 #'   UserCode, FriendlyDeviceName)
 #'
-#' @param AccessToken A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
-#' @param Session The session ID from an
-#' [`associate_software_token`][cognitoidentityprovider_associate_software_token]
-#' request.
+#' @param AccessToken A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
+#' @param Session The session ID from an [`associate_software_token`][cognitoidentityprovider_associate_software_token] request.
 #' @param UserCode &#91;required&#93; A TOTP that the user generated in their configured authenticator app.
 #' @param FriendlyDeviceName A friendly name for the device that's running the TOTP authenticator.
 #'
@@ -14013,36 +10774,21 @@ cognitoidentityprovider_verify_software_token <- function(AccessToken = NULL, Se
 #' changed a value of an auto-verified attribute
 #'
 #' @description
-#' Submits a verification code for a signed-in user who has added or
-#' changed a value of an auto-verified attribute. When successful, the
-#' user's attribute becomes verified and the attribute `email_verified` or
-#' `phone_number_verified` becomes `true`.
+#' Submits a verification code for a signed-in user who has added or changed a value of an auto-verified attribute. When successful, the user's attribute becomes verified and the attribute `email_verified` or `phone_number_verified` becomes `true`.
 #' 
-#' If your user pool requires verification before Amazon Cognito updates
-#' the attribute value, this operation updates the affected attribute to
-#' its pending value.
+#' If your user pool requires verification before Amazon Cognito updates the attribute value, this operation updates the affected attribute to its pending value.
 #' 
-#' Authorize this action with a signed-in user's access token. It must
-#' include the scope `aws.cognito.signin.user.admin`.
+#' Authorize this action with a signed-in user's access token. It must include the scope `aws.cognito.signin.user.admin`.
 #' 
-#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM)
-#' policies in requests for this API operation. For this operation, you
-#' can't use IAM credentials to authorize requests, and you can't grant IAM
-#' permissions in policies. For more information about authorization models
-#' in Amazon Cognito, see [Using the Amazon Cognito user pools API and user
-#' pool
-#' endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
+#' Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests for this API operation. For this operation, you can't use IAM credentials to authorize requests, and you can't grant IAM permissions in policies. For more information about authorization models in Amazon Cognito, see [Using the Amazon Cognito user pools API and user pool endpoints](https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flows-public-server-side.html).
 #'
 #' @usage
 #' cognitoidentityprovider_verify_user_attribute(AccessToken,
 #'   AttributeName, Code)
 #'
-#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently
-#' signed-in user. Must include a scope claim for
-#' `aws.cognito.signin.user.admin`.
+#' @param AccessToken &#91;required&#93; A valid access token that Amazon Cognito issued to the currently signed-in user. Must include a scope claim for `aws.cognito.signin.user.admin`.
 #' @param AttributeName &#91;required&#93; The name of the attribute that you want to verify.
-#' @param Code &#91;required&#93; The verification code that your user pool sent to the added or changed
-#' attribute, for example the user's email address.
+#' @param Code &#91;required&#93; The verification code that your user pool sent to the added or changed attribute, for example the user's email address.
 #'
 #' @return
 #' An empty list.

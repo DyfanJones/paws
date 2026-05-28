@@ -7,12 +7,9 @@
 route53_create_cidr_collection(Name, CallerReference)
 }
 \arguments{
-\item{Name}{[required] A unique identifier for the account that can be used to reference the
-collection from other API calls.}
+\item{Name}{[required] A unique identifier for the account that can be used to reference the collection from other API calls.}
 
-\item{CallerReference}{[required] A client-specific token that allows requests to be securely retried so
-that the intended outcome will only occur once, retries receive a
-similar response, and there are no additional edge cases to handle.}
+\item{CallerReference}{[required] A client-specific token that allows requests to be securely retried so that the intended outcome will only occur once, retries receive a similar response, and there are no additional edge cases to handle.}
 }
 \description{
 Creates a CIDR collection in the current Amazon Web Services account.

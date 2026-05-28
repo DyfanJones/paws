@@ -8,13 +8,9 @@ sentiment, POSITIVE, NEUTRAL, MIXED, or NEGATIVE, in each one}
 comprehend_batch_detect_sentiment(TextList, LanguageCode)
 }
 \arguments{
-\item{TextList}{[required] A list containing the UTF-8 encoded text of the input documents. The
-list can contain a maximum of 25 documents. The maximum size of each
-document is 5 KB.}
+\item{TextList}{[required] A list containing the UTF-8 encoded text of the input documents. The list can contain a maximum of 25 documents. The maximum size of each document is 5 KB.}
 
-\item{LanguageCode}{[required] The language of the input documents. You can specify any of the primary
-languages supported by Amazon Comprehend. All documents must be in the
-same language.}
+\item{LanguageCode}{[required] The language of the input documents. You can specify any of the primary languages supported by Amazon Comprehend. All documents must be in the same language.}
 }
 \description{
 Inspects a batch of documents and returns an inference of the prevailing sentiment, \code{POSITIVE}, \code{NEUTRAL}, \code{MIXED}, or \code{NEGATIVE}, in each one.

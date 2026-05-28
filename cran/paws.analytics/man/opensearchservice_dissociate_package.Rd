@@ -7,9 +7,7 @@
 opensearchservice_dissociate_package(PackageID, DomainName)
 }
 \arguments{
-\item{PackageID}{[required] Internal ID of the package to dissociate from the domain. Use
-\code{\link[=opensearchservice_list_packages_for_domain]{list_packages_for_domain}}
-to find this value.}
+\item{PackageID}{[required] Internal ID of the package to dissociate from the domain. Use \code{\link[=opensearchservice_list_packages_for_domain]{list_packages_for_domain}} to find this value.}
 
 \item{DomainName}{[required] Name of the domain to dissociate the package from.}
 }

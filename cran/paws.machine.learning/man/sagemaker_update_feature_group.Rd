@@ -13,15 +13,15 @@ sagemaker_update_feature_group(
 )
 }
 \arguments{
-\item{FeatureGroupName}{[required] The name or Amazon Resource Name (ARN) of the feature group that you're
-updating.}
+\item{FeatureGroupName}{[required] The name or Amazon Resource Name (ARN) of the feature group that you're updating.}
 
-\item{FeatureAdditions}{Updates the feature group. Updating a feature group is an asynchronous
-operation. When you get an HTTP 200 response, you've made a valid
-request. It takes some time after you've made a valid request for
-Feature Store to update the feature group.}
+\item{FeatureAdditions}{Updates the feature group. Updating a feature group is an asynchronous operation. When you get an HTTP 200 response, you've made a valid request. It takes some time after you've made a valid request for Feature Store to update the feature group.}
 
 \item{OnlineStoreConfig}{Updates the feature group online store configuration.}
+
+\item{ThroughputConfig}{Used to set feature group throughput configuration. There are two modes: \code{ON_DEMAND} and \code{PROVISIONED}. With on-demand mode, you are charged for data reads and writes that your application performs on your feature group. You do not need to specify read and write throughput because Feature Store accommodates your workloads as they ramp up and down. You can switch a feature group to on-demand only once in a 24 hour period. With provisioned throughput mode, you specify the read and write capacity per second that you expect your application to require, and you are billed based on those limits. Exceeding provisioned throughput will result in your requests being throttled.
+
+Note: \code{PROVISIONED} throughput mode is supported only for feature groups that are offline-only, or use the \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType}{\code{Standard}} tier online store.}
 }
 \description{
 Updates the feature group by either adding features or updating the online store configuration. Use one of the following request parameters at a time while using the \code{\link[=sagemaker_update_feature_group]{update_feature_group}} API.

@@ -18,16 +18,13 @@ xray_get_insight_summaries(
 \arguments{
 \item{States}{The list of insight states.}
 
-\item{GroupARN}{The Amazon Resource Name (ARN) of the group. Required if the GroupName
-isn't provided.}
+\item{GroupARN}{The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.}
 
 \item{GroupName}{The name of the group. Required if the GroupARN isn't provided.}
 
-\item{StartTime}{[required] The beginning of the time frame in which the insights started. The start
-time can't be more than 30 days old.}
+\item{StartTime}{[required] The beginning of the time frame in which the insights started. The start time can't be more than 30 days old.}
 
-\item{EndTime}{[required] The end of the time frame in which the insights ended. The end time
-can't be more than 30 days old.}
+\item{EndTime}{[required] The end of the time frame in which the insights ended. The end time can't be more than 30 days old.}
 
 \item{MaxResults}{The maximum number of results to display.}
 

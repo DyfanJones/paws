@@ -7,8 +7,7 @@
 redshift_describe_authentication_profiles(AuthenticationProfileName = NULL)
 }
 \arguments{
-\item{AuthenticationProfileName}{The name of the authentication profile to describe. If not specified
-then all authentication profiles owned by the account are listed.}
+\item{AuthenticationProfileName}{The name of the authentication profile to describe. If not specified then all authentication profiles owned by the account are listed.}
 }
 \description{
 Describes an authentication profile.

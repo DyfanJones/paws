@@ -7,8 +7,7 @@
 docdb_delete_event_subscription(SubscriptionName)
 }
 \arguments{
-\item{SubscriptionName}{[required] The name of the Amazon DocumentDB event notification subscription that
-you want to delete.}
+\item{SubscriptionName}{[required] The name of the Amazon DocumentDB event notification subscription that you want to delete.}
 }
 \description{
 Deletes an Amazon DocumentDB event notification subscription.

@@ -10,10 +10,7 @@ cloudformation_start_resource_scan(
 )
 }
 \arguments{
-\item{ClientRequestToken}{A unique identifier for this
-\code{\link[=cloudformation_start_resource_scan]{start_resource_scan}} request.
-Specify this token if you plan to retry requests so that CloudFormation
-knows that you're not attempting to start a new resource scan.}
+\item{ClientRequestToken}{A unique identifier for this \code{\link[=cloudformation_start_resource_scan]{start_resource_scan}} request. Specify this token if you plan to retry requests so that CloudFormation knows that you're not attempting to start a new resource scan.}
 
 \item{ScanFilters}{The scan filters to use.}
 }

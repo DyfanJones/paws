@@ -22,57 +22,33 @@ elasticache_create_serverless_cache(
 )
 }
 \arguments{
-\item{ServerlessCacheName}{[required] User-provided identifier for the serverless cache. This parameter is
-stored as a lowercase string.}
+\item{ServerlessCacheName}{[required] User-provided identifier for the serverless cache. This parameter is stored as a lowercase string.}
 
-\item{Description}{User-provided description for the serverless cache. The default is NULL,
-i.e. if no description is provided then an empty string will be
-returned. The maximum length is 255 characters.}
+\item{Description}{User-provided description for the serverless cache. The default is NULL, i.e. if no description is provided then an empty string will be returned. The maximum length is 255 characters.}
 
-\item{Engine}{[required] The name of the cache engine to be used for creating the serverless
-cache.}
+\item{Engine}{[required] The name of the cache engine to be used for creating the serverless cache.}
 
-\item{MajorEngineVersion}{The version of the cache engine that will be used to create the
-serverless cache.}
+\item{MajorEngineVersion}{The version of the cache engine that will be used to create the serverless cache.}
 
-\item{CacheUsageLimits}{Sets the cache usage limits for storage and ElastiCache Processing Units
-for the cache.}
+\item{CacheUsageLimits}{Sets the cache usage limits for storage and ElastiCache Processing Units for the cache.}
 
-\item{KmsKeyId}{ARN of the customer managed key for encrypting the data at rest. If no
-KMS key is provided, a default service key is used.}
+\item{KmsKeyId}{ARN of the customer managed key for encrypting the data at rest. If no KMS key is provided, a default service key is used.}
 
-\item{SecurityGroupIds}{A list of the one or more VPC security groups to be associated with the
-serverless cache. The security group will authorize traffic access for
-the VPC end-point (private-link). If no other information is given this
-will be the VPC’s Default Security Group that is associated with the
-cluster VPC end-point.}
+\item{SecurityGroupIds}{A list of the one or more VPC security groups to be associated with the serverless cache. The security group will authorize traffic access for the VPC end-point (private-link). If no other information is given this will be the VPC’s Default Security Group that is associated with the cluster VPC end-point.}
 
-\item{SnapshotArnsToRestore}{The ARN(s) of the snapshot that the new serverless cache will be created
-from. Available for Valkey, Redis OSS and Serverless Memcached only.}
+\item{SnapshotArnsToRestore}{The ARN(s) of the snapshot that the new serverless cache will be created from. Available for Valkey, Redis OSS and Serverless Memcached only.}
 
-\item{Tags}{The list of tags (key, value) pairs to be added to the serverless cache
-resource. Default is NULL.}
+\item{Tags}{The list of tags (key, value) pairs to be added to the serverless cache resource. Default is NULL.}
 
-\item{UserGroupId}{The identifier of the UserGroup to be associated with the serverless
-cache. Available for Valkey and Redis OSS only. Default is NULL.}
+\item{UserGroupId}{The identifier of the UserGroup to be associated with the serverless cache. Available for Valkey and Redis OSS only. Default is NULL.}
 
-\item{SubnetIds}{A list of the identifiers of the subnets where the VPC endpoint for the
-serverless cache will be deployed. All the subnetIds must belong to the
-same VPC.}
+\item{SubnetIds}{A list of the identifiers of the subnets where the VPC endpoint for the serverless cache will be deployed. All the subnetIds must belong to the same VPC.}
 
-\item{SnapshotRetentionLimit}{The number of days for which ElastiCache retains automatic snapshots
-before deleting them. Available for Valkey, Redis OSS and Serverless
-Memcached only. The maximum value allowed is 35 days.}
+\item{SnapshotRetentionLimit}{The number of days for which ElastiCache retains automatic snapshots before deleting them. Available for Valkey, Redis OSS and Serverless Memcached only. The maximum value allowed is 35 days.}
 
-\item{DailySnapshotTime}{The daily time that snapshots will be created from the new serverless
-cache. By default this number is populated with 0, i.e. no snapshots
-will be created on an automatic daily basis. Available for Valkey, Redis
-OSS and Serverless Memcached only.}
+\item{DailySnapshotTime}{The daily time that snapshots will be created from the new serverless cache. By default this number is populated with 0, i.e. no snapshots will be created on an automatic daily basis. Available for Valkey, Redis OSS and Serverless Memcached only.}
 
-\item{NetworkType}{The IP protocol version used by the serverless cache. Must be either
-\code{ipv4} | \code{ipv6} | \code{dual_stack}. \code{ipv6} is only supported with ipv6-only
-subnets. If not specified, defaults to \code{ipv4}, unless all provided
-subnets are IPv6-only, in which case it defaults to \code{ipv6}.}
+\item{NetworkType}{The IP protocol version used by the serverless cache. Must be either \code{ipv4} | \code{ipv6} | \code{dual_stack}. \code{ipv6} is only supported with ipv6-only subnets. If not specified, defaults to \code{ipv4}, unless all provided subnets are IPv6-only, in which case it defaults to \code{ipv6}.}
 }
 \description{
 Creates a serverless cache.

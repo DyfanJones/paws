@@ -14,9 +14,7 @@ fis_list_experiment_resolved_targets(
 \arguments{
 \item{experimentId}{[required] The ID of the experiment.}
 
-\item{maxResults}{The maximum number of results to return with a single call. To retrieve
-the remaining results, make another call with the returned nextToken
-value.}
+\item{maxResults}{The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.}
 
 \item{nextToken}{The token for the next page of results.}
 

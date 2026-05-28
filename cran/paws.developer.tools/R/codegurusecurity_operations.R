@@ -10,9 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_batch_get_findings/](https://www.paws-r-sdk.com/docs/codegurusecurity_batch_get_findings/) for full documentation.
 #'
-#' @param findingIdentifiers &#91;required&#93; A list of finding identifiers. Each identifier consists of a `scanName`
-#' and a `findingId`. You retrieve the `findingId` when you call
-#' [`get_findings`][codegurusecurity_get_findings].
+#' @param findingIdentifiers &#91;required&#93; A list of finding identifiers. Each identifier consists of a `scanName` and a `findingId`. You retrieve the `findingId` when you call [`get_findings`][codegurusecurity_get_findings].
 #'
 #' @keywords internal
 #'
@@ -43,33 +41,18 @@ codegurusecurity_batch_get_findings <- function(findingIdentifiers) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_create_scan/](https://www.paws-r-sdk.com/docs/codegurusecurity_create_scan/) for full documentation.
 #'
-#' @param clientToken The idempotency token for the request. Amazon CodeGuru Security uses
-#' this value to prevent the accidental creation of duplicate scans if
-#' there are failures and retries.
+#' @param clientToken The idempotency token for the request. Amazon CodeGuru Security uses this value to prevent the accidental creation of duplicate scans if there are failures and retries.
 #' @param resourceId &#91;required&#93; The identifier for the resource object to be scanned.
-#' @param scanName &#91;required&#93; The unique name that CodeGuru Security uses to track revisions across
-#' multiple scans of the same resource. Only allowed for a `STANDARD` scan
-#' type.
-#' @param scanType The type of scan, either `Standard` or `Express`. Defaults to `Standard`
-#' type if missing.
+#' @param scanName &#91;required&#93; The unique name that CodeGuru Security uses to track revisions across multiple scans of the same resource. Only allowed for a `STANDARD` scan type.
+#' @param scanType The type of scan, either `Standard` or `Express`. Defaults to `Standard` type if missing.
 #' 
-#' `Express` scans run on limited resources and use a limited set of
-#' detectors to analyze your code in near-real time. `Standard` scans have
-#' standard resource limits and use the full set of detectors to analyze
-#' your code.
-#' @param analysisType The type of analysis you want CodeGuru Security to perform in the scan,
-#' either `Security` or `All`. The `Security` type only generates findings
-#' related to security. The `All` type generates both security findings and
-#' quality findings. Defaults to `Security` type if missing.
-#' @param tags An array of key-value pairs used to tag a scan. A tag is a custom
-#' attribute label with two parts:
+#' `Express` scans run on limited resources and use a limited set of detectors to analyze your code in near-real time. `Standard` scans have standard resource limits and use the full set of detectors to analyze your code.
+#' @param analysisType The type of analysis you want CodeGuru Security to perform in the scan, either `Security` or `All`. The `Security` type only generates findings related to security. The `All` type generates both security findings and quality findings. Defaults to `Security` type if missing.
+#' @param tags An array of key-value pairs used to tag a scan. A tag is a custom attribute label with two parts:
 #' 
-#' -   A tag key. For example, `CostCenter`, `Environment`, or `Secret`.
-#'     Tag keys are case sensitive.
+#' -   A tag key. For example, `CostCenter`, `Environment`, or `Secret`. Tag keys are case sensitive.
 #' 
-#' -   An optional tag value field. For example, `111122223333`,
-#'     `Production`, or a team name. Omitting the tag value is the same as
-#'     using an empty string. Tag values are case sensitive.
+#' -   An optional tag value field. For example, `111122223333`, `Production`, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.
 #'
 #' @keywords internal
 #'
@@ -101,11 +84,7 @@ codegurusecurity_create_scan <- function(clientToken = NULL, resourceId, scanNam
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_create_upload_url/](https://www.paws-r-sdk.com/docs/codegurusecurity_create_upload_url/) for full documentation.
 #'
-#' @param scanName &#91;required&#93; The name of the scan that will use the uploaded resource. CodeGuru
-#' Security uses the unique scan name to track revisions across multiple
-#' scans of the same resource. Use this `scanName` when you call
-#' [`create_scan`][codegurusecurity_create_scan] on the code resource you
-#' upload to this URL.
+#' @param scanName &#91;required&#93; The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this `scanName` when you call [`create_scan`][codegurusecurity_create_scan] on the code resource you upload to this URL.
 #'
 #' @keywords internal
 #'
@@ -168,17 +147,9 @@ codegurusecurity_get_account_configuration <- function() {
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_get_findings/](https://www.paws-r-sdk.com/docs/codegurusecurity_get_findings/) for full documentation.
 #'
 #' @param scanName &#91;required&#93; The name of the scan you want to retrieve findings from.
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request. For
-#' subsequent calls, use the `nextToken` value returned from the previous
-#' request to continue listing results after the first page.
-#' @param maxResults The maximum number of results to return in the response. Use this
-#' parameter when paginating results. If additional results exist beyond
-#' the number you specify, the `nextToken` element is returned in the
-#' response. Use `nextToken` in a subsequent request to retrieve additional
-#' results. If not specified, returns 1000 results.
-#' @param status The status of the findings you want to get. Pass either `Open`,
-#' `Closed`, or `All`.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
+#' @param maxResults The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the `nextToken` element is returned in the response. Use `nextToken` in a subsequent request to retrieve additional results. If not specified, returns 1000 results.
+#' @param status The status of the findings you want to get. Pass either `Open`, `Closed`, or `All`.
 #'
 #' @keywords internal
 #'
@@ -212,8 +183,7 @@ codegurusecurity_get_findings <- function(scanName, nextToken = NULL, maxResults
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_get_metrics_summary/](https://www.paws-r-sdk.com/docs/codegurusecurity_get_metrics_summary/) for full documentation.
 #'
-#' @param date &#91;required&#93; The date you want to retrieve summary metrics from, rounded to the
-#' nearest day. The date must be within the past two years.
+#' @param date &#91;required&#93; The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years.
 #'
 #' @keywords internal
 #'
@@ -246,10 +216,7 @@ codegurusecurity_get_metrics_summary <- function(date) {
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_get_scan/](https://www.paws-r-sdk.com/docs/codegurusecurity_get_scan/) for full documentation.
 #'
 #' @param scanName &#91;required&#93; The name of the scan you want to view details about.
-#' @param runId UUID that identifies the individual scan run you want to view details
-#' about. You retrieve this when you call the
-#' [`create_scan`][codegurusecurity_create_scan] operation. Defaults to the
-#' latest scan run if missing.
+#' @param runId UUID that identifies the individual scan run you want to view details about. You retrieve this when you call the [`create_scan`][codegurusecurity_create_scan] operation. Defaults to the latest scan run if missing.
 #'
 #' @keywords internal
 #'
@@ -281,19 +248,10 @@ codegurusecurity_get_scan <- function(scanName, runId = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_list_findings_metrics/](https://www.paws-r-sdk.com/docs/codegurusecurity_list_findings_metrics/) for full documentation.
 #'
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request. For
-#' subsequent calls, use the `nextToken` value returned from the previous
-#' request to continue listing results after the first page.
-#' @param maxResults The maximum number of results to return in the response. Use this
-#' parameter when paginating results. If additional results exist beyond
-#' the number you specify, the `nextToken` element is returned in the
-#' response. Use `nextToken` in a subsequent request to retrieve additional
-#' results. If not specified, returns 1000 results.
-#' @param startDate &#91;required&#93; The start date of the interval which you want to retrieve metrics from.
-#' Rounds to the nearest day.
-#' @param endDate &#91;required&#93; The end date of the interval which you want to retrieve metrics from.
-#' Round to the nearest day.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
+#' @param maxResults The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the `nextToken` element is returned in the response. Use `nextToken` in a subsequent request to retrieve additional results. If not specified, returns 1000 results.
+#' @param startDate &#91;required&#93; The start date of the interval which you want to retrieve metrics from. Rounds to the nearest day.
+#' @param endDate &#91;required&#93; The end date of the interval which you want to retrieve metrics from. Round to the nearest day.
 #'
 #' @keywords internal
 #'
@@ -324,15 +282,8 @@ codegurusecurity_list_findings_metrics <- function(nextToken = NULL, maxResults 
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_list_scans/](https://www.paws-r-sdk.com/docs/codegurusecurity_list_scans/) for full documentation.
 #'
-#' @param nextToken A token to use for paginating results that are returned in the response.
-#' Set the value of this parameter to null for the first request. For
-#' subsequent calls, use the `nextToken` value returned from the previous
-#' request to continue listing results after the first page.
-#' @param maxResults The maximum number of results to return in the response. Use this
-#' parameter when paginating results. If additional results exist beyond
-#' the number you specify, the `nextToken` element is returned in the
-#' response. Use `nextToken` in a subsequent request to retrieve additional
-#' results. If not specified, returns 100 results.
+#' @param nextToken A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request. For subsequent calls, use the `nextToken` value returned from the previous request to continue listing results after the first page.
+#' @param maxResults The maximum number of results to return in the response. Use this parameter when paginating results. If additional results exist beyond the number you specify, the `nextToken` element is returned in the response. Use `nextToken` in a subsequent request to retrieve additional results. If not specified, returns 100 results.
 #'
 #' @keywords internal
 #'
@@ -363,10 +314,7 @@ codegurusecurity_list_scans <- function(nextToken = NULL, maxResults = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/codegurusecurity_list_tags_for_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The ARN of the `ScanName` object. You can retrieve this ARN by calling
-#' [`create_scan`][codegurusecurity_create_scan],
-#' [`list_scans`][codegurusecurity_list_scans], or
-#' [`get_scan`][codegurusecurity_get_scan].
+#' @param resourceArn &#91;required&#93; The ARN of the `ScanName` object. You can retrieve this ARN by calling [`create_scan`][codegurusecurity_create_scan], [`list_scans`][codegurusecurity_list_scans], or [`get_scan`][codegurusecurity_get_scan].
 #'
 #' @keywords internal
 #'
@@ -397,19 +345,12 @@ codegurusecurity_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_tag_resource/](https://www.paws-r-sdk.com/docs/codegurusecurity_tag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The ARN of the `ScanName` object. You can retrieve this ARN by calling
-#' [`create_scan`][codegurusecurity_create_scan],
-#' [`list_scans`][codegurusecurity_list_scans], or
-#' [`get_scan`][codegurusecurity_get_scan].
-#' @param tags &#91;required&#93; An array of key-value pairs used to tag an existing scan. A tag is a
-#' custom attribute label with two parts:
+#' @param resourceArn &#91;required&#93; The ARN of the `ScanName` object. You can retrieve this ARN by calling [`create_scan`][codegurusecurity_create_scan], [`list_scans`][codegurusecurity_list_scans], or [`get_scan`][codegurusecurity_get_scan].
+#' @param tags &#91;required&#93; An array of key-value pairs used to tag an existing scan. A tag is a custom attribute label with two parts:
 #' 
-#' -   A tag key. For example, `CostCenter`, `Environment`, or `Secret`.
-#'     Tag keys are case sensitive.
+#' -   A tag key. For example, `CostCenter`, `Environment`, or `Secret`. Tag keys are case sensitive.
 #' 
-#' -   An optional tag value field. For example, `111122223333`,
-#'     `Production`, or a team name. Omitting the tag value is the same as
-#'     using an empty string. Tag values are case sensitive.
+#' -   An optional tag value field. For example, `111122223333`, `Production`, or a team name. Omitting the tag value is the same as using an empty string. Tag values are case sensitive.
 #'
 #' @keywords internal
 #'
@@ -440,10 +381,7 @@ codegurusecurity_tag_resource <- function(resourceArn, tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_untag_resource/](https://www.paws-r-sdk.com/docs/codegurusecurity_untag_resource/) for full documentation.
 #'
-#' @param resourceArn &#91;required&#93; The ARN of the `ScanName` object. You can retrieve this ARN by calling
-#' [`create_scan`][codegurusecurity_create_scan],
-#' [`list_scans`][codegurusecurity_list_scans], or
-#' [`get_scan`][codegurusecurity_get_scan].
+#' @param resourceArn &#91;required&#93; The ARN of the `ScanName` object. You can retrieve this ARN by calling [`create_scan`][codegurusecurity_create_scan], [`list_scans`][codegurusecurity_list_scans], or [`get_scan`][codegurusecurity_get_scan].
 #' @param tagKeys &#91;required&#93; A list of keys for each tag you want to remove from a scan.
 #'
 #' @keywords internal
@@ -475,10 +413,7 @@ codegurusecurity_untag_resource <- function(resourceArn, tagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/codegurusecurity_update_account_configuration/](https://www.paws-r-sdk.com/docs/codegurusecurity_update_account_configuration/) for full documentation.
 #'
-#' @param encryptionConfig &#91;required&#93; The customer-managed KMS key ARN you want to use for encryption. If not
-#' specified, CodeGuru Security will use an AWS-managed key for encryption.
-#' If you previously specified a customer-managed KMS key and want CodeGuru
-#' Security to use an AWS-managed key for encryption instead, pass nothing.
+#' @param encryptionConfig &#91;required&#93; The customer-managed KMS key ARN you want to use for encryption. If not specified, CodeGuru Security will use an AWS-managed key for encryption. If you previously specified a customer-managed KMS key and want CodeGuru Security to use an AWS-managed key for encryption instead, pass nothing.
 #'
 #' @keywords internal
 #'

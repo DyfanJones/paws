@@ -14,13 +14,11 @@ networkmanager_create_site_to_site_vpn_attachment(
 )
 }
 \arguments{
-\item{CoreNetworkId}{[required] The ID of a core network where you're creating a site-to-site VPN
-attachment.}
+\item{CoreNetworkId}{[required] The ID of a core network where you're creating a site-to-site VPN attachment.}
 
 \item{VpnConnectionArn}{[required] The ARN identifying the VPN attachment.}
 
-\item{RoutingPolicyLabel}{The routing policy label to apply to the Site-to-Site VPN attachment for
-traffic routing decisions.}
+\item{RoutingPolicyLabel}{The routing policy label to apply to the Site-to-Site VPN attachment for traffic routing decisions.}
 
 \item{Tags}{The tags associated with the request.}
 

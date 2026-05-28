@@ -7,23 +7,15 @@ NULL
 #' @description
 #' Amazon DocumentDB elastic clusters
 #' 
-#' Amazon DocumentDB elastic-clusters support workloads with millions of
-#' reads/writes per second and petabytes of storage capacity. Amazon
-#' DocumentDB elastic clusters also simplify how developers interact with
-#' Amazon DocumentDB elastic-clusters by eliminating the need to choose,
-#' manage or upgrade instances.
+#' Amazon DocumentDB elastic-clusters support workloads with millions of reads/writes per second and petabytes of storage capacity. Amazon DocumentDB elastic clusters also simplify how developers interact with Amazon DocumentDB elastic-clusters by eliminating the need to choose, manage or upgrade instances.
 #' 
 #' Amazon DocumentDB elastic-clusters were created to:
 #' 
-#' -   provide a solution for customers looking for a database that
-#'     provides virtually limitless scale with rich query capabilities and
-#'     MongoDB API compatibility.
+#' -   provide a solution for customers looking for a database that provides virtually limitless scale with rich query capabilities and MongoDB API compatibility.
 #' 
-#' -   give customers higher connection limits, and to reduce downtime from
-#'     patching.
+#' -   give customers higher connection limits, and to reduce downtime from patching.
 #' 
-#' -   continue investing in a cloud-native, elastic, and class leading
-#'     architecture for JSON workloads.
+#' -   continue investing in a cloud-native, elastic, and class leading architecture for JSON workloads.
 #'
 #' @param
 #' config

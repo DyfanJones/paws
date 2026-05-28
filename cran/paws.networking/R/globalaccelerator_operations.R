@@ -12,8 +12,7 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_add_custom_routing_endpoints/](https://www.paws-r-sdk.com/docs/globalaccelerator_add_custom_routing_endpoints/) for full documentation.
 #'
 #' @param EndpointConfigurations &#91;required&#93; The list of endpoint objects to add to a custom routing accelerator.
-#' @param EndpointGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint group for the custom
-#' routing endpoint.
+#' @param EndpointGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint group for the custom routing endpoint.
 #'
 #' @keywords internal
 #'
@@ -78,13 +77,9 @@ globalaccelerator_add_endpoints <- function(EndpointConfigurations, EndpointGrou
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_advertise_byoip_cidr/](https://www.paws-r-sdk.com/docs/globalaccelerator_advertise_byoip_cidr/) for full documentation.
 #'
-#' @param Cidr &#91;required&#93; The address range, in CIDR notation. This must be the exact range that
-#' you provisioned. You can't advertise only a portion of the provisioned
-#' range.
+#' @param Cidr &#91;required&#93; The address range, in CIDR notation. This must be the exact range that you provisioned. You can't advertise only a portion of the provisioned range.
 #' 
-#' For more information, see [Bring your own IP addresses
-#' (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html)
-#' in the Global Accelerator Developer Guide.
+#' For more information, see [Bring your own IP addresses (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html) in the Global Accelerator Developer Guide.
 #'
 #' @keywords internal
 #'
@@ -118,30 +113,16 @@ globalaccelerator_advertise_byoip_cidr <- function(Cidr) {
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_allow_custom_routing_traffic/](https://www.paws-r-sdk.com/docs/globalaccelerator_allow_custom_routing_traffic/) for full documentation.
 #'
 #' @param EndpointGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint group.
-#' @param EndpointId &#91;required&#93; An ID for the endpoint. For custom routing accelerators, this is the
-#' virtual private cloud (VPC) subnet ID.
-#' @param DestinationAddresses A list of specific Amazon EC2 instance IP addresses (destination
-#' addresses) in a subnet that you want to allow to receive traffic. The IP
-#' addresses must be a subset of the IP addresses that you specified for
-#' the endpoint group.
+#' @param EndpointId &#91;required&#93; An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.
+#' @param DestinationAddresses A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to allow to receive traffic. The IP addresses must be a subset of the IP addresses that you specified for the endpoint group.
 #' 
-#' `DestinationAddresses` is required if `AllowAllTrafficToEndpoint` is
-#' `FALSE` or is not specified.
-#' @param DestinationPorts A list of specific Amazon EC2 instance ports (destination ports) that
-#' you want to allow to receive traffic.
-#' @param AllowAllTrafficToEndpoint Indicates whether all destination IP addresses and ports for a specified
-#' VPC subnet endpoint can receive traffic from a custom routing
-#' accelerator. The value is TRUE or FALSE.
+#' `DestinationAddresses` is required if `AllowAllTrafficToEndpoint` is `FALSE` or is not specified.
+#' @param DestinationPorts A list of specific Amazon EC2 instance ports (destination ports) that you want to allow to receive traffic.
+#' @param AllowAllTrafficToEndpoint Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint can receive traffic from a custom routing accelerator. The value is TRUE or FALSE.
 #' 
-#' When set to TRUE, *all* destinations in the custom routing VPC subnet
-#' can receive traffic. Note that you cannot specify destination IP
-#' addresses and ports when the value is set to TRUE.
+#' When set to TRUE, *all* destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.
 #' 
-#' When set to FALSE (or not specified), you *must* specify a list of
-#' destination IP addresses that are allowed to receive traffic. A list of
-#' ports is optional. If you don't specify a list of ports, the ports that
-#' can accept traffic is the same as the ports configured for the endpoint
-#' group.
+#' When set to FALSE (or not specified), you *must* specify a list of destination IP addresses that are allowed to receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.
 #' 
 #' The default value is FALSE.
 #'
@@ -174,46 +155,24 @@ globalaccelerator_allow_custom_routing_traffic <- function(EndpointGroupArn, End
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_create_accelerator/](https://www.paws-r-sdk.com/docs/globalaccelerator_create_accelerator/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the accelerator. The name can have a maximum of 64
-#' characters, must contain only alphanumeric characters, periods (.), or
-#' hyphens (-), and must not begin or end with a hyphen or period.
-#' @param IpAddressType The IP address type that an accelerator supports. For a standard
-#' accelerator, the value can be IPV4 or DUAL_STACK.
-#' @param IpAddresses Optionally, if you've added your own IP address pool to Global
-#' Accelerator (BYOIP), you can choose an IPv4 address from your own pool
-#' to use for the accelerator's static IPv4 address when you create an
-#' accelerator.
+#' @param Name &#91;required&#93; The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
+#' @param IpAddressType The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.
+#' @param IpAddresses Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator.
 #' 
-#' After you bring an address range to Amazon Web Services, it appears in
-#' your account as an address pool. When you create an accelerator, you can
-#' assign one IPv4 address from your range to it. Global Accelerator
-#' assigns you a second static IPv4 address from an Amazon IP address
-#' range. If you bring two IPv4 address ranges to Amazon Web Services, you
-#' can assign one IPv4 address from each range to your accelerator. This
-#' restriction is because Global Accelerator assigns each address range to
-#' a different network zone, for high availability.
+#' After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.
 #' 
-#' You can specify one or two addresses, separated by a space. Do not
-#' include the /32 suffix.
+#' You can specify one or two addresses, separated by a space. Do not include the /32 suffix.
 #' 
-#' Note that you can't update IP addresses for an existing accelerator. To
-#' change them, you must create a new accelerator with the new addresses.
+#' Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.
 #' 
-#' For more information, see [Bring your own IP addresses
-#' (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html)
-#' in the *Global Accelerator Developer Guide*.
-#' @param Enabled Indicates whether an accelerator is enabled. The value is true or false.
-#' The default value is true.
+#' For more information, see [Bring your own IP addresses (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html) in the *Global Accelerator Developer Guide*.
+#' @param Enabled Indicates whether an accelerator is enabled. The value is true or false. The default value is true.
 #' 
-#' If the value is set to true, an accelerator cannot be deleted. If set to
-#' false, the accelerator can be deleted.
-#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency—that is, the uniqueness—of an accelerator.
+#' If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.
+#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of an accelerator.
 #' @param Tags Create tags for an accelerator.
 #' 
-#' For more information, see [Tagging in Global
-#' Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html)
-#' in the *Global Accelerator Developer Guide*.
+#' For more information, see [Tagging in Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html) in the *Global Accelerator Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -245,20 +204,12 @@ globalaccelerator_create_accelerator <- function(Name, IpAddressType = NULL, IpA
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_create_cross_account_attachment/](https://www.paws-r-sdk.com/docs/globalaccelerator_create_cross_account_attachment/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the cross-account attachment.
-#' @param Principals The principals to include in the cross-account attachment. A principal
-#' can be an Amazon Web Services account number or the Amazon Resource Name
-#' (ARN) for an accelerator.
-#' @param Resources The Amazon Resource Names (ARNs) for the resources to include in the
-#' cross-account attachment. A resource can be any supported Amazon Web
-#' Services resource type for Global Accelerator or a CIDR range for a
-#' bring your own IP address (BYOIP) address pool.
-#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency—that is, the uniqueness—of the request.
+#' @param Principals The principals to include in the cross-account attachment. A principal can be an Amazon Web Services account number or the Amazon Resource Name (ARN) for an accelerator.
+#' @param Resources The Amazon Resource Names (ARNs) for the resources to include in the cross-account attachment. A resource can be any supported Amazon Web Services resource type for Global Accelerator or a CIDR range for a bring your own IP address (BYOIP) address pool.
+#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.
 #' @param Tags Add tags for a cross-account attachment.
 #' 
-#' For more information, see [Tagging in Global
-#' Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html)
-#' in the *Global Accelerator Developer Guide*.
+#' For more information, see [Tagging in Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html) in the *Global Accelerator Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -289,46 +240,24 @@ globalaccelerator_create_cross_account_attachment <- function(Name, Principals =
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_create_custom_routing_accelerator/](https://www.paws-r-sdk.com/docs/globalaccelerator_create_custom_routing_accelerator/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of a custom routing accelerator. The name can have a maximum of
-#' 64 characters, must contain only alphanumeric characters or hyphens (-),
-#' and must not begin or end with a hyphen.
-#' @param IpAddressType The IP address type that an accelerator supports. For a custom routing
-#' accelerator, the value must be IPV4.
-#' @param IpAddresses Optionally, if you've added your own IP address pool to Global
-#' Accelerator (BYOIP), you can choose an IPv4 address from your own pool
-#' to use for the accelerator's static IPv4 address when you create an
-#' accelerator.
+#' @param Name &#91;required&#93; The name of a custom routing accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters or hyphens (-), and must not begin or end with a hyphen.
+#' @param IpAddressType The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
+#' @param IpAddresses Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose an IPv4 address from your own pool to use for the accelerator's static IPv4 address when you create an accelerator.
 #' 
-#' After you bring an address range to Amazon Web Services, it appears in
-#' your account as an address pool. When you create an accelerator, you can
-#' assign one IPv4 address from your range to it. Global Accelerator
-#' assigns you a second static IPv4 address from an Amazon IP address
-#' range. If you bring two IPv4 address ranges to Amazon Web Services, you
-#' can assign one IPv4 address from each range to your accelerator. This
-#' restriction is because Global Accelerator assigns each address range to
-#' a different network zone, for high availability.
+#' After you bring an address range to Amazon Web Services, it appears in your account as an address pool. When you create an accelerator, you can assign one IPv4 address from your range to it. Global Accelerator assigns you a second static IPv4 address from an Amazon IP address range. If you bring two IPv4 address ranges to Amazon Web Services, you can assign one IPv4 address from each range to your accelerator. This restriction is because Global Accelerator assigns each address range to a different network zone, for high availability.
 #' 
-#' You can specify one or two addresses, separated by a space. Do not
-#' include the /32 suffix.
+#' You can specify one or two addresses, separated by a space. Do not include the /32 suffix.
 #' 
-#' Note that you can't update IP addresses for an existing accelerator. To
-#' change them, you must create a new accelerator with the new addresses.
+#' Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new accelerator with the new addresses.
 #' 
-#' For more information, see [Bring your own IP addresses
-#' (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html)
-#' in the *Global Accelerator Developer Guide*.
-#' @param Enabled Indicates whether an accelerator is enabled. The value is true or false.
-#' The default value is true.
+#' For more information, see [Bring your own IP addresses (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html) in the *Global Accelerator Developer Guide*.
+#' @param Enabled Indicates whether an accelerator is enabled. The value is true or false. The default value is true.
 #' 
-#' If the value is set to true, an accelerator cannot be deleted. If set to
-#' false, the accelerator can be deleted.
-#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency—that is, the uniqueness—of the request.
+#' If the value is set to true, an accelerator cannot be deleted. If set to false, the accelerator can be deleted.
+#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.
 #' @param Tags Create tags for an accelerator.
 #' 
-#' For more information, see [Tagging in Global
-#' Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html)
-#' in the *Global Accelerator Developer Guide*.
+#' For more information, see [Tagging in Global Accelerator](https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html) in the *Global Accelerator Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -360,15 +289,10 @@ globalaccelerator_create_custom_routing_accelerator <- function(Name, IpAddressT
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_create_custom_routing_endpoint_group/](https://www.paws-r-sdk.com/docs/globalaccelerator_create_custom_routing_endpoint_group/) for full documentation.
 #'
-#' @param ListenerArn &#91;required&#93; The Amazon Resource Name (ARN) of the listener for a custom routing
-#' endpoint.
-#' @param EndpointGroupRegion &#91;required&#93; The Amazon Web Services Region where the endpoint group is located. A
-#' listener can have only one endpoint group in a specific Region.
-#' @param DestinationConfigurations &#91;required&#93; Sets the port range and protocol for all endpoints (virtual private
-#' cloud subnets) in a custom routing endpoint group to accept client
-#' traffic on.
-#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency—that is, the uniqueness—of the request.
+#' @param ListenerArn &#91;required&#93; The Amazon Resource Name (ARN) of the listener for a custom routing endpoint.
+#' @param EndpointGroupRegion &#91;required&#93; The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.
+#' @param DestinationConfigurations &#91;required&#93; Sets the port range and protocol for all endpoints (virtual private cloud subnets) in a custom routing endpoint group to accept client traffic on.
+#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.
 #'
 #' @keywords internal
 #'
@@ -400,16 +324,11 @@ globalaccelerator_create_custom_routing_endpoint_group <- function(ListenerArn, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_create_custom_routing_listener/](https://www.paws-r-sdk.com/docs/globalaccelerator_create_custom_routing_listener/) for full documentation.
 #'
-#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator for a custom routing
-#' listener.
-#' @param PortRanges &#91;required&#93; The port range to support for connections from clients to your
-#' accelerator.
+#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator for a custom routing listener.
+#' @param PortRanges &#91;required&#93; The port range to support for connections from clients to your accelerator.
 #' 
-#' Separately, you set port ranges for endpoints. For more information, see
-#' [About endpoints for custom routing
-#' accelerators](https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html).
-#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency—that is, the uniqueness—of the request.
+#' Separately, you set port ranges for endpoints. For more information, see [About endpoints for custom routing accelerators](https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html).
+#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.
 #'
 #' @keywords internal
 #'
@@ -441,43 +360,22 @@ globalaccelerator_create_custom_routing_listener <- function(AcceleratorArn, Por
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_create_endpoint_group/](https://www.paws-r-sdk.com/docs/globalaccelerator_create_endpoint_group/) for full documentation.
 #'
 #' @param ListenerArn &#91;required&#93; The Amazon Resource Name (ARN) of the listener.
-#' @param EndpointGroupRegion &#91;required&#93; The Amazon Web Services Region where the endpoint group is located. A
-#' listener can have only one endpoint group in a specific Region.
+#' @param EndpointGroupRegion &#91;required&#93; The Amazon Web Services Region where the endpoint group is located. A listener can have only one endpoint group in a specific Region.
 #' @param EndpointConfigurations The list of endpoint objects.
-#' @param TrafficDialPercentage The percentage of traffic to send to an Amazon Web Services Region.
-#' Additional traffic is distributed to other endpoint groups for this
-#' listener.
+#' @param TrafficDialPercentage The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.
 #' 
-#' Use this action to increase (dial up) or decrease (dial down) traffic to
-#' a specific Region. The percentage is applied to the traffic that would
-#' otherwise have been routed to the Region based on optimal routing.
+#' Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.
 #' 
 #' The default value is 100.
-#' @param HealthCheckPort The port that Global Accelerator uses to check the health of endpoints
-#' that are part of this endpoint group. The default port is the listener
-#' port that this endpoint group is associated with. If listener port is a
-#' list of ports, Global Accelerator uses the first port in the list.
-#' @param HealthCheckProtocol The protocol that Global Accelerator uses to check the health of
-#' endpoints that are part of this endpoint group. The default value is
-#' TCP.
-#' @param HealthCheckPath If the protocol is HTTP/S, then this specifies the path that is the
-#' destination for health check targets. The default value is slash (/).
-#' @param HealthCheckIntervalSeconds The time—10 seconds or 30 seconds—between each health check for an
-#' endpoint. The default value is 30.
-#' @param ThresholdCount The number of consecutive health checks required to set the state of a
-#' healthy endpoint to unhealthy, or to set an unhealthy endpoint to
-#' healthy. The default value is 3.
-#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency—that is, the uniqueness—of the request.
-#' @param PortOverrides Override specific listener ports used to route traffic to endpoints that
-#' are part of this endpoint group. For example, you can create a port
-#' override in which the listener receives user traffic on ports 80 and
-#' 443, but your accelerator routes that traffic to ports 1080 and 1443,
-#' respectively, on the endpoints.
+#' @param HealthCheckPort The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If listener port is a list of ports, Global Accelerator uses the first port in the list.
+#' @param HealthCheckProtocol The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.
+#' @param HealthCheckPath If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).
+#' @param HealthCheckIntervalSeconds The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
+#' @param ThresholdCount The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.
+#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.
+#' @param PortOverrides Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
 #' 
-#' For more information, see [Overriding listener
-#' ports](https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html)
-#' in the *Global Accelerator Developer Guide*.
+#' For more information, see [Overriding listener ports](https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html) in the *Global Accelerator Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -510,32 +408,16 @@ globalaccelerator_create_endpoint_group <- function(ListenerArn, EndpointGroupRe
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_create_listener/](https://www.paws-r-sdk.com/docs/globalaccelerator_create_listener/) for full documentation.
 #'
 #' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of your accelerator.
-#' @param PortRanges &#91;required&#93; The list of port ranges to support for connections from clients to your
-#' accelerator.
+#' @param PortRanges &#91;required&#93; The list of port ranges to support for connections from clients to your accelerator.
 #' @param Protocol &#91;required&#93; The protocol for connections from clients to your accelerator.
-#' @param ClientAffinity Client affinity lets you direct all requests from a user to the same
-#' endpoint, if you have stateful applications, regardless of the port and
-#' protocol of the client request. Client affinity gives you control over
-#' whether to always route each client to the same specific endpoint.
+#' @param ClientAffinity Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.
 #' 
-#' Global Accelerator uses a consistent-flow hashing algorithm to choose
-#' the optimal endpoint for a connection. If client affinity is `NONE`,
-#' Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP
-#' address, source port, destination IP address, destination port, and
-#' protocol—to select the hash value, and then chooses the best endpoint.
-#' However, with this setting, if someone uses different ports to connect
-#' to Global Accelerator, their connections might not be always routed to
-#' the same endpoint because the hash value changes.
+#' Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is `NONE`, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes.
 #' 
-#' If you want a given client to always be routed to the same endpoint, set
-#' client affinity to `SOURCE_IP` instead. When you use the `SOURCE_IP`
-#' setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-#' source (client) IP address and destination IP address—to select the hash
-#' value.
+#' If you want a given client to always be routed to the same endpoint, set client affinity to `SOURCE_IP` instead. When you use the `SOURCE_IP` setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.
 #' 
 #' The default value is `NONE`.
-#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the
-#' idempotency—that is, the uniqueness—of the request.
+#' @param IdempotencyToken &#91;required&#93; A unique, case-sensitive identifier that you provide to ensure the idempotency—that is, the uniqueness—of the request.
 #'
 #' @keywords internal
 #'
@@ -597,8 +479,7 @@ globalaccelerator_delete_accelerator <- function(AcceleratorArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_delete_cross_account_attachment/](https://www.paws-r-sdk.com/docs/globalaccelerator_delete_cross_account_attachment/) for full documentation.
 #'
-#' @param AttachmentArn &#91;required&#93; The Amazon Resource Name (ARN) for the cross-account attachment to
-#' delete.
+#' @param AttachmentArn &#91;required&#93; The Amazon Resource Name (ARN) for the cross-account attachment to delete.
 #'
 #' @keywords internal
 #'
@@ -629,8 +510,7 @@ globalaccelerator_delete_cross_account_attachment <- function(AttachmentArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_delete_custom_routing_accelerator/](https://www.paws-r-sdk.com/docs/globalaccelerator_delete_custom_routing_accelerator/) for full documentation.
 #'
-#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom routing accelerator to
-#' delete.
+#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom routing accelerator to delete.
 #'
 #' @keywords internal
 #'
@@ -789,27 +669,14 @@ globalaccelerator_delete_listener <- function(ListenerArn) {
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_deny_custom_routing_traffic/](https://www.paws-r-sdk.com/docs/globalaccelerator_deny_custom_routing_traffic/) for full documentation.
 #'
 #' @param EndpointGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint group.
-#' @param EndpointId &#91;required&#93; An ID for the endpoint. For custom routing accelerators, this is the
-#' virtual private cloud (VPC) subnet ID.
-#' @param DestinationAddresses A list of specific Amazon EC2 instance IP addresses (destination
-#' addresses) in a subnet that you want to prevent from receiving traffic.
-#' The IP addresses must be a subset of the IP addresses allowed for the
-#' VPC subnet associated with the endpoint group.
-#' @param DestinationPorts A list of specific Amazon EC2 instance ports (destination ports) in a
-#' subnet endpoint that you want to prevent from receiving traffic.
-#' @param DenyAllTrafficToEndpoint Indicates whether all destination IP addresses and ports for a specified
-#' VPC subnet endpoint *cannot* receive traffic from a custom routing
-#' accelerator. The value is TRUE or FALSE.
+#' @param EndpointId &#91;required&#93; An ID for the endpoint. For custom routing accelerators, this is the virtual private cloud (VPC) subnet ID.
+#' @param DestinationAddresses A list of specific Amazon EC2 instance IP addresses (destination addresses) in a subnet that you want to prevent from receiving traffic. The IP addresses must be a subset of the IP addresses allowed for the VPC subnet associated with the endpoint group.
+#' @param DestinationPorts A list of specific Amazon EC2 instance ports (destination ports) in a subnet endpoint that you want to prevent from receiving traffic.
+#' @param DenyAllTrafficToEndpoint Indicates whether all destination IP addresses and ports for a specified VPC subnet endpoint *cannot* receive traffic from a custom routing accelerator. The value is TRUE or FALSE.
 #' 
-#' When set to TRUE, *no* destinations in the custom routing VPC subnet can
-#' receive traffic. Note that you cannot specify destination IP addresses
-#' and ports when the value is set to TRUE.
+#' When set to TRUE, *no* destinations in the custom routing VPC subnet can receive traffic. Note that you cannot specify destination IP addresses and ports when the value is set to TRUE.
 #' 
-#' When set to FALSE (or not specified), you *must* specify a list of
-#' destination IP addresses that cannot receive traffic. A list of ports is
-#' optional. If you don't specify a list of ports, the ports that can
-#' accept traffic is the same as the ports configured for the endpoint
-#' group.
+#' When set to FALSE (or not specified), you *must* specify a list of destination IP addresses that cannot receive traffic. A list of ports is optional. If you don't specify a list of ports, the ports that can accept traffic is the same as the ports configured for the endpoint group.
 #' 
 #' The default value is FALSE.
 #'
@@ -844,12 +711,9 @@ globalaccelerator_deny_custom_routing_traffic <- function(EndpointGroupArn, Endp
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_deprovision_byoip_cidr/](https://www.paws-r-sdk.com/docs/globalaccelerator_deprovision_byoip_cidr/) for full documentation.
 #'
-#' @param Cidr &#91;required&#93; The address range, in CIDR notation. The prefix must be the same prefix
-#' that you specified when you provisioned the address range.
+#' @param Cidr &#91;required&#93; The address range, in CIDR notation. The prefix must be the same prefix that you specified when you provisioned the address range.
 #' 
-#' For more information, see [Bring your own IP addresses
-#' (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html)
-#' in the Global Accelerator Developer Guide.
+#' For more information, see [Bring your own IP addresses (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html) in the Global Accelerator Developer Guide.
 #'
 #' @keywords internal
 #'
@@ -911,8 +775,7 @@ globalaccelerator_describe_accelerator <- function(AcceleratorArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_describe_accelerator_attributes/](https://www.paws-r-sdk.com/docs/globalaccelerator_describe_accelerator_attributes/) for full documentation.
 #'
-#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator with the attributes
-#' that you want to describe.
+#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator with the attributes that you want to describe.
 #'
 #' @keywords internal
 #'
@@ -943,8 +806,7 @@ globalaccelerator_describe_accelerator_attributes <- function(AcceleratorArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_describe_cross_account_attachment/](https://www.paws-r-sdk.com/docs/globalaccelerator_describe_cross_account_attachment/) for full documentation.
 #'
-#' @param AttachmentArn &#91;required&#93; The Amazon Resource Name (ARN) for the cross-account attachment to
-#' describe.
+#' @param AttachmentArn &#91;required&#93; The Amazon Resource Name (ARN) for the cross-account attachment to describe.
 #'
 #' @keywords internal
 #'
@@ -1006,8 +868,7 @@ globalaccelerator_describe_custom_routing_accelerator <- function(AcceleratorArn
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_describe_custom_routing_accelerator_attributes/](https://www.paws-r-sdk.com/docs/globalaccelerator_describe_custom_routing_accelerator_attributes/) for full documentation.
 #'
-#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom routing accelerator to
-#' describe the attributes for.
+#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom routing accelerator to describe the attributes for.
 #'
 #' @keywords internal
 #'
@@ -1162,10 +1023,8 @@ globalaccelerator_describe_listener <- function(ListenerArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_accelerators/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_accelerators/) for full documentation.
 #'
-#' @param MaxResults The number of Global Accelerator objects that you want to return with
-#' this call. The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param MaxResults The number of Global Accelerator objects that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1198,9 +1057,7 @@ globalaccelerator_list_accelerators <- function(MaxResults = NULL, NextToken = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_byoip_cidrs/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_byoip_cidrs/) for full documentation.
 #'
-#' @param MaxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param MaxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param NextToken The token for the next page of results.
 #'
 #' @keywords internal
@@ -1233,10 +1090,8 @@ globalaccelerator_list_byoip_cidrs <- function(MaxResults = NULL, NextToken = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_cross_account_attachments/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_cross_account_attachments/) for full documentation.
 #'
-#' @param MaxResults The number of cross-account attachment objects that you want to return
-#' with this call. The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param MaxResults The number of cross-account attachment objects that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1298,13 +1153,10 @@ globalaccelerator_list_cross_account_resource_accounts <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_cross_account_resources/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_cross_account_resources/) for full documentation.
 #'
-#' @param AcceleratorArn The Amazon Resource Name (ARN) of an accelerator in a cross-account
-#' attachment.
+#' @param AcceleratorArn The Amazon Resource Name (ARN) of an accelerator in a cross-account attachment.
 #' @param ResourceOwnerAwsAccountId &#91;required&#93; The account ID of a resource owner in a cross-account attachment.
-#' @param MaxResults The number of cross-account resource objects that you want to return
-#' with this call. The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param MaxResults The number of cross-account resource objects that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1335,10 +1187,8 @@ globalaccelerator_list_cross_account_resources <- function(AcceleratorArn = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_accelerators/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_accelerators/) for full documentation.
 #'
-#' @param MaxResults The number of custom routing Global Accelerator objects that you want to
-#' return with this call. The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param MaxResults The number of custom routing Global Accelerator objects that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1370,12 +1220,9 @@ globalaccelerator_list_custom_routing_accelerators <- function(MaxResults = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_endpoint_groups/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_endpoint_groups/) for full documentation.
 #'
-#' @param ListenerArn &#91;required&#93; The Amazon Resource Name (ARN) of the listener to list endpoint groups
-#' for.
-#' @param MaxResults The number of endpoint group objects that you want to return with this
-#' call. The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param ListenerArn &#91;required&#93; The Amazon Resource Name (ARN) of the listener to list endpoint groups for.
+#' @param MaxResults The number of endpoint group objects that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1407,10 +1254,8 @@ globalaccelerator_list_custom_routing_endpoint_groups <- function(ListenerArn, M
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_listeners/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_listeners/) for full documentation.
 #'
 #' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator to list listeners for.
-#' @param MaxResults The number of listener objects that you want to return with this call.
-#' The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param MaxResults The number of listener objects that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1443,14 +1288,10 @@ globalaccelerator_list_custom_routing_listeners <- function(AcceleratorArn, MaxR
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_port_mappings/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_port_mappings/) for full documentation.
 #'
-#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator to list the custom
-#' routing port mappings for.
-#' @param EndpointGroupArn The Amazon Resource Name (ARN) of the endpoint group to list the custom
-#' routing port mappings for.
-#' @param MaxResults The number of destination port mappings that you want to return with
-#' this call. The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator to list the custom routing port mappings for.
+#' @param EndpointGroupArn The Amazon Resource Name (ARN) of the endpoint group to list the custom routing port mappings for.
+#' @param MaxResults The number of destination port mappings that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1483,12 +1324,9 @@ globalaccelerator_list_custom_routing_port_mappings <- function(AcceleratorArn, 
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_port_mappings_by_destination/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_custom_routing_port_mappings_by_destination/) for full documentation.
 #'
 #' @param EndpointId &#91;required&#93; The ID for the virtual private cloud (VPC) subnet.
-#' @param DestinationAddress &#91;required&#93; The endpoint IP address in a virtual private cloud (VPC) subnet for
-#' which you want to receive back port mappings.
-#' @param MaxResults The number of destination port mappings that you want to return with
-#' this call. The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param DestinationAddress &#91;required&#93; The endpoint IP address in a virtual private cloud (VPC) subnet for which you want to receive back port mappings.
+#' @param MaxResults The number of destination port mappings that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1520,10 +1358,8 @@ globalaccelerator_list_custom_routing_port_mappings_by_destination <- function(E
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_endpoint_groups/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_endpoint_groups/) for full documentation.
 #'
 #' @param ListenerArn &#91;required&#93; The Amazon Resource Name (ARN) of the listener.
-#' @param MaxResults The number of endpoint group objects that you want to return with this
-#' call. The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param MaxResults The number of endpoint group objects that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1554,12 +1390,9 @@ globalaccelerator_list_endpoint_groups <- function(ListenerArn, MaxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_listeners/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_listeners/) for full documentation.
 #'
-#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator for which you want to
-#' list listener objects.
-#' @param MaxResults The number of listener objects that you want to return with this call.
-#' The default value is 10.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
+#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator for which you want to list listener objects.
+#' @param MaxResults The number of listener objects that you want to return with this call. The default value is 10.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
 #'
 #' @keywords internal
 #'
@@ -1590,8 +1423,7 @@ globalaccelerator_list_listeners <- function(AcceleratorArn, MaxResults = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/globalaccelerator_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator to list tags for. An
-#' ARN uniquely identifies an accelerator.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator to list tags for. An ARN uniquely identifies an accelerator.
 #'
 #' @keywords internal
 #'
@@ -1624,16 +1456,10 @@ globalaccelerator_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_provision_byoip_cidr/](https://www.paws-r-sdk.com/docs/globalaccelerator_provision_byoip_cidr/) for full documentation.
 #'
-#' @param Cidr &#91;required&#93; The public IPv4 address range, in CIDR notation. The most specific IP
-#' prefix that you can specify is /24. The address range cannot overlap
-#' with another address range that you've brought to this Amazon Web
-#' Services Region or another Region.
+#' @param Cidr &#91;required&#93; The public IPv4 address range, in CIDR notation. The most specific IP prefix that you can specify is /24. The address range cannot overlap with another address range that you've brought to this Amazon Web Services Region or another Region.
 #' 
-#' For more information, see [Bring your own IP addresses
-#' (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html)
-#' in the Global Accelerator Developer Guide.
-#' @param CidrAuthorizationContext &#91;required&#93; A signed document that proves that you are authorized to bring the
-#' specified IP address range to Amazon using BYOIP.
+#' For more information, see [Bring your own IP addresses (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html) in the Global Accelerator Developer Guide.
+#' @param CidrAuthorizationContext &#91;required&#93; A signed document that proves that you are authorized to bring the specified IP address range to Amazon using BYOIP.
 #'
 #' @keywords internal
 #'
@@ -1664,10 +1490,8 @@ globalaccelerator_provision_byoip_cidr <- function(Cidr, CidrAuthorizationContex
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_remove_custom_routing_endpoints/](https://www.paws-r-sdk.com/docs/globalaccelerator_remove_custom_routing_endpoints/) for full documentation.
 #'
-#' @param EndpointIds &#91;required&#93; The IDs for the endpoints. For custom routing accelerators, endpoint IDs
-#' are the virtual private cloud (VPC) subnet IDs.
-#' @param EndpointGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint group to remove endpoints
-#' from.
+#' @param EndpointIds &#91;required&#93; The IDs for the endpoints. For custom routing accelerators, endpoint IDs are the virtual private cloud (VPC) subnet IDs.
+#' @param EndpointGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint group to remove endpoints from.
 #'
 #' @keywords internal
 #'
@@ -1730,10 +1554,8 @@ globalaccelerator_remove_endpoints <- function(EndpointIdentifiers, EndpointGrou
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_tag_resource/](https://www.paws-r-sdk.com/docs/globalaccelerator_tag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Global Accelerator resource to add
-#' tags to. An ARN uniquely identifies a resource.
-#' @param Tags &#91;required&#93; The tags to add to a resource. A tag consists of a key and a value that
-#' you define.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Global Accelerator resource to add tags to. An ARN uniquely identifies a resource.
+#' @param Tags &#91;required&#93; The tags to add to a resource. A tag consists of a key and a value that you define.
 #'
 #' @keywords internal
 #'
@@ -1764,8 +1586,7 @@ globalaccelerator_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_untag_resource/](https://www.paws-r-sdk.com/docs/globalaccelerator_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Global Accelerator resource to
-#' remove tags from. An ARN uniquely identifies a resource.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the Global Accelerator resource to remove tags from. An ARN uniquely identifies a resource.
 #' @param TagKeys &#91;required&#93; The tag key pairs that you want to remove from the specified resources.
 #'
 #' @keywords internal
@@ -1798,17 +1619,12 @@ globalaccelerator_untag_resource <- function(ResourceArn, TagKeys) {
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_update_accelerator/](https://www.paws-r-sdk.com/docs/globalaccelerator_update_accelerator/) for full documentation.
 #'
 #' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator to update.
-#' @param Name The name of the accelerator. The name can have a maximum of 64
-#' characters, must contain only alphanumeric characters, periods (.), or
-#' hyphens (-), and must not begin or end with a hyphen or period.
-#' @param IpAddressType The IP address type that an accelerator supports. For a standard
-#' accelerator, the value can be IPV4 or DUAL_STACK.
+#' @param Name The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
+#' @param IpAddressType The IP address type that an accelerator supports. For a standard accelerator, the value can be IPV4 or DUAL_STACK.
 #' @param IpAddresses The IP addresses for an accelerator.
-#' @param Enabled Indicates whether an accelerator is enabled. The value is true or false.
-#' The default value is true.
+#' @param Enabled Indicates whether an accelerator is enabled. The value is true or false. The default value is true.
 #' 
-#' If the value is set to true, the accelerator cannot be deleted. If set
-#' to false, the accelerator can be deleted.
+#' If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.
 #'
 #' @keywords internal
 #'
@@ -1839,24 +1655,14 @@ globalaccelerator_update_accelerator <- function(AcceleratorArn, Name = NULL, Ip
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_update_accelerator_attributes/](https://www.paws-r-sdk.com/docs/globalaccelerator_update_accelerator_attributes/) for full documentation.
 #'
-#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator that you want to
-#' update.
-#' @param FlowLogsEnabled Update whether flow logs are enabled. The default value is false. If the
-#' value is true, `FlowLogsS3Bucket` and `FlowLogsS3Prefix` must be
-#' specified.
+#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator that you want to update.
+#' @param FlowLogsEnabled Update whether flow logs are enabled. The default value is false. If the value is true, `FlowLogsS3Bucket` and `FlowLogsS3Prefix` must be specified.
 #' 
-#' For more information, see [Flow
-#' Logs](https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html)
-#' in the *Global Accelerator Developer Guide*.
-#' @param FlowLogsS3Bucket The name of the Amazon S3 bucket for the flow logs. Attribute is
-#' required if `FlowLogsEnabled` is `true`. The bucket must exist and have
-#' a bucket policy that grants Global Accelerator permission to write to
-#' the bucket.
-#' @param FlowLogsS3Prefix Update the prefix for the location in the Amazon S3 bucket for the flow
-#' logs. Attribute is required if `FlowLogsEnabled` is `true`.
+#' For more information, see [Flow Logs](https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html) in the *Global Accelerator Developer Guide*.
+#' @param FlowLogsS3Bucket The name of the Amazon S3 bucket for the flow logs. Attribute is required if `FlowLogsEnabled` is `true`. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.
+#' @param FlowLogsS3Prefix Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if `FlowLogsEnabled` is `true`.
 #' 
-#' If you specify slash (/) for the S3 bucket prefix, the log file bucket
-#' folder structure will include a double slash (//), like the following:
+#' If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
 #' 
 #' s3-bucket_name//AWSLogs/aws_account_id
 #'
@@ -1890,34 +1696,20 @@ globalaccelerator_update_accelerator_attributes <- function(AcceleratorArn, Flow
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_update_cross_account_attachment/](https://www.paws-r-sdk.com/docs/globalaccelerator_update_cross_account_attachment/) for full documentation.
 #'
-#' @param AttachmentArn &#91;required&#93; The Amazon Resource Name (ARN) of the cross-account attachment to
-#' update.
+#' @param AttachmentArn &#91;required&#93; The Amazon Resource Name (ARN) of the cross-account attachment to update.
 #' @param Name The name of the cross-account attachment.
-#' @param AddPrincipals The principals to add to the cross-account attachment. A principal is an
-#' account or the Amazon Resource Name (ARN) of an accelerator that the
-#' attachment gives permission to work with resources from another account.
-#' The resources are also listed in the attachment.
+#' @param AddPrincipals The principals to add to the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.
 #' 
-#' To add more than one principal, separate the account numbers or
-#' accelerator ARNs, or both, with commas.
-#' @param RemovePrincipals The principals to remove from the cross-account attachment. A principal
-#' is an account or the Amazon Resource Name (ARN) of an accelerator that
-#' the attachment gives permission to work with resources from another
-#' account. The resources are also listed in the attachment.
+#' To add more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.
+#' @param RemovePrincipals The principals to remove from the cross-account attachment. A principal is an account or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission to work with resources from another account. The resources are also listed in the attachment.
 #' 
-#' To remove more than one principal, separate the account numbers or
-#' accelerator ARNs, or both, with commas.
-#' @param AddResources The resources to add to the cross-account attachment. A resource listed
-#' in a cross-account attachment can be used with an accelerator by the
-#' principals that are listed in the attachment.
+#' To remove more than one principal, separate the account numbers or accelerator ARNs, or both, with commas.
+#' @param AddResources The resources to add to the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.
 #' 
 #' To add more than one resource, separate the resource ARNs with commas.
-#' @param RemoveResources The resources to remove from the cross-account attachment. A resource
-#' listed in a cross-account attachment can be used with an accelerator by
-#' the principals that are listed in the attachment.
+#' @param RemoveResources The resources to remove from the cross-account attachment. A resource listed in a cross-account attachment can be used with an accelerator by the principals that are listed in the attachment.
 #' 
-#' To remove more than one resource, separate the resource ARNs with
-#' commas.
+#' To remove more than one resource, separate the resource ARNs with commas.
 #'
 #' @keywords internal
 #'
@@ -1949,17 +1741,12 @@ globalaccelerator_update_cross_account_attachment <- function(AttachmentArn, Nam
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_update_custom_routing_accelerator/](https://www.paws-r-sdk.com/docs/globalaccelerator_update_custom_routing_accelerator/) for full documentation.
 #'
 #' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the accelerator to update.
-#' @param Name The name of the accelerator. The name can have a maximum of 64
-#' characters, must contain only alphanumeric characters, periods (.), or
-#' hyphens (-), and must not begin or end with a hyphen or period.
-#' @param IpAddressType The IP address type that an accelerator supports. For a custom routing
-#' accelerator, the value must be IPV4.
+#' @param Name The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.
+#' @param IpAddressType The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.
 #' @param IpAddresses The IP addresses for an accelerator.
-#' @param Enabled Indicates whether an accelerator is enabled. The value is true or false.
-#' The default value is true.
+#' @param Enabled Indicates whether an accelerator is enabled. The value is true or false. The default value is true.
 #' 
-#' If the value is set to true, the accelerator cannot be deleted. If set
-#' to false, the accelerator can be deleted.
+#' If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.
 #'
 #' @keywords internal
 #'
@@ -1990,26 +1777,14 @@ globalaccelerator_update_custom_routing_accelerator <- function(AcceleratorArn, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_update_custom_routing_accelerator_attributes/](https://www.paws-r-sdk.com/docs/globalaccelerator_update_custom_routing_accelerator_attributes/) for full documentation.
 #'
-#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom routing accelerator to
-#' update attributes for.
-#' @param FlowLogsEnabled Update whether flow logs are enabled. The default value is false. If the
-#' value is true, `FlowLogsS3Bucket` and `FlowLogsS3Prefix` must be
-#' specified.
+#' @param AcceleratorArn &#91;required&#93; The Amazon Resource Name (ARN) of the custom routing accelerator to update attributes for.
+#' @param FlowLogsEnabled Update whether flow logs are enabled. The default value is false. If the value is true, `FlowLogsS3Bucket` and `FlowLogsS3Prefix` must be specified.
 #' 
-#' For more information, see [Flow
-#' logs](https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html)
-#' in the *Global Accelerator Developer Guide*.
-#' @param FlowLogsS3Bucket The name of the Amazon S3 bucket for the flow logs. Attribute is
-#' required if `FlowLogsEnabled` is `true`. The bucket must exist and have
-#' a bucket policy that grants Global Accelerator permission to write to
-#' the bucket.
-#' @param FlowLogsS3Prefix Update the prefix for the location in the Amazon S3 bucket for the flow
-#' logs. Attribute is required if `FlowLogsEnabled` is `true`.
+#' For more information, see [Flow logs](https://docs.aws.amazon.com/global-accelerator/latest/dg/monitoring-global-accelerator.flow-logs.html) in the *Global Accelerator Developer Guide*.
+#' @param FlowLogsS3Bucket The name of the Amazon S3 bucket for the flow logs. Attribute is required if `FlowLogsEnabled` is `true`. The bucket must exist and have a bucket policy that grants Global Accelerator permission to write to the bucket.
+#' @param FlowLogsS3Prefix Update the prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is required if `FlowLogsEnabled` is `true`.
 #' 
-#' If you don’t specify a prefix, the flow logs are stored in the root of
-#' the bucket. If you specify slash (/) for the S3 bucket prefix, the log
-#' file bucket folder structure will include a double slash (//), like the
-#' following:
+#' If you don’t specify a prefix, the flow logs are stored in the root of the bucket. If you specify slash (/) for the S3 bucket prefix, the log file bucket folder structure will include a double slash (//), like the following:
 #' 
 #' DOC-EXAMPLE-BUCKET//AWSLogs/aws_account_id
 #'
@@ -2043,13 +1818,9 @@ globalaccelerator_update_custom_routing_accelerator_attributes <- function(Accel
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_update_custom_routing_listener/](https://www.paws-r-sdk.com/docs/globalaccelerator_update_custom_routing_listener/) for full documentation.
 #'
 #' @param ListenerArn &#91;required&#93; The Amazon Resource Name (ARN) of the listener to update.
-#' @param PortRanges &#91;required&#93; The updated port range to support for connections from clients to your
-#' accelerator. If you remove ports that are currently being used by a
-#' subnet endpoint, the call fails.
+#' @param PortRanges &#91;required&#93; The updated port range to support for connections from clients to your accelerator. If you remove ports that are currently being used by a subnet endpoint, the call fails.
 #' 
-#' Separately, you set port ranges for endpoints. For more information, see
-#' [About endpoints for custom routing
-#' accelerators](https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html).
+#' Separately, you set port ranges for endpoints. For more information, see [About endpoints for custom routing accelerators](https://docs.aws.amazon.com/global-accelerator/latest/dg/about-custom-routing-endpoints.html).
 #'
 #' @keywords internal
 #'
@@ -2081,40 +1852,20 @@ globalaccelerator_update_custom_routing_listener <- function(ListenerArn, PortRa
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_update_endpoint_group/](https://www.paws-r-sdk.com/docs/globalaccelerator_update_endpoint_group/) for full documentation.
 #'
 #' @param EndpointGroupArn &#91;required&#93; The Amazon Resource Name (ARN) of the endpoint group.
-#' @param EndpointConfigurations The list of endpoint objects. A resource must be valid and active when
-#' you add it as an endpoint.
-#' @param TrafficDialPercentage The percentage of traffic to send to an Amazon Web Services Region.
-#' Additional traffic is distributed to other endpoint groups for this
-#' listener.
+#' @param EndpointConfigurations The list of endpoint objects. A resource must be valid and active when you add it as an endpoint.
+#' @param TrafficDialPercentage The percentage of traffic to send to an Amazon Web Services Region. Additional traffic is distributed to other endpoint groups for this listener.
 #' 
-#' Use this action to increase (dial up) or decrease (dial down) traffic to
-#' a specific Region. The percentage is applied to the traffic that would
-#' otherwise have been routed to the Region based on optimal routing.
+#' Use this action to increase (dial up) or decrease (dial down) traffic to a specific Region. The percentage is applied to the traffic that would otherwise have been routed to the Region based on optimal routing.
 #' 
 #' The default value is 100.
-#' @param HealthCheckPort The port that Global Accelerator uses to check the health of endpoints
-#' that are part of this endpoint group. The default port is the listener
-#' port that this endpoint group is associated with. If the listener port
-#' is a list of ports, Global Accelerator uses the first port in the list.
-#' @param HealthCheckProtocol The protocol that Global Accelerator uses to check the health of
-#' endpoints that are part of this endpoint group. The default value is
-#' TCP.
-#' @param HealthCheckPath If the protocol is HTTP/S, then this specifies the path that is the
-#' destination for health check targets. The default value is slash (/).
-#' @param HealthCheckIntervalSeconds The time—10 seconds or 30 seconds—between each health check for an
-#' endpoint. The default value is 30.
-#' @param ThresholdCount The number of consecutive health checks required to set the state of a
-#' healthy endpoint to unhealthy, or to set an unhealthy endpoint to
-#' healthy. The default value is 3.
-#' @param PortOverrides Override specific listener ports used to route traffic to endpoints that
-#' are part of this endpoint group. For example, you can create a port
-#' override in which the listener receives user traffic on ports 80 and
-#' 443, but your accelerator routes that traffic to ports 1080 and 1443,
-#' respectively, on the endpoints.
+#' @param HealthCheckPort The port that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default port is the listener port that this endpoint group is associated with. If the listener port is a list of ports, Global Accelerator uses the first port in the list.
+#' @param HealthCheckProtocol The protocol that Global Accelerator uses to check the health of endpoints that are part of this endpoint group. The default value is TCP.
+#' @param HealthCheckPath If the protocol is HTTP/S, then this specifies the path that is the destination for health check targets. The default value is slash (/).
+#' @param HealthCheckIntervalSeconds The time—10 seconds or 30 seconds—between each health check for an endpoint. The default value is 30.
+#' @param ThresholdCount The number of consecutive health checks required to set the state of a healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The default value is 3.
+#' @param PortOverrides Override specific listener ports used to route traffic to endpoints that are part of this endpoint group. For example, you can create a port override in which the listener receives user traffic on ports 80 and 443, but your accelerator routes that traffic to ports 1080 and 1443, respectively, on the endpoints.
 #' 
-#' For more information, see [Overriding listener
-#' ports](https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html)
-#' in the *Global Accelerator Developer Guide*.
+#' For more information, see [Overriding listener ports](https://docs.aws.amazon.com/global-accelerator/latest/dg/about-endpoint-groups-port-override.html) in the *Global Accelerator Developer Guide*.
 #'
 #' @keywords internal
 #'
@@ -2146,29 +1897,13 @@ globalaccelerator_update_endpoint_group <- function(EndpointGroupArn, EndpointCo
 #' See [https://www.paws-r-sdk.com/docs/globalaccelerator_update_listener/](https://www.paws-r-sdk.com/docs/globalaccelerator_update_listener/) for full documentation.
 #'
 #' @param ListenerArn &#91;required&#93; The Amazon Resource Name (ARN) of the listener to update.
-#' @param PortRanges The updated list of port ranges for the connections from clients to the
-#' accelerator.
-#' @param Protocol The updated protocol for the connections from clients to the
-#' accelerator.
-#' @param ClientAffinity Client affinity lets you direct all requests from a user to the same
-#' endpoint, if you have stateful applications, regardless of the port and
-#' protocol of the client request. Client affinity gives you control over
-#' whether to always route each client to the same specific endpoint.
+#' @param PortRanges The updated list of port ranges for the connections from clients to the accelerator.
+#' @param Protocol The updated protocol for the connections from clients to the accelerator.
+#' @param ClientAffinity Client affinity lets you direct all requests from a user to the same endpoint, if you have stateful applications, regardless of the port and protocol of the client request. Client affinity gives you control over whether to always route each client to the same specific endpoint.
 #' 
-#' Global Accelerator uses a consistent-flow hashing algorithm to choose
-#' the optimal endpoint for a connection. If client affinity is `NONE`,
-#' Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP
-#' address, source port, destination IP address, destination port, and
-#' protocol—to select the hash value, and then chooses the best endpoint.
-#' However, with this setting, if someone uses different ports to connect
-#' to Global Accelerator, their connections might not be always routed to
-#' the same endpoint because the hash value changes.
+#' Global Accelerator uses a consistent-flow hashing algorithm to choose the optimal endpoint for a connection. If client affinity is `NONE`, Global Accelerator uses the "five-tuple" (5-tuple) properties—source IP address, source port, destination IP address, destination port, and protocol—to select the hash value, and then chooses the best endpoint. However, with this setting, if someone uses different ports to connect to Global Accelerator, their connections might not be always routed to the same endpoint because the hash value changes.
 #' 
-#' If you want a given client to always be routed to the same endpoint, set
-#' client affinity to `SOURCE_IP` instead. When you use the `SOURCE_IP`
-#' setting, Global Accelerator uses the "two-tuple" (2-tuple) properties—
-#' source (client) IP address and destination IP address—to select the hash
-#' value.
+#' If you want a given client to always be routed to the same endpoint, set client affinity to `SOURCE_IP` instead. When you use the `SOURCE_IP` setting, Global Accelerator uses the "two-tuple" (2-tuple) properties— source (client) IP address and destination IP address—to select the hash value.
 #' 
 #' The default value is `NONE`.
 #'
@@ -2204,9 +1939,7 @@ globalaccelerator_update_listener <- function(ListenerArn, PortRanges = NULL, Pr
 #'
 #' @param Cidr &#91;required&#93; The address range, in CIDR notation.
 #' 
-#' For more information, see [Bring your own IP addresses
-#' (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html)
-#' in the Global Accelerator Developer Guide.
+#' For more information, see [Bring your own IP addresses (BYOIP)](https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html) in the Global Accelerator Developer Guide.
 #'
 #' @keywords internal
 #'

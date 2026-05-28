@@ -7,8 +7,7 @@
 translate_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the given Amazon Translate resource
-you are querying.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the given Amazon Translate resource you are querying.}
 }
 \description{
 Lists all tags associated with a given Amazon Translate resource. For more information, see \href{https://docs.aws.amazon.com/translate/latest/dg/tagging.html}{Tagging your resources}.

@@ -17,25 +17,19 @@ networkfirewall_start_flow_capture(
 \arguments{
 \item{FirewallArn}{[required] The Amazon Resource Name (ARN) of the firewall.}
 
-\item{AvailabilityZone}{The ID of the Availability Zone where the firewall is located. For
-example, \verb{us-east-2a}.
+\item{AvailabilityZone}{The ID of the Availability Zone where the firewall is located. For example, \verb{us-east-2a}.
 
-Defines the scope a flow operation. You can use up to 20 filters to
-configure a single flow operation.}
+Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.}
 
 \item{VpcEndpointAssociationArn}{The Amazon Resource Name (ARN) of a VPC endpoint association.}
 
 \item{VpcEndpointId}{A unique identifier for the primary endpoint associated with a firewall.}
 
-\item{MinimumFlowAgeInSeconds}{The reqested \code{FlowOperation} ignores flows with an age (in seconds)
-lower than \code{MinimumFlowAgeInSeconds}. You provide this for start
-commands.
+\item{MinimumFlowAgeInSeconds}{The reqested \code{FlowOperation} ignores flows with an age (in seconds) lower than \code{MinimumFlowAgeInSeconds}. You provide this for start commands.
 
-We recommend setting this value to at least 1 minute (60 seconds) to
-reduce chance of capturing flows that are not yet established.}
+We recommend setting this value to at least 1 minute (60 seconds) to reduce chance of capturing flows that are not yet established.}
 
-\item{FlowFilters}{[required] Defines the scope a flow operation. You can use up to 20 filters to
-configure a single flow operation.}
+\item{FlowFilters}{[required] Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.}
 }
 \description{
 Begins capturing the flows in a firewall, according to the filters you define. Captures are similar, but not identical to snapshots. Capture operations provide visibility into flows that are not closed and are tracked by a firewall's flow table. Unlike snapshots, captures are a time-boxed view.

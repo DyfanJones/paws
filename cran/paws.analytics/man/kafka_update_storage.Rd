@@ -16,8 +16,7 @@ kafka_update_storage(
 \arguments{
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) of the cluster to be updated.}
 
-\item{CurrentVersion}{[required] The version of cluster to update from. A successful operation will then
-generate a new version.}
+\item{CurrentVersion}{[required] The version of cluster to update from. A successful operation will then generate a new version.}
 
 \item{ProvisionedThroughput}{EBS volume provisioned throughput information.}
 

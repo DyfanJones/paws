@@ -8,14 +8,9 @@ Services account and Region}
 opensearchingestion_list_pipelines(MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial \code{\link[=opensearchingestion_list_pipelines]{list_pipelines}}
-operation returns a \code{nextToken}, you can include the returned
-\code{nextToken} in subsequent
-\code{\link[=opensearchingestion_list_pipelines]{list_pipelines}} operations, which
-returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchingestion_list_pipelines]{list_pipelines}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in subsequent \code{\link[=opensearchingestion_list_pipelines]{list_pipelines}} operations, which returns results in the next page.}
 }
 \description{
 Lists all OpenSearch Ingestion pipelines in the current Amazon Web Services account and Region. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/list-pipeline.html}{Viewing Amazon OpenSearch Ingestion pipelines}.

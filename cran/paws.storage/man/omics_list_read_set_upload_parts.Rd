@@ -23,12 +23,9 @@ omics_list_read_set_upload_parts(
 
 \item{maxResults}{The maximum number of read set upload parts returned in a page.}
 
-\item{nextToken}{Next token returned in the response of a previous
-ListReadSetUploadPartsRequest call. Used to get the next page of
-results.}
+\item{nextToken}{Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.}
 
-\item{filter}{Attributes used to filter for a specific subset of read set part
-uploads.}
+\item{filter}{Attributes used to filter for a specific subset of read set part uploads.}
 }
 \description{
 Lists all parts in a multipart read set upload for a sequence store and returns the metadata in a JSON formatted output.

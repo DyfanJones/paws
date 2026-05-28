@@ -17,10 +17,7 @@ lakeformation_create_lf_tag_expression(
 
 \item{Description}{A description with information about the LF-Tag expression.}
 
-\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The
-Data Catalog is the persistent metadata store. It contains database
-definitions, table definitions, and other control information to manage
-your Lake Formation environment.}
+\item{CatalogId}{The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.}
 
 \item{Expression}{[required] A list of LF-Tag conditions (key-value pairs).}
 }

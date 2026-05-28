@@ -15,10 +15,9 @@ networkfirewall_create_vpc_endpoint_association(
 \arguments{
 \item{FirewallArn}{[required] The Amazon Resource Name (ARN) of the firewall.}
 
-\item{VpcId}{[required] The unique identifier of the VPC where you want to create a firewall
-endpoint.}
+\item{VpcId}{[required] The unique identifier of the VPC where you want to create a firewall endpoint.}
 
-\item{SubnetMapping}{[required]}
+\item{SubnetMapping}{[required] The ID for a subnet that's used in an association with a firewall. This is used in \code{\link[=networkfirewall_create_firewall]{create_firewall}}, \code{\link[=networkfirewall_associate_subnets]{associate_subnets}}, and \code{\link[=networkfirewall_create_vpc_endpoint_association]{create_vpc_endpoint_association}}. Network Firewall creates an instance of the associated firewall in each subnet that you specify, to filter traffic in the subnet's Availability Zone.}
 
 \item{Description}{A description of the VPC endpoint association.}
 

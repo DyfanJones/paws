@@ -21,49 +21,27 @@ elbv2_modify_target_group(
 \arguments{
 \item{TargetGroupArn}{[required] The Amazon Resource Name (ARN) of the target group.}
 
-\item{HealthCheckProtocol}{The protocol the load balancer uses when performing health checks on
-targets. For Application Load Balancers, the default is HTTP. For
-Network Load Balancers and Gateway Load Balancers, the default is TCP.
-The TCP protocol is not supported for health checks if the protocol of
-the target group is HTTP or HTTPS. It is supported for health checks
-only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP.
-The GENEVE, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not
-supported for health checks.}
+\item{HealthCheckProtocol}{The protocol the load balancer uses when performing health checks on targets. For Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load Balancers, the default is TCP. The TCP protocol is not supported for health checks if the protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, TCP_UDP, QUIC, and TCP_QUIC protocols are not supported for health checks.}
 
-\item{HealthCheckPort}{The port the load balancer uses when performing health checks on
-targets.}
+\item{HealthCheckPort}{The port the load balancer uses when performing health checks on targets.}
 
-\item{HealthCheckPath}{[HTTP/HTTPS health checks] The destination for health checks on the
-targets.
+\item{HealthCheckPath}{[HTTP/HTTPS health checks] The destination for health checks on the targets.
 
 [HTTP1 or HTTP2 protocol version] The ping path. The default is /.
 
-[GRPC protocol version] The path of a custom health check method with
-the format /package.service/method. The default is /Amazon Web
-Services.ALB/healthcheck.}
+[GRPC protocol version] The path of a custom health check method with the format /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.}
 
-\item{HealthCheckEnabled}{Indicates whether health checks are enabled. If the target type is
-\code{lambda}, health checks are disabled by default but can be enabled. If
-the target type is \code{instance}, \code{ip}, or \code{alb}, health checks are always
-enabled and can't be disabled.}
+\item{HealthCheckEnabled}{Indicates whether health checks are enabled. If the target type is \code{lambda}, health checks are disabled by default but can be enabled. If the target type is \code{instance}, \code{ip}, or \code{alb}, health checks are always enabled and can't be disabled.}
 
-\item{HealthCheckIntervalSeconds}{The approximate amount of time, in seconds, between health checks of an
-individual target.}
+\item{HealthCheckIntervalSeconds}{The approximate amount of time, in seconds, between health checks of an individual target.}
 
-\item{HealthCheckTimeoutSeconds}{[HTTP/HTTPS health checks] The amount of time, in seconds, during
-which no response means a failed health check.}
+\item{HealthCheckTimeoutSeconds}{[HTTP/HTTPS health checks] The amount of time, in seconds, during which no response means a failed health check.}
 
-\item{HealthyThresholdCount}{The number of consecutive health checks successes required before
-considering an unhealthy target healthy.}
+\item{HealthyThresholdCount}{The number of consecutive health checks successes required before considering an unhealthy target healthy.}
 
-\item{UnhealthyThresholdCount}{The number of consecutive health check failures required before
-considering the target unhealthy.}
+\item{UnhealthyThresholdCount}{The number of consecutive health check failures required before considering the target unhealthy.}
 
-\item{Matcher}{[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking
-for a successful response from a target. For target groups with a
-protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target
-groups with a protocol of HTTP or HTTPS, the range is 200-499. For
-target groups with a protocol of GENEVE, the range is 200-399.}
+\item{Matcher}{[HTTP/HTTPS health checks] The HTTP or gRPC codes to use when checking for a successful response from a target. For target groups with a protocol of TCP, TCP_UDP, UDP or TLS the range is 200-599. For target groups with a protocol of HTTP or HTTPS, the range is 200-499. For target groups with a protocol of GENEVE, the range is 200-399.}
 }
 \description{
 Modifies the health checks used when evaluating the health state of the targets in the specified target group.

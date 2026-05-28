@@ -13,26 +13,13 @@ redshift_describe_data_shares_for_consumer(
 )
 }
 \arguments{
-\item{ConsumerArn}{The Amazon Resource Name (ARN) of the consumer namespace that returns in
-the list of datashares.}
+\item{ConsumerArn}{The Amazon Resource Name (ARN) of the consumer namespace that returns in the list of datashares.}
 
-\item{Status}{An identifier giving the status of a datashare in the consumer cluster.
-If this field is specified, Amazon Redshift returns the list of
-datashares that have the specified status.}
+\item{Status}{An identifier giving the status of a datashare in the consumer cluster. If this field is specified, Amazon Redshift returns the list of datashares that have the specified status.}
 
-\item{MaxRecords}{The maximum number of response records to return in each call. If the
-number of remaining response records exceeds the specified \code{MaxRecords}
-value, a value is returned in a \code{marker} field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned marker value.}
+\item{MaxRecords}{The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified \code{MaxRecords} value, a value is returned in a \code{marker} field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.}
 
-\item{Marker}{An optional parameter that specifies the starting point to return a set
-of response records. When the results of a
-\code{\link[=redshift_describe_data_shares_for_consumer]{describe_data_shares_for_consumer}}
-request exceed the value specified in \code{MaxRecords}, Amazon Web Services
-returns a value in the \code{Marker} field of the response. You can retrieve
-the next set of response records by providing the returned marker value
-in the \code{Marker} parameter and retrying the request.}
+\item{Marker}{An optional parameter that specifies the starting point to return a set of response records. When the results of a \code{\link[=redshift_describe_data_shares_for_consumer]{describe_data_shares_for_consumer}} request exceed the value specified in \code{MaxRecords}, Amazon Web Services returns a value in the \code{Marker} field of the response. You can retrieve the next set of response records by providing the returned marker value in the \code{Marker} parameter and retrying the request.}
 }
 \description{
 Returns a list of datashares where the account identifier being called is a consumer account identifier.

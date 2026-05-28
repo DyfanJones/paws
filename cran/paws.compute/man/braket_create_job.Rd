@@ -21,48 +21,29 @@ braket_create_job(
 )
 }
 \arguments{
-\item{clientToken}{[required] The client token associated with this request that guarantees that the
-request is idempotent.}
+\item{clientToken}{[required] The client token associated with this request that guarantees that the request is idempotent.}
 
-\item{algorithmSpecification}{[required] Definition of the Amazon Braket job to be created. Specifies the
-container image the job uses and information about the Python scripts
-used for entry and training.}
+\item{algorithmSpecification}{[required] Definition of the Amazon Braket job to be created. Specifies the container image the job uses and information about the Python scripts used for entry and training.}
 
-\item{inputDataConfig}{A list of parameters that specify the name and type of input data and
-where it is located.}
+\item{inputDataConfig}{A list of parameters that specify the name and type of input data and where it is located.}
 
-\item{outputDataConfig}{[required] The path to the S3 location where you want to store hybrid job artifacts
-and the encryption key used to store them.}
+\item{outputDataConfig}{[required] The path to the S3 location where you want to store hybrid job artifacts and the encryption key used to store them.}
 
 \item{checkpointConfig}{Information about the output locations for hybrid job checkpoint data.}
 
 \item{jobName}{[required] The name of the Amazon Braket hybrid job.}
 
-\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can
-assume to perform tasks on behalf of a user. It can access user
-resources, run an Amazon Braket job container on behalf of user, and
-output results and hybrid job details to the users' s3 buckets.}
+\item{roleArn}{[required] The Amazon Resource Name (ARN) of an IAM role that Amazon Braket can assume to perform tasks on behalf of a user. It can access user resources, run an Amazon Braket job container on behalf of user, and output results and hybrid job details to the users' s3 buckets.}
 
-\item{stoppingCondition}{The user-defined criteria that specifies when a hybrid job stops
-running.}
+\item{stoppingCondition}{The user-defined criteria that specifies when a hybrid job stops running.}
 
-\item{instanceConfig}{[required] Configuration of the resource instances to use while running the hybrid
-job on Amazon Braket.}
+\item{instanceConfig}{[required] Configuration of the resource instances to use while running the hybrid job on Amazon Braket.}
 
-\item{hyperParameters}{Algorithm-specific parameters used by an Amazon Braket hybrid job that
-influence the quality of the training job. The values are set with a map
-of JSON key:value pairs, where the key is the name of the hyperparameter
-and the value is the value of the hyperparameter.
+\item{hyperParameters}{Algorithm-specific parameters used by an Amazon Braket hybrid job that influence the quality of the training job. The values are set with a map of JSON key:value pairs, where the key is the name of the hyperparameter and the value is the value of the hyperparameter.
 
-Do not include any security-sensitive information including account
-access IDs, secrets, or tokens in any hyperparameter fields. As part of
-the shared responsibility model, you are responsible for any potential
-exposure, unauthorized access, or compromise of your sensitive data if
-caused by security-sensitive information included in the request
-hyperparameter variable or plain text fields.}
+Do not include any security-sensitive information including account access IDs, secrets, or tokens in any hyperparameter fields. As part of the shared responsibility model, you are responsible for any potential exposure, unauthorized access, or compromise of your sensitive data if caused by security-sensitive information included in the request hyperparameter variable or plain text fields.}
 
-\item{deviceConfig}{[required] The quantum processing unit (QPU) or simulator used to create an Amazon
-Braket hybrid job.}
+\item{deviceConfig}{[required] The quantum processing unit (QPU) or simulator used to create an Amazon Braket hybrid job.}
 
 \item{tags}{Tags to be added to the hybrid job you're creating.}
 

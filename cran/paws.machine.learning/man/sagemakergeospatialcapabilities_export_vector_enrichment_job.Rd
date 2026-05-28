@@ -17,8 +17,7 @@ sagemakergeospatialcapabilities_export_vector_enrichment_job(
 
 \item{ClientToken}{A unique token that guarantees that the call to this API is idempotent.}
 
-\item{ExecutionRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM rolewith permission to upload
-to the location in OutputConfig.}
+\item{ExecutionRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.}
 
 \item{OutputConfig}{[required] Output location information for exporting Vector Enrichment Job results.}
 }

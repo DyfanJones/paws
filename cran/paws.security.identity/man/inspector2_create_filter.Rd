@@ -14,16 +14,13 @@ inspector2_create_filter(
 )
 }
 \arguments{
-\item{action}{[required] Defines the action that is to be applied to the findings that match the
-filter.}
+\item{action}{[required] Defines the action that is to be applied to the findings that match the filter.}
 
 \item{description}{A description of the filter.}
 
 \item{filterCriteria}{[required] Defines the criteria to be used in the filter for querying findings.}
 
-\item{name}{[required] The name of the filter. Minimum length of 3. Maximum length of 64. Valid
-characters include alphanumeric characters, dot (.), underscore (_),
-and dash (-). Spaces are not allowed.}
+\item{name}{[required] The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed.}
 
 \item{tags}{A list of tags for the filter.}
 

@@ -10,8 +10,7 @@ apigateway_get_vpc_links(position = NULL, limit = NULL)
 \arguments{
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 }
 \description{
 Gets the VpcLinks collection under the caller's account in a selected region.

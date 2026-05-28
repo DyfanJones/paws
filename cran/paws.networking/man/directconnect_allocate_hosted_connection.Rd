@@ -17,14 +17,9 @@ directconnect_allocate_hosted_connection(
 \arguments{
 \item{connectionId}{[required] The ID of the interconnect or LAG.}
 
-\item{ownerAccount}{[required] The ID of the Amazon Web Services account ID of the customer for the
-connection.}
+\item{ownerAccount}{[required] The ID of the Amazon Web Services account ID of the customer for the connection.}
 
-\item{bandwidth}{[required] The bandwidth of the connection. The possible values are 50Mbps,
-100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps,
-10Gbps, and 25Gbps. Note that only those Direct Connect Partners who
-have met specific requirements are allowed to create a 1Gbps, 2Gbps,
-5Gbps, 10Gbps, or 25Gbps hosted connection.}
+\item{bandwidth}{[required] The bandwidth of the connection. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, 10Gbps, and 25Gbps. Note that only those Direct Connect Partners who have met specific requirements are allowed to create a 1Gbps, 2Gbps, 5Gbps, 10Gbps, or 25Gbps hosted connection.}
 
 \item{connectionName}{[required] The name of the hosted connection.}
 

@@ -10,15 +10,9 @@ sagemaker_batch_add_cluster_nodes(ClusterName, ClientToken = NULL, NodesToAdd)
 \arguments{
 \item{ClusterName}{[required] The name of the HyperPod cluster to which you want to add nodes.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. This token is valid for 8 hours. If you
-retry the request with the same client token within this timeframe and
-the same parameters, the API returns the same set of \code{NodeLogicalIds}
-with their latest status.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. This token is valid for 8 hours. If you retry the request with the same client token within this timeframe and the same parameters, the API returns the same set of \code{NodeLogicalIds} with their latest status.}
 
-\item{NodesToAdd}{[required] A list of instance groups and the number of nodes to add to each. You
-can specify up to 5 instance groups in a single request, with a maximum
-of 50 nodes total across all instance groups.}
+\item{NodesToAdd}{[required] A list of instance groups and the number of nodes to add to each. You can specify up to 5 instance groups in a single request, with a maximum of 50 nodes total across all instance groups.}
 }
 \description{
 Adds nodes to a HyperPod cluster by incrementing the target count for one or more instance groups. This operation returns a unique \code{NodeLogicalId} for each node being added, which can be used to track the provisioning status of the node. This API provides a safer alternative to \code{\link[=sagemaker_update_cluster]{update_cluster}} for scaling operations by avoiding unintended configuration changes.

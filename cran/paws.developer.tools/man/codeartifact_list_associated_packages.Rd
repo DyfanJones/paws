@@ -14,24 +14,17 @@ codeartifact_list_associated_packages(
 )
 }
 \arguments{
-\item{domain}{[required] The name of the domain that contains the package group from which to
-list associated packages.}
+\item{domain}{[required] The name of the domain that contains the package group from which to list associated packages.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{packageGroup}{[required] The pattern of the package group from which to list associated packages.}
 
 \item{maxResults}{The maximum number of results to return per page.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 
-\item{preview}{When this flag is included,
-\code{\link[=codeartifact_list_associated_packages]{list_associated_packages}} will
-return a list of packages that would be associated with a package group,
-even if it does not exist.}
+\item{preview}{When this flag is included, \code{\link[=codeartifact_list_associated_packages]{list_associated_packages}} will return a list of packages that would be associated with a package group, even if it does not exist.}
 }
 \description{
 Returns a list of packages associated with the requested package group. For information package group association and matching, see \href{https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html}{Package group definition syntax and matching behavior} in the \emph{CodeArtifact User Guide}.

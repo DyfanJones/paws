@@ -10,11 +10,7 @@ cloudwatchobservabilityaccessmanager_get_sink(Identifier, IncludeTags = NULL)
 \arguments{
 \item{Identifier}{[required] The ARN of the sink to retrieve information for.}
 
-\item{IncludeTags}{Specifies whether to include the tags associated with the sink in the
-response. When \code{IncludeTags} is set to \code{true} and the caller has the
-required permission, \code{oam:ListTagsForResource}, the API will return the
-tags for the specified resource. If the caller doesn't have the required
-permission, \code{oam:ListTagsForResource}, the API will raise an exception.
+\item{IncludeTags}{Specifies whether to include the tags associated with the sink in the response. When \code{IncludeTags} is set to \code{true} and the caller has the required permission, \code{oam:ListTagsForResource}, the API will return the tags for the specified resource. If the caller doesn't have the required permission, \code{oam:ListTagsForResource}, the API will raise an exception.
 
 The default value is \code{false}.}
 }

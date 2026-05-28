@@ -18,33 +18,23 @@ neptune_describe_orderable_db_instance_options(
 \arguments{
 \item{Engine}{[required] The name of the engine to retrieve DB instance options for.}
 
-\item{EngineVersion}{The engine version filter value. Specify this parameter to show only the
-available offerings matching the specified engine version.}
+\item{EngineVersion}{The engine version filter value. Specify this parameter to show only the available offerings matching the specified engine version.}
 
-\item{DBInstanceClass}{The DB instance class filter value. Specify this parameter to show only
-the available offerings matching the specified DB instance class.}
+\item{DBInstanceClass}{The DB instance class filter value. Specify this parameter to show only the available offerings matching the specified DB instance class.}
 
-\item{LicenseModel}{The license model filter value. Specify this parameter to show only the
-available offerings matching the specified license model.}
+\item{LicenseModel}{The license model filter value. Specify this parameter to show only the available offerings matching the specified license model.}
 
-\item{Vpc}{The VPC filter value. Specify this parameter to show only the available
-VPC or non-VPC offerings.}
+\item{Vpc}{The VPC filter value. Specify this parameter to show only the available VPC or non-VPC offerings.}
 
 \item{Filters}{This parameter is not currently supported.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a marker is included in the response so that the remaining
-results can be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a marker is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous
-DescribeOrderableDBInstanceOptions request. If this parameter is
-specified, the response includes only records beyond the marker, up to
-the value specified by \code{MaxRecords} .}
+\item{Marker}{An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords} .}
 }
 \description{
 Returns a list of orderable DB instance options for the specified engine.

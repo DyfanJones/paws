@@ -13,13 +13,9 @@ codeguruprofiler_get_recommendations(
 )
 }
 \arguments{
-\item{endTime}{[required] The start time of the profile to get analysis data about. You must
-specify \code{startTime} and \code{endTime}. This is specified using the ISO 8601
-format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond
-past June 1, 2020 1:15:02 PM UTC.}
+\item{endTime}{[required] The start time of the profile to get analysis data about. You must specify \code{startTime} and \code{endTime}. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.}
 
-\item{locale}{The language used to provide analysis. Specify using a string that is
-one of the following \verb{BCP 47} language codes.
+\item{locale}{The language used to provide analysis. Specify using a string that is one of the following \verb{BCP 47} language codes.
 \itemize{
 \item \code{de-DE} - German, Germany
 \item \code{en-GB} - English, United Kingdom
@@ -36,10 +32,7 @@ one of the following \verb{BCP 47} language codes.
 
 \item{profilingGroupName}{[required] The name of the profiling group to get analysis data about.}
 
-\item{startTime}{[required] The end time of the profile to get analysis data about. You must specify
-\code{startTime} and \code{endTime}. This is specified using the ISO 8601 format.
-For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June
-1, 2020 1:15:02 PM UTC.}
+\item{startTime}{[required] The end time of the profile to get analysis data about. You must specify \code{startTime} and \code{endTime}. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.}
 }
 \description{
 Returns a list of \href{https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html}{\code{Recommendation}} objects that contain recommendations for a profiling group for a given time period. A list of \href{https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html}{\code{Anomaly}} objects that contains details about anomalies detected in the profiling group for the same time period is also returned.

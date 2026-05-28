@@ -20,12 +20,9 @@ marketplacecatalog_list_change_sets(
 
 \item{Sort}{An object that contains two attributes, \code{SortBy} and \code{SortOrder}.}
 
-\item{MaxResults}{The maximum number of results returned by a single call. This value must
-be provided in the next call to retrieve the next set of results. By
-default, this value is 20.}
+\item{MaxResults}{The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.}
 
-\item{NextToken}{The token value retrieved from a previous call to access the next page
-of results.}
+\item{NextToken}{The token value retrieved from a previous call to access the next page of results.}
 }
 \description{
 Returns the list of change sets owned by the account being used to make the call. You can filter this list by providing any combination of \code{entityId}, \code{ChangeSetName}, and status. If you provide more than one filter, the API operation applies a logical AND between the filters.

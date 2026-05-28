@@ -14,13 +14,11 @@ codeartifact_associate_external_connection(
 \arguments{
 \item{domain}{[required] The name of the domain that contains the repository.}
 
-\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns
-the domain. It does not include dashes or spaces.}
+\item{domainOwner}{The 12-digit account number of the Amazon Web Services account that owns the domain. It does not include dashes or spaces.}
 
 \item{repository}{[required] The name of the repository to which the external connection is added.}
 
-\item{externalConnection}{[required] The name of the external connection to add to the repository. The
-following values are supported:
+\item{externalConnection}{[required] The name of the external connection to add to the repository. The following values are supported:
 \itemize{
 \item \code{public:npmjs} - for the npm public repository.
 \item \code{public:nuget-org} - for the NuGet Gallery.

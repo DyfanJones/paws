@@ -21,11 +21,7 @@ Constraints:
 
 This value is stored as a lowercase string.}
 
-\item{DBParameterGroupFamily}{[required] The DB cluster parameter group family name. A DB cluster parameter group
-can be associated with one and only one DB cluster parameter group
-family, and can be applied only to a DB cluster running a database
-engine and engine version compatible with that DB cluster parameter
-group family.}
+\item{DBParameterGroupFamily}{[required] The DB cluster parameter group family name. A DB cluster parameter group can be associated with one and only one DB cluster parameter group family, and can be applied only to a DB cluster running a database engine and engine version compatible with that DB cluster parameter group family.}
 
 \item{Description}{[required] The description for the DB cluster parameter group.}
 

@@ -10,11 +10,9 @@ EvaluationMetrics}
 textract_get_adapter_version(AdapterId, AdapterVersion)
 }
 \arguments{
-\item{AdapterId}{[required] A string specifying a unique ID for the adapter version you want to
-retrieve information for.}
+\item{AdapterId}{[required] A string specifying a unique ID for the adapter version you want to retrieve information for.}
 
-\item{AdapterVersion}{[required] A string specifying the adapter version you want to retrieve information
-for.}
+\item{AdapterVersion}{[required] A string specifying the adapter version you want to retrieve information for.}
 }
 \description{
 Gets configuration information for the specified adapter version, including: AdapterId, AdapterVersion, FeatureTypes, Status, StatusMessage, DatasetConfig, KMSKeyId, OutputConfig, Tags and EvaluationMetrics.

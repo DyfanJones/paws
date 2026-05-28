@@ -5,9 +5,7 @@ NULL
 #' AWS Cloud Control API
 #'
 #' @description
-#' For more information about Amazon Web Services Cloud Control API, see
-#' the [Amazon Web Services Cloud Control API User
-#' Guide](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html).
+#' For more information about Amazon Web Services Cloud Control API, see the [Amazon Web Services Cloud Control API User Guide](https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/what-is-cloudcontrolapi.html).
 #'
 #' @param
 #' config

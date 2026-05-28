@@ -21,65 +21,40 @@ vpclattice_create_resource_configuration(
 )
 }
 \arguments{
-\item{name}{[required] The name of the resource configuration. The name must be unique within
-the account. The valid characters are a-z, 0-9, and hyphens (-). You
-can't use a hyphen as the first or last character, or immediately after
-another hyphen.}
+\item{name}{[required] The name of the resource configuration. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.}
 
-\item{type}{[required] The type of resource configuration. A resource configuration can be one
-of the following types:
+\item{type}{[required] The type of resource configuration. A resource configuration can be one of the following types:
 \itemize{
 \item \strong{SINGLE} - A single resource.
-\item \strong{GROUP} - A group of resources. You must create a group resource
-configuration before you create a child resource configuration.
-\item \strong{CHILD} - A single resource that is part of a group resource
-configuration.
+\item \strong{GROUP} - A group of resources. You must create a group resource configuration before you create a child resource configuration.
+\item \strong{CHILD} - A single resource that is part of a group resource configuration.
 \item \strong{ARN} - An Amazon Web Services resource.
 }}
 
-\item{portRanges}{(SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to
-access a resource configuration (for example: 1-65535). You can separate
-port ranges using commas (for example: 1,2,22-30).}
+\item{portRanges}{(SINGLE, GROUP, CHILD) The TCP port ranges that a consumer can use to access a resource configuration (for example: 1-65535). You can separate port ranges using commas (for example: 1,2,22-30).}
 
 \item{protocol}{(SINGLE, GROUP) The protocol accepted by the resource configuration.}
 
-\item{resourceGatewayIdentifier}{(SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to
-connect to the resource configuration. For a child resource
-configuration, this value is inherited from the parent resource
-configuration.}
+\item{resourceGatewayIdentifier}{(SINGLE, GROUP, ARN) The ID or ARN of the resource gateway used to connect to the resource configuration. For a child resource configuration, this value is inherited from the parent resource configuration.}
 
-\item{resourceConfigurationGroupIdentifier}{(CHILD) The ID or ARN of the parent resource configuration of type
-\code{GROUP}. This is used to associate a child resource configuration with a
-group resource configuration.}
+\item{resourceConfigurationGroupIdentifier}{(CHILD) The ID or ARN of the parent resource configuration of type \code{GROUP}. This is used to associate a child resource configuration with a group resource configuration.}
 
 \item{resourceConfigurationDefinition}{Identifies the resource configuration in one of the following ways:
 \itemize{
-\item \strong{Amazon Resource Name (ARN)} - Supported resource-types that are
-provisioned by Amazon Web Services services, such as RDS databases,
-can be identified by their ARN.
+\item \strong{Amazon Resource Name (ARN)} - Supported resource-types that are provisioned by Amazon Web Services services, such as RDS databases, can be identified by their ARN.
 \item \strong{Domain name} - Any domain name that is publicly resolvable.
-\item \strong{IP address} - For IPv4 and IPv6, only IP addresses in the VPC are
-supported.
+\item \strong{IP address} - For IPv4 and IPv6, only IP addresses in the VPC are supported.
 }}
 
-\item{allowAssociationToShareableServiceNetwork}{(SINGLE, GROUP, ARN) Specifies whether the resource configuration can be
-associated with a sharable service network. The default is false.}
+\item{allowAssociationToShareableServiceNetwork}{(SINGLE, GROUP, ARN) Specifies whether the resource configuration can be associated with a sharable service network. The default is false.}
 
-\item{customDomainName}{A custom domain name for your resource configuration. Additionally,
-provide a DomainVerificationID to prove your ownership of a domain.}
+\item{customDomainName}{A custom domain name for your resource configuration. Additionally, provide a DomainVerificationID to prove your ownership of a domain.}
 
-\item{groupDomain}{(GROUP) The group domain for a group resource configuration. Any domains
-that you create for the child resource are subdomains of the group
-domain. Child resources inherit the verification status of the domain.}
+\item{groupDomain}{(GROUP) The group domain for a group resource configuration. Any domains that you create for the child resource are subdomains of the group domain. Child resources inherit the verification status of the domain.}
 
-\item{domainVerificationIdentifier}{The domain verification ID of your verified custom domain name. If you
-don't provide an ID, you must configure the DNS settings yourself.}
+\item{domainVerificationIdentifier}{The domain verification ID of your verified custom domain name. If you don't provide an ID, you must configure the DNS settings yourself.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request. If you retry a request that completed
-successfully using the same client token and parameters, the retry
-succeeds without performing any actions. If the parameters aren't
-identical, the retry fails.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.}
 
 \item{tags}{The tags for the resource configuration.}
 }

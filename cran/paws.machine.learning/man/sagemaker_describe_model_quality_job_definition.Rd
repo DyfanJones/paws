@@ -7,8 +7,7 @@
 sagemaker_describe_model_quality_job_definition(JobDefinitionName)
 }
 \arguments{
-\item{JobDefinitionName}{[required] The name of the model quality job. The name must be unique within an
-Amazon Web Services Region in the Amazon Web Services account.}
+\item{JobDefinitionName}{[required] The name of the model quality job. The name must be unique within an Amazon Web Services Region in the Amazon Web Services account.}
 }
 \description{
 Returns a description of a model quality job definition.

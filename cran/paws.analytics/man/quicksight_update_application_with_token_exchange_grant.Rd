@@ -10,8 +10,7 @@ quicksight_update_application_with_token_exchange_grant(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account to be updated with a token
-exchange grant.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account to be updated with a token exchange grant.}
 
 \item{Namespace}{[required] The namespace of the Quick application.}
 }

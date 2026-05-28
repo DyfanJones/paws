@@ -14,14 +14,11 @@ lookoutequipment_start_data_ingestion_job(
 \arguments{
 \item{DatasetName}{[required] The name of the dataset being used by the data ingestion job.}
 
-\item{IngestionInputConfiguration}{[required] Specifies information for the input data for the data ingestion job,
-including dataset S3 location.}
+\item{IngestionInputConfiguration}{[required] Specifies information for the input data for the data ingestion job, including dataset S3 location.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of a role with permission to access the
-data source for the data ingestion job.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of a role with permission to access the data source for the data ingestion job.}
 
-\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client
-request token, Amazon Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.}
 }
 \description{
 Starts a data ingestion job. Amazon Lookout for Equipment returns the job status.

@@ -7,8 +7,7 @@
 datazone_get_metadata_generation_run(domainIdentifier, identifier, type = NULL)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain the metadata generation run of
-which you want to get.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain the metadata generation run of which you want to get.}
 
 \item{identifier}{[required] The identifier of the metadata generation run.}
 

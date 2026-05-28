@@ -12,9 +12,7 @@ pinpointsmsvoicev2_submit_registration_version(
 \arguments{
 \item{RegistrationId}{[required] The unique identifier for the registration.}
 
-\item{AwsReview}{Set to true to request AWS review of the registration. When enabled, AWS
-will perform additional validation and review of the registration
-submission before processing.}
+\item{AwsReview}{Set to true to request AWS review of the registration. When enabled, AWS will perform additional validation and review of the registration submission before processing.}
 }
 \description{
 Submit the specified registration for review and approval.

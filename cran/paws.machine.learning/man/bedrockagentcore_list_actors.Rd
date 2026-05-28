@@ -7,15 +7,11 @@
 bedrockagentcore_list_actors(memoryId, maxResults = NULL, nextToken = NULL)
 }
 \arguments{
-\item{memoryId}{[required] The identifier of the AgentCore Memory resource for which to list
-actors.}
+\item{memoryId}{[required] The identifier of the AgentCore Memory resource for which to list actors.}
 
-\item{maxResults}{The maximum number of results to return in a single call. The default
-value is 20.}
+\item{maxResults}{The maximum number of results to return in a single call. The default value is 20.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Lists all actors in an AgentCore Memory resource. We recommend using pagination to ensure that the operation returns quickly and successfully.

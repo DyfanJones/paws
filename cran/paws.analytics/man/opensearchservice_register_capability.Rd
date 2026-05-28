@@ -11,16 +11,11 @@ opensearchservice_register_capability(
 )
 }
 \arguments{
-\item{applicationId}{[required] The unique identifier of the OpenSearch UI application to register the
-capability for.}
+\item{applicationId}{[required] The unique identifier of the OpenSearch UI application to register the capability for.}
 
-\item{capabilityName}{[required] The name of the capability to register. Must be between 3 and 30
-characters and contain only alphanumeric characters and hyphens. This
-identifies the type of capability being enabled for the application. For
-registering AI Assistant capability, use \code{ai-capability}}
+\item{capabilityName}{[required] The name of the capability to register. Must be between 3 and 30 characters and contain only alphanumeric characters and hyphens. This identifies the type of capability being enabled for the application. For registering AI Assistant capability, use \code{ai-capability}}
 
-\item{capabilityConfig}{[required] The configuration settings for the capability being registered. This
-includes capability-specific settings such as AI configuration.}
+\item{capabilityConfig}{[required] The configuration settings for the capability being registered. This includes capability-specific settings such as AI configuration.}
 }
 \description{
 Registers a capability for an OpenSearch UI application. Use this operation to enable specific capabilities, such as AI features, for a given application. The capability configuration defines the type and settings of the capability to register. For more information about the AI features, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/application-ai-assistant.html}{Agentic AI for OpenSearch UI}.

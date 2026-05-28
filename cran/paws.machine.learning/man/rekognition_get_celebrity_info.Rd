@@ -8,9 +8,7 @@ their Amazon Rekognition ID}
 rekognition_get_celebrity_info(Id)
 }
 \arguments{
-\item{Id}{[required] The ID for the celebrity. You get the celebrity ID from a call to the
-\code{\link[=rekognition_recognize_celebrities]{recognize_celebrities}} operation,
-which recognizes celebrities in an image.}
+\item{Id}{[required] The ID for the celebrity. You get the celebrity ID from a call to the \code{\link[=rekognition_recognize_celebrities]{recognize_celebrities}} operation, which recognizes celebrities in an image.}
 }
 \description{
 Gets the name and additional information about a celebrity based on their Amazon Rekognition ID. The additional information is returned as an array of URLs. If there is no additional information about the celebrity, this list is empty.

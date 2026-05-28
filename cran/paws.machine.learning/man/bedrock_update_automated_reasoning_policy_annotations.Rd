@@ -12,17 +12,13 @@ bedrock_update_automated_reasoning_policy_annotations(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose
-annotations you want to update.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy whose annotations you want to update.}
 
-\item{buildWorkflowId}{[required] The unique identifier of the build workflow whose annotations you want
-to update.}
+\item{buildWorkflowId}{[required] The unique identifier of the build workflow whose annotations you want to update.}
 
-\item{annotations}{[required] The updated annotations containing modified rules, variables, and types
-for the policy.}
+\item{annotations}{[required] The updated annotations containing modified rules, variables, and types for the policy.}
 
-\item{lastUpdatedAnnotationSetHash}{[required] The hash value of the annotation set that you're updating. This is used
-for optimistic concurrency control to prevent conflicting updates.}
+\item{lastUpdatedAnnotationSetHash}{[required] The hash value of the annotation set that you're updating. This is used for optimistic concurrency control to prevent conflicting updates.}
 }
 \description{
 Updates the annotations for an Automated Reasoning policy build workflow. This allows you to modify extracted rules, variables, and types before finalizing the policy.

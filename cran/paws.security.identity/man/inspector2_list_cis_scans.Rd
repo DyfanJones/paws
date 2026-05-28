@@ -22,8 +22,7 @@ inspector2_list_cis_scans(
 
 \item{sortOrder}{The CIS scans sort order.}
 
-\item{nextToken}{The pagination token from a previous request that's used to retrieve the
-next page of results.}
+\item{nextToken}{The pagination token from a previous request that's used to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of results to be returned.}
 }

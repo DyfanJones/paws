@@ -15,46 +15,29 @@ paymentcryptographycontrolplane_import_key(
 )
 }
 \arguments{
-\item{KeyMaterial}{[required] The key or public key certificate type to use during key material
-import, for example TR-34 or RootCertificatePublicKey.}
+\item{KeyMaterial}{[required] The key or public key certificate type to use during key material import, for example TR-34 or RootCertificatePublicKey.}
 
-\item{KeyCheckValueAlgorithm}{The algorithm that Amazon Web Services Payment Cryptography uses to
-calculate the key check value (KCV). It is used to validate the key
-integrity.
+\item{KeyCheckValueAlgorithm}{The algorithm that Amazon Web Services Payment Cryptography uses to calculate the key check value (KCV). It is used to validate the key integrity.
 
-For TDES keys, the KCV is computed by encrypting 8 bytes, each with
-value of zero, with the key to be checked and retaining the 3 highest
-order bytes of the encrypted result. For AES keys, the KCV is computed
-using a CMAC algorithm where the input data is 16 bytes of zero and
-retaining the 3 highest order bytes of the encrypted result.}
+For TDES keys, the KCV is computed by encrypting 8 bytes, each with value of zero, with the key to be checked and retaining the 3 highest order bytes of the encrypted result. For AES keys, the KCV is computed using a CMAC algorithm where the input data is 16 bytes of zero and retaining the 3 highest order bytes of the encrypted result.}
 
 \item{Enabled}{Specifies whether import key is enabled.}
 
-\item{Tags}{Assigns one or more tags to the Amazon Web Services Payment Cryptography
-key. Use this parameter to tag a key when it is imported. To tag an
-existing Amazon Web Services Payment Cryptography key, use the
-\code{\link[=paymentcryptographycontrolplane_tag_resource]{tag_resource}}
-operation.
+\item{Tags}{Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use this parameter to tag a key when it is imported. To tag an existing Amazon Web Services Payment Cryptography key, use the \code{\link[=paymentcryptographycontrolplane_tag_resource]{tag_resource}} operation.
 
-Each tag consists of a tag key and a tag value. Both the tag key and the
-tag value are required, but the tag value can be an empty (null) string.
-You can't have more than one tag on an Amazon Web Services Payment
-Cryptography key with the same tag key. If you specify an existing tag
-key with a different tag value, Amazon Web Services Payment Cryptography
-replaces the current tag value with the specified one.
+Each tag consists of a tag key and a tag value. Both the tag key and the tag value are required, but the tag value can be an empty (null) string. You can't have more than one tag on an Amazon Web Services Payment Cryptography key with the same tag key. If you specify an existing tag key with a different tag value, Amazon Web Services Payment Cryptography replaces the current tag value with the specified one.
 
-Don't include personal, confidential or sensitive information in this
-field. This field may be displayed in plaintext in CloudTrail logs and
-other output.
+Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.
 
-Tagging or untagging an Amazon Web Services Payment Cryptography key can
-allow or deny permission to the key.}
+Tagging or untagging an Amazon Web Services Payment Cryptography key can allow or deny permission to the key.}
+
+\item{ReplicationRegions}{A list of Amazon Web Services Regions for key replication operations.
+
+Each region in the list must be a valid Amazon Web Services Region identifier where Amazon Web Services Payment Cryptography is available. This list is used to specify which regions should be added to or removed from a key's replication configuration.}
 
 \item{RequesterComment}{The comment from the requester explaining the reason for the import.
 
-Don't include personal, confidential or sensitive information in this
-field. This field may be displayed in plaintext in CloudTrail logs and
-other output.}
+Don't include personal, confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output.}
 }
 \description{
 Imports symmetric keys and public key certificates in PEM format (base64 encoded) into Amazon Web Services Payment Cryptography.

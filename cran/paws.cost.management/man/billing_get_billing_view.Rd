@@ -7,8 +7,7 @@
 billing_get_billing_view(arn)
 }
 \arguments{
-\item{arn}{[required] The Amazon Resource Name (ARN) that can be used to uniquely identify the
-billing view.}
+\item{arn}{[required] The Amazon Resource Name (ARN) that can be used to uniquely identify the billing view.}
 }
 \description{
 Returns the metadata associated to the specified billing view ARN.

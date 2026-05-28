@@ -26,97 +26,68 @@ opensearchservice_create_domain(
   OffPeakWindowOptions = NULL,
   SoftwareUpdateOptions = NULL,
   AIMLOptions = NULL,
-  DeploymentStrategyOptions = NULL
+  DeploymentStrategyOptions = NULL,
+  AutomatedSnapshotPauseOptions = NULL
 )
 }
 \arguments{
-\item{DomainName}{[required] Name of the OpenSearch Service domain to create. Domain names are unique
-across the domains owned by an account within an Amazon Web Services
-Region.}
+\item{DomainName}{[required] Name of the OpenSearch Service domain to create. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.}
 
-\item{EngineVersion}{String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the
-engine version for the OpenSearch Service domain. For example,
-\code{OpenSearch_1.0} or \code{Elasticsearch_7.9}. For more information, see
-\href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains}{Creating and managing Amazon OpenSearch Service domains}.}
+\item{EngineVersion}{String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, \code{OpenSearch_1.0} or \code{Elasticsearch_7.9}. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains}{Creating and managing Amazon OpenSearch Service domains}.}
 
 \item{ClusterConfig}{Container for the cluster configuration of a domain.}
 
-\item{EBSOptions}{Container for the parameters required to enable EBS-based storage for an
-OpenSearch Service domain.}
+\item{EBSOptions}{Container for the parameters required to enable EBS-based storage for an OpenSearch Service domain.}
 
-\item{AccessPolicies}{Identity and Access Management (IAM) policy document specifying the
-access policies for the new domain.}
+\item{AccessPolicies}{Identity and Access Management (IAM) policy document specifying the access policies for the new domain.}
 
-\item{IPAddressType}{Specify either dual stack or IPv4 as your IP address type. Dual stack
-allows you to share domain resources across IPv4 and IPv6 address types,
-and is the recommended option. If you set your IP address type to dual
-stack, you can't change your address type later.}
+\item{IPAddressType}{Specify either dual stack or IPv4 as your IP address type. Dual stack allows you to share domain resources across IPv4 and IPv6 address types, and is the recommended option. If you set your IP address type to dual stack, you can't change your address type later.}
 
-\item{SnapshotOptions}{DEPRECATED. Container for the parameters required to configure automated
-snapshots of domain indexes.}
+\item{SnapshotOptions}{DEPRECATED. Container for the parameters required to configure automated snapshots of domain indexes.}
 
-\item{VPCOptions}{Container for the values required to configure VPC access domains. If
-you don't specify these values, OpenSearch Service creates the domain
-with a public endpoint. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html}{Launching your Amazon OpenSearch Service domains using a VPC}.}
+\item{VPCOptions}{Container for the values required to configure VPC access domains. If you don't specify these values, OpenSearch Service creates the domain with a public endpoint. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html}{Launching your Amazon OpenSearch Service domains using a VPC}.}
 
-\item{CognitoOptions}{Key-value pairs to configure Amazon Cognito authentication. For more
-information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html}{Configuring Amazon Cognito authentication for OpenSearch Dashboards}.}
+\item{CognitoOptions}{Key-value pairs to configure Amazon Cognito authentication. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html}{Configuring Amazon Cognito authentication for OpenSearch Dashboards}.}
 
 \item{EncryptionAtRestOptions}{Key-value pairs to enable encryption at rest.}
 
 \item{NodeToNodeEncryptionOptions}{Enables node-to-node encryption.}
 
-\item{AdvancedOptions}{Key-value pairs to specify advanced configuration options. The following
-key-value pairs are supported:
+\item{AdvancedOptions}{Key-value pairs to specify advanced configuration options. The following key-value pairs are supported:
 \itemize{
-\item \code{"rest.action.multi.allow_explicit_index": "true" | "false"} - Note
-the use of a string rather than a boolean. Specifies whether
-explicit references to indexes are allowed inside the body of HTTP
-requests. If you want to configure access policies for domain
-sub-resources, such as specific indexes and domain APIs, you must
-disable this property. Default is true.
-\item \code{"indices.fielddata.cache.size": "80" } - Note the use of a string
-rather than a boolean. Specifies the percentage of heap space
-allocated to field data. Default is unbounded.
-\item \code{"indices.query.bool.max_clause_count": "1024"} - Note the use of a
-string rather than a boolean. Specifies the maximum number of
-clauses allowed in a Lucene boolean query. Default is 1,024. Queries
-with more than the permitted number of clauses result in a
-\code{TooManyClauses} error.
-\item \code{"override_main_response_version": "true" | "false"} - Note the use
-of a string rather than a boolean. Specifies whether the domain
-reports its version as 7.10 to allow Elasticsearch OSS clients and
-plugins to continue working with it. Default is false when creating
-a domain and true when upgrading a domain.
+\item \code{"rest.action.multi.allow_explicit_index": "true" | "false"} - Note the use of a string rather than a boolean. Specifies whether explicit references to indexes are allowed inside the body of HTTP requests. If you want to configure access policies for domain sub-resources, such as specific indexes and domain APIs, you must disable this property. Default is true.
+\item \code{"indices.fielddata.cache.size": "80" } - Note the use of a string rather than a boolean. Specifies the percentage of heap space allocated to field data. Default is unbounded.
+\item \code{"indices.query.bool.max_clause_count": "1024"} - Note the use of a string rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean query. Default is 1,024. Queries with more than the permitted number of clauses result in a \code{TooManyClauses} error.
+\item \code{"override_main_response_version": "true" | "false"} - Note the use of a string rather than a boolean. Specifies whether the domain reports its version as 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default is false when creating a domain and true when upgrading a domain.
 }
 
 For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options}{Advanced cluster parameters}.}
 
 \item{LogPublishingOptions}{Key-value pairs to configure log publishing.}
 
-\item{DomainEndpointOptions}{Additional options for the domain endpoint, such as whether to require
-HTTPS for all traffic.}
+\item{DomainEndpointOptions}{Additional options for the domain endpoint, such as whether to require HTTPS for all traffic.}
 
 \item{AdvancedSecurityOptions}{Options for fine-grained access control.}
 
-\item{IdentityCenterOptions}{Configuration options for enabling and managing IAM Identity Center
-integration within a domain.}
+\item{IdentityCenterOptions}{Configuration options for enabling and managing IAM Identity Center integration within a domain.}
 
 \item{TagList}{List of tags to add to the domain upon creation.}
 
 \item{AutoTuneOptions}{Options for Auto-Tune.}
 
-\item{OffPeakWindowOptions}{Specifies a daily 10-hour time block during which OpenSearch Service can
-perform configuration changes on the domain, including service software
-updates and Auto-Tune enhancements that require a blue/green deployment.
-If no options are specified, the default start time of 10:00 P.M. local
-time (for the Region that the domain is created in) is used.}
+\item{OffPeakWindowOptions}{Specifies a daily 10-hour time block during which OpenSearch Service can perform configuration changes on the domain, including service software updates and Auto-Tune enhancements that require a blue/green deployment. If no options are specified, the default start time of 10:00 P.M. local time (for the Region that the domain is created in) is used.}
 
 \item{SoftwareUpdateOptions}{Software update options for the domain.}
 
 \item{AIMLOptions}{Options for all machine learning features for the specified domain.}
 
 \item{DeploymentStrategyOptions}{Specifies the deployment strategy options for the domain.}
+
+\item{AutomatedSnapshotPauseOptions}{Specifies the automated snapshot pause options for the domain.
+
+Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.
+
+Maximum suspension duration: 3 days.}
 }
 \description{
 Creates an Amazon OpenSearch Service domain. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html}{Creating and managing Amazon OpenSearch Service domains}.

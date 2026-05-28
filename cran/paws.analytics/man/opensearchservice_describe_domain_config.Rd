@@ -7,8 +7,7 @@
 opensearchservice_describe_domain_config(DomainName)
 }
 \arguments{
-\item{DomainName}{[required] Name of the OpenSearch Service domain configuration that you want to
-describe.}
+\item{DomainName}{[required] Name of the OpenSearch Service domain configuration that you want to describe.}
 }
 \description{
 Returns the configuration of an Amazon OpenSearch Service domain.

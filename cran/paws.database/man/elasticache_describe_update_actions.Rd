@@ -24,13 +24,11 @@ elasticache_describe_update_actions(
 
 \item{CacheClusterIds}{The cache cluster IDs}
 
-\item{Engine}{The Elasticache engine to which the update applies. Either Valkey, Redis
-OSS or Memcached.}
+\item{Engine}{The Elasticache engine to which the update applies. Either Valkey, Redis OSS or Memcached.}
 
 \item{ServiceUpdateStatus}{The status of the service update}
 
-\item{ServiceUpdateTimeRange}{The range of time specified to search for service updates that are in
-available status}
+\item{ServiceUpdateTimeRange}{The range of time specified to search for service updates that are in available status}
 
 \item{UpdateActionStatus}{The status of the update action.}
 
@@ -38,10 +36,7 @@ available status}
 
 \item{MaxRecords}{The maximum number of records to include in the response}
 
-\item{Marker}{An optional marker returned from a prior request. Use this marker for
-pagination of results from this operation. If this parameter is
-specified, the response includes only records beyond the marker, up to
-the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns details of the update actions

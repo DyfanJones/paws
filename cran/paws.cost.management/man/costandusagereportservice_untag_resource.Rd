@@ -7,8 +7,7 @@
 costandusagereportservice_untag_resource(ReportName, TagKeys)
 }
 \arguments{
-\item{ReportName}{[required] The report name of the report definition that tags are to be
-disassociated from.}
+\item{ReportName}{[required] The report name of the report definition that tags are to be disassociated from.}
 
 \item{TagKeys}{[required] The tags to be disassociated from the report definition resource.}
 }

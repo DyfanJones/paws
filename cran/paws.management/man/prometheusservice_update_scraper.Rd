@@ -20,17 +20,13 @@ prometheusservice_update_scraper(
 
 \item{scrapeConfiguration}{Contains the base-64 encoded YAML configuration for the scraper.
 
-For more information about configuring a scraper, see \href{https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html}{Using an Amazon Web Services managed collector}
-in the \emph{Amazon Managed Service for Prometheus User Guide}.}
+For more information about configuring a scraper, see \href{https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-collector-how-to.html}{Using an Amazon Web Services managed collector} in the \emph{Amazon Managed Service for Prometheus User Guide}.}
 
-\item{destination}{The new Amazon Managed Service for Prometheus workspace to send metrics
-to.}
+\item{destination}{The new Amazon Managed Service for Prometheus workspace to send metrics to.}
 
-\item{roleConfiguration}{Use this structure to enable cross-account access, so that you can use a
-target account to access Prometheus metrics from source accounts.}
+\item{roleConfiguration}{Use this structure to enable cross-account access, so that you can use a target account to access Prometheus metrics from source accounts.}
 
-\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of
-the request. Case-sensitive.}
+\item{clientToken}{A unique identifier that you can provide to ensure the idempotency of the request. Case-sensitive.}
 }
 \description{
 Updates an existing scraper.

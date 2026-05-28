@@ -20,36 +20,25 @@ billingconductor_create_custom_line_item(
 )
 }
 \arguments{
-\item{ClientToken}{A unique, case-sensitive identifier that you specify to ensure
-idempotency of the request. Idempotency ensures that an API request
-completes no more than one time. With an idempotent request, if the
-original request completes successfully, any subsequent retries complete
-successfully without performing any further actions.}
+\item{ClientToken}{A unique, case-sensitive identifier that you specify to ensure idempotency of the request. Idempotency ensures that an API request completes no more than one time. With an idempotent request, if the original request completes successfully, any subsequent retries complete successfully without performing any further actions.}
 
 \item{Name}{[required] The name of the custom line item.}
 
-\item{Description}{[required] The description of the custom line item. This is shown on the Bills page
-in association with the charge value.}
+\item{Description}{[required] The description of the custom line item. This is shown on the Bills page in association with the charge value.}
 
-\item{BillingGroupArn}{[required] The Amazon Resource Name (ARN) that references the billing group where
-the custom line item applies to.}
+\item{BillingGroupArn}{[required] The Amazon Resource Name (ARN) that references the billing group where the custom line item applies to.}
 
 \item{BillingPeriodRange}{A time range for which the custom line item is effective.}
 
-\item{Tags}{A map that contains tag keys and tag values that are attached to a
-custom line item.}
+\item{Tags}{A map that contains tag keys and tag values that are attached to a custom line item.}
 
-\item{ChargeDetails}{[required] A \code{CustomLineItemChargeDetails} that describes the charge details for a
-custom line item.}
+\item{ChargeDetails}{[required] A \code{CustomLineItemChargeDetails} that describes the charge details for a custom line item.}
 
-\item{AccountId}{The Amazon Web Services account in which this custom line item will be
-applied to.}
+\item{AccountId}{The Amazon Web Services account in which this custom line item will be applied to.}
 
 \item{ComputationRule}{Specifies how the custom line item charges are computed.}
 
-\item{PresentationDetails}{Details controlling how the custom line item charges are presented in
-the bill. Contains specifications for which service the charges will be
-shown under.}
+\item{PresentationDetails}{Details controlling how the custom line item charges are presented in the bill. Contains specifications for which service the charges will be shown under.}
 }
 \description{
 Creates a custom line item that can be used to create a one-time fixed charge that can be applied to a single billing group for the current or previous billing period. The one-time fixed charge is either a fee or discount.

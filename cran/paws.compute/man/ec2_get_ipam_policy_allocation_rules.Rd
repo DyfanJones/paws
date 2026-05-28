@@ -15,10 +15,7 @@ ec2_get_ipam_policy_allocation_rules(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{IpamPolicyId}{[required] The ID of the IPAM policy for which to get allocation rules.}
 
@@ -28,9 +25,7 @@ you have the required permissions, the error response is
 
 \item{ResourceType}{The resource type for which to get the allocation rules.
 
-The Amazon Web Services service or resource type that can use IP
-addresses through IPAM policies. Supported services and resource types
-include:
+The Amazon Web Services service or resource type that can use IP addresses through IPAM policies. Supported services and resource types include:
 \itemize{
 \item Elastic IP addresses
 }}

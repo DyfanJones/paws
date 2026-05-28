@@ -10,8 +10,7 @@ networkmanager_delete_core_network_prefix_list_association(
 )
 }
 \arguments{
-\item{CoreNetworkId}{[required] The ID of the core network from which to delete the prefix list
-association.}
+\item{CoreNetworkId}{[required] The ID of the core network from which to delete the prefix list association.}
 
 \item{PrefixListArn}{[required] The ARN of the prefix list to disassociate from the core network.}
 }

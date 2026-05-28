@@ -12,8 +12,7 @@ drs_list_extensible_source_servers(
 )
 }
 \arguments{
-\item{stagingAccountID}{[required] The Id of the staging Account to retrieve extensible source servers
-from.}
+\item{stagingAccountID}{[required] The Id of the staging Account to retrieve extensible source servers from.}
 
 \item{maxResults}{The maximum number of extensible source servers to retrieve.}
 

@@ -7,11 +7,9 @@
 s3control_put_access_point_scope(AccountId, Name, Scope)
 }
 \arguments{
-\item{AccountId}{[required] The Amazon Web Services account ID that owns the access point with scope
-that you want to create or replace.}
+\item{AccountId}{[required] The Amazon Web Services account ID that owns the access point with scope that you want to create or replace.}
 
-\item{Name}{[required] The name of the access point with the scope that you want to create or
-replace.}
+\item{Name}{[required] The name of the access point with the scope that you want to create or replace.}
 
 \item{Scope}{[required] Object prefixes, API operations, or a combination of both.}
 }

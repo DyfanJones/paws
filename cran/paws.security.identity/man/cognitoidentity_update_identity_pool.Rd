@@ -24,9 +24,7 @@ cognitoidentity_update_identity_pool(
 
 \item{AllowUnauthenticatedIdentities}{[required] TRUE if the identity pool supports unauthenticated logins.}
 
-\item{AllowClassicFlow}{Enables or disables the Basic (Classic) authentication flow. For more
-information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html}{Identity Pools (Federated Identities) Authentication Flow}
-in the \emph{Amazon Cognito Developer Guide}.}
+\item{AllowClassicFlow}{Enables or disables the Basic (Classic) authentication flow. For more information, see \href{https://docs.aws.amazon.com/cognito/latest/developerguide/authentication-flow.html}{Identity Pools (Federated Identities) Authentication Flow} in the \emph{Amazon Cognito Developer Guide}.}
 
 \item{SupportedLoginProviders}{Optional key:value pairs mapping provider names to provider app IDs.}
 
@@ -36,13 +34,9 @@ in the \emph{Amazon Cognito Developer Guide}.}
 
 \item{CognitoIdentityProviders}{A list representing an Amazon Cognito user pool and its client ID.}
 
-\item{SamlProviderARNs}{An array of Amazon Resource Names (ARNs) of the SAML provider for your
-identity pool.}
+\item{SamlProviderARNs}{An array of Amazon Resource Names (ARNs) of the SAML provider for your identity pool.}
 
-\item{IdentityPoolTags}{The tags that are assigned to the identity pool. A tag is a label that
-you can apply to identity pools to categorize and manage them in
-different ways, such as by purpose, owner, environment, or other
-criteria.}
+\item{IdentityPoolTags}{The tags that are assigned to the identity pool. A tag is a label that you can apply to identity pools to categorize and manage them in different ways, such as by purpose, owner, environment, or other criteria.}
 }
 \description{
 Updates the configuration of an identity pool.

@@ -24,9 +24,7 @@ glue_create_trigger(
 
 \item{Type}{[required] The type of the new trigger.}
 
-\item{Schedule}{A \code{cron} expression used to specify the schedule (see \href{https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html}{Time-Based Schedules for Jobs and Crawlers}.
-For example, to run something every day at 12:15 UTC, you would specify:
-\verb{cron(15 12 * * ? *)}.
+\item{Schedule}{A \code{cron} expression used to specify the schedule (see \href{https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html}{Time-Based Schedules for Jobs and Crawlers}. For example, to run something every day at 12:15 UTC, you would specify: \verb{cron(15 12 * * ? *)}.
 
 This field is required when the trigger type is SCHEDULED.}
 
@@ -38,15 +36,11 @@ This field is required when the trigger type is \code{CONDITIONAL}.}
 
 \item{Description}{A description of the new trigger.}
 
-\item{StartOnCreation}{Set to \code{true} to start \code{SCHEDULED} and \code{CONDITIONAL} triggers when
-created. True is not supported for \code{ON_DEMAND} triggers.}
+\item{StartOnCreation}{Set to \code{true} to start \code{SCHEDULED} and \code{CONDITIONAL} triggers when created. True is not supported for \code{ON_DEMAND} triggers.}
 
-\item{Tags}{The tags to use with this trigger. You may use tags to limit access to
-the trigger. For more information about tags in Glue, see \href{https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html}{Amazon Web Services Tags in Glue} in
-the developer guide.}
+\item{Tags}{The tags to use with this trigger. You may use tags to limit access to the trigger. For more information about tags in Glue, see \href{https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html}{Amazon Web Services Tags in Glue} in the developer guide.}
 
-\item{EventBatchingCondition}{Batch condition that must be met (specified number of events received or
-batch time window expired) before EventBridge event trigger fires.}
+\item{EventBatchingCondition}{Batch condition that must be met (specified number of events received or batch time window expired) before EventBridge event trigger fires.}
 }
 \description{
 Creates a new trigger.

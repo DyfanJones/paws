@@ -13,15 +13,13 @@ quicksight_update_self_upgrade(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the self-upgrade
-request.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the self-upgrade request.}
 
 \item{Namespace}{[required] The Quick namespace for the self-upgrade request.}
 
 \item{UpgradeRequestId}{[required] The ID of the self-upgrade request to update.}
 
-\item{Action}{[required] The action to perform on the self-upgrade request. Valid values are
-\code{APPROVE}, \code{DENY}, or \code{VERIFY}.}
+\item{Action}{[required] The action to perform on the self-upgrade request. Valid values are \code{APPROVE}, \code{DENY}, or \code{VERIFY}.}
 }
 \description{
 Updates a self-upgrade request for a Quick user by approving, denying, or verifying the request.

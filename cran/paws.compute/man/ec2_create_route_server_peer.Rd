@@ -17,13 +17,9 @@ ec2_create_route_server_peer(
 
 \item{PeerAddress}{[required] The IPv4 address of the peer device.}
 
-\item{BgpOptions}{[required] The BGP options for the peer, including ASN (Autonomous System Number)
-and BFD (Bidrectional Forwarding Detection) settings.}
+\item{BgpOptions}{[required] The BGP options for the peer, including ASN (Autonomous System Number) and BFD (Bidrectional Forwarding Detection) settings.}
 
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{TagSpecifications}{The tags to apply to the route server peer during creation.}
 }

@@ -11,11 +11,9 @@ managedgrafana_associate_license(workspaceId, licenseType, grafanaToken = NULL)
 
 \item{licenseType}{[required] The type of license to associate with the workspace.
 
-Amazon Managed Grafana workspaces no longer support Grafana Enterprise
-free trials.}
+Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.}
 
-\item{grafanaToken}{A token from Grafana Labs that ties your Amazon Web Services account
-with a Grafana Labs account. For more information, see \href{https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-enterprise-plugins.html#AMG-workspace-register-enterprise}{Link your account with Grafana Labs}.}
+\item{grafanaToken}{A token from Grafana Labs that ties your Amazon Web Services account with a Grafana Labs account. For more information, see \href{https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-enterprise-plugins.html#AMG-workspace-register-enterprise}{Link your account with Grafana Labs}.}
 }
 \description{
 Assigns a Grafana Enterprise license to a workspace. To upgrade, you must use \code{ENTERPRISE} for the \code{licenseType}, and pass in a valid Grafana Labs token for the \code{grafanaToken}. Upgrading to Grafana Enterprise incurs additional fees. For more information, see \href{https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-enterprise-plugins.html}{Upgrade a workspace to Grafana Enterprise}.

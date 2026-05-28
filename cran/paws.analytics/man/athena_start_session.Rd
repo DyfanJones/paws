@@ -22,36 +22,19 @@ athena_start_session(
 
 \item{WorkGroup}{[required] The workgroup to which the session belongs.}
 
-\item{EngineConfiguration}{[required] Contains engine data processing unit (DPU) configuration settings and
-parameter mappings.}
+\item{EngineConfiguration}{[required] Contains engine data processing unit (DPU) configuration settings and parameter mappings.}
 
-\item{ExecutionRole}{The ARN of the execution role used to access user resources for Spark
-sessions and Identity Center enabled workgroups. This property applies
-only to Spark enabled workgroups and Identity Center enabled workgroups.}
+\item{ExecutionRole}{The ARN of the execution role used to access user resources for Spark sessions and Identity Center enabled workgroups. This property applies only to Spark enabled workgroups and Identity Center enabled workgroups.}
 
-\item{MonitoringConfiguration}{Contains the configuration settings for managed log persistence,
-delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.}
+\item{MonitoringConfiguration}{Contains the configuration settings for managed log persistence, delivering logs to Amazon S3 buckets, Amazon CloudWatch log groups etc.}
 
-\item{NotebookVersion}{The notebook version. This value is supplied automatically for notebook
-sessions in the Athena console and is not required for programmatic
-session access. The only valid notebook version is
-\verb{Athena notebook version 1}. If you specify a value for
-\code{NotebookVersion}, you must also specify a value for \code{NotebookId}. See
-EngineConfiguration$AdditionalConfigs.}
+\item{NotebookVersion}{The notebook version. This value is supplied automatically for notebook sessions in the Athena console and is not required for programmatic session access. The only valid notebook version is \verb{Athena notebook version 1}. If you specify a value for \code{NotebookVersion}, you must also specify a value for \code{NotebookId}. See EngineConfiguration$AdditionalConfigs.}
 
 \item{SessionIdleTimeoutInMinutes}{The idle timeout in minutes for the session.}
 
-\item{ClientRequestToken}{A unique case-sensitive string used to ensure the request to create the
-session is idempotent (executes only once). If another
-\code{StartSessionRequest} is received, the same response is returned and
-another session is not created. If a parameter has changed, an error is
-returned.
+\item{ClientRequestToken}{A unique case-sensitive string used to ensure the request to create the session is idempotent (executes only once). If another \code{StartSessionRequest} is received, the same response is returned and another session is not created. If a parameter has changed, an error is returned.
 
-This token is listed as not required because Amazon Web Services SDKs
-(for example the Amazon Web Services SDK for Java) auto-generate the
-token for users. If you are not using the Amazon Web Services SDK or the
-Amazon Web Services CLI, you must provide this token or the action will
-fail.}
+This token is listed as not required because Amazon Web Services SDKs (for example the Amazon Web Services SDK for Java) auto-generate the token for users. If you are not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide this token or the action will fail.}
 
 \item{Tags}{A list of comma separated tags to add to the session that is created.}
 

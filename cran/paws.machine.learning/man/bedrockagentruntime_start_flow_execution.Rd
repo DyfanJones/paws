@@ -15,16 +15,13 @@ bedrockagentruntime_start_flow_execution(
 \arguments{
 \item{flowAliasIdentifier}{[required] The unique identifier of the flow alias to use for the flow execution.}
 
-\item{flowExecutionName}{The unique name for the flow execution. If you don't provide one, a
-system-generated name is used.}
+\item{flowExecutionName}{The unique name for the flow execution. If you don't provide one, a system-generated name is used.}
 
 \item{flowIdentifier}{[required] The unique identifier of the flow to execute.}
 
-\item{inputs}{[required] The input data required for the flow execution. This must match the
-input schema defined in the flow.}
+\item{inputs}{[required] The input data required for the flow execution. This must match the input schema defined in the flow.}
 
-\item{modelPerformanceConfiguration}{The performance settings for the foundation model used in the flow
-execution.}
+\item{modelPerformanceConfiguration}{The performance settings for the foundation model used in the flow execution.}
 }
 \description{
 Starts an execution of an Amazon Bedrock flow. Unlike flows that run until completion or time out after five minutes, flow executions let you run flows asynchronously for longer durations. Flow executions also yield control so that your application can perform other tasks.

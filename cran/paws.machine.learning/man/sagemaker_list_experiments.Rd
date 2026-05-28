@@ -16,19 +16,15 @@ sagemaker_list_experiments(
 \arguments{
 \item{CreatedAfter}{A filter that returns only experiments created after the specified time.}
 
-\item{CreatedBefore}{A filter that returns only experiments created before the specified
-time.}
+\item{CreatedBefore}{A filter that returns only experiments created before the specified time.}
 
 \item{SortBy}{The property used to sort results. The default value is \code{CreationTime}.}
 
 \item{SortOrder}{The sort order. The default value is \code{Descending}.}
 
-\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_experiments]{list_experiments}}
-didn't return the full set of experiments, the call returns a token for
-getting the next set of experiments.}
+\item{NextToken}{If the previous call to \code{\link[=sagemaker_list_experiments]{list_experiments}} didn't return the full set of experiments, the call returns a token for getting the next set of experiments.}
 
-\item{MaxResults}{The maximum number of experiments to return in the response. The default
-value is 10.}
+\item{MaxResults}{The maximum number of experiments to return in the response. The default value is 10.}
 }
 \description{
 Lists all the experiments in your account. The list can be filtered to show only experiments that were created in a specific time range. The list can be sorted by experiment name or creation time.

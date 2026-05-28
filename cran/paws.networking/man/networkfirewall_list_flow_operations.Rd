@@ -17,29 +17,19 @@ networkfirewall_list_flow_operations(
 \arguments{
 \item{FirewallArn}{[required] The Amazon Resource Name (ARN) of the firewall.}
 
-\item{AvailabilityZone}{The ID of the Availability Zone where the firewall is located. For
-example, \verb{us-east-2a}.
+\item{AvailabilityZone}{The ID of the Availability Zone where the firewall is located. For example, \verb{us-east-2a}.
 
-Defines the scope a flow operation. You can use up to 20 filters to
-configure a single flow operation.}
+Defines the scope a flow operation. You can use up to 20 filters to configure a single flow operation.}
 
 \item{VpcEndpointAssociationArn}{The Amazon Resource Name (ARN) of a VPC endpoint association.}
 
 \item{VpcEndpointId}{A unique identifier for the primary endpoint associated with a firewall.}
 
-\item{FlowOperationType}{An optional string that defines whether any or all operation types are
-returned.}
+\item{FlowOperationType}{An optional string that defines whether any or all operation types are returned.}
 
-\item{NextToken}{When you request a list of objects with a \code{MaxResults} setting, if the
-number of objects that are still available for retrieval exceeds the
-maximum you requested, Network Firewall returns a \code{NextToken} value in
-the response. To retrieve the next batch of objects, use the token
-returned from the prior request in your next request.}
+\item{NextToken}{When you request a list of objects with a \code{MaxResults} setting, if the number of objects that are still available for retrieval exceeds the maximum you requested, Network Firewall returns a \code{NextToken} value in the response. To retrieve the next batch of objects, use the token returned from the prior request in your next request.}
 
-\item{MaxResults}{The maximum number of objects that you want Network Firewall to return
-for this request. If more objects are available, in the response,
-Network Firewall provides a \code{NextToken} value that you can use in a
-subsequent call to get the next batch of objects.}
+\item{MaxResults}{The maximum number of objects that you want Network Firewall to return for this request. If more objects are available, in the response, Network Firewall provides a \code{NextToken} value that you can use in a subsequent call to get the next batch of objects.}
 }
 \description{
 Returns a list of all flow operations ran in a specific firewall. You can optionally narrow the request scope by specifying the operation type or Availability Zone associated with a firewall's flow operations.

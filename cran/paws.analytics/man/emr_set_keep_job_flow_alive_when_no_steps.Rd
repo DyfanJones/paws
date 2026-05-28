@@ -11,12 +11,9 @@ emr_set_keep_job_flow_alive_when_no_steps(
 )
 }
 \arguments{
-\item{JobFlowIds}{[required] A list of strings that uniquely identify the clusters to protect. This
-identifier is returned by \code{\link[=emr_run_job_flow]{run_job_flow}} and can
-also be obtained from \code{\link[=emr_describe_job_flows]{describe_job_flows}}.}
+\item{JobFlowIds}{[required] A list of strings that uniquely identify the clusters to protect. This identifier is returned by \code{\link[=emr_run_job_flow]{run_job_flow}} and can also be obtained from \code{\link[=emr_describe_job_flows]{describe_job_flows}}.}
 
-\item{KeepJobFlowAliveWhenNoSteps}{[required] A Boolean that indicates whether to terminate the cluster after all
-steps are executed.}
+\item{KeepJobFlowAliveWhenNoSteps}{[required] A Boolean that indicates whether to terminate the cluster after all steps are executed.}
 }
 \description{
 You can use the \code{\link[=emr_set_keep_job_flow_alive_when_no_steps]{set_keep_job_flow_alive_when_no_steps}} to configure a cluster (job flow) to terminate after the step execution, i.e., all your steps are executed. If you want a transient cluster that shuts down after the last of the current executing steps are completed, you can configure \code{\link[=emr_set_keep_job_flow_alive_when_no_steps]{set_keep_job_flow_alive_when_no_steps}} to false. If you want a long running cluster, configure \code{\link[=emr_set_keep_job_flow_alive_when_no_steps]{set_keep_job_flow_alive_when_no_steps}} to true.

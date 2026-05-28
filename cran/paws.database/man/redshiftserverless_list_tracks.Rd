@@ -7,15 +7,9 @@
 redshiftserverless_list_tracks(maxResults = NULL, nextToken = NULL)
 }
 \arguments{
-\item{maxResults}{The maximum number of response records to return in each call. If the
-number of remaining response records exceeds the specified MaxRecords
-value, a value is returned in a marker field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned marker value.}
+\item{maxResults}{The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in a marker field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.}
 
-\item{nextToken}{If your initial \code{ListTracksRequest} operation returns a \code{nextToken}, you
-can include the returned \code{nextToken} in following \code{ListTracksRequest}
-operations, which returns results in the next page.}
+\item{nextToken}{If your initial \code{ListTracksRequest} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in following \code{ListTracksRequest} operations, which returns results in the next page.}
 }
 \description{
 List the Amazon Redshift Serverless versions.

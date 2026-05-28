@@ -16,24 +16,15 @@ sagemaker_update_inference_experiment(
 \arguments{
 \item{Name}{[required] The name of the inference experiment to be updated.}
 
-\item{Schedule}{The duration for which the inference experiment will run. If the status
-of the inference experiment is \code{Created}, then you can update both the
-start and end dates. If the status of the inference experiment is
-\code{Running}, then you can update only the end date.}
+\item{Schedule}{The duration for which the inference experiment will run. If the status of the inference experiment is \code{Created}, then you can update both the start and end dates. If the status of the inference experiment is \code{Running}, then you can update only the end date.}
 
 \item{Description}{The description of the inference experiment.}
 
-\item{ModelVariants}{An array of \code{ModelVariantConfig} objects. There is one for each variant,
-whose infrastructure configuration you want to update.}
+\item{ModelVariants}{An array of \code{ModelVariantConfig} objects. There is one for each variant, whose infrastructure configuration you want to update.}
 
-\item{DataStorageConfig}{The Amazon S3 location and configuration for storing inference request
-and response data.}
+\item{DataStorageConfig}{The Amazon S3 location and configuration for storing inference request and response data.}
 
-\item{ShadowModeConfig}{The configuration of \code{ShadowMode} inference experiment type. Use this
-field to specify a production variant which takes all the inference
-requests, and a shadow variant to which Amazon SageMaker replicates a
-percentage of the inference requests. For the shadow variant also
-specify the percentage of requests that Amazon SageMaker replicates.}
+\item{ShadowModeConfig}{The configuration of \code{ShadowMode} inference experiment type. Use this field to specify a production variant which takes all the inference requests, and a shadow variant to which Amazon SageMaker replicates a percentage of the inference requests. For the shadow variant also specify the percentage of requests that Amazon SageMaker replicates.}
 }
 \description{
 Updates an inference experiment that you created. The status of the inference experiment has to be either \code{Created}, \code{Running}. For more information on the status of an inference experiment, see \code{\link[=sagemaker_describe_inference_experiment]{describe_inference_experiment}}.

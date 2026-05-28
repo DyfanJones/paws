@@ -22,21 +22,15 @@ locationservice_start_job(
 
 \item{ActionOptions}{Additional parameters that can be requested for each result.}
 
-\item{ExecutionRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that Amazon Location
-Service assumes during job processing. Amazon Location Service uses this
-role to access the input and output locations specified for the job.
+\item{ExecutionRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that Amazon Location Service assumes during job processing. Amazon Location Service uses this role to access the input and output locations specified for the job.
 
-The IAM role must be created in the same Amazon Web Services account
-where you plan to run your job.
+The IAM role must be created in the same Amazon Web Services account where you plan to run your job.
 
-For more information about configuring IAM roles for Amazon Location
-jobs, see \href{https://docs.aws.amazon.com/location/latest/developerguide/configure-iam-role-policy-credentials.html}{Configure IAM permissions}
-in the \emph{Amazon Location Service Developer Guide}.}
+For more information about configuring IAM roles for Amazon Location jobs, see \href{https://docs.aws.amazon.com/location/latest/developerguide/configure-iam-role-policy-credentials.html}{Configure IAM permissions} in the \emph{Amazon Location Service Developer Guide}.}
 
 \item{InputOptions}{[required] Configuration for input data location and format.
 
-Input files have a limitation of 10gb per file, and 1gb per Parquet
-row-group within the file.}
+Input files have a limitation of 10gb per file, and 1gb per Parquet row-group within the file.}
 
 \item{Name}{An optional name for the job resource.}
 

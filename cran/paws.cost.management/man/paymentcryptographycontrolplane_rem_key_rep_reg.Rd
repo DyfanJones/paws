@@ -12,18 +12,13 @@ paymentcryptographycontrolplane_remove_key_replication_regions(
 )
 }
 \arguments{
-\item{KeyIdentifier}{[required] The key identifier (ARN or alias) of the key from which to remove
-replication regions.
+\item{KeyIdentifier}{[required] The key identifier (ARN or alias) of the key from which to remove replication regions.
 
-This key must exist and have replication enabled in the specified
-regions.}
+This key must exist and have replication enabled in the specified regions.}
 
-\item{ReplicationRegions}{[required] The list of Amazon Web Services Regions to remove from the key's
-replication configuration.
+\item{ReplicationRegions}{[required] The list of Amazon Web Services Regions to remove from the key's replication configuration.
 
-The key will no longer be available for cryptographic operations in
-these regions after removal. Ensure no active operations depend on the
-key in these regions before removal.}
+The key will no longer be available for cryptographic operations in these regions after removal. Ensure no active operations depend on the key in these regions before removal.}
 }
 \description{
 Removes Replication Regions from an existing Amazon Web Services Payment Cryptography key, disabling the key's availability for cryptographic operations in the specified Amazon Web Services Regions.

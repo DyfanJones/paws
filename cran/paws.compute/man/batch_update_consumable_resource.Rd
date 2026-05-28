@@ -14,32 +14,22 @@ batch_update_consumable_resource(
 \arguments{
 \item{consumableResource}{[required] The name or ARN of the consumable resource to be updated.}
 
-\item{operation}{Indicates how the quantity of the consumable resource will be updated.
-Must be one of:
+\item{operation}{Indicates how the quantity of the consumable resource will be updated. Must be one of:
 \itemize{
 \item \code{SET}
 
-Sets the quantity of the resource to the value specified by the
-\code{quantity} parameter.
+Sets the quantity of the resource to the value specified by the \code{quantity} parameter.
 \item \code{ADD}
 
-Increases the quantity of the resource by the value specified by the
-\code{quantity} parameter.
+Increases the quantity of the resource by the value specified by the \code{quantity} parameter.
 \item \code{REMOVE}
 
-Reduces the quantity of the resource by the value specified by the
-\code{quantity} parameter.
+Reduces the quantity of the resource by the value specified by the \code{quantity} parameter.
 }}
 
-\item{quantity}{The change in the total quantity of the consumable resource. The
-\code{operation} parameter determines whether the value specified here will
-be the new total quantity, or the amount by which the total quantity
-will be increased or reduced. Must be a non-negative value.}
+\item{quantity}{The change in the total quantity of the consumable resource. The \code{operation} parameter determines whether the value specified here will be the new total quantity, or the amount by which the total quantity will be increased or reduced. Must be a non-negative value.}
 
-\item{clientToken}{If this parameter is specified and two update requests with identical
-payloads and \code{clientToken}s are received, these requests are considered
-the same request. Both requests will succeed, but the update will only
-happen once. A \code{clientToken} is valid for 8 hours.}
+\item{clientToken}{If this parameter is specified and two update requests with identical payloads and \code{clientToken}s are received, these requests are considered the same request. Both requests will succeed, but the update will only happen once. A \code{clientToken} is valid for 8 hours.}
 }
 \description{
 Updates a consumable resource.

@@ -7,13 +7,11 @@
 workmail_describe_resource(OrganizationId, ResourceId)
 }
 \arguments{
-\item{OrganizationId}{[required] The identifier associated with the organization for which the resource
-is described.}
+\item{OrganizationId}{[required] The identifier associated with the organization for which the resource is described.}
 
 \item{ResourceId}{[required] The identifier of the resource to be described.
 
-The identifier can accept \emph{ResourceId}, \emph{Resourcename}, or \emph{email}. The
-following identity formats are available:
+The identifier can accept \emph{ResourceId}, \emph{Resourcename}, or \emph{email}. The following identity formats are available:
 \itemize{
 \item Resource ID: r-0123456789a0123456789b0123456789
 \item Email address: resource@domain.tld

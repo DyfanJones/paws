@@ -15,8 +15,7 @@ apigatewayv2_create_portal_product(
 
 \item{DisplayName}{[required] The name of the portal product as it appears in a published portal.}
 
-\item{Tags}{The collection of tags. Each tag element is associated with a given
-resource.}
+\item{Tags}{The collection of tags. Each tag element is associated with a given resource.}
 }
 \description{
 Creates a new portal product.

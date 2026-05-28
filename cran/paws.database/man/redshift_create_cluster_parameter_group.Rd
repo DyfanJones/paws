@@ -24,17 +24,9 @@ Constraints:
 
 This value is stored as a lower-case string.}
 
-\item{ParameterGroupFamily}{[required] The Amazon Redshift engine version to which the cluster parameter group
-applies. The cluster engine version determines the set of parameters.
+\item{ParameterGroupFamily}{[required] The Amazon Redshift engine version to which the cluster parameter group applies. The cluster engine version determines the set of parameters.
 
-To get a list of valid parameter group family names, you can call
-\code{\link[=redshift_describe_cluster_parameter_groups]{describe_cluster_parameter_groups}}.
-By default, Amazon Redshift returns a list of all the parameter groups
-that are owned by your Amazon Web Services account, including the
-default parameter groups for each Amazon Redshift engine version. The
-parameter group family names associated with the default parameter
-groups provide you the valid values. For example, a valid family name is
-"redshift-1.0".}
+To get a list of valid parameter group family names, you can call \code{\link[=redshift_describe_cluster_parameter_groups]{describe_cluster_parameter_groups}}. By default, Amazon Redshift returns a list of all the parameter groups that are owned by your Amazon Web Services account, including the default parameter groups for each Amazon Redshift engine version. The parameter group family names associated with the default parameter groups provide you the valid values. For example, a valid family name is "redshift-1.0".}
 
 \item{Description}{[required] A description of the parameter group.}
 

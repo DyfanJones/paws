@@ -7,8 +7,7 @@
 costandusagereportservice_tag_resource(ReportName, Tags)
 }
 \arguments{
-\item{ReportName}{[required] The report name of the report definition that tags are to be associated
-with.}
+\item{ReportName}{[required] The report name of the report definition that tags are to be associated with.}
 
 \item{Tags}{[required] The tags to be assigned to the report definition resource.}
 }

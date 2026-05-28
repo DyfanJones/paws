@@ -7,11 +7,7 @@ NULL
 #' @description
 #' Security Token Service
 #' 
-#' Security Token Service (STS) enables you to request temporary,
-#' limited-privilege credentials for users. This guide provides
-#' descriptions of the STS API. For more information about using this
-#' service, see [Temporary Security
-#' Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html).
+#' Security Token Service (STS) enables you to request temporary, limited-privilege credentials for users. This guide provides descriptions of the STS API. For more information about using this service, see [Temporary Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html).
 #'
 #' @param
 #' config

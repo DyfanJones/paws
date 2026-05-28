@@ -12,30 +12,17 @@ servicediscovery_list_services(
 )
 }
 \arguments{
-\item{NextToken}{For the first \code{\link[=servicediscovery_list_services]{list_services}} request,
-omit this value.
+\item{NextToken}{For the first \code{\link[=servicediscovery_list_services]{list_services}} request, omit this value.
 
-If the response contains \code{NextToken}, submit another
-\code{\link[=servicediscovery_list_services]{list_services}} request to get the
-next group of results. Specify the value of \code{NextToken} from the
-previous response in the next request.
+If the response contains \code{NextToken}, submit another \code{\link[=servicediscovery_list_services]{list_services}} request to get the next group of results. Specify the value of \code{NextToken} from the previous response in the next request.
 
-Cloud Map gets \code{MaxResults} services and then filters them based on the
-specified criteria. It's possible that no services in the first
-\code{MaxResults} services matched the specified criteria but that subsequent
-groups of \code{MaxResults} services do contain services that match the
-criteria.}
+Cloud Map gets \code{MaxResults} services and then filters them based on the specified criteria. It's possible that no services in the first \code{MaxResults} services matched the specified criteria but that subsequent groups of \code{MaxResults} services do contain services that match the criteria.}
 
-\item{MaxResults}{The maximum number of services that you want Cloud Map to return in the
-response to a \code{\link[=servicediscovery_list_services]{list_services}} request.
-If you don't specify a value for \code{MaxResults}, Cloud Map returns up to
-100 services.}
+\item{MaxResults}{The maximum number of services that you want Cloud Map to return in the response to a \code{\link[=servicediscovery_list_services]{list_services}} request. If you don't specify a value for \code{MaxResults}, Cloud Map returns up to 100 services.}
 
-\item{Filters}{A complex type that contains specifications for the namespaces that you
-want to list services for.
+\item{Filters}{A complex type that contains specifications for the namespaces that you want to list services for.
 
-If you specify more than one filter, an operation must match all filters
-to be returned by \code{\link[=servicediscovery_list_services]{list_services}}.}
+If you specify more than one filter, an operation must match all filters to be returned by \code{\link[=servicediscovery_list_services]{list_services}}.}
 }
 \description{
 Lists summary information for all the services that are associated with one or more namespaces.

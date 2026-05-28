@@ -21,16 +21,11 @@ opensearchserviceserverless_create_security_config(
 
 \item{description}{A description of the security configuration.}
 
-\item{samlOptions}{Describes SAML options in the form of a key-value map. This field is
-required if you specify \code{SAML} for the \code{type} parameter.}
+\item{samlOptions}{Describes SAML options in the form of a key-value map. This field is required if you specify \code{SAML} for the \code{type} parameter.}
 
-\item{iamIdentityCenterOptions}{Describes IAM Identity Center options in the form of a key-value map.
-This field is required if you specify \code{iamidentitycenter} for the \code{type}
-parameter.}
+\item{iamIdentityCenterOptions}{Describes IAM Identity Center options in the form of a key-value map. This field is required if you specify \code{iamidentitycenter} for the \code{type} parameter.}
 
-\item{iamFederationOptions}{Describes IAM federation options in the form of a key-value map. This
-field is required if you specify \code{iamFederation} for the \code{type}
-parameter.}
+\item{iamFederationOptions}{Describes IAM federation options in the form of a key-value map. This field is required if you specify \code{iamFederation} for the \code{type} parameter.}
 
 \item{clientToken}{Unique, case-sensitive identifier to ensure idempotency of the request.}
 }

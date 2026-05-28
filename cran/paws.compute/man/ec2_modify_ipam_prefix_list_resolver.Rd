@@ -12,17 +12,13 @@ ec2_modify_ipam_prefix_list_resolver(
 )
 }
 \arguments{
-\item{DryRun}{A check for whether you have the required permissions for the action
-without actually making the request and provides an error response. If
-you have the required permissions, the error response is
-\code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
+\item{DryRun}{A check for whether you have the required permissions for the action without actually making the request and provides an error response. If you have the required permissions, the error response is \code{DryRunOperation}. Otherwise, it is \code{UnauthorizedOperation}.}
 
 \item{IpamPrefixListResolverId}{[required] The ID of the IPAM prefix list resolver to modify.}
 
 \item{Description}{A new description for the IPAM prefix list resolver.}
 
-\item{Rules}{The updated CIDR selection rules for the resolver. These rules replace
-the existing rules entirely.}
+\item{Rules}{The updated CIDR selection rules for the resolver. These rules replace the existing rules entirely.}
 }
 \description{
 Modifies an IPAM prefix list resolver. You can update the description and CIDR selection rules. Changes to rules will trigger re-evaluation and potential updates to associated prefix lists.

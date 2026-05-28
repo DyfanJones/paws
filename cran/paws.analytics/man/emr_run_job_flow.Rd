@@ -44,188 +44,95 @@ emr_run_job_flow(
 \arguments{
 \item{Name}{[required] The name of the job flow.}
 
-\item{LogUri}{The location in Amazon S3 to write the log files of the job flow. If a
-value is not provided, logs are not created.}
+\item{LogUri}{The location in Amazon S3 to write the log files of the job flow. If a value is not provided, logs are not created.}
 
-\item{LogEncryptionKmsKeyId}{The KMS key used for encrypting log files. If a value is not provided,
-the logs remain encrypted by AES-256. This attribute is only available
-with Amazon EMR releases 5.30.0 and later, excluding Amazon EMR 6.0.0.}
+\item{LogEncryptionKmsKeyId}{The KMS key used for encrypting log files. If a value is not provided, the logs remain encrypted by AES-256. This attribute is only available with Amazon EMR releases 5.30.0 and later, excluding Amazon EMR 6.0.0.}
 
 \item{AdditionalInfo}{A JSON string for selecting additional features.}
 
-\item{AmiVersion}{Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR
-releases 4.0 and later, \code{ReleaseLabel} is used. To specify a custom AMI,
-use \code{CustomAmiID}.}
+\item{AmiVersion}{Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and later, \code{ReleaseLabel} is used. To specify a custom AMI, use \code{CustomAmiID}.}
 
-\item{ReleaseLabel}{The Amazon EMR release label, which determines the version of
-open-source application packages installed on the cluster. Release
-labels are in the form \code{emr-x.x.x}, where x.x.x is an Amazon EMR release
-version such as \verb{emr-5.14.0}. For more information about Amazon EMR
-release versions and included application versions and features, see
-\url{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/}. The release
-label applies only to Amazon EMR releases version 4.0 and later. Earlier
-versions use \code{AmiVersion}.}
+\item{ReleaseLabel}{The Amazon EMR release label, which determines the version of open-source application packages installed on the cluster. Release labels are in the form \code{emr-x.x.x}, where x.x.x is an Amazon EMR release version such as \verb{emr-5.14.0}. For more information about Amazon EMR release versions and included application versions and features, see \url{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/}. The release label applies only to Amazon EMR releases version 4.0 and later. Earlier versions use \code{AmiVersion}.}
 
 \item{Instances}{[required] A specification of the number and type of Amazon EC2 instances.}
 
 \item{Steps}{A list of steps to run.}
 
-\item{StepExecutionRoleArn}{The Amazon Resource Name (ARN) of the runtime role for steps specified
-in the RunJobFlow request. The runtime role can be a cross-account IAM
-role. The runtime role ARN is a combination of account ID, role name,
-and role type using the following format:
-\code{arn:partition:iam::account-id:role/role-name}.
+\item{StepExecutionRoleArn}{The Amazon Resource Name (ARN) of the runtime role for steps specified in the RunJobFlow request. The runtime role can be a cross-account IAM role. The runtime role ARN is a combination of account ID, role name, and role type using the following format: \code{arn:partition:iam::account-id:role/role-name}.
 
-For example, \verb{arn:aws:iam::1234567890:role/ReadOnly} is a correctly
-formatted runtime role ARN.
+For example, \verb{arn:aws:iam::1234567890:role/ReadOnly} is a correctly formatted runtime role ARN.
 
-This parameter applies only to steps included in the \code{Steps} parameter
-of this RunJobFlow request. It does not apply to steps added later to
-the cluster.}
+This parameter applies only to steps included in the \code{Steps} parameter of this RunJobFlow request. It does not apply to steps added later to the cluster.}
 
-\item{BootstrapActions}{A list of bootstrap actions to run before Hadoop starts on the cluster
-nodes.}
+\item{BootstrapActions}{A list of bootstrap actions to run before Hadoop starts on the cluster nodes.}
 
-\item{SupportedProducts}{For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-later, use Applications.
+\item{SupportedProducts}{For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
 
-A list of strings that indicates third-party software to use. For more
-information, see the \href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-3x.html}{Amazon EMR Developer Guide}.
-Currently supported values are:
+A list of strings that indicates third-party software to use. For more information, see the \href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-3x.html}{Amazon EMR Developer Guide}. Currently supported values are:
 \itemize{
 \item "mapr-m3" - launch the job flow using MapR M3 Edition.
 \item "mapr-m5" - launch the job flow using MapR M5 Edition.
 }}
 
-\item{NewSupportedProducts}{For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
-later, use Applications.
+\item{NewSupportedProducts}{For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and later, use Applications.
 
-A list of strings that indicates third-party software to use with the
-job flow that accepts a user argument list. Amazon EMR accepts and
-forwards the argument list to the corresponding installation script as
-bootstrap action arguments. For more information, see "Launch a Job Flow
-on the MapR Distribution for Hadoop" in the \href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-3x.html}{Amazon EMR Developer Guide}.
-Supported values are:
+A list of strings that indicates third-party software to use with the job flow that accepts a user argument list. Amazon EMR accepts and forwards the argument list to the corresponding installation script as bootstrap action arguments. For more information, see "Launch a Job Flow on the MapR Distribution for Hadoop" in the \href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-release-3x.html}{Amazon EMR Developer Guide}. Supported values are:
 \itemize{
 \item "mapr-m3" - launch the cluster using MapR M3 Edition.
 \item "mapr-m5" - launch the cluster using MapR M5 Edition.
-\item "mapr" with the user arguments specifying "--edition,m3" or
-"--edition,m5" - launch the job flow using MapR M3 or M5 Edition
-respectively.
+\item "mapr" with the user arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow using MapR M3 or M5 Edition respectively.
 \item "mapr-m7" - launch the cluster using MapR M7 Edition.
-\item "hunk" - launch the cluster with the Hunk Big Data Analytics
-Platform.
+\item "hunk" - launch the cluster with the Hunk Big Data Analytics Platform.
 \item "hue"- launch the cluster with Hue installed.
 \item "spark" - launch the cluster with Apache Spark installed.
-\item "ganglia" - launch the cluster with the Ganglia Monitoring System
-installed.
+\item "ganglia" - launch the cluster with the Ganglia Monitoring System installed.
 }}
 
-\item{Applications}{Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
-applications for Amazon EMR to install and configure when launching the
-cluster. For a list of applications available for each Amazon EMR
-release version, see the \href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/}{Amazon EMRRelease Guide}.}
+\item{Applications}{Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of applications for Amazon EMR to install and configure when launching the cluster. For a list of applications available for each Amazon EMR release version, see the \href{https://docs.aws.amazon.com/emr/latest/ReleaseGuide/}{Amazon EMRRelease Guide}.}
 
-\item{Configurations}{For Amazon EMR releases 4.0 and later. The list of configurations
-supplied for the Amazon EMR cluster that you are creating.}
+\item{Configurations}{For Amazon EMR releases 4.0 and later. The list of configurations supplied for the Amazon EMR cluster that you are creating.}
 
-\item{VisibleToAllUsers}{The VisibleToAllUsers parameter is no longer supported. By default, the
-value is set to \code{true}. Setting it to \code{false} now has no effect.
+\item{VisibleToAllUsers}{The VisibleToAllUsers parameter is no longer supported. By default, the value is set to \code{true}. Setting it to \code{false} now has no effect.
 
-Set this value to \code{true} so that IAM principals in the Amazon Web
-Services account associated with the cluster can perform Amazon EMR
-actions on the cluster that their IAM policies allow. This value
-defaults to \code{true} for clusters created using the Amazon EMR API or the
-CLI
-\href{https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html}{create-cluster}
-command.
+Set this value to \code{true} so that IAM principals in the Amazon Web Services account associated with the cluster can perform Amazon EMR actions on the cluster that their IAM policies allow. This value defaults to \code{true} for clusters created using the Amazon EMR API or the CLI \href{https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html}{create-cluster} command.
 
-When set to \code{false}, only the IAM principal that created the cluster and
-the Amazon Web Services account root user can perform Amazon EMR actions
-for the cluster, regardless of the IAM permissions policies attached to
-other IAM principals. For more information, see \href{https://docs.aws.amazon.com/emr/latest/ManagementGuide/#security_set_visible_to_all_users}{Understanding the Amazon EMR cluster VisibleToAllUsers setting}
-in the \emph{Amazon EMR Management Guide}.}
+When set to \code{false}, only the IAM principal that created the cluster and the Amazon Web Services account root user can perform Amazon EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see \href{https://docs.aws.amazon.com/emr/latest/ManagementGuide/#security_set_visible_to_all_users}{Understanding the Amazon EMR cluster VisibleToAllUsers setting} in the \emph{Amazon EMR Management Guide}.}
 
-\item{JobFlowRole}{Also called instance profile and Amazon EC2 role. An IAM role for an
-Amazon EMR cluster. The Amazon EC2 instances of the cluster assume this
-role. The default role is \code{EMR_EC2_DefaultRole}. In order to use the
-default role, you must have already created it using the CLI or console.}
+\item{JobFlowRole}{Also called instance profile and Amazon EC2 role. An IAM role for an Amazon EMR cluster. The Amazon EC2 instances of the cluster assume this role. The default role is \code{EMR_EC2_DefaultRole}. In order to use the default role, you must have already created it using the CLI or console.}
 
-\item{ServiceRole}{The IAM role that Amazon EMR assumes in order to access Amazon Web
-Services resources on your behalf. If you've created a custom service
-role path, you must specify it for the service role when you launch your
-cluster.}
+\item{ServiceRole}{The IAM role that Amazon EMR assumes in order to access Amazon Web Services resources on your behalf. If you've created a custom service role path, you must specify it for the service role when you launch your cluster.}
 
-\item{Tags}{A list of tags to associate with a cluster and propagate to Amazon EC2
-instances.}
+\item{Tags}{A list of tags to associate with a cluster and propagate to Amazon EC2 instances.}
 
 \item{SecurityConfiguration}{The name of a security configuration to apply to the cluster.}
 
-\item{AutoScalingRole}{An IAM role for automatic scaling policies. The default role is
-\code{EMR_AutoScaling_DefaultRole}. The IAM role provides permissions that
-the automatic scaling feature requires to launch and terminate Amazon
-EC2 instances in an instance group.}
+\item{AutoScalingRole}{An IAM role for automatic scaling policies. The default role is \code{EMR_AutoScaling_DefaultRole}. The IAM role provides permissions that the automatic scaling feature requires to launch and terminate Amazon EC2 instances in an instance group.}
 
-\item{ScaleDownBehavior}{Specifies the way that individual Amazon EC2 instances terminate when an
-automatic scale-in activity occurs or an instance group is resized.
-\code{TERMINATE_AT_INSTANCE_HOUR} indicates that Amazon EMR terminates nodes
-at the instance-hour boundary, regardless of when the request to
-terminate the instance was submitted. This option is only available with
-Amazon EMR 5.1.0 and later and is the default for clusters created using
-that version. \code{TERMINATE_AT_TASK_COMPLETION} indicates that Amazon EMR
-adds nodes to a deny list and drains tasks from nodes before terminating
-the Amazon EC2 instances, regardless of the instance-hour boundary. With
-either behavior, Amazon EMR removes the least active nodes first and
-blocks instance termination if it could lead to HDFS corruption.
-\code{TERMINATE_AT_TASK_COMPLETION} available only in Amazon EMR releases
-4.1.0 and later, and is the default for releases of Amazon EMR earlier
-than 5.1.0.}
+\item{ScaleDownBehavior}{Specifies the way that individual Amazon EC2 instances terminate when an automatic scale-in activity occurs or an instance group is resized. \code{TERMINATE_AT_INSTANCE_HOUR} indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless of when the request to terminate the instance was submitted. This option is only available with Amazon EMR 5.1.0 and later and is the default for clusters created using that version. \code{TERMINATE_AT_TASK_COMPLETION} indicates that Amazon EMR adds nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances, regardless of the instance-hour boundary. With either behavior, Amazon EMR removes the least active nodes first and blocks instance termination if it could lead to HDFS corruption. \code{TERMINATE_AT_TASK_COMPLETION} available only in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.}
 
-\item{CustomAmiId}{Available only in Amazon EMR releases 5.7.0 and later. The ID of a
-custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this
-AMI when it launches cluster Amazon EC2 instances. For more information
-about custom AMIs in Amazon EMR, see \href{https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html}{Using a Custom AMI}
-in the \emph{Amazon EMR Management Guide}. If omitted, the cluster uses the
-base Linux AMI for the \code{ReleaseLabel} specified. For Amazon EMR releases
-2.x and 3.x, use \code{AmiVersion} instead.
+\item{CustomAmiId}{Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster Amazon EC2 instances. For more information about custom AMIs in Amazon EMR, see \href{https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html}{Using a Custom AMI} in the \emph{Amazon EMR Management Guide}. If omitted, the cluster uses the base Linux AMI for the \code{ReleaseLabel} specified. For Amazon EMR releases 2.x and 3.x, use \code{AmiVersion} instead.
 
-For information about creating a custom AMI, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html}{Creating an Amazon EBS-Backed Linux AMI}
-in the \emph{Amazon Elastic Compute Cloud User Guide for Linux Instances}.
-For information about finding an AMI ID, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html}{Finding a Linux AMI}.}
+For information about creating a custom AMI, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html}{Creating an Amazon EBS-Backed Linux AMI} in the \emph{Amazon Elastic Compute Cloud User Guide for Linux Instances}. For information about finding an AMI ID, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html}{Finding a Linux AMI}.}
 
-\item{EbsRootVolumeSize}{The size, in GiB, of the Amazon EBS root device volume of the Linux AMI
-that is used for each Amazon EC2 instance. Available in Amazon EMR
-releases 4.x and later.}
+\item{EbsRootVolumeSize}{The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.}
 
-\item{RepoUpgradeOnBoot}{Applies only when \code{CustomAmiID} is used. Specifies which updates from
-the Amazon Linux AMI package repositories to apply automatically when
-the instance boots using the AMI. If omitted, the default is \code{SECURITY},
-which indicates that only security updates are applied. If \code{NONE} is
-specified, no updates are applied, and all updates must be applied
-manually.}
+\item{RepoUpgradeOnBoot}{Applies only when \code{CustomAmiID} is used. Specifies which updates from the Amazon Linux AMI package repositories to apply automatically when the instance boots using the AMI. If omitted, the default is \code{SECURITY}, which indicates that only security updates are applied. If \code{NONE} is specified, no updates are applied, and all updates must be applied manually.}
 
-\item{KerberosAttributes}{Attributes for Kerberos configuration when Kerberos authentication is
-enabled using a security configuration. For more information see \href{https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html}{Use Kerberos Authentication}
-in the \emph{Amazon EMR Management Guide}.}
+\item{KerberosAttributes}{Attributes for Kerberos configuration when Kerberos authentication is enabled using a security configuration. For more information see \href{https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html}{Use Kerberos Authentication} in the \emph{Amazon EMR Management Guide}.}
 
-\item{StepConcurrencyLevel}{Specifies the number of steps that can be executed concurrently. The
-default value is \code{1}. The maximum value is \code{256}.}
+\item{StepConcurrencyLevel}{Specifies the number of steps that can be executed concurrently. The default value is \code{1}. The maximum value is \code{256}.}
 
 \item{ManagedScalingPolicy}{The specified managed scaling policy for an Amazon EMR cluster.}
 
 \item{PlacementGroupConfigs}{The specified placement group configuration for an Amazon EMR cluster.}
 
-\item{OSReleaseLabel}{Specifies a particular Amazon Linux release for all nodes in a cluster
-launch RunJobFlow request. If a release is not specified, Amazon EMR
-uses the latest validated Amazon Linux release for cluster launch.}
+\item{AutoTerminationPolicy}{An auto-termination policy for an Amazon EMR cluster. An auto-termination policy defines the amount of idle time in seconds after which a cluster automatically terminates. For alternative cluster termination options, see \href{https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-termination.html}{Control cluster termination}.}
 
-\item{EbsRootVolumeIops}{The IOPS, of the Amazon EBS root device volume of the Linux AMI that is
-used for each Amazon EC2 instance. Available in Amazon EMR releases
-6.15.0 and later.}
+\item{OSReleaseLabel}{Specifies a particular Amazon Linux release for all nodes in a cluster launch RunJobFlow request. If a release is not specified, Amazon EMR uses the latest validated Amazon Linux release for cluster launch.}
 
-\item{EbsRootVolumeThroughput}{The throughput, in MiB/s, of the Amazon EBS root device volume of the
-Linux AMI that is used for each Amazon EC2 instance. Available in Amazon
-EMR releases 6.15.0 and later.}
+\item{EbsRootVolumeIops}{The IOPS, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.}
+
+\item{EbsRootVolumeThroughput}{The throughput, in MiB/s, of the Amazon EBS root device volume of the Linux AMI that is used for each Amazon EC2 instance. Available in Amazon EMR releases 6.15.0 and later.}
 
 \item{ExtendedSupport}{Reserved.}
 

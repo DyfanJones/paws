@@ -13,9 +13,7 @@ personalize_list_event_trackers(
 \arguments{
 \item{datasetGroupArn}{The ARN of a dataset group used to filter the response.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_event_trackers]{list_event_trackers}} for getting the
-next set of event trackers (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_event_trackers]{list_event_trackers}} for getting the next set of event trackers (if they exist).}
 
 \item{maxResults}{The maximum number of event trackers to return.}
 }

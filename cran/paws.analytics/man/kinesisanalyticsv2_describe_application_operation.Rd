@@ -7,9 +7,9 @@
 kinesisanalyticsv2_describe_application_operation(ApplicationName, OperationId)
 }
 \arguments{
-\item{ApplicationName}{[required]}
+\item{ApplicationName}{[required] The name of the application.}
 
-\item{OperationId}{[required]}
+\item{OperationId}{[required] The operation ID of the request.}
 }
 \description{
 Provides a detailed description of a specified application operation. To see a list of all the operations of an application, invoke the \code{\link[=kinesisanalyticsv2_list_application_operations]{list_application_operations}} operation.

@@ -21,15 +21,15 @@ workspaces_create_workspace_bundle(
 
 \item{ImageId}{[required] The identifier of the image that is used to create the bundle.}
 
-\item{ComputeType}{[required]}
+\item{ComputeType}{[required] Describes the compute type of the bundle.}
 
-\item{UserStorage}{[required]}
+\item{UserStorage}{[required] Describes the user volume for a WorkSpace bundle.}
+
+\item{RootStorage}{Describes the root volume for a WorkSpace bundle.}
 
 \item{Tags}{The tags associated with the bundle.
 
-To add tags at the same time when you're creating the bundle, you must
-create an IAM policy that grants your IAM user permissions to use
-\code{workspaces:CreateTags}.}
+To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use \code{workspaces:CreateTags}.}
 }
 \description{
 Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see \href{https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html}{Create a Custom WorkSpaces Image and Bundle}.

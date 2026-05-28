@@ -27,17 +27,13 @@ datazone_create_asset_revision(
 
 \item{description}{The revised description of the asset.}
 
-\item{glossaryTerms}{The glossary terms to be attached to the asset as part of asset
-revision.}
+\item{glossaryTerms}{The glossary terms to be attached to the asset as part of asset revision.}
 
-\item{formsInput}{The metadata forms to be attached to the asset as part of asset
-revision.}
+\item{formsInput}{The metadata forms to be attached to the asset as part of asset revision.}
 
-\item{predictionConfiguration}{The configuration of the automatically generated business-friendly
-metadata for the asset.}
+\item{predictionConfiguration}{The configuration of the automatically generated business-friendly metadata for the asset.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates a revision of the asset.

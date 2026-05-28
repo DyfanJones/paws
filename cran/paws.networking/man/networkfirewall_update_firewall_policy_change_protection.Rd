@@ -13,38 +13,21 @@ networkfirewall_update_firewall_policy_change_protection(
 )
 }
 \arguments{
-\item{UpdateToken}{An optional token that you can use for optimistic locking. Network
-Firewall returns a token to your requests that access the firewall. The
-token marks the state of the firewall resource at the time of the
-request.
+\item{UpdateToken}{An optional token that you can use for optimistic locking. Network Firewall returns a token to your requests that access the firewall. The token marks the state of the firewall resource at the time of the request.
 
-To make an unconditional change to the firewall, omit the token in your
-update request. Without the token, Network Firewall performs your
-updates regardless of whether the firewall has changed since you last
-retrieved it.
+To make an unconditional change to the firewall, omit the token in your update request. Without the token, Network Firewall performs your updates regardless of whether the firewall has changed since you last retrieved it.
 
-To make a conditional change to the firewall, provide the token in your
-update request. Network Firewall uses the token to ensure that the
-firewall hasn't changed since you last retrieved it. If it has changed,
-the operation fails with an \code{InvalidTokenException}. If this happens,
-retrieve the firewall again to get a current copy of it with a new
-token. Reapply your changes as needed, then try the operation again
-using the new token.}
+To make a conditional change to the firewall, provide the token in your update request. Network Firewall uses the token to ensure that the firewall hasn't changed since you last retrieved it. If it has changed, the operation fails with an \code{InvalidTokenException}. If this happens, retrieve the firewall again to get a current copy of it with a new token. Reapply your changes as needed, then try the operation again using the new token.}
 
 \item{FirewallArn}{The Amazon Resource Name (ARN) of the firewall.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{FirewallName}{The descriptive name of the firewall. You can't change the name of a
-firewall after you create it.
+\item{FirewallName}{The descriptive name of the firewall. You can't change the name of a firewall after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{FirewallPolicyChangeProtection}{[required] A setting indicating whether the firewall is protected against a change
-to the firewall policy association. Use this setting to protect against
-accidentally modifying the firewall policy for a firewall that is in
-use. When you create a firewall, the operation initializes this setting
-to \code{TRUE}.}
+\item{FirewallPolicyChangeProtection}{[required] A setting indicating whether the firewall is protected against a change to the firewall policy association. Use this setting to protect against accidentally modifying the firewall policy for a firewall that is in use. When you create a firewall, the operation initializes this setting to \code{TRUE}.}
 }
 \description{
 Modifies the flag, \code{ChangeProtection}, which indicates whether it is possible to change the firewall. If the flag is set to \code{TRUE}, the firewall is protected from changes. This setting helps protect against accidentally changing a firewall that's in use.

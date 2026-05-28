@@ -7,8 +7,7 @@
 transcribeservice_delete_medical_transcription_job(MedicalTranscriptionJobName)
 }
 \arguments{
-\item{MedicalTranscriptionJobName}{[required] The name of the medical transcription job you want to delete. Job names
-are case sensitive.}
+\item{MedicalTranscriptionJobName}{[required] The name of the medical transcription job you want to delete. Job names are case sensitive.}
 }
 \description{
 Deletes a medical transcription job. To use this operation, specify the name of the job you want to delete using \code{MedicalTranscriptionJobName}. Job names are case sensitive.

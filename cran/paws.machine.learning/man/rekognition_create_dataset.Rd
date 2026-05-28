@@ -12,18 +12,11 @@ rekognition_create_dataset(
 )
 }
 \arguments{
-\item{DatasetSource}{The source files for the dataset. You can specify the ARN of an existing
-dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker
-format manifest file. If you don't specify \code{datasetSource}, an empty
-dataset is created. To add labeled images to the dataset, You can use
-the console or call
-\code{\link[=rekognition_update_dataset_entries]{update_dataset_entries}}.}
+\item{DatasetSource}{The source files for the dataset. You can specify the ARN of an existing dataset or specify the Amazon S3 bucket location of an Amazon Sagemaker format manifest file. If you don't specify \code{datasetSource}, an empty dataset is created. To add labeled images to the dataset, You can use the console or call \code{\link[=rekognition_update_dataset_entries]{update_dataset_entries}}.}
 
-\item{DatasetType}{[required] The type of the dataset. Specify \code{TRAIN} to create a training dataset.
-Specify \code{TEST} to create a test dataset.}
+\item{DatasetType}{[required] The type of the dataset. Specify \code{TRAIN} to create a training dataset. Specify \code{TEST} to create a test dataset.}
 
-\item{ProjectArn}{[required] The ARN of the Amazon Rekognition Custom Labels project to which you
-want to asssign the dataset.}
+\item{ProjectArn}{[required] The ARN of the Amazon Rekognition Custom Labels project to which you want to asssign the dataset.}
 
 \item{Tags}{A set of tags (key-value pairs) that you want to attach to the dataset.}
 }

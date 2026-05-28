@@ -18,14 +18,11 @@ drs_update_failback_replication_configuration(
 
 \item{name}{The name of the Failback Replication Configuration.}
 
-\item{bandwidthThrottling}{Configure bandwidth throttling for the outbound data transfer rate of
-the Recovery Instance in Mbps.}
+\item{bandwidthThrottling}{Configure bandwidth throttling for the outbound data transfer rate of the Recovery Instance in Mbps.}
 
-\item{usePrivateIP}{Whether to use Private IP for the failback replication of the Recovery
-Instance.}
+\item{usePrivateIP}{Whether to use Private IP for the failback replication of the Recovery Instance.}
 
-\item{internetProtocol}{Which version of the Internet Protocol to use for replication of data.
-(IPv4 or IPv6)}
+\item{internetProtocol}{Which version of the Internet Protocol to use for replication of data. (IPv4 or IPv6)}
 }
 \description{
 Allows you to update the failback replication configuration of a Recovery Instance by ID.

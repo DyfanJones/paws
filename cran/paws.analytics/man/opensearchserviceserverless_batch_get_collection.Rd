@@ -9,13 +9,9 @@ endpoints}
 opensearchserviceserverless_batch_get_collection(ids = NULL, names = NULL)
 }
 \arguments{
-\item{ids}{A list of collection IDs. You can't provide names and IDs in the same
-request. The ID is part of the collection endpoint. You can also
-retrieve it using the
-\code{\link[=opensearchserviceserverless_list_collections]{list_collections}} API.}
+\item{ids}{A list of collection IDs. You can't provide names and IDs in the same request. The ID is part of the collection endpoint. You can also retrieve it using the \code{\link[=opensearchserviceserverless_list_collections]{list_collections}} API.}
 
-\item{names}{A list of collection names. You can't provide names and IDs in the same
-request.}
+\item{names}{A list of collection names. You can't provide names and IDs in the same request.}
 }
 \description{
 Returns attributes for one or more collections, including the collection endpoint, the OpenSearch Dashboards endpoint, and FIPS-compliant endpoints. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html}{Creating and managing Amazon OpenSearch Serverless collections}.

@@ -13,11 +13,9 @@ elb_describe_load_balancers(
 \arguments{
 \item{LoadBalancerNames}{The names of the load balancers.}
 
-\item{Marker}{The marker for the next set of results. (You received this marker from a
-previous call.)}
+\item{Marker}{The marker for the next set of results. (You received this marker from a previous call.)}
 
-\item{PageSize}{The maximum number of results to return with this call (a number from 1
-to 400). The default is 400.}
+\item{PageSize}{The maximum number of results to return with this call (a number from 1 to 400). The default is 400.}
 }
 \description{
 Describes the specified the load balancers. If no load balancers are specified, the call describes all of your load balancers.

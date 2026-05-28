@@ -21,58 +21,36 @@ elasticsearchservice_create_elasticsearch_domain(
   AdvancedSecurityOptions = NULL,
   AutoTuneOptions = NULL,
   TagList = NULL,
-  DeploymentStrategyOptions = NULL
+  DeploymentStrategyOptions = NULL,
+  AutomatedSnapshotPauseOptions = NULL
 )
 }
 \arguments{
-\item{DomainName}{[required] The name of the Elasticsearch domain that you are creating. Domain names
-are unique across the domains owned by an account within an AWS region.
-Domain names must start with a lowercase letter and can contain the
-following characters: a-z (lowercase), 0-9, and - (hyphen).}
+\item{DomainName}{[required] The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a lowercase letter and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).}
 
-\item{ElasticsearchVersion}{String of format X.Y to specify version for the Elasticsearch domain eg.
-"1.5" or "2.3". For more information, see \if{html}{\out{<a
-href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomains"
-target="_blank">}}Creating Elasticsearch Domains\if{html}{\out{</a>}} in the \emph{Amazon
-Elasticsearch Service Developer Guide}.}
+\item{ElasticsearchVersion}{String of format X.Y to specify version for the Elasticsearch domain eg. "1.5" or "2.3". For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomains" target="_blank">}}Creating Elasticsearch Domains\if{html}{\out{</a>}} in the \emph{Amazon Elasticsearch Service Developer Guide}.}
 
-\item{ElasticsearchClusterConfig}{Configuration options for an Elasticsearch domain. Specifies the
-instance type and number of instances in the domain cluster.}
+\item{ElasticsearchClusterConfig}{Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.}
 
-\item{EBSOptions}{Options to enable, disable and specify the type and size of EBS storage
-volumes.}
+\item{EBSOptions}{Options to enable, disable and specify the type and size of EBS storage volumes.}
 
 \item{AccessPolicies}{IAM access policy as a JSON-formatted string.}
 
-\item{SnapshotOptions}{Option to set time, in UTC format, of the daily automated snapshot.
-Default value is 0 hours.}
+\item{SnapshotOptions}{Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.}
 
-\item{VPCOptions}{Options to specify the subnets and security groups for VPC endpoint. For
-more information, see \if{html}{\out{<a
-href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html#es-creating-vpc"
-target="_blank">}}Creating a VPC\if{html}{\out{</a>}} in \emph{VPC Endpoints for Amazon
-Elasticsearch Service Domains}}
+\item{VPCOptions}{Options to specify the subnets and security groups for VPC endpoint. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html#es-creating-vpc" target="_blank">}}Creating a VPC\if{html}{\out{</a>}} in \emph{VPC Endpoints for Amazon Elasticsearch Service Domains}}
 
-\item{CognitoOptions}{Options to specify the Cognito user and identity pools for Kibana
-authentication. For more information, see \if{html}{\out{<a
-href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html"
-target="_blank">}}Amazon Cognito Authentication for Kibana\if{html}{\out{</a>}}.}
+\item{CognitoOptions}{Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html" target="_blank">}}Amazon Cognito Authentication for Kibana\if{html}{\out{</a>}}.}
 
 \item{EncryptionAtRestOptions}{Specifies the Encryption At Rest Options.}
 
 \item{NodeToNodeEncryptionOptions}{Specifies the NodeToNodeEncryptionOptions.}
 
-\item{AdvancedOptions}{Option to allow references to indices in an HTTP request body. Must be
-\code{false} when configuring access to individual sub-resources. By default,
-the value is \code{true}. See \if{html}{\out{<a
-href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomain-configure-advanced-options"
-target="_blank">}}Configuration Advanced Options\if{html}{\out{</a>}} for more information.}
+\item{AdvancedOptions}{Option to allow references to indices in an HTTP request body. Must be \code{false} when configuring access to individual sub-resources. By default, the value is \code{true}. See \if{html}{\out{<a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomain-configure-advanced-options" target="_blank">}}Configuration Advanced Options\if{html}{\out{</a>}} for more information.}
 
-\item{LogPublishingOptions}{Map of \code{LogType} and \code{LogPublishingOption}, each containing options to
-publish a given type of Elasticsearch log.}
+\item{LogPublishingOptions}{Map of \code{LogType} and \code{LogPublishingOption}, each containing options to publish a given type of Elasticsearch log.}
 
-\item{DomainEndpointOptions}{Options to specify configuration that will be applied to the domain
-endpoint.}
+\item{DomainEndpointOptions}{Options to specify configuration that will be applied to the domain endpoint.}
 
 \item{AdvancedSecurityOptions}{Specifies advanced security options.}
 
@@ -81,6 +59,12 @@ endpoint.}
 \item{TagList}{A list of \code{Tag} added during domain creation.}
 
 \item{DeploymentStrategyOptions}{Specifies the deployment strategy options.}
+
+\item{AutomatedSnapshotPauseOptions}{Specifies the automated snapshot pause options for the domain.
+
+Suspending snapshots reduces data protection. You cannot restore your domain to points in time when snapshots are suspended. Use this feature only for short-term operational needs such as migrations or maintenance windows.
+
+Maximum suspension duration: 3 days.}
 }
 \description{
 Creates a new Elasticsearch domain. For more information, see \if{html}{\out{<a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#es-createdomains" target="_blank">}}Creating Elasticsearch Domains\if{html}{\out{</a>}} in the \emph{Amazon Elasticsearch Service Developer Guide}.

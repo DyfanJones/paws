@@ -9,9 +9,7 @@ organizations_accept_handshake(HandshakeId)
 \arguments{
 \item{HandshakeId}{[required] ID for the handshake that you want to accept.
 
-The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for handshake
-ID string requires "h-" followed by from 8 to 32 lowercase letters or
-digits.}
+The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.}
 }
 \description{
 Accepts a handshake by sending an \code{ACCEPTED} response to the sender. You can view accepted handshakes in API responses for 30 days before they are deleted.

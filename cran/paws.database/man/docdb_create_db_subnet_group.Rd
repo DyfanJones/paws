@@ -12,11 +12,9 @@ docdb_create_db_subnet_group(
 )
 }
 \arguments{
-\item{DBSubnetGroupName}{[required] The name for the subnet group. This value is stored as a lowercase
-string.
+\item{DBSubnetGroupName}{[required] The name for the subnet group. This value is stored as a lowercase string.
 
-Constraints: Must contain no more than 255 letters, numbers, periods,
-underscores, spaces, or hyphens. Must not be default.
+Constraints: Must contain no more than 255 letters, numbers, periods, underscores, spaces, or hyphens. Must not be default.
 
 Example: \code{mySubnetgroup}}
 

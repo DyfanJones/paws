@@ -7,11 +7,7 @@
 sagemaker_extend_training_plan(TrainingPlanExtensionOfferingId)
 }
 \arguments{
-\item{TrainingPlanExtensionOfferingId}{[required] The unique identifier of the extension offering to purchase. You can
-retrieve this ID from the \code{TrainingPlanExtensionOfferings} in the
-response of the
-\code{\link[=sagemaker_search_training_plan_offerings]{search_training_plan_offerings}}
-API.}
+\item{TrainingPlanExtensionOfferingId}{[required] The unique identifier of the extension offering to purchase. You can retrieve this ID from the \code{TrainingPlanExtensionOfferings} in the response of the \code{\link[=sagemaker_search_training_plan_offerings]{search_training_plan_offerings}} API.}
 }
 \description{
 Extends an existing training plan by purchasing an extension offering. This allows you to add additional compute capacity time to your training plan without creating a new plan or reconfiguring your workloads.

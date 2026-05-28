@@ -13,13 +13,11 @@ quicksight_list_theme_versions(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the themes that
-you're listing.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the themes that you're listing.}
 
 \item{ThemeId}{[required] The ID for the theme.}
 
-\item{NextToken}{The token for the next set of results, or null if there are no more
-results.}
+\item{NextToken}{The token for the next set of results, or null if there are no more results.}
 
 \item{MaxResults}{The maximum number of results to be returned per request.}
 }

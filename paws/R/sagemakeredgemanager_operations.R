@@ -11,8 +11,7 @@ NULL
 #' @usage
 #' sagemakeredgemanager_get_deployments(DeviceName, DeviceFleetName)
 #'
-#' @param DeviceName &#91;required&#93; The unique name of the device you want to get the configuration of
-#' active deployments from.
+#' @param DeviceName &#91;required&#93; The unique name of the device you want to get the configuration of active deployments from.
 #' @param DeviceFleetName &#91;required&#93; The name of the fleet that the device belongs to.
 #'
 #' @return
@@ -81,8 +80,7 @@ sagemakeredgemanager_get_deployments <- function(DeviceName, DeviceFleetName) {
 #' sagemakeredgemanager_get_device_registration(DeviceName,
 #'   DeviceFleetName)
 #'
-#' @param DeviceName &#91;required&#93; The unique name of the device you want to get the registration status
-#' from.
+#' @param DeviceName &#91;required&#93; The unique name of the device you want to get the registration status from.
 #' @param DeviceFleetName &#91;required&#93; The name of the fleet that the device belongs to.
 #'
 #' @return
@@ -130,15 +128,13 @@ sagemakeredgemanager_get_device_registration <- function(DeviceName, DeviceFleet
 #' Manager
 #'
 #' @description
-#' Use to get the current status of devices registered on SageMaker Edge
-#' Manager.
+#' Use to get the current status of devices registered on SageMaker Edge Manager.
 #'
 #' @usage
 #' sagemakeredgemanager_send_heartbeat(AgentMetrics, Models, AgentVersion,
 #'   DeviceName, DeviceFleetName, DeploymentResult)
 #'
-#' @param AgentMetrics For internal use. Returns a list of SageMaker Edge Manager agent
-#' operating metrics.
+#' @param AgentMetrics For internal use. Returns a list of SageMaker Edge Manager agent operating metrics.
 #' @param Models Returns a list of models deployed on the the device.
 #' @param AgentVersion &#91;required&#93; Returns the version of the agent.
 #' @param DeviceName &#91;required&#93; The unique name of the device.

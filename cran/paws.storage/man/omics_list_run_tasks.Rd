@@ -17,8 +17,7 @@ omics_list_run_tasks(
 
 \item{status}{Filter the list by status.}
 
-\item{startingToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{startingToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of run tasks to return in one page of results.}
 }

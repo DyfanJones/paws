@@ -13,23 +13,17 @@ docdb_describe_engine_default_cluster_parameters(
 )
 }
 \arguments{
-\item{DBParameterGroupFamily}{[required] The name of the cluster parameter group family to return the engine
-parameter information for.}
+\item{DBParameterGroupFamily}{[required] The name of the cluster parameter group family to return the engine parameter information for.}
 
 \item{Filters}{This parameter is not currently supported.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-(marker) is included in the response so that the remaining results can
-be retrieved.
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.
 
 Default: 100
 
 Constraints: Minimum 20, maximum 100.}
 
-\item{Marker}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{MaxRecords}.}
+\item{Marker}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{MaxRecords}.}
 }
 \description{
 Returns the default engine and system parameter information for the cluster database engine.

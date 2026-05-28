@@ -14,8 +14,7 @@ NULL
 #' @param Username &#91;required&#93; The user name from the identity provider.
 #' @param InstanceId &#91;required&#93; The ID of the EC2 instance that provides the user-based subscription.
 #' @param IdentityProvider &#91;required&#93; The identity provider for the user.
-#' @param Domain The domain name of the Active Directory that contains information for
-#' the user to associate.
+#' @param Domain The domain name of the Active Directory that contains information for the user to associate.
 #' @param Tags The tags that apply for the user association.
 #'
 #' @keywords internal
@@ -48,15 +47,8 @@ licensemanagerusersubscriptions_associate_user <- function(Username, InstanceId,
 #'
 #' See [https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_create_license_server_endpoint/](https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_create_license_server_endpoint/) for full documentation.
 #'
-#' @param IdentityProviderArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the `IdentityProvider`
-#' resource that contains details about a registered identity provider. In
-#' the case of Active Directory, that can be a self-managed Active
-#' Directory or an Amazon Web Services Managed Active Directory that
-#' contains user identity details.
-#' @param LicenseServerSettings &#91;required&#93; The `LicenseServerSettings` resource to create for the endpoint. The
-#' settings include the type of license server and the Secrets Manager
-#' secret that enables administrators to add or remove users associated
-#' with the license server.
+#' @param IdentityProviderArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the `IdentityProvider` resource that contains details about a registered identity provider. In the case of Active Directory, that can be a self-managed Active Directory or an Amazon Web Services Managed Active Directory that contains user identity details.
+#' @param LicenseServerSettings &#91;required&#93; The `LicenseServerSettings` resource to create for the endpoint. The settings include the type of license server and the Secrets Manager secret that enables administrators to add or remove users associated with the license server.
 #' @param Tags The tags that apply for the license server endpoint.
 #'
 #' @keywords internal
@@ -88,8 +80,7 @@ licensemanagerusersubscriptions_create_license_server_endpoint <- function(Ident
 #'
 #' See [https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_delete_license_server_endpoint/](https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_delete_license_server_endpoint/) for full documentation.
 #'
-#' @param LicenseServerEndpointArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the
-#' `LicenseServerEndpoint` resource to delete.
+#' @param LicenseServerEndpointArn &#91;required&#93; The Amazon Resource Name (ARN) that identifies the `LicenseServerEndpoint` resource to delete.
 #' @param ServerType &#91;required&#93; The type of License Server that the delete request refers to.
 #'
 #' @keywords internal
@@ -122,14 +113,11 @@ licensemanagerusersubscriptions_delete_license_server_endpoint <- function(Licen
 #'
 #' See [https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_deregister_identity_provider/](https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_deregister_identity_provider/) for full documentation.
 #'
-#' @param IdentityProvider An object that specifies details for the Active Directory identity
-#' provider.
+#' @param IdentityProvider An object that specifies details for the Active Directory identity provider.
 #' @param Product The name of the user-based subscription product.
 #' 
-#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL`
-#' | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
-#' @param IdentityProviderArn The Amazon Resource Name (ARN) that identifies the identity provider to
-#' deregister.
+#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL` | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
+#' @param IdentityProviderArn The Amazon Resource Name (ARN) that identifies the identity provider to deregister.
 #'
 #' @keywords internal
 #'
@@ -163,12 +151,9 @@ licensemanagerusersubscriptions_deregister_identity_provider <- function(Identit
 #'
 #' @param Username The user name from the Active Directory identity provider for the user.
 #' @param InstanceId The ID of the EC2 instance which provides user-based subscriptions.
-#' @param IdentityProvider An object that specifies details for the Active Directory identity
-#' provider.
-#' @param InstanceUserArn The Amazon Resource Name (ARN) of the user to disassociate from the EC2
-#' instance.
-#' @param Domain The domain name of the Active Directory that contains information for
-#' the user to disassociate.
+#' @param IdentityProvider An object that specifies details for the Active Directory identity provider.
+#' @param InstanceUserArn The Amazon Resource Name (ARN) of the user to disassociate from the EC2 instance.
+#' @param Domain The domain name of the Active Directory that contains information for the user to disassociate.
 #'
 #' @keywords internal
 #'
@@ -206,8 +191,7 @@ licensemanagerusersubscriptions_disassociate_user <- function(Username = NULL, I
 #' -   Product
 #' 
 #' -   DirectoryId
-#' @param NextToken A token to specify where to start paginating. This is the nextToken from
-#' a previously truncated response.
+#' @param NextToken A token to specify where to start paginating. This is the nextToken from a previously truncated response.
 #'
 #' @keywords internal
 #'
@@ -239,8 +223,7 @@ licensemanagerusersubscriptions_list_identity_providers <- function(MaxResults =
 #' See [https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_list_instances/](https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_list_instances/) for full documentation.
 #'
 #' @param MaxResults The maximum number of results to return from a single request.
-#' @param NextToken A token to specify where to start paginating. This is the nextToken from
-#' a previously truncated response.
+#' @param NextToken A token to specify where to start paginating. This is the nextToken from a previously truncated response.
 #' @param Filters You can use the following filters to streamline results:
 #' 
 #' -   Status
@@ -280,8 +263,7 @@ licensemanagerusersubscriptions_list_instances <- function(MaxResults = NULL, Ne
 #' @param Filters You can use the following filters to streamline results:
 #' 
 #' -   IdentityProviderArn
-#' @param NextToken A token to specify where to start paginating. This is the nextToken from
-#' a previously truncated response.
+#' @param NextToken A token to specify where to start paginating. This is the nextToken from a previously truncated response.
 #'
 #' @keywords internal
 #'
@@ -315,8 +297,7 @@ licensemanagerusersubscriptions_list_license_server_endpoints <- function(MaxRes
 #'
 #' @param Product The name of the user-based subscription product.
 #' 
-#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL`
-#' | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
+#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL` | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
 #' @param IdentityProvider &#91;required&#93; An object that specifies details for the identity provider.
 #' @param MaxResults The maximum number of results to return from a single request.
 #' @param Filters You can use the following filters to streamline results:
@@ -326,8 +307,7 @@ licensemanagerusersubscriptions_list_license_server_endpoints <- function(MaxRes
 #' -   Username
 #' 
 #' -   Domain
-#' @param NextToken A token to specify where to start paginating. This is the nextToken from
-#' a previously truncated response.
+#' @param NextToken A token to specify where to start paginating. This is the nextToken from a previously truncated response.
 #'
 #' @keywords internal
 #'
@@ -358,8 +338,7 @@ licensemanagerusersubscriptions_list_product_subscriptions <- function(Product =
 #'
 #' See [https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_list_tags_for_resource/](https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_list_tags_for_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource whose tags you want to
-#' retrieve.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.
 #'
 #' @keywords internal
 #'
@@ -400,8 +379,7 @@ licensemanagerusersubscriptions_list_tags_for_resource <- function(ResourceArn) 
 #' -   Username
 #' 
 #' -   Domain
-#' @param NextToken A token to specify where to start paginating. This is the nextToken from
-#' a previously truncated response.
+#' @param NextToken A token to specify where to start paginating. This is the nextToken from a previously truncated response.
 #'
 #' @keywords internal
 #'
@@ -435,10 +413,8 @@ licensemanagerusersubscriptions_list_user_associations <- function(InstanceId, I
 #' @param IdentityProvider &#91;required&#93; An object that specifies details for the identity provider to register.
 #' @param Product &#91;required&#93; The name of the user-based subscription product.
 #' 
-#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL`
-#' | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
-#' @param Settings The registered identity provider’s product related configuration
-#' settings such as the subnets to provision VPC endpoints.
+#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL` | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
+#' @param Settings The registered identity provider’s product related configuration settings such as the subnets to provision VPC endpoints.
 #' @param Tags The tags that apply to the identity provider's registration.
 #'
 #' @keywords internal
@@ -475,10 +451,8 @@ licensemanagerusersubscriptions_register_identity_provider <- function(IdentityP
 #' @param IdentityProvider &#91;required&#93; An object that specifies details for the identity provider.
 #' @param Product &#91;required&#93; The name of the user-based subscription product.
 #' 
-#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL`
-#' | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
-#' @param Domain The domain name of the Active Directory that contains the user for whom
-#' to start the product subscription.
+#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL` | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
+#' @param Domain The domain name of the Active Directory that contains the user for whom to start the product subscription.
 #' @param Tags The tags that apply to the product subscription.
 #'
 #' @keywords internal
@@ -515,11 +489,9 @@ licensemanagerusersubscriptions_start_product_subscription <- function(Username,
 #' @param IdentityProvider An object that specifies details for the identity provider.
 #' @param Product The name of the user-based subscription product.
 #' 
-#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL`
-#' | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
+#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL` | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
 #' @param ProductUserArn The Amazon Resource Name (ARN) of the product user.
-#' @param Domain The domain name of the Active Directory that contains the user for whom
-#' to stop the product subscription.
+#' @param Domain The domain name of the Active Directory that contains the user for whom to stop the product subscription.
 #'
 #' @keywords internal
 #'
@@ -582,8 +554,7 @@ licensemanagerusersubscriptions_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_untag_resource/](https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_untag_resource/) for full documentation.
 #'
-#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove
-#' tags from.
+#' @param ResourceArn &#91;required&#93; The Amazon Resource Name (ARN) of the resource that you want to remove tags from.
 #' @param TagKeys &#91;required&#93; The tag keys to remove from the resource.
 #'
 #' @keywords internal
@@ -616,15 +587,12 @@ licensemanagerusersubscriptions_untag_resource <- function(ResourceArn, TagKeys)
 #'
 #' See [https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_update_identity_provider_settings/](https://www.paws-r-sdk.com/docs/licensemanagerusersubscriptions_update_identity_provider_settings/) for full documentation.
 #'
-#' @param IdentityProvider 
+#' @param IdentityProvider Refers to an identity provider.
 #' @param Product The name of the user-based subscription product.
 #' 
-#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL`
-#' | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
+#' Valid values: `VISUAL_STUDIO_ENTERPRISE` | `VISUAL_STUDIO_PROFESSIONAL` | `OFFICE_PROFESSIONAL_PLUS` | `REMOTE_DESKTOP_SERVICES`
 #' @param IdentityProviderArn The Amazon Resource Name (ARN) of the identity provider to update.
-#' @param UpdateSettings &#91;required&#93; Updates the registered identity provider’s product related configuration
-#' settings. You can update any combination of settings in a single
-#' operation such as the:
+#' @param UpdateSettings &#91;required&#93; Updates the registered identity provider’s product related configuration settings. You can update any combination of settings in a single operation such as the:
 #' 
 #' -   Subnets which you want to add to provision VPC endpoints.
 #' 

@@ -13,15 +13,11 @@ lookoutequipment_list_retraining_schedulers(
 )
 }
 \arguments{
-\item{ModelNameBeginsWith}{Specify this field to only list retraining schedulers whose machine
-learning models begin with the value you specify.}
+\item{ModelNameBeginsWith}{Specify this field to only list retraining schedulers whose machine learning models begin with the value you specify.}
 
-\item{Status}{Specify this field to only list retraining schedulers whose status
-matches the value you specify.}
+\item{Status}{Specify this field to only list retraining schedulers whose status matches the value you specify.}
 
-\item{NextToken}{If the number of results exceeds the maximum, a pagination token is
-returned. Use the token in the request to show the next page of
-retraining schedulers.}
+\item{NextToken}{If the number of results exceeds the maximum, a pagination token is returned. Use the token in the request to show the next page of retraining schedulers.}
 
 \item{MaxResults}{Specifies the maximum number of retraining schedulers to list.}
 }

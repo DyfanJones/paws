@@ -15,13 +15,11 @@ sagemakergeospatialcapabilities_list_vector_enrichment_jobs(
 \arguments{
 \item{MaxResults}{The maximum number of items to return.}
 
-\item{NextToken}{If the previous response was truncated, you receive this token. Use it
-in your next request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.}
 
 \item{SortBy}{The parameter by which to sort the results.}
 
-\item{SortOrder}{An optional value that specifies whether you want the results sorted in
-\code{Ascending} or \code{Descending} order.}
+\item{SortOrder}{An optional value that specifies whether you want the results sorted in \code{Ascending} or \code{Descending} order.}
 
 \item{StatusEquals}{A filter that retrieves only jobs with a specific status.}
 }

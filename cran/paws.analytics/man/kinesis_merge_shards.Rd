@@ -17,8 +17,7 @@ kinesis_merge_shards(
 \arguments{
 \item{StreamName}{The name of the stream for the merge.}
 
-\item{ShardToMerge}{[required] The shard ID of the shard to combine with the adjacent shard for the
-merge.}
+\item{ShardToMerge}{[required] The shard ID of the shard to combine with the adjacent shard for the merge.}
 
 \item{AdjacentShardToMerge}{[required] The shard ID of the adjacent shard for the merge.}
 

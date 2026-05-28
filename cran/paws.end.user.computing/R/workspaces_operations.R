@@ -11,8 +11,7 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/workspaces_accept_account_link_invitation/](https://www.paws-r-sdk.com/docs/workspaces_accept_account_link_invitation/) for full documentation.
 #'
 #' @param LinkId &#91;required&#93; The identifier of the account link.
-#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to
-#' ensure idempotent creation.
+#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.
 #'
 #' @keywords internal
 #'
@@ -210,8 +209,7 @@ workspaces_copy_workspace_image <- function(Name, Description = NULL, SourceImag
 #' See [https://www.paws-r-sdk.com/docs/workspaces_create_account_link_invitation/](https://www.paws-r-sdk.com/docs/workspaces_create_account_link_invitation/) for full documentation.
 #'
 #' @param TargetAccountId &#91;required&#93; The identifier of the target account.
-#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to
-#' ensure idempotent creation.
+#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.
 #'
 #' @keywords internal
 #'
@@ -276,14 +274,9 @@ workspaces_create_connect_client_add_in <- function(ResourceId, Name, URL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_create_connection_alias/](https://www.paws-r-sdk.com/docs/workspaces_create_connection_alias/) for full documentation.
 #'
-#' @param ConnectionString &#91;required&#93; A connection string in the form of a fully qualified domain name (FQDN),
-#' such as `www.example.com`.
+#' @param ConnectionString &#91;required&#93; A connection string in the form of a fully qualified domain name (FQDN), such as `www.example.com`.
 #' 
-#' After you create a connection string, it is always associated to your
-#' Amazon Web Services account. You cannot recreate the same connection
-#' string with a different account, even if you delete all instances of it
-#' from the original account. The connection string is globally reserved
-#' for your account.
+#' After you create a connection string, it is always associated to your Amazon Web Services account. You cannot recreate the same connection string with a different account, even if you delete all instances of it from the original account. The connection string is globally reserved for your account.
 #' @param Tags The tags to associate with the connection alias.
 #'
 #' @keywords internal
@@ -381,9 +374,7 @@ workspaces_create_standby_workspaces <- function(PrimaryRegion, StandbyWorkspace
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_create_tags/](https://www.paws-r-sdk.com/docs/workspaces_create_tags/) for full documentation.
 #'
-#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types
-#' are WorkSpaces, registered directories, images, custom bundles, IP
-#' access control groups, and connection aliases.
+#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.
 #' @param Tags &#91;required&#93; The tags. Each WorkSpaces resource can have a maximum of 50 tags.
 #'
 #' @keywords internal
@@ -421,9 +412,7 @@ workspaces_create_tags <- function(ResourceId, Tags) {
 #' @param SourceImageId &#91;required&#93; The identifier of the source WorkSpace image.
 #' @param Tags The tags that you want to add to the new updated WorkSpace image.
 #' 
-#' To add tags at the same time when you're creating the updated image, you
-#' must create an IAM policy that grants your IAM user permissions to use
-#' `workspaces:CreateTags`.
+#' To add tags at the same time when you're creating the updated image, you must create an IAM policy that grants your IAM user permissions to use `workspaces:CreateTags`.
 #'
 #' @keywords internal
 #'
@@ -457,14 +446,12 @@ workspaces_create_updated_workspace_image <- function(Name, Description, SourceI
 #' @param BundleName &#91;required&#93; The name of the bundle.
 #' @param BundleDescription &#91;required&#93; The description of the bundle.
 #' @param ImageId &#91;required&#93; The identifier of the image that is used to create the bundle.
-#' @param ComputeType &#91;required&#93; 
-#' @param UserStorage &#91;required&#93; 
-#' @param RootStorage 
+#' @param ComputeType &#91;required&#93; Describes the compute type of the bundle.
+#' @param UserStorage &#91;required&#93; Describes the user volume for a WorkSpace bundle.
+#' @param RootStorage Describes the root volume for a WorkSpace bundle.
 #' @param Tags The tags associated with the bundle.
 #' 
-#' To add tags at the same time when you're creating the bundle, you must
-#' create an IAM policy that grants your IAM user permissions to use
-#' `workspaces:CreateTags`.
+#' To add tags at the same time when you're creating the bundle, you must create an IAM policy that grants your IAM user permissions to use `workspaces:CreateTags`.
 #'
 #' @keywords internal
 #'
@@ -498,9 +485,7 @@ workspaces_create_workspace_bundle <- function(BundleName, BundleDescription, Im
 #' @param Name &#91;required&#93; The name of the new WorkSpace image.
 #' @param Description &#91;required&#93; The description of the new WorkSpace image.
 #' @param WorkspaceId &#91;required&#93; The identifier of the source WorkSpace
-#' @param Tags The tags that you want to add to the new WorkSpace image. To add tags
-#' when you're creating the image, you must create an IAM policy that
-#' grants your IAM user permission to use `workspaces:CreateTags`.
+#' @param Tags The tags that you want to add to the new WorkSpace image. To add tags when you're creating the image, you must create an IAM policy that grants your IAM user permission to use `workspaces:CreateTags`.
 #'
 #' @keywords internal
 #'
@@ -602,8 +587,7 @@ workspaces_create_workspaces_pool <- function(PoolName, Description, BundleId, D
 #' See [https://www.paws-r-sdk.com/docs/workspaces_delete_account_link_invitation/](https://www.paws-r-sdk.com/docs/workspaces_delete_account_link_invitation/) for full documentation.
 #'
 #' @param LinkId &#91;required&#93; The identifier of the account link.
-#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to
-#' ensure idempotent creation.
+#' @param ClientToken A string of up to 64 ASCII characters that Amazon WorkSpaces uses to ensure idempotent creation.
 #'
 #' @keywords internal
 #'
@@ -634,8 +618,7 @@ workspaces_delete_account_link_invitation <- function(LinkId, ClientToken = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_delete_client_branding/](https://www.paws-r-sdk.com/docs/workspaces_delete_client_branding/) for full documentation.
 #'
-#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to delete
-#' client branding.
+#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to delete client branding.
 #' @param Platforms &#91;required&#93; The device type for which you want to delete client branding.
 #'
 #' @keywords internal
@@ -762,9 +745,7 @@ workspaces_delete_ip_group <- function(GroupId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_delete_tags/](https://www.paws-r-sdk.com/docs/workspaces_delete_tags/) for full documentation.
 #'
-#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types
-#' are WorkSpaces, registered directories, images, custom bundles, IP
-#' access control groups, and connection aliases.
+#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.
 #' @param TagKeys &#91;required&#93; The tag keys.
 #'
 #' @keywords internal
@@ -859,9 +840,7 @@ workspaces_delete_workspace_image <- function(ImageId) {
 #' See [https://www.paws-r-sdk.com/docs/workspaces_deploy_workspace_applications/](https://www.paws-r-sdk.com/docs/workspaces_deploy_workspace_applications/) for full documentation.
 #'
 #' @param WorkspaceId &#91;required&#93; The identifier of the WorkSpace.
-#' @param Force Indicates whether the force flag is applied for the specified WorkSpace.
-#' When the force flag is enabled, it allows previously failed deployments
-#' to be retried.
+#' @param Force Indicates whether the force flag is applied for the specified WorkSpace. When the force flag is enabled, it allows previously failed deployments to be retried.
 #'
 #' @keywords internal
 #'
@@ -892,9 +871,7 @@ workspaces_deploy_workspace_applications <- function(WorkspaceId, Force = NULL) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_deregister_workspace_directory/](https://www.paws-r-sdk.com/docs/workspaces_deregister_workspace_directory/) for full documentation.
 #'
-#' @param DirectoryId &#91;required&#93; The identifier of the directory. If any WorkSpaces are registered to
-#' this directory, you must remove them before you deregister the
-#' directory, or you will receive an OperationNotSupportedException error.
+#' @param DirectoryId &#91;required&#93; The identifier of the directory. If any WorkSpaces are registered to this directory, you must remove them before you deregister the directory, or you will receive an OperationNotSupportedException error.
 #'
 #' @keywords internal
 #'
@@ -958,8 +935,7 @@ workspaces_describe_account <- function() {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_account_modifications/](https://www.paws-r-sdk.com/docs/workspaces_describe_account_modifications/) for full documentation.
 #'
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @keywords internal
 #'
@@ -992,8 +968,7 @@ workspaces_describe_account_modifications <- function(NextToken = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_application_associations/](https://www.paws-r-sdk.com/docs/workspaces_describe_application_associations/) for full documentation.
 #'
 #' @param MaxResults The maximum number of associations to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param ApplicationId &#91;required&#93; The identifier of the specified application.
 #' @param AssociatedResourceTypes &#91;required&#93; The resource type of the associated resources.
 #'
@@ -1033,8 +1008,7 @@ workspaces_describe_application_associations <- function(MaxResults = NULL, Next
 #' @param OperatingSystemNames The operating systems supported by the applications.
 #' @param Owner The owner of the applications.
 #' @param MaxResults The maximum number of applications to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1098,8 +1072,7 @@ workspaces_describe_bundle_associations <- function(BundleId, AssociatedResource
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_client_branding/](https://www.paws-r-sdk.com/docs/workspaces_describe_client_branding/) for full documentation.
 #'
-#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to view
-#' client branding information.
+#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to view client branding information.
 #'
 #' @keywords internal
 #'
@@ -1163,8 +1136,7 @@ workspaces_describe_client_properties <- function(ResourceIds) {
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_connect_client_add_ins/](https://www.paws-r-sdk.com/docs/workspaces_describe_connect_client_add_ins/) for full documentation.
 #'
 #' @param ResourceId &#91;required&#93; The directory identifier for which the client add-in is configured.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of items to return.
 #'
 #' @keywords internal
@@ -1199,8 +1171,7 @@ workspaces_describe_connect_client_add_ins <- function(ResourceId, NextToken = N
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_connection_alias_permissions/](https://www.paws-r-sdk.com/docs/workspaces_describe_connection_alias_permissions/) for full documentation.
 #'
 #' @param AliasId &#91;required&#93; The identifier of the connection alias.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of results to return.
 #'
 #' @keywords internal
@@ -1236,8 +1207,7 @@ workspaces_describe_connection_alias_permissions <- function(AliasId, NextToken 
 #' @param AliasIds The identifiers of the connection aliases to describe.
 #' @param ResourceId The identifier of the directory associated with the connection alias.
 #' @param Limit The maximum number of connection aliases to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1334,8 +1304,7 @@ workspaces_describe_image_associations <- function(ImageId, AssociatedResourceTy
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_ip_groups/](https://www.paws-r-sdk.com/docs/workspaces_describe_ip_groups/) for full documentation.
 #'
 #' @param GroupIds The identifiers of one or more IP access control groups.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of items to return.
 #'
 #' @keywords internal
@@ -1367,9 +1336,7 @@ workspaces_describe_ip_groups <- function(GroupIds = NULL, NextToken = NULL, Max
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_tags/](https://www.paws-r-sdk.com/docs/workspaces_describe_tags/) for full documentation.
 #'
-#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types
-#' are WorkSpaces, registered directories, images, custom bundles, IP
-#' access control groups, and connection aliases.
+#' @param ResourceId &#91;required&#93; The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories, images, custom bundles, IP access control groups, and connection aliases.
 #'
 #' @keywords internal
 #'
@@ -1433,16 +1400,11 @@ workspaces_describe_workspace_associations <- function(WorkspaceId, AssociatedRe
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_workspace_bundles/](https://www.paws-r-sdk.com/docs/workspaces_describe_workspace_bundles/) for full documentation.
 #'
-#' @param BundleIds The identifiers of the bundles. You cannot combine this parameter with
-#' any other filter.
-#' @param Owner The owner of the bundles. You cannot combine this parameter with any
-#' other filter.
+#' @param BundleIds The identifiers of the bundles. You cannot combine this parameter with any other filter.
+#' @param Owner The owner of the bundles. You cannot combine this parameter with any other filter.
 #' 
-#' To describe the bundles provided by Amazon Web Services, specify
-#' `AMAZON`. To describe the bundles that belong to your account, don't
-#' specify a value.
-#' @param NextToken The token for the next set of results. (You received this token from a
-#' previous call.)
+#' To describe the bundles provided by Amazon Web Services, specify `AMAZON`. To describe the bundles that belong to your account, don't specify a value.
+#' @param NextToken The token for the next set of results. (You received this token from a previous call.)
 #'
 #' @keywords internal
 #'
@@ -1474,12 +1436,10 @@ workspaces_describe_workspace_bundles <- function(BundleIds = NULL, Owner = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_workspace_directories/](https://www.paws-r-sdk.com/docs/workspaces_describe_workspace_directories/) for full documentation.
 #'
-#' @param DirectoryIds The identifiers of the directories. If the value is null, all
-#' directories are retrieved.
+#' @param DirectoryIds The identifiers of the directories. If the value is null, all directories are retrieved.
 #' @param WorkspaceDirectoryNames The names of the WorkSpace directories.
 #' @param Limit The maximum number of directories to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param Filters The filter condition for the WorkSpaces.
 #'
 #' @keywords internal
@@ -1513,8 +1473,7 @@ workspaces_describe_workspace_directories <- function(DirectoryIds = NULL, Works
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_workspace_image_permissions/](https://www.paws-r-sdk.com/docs/workspaces_describe_workspace_image_permissions/) for full documentation.
 #'
 #' @param ImageId &#91;required&#93; The identifier of the image.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of items to return.
 #'
 #' @keywords internal
@@ -1549,8 +1508,7 @@ workspaces_describe_workspace_image_permissions <- function(ImageId, NextToken =
 #'
 #' @param ImageIds The identifier of the image.
 #' @param ImageType The type (owned or shared) of the image.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param MaxResults The maximum number of items to return.
 #'
 #' @keywords internal
@@ -1613,25 +1571,14 @@ workspaces_describe_workspace_snapshots <- function(WorkspaceId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_workspaces/](https://www.paws-r-sdk.com/docs/workspaces_describe_workspaces/) for full documentation.
 #'
-#' @param WorkspaceIds The identifiers of the WorkSpaces. You cannot combine this parameter
-#' with any other filter.
+#' @param WorkspaceIds The identifiers of the WorkSpaces. You cannot combine this parameter with any other filter.
 #' 
-#' Because the [`create_workspaces`][workspaces_create_workspaces]
-#' operation is asynchronous, the identifier it returns is not immediately
-#' available. If you immediately call
-#' [`describe_workspaces`][workspaces_describe_workspaces] with this
-#' identifier, no information is returned.
-#' @param DirectoryId The identifier of the directory. In addition, you can optionally specify
-#' a specific directory user (see `UserName`). You cannot combine this
-#' parameter with any other filter.
-#' @param UserName The name of the directory user. You must specify this parameter with
-#' `DirectoryId`.
-#' @param BundleId The identifier of the bundle. All WorkSpaces that are created from this
-#' bundle are retrieved. You cannot combine this parameter with any other
-#' filter.
+#' Because the [`create_workspaces`][workspaces_create_workspaces] operation is asynchronous, the identifier it returns is not immediately available. If you immediately call [`describe_workspaces`][workspaces_describe_workspaces] with this identifier, no information is returned.
+#' @param DirectoryId The identifier of the directory. In addition, you can optionally specify a specific directory user (see `UserName`). You cannot combine this parameter with any other filter.
+#' @param UserName The name of the directory user. You must specify this parameter with `DirectoryId`.
+#' @param BundleId The identifier of the bundle. All WorkSpaces that are created from this bundle are retrieved. You cannot combine this parameter with any other filter.
 #' @param Limit The maximum number of items to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #' @param WorkspaceName The name of the user-decoupled WorkSpace.
 #'
 #' @keywords internal
@@ -1664,8 +1611,7 @@ workspaces_describe_workspaces <- function(WorkspaceIds = NULL, DirectoryId = NU
 #' See [https://www.paws-r-sdk.com/docs/workspaces_describe_workspaces_connection_status/](https://www.paws-r-sdk.com/docs/workspaces_describe_workspaces_connection_status/) for full documentation.
 #'
 #' @param WorkspaceIds The identifiers of the WorkSpaces. You can specify up to 25 WorkSpaces.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1699,10 +1645,8 @@ workspaces_describe_workspaces_connection_status <- function(WorkspaceIds = NULL
 #'
 #' @param PoolId &#91;required&#93; The identifier of the pool.
 #' @param UserId The identifier of the user.
-#' @param Limit The maximum size of each page of results. The default value is 20 and
-#' the maximum value is 50.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param Limit The maximum size of each page of results. The default value is 20 and the maximum value is 50.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1736,8 +1680,7 @@ workspaces_describe_workspaces_pool_sessions <- function(PoolId, UserId = NULL, 
 #' @param PoolIds The identifier of the WorkSpaces Pools.
 #' @param Filters The filter conditions for the WorkSpaces Pool to return.
 #' @param Limit The maximum number of items to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @keywords internal
 #'
@@ -1896,8 +1839,7 @@ workspaces_get_account_link <- function(LinkId = NULL, LinkedAccountId = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_import_client_branding/](https://www.paws-r-sdk.com/docs/workspaces_import_client_branding/) for full documentation.
 #'
-#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to import
-#' client branding.
+#' @param ResourceId &#91;required&#93; The directory identifier of the WorkSpace for which you want to import client branding.
 #' @param DeviceTypeWindows The branding information to import for Windows devices.
 #' @param DeviceTypeOsx The branding information to import for macOS devices.
 #' @param DeviceTypeAndroid The branding information to import for Android devices.
@@ -1938,15 +1880,12 @@ workspaces_import_client_branding <- function(ResourceId, DeviceTypeWindows = NU
 #' @param ImageName &#91;required&#93; The name of the WorkSpace image.
 #' @param ImageDescription &#91;required&#93; The description of the WorkSpace image.
 #' @param ComputeType &#91;required&#93; The supported compute type for the WorkSpace image.
-#' @param Protocol &#91;required&#93; The supported protocol for the WorkSpace image. Windows 11 does not
-#' support PCOIP protocol.
+#' @param Protocol &#91;required&#93; The supported protocol for the WorkSpace image. Windows 11 does not support PCOIP protocol.
 #' @param ImageSource &#91;required&#93; The options for image import source.
-#' @param InfrastructureConfigurationArn &#91;required&#93; The infrastructure configuration ARN that specifies how the WorkSpace
-#' image is built.
+#' @param InfrastructureConfigurationArn &#91;required&#93; The infrastructure configuration ARN that specifies how the WorkSpace image is built.
 #' @param Platform &#91;required&#93; The platform for the WorkSpace image source.
 #' @param OsVersion &#91;required&#93; The OS version for the WorkSpace image source.
-#' @param Tags The resource tags. Each WorkSpaces resource can have a maximum of 50
-#' tags.
+#' @param Tags The resource tags. Each WorkSpaces resource can have a maximum of 50 tags.
 #'
 #' @keywords internal
 #'
@@ -1979,36 +1918,19 @@ workspaces_import_custom_workspace_image <- function(ImageName, ImageDescription
 #' See [https://www.paws-r-sdk.com/docs/workspaces_import_workspace_image/](https://www.paws-r-sdk.com/docs/workspaces_import_workspace_image/) for full documentation.
 #'
 #' @param Ec2ImageId &#91;required&#93; The identifier of the EC2 image.
-#' @param IngestionProcess &#91;required&#93; The ingestion process to be used when importing the image, depending on
-#' which protocol you want to use for your BYOL Workspace image, either
-#' PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a
-#' value that ends in `_WSP`. To use PCoIP, specify a value that does not
-#' end in `_WSP`. To use BYOP, specify a value that ends in `_BYOP`.
+#' @param IngestionProcess &#91;required&#93; The ingestion process to be used when importing the image, depending on which protocol you want to use for your BYOL Workspace image, either PCoIP, WSP, or bring your own protocol (BYOP). To use DCV, specify a value that ends in `_WSP`. To use PCoIP, specify a value that does not end in `_WSP`. To use BYOP, specify a value that ends in `_BYOP`.
 #' 
-#' For non-GPU-enabled bundles (bundles other than Graphics or
-#' GraphicsPro), specify `BYOL_REGULAR`, `BYOL_REGULAR_WSP`, or
-#' `BYOL_REGULAR_BYOP`, depending on the protocol.
+#' For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify `BYOL_REGULAR`, `BYOL_REGULAR_WSP`, or `BYOL_REGULAR_BYOP`, depending on the protocol.
 #' 
-#' The `BYOL_REGULAR_BYOP` and `BYOL_GRAPHICS_G4DN_BYOP` values are only
-#' supported by Amazon WorkSpaces Core. Contact your account team to be
-#' allow-listed to use these values. For more information, see [Amazon
-#' WorkSpaces Core](https://aws.amazon.com/workspaces/vdi-partners/).
+#' The `BYOL_REGULAR_BYOP` and `BYOL_GRAPHICS_G4DN_BYOP` values are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these values. For more information, see [Amazon WorkSpaces Core](https://aws.amazon.com/workspaces/vdi-partners/).
 #' @param ImageName &#91;required&#93; The name of the WorkSpace image.
 #' @param ImageDescription &#91;required&#93; The description of the WorkSpace image.
 #' @param Tags The tags. Each WorkSpaces resource can have a maximum of 50 tags.
-#' @param Applications If specified, the version of Microsoft Office to subscribe to. Valid
-#' only for Windows 10 and 11 BYOL images. For more information about
-#' subscribing to Office for BYOL images, see [Bring Your Own Windows
-#' Desktop
-#' Licenses](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
+#' @param Applications If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images, see [Bring Your Own Windows Desktop Licenses](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
 #' 
-#' -   Although this parameter is an array, only one item is allowed at
-#'     this time.
+#' -   Although this parameter is an array, only one item is allowed at this time.
 #' 
-#' -   During the image import process, non-GPU DCV (formerly WSP)
-#'     WorkSpaces with Windows 11 support only `Microsoft_Office_2019`. GPU
-#'     DCV (formerly WSP) WorkSpaces with Windows 11 do not support Office
-#'     installation.
+#' -   During the image import process, non-GPU DCV (formerly WSP) WorkSpaces with Windows 11 support only `Microsoft_Office_2019`. GPU DCV (formerly WSP) WorkSpaces with Windows 11 do not support Office installation.
 #'
 #' @keywords internal
 #'
@@ -2040,8 +1962,7 @@ workspaces_import_workspace_image <- function(Ec2ImageId, IngestionProcess, Imag
 #' See [https://www.paws-r-sdk.com/docs/workspaces_list_account_links/](https://www.paws-r-sdk.com/docs/workspaces_list_account_links/) for full documentation.
 #'
 #' @param LinkStatusFilter Filters the account based on their link status.
-#' @param NextToken The token to use to retrieve the next page of results. This value is
-#' null when there are no more results to return.
+#' @param NextToken The token to use to retrieve the next page of results. This value is null when there are no more results to return.
 #' @param MaxResults The maximum number of accounts to return.
 #'
 #' @keywords internal
@@ -2075,12 +1996,9 @@ workspaces_list_account_links <- function(LinkStatusFilter = NULL, NextToken = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_list_available_management_cidr_ranges/](https://www.paws-r-sdk.com/docs/workspaces_list_available_management_cidr_ranges/) for full documentation.
 #'
-#' @param ManagementCidrRangeConstraint &#91;required&#93; The IP address range to search. Specify an IP address range that is
-#' compatible with your network and in CIDR notation (that is, specify the
-#' range as an IPv4 CIDR block).
+#' @param ManagementCidrRangeConstraint &#91;required&#93; The IP address range to search. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block).
 #' @param MaxResults The maximum number of items to return.
-#' @param NextToken If you received a `NextToken` from a previous call that was paginated,
-#' provide this token to receive the next set of results.
+#' @param NextToken If you received a `NextToken` from a previous call that was paginated, provide this token to receive the next set of results.
 #'
 #' @keywords internal
 #'
@@ -2146,13 +2064,7 @@ workspaces_migrate_workspace <- function(SourceWorkspaceId, BundleId) {
 #' See [https://www.paws-r-sdk.com/docs/workspaces_modify_account/](https://www.paws-r-sdk.com/docs/workspaces_modify_account/) for full documentation.
 #'
 #' @param DedicatedTenancySupport The status of BYOL.
-#' @param DedicatedTenancyManagementCidrRange The IP address range, specified as an IPv4 CIDR block, for the
-#' management network interface. Specify an IP address range that is
-#' compatible with your network and in CIDR notation (that is, specify the
-#' range as an IPv4 CIDR block). The CIDR block size must be /16 (for
-#' example, 203.0.113.25/16). It must also be specified as available by the
-#' [`list_available_management_cidr_ranges`][workspaces_list_available_management_cidr_ranges]
-#' operation.
+#' @param DedicatedTenancyManagementCidrRange The IP address range, specified as an IPv4 CIDR block, for the management network interface. Specify an IP address range that is compatible with your network and in CIDR notation (that is, specify the range as an IPv4 CIDR block). The CIDR block size must be /16 (for example, 203.0.113.25/16). It must also be specified as available by the [`list_available_management_cidr_ranges`][workspaces_list_available_management_cidr_ranges] operation.
 #'
 #' @keywords internal
 #'
@@ -2186,8 +2098,7 @@ workspaces_modify_account <- function(DedicatedTenancySupport = NULL, DedicatedT
 #'
 #' @param ResourceId &#91;required&#93; The resource identifiers, in the form of directory IDs.
 #' @param CertificateBasedAuthProperties The properties of the certificate-based authentication.
-#' @param PropertiesToDelete The properties of the certificate-based authentication you want to
-#' delete.
+#' @param PropertiesToDelete The properties of the certificate-based authentication you want to delete.
 #'
 #' @keywords internal
 #'
@@ -2252,8 +2163,7 @@ workspaces_modify_client_properties <- function(ResourceId, ClientProperties) {
 #' See [https://www.paws-r-sdk.com/docs/workspaces_modify_endpoint_encryption_mode/](https://www.paws-r-sdk.com/docs/workspaces_modify_endpoint_encryption_mode/) for full documentation.
 #'
 #' @param DirectoryId &#91;required&#93; The identifier of the directory.
-#' @param EndpointEncryptionMode &#91;required&#93; The encryption mode used for endpoint connections when streaming to
-#' WorkSpaces Personal or WorkSpace Pools.
+#' @param EndpointEncryptionMode &#91;required&#93; The encryption mode used for endpoint connections when streaming to WorkSpaces Personal or WorkSpace Pools.
 #'
 #' @keywords internal
 #'
@@ -2284,8 +2194,7 @@ workspaces_modify_endpoint_encryption_mode <- function(DirectoryId, EndpointEncr
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_modify_saml_properties/](https://www.paws-r-sdk.com/docs/workspaces_modify_saml_properties/) for full documentation.
 #'
-#' @param ResourceId &#91;required&#93; The directory identifier for which you want to configure SAML
-#' properties.
+#' @param ResourceId &#91;required&#93; The directory identifier for which you want to configure SAML properties.
 #' @param SamlProperties The properties for configuring SAML 2.0 authentication.
 #' @param PropertiesToDelete The SAML properties to delete as part of your request.
 #' 
@@ -2293,8 +2202,7 @@ workspaces_modify_endpoint_encryption_mode <- function(DirectoryId, EndpointEncr
 #' 
 #' -   `SAML_PROPERTIES_USER_ACCESS_URL` to delete the user access URL.
 #' 
-#' -   `SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME` to delete the relay
-#'     state parameter name.
+#' -   `SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME` to delete the relay state parameter name.
 #'
 #' @keywords internal
 #'
@@ -2582,25 +2490,10 @@ workspaces_rebuild_workspaces <- function(RebuildWorkspaceRequests) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_register_workspace_directory/](https://www.paws-r-sdk.com/docs/workspaces_register_workspace_directory/) for full documentation.
 #'
-#' @param DirectoryId The identifier of the directory. You cannot register a directory if it
-#' does not have a status of Active. If the directory does not have a
-#' status of Active, you will receive an InvalidResourceStateException
-#' error. If you have already registered the maximum number of directories
-#' that you can register with Amazon WorkSpaces, you will receive a
-#' ResourceLimitExceededException error. Deregister directories that you
-#' are not using for WorkSpaces, and try again.
-#' @param SubnetIds The identifiers of the subnets for your virtual private cloud (VPC).
-#' Make sure that the subnets are in supported Availability Zones. The
-#' subnets must also be in separate Availability Zones. If these conditions
-#' are not met, you will receive an OperationNotSupportedException error.
+#' @param DirectoryId The identifier of the directory. You cannot register a directory if it does not have a status of Active. If the directory does not have a status of Active, you will receive an InvalidResourceStateException error. If you have already registered the maximum number of directories that you can register with Amazon WorkSpaces, you will receive a ResourceLimitExceededException error. Deregister directories that you are not using for WorkSpaces, and try again.
+#' @param SubnetIds The identifiers of the subnets for your virtual private cloud (VPC). Make sure that the subnets are in supported Availability Zones. The subnets must also be in separate Availability Zones. If these conditions are not met, you will receive an OperationNotSupportedException error.
 #' @param EnableSelfService Indicates whether self-service capabilities are enabled or disabled.
-#' @param Tenancy Indicates whether your WorkSpace directory is dedicated or shared. To
-#' use Bring Your Own License (BYOL) images, this value must be set to
-#' `DEDICATED` and your Amazon Web Services account must be enabled for
-#' BYOL. If your account has not been enabled for BYOL, you will receive an
-#' InvalidParameterValuesException error. For more information about BYOL
-#' images, see [Bring Your Own Windows Desktop
-#' Images](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
+#' @param Tenancy Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your Own License (BYOL) images, this value must be set to `DEDICATED` and your Amazon Web Services account must be enabled for BYOL. If your account has not been enabled for BYOL, you will receive an InvalidParameterValuesException error. For more information about BYOL images, see [Bring Your Own Windows Desktop Images](https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html).
 #' @param Tags The tags associated with the directory.
 #' @param WorkspaceDirectoryName The name of the directory to register.
 #' @param WorkspaceDirectoryDescription Description of the directory to register.
@@ -2987,10 +2880,8 @@ workspaces_update_connect_client_add_in <- function(AddInId, ResourceId, Name = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/workspaces_update_connection_alias_permission/](https://www.paws-r-sdk.com/docs/workspaces_update_connection_alias_permission/) for full documentation.
 #'
-#' @param AliasId &#91;required&#93; The identifier of the connection alias that you want to update
-#' permissions for.
-#' @param ConnectionAliasPermission &#91;required&#93; Indicates whether to share or unshare the connection alias with the
-#' specified Amazon Web Services account.
+#' @param AliasId &#91;required&#93; The identifier of the connection alias that you want to update permissions for.
+#' @param ConnectionAliasPermission &#91;required&#93; Indicates whether to share or unshare the connection alias with the specified Amazon Web Services account.
 #'
 #' @keywords internal
 #'
@@ -3089,13 +2980,10 @@ workspaces_update_workspace_bundle <- function(BundleId = NULL, ImageId = NULL) 
 #' See [https://www.paws-r-sdk.com/docs/workspaces_update_workspace_image_permission/](https://www.paws-r-sdk.com/docs/workspaces_update_workspace_image_permission/) for full documentation.
 #'
 #' @param ImageId &#91;required&#93; The identifier of the image.
-#' @param AllowCopyImage &#91;required&#93; The permission to copy the image. This permission can be revoked only
-#' after an image has been shared.
-#' @param SharedAccountId &#91;required&#93; The identifier of the Amazon Web Services account to share or unshare
-#' the image with.
+#' @param AllowCopyImage &#91;required&#93; The permission to copy the image. This permission can be revoked only after an image has been shared.
+#' @param SharedAccountId &#91;required&#93; The identifier of the Amazon Web Services account to share or unshare the image with.
 #' 
-#' Before sharing the image, confirm that you are sharing to the correct
-#' Amazon Web Services account ID.
+#' Before sharing the image, confirm that you are sharing to the correct Amazon Web Services account ID.
 #'
 #' @keywords internal
 #'
@@ -3133,8 +3021,7 @@ workspaces_update_workspace_image_permission <- function(ImageId, AllowCopyImage
 #' @param Capacity The desired capacity for the pool.
 #' @param ApplicationSettings The persistent application settings for users in the pool.
 #' @param TimeoutSettings Indicates the timeout settings of the specified pool.
-#' @param RunningMode The desired running mode for the pool. The running mode can only be
-#' updated when the pool is in a stopped state.
+#' @param RunningMode The desired running mode for the pool. The running mode can only be updated when the pool is in a stopped state.
 #'
 #' @keywords internal
 #'

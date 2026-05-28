@@ -14,12 +14,9 @@ guardduty_update_threat_intel_set(
 )
 }
 \arguments{
-\item{DetectorId}{[required] The detectorID that specifies the GuardDuty service whose ThreatIntelSet
-you want to update.
+\item{DetectorId}{[required] The detectorID that specifies the GuardDuty service whose ThreatIntelSet you want to update.
 
-To find the \code{detectorId} in the current Region, see the Settings page in
-the GuardDuty console, or run the
-\code{\link[=guardduty_list_detectors]{list_detectors}} API.}
+To find the \code{detectorId} in the current Region, see the Settings page in the GuardDuty console, or run the \code{\link[=guardduty_list_detectors]{list_detectors}} API.}
 
 \item{ThreatIntelSetId}{[required] The unique ID that specifies the ThreatIntelSet that you want to update.}
 
@@ -27,11 +24,9 @@ the GuardDuty console, or run the
 
 \item{Location}{The updated URI of the file that contains the ThreateIntelSet.}
 
-\item{Activate}{The updated Boolean value that specifies whether the ThreateIntelSet is
-active or not.}
+\item{Activate}{The updated Boolean value that specifies whether the ThreateIntelSet is active or not.}
 
-\item{ExpectedBucketOwner}{The Amazon Web Services account ID that owns the Amazon S3 bucket
-specified in the \strong{location} parameter.}
+\item{ExpectedBucketOwner}{The Amazon Web Services account ID that owns the Amazon S3 bucket specified in the \strong{location} parameter.}
 }
 \description{
 Updates the ThreatIntelSet specified by the ThreatIntelSet ID.

@@ -18,29 +18,19 @@ sagemaker_create_app(
 \arguments{
 \item{DomainId}{[required] The domain ID.}
 
-\item{UserProfileName}{The user profile name. If this value is not set, then \code{SpaceName} must
-be set.}
+\item{UserProfileName}{The user profile name. If this value is not set, then \code{SpaceName} must be set.}
 
-\item{SpaceName}{The name of the space. If this value is not set, then \code{UserProfileName}
-must be set.}
+\item{SpaceName}{The name of the space. If this value is not set, then \code{UserProfileName} must be set.}
 
 \item{AppType}{[required] The type of app.}
 
 \item{AppName}{[required] The name of the app.}
 
-\item{Tags}{Each tag consists of a key and an optional value. Tag keys must be
-unique per resource.}
+\item{Tags}{Each tag consists of a key and an optional value. Tag keys must be unique per resource.}
 
-\item{ResourceSpec}{The instance type and the Amazon Resource Name (ARN) of the SageMaker AI
-image created on the instance.
+\item{ResourceSpec}{The instance type and the Amazon Resource Name (ARN) of the SageMaker AI image created on the instance.
 
-The value of \code{InstanceType} passed as part of the \code{ResourceSpec} in the
-\code{\link[=sagemaker_create_app]{create_app}} call overrides the value passed as
-part of the \code{ResourceSpec} configured for the user profile or the
-domain. If \code{InstanceType} is not specified in any of those three
-\code{ResourceSpec} values for a \code{KernelGateway} app, the
-\code{\link[=sagemaker_create_app]{create_app}} call fails with a request
-validation error.}
+The value of \code{InstanceType} passed as part of the \code{ResourceSpec} in the \code{\link[=sagemaker_create_app]{create_app}} call overrides the value passed as part of the \code{ResourceSpec} configured for the user profile or the domain. If \code{InstanceType} is not specified in any of those three \code{ResourceSpec} values for a \code{KernelGateway} app, the \code{\link[=sagemaker_create_app]{create_app}} call fails with a request validation error.}
 
 \item{RecoveryMode}{Indicates whether the application is launched in recovery mode.}
 }

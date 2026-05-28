@@ -10,14 +10,9 @@ docdbelastic_list_pending_maintenance_actions(
 )
 }
 \arguments{
-\item{maxResults}{The maximum number of results to include in the response. If more
-records exist than the specified \code{maxResults} value, a pagination token
-(marker) is included in the response so that the remaining results can
-be retrieved.}
+\item{maxResults}{The maximum number of results to include in the response. If more records exist than the specified \code{maxResults} value, a pagination token (marker) is included in the response so that the remaining results can be retrieved.}
 
-\item{nextToken}{An optional pagination token provided by a previous request. If this
-parameter is specified, the response includes only records beyond the
-marker, up to the value specified by \code{maxResults}.}
+\item{nextToken}{An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by \code{maxResults}.}
 }
 \description{
 Retrieves a list of all maintenance actions that are pending.

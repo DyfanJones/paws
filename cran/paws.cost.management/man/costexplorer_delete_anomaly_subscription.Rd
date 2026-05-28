@@ -7,8 +7,7 @@
 costexplorer_delete_anomaly_subscription(SubscriptionArn)
 }
 \arguments{
-\item{SubscriptionArn}{[required] The unique identifier of the cost anomaly subscription that you want to
-delete.}
+\item{SubscriptionArn}{[required] The unique identifier of the cost anomaly subscription that you want to delete.}
 }
 \description{
 Deletes a cost anomaly subscription.

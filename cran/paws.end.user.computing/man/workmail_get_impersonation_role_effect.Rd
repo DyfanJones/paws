@@ -15,11 +15,9 @@ workmail_get_impersonation_role_effect(
 
 \item{ImpersonationRoleId}{[required] The impersonation role ID to test.}
 
-\item{TargetUser}{[required] The WorkMail organization user chosen to test the impersonation role.
-The following identity formats are available:
+\item{TargetUser}{[required] The WorkMail organization user chosen to test the impersonation role. The following identity formats are available:
 \itemize{
-\item User ID: \code{12345678-1234-1234-1234-123456789012} or
-\code{S-1-1-12-1234567890-123456789-123456789-1234}
+\item User ID: \code{12345678-1234-1234-1234-123456789012} or \code{S-1-1-12-1234567890-123456789-123456789-1234}
 \item Email address: \code{user@domain.tld}
 \item User name: \code{user}
 }}

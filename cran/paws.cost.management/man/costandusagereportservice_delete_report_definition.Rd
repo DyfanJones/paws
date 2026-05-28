@@ -7,8 +7,7 @@
 costandusagereportservice_delete_report_definition(ReportName)
 }
 \arguments{
-\item{ReportName}{[required] The name of the report that you want to delete. The name must be unique,
-is case sensitive, and can't include spaces.}
+\item{ReportName}{[required] The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.}
 }
 \description{
 Deletes the specified report. Any tags associated with the report are also deleted.

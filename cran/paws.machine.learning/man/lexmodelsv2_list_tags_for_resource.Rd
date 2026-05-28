@@ -7,8 +7,7 @@
 lexmodelsv2_list_tags_for_resource(resourceARN)
 }
 \arguments{
-\item{resourceARN}{[required] The Amazon Resource Name (ARN) of the resource to get a list of tags
-for.}
+\item{resourceARN}{[required] The Amazon Resource Name (ARN) of the resource to get a list of tags for.}
 }
 \description{
 Gets a list of tags associated with a resource. Only bots, bot aliases, and bot channels can have tags associated with them.

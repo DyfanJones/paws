@@ -7,8 +7,7 @@
 kafka_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the resource
-that's associated with the tags.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the resource that's associated with the tags.}
 
 \item{Tags}{[required] The key-value pair for the resource tag.}
 }

@@ -13,8 +13,7 @@ rds_deregister_db_proxy_targets(
 )
 }
 \arguments{
-\item{DBProxyName}{[required] The identifier of the \code{DBProxy} that is associated with the
-\code{DBProxyTargetGroup}.}
+\item{DBProxyName}{[required] The identifier of the \code{DBProxy} that is associated with the \code{DBProxyTargetGroup}.}
 
 \item{TargetGroupName}{The identifier of the \code{DBProxyTargetGroup}.}
 

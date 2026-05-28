@@ -24,20 +24,17 @@ workspaces_import_custom_workspace_image(
 
 \item{ComputeType}{[required] The supported compute type for the WorkSpace image.}
 
-\item{Protocol}{[required] The supported protocol for the WorkSpace image. Windows 11 does not
-support PCOIP protocol.}
+\item{Protocol}{[required] The supported protocol for the WorkSpace image. Windows 11 does not support PCOIP protocol.}
 
 \item{ImageSource}{[required] The options for image import source.}
 
-\item{InfrastructureConfigurationArn}{[required] The infrastructure configuration ARN that specifies how the WorkSpace
-image is built.}
+\item{InfrastructureConfigurationArn}{[required] The infrastructure configuration ARN that specifies how the WorkSpace image is built.}
 
 \item{Platform}{[required] The platform for the WorkSpace image source.}
 
 \item{OsVersion}{[required] The OS version for the WorkSpace image source.}
 
-\item{Tags}{The resource tags. Each WorkSpaces resource can have a maximum of 50
-tags.}
+\item{Tags}{The resource tags. Each WorkSpaces resource can have a maximum of 50 tags.}
 }
 \description{
 Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon WorkSpaces using EC2 Image Builder. The image must be an already licensed image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see \href{https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html}{Bring Your Own Windows Desktop Licenses}.

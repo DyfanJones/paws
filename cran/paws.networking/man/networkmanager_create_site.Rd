@@ -18,9 +18,7 @@ networkmanager_create_site(
 
 Constraints: Maximum length of 256 characters.}
 
-\item{Location}{The site location. This information is used for visualization in the
-Network Manager console. If you specify the address, the latitude and
-longitude are automatically calculated.
+\item{Location}{The site location. This information is used for visualization in the Network Manager console. If you specify the address, the latitude and longitude are automatically calculated.
 \itemize{
 \item \code{Address}: The physical address of the site.
 \item \code{Latitude}: The latitude of the site.

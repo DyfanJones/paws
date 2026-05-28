@@ -7,8 +7,7 @@
 comprehend_delete_resource_policy(ResourceArn, PolicyRevisionId = NULL)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the custom model version that has the
-policy to delete.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the custom model version that has the policy to delete.}
 
 \item{PolicyRevisionId}{The revision ID of the policy to delete.}
 }

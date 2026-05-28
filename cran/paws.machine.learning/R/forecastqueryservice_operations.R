@@ -12,24 +12,14 @@ NULL
 #' See [https://www.paws-r-sdk.com/docs/forecastqueryservice_query_forecast/](https://www.paws-r-sdk.com/docs/forecastqueryservice_query_forecast/) for full documentation.
 #'
 #' @param ForecastArn &#91;required&#93; The Amazon Resource Name (ARN) of the forecast to query.
-#' @param StartDate The start date for the forecast. Specify the date using this format:
-#' yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example,
-#' 2015-01-01T08:00:00.
-#' @param EndDate The end date for the forecast. Specify the date using this format:
-#' yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example,
-#' 2015-01-01T20:00:00.
-#' @param Filters &#91;required&#93; The filtering criteria to apply when retrieving the forecast. For
-#' example, to get the forecast for `client_21` in the electricity usage
-#' dataset, specify the following:
+#' @param StartDate The start date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.
+#' @param EndDate The end date for the forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.
+#' @param Filters &#91;required&#93; The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for `client_21` in the electricity usage dataset, specify the following:
 #' 
 #' `{"item_id" : "client_21"}`
 #' 
-#' To get the full forecast, use the
-#' [CreateForecastExportJob](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecastExportJob.html)
-#' operation.
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' To get the full forecast, use the [CreateForecastExportJob](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecastExportJob.html) operation.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #'
 #' @keywords internal
 #'
@@ -61,24 +51,14 @@ forecastqueryservice_query_forecast <- function(ForecastArn, StartDate = NULL, E
 #' See [https://www.paws-r-sdk.com/docs/forecastqueryservice_query_what_if_forecast/](https://www.paws-r-sdk.com/docs/forecastqueryservice_query_what_if_forecast/) for full documentation.
 #'
 #' @param WhatIfForecastArn &#91;required&#93; The Amazon Resource Name (ARN) of the what-if forecast to query.
-#' @param StartDate The start date for the what-if forecast. Specify the date using this
-#' format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example,
-#' 2015-01-01T08:00:00.
-#' @param EndDate The end date for the what-if forecast. Specify the date using this
-#' format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example,
-#' 2015-01-01T20:00:00.
-#' @param Filters &#91;required&#93; The filtering criteria to apply when retrieving the forecast. For
-#' example, to get the forecast for `client_21` in the electricity usage
-#' dataset, specify the following:
+#' @param StartDate The start date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T08:00:00.
+#' @param EndDate The end date for the what-if forecast. Specify the date using this format: yyyy-MM-dd'T'HH:mm:ss (ISO 8601 format). For example, 2015-01-01T20:00:00.
+#' @param Filters &#91;required&#93; The filtering criteria to apply when retrieving the forecast. For example, to get the forecast for `client_21` in the electricity usage dataset, specify the following:
 #' 
 #' `{"item_id" : "client_21"}`
 #' 
-#' To get the full what-if forecast, use the
-#' [CreateForecastExportJob](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecastExport.html)
-#' operation.
-#' @param NextToken If the result of the previous request was truncated, the response
-#' includes a `NextToken`. To retrieve the next set of results, use the
-#' token in the next request. Tokens expire after 24 hours.
+#' To get the full what-if forecast, use the [CreateForecastExportJob](https://docs.aws.amazon.com/forecast/latest/dg/API_CreateWhatIfForecastExport.html) operation.
+#' @param NextToken If the result of the previous request was truncated, the response includes a `NextToken`. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.
 #'
 #' @keywords internal
 #'

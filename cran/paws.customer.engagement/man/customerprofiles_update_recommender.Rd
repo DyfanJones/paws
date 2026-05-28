@@ -19,8 +19,7 @@ customerprofiles_update_recommender(
 
 \item{Description}{The new description to assign to the recommender.}
 
-\item{RecommenderConfig}{The new configuration settings to apply to the recommender, including
-updated parameters and settings that define its behavior.}
+\item{RecommenderConfig}{The new configuration settings to apply to the recommender, including updated parameters and settings that define its behavior.}
 }
 \description{
 Updates the properties of an existing recommender, allowing you to modify its configuration and description.

@@ -8,11 +8,9 @@ network}
 vpclattice_put_resource_policy(resourceArn, policy)
 }
 \arguments{
-\item{resourceArn}{[required] The ID or ARN of the service network or service for which the policy is
-created.}
+\item{resourceArn}{[required] The ID or ARN of the service network or service for which the policy is created.}
 
-\item{policy}{[required] An IAM policy. The policy string in JSON must not contain newlines or
-blank lines.}
+\item{policy}{[required] An IAM policy. The policy string in JSON must not contain newlines or blank lines.}
 }
 \description{
 Attaches a resource-based permission policy to a service or service network. The policy must contain the same actions and condition statements as the Amazon Web Services Resource Access Manager permission for sharing services and service networks.

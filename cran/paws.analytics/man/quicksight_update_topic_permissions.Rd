@@ -12,11 +12,9 @@ quicksight_update_topic_permissions(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that
-you want to update the permissions for.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the topic that you want to update the permissions for.}
 
-\item{TopicId}{[required] The ID of the topic that you want to modify. This ID is unique per
-Amazon Web Services Region for each Amazon Web Services account.}
+\item{TopicId}{[required] The ID of the topic that you want to modify. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
 \item{GrantPermissions}{The resource permissions that you want to grant to the topic.}
 

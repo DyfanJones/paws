@@ -11,12 +11,9 @@ cloudfront_update_domain_association(Domain, TargetResource, IfMatch = NULL)
 \arguments{
 \item{Domain}{[required] The domain to update.}
 
-\item{TargetResource}{[required] The target standard distribution or distribution tenant resource for the
-domain. You can specify either \code{DistributionId} or
-\code{DistributionTenantId}, but not both.}
+\item{TargetResource}{[required] The target standard distribution or distribution tenant resource for the domain. You can specify either \code{DistributionId} or \code{DistributionTenantId}, but not both.}
 
-\item{IfMatch}{The value of the \code{ETag} identifier for the standard distribution or
-distribution tenant that will be associated with the domain.}
+\item{IfMatch}{The value of the \code{ETag} identifier for the standard distribution or distribution tenant that will be associated with the domain.}
 }
 \description{
 We recommend that you use the \code{\link[=cloudfront_update_domain_association]{update_domain_association}} API operation to move a domain association, as it supports both standard distributions and distribution tenants. \code{\link[=cloudfront_associate_alias]{associate_alias}} performs similar checks but only supports standard distributions.

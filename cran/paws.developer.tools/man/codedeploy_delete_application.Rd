@@ -7,8 +7,7 @@
 codedeploy_delete_application(applicationName)
 }
 \arguments{
-\item{applicationName}{[required] The name of an CodeDeploy application associated with the user or Amazon
-Web Services account.}
+\item{applicationName}{[required] The name of an CodeDeploy application associated with the user or Amazon Web Services account.}
 }
 \description{
 Deletes an application.

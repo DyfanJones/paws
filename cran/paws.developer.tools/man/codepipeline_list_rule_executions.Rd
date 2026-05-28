@@ -13,19 +13,13 @@ codepipeline_list_rule_executions(
 )
 }
 \arguments{
-\item{pipelineName}{[required] The name of the pipeline for which you want to get execution summary
-information.}
+\item{pipelineName}{[required] The name of the pipeline for which you want to get execution summary information.}
 
 \item{filter}{Input information used to filter rule execution history.}
 
-\item{maxResults}{The maximum number of results to return in a single call. To retrieve
-the remaining results, make another call with the returned nextToken
-value. Pipeline history is limited to the most recent 12 months, based
-on pipeline execution start times. Default value is 100.}
+\item{maxResults}{The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned nextToken value. Pipeline history is limited to the most recent 12 months, based on pipeline execution start times. Default value is 100.}
 
-\item{nextToken}{The token that was returned from the previous
-\code{\link[=codepipeline_list_rule_executions]{list_rule_executions}} call, which
-can be used to return the next set of rule executions in the list.}
+\item{nextToken}{The token that was returned from the previous \code{\link[=codepipeline_list_rule_executions]{list_rule_executions}} call, which can be used to return the next set of rule executions in the list.}
 }
 \description{
 Lists the rule executions that have occurred in a pipeline configured for conditions with rules.

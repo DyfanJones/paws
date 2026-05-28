@@ -15,9 +15,7 @@ cloudfront_list_distributions_by_connection_mode(
 
 \item{MaxItems}{The maximum number of distributions to return.}
 
-\item{ConnectionMode}{[required] This field specifies whether the connection mode is through a standard
-distribution (direct) or a multi-tenant distribution with distribution
-tenants (tenant-only).}
+\item{ConnectionMode}{[required] This field specifies whether the connection mode is through a standard distribution (direct) or a multi-tenant distribution with distribution tenants (tenant-only).}
 }
 \description{
 Lists the distributions by the connection mode that you specify.

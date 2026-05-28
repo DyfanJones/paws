@@ -6,8 +6,7 @@ NULL
 #' Creates a DAX cluster
 #'
 #' @description
-#' Creates a DAX cluster. All nodes in the cluster run the same DAX caching
-#' software.
+#' Creates a DAX cluster. All nodes in the cluster run the same DAX caching software.
 #'
 #' @usage
 #' dax_create_cluster(ClusterName, NodeType, Description,
@@ -27,34 +26,17 @@ NULL
 #' -   A name cannot end with a hyphen or contain two consecutive hyphens.
 #' @param NodeType &#91;required&#93; The compute and memory capacity of the nodes in the cluster.
 #' @param Description A description of the cluster.
-#' @param ReplicationFactor &#91;required&#93; The number of nodes in the DAX cluster. A replication factor of 1 will
-#' create a single-node cluster, without any read replicas. For additional
-#' fault tolerance, you can create a multiple node cluster with one or more
-#' read replicas. To do this, set `ReplicationFactor` to a number between 3
-#' (one primary and two read replicas) and 10 (one primary and nine read
-#' replicas). `If the AvailabilityZones` parameter is provided, its length
-#' must equal the `ReplicationFactor`.
+#' @param ReplicationFactor &#91;required&#93; The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node cluster, without any read replicas. For additional fault tolerance, you can create a multiple node cluster with one or more read replicas. To do this, set `ReplicationFactor` to a number between 3 (one primary and two read replicas) and 10 (one primary and nine read replicas). `If the AvailabilityZones` parameter is provided, its length must equal the `ReplicationFactor`.
 #' 
-#' Amazon Web Services recommends that you have at least two read replicas
-#' per cluster.
-#' @param AvailabilityZones The Availability Zones (AZs) in which the cluster nodes will reside
-#' after the cluster has been created or updated. If provided, the length
-#' of this list must equal the `ReplicationFactor` parameter. If you omit
-#' this parameter, DAX will spread the nodes across Availability Zones for
-#' the highest availability.
+#' Amazon Web Services recommends that you have at least two read replicas per cluster.
+#' @param AvailabilityZones The Availability Zones (AZs) in which the cluster nodes will reside after the cluster has been created or updated. If provided, the length of this list must equal the `ReplicationFactor` parameter. If you omit this parameter, DAX will spread the nodes across Availability Zones for the highest availability.
 #' @param SubnetGroupName The name of the subnet group to be used for the replication group.
 #' 
-#' DAX clusters can only run in an Amazon VPC environment. All of the
-#' subnets that you specify in a subnet group must exist in the same VPC.
-#' @param SecurityGroupIds A list of security group IDs to be assigned to each node in the DAX
-#' cluster. (Each of the security group ID is system-generated.)
+#' DAX clusters can only run in an Amazon VPC environment. All of the subnets that you specify in a subnet group must exist in the same VPC.
+#' @param SecurityGroupIds A list of security group IDs to be assigned to each node in the DAX cluster. (Each of the security group ID is system-generated.)
 #' 
-#' If this parameter is not specified, DAX assigns the default VPC security
-#' group to each node.
-#' @param PreferredMaintenanceWindow Specifies the weekly time range during which maintenance on the DAX
-#' cluster is performed. It is specified as a range in the format
-#' ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-#' is a 60 minute period. Valid values for `ddd` are:
+#' If this parameter is not specified, DAX assigns the default VPC security group to each node.
+#' @param PreferredMaintenanceWindow Specifies the weekly time range during which maintenance on the DAX cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid values for `ddd` are:
 #' 
 #' -   `sun`
 #' 
@@ -72,38 +54,28 @@ NULL
 #' 
 #' Example: `sun:05:00-sun:09:00`
 #' 
-#' If you don't specify a preferred maintenance window when you create or
-#' modify a cache cluster, DAX assigns a 60-minute maintenance window on a
-#' randomly selected day of the week.
-#' @param NotificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which
-#' notifications will be sent.
+#' If you don't specify a preferred maintenance window when you create or modify a cache cluster, DAX assigns a 60-minute maintenance window on a randomly selected day of the week.
+#' @param NotificationTopicArn The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications will be sent.
 #' 
 #' The Amazon SNS topic owner must be same as the DAX cluster owner.
-#' @param IamRoleArn &#91;required&#93; A valid Amazon Resource Name (ARN) that identifies an IAM role. At
-#' runtime, DAX will assume this role and use the role's permissions to
-#' access DynamoDB on your behalf.
+#' @param IamRoleArn &#91;required&#93; A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime, DAX will assume this role and use the role's permissions to access DynamoDB on your behalf.
 #' @param ParameterGroupName The parameter group to be associated with the DAX cluster.
 #' @param Tags A set of tags to associate with the DAX cluster.
-#' @param SSESpecification Represents the settings used to enable server-side encryption on the
-#' cluster.
-#' @param ClusterEndpointEncryptionType The type of encryption the cluster's endpoint should support. Values
-#' are:
+#' @param SSESpecification Represents the settings used to enable server-side encryption on the cluster.
+#' @param ClusterEndpointEncryptionType The type of encryption the cluster's endpoint should support. Values are:
 #' 
 #' -   `NONE` for no encryption
 #' 
 #' -   `TLS` for Transport Layer Security
-#' @param NetworkType Specifies the IP protocol(s) the cluster uses for network
-#' communications. Values are:
+#' @param NetworkType Specifies the IP protocol(s) the cluster uses for network communications. Values are:
 #' 
 #' -   `ipv4` - The cluster is accessible only through IPv4 addresses
 #' 
 #' -   `ipv6` - The cluster is accessible only through IPv6 addresses
 #' 
-#' -   `dual_stack` - The cluster is accessible through both IPv4 and IPv6
-#'     addresses.
+#' -   `dual_stack` - The cluster is accessible through both IPv4 and IPv6 addresses.
 #' 
-#' If no explicit `NetworkType` is provided, the network type is derived
-#' based on the subnet group's configuration.
+#' If no explicit `NetworkType` is provided, the network type is derived based on the subnet group's configuration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -229,14 +201,12 @@ dax_create_cluster <- function(ClusterName, NodeType, Description = NULL, Replic
 #' Creates a new parameter group
 #'
 #' @description
-#' Creates a new parameter group. A parameter group is a collection of
-#' parameters that you apply to all of the nodes in a DAX cluster.
+#' Creates a new parameter group. A parameter group is a collection of parameters that you apply to all of the nodes in a DAX cluster.
 #'
 #' @usage
 #' dax_create_parameter_group(ParameterGroupName, Description)
 #'
-#' @param ParameterGroupName &#91;required&#93; The name of the parameter group to apply to all of the clusters in this
-#' replication group.
+#' @param ParameterGroupName &#91;required&#93; The name of the parameter group to apply to all of the clusters in this replication group.
 #' @param Description A description of the parameter group.
 #'
 #' @return
@@ -358,10 +328,7 @@ dax_create_subnet_group <- function(SubnetGroupName, Description = NULL, SubnetI
 #' @description
 #' Removes one or more nodes from a DAX cluster.
 #' 
-#' You cannot use
-#' [`decrease_replication_factor`][dax_decrease_replication_factor] to
-#' remove the last node in a DAX cluster. If you need to do this, use
-#' [`delete_cluster`][dax_delete_cluster] instead.
+#' You cannot use [`decrease_replication_factor`][dax_decrease_replication_factor] to remove the last node in a DAX cluster. If you need to do this, use [`delete_cluster`][dax_delete_cluster] instead.
 #'
 #' @usage
 #' dax_decrease_replication_factor(ClusterName, NewReplicationFactor,
@@ -478,10 +445,7 @@ dax_decrease_replication_factor <- function(ClusterName, NewReplicationFactor, A
 #' Deletes a previously provisioned DAX cluster
 #'
 #' @description
-#' Deletes a previously provisioned DAX cluster. *DeleteCluster* deletes
-#' all associated nodes, node endpoints and the DAX cluster itself. When
-#' you receive a successful response from this action, DAX immediately
-#' begins deleting the cluster; you cannot cancel or revert this action.
+#' Deletes a previously provisioned DAX cluster. *DeleteCluster* deletes all associated nodes, node endpoints and the DAX cluster itself. When you receive a successful response from this action, DAX immediately begins deleting the cluster; you cannot cancel or revert this action.
 #'
 #' @usage
 #' dax_delete_cluster(ClusterName)
@@ -587,8 +551,7 @@ dax_delete_cluster <- function(ClusterName) {
 #' Deletes the specified parameter group
 #'
 #' @description
-#' Deletes the specified parameter group. You cannot delete a parameter
-#' group if it is associated with any DAX clusters.
+#' Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any DAX clusters.
 #'
 #' @usage
 #' dax_delete_parameter_group(ParameterGroupName)
@@ -639,8 +602,7 @@ dax_delete_parameter_group <- function(ParameterGroupName) {
 #' @description
 #' Deletes a subnet group.
 #' 
-#' You cannot delete a subnet group if it is associated with any DAX
-#' clusters.
+#' You cannot delete a subnet group if it is associated with any DAX clusters.
 #'
 #' @usage
 #' dax_delete_subnet_group(SubnetGroupName)
@@ -691,37 +653,24 @@ dax_delete_subnet_group <- function(SubnetGroupName) {
 #' identifier is supplied
 #'
 #' @description
-#' Returns information about all provisioned DAX clusters if no cluster
-#' identifier is specified, or about a specific DAX cluster if a cluster
-#' identifier is supplied.
+#' Returns information about all provisioned DAX clusters if no cluster identifier is specified, or about a specific DAX cluster if a cluster identifier is supplied.
 #' 
-#' If the cluster is in the CREATING state, only cluster level information
-#' will be displayed until all of the nodes are successfully provisioned.
+#' If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.
 #' 
-#' If the cluster is in the DELETING state, only cluster level information
-#' will be displayed.
+#' If the cluster is in the DELETING state, only cluster level information will be displayed.
 #' 
-#' If nodes are currently being added to the DAX cluster, node endpoint
-#' information and creation time for the additional nodes will not be
-#' displayed until they are completely provisioned. When the DAX cluster
-#' state is *available*, the cluster is ready for use.
+#' If nodes are currently being added to the DAX cluster, node endpoint information and creation time for the additional nodes will not be displayed until they are completely provisioned. When the DAX cluster state is *available*, the cluster is ready for use.
 #' 
-#' If nodes are currently being removed from the DAX cluster, no endpoint
-#' information for the removed nodes is displayed.
+#' If nodes are currently being removed from the DAX cluster, no endpoint information for the removed nodes is displayed.
 #'
 #' @usage
 #' dax_describe_clusters(ClusterNames, MaxResults, NextToken)
 #'
 #' @param ClusterNames The names of the DAX clusters being described.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -830,21 +779,15 @@ dax_describe_clusters <- function(ClusterNames = NULL, MaxResults = NULL, NextTo
 #' software
 #'
 #' @description
-#' Returns the default system parameter information for the DAX caching
-#' software.
+#' Returns the default system parameter information for the DAX caching software.
 #'
 #' @usage
 #' dax_describe_default_parameters(MaxResults, NextToken)
 #'
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -908,36 +851,23 @@ dax_describe_default_parameters <- function(MaxResults = NULL, NextToken = NULL)
 #' Returns events related to DAX clusters and parameter groups
 #'
 #' @description
-#' Returns events related to DAX clusters and parameter groups. You can
-#' obtain events specific to a particular DAX cluster or parameter group by
-#' providing the name as a parameter.
+#' Returns events related to DAX clusters and parameter groups. You can obtain events specific to a particular DAX cluster or parameter group by providing the name as a parameter.
 #' 
-#' By default, only the events occurring within the last 24 hours are
-#' returned; however, you can retrieve up to 14 days' worth of events if
-#' necessary.
+#' By default, only the events occurring within the last 24 hours are returned; however, you can retrieve up to 14 days' worth of events if necessary.
 #'
 #' @usage
 #' dax_describe_events(SourceName, SourceType, StartTime, EndTime,
 #'   Duration, MaxResults, NextToken)
 #'
-#' @param SourceName The identifier of the event source for which events will be returned. If
-#' not specified, then all sources are included in the response.
-#' @param SourceType The event source to retrieve events for. If no value is specified, all
-#' events are returned.
-#' @param StartTime The beginning of the time interval to retrieve events for, specified in
-#' ISO 8601 format.
-#' @param EndTime The end of the time interval for which to retrieve events, specified in
-#' ISO 8601 format.
+#' @param SourceName The identifier of the event source for which events will be returned. If not specified, then all sources are included in the response.
+#' @param SourceType The event source to retrieve events for. If no value is specified, all events are returned.
+#' @param StartTime The beginning of the time interval to retrieve events for, specified in ISO 8601 format.
+#' @param EndTime The end of the time interval for which to retrieve events, specified in ISO 8601 format.
 #' @param Duration The number of minutes' worth of events to retrieve.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1001,24 +931,17 @@ dax_describe_events <- function(SourceName = NULL, SourceType = NULL, StartTime 
 #' Returns a list of parameter group descriptions
 #'
 #' @description
-#' Returns a list of parameter group descriptions. If a parameter group
-#' name is specified, the list will contain only the descriptions for that
-#' group.
+#' Returns a list of parameter group descriptions. If a parameter group name is specified, the list will contain only the descriptions for that group.
 #'
 #' @usage
 #' dax_describe_parameter_groups(ParameterGroupNames, MaxResults,
 #'   NextToken)
 #'
 #' @param ParameterGroupNames The names of the parameter groups.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1079,17 +1002,11 @@ dax_describe_parameter_groups <- function(ParameterGroupNames = NULL, MaxResults
 #'   NextToken)
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the parameter group.
-#' @param Source How the parameter is defined. For example, `system` denotes a
-#' system-defined parameter.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param Source How the parameter is defined. For example, `system` denotes a system-defined parameter.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1155,22 +1072,16 @@ dax_describe_parameters <- function(ParameterGroupName, Source = NULL, MaxResult
 #' Returns a list of subnet group descriptions
 #'
 #' @description
-#' Returns a list of subnet group descriptions. If a subnet group name is
-#' specified, the list will contain only the description of that group.
+#' Returns a list of subnet group descriptions. If a subnet group name is specified, the list will contain only the description of that group.
 #'
 #' @usage
 #' dax_describe_subnet_groups(SubnetGroupNames, MaxResults, NextToken)
 #'
 #' @param SubnetGroupNames The name of the subnet group.
-#' @param MaxResults The maximum number of results to include in the response. If more
-#' results exist than the specified `MaxResults` value, a token is included
-#' in the response so that the remaining results can be retrieved.
+#' @param MaxResults The maximum number of results to include in the response. If more results exist than the specified `MaxResults` value, a token is included in the response so that the remaining results can be retrieved.
 #' 
 #' The value for `MaxResults` must be between 20 and 100.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token, up to the value
-#' specified by `MaxResults`.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by `MaxResults`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1245,10 +1156,7 @@ dax_describe_subnet_groups <- function(SubnetGroupNames = NULL, MaxResults = NUL
 #'
 #' @param ClusterName &#91;required&#93; The name of the DAX cluster that will receive additional nodes.
 #' @param NewReplicationFactor &#91;required&#93; The new number of nodes for the DAX cluster.
-#' @param AvailabilityZones The Availability Zones (AZs) in which the cluster nodes will be created.
-#' All nodes belonging to the cluster are placed in these Availability
-#' Zones. Use this parameter if you want to distribute the nodes across
-#' multiple AZs.
+#' @param AvailabilityZones The Availability Zones (AZs) in which the cluster nodes will be created. All nodes belonging to the cluster are placed in these Availability Zones. Use this parameter if you want to distribute the nodes across multiple AZs.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1353,16 +1261,13 @@ dax_increase_replication_factor <- function(ClusterName, NewReplicationFactor, A
 #' List all of the tags for a DAX cluster
 #'
 #' @description
-#' List all of the tags for a DAX cluster. You can call
-#' [`list_tags`][dax_list_tags] up to 10 times per second, per account.
+#' List all of the tags for a DAX cluster. You can call [`list_tags`][dax_list_tags] up to 10 times per second, per account.
 #'
 #' @usage
 #' dax_list_tags(ResourceName, NextToken)
 #'
 #' @param ResourceName &#91;required&#93; The name of the DAX resource to which the tags belong.
-#' @param NextToken An optional token returned from a prior request. Use this token for
-#' pagination of results from this action. If this parameter is specified,
-#' the response includes only results beyond the token.
+#' @param NextToken An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1413,12 +1318,9 @@ dax_list_tags <- function(ResourceName, NextToken = NULL) {
 #' Reboots a single node of a DAX cluster
 #'
 #' @description
-#' Reboots a single node of a DAX cluster. The reboot action takes place as
-#' soon as possible. During the reboot, the node status is set to
-#' REBOOTING.
+#' Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.
 #' 
-#' [`reboot_node`][dax_reboot_node] restarts the DAX engine process and
-#' does not remove the contents of the cache.
+#' [`reboot_node`][dax_reboot_node] restarts the DAX engine process and does not remove the contents of the cache.
 #'
 #' @usage
 #' dax_reboot_node(ClusterName, NodeId)
@@ -1526,9 +1428,7 @@ dax_reboot_node <- function(ClusterName, NodeId) {
 #' Associates a set of tags with a DAX resource
 #'
 #' @description
-#' Associates a set of tags with a DAX resource. You can call
-#' [`tag_resource`][dax_tag_resource] up to 5 times per second, per
-#' account.
+#' Associates a set of tags with a DAX resource. You can call [`tag_resource`][dax_tag_resource] up to 5 times per second, per account.
 #'
 #' @usage
 #' dax_tag_resource(ResourceName, Tags)
@@ -1589,16 +1489,13 @@ dax_tag_resource <- function(ResourceName, Tags) {
 #' Removes the association of tags from a DAX resource
 #'
 #' @description
-#' Removes the association of tags from a DAX resource. You can call
-#' [`untag_resource`][dax_untag_resource] up to 5 times per second, per
-#' account.
+#' Removes the association of tags from a DAX resource. You can call [`untag_resource`][dax_untag_resource] up to 5 times per second, per account.
 #'
 #' @usage
 #' dax_untag_resource(ResourceName, TagKeys)
 #'
 #' @param ResourceName &#91;required&#93; The name of the DAX resource from which the tags should be removed.
-#' @param TagKeys &#91;required&#93; A list of tag keys. If the DAX cluster has any tags with these keys,
-#' then the tags are removed from the cluster.
+#' @param TagKeys &#91;required&#93; A list of tag keys. If the DAX cluster has any tags with these keys, then the tags are removed from the cluster.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1650,9 +1547,7 @@ dax_untag_resource <- function(ResourceName, TagKeys) {
 #' Modifies the settings for a DAX cluster
 #'
 #' @description
-#' Modifies the settings for a DAX cluster. You can use this action to
-#' change one or more cluster configuration parameters by specifying the
-#' parameters and the new values.
+#' Modifies the settings for a DAX cluster. You can use this action to change one or more cluster configuration parameters by specifying the parameters and the new values.
 #'
 #' @usage
 #' dax_update_cluster(ClusterName, Description, PreferredMaintenanceWindow,
@@ -1661,18 +1556,11 @@ dax_untag_resource <- function(ResourceName, TagKeys) {
 #'
 #' @param ClusterName &#91;required&#93; The name of the DAX cluster to be modified.
 #' @param Description A description of the changes being made to the cluster.
-#' @param PreferredMaintenanceWindow A range of time when maintenance of DAX cluster software will be
-#' performed. For example: `sun:01:00-sun:09:00`. Cluster maintenance
-#' normally takes less than 30 minutes, and is performed automatically
-#' within the maintenance window.
+#' @param PreferredMaintenanceWindow A range of time when maintenance of DAX cluster software will be performed. For example: `sun:01:00-sun:09:00`. Cluster maintenance normally takes less than 30 minutes, and is performed automatically within the maintenance window.
 #' @param NotificationTopicArn The Amazon Resource Name (ARN) that identifies the topic.
-#' @param NotificationTopicStatus The current state of the topic. A value of “active” means that
-#' notifications will be sent to the topic. A value of “inactive” means
-#' that notifications will not be sent to the topic.
+#' @param NotificationTopicStatus The current state of the topic. A value of “active” means that notifications will be sent to the topic. A value of “inactive” means that notifications will not be sent to the topic.
 #' @param ParameterGroupName The name of a parameter group for this cluster.
-#' @param SecurityGroupIds A list of user-specified security group IDs to be assigned to each node
-#' in the DAX cluster. If this parameter is not specified, DAX assigns the
-#' default VPC security group to each node.
+#' @param SecurityGroupIds A list of user-specified security group IDs to be assigned to each node in the DAX cluster. If this parameter is not specified, DAX assigns the default VPC security group to each node.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1781,20 +1669,15 @@ dax_update_cluster <- function(ClusterName, Description = NULL, PreferredMainten
 #' Modifies the parameters of a parameter group
 #'
 #' @description
-#' Modifies the parameters of a parameter group. You can modify up to 20
-#' parameters in a single request by submitting a list parameter name and
-#' value pairs.
+#' Modifies the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.
 #'
 #' @usage
 #' dax_update_parameter_group(ParameterGroupName, ParameterNameValues)
 #'
 #' @param ParameterGroupName &#91;required&#93; The name of the parameter group.
-#' @param ParameterNameValues &#91;required&#93; An array of name-value pairs for the parameters in the group. Each
-#' element in the array represents a single parameter.
+#' @param ParameterNameValues &#91;required&#93; An array of name-value pairs for the parameters in the group. Each element in the array represents a single parameter.
 #' 
-#' `record-ttl-millis` and `query-ttl-millis` are the only supported
-#' parameter names. For more details, see [Configuring TTL
-#' Settings](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl).
+#' `record-ttl-millis` and `query-ttl-millis` are the only supported parameter names. For more details, see [Configuring TTL Settings](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl).
 #'
 #' @return
 #' A list with the following syntax:

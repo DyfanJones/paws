@@ -12,39 +12,24 @@ sagemaker_batch_replace_cluster_nodes(
 )
 }
 \arguments{
-\item{ClusterName}{[required] The name or Amazon Resource Name (ARN) of the SageMaker HyperPod cluster
-containing the nodes to replace.}
+\item{ClusterName}{[required] The name or Amazon Resource Name (ARN) of the SageMaker HyperPod cluster containing the nodes to replace.}
 
-\item{NodeIds}{A list of EC2 instance IDs to replace with new hardware. You can specify
-between 1 and 25 instance IDs.
+\item{NodeIds}{A list of EC2 instance IDs to replace with new hardware. You can specify between 1 and 25 instance IDs.
 
-Replace operations destroy all instance volumes (root and secondary).
-Ensure you have backed up any important data before proceeding.
+Replace operations destroy all instance volumes (root and secondary). Ensure you have backed up any important data before proceeding.
 \itemize{
-\item Either \code{NodeIds} or \code{NodeLogicalIds} must be provided (or both), but
-at least one is required.
-\item Each instance ID must follow the pattern \verb{i-} followed by 17
-hexadecimal characters (for example, \verb{i-0123456789abcdef0}).
-\item For SageMaker HyperPod clusters using the Slurm workload manager,
-you cannot replace instances that are configured as Slurm controller
-nodes.
+\item Either \code{NodeIds} or \code{NodeLogicalIds} must be provided (or both), but at least one is required.
+\item Each instance ID must follow the pattern \verb{i-} followed by 17 hexadecimal characters (for example, \verb{i-0123456789abcdef0}).
+\item For SageMaker HyperPod clusters using the Slurm workload manager, you cannot replace instances that are configured as Slurm controller nodes.
 }}
 
-\item{NodeLogicalIds}{A list of logical node IDs to replace with new hardware. You can specify
-between 1 and 25 logical node IDs.
+\item{NodeLogicalIds}{A list of logical node IDs to replace with new hardware. You can specify between 1 and 25 logical node IDs.
 
-The \code{NodeLogicalId} is a unique identifier that persists throughout the
-node's lifecycle and can be used to track nodes that are still being
-provisioned and don't yet have an EC2 instance ID assigned.
+The \code{NodeLogicalId} is a unique identifier that persists throughout the node's lifecycle and can be used to track nodes that are still being provisioned and don't yet have an EC2 instance ID assigned.
 \itemize{
-\item Replace operations destroy all instance volumes (root and
-secondary). Ensure you have backed up any important data before
-proceeding.
-\item This parameter is only supported for clusters using \code{Continuous} as
-the \code{NodeProvisioningMode}. For clusters using the default
-provisioning mode, use \code{NodeIds} instead.
-\item Either \code{NodeIds} or \code{NodeLogicalIds} must be provided (or both), but
-at least one is required.
+\item Replace operations destroy all instance volumes (root and secondary). Ensure you have backed up any important data before proceeding.
+\item This parameter is only supported for clusters using \code{Continuous} as the \code{NodeProvisioningMode}. For clusters using the default provisioning mode, use \code{NodeIds} instead.
+\item Either \code{NodeIds} or \code{NodeLogicalIds} must be provided (or both), but at least one is required.
 }}
 }
 \description{

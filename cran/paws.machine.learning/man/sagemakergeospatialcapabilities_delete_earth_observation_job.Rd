@@ -7,8 +7,7 @@
 sagemakergeospatialcapabilities_delete_earth_observation_job(Arn)
 }
 \arguments{
-\item{Arn}{[required] The Amazon Resource Name (ARN) of the Earth Observation job being
-deleted.}
+\item{Arn}{[required] The Amazon Resource Name (ARN) of the Earth Observation job being deleted.}
 }
 \description{
 Use this operation to delete an Earth Observation job.

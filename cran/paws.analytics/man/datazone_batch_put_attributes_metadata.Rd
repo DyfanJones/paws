@@ -19,8 +19,7 @@ datazone_batch_put_attributes_metadata(
 
 \item{entityIdentifier}{[required] The entity ID for which you want to write the attribute metadata.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request. This field is automatically populated if not provided.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.}
 
 \item{attributes}{[required] The attributes of the metadata.}
 }

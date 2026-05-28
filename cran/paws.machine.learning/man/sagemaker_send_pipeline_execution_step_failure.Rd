@@ -16,9 +16,7 @@ sagemaker_send_pipeline_execution_step_failure(
 
 \item{FailureReason}{A message describing why the step failed.}
 
-\item{ClientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the operation. An idempotent operation completes no more
-than one time.}
+\item{ClientRequestToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the operation. An idempotent operation completes no more than one time.}
 }
 \description{
 Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).

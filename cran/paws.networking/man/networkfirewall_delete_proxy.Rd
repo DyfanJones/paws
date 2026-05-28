@@ -9,8 +9,7 @@ networkfirewall_delete_proxy(NatGatewayId, ProxyName = NULL, ProxyArn = NULL)
 \arguments{
 \item{NatGatewayId}{[required] The NAT Gateway the proxy is attached to.}
 
-\item{ProxyName}{The descriptive name of the proxy. You can't change the name of a proxy
-after you create it.
+\item{ProxyName}{The descriptive name of the proxy. You can't change the name of a proxy after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 

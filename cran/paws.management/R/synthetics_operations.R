@@ -10,10 +10,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_associate_resource/](https://www.paws-r-sdk.com/docs/synthetics_associate_resource/) for full documentation.
 #'
-#' @param GroupIdentifier &#91;required&#93; Specifies the group. You can specify the group name, the ARN, or the
-#' group ID as the `GroupIdentifier`.
-#' @param ResourceArn &#91;required&#93; The ARN of the canary that you want to associate with the specified
-#' group.
+#' @param GroupIdentifier &#91;required&#93; Specifies the group. You can specify the group name, the ARN, or the group ID as the `GroupIdentifier`.
+#' @param ResourceArn &#91;required&#93; The ARN of the canary that you want to associate with the specified group.
 #'
 #' @keywords internal
 #'
@@ -44,24 +42,12 @@ synthetics_associate_resource <- function(GroupIdentifier, ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_create_canary/](https://www.paws-r-sdk.com/docs/synthetics_create_canary/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name for this canary. Be sure to give it a descriptive name that
-#' distinguishes it from other canaries in your account.
+#' @param Name &#91;required&#93; The name for this canary. Be sure to give it a descriptive name that distinguishes it from other canaries in your account.
 #' 
-#' Do not include secrets or proprietary information in your canary names.
-#' The canary name makes up part of the canary ARN, and the ARN is included
-#' in outbound calls over the internet. For more information, see [Security
-#' Considerations for Synthetics
-#' Canaries](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html).
-#' @param Code &#91;required&#93; A structure that includes the entry point from which the canary should
-#' start running your script. If the script is stored in an Amazon S3
-#' bucket, the bucket name, key, and version are also included.
-#' @param ArtifactS3Location &#91;required&#93; The location in Amazon S3 where Synthetics stores artifacts from the
-#' test runs of this canary. Artifacts include the log file, screenshots,
-#' and HAR files. The name of the Amazon S3 bucket can't include a period
-#' (.).
-#' @param ExecutionRoleArn &#91;required&#93; The ARN of the IAM role to be used to run the canary. This role must
-#' already exist, and must include `lambda.amazonaws.com` as a principal in
-#' the trust policy. The role must also have the following permissions:
+#' Do not include secrets or proprietary information in your canary names. The canary name makes up part of the canary ARN, and the ARN is included in outbound calls over the internet. For more information, see [Security Considerations for Synthetics Canaries](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/servicelens_canaries_security.html).
+#' @param Code &#91;required&#93; A structure that includes the entry point from which the canary should start running your script. If the script is stored in an Amazon S3 bucket, the bucket name, key, and version are also included.
+#' @param ArtifactS3Location &#91;required&#93; The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the Amazon S3 bucket can't include a period (.).
+#' @param ExecutionRoleArn &#91;required&#93; The ARN of the IAM role to be used to run the canary. This role must already exist, and must include `lambda.amazonaws.com` as a principal in the trust policy. The role must also have the following permissions:
 #' 
 #' -   `s3:PutObject`
 #' 
@@ -76,72 +62,33 @@ synthetics_associate_resource <- function(GroupIdentifier, ResourceArn) {
 #' -   `logs:CreateLogStream`
 #' 
 #' -   `logs:PutLogEvents`
-#' @param Schedule &#91;required&#93; A structure that contains information about how often the canary is to
-#' run and when these test runs are to stop.
-#' @param RunConfig A structure that contains the configuration for individual canary runs,
-#' such as timeout value and environment variables.
+#' @param Schedule &#91;required&#93; A structure that contains information about how often the canary is to run and when these test runs are to stop.
+#' @param RunConfig A structure that contains the configuration for individual canary runs, such as timeout value and environment variables.
 #' 
-#' Environment variable keys and values are encrypted at rest using Amazon
-#' Web Services owned KMS keys. However, the environment variables are not
-#' encrypted on the client side. Do not store sensitive information in
-#' them.
-#' @param SuccessRetentionPeriodInDays The number of days to retain data about successful runs of this canary.
-#' If you omit this field, the default of 31 days is used. The valid range
-#' is 1 to 455 days.
+#' Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.
+#' @param SuccessRetentionPeriodInDays The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
 #' 
-#' This setting affects the range of information returned by
-#' [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of
-#' information displayed in the Synthetics console.
-#' @param FailureRetentionPeriodInDays The number of days to retain data about failed runs of this canary. If
-#' you omit this field, the default of 31 days is used. The valid range is
-#' 1 to 455 days.
+#' This setting affects the range of information returned by [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of information displayed in the Synthetics console.
+#' @param FailureRetentionPeriodInDays The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
 #' 
-#' This setting affects the range of information returned by
-#' [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of
-#' information displayed in the Synthetics console.
-#' @param RuntimeVersion &#91;required&#93; Specifies the runtime version to use for the canary. For a list of valid
-#' runtime versions and more information about runtime versions, see
-#' [Canary Runtime
-#' Versions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html).
-#' @param VpcConfig If this canary is to test an endpoint in a VPC, this structure contains
-#' information about the subnet and security groups of the VPC endpoint.
-#' For more information, see [Running a Canary in a
-#' VPC](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html).
-#' @param ResourcesToReplicateTags To have the tags that you apply to this canary also be applied to the
-#' Lambda function that the canary uses, specify this parameter with the
-#' value `lambda-function`.
+#' This setting affects the range of information returned by [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of information displayed in the Synthetics console.
+#' @param RuntimeVersion &#91;required&#93; Specifies the runtime version to use for the canary. For a list of valid runtime versions and more information about runtime versions, see [Canary Runtime Versions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html).
+#' @param VpcConfig If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see [Running a Canary in a VPC](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html).
+#' @param ResourcesToReplicateTags To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value `lambda-function`.
 #' 
-#' If you specify this parameter and don't specify any tags in the `Tags`
-#' parameter, the canary creation fails.
-#' @param ProvisionedResourceCleanup Specifies whether to also delete the Lambda functions and layers used by
-#' this canary when the canary is deleted. If you omit this parameter, the
-#' default of `AUTOMATIC` is used, which means that the Lambda functions
-#' and layers will be deleted when the canary is deleted.
+#' If you specify this parameter and don't specify any tags in the `Tags` parameter, the canary creation fails.
+#' @param ProvisionedResourceCleanup Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of `AUTOMATIC` is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.
 #' 
-#' If the value of this parameter is `OFF`, then the value of the
-#' `DeleteLambda` parameter of the
-#' [`delete_canary`][synthetics_delete_canary] operation determines whether
-#' the Lambda functions and layers will be deleted.
-#' @param BrowserConfigs CloudWatch Synthetics now supports multibrowser canaries for
-#' `syn-nodejs-puppeteer-11.0` and `syn-nodejs-playwright-3.0` runtimes.
-#' This feature allows you to run your canaries on both Firefox and Chrome
-#' browsers. To create a multibrowser canary, you need to specify the
-#' BrowserConfigs with a list of browsers you want to use.
+#' If the value of this parameter is `OFF`, then the value of the `DeleteLambda` parameter of the [`delete_canary`][synthetics_delete_canary] operation determines whether the Lambda functions and layers will be deleted.
+#' @param BrowserConfigs CloudWatch Synthetics now supports multibrowser canaries for `syn-nodejs-puppeteer-11.0` and `syn-nodejs-playwright-3.0` runtimes. This feature allows you to run your canaries on both Firefox and Chrome browsers. To create a multibrowser canary, you need to specify the BrowserConfigs with a list of browsers you want to use.
 #' 
 #' If not specified, `browserConfigs` defaults to Chrome.
-#' @param Tags A list of key-value pairs to associate with the canary. You can
-#' associate as many as 50 tags with a canary.
+#' @param Tags A list of key-value pairs to associate with the canary. You can associate as many as 50 tags with a canary.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions, by granting a user permission to
-#' access or change only the resources that have certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.
 #' 
-#' To have the tags that you apply to this canary also be applied to the
-#' Lambda function that the canary uses, specify this parameter with the
-#' value `lambda-function`.
-#' @param ArtifactConfig A structure that contains the configuration for canary artifacts,
-#' including the encryption-at-rest settings for artifacts that the canary
-#' uploads to Amazon S3.
+#' To have the tags that you apply to this canary also be applied to the Lambda function that the canary uses, specify this parameter with the value `lambda-function`.
+#' @param ArtifactConfig A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.
 #'
 #' @keywords internal
 #'
@@ -175,14 +122,10 @@ synthetics_create_canary <- function(Name, Code, ArtifactS3Location, ExecutionRo
 #'
 #' @param Name &#91;required&#93; The name for the group. It can include any Unicode characters.
 #' 
-#' The names for all groups in your account, across all Regions, must be
-#' unique.
-#' @param Tags A list of key-value pairs to associate with the group. You can associate
-#' as many as 50 tags with a group.
+#' The names for all groups in your account, across all Regions, must be unique.
+#' @param Tags A list of key-value pairs to associate with the group. You can associate as many as 50 tags with a group.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions, by granting a user permission to
-#' access or change only the resources that have certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only the resources that have certain tag values.
 #'
 #' @keywords internal
 #'
@@ -213,15 +156,10 @@ synthetics_create_group <- function(Name, Tags = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_delete_canary/](https://www.paws-r-sdk.com/docs/synthetics_delete_canary/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the canary that you want to delete. To find the names of
-#' your canaries, use [`describe_canaries`][synthetics_describe_canaries].
-#' @param DeleteLambda Specifies whether to also delete the Lambda functions and layers used by
-#' this canary. The default is `false`.
+#' @param Name &#91;required&#93; The name of the canary that you want to delete. To find the names of your canaries, use [`describe_canaries`][synthetics_describe_canaries].
+#' @param DeleteLambda Specifies whether to also delete the Lambda functions and layers used by this canary. The default is `false`.
 #' 
-#' Your setting for this parameter is used only if the canary doesn't have
-#' `AUTOMATIC` for its `ProvisionedResourceCleanup` field. If that field is
-#' set to `AUTOMATIC`, then the Lambda functions and layers will be deleted
-#' when this canary is deleted.
+#' Your setting for this parameter is used only if the canary doesn't have `AUTOMATIC` for its `ProvisionedResourceCleanup` field. If that field is set to `AUTOMATIC`, then the Lambda functions and layers will be deleted when this canary is deleted.
 #' 
 #' Type: Boolean
 #'
@@ -254,8 +192,7 @@ synthetics_delete_canary <- function(Name, DeleteLambda = NULL) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_delete_group/](https://www.paws-r-sdk.com/docs/synthetics_delete_group/) for full documentation.
 #'
-#' @param GroupIdentifier &#91;required&#93; Specifies which group to delete. You can specify the group name, the
-#' ARN, or the group ID as the `GroupIdentifier`.
+#' @param GroupIdentifier &#91;required&#93; Specifies which group to delete. You can specify the group name, the ARN, or the group ID as the `GroupIdentifier`.
 #'
 #' @keywords internal
 #'
@@ -287,25 +224,13 @@ synthetics_delete_group <- function(GroupIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_describe_canaries/](https://www.paws-r-sdk.com/docs/synthetics_describe_canaries/) for full documentation.
 #'
-#' @param NextToken A token that indicates that there is more data available. You can use
-#' this token in a subsequent operation to retrieve the next set of
-#' results.
-#' @param MaxResults Specify this parameter to limit how many canaries are returned each time
-#' you use the [`describe_canaries`][synthetics_describe_canaries]
-#' operation. If you omit this parameter, the default of 20 is used.
-#' @param Names Use this parameter to return only canaries that match the names that you
-#' specify here. You can specify as many as five canary names.
+#' @param NextToken A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
+#' @param MaxResults Specify this parameter to limit how many canaries are returned each time you use the [`describe_canaries`][synthetics_describe_canaries] operation. If you omit this parameter, the default of 20 is used.
+#' @param Names Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.
 #' 
-#' If you specify this parameter, the operation is successful only if you
-#' have authorization to view all the canaries that you specify in your
-#' request. If you do not have permission to view any of the canaries, the
-#' request fails with a 403 response.
+#' If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.
 #' 
-#' You are required to use this parameter if you are logged on to a user or
-#' role that has an IAM policy that restricts which canaries that you are
-#' allowed to view. For more information, see [Limiting a user to viewing
-#' specific
-#' canaries](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html).
+#' You are required to use this parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see [Limiting a user to viewing specific canaries](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html).
 #'
 #' @keywords internal
 #'
@@ -337,26 +262,13 @@ synthetics_describe_canaries <- function(NextToken = NULL, MaxResults = NULL, Na
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_describe_canaries_last_run/](https://www.paws-r-sdk.com/docs/synthetics_describe_canaries_last_run/) for full documentation.
 #'
-#' @param NextToken A token that indicates that there is more data available. You can use
-#' this token in a subsequent
-#' [`describe_canaries_last_run`][synthetics_describe_canaries_last_run]
-#' operation to retrieve the next set of results.
-#' @param MaxResults Specify this parameter to limit how many runs are returned each time you
-#' use the `DescribeLastRun` operation. If you omit this parameter, the
-#' default of 100 is used.
-#' @param Names Use this parameter to return only canaries that match the names that you
-#' specify here. You can specify as many as five canary names.
+#' @param NextToken A token that indicates that there is more data available. You can use this token in a subsequent [`describe_canaries_last_run`][synthetics_describe_canaries_last_run] operation to retrieve the next set of results.
+#' @param MaxResults Specify this parameter to limit how many runs are returned each time you use the `DescribeLastRun` operation. If you omit this parameter, the default of 100 is used.
+#' @param Names Use this parameter to return only canaries that match the names that you specify here. You can specify as many as five canary names.
 #' 
-#' If you specify this parameter, the operation is successful only if you
-#' have authorization to view all the canaries that you specify in your
-#' request. If you do not have permission to view any of the canaries, the
-#' request fails with a 403 response.
+#' If you specify this parameter, the operation is successful only if you have authorization to view all the canaries that you specify in your request. If you do not have permission to view any of the canaries, the request fails with a 403 response.
 #' 
-#' You are required to use the `Names` parameter if you are logged on to a
-#' user or role that has an IAM policy that restricts which canaries that
-#' you are allowed to view. For more information, see [Limiting a user to
-#' viewing specific
-#' canaries](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html).
+#' You are required to use the `Names` parameter if you are logged on to a user or role that has an IAM policy that restricts which canaries that you are allowed to view. For more information, see [Limiting a user to viewing specific canaries](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html).
 #' @param BrowserType The type of browser to use for the canary run.
 #'
 #' @keywords internal
@@ -388,14 +300,8 @@ synthetics_describe_canaries_last_run <- function(NextToken = NULL, MaxResults =
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_describe_runtime_versions/](https://www.paws-r-sdk.com/docs/synthetics_describe_runtime_versions/) for full documentation.
 #'
-#' @param NextToken A token that indicates that there is more data available. You can use
-#' this token in a subsequent
-#' [`describe_runtime_versions`][synthetics_describe_runtime_versions]
-#' operation to retrieve the next set of results.
-#' @param MaxResults Specify this parameter to limit how many runs are returned each time you
-#' use the
-#' [`describe_runtime_versions`][synthetics_describe_runtime_versions]
-#' operation. If you omit this parameter, the default of 100 is used.
+#' @param NextToken A token that indicates that there is more data available. You can use this token in a subsequent [`describe_runtime_versions`][synthetics_describe_runtime_versions] operation to retrieve the next set of results.
+#' @param MaxResults Specify this parameter to limit how many runs are returned each time you use the [`describe_runtime_versions`][synthetics_describe_runtime_versions] operation. If you omit this parameter, the default of 100 is used.
 #'
 #' @keywords internal
 #'
@@ -426,8 +332,7 @@ synthetics_describe_runtime_versions <- function(NextToken = NULL, MaxResults = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_disassociate_resource/](https://www.paws-r-sdk.com/docs/synthetics_disassociate_resource/) for full documentation.
 #'
-#' @param GroupIdentifier &#91;required&#93; Specifies the group. You can specify the group name, the ARN, or the
-#' group ID as the `GroupIdentifier`.
+#' @param GroupIdentifier &#91;required&#93; Specifies the group. You can specify the group name, the ARN, or the group ID as the `GroupIdentifier`.
 #' @param ResourceArn &#91;required&#93; The ARN of the canary that you want to remove from the specified group.
 #'
 #' @keywords internal
@@ -460,8 +365,7 @@ synthetics_disassociate_resource <- function(GroupIdentifier, ResourceArn) {
 #' See [https://www.paws-r-sdk.com/docs/synthetics_get_canary/](https://www.paws-r-sdk.com/docs/synthetics_get_canary/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the canary that you want details for.
-#' @param DryRunId The DryRunId associated with an existing canary’s dry run. You can use
-#' this DryRunId to retrieve information about the dry run.
+#' @param DryRunId The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.
 #'
 #' @keywords internal
 #'
@@ -493,30 +397,18 @@ synthetics_get_canary <- function(Name, DryRunId = NULL) {
 #' See [https://www.paws-r-sdk.com/docs/synthetics_get_canary_runs/](https://www.paws-r-sdk.com/docs/synthetics_get_canary_runs/) for full documentation.
 #'
 #' @param Name &#91;required&#93; The name of the canary that you want to see runs for.
-#' @param NextToken A token that indicates that there is more data available. You can use
-#' this token in a subsequent
-#' [`get_canary_runs`][synthetics_get_canary_runs] operation to retrieve
-#' the next set of results.
+#' @param NextToken A token that indicates that there is more data available. You can use this token in a subsequent [`get_canary_runs`][synthetics_get_canary_runs] operation to retrieve the next set of results.
 #' 
-#' When auto retry is enabled for the canary, the first subsequent retry is
-#' suffixed with *1 indicating its the first retry and the next subsequent
-#' try is suffixed with *2.
-#' @param MaxResults Specify this parameter to limit how many runs are returned each time you
-#' use the [`get_canary_runs`][synthetics_get_canary_runs] operation. If
-#' you omit this parameter, the default of 100 is used.
-#' @param DryRunId The DryRunId associated with an existing canary’s dry run. You can use
-#' this DryRunId to retrieve information about the dry run.
-#' @param RunType -   When you provide `RunType=CANARY_RUN` and `dryRunId`, you will get
-#'     an exception
+#' When auto retry is enabled for the canary, the first subsequent retry is suffixed with *1 indicating its the first retry and the next subsequent try is suffixed with *2.
+#' @param MaxResults Specify this parameter to limit how many runs are returned each time you use the [`get_canary_runs`][synthetics_get_canary_runs] operation. If you omit this parameter, the default of 100 is used.
+#' @param DryRunId The DryRunId associated with an existing canary’s dry run. You can use this DryRunId to retrieve information about the dry run.
+#' @param RunType -   When you provide `RunType=CANARY_RUN` and `dryRunId`, you will get an exception
 #' 
-#' -   When a value is not provided for `RunType`, the default value is
-#'     `CANARY_RUN`
+#' -   When a value is not provided for `RunType`, the default value is `CANARY_RUN`
 #' 
-#' -   When `CANARY_RUN` is provided, all canary runs excluding dry runs
-#'     are returned
+#' -   When `CANARY_RUN` is provided, all canary runs excluding dry runs are returned
 #' 
-#' -   When `DRY_RUN` is provided, all dry runs excluding canary runs are
-#'     returned
+#' -   When `DRY_RUN` is provided, all dry runs excluding canary runs are returned
 #'
 #' @keywords internal
 #'
@@ -547,8 +439,7 @@ synthetics_get_canary_runs <- function(Name, NextToken = NULL, MaxResults = NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_get_group/](https://www.paws-r-sdk.com/docs/synthetics_get_group/) for full documentation.
 #'
-#' @param GroupIdentifier &#91;required&#93; Specifies the group to return information for. You can specify the group
-#' name, the ARN, or the group ID as the `GroupIdentifier`.
+#' @param GroupIdentifier &#91;required&#93; Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the `GroupIdentifier`.
 #'
 #' @keywords internal
 #'
@@ -580,13 +471,8 @@ synthetics_get_group <- function(GroupIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_list_associated_groups/](https://www.paws-r-sdk.com/docs/synthetics_list_associated_groups/) for full documentation.
 #'
-#' @param NextToken A token that indicates that there is more data available. You can use
-#' this token in a subsequent operation to retrieve the next set of
-#' results.
-#' @param MaxResults Specify this parameter to limit how many groups are returned each time
-#' you use the
-#' [`list_associated_groups`][synthetics_list_associated_groups] operation.
-#' If you omit this parameter, the default of 20 is used.
+#' @param NextToken A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
+#' @param MaxResults Specify this parameter to limit how many groups are returned each time you use the [`list_associated_groups`][synthetics_list_associated_groups] operation. If you omit this parameter, the default of 20 is used.
 #' @param ResourceArn &#91;required&#93; The ARN of the canary that you want to view groups for.
 #'
 #' @keywords internal
@@ -619,15 +505,9 @@ synthetics_list_associated_groups <- function(NextToken = NULL, MaxResults = NUL
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_list_group_resources/](https://www.paws-r-sdk.com/docs/synthetics_list_group_resources/) for full documentation.
 #'
-#' @param NextToken A token that indicates that there is more data available. You can use
-#' this token in a subsequent operation to retrieve the next set of
-#' results.
-#' @param MaxResults Specify this parameter to limit how many canary ARNs are returned each
-#' time you use the
-#' [`list_group_resources`][synthetics_list_group_resources] operation. If
-#' you omit this parameter, the default of 20 is used.
-#' @param GroupIdentifier &#91;required&#93; Specifies the group to return information for. You can specify the group
-#' name, the ARN, or the group ID as the `GroupIdentifier`.
+#' @param NextToken A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
+#' @param MaxResults Specify this parameter to limit how many canary ARNs are returned each time you use the [`list_group_resources`][synthetics_list_group_resources] operation. If you omit this parameter, the default of 20 is used.
+#' @param GroupIdentifier &#91;required&#93; Specifies the group to return information for. You can specify the group name, the ARN, or the group ID as the `GroupIdentifier`.
 #'
 #' @keywords internal
 #'
@@ -659,12 +539,8 @@ synthetics_list_group_resources <- function(NextToken = NULL, MaxResults = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_list_groups/](https://www.paws-r-sdk.com/docs/synthetics_list_groups/) for full documentation.
 #'
-#' @param NextToken A token that indicates that there is more data available. You can use
-#' this token in a subsequent operation to retrieve the next set of
-#' results.
-#' @param MaxResults Specify this parameter to limit how many groups are returned each time
-#' you use the [`list_groups`][synthetics_list_groups] operation. If you
-#' omit this parameter, the default of 20 is used.
+#' @param NextToken A token that indicates that there is more data available. You can use this token in a subsequent operation to retrieve the next set of results.
+#' @param MaxResults Specify this parameter to limit how many groups are returned each time you use the [`list_groups`][synthetics_list_groups] operation. If you omit this parameter, the default of 20 is used.
 #'
 #' @keywords internal
 #'
@@ -697,11 +573,9 @@ synthetics_list_groups <- function(NextToken = NULL, MaxResults = NULL) {
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the canary or group that you want to view tags for.
 #' 
-#' The ARN format of a canary is
-#' `arn:aws:synthetics:Region:account-id:canary:canary-name `.
+#' The ARN format of a canary is `arn:aws:synthetics:Region:account-id:canary:canary-name `.
 #' 
-#' The ARN format of a group is
-#' `arn:aws:synthetics:Region:account-id:group:group-name `
+#' The ARN format of a group is `arn:aws:synthetics:Region:account-id:group:group-name `
 #'
 #' @keywords internal
 #'
@@ -732,8 +606,7 @@ synthetics_list_tags_for_resource <- function(ResourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_start_canary/](https://www.paws-r-sdk.com/docs/synthetics_start_canary/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the canary that you want to run. To find canary names, use
-#' [`describe_canaries`][synthetics_describe_canaries].
+#' @param Name &#91;required&#93; The name of the canary that you want to run. To find canary names, use [`describe_canaries`][synthetics_describe_canaries].
 #'
 #' @keywords internal
 #'
@@ -765,64 +638,40 @@ synthetics_start_canary <- function(Name) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_start_canary_dry_run/](https://www.paws-r-sdk.com/docs/synthetics_start_canary_dry_run/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the canary that you want to dry run. To find canary names,
-#' use [`describe_canaries`][synthetics_describe_canaries].
-#' @param Code 
-#' @param RuntimeVersion Specifies the runtime version to use for the canary. For a list of valid
-#' runtime versions and for more information about runtime versions, see
-#' [Canary Runtime
-#' Versions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html).
-#' @param RunConfig 
-#' @param VpcConfig 
-#' @param ExecutionRoleArn The ARN of the IAM role to be used to run the canary. This role must
-#' already exist, and must include `lambda.amazonaws.com` as a principal in
-#' the trust policy. The role must also have the following permissions:
-#' @param SuccessRetentionPeriodInDays The number of days to retain data about successful runs of this canary.
-#' If you omit this field, the default of 31 days is used. The valid range
-#' is 1 to 455 days.
+#' @param Name &#91;required&#93; The name of the canary that you want to dry run. To find canary names, use [`describe_canaries`][synthetics_describe_canaries].
+#' @param Code Use this structure to input your script code for the canary. This structure contains the Lambda handler with the location where the canary should start running the script. If the script is stored in an Amazon S3 bucket, the bucket name, key, and version are also included. If the script was passed into the canary directly, the script code is contained in the value of `Zipfile`.
 #' 
-#' This setting affects the range of information returned by
-#' [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of
-#' information displayed in the Synthetics console.
-#' @param FailureRetentionPeriodInDays The number of days to retain data about failed runs of this canary. If
-#' you omit this field, the default of 31 days is used. The valid range is
-#' 1 to 455 days.
+#' If you are uploading your canary scripts with an Amazon S3 bucket, your zip file should include your script in a certain folder structure.
 #' 
-#' This setting affects the range of information returned by
-#' [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of
-#' information displayed in the Synthetics console.
-#' @param VisualReference 
-#' @param ArtifactS3Location The location in Amazon S3 where Synthetics stores artifacts from the
-#' test runs of this canary. Artifacts include the log file, screenshots,
-#' and HAR files. The name of the Amazon S3 bucket can't include a period
-#' (.).
-#' @param ArtifactConfig 
-#' @param ProvisionedResourceCleanup Specifies whether to also delete the Lambda functions and layers used by
-#' this canary when the canary is deleted. If you omit this parameter, the
-#' default of `AUTOMATIC` is used, which means that the Lambda functions
-#' and layers will be deleted when the canary is deleted.
+#' -   For Node.js canaries, the folder structure must be `nodejs/node_modules/myCanaryFilename.js ` For more information, see [Packaging your Node.js canary files](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/#CloudWatch_Synthetics_Canaries_package)
 #' 
-#' If the value of this parameter is `OFF`, then the value of the
-#' `DeleteLambda` parameter of the
-#' [`delete_canary`][synthetics_delete_canary] operation determines whether
-#' the Lambda functions and layers will be deleted.
-#' @param BrowserConfigs A structure that specifies the browser type to use for a canary run.
-#' CloudWatch Synthetics supports running canaries on both `CHROME` and
-#' `FIREFOX` browsers.
+#' -   For Python canaries, the folder structure must be `python/myCanaryFilename.py ` or `python/myFolder/myCanaryFilename.py ` For more information, see [Packaging your Python canary files](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_WritingCanary_Python.html#CloudWatch_Synthetics_Canaries_WritingCanary_Python_package)
+#' @param RuntimeVersion Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see [Canary Runtime Versions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html).
+#' @param RunConfig A structure that contains input information for a canary run.
+#' @param VpcConfig If this canary is to test an endpoint in a VPC, this structure contains information about the subnets and security groups of the VPC endpoint. For more information, see [Running a Canary in a VPC](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html).
+#' @param ExecutionRoleArn The ARN of the IAM role to be used to run the canary. This role must already exist, and must include `lambda.amazonaws.com` as a principal in the trust policy. The role must also have the following permissions:
+#' @param SuccessRetentionPeriodInDays The number of days to retain data about successful runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
+#' 
+#' This setting affects the range of information returned by [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of information displayed in the Synthetics console.
+#' @param FailureRetentionPeriodInDays The number of days to retain data about failed runs of this canary. If you omit this field, the default of 31 days is used. The valid range is 1 to 455 days.
+#' 
+#' This setting affects the range of information returned by [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of information displayed in the Synthetics console.
+#' @param VisualReference An object that specifies what screenshots to use as a baseline for visual monitoring by this canary. It can optionally also specify parts of the screenshots to ignore during the visual monitoring comparison.
+#' 
+#' Visual monitoring is supported only on canaries running the **syn-puppeteer-node-3.2** runtime or later. For more information, see [Visual monitoring](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/) and [Visual monitoring blueprint](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)
+#' @param ArtifactS3Location The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the Amazon S3 bucket can't include a period (.).
+#' @param ArtifactConfig A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.
+#' @param ProvisionedResourceCleanup Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted. If you omit this parameter, the default of `AUTOMATIC` is used, which means that the Lambda functions and layers will be deleted when the canary is deleted.
+#' 
+#' If the value of this parameter is `OFF`, then the value of the `DeleteLambda` parameter of the [`delete_canary`][synthetics_delete_canary] operation determines whether the Lambda functions and layers will be deleted.
+#' @param BrowserConfigs A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both `CHROME` and `FIREFOX` browsers.
 #' 
 #' If not specified, `browserConfigs` defaults to Chrome.
-#' @param VisualReferences A list of visual reference configurations for the canary, one for each
-#' browser type that the canary is configured to run on. Visual references
-#' are used for visual monitoring comparisons.
+#' @param VisualReferences A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.
 #' 
-#' `syn-nodejs-puppeteer-11.0` and above, and `syn-nodejs-playwright-3.0`
-#' and above, only supports `visualReferences`. `visualReference` field is
-#' not supported.
+#' `syn-nodejs-puppeteer-11.0` and above, and `syn-nodejs-playwright-3.0` and above, only supports `visualReferences`. `visualReference` field is not supported.
 #' 
-#' Versions older than `syn-nodejs-puppeteer-11.0` supports both
-#' `visualReference` and `visualReferences` for backward compatibility. It
-#' is recommended to use `visualReferences` for consistency and future
-#' compatibility.
+#' Versions older than `syn-nodejs-puppeteer-11.0` supports both `visualReference` and `visualReferences` for backward compatibility. It is recommended to use `visualReferences` for consistency and future compatibility.
 #'
 #' @keywords internal
 #'
@@ -853,9 +702,7 @@ synthetics_start_canary_dry_run <- function(Name, Code = NULL, RuntimeVersion = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_stop_canary/](https://www.paws-r-sdk.com/docs/synthetics_stop_canary/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the canary that you want to stop. To find the names of your
-#' canaries, use
-#' [ListCanaries](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html).
+#' @param Name &#91;required&#93; The name of the canary that you want to stop. To find the names of your canaries, use [ListCanaries](https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html).
 #'
 #' @keywords internal
 #'
@@ -889,11 +736,9 @@ synthetics_stop_canary <- function(Name) {
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the canary or group that you're adding tags to.
 #' 
-#' The ARN format of a canary is
-#' `arn:aws:synthetics:Region:account-id:canary:canary-name `.
+#' The ARN format of a canary is `arn:aws:synthetics:Region:account-id:canary:canary-name `.
 #' 
-#' The ARN format of a group is
-#' `arn:aws:synthetics:Region:account-id:group:group-name `
+#' The ARN format of a group is `arn:aws:synthetics:Region:account-id:group:group-name `
 #' @param Tags &#91;required&#93; The list of key-value pairs to associate with the resource.
 #'
 #' @keywords internal
@@ -927,11 +772,9 @@ synthetics_tag_resource <- function(ResourceArn, Tags) {
 #'
 #' @param ResourceArn &#91;required&#93; The ARN of the canary or group that you're removing tags from.
 #' 
-#' The ARN format of a canary is
-#' `arn:aws:synthetics:Region:account-id:canary:canary-name `.
+#' The ARN format of a canary is `arn:aws:synthetics:Region:account-id:canary:canary-name `.
 #' 
-#' The ARN format of a group is
-#' `arn:aws:synthetics:Region:account-id:group:group-name `
+#' The ARN format of a group is `arn:aws:synthetics:Region:account-id:group:group-name `
 #' @param TagKeys &#91;required&#93; The list of tag keys to remove from the resource.
 #'
 #' @keywords internal
@@ -963,16 +806,11 @@ synthetics_untag_resource <- function(ResourceArn, TagKeys) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/synthetics_update_canary/](https://www.paws-r-sdk.com/docs/synthetics_update_canary/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name of the canary that you want to update. To find the names of
-#' your canaries, use [`describe_canaries`][synthetics_describe_canaries].
+#' @param Name &#91;required&#93; The name of the canary that you want to update. To find the names of your canaries, use [`describe_canaries`][synthetics_describe_canaries].
 #' 
 #' You cannot change the name of a canary that has already been created.
-#' @param Code A structure that includes the entry point from which the canary should
-#' start running your script. If the script is stored in an Amazon S3
-#' bucket, the bucket name, key, and version are also included.
-#' @param ExecutionRoleArn The ARN of the IAM role to be used to run the canary. This role must
-#' already exist, and must include `lambda.amazonaws.com` as a principal in
-#' the trust policy. The role must also have the following permissions:
+#' @param Code A structure that includes the entry point from which the canary should start running your script. If the script is stored in an Amazon S3 bucket, the bucket name, key, and version are also included.
+#' @param ExecutionRoleArn The ARN of the IAM role to be used to run the canary. This role must already exist, and must include `lambda.amazonaws.com` as a principal in the trust policy. The role must also have the following permissions:
 #' 
 #' -   `s3:PutObject`
 #' 
@@ -987,90 +825,39 @@ synthetics_untag_resource <- function(ResourceArn, TagKeys) {
 #' -   `logs:CreateLogStream`
 #' 
 #' -   `logs:CreateLogStream`
-#' @param RuntimeVersion Specifies the runtime version to use for the canary. For a list of valid
-#' runtime versions and for more information about runtime versions, see
-#' [Canary Runtime
-#' Versions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html).
-#' @param Schedule A structure that contains information about how often the canary is to
-#' run, and when these runs are to stop.
-#' @param RunConfig A structure that contains the timeout value that is used for each
-#' individual run of the canary.
+#' @param RuntimeVersion Specifies the runtime version to use for the canary. For a list of valid runtime versions and for more information about runtime versions, see [Canary Runtime Versions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html).
+#' @param Schedule A structure that contains information about how often the canary is to run, and when these runs are to stop.
+#' @param RunConfig A structure that contains the timeout value that is used for each individual run of the canary.
 #' 
-#' Environment variable keys and values are encrypted at rest using Amazon
-#' Web Services owned KMS keys. However, the environment variables are not
-#' encrypted on the client side. Do not store sensitive information in
-#' them.
+#' Environment variable keys and values are encrypted at rest using Amazon Web Services owned KMS keys. However, the environment variables are not encrypted on the client side. Do not store sensitive information in them.
 #' @param SuccessRetentionPeriodInDays The number of days to retain data about successful runs of this canary.
 #' 
-#' This setting affects the range of information returned by
-#' [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of
-#' information displayed in the Synthetics console.
+#' This setting affects the range of information returned by [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of information displayed in the Synthetics console.
 #' @param FailureRetentionPeriodInDays The number of days to retain data about failed runs of this canary.
 #' 
-#' This setting affects the range of information returned by
-#' [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of
-#' information displayed in the Synthetics console.
-#' @param VpcConfig If this canary is to test an endpoint in a VPC, this structure contains
-#' information about the subnet and security groups of the VPC endpoint.
-#' For more information, see [Running a Canary in a
-#' VPC](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html).
-#' @param VisualReference Defines the screenshots to use as the baseline for comparisons during
-#' visual monitoring comparisons during future runs of this canary. If you
-#' omit this parameter, no changes are made to any baseline screenshots
-#' that the canary might be using already.
+#' This setting affects the range of information returned by [`get_canary_runs`][synthetics_get_canary_runs], as well as the range of information displayed in the Synthetics console.
+#' @param VpcConfig If this canary is to test an endpoint in a VPC, this structure contains information about the subnet and security groups of the VPC endpoint. For more information, see [Running a Canary in a VPC](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_VPC.html).
+#' @param VisualReference Defines the screenshots to use as the baseline for comparisons during visual monitoring comparisons during future runs of this canary. If you omit this parameter, no changes are made to any baseline screenshots that the canary might be using already.
 #' 
-#' Visual monitoring is supported only on canaries running the
-#' **syn-puppeteer-node-3.2** runtime or later. For more information, see
-#' [Visual
-#' monitoring](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)
-#' and [Visual monitoring
-#' blueprint](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)
-#' @param ArtifactS3Location The location in Amazon S3 where Synthetics stores artifacts from the
-#' test runs of this canary. Artifacts include the log file, screenshots,
-#' and HAR files. The name of the Amazon S3 bucket can't include a period
-#' (.).
-#' @param ArtifactConfig A structure that contains the configuration for canary artifacts,
-#' including the encryption-at-rest settings for artifacts that the canary
-#' uploads to Amazon S3.
-#' @param ProvisionedResourceCleanup Specifies whether to also delete the Lambda functions and layers used by
-#' this canary when the canary is deleted.
+#' Visual monitoring is supported only on canaries running the **syn-puppeteer-node-3.2** runtime or later. For more information, see [Visual monitoring](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/) and [Visual monitoring blueprint](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)
+#' @param ArtifactS3Location The location in Amazon S3 where Synthetics stores artifacts from the test runs of this canary. Artifacts include the log file, screenshots, and HAR files. The name of the Amazon S3 bucket can't include a period (.).
+#' @param ArtifactConfig A structure that contains the configuration for canary artifacts, including the encryption-at-rest settings for artifacts that the canary uploads to Amazon S3.
+#' @param ProvisionedResourceCleanup Specifies whether to also delete the Lambda functions and layers used by this canary when the canary is deleted.
 #' 
-#' If the value of this parameter is `OFF`, then the value of the
-#' `DeleteLambda` parameter of the
-#' [`delete_canary`][synthetics_delete_canary] operation determines whether
-#' the Lambda functions and layers will be deleted.
-#' @param DryRunId Update the existing canary using the updated configurations from the
-#' DryRun associated with the DryRunId.
+#' If the value of this parameter is `OFF`, then the value of the `DeleteLambda` parameter of the [`delete_canary`][synthetics_delete_canary] operation determines whether the Lambda functions and layers will be deleted.
+#' @param DryRunId Update the existing canary using the updated configurations from the DryRun associated with the DryRunId.
 #' 
-#' When you use the `dryRunId` field when updating a canary, the only other
-#' field you can provide is the `Schedule`. Adding any other field will
-#' thrown an exception.
-#' @param VisualReferences A list of visual reference configurations for the canary, one for each
-#' browser type that the canary is configured to run on. Visual references
-#' are used for visual monitoring comparisons.
+#' When you use the `dryRunId` field when updating a canary, the only other field you can provide is the `Schedule`. Adding any other field will thrown an exception.
+#' @param VisualReferences A list of visual reference configurations for the canary, one for each browser type that the canary is configured to run on. Visual references are used for visual monitoring comparisons.
 #' 
-#' `syn-nodejs-puppeteer-11.0` and above, and `syn-nodejs-playwright-3.0`
-#' and above, only supports `visualReferences`. `visualReference` field is
-#' not supported.
+#' `syn-nodejs-puppeteer-11.0` and above, and `syn-nodejs-playwright-3.0` and above, only supports `visualReferences`. `visualReference` field is not supported.
 #' 
-#' Versions older than `syn-nodejs-puppeteer-11.0` supports both
-#' `visualReference` and `visualReferences` for backward compatibility. It
-#' is recommended to use `visualReferences` for consistency and future
-#' compatibility.
+#' Versions older than `syn-nodejs-puppeteer-11.0` supports both `visualReference` and `visualReferences` for backward compatibility. It is recommended to use `visualReferences` for consistency and future compatibility.
 #' 
-#' For multibrowser visual monitoring, you can update the baseline for all
-#' configured browsers in a single update call by specifying a list of
-#' VisualReference objects, one per browser. Each VisualReference object
-#' maps to a specific browser configuration, allowing you to manage visual
-#' baselines for multiple browsers simultaneously.
+#' For multibrowser visual monitoring, you can update the baseline for all configured browsers in a single update call by specifying a list of VisualReference objects, one per browser. Each VisualReference object maps to a specific browser configuration, allowing you to manage visual baselines for multiple browsers simultaneously.
 #' 
-#' For single configuration canaries using Chrome browser (default
-#' browser), use visualReferences for `syn-nodejs-puppeteer-11.0` and
-#' above, and `syn-nodejs-playwright-3.0` and above canaries. The
-#' browserType in the visualReference object is not mandatory.
-#' @param BrowserConfigs A structure that specifies the browser type to use for a canary run.
-#' CloudWatch Synthetics supports running canaries on both `CHROME` and
-#' `FIREFOX` browsers.
+#' For single configuration canaries using Chrome browser (default browser), use visualReferences for `syn-nodejs-puppeteer-11.0` and above, and `syn-nodejs-playwright-3.0` and above canaries. The browserType in the visualReference object is not mandatory.
+#' @param BrowserConfigs A structure that specifies the browser type to use for a canary run. CloudWatch Synthetics supports running canaries on both `CHROME` and `FIREFOX` browsers.
 #' 
 #' If not specified, `browserConfigs` defaults to Chrome.
 #'

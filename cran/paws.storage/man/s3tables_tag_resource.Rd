@@ -8,13 +8,9 @@ updates existing tags}
 s3tables_tag_resource(resourceArn, tags)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that
-you're applying tags to. The tagged resource can be a table bucket or a
-table. For a list of all S3 resources that support tagging, see
-\href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags}{Managing tags for Amazon S3 resources}.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the Amazon S3 Tables resource that you're applying tags to. The tagged resource can be a table bucket or a table. For a list of all S3 resources that support tagging, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html#manage-tags}{Managing tags for Amazon S3 resources}.}
 
-\item{tags}{[required] The user-defined tag that you want to add to the specified S3 Tables
-resource. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html}{Tagging for cost allocation or attribute-based access control (ABAC)}.}
+\item{tags}{[required] The user-defined tag that you want to add to the specified S3 Tables resource. For more information, see \href{https://docs.aws.amazon.com/AmazonS3/latest/userguide/tagging.html}{Tagging for cost allocation or attribute-based access control (ABAC)}.}
 }
 \description{
 Applies one or more user-defined tags to an Amazon S3 Tables resource or updates existing tags. Each tag is a label consisting of a key and value pair. Tags can help you organize, track costs for, and control access to your resources. You can add up to 50 tags for each S3 resource.

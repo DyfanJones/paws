@@ -7,8 +7,7 @@
 datazone_delete_subscription_request(domainIdentifier, identifier)
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription request
-is deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the subscription request is deleted.}
 
 \item{identifier}{[required] The ID of the subscription request that is deleted.}
 }

@@ -13,8 +13,7 @@ backupgateway_put_maintenance_start_time(
 )
 }
 \arguments{
-\item{GatewayArn}{[required] The Amazon Resource Name (ARN) for the gateway, used to specify its
-maintenance start time.}
+\item{GatewayArn}{[required] The Amazon Resource Name (ARN) for the gateway, used to specify its maintenance start time.}
 
 \item{HourOfDay}{[required] The hour of the day to start maintenance on a gateway.}
 

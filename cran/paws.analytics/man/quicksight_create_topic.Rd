@@ -14,16 +14,13 @@ quicksight_create_topic(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that you want to create a
-topic in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that you want to create a topic in.}
 
-\item{TopicId}{[required] The ID for the topic that you want to create. This ID is unique per
-Amazon Web Services Region for each Amazon Web Services account.}
+\item{TopicId}{[required] The ID for the topic that you want to create. This ID is unique per Amazon Web Services Region for each Amazon Web Services account.}
 
 \item{Topic}{[required] The definition of a topic to create.}
 
-\item{Tags}{Contains a map of the key-value pairs for the resource tag or tags that
-are assigned to the dataset.}
+\item{Tags}{Contains a map of the key-value pairs for the resource tag or tags that are assigned to the dataset.}
 
 \item{FolderArns}{The Folder ARN of the folder that you want the topic to reside in.}
 

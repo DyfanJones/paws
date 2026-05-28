@@ -10,11 +10,9 @@ sagemaker_start_cluster_health_check(
 )
 }
 \arguments{
-\item{ClusterName}{[required] The string name or the Amazon Resource Name (ARN) of the SageMaker
-HyperPod cluster.}
+\item{ClusterName}{[required] The string name or the Amazon Resource Name (ARN) of the SageMaker HyperPod cluster.}
 
-\item{DeepHealthCheckConfigurations}{[required] A list of configurations containing instance group names, EC2 instance
-IDs, and deep health checks to perform.}
+\item{DeepHealthCheckConfigurations}{[required] A list of configurations containing instance group names, EC2 instance IDs, and deep health checks to perform.}
 }
 \description{
 Start deep health checks for a SageMaker HyperPod cluster. You can use \code{\link[=sagemaker_describe_cluster_node]{describe_cluster_node}} API to track progress of the deep health checks. The unhealthy nodes will be automatically rebooted or replaced. Please see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-hyperpod-eks-resiliency-node-labels.html}{Resilience-related Kubernetes labels by SageMaker HyperPod} for details.

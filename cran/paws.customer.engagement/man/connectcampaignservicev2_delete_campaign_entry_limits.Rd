@@ -7,7 +7,7 @@
 connectcampaignservicev2_delete_campaign_entry_limits(id)
 }
 \arguments{
-\item{id}{[required]}
+\item{id}{[required] Identifier representing a Campaign}
 }
 \description{
 Deletes the entry limits config for a campaign. This API is idempotent.

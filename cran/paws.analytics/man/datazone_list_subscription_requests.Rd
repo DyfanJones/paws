@@ -24,8 +24,7 @@ datazone_list_subscription_requests(
 
 \item{status}{Specifies the status of the subscription requests.
 
-This is not a required parameter, but if not specified, by default,
-Amazon DataZone returns only \code{PENDING} subscription requests.}
+This is not a required parameter, but if not specified, by default, Amazon DataZone returns only \code{PENDING} subscription requests.}
 
 \item{subscribedListingId}{The identifier of the subscribed listing.}
 
@@ -43,21 +42,9 @@ Amazon DataZone returns only \code{PENDING} subscription requests.}
 
 \item{sortOrder}{Specifies the sort order for the results of this action.}
 
-\item{maxResults}{The maximum number of subscription requests to return in a single call
-to \code{\link[=datazone_list_subscription_requests]{list_subscription_requests}}.
-When the number of subscription requests to be listed is greater than
-the value of \code{MaxResults}, the response contains a \code{NextToken} value
-that you can use in a subsequent call to
-\code{\link[=datazone_list_subscription_requests]{list_subscription_requests}} to
-list the next set of subscription requests.}
+\item{maxResults}{The maximum number of subscription requests to return in a single call to \code{\link[=datazone_list_subscription_requests]{list_subscription_requests}}. When the number of subscription requests to be listed is greater than the value of \code{MaxResults}, the response contains a \code{NextToken} value that you can use in a subsequent call to \code{\link[=datazone_list_subscription_requests]{list_subscription_requests}} to list the next set of subscription requests.}
 
-\item{nextToken}{When the number of subscription requests is greater than the default
-value for the \code{MaxResults} parameter, or if you explicitly specify a
-value for \code{MaxResults} that is less than the number of subscription
-requests, the response includes a pagination token named \code{NextToken}.
-You can specify this \code{NextToken} value in a subsequent call to
-\code{\link[=datazone_list_subscription_requests]{list_subscription_requests}} to
-list the next set of subscription requests.}
+\item{nextToken}{When the number of subscription requests is greater than the default value for the \code{MaxResults} parameter, or if you explicitly specify a value for \code{MaxResults} that is less than the number of subscription requests, the response includes a pagination token named \code{NextToken}. You can specify this \code{NextToken} value in a subsequent call to \code{\link[=datazone_list_subscription_requests]{list_subscription_requests}} to list the next set of subscription requests.}
 }
 \description{
 Lists Amazon DataZone subscription requests.

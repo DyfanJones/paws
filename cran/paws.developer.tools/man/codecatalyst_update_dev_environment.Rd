@@ -22,28 +22,19 @@ codecatalyst_update_dev_environment(
 
 \item{id}{[required] The system-generated unique ID of the Dev Environment.}
 
-\item{alias}{The user-specified alias for the Dev Environment. Changing this value
-will not cause a restart.}
+\item{alias}{The user-specified alias for the Dev Environment. Changing this value will not cause a restart.}
 
-\item{ides}{Information about the integrated development environment (IDE)
-configured for a Dev Environment.}
+\item{ides}{Information about the integrated development environment (IDE) configured for a Dev Environment.}
 
 \item{instanceType}{The Amazon EC2 instace type to use for the Dev Environment.
 
-Changing this value will cause a restart of the Dev Environment if it is
-running.}
+Changing this value will cause a restart of the Dev Environment if it is running.}
 
-\item{inactivityTimeoutMinutes}{The amount of time the Dev Environment will run without any activity
-detected before stopping, in minutes. Only whole integers are allowed.
-Dev Environments consume compute minutes when running.
+\item{inactivityTimeoutMinutes}{The amount of time the Dev Environment will run without any activity detected before stopping, in minutes. Only whole integers are allowed. Dev Environments consume compute minutes when running.
 
-Changing this value will cause a restart of the Dev Environment if it is
-running.}
+Changing this value will cause a restart of the Dev Environment if it is running.}
 
-\item{clientToken}{A user-specified idempotency token. Idempotency ensures that an API
-request completes only once. With an idempotent request, if the original
-request completes successfully, the subsequent retries return the result
-from the original successful request and have no additional effect.}
+\item{clientToken}{A user-specified idempotency token. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, the subsequent retries return the result from the original successful request and have no additional effect.}
 }
 \description{
 Changes one or more values for a Dev Environment. Updating certain values of the Dev Environment will cause a restart.

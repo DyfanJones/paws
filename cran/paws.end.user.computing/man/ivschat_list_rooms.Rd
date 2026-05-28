@@ -16,8 +16,7 @@ ivschat_list_rooms(
 \arguments{
 \item{name}{Filters the list to match the specified room name.}
 
-\item{nextToken}{The first room to retrieve. This is used for pagination; see the
-\code{nextToken} response field.}
+\item{nextToken}{The first room to retrieve. This is used for pagination; see the \code{nextToken} response field.}
 
 \item{maxResults}{Maximum number of rooms to return. Default: 50.}
 

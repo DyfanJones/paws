@@ -18,8 +18,7 @@ memorydb_purchase_reserved_nodes_offering(
 
 \item{NodeCount}{The number of node instances to reserve.}
 
-\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair.
-A tag key must be accompanied by a tag value, although null is accepted.}
+\item{Tags}{A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.}
 }
 \description{
 Allows you to purchase a reserved node offering. Reserved nodes are not eligible for cancellation and are non-refundable.

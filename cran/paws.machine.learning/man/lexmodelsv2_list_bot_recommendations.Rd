@@ -13,22 +13,15 @@ lexmodelsv2_list_bot_recommendations(
 )
 }
 \arguments{
-\item{botId}{[required] The unique identifier of the bot that contains the bot recommendation
-list.}
+\item{botId}{[required] The unique identifier of the bot that contains the bot recommendation list.}
 
 \item{botVersion}{[required] The version of the bot that contains the bot recommendation list.}
 
-\item{localeId}{[required] The identifier of the language and locale of the bot recommendation
-list.}
+\item{localeId}{[required] The identifier of the language and locale of the bot recommendation list.}
 
-\item{maxResults}{The maximum number of bot recommendations to return in each page of
-results. If there are fewer results than the max page size, only the
-actual number of results are returned.}
+\item{maxResults}{The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextToken}{If the response from the ListBotRecommendation operation contains more
-results than specified in the maxResults parameter, a token is returned
-in the response. Use that token in the nextToken parameter to return the
-next page of results.}
+\item{nextToken}{If the response from the ListBotRecommendation operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.}
 }
 \description{
 Get a list of bot recommendations that meet the specified criteria.

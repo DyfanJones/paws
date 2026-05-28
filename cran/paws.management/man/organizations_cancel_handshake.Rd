@@ -7,14 +7,9 @@
 organizations_cancel_handshake(HandshakeId)
 }
 \arguments{
-\item{HandshakeId}{[required] ID for the handshake that you want to cancel. You can get the ID from
-the
-\code{\link[=organizations_list_handshakes_for_organization]{list_handshakes_for_organization}}
-operation.
+\item{HandshakeId}{[required] ID for the handshake that you want to cancel. You can get the ID from the \code{\link[=organizations_list_handshakes_for_organization]{list_handshakes_for_organization}} operation.
 
-The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for handshake
-ID string requires "h-" followed by from 8 to 32 lowercase letters or
-digits.}
+The \href{https://en.wikipedia.org/wiki/Regex}{regex pattern} for handshake ID string requires "h-" followed by from 8 to 32 lowercase letters or digits.}
 }
 \description{
 Cancels a Handshake.

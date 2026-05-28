@@ -83,22 +83,14 @@ lexruntimev2_get_session <- function(botId, botAliasId, localeId, sessionId) {
 #' @param botAliasId &#91;required&#93; The alias identifier of the bot that receives the session data.
 #' @param localeId &#91;required&#93; The locale where the session is in use.
 #' @param sessionId &#91;required&#93; The identifier of the session that receives the session data.
-#' @param messages A list of messages to send to the user. Messages are sent in the order
-#' that they are defined in the list.
-#' @param sessionState &#91;required&#93; Sets the state of the session with the user. You can use this to set the
-#' current intent, attributes, context, and dialog action. Use the dialog
-#' action to determine the next step that Amazon Lex V2 should use in the
-#' conversation with the user.
-#' @param requestAttributes Request-specific information passed between Amazon Lex V2 and the client
-#' application.
+#' @param messages A list of messages to send to the user. Messages are sent in the order that they are defined in the list.
+#' @param sessionState &#91;required&#93; Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.
+#' @param requestAttributes Request-specific information passed between Amazon Lex V2 and the client application.
 #' 
-#' The namespace `x-amz-lex:` is reserved for special attributes. Don't
-#' create any request attributes with the prefix `x-amz-lex:`.
-#' @param responseContentType The message that Amazon Lex V2 returns in the response can be either
-#' text or speech depending on the value of this parameter.
+#' The namespace `x-amz-lex:` is reserved for special attributes. Don't create any request attributes with the prefix `x-amz-lex:`.
+#' @param responseContentType The message that Amazon Lex V2 returns in the response can be either text or speech depending on the value of this parameter.
 #' 
-#' -   If the value is `text/plain; charset=utf-8`, Amazon Lex V2 returns
-#'     text in the response.
+#' -   If the value is `text/plain; charset=utf-8`, Amazon Lex V2 returns text in the response.
 #'
 #' @keywords internal
 #'
@@ -135,11 +127,9 @@ lexruntimev2_put_session <- function(botId, botAliasId, localeId, sessionId, mes
 #' @param sessionId &#91;required&#93; The identifier of the user session that is having the conversation.
 #' @param text &#91;required&#93; The text that the user entered. Amazon Lex V2 interprets this text.
 #' @param sessionState The current state of the dialog between the user and the bot.
-#' @param requestAttributes Request-specific information passed between the client application and
-#' Amazon Lex V2
+#' @param requestAttributes Request-specific information passed between the client application and Amazon Lex V2
 #' 
-#' The namespace `x-amz-lex:` is reserved for special attributes. Don't
-#' create any request attributes with the prefix `x-amz-lex:`.
+#' The namespace `x-amz-lex:` is reserved for special attributes. Don't create any request attributes with the prefix `x-amz-lex:`.
 #'
 #' @keywords internal
 #'
@@ -174,23 +164,15 @@ lexruntimev2_recognize_text <- function(botId, botAliasId, localeId, sessionId, 
 #' @param botAliasId &#91;required&#93; The alias identifier in use for the bot that should receive the request.
 #' @param localeId &#91;required&#93; The locale where the session is in use.
 #' @param sessionId &#91;required&#93; The identifier of the session in use.
-#' @param sessionState Sets the state of the session with the user. You can use this to set the
-#' current intent, attributes, context, and dialog action. Use the dialog
-#' action to determine the next step that Amazon Lex V2 should use in the
-#' conversation with the user.
+#' @param sessionState Sets the state of the session with the user. You can use this to set the current intent, attributes, context, and dialog action. Use the dialog action to determine the next step that Amazon Lex V2 should use in the conversation with the user.
 #' 
-#' The `sessionState` field must be compressed using gzip and then base64
-#' encoded before sending to Amazon Lex V2.
-#' @param requestAttributes Request-specific information passed between the client application and
-#' Amazon Lex V2
+#' The `sessionState` field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.
+#' @param requestAttributes Request-specific information passed between the client application and Amazon Lex V2
 #' 
-#' The namespace `x-amz-lex:` is reserved for special attributes. Don't
-#' create any request attributes for prefix `x-amz-lex:`.
+#' The namespace `x-amz-lex:` is reserved for special attributes. Don't create any request attributes for prefix `x-amz-lex:`.
 #' 
-#' The `requestAttributes` field must be compressed using gzip and then
-#' base64 encoded before sending to Amazon Lex V2.
-#' @param requestContentType &#91;required&#93; Indicates the format for audio input or that the content is text. The
-#' header must start with one of the following prefixes:
+#' The `requestAttributes` field must be compressed using gzip and then base64 encoded before sending to Amazon Lex V2.
+#' @param requestContentType &#91;required&#93; Indicates the format for audio input or that the content is text. The header must start with one of the following prefixes:
 #' 
 #' -   PCM format, audio data must be in little-endian byte order.
 #' 
@@ -198,8 +180,7 @@ lexruntimev2_recognize_text <- function(botId, botAliasId, localeId, sessionId, 
 #' 
 #'     -   audio/x-l16; sample-rate=16000; channel-count=1
 #' 
-#'     -   audio/lpcm; sample-rate=8000; sample-size-bits=16;
-#'         channel-count=1; is-big-endian=false
+#'     -   audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false
 #' 
 #' -   Opus format
 #' 
@@ -208,21 +189,13 @@ lexruntimev2_recognize_text <- function(botId, botAliasId, localeId, sessionId, 
 #' -   Text format
 #' 
 #'     -   text/plain; charset=utf-8
-#' @param responseContentType The message that Amazon Lex V2 returns in the response can be either
-#' text or speech based on the `responseContentType` value.
+#' @param responseContentType The message that Amazon Lex V2 returns in the response can be either text or speech based on the `responseContentType` value.
 #' 
-#' -   If the value is `text/plain;charset=utf-8`, Amazon Lex V2 returns
-#'     text in the response.
+#' -   If the value is `text/plain;charset=utf-8`, Amazon Lex V2 returns text in the response.
 #' 
-#' -   If the value begins with `audio/`, Amazon Lex V2 returns speech in
-#'     the response. Amazon Lex V2 uses Amazon Polly to generate the speech
-#'     using the configuration that you specified in the
-#'     `responseContentType` parameter. For example, if you specify
-#'     `audio/mpeg` as the value, Amazon Lex V2 returns speech in the MPEG
-#'     format.
+#' -   If the value begins with `audio/`, Amazon Lex V2 returns speech in the response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that you specified in the `responseContentType` parameter. For example, if you specify `audio/mpeg` as the value, Amazon Lex V2 returns speech in the MPEG format.
 #' 
-#' -   If the value is `audio/pcm`, the speech returned is `audio/pcm` at
-#'     16 KHz in 16-bit, little-endian format.
+#' -   If the value is `audio/pcm`, the speech returned is `audio/pcm` at 16 KHz in 16-bit, little-endian format.
 #' 
 #' -   The following are the accepted values:
 #' 
@@ -235,8 +208,7 @@ lexruntimev2_recognize_text <- function(botId, botAliasId, localeId, sessionId, 
 #'     -   audio/* (defaults to mpeg)
 #' 
 #'     -   text/plain; charset=utf-8
-#' @param inputStream User input in PCM or Opus audio format or text format as described in
-#' the `requestContentType` parameter.
+#' @param inputStream User input in PCM or Opus audio format or text format as described in the `requestContentType` parameter.
 #'
 #' @keywords internal
 #'
@@ -272,11 +244,8 @@ lexruntimev2_recognize_utterance <- function(botId, botAliasId, localeId, sessio
 #' @param botAliasId &#91;required&#93; The alias identifier in use for the bot that processes the request.
 #' @param localeId &#91;required&#93; The locale where the session is in use.
 #' @param sessionId &#91;required&#93; The identifier of the user session that is having the conversation.
-#' @param conversationMode The conversation type that you are using the Amazon Lex V2. If the
-#' conversation mode is `AUDIO` you can send both audio and DTMF
-#' information. If the mode is `TEXT` you can only send text.
-#' @param requestEventStream &#91;required&#93; Represents the stream of events to Amazon Lex V2 from your application.
-#' The events are encoded as HTTP/2 data frames.
+#' @param conversationMode The conversation type that you are using the Amazon Lex V2. If the conversation mode is `AUDIO` you can send both audio and DTMF information. If the mode is `TEXT` you can only send text.
+#' @param requestEventStream &#91;required&#93; Represents the stream of events to Amazon Lex V2 from your application. The events are encoded as HTTP/2 data frames.
 #'
 #' @keywords internal
 #'

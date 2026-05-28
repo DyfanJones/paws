@@ -24,81 +24,42 @@ redshift_describe_cluster_snapshots(
 \arguments{
 \item{ClusterIdentifier}{The identifier of the cluster which generated the requested snapshots.}
 
-\item{SnapshotIdentifier}{The snapshot identifier of the snapshot about which to return
-information.}
+\item{SnapshotIdentifier}{The snapshot identifier of the snapshot about which to return information.}
 
-\item{SnapshotArn}{The Amazon Resource Name (ARN) of the snapshot associated with the
-message to describe cluster snapshots.}
+\item{SnapshotArn}{The Amazon Resource Name (ARN) of the snapshot associated with the message to describe cluster snapshots.}
 
-\item{SnapshotType}{The type of snapshots for which you are requesting information. By
-default, snapshots of all types are returned.
+\item{SnapshotType}{The type of snapshots for which you are requesting information. By default, snapshots of all types are returned.
 
 Valid Values: \code{automated} | \code{manual}}
 
-\item{StartTime}{A value that requests only snapshots created at or after the specified
-time. The time value is specified in ISO 8601 format. For more
-information about ISO 8601, go to the \href{https://en.wikipedia.org/wiki/ISO_8601}{ISO8601 Wikipedia page.}
+\item{StartTime}{A value that requests only snapshots created at or after the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the \href{https://en.wikipedia.org/wiki/ISO_8601}{ISO8601 Wikipedia page.}
 
 Example: \verb{2012-07-16T18:00:00Z}}
 
-\item{EndTime}{A time value that requests only snapshots created at or before the
-specified time. The time value is specified in ISO 8601 format. For more
-information about ISO 8601, go to the \href{https://en.wikipedia.org/wiki/ISO_8601}{ISO8601 Wikipedia page.}
+\item{EndTime}{A time value that requests only snapshots created at or before the specified time. The time value is specified in ISO 8601 format. For more information about ISO 8601, go to the \href{https://en.wikipedia.org/wiki/ISO_8601}{ISO8601 Wikipedia page.}
 
 Example: \verb{2012-07-16T18:00:00Z}}
 
-\item{MaxRecords}{The maximum number of response records to return in each call. If the
-number of remaining response records exceeds the specified \code{MaxRecords}
-value, a value is returned in a \code{marker} field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned marker value.
+\item{MaxRecords}{The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified \code{MaxRecords} value, a value is returned in a \code{marker} field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.
 
 Default: \code{100}
 
 Constraints: minimum 20, maximum 100.}
 
-\item{Marker}{An optional parameter that specifies the starting point to return a set
-of response records. When the results of a
-\code{\link[=redshift_describe_cluster_snapshots]{describe_cluster_snapshots}}
-request exceed the value specified in \code{MaxRecords}, Amazon Web Services
-returns a value in the \code{Marker} field of the response. You can retrieve
-the next set of response records by providing the returned marker value
-in the \code{Marker} parameter and retrying the request.}
+\item{Marker}{An optional parameter that specifies the starting point to return a set of response records. When the results of a \code{\link[=redshift_describe_cluster_snapshots]{describe_cluster_snapshots}} request exceed the value specified in \code{MaxRecords}, Amazon Web Services returns a value in the \code{Marker} field of the response. You can retrieve the next set of response records by providing the returned marker value in the \code{Marker} parameter and retrying the request.}
 
-\item{OwnerAccount}{The Amazon Web Services account used to create or copy the snapshot. Use
-this field to filter the results to snapshots owned by a particular
-account. To describe snapshots you own, either specify your Amazon Web
-Services account, or do not specify the parameter.}
+\item{OwnerAccount}{The Amazon Web Services account used to create or copy the snapshot. Use this field to filter the results to snapshots owned by a particular account. To describe snapshots you own, either specify your Amazon Web Services account, or do not specify the parameter.}
 
-\item{TagKeys}{A tag key or keys for which you want to return all matching cluster
-snapshots that are associated with the specified key or keys. For
-example, suppose that you have snapshots that are tagged with keys
-called \code{owner} and \code{environment}. If you specify both of these tag keys
-in the request, Amazon Redshift returns a response with the snapshots
-that have either or both of these tag keys associated with them.}
+\item{TagKeys}{A tag key or keys for which you want to return all matching cluster snapshots that are associated with the specified key or keys. For example, suppose that you have snapshots that are tagged with keys called \code{owner} and \code{environment}. If you specify both of these tag keys in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag keys associated with them.}
 
-\item{TagValues}{A tag value or values for which you want to return all matching cluster
-snapshots that are associated with the specified tag value or values.
-For example, suppose that you have snapshots that are tagged with values
-called \code{admin} and \code{test}. If you specify both of these tag values in
-the request, Amazon Redshift returns a response with the snapshots that
-have either or both of these tag values associated with them.}
+\item{TagValues}{A tag value or values for which you want to return all matching cluster snapshots that are associated with the specified tag value or values. For example, suppose that you have snapshots that are tagged with values called \code{admin} and \code{test}. If you specify both of these tag values in the request, Amazon Redshift returns a response with the snapshots that have either or both of these tag values associated with them.}
 
-\item{ClusterExists}{A value that indicates whether to return snapshots only for an existing
-cluster. You can perform table-level restore only by using a snapshot of
-an existing cluster, that is, a cluster that has not been deleted.
-Values for this parameter work as follows:
+\item{ClusterExists}{A value that indicates whether to return snapshots only for an existing cluster. You can perform table-level restore only by using a snapshot of an existing cluster, that is, a cluster that has not been deleted. Values for this parameter work as follows:
 \itemize{
-\item If \code{ClusterExists} is set to \code{true}, \code{ClusterIdentifier} is
-required.
-\item If \code{ClusterExists} is set to \code{false} and \code{ClusterIdentifier} isn't
-specified, all snapshots associated with deleted clusters (orphaned
-snapshots) are returned.
-\item If \code{ClusterExists} is set to \code{false} and \code{ClusterIdentifier} is
-specified for a deleted cluster, snapshots associated with that
-cluster are returned.
-\item If \code{ClusterExists} is set to \code{false} and \code{ClusterIdentifier} is
-specified for an existing cluster, no snapshots are returned.
+\item If \code{ClusterExists} is set to \code{true}, \code{ClusterIdentifier} is required.
+\item If \code{ClusterExists} is set to \code{false} and \code{ClusterIdentifier} isn't specified, all snapshots associated with deleted clusters (orphaned snapshots) are returned.
+\item If \code{ClusterExists} is set to \code{false} and \code{ClusterIdentifier} is specified for a deleted cluster, snapshots associated with that cluster are returned.
+\item If \code{ClusterExists} is set to \code{false} and \code{ClusterIdentifier} is specified for an existing cluster, no snapshots are returned.
 }}
 }
 \description{

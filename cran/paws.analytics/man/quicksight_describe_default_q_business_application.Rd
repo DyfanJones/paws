@@ -11,13 +11,9 @@ quicksight_describe_default_q_business_application(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Quick Sight account that is linked to the Amazon Q
-Business application that you want described.}
+\item{AwsAccountId}{[required] The ID of the Quick Sight account that is linked to the Amazon Q Business application that you want described.}
 
-\item{Namespace}{The Quick Sight namespace that contains the linked Amazon Q Business
-application. If this field is left blank, the default namespace is used.
-Currently, the default namespace is the only valid value for this
-parameter.}
+\item{Namespace}{The Quick Sight namespace that contains the linked Amazon Q Business application. If this field is left blank, the default namespace is used. Currently, the default namespace is the only valid value for this parameter.}
 }
 \description{
 Describes a Amazon Q Business application that is linked to an Quick Sight account.

@@ -12,8 +12,7 @@ quicksight_create_custom_permissions(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that you want to create the
-custom permissions profile in.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that you want to create the custom permissions profile in.}
 
 \item{CustomPermissionsName}{[required] The name of the custom permissions profile that you want to create.}
 

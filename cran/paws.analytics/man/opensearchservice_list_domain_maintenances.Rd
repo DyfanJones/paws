@@ -19,15 +19,9 @@ opensearchservice_list_domain_maintenances(
 
 \item{Status}{The status of the action.}
 
-\item{MaxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results.}
+\item{MaxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results.}
 
-\item{NextToken}{If your initial
-\code{\link[=opensearchservice_list_domain_maintenances]{list_domain_maintenances}}
-operation returns a \code{nextToken}, include the returned \code{nextToken} in
-subsequent
-\code{\link[=opensearchservice_list_domain_maintenances]{list_domain_maintenances}}
-operations, which returns results in the next page.}
+\item{NextToken}{If your initial \code{\link[=opensearchservice_list_domain_maintenances]{list_domain_maintenances}} operation returns a \code{nextToken}, include the returned \code{nextToken} in subsequent \code{\link[=opensearchservice_list_domain_maintenances]{list_domain_maintenances}} operations, which returns results in the next page.}
 }
 \description{
 A list of maintenance actions for the domain.

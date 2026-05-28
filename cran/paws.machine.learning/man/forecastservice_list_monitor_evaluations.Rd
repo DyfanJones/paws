@@ -13,32 +13,22 @@ forecastservice_list_monitor_evaluations(
 )
 }
 \arguments{
-\item{NextToken}{If the result of the previous request was truncated, the response
-includes a \code{NextToken}. To retrieve the next set of results, use the
-token in the next request. Tokens expire after 24 hours.}
+\item{NextToken}{If the result of the previous request was truncated, the response includes a \code{NextToken}. To retrieve the next set of results, use the token in the next request. Tokens expire after 24 hours.}
 
 \item{MaxResults}{The maximum number of monitoring results to return.}
 
-\item{MonitorArn}{[required] The Amazon Resource Name (ARN) of the monitor resource to get results
-from.}
+\item{MonitorArn}{[required] The Amazon Resource Name (ARN) of the monitor resource to get results from.}
 
-\item{Filters}{An array of filters. For each filter, provide a condition and a match
-statement. The condition is either \code{IS} or \code{IS_NOT}, which specifies
-whether to include or exclude the resources that match the statement
-from the list. The match statement consists of a key and a value.
+\item{Filters}{An array of filters. For each filter, provide a condition and a match statement. The condition is either \code{IS} or \code{IS_NOT}, which specifies whether to include or exclude the resources that match the statement from the list. The match statement consists of a key and a value.
 
 \strong{Filter properties}
 \itemize{
-\item \code{Condition} - The condition to apply. Valid values are \code{IS} and
-\code{IS_NOT}.
-\item \code{Key} - The name of the parameter to filter on. The only valid value
-is \code{EvaluationState}.
-\item \code{Value} - The value to match. Valid values are only \code{SUCCESS} or
-\code{FAILURE}.
+\item \code{Condition} - The condition to apply. Valid values are \code{IS} and \code{IS_NOT}.
+\item \code{Key} - The name of the parameter to filter on. The only valid value is \code{EvaluationState}.
+\item \code{Value} - The value to match. Valid values are only \code{SUCCESS} or \code{FAILURE}.
 }
 
-For example, to list only successful monitor evaluations, you would
-specify:
+For example, to list only successful monitor evaluations, you would specify:
 
 \verb{"Filters": [ \{ "Condition": "IS", "Key": "EvaluationState", "Value": "SUCCESS" \} ]}}
 }

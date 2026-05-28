@@ -9,8 +9,7 @@ backups}
 rds_delete_db_cluster_automated_backup(DbClusterResourceId)
 }
 \arguments{
-\item{DbClusterResourceId}{[required] The identifier for the source DB cluster, which can't be changed and
-which is unique to an Amazon Web Services Region.}
+\item{DbClusterResourceId}{[required] The identifier for the source DB cluster, which can't be changed and which is unique to an Amazon Web Services Region.}
 }
 \description{
 Deletes automated backups using the \code{DbClusterResourceId} value of the source DB cluster or the Amazon Resource Name (ARN) of the automated backups.

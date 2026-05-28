@@ -14,8 +14,7 @@ quicksight_describe_action_connector_permissions(
 \arguments{
 \item{AwsAccountId}{[required] The Amazon Web Services account ID that contains the action connector.}
 
-\item{ActionConnectorId}{[required] The unique identifier of the action connector whose permissions you want
-to describe.}
+\item{ActionConnectorId}{[required] The unique identifier of the action connector whose permissions you want to describe.}
 }
 \description{
 Retrieves the permissions configuration for an action connector, showing which users, groups, and namespaces have access and what operations they can perform.

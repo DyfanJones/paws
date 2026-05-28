@@ -9,8 +9,7 @@ savingsplans_return_savings_plan(savingsPlanId, clientToken = NULL)
 \arguments{
 \item{savingsPlanId}{[required] The ID of the Savings Plan.}
 
-\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 }
 \description{
 Returns the specified Savings Plan.

@@ -15,9 +15,7 @@ route53profiles_update_profile_resource_association(
 
 \item{ProfileResourceAssociationId}{[required] ID of the resource association.}
 
-\item{ResourceProperties}{If you are adding a DNS Firewall rule group, include also a priority.
-The priority indicates the processing order for the rule groups,
-starting with the priority assinged the lowest value.
+\item{ResourceProperties}{If you are adding a DNS Firewall rule group, include also a priority. The priority indicates the processing order for the rule groups, starting with the priority assinged the lowest value.
 
 The allowed values for priority are between 100 and 9900.}
 }

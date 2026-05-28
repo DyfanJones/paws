@@ -8,8 +8,7 @@ provided by the service and custom evaluators created by the user}
 bedrockagentcorecontrol_list_evaluators(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{The pagination token from a previous request to retrieve the next page
-of results.}
+\item{nextToken}{The pagination token from a previous request to retrieve the next page of results.}
 
 \item{maxResults}{The maximum number of evaluators to return in a single response.}
 }

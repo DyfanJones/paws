@@ -15,24 +15,17 @@ lexmodelsv2_list_recommended_intents(
 )
 }
 \arguments{
-\item{botId}{[required] The unique identifier of the bot associated with the recommended
-intents.}
+\item{botId}{[required] The unique identifier of the bot associated with the recommended intents.}
 
 \item{botVersion}{[required] The version of the bot that contains the recommended intents.}
 
 \item{localeId}{[required] The identifier of the language and locale of the recommended intents.}
 
-\item{botRecommendationId}{[required] The identifier of the bot recommendation that contains the recommended
-intents.}
+\item{botRecommendationId}{[required] The identifier of the bot recommendation that contains the recommended intents.}
 
-\item{nextToken}{If the response from the ListRecommendedIntents operation contains more
-results than specified in the maxResults parameter, a token is returned
-in the response. Use that token in the nextToken parameter to return the
-next page of results.}
+\item{nextToken}{If the response from the ListRecommendedIntents operation contains more results than specified in the maxResults parameter, a token is returned in the response. Use that token in the nextToken parameter to return the next page of results.}
 
-\item{maxResults}{The maximum number of bot recommendations to return in each page of
-results. If there are fewer results than the max page size, only the
-actual number of results are returned.}
+\item{maxResults}{The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 }
 \description{
 Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in the response are ordered by relevance.

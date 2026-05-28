@@ -8,35 +8,17 @@ NULL
 #' inferences from the model hosted at the specified endpoint
 #'
 #' @description
-#' After you deploy a model into production using Amazon SageMaker AI
-#' hosting services, your client applications use this API to get
-#' inferences from the model hosted at the specified endpoint.
+#' After you deploy a model into production using Amazon SageMaker AI hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint.
 #' 
-#' For an overview of Amazon SageMaker AI, see [How It
-#' Works](https://docs.aws.amazon.com/sagemaker/latest/dg/).
+#' For an overview of Amazon SageMaker AI, see [How It Works](https://docs.aws.amazon.com/sagemaker/latest/dg/).
 #' 
-#' Amazon SageMaker AI strips all POST headers except those supported by
-#' the API. Amazon SageMaker AI might add additional headers. You should
-#' not rely on the behavior of headers outside those enumerated in the
-#' request syntax.
+#' Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon SageMaker AI might add additional headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
 #' 
-#' Calls to [`invoke_endpoint`][sagemakerruntime_invoke_endpoint] are
-#' authenticated by using Amazon Web Services Signature Version 4. For
-#' information, see [Authenticating Requests (Amazon Web Services Signature
-#' Version
-#' 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
-#' in the *Amazon S3 API Reference*.
+#' Calls to [`invoke_endpoint`][sagemakerruntime_invoke_endpoint] are authenticated by using Amazon Web Services Signature Version 4. For information, see [Authenticating Requests (Amazon Web Services Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) in the *Amazon S3 API Reference*.
 #' 
-#' A customer's model containers must respond to requests within 60
-#' seconds. The model itself can have a maximum processing time of 60
-#' seconds before responding to invocations. If your model is going to take
-#' 50-60 seconds of processing time, the SDK socket timeout should be set
-#' to be 70 seconds.
+#' A customer's model containers must respond to requests within 60 seconds. The model itself can have a maximum processing time of 60 seconds before responding to invocations. If your model is going to take 50-60 seconds of processing time, the SDK socket timeout should be set to be 70 seconds.
 #' 
-#' Endpoints are scoped to an individual account, and are not public. The
-#' URL does not contain the account ID, but Amazon SageMaker AI determines
-#' the account ID from the authentication token that is supplied by the
-#' caller.
+#' Endpoints are scoped to an individual account, and are not public. The URL does not contain the account ID, but Amazon SageMaker AI determines the account ID from the authentication token that is supplied by the caller.
 #'
 #' @usage
 #' sagemakerruntime_invoke_endpoint(EndpointName, Body, ContentType,
@@ -44,75 +26,32 @@ NULL
 #'   TargetContainerHostname, InferenceId, EnableExplanations,
 #'   InferenceComponentName, SessionId)
 #'
-#' @param EndpointName &#91;required&#93; The name of the endpoint that you specified when you created the
-#' endpoint using the
-#' [CreateEndpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html)
-#' API.
-#' @param Body &#91;required&#93; Provides input data, in the format specified in the `ContentType`
-#' request header. Amazon SageMaker AI passes all of the data in the body
-#' to the model.
+#' @param EndpointName &#91;required&#93; The name of the endpoint that you specified when you created the endpoint using the [CreateEndpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html) API.
+#' @param Body &#91;required&#93; Provides input data, in the format specified in the `ContentType` request header. Amazon SageMaker AI passes all of the data in the body to the model.
 #' 
-#' For information about the format of the request body, see [Common Data
-#' Formats-Inference](https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html).
+#' For information about the format of the request body, see [Common Data Formats-Inference](https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html).
 #' @param ContentType The MIME type of the input data in the request body.
-#' @param Accept The desired MIME type of the inference response from the model
-#' container.
-#' @param CustomAttributes Provides additional information about a request for an inference
-#' submitted to a model hosted at an Amazon SageMaker AI endpoint. The
-#' information is an opaque value that is forwarded verbatim. You could use
-#' this value, for example, to provide an ID that you can use to track a
-#' request or to provide other metadata that a service endpoint was
-#' programmed to process. The value must consist of no more than 1024
-#' visible US-ASCII characters as specified in [Section 3.3.6. Field Value
-#' Components](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6)
-#' of the Hypertext Transfer Protocol (HTTP/1.1).
+#' @param Accept The desired MIME type of the inference response from the model container.
+#' @param CustomAttributes Provides additional information about a request for an inference submitted to a model hosted at an Amazon SageMaker AI endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for example, to provide an ID that you can use to track a request or to provide other metadata that a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as specified in [Section 3.3.6. Field Value Components](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6) of the Hypertext Transfer Protocol (HTTP/1.1).
 #' 
-#' The code in your model is responsible for setting or updating any custom
-#' attributes in the response. If your code does not set this value in the
-#' response, an empty value is returned. For example, if a custom attribute
-#' represents the trace ID, your model can prepend the custom attribute
-#' with `Trace ID:` in your post-processing function.
+#' The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with `Trace ID:` in your post-processing function.
 #' 
-#' This feature is currently supported in the Amazon Web Services SDKs but
-#' not in the Amazon SageMaker AI Python SDK.
+#' This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker AI Python SDK.
 #' @param TargetModel The model to request for inference when invoking a multi-model endpoint.
-#' @param TargetVariant Specify the production variant to send the inference request to when
-#' invoking an endpoint that is running two or more variants. Note that
-#' this parameter overrides the default behavior for the endpoint, which is
-#' to distribute the invocation traffic based on the variant weights.
+#' @param TargetVariant Specify the production variant to send the inference request to when invoking an endpoint that is running two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute the invocation traffic based on the variant weights.
 #' 
-#' For information about how to use variant targeting to perform a/b
-#' testing, see [Test models in
-#' production](https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html)
-#' @param TargetContainerHostname If the endpoint hosts multiple containers and is configured to use
-#' direct invocation, this parameter specifies the host name of the
-#' container to invoke.
-#' @param InferenceId If you provide a value, it is added to the captured data when you enable
-#' data capture on the endpoint. For information about data capture, see
-#' [Capture
-#' Data](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html).
-#' @param EnableExplanations An optional JMESPath expression used to override the
-#' `EnableExplanations` parameter of the `ClarifyExplainerConfig` API. See
-#' the
-#' [EnableExplanations](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable)
-#' section in the developer guide for more information.
-#' @param InferenceComponentName If the endpoint hosts one or more inference components, this parameter
-#' specifies the name of inference component to invoke.
-#' @param SessionId Creates a stateful session or identifies an existing one. You can do one
-#' of the following:
+#' For information about how to use variant targeting to perform a/b testing, see [Test models in production](https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html)
+#' @param TargetContainerHostname If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies the host name of the container to invoke.
+#' @param InferenceId If you provide a value, it is added to the captured data when you enable data capture on the endpoint. For information about data capture, see [Capture Data](https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html).
+#' @param EnableExplanations An optional JMESPath expression used to override the `EnableExplanations` parameter of the `ClarifyExplainerConfig` API. See the [EnableExplanations](https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable) section in the developer guide for more information.
+#' @param InferenceComponentName If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke.
+#' @param SessionId Creates a stateful session or identifies an existing one. You can do one of the following:
 #' 
 #' -   Create a stateful session by specifying the value `NEW_SESSION`.
 #' 
-#' -   Send your request to an existing stateful session by specifying the
-#'     ID of that session.
+#' -   Send your request to an existing stateful session by specifying the ID of that session.
 #' 
-#' With a stateful session, you can send multiple requests to a stateful
-#' model. When you create a session with a stateful model, the model must
-#' create the session ID and set the expiration time. The model must also
-#' provide that information in the response to your request. You can get
-#' the ID and timestamp from the `NewSessionId` response parameter. For any
-#' subsequent request where you specify that session ID, SageMaker AI
-#' routes the request to the same instance that supports the session.
+#' With a stateful session, you can send multiple requests to a stateful model. When you create a session with a stateful model, the model must create the session ID and set the expiration time. The model must also provide that information in the response to your request. You can get the ID and timestamp from the `NewSessionId` response parameter. For any subsequent request where you specify that session ID, SageMaker AI routes the request to the same instance that supports the session.
 #'
 #' @return
 #' A list with the following syntax:
@@ -175,29 +114,13 @@ sagemakerruntime_invoke_endpoint <- function(EndpointName, Body, ContentType = N
 #' asynchronous manner
 #'
 #' @description
-#' After you deploy a model into production using Amazon SageMaker AI
-#' hosting services, your client applications use this API to get
-#' inferences from the model hosted at the specified endpoint in an
-#' asynchronous manner.
+#' After you deploy a model into production using Amazon SageMaker AI hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint in an asynchronous manner.
 #' 
-#' Inference requests sent to this API are enqueued for asynchronous
-#' processing. The processing of the inference request may or may not
-#' complete before you receive a response from this API. The response from
-#' this API will not contain the result of the inference request but
-#' contain information about where you can locate it.
+#' Inference requests sent to this API are enqueued for asynchronous processing. The processing of the inference request may or may not complete before you receive a response from this API. The response from this API will not contain the result of the inference request but contain information about where you can locate it.
 #' 
-#' Amazon SageMaker AI strips all POST headers except those supported by
-#' the API. Amazon SageMaker AI might add additional headers. You should
-#' not rely on the behavior of headers outside those enumerated in the
-#' request syntax.
+#' Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon SageMaker AI might add additional headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
 #' 
-#' Calls to
-#' [`invoke_endpoint_async`][sagemakerruntime_invoke_endpoint_async] are
-#' authenticated by using Amazon Web Services Signature Version 4. For
-#' information, see [Authenticating Requests (Amazon Web Services Signature
-#' Version
-#' 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
-#' in the *Amazon S3 API Reference*.
+#' Calls to [`invoke_endpoint_async`][sagemakerruntime_invoke_endpoint_async] are authenticated by using Amazon Web Services Signature Version 4. For information, see [Authenticating Requests (Amazon Web Services Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) in the *Amazon S3 API Reference*.
 #'
 #' @usage
 #' sagemakerruntime_invoke_endpoint_async(EndpointName, ContentType,
@@ -205,43 +128,20 @@ sagemakerruntime_invoke_endpoint <- function(EndpointName, Body, ContentType = N
 #'   S3OutputPathExtension, Filename, RequestTTLSeconds,
 #'   InvocationTimeoutSeconds)
 #'
-#' @param EndpointName &#91;required&#93; The name of the endpoint that you specified when you created the
-#' endpoint using the
-#' [CreateEndpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html)
-#' API.
+#' @param EndpointName &#91;required&#93; The name of the endpoint that you specified when you created the endpoint using the [CreateEndpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html) API.
 #' @param ContentType The MIME type of the input data in the request body.
-#' @param Accept The desired MIME type of the inference response from the model
-#' container.
-#' @param CustomAttributes Provides additional information about a request for an inference
-#' submitted to a model hosted at an Amazon SageMaker AI endpoint. The
-#' information is an opaque value that is forwarded verbatim. You could use
-#' this value, for example, to provide an ID that you can use to track a
-#' request or to provide other metadata that a service endpoint was
-#' programmed to process. The value must consist of no more than 1024
-#' visible US-ASCII characters as specified in [Section 3.3.6. Field Value
-#' Components](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6)
-#' of the Hypertext Transfer Protocol (HTTP/1.1).
+#' @param Accept The desired MIME type of the inference response from the model container.
+#' @param CustomAttributes Provides additional information about a request for an inference submitted to a model hosted at an Amazon SageMaker AI endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for example, to provide an ID that you can use to track a request or to provide other metadata that a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as specified in [Section 3.3.6. Field Value Components](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6) of the Hypertext Transfer Protocol (HTTP/1.1).
 #' 
-#' The code in your model is responsible for setting or updating any custom
-#' attributes in the response. If your code does not set this value in the
-#' response, an empty value is returned. For example, if a custom attribute
-#' represents the trace ID, your model can prepend the custom attribute
-#' with `Trace ID:` in your post-processing function.
+#' The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with `Trace ID:` in your post-processing function.
 #' 
-#' This feature is currently supported in the Amazon Web Services SDKs but
-#' not in the Amazon SageMaker AI Python SDK.
-#' @param InferenceId The identifier for the inference request. Amazon SageMaker AI will
-#' generate an identifier for you if none is specified.
+#' This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker AI Python SDK.
+#' @param InferenceId The identifier for the inference request. Amazon SageMaker AI will generate an identifier for you if none is specified.
 #' @param InputLocation &#91;required&#93; The Amazon S3 URI where the inference request payload is stored.
-#' @param S3OutputPathExtension The path extension that is appended to the Amazon S3 output path where
-#' the inference response payload is stored.
-#' @param Filename The filename for the inference response payload stored in Amazon S3. If
-#' not specified, Amazon SageMaker AI generates a filename based on the
-#' inference ID.
-#' @param RequestTTLSeconds Maximum age in seconds a request can be in the queue before it is marked
-#' as expired. The default is 6 hours, or 21,600 seconds.
-#' @param InvocationTimeoutSeconds Maximum amount of time in seconds a request can be processed before it
-#' is marked as expired. The default is 15 minutes, or 900 seconds.
+#' @param S3OutputPathExtension The path extension that is appended to the Amazon S3 output path where the inference response payload is stored.
+#' @param Filename The filename for the inference response payload stored in Amazon S3. If not specified, Amazon SageMaker AI generates a filename based on the inference ID.
+#' @param RequestTTLSeconds Maximum age in seconds a request can be in the queue before it is marked as expired. The default is 6 hours, or 21,600 seconds.
+#' @param InvocationTimeoutSeconds Maximum amount of time in seconds a request can be processed before it is marked as expired. The default is 15 minutes, or 900 seconds.
 #'
 #' @return
 #' A list with the following syntax:
@@ -297,104 +197,45 @@ sagemakerruntime_invoke_endpoint_async <- function(EndpointName, ContentType = N
 #' response as a stream
 #'
 #' @description
-#' Invokes a model at the specified endpoint to return the inference
-#' response as a stream. The inference stream provides the response payload
-#' incrementally as a series of parts. Before you can get an inference
-#' stream, you must have access to a model that's deployed using Amazon
-#' SageMaker AI hosting services, and the container for that model must
-#' support inference streaming.
+#' Invokes a model at the specified endpoint to return the inference response as a stream. The inference stream provides the response payload incrementally as a series of parts. Before you can get an inference stream, you must have access to a model that's deployed using Amazon SageMaker AI hosting services, and the container for that model must support inference streaming.
 #' 
-#' For more information that can help you use this API, see the following
-#' sections in the *Amazon SageMaker AI Developer Guide*:
+#' For more information that can help you use this API, see the following sections in the *Amazon SageMaker AI Developer Guide*:
 #' 
-#' -   For information about how to add streaming support to a model, see
-#'     [How Containers Serve
-#'     Requests](https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-code-how-containe-serves-requests).
+#' -   For information about how to add streaming support to a model, see [How Containers Serve Requests](https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-inference-code.html#your-algorithms-inference-code-how-containe-serves-requests).
 #' 
-#' -   For information about how to process the streaming response, see
-#'     [Invoke real-time
-#'     endpoints](https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-test-endpoints.html).
+#' -   For information about how to process the streaming response, see [Invoke real-time endpoints](https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-test-endpoints.html).
 #' 
-#' Before you can use this operation, your IAM permissions must allow the
-#' `sagemaker:InvokeEndpoint` action. For more information about Amazon
-#' SageMaker AI actions for IAM policies, see [Actions, resources, and
-#' condition keys for Amazon SageMaker
-#' AI](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html)
-#' in the *IAM Service Authorization Reference*.
+#' Before you can use this operation, your IAM permissions must allow the `sagemaker:InvokeEndpoint` action. For more information about Amazon SageMaker AI actions for IAM policies, see [Actions, resources, and condition keys for Amazon SageMaker AI](https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html) in the *IAM Service Authorization Reference*.
 #' 
-#' Amazon SageMaker AI strips all POST headers except those supported by
-#' the API. Amazon SageMaker AI might add additional headers. You should
-#' not rely on the behavior of headers outside those enumerated in the
-#' request syntax.
+#' Amazon SageMaker AI strips all POST headers except those supported by the API. Amazon SageMaker AI might add additional headers. You should not rely on the behavior of headers outside those enumerated in the request syntax.
 #' 
-#' Calls to
-#' [`invoke_endpoint_with_response_stream`][sagemakerruntime_invoke_endpoint_with_response_stream]
-#' are authenticated by using Amazon Web Services Signature Version 4. For
-#' information, see [Authenticating Requests (Amazon Web Services Signature
-#' Version
-#' 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html)
-#' in the *Amazon S3 API Reference*.
+#' Calls to [`invoke_endpoint_with_response_stream`][sagemakerruntime_invoke_endpoint_with_response_stream] are authenticated by using Amazon Web Services Signature Version 4. For information, see [Authenticating Requests (Amazon Web Services Signature Version 4)](https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html) in the *Amazon S3 API Reference*.
 #'
 #' @usage
 #' sagemakerruntime_invoke_endpoint_with_response_stream(EndpointName,
 #'   Body, ContentType, Accept, CustomAttributes, TargetVariant,
 #'   TargetContainerHostname, InferenceId, InferenceComponentName, SessionId)
 #'
-#' @param EndpointName &#91;required&#93; The name of the endpoint that you specified when you created the
-#' endpoint using the
-#' [CreateEndpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html)
-#' API.
-#' @param Body &#91;required&#93; Provides input data, in the format specified in the `ContentType`
-#' request header. Amazon SageMaker AI passes all of the data in the body
-#' to the model.
+#' @param EndpointName &#91;required&#93; The name of the endpoint that you specified when you created the endpoint using the [CreateEndpoint](https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html) API.
+#' @param Body &#91;required&#93; Provides input data, in the format specified in the `ContentType` request header. Amazon SageMaker AI passes all of the data in the body to the model.
 #' 
-#' For information about the format of the request body, see [Common Data
-#' Formats-Inference](https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html).
+#' For information about the format of the request body, see [Common Data Formats-Inference](https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html).
 #' @param ContentType The MIME type of the input data in the request body.
-#' @param Accept The desired MIME type of the inference response from the model
-#' container.
-#' @param CustomAttributes Provides additional information about a request for an inference
-#' submitted to a model hosted at an Amazon SageMaker AI endpoint. The
-#' information is an opaque value that is forwarded verbatim. You could use
-#' this value, for example, to provide an ID that you can use to track a
-#' request or to provide other metadata that a service endpoint was
-#' programmed to process. The value must consist of no more than 1024
-#' visible US-ASCII characters as specified in [Section 3.3.6. Field Value
-#' Components](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6)
-#' of the Hypertext Transfer Protocol (HTTP/1.1).
+#' @param Accept The desired MIME type of the inference response from the model container.
+#' @param CustomAttributes Provides additional information about a request for an inference submitted to a model hosted at an Amazon SageMaker AI endpoint. The information is an opaque value that is forwarded verbatim. You could use this value, for example, to provide an ID that you can use to track a request or to provide other metadata that a service endpoint was programmed to process. The value must consist of no more than 1024 visible US-ASCII characters as specified in [Section 3.3.6. Field Value Components](https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6) of the Hypertext Transfer Protocol (HTTP/1.1).
 #' 
-#' The code in your model is responsible for setting or updating any custom
-#' attributes in the response. If your code does not set this value in the
-#' response, an empty value is returned. For example, if a custom attribute
-#' represents the trace ID, your model can prepend the custom attribute
-#' with `Trace ID:` in your post-processing function.
+#' The code in your model is responsible for setting or updating any custom attributes in the response. If your code does not set this value in the response, an empty value is returned. For example, if a custom attribute represents the trace ID, your model can prepend the custom attribute with `Trace ID:` in your post-processing function.
 #' 
-#' This feature is currently supported in the Amazon Web Services SDKs but
-#' not in the Amazon SageMaker AI Python SDK.
-#' @param TargetVariant Specify the production variant to send the inference request to when
-#' invoking an endpoint that is running two or more variants. Note that
-#' this parameter overrides the default behavior for the endpoint, which is
-#' to distribute the invocation traffic based on the variant weights.
+#' This feature is currently supported in the Amazon Web Services SDKs but not in the Amazon SageMaker AI Python SDK.
+#' @param TargetVariant Specify the production variant to send the inference request to when invoking an endpoint that is running two or more variants. Note that this parameter overrides the default behavior for the endpoint, which is to distribute the invocation traffic based on the variant weights.
 #' 
-#' For information about how to use variant targeting to perform a/b
-#' testing, see [Test models in
-#' production](https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html)
-#' @param TargetContainerHostname If the endpoint hosts multiple containers and is configured to use
-#' direct invocation, this parameter specifies the host name of the
-#' container to invoke.
+#' For information about how to use variant targeting to perform a/b testing, see [Test models in production](https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html)
+#' @param TargetContainerHostname If the endpoint hosts multiple containers and is configured to use direct invocation, this parameter specifies the host name of the container to invoke.
 #' @param InferenceId An identifier that you assign to your request.
-#' @param InferenceComponentName If the endpoint hosts one or more inference components, this parameter
-#' specifies the name of inference component to invoke for a streaming
-#' response.
+#' @param InferenceComponentName If the endpoint hosts one or more inference components, this parameter specifies the name of inference component to invoke for a streaming response.
 #' @param SessionId The ID of a stateful session to handle your request.
 #' 
-#' You can't create a stateful session by using the
-#' [`invoke_endpoint_with_response_stream`][sagemakerruntime_invoke_endpoint_with_response_stream]
-#' action. Instead, you can create one by using the
-#' [`invoke_endpoint`][sagemakerruntime_invoke_endpoint] action. In your
-#' request, you specify `NEW_SESSION` for the `SessionId` request
-#' parameter. The response to that request provides the session ID for the
-#' `NewSessionId` response parameter.
+#' You can't create a stateful session by using the [`invoke_endpoint_with_response_stream`][sagemakerruntime_invoke_endpoint_with_response_stream] action. Instead, you can create one by using the [`invoke_endpoint`][sagemakerruntime_invoke_endpoint] action. In your request, you specify `NEW_SESSION` for the `SessionId` request parameter. The response to that request provides the session ID for the `NewSessionId` response parameter.
 #'
 #' @return
 #' A list with the following syntax:

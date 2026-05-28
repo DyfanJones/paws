@@ -10,8 +10,7 @@ autoscaling_attach_load_balancers(AutoScalingGroupName, LoadBalancerNames)
 \arguments{
 \item{AutoScalingGroupName}{[required] The name of the Auto Scaling group.}
 
-\item{LoadBalancerNames}{[required] The names of the load balancers. You can specify up to 10 load
-balancers.}
+\item{LoadBalancerNames}{[required] The names of the load balancers. You can specify up to 10 load balancers.}
 }
 \description{
 This API operation is superseded by \code{\link[=autoscaling_attach_traffic_sources]{attach_traffic_sources}}, which can attach multiple traffic sources types. We recommend using \code{\link[=autoscaling_attach_traffic_sources]{attach_traffic_sources}} to simplify how you manage traffic sources. However, we continue to support \code{\link[=autoscaling_attach_load_balancers]{attach_load_balancers}}. You can use both the original \code{\link[=autoscaling_attach_load_balancers]{attach_load_balancers}} API operation and \code{\link[=autoscaling_attach_traffic_sources]{attach_traffic_sources}} on the same Auto Scaling group.

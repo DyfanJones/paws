@@ -12,9 +12,7 @@ codecatalyst_get_dev_environment(spaceName, projectName, id)
 
 \item{projectName}{[required] The name of the project in the space.}
 
-\item{id}{[required] The system-generated unique ID of the Dev Environment for which you want
-to view information. To retrieve a list of Dev Environment IDs, use
-\code{\link[=codecatalyst_list_dev_environments]{list_dev_environments}}.}
+\item{id}{[required] The system-generated unique ID of the Dev Environment for which you want to view information. To retrieve a list of Dev Environment IDs, use \code{\link[=codecatalyst_list_dev_environments]{list_dev_environments}}.}
 }
 \description{
 Returns information about a Dev Environment for a source repository in a project. Dev Environments are specific to the user who creates them.

@@ -13,14 +13,15 @@ glue_get_partition(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the partition in question resides. If
-none is provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the partition in question resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the catalog database where the partition resides.}
 
 \item{TableName}{[required] The name of the partition's table.}
 
 \item{PartitionValues}{[required] The values that define the partition.}
+
+\item{AuditContext}{A structure containing the Lake Formation audit context.}
 }
 \description{
 Retrieves information about a specified partition.

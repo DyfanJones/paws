@@ -7,8 +7,7 @@
 emr_get_managed_scaling_policy(ClusterId)
 }
 \arguments{
-\item{ClusterId}{[required] Specifies the ID of the cluster for which the managed scaling policy
-will be fetched.}
+\item{ClusterId}{[required] Specifies the ID of the cluster for which the managed scaling policy will be fetched.}
 }
 \description{
 Fetches the attached managed scaling policy for an Amazon EMR cluster.

@@ -13,16 +13,13 @@ paymentcryptographydataplane_verify_mac(
 )
 }
 \arguments{
-\item{KeyIdentifier}{[required] The \code{keyARN} of the encryption key that Amazon Web Services Payment
-Cryptography uses to verify MAC data.}
+\item{KeyIdentifier}{[required] The \code{keyARN} of the encryption key that Amazon Web Services Payment Cryptography uses to verify MAC data.}
 
-\item{MessageData}{[required] The data on for which MAC is under verification. This value must be
-hexBinary.}
+\item{MessageData}{[required] The data on for which MAC is under verification. This value must be hexBinary.}
 
 \item{Mac}{[required] The MAC being verified.}
 
-\item{VerificationAttributes}{[required] The attributes and data values to use for MAC verification within Amazon
-Web Services Payment Cryptography.}
+\item{VerificationAttributes}{[required] The attributes and data values to use for MAC verification within Amazon Web Services Payment Cryptography.}
 
 \item{MacLength}{The length of the MAC.}
 }

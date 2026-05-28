@@ -15,14 +15,11 @@ bedrockagentcore_list_memory_extraction_jobs(
 \arguments{
 \item{memoryId}{[required] The unique identifier of the memory to list extraction jobs for.}
 
-\item{maxResults}{The maximum number of results to return in a single call. The default
-value is 20.}
+\item{maxResults}{The maximum number of results to return in a single call. The default value is 20.}
 
 \item{filter}{Filter criteria to apply when listing extraction jobs.}
 
-\item{nextToken}{The token for the next set of results. Use the value returned in the
-previous response in the next request to retrieve the next set of
-results.}
+\item{nextToken}{The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.}
 }
 \description{
 Lists all long-term memory extraction jobs that are eligible to be started with optional filtering.

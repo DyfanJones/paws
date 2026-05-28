@@ -13,23 +13,15 @@ bedrock_create_custom_model_deployment(
 )
 }
 \arguments{
-\item{modelDeploymentName}{[required] The name for the custom model deployment. The name must be unique within
-your Amazon Web Services account and Region.}
+\item{modelDeploymentName}{[required] The name for the custom model deployment. The name must be unique within your Amazon Web Services account and Region.}
 
-\item{modelArn}{[required] The Amazon Resource Name (ARN) of the custom model to deploy for
-on-demand inference. The custom model must be in the \code{Active} state.}
+\item{modelArn}{[required] The Amazon Resource Name (ARN) of the custom model to deploy for on-demand inference. The custom model must be in the \code{Active} state.}
 
-\item{description}{A description for the custom model deployment to help you identify its
-purpose.}
+\item{description}{A description for the custom model deployment to help you identify its purpose.}
 
-\item{tags}{Tags to assign to the custom model deployment. You can use tags to
-organize and track your Amazon Web Services resources for cost
-allocation and management purposes.}
+\item{tags}{Tags to assign to the custom model deployment. You can use tags to organize and track your Amazon Web Services resources for cost allocation and management purposes.}
 
-\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/}{Ensuring idempotency}.}
+\item{clientRequestToken}{A unique, case-sensitive identifier to ensure that the operation completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/}{Ensuring idempotency}.}
 }
 \description{
 Deploys a custom model for on-demand inference in Amazon Bedrock. After you deploy your custom model, you use the deployment's Amazon Resource Name (ARN) as the \code{modelId} parameter when you submit prompts and generate responses with model inference.

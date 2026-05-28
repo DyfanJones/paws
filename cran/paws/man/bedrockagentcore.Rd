@@ -53,9 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data
-Plane actions process and handle data or workloads within Amazon Web
-Services services.
+Welcome to the Amazon Bedrock AgentCore Data Plane API reference. Data Plane actions process and handle data or workloads within Amazon Web Services services.
 }
 \section{Service syntax}{
 
@@ -103,13 +101,13 @@ Services services.
 \link[paws.machine.learning:bedrockagentcore_create_ab_test]{create_ab_test} \tab Creates an A/B test for comparing agent configurations\cr
 \link[paws.machine.learning:bedrockagentcore_create_event]{create_event} \tab Creates an event in an AgentCore Memory resource\cr
 \link[paws.machine.learning:bedrockagentcore_create_payment_instrument]{create_payment_instrument} \tab Create a new payment instrument for a connector\cr
-\link[paws.machine.learning:bedrockagentcore_create_payment_session]{create_payment_session} \tab Create a new payment manager session\cr
+\link[paws.machine.learning:bedrockagentcore_create_payment_session]{create_payment_session} \tab Create a new payment session\cr
 \link[paws.machine.learning:bedrockagentcore_delete_ab_test]{delete_ab_test} \tab Deletes an A/B test and its associated gateway rules\cr
 \link[paws.machine.learning:bedrockagentcore_delete_batch_evaluation]{delete_batch_evaluation} \tab Deletes a batch evaluation and its associated results\cr
 \link[paws.machine.learning:bedrockagentcore_delete_event]{delete_event} \tab Deletes an event from an AgentCore Memory resource\cr
 \link[paws.machine.learning:bedrockagentcore_delete_memory_record]{delete_memory_record} \tab Deletes a memory record from an AgentCore Memory resource\cr
-\link[paws.machine.learning:bedrockagentcore_delete_payment_instrument]{delete_payment_instrument} \tab Delete a payment instrument\cr
-\link[paws.machine.learning:bedrockagentcore_delete_payment_session]{delete_payment_session} \tab Delete a payment manager session\cr
+\link[paws.machine.learning:bedrockagentcore_delete_payment_instrument]{delete_payment_instrument} \tab Deletes a payment instrument\cr
+\link[paws.machine.learning:bedrockagentcore_delete_payment_session]{delete_payment_session} \tab Deletes a payment session\cr
 \link[paws.machine.learning:bedrockagentcore_delete_recommendation]{delete_recommendation} \tab Deletes a recommendation and its associated results\cr
 \link[paws.machine.learning:bedrockagentcore_evaluate]{evaluate} \tab Performs on-demand evaluation of agent traces using a specified evaluator\cr
 \link[paws.machine.learning:bedrockagentcore_get_ab_test]{get_ab_test} \tab Retrieves detailed information about an A/B test, including its configuration, status, and statistical results\cr
@@ -143,10 +141,10 @@ Services services.
 \link[paws.machine.learning:bedrockagentcore_list_memory_extraction_jobs]{list_memory_extraction_jobs} \tab Lists all long-term memory extraction jobs that are eligible to be started with optional filtering\cr
 \link[paws.machine.learning:bedrockagentcore_list_memory_records]{list_memory_records} \tab Lists memory records in an AgentCore Memory resource based on specified criteria\cr
 \link[paws.machine.learning:bedrockagentcore_list_payment_instruments]{list_payment_instruments} \tab List payment instruments for a manager\cr
-\link[paws.machine.learning:bedrockagentcore_list_payment_sessions]{list_payment_sessions} \tab List payment manager sessions\cr
+\link[paws.machine.learning:bedrockagentcore_list_payment_sessions]{list_payment_sessions} \tab List payment sessions\cr
 \link[paws.machine.learning:bedrockagentcore_list_recommendations]{list_recommendations} \tab Lists all recommendations in the account, with optional filtering by status\cr
 \link[paws.machine.learning:bedrockagentcore_list_sessions]{list_sessions} \tab Lists sessions in an AgentCore Memory resource based on specified criteria\cr
-\link[paws.machine.learning:bedrockagentcore_process_payment]{process_payment} \tab Process a payment transaction\cr
+\link[paws.machine.learning:bedrockagentcore_process_payment]{process_payment} \tab Processes a payment using a payment instrument within a payment session\cr
 \link[paws.machine.learning:bedrockagentcore_retrieve_memory_records]{retrieve_memory_records} \tab Searches for and retrieves memory records from an AgentCore Memory resource based on specified search criteria\cr
 \link[paws.machine.learning:bedrockagentcore_save_browser_session_profile]{save_browser_session_profile} \tab Saves the current state of a browser session as a reusable profile in Amazon Bedrock AgentCore\cr
 \link[paws.machine.learning:bedrockagentcore_search_registry_records]{search_registry_records} \tab Searches for registry records using semantic, lexical, or hybrid queries\cr

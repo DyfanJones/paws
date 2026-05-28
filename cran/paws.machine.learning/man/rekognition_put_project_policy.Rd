@@ -12,19 +12,13 @@ rekognition_put_project_policy(
 )
 }
 \arguments{
-\item{ProjectArn}{[required] The Amazon Resource Name (ARN) of the project that the project policy is
-attached to.}
+\item{ProjectArn}{[required] The Amazon Resource Name (ARN) of the project that the project policy is attached to.}
 
 \item{PolicyName}{[required] A name for the policy.}
 
-\item{PolicyRevisionId}{The revision ID for the Project Policy. Each time you modify a policy,
-Amazon Rekognition Custom Labels generates and assigns a new
-\code{PolicyRevisionId} and then deletes the previous version of the policy.}
+\item{PolicyRevisionId}{The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition Custom Labels generates and assigns a new \code{PolicyRevisionId} and then deletes the previous version of the policy.}
 
-\item{PolicyDocument}{[required] A resource policy to add to the model. The policy is a JSON structure
-that contains one or more statements that define the policy. The policy
-must follow the IAM syntax. For more information about the contents of a
-JSON policy document, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html}{IAM JSON policy reference}.}
+\item{PolicyDocument}{[required] A resource policy to add to the model. The policy is a JSON structure that contains one or more statements that define the policy. The policy must follow the IAM syntax. For more information about the contents of a JSON policy document, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html}{IAM JSON policy reference}.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

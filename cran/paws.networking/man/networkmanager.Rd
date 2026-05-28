@@ -53,9 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Web Services enables you to centrally manage your Amazon Web
-Services Cloud WAN core network and your Transit Gateway network across
-Amazon Web Services accounts, Regions, and on-premises locations.
+Amazon Web Services enables you to centrally manage your Amazon Web Services Cloud WAN core network and your Transit Gateway network across Amazon Web Services accounts, Regions, and on-premises locations.
 }
 \section{Service syntax}{
 

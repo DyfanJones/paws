@@ -19,36 +19,25 @@ pinpointsmsvoicev2_send_notify_voice_message(
 )
 }
 \arguments{
-\item{NotifyConfigurationId}{[required] The unique identifier of the notify configuration to use for sending the
-message. This can be either the NotifyConfigurationId or
-NotifyConfigurationArn.}
+\item{NotifyConfigurationId}{[required] The unique identifier of the notify configuration to use for sending the message. This can be either the NotifyConfigurationId or NotifyConfigurationArn.}
 
 \item{DestinationPhoneNumber}{[required] The destination phone number in E.164 format.}
 
 \item{TemplateId}{The unique identifier of the template to use for the message.}
 
-\item{TemplateVariables}{[required] A map of template variable names and their values. All variable values
-are passed as strings regardless of the declared variable type. For
-example, pass \code{INTEGER} values as \code{"42"} and \code{BOOLEAN} values as
-\code{"true"} or \code{"false"}.}
+\item{TemplateVariables}{[required] A map of template variable names and their values. All variable values are passed as strings regardless of the declared variable type. For example, pass \code{INTEGER} values as \code{"42"} and \code{BOOLEAN} values as \code{"true"} or \code{"false"}.}
 
 \item{VoiceId}{The voice ID to use for the voice message.}
 
-\item{TimeToLive}{How long the voice message is valid for, in seconds. By default this is
-72 hours.}
+\item{TimeToLive}{How long the voice message is valid for, in seconds. By default this is 72 hours.}
 
-\item{Context}{You can specify custom data in this field. If you do, that data is
-logged to the event destination.}
+\item{Context}{You can specify custom data in this field. If you do, that data is logged to the event destination.}
 
-\item{ConfigurationSetName}{The name of the configuration set to use. This can be either the
-ConfigurationSetName or ConfigurationSetArn.}
+\item{ConfigurationSetName}{The name of the configuration set to use. This can be either the ConfigurationSetName or ConfigurationSetArn.}
 
-\item{DryRun}{When set to true, the message is checked and validated, but isn't sent
-to the end recipient.}
+\item{DryRun}{When set to true, the message is checked and validated, but isn't sent to the end recipient.}
 
-\item{MessageFeedbackEnabled}{Set to true to enable message feedback for the message. When a user
-receives the message you need to update the message status using
-\code{\link[=pinpointsmsvoicev2_put_message_feedback]{put_message_feedback}}.}
+\item{MessageFeedbackEnabled}{Set to true to enable message feedback for the message. When a user receives the message you need to update the message status using \code{\link[=pinpointsmsvoicev2_put_message_feedback]{put_message_feedback}}.}
 }
 \description{
 Sends a templated voice message through a notify configuration to a recipient's phone number.

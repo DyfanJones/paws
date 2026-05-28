@@ -15,12 +15,9 @@ networkmanager_create_transit_gateway_route_table_attachment(
 \arguments{
 \item{PeeringId}{[required] The ID of the peer for the}
 
-\item{TransitGatewayRouteTableArn}{[required] The ARN of the transit gateway route table for the attachment request.
-For example,
-\code{"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"}.}
+\item{TransitGatewayRouteTableArn}{[required] The ARN of the transit gateway route table for the attachment request. For example, \code{"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"}.}
 
-\item{RoutingPolicyLabel}{The routing policy label to apply to the Transit Gateway route table
-attachment for traffic routing decisions.}
+\item{RoutingPolicyLabel}{The routing policy label to apply to the Transit Gateway route table attachment for traffic routing decisions.}
 
 \item{Tags}{The list of key-value tags associated with the request.}
 

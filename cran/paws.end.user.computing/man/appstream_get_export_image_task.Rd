@@ -8,8 +8,7 @@ state, progress, and any error details}
 appstream_get_export_image_task(TaskId = NULL)
 }
 \arguments{
-\item{TaskId}{The unique identifier of the export image task to retrieve information
-about.}
+\item{TaskId}{The unique identifier of the export image task to retrieve information about.}
 }
 \description{
 Retrieves information about an export image task, including its current state, progress, and any error details.

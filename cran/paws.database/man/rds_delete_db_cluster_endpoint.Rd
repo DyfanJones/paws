@@ -8,8 +8,7 @@ cluster}
 rds_delete_db_cluster_endpoint(DBClusterEndpointIdentifier)
 }
 \arguments{
-\item{DBClusterEndpointIdentifier}{[required] The identifier associated with the custom endpoint. This parameter is
-stored as a lowercase string.}
+\item{DBClusterEndpointIdentifier}{[required] The identifier associated with the custom endpoint. This parameter is stored as a lowercase string.}
 }
 \description{
 Deletes a custom endpoint and removes it from an Amazon Aurora DB cluster.

@@ -13,14 +13,9 @@ bedrockagentcorecontrol_list_gateway_targets(
 \arguments{
 \item{gatewayIdentifier}{[required] The identifier of the gateway to list targets for.}
 
-\item{maxResults}{The maximum number of results to return in the response. If the total
-number of results is greater than this value, use the token returned in
-the response in the \code{nextToken} field when making another request to
-return the next batch of results.}
+\item{maxResults}{The maximum number of results to return in the response. If the total number of results is greater than this value, use the token returned in the response in the \code{nextToken} field when making another request to return the next batch of results.}
 
-\item{nextToken}{If the total number of results is greater than the \code{maxResults} value
-provided in the request, enter the token returned in the \code{nextToken}
-field in the response in this field to return the next batch of results.}
+\item{nextToken}{If the total number of results is greater than the \code{maxResults} value provided in the request, enter the token returned in the \code{nextToken} field in the response in this field to return the next batch of results.}
 }
 \description{
 Lists all targets for a specific gateway.

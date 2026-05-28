@@ -7,8 +7,7 @@
 glue_batch_get_table_optimizer(Entries)
 }
 \arguments{
-\item{Entries}{[required] A list of \code{BatchGetTableOptimizerEntry} objects specifying the table
-optimizers to retrieve.}
+\item{Entries}{[required] A list of \code{BatchGetTableOptimizerEntry} objects specifying the table optimizers to retrieve.}
 }
 \description{
 Returns the configuration for the specified table optimizers.

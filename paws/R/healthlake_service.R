@@ -5,10 +5,7 @@ NULL
 #' Amazon HealthLake
 #'
 #' @description
-#' This is the *AWS HealthLake API Reference*. For an introduction to the
-#' service, see [What is AWS
-#' HealthLake?](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html)
-#' in the *AWS HealthLake Developer Guide*.
+#' This is the *AWS HealthLake API Reference*. For an introduction to the service, see [What is AWS HealthLake?](https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html) in the *AWS HealthLake Developer Guide*.
 #'
 #' @param
 #' config

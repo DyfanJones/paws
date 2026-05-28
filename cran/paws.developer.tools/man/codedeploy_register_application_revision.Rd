@@ -11,13 +11,11 @@ codedeploy_register_application_revision(
 )
 }
 \arguments{
-\item{applicationName}{[required] The name of an CodeDeploy application associated with the user or Amazon
-Web Services account.}
+\item{applicationName}{[required] The name of an CodeDeploy application associated with the user or Amazon Web Services account.}
 
 \item{description}{A comment about the revision.}
 
-\item{revision}{[required] Information about the application revision to register, including type
-and location.}
+\item{revision}{[required] Information about the application revision to register, including type and location.}
 }
 \description{
 Registers with CodeDeploy a revision for the specified application.

@@ -15,11 +15,9 @@ cloudformation_import_stacks_to_stack_set(
 )
 }
 \arguments{
-\item{StackSetName}{[required] The name of the StackSet. The name must be unique in the Region where
-you create your StackSet.}
+\item{StackSetName}{[required] The name of the StackSet. The name must be unique in the Region where you create your StackSet.}
 
-\item{StackIds}{The IDs of the stacks you are importing into a StackSet. You import up
-to 10 stacks per StackSet at a time.
+\item{StackIds}{The IDs of the stacks you are importing into a StackSet. You import up to 10 stacks per StackSet at a time.
 
 Specify either \code{StackIds} or \code{StackIdsUrl}.}
 
@@ -27,19 +25,15 @@ Specify either \code{StackIds} or \code{StackIdsUrl}.}
 
 Specify either \code{StackIds} or \code{StackIdsUrl}.}
 
-\item{OrganizationalUnitIds}{The list of OU ID's to which the imported stacks must be mapped as
-deployment targets.}
+\item{OrganizationalUnitIds}{The list of OU ID's to which the imported stacks must be mapped as deployment targets.}
 
-\item{OperationPreferences}{The user-specified preferences for how CloudFormation performs a
-StackSet operation.
+\item{OperationPreferences}{The user-specified preferences for how CloudFormation performs a StackSet operation.
 
-For more information about maximum concurrent accounts and failure
-tolerance, see \href{https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options}{StackSet operation options}.}
+For more information about maximum concurrent accounts and failure tolerance, see \href{https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options}{StackSet operation options}.}
 
 \item{OperationId}{A unique, user defined, identifier for the StackSet operation.}
 
-\item{CallAs}{By default, \code{SELF} is specified. Use \code{SELF} for StackSets with
-self-managed permissions.
+\item{CallAs}{By default, \code{SELF} is specified. Use \code{SELF} for StackSets with self-managed permissions.
 \itemize{
 \item If you are signed in to the management account, specify \code{SELF}.
 \item For service managed StackSets, specify \code{DELEGATED_ADMIN}.

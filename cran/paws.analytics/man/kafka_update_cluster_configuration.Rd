@@ -14,8 +14,7 @@ kafka_update_cluster_configuration(
 \arguments{
 \item{ClusterArn}{[required] The Amazon Resource Name (ARN) that uniquely identifies the cluster.}
 
-\item{ConfigurationInfo}{[required] Represents the configuration that you want MSK to use for the brokers in
-a cluster.}
+\item{ConfigurationInfo}{[required] Represents the configuration that you want MSK to use for the brokers in a cluster.}
 
 \item{CurrentVersion}{[required] The version of the cluster that needs to be updated.}
 }

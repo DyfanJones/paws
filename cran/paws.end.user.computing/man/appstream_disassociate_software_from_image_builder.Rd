@@ -13,8 +13,7 @@ appstream_disassociate_software_from_image_builder(
 \arguments{
 \item{ImageBuilderName}{[required] The name of the target image builder instance.}
 
-\item{SoftwareNames}{[required] The list of license included applications to disassociate from the image
-builder.
+\item{SoftwareNames}{[required] The list of license included applications to disassociate from the image builder.
 
 Possible values include the following:
 \itemize{

@@ -7,8 +7,7 @@
 kafkaconnect_describe_connector(connectorArn)
 }
 \arguments{
-\item{connectorArn}{[required] The Amazon Resource Name (ARN) of the connector that you want to
-describe.}
+\item{connectorArn}{[required] The Amazon Resource Name (ARN) of the connector that you want to describe.}
 }
 \description{
 Returns summary information about the connector.

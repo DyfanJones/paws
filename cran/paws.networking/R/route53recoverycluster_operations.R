@@ -10,8 +10,7 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycluster_get_routing_control_state/](https://www.paws-r-sdk.com/docs/route53recoverycluster_get_routing_control_state/) for full documentation.
 #'
-#' @param RoutingControlArn &#91;required&#93; The Amazon Resource Name (ARN) for the routing control that you want to
-#' get the state for.
+#' @param RoutingControlArn &#91;required&#93; The Amazon Resource Name (ARN) for the routing control that you want to get the state for.
 #'
 #' @keywords internal
 #'
@@ -44,12 +43,9 @@ route53recoverycluster_get_routing_control_state <- function(RoutingControlArn) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycluster_list_routing_controls/](https://www.paws-r-sdk.com/docs/route53recoverycluster_list_routing_controls/) for full documentation.
 #'
-#' @param ControlPanelArn The Amazon Resource Name (ARN) of the control panel of the routing
-#' controls to list.
-#' @param NextToken The token for the next set of results. You receive this token from a
-#' previous call.
-#' @param MaxResults The number of routing controls objects that you want to return with this
-#' call. The default value is 500.
+#' @param ControlPanelArn The Amazon Resource Name (ARN) of the control panel of the routing controls to list.
+#' @param NextToken The token for the next set of results. You receive this token from a previous call.
+#' @param MaxResults The number of routing controls objects that you want to return with this call. The default value is 500.
 #'
 #' @keywords internal
 #'
@@ -80,17 +76,11 @@ route53recoverycluster_list_routing_controls <- function(ControlPanelArn = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycluster_update_routing_control_state/](https://www.paws-r-sdk.com/docs/route53recoverycluster_update_routing_control_state/) for full documentation.
 #'
-#' @param RoutingControlArn &#91;required&#93; The Amazon Resource Name (ARN) for the routing control that you want to
-#' update the state for.
+#' @param RoutingControlArn &#91;required&#93; The Amazon Resource Name (ARN) for the routing control that you want to update the state for.
 #' @param RoutingControlState &#91;required&#93; The state of the routing control. You can set the value to ON or OFF.
-#' @param SafetyRulesToOverride The Amazon Resource Names (ARNs) for the safety rules that you want to
-#' override when you're updating the state of a routing control. You can
-#' override one safety rule or multiple safety rules by including one or
-#' more ARNs, separated by commas.
+#' @param SafetyRulesToOverride The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating the state of a routing control. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.
 #' 
-#' For more information, see [Override safety rules to reroute
-#' traffic](https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html)
-#' in the Amazon Route 53 Application Recovery Controller Developer Guide.
+#' For more information, see [Override safety rules to reroute traffic](https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html) in the Amazon Route 53 Application Recovery Controller Developer Guide.
 #'
 #' @keywords internal
 #'
@@ -122,14 +112,9 @@ route53recoverycluster_update_routing_control_state <- function(RoutingControlAr
 #' See [https://www.paws-r-sdk.com/docs/route53recoverycluster_update_routing_control_states/](https://www.paws-r-sdk.com/docs/route53recoverycluster_update_routing_control_states/) for full documentation.
 #'
 #' @param UpdateRoutingControlStateEntries &#91;required&#93; A set of routing control entries that you want to update.
-#' @param SafetyRulesToOverride The Amazon Resource Names (ARNs) for the safety rules that you want to
-#' override when you're updating routing control states. You can override
-#' one safety rule or multiple safety rules by including one or more ARNs,
-#' separated by commas.
+#' @param SafetyRulesToOverride The Amazon Resource Names (ARNs) for the safety rules that you want to override when you're updating routing control states. You can override one safety rule or multiple safety rules by including one or more ARNs, separated by commas.
 #' 
-#' For more information, see [Override safety rules to reroute
-#' traffic](https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html)
-#' in the Amazon Route 53 Application Recovery Controller Developer Guide.
+#' For more information, see [Override safety rules to reroute traffic](https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html) in the Amazon Route 53 Application Recovery Controller Developer Guide.
 #'
 #' @keywords internal
 #'

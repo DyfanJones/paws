@@ -9,8 +9,7 @@ sagemaker_delete_model_package(ModelPackageName)
 \arguments{
 \item{ModelPackageName}{[required] The name or Amazon Resource Name (ARN) of the model package to delete.
 
-When you specify a name, the name must have 1 to 63 characters. Valid
-characters are a-z, A-Z, 0-9, and - (hyphen).}
+When you specify a name, the name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and - (hyphen).}
 }
 \description{
 Deletes a model package.

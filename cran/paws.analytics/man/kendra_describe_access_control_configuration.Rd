@@ -10,8 +10,7 @@ kendra_describe_access_control_configuration(IndexId, Id)
 \arguments{
 \item{IndexId}{[required] The identifier of the index for an access control configuration.}
 
-\item{Id}{[required] The identifier of the access control configuration you want to get
-information on.}
+\item{Id}{[required] The identifier of the access control configuration you want to get information on.}
 }
 \description{
 Gets information about an access control configuration that you created for your documents in an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.

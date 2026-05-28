@@ -7,10 +7,7 @@
 elasticache_list_tags_for_resource(ResourceName)
 }
 \arguments{
-\item{ResourceName}{[required] The Amazon Resource Name (ARN) of the resource for which you want the
-list of tags, for example
-\code{arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster} or
-\code{arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot}.
+\item{ResourceName}{[required] The Amazon Resource Name (ARN) of the resource for which you want the list of tags, for example \code{arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster} or \code{arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot}.
 
 For more information about ARNs, see \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html}{Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces}.}
 }

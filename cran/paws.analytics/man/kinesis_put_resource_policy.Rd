@@ -11,9 +11,7 @@ kinesis_put_resource_policy(ResourceARN, StreamId = NULL, Policy)
 
 \item{StreamId}{Not Implemented. Reserved for future use.}
 
-\item{Policy}{[required] Details of the resource policy. It must include the identity of the
-principal and the actions allowed on this resource. This is formatted as
-a JSON string.}
+\item{Policy}{[required] Details of the resource policy. It must include the identity of the principal and the actions allowed on this resource. This is formatted as a JSON string.}
 }
 \description{
 Attaches a resource-based policy to a data stream or registered consumer. If you are using an identity other than the root user of the Amazon Web Services account that owns the resource, the calling identity must have the \code{\link[=kinesis_put_resource_policy]{put_resource_policy}} permissions on the specified Kinesis Data Streams resource and belong to the owner's account in order to use this operation. If you don't have \code{\link[=kinesis_put_resource_policy]{put_resource_policy}} permissions, Amazon Kinesis Data Streams returns a \verb{403 Access Denied error}. If you receive a \code{ResourceNotFoundException}, check to see if you passed a valid stream or consumer resource.

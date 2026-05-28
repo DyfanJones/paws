@@ -14,14 +14,11 @@ chatbot_update_custom_action(
 \arguments{
 \item{CustomActionArn}{[required] The fully defined Amazon Resource Name (ARN) of the custom action.}
 
-\item{Definition}{[required] The definition of the command to run when invoked as an alias or as an
-action button.}
+\item{Definition}{[required] The definition of the command to run when invoked as an alias or as an action button.}
 
-\item{AliasName}{The name used to invoke this action in the chat channel. For example,
-\verb{@aws run my-alias}.}
+\item{AliasName}{The name used to invoke this action in the chat channel. For example, \verb{@aws run my-alias}.}
 
-\item{Attachments}{Defines when this custom action button should be attached to a
-notification.}
+\item{Attachments}{Defines when this custom action button should be attached to a notification.}
 }
 \description{
 Updates a custom action.

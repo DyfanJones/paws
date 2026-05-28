@@ -12,9 +12,7 @@ rds_copy_db_parameter_group(
 )
 }
 \arguments{
-\item{SourceDBParameterGroupIdentifier}{[required] The identifier or ARN for the source DB parameter group. For information
-about creating an ARN, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing}{Constructing an ARN for Amazon RDS}
-in the \emph{Amazon RDS User Guide}.
+\item{SourceDBParameterGroupIdentifier}{[required] The identifier or ARN for the source DB parameter group. For information about creating an ARN, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing}{Constructing an ARN for Amazon RDS} in the \emph{Amazon RDS User Guide}.
 
 Constraints:
 \itemize{
@@ -34,6 +32,10 @@ Constraints:
 Example: \code{my-db-parameter-group}}
 
 \item{TargetDBParameterGroupDescription}{[required] A description for the copied DB parameter group.}
+
+\item{Tags}{A list of tags.
+
+For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html}{Tagging Amazon RDS resources} in the \emph{Amazon RDS User Guide} or \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html}{Tagging Amazon Aurora and Amazon RDS resources} in the \emph{Amazon Aurora User Guide}.}
 }
 \description{
 Copies the specified DB parameter group.

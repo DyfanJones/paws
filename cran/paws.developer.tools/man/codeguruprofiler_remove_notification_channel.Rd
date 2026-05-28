@@ -9,8 +9,7 @@ codeguruprofiler_remove_notification_channel(channelId, profilingGroupName)
 \arguments{
 \item{channelId}{[required] The id of the channel that we want to stop receiving notifications.}
 
-\item{profilingGroupName}{[required] The name of the profiling group we want to change notification
-configuration for.}
+\item{profilingGroupName}{[required] The name of the profiling group we want to change notification configuration for.}
 }
 \description{
 Remove one anomaly notifications channel for a profiling group.

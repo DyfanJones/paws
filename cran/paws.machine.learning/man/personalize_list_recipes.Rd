@@ -14,15 +14,11 @@ personalize_list_recipes(
 \arguments{
 \item{recipeProvider}{The default is \code{SERVICE}.}
 
-\item{nextToken}{A token returned from the previous call to
-\code{\link[=personalize_list_recipes]{list_recipes}} for getting the next set of
-recipes (if they exist).}
+\item{nextToken}{A token returned from the previous call to \code{\link[=personalize_list_recipes]{list_recipes}} for getting the next set of recipes (if they exist).}
 
 \item{maxResults}{The maximum number of recipes to return.}
 
-\item{domain}{Filters returned recipes by domain for a Domain dataset group. Only
-recipes (Domain dataset group use cases) for this domain are included in
-the response. If you don't specify a domain, all recipes are returned.}
+\item{domain}{Filters returned recipes by domain for a Domain dataset group. Only recipes (Domain dataset group use cases) for this domain are included in the response. If you don't specify a domain, all recipes are returned.}
 }
 \description{
 Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's Amazon Resource Name (ARN).

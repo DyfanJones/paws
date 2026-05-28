@@ -10,11 +10,9 @@ sagemaker_create_human_task_ui(HumanTaskUiName, UiTemplate, Tags = NULL)
 \arguments{
 \item{HumanTaskUiName}{[required] The name of the user interface you are creating.}
 
-\item{UiTemplate}{[required]}
+\item{UiTemplate}{[required] The Liquid template for the worker user interface.}
 
-\item{Tags}{An array of key-value pairs that contain metadata to help you categorize
-and organize a human review workflow user interface. Each tag consists
-of a key and a value, both of which you define.}
+\item{Tags}{An array of key-value pairs that contain metadata to help you categorize and organize a human review workflow user interface. Each tag consists of a key and a value, both of which you define.}
 }
 \description{
 Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel interface with an instruction area, the item to review, and an input area.

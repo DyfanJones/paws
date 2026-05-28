@@ -58,12 +58,7 @@ Operations section.
 \item \href{https://docs.aws.amazon.com/connect/latest/APIReference/API_Types_Amazon_Connect_Cases.html}{Cases data types}
 }
 
-With Amazon Connect Cases, your agents can track and manage customer
-issues that require multiple interactions, follow-up tasks, and teams in
-your contact center. A case represents a customer issue. It records the
-issue, the steps and interactions taken to resolve the issue, and the
-outcome. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/cases.html}{Amazon Connect Cases}
-in the \emph{Amazon Connect Administrator Guide}.
+With Amazon Connect Cases, your agents can track and manage customer issues that require multiple interactions, follow-up tasks, and teams in your contact center. A case represents a customer issue. It records the issue, the steps and interactions taken to resolve the issue, and the outcome. For more information, see \href{https://docs.aws.amazon.com/connect/latest/adminguide/cases.html}{Amazon Connect Cases} in the \emph{Amazon Connect Administrator Guide}.
 }
 \section{Service syntax}{
 

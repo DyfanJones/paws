@@ -13,14 +13,9 @@ rekognition_list_project_policies(
 \arguments{
 \item{ProjectArn}{[required] The ARN of the project for which you want to list the project policies.}
 
-\item{NextToken}{If the previous response was incomplete (because there is more results
-to retrieve), Amazon Rekognition Custom Labels returns a pagination
-token in the response. You can use this pagination token to retrieve the
-next set of results.}
+\item{NextToken}{If the previous response was incomplete (because there is more results to retrieve), Amazon Rekognition Custom Labels returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.}
 
-\item{MaxResults}{The maximum number of results to return per paginated call. The largest
-value you can specify is 5. If you specify a value greater than 5, a
-ValidationException error occurs. The default value is 5.}
+\item{MaxResults}{The maximum number of results to return per paginated call. The largest value you can specify is 5. If you specify a value greater than 5, a ValidationException error occurs. The default value is 5.}
 }
 \description{
 This operation applies only to Amazon Rekognition Custom Labels.

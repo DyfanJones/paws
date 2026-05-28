@@ -10,8 +10,7 @@ datazone_delete_environment_blueprint_configuration(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the blueprint
-configuration is deleted.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the blueprint configuration is deleted.}
 
 \item{environmentBlueprintIdentifier}{[required] The ID of the blueprint the configuration of which is deleted.}
 }

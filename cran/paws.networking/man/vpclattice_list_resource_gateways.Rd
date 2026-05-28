@@ -9,8 +9,7 @@ vpclattice_list_resource_gateways(maxResults = NULL, nextToken = NULL)
 \arguments{
 \item{maxResults}{The maximum page size.}
 
-\item{nextToken}{If there are additional results, a pagination token for the next page of
-results.}
+\item{nextToken}{If there are additional results, a pagination token for the next page of results.}
 }
 \description{
 Lists the resource gateways that you own or that were shared with you.

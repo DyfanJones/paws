@@ -13,13 +13,9 @@ redshift_get_cluster_credentials_with_iam(
 )
 }
 \arguments{
-\item{DbName}{The name of the database for which you are requesting credentials. If
-the database name is specified, the IAM policy must allow access to the
-resource \code{dbname} for the specified database name. If the database name
-is not specified, access to all databases is allowed.}
+\item{DbName}{The name of the database for which you are requesting credentials. If the database name is specified, the IAM policy must allow access to the resource \code{dbname} for the specified database name. If the database name is not specified, access to all databases is allowed.}
 
-\item{ClusterIdentifier}{The unique identifier of the cluster that contains the database for
-which you are requesting credentials.}
+\item{ClusterIdentifier}{The unique identifier of the cluster that contains the database for which you are requesting credentials.}
 
 \item{DurationSeconds}{The number of seconds until the returned temporary password expires.
 

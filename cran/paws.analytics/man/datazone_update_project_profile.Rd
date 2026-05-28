@@ -32,8 +32,7 @@ datazone_update_project_profile(
 
 \item{allowCustomProjectResourceTags}{Specifies whether custom project resource tags are supported.}
 
-\item{projectResourceTagsDescription}{Field viewable through the UI that provides a project user with the
-allowed resource tag specifications.}
+\item{projectResourceTagsDescription}{Field viewable through the UI that provides a project user with the allowed resource tag specifications.}
 
 \item{environmentConfigurations}{The environment configurations of a project profile.}
 

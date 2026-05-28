@@ -10,8 +10,7 @@ networkfirewall_describe_proxy_configuration(
 )
 }
 \arguments{
-\item{ProxyConfigurationName}{The descriptive name of the proxy configuration. You can't change the
-name of a proxy configuration after you create it.
+\item{ProxyConfigurationName}{The descriptive name of the proxy configuration. You can't change the name of a proxy configuration after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 

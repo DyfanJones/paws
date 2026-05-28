@@ -12,14 +12,11 @@ comprehend_list_dominant_language_detection_jobs(
 )
 }
 \arguments{
-\item{Filter}{Filters that jobs that are returned. You can filter jobs on their name,
-status, or the date and time that they were submitted. You can only set
-one filter at a time.}
+\item{Filter}{Filters that jobs that are returned. You can filter jobs on their name, status, or the date and time that they were submitted. You can only set one filter at a time.}
 
 \item{NextToken}{Identifies the next page of results to return.}
 
-\item{MaxResults}{The maximum number of results to return in each page. The default is
-100.}
+\item{MaxResults}{The maximum number of results to return in each page. The default is 100.}
 }
 \description{
 Gets a list of the dominant language detection jobs that you have submitted.

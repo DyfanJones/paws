@@ -13,6 +13,19 @@ bedrockdataautomation_list_blueprints(
   projectFilter = NULL
 )
 }
+\arguments{
+\item{blueprintArn}{ARN of a Blueprint}
+
+\item{resourceOwner}{Resource Owner}
+
+\item{blueprintStageFilter}{Blueprint Stage filter}
+
+\item{maxResults}{Max Results}
+
+\item{nextToken}{Pagination token}
+
+\item{projectFilter}{Data Automation Project Filter}
+}
 \description{
 Lists all existing Amazon Bedrock Data Automation Blueprints
 

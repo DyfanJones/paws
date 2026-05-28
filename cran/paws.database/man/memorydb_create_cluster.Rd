@@ -34,8 +34,7 @@ memorydb_create_cluster(
 )
 }
 \arguments{
-\item{ClusterName}{[required] The name of the cluster. This value must be unique as it also serves as
-the cluster identifier.}
+\item{ClusterName}{[required] The name of the cluster. This value must be unique as it also serves as the cluster identifier.}
 
 \item{NodeType}{[required] The compute and memory capacity of the nodes in the cluster.}
 
@@ -47,17 +46,13 @@ the cluster identifier.}
 
 \item{NumShards}{The number of shards the cluster will contain. The default value is 1.}
 
-\item{NumReplicasPerShard}{The number of replicas to apply to each shard. The default value is 1.
-The maximum is 5.}
+\item{NumReplicasPerShard}{The number of replicas to apply to each shard. The default value is 1. The maximum is 5.}
 
 \item{SubnetGroupName}{The name of the subnet group to be used for the cluster.}
 
 \item{SecurityGroupIds}{A list of security group names to associate with this cluster.}
 
-\item{MaintenanceWindow}{Specifies the weekly time range during which maintenance on the cluster
-is performed. It is specified as a range in the format
-ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-is a 60 minute period.
+\item{MaintenanceWindow}{Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
 
 Valid values for \code{ddd} are:
 \itemize{
@@ -74,39 +69,25 @@ Example: \code{sun:23:00-mon:01:30}}
 
 \item{Port}{The port number on which each of the nodes accepts connections.}
 
-\item{SnsTopicArn}{The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-(SNS) topic to which notifications are sent.}
+\item{SnsTopicArn}{The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) topic to which notifications are sent.}
 
 \item{TLSEnabled}{A flag to enable in-transit encryption on the cluster.}
 
 \item{KmsKeyId}{The ID of the KMS key used to encrypt the cluster.}
 
-\item{SnapshotArns}{A list of Amazon Resource Names (ARN) that uniquely identify the RDB
-snapshot files stored in Amazon S3. The snapshot files are used to
-populate the new cluster. The Amazon S3 object name in the ARN cannot
-contain any commas.}
+\item{SnapshotArns}{A list of Amazon Resource Names (ARN) that uniquely identify the RDB snapshot files stored in Amazon S3. The snapshot files are used to populate the new cluster. The Amazon S3 object name in the ARN cannot contain any commas.}
 
-\item{SnapshotName}{The name of a snapshot from which to restore data into the new cluster.
-The snapshot status changes to restoring while the new cluster is being
-created.}
+\item{SnapshotName}{The name of a snapshot from which to restore data into the new cluster. The snapshot status changes to restoring while the new cluster is being created.}
 
-\item{SnapshotRetentionLimit}{The number of days for which MemoryDB retains automatic snapshots before
-deleting them. For example, if you set SnapshotRetentionLimit to 5, a
-snapshot that was taken today is retained for 5 days before being
-deleted.}
+\item{SnapshotRetentionLimit}{The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.}
 
-\item{Tags}{A list of tags to be added to this resource. Tags are comma-separated
-key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include
-multiple tags as shown following: Key=myKey, Value=myKeyValue
-Key=mySecondKey, Value=mySecondKeyValue.}
+\item{Tags}{A list of tags to be added to this resource. Tags are comma-separated key,value pairs (e.g. Key=myKey, Value=myKeyValue. You can include multiple tags as shown following: Key=myKey, Value=myKeyValue Key=mySecondKey, Value=mySecondKeyValue.}
 
-\item{SnapshotWindow}{The daily time range (in UTC) during which MemoryDB begins taking a
-daily snapshot of your shard.
+\item{SnapshotWindow}{The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard.
 
 Example: 05:00-09:00
 
-If you do not specify this parameter, MemoryDB automatically chooses an
-appropriate time range.}
+If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.}
 
 \item{ACLName}{[required] The name of the Access Control List to associate with the cluster.}
 
@@ -114,27 +95,13 @@ appropriate time range.}
 
 \item{EngineVersion}{The version number of the Redis OSS engine to be used for the cluster.}
 
-\item{AutoMinorVersionUpgrade}{When set to true, the cluster will automatically receive minor engine
-version upgrades after launch.}
+\item{AutoMinorVersionUpgrade}{When set to true, the cluster will automatically receive minor engine version upgrades after launch.}
 
-\item{DataTiering}{Enables data tiering. Data tiering is only supported for clusters using
-the r6gd node type. This parameter must be set when using r6gd nodes.
-For more information, see \href{https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html}{Data tiering}.}
+\item{DataTiering}{Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see \href{https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html}{Data tiering}.}
 
-\item{NetworkType}{Specifies the IP address type for the cluster. Valid values are 'ipv4',
-'ipv6', or 'dual_stack'. When set to 'ipv4', the cluster will only be
-accessible via IPv4 addresses. When set to 'ipv6', the cluster will only
-be accessible via IPv6 addresses. When set to 'dual_stack', the cluster
-will be accessible via both IPv4 and IPv6 addresses. If not specified,
-the default is 'ipv4'.}
+\item{NetworkType}{Specifies the IP address type for the cluster. Valid values are 'ipv4', 'ipv6', or 'dual_stack'. When set to 'ipv4', the cluster will only be accessible via IPv4 addresses. When set to 'ipv6', the cluster will only be accessible via IPv6 addresses. When set to 'dual_stack', the cluster will be accessible via both IPv4 and IPv6 addresses. If not specified, the default is 'ipv4'.}
 
-\item{IpDiscovery}{The mechanism for discovering IP addresses for the cluster discovery
-protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster
-discovery functions such as cluster slots, cluster shards, and cluster
-nodes return IPv4 addresses for cluster nodes. When set to 'ipv6', the
-cluster discovery functions return IPv6 addresses for cluster nodes. The
-value must be compatible with the NetworkType parameter. If not
-specified, the default is 'ipv4'.}
+\item{IpDiscovery}{The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.}
 }
 \description{
 Creates a cluster. All nodes in the cluster run the same protocol-compliant engine software.

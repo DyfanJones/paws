@@ -20,21 +20,15 @@ bedrockagent_create_flow(
 
 \item{description}{A description for the flow.}
 
-\item{executionRoleArn}{[required] The Amazon Resource Name (ARN) of the service role with permissions to
-create and manage a flow. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html}{Create a service role for flows in Amazon Bedrock}
-in the Amazon Bedrock User Guide.}
+\item{executionRoleArn}{[required] The Amazon Resource Name (ARN) of the service role with permissions to create and manage a flow. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-permissions.html}{Create a service role for flows in Amazon Bedrock} in the Amazon Bedrock User Guide.}
 
 \item{customerEncryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key to encrypt the flow.}
 
 \item{definition}{A definition of the nodes and connections between nodes in the flow.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{tags}{Any tags that you want to attach to the flow. For more information, see
-\href{https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html}{Tagging resources in Amazon Bedrock}.}
+\item{tags}{Any tags that you want to attach to the flow. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html}{Tagging resources in Amazon Bedrock}.}
 }
 \description{
 Creates a prompt flow that you can use to send an input through various steps to yield an output. Configure nodes, each of which corresponds to a step of the flow, and create connections between the nodes to create paths to different outputs. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-how-it-works.html}{How it works} and \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows-create.html}{Create a flow in Amazon Bedrock} in the Amazon Bedrock User Guide.

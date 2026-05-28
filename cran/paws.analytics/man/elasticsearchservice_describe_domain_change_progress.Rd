@@ -13,9 +13,7 @@ elasticsearchservice_describe_domain_change_progress(
 \arguments{
 \item{DomainName}{[required] The domain you want to get the progress information about.}
 
-\item{ChangeId}{The specific change ID for which you want to get progress information.
-This is an optional parameter. If omitted, the service returns
-information about the most recent configuration change.}
+\item{ChangeId}{The specific change ID for which you want to get progress information. This is an optional parameter. If omitted, the service returns information about the most recent configuration change.}
 }
 \description{
 Returns information about the current blue/green deployment happening on a domain, including a change ID, status, and progress stages.

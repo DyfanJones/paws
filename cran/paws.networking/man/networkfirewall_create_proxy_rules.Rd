@@ -15,14 +15,11 @@ networkfirewall_create_proxy_rules(
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{ProxyRuleGroupName}{The descriptive name of the proxy rule group. You can't change the name
-of a proxy rule group after you create it.
+\item{ProxyRuleGroupName}{The descriptive name of the proxy rule group. You can't change the name of a proxy rule group after you create it.
 
 You must specify the ARN or the name, and you can specify both.}
 
-\item{Rules}{[required] Individual rules that define match conditions and actions for
-application-layer traffic. Rules specify what to inspect (domains,
-headers, methods) and what action to take (allow, deny, alert).}
+\item{Rules}{[required] Individual rules that define match conditions and actions for application-layer traffic. Rules specify what to inspect (domains, headers, methods) and what action to take (allow, deny, alert).}
 }
 \description{
 Creates Network Firewall ProxyRule resources.

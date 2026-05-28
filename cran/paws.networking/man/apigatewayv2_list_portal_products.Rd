@@ -13,8 +13,7 @@ apigatewayv2_list_portal_products(
 \arguments{
 \item{MaxResults}{The maximum number of elements to be returned for this resource.}
 
-\item{NextToken}{The next page of elements from this collection. Not valid for the last
-element of the collection.}
+\item{NextToken}{The next page of elements from this collection. Not valid for the last element of the collection.}
 
 \item{ResourceOwner}{The resource owner of the portal product.}
 }

@@ -24,41 +24,27 @@ redshiftdataapiservice_execute_statement(
 \arguments{
 \item{Sql}{[required] The SQL statement text to run.}
 
-\item{ClusterIdentifier}{The cluster identifier. This parameter is required when connecting to a
-cluster and authenticating using either Secrets Manager or temporary
-credentials.}
+\item{ClusterIdentifier}{The cluster identifier. This parameter is required when connecting to a cluster and authenticating using either Secrets Manager or temporary credentials.}
 
-\item{SecretArn}{The name or ARN of the secret that enables access to the database. This
-parameter is required when authenticating using Secrets Manager.}
+\item{SecretArn}{The name or ARN of the secret that enables access to the database. This parameter is required when authenticating using Secrets Manager.}
 
-\item{DbUser}{The database user name. This parameter is required when connecting to a
-cluster as a database user and authenticating using temporary
-credentials.}
+\item{DbUser}{The database user name. This parameter is required when connecting to a cluster as a database user and authenticating using temporary credentials.}
 
-\item{Database}{The name of the database. This parameter is required when authenticating
-using either Secrets Manager or temporary credentials.}
+\item{Database}{The name of the database. This parameter is required when authenticating using either Secrets Manager or temporary credentials.}
 
-\item{WithEvent}{A value that indicates whether to send an event to the Amazon
-EventBridge event bus after the SQL statement runs.}
+\item{WithEvent}{A value that indicates whether to send an event to the Amazon EventBridge event bus after the SQL statement runs.}
 
-\item{StatementName}{The name of the SQL statement. You can name the SQL statement when you
-create it to identify the query.}
+\item{StatementName}{The name of the SQL statement. You can name the SQL statement when you create it to identify the query.}
 
 \item{Parameters}{The parameters for the SQL statement.}
 
-\item{WorkgroupName}{The serverless workgroup name or Amazon Resource Name (ARN). This
-parameter is required when connecting to a serverless workgroup and
-authenticating using either Secrets Manager or temporary credentials.}
+\item{WorkgroupName}{The serverless workgroup name or Amazon Resource Name (ARN). This parameter is required when connecting to a serverless workgroup and authenticating using either Secrets Manager or temporary credentials.}
 
-\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the
-idempotency of the request.}
+\item{ClientToken}{A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.}
 
-\item{ResultFormat}{The data format of the result of the SQL statement. If no format is
-specified, the default is JSON.}
+\item{ResultFormat}{The data format of the result of the SQL statement. If no format is specified, the default is JSON.}
 
-\item{SessionKeepAliveSeconds}{The number of seconds to keep the session alive after the query
-finishes. The maximum time a session can keep alive is 24 hours. After
-24 hours, the session is forced closed and the query is terminated.}
+\item{SessionKeepAliveSeconds}{The number of seconds to keep the session alive after the query finishes. The maximum time a session can keep alive is 24 hours. After 24 hours, the session is forced closed and the query is terminated.}
 
 \item{SessionId}{The session identifier of the query.}
 }

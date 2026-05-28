@@ -15,20 +15,15 @@ globalaccelerator_update_custom_routing_accelerator(
 \arguments{
 \item{AcceleratorArn}{[required] The Amazon Resource Name (ARN) of the accelerator to update.}
 
-\item{Name}{The name of the accelerator. The name can have a maximum of 64
-characters, must contain only alphanumeric characters, periods (.), or
-hyphens (-), and must not begin or end with a hyphen or period.}
+\item{Name}{The name of the accelerator. The name can have a maximum of 64 characters, must contain only alphanumeric characters, periods (.), or hyphens (-), and must not begin or end with a hyphen or period.}
 
-\item{IpAddressType}{The IP address type that an accelerator supports. For a custom routing
-accelerator, the value must be IPV4.}
+\item{IpAddressType}{The IP address type that an accelerator supports. For a custom routing accelerator, the value must be IPV4.}
 
 \item{IpAddresses}{The IP addresses for an accelerator.}
 
-\item{Enabled}{Indicates whether an accelerator is enabled. The value is true or false.
-The default value is true.
+\item{Enabled}{Indicates whether an accelerator is enabled. The value is true or false. The default value is true.
 
-If the value is set to true, the accelerator cannot be deleted. If set
-to false, the accelerator can be deleted.}
+If the value is set to true, the accelerator cannot be deleted. If set to false, the accelerator can be deleted.}
 }
 \description{
 Update a custom routing accelerator.

@@ -11,8 +11,7 @@ timestreamquery_list_tags_for_resource(
 )
 }
 \arguments{
-\item{ResourceARN}{[required] The Timestream resource with tags to be listed. This value is an Amazon
-Resource Name (ARN).}
+\item{ResourceARN}{[required] The Timestream resource with tags to be listed. This value is an Amazon Resource Name (ARN).}
 
 \item{MaxResults}{The maximum number of tags to return.}
 

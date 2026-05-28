@@ -14,18 +14,9 @@ kinesisanalyticsv2_delete_application_reference_data_source(
 \arguments{
 \item{ApplicationName}{[required] The name of an existing application.}
 
-\item{CurrentApplicationVersionId}{[required] The current application version. You can use the
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}
-operation to get the current application version. If the version
-specified is not the current version, the
-\code{ConcurrentModificationException} is returned.}
+\item{CurrentApplicationVersionId}{[required] The current application version. You can use the \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}} operation to get the current application version. If the version specified is not the current version, the \code{ConcurrentModificationException} is returned.}
 
-\item{ReferenceId}{[required] The ID of the reference data source. When you add a reference data
-source to your application using the
-\code{\link[=kinesisanalyticsv2_add_application_reference_data_source]{add_application_reference_data_source}},
-Kinesis Data Analytics assigns an ID. You can use the
-\code{\link[=kinesisanalyticsv2_describe_application]{describe_application}}
-operation to get the reference ID.}
+\item{ReferenceId}{[required] The ID of the reference data source. When you add a reference data source to your application using the \code{\link[=kinesisanalyticsv2_add_application_reference_data_source]{add_application_reference_data_source}}, Kinesis Data Analytics assigns an ID. You can use the \code{\link[=kinesisanalyticsv2_describe_application]{describe_application}} operation to get the reference ID.}
 }
 \description{
 Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's configuration.

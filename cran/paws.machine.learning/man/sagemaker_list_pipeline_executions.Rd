@@ -17,20 +17,15 @@ sagemaker_list_pipeline_executions(
 \arguments{
 \item{PipelineName}{[required] The name or Amazon Resource Name (ARN) of the pipeline.}
 
-\item{CreatedAfter}{A filter that returns the pipeline executions that were created after a
-specified time.}
+\item{CreatedAfter}{A filter that returns the pipeline executions that were created after a specified time.}
 
-\item{CreatedBefore}{A filter that returns the pipeline executions that were created before a
-specified time.}
+\item{CreatedBefore}{A filter that returns the pipeline executions that were created before a specified time.}
 
 \item{SortBy}{The field by which to sort results. The default is \code{CreatedTime}.}
 
 \item{SortOrder}{The sort order for results.}
 
-\item{NextToken}{If the result of the previous
-\code{\link[=sagemaker_list_pipeline_executions]{list_pipeline_executions}} request
-was truncated, the response includes a \code{NextToken}. To retrieve the next
-set of pipeline executions, use the token in the next request.}
+\item{NextToken}{If the result of the previous \code{\link[=sagemaker_list_pipeline_executions]{list_pipeline_executions}} request was truncated, the response includes a \code{NextToken}. To retrieve the next set of pipeline executions, use the token in the next request.}
 
 \item{MaxResults}{The maximum number of pipeline executions to return in the response.}
 }

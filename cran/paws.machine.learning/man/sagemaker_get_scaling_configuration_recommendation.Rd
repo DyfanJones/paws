@@ -16,25 +16,17 @@ sagemaker_get_scaling_configuration_recommendation(
 \arguments{
 \item{InferenceRecommendationsJobName}{[required] The name of a previously completed Inference Recommender job.}
 
-\item{RecommendationId}{The recommendation ID of a previously completed inference
-recommendation. This ID should come from one of the recommendations
-returned by the job specified in the \code{InferenceRecommendationsJobName}
-field.
+\item{RecommendationId}{The recommendation ID of a previously completed inference recommendation. This ID should come from one of the recommendations returned by the job specified in the \code{InferenceRecommendationsJobName} field.
 
 Specify either this field or the \code{EndpointName} field.}
 
-\item{EndpointName}{The name of an endpoint benchmarked during a previously completed
-inference recommendation job. This name should come from one of the
-recommendations returned by the job specified in the
-\code{InferenceRecommendationsJobName} field.
+\item{EndpointName}{The name of an endpoint benchmarked during a previously completed inference recommendation job. This name should come from one of the recommendations returned by the job specified in the \code{InferenceRecommendationsJobName} field.
 
 Specify either this field or the \code{RecommendationId} field.}
 
-\item{TargetCpuUtilizationPerCore}{The percentage of how much utilization you want an instance to use
-before autoscaling. The default value is 50\%.}
+\item{TargetCpuUtilizationPerCore}{The percentage of how much utilization you want an instance to use before autoscaling. The default value is 50\%.}
 
-\item{ScalingPolicyObjective}{An object where you specify the anticipated traffic pattern for an
-endpoint.}
+\item{ScalingPolicyObjective}{An object where you specify the anticipated traffic pattern for an endpoint.}
 }
 \description{
 Starts an Amazon SageMaker Inference Recommender autoscaling recommendation job. Returns recommendations for autoscaling policies that you can apply to your SageMaker endpoint.

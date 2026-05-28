@@ -12,21 +12,11 @@ kinesisanalytics_add_application_output(
 )
 }
 \arguments{
-\item{ApplicationName}{[required] Name of the application to which you want to add the output
-configuration.}
+\item{ApplicationName}{[required] Name of the application to which you want to add the output configuration.}
 
-\item{CurrentApplicationVersionId}{[required] Version of the application to which you want to add the output
-configuration. You can use the
-\code{\link[=kinesisanalytics_describe_application]{describe_application}}
-operation to get the current application version. If the version
-specified is not the current version, the
-\code{ConcurrentModificationException} is returned.}
+\item{CurrentApplicationVersionId}{[required] Version of the application to which you want to add the output configuration. You can use the \code{\link[=kinesisanalytics_describe_application]{describe_application}} operation to get the current application version. If the version specified is not the current version, the \code{ConcurrentModificationException} is returned.}
 
-\item{Output}{[required] An array of objects, each describing one output configuration. In the
-output configuration, you specify the name of an in-application stream,
-a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis
-Firehose delivery stream, or an AWS Lambda function), and record the
-formation to use when writing to the destination.}
+\item{Output}{[required] An array of objects, each describing one output configuration. In the output configuration, you specify the name of an in-application stream, a destination (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an AWS Lambda function), and record the formation to use when writing to the destination.}
 }
 \description{
 This documentation is for version 1 of the Amazon Kinesis Data Analytics API, which only supports SQL applications. Version 2 of the API supports SQL and Java applications. For more information about version 2, see Amazon Kinesis Data Analytics API V2 Documentation.

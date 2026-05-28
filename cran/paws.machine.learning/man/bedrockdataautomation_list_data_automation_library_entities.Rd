@@ -16,6 +16,8 @@ bedrockdataautomation_list_data_automation_library_entities(
 
 \item{entityType}{[required] The entity type for which the entity list is requested}
 
+\item{maxResults}{Max Results}
+
 \item{nextToken}{Pagination token for retrieving the next set of results}
 }
 \description{

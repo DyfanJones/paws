@@ -15,13 +15,11 @@ sagemakergeospatialcapabilities_export_earth_observation_job(
 )
 }
 \arguments{
-\item{Arn}{[required] The input Amazon Resource Name (ARN) of the Earth Observation job being
-exported.}
+\item{Arn}{[required] The input Amazon Resource Name (ARN) of the Earth Observation job being exported.}
 
 \item{ClientToken}{A unique token that guarantees that the call to this API is idempotent.}
 
-\item{ExecutionRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that you specified for
-the job.}
+\item{ExecutionRoleArn}{[required] The Amazon Resource Name (ARN) of the IAM role that you specified for the job.}
 
 \item{ExportSourceImages}{The source images provided to the Earth Observation job being exported.}
 

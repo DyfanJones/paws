@@ -13,8 +13,7 @@ glue_update_partition(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog where the partition to be updated resides. If
-none is provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog where the partition to be updated resides. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the catalog database in which the table in question resides.}
 
@@ -24,8 +23,7 @@ none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{PartitionInput}{[required] The new partition object to update the partition to.
 
-The \code{Values} property can't be changed. If you want to change the
-partition key values for a partition, delete and recreate the partition.}
+The \code{Values} property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.}
 }
 \description{
 Updates a partition.

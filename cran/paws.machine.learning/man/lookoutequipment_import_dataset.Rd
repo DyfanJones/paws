@@ -15,16 +15,11 @@ lookoutequipment_import_dataset(
 \arguments{
 \item{SourceDatasetArn}{[required] The Amazon Resource Name (ARN) of the dataset to import.}
 
-\item{DatasetName}{The name of the machine learning dataset to be created. If the dataset
-already exists, Amazon Lookout for Equipment overwrites the existing
-dataset. If you don't specify this field, it is filled with the name of
-the source dataset.}
+\item{DatasetName}{The name of the machine learning dataset to be created. If the dataset already exists, Amazon Lookout for Equipment overwrites the existing dataset. If you don't specify this field, it is filled with the name of the source dataset.}
 
-\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client
-request token, Amazon Lookout for Equipment generates one.}
+\item{ClientToken}{[required] A unique identifier for the request. If you do not set the client request token, Amazon Lookout for Equipment generates one.}
 
-\item{ServerSideKmsKeyId}{Provides the identifier of the KMS key key used to encrypt model data by
-Amazon Lookout for Equipment.}
+\item{ServerSideKmsKeyId}{Provides the identifier of the KMS key key used to encrypt model data by Amazon Lookout for Equipment.}
 
 \item{Tags}{Any tags associated with the dataset to be created.}
 }

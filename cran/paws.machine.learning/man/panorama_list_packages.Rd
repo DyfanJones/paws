@@ -9,8 +9,7 @@ panorama_list_packages(MaxResults = NULL, NextToken = NULL)
 \arguments{
 \item{MaxResults}{The maximum number of packages to return in one page of results.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 }
 \description{
 Returns a list of packages.

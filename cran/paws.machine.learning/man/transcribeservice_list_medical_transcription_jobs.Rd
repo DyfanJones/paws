@@ -13,25 +13,13 @@ transcribeservice_list_medical_transcription_jobs(
 )
 }
 \arguments{
-\item{Status}{Returns only medical transcription jobs with the specified status. Jobs
-are ordered by creation date, with the newest job first. If you do not
-include \code{Status}, all medical transcription jobs are returned.}
+\item{Status}{Returns only medical transcription jobs with the specified status. Jobs are ordered by creation date, with the newest job first. If you do not include \code{Status}, all medical transcription jobs are returned.}
 
-\item{JobNameContains}{Returns only the medical transcription jobs that contain the specified
-string. The search is not case sensitive.}
+\item{JobNameContains}{Returns only the medical transcription jobs that contain the specified string. The search is not case sensitive.}
 
-\item{NextToken}{If your
-\code{\link[=transcribeservice_list_medical_transcription_jobs]{list_medical_transcription_jobs}}
-request returns more results than can be displayed, \code{NextToken} is
-displayed in the response with an associated string. To get the next
-page of results, copy this string and repeat your request, including
-\code{NextToken} with the value of the copied string. Repeat as needed to
-view all your results.}
+\item{NextToken}{If your \code{\link[=transcribeservice_list_medical_transcription_jobs]{list_medical_transcription_jobs}} request returns more results than can be displayed, \code{NextToken} is displayed in the response with an associated string. To get the next page of results, copy this string and repeat your request, including \code{NextToken} with the value of the copied string. Repeat as needed to view all your results.}
 
-\item{MaxResults}{The maximum number of medical transcription jobs to return in each page
-of results. If there are fewer results than the value that you specify,
-only the actual results are returned. If you do not specify a value, a
-default of 5 is used.}
+\item{MaxResults}{The maximum number of medical transcription jobs to return in each page of results. If there are fewer results than the value that you specify, only the actual results are returned. If you do not specify a value, a default of 5 is used.}
 }
 \description{
 Provides a list of medical transcription jobs that match the specified criteria. If no criteria are specified, all medical transcription jobs are returned.

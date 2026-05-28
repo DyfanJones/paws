@@ -53,10 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-This is the \emph{Amazon CloudFront API Reference}. This guide is for
-developers who need detailed information about CloudFront API actions,
-data types, and errors. For detailed information about CloudFront
-features, see the \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html}{Amazon CloudFront Developer Guide}.
+This is the \emph{Amazon CloudFront API Reference}. This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html}{Amazon CloudFront Developer Guide}.
 }
 \section{Service syntax}{
 

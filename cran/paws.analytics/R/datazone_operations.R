@@ -14,13 +14,9 @@ NULL
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
 #' @param identifier &#91;required&#93; The identifier of the asset.
 #' @param revision The revision that is to be made to the asset.
-#' @param acceptRule Specifies the rule (or the conditions) under which a prediction can be
-#' accepted.
-#' @param acceptChoices Specifies the prediction (aka, the automatically generated piece of
-#' metadata) and the target (for example, a column name) that can be
-#' accepted.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request. This field is automatically populated if not provided.
+#' @param acceptRule Specifies the rule (or the conditions) under which a prediction can be accepted.
+#' @param acceptChoices Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be accepted.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
 #'
 #' @keywords internal
 #'
@@ -51,12 +47,9 @@ datazone_accept_predictions <- function(domainIdentifier, identifier, revision =
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_accept_subscription_request/](https://www.paws-r-sdk.com/docs/datazone_accept_subscription_request/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The Amazon DataZone domain where the specified subscription request is
-#' being accepted.
-#' @param identifier &#91;required&#93; The unique identifier of the subscription request that is to be
-#' accepted.
-#' @param decisionComment A description that specifies the reason for accepting the specified
-#' subscription request.
+#' @param domainIdentifier &#91;required&#93; The Amazon DataZone domain where the specified subscription request is being accepted.
+#' @param identifier &#91;required&#93; The unique identifier of the subscription request that is to be accepted.
+#' @param decisionComment A description that specifies the reason for accepting the specified subscription request.
 #' @param assetScopes The asset scopes of the accept subscription request.
 #' @param assetPermissions The asset permissions of the accept subscription request.
 #'
@@ -93,8 +86,7 @@ datazone_accept_subscription_request <- function(domainIdentifier, identifier, d
 #' @param entityType &#91;required&#93; The type of an entity.
 #' @param entityIdentifier &#91;required&#93; The ID of the entity to which you want to add an owner.
 #' @param owner &#91;required&#93; The owner that you want to add to the entity.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -133,8 +125,7 @@ datazone_add_entity_owner <- function(domainIdentifier, entityType, entityIdenti
 #' @param policyType &#91;required&#93; The type of policy that you want to grant.
 #' @param principal &#91;required&#93; The principal to whom the permissions are granted.
 #' @param detail &#91;required&#93; The details of the policy grant.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -165,8 +156,7 @@ datazone_add_policy_grant <- function(domainIdentifier, entityType, entityIdenti
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_associate_environment_role/](https://www.paws-r-sdk.com/docs/datazone_associate_environment_role/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment role is
-#' associated.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment role is associated.
 #' @param environmentIdentifier &#91;required&#93; The ID of the Amazon DataZone environment.
 #' @param environmentRoleArn &#91;required&#93; The ARN of the environment role.
 #'
@@ -199,8 +189,7 @@ datazone_associate_environment_role <- function(domainIdentifier, environmentIde
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_associate_governed_terms/](https://www.paws-r-sdk.com/docs/datazone_associate_governed_terms/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain where governed terms are to be associated with an
-#' asset.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain where governed terms are to be associated with an asset.
 #' @param entityIdentifier &#91;required&#93; The ID of the asset with which you want to associate a governed term.
 #' @param entityType &#91;required&#93; The type of the asset with which you want to associate a governed term.
 #' @param governedGlossaryTerms &#91;required&#93; The glossary terms in a restricted glossary.
@@ -272,8 +261,7 @@ datazone_batch_get_attributes_metadata <- function(domainIdentifier, entityType,
 #' @param domainIdentifier &#91;required&#93; The domain ID where you want to write the attribute metadata.
 #' @param entityType &#91;required&#93; The entity type for which you want to write the attribute metadata.
 #' @param entityIdentifier &#91;required&#93; The entity ID for which you want to write the attribute metadata.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request. This field is automatically populated if not provided.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
 #' @param attributes &#91;required&#93; The attributes of the metadata.
 #'
 #' @keywords internal
@@ -305,8 +293,7 @@ datazone_batch_put_attributes_metadata <- function(domainIdentifier, entityType,
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_cancel_metadata_generation_run/](https://www.paws-r-sdk.com/docs/datazone_cancel_metadata_generation_run/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the metadata generation
-#' run is to be cancelled.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the metadata generation run is to be cancelled.
 #' @param identifier &#91;required&#93; The ID of the metadata generation run.
 #'
 #' @keywords internal
@@ -338,8 +325,7 @@ datazone_cancel_metadata_generation_run <- function(domainIdentifier, identifier
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_cancel_subscription/](https://www.paws-r-sdk.com/docs/datazone_cancel_subscription/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The unique identifier of the Amazon DataZone domain where the
-#' subscription request is being cancelled.
+#' @param domainIdentifier &#91;required&#93; The unique identifier of the Amazon DataZone domain where the subscription request is being cancelled.
 #' @param identifier &#91;required&#93; The unique identifier of the subscription that is being cancelled.
 #'
 #' @keywords internal
@@ -374,11 +360,8 @@ datazone_cancel_subscription <- function(domainIdentifier, identifier) {
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where the account pool is created.
 #' @param name &#91;required&#93; The name of the account pool.
 #' @param description The description of the account pool.
-#' @param resolutionStrategy &#91;required&#93; The mechanism used to resolve the account selection from the account
-#' pool.
-#' @param accountSource &#91;required&#93; The source of accounts for the account pool. In the current release,
-#' it's either a static list of accounts provided by the customer or a
-#' custom Amazon Web Services Lambda handler.
+#' @param resolutionStrategy &#91;required&#93; The mechanism used to resolve the account selection from the account pool.
+#' @param accountSource &#91;required&#93; The source of accounts for the account pool. In the current release, it's either a static list of accounts provided by the customer or a custom Amazon Web Services Lambda handler.
 #'
 #' @keywords internal
 #'
@@ -413,18 +396,15 @@ datazone_create_account_pool <- function(domainIdentifier, name, description = N
 #' @param domainIdentifier &#91;required&#93; Amazon DataZone domain where the asset is created.
 #' @param externalIdentifier The external identifier of the asset.
 #' 
-#' If the value for the `externalIdentifier` parameter is specified, it
-#' must be a unique value.
+#' If the value for the `externalIdentifier` parameter is specified, it must be a unique value.
 #' @param typeIdentifier &#91;required&#93; The unique identifier of this asset's type.
 #' @param typeRevision The revision of this asset's type.
 #' @param description Asset description.
 #' @param glossaryTerms Glossary terms attached to the asset.
 #' @param formsInput Metadata forms attached to the asset.
 #' @param owningProjectIdentifier &#91;required&#93; The unique identifier of the project that owns this asset.
-#' @param predictionConfiguration The configuration of the automatically generated business-friendly
-#' metadata for the asset.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param predictionConfiguration The configuration of the automatically generated business-friendly metadata for the asset.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -460,8 +440,7 @@ datazone_create_asset <- function(name, domainIdentifier, externalIdentifier = N
 #' @param name &#91;required&#93; The name of the asset filter.
 #' @param description The description of the asset filter.
 #' @param configuration &#91;required&#93; The configuration of the asset filter.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -497,14 +476,10 @@ datazone_create_asset_filter <- function(domainIdentifier, assetIdentifier, name
 #' @param identifier &#91;required&#93; The identifier of the asset.
 #' @param typeRevision The revision type of the asset.
 #' @param description The revised description of the asset.
-#' @param glossaryTerms The glossary terms to be attached to the asset as part of asset
-#' revision.
-#' @param formsInput The metadata forms to be attached to the asset as part of asset
-#' revision.
-#' @param predictionConfiguration The configuration of the automatically generated business-friendly
-#' metadata for the asset.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param glossaryTerms The glossary terms to be attached to the asset as part of asset revision.
+#' @param formsInput The metadata forms to be attached to the asset as part of asset revision.
+#' @param predictionConfiguration The configuration of the automatically generated business-friendly metadata for the asset.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -535,13 +510,11 @@ datazone_create_asset_revision <- function(name, domainIdentifier, identifier, t
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_asset_type/](https://www.paws-r-sdk.com/docs/datazone_create_asset_type/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The unique identifier of the Amazon DataZone domain where the custom
-#' asset type is being created.
+#' @param domainIdentifier &#91;required&#93; The unique identifier of the Amazon DataZone domain where the custom asset type is being created.
 #' @param name &#91;required&#93; The name of the custom asset type.
 #' @param description The descripton of the custom asset type.
 #' @param formsInput &#91;required&#93; The metadata forms that are to be attached to the custom asset type.
-#' @param owningProjectIdentifier &#91;required&#93; The identifier of the Amazon DataZone project that is to own the custom
-#' asset type.
+#' @param owningProjectIdentifier &#91;required&#93; The identifier of the Amazon DataZone project that is to own the custom asset type.
 #'
 #' @keywords internal
 #'
@@ -573,8 +546,7 @@ datazone_create_asset_type <- function(domainIdentifier, name, description = NUL
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_connection/](https://www.paws-r-sdk.com/docs/datazone_create_connection/) for full documentation.
 #'
 #' @param awsLocation The location where the connection is created.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #' @param configurations The configurations of the connection.
 #' @param description A connection description.
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where the connection is created.
@@ -620,8 +592,7 @@ datazone_create_connection <- function(awsLocation = NULL, clientToken = NULL, c
 #' @param glossaryTerms The glossary terms of the data product.
 #' @param formsInput The metadata forms of the data product.
 #' @param items The data assets of the data product.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -659,8 +630,7 @@ datazone_create_data_product <- function(domainIdentifier, name, owningProjectId
 #' @param glossaryTerms The glossary terms of the data product revision.
 #' @param items The data assets of the data product revision.
 #' @param formsInput The metadata forms of the data product revision.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -694,28 +664,17 @@ datazone_create_data_product_revision <- function(domainIdentifier, identifier, 
 #' @param name &#91;required&#93; The name of the data source.
 #' @param description The description of the data source.
 #' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where the data source is created.
-#' @param projectIdentifier &#91;required&#93; The identifier of the Amazon DataZone project in which you want to add
-#' this data source.
-#' @param environmentIdentifier The unique identifier of the Amazon DataZone environment to which the
-#' data source publishes assets.
+#' @param projectIdentifier &#91;required&#93; The identifier of the Amazon DataZone project in which you want to add this data source.
+#' @param environmentIdentifier The unique identifier of the Amazon DataZone environment to which the data source publishes assets.
 #' @param connectionIdentifier The ID of the connection.
-#' @param type &#91;required&#93; The type of the data source. In Amazon DataZone, you can use data
-#' sources to import technical metadata of assets (data) from the source
-#' databases or data warehouses into Amazon DataZone. In the current
-#' release of Amazon DataZone, you can create and run data sources for
-#' Amazon Web Services Glue and Amazon Redshift.
-#' @param configuration Specifies the configuration of the data source. It can be set to either
-#' `glueRunConfiguration` or `redshiftRunConfiguration`.
-#' @param recommendation Specifies whether the business name generation is to be enabled for this
-#' data source.
+#' @param type &#91;required&#93; The type of the data source. In Amazon DataZone, you can use data sources to import technical metadata of assets (data) from the source databases or data warehouses into Amazon DataZone. In the current release of Amazon DataZone, you can create and run data sources for Amazon Web Services Glue and Amazon Redshift.
+#' @param configuration Specifies the configuration of the data source. It can be set to either `glueRunConfiguration` or `redshiftRunConfiguration`.
+#' @param recommendation Specifies whether the business name generation is to be enabled for this data source.
 #' @param enableSetting Specifies whether the data source is enabled.
 #' @param schedule The schedule of the data source runs.
-#' @param publishOnImport Specifies whether the assets that this data source creates in the
-#' inventory are to be also automatically published to the catalog.
-#' @param assetFormsInput The metadata forms that are to be attached to the assets that this data
-#' source works with.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param publishOnImport Specifies whether the assets that this data source creates in the inventory are to be also automatically published to the catalog.
+#' @param assetFormsInput The metadata forms that are to be attached to the assets that this data source works with.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -749,17 +708,12 @@ datazone_create_data_source <- function(name, description = NULL, domainIdentifi
 #' @param name &#91;required&#93; The name of the Amazon DataZone domain.
 #' @param description The description of the Amazon DataZone domain.
 #' @param singleSignOn The single-sign on configuration of the Amazon DataZone domain.
-#' @param domainExecutionRole The domain execution role that is created when an Amazon DataZone domain
-#' is created. The domain execution role is created in the Amazon Web
-#' Services account that houses the Amazon DataZone domain.
-#' @param kmsKeyIdentifier The identifier of the Amazon Web Services Key Management Service (KMS)
-#' key that is used to encrypt the Amazon DataZone domain, metadata, and
-#' reporting data.
+#' @param domainExecutionRole The domain execution role that is created when an Amazon DataZone domain is created. The domain execution role is created in the Amazon Web Services account that houses the Amazon DataZone domain.
+#' @param kmsKeyIdentifier The identifier of the Amazon Web Services Key Management Service (KMS) key that is used to encrypt the Amazon DataZone domain, metadata, and reporting data.
 #' @param tags The tags specified for the Amazon DataZone domain.
 #' @param domainVersion The version of the domain that is created.
 #' @param serviceRole The service role of the domain that is created.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -794,8 +748,7 @@ datazone_create_domain <- function(name, description = NULL, singleSignOn = NULL
 #' @param name &#91;required&#93; The name of the domain unit.
 #' @param parentDomainUnitIdentifier &#91;required&#93; The ID of the parent domain unit.
 #' @param description The description of the domain unit.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -826,14 +779,11 @@ datazone_create_domain_unit <- function(domainIdentifier, name, parentDomainUnit
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_environment/](https://www.paws-r-sdk.com/docs/datazone_create_environment/) for full documentation.
 #'
-#' @param projectIdentifier &#91;required&#93; The identifier of the Amazon DataZone project in which this environment
-#' is created.
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the environment is
-#' created.
+#' @param projectIdentifier &#91;required&#93; The identifier of the Amazon DataZone project in which this environment is created.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the environment is created.
 #' @param description The description of the Amazon DataZone environment.
 #' @param name &#91;required&#93; The name of the Amazon DataZone environment.
-#' @param environmentProfileIdentifier The identifier of the environment profile that is used to create this
-#' Amazon DataZone environment.
+#' @param environmentProfileIdentifier The identifier of the environment profile that is used to create this Amazon DataZone environment.
 #' @param userParameters The user parameters of this Amazon DataZone environment.
 #' @param glossaryTerms The glossary terms that can be used in this Amazon DataZone environment.
 #' @param environmentAccountIdentifier The ID of the account in which the environment is being created.
@@ -873,13 +823,11 @@ datazone_create_environment <- function(projectIdentifier, domainIdentifier, des
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_environment_action/](https://www.paws-r-sdk.com/docs/datazone_create_environment_action/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment action is
-#' created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment action is created.
 #' @param environmentIdentifier &#91;required&#93; The ID of the environment in which the environment action is created.
 #' @param name &#91;required&#93; The name of the environment action.
 #' @param parameters &#91;required&#93; The parameters of the environment action.
-#' @param description The description of the environment action that is being created in the
-#' environment.
+#' @param description The description of the environment action that is being created in the environment.
 #'
 #' @keywords internal
 #'
@@ -945,18 +893,14 @@ datazone_create_environment_blueprint <- function(domainIdentifier, name, descri
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_environment_profile/](https://www.paws-r-sdk.com/docs/datazone_create_environment_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this environment profile
-#' is created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this environment profile is created.
 #' @param name &#91;required&#93; The name of this Amazon DataZone environment profile.
 #' @param description The description of this Amazon DataZone environment profile.
 #' @param environmentBlueprintIdentifier &#91;required&#93; The ID of the blueprint with which this environment profile is created.
-#' @param projectIdentifier &#91;required&#93; The identifier of the project in which to create the environment
-#' profile.
+#' @param projectIdentifier &#91;required&#93; The identifier of the project in which to create the environment profile.
 #' @param userParameters The user parameters of this Amazon DataZone environment profile.
-#' @param awsAccountId The Amazon Web Services account in which the Amazon DataZone environment
-#' is created.
-#' @param awsAccountRegion The Amazon Web Services region in which this environment profile is
-#' created.
+#' @param awsAccountId The Amazon Web Services account in which the Amazon DataZone environment is created.
+#' @param awsAccountRegion The Amazon Web Services region in which this environment profile is created.
 #'
 #' @keywords internal
 #'
@@ -987,8 +931,7 @@ datazone_create_environment_profile <- function(domainIdentifier, name, descript
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_form_type/](https://www.paws-r-sdk.com/docs/datazone_create_form_type/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this metadata form type is
-#' created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this metadata form type is created.
 #' @param name &#91;required&#93; The name of this Amazon DataZone metadata form type.
 #' @param model &#91;required&#93; The model of this Amazon DataZone metadata form type.
 #' @param owningProjectIdentifier &#91;required&#93; The ID of the Amazon DataZone project that owns this metadata form type.
@@ -1024,15 +967,13 @@ datazone_create_form_type <- function(domainIdentifier, name, model, owningProje
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_glossary/](https://www.paws-r-sdk.com/docs/datazone_create_glossary/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this business glossary is
-#' created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this business glossary is created.
 #' @param name &#91;required&#93; The name of this business glossary.
 #' @param owningProjectIdentifier &#91;required&#93; The ID of the project that currently owns business glossary.
 #' @param description The description of this business glossary.
 #' @param status The status of this business glossary.
 #' @param usageRestrictions The usage restriction of the restricted glossary.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1063,16 +1004,14 @@ datazone_create_glossary <- function(domainIdentifier, name, owningProjectIdenti
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_glossary_term/](https://www.paws-r-sdk.com/docs/datazone_create_glossary_term/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this business glossary
-#' term is created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this business glossary term is created.
 #' @param glossaryIdentifier &#91;required&#93; The ID of the business glossary in which this term is created.
 #' @param name &#91;required&#93; The name of this business glossary term.
 #' @param status The status of this business glossary term.
 #' @param shortDescription The short description of this business glossary term.
 #' @param longDescription The long description of this business glossary term.
 #' @param termRelations The term relations of this business glossary term.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1103,14 +1042,10 @@ datazone_create_glossary_term <- function(domainIdentifier, glossaryIdentifier, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_group_profile/](https://www.paws-r-sdk.com/docs/datazone_create_group_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the group profile
-#' is created.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the group profile is created.
 #' @param groupIdentifier The identifier of the group for which the group profile is created.
-#' @param rolePrincipalArn The ARN of the IAM role that will be associated with the group profile.
-#' This role defines the permissions that group members will assume when
-#' accessing Amazon DataZone resources.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param rolePrincipalArn The ARN of the IAM role that will be associated with the group profile. This role defines the permissions that group members will assume when accessing Amazon DataZone resources.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1147,8 +1082,7 @@ datazone_create_group_profile <- function(domainIdentifier, groupIdentifier = NU
 #' @param entityType &#91;required&#93; The type of an entity.
 #' @param entityRevision The revision of an asset.
 #' @param action &#91;required&#93; Specifies whether to publish or unpublish a listing.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1172,6 +1106,43 @@ datazone_create_listing_change_set <- function(domainIdentifier, entityIdentifie
 }
 .datazone$operations$create_listing_change_set <- datazone_create_listing_change_set
 
+#' Creates a notebook in Amazon SageMaker Unified Studio
+#'
+#' @description
+#' Creates a [notebook](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) in Amazon SageMaker Unified Studio. A notebook is a collaborative document within a project that contains code cells for interactive computing.
+#'
+#' See [https://www.paws-r-sdk.com/docs/datazone_create_notebook/](https://www.paws-r-sdk.com/docs/datazone_create_notebook/) for full documentation.
+#'
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which to create the notebook.
+#' @param owningProjectIdentifier &#91;required&#93; The identifier of the project that owns the notebook.
+#' @param name &#91;required&#93; The name of the notebook. The name must be between 1 and 256 characters.
+#' @param description The description of the notebook.
+#' @param metadata The metadata for the notebook, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.
+#' @param parameters The sensitive parameters for the notebook, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
+#'
+#' @keywords internal
+#'
+#' @rdname datazone_create_notebook
+datazone_create_notebook <- function(domainIdentifier, owningProjectIdentifier, name, description = NULL, metadata = NULL, parameters = NULL, clientToken = NULL) {
+  op <- new_operation(
+    name = "CreateNotebook",
+    http_method = "POST",
+    http_path = "/v2/domains/{domainIdentifier}/notebooks",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .datazone$create_notebook_input(domainIdentifier = domainIdentifier, owningProjectIdentifier = owningProjectIdentifier, name = name, description = description, metadata = metadata, parameters = parameters, clientToken = clientToken)
+  output <- .datazone$create_notebook_output()
+  config <- get_config()
+  svc <- .datazone$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.datazone$operations$create_notebook <- datazone_create_notebook
+
 #' Creates an Amazon DataZone project
 #'
 #' @description
@@ -1184,15 +1155,11 @@ datazone_create_listing_change_set <- function(domainIdentifier, entityIdentifie
 #' @param description The description of the Amazon DataZone project.
 #' @param resourceTags The resource tags of the project.
 #' @param glossaryTerms The glossary terms that can be used in this Amazon DataZone project.
-#' @param domainUnitId The ID of the domain unit. This parameter is not required and if it is
-#' not specified, then the project is created at the root domain unit
-#' level.
+#' @param domainUnitId The ID of the domain unit. This parameter is not required and if it is not specified, then the project is created at the root domain unit level.
 #' @param projectProfileId The ID of the project profile.
 #' @param userParameters The user parameters of the project.
-#' @param projectCategory The category of the project. Set to 'ADMIN' designates this as an
-#' administrative project for the Amazon DataZone domain.
-#' @param projectExecutionRole The default project IAM role that is used to access project resources
-#' and run computes such as Glue and Sagemaker.
+#' @param projectCategory The category of the project. Set to 'ADMIN' designates this as an administrative project for the Amazon DataZone domain.
+#' @param projectExecutionRole The default project IAM role that is used to access project resources and run computes such as Glue and Sagemaker.
 #' @param membershipAssignments The members to be assigned to the project.
 #'
 #' @keywords internal
@@ -1224,8 +1191,7 @@ datazone_create_project <- function(domainIdentifier, name, description = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_project_membership/](https://www.paws-r-sdk.com/docs/datazone_create_project_membership/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which project membership is
-#' created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which project membership is created.
 #' @param projectIdentifier &#91;required&#93; The ID of the project for which this project membership was created.
 #' @param member &#91;required&#93; The project member whose project membership was created.
 #' @param designation &#91;required&#93; The designation of the project membership.
@@ -1265,8 +1231,7 @@ datazone_create_project_membership <- function(domainIdentifier, projectIdentifi
 #' @param status Project profile status.
 #' @param projectResourceTags The resource tags of the project profile.
 #' @param allowCustomProjectResourceTags Specifies whether custom project resource tags are supported.
-#' @param projectResourceTagsDescription Field viewable through the UI that provides a project user with the
-#' allowed resource tag specifications.
+#' @param projectResourceTagsDescription Field viewable through the UI that provides a project user with the allowed resource tag specifications.
 #' @param environmentConfigurations Environment configurations of the project profile.
 #' @param domainUnitIdentifier A domain unit ID of the project profile.
 #'
@@ -1306,8 +1271,7 @@ datazone_create_project_profile <- function(domainIdentifier, name, description 
 #' @param scope &#91;required&#93; The scope of the rule.
 #' @param detail &#91;required&#93; The detail of the rule.
 #' @param description The description of the rule.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1338,15 +1302,12 @@ datazone_create_rule <- function(domainIdentifier, name, target, action, scope, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_subscription_grant/](https://www.paws-r-sdk.com/docs/datazone_create_subscription_grant/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription grant is
-#' created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription grant is created.
 #' @param environmentIdentifier &#91;required&#93; The ID of the environment in which the subscription grant is created.
-#' @param subscriptionTargetIdentifier The ID of the subscription target for which the subscription grant is
-#' created.
+#' @param subscriptionTargetIdentifier The ID of the subscription target for which the subscription grant is created.
 #' @param grantedEntity &#91;required&#93; The entity to which the subscription is to be granted.
 #' @param assetTargetNames The names of the assets for which the subscription grant is created.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1377,14 +1338,11 @@ datazone_create_subscription_grant <- function(domainIdentifier, environmentIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_subscription_request/](https://www.paws-r-sdk.com/docs/datazone_create_subscription_request/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription request
-#' is created.
-#' @param subscribedPrincipals &#91;required&#93; The Amazon DataZone principals for whom the subscription request is
-#' created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription request is created.
+#' @param subscribedPrincipals &#91;required&#93; The Amazon DataZone principals for whom the subscription request is created.
 #' @param subscribedListings &#91;required&#93; The published asset for which the subscription grant is to be created.
 #' @param requestReason &#91;required&#93; The reason for the subscription request.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #' @param metadataForms The metadata form included in the subscription request.
 #' @param assetPermissions The asset permissions of the subscription request.
 #' @param assetScopes The asset scopes of the subscription request.
@@ -1418,8 +1376,7 @@ datazone_create_subscription_request <- function(domainIdentifier, subscribedPri
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_subscription_target/](https://www.paws-r-sdk.com/docs/datazone_create_subscription_target/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which subscription target is
-#' created.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which subscription target is created.
 #' @param environmentIdentifier &#91;required&#93; The ID of the environment in which subscription target is created.
 #' @param name &#91;required&#93; The name of the subscription target.
 #' @param type &#91;required&#93; The type of the subscription target.
@@ -1428,11 +1385,8 @@ datazone_create_subscription_request <- function(domainIdentifier, subscribedPri
 #' @param manageAccessRole &#91;required&#93; The manage access role that is used to create the subscription target.
 #' @param applicableAssetTypes &#91;required&#93; The asset types that can be included in the subscription target.
 #' @param provider The provider of the subscription target.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
-#' @param subscriptionGrantCreationMode Determines the subscription grant creation mode for this target,
-#' defining if grants are auto-created upon subscription approval or
-#' managed manually.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
+#' @param subscriptionGrantCreationMode Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.
 #'
 #' @keywords internal
 #'
@@ -1463,13 +1417,11 @@ datazone_create_subscription_target <- function(domainIdentifier, environmentIde
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_create_user_profile/](https://www.paws-r-sdk.com/docs/datazone_create_user_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a user profile is
-#' created.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a user profile is created.
 #' @param userIdentifier &#91;required&#93; The identifier of the user for which the user profile is created.
 #' @param userType The user type of the user for which the user profile is created.
 #' @param sessionName The session name for IAM role sessions.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -1661,8 +1613,7 @@ datazone_delete_connection <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_data_export_configuration/](https://www.paws-r-sdk.com/docs/datazone_delete_data_export_configuration/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The domain ID for which you want to delete the data export
-#' configuration.
+#' @param domainIdentifier &#91;required&#93; The domain ID for which you want to delete the data export configuration.
 #'
 #' @keywords internal
 #'
@@ -1693,8 +1644,7 @@ datazone_delete_data_export_configuration <- function(domainIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_data_product/](https://www.paws-r-sdk.com/docs/datazone_delete_data_product/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the data product is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the data product is deleted.
 #' @param identifier &#91;required&#93; The identifier of the data product that is deleted.
 #'
 #' @keywords internal
@@ -1726,13 +1676,10 @@ datazone_delete_data_product <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_data_source/](https://www.paws-r-sdk.com/docs/datazone_delete_data_source/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the data source is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the data source is deleted.
 #' @param identifier &#91;required&#93; The identifier of the data source that is deleted.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
-#' @param retainPermissionsOnRevokeFailure Specifies that the granted permissions are retained in case of a
-#' self-subscribe functionality failure for a data source.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
+#' @param retainPermissionsOnRevokeFailure Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.
 #'
 #' @keywords internal
 #'
@@ -1764,10 +1711,8 @@ datazone_delete_data_source <- function(domainIdentifier, identifier, clientToke
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_domain/](https://www.paws-r-sdk.com/docs/datazone_delete_domain/) for full documentation.
 #'
 #' @param identifier &#91;required&#93; The identifier of the Amazon Web Services domain that is to be deleted.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
-#' @param skipDeletionCheck Specifies the optional flag to delete all child entities within the
-#' domain.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
+#' @param skipDeletionCheck Specifies the optional flag to delete all child entities within the domain.
 #'
 #' @keywords internal
 #'
@@ -1830,8 +1775,7 @@ datazone_delete_domain_unit <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_environment/](https://www.paws-r-sdk.com/docs/datazone_delete_environment/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment is deleted.
 #' @param identifier &#91;required&#93; The identifier of the environment that is to be deleted.
 #'
 #' @keywords internal
@@ -1864,8 +1808,7 @@ datazone_delete_environment <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_environment_action/](https://www.paws-r-sdk.com/docs/datazone_delete_environment_action/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which an environment action is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which an environment action is deleted.
 #' @param environmentIdentifier &#91;required&#93; The ID of the environment where an environment action is deleted.
 #' @param identifier &#91;required&#93; The ID of the environment action that is deleted.
 #'
@@ -1930,8 +1873,7 @@ datazone_delete_environment_blueprint <- function(domainIdentifier, identifier) 
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_environment_blueprint_configuration/](https://www.paws-r-sdk.com/docs/datazone_delete_environment_blueprint_configuration/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the blueprint
-#' configuration is deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the blueprint configuration is deleted.
 #' @param environmentBlueprintIdentifier &#91;required&#93; The ID of the blueprint the configuration of which is deleted.
 #'
 #' @keywords internal
@@ -1963,8 +1905,7 @@ datazone_delete_environment_blueprint_configuration <- function(domainIdentifier
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_environment_profile/](https://www.paws-r-sdk.com/docs/datazone_delete_environment_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment profile is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment profile is deleted.
 #' @param identifier &#91;required&#93; The ID of the environment profile that is deleted.
 #'
 #' @keywords internal
@@ -1996,8 +1937,7 @@ datazone_delete_environment_profile <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_form_type/](https://www.paws-r-sdk.com/docs/datazone_delete_form_type/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the metadata form type is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the metadata form type is deleted.
 #' @param formTypeIdentifier &#91;required&#93; The ID of the metadata form type that is deleted.
 #'
 #' @keywords internal
@@ -2029,8 +1969,7 @@ datazone_delete_form_type <- function(domainIdentifier, formTypeIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_glossary/](https://www.paws-r-sdk.com/docs/datazone_delete_glossary/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the business glossary is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the business glossary is deleted.
 #' @param identifier &#91;required&#93; The ID of the business glossary that is deleted.
 #'
 #' @keywords internal
@@ -2062,8 +2001,7 @@ datazone_delete_glossary <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_glossary_term/](https://www.paws-r-sdk.com/docs/datazone_delete_glossary_term/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the business glossary term
-#' is deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the business glossary term is deleted.
 #' @param identifier &#91;required&#93; The ID of the business glossary term that is deleted.
 #'
 #' @keywords internal
@@ -2120,6 +2058,38 @@ datazone_delete_listing <- function(domainIdentifier, identifier) {
 }
 .datazone$operations$delete_listing <- datazone_delete_listing
 
+#' Deletes a notebook in Amazon SageMaker Unified Studio
+#'
+#' @description
+#' Deletes a [notebook](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) in Amazon SageMaker Unified Studio.
+#'
+#' See [https://www.paws-r-sdk.com/docs/datazone_delete_notebook/](https://www.paws-r-sdk.com/docs/datazone_delete_notebook/) for full documentation.
+#'
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which the notebook exists.
+#' @param identifier &#91;required&#93; The identifier of the notebook to delete.
+#'
+#' @keywords internal
+#'
+#' @rdname datazone_delete_notebook
+datazone_delete_notebook <- function(domainIdentifier, identifier) {
+  op <- new_operation(
+    name = "DeleteNotebook",
+    http_method = "DELETE",
+    http_path = "/v2/domains/{domainIdentifier}/notebooks/{identifier}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .datazone$delete_notebook_input(domainIdentifier = domainIdentifier, identifier = identifier)
+  output <- .datazone$delete_notebook_output()
+  config <- get_config()
+  svc <- .datazone$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.datazone$operations$delete_notebook <- datazone_delete_notebook
+
 #' Deletes a project in Amazon DataZone
 #'
 #' @description
@@ -2129,8 +2099,7 @@ datazone_delete_listing <- function(domainIdentifier, identifier) {
 #'
 #' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the project is deleted.
 #' @param identifier &#91;required&#93; The identifier of the project that is to be deleted.
-#' @param skipDeletionCheck Specifies the optional flag to delete all child entities within the
-#' project.
+#' @param skipDeletionCheck Specifies the optional flag to delete all child entities within the project.
 #'
 #' @keywords internal
 #'
@@ -2161,10 +2130,8 @@ datazone_delete_project <- function(domainIdentifier, identifier, skipDeletionCh
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_project_membership/](https://www.paws-r-sdk.com/docs/datazone_delete_project_membership/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where project membership is
-#' deleted.
-#' @param projectIdentifier &#91;required&#93; The ID of the Amazon DataZone project the membership to which is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where project membership is deleted.
+#' @param projectIdentifier &#91;required&#93; The ID of the Amazon DataZone project the membership to which is deleted.
 #' @param member &#91;required&#93; The project member whose project membership is deleted.
 #'
 #' @keywords internal
@@ -2260,8 +2227,7 @@ datazone_delete_rule <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_subscription_grant/](https://www.paws-r-sdk.com/docs/datazone_delete_subscription_grant/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where the subscription grant is
-#' deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where the subscription grant is deleted.
 #' @param identifier &#91;required&#93; The ID of the subscription grant that is deleted.
 #'
 #' @keywords internal
@@ -2293,8 +2259,7 @@ datazone_delete_subscription_grant <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_subscription_request/](https://www.paws-r-sdk.com/docs/datazone_delete_subscription_request/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription request
-#' is deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription request is deleted.
 #' @param identifier &#91;required&#93; The ID of the subscription request that is deleted.
 #'
 #' @keywords internal
@@ -2326,10 +2291,8 @@ datazone_delete_subscription_request <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_subscription_target/](https://www.paws-r-sdk.com/docs/datazone_delete_subscription_target/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription target is
-#' deleted.
-#' @param environmentIdentifier &#91;required&#93; The ID of the Amazon DataZone environment in which the subscription
-#' target is deleted.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription target is deleted.
+#' @param environmentIdentifier &#91;required&#93; The ID of the Amazon DataZone environment in which the subscription target is deleted.
 #' @param identifier &#91;required&#93; The ID of the subscription target that is deleted.
 #'
 #' @keywords internal
@@ -2361,13 +2324,11 @@ datazone_delete_subscription_target <- function(domainIdentifier, environmentIde
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_delete_time_series_data_points/](https://www.paws-r-sdk.com/docs/datazone_delete_time_series_data_points/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain that houses the asset for which you
-#' want to delete a time series form.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain that houses the asset for which you want to delete a time series form.
 #' @param entityIdentifier &#91;required&#93; The ID of the asset for which you want to delete a time series form.
 #' @param entityType &#91;required&#93; The type of the asset for which you want to delete a time series form.
 #' @param formName &#91;required&#93; The name of the time series form that you want to delete.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request. This field is automatically populated if not provided.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
 #'
 #' @keywords internal
 #'
@@ -2398,8 +2359,7 @@ datazone_delete_time_series_data_points <- function(domainIdentifier, entityIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_disassociate_environment_role/](https://www.paws-r-sdk.com/docs/datazone_disassociate_environment_role/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which an environment role is
-#' disassociated.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which an environment role is disassociated.
 #' @param environmentIdentifier &#91;required&#93; The ID of the environment.
 #' @param environmentRoleArn &#91;required&#93; The ARN of the environment role.
 #'
@@ -2432,13 +2392,10 @@ datazone_disassociate_environment_role <- function(domainIdentifier, environment
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_disassociate_governed_terms/](https://www.paws-r-sdk.com/docs/datazone_disassociate_governed_terms/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to disassociate restricted terms
-#' from an asset.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to disassociate restricted terms from an asset.
 #' @param entityIdentifier &#91;required&#93; The ID of an asset from which you want to disassociate restricted terms.
-#' @param entityType &#91;required&#93; The type of the asset from which you want to disassociate restricted
-#' terms.
-#' @param governedGlossaryTerms &#91;required&#93; The restricted glossary terms that you want to disassociate from an
-#' asset.
+#' @param entityType &#91;required&#93; The type of the asset from which you want to disassociate restricted terms.
+#' @param governedGlossaryTerms &#91;required&#93; The restricted glossary terms that you want to disassociate from an asset.
 #'
 #' @keywords internal
 #'
@@ -2469,8 +2426,7 @@ datazone_disassociate_governed_terms <- function(domainIdentifier, entityIdentif
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_account_pool/](https://www.paws-r-sdk.com/docs/datazone_get_account_pool/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain in which the account pool lives whose details are
-#' to be displayed.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain in which the account pool lives whose details are to be displayed.
 #' @param identifier &#91;required&#93; The ID of the account pool whose details are to be displayed.
 #'
 #' @keywords internal
@@ -2505,10 +2461,7 @@ datazone_get_account_pool <- function(domainIdentifier, identifier) {
 #' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain to which the asset belongs.
 #' @param identifier &#91;required&#93; The ID of the Amazon DataZone asset.
 #' 
-#' This parameter supports either the value of `assetId` or
-#' `externalIdentifier` as input. If you are passing the value of
-#' `externalIdentifier`, you must prefix this value with
-#' `externalIdentifer%2F`.
+#' This parameter supports either the value of `assetId` or `externalIdentifier` as input. If you are passing the value of `externalIdentifier`, you must prefix this value with `externalIdentifer%2F`.
 #' @param revision The revision of the Amazon DataZone asset.
 #'
 #' @keywords internal
@@ -2639,8 +2592,7 @@ datazone_get_connection <- function(domainIdentifier, identifier, withSecret = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_data_export_configuration/](https://www.paws-r-sdk.com/docs/datazone_get_data_export_configuration/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to get the data export configuration
-#' details.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to get the data export configuration details.
 #'
 #' @keywords internal
 #'
@@ -2863,9 +2815,7 @@ datazone_get_environment <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_environment_action/](https://www.paws-r-sdk.com/docs/datazone_get_environment_action/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the
-#' [`get_environment_action`][datazone_get_environment_action] API is
-#' invoked.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the [`get_environment_action`][datazone_get_environment_action] API is invoked.
 #' @param environmentIdentifier &#91;required&#93; The environment ID of the environment action.
 #' @param identifier &#91;required&#93; The ID of the environment action
 #'
@@ -2962,8 +2912,7 @@ datazone_get_environment_blueprint_configuration <- function(domainIdentifier, e
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_environment_credentials/](https://www.paws-r-sdk.com/docs/datazone_get_environment_credentials/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this environment and its
-#' credentials exist.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this environment and its credentials exist.
 #' @param environmentIdentifier &#91;required&#93; The ID of the environment whose credentials this operation gets.
 #'
 #' @keywords internal
@@ -2995,8 +2944,7 @@ datazone_get_environment_credentials <- function(domainIdentifier, environmentId
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_environment_profile/](https://www.paws-r-sdk.com/docs/datazone_get_environment_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this environment profile
-#' exists.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this environment profile exists.
 #' @param identifier &#91;required&#93; The ID of the environment profile.
 #'
 #' @keywords internal
@@ -3028,8 +2976,7 @@ datazone_get_environment_profile <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_form_type/](https://www.paws-r-sdk.com/docs/datazone_get_form_type/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this metadata form type
-#' exists.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this metadata form type exists.
 #' @param formTypeIdentifier &#91;required&#93; The ID of the metadata form type.
 #' @param revision The revision of this metadata form type.
 #'
@@ -3062,8 +3009,7 @@ datazone_get_form_type <- function(domainIdentifier, formTypeIdentifier, revisio
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_glossary/](https://www.paws-r-sdk.com/docs/datazone_get_glossary/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this business glossary
-#' exists.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this business glossary exists.
 #' @param identifier &#91;required&#93; The ID of the business glossary.
 #'
 #' @keywords internal
@@ -3095,8 +3041,7 @@ datazone_get_glossary <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_glossary_term/](https://www.paws-r-sdk.com/docs/datazone_get_glossary_term/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this business glossary
-#' term exists.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which this business glossary term exists.
 #' @param identifier &#91;required&#93; The ID of the business glossary term.
 #'
 #' @keywords internal
@@ -3128,8 +3073,7 @@ datazone_get_glossary_term <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_group_profile/](https://www.paws-r-sdk.com/docs/datazone_get_group_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the group profile
-#' exists.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the group profile exists.
 #' @param groupIdentifier &#91;required&#93; The identifier of the group profile.
 #'
 #' @keywords internal
@@ -3161,8 +3105,7 @@ datazone_get_group_profile <- function(domainIdentifier, groupIdentifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_iam_portal_login_url/](https://www.paws-r-sdk.com/docs/datazone_get_iam_portal_login_url/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; the ID of the Amazon DataZone domain the data portal of which you want
-#' to get.
+#' @param domainIdentifier &#91;required&#93; the ID of the Amazon DataZone domain the data portal of which you want to get.
 #'
 #' @keywords internal
 #'
@@ -3260,10 +3203,7 @@ datazone_get_lineage_event <- function(domainIdentifier, identifier) {
 #' @param domainIdentifier &#91;required&#93; The ID of the domain in which you want to get the data lineage node.
 #' @param identifier &#91;required&#93; The ID of the data lineage node that you want to get.
 #' 
-#' Both, a lineage node identifier generated by Amazon DataZone and a
-#' `sourceIdentifier` of the lineage node are supported. If
-#' `sourceIdentifier` is greater than 1800 characters, you can use lineage
-#' node identifier generated by Amazon DataZone to get the node details.
+#' Both, a lineage node identifier generated by Amazon DataZone and a `sourceIdentifier` of the lineage node are supported. If `sourceIdentifier` is greater than 1800 characters, you can use lineage node identifier generated by Amazon DataZone to get the node details.
 #' @param eventTimestamp The event time stamp for which you want to get the data lineage node.
 #'
 #' @keywords internal
@@ -3328,8 +3268,7 @@ datazone_get_listing <- function(domainIdentifier, identifier, listingRevision =
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_metadata_generation_run/](https://www.paws-r-sdk.com/docs/datazone_get_metadata_generation_run/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain the metadata generation run of
-#' which you want to get.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain the metadata generation run of which you want to get.
 #' @param identifier &#91;required&#93; The identifier of the metadata generation run.
 #' @param type The type of the metadata generation run.
 #'
@@ -3355,15 +3294,78 @@ datazone_get_metadata_generation_run <- function(domainIdentifier, identifier, t
 }
 .datazone$operations$get_metadata_generation_run <- datazone_get_metadata_generation_run
 
-#' Gets the details of a notebook run in an Amazon DataZone domain
+#' Gets the details of a notebook in Amazon SageMaker Unified Studio
 #'
 #' @description
-#' Gets the details of a notebook run in an Amazon DataZone domain.
+#' Gets the details of a [notebook](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) in Amazon SageMaker Unified Studio.
+#'
+#' See [https://www.paws-r-sdk.com/docs/datazone_get_notebook/](https://www.paws-r-sdk.com/docs/datazone_get_notebook/) for full documentation.
+#'
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which the notebook exists.
+#' @param identifier &#91;required&#93; The identifier of the notebook.
+#'
+#' @keywords internal
+#'
+#' @rdname datazone_get_notebook
+datazone_get_notebook <- function(domainIdentifier, identifier) {
+  op <- new_operation(
+    name = "GetNotebook",
+    http_method = "GET",
+    http_path = "/v2/domains/{domainIdentifier}/notebooks/{identifier}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .datazone$get_notebook_input(domainIdentifier = domainIdentifier, identifier = identifier)
+  output <- .datazone$get_notebook_output()
+  config <- get_config()
+  svc <- .datazone$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.datazone$operations$get_notebook <- datazone_get_notebook
+
+#' Gets the details of a notebook export in Amazon SageMaker Unified Studio
+#'
+#' @description
+#' Gets the details of a notebook export in Amazon SageMaker Unified Studio.
+#'
+#' See [https://www.paws-r-sdk.com/docs/datazone_get_notebook_export/](https://www.paws-r-sdk.com/docs/datazone_get_notebook_export/) for full documentation.
+#'
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which the notebook export exists.
+#' @param identifier &#91;required&#93; The identifier of the notebook export.
+#'
+#' @keywords internal
+#'
+#' @rdname datazone_get_notebook_export
+datazone_get_notebook_export <- function(domainIdentifier, identifier) {
+  op <- new_operation(
+    name = "GetNotebookExport",
+    http_method = "GET",
+    http_path = "/v2/domains/{domainIdentifier}/notebook-exports/{identifier}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .datazone$get_notebook_export_input(domainIdentifier = domainIdentifier, identifier = identifier)
+  output <- .datazone$get_notebook_export_output()
+  config <- get_config()
+  svc <- .datazone$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.datazone$operations$get_notebook_export <- datazone_get_notebook_export
+
+#' Gets the details of a notebook run in Amazon SageMaker Unified Studio
+#'
+#' @description
+#' Gets the details of a [notebook run](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) in Amazon SageMaker Unified Studio.
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_notebook_run/](https://www.paws-r-sdk.com/docs/datazone_get_notebook_run/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the notebook run
-#' exists.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run exists.
 #' @param identifier &#91;required&#93; The identifier of the notebook run.
 #'
 #' @keywords internal
@@ -3459,8 +3461,7 @@ datazone_get_project_profile <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_rule/](https://www.paws-r-sdk.com/docs/datazone_get_rule/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain where the [`get_rule`][datazone_get_rule] action is
-#' to be invoked.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain where the [`get_rule`][datazone_get_rule] action is to be invoked.
 #' @param identifier &#91;required&#93; The ID of the rule.
 #' @param revision The revision of the rule.
 #'
@@ -3525,8 +3526,7 @@ datazone_get_subscription <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_subscription_grant/](https://www.paws-r-sdk.com/docs/datazone_get_subscription_grant/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription grant
-#' exists.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription grant exists.
 #' @param identifier &#91;required&#93; The ID of the subscription grant.
 #'
 #' @keywords internal
@@ -3558,8 +3558,7 @@ datazone_get_subscription_grant <- function(domainIdentifier, identifier) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_subscription_request_details/](https://www.paws-r-sdk.com/docs/datazone_get_subscription_request_details/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to get the
-#' subscription request details.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to get the subscription request details.
 #' @param identifier &#91;required&#93; The identifier of the subscription request the details of which to get.
 #'
 #' @keywords internal
@@ -3591,8 +3590,7 @@ datazone_get_subscription_request_details <- function(domainIdentifier, identifi
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_subscription_target/](https://www.paws-r-sdk.com/docs/datazone_get_subscription_target/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription target
-#' exists.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the subscription target exists.
 #' @param environmentIdentifier &#91;required&#93; The ID of the environment associated with the subscription target.
 #' @param identifier &#91;required&#93; The ID of the subscription target.
 #'
@@ -3625,13 +3623,11 @@ datazone_get_subscription_target <- function(domainIdentifier, environmentIdenti
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_time_series_data_point/](https://www.paws-r-sdk.com/docs/datazone_get_time_series_data_point/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain that houses the asset for which you
-#' want to get the data point.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain that houses the asset for which you want to get the data point.
 #' @param entityIdentifier &#91;required&#93; The ID of the asset for which you want to get the data point.
 #' @param entityType &#91;required&#93; The type of the asset for which you want to get the data point.
 #' @param identifier &#91;required&#93; The ID of the data point that you want to get.
-#' @param formName &#91;required&#93; The name of the time series form that houses the data point that you
-#' want to get.
+#' @param formName &#91;required&#93; The name of the time series form that houses the data point that you want to get.
 #'
 #' @keywords internal
 #'
@@ -3662,8 +3658,7 @@ datazone_get_time_series_data_point <- function(domainIdentifier, entityIdentifi
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_get_user_profile/](https://www.paws-r-sdk.com/docs/datazone_get_user_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; the ID of the Amazon DataZone domain the data portal of which you want
-#' to get.
+#' @param domainIdentifier &#91;required&#93; the ID of the Amazon DataZone domain the data portal of which you want to get.
 #' @param userIdentifier &#91;required&#93; The identifier of the user for which you want to get the user profile.
 #' @param type The type of the user profile.
 #' @param sessionName The session name for IAM role sessions.
@@ -3699,20 +3694,10 @@ datazone_get_user_profile <- function(domainIdentifier, userIdentifier, type = N
 #'
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where exsting account pools are to be listed.
 #' @param name The name of the account pool to be listed.
-#' @param sortBy The sort by mechanism in which the existing account pools are to be
-#' listed.
+#' @param sortBy The sort by mechanism in which the existing account pools are to be listed.
 #' @param sortOrder The sort order in which the existing account pools are to be listed.
-#' @param nextToken When the number of account pools is greater than the default value for
-#' the MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of account pools, the response
-#' includes a pagination token named NextToken. You can specify this
-#' NextToken value in a subsequent call to ListAccountPools to list the
-#' next set of account pools.
-#' @param maxResults The maximum number of account pools to return in a single call to
-#' ListAccountPools. When the number of account pools to be listed is
-#' greater than the value of MaxResults, the response contains a NextToken
-#' value that you can use in a subsequent call to ListAccountPools to list
-#' the next set of account pools.
+#' @param nextToken When the number of account pools is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of account pools, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListAccountPools to list the next set of account pools.
+#' @param maxResults The maximum number of account pools to return in a single call to ListAccountPools. When the number of account pools to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListAccountPools to list the next set of account pools.
 #'
 #' @keywords internal
 #'
@@ -3743,20 +3728,10 @@ datazone_list_account_pools <- function(domainIdentifier, name = NULL, sortBy = 
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_accounts_in_account_pool/](https://www.paws-r-sdk.com/docs/datazone_list_accounts_in_account_pool/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain in which the accounts in the specified account pool
-#' are to be listed.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain in which the accounts in the specified account pool are to be listed.
 #' @param identifier &#91;required&#93; The ID of the account pool whose accounts are to be listed.
-#' @param nextToken When the number of accounts is greater than the default value for the
-#' MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of accounts, the response
-#' includes a pagination token named NextToken. You can specify this
-#' NextToken value in a subsequent call to ListAccountsInAccountPool to
-#' list the next set of accounts.
-#' @param maxResults The maximum number of accounts to return in a single call to
-#' ListAccountsInAccountPool. When the number of accounts to be listed is
-#' greater than the value of MaxResults, the response contains a NextToken
-#' value that you can use in a subsequent call to ListAccountsInAccountPool
-#' to list the next set of accounts.
+#' @param nextToken When the number of accounts is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of accounts, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListAccountsInAccountPool to list the next set of accounts.
+#' @param maxResults The maximum number of accounts to return in a single call to ListAccountsInAccountPool. When the number of accounts to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListAccountsInAccountPool to list the next set of accounts.
 #'
 #' @keywords internal
 #'
@@ -3790,19 +3765,8 @@ datazone_list_accounts_in_account_pool <- function(domainIdentifier, identifier,
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to list asset filters.
 #' @param assetIdentifier &#91;required&#93; The ID of the data asset.
 #' @param status The status of the asset filter.
-#' @param nextToken When the number of asset filters is greater than the default value for
-#' the `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of asset filters, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_asset_filters`][datazone_list_asset_filters] to list the next set
-#' of asset filters.
-#' @param maxResults The maximum number of asset filters to return in a single call to
-#' [`list_asset_filters`][datazone_list_asset_filters]. When the number of
-#' asset filters to be listed is greater than the value of `MaxResults`,
-#' the response contains a `NextToken` value that you can use in a
-#' subsequent call to [`list_asset_filters`][datazone_list_asset_filters]
-#' to list the next set of asset filters.
+#' @param nextToken When the number of asset filters is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of asset filters, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_asset_filters`][datazone_list_asset_filters] to list the next set of asset filters.
+#' @param maxResults The maximum number of asset filters to return in a single call to [`list_asset_filters`][datazone_list_asset_filters]. When the number of asset filters to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_asset_filters`][datazone_list_asset_filters] to list the next set of asset filters.
 #'
 #' @keywords internal
 #'
@@ -3835,19 +3799,8 @@ datazone_list_asset_filters <- function(domainIdentifier, assetIdentifier, statu
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the domain.
 #' @param identifier &#91;required&#93; The identifier of the asset.
-#' @param nextToken When the number of revisions is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of revisions, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_asset_revisions`][datazone_list_asset_revisions] to list the next
-#' set of revisions.
-#' @param maxResults The maximum number of revisions to return in a single call to
-#' [`list_asset_revisions`][datazone_list_asset_revisions]. When the number
-#' of revisions to be listed is greater than the value of `MaxResults`, the
-#' response contains a `NextToken` value that you can use in a subsequent
-#' call to [`list_asset_revisions`][datazone_list_asset_revisions] to list
-#' the next set of revisions.
+#' @param nextToken When the number of revisions is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of revisions, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_asset_revisions`][datazone_list_asset_revisions] to list the next set of revisions.
+#' @param maxResults The maximum number of revisions to return in a single call to [`list_asset_revisions`][datazone_list_asset_revisions]. When the number of revisions to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_asset_revisions`][datazone_list_asset_revisions] to list the next set of revisions.
 #'
 #' @keywords internal
 #'
@@ -3879,17 +3832,8 @@ datazone_list_asset_revisions <- function(domainIdentifier, identifier, nextToke
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_connections/](https://www.paws-r-sdk.com/docs/datazone_list_connections/) for full documentation.
 #'
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to list connections.
-#' @param maxResults The maximum number of connections to return in a single call to
-#' ListConnections. When the number of connections to be listed is greater
-#' than the value of MaxResults, the response contains a NextToken value
-#' that you can use in a subsequent call to ListConnections to list the
-#' next set of connections.
-#' @param nextToken When the number of connections is greater than the default value for the
-#' MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of connections, the response
-#' includes a pagination token named NextToken. You can specify this
-#' NextToken value in a subsequent call to ListConnections to list the next
-#' set of connections.
+#' @param maxResults The maximum number of connections to return in a single call to ListConnections. When the number of connections to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListConnections to list the next set of connections.
+#' @param nextToken When the number of connections is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of connections, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListConnections to list the next set of connections.
 #' @param sortBy Specifies how you want to sort the listed connections.
 #' @param sortOrder Specifies the sort order for the listed connections.
 #' @param name The name of the connection.
@@ -3927,23 +3871,10 @@ datazone_list_connections <- function(domainIdentifier, maxResults = NULL, nextT
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_data_product_revisions/](https://www.paws-r-sdk.com/docs/datazone_list_data_product_revisions/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain of the data product revisions that you want to
-#' list.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain of the data product revisions that you want to list.
 #' @param identifier &#91;required&#93; The ID of the data product revision.
-#' @param maxResults The maximum number of asset filters to return in a single call to
-#' [`list_data_product_revisions`][datazone_list_data_product_revisions].
-#' When the number of data product revisions to be listed is greater than
-#' the value of `MaxResults`, the response contains a `NextToken` value
-#' that you can use in a subsequent call to
-#' [`list_data_product_revisions`][datazone_list_data_product_revisions] to
-#' list the next set of data product revisions.
-#' @param nextToken When the number of data product revisions is greater than the default
-#' value for the `MaxResults` parameter, or if you explicitly specify a
-#' value for `MaxResults` that is less than the number of data product
-#' revisions, the response includes a pagination token named `NextToken`.
-#' You can specify this `NextToken` value in a subsequent call to
-#' [`list_data_product_revisions`][datazone_list_data_product_revisions] to
-#' list the next set of data product revisions.
+#' @param maxResults The maximum number of asset filters to return in a single call to [`list_data_product_revisions`][datazone_list_data_product_revisions]. When the number of data product revisions to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_data_product_revisions`][datazone_list_data_product_revisions] to list the next set of data product revisions.
+#' @param nextToken When the number of data product revisions is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of data product revisions, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_data_product_revisions`][datazone_list_data_product_revisions] to list the next set of data product revisions.
 #'
 #' @keywords internal
 #'
@@ -3974,24 +3905,11 @@ datazone_list_data_product_revisions <- function(domainIdentifier, identifier, m
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_data_source_run_activities/](https://www.paws-r-sdk.com/docs/datazone_list_data_source_run_activities/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to list data
-#' source run activities.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to list data source run activities.
 #' @param identifier &#91;required&#93; The identifier of the data source run.
 #' @param status The status of the data source run.
-#' @param nextToken When the number of activities is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of activities, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_data_source_run_activities`][datazone_list_data_source_run_activities]
-#' to list the next set of activities.
-#' @param maxResults The maximum number of activities to return in a single call to
-#' [`list_data_source_run_activities`][datazone_list_data_source_run_activities].
-#' When the number of activities to be listed is greater than the value of
-#' `MaxResults`, the response contains a `NextToken` value that you can use
-#' in a subsequent call to
-#' [`list_data_source_run_activities`][datazone_list_data_source_run_activities]
-#' to list the next set of activities.
+#' @param nextToken When the number of activities is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of activities, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_data_source_run_activities`][datazone_list_data_source_run_activities] to list the next set of activities.
+#' @param maxResults The maximum number of activities to return in a single call to [`list_data_source_run_activities`][datazone_list_data_source_run_activities]. When the number of activities to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_data_source_run_activities`][datazone_list_data_source_run_activities] to list the next set of activities.
 #'
 #' @keywords internal
 #'
@@ -4022,24 +3940,11 @@ datazone_list_data_source_run_activities <- function(domainIdentifier, identifie
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_data_source_runs/](https://www.paws-r-sdk.com/docs/datazone_list_data_source_runs/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to invoke the
-#' [`list_data_source_runs`][datazone_list_data_source_runs] action.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to invoke the [`list_data_source_runs`][datazone_list_data_source_runs] action.
 #' @param dataSourceIdentifier &#91;required&#93; The identifier of the data source.
 #' @param status The status of the data source.
-#' @param nextToken When the number of runs is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of runs, the response includes
-#' a pagination token named `NextToken`. You can specify this `NextToken`
-#' value in a subsequent call to
-#' [`list_data_source_runs`][datazone_list_data_source_runs] to list the
-#' next set of runs.
-#' @param maxResults The maximum number of runs to return in a single call to
-#' [`list_data_source_runs`][datazone_list_data_source_runs]. When the
-#' number of runs to be listed is greater than the value of `MaxResults`,
-#' the response contains a `NextToken` value that you can use in a
-#' subsequent call to
-#' [`list_data_source_runs`][datazone_list_data_source_runs] to list the
-#' next set of runs.
+#' @param nextToken When the number of runs is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of runs, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_data_source_runs`][datazone_list_data_source_runs] to list the next set of runs.
+#' @param maxResults The maximum number of runs to return in a single call to [`list_data_source_runs`][datazone_list_data_source_runs]. When the number of runs to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_data_source_runs`][datazone_list_data_source_runs] to list the next set of runs.
 #'
 #' @keywords internal
 #'
@@ -4070,27 +3975,15 @@ datazone_list_data_source_runs <- function(domainIdentifier, dataSourceIdentifie
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_data_sources/](https://www.paws-r-sdk.com/docs/datazone_list_data_sources/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to list the data
-#' sources.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to list the data sources.
 #' @param projectIdentifier &#91;required&#93; The identifier of the project in which to list data sources.
 #' @param environmentIdentifier The identifier of the environment in which to list the data sources.
 #' @param connectionIdentifier The ID of the connection.
 #' @param type The type of the data source.
 #' @param status The status of the data source.
 #' @param name The name of the data source.
-#' @param nextToken When the number of data sources is greater than the default value for
-#' the `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of data sources, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_data_sources`][datazone_list_data_sources] to list the next set
-#' of data sources.
-#' @param maxResults The maximum number of data sources to return in a single call to
-#' [`list_data_sources`][datazone_list_data_sources]. When the number of
-#' data sources to be listed is greater than the value of `MaxResults`, the
-#' response contains a `NextToken` value that you can use in a subsequent
-#' call to [`list_data_sources`][datazone_list_data_sources] to list the
-#' next set of data sources.
+#' @param nextToken When the number of data sources is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of data sources, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_data_sources`][datazone_list_data_sources] to list the next set of data sources.
+#' @param maxResults The maximum number of data sources to return in a single call to [`list_data_sources`][datazone_list_data_sources]. When the number of data sources to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_data_sources`][datazone_list_data_sources] to list the next set of data sources.
 #'
 #' @keywords internal
 #'
@@ -4121,20 +4014,10 @@ datazone_list_data_sources <- function(domainIdentifier, projectIdentifier, envi
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_domain_units_for_parent/](https://www.paws-r-sdk.com/docs/datazone_list_domain_units_for_parent/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain in which you want to list domain units for a parent
-#' domain unit.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain in which you want to list domain units for a parent domain unit.
 #' @param parentDomainUnitIdentifier &#91;required&#93; The ID of the parent domain unit.
-#' @param maxResults The maximum number of domain units to return in a single call to
-#' ListDomainUnitsForParent. When the number of domain units to be listed
-#' is greater than the value of MaxResults, the response contains a
-#' NextToken value that you can use in a subsequent call to
-#' ListDomainUnitsForParent to list the next set of domain units.
-#' @param nextToken When the number of domain units is greater than the default value for
-#' the MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of domain units, the response
-#' includes a pagination token named NextToken. You can specify this
-#' NextToken value in a subsequent call to ListDomainUnitsForParent to list
-#' the next set of domain units.
+#' @param maxResults The maximum number of domain units to return in a single call to ListDomainUnitsForParent. When the number of domain units to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListDomainUnitsForParent to list the next set of domain units.
+#' @param nextToken When the number of domain units is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of domain units, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListDomainUnitsForParent to list the next set of domain units.
 #'
 #' @keywords internal
 #'
@@ -4166,17 +4049,8 @@ datazone_list_domain_units_for_parent <- function(domainIdentifier, parentDomain
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_domains/](https://www.paws-r-sdk.com/docs/datazone_list_domains/) for full documentation.
 #'
 #' @param status The status of the data source.
-#' @param maxResults The maximum number of domains to return in a single call to
-#' [`list_domains`][datazone_list_domains]. When the number of domains to
-#' be listed is greater than the value of `MaxResults`, the response
-#' contains a `NextToken` value that you can use in a subsequent call to
-#' [`list_domains`][datazone_list_domains] to list the next set of domains.
-#' @param nextToken When the number of domains is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of domains, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_domains`][datazone_list_domains] to list the next set of domains.
+#' @param maxResults The maximum number of domains to return in a single call to [`list_domains`][datazone_list_domains]. When the number of domains to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_domains`][datazone_list_domains] to list the next set of domains.
+#' @param nextToken When the number of domains is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of domains, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_domains`][datazone_list_domains] to list the next set of domains.
 #'
 #' @keywords internal
 #'
@@ -4210,19 +4084,8 @@ datazone_list_domains <- function(status = NULL, maxResults = NULL, nextToken = 
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to list entity owners.
 #' @param entityType &#91;required&#93; The type of the entity that you want to list.
 #' @param entityIdentifier &#91;required&#93; The ID of the entity that you want to list.
-#' @param maxResults The maximum number of entities to return in a single call to
-#' [`list_entity_owners`][datazone_list_entity_owners]. When the number of
-#' entities to be listed is greater than the value of `MaxResults`, the
-#' response contains a `NextToken` value that you can use in a subsequent
-#' call to [`list_entity_owners`][datazone_list_entity_owners] to list the
-#' next set of entities.
-#' @param nextToken When the number of entities is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of entities, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_entity_owners`][datazone_list_entity_owners] to list the next set
-#' of entities.
+#' @param maxResults The maximum number of entities to return in a single call to [`list_entity_owners`][datazone_list_entity_owners]. When the number of entities to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_entity_owners`][datazone_list_entity_owners] to list the next set of entities.
+#' @param nextToken When the number of entities is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of entities, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_entity_owners`][datazone_list_entity_owners] to list the next set of entities.
 #'
 #' @keywords internal
 #'
@@ -4253,23 +4116,10 @@ datazone_list_entity_owners <- function(domainIdentifier, entityType, entityIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_environment_actions/](https://www.paws-r-sdk.com/docs/datazone_list_environment_actions/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment actions
-#' are listed.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which the environment actions are listed.
 #' @param environmentIdentifier &#91;required&#93; The ID of the envrironment whose environment actions are listed.
-#' @param nextToken When the number of environment actions is greater than the default value
-#' for the `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of environment actions, the
-#' response includes a pagination token named `NextToken`. You can specify
-#' this `NextToken` value in a subsequent call to
-#' [`list_environment_actions`][datazone_list_environment_actions] to list
-#' the next set of environment actions.
-#' @param maxResults The maximum number of environment actions to return in a single call to
-#' [`list_environment_actions`][datazone_list_environment_actions]. When
-#' the number of environment actions to be listed is greater than the value
-#' of `MaxResults`, the response contains a `NextToken` value that you can
-#' use in a subsequent call to
-#' [`list_environment_actions`][datazone_list_environment_actions] to list
-#' the next set of environment actions.
+#' @param nextToken When the number of environment actions is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of environment actions, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_environment_actions`][datazone_list_environment_actions] to list the next set of environment actions.
+#' @param maxResults The maximum number of environment actions to return in a single call to [`list_environment_actions`][datazone_list_environment_actions]. When the number of environment actions to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_environment_actions`][datazone_list_environment_actions] to list the next set of environment actions.
 #'
 #' @keywords internal
 #'
@@ -4301,21 +4151,8 @@ datazone_list_environment_actions <- function(domainIdentifier, environmentIdent
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_environment_blueprint_configurations/](https://www.paws-r-sdk.com/docs/datazone_list_environment_blueprint_configurations/) for full documentation.
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
-#' @param maxResults The maximum number of blueprint configurations to return in a single
-#' call to
-#' [`list_environment_blueprint_configurations`][datazone_list_environment_blueprint_configurations].
-#' When the number of configurations to be listed is greater than the value
-#' of `MaxResults`, the response contains a `NextToken` value that you can
-#' use in a subsequent call to
-#' [`list_environment_blueprint_configurations`][datazone_list_environment_blueprint_configurations]
-#' to list the next set of configurations.
-#' @param nextToken When the number of blueprint configurations is greater than the default
-#' value for the `MaxResults` parameter, or if you explicitly specify a
-#' value for `MaxResults` that is less than the number of configurations,
-#' the response includes a pagination token named `NextToken`. You can
-#' specify this `NextToken` value in a subsequent call to
-#' [`list_environment_blueprint_configurations`][datazone_list_environment_blueprint_configurations]
-#' to list the next set of configurations.
+#' @param maxResults The maximum number of blueprint configurations to return in a single call to [`list_environment_blueprint_configurations`][datazone_list_environment_blueprint_configurations]. When the number of configurations to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_environment_blueprint_configurations`][datazone_list_environment_blueprint_configurations] to list the next set of configurations.
+#' @param nextToken When the number of blueprint configurations is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of configurations, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_environment_blueprint_configurations`][datazone_list_environment_blueprint_configurations] to list the next set of configurations.
 #'
 #' @keywords internal
 #'
@@ -4347,24 +4184,10 @@ datazone_list_environment_blueprint_configurations <- function(domainIdentifier,
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_environment_blueprints/](https://www.paws-r-sdk.com/docs/datazone_list_environment_blueprints/) for full documentation.
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
-#' @param maxResults The maximum number of blueprints to return in a single call to
-#' [`list_environment_blueprints`][datazone_list_environment_blueprints].
-#' When the number of blueprints to be listed is greater than the value of
-#' `MaxResults`, the response contains a `NextToken` value that you can use
-#' in a subsequent call to
-#' [`list_environment_blueprints`][datazone_list_environment_blueprints] to
-#' list the next set of blueprints.
-#' @param nextToken When the number of blueprints in the environment is greater than the
-#' default value for the `MaxResults` parameter, or if you explicitly
-#' specify a value for `MaxResults` that is less than the number of
-#' blueprints in the environment, the response includes a pagination token
-#' named `NextToken`. You can specify this `NextToken` value in a
-#' subsequent call to
-#' [`list_environment_blueprints`][datazone_list_environment_blueprints]to
-#' list the next set of blueprints.
+#' @param maxResults The maximum number of blueprints to return in a single call to [`list_environment_blueprints`][datazone_list_environment_blueprints]. When the number of blueprints to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_environment_blueprints`][datazone_list_environment_blueprints] to list the next set of blueprints.
+#' @param nextToken When the number of blueprints in the environment is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of blueprints in the environment, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_environment_blueprints`][datazone_list_environment_blueprints]to list the next set of blueprints.
 #' @param name The name of the Amazon DataZone environment.
-#' @param managed Specifies whether the environment blueprint is managed by Amazon
-#' DataZone.
+#' @param managed Specifies whether the environment blueprint is managed by Amazon DataZone.
 #'
 #' @keywords internal
 #'
@@ -4396,28 +4219,13 @@ datazone_list_environment_blueprints <- function(domainIdentifier, maxResults = 
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_environment_profiles/](https://www.paws-r-sdk.com/docs/datazone_list_environment_profiles/) for full documentation.
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
-#' @param awsAccountId The identifier of the Amazon Web Services account where you want to list
-#' environment profiles.
-#' @param awsAccountRegion The Amazon Web Services region where you want to list environment
-#' profiles.
-#' @param environmentBlueprintIdentifier The identifier of the blueprint that was used to create the environment
-#' profiles that you want to list.
+#' @param awsAccountId The identifier of the Amazon Web Services account where you want to list environment profiles.
+#' @param awsAccountRegion The Amazon Web Services region where you want to list environment profiles.
+#' @param environmentBlueprintIdentifier The identifier of the blueprint that was used to create the environment profiles that you want to list.
 #' @param projectIdentifier The identifier of the Amazon DataZone project.
 #' @param name 
-#' @param nextToken When the number of environment profiles is greater than the default
-#' value for the `MaxResults` parameter, or if you explicitly specify a
-#' value for `MaxResults` that is less than the number of environment
-#' profiles, the response includes a pagination token named `NextToken`.
-#' You can specify this `NextToken` value in a subsequent call to
-#' [`list_environment_profiles`][datazone_list_environment_profiles] to
-#' list the next set of environment profiles.
-#' @param maxResults The maximum number of environment profiles to return in a single call to
-#' [`list_environment_profiles`][datazone_list_environment_profiles]. When
-#' the number of environment profiles to be listed is greater than the
-#' value of `MaxResults`, the response contains a `NextToken` value that
-#' you can use in a subsequent call to
-#' [`list_environment_profiles`][datazone_list_environment_profiles] to
-#' list the next set of environment profiles.
+#' @param nextToken When the number of environment profiles is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of environment profiles, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_environment_profiles`][datazone_list_environment_profiles] to list the next set of environment profiles.
+#' @param maxResults The maximum number of environment profiles to return in a single call to [`list_environment_profiles`][datazone_list_environment_profiles]. When the number of environment profiles to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_environment_profiles`][datazone_list_environment_profiles] to list the next set of environment profiles.
 #'
 #' @keywords internal
 #'
@@ -4449,8 +4257,7 @@ datazone_list_environment_profiles <- function(domainIdentifier, awsAccountId = 
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_environments/](https://www.paws-r-sdk.com/docs/datazone_list_environments/) for full documentation.
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
-#' @param awsAccountId The identifier of the Amazon Web Services account where you want to list
-#' environments.
+#' @param awsAccountId The identifier of the Amazon Web Services account where you want to list environments.
 #' @param status The status of the environments that you want to list.
 #' @param awsAccountRegion The Amazon Web Services region where you want to list environments.
 #' @param projectIdentifier &#91;required&#93; The identifier of the Amazon DataZone project.
@@ -4458,19 +4265,8 @@ datazone_list_environment_profiles <- function(domainIdentifier, awsAccountId = 
 #' @param environmentBlueprintIdentifier The identifier of the Amazon DataZone blueprint.
 #' @param provider The provider of the environment.
 #' @param name The name of the environment.
-#' @param maxResults The maximum number of environments to return in a single call to
-#' [`list_environments`][datazone_list_environments]. When the number of
-#' environments to be listed is greater than the value of `MaxResults`, the
-#' response contains a `NextToken` value that you can use in a subsequent
-#' call to [`list_environments`][datazone_list_environments] to list the
-#' next set of environments.
-#' @param nextToken When the number of environments is greater than the default value for
-#' the `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of environments, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_environments`][datazone_list_environments] to list the next set
-#' of environments.
+#' @param maxResults The maximum number of environments to return in a single call to [`list_environments`][datazone_list_environments]. When the number of environments to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_environments`][datazone_list_environments] to list the next set of environments.
+#' @param nextToken When the number of environments is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of environments, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_environments`][datazone_list_environments] to list the next set of environments.
 #'
 #' @keywords internal
 #'
@@ -4505,17 +4301,8 @@ datazone_list_environments <- function(domainIdentifier, awsAccountId = NULL, st
 #' @param jobIdentifier &#91;required&#93; The ID of the job run.
 #' @param status The status of a job run.
 #' @param sortOrder Specifies the order in which job runs are to be sorted.
-#' @param nextToken When the number of job runs is greater than the default value for the
-#' MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of job runs, the response
-#' includes a pagination token named NextToken. You can specify this
-#' NextToken value in a subsequent call to ListJobRuns to list the next set
-#' of job runs.
-#' @param maxResults The maximum number of job runs to return in a single call to
-#' ListJobRuns. When the number of job runs to be listed is greater than
-#' the value of MaxResults, the response contains a NextToken value that
-#' you can use in a subsequent call to ListJobRuns to list the next set of
-#' job runs.
+#' @param nextToken When the number of job runs is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of job runs, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListJobRuns to list the next set of job runs.
+#' @param maxResults The maximum number of job runs to return in a single call to ListJobRuns. When the number of job runs to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListJobRuns to list the next set of job runs.
 #'
 #' @keywords internal
 #'
@@ -4547,21 +4334,12 @@ datazone_list_job_runs <- function(domainIdentifier, jobIdentifier, status = NUL
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_lineage_events/](https://www.paws-r-sdk.com/docs/datazone_list_lineage_events/) for full documentation.
 #'
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to list lineage events.
-#' @param maxResults The maximum number of lineage events to return in a single call to
-#' ListLineageEvents. When the number of lineage events to be listed is
-#' greater than the value of MaxResults, the response contains a NextToken
-#' value that you can use in a subsequent call to ListLineageEvents to list
-#' the next set of lineage events.
+#' @param maxResults The maximum number of lineage events to return in a single call to ListLineageEvents. When the number of lineage events to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListLineageEvents to list the next set of lineage events.
 #' @param timestampAfter The after timestamp of a lineage event.
 #' @param timestampBefore The before timestamp of a lineage event.
 #' @param processingStatus The processing status of a lineage event.
 #' @param sortOrder The sort order of the lineage events.
-#' @param nextToken When the number of lineage events is greater than the default value for
-#' the MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of lineage events, the response
-#' includes a pagination token named NextToken. You can specify this
-#' NextToken value in a subsequent call to ListLineageEvents to list the
-#' next set of lineage events.
+#' @param nextToken When the number of lineage events is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of lineage events, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListLineageEvents to list the next set of lineage events.
 #'
 #' @keywords internal
 #'
@@ -4592,28 +4370,13 @@ datazone_list_lineage_events <- function(domainIdentifier, maxResults = NULL, ti
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_lineage_node_history/](https://www.paws-r-sdk.com/docs/datazone_list_lineage_node_history/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to list the history of the specified
-#' data lineage node.
-#' @param maxResults The maximum number of history items to return in a single call to
-#' ListLineageNodeHistory. When the number of memberships to be listed is
-#' greater than the value of MaxResults, the response contains a NextToken
-#' value that you can use in a subsequent call to ListLineageNodeHistory to
-#' list the next set of items.
-#' @param nextToken When the number of history items is greater than the default value for
-#' the MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of items, the response includes
-#' a pagination token named NextToken. You can specify this NextToken value
-#' in a subsequent call to ListLineageNodeHistory to list the next set of
-#' items.
+#' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to list the history of the specified data lineage node.
+#' @param maxResults The maximum number of history items to return in a single call to ListLineageNodeHistory. When the number of memberships to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListLineageNodeHistory to list the next set of items.
+#' @param nextToken When the number of history items is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of items, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListLineageNodeHistory to list the next set of items.
 #' @param identifier &#91;required&#93; The ID of the data lineage node whose history you want to list.
-#' @param direction The direction of the data lineage node refers to the lineage node having
-#' neighbors in that direction. For example, if direction is `UPSTREAM`,
-#' the [`list_lineage_node_history`][datazone_list_lineage_node_history]
-#' API responds with historical versions with upstream neighbors only.
-#' @param eventTimestampGTE Specifies whether the action is to return data lineage node history from
-#' the time after the event timestamp.
-#' @param eventTimestampLTE Specifies whether the action is to return data lineage node history from
-#' the time prior of the event timestamp.
+#' @param direction The direction of the data lineage node refers to the lineage node having neighbors in that direction. For example, if direction is `UPSTREAM`, the [`list_lineage_node_history`][datazone_list_lineage_node_history] API responds with historical versions with upstream neighbors only.
+#' @param eventTimestampGTE Specifies whether the action is to return data lineage node history from the time after the event timestamp.
+#' @param eventTimestampLTE Specifies whether the action is to return data lineage node history from the time prior of the event timestamp.
 #' @param sortOrder The order by which you want data lineage node history to be sorted.
 #'
 #' @keywords internal
@@ -4645,21 +4408,11 @@ datazone_list_lineage_node_history <- function(domainIdentifier, maxResults = NU
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_metadata_generation_runs/](https://www.paws-r-sdk.com/docs/datazone_list_metadata_generation_runs/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where you want to list metadata
-#' generation runs.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where you want to list metadata generation runs.
 #' @param status The status of the metadata generation runs.
 #' @param type The type of the metadata generation runs.
-#' @param nextToken When the number of metadata generation runs is greater than the default
-#' value for the MaxResults parameter, or if you explicitly specify a value
-#' for MaxResults that is less than the number of metadata generation runs,
-#' the response includes a pagination token named NextToken. You can
-#' specify this NextToken value in a subsequent call to
-#' ListMetadataGenerationRuns to list the next set of revisions.
-#' @param maxResults The maximum number of metadata generation runs to return in a single
-#' call to ListMetadataGenerationRuns. When the number of metadata
-#' generation runs to be listed is greater than the value of MaxResults,
-#' the response contains a NextToken value that you can use in a subsequent
-#' call to ListMetadataGenerationRuns to list the next set of revisions.
+#' @param nextToken When the number of metadata generation runs is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of metadata generation runs, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListMetadataGenerationRuns to list the next set of revisions.
+#' @param maxResults The maximum number of metadata generation runs to return in a single call to ListMetadataGenerationRuns. When the number of metadata generation runs to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListMetadataGenerationRuns to list the next set of revisions.
 #' @param targetIdentifier The target ID for which you want to list metadata generation runs.
 #'
 #' @keywords internal
@@ -4684,30 +4437,21 @@ datazone_list_metadata_generation_runs <- function(domainIdentifier, status = NU
 }
 .datazone$operations$list_metadata_generation_runs <- datazone_list_metadata_generation_runs
 
-#' Lists notebook runs in an Amazon DataZone domain
+#' Lists notebook runs in Amazon SageMaker Unified Studio
 #'
 #' @description
-#' Lists notebook runs in an Amazon DataZone domain.
+#' Lists [notebook runs](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) in Amazon SageMaker Unified Studio.
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_notebook_runs/](https://www.paws-r-sdk.com/docs/datazone_list_notebook_runs/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to list notebook
-#' runs.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which to list notebook runs.
 #' @param owningProjectIdentifier &#91;required&#93; The identifier of the project that owns the notebook runs.
 #' @param notebookIdentifier The identifier of the notebook to filter runs by.
 #' @param status The status to filter notebook runs by.
 #' @param scheduleIdentifier The identifier of the schedule to filter notebook runs by.
-#' @param maxResults The maximum number of notebook runs to return in a single call. When the
-#' number of notebook runs exceeds the value of `MaxResults`, the response
-#' contains a `NextToken` value.
+#' @param maxResults The maximum number of notebook runs to return in a single call. When the number of notebook runs exceeds the value of `MaxResults`, the response contains a `NextToken` value.
 #' @param sortOrder The sort order for the results.
-#' @param nextToken When the number of notebook runs is greater than the default value for
-#' the `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of notebook runs, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_notebook_runs`][datazone_list_notebook_runs] to list the next set
-#' of notebook runs.
+#' @param nextToken When the number of notebook runs is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of notebook runs, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_notebook_runs`][datazone_list_notebook_runs] to list the next set of notebook runs.
 #'
 #' @keywords internal
 #'
@@ -4731,6 +4475,43 @@ datazone_list_notebook_runs <- function(domainIdentifier, owningProjectIdentifie
 }
 .datazone$operations$list_notebook_runs <- datazone_list_notebook_runs
 
+#' Lists notebooks in Amazon SageMaker Unified Studio
+#'
+#' @description
+#' Lists [notebooks](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) in Amazon SageMaker Unified Studio.
+#'
+#' See [https://www.paws-r-sdk.com/docs/datazone_list_notebooks/](https://www.paws-r-sdk.com/docs/datazone_list_notebooks/) for full documentation.
+#'
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which to list notebooks.
+#' @param owningProjectIdentifier &#91;required&#93; The identifier of the project that owns the notebooks.
+#' @param maxResults The maximum number of notebooks to return in a single call. When the number of notebooks exceeds the value of `MaxResults`, the response contains a `NextToken` value.
+#' @param sortOrder The sort order for the results.
+#' @param sortBy The field to sort the results by.
+#' @param status The status to filter notebooks by.
+#' @param nextToken When the number of notebooks is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of notebooks, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_notebooks`][datazone_list_notebooks] to list the next set of notebooks.
+#'
+#' @keywords internal
+#'
+#' @rdname datazone_list_notebooks
+datazone_list_notebooks <- function(domainIdentifier, owningProjectIdentifier, maxResults = NULL, sortOrder = NULL, sortBy = NULL, status = NULL, nextToken = NULL) {
+  op <- new_operation(
+    name = "ListNotebooks",
+    http_method = "GET",
+    http_path = "/v2/domains/{domainIdentifier}/notebooks",
+    host_prefix = "",
+    paginator = list(input_token = "nextToken", output_token = "nextToken", limit_key = "maxResults", result_key = "items"),
+    stream_api = FALSE
+  )
+  input <- .datazone$list_notebooks_input(domainIdentifier = domainIdentifier, owningProjectIdentifier = owningProjectIdentifier, maxResults = maxResults, sortOrder = sortOrder, sortBy = sortBy, status = status, nextToken = nextToken)
+  output <- .datazone$list_notebooks_output()
+  config <- get_config()
+  svc <- .datazone$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.datazone$operations$list_notebooks <- datazone_list_notebooks
+
 #' Lists all Amazon DataZone notifications
 #'
 #' @description
@@ -4744,19 +4525,8 @@ datazone_list_notebook_runs <- function(domainIdentifier, owningProjectIdentifie
 #' @param beforeTimestamp The time before which you want to list notifications.
 #' @param subjects The subjects of notifications.
 #' @param taskStatus The task status of notifications.
-#' @param maxResults The maximum number of notifications to return in a single call to
-#' [`list_notifications`][datazone_list_notifications]. When the number of
-#' notifications to be listed is greater than the value of `MaxResults`,
-#' the response contains a `NextToken` value that you can use in a
-#' subsequent call to [`list_notifications`][datazone_list_notifications]
-#' to list the next set of notifications.
-#' @param nextToken When the number of notifications is greater than the default value for
-#' the `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of notifications, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_notifications`][datazone_list_notifications] to list the next set
-#' of notifications.
+#' @param maxResults The maximum number of notifications to return in a single call to [`list_notifications`][datazone_list_notifications]. When the number of notifications to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_notifications`][datazone_list_notifications] to list the next set of notifications.
+#' @param nextToken When the number of notifications is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of notifications, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_notifications`][datazone_list_notifications] to list the next set of notifications.
 #'
 #' @keywords internal
 #'
@@ -4791,19 +4561,8 @@ datazone_list_notifications <- function(domainIdentifier, type, afterTimestamp =
 #' @param entityType &#91;required&#93; The type of entity for which you want to list policy grants.
 #' @param entityIdentifier &#91;required&#93; The ID of the entity for which you want to list policy grants.
 #' @param policyType &#91;required&#93; The type of policy that you want to list.
-#' @param maxResults The maximum number of grants to return in a single call to
-#' [`list_policy_grants`][datazone_list_policy_grants]. When the number of
-#' grants to be listed is greater than the value of `MaxResults`, the
-#' response contains a `NextToken` value that you can use in a subsequent
-#' call to [`list_policy_grants`][datazone_list_policy_grants] to list the
-#' next set of grants.
-#' @param nextToken When the number of grants is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of grants, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_policy_grants`][datazone_list_policy_grants] to list the next set
-#' of grants.
+#' @param maxResults The maximum number of grants to return in a single call to [`list_policy_grants`][datazone_list_policy_grants]. When the number of grants to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_policy_grants`][datazone_list_policy_grants] to list the next set of grants.
+#' @param nextToken When the number of grants is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of grants, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_policy_grants`][datazone_list_policy_grants] to list the next set of grants.
 #'
 #' @keywords internal
 #'
@@ -4834,25 +4593,12 @@ datazone_list_policy_grants <- function(domainIdentifier, entityType, entityIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_project_memberships/](https://www.paws-r-sdk.com/docs/datazone_list_project_memberships/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which you want to list
-#' project memberships.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which you want to list project memberships.
 #' @param projectIdentifier &#91;required&#93; The identifier of the project whose memberships you want to list.
 #' @param sortBy The method by which you want to sort the project memberships.
 #' @param sortOrder The sort order of the project memberships.
-#' @param nextToken When the number of memberships is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of memberships, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_project_memberships`][datazone_list_project_memberships] to list
-#' the next set of memberships.
-#' @param maxResults The maximum number of memberships to return in a single call to
-#' [`list_project_memberships`][datazone_list_project_memberships]. When
-#' the number of memberships to be listed is greater than the value of
-#' `MaxResults`, the response contains a `NextToken` value that you can use
-#' in a subsequent call to
-#' [`list_project_memberships`][datazone_list_project_memberships] to list
-#' the next set of memberships.
+#' @param nextToken When the number of memberships is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of memberships, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_project_memberships`][datazone_list_project_memberships] to list the next set of memberships.
+#' @param maxResults The maximum number of memberships to return in a single call to [`list_project_memberships`][datazone_list_project_memberships]. When the number of memberships to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_project_memberships`][datazone_list_project_memberships] to list the next set of memberships.
 #'
 #' @keywords internal
 #'
@@ -4887,17 +4633,8 @@ datazone_list_project_memberships <- function(domainIdentifier, projectIdentifie
 #' @param name The name of a project profile.
 #' @param sortBy Specifies by what to sort project profiles.
 #' @param sortOrder Specifies the sort order of the project profiles.
-#' @param nextToken When the number of project profiles is greater than the default value
-#' for the MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of project profiles, the
-#' response includes a pagination token named NextToken. You can specify
-#' this NextToken value in a subsequent call to ListProjectProfiles to list
-#' the next set of project profiles.
-#' @param maxResults The maximum number of project profiles to return in a single call to
-#' ListProjectProfiles. When the number of project profiles to be listed is
-#' greater than the value of MaxResults, the response contains a NextToken
-#' value that you can use in a subsequent call to ListProjectProfiles to
-#' list the next set of project profiles.
+#' @param nextToken When the number of project profiles is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of project profiles, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListProjectProfiles to list the next set of project profiles.
+#' @param maxResults The maximum number of project profiles to return in a single call to ListProjectProfiles. When the number of project profiles to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListProjectProfiles to list the next set of project profiles.
 #'
 #' @keywords internal
 #'
@@ -4933,19 +4670,8 @@ datazone_list_project_profiles <- function(domainIdentifier, name = NULL, sortBy
 #' @param groupIdentifier The identifier of a group.
 #' @param name The name of the project.
 #' @param projectCategory A parameter to filter projects by their category.
-#' @param nextToken When the number of projects is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of projects, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_projects`][datazone_list_projects] to list the next set of
-#' projects.
-#' @param maxResults The maximum number of projects to return in a single call to
-#' [`list_projects`][datazone_list_projects]. When the number of projects
-#' to be listed is greater than the value of `MaxResults`, the response
-#' contains a `NextToken` value that you can use in a subsequent call to
-#' [`list_projects`][datazone_list_projects] to list the next set of
-#' projects.
+#' @param nextToken When the number of projects is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of projects, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_projects`][datazone_list_projects] to list the next set of projects.
+#' @param maxResults The maximum number of projects to return in a single call to [`list_projects`][datazone_list_projects]. When the number of projects to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_projects`][datazone_list_projects] to list the next set of projects.
 #'
 #' @keywords internal
 #'
@@ -4985,17 +4711,8 @@ datazone_list_projects <- function(domainIdentifier, userIdentifier = NULL, grou
 #' @param assetTypes The asset types of the rule.
 #' @param dataProduct The data product of the rule.
 #' @param includeCascaded Specifies whether to include cascading rules in the results.
-#' @param maxResults The maximum number of rules to return in a single call to
-#' [`list_rules`][datazone_list_rules]. When the number of rules to be
-#' listed is greater than the value of `MaxResults`, the response contains
-#' a `NextToken` value that you can use in a subsequent call to
-#' [`list_rules`][datazone_list_rules] to list the next set of rules.
-#' @param nextToken When the number of rules is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of rules, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_rules`][datazone_list_rules] to list the next set of rules.
+#' @param maxResults The maximum number of rules to return in a single call to [`list_rules`][datazone_list_rules]. When the number of rules to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_rules`][datazone_list_rules] to list the next set of rules.
+#' @param nextToken When the number of rules is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of rules, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_rules`][datazone_list_rules] to list the next set of rules.
 #'
 #' @keywords internal
 #'
@@ -5037,20 +4754,8 @@ datazone_list_rules <- function(domainIdentifier, targetType, targetIdentifier, 
 #' @param owningGroupId The ID of the owning group.
 #' @param sortBy Specifies the way of sorting the results of this action.
 #' @param sortOrder Specifies the sort order of this action.
-#' @param maxResults The maximum number of subscription grants to return in a single call to
-#' [`list_subscription_grants`][datazone_list_subscription_grants]. When
-#' the number of subscription grants to be listed is greater than the value
-#' of `MaxResults`, the response contains a `NextToken` value that you can
-#' use in a subsequent call to
-#' [`list_subscription_grants`][datazone_list_subscription_grants] to list
-#' the next set of subscription grants.
-#' @param nextToken When the number of subscription grants is greater than the default value
-#' for the `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of subscription grants, the
-#' response includes a pagination token named `NextToken`. You can specify
-#' this `NextToken` value in a subsequent call to
-#' [`list_subscription_grants`][datazone_list_subscription_grants] to list
-#' the next set of subscription grants.
+#' @param maxResults The maximum number of subscription grants to return in a single call to [`list_subscription_grants`][datazone_list_subscription_grants]. When the number of subscription grants to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_subscription_grants`][datazone_list_subscription_grants] to list the next set of subscription grants.
+#' @param nextToken When the number of subscription grants is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of subscription grants, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_subscription_grants`][datazone_list_subscription_grants] to list the next set of subscription grants.
 #'
 #' @keywords internal
 #'
@@ -5084,8 +4789,7 @@ datazone_list_subscription_grants <- function(domainIdentifier, environmentId = 
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
 #' @param status Specifies the status of the subscription requests.
 #' 
-#' This is not a required parameter, but if not specified, by default,
-#' Amazon DataZone returns only `PENDING` subscription requests.
+#' This is not a required parameter, but if not specified, by default, Amazon DataZone returns only `PENDING` subscription requests.
 #' @param subscribedListingId The identifier of the subscribed listing.
 #' @param owningProjectId The identifier of the project for the subscription requests.
 #' @param owningIamPrincipalArn The ARN of the owning IAM principal.
@@ -5094,20 +4798,8 @@ datazone_list_subscription_grants <- function(domainIdentifier, environmentId = 
 #' @param owningGroupId The ID of the owning group.
 #' @param sortBy Specifies the way to sort the results of this action.
 #' @param sortOrder Specifies the sort order for the results of this action.
-#' @param maxResults The maximum number of subscription requests to return in a single call
-#' to [`list_subscription_requests`][datazone_list_subscription_requests].
-#' When the number of subscription requests to be listed is greater than
-#' the value of `MaxResults`, the response contains a `NextToken` value
-#' that you can use in a subsequent call to
-#' [`list_subscription_requests`][datazone_list_subscription_requests] to
-#' list the next set of subscription requests.
-#' @param nextToken When the number of subscription requests is greater than the default
-#' value for the `MaxResults` parameter, or if you explicitly specify a
-#' value for `MaxResults` that is less than the number of subscription
-#' requests, the response includes a pagination token named `NextToken`.
-#' You can specify this `NextToken` value in a subsequent call to
-#' [`list_subscription_requests`][datazone_list_subscription_requests] to
-#' list the next set of subscription requests.
+#' @param maxResults The maximum number of subscription requests to return in a single call to [`list_subscription_requests`][datazone_list_subscription_requests]. When the number of subscription requests to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_subscription_requests`][datazone_list_subscription_requests] to list the next set of subscription requests.
+#' @param nextToken When the number of subscription requests is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of subscription requests, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_subscription_requests`][datazone_list_subscription_requests] to list the next set of subscription requests.
 #'
 #' @keywords internal
 #'
@@ -5138,26 +4830,12 @@ datazone_list_subscription_requests <- function(domainIdentifier, status = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_subscription_targets/](https://www.paws-r-sdk.com/docs/datazone_list_subscription_targets/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain where you want to list
-#' subscription targets.
-#' @param environmentIdentifier &#91;required&#93; The identifier of the environment where you want to list subscription
-#' targets.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain where you want to list subscription targets.
+#' @param environmentIdentifier &#91;required&#93; The identifier of the environment where you want to list subscription targets.
 #' @param sortBy Specifies the way in which the results of this action are to be sorted.
 #' @param sortOrder Specifies the sort order for the results of this action.
-#' @param maxResults The maximum number of subscription targets to return in a single call to
-#' [`list_subscription_targets`][datazone_list_subscription_targets]. When
-#' the number of subscription targets to be listed is greater than the
-#' value of `MaxResults`, the response contains a `NextToken` value that
-#' you can use in a subsequent call to
-#' [`list_subscription_targets`][datazone_list_subscription_targets] to
-#' list the next set of subscription targets.
-#' @param nextToken When the number of subscription targets is greater than the default
-#' value for the `MaxResults` parameter, or if you explicitly specify a
-#' value for `MaxResults` that is less than the number of subscription
-#' targets, the response includes a pagination token named `NextToken`. You
-#' can specify this `NextToken` value in a subsequent call to
-#' [`list_subscription_targets`][datazone_list_subscription_targets] to
-#' list the next set of subscription targets.
+#' @param maxResults The maximum number of subscription targets to return in a single call to [`list_subscription_targets`][datazone_list_subscription_targets]. When the number of subscription targets to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_subscription_targets`][datazone_list_subscription_targets] to list the next set of subscription targets.
+#' @param nextToken When the number of subscription targets is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of subscription targets, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_subscription_targets`][datazone_list_subscription_targets] to list the next set of subscription targets.
 #'
 #' @keywords internal
 #'
@@ -5189,14 +4867,11 @@ datazone_list_subscription_targets <- function(domainIdentifier, environmentIden
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_subscriptions/](https://www.paws-r-sdk.com/docs/datazone_list_subscriptions/) for full documentation.
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
-#' @param subscriptionRequestIdentifier The identifier of the subscription request for the subscriptions that
-#' you want to list.
+#' @param subscriptionRequestIdentifier The identifier of the subscription request for the subscriptions that you want to list.
 #' @param status The status of the subscriptions that you want to list.
 #' 
-#' This is not a required parameter, but if not provided, by default,
-#' Amazon DataZone returns only `APPROVED` subscriptions.
-#' @param subscribedListingId The identifier of the subscribed listing for the subscriptions that you
-#' want to list.
+#' This is not a required parameter, but if not provided, by default, Amazon DataZone returns only `APPROVED` subscriptions.
+#' @param subscribedListingId The identifier of the subscribed listing for the subscriptions that you want to list.
 #' @param owningProjectId The identifier of the owning project.
 #' @param owningIamPrincipalArn The ARN of the owning IAM principal.
 #' @param owningUserId The ID of the owning user.
@@ -5204,19 +4879,8 @@ datazone_list_subscription_targets <- function(domainIdentifier, environmentIden
 #' @param approverProjectId The identifier of the project for the subscription's approver.
 #' @param sortBy Specifies the way in which the results of this action are to be sorted.
 #' @param sortOrder Specifies the sort order for the results of this action.
-#' @param maxResults The maximum number of subscriptions to return in a single call to
-#' [`list_subscriptions`][datazone_list_subscriptions]. When the number of
-#' subscriptions to be listed is greater than the value of `MaxResults`,
-#' the response contains a `NextToken` value that you can use in a
-#' subsequent call to [`list_subscriptions`][datazone_list_subscriptions]
-#' to list the next set of Subscriptions.
-#' @param nextToken When the number of subscriptions is greater than the default value for
-#' the `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of subscriptions, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`list_subscriptions`][datazone_list_subscriptions] to list the next set
-#' of subscriptions.
+#' @param maxResults The maximum number of subscriptions to return in a single call to [`list_subscriptions`][datazone_list_subscriptions]. When the number of subscriptions to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`list_subscriptions`][datazone_list_subscriptions] to list the next set of Subscriptions.
+#' @param nextToken When the number of subscriptions is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of subscriptions, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`list_subscriptions`][datazone_list_subscriptions] to list the next set of subscriptions.
 #'
 #' @keywords internal
 #'
@@ -5278,24 +4942,14 @@ datazone_list_tags_for_resource <- function(resourceArn) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_list_time_series_data_points/](https://www.paws-r-sdk.com/docs/datazone_list_time_series_data_points/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain that houses the assets for which
-#' you want to list time series data points.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain that houses the assets for which you want to list time series data points.
 #' @param entityIdentifier &#91;required&#93; The ID of the asset for which you want to list data points.
 #' @param entityType &#91;required&#93; The type of the asset for which you want to list data points.
 #' @param formName &#91;required&#93; The name of the time series data points form.
 #' @param startedAt The timestamp at which the data points that you want to list started.
 #' @param endedAt The timestamp at which the data points that you wanted to list ended.
-#' @param nextToken When the number of data points is greater than the default value for the
-#' MaxResults parameter, or if you explicitly specify a value for
-#' MaxResults that is less than the number of data points, the response
-#' includes a pagination token named NextToken. You can specify this
-#' NextToken value in a subsequent call to ListTimeSeriesDataPoints to list
-#' the next set of data points.
-#' @param maxResults The maximum number of data points to return in a single call to
-#' ListTimeSeriesDataPoints. When the number of data points to be listed is
-#' greater than the value of MaxResults, the response contains a NextToken
-#' value that you can use in a subsequent call to ListTimeSeriesDataPoints
-#' to list the next set of data points.
+#' @param nextToken When the number of data points is greater than the default value for the MaxResults parameter, or if you explicitly specify a value for MaxResults that is less than the number of data points, the response includes a pagination token named NextToken. You can specify this NextToken value in a subsequent call to ListTimeSeriesDataPoints to list the next set of data points.
+#' @param maxResults The maximum number of data points to return in a single call to ListTimeSeriesDataPoints. When the number of data points to be listed is greater than the value of MaxResults, the response contains a NextToken value that you can use in a subsequent call to ListTimeSeriesDataPoints to list the next set of data points.
 #'
 #' @keywords internal
 #'
@@ -5327,10 +4981,8 @@ datazone_list_time_series_data_points <- function(domainIdentifier, entityIdenti
 #' See [https://www.paws-r-sdk.com/docs/datazone_post_lineage_event/](https://www.paws-r-sdk.com/docs/datazone_post_lineage_event/) for full documentation.
 #'
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where you want to post a data lineage event.
-#' @param event &#91;required&#93; The data lineage event that you want to post. Only open-lineage run
-#' event are supported as events.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param event &#91;required&#93; The data lineage event that you want to post. Only open-lineage run event are supported as events.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -5361,13 +5013,11 @@ datazone_post_lineage_event <- function(domainIdentifier, event, clientToken = N
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_post_time_series_data_points/](https://www.paws-r-sdk.com/docs/datazone_post_time_series_data_points/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which you want to post time
-#' series data points.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain in which you want to post time series data points.
 #' @param entityIdentifier &#91;required&#93; The ID of the asset for which you want to post time series data points.
 #' @param entityType &#91;required&#93; The type of the asset for which you want to post data points.
 #' @param forms &#91;required&#93; The forms that contain the data points that you want to post.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -5398,19 +5048,12 @@ datazone_post_time_series_data_points <- function(domainIdentifier, entityIdenti
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_put_data_export_configuration/](https://www.paws-r-sdk.com/docs/datazone_put_data_export_configuration/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The domain ID for which you want to create data export configuration
-#' details.
-#' @param enableExport &#91;required&#93; Specifies that the export is to be enabled as part of creating data
-#' export configuration details.
-#' @param encryptionConfiguration The encryption configuration as part of creating data export
-#' configuration details.
+#' @param domainIdentifier &#91;required&#93; The domain ID for which you want to create data export configuration details.
+#' @param enableExport &#91;required&#93; Specifies that the export is to be enabled as part of creating data export configuration details.
+#' @param encryptionConfiguration The encryption configuration as part of creating data export configuration details.
 #' 
-#' The KMS key provided here as part of encryptionConfiguration must have
-#' the required permissions as described in [KMS permissions for exporting
-#' asset metadata in Amazon SageMaker Unified
-#' Studio](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/adminguide/sagemaker-unified-studio-export-asset-metadata-kms-permissions.html).
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request. This field is automatically populated if not provided.
+#' The KMS key provided here as part of encryptionConfiguration must have the required permissions as described in [KMS permissions for exporting asset metadata in Amazon SageMaker Unified Studio](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/adminguide/sagemaker-unified-studio-export-asset-metadata-kms-permissions.html).
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
 #'
 #' @keywords internal
 #'
@@ -5449,13 +5092,15 @@ datazone_put_data_export_configuration <- function(domainIdentifier, enableExpor
 #' @param environmentRolePermissionBoundary The environment role permissions boundary.
 #' @param enabledRegions &#91;required&#93; Specifies the enabled Amazon Web Services Regions.
 #' @param regionalParameters The regional parameters in the environment blueprint.
+#' @param resourceConfigurations The resource configurations of the environment blueprint.
+#' @param allowUserProvidedConfigurations Specifies whether user-provided resource configurations are allowed for the environment blueprint.
 #' @param globalParameters Region-agnostic environment blueprint parameters.
 #' @param provisioningConfigurations The provisioning configuration of a blueprint.
 #'
 #' @keywords internal
 #'
 #' @rdname datazone_put_environment_blueprint_configuration
-datazone_put_environment_blueprint_configuration <- function(domainIdentifier, environmentBlueprintIdentifier, provisioningRoleArn = NULL, manageAccessRoleArn = NULL, environmentRolePermissionBoundary = NULL, enabledRegions, regionalParameters = NULL, globalParameters = NULL, provisioningConfigurations = NULL) {
+datazone_put_environment_blueprint_configuration <- function(domainIdentifier, environmentBlueprintIdentifier, provisioningRoleArn = NULL, manageAccessRoleArn = NULL, environmentRolePermissionBoundary = NULL, enabledRegions, regionalParameters = NULL, resourceConfigurations = NULL, allowUserProvidedConfigurations = NULL, globalParameters = NULL, provisioningConfigurations = NULL) {
   op <- new_operation(
     name = "PutEnvironmentBlueprintConfiguration",
     http_method = "PUT",
@@ -5464,7 +5109,7 @@ datazone_put_environment_blueprint_configuration <- function(domainIdentifier, e
     paginator = list(),
     stream_api = FALSE
   )
-  input <- .datazone$put_environment_blueprint_configuration_input(domainIdentifier = domainIdentifier, environmentBlueprintIdentifier = environmentBlueprintIdentifier, provisioningRoleArn = provisioningRoleArn, manageAccessRoleArn = manageAccessRoleArn, environmentRolePermissionBoundary = environmentRolePermissionBoundary, enabledRegions = enabledRegions, regionalParameters = regionalParameters, globalParameters = globalParameters, provisioningConfigurations = provisioningConfigurations)
+  input <- .datazone$put_environment_blueprint_configuration_input(domainIdentifier = domainIdentifier, environmentBlueprintIdentifier = environmentBlueprintIdentifier, provisioningRoleArn = provisioningRoleArn, manageAccessRoleArn = manageAccessRoleArn, environmentRolePermissionBoundary = environmentRolePermissionBoundary, enabledRegions = enabledRegions, regionalParameters = regionalParameters, resourceConfigurations = resourceConfigurations, allowUserProvidedConfigurations = allowUserProvidedConfigurations, globalParameters = globalParameters, provisioningConfigurations = provisioningConfigurations)
   output <- .datazone$put_environment_blueprint_configuration_output()
   config <- get_config()
   svc <- .datazone$service(config, op)
@@ -5483,19 +5128,9 @@ datazone_put_environment_blueprint_configuration <- function(domainIdentifier, e
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
 #' @param match &#91;required&#93; List of query match clauses.
-#' @param maxResults The maximum number of entities to return in a single call to
-#' [`query_graph`][datazone_query_graph]. When the number of entities to be
-#' listed is greater than the value of `MaxResults`, the response contains
-#' a `NextToken` value that you can use in a subsequent call to
-#' [`query_graph`][datazone_query_graph] to list the next set of entities.
-#' @param nextToken When the number of entities is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of entities, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`query_graph`][datazone_query_graph] to list the next set of entities.
-#' @param additionalAttributes Additional details on the queried entity that can be requested in the
-#' response.
+#' @param maxResults The maximum number of entities to return in a single call to [`query_graph`][datazone_query_graph]. When the number of entities to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`query_graph`][datazone_query_graph] to list the next set of entities.
+#' @param nextToken When the number of entities is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of entities, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`query_graph`][datazone_query_graph] to list the next set of entities.
+#' @param additionalAttributes Additional details on the queried entity that can be requested in the response.
 #'
 #' @keywords internal
 #'
@@ -5530,13 +5165,9 @@ datazone_query_graph <- function(domainIdentifier, match, maxResults = NULL, nex
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
 #' @param identifier &#91;required&#93; The identifier of the prediction.
 #' @param revision The revision that is to be made to the asset.
-#' @param rejectRule Specifies the rule (or the conditions) under which a prediction can be
-#' rejected.
-#' @param rejectChoices Specifies the prediction (aka, the automatically generated piece of
-#' metadata) and the target (for example, a column name) that can be
-#' rejected.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param rejectRule Specifies the rule (or the conditions) under which a prediction can be rejected.
+#' @param rejectChoices Specifies the prediction (aka, the automatically generated piece of metadata) and the target (for example, a column name) that can be rejected.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -5567,8 +5198,7 @@ datazone_reject_predictions <- function(domainIdentifier, identifier, revision =
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_reject_subscription_request/](https://www.paws-r-sdk.com/docs/datazone_reject_subscription_request/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the subscription
-#' request was rejected.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the subscription request was rejected.
 #' @param identifier &#91;required&#93; The identifier of the subscription request that was rejected.
 #' @param decisionComment The decision comment of the rejected subscription request.
 #'
@@ -5605,8 +5235,7 @@ datazone_reject_subscription_request <- function(domainIdentifier, identifier, d
 #' @param entityType &#91;required&#93; The type of the entity from which you want to remove an owner.
 #' @param entityIdentifier &#91;required&#93; The ID of the entity from which you want to remove an owner.
 #' @param owner &#91;required&#93; The owner that you want to remove from an entity.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -5642,10 +5271,8 @@ datazone_remove_entity_owner <- function(domainIdentifier, entityType, entityIde
 #' @param entityIdentifier &#91;required&#93; The ID of the entity from which you want to remove a policy grant.
 #' @param policyType &#91;required&#93; The type of the policy that you want to remove.
 #' @param principal &#91;required&#93; The principal from which you want to remove a policy grant.
-#' @param grantIdentifier The ID of the policy grant that is to be removed from a specified
-#' entity.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param grantIdentifier The ID of the policy grant that is to be removed from a specified entity.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -5676,11 +5303,9 @@ datazone_remove_policy_grant <- function(domainIdentifier, entityType, entityIde
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_revoke_subscription/](https://www.paws-r-sdk.com/docs/datazone_revoke_subscription/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain where you want to revoke a
-#' subscription.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain where you want to revoke a subscription.
 #' @param identifier &#91;required&#93; The identifier of the revoked subscription.
-#' @param retainPermissions Specifies whether permissions are retained when the subscription is
-#' revoked.
+#' @param retainPermissions Specifies whether permissions are retained when the subscription is revoked.
 #'
 #' @keywords internal
 #'
@@ -5713,24 +5338,14 @@ datazone_revoke_subscription <- function(domainIdentifier, identifier, retainPer
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain.
 #' @param owningProjectIdentifier The identifier of the owning project specified for the search.
-#' @param maxResults The maximum number of results to return in a single call to
-#' [`search`][datazone_search]. When the number of results to be listed is
-#' greater than the value of `MaxResults`, the response contains a
-#' `NextToken` value that you can use in a subsequent call to
-#' [`search`][datazone_search] to list the next set of results.
-#' @param nextToken When the number of results is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of results, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to [`search`][datazone_search] to
-#' list the next set of results.
+#' @param maxResults The maximum number of results to return in a single call to [`search`][datazone_search]. When the number of results to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`search`][datazone_search] to list the next set of results.
+#' @param nextToken When the number of results is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of results, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`search`][datazone_search] to list the next set of results.
 #' @param searchScope &#91;required&#93; The scope of the search.
 #' @param searchText Specifies the text for which to search.
 #' @param searchIn The details of the search.
 #' @param filters Specifies the search filters.
 #' @param sort Specifies the way in which the search results are to be sorted.
-#' @param additionalAttributes Specifies additional attributes for the [`search`][datazone_search]
-#' action.
+#' @param additionalAttributes Specifies additional attributes for the [`search`][datazone_search] action.
 #'
 #' @keywords internal
 #'
@@ -5761,24 +5376,11 @@ datazone_search <- function(domainIdentifier, owningProjectIdentifier = NULL, ma
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_search_group_profiles/](https://www.paws-r-sdk.com/docs/datazone_search_group_profiles/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which you want to search
-#' group profiles.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which you want to search group profiles.
 #' @param groupType &#91;required&#93; The group type for which to search.
 #' @param searchText Specifies the text for which to search.
-#' @param maxResults The maximum number of results to return in a single call to
-#' [`search_group_profiles`][datazone_search_group_profiles]. When the
-#' number of results to be listed is greater than the value of
-#' `MaxResults`, the response contains a `NextToken` value that you can use
-#' in a subsequent call to
-#' [`search_group_profiles`][datazone_search_group_profiles] to list the
-#' next set of results.
-#' @param nextToken When the number of results is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of results, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`search_group_profiles`][datazone_search_group_profiles] to list the
-#' next set of results.
+#' @param maxResults The maximum number of results to return in a single call to [`search_group_profiles`][datazone_search_group_profiles]. When the number of results to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`search_group_profiles`][datazone_search_group_profiles] to list the next set of results.
+#' @param nextToken When the number of results is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of results, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`search_group_profiles`][datazone_search_group_profiles] to list the next set of results.
 #'
 #' @keywords internal
 #'
@@ -5812,22 +5414,10 @@ datazone_search_group_profiles <- function(domainIdentifier, groupType, searchTe
 #' @param domainIdentifier &#91;required&#93; The identifier of the domain in which to search listings.
 #' @param searchText Specifies the text for which to search.
 #' @param searchIn The details of the search.
-#' @param maxResults The maximum number of results to return in a single call to
-#' [`search_listings`][datazone_search_listings]. When the number of
-#' results to be listed is greater than the value of `MaxResults`, the
-#' response contains a `NextToken` value that you can use in a subsequent
-#' call to [`search_listings`][datazone_search_listings] to list the next
-#' set of results.
-#' @param nextToken When the number of results is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of results, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`search_listings`][datazone_search_listings] to list the next set of
-#' results.
+#' @param maxResults The maximum number of results to return in a single call to [`search_listings`][datazone_search_listings]. When the number of results to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`search_listings`][datazone_search_listings] to list the next set of results.
+#' @param nextToken When the number of results is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of results, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`search_listings`][datazone_search_listings] to list the next set of results.
 #' @param filters Specifies the filters for the search of listings.
-#' @param aggregations Enables you to specify one or more attributes to compute and return
-#' counts grouped by field values.
+#' @param aggregations Enables you to specify one or more attributes to compute and return counts grouped by field values.
 #' @param sort Specifies the way for sorting the search results.
 #' @param additionalAttributes Specifies additional attributes for the search.
 #'
@@ -5860,25 +5450,14 @@ datazone_search_listings <- function(domainIdentifier, searchText = NULL, search
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_search_types/](https://www.paws-r-sdk.com/docs/datazone_search_types/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to invoke the
-#' [`search_types`][datazone_search_types] action.
-#' @param maxResults The maximum number of results to return in a single call to
-#' [`search_types`][datazone_search_types]. When the number of results to
-#' be listed is greater than the value of `MaxResults`, the response
-#' contains a `NextToken` value that you can use in a subsequent call to
-#' [`search_types`][datazone_search_types] to list the next set of results.
-#' @param nextToken When the number of results is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of results, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`search_types`][datazone_search_types] to list the next set of results.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to invoke the [`search_types`][datazone_search_types] action.
+#' @param maxResults The maximum number of results to return in a single call to [`search_types`][datazone_search_types]. When the number of results to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`search_types`][datazone_search_types] to list the next set of results.
+#' @param nextToken When the number of results is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of results, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`search_types`][datazone_search_types] to list the next set of results.
 #' @param searchScope &#91;required&#93; Specifies the scope of the search for types.
 #' @param searchText Specifies the text for which to search.
 #' @param searchIn The details of the search.
 #' @param filters The filters for the [`search_types`][datazone_search_types] action.
-#' @param sort The specifies the way to sort the
-#' [`search_types`][datazone_search_types] results.
+#' @param sort The specifies the way to sort the [`search_types`][datazone_search_types] results.
 #' @param managed &#91;required&#93; Specifies whether the search is managed.
 #'
 #' @keywords internal
@@ -5910,24 +5489,11 @@ datazone_search_types <- function(domainIdentifier, maxResults = NULL, nextToken
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_search_user_profiles/](https://www.paws-r-sdk.com/docs/datazone_search_user_profiles/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which you want to search
-#' user profiles.
-#' @param userType &#91;required&#93; Specifies the user type for the
-#' [`search_user_profiles`][datazone_search_user_profiles] action.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which you want to search user profiles.
+#' @param userType &#91;required&#93; Specifies the user type for the [`search_user_profiles`][datazone_search_user_profiles] action.
 #' @param searchText Specifies the text for which to search.
-#' @param maxResults The maximum number of results to return in a single call to
-#' [`search_user_profiles`][datazone_search_user_profiles]. When the number
-#' of results to be listed is greater than the value of `MaxResults`, the
-#' response contains a `NextToken` value that you can use in a subsequent
-#' call to [`search_user_profiles`][datazone_search_user_profiles] to list
-#' the next set of results.
-#' @param nextToken When the number of results is greater than the default value for the
-#' `MaxResults` parameter, or if you explicitly specify a value for
-#' `MaxResults` that is less than the number of results, the response
-#' includes a pagination token named `NextToken`. You can specify this
-#' `NextToken` value in a subsequent call to
-#' [`search_user_profiles`][datazone_search_user_profiles] to list the next
-#' set of results.
+#' @param maxResults The maximum number of results to return in a single call to [`search_user_profiles`][datazone_search_user_profiles]. When the number of results to be listed is greater than the value of `MaxResults`, the response contains a `NextToken` value that you can use in a subsequent call to [`search_user_profiles`][datazone_search_user_profiles] to list the next set of results.
+#' @param nextToken When the number of results is greater than the default value for the `MaxResults` parameter, or if you explicitly specify a value for `MaxResults` that is less than the number of results, the response includes a pagination token named `NextToken`. You can specify this `NextToken` value in a subsequent call to [`search_user_profiles`][datazone_search_user_profiles] to list the next set of results.
 #'
 #' @keywords internal
 #'
@@ -5958,11 +5524,9 @@ datazone_search_user_profiles <- function(domainIdentifier, userType, searchText
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_start_data_source_run/](https://www.paws-r-sdk.com/docs/datazone_start_data_source_run/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to start a data
-#' source run.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which to start a data source run.
 #' @param dataSourceIdentifier &#91;required&#93; The identifier of the data source.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -5993,15 +5557,12 @@ datazone_start_data_source_run <- function(domainIdentifier, dataSourceIdentifie
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_start_metadata_generation_run/](https://www.paws-r-sdk.com/docs/datazone_start_metadata_generation_run/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where you want to start a metadata
-#' generation run.
+#' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where you want to start a metadata generation run.
 #' @param type The type of the metadata generation run.
 #' @param types The types of the metadata generation run.
 #' @param target &#91;required&#93; The asset for which you want to start a metadata generation run.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request. This field is automatically populated if not provided.
-#' @param owningProjectIdentifier &#91;required&#93; The ID of the project that owns the asset for which you want to start a
-#' metadata generation run.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
+#' @param owningProjectIdentifier &#91;required&#93; The ID of the project that owns the asset for which you want to start a metadata generation run.
 #'
 #' @keywords internal
 #'
@@ -6025,33 +5586,95 @@ datazone_start_metadata_generation_run <- function(domainIdentifier, type = NULL
 }
 .datazone$operations$start_metadata_generation_run <- datazone_start_metadata_generation_run
 
-#' Starts a notebook run in an Amazon DataZone domain
+#' Starts a notebook export in Amazon SageMaker Unified Studio
 #'
 #' @description
-#' Starts a notebook run in an Amazon DataZone domain. A notebook run represents the execution of a Amazon DataZone notebook within a project. You can configure compute, network, timeout, and environment settings for the run.
+#' Starts a notebook export in Amazon SageMaker Unified Studio. This operation exports a notebook to a specified file format and stores the output in Amazon Simple Storage Service.
+#'
+#' See [https://www.paws-r-sdk.com/docs/datazone_start_notebook_export/](https://www.paws-r-sdk.com/docs/datazone_start_notebook_export/) for full documentation.
+#'
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which to export the notebook.
+#' @param notebookIdentifier &#91;required&#93; The identifier of the notebook to export.
+#' @param owningProjectIdentifier &#91;required&#93; The identifier of the project that owns the notebook.
+#' @param fileFormat &#91;required&#93; The file format for the notebook export. Valid values are `PDF` and `IPYNB`.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
+#'
+#' @keywords internal
+#'
+#' @rdname datazone_start_notebook_export
+datazone_start_notebook_export <- function(domainIdentifier, notebookIdentifier, owningProjectIdentifier, fileFormat, clientToken = NULL) {
+  op <- new_operation(
+    name = "StartNotebookExport",
+    http_method = "POST",
+    http_path = "/v2/domains/{domainIdentifier}/notebook-exports",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .datazone$start_notebook_export_input(domainIdentifier = domainIdentifier, notebookIdentifier = notebookIdentifier, owningProjectIdentifier = owningProjectIdentifier, fileFormat = fileFormat, clientToken = clientToken)
+  output <- .datazone$start_notebook_export_output()
+  config <- get_config()
+  svc <- .datazone$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.datazone$operations$start_notebook_export <- datazone_start_notebook_export
+
+#' Starts a notebook import in Amazon SageMaker Unified Studio
+#'
+#' @description
+#' Starts a notebook import in Amazon SageMaker Unified Studio. This operation imports a notebook from an Amazon Simple Storage Service location into a project.
+#'
+#' See [https://www.paws-r-sdk.com/docs/datazone_start_notebook_import/](https://www.paws-r-sdk.com/docs/datazone_start_notebook_import/) for full documentation.
+#'
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which to import the notebook.
+#' @param owningProjectIdentifier &#91;required&#93; The identifier of the project that will own the imported notebook.
+#' @param sourceLocation &#91;required&#93; The source location of the notebook to import. This specifies the Amazon Simple Storage Service URI of the notebook file.
+#' @param name &#91;required&#93; The name of the imported notebook. The name must be between 1 and 256 characters.
+#' @param description The description of the imported notebook.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
+#'
+#' @keywords internal
+#'
+#' @rdname datazone_start_notebook_import
+datazone_start_notebook_import <- function(domainIdentifier, owningProjectIdentifier, sourceLocation, name, description = NULL, clientToken = NULL) {
+  op <- new_operation(
+    name = "StartNotebookImport",
+    http_method = "POST",
+    http_path = "/v2/domains/{domainIdentifier}/notebook-imports",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .datazone$start_notebook_import_input(domainIdentifier = domainIdentifier, owningProjectIdentifier = owningProjectIdentifier, sourceLocation = sourceLocation, name = name, description = description, clientToken = clientToken)
+  output <- .datazone$start_notebook_import_output()
+  config <- get_config()
+  svc <- .datazone$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.datazone$operations$start_notebook_import <- datazone_start_notebook_import
+
+#' Starts a notebook run in Amazon SageMaker Unified Studio
+#'
+#' @description
+#' Starts a notebook run in Amazon SageMaker Unified Studio. A notebook run represents the execution of an [Amazon SageMaker notebook](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) within a project. You can configure compute, network, timeout, and environment settings for the run.
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_start_notebook_run/](https://www.paws-r-sdk.com/docs/datazone_start_notebook_run/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the notebook run
-#' is started.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is started.
 #' @param owningProjectIdentifier &#91;required&#93; The identifier of the project that owns the notebook run.
 #' @param notebookIdentifier &#91;required&#93; The identifier of the notebook to run.
 #' @param scheduleIdentifier The identifier of the schedule associated with the notebook run.
-#' @param computeConfiguration The compute configuration for the notebook run, including instance type
-#' and environment version.
-#' @param networkConfiguration The network configuration for the notebook run, including network access
-#' type and optional VPC settings.
-#' @param timeoutConfiguration The timeout configuration for the notebook run. The default timeout is
-#' 720 minutes (12 hours) and the maximum is 1440 minutes (24 hours).
+#' @param computeConfiguration The compute configuration for the notebook run, including instance type and environment version.
+#' @param networkConfiguration The network configuration for the notebook run, including network access type and optional VPC settings.
+#' @param timeoutConfiguration The timeout configuration for the notebook run. The default timeout is 720 minutes (12 hours) and the maximum is 1440 minutes (24 hours).
 #' @param triggerSource The source that triggered the notebook run.
-#' @param metadata The metadata for the notebook run, specified as key-value pairs. You can
-#' specify up to 50 entries, with keys up to 128 characters and values up
-#' to 1024 characters.
-#' @param parameters The sensitive parameters for the notebook run, specified as key-value
-#' pairs. You can specify up to 50 entries, with keys up to 128 characters
-#' and values up to 1024 characters.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request. This field is automatically populated if not provided.
+#' @param metadata The metadata for the notebook run, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.
+#' @param parameters The sensitive parameters for the notebook run, specified as key-value pairs. You can specify up to 50 entries, with keys up to 128 characters and values up to 1024 characters.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
 #'
 #' @keywords internal
 #'
@@ -6075,18 +5698,16 @@ datazone_start_notebook_run <- function(domainIdentifier, owningProjectIdentifie
 }
 .datazone$operations$start_notebook_run <- datazone_start_notebook_run
 
-#' Stops a running notebook run in an Amazon DataZone domain
+#' Stops a running notebook run in Amazon SageMaker Unified Studio
 #'
 #' @description
-#' Stops a running notebook run in an Amazon DataZone domain.
+#' Stops a running [notebook run](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) in Amazon SageMaker Unified Studio.
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_stop_notebook_run/](https://www.paws-r-sdk.com/docs/datazone_stop_notebook_run/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which the notebook run
-#' is stopped.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which the notebook run is stopped.
 #' @param identifier &#91;required&#93; The identifier of the notebook run to stop.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request. This field is automatically populated if not provided.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
 #'
 #' @keywords internal
 #'
@@ -6118,8 +5739,7 @@ datazone_stop_notebook_run <- function(domainIdentifier, identifier, clientToken
 #' See [https://www.paws-r-sdk.com/docs/datazone_tag_resource/](https://www.paws-r-sdk.com/docs/datazone_tag_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be tagged in Amazon DataZone.
-#' @param tags &#91;required&#93; Specifies the tags for the [`tag_resource`][datazone_tag_resource]
-#' action.
+#' @param tags &#91;required&#93; Specifies the tags for the [`tag_resource`][datazone_tag_resource] action.
 #'
 #' @keywords internal
 #'
@@ -6151,8 +5771,7 @@ datazone_tag_resource <- function(resourceArn, tags) {
 #' See [https://www.paws-r-sdk.com/docs/datazone_untag_resource/](https://www.paws-r-sdk.com/docs/datazone_untag_resource/) for full documentation.
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be untagged in Amazon DataZone.
-#' @param tagKeys &#91;required&#93; Specifies the tag keys for the
-#' [`untag_resource`][datazone_untag_resource] action.
+#' @param tagKeys &#91;required&#93; Specifies the tag keys for the [`untag_resource`][datazone_untag_resource] action.
 #'
 #' @keywords internal
 #'
@@ -6187,11 +5806,8 @@ datazone_untag_resource <- function(resourceArn, tagKeys) {
 #' @param identifier &#91;required&#93; The ID of the account pool that is to be updated.
 #' @param name The name of the account pool that is to be updated.
 #' @param description The description of the account pool that is to be udpated.
-#' @param resolutionStrategy The mechanism used to resolve the account selection from the account
-#' pool.
-#' @param accountSource The source of accounts for the account pool. In the current release,
-#' it's either a static list of accounts provided by the customer or a
-#' custom Amazon Web Services Lambda handler.
+#' @param resolutionStrategy The mechanism used to resolve the account selection from the account pool.
+#' @param accountSource The source of accounts for the account pool. In the current release, it's either a static list of accounts provided by the customer or a custom Amazon Web Services Lambda handler.
 #'
 #' @keywords internal
 #'
@@ -6296,24 +5912,15 @@ datazone_update_connection <- function(configurations = NULL, domainIdentifier, 
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the domain in which to update a data source.
 #' @param identifier &#91;required&#93; The identifier of the data source to be updated.
-#' @param name The name to be updated as part of the
-#' [`update_data_source`][datazone_update_data_source] action.
-#' @param description The description to be updated as part of the
-#' [`update_data_source`][datazone_update_data_source] action.
-#' @param enableSetting The enable setting to be updated as part of the
-#' [`update_data_source`][datazone_update_data_source] action.
-#' @param publishOnImport The publish on import setting to be updated as part of the
-#' [`update_data_source`][datazone_update_data_source] action.
-#' @param assetFormsInput The asset forms to be updated as part of the
-#' [`update_data_source`][datazone_update_data_source] action.
-#' @param schedule The schedule to be updated as part of the
-#' [`update_data_source`][datazone_update_data_source] action.
-#' @param configuration The configuration to be updated as part of the
-#' [`update_data_source`][datazone_update_data_source] action.
-#' @param recommendation The recommendation to be updated as part of the
-#' [`update_data_source`][datazone_update_data_source] action.
-#' @param retainPermissionsOnRevokeFailure Specifies that the granted permissions are retained in case of a
-#' self-subscribe functionality failure for a data source.
+#' @param name The name to be updated as part of the [`update_data_source`][datazone_update_data_source] action.
+#' @param description The description to be updated as part of the [`update_data_source`][datazone_update_data_source] action.
+#' @param enableSetting The enable setting to be updated as part of the [`update_data_source`][datazone_update_data_source] action.
+#' @param publishOnImport The publish on import setting to be updated as part of the [`update_data_source`][datazone_update_data_source] action.
+#' @param assetFormsInput The asset forms to be updated as part of the [`update_data_source`][datazone_update_data_source] action.
+#' @param schedule The schedule to be updated as part of the [`update_data_source`][datazone_update_data_source] action.
+#' @param configuration The configuration to be updated as part of the [`update_data_source`][datazone_update_data_source] action.
+#' @param recommendation The recommendation to be updated as part of the [`update_data_source`][datazone_update_data_source] action.
+#' @param retainPermissionsOnRevokeFailure Specifies that the granted permissions are retained in case of a self-subscribe functionality failure for a data source.
 #'
 #' @keywords internal
 #'
@@ -6345,17 +5952,12 @@ datazone_update_data_source <- function(domainIdentifier, identifier, name = NUL
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_domain/](https://www.paws-r-sdk.com/docs/datazone_update_domain/) for full documentation.
 #'
 #' @param identifier &#91;required&#93; The ID of the Amazon Web Services domain that is to be updated.
-#' @param description The description to be updated as part of the
-#' [`update_domain`][datazone_update_domain] action.
-#' @param singleSignOn The single sign-on option to be updated as part of the
-#' [`update_domain`][datazone_update_domain] action.
-#' @param domainExecutionRole The domain execution role to be updated as part of the
-#' [`update_domain`][datazone_update_domain] action.
+#' @param description The description to be updated as part of the [`update_domain`][datazone_update_domain] action.
+#' @param singleSignOn The single sign-on option to be updated as part of the [`update_domain`][datazone_update_domain] action.
+#' @param domainExecutionRole The domain execution role to be updated as part of the [`update_domain`][datazone_update_domain] action.
 #' @param serviceRole The service role of the domain.
-#' @param name The name to be updated as part of the
-#' [`update_domain`][datazone_update_domain] action.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param name The name to be updated as part of the [`update_domain`][datazone_update_domain] action.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -6422,14 +6024,10 @@ datazone_update_domain_unit <- function(domainIdentifier, identifier, descriptio
 #'
 #' @param domainIdentifier &#91;required&#93; The identifier of the domain in which the environment is to be updated.
 #' @param identifier &#91;required&#93; The identifier of the environment that is to be updated.
-#' @param name The name to be updated as part of the
-#' [`update_environment`][datazone_update_environment] action.
-#' @param description The description to be updated as part of the
-#' [`update_environment`][datazone_update_environment] action.
-#' @param glossaryTerms The glossary terms to be updated as part of the
-#' [`update_environment`][datazone_update_environment] action.
-#' @param blueprintVersion The blueprint version to which the environment should be updated. You
-#' can only specify the following string for this parameter: `latest`.
+#' @param name The name to be updated as part of the [`update_environment`][datazone_update_environment] action.
+#' @param description The description to be updated as part of the [`update_environment`][datazone_update_environment] action.
+#' @param glossaryTerms The glossary terms to be updated as part of the [`update_environment`][datazone_update_environment] action.
+#' @param blueprintVersion The blueprint version to which the environment should be updated. You can only specify the following string for this parameter: `latest`.
 #' @param userParameters The user parameters of the environment.
 #' @param environmentConfigurationName The configuration name of the environment.
 #'
@@ -6498,18 +6096,11 @@ datazone_update_environment_action <- function(domainIdentifier, environmentIden
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_environment_blueprint/](https://www.paws-r-sdk.com/docs/datazone_update_environment_blueprint/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which an environment
-#' blueprint is to be updated.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which an environment blueprint is to be updated.
 #' @param identifier &#91;required&#93; The identifier of the environment blueprint to be updated.
-#' @param description The description to be updated as part of the
-#' [`update_environment_blueprint`][datazone_update_environment_blueprint]
-#' action.
-#' @param provisioningProperties The provisioning properties to be updated as part of the
-#' [`update_environment_blueprint`][datazone_update_environment_blueprint]
-#' action.
-#' @param userParameters The user parameters to be updated as part of the
-#' [`update_environment_blueprint`][datazone_update_environment_blueprint]
-#' action.
+#' @param description The description to be updated as part of the [`update_environment_blueprint`][datazone_update_environment_blueprint] action.
+#' @param provisioningProperties The provisioning properties to be updated as part of the [`update_environment_blueprint`][datazone_update_environment_blueprint] action.
+#' @param userParameters The user parameters to be updated as part of the [`update_environment_blueprint`][datazone_update_environment_blueprint] action.
 #'
 #' @keywords internal
 #'
@@ -6540,22 +6131,13 @@ datazone_update_environment_blueprint <- function(domainIdentifier, identifier, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_environment_profile/](https://www.paws-r-sdk.com/docs/datazone_update_environment_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which an environment
-#' profile is to be updated.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which an environment profile is to be updated.
 #' @param identifier &#91;required&#93; The identifier of the environment profile that is to be updated.
-#' @param name The name to be updated as part of the
-#' [`update_environment_profile`][datazone_update_environment_profile]
-#' action.
-#' @param description The description to be updated as part of the
-#' [`update_environment_profile`][datazone_update_environment_profile]
-#' action.
-#' @param userParameters The user parameters to be updated as part of the
-#' [`update_environment_profile`][datazone_update_environment_profile]
-#' action.
-#' @param awsAccountId The Amazon Web Services account in which a specified environment profile
-#' is to be udpated.
-#' @param awsAccountRegion The Amazon Web Services Region in which a specified environment profile
-#' is to be updated.
+#' @param name The name to be updated as part of the [`update_environment_profile`][datazone_update_environment_profile] action.
+#' @param description The description to be updated as part of the [`update_environment_profile`][datazone_update_environment_profile] action.
+#' @param userParameters The user parameters to be updated as part of the [`update_environment_profile`][datazone_update_environment_profile] action.
+#' @param awsAccountId The Amazon Web Services account in which a specified environment profile is to be udpated.
+#' @param awsAccountRegion The Amazon Web Services Region in which a specified environment profile is to be updated.
 #'
 #' @keywords internal
 #'
@@ -6586,17 +6168,12 @@ datazone_update_environment_profile <- function(domainIdentifier, identifier, na
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_glossary/](https://www.paws-r-sdk.com/docs/datazone_update_glossary/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a business
-#' glossary is to be updated.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a business glossary is to be updated.
 #' @param identifier &#91;required&#93; The identifier of the business glossary to be updated.
-#' @param name The name to be updated as part of the
-#' [`update_glossary`][datazone_update_glossary] action.
-#' @param description The description to be updated as part of the
-#' [`update_glossary`][datazone_update_glossary] action.
-#' @param status The status to be updated as part of the
-#' [`update_glossary`][datazone_update_glossary] action.
-#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the
-#' idempotency of the request.
+#' @param name The name to be updated as part of the [`update_glossary`][datazone_update_glossary] action.
+#' @param description The description to be updated as part of the [`update_glossary`][datazone_update_glossary] action.
+#' @param status The status to be updated as part of the [`update_glossary`][datazone_update_glossary] action.
+#' @param clientToken A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.
 #'
 #' @keywords internal
 #'
@@ -6627,21 +6204,14 @@ datazone_update_glossary <- function(domainIdentifier, identifier, name = NULL, 
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_glossary_term/](https://www.paws-r-sdk.com/docs/datazone_update_glossary_term/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a business
-#' glossary term is to be updated.
-#' @param glossaryIdentifier The identifier of the business glossary in which a term is to be
-#' updated.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a business glossary term is to be updated.
+#' @param glossaryIdentifier The identifier of the business glossary in which a term is to be updated.
 #' @param identifier &#91;required&#93; The identifier of the business glossary term that is to be updated.
-#' @param name The name to be updated as part of the
-#' [`update_glossary_term`][datazone_update_glossary_term] action.
-#' @param shortDescription The short description to be updated as part of the
-#' [`update_glossary_term`][datazone_update_glossary_term] action.
-#' @param longDescription The long description to be updated as part of the
-#' [`update_glossary_term`][datazone_update_glossary_term] action.
-#' @param termRelations The term relations to be updated as part of the
-#' [`update_glossary_term`][datazone_update_glossary_term] action.
-#' @param status The status to be updated as part of the
-#' [`update_glossary_term`][datazone_update_glossary_term] action.
+#' @param name The name to be updated as part of the [`update_glossary_term`][datazone_update_glossary_term] action.
+#' @param shortDescription The short description to be updated as part of the [`update_glossary_term`][datazone_update_glossary_term] action.
+#' @param longDescription The long description to be updated as part of the [`update_glossary_term`][datazone_update_glossary_term] action.
+#' @param termRelations The term relations to be updated as part of the [`update_glossary_term`][datazone_update_glossary_term] action.
+#' @param status The status to be updated as part of the [`update_glossary_term`][datazone_update_glossary_term] action.
 #'
 #' @keywords internal
 #'
@@ -6672,8 +6242,7 @@ datazone_update_glossary_term <- function(domainIdentifier, glossaryIdentifier =
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_group_profile/](https://www.paws-r-sdk.com/docs/datazone_update_group_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a group profile is
-#' updated.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a group profile is updated.
 #' @param groupIdentifier &#91;required&#93; The identifier of the group profile that is updated.
 #' @param status &#91;required&#93; The status of the group profile that is updated.
 #'
@@ -6699,6 +6268,46 @@ datazone_update_group_profile <- function(domainIdentifier, groupIdentifier, sta
 }
 .datazone$operations$update_group_profile <- datazone_update_group_profile
 
+#' Updates a notebook in Amazon SageMaker Unified Studio
+#'
+#' @description
+#' Updates a [notebook](https://docs.aws.amazon.com/sagemaker-unified-studio/latest/userguide/notebooks.html) in Amazon SageMaker Unified Studio.
+#'
+#' See [https://www.paws-r-sdk.com/docs/datazone_update_notebook/](https://www.paws-r-sdk.com/docs/datazone_update_notebook/) for full documentation.
+#'
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon SageMaker Unified Studio domain in which the notebook exists.
+#' @param identifier &#91;required&#93; The identifier of the notebook to update.
+#' @param description The updated description of the notebook.
+#' @param status The updated status of the notebook.
+#' @param name The updated name of the notebook.
+#' @param cellOrder The updated ordered list of cells in the notebook.
+#' @param metadata The updated metadata for the notebook, specified as key-value pairs.
+#' @param parameters The updated sensitive parameters for the notebook, specified as key-value pairs.
+#' @param environmentConfiguration The updated environment configuration for the notebook.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
+#'
+#' @keywords internal
+#'
+#' @rdname datazone_update_notebook
+datazone_update_notebook <- function(domainIdentifier, identifier, description = NULL, status = NULL, name = NULL, cellOrder = NULL, metadata = NULL, parameters = NULL, environmentConfiguration = NULL, clientToken = NULL) {
+  op <- new_operation(
+    name = "UpdateNotebook",
+    http_method = "PATCH",
+    http_path = "/v2/domains/{domainIdentifier}/notebooks/{identifier}",
+    host_prefix = "",
+    paginator = list(),
+    stream_api = FALSE
+  )
+  input <- .datazone$update_notebook_input(domainIdentifier = domainIdentifier, identifier = identifier, description = description, status = status, name = name, cellOrder = cellOrder, metadata = metadata, parameters = parameters, environmentConfiguration = environmentConfiguration, clientToken = clientToken)
+  output <- .datazone$update_notebook_output()
+  config <- get_config()
+  svc <- .datazone$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.datazone$operations$update_notebook <- datazone_update_notebook
+
 #' Updates the specified project in Amazon DataZone
 #'
 #' @description
@@ -6708,18 +6317,14 @@ datazone_update_group_profile <- function(domainIdentifier, groupIdentifier, sta
 #'
 #' @param domainIdentifier &#91;required&#93; The ID of the Amazon DataZone domain where a project is being updated.
 #' @param identifier &#91;required&#93; The identifier of the project that is to be updated.
-#' @param name The name to be updated as part of the
-#' [`update_project`][datazone_update_project] action.
-#' @param description The description to be updated as part of the
-#' [`update_project`][datazone_update_project] action.
+#' @param name The name to be updated as part of the [`update_project`][datazone_update_project] action.
+#' @param description The description to be updated as part of the [`update_project`][datazone_update_project] action.
 #' @param resourceTags The resource tags of the project.
-#' @param glossaryTerms The glossary terms to be updated as part of the
-#' [`update_project`][datazone_update_project] action.
+#' @param glossaryTerms The glossary terms to be updated as part of the [`update_project`][datazone_update_project] action.
 #' @param domainUnitId The ID of the domain unit.
 #' @param environmentDeploymentDetails The environment deployment details of the project.
 #' @param userParameters The user parameters of the project.
-#' @param projectProfileVersion The project profile version to which the project should be updated. You
-#' can only specify the following string for this parameter: `latest`.
+#' @param projectProfileVersion The project profile version to which the project should be updated. You can only specify the following string for this parameter: `latest`.
 #'
 #' @keywords internal
 #'
@@ -6757,8 +6362,7 @@ datazone_update_project <- function(domainIdentifier, identifier, name = NULL, d
 #' @param status The status of a project profile.
 #' @param projectResourceTags The resource tags of the project profile.
 #' @param allowCustomProjectResourceTags Specifies whether custom project resource tags are supported.
-#' @param projectResourceTagsDescription Field viewable through the UI that provides a project user with the
-#' allowed resource tag specifications.
+#' @param projectResourceTagsDescription Field viewable through the UI that provides a project user with the allowed resource tag specifications.
 #' @param environmentConfigurations The environment configurations of a project profile.
 #' @param domainUnitIdentifier The ID of the domain unit where a project profile is to be updated.
 #'
@@ -6794,8 +6398,7 @@ datazone_update_project_profile <- function(domainIdentifier, identifier, name =
 #' @param domainIdentifier &#91;required&#93; The ID of the domain where the root domain unit owner is to be updated.
 #' @param currentOwner &#91;required&#93; The current owner of the root domain unit.
 #' @param newOwner &#91;required&#93; The new owner of the root domain unit.
-#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the
-#' request. This field is automatically populated if not provided.
+#' @param clientToken A unique, case-sensitive identifier to ensure idempotency of the request. This field is automatically populated if not provided.
 #'
 #' @keywords internal
 #'
@@ -6864,20 +6467,12 @@ datazone_update_rule <- function(domainIdentifier, identifier, name = NULL, desc
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_subscription_grant_status/](https://www.paws-r-sdk.com/docs/datazone_update_subscription_grant_status/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a subscription
-#' grant status is to be updated.
-#' @param identifier &#91;required&#93; The identifier of the subscription grant the status of which is to be
-#' updated.
-#' @param assetIdentifier &#91;required&#93; The identifier of the asset the subscription grant status of which is to
-#' be updated.
-#' @param status &#91;required&#93; The status to be updated as part of the
-#' [`update_subscription_grant_status`][datazone_update_subscription_grant_status]
-#' action.
-#' @param failureCause Specifies the error message that is returned if the operation cannot be
-#' successfully completed.
-#' @param targetName The target name to be updated as part of the
-#' [`update_subscription_grant_status`][datazone_update_subscription_grant_status]
-#' action.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a subscription grant status is to be updated.
+#' @param identifier &#91;required&#93; The identifier of the subscription grant the status of which is to be updated.
+#' @param assetIdentifier &#91;required&#93; The identifier of the asset the subscription grant status of which is to be updated.
+#' @param status &#91;required&#93; The status to be updated as part of the [`update_subscription_grant_status`][datazone_update_subscription_grant_status] action.
+#' @param failureCause Specifies the error message that is returned if the operation cannot be successfully completed.
+#' @param targetName The target name to be updated as part of the [`update_subscription_grant_status`][datazone_update_subscription_grant_status] action.
 #'
 #' @keywords internal
 #'
@@ -6908,12 +6503,9 @@ datazone_update_subscription_grant_status <- function(domainIdentifier, identifi
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_subscription_request/](https://www.paws-r-sdk.com/docs/datazone_update_subscription_request/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a subscription
-#' request is to be updated.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a subscription request is to be updated.
 #' @param identifier &#91;required&#93; The identifier of the subscription request that is to be updated.
-#' @param requestReason &#91;required&#93; The reason for the
-#' [`update_subscription_request`][datazone_update_subscription_request]
-#' action.
+#' @param requestReason &#91;required&#93; The reason for the [`update_subscription_request`][datazone_update_subscription_request] action.
 #'
 #' @keywords internal
 #'
@@ -6944,32 +6536,16 @@ datazone_update_subscription_request <- function(domainIdentifier, identifier, r
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_subscription_target/](https://www.paws-r-sdk.com/docs/datazone_update_subscription_target/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a subscription
-#' target is to be updated.
-#' @param environmentIdentifier &#91;required&#93; The identifier of the environment in which a subscription target is to
-#' be updated.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a subscription target is to be updated.
+#' @param environmentIdentifier &#91;required&#93; The identifier of the environment in which a subscription target is to be updated.
 #' @param identifier &#91;required&#93; Identifier of the subscription target that is to be updated.
-#' @param name The name to be updated as part of the
-#' [`update_subscription_target`][datazone_update_subscription_target]
-#' action.
-#' @param authorizedPrincipals The authorized principals to be updated as part of the
-#' [`update_subscription_target`][datazone_update_subscription_target]
-#' action.
-#' @param applicableAssetTypes The applicable asset types to be updated as part of the
-#' [`update_subscription_target`][datazone_update_subscription_target]
-#' action.
-#' @param subscriptionTargetConfig The configuration to be updated as part of the
-#' [`update_subscription_target`][datazone_update_subscription_target]
-#' action.
-#' @param manageAccessRole The manage access role to be updated as part of the
-#' [`update_subscription_target`][datazone_update_subscription_target]
-#' action.
-#' @param provider The provider to be updated as part of the
-#' [`update_subscription_target`][datazone_update_subscription_target]
-#' action.
-#' @param subscriptionGrantCreationMode Determines the subscription grant creation mode for this target,
-#' defining if grants are auto-created upon subscription approval or
-#' managed manually.
+#' @param name The name to be updated as part of the [`update_subscription_target`][datazone_update_subscription_target] action.
+#' @param authorizedPrincipals The authorized principals to be updated as part of the [`update_subscription_target`][datazone_update_subscription_target] action.
+#' @param applicableAssetTypes The applicable asset types to be updated as part of the [`update_subscription_target`][datazone_update_subscription_target] action.
+#' @param subscriptionTargetConfig The configuration to be updated as part of the [`update_subscription_target`][datazone_update_subscription_target] action.
+#' @param manageAccessRole The manage access role to be updated as part of the [`update_subscription_target`][datazone_update_subscription_target] action.
+#' @param provider The provider to be updated as part of the [`update_subscription_target`][datazone_update_subscription_target] action.
+#' @param subscriptionGrantCreationMode Determines the subscription grant creation mode for this target, defining if grants are auto-created upon subscription approval or managed manually.
 #'
 #' @keywords internal
 #'
@@ -7000,8 +6576,7 @@ datazone_update_subscription_target <- function(domainIdentifier, environmentIde
 #'
 #' See [https://www.paws-r-sdk.com/docs/datazone_update_user_profile/](https://www.paws-r-sdk.com/docs/datazone_update_user_profile/) for full documentation.
 #'
-#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a user profile is
-#' updated.
+#' @param domainIdentifier &#91;required&#93; The identifier of the Amazon DataZone domain in which a user profile is updated.
 #' @param userIdentifier &#91;required&#93; The identifier of the user whose user profile is to be updated.
 #' @param type The type of the user profile that are to be updated.
 #' @param status &#91;required&#93; The status of the user profile that are to be updated.

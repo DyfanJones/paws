@@ -22,65 +22,35 @@ elbv2_create_load_balancer(
 \arguments{
 \item{Name}{[required] The name of the load balancer.
 
-This name must be unique per region per account, can have a maximum of
-32 characters, must contain only alphanumeric characters or hyphens,
-must not begin or end with a hyphen, and must not begin with
-"internal-".}
+This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, must not begin or end with a hyphen, and must not begin with "internal-".}
 
-\item{Subnets}{The IDs of the subnets. You can specify only one subnet per Availability
-Zone. You must specify either subnets or subnet mappings, but not both.
-To specify an Elastic IP address, specify subnet mappings instead of
-subnets.
+\item{Subnets}{The IDs of the subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both. To specify an Elastic IP address, specify subnet mappings instead of subnets.
 
-[Application Load Balancers] You must specify subnets from at least
-two Availability Zones.
+[Application Load Balancers] You must specify subnets from at least two Availability Zones.
 
-[Application Load Balancers on Outposts] You must specify one Outpost
-subnet.
+[Application Load Balancers on Outposts] You must specify one Outpost subnet.
 
-[Application Load Balancers on Local Zones] You can specify subnets
-from one or more Local Zones.
+[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
 
-[Network Load Balancers and Gateway Load Balancers] You can specify
-subnets from one or more Availability Zones.}
+[Network Load Balancers and Gateway Load Balancers] You can specify subnets from one or more Availability Zones.}
 
-\item{SubnetMappings}{The IDs of the subnets. You can specify only one subnet per Availability
-Zone. You must specify either subnets or subnet mappings, but not both.
+\item{SubnetMappings}{The IDs of the subnets. You can specify only one subnet per Availability Zone. You must specify either subnets or subnet mappings, but not both.
 
-[Application Load Balancers] You must specify subnets from at least
-two Availability Zones. You can't specify Elastic IP addresses for your
-subnets.
+[Application Load Balancers] You must specify subnets from at least two Availability Zones. You can't specify Elastic IP addresses for your subnets.
 
-[Application Load Balancers on Outposts] You must specify one Outpost
-subnet.
+[Application Load Balancers on Outposts] You must specify one Outpost subnet.
 
-[Application Load Balancers on Local Zones] You can specify subnets
-from one or more Local Zones.
+[Application Load Balancers on Local Zones] You can specify subnets from one or more Local Zones.
 
-[Network Load Balancers] You can specify subnets from one or more
-Availability Zones. You can specify one Elastic IP address per subnet if
-you need static IP addresses for your internet-facing load balancer. For
-internal load balancers, you can specify one private IP address per
-subnet from the IPv4 range of the subnet. For internet-facing load
-balancer, you can specify one IPv6 address per subnet.
+[Network Load Balancers] You can specify subnets from one or more Availability Zones. You can specify one Elastic IP address per subnet if you need static IP addresses for your internet-facing load balancer. For internal load balancers, you can specify one private IP address per subnet from the IPv4 range of the subnet. For internet-facing load balancer, you can specify one IPv6 address per subnet.
 
-[Gateway Load Balancers] You can specify subnets from one or more
-Availability Zones. You can't specify Elastic IP addresses for your
-subnets.}
+[Gateway Load Balancers] You can specify subnets from one or more Availability Zones. You can't specify Elastic IP addresses for your subnets.}
 
-\item{SecurityGroups}{[Application Load Balancers and Network Load Balancers] The IDs of the
-security groups for the load balancer.}
+\item{SecurityGroups}{[Application Load Balancers and Network Load Balancers] The IDs of the security groups for the load balancer.}
 
-\item{Scheme}{The nodes of an Internet-facing load balancer have public IP addresses.
-The DNS name of an Internet-facing load balancer is publicly resolvable
-to the public IP addresses of the nodes. Therefore, Internet-facing load
-balancers can route requests from clients over the internet.
+\item{Scheme}{The nodes of an Internet-facing load balancer have public IP addresses. The DNS name of an Internet-facing load balancer is publicly resolvable to the public IP addresses of the nodes. Therefore, Internet-facing load balancers can route requests from clients over the internet.
 
-The nodes of an internal load balancer have only private IP addresses.
-The DNS name of an internal load balancer is publicly resolvable to the
-private IP addresses of the nodes. Therefore, internal load balancers
-can route requests only from clients with access to the VPC for the load
-balancer.
+The nodes of an internal load balancer have only private IP addresses. The DNS name of an internal load balancer is publicly resolvable to the private IP addresses of the nodes. Therefore, internal load balancers can route requests only from clients with access to the VPC for the load balancer.
 
 The default is an Internet-facing load balancer.
 
@@ -92,24 +62,15 @@ You can't specify a scheme for a Gateway Load Balancer.}
 
 \item{IpAddressType}{The IP address type. Internal load balancers must use \code{ipv4}.
 
-[Application Load Balancers] The possible values are \code{ipv4} (IPv4
-addresses), \code{dualstack} (IPv4 and IPv6 addresses), and
-\code{dualstack-without-public-ipv4} (public IPv6 addresses and private IPv4
-and IPv6 addresses).
+[Application Load Balancers] The possible values are \code{ipv4} (IPv4 addresses), \code{dualstack} (IPv4 and IPv6 addresses), and \code{dualstack-without-public-ipv4} (public IPv6 addresses and private IPv4 and IPv6 addresses).
 
-[Network Load Balancers and Gateway Load Balancers] The possible
-values are \code{ipv4} (IPv4 addresses) and \code{dualstack} (IPv4 and IPv6
-addresses).}
+[Network Load Balancers and Gateway Load Balancers] The possible values are \code{ipv4} (IPv4 addresses) and \code{dualstack} (IPv4 and IPv6 addresses).}
 
-\item{CustomerOwnedIpv4Pool}{[Application Load Balancers on Outposts] The ID of the customer-owned
-address pool (CoIP pool).}
+\item{CustomerOwnedIpv4Pool}{[Application Load Balancers on Outposts] The ID of the customer-owned address pool (CoIP pool).}
 
-\item{EnablePrefixForIpv6SourceNat}{[Network Load Balancers with UDP listeners] Indicates whether to use
-an IPv6 prefix from each subnet for source NAT. The IP address type must
-be \code{dualstack}. The default value is \code{off}.}
+\item{EnablePrefixForIpv6SourceNat}{[Network Load Balancers with UDP listeners] Indicates whether to use an IPv6 prefix from each subnet for source NAT. The IP address type must be \code{dualstack}. The default value is \code{off}.}
 
-\item{IpamPools}{[Application Load Balancers] The IPAM pools to use with the load
-balancer.}
+\item{IpamPools}{[Application Load Balancers] The IPAM pools to use with the load balancer.}
 }
 \description{
 Creates an Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.

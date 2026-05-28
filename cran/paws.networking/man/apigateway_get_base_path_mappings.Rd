@@ -14,13 +14,11 @@ apigateway_get_base_path_mappings(
 \arguments{
 \item{domainName}{[required] The domain name of a BasePathMapping resource.}
 
-\item{domainNameId}{The identifier for the domain name resource. Supported only for private
-custom domain names.}
+\item{domainNameId}{The identifier for the domain name resource. Supported only for private custom domain names.}
 
 \item{position}{The current pagination position in the paged result set.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 }
 \description{
 Represents a collection of BasePathMapping resources.

@@ -26,61 +26,35 @@ apigateway_create_domain_name(
 \arguments{
 \item{domainName}{[required] The name of the DomainName resource.}
 
-\item{certificateName}{The user-friendly name of the certificate that will be used by
-edge-optimized endpoint or private endpoint for this domain name.}
+\item{certificateName}{The user-friendly name of the certificate that will be used by edge-optimized endpoint or private endpoint for this domain name.}
 
-\item{certificateBody}{[Deprecated] The body of the server certificate that will be used by
-edge-optimized endpoint or private endpoint for this domain name
-provided by your certificate authority.}
+\item{certificateBody}{[Deprecated] The body of the server certificate that will be used by edge-optimized endpoint or private endpoint for this domain name provided by your certificate authority.}
 
-\item{certificatePrivateKey}{[Deprecated] Your edge-optimized endpoint's domain name certificate's
-private key.}
+\item{certificatePrivateKey}{[Deprecated] Your edge-optimized endpoint's domain name certificate's private key.}
 
-\item{certificateChain}{[Deprecated] The intermediate certificates and optionally the root
-certificate, one after the other without any blank lines, used by an
-edge-optimized endpoint for this domain name. If you include the root
-certificate, your certificate chain must start with intermediate
-certificates and end with the root certificate. Use the intermediate
-certificates that were provided by your certificate authority. Do not
-include any intermediaries that are not in the chain of trust path.}
+\item{certificateChain}{[Deprecated] The intermediate certificates and optionally the root certificate, one after the other without any blank lines, used by an edge-optimized endpoint for this domain name. If you include the root certificate, your certificate chain must start with intermediate certificates and end with the root certificate. Use the intermediate certificates that were provided by your certificate authority. Do not include any intermediaries that are not in the chain of trust path.}
 
-\item{certificateArn}{The reference to an Amazon Web Services-managed certificate that will be
-used by edge-optimized endpoint or private endpoint for this domain
-name. Certificate Manager is the only supported source.}
+\item{certificateArn}{The reference to an Amazon Web Services-managed certificate that will be used by edge-optimized endpoint or private endpoint for this domain name. Certificate Manager is the only supported source.}
 
-\item{regionalCertificateName}{The user-friendly name of the certificate that will be used by regional
-endpoint for this domain name.}
+\item{regionalCertificateName}{The user-friendly name of the certificate that will be used by regional endpoint for this domain name.}
 
-\item{regionalCertificateArn}{The reference to an Amazon Web Services-managed certificate that will be
-used by regional endpoint for this domain name. Certificate Manager is
-the only supported source.}
+\item{regionalCertificateArn}{The reference to an Amazon Web Services-managed certificate that will be used by regional endpoint for this domain name. Certificate Manager is the only supported source.}
 
-\item{endpointConfiguration}{The endpoint configuration of this DomainName showing the endpoint types
-and IP address types of the domain name.}
+\item{endpointConfiguration}{The endpoint configuration of this DomainName showing the endpoint types and IP address types of the domain name.}
 
-\item{tags}{The key-value map of strings. The valid character set is
-[a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not
-start with \verb{aws:}. The tag value can be up to 256 characters.}
+\item{tags}{The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with \verb{aws:}. The tag value can be up to 256 characters.}
 
-\item{securityPolicy}{The Transport Layer Security (TLS) version + cipher suite for this
-DomainName.}
+\item{securityPolicy}{The Transport Layer Security (TLS) version + cipher suite for this DomainName.}
 
-\item{endpointAccessMode}{The endpoint access mode of the DomainName. Only available for
-DomainNames that use security policies that start with
-\code{SecurityPolicy_}.}
+\item{endpointAccessMode}{The endpoint access mode of the DomainName. Only available for DomainNames that use security policies that start with \code{SecurityPolicy_}.}
 
-\item{ownershipVerificationCertificateArn}{The ARN of the public certificate issued by ACM to validate ownership of
-your custom domain. Only required when configuring mutual TLS and using
-an ACM imported or private CA certificate ARN as the
-regionalCertificateArn.}
+\item{mutualTlsAuthentication}{The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.}
 
-\item{policy}{A stringified JSON policy document that applies to the \code{execute-api}
-service for this DomainName regardless of the caller and Method
-configuration. Supported only for private custom domain names.}
+\item{ownershipVerificationCertificateArn}{The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.}
 
-\item{routingMode}{The routing mode for this domain name. The routing mode determines how
-API Gateway sends traffic from your custom domain name to your private
-APIs.}
+\item{policy}{A stringified JSON policy document that applies to the \code{execute-api} service for this DomainName regardless of the caller and Method configuration. Supported only for private custom domain names.}
+
+\item{routingMode}{The routing mode for this domain name. The routing mode determines how API Gateway sends traffic from your custom domain name to your private APIs.}
 }
 \description{
 Creates a new domain name.

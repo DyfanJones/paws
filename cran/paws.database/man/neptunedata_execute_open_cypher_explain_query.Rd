@@ -15,8 +15,7 @@ neptunedata_execute_open_cypher_explain_query(
 
 \item{parameters}{The openCypher query parameters.}
 
-\item{explainMode}{[required] The openCypher \code{explain} mode. Can be one of: \code{static}, \code{dynamic}, or
-\code{details}.}
+\item{explainMode}{[required] The openCypher \code{explain} mode. Can be one of: \code{static}, \code{dynamic}, or \code{details}.}
 }
 \description{
 Executes an openCypher \code{explain} request. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-explain.html}{The openCypher explain feature} for more information.

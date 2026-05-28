@@ -7,25 +7,19 @@ NULL
 #' the DB instance
 #'
 #' @description
-#' Creates a new performance analysis report for a specific time period for
-#' the DB instance.
+#' Creates a new performance analysis report for a specific time period for the DB instance.
 #'
 #' @usage
 #' pi_create_performance_analysis_report(ServiceType, Identifier,
 #'   StartTime, EndTime, Tags)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights will
-#' return metrics. Valid value is `RDS`.
-#' @param Identifier &#91;required&#93; An immutable, Amazon Web Services Region-unique identifier for a data
-#' source. Performance Insights gathers metrics from this data source.
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights will return metrics. Valid value is `RDS`.
+#' @param Identifier &#91;required&#93; An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.
 #' 
-#' To use an Amazon RDS instance as a data source, you specify its
-#' `DbiResourceId` value. For example, specify
-#' `db-ADECBTYHKTSAUMUZQYPDS2GW4A`.
+#' To use an Amazon RDS instance as a data source, you specify its `DbiResourceId` value. For example, specify `db-ADECBTYHKTSAUMUZQYPDS2GW4A`.
 #' @param StartTime &#91;required&#93; The start time defined for the analysis report.
-#' @param EndTime &#91;required&#93; The end time defined for the analysis report.
-#' @param Tags The metadata assigned to the analysis report consisting of a key-value
-#' pair.
+#' @param EndTime The end time defined for the analysis report.
+#' @param Tags The metadata assigned to the analysis report consisting of a key-value pair.
 #'
 #' @return
 #' A list with the following syntax:
@@ -60,7 +54,7 @@ NULL
 #' @rdname pi_create_performance_analysis_report
 #'
 #' @aliases pi_create_performance_analysis_report
-pi_create_performance_analysis_report <- function(ServiceType, Identifier, StartTime, EndTime, Tags = NULL) {
+pi_create_performance_analysis_report <- function(ServiceType, Identifier, StartTime, EndTime = NULL, Tags = NULL) {
   op <- new_operation(
     name = "CreatePerformanceAnalysisReport",
     http_method = "POST",
@@ -88,16 +82,10 @@ pi_create_performance_analysis_report <- function(ServiceType, Identifier, Start
 #' pi_delete_performance_analysis_report(ServiceType, Identifier,
 #'   AnalysisReportId)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights will
-#' return metrics. Valid value is `RDS`.
-#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon
-#' Web Services Region. Performance Insights gathers metrics from this data
-#' source. In the console, the identifier is shown as *ResourceID*. When
-#' you call `DescribeDBInstances`, the identifier is returned as
-#' `DbiResourceId`.
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights will return metrics. Valid value is `RDS`.
+#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as *ResourceID*. When you call `DescribeDBInstances`, the identifier is returned as `DbiResourceId`.
 #' 
-#' To use a DB instance as a data source, specify its `DbiResourceId`
-#' value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
+#' To use a DB instance as a data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
 #' @param AnalysisReportId &#91;required&#93; The unique identifier of the analysis report for deletion.
 #'
 #' @return
@@ -140,60 +128,39 @@ pi_delete_performance_analysis_report <- function(ServiceType, Identifier, Analy
 #' metric
 #'
 #' @description
-#' For a specific time period, retrieve the top `N` dimension keys for a
-#' metric.
+#' For a specific time period, retrieve the top `N` dimension keys for a metric.
 #' 
-#' Each response element returns a maximum of 500 bytes. For larger
-#' elements, such as SQL statements, only the first 500 bytes are returned.
+#' Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.
 #'
 #' @usage
 #' pi_describe_dimension_keys(ServiceType, Identifier, StartTime, EndTime,
 #'   Metric, PeriodInSeconds, GroupBy, AdditionalMetrics, PartitionBy,
 #'   Filter, MaxResults, NextToken)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights will
-#' return metrics. Valid values are as follows:
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights will return metrics. Valid values are as follows:
 #' 
 #' -   `RDS`
 #' 
 #' -   `DOCDB`
-#' @param Identifier &#91;required&#93; An immutable, Amazon Web Services Region-unique identifier for a data
-#' source. Performance Insights gathers metrics from this data source.
+#' @param Identifier &#91;required&#93; An immutable, Amazon Web Services Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.
 #' 
-#' To use an Amazon RDS instance as a data source, you specify its
-#' `DbiResourceId` value. For example, specify
-#' `db-FAIHNTYBKTGAUSUZQYPDS2GW4A`.
-#' @param StartTime &#91;required&#93; The date and time specifying the beginning of the requested time series
-#' data. You must specify a `StartTime` within the past 7 days. The value
-#' specified is *inclusive*, which means that data points equal to or
-#' greater than `StartTime` are returned.
+#' To use an Amazon RDS instance as a data source, you specify its `DbiResourceId` value. For example, specify `db-FAIHNTYBKTGAUSUZQYPDS2GW4A`.
+#' @param StartTime &#91;required&#93; The date and time specifying the beginning of the requested time series data. You must specify a `StartTime` within the past 7 days. The value specified is *inclusive*, which means that data points equal to or greater than `StartTime` are returned.
 #' 
 #' The value for `StartTime` must be earlier than the value for `EndTime`.
-#' @param EndTime &#91;required&#93; The date and time specifying the end of the requested time series data.
-#' The value specified is *exclusive*, which means that data points less
-#' than (but not equal to) `EndTime` are returned.
+#' @param EndTime &#91;required&#93; The date and time specifying the end of the requested time series data. The value specified is *exclusive*, which means that data points less than (but not equal to) `EndTime` are returned.
 #' 
 #' The value for `EndTime` must be later than the value for `StartTime`.
 #' @param Metric &#91;required&#93; The name of a Performance Insights metric to be measured.
 #' 
 #' Valid values for `Metric` are:
 #' 
-#' -   `db.load.avg` - A scaled representation of the number of active
-#'     sessions for the database engine.
+#' -   `db.load.avg` - A scaled representation of the number of active sessions for the database engine.
 #' 
-#' -   `db.sampledload.avg` - The raw number of active sessions for the
-#'     database engine.
+#' -   `db.sampledload.avg` - The raw number of active sessions for the database engine.
 #' 
-#' If the number of active sessions is less than an internal Performance
-#' Insights threshold, `db.load.avg` and `db.sampledload.avg` are the same
-#' value. If the number of active sessions is greater than the internal
-#' threshold, Performance Insights samples the active sessions, with
-#' `db.load.avg` showing the scaled values, `db.sampledload.avg` showing
-#' the raw values, and `db.sampledload.avg` less than `db.load.avg`. For
-#' most use cases, you can query `db.load.avg` only.
-#' @param PeriodInSeconds The granularity, in seconds, of the data points returned from
-#' Performance Insights. A period can be as short as one second, or as long
-#' as one day (86400 seconds). Valid values are:
+#' If the number of active sessions is less than an internal Performance Insights threshold, `db.load.avg` and `db.sampledload.avg` are the same value. If the number of active sessions is greater than the internal threshold, Performance Insights samples the active sessions, with `db.load.avg` showing the scaled values, `db.sampledload.avg` showing the raw values, and `db.sampledload.avg` less than `db.load.avg`. For most use cases, you can query `db.load.avg` only.
+#' @param PeriodInSeconds The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:
 #' 
 #' -   `1` (one second)
 #' 
@@ -205,38 +172,21 @@ pi_delete_performance_analysis_report <- function(ServiceType, Identifier, Analy
 #' 
 #' -   `86400` (twenty-four hours)
 #' 
-#' If you don't specify `PeriodInSeconds`, then Performance Insights
-#' chooses a value for you, with a goal of returning roughly 100-200 data
-#' points in the response.
-#' @param GroupBy &#91;required&#93; A specification for how to aggregate the data points from a query
-#' result. You must specify a valid dimension group. Performance Insights
-#' returns all dimensions within this group, unless you provide the names
-#' of specific dimensions within this group. You can also request that
-#' Performance Insights return a limited number of values for a dimension.
-#' @param AdditionalMetrics Additional metrics for the top `N` dimension keys. If the specified
-#' dimension group in the `GroupBy` parameter is `db.sql_tokenized`, you
-#' can specify per-SQL metrics to get the values for the top `N` SQL
-#' digests. The response syntax is as follows:
-#' `"AdditionalMetrics" : { "string" : "string" }`.
+#' If you don't specify `PeriodInSeconds`, then Performance Insights chooses a value for you, with a goal of returning roughly 100-200 data points in the response.
+#' @param GroupBy &#91;required&#93; A specification for how to aggregate the data points from a query result. You must specify a valid dimension group. Performance Insights returns all dimensions within this group, unless you provide the names of specific dimensions within this group. You can also request that Performance Insights return a limited number of values for a dimension.
+#' @param AdditionalMetrics Additional metrics for the top `N` dimension keys. If the specified dimension group in the `GroupBy` parameter is `db.sql_tokenized`, you can specify per-SQL metrics to get the values for the top `N` SQL digests. The response syntax is as follows: `"AdditionalMetrics" : { "string" : "string" }`.
 #' 
 #' The only supported statistic function is `.avg`.
-#' @param PartitionBy For each dimension specified in `GroupBy`, specify a secondary dimension
-#' to further subdivide the partition keys in the response.
+#' @param PartitionBy For each dimension specified in `GroupBy`, specify a secondary dimension to further subdivide the partition keys in the response.
 #' @param Filter One or more filters to apply in the request. Restrictions:
 #' 
-#' -   Any number of filters by the same dimension, as specified in the
-#'     `GroupBy` or `Partition` parameters.
+#' -   Any number of filters by the same dimension, as specified in the `GroupBy` or `Partition` parameters.
 #' 
 #' -   A single filter for any other dimension in this dimension group.
 #' 
-#' The `db.sql.db_id` filter isn't available for RDS for SQL Server DB
-#' instances.
-#' @param MaxResults The maximum number of items to return in the response. If more items
-#' exist than the specified `MaxRecords` value, a pagination token is
-#' included in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional pagination token provided by a previous request. If this
-#' parameter is specified, the response includes only records beyond the
-#' token, up to the value specified by `MaxRecords`.
+#' The `db.sql.db_id` filter isn't available for RDS for SQL Server DB instances.
+#' @param MaxResults The maximum number of items to return in the response. If more items exist than the specified `MaxRecords` value, a pagination token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by `MaxRecords`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -339,29 +289,15 @@ pi_describe_dimension_keys <- function(ServiceType, Identifier, StartTime, EndTi
 #' data source
 #'
 #' @description
-#' Get the attributes of the specified dimension group for a DB instance or
-#' data source. For example, if you specify a SQL ID,
-#' [`get_dimension_key_details`][pi_get_dimension_key_details] retrieves
-#' the full text of the dimension `db.sql.statement` associated with this
-#' ID. This operation is useful because
-#' [`get_resource_metrics`][pi_get_resource_metrics] and
-#' [`describe_dimension_keys`][pi_describe_dimension_keys] don't support
-#' retrieval of large SQL statement text, lock snapshots, and execution
-#' plans.
+#' Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, [`get_dimension_key_details`][pi_get_dimension_key_details] retrieves the full text of the dimension `db.sql.statement` associated with this ID. This operation is useful because [`get_resource_metrics`][pi_get_resource_metrics] and [`describe_dimension_keys`][pi_describe_dimension_keys] don't support retrieval of large SQL statement text, lock snapshots, and execution plans.
 #'
 #' @usage
 #' pi_get_dimension_key_details(ServiceType, Identifier, Group,
 #'   GroupIdentifier, RequestedDimensions)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns
-#' data. The only valid value is `RDS`.
-#' @param Identifier &#91;required&#93; The ID for a data source from which to gather dimension data. This ID
-#' must be immutable and unique within an Amazon Web Services Region. When
-#' a DB instance is the data source, specify its `DbiResourceId` value. For
-#' example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
-#' @param Group &#91;required&#93; The name of the dimension group. Performance Insights searches the
-#' specified group for the dimension group ID. The following group name
-#' values are valid:
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns data. The only valid value is `RDS`.
+#' @param Identifier &#91;required&#93; The ID for a data source from which to gather dimension data. This ID must be immutable and unique within an Amazon Web Services Region. When a DB instance is the data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
+#' @param Group &#91;required&#93; The name of the dimension group. Performance Insights searches the specified group for the dimension group ID. The following group name values are valid:
 #' 
 #' -   `db.execution_plan` (Amazon RDS and Aurora only)
 #' 
@@ -370,41 +306,24 @@ pi_describe_dimension_keys <- function(ServiceType, Identifier, StartTime, EndTi
 #' -   `db.query` (Amazon DocumentDB only)
 #' 
 #' -   `db.sql` (Amazon RDS and Aurora only)
-#' @param GroupIdentifier &#91;required&#93; The ID of the dimension group from which to retrieve dimension details.
-#' For dimension group `db.sql`, the group ID is `db.sql.id`. The following
-#' group ID values are valid:
+#' @param GroupIdentifier &#91;required&#93; The ID of the dimension group from which to retrieve dimension details. For dimension group `db.sql`, the group ID is `db.sql.id`. The following group ID values are valid:
 #' 
-#' -   `db.execution_plan.id` for dimension group `db.execution_plan`
-#'     (Aurora and RDS only)
+#' -   `db.execution_plan.id` for dimension group `db.execution_plan` (Aurora and RDS only)
 #' 
 #' -   `db.sql.id` for dimension group `db.sql` (Aurora and RDS only)
 #' 
 #' -   `db.query.id` for dimension group `db.query` (DocumentDB only)
 #' 
-#' -   For the dimension group `db.lock_snapshot`, the `GroupIdentifier` is
-#'     the epoch timestamp when Performance Insights captured the snapshot,
-#'     in seconds. You can retrieve this value with the
-#'     [`get_resource_metrics`][pi_get_resource_metrics] operation for a 1
-#'     second period.
-#' @param RequestedDimensions A list of dimensions to retrieve the detail data for within the given
-#' dimension group. If you don't specify this parameter, Performance
-#' Insights returns all dimension data within the specified dimension
-#' group. Specify dimension names for the following dimension groups:
+#' -   For the dimension group `db.lock_snapshot`, the `GroupIdentifier` is the epoch timestamp when Performance Insights captured the snapshot, in seconds. You can retrieve this value with the [`get_resource_metrics`][pi_get_resource_metrics] operation for a 1 second period.
+#' @param RequestedDimensions A list of dimensions to retrieve the detail data for within the given dimension group. If you don't specify this parameter, Performance Insights returns all dimension data within the specified dimension group. Specify dimension names for the following dimension groups:
 #' 
-#' -   `db.execution_plan` - Specify the dimension name
-#'     `db.execution_plan.raw_plan` or the short dimension name `raw_plan`
-#'     (Amazon RDS and Aurora only)
+#' -   `db.execution_plan` - Specify the dimension name `db.execution_plan.raw_plan` or the short dimension name `raw_plan` (Amazon RDS and Aurora only)
 #' 
-#' -   `db.lock_snapshot` - Specify the dimension name
-#'     `db.lock_snapshot.lock_trees` or the short dimension name
-#'     `lock_trees`. (Aurora only)
+#' -   `db.lock_snapshot` - Specify the dimension name `db.lock_snapshot.lock_trees` or the short dimension name `lock_trees`. (Aurora only)
 #' 
-#' -   `db.sql` - Specify either the full dimension name `db.sql.statement`
-#'     or the short dimension name `statement` (Aurora and RDS only).
+#' -   `db.sql` - Specify either the full dimension name `db.sql.statement` or the short dimension name `statement` (Aurora and RDS only).
 #' 
-#' -   `db.query` - Specify either the full dimension name
-#'     `db.query.statement` or the short dimension name `statement`
-#'     (DocumentDB only).
+#' -   `db.query` - Specify either the full dimension name `db.query.statement` or the short dimension name `statement` (DocumentDB only).
 #'
 #' @return
 #' A list with the following syntax:
@@ -461,31 +380,19 @@ pi_get_dimension_key_details <- function(ServiceType, Identifier, Group, GroupId
 #' the insights with recommendations
 #'
 #' @description
-#' Retrieves the report including the report ID, status, time details, and
-#' the insights with recommendations. The report status can be `RUNNING`,
-#' `SUCCEEDED`, or `FAILED`. The insights include the `description` and
-#' `recommendation` fields.
+#' Retrieves the report including the report ID, status, time details, and the insights with recommendations. The report status can be `RUNNING`, `SUCCEEDED`, or `FAILED`. The insights include the `description` and `recommendation` fields.
 #'
 #' @usage
 #' pi_get_performance_analysis_report(ServiceType, Identifier,
 #'   AnalysisReportId, TextFormat, AcceptLanguage)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights will
-#' return metrics. Valid value is `RDS`.
-#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon
-#' Web Services Region. Performance Insights gathers metrics from this data
-#' source. In the console, the identifier is shown as *ResourceID*. When
-#' you call `DescribeDBInstances`, the identifier is returned as
-#' `DbiResourceId`.
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights will return metrics. Valid value is `RDS`.
+#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as *ResourceID*. When you call `DescribeDBInstances`, the identifier is returned as `DbiResourceId`.
 #' 
-#' To use a DB instance as a data source, specify its `DbiResourceId`
-#' value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
-#' @param AnalysisReportId &#91;required&#93; A unique identifier of the created analysis report. For example,
-#' `report-12345678901234567`
-#' @param TextFormat Indicates the text format in the report. The options are `PLAIN_TEXT` or
-#' `MARKDOWN`. The default value is `plain text`.
-#' @param AcceptLanguage The text language in the report. The default language is `EN_US`
-#' (English).
+#' To use a DB instance as a data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
+#' @param AnalysisReportId &#91;required&#93; A unique identifier of the created analysis report. For example, `report-12345678901234567`
+#' @param TextFormat Indicates the text format in the report. The options are `PLAIN_TEXT` or `MARKDOWN`. The default value is `plain text`.
+#' @param AcceptLanguage The text language in the report. The default language is `EN_US` (English).
 #'
 #' @return
 #' A list with the following syntax:
@@ -522,7 +429,8 @@ pi_get_dimension_key_details <- function(ServiceType, Identifier, Group, GroupId
 #'         Recommendations = list(
 #'           list(
 #'             RecommendationId = "string",
-#'             RecommendationDescription = "string"
+#'             RecommendationDescription = "string",
+#'             RecommendationDetails = "string"
 #'           )
 #'         ),
 #'         InsightData = list(
@@ -599,20 +507,13 @@ pi_get_performance_analysis_report <- function(ServiceType, Identifier, Analysis
 #' Retrieve the metadata for different features
 #'
 #' @description
-#' Retrieve the metadata for different features. For example, the metadata
-#' might indicate that a feature is turned on or off on a specific DB
-#' instance.
+#' Retrieve the metadata for different features. For example, the metadata might indicate that a feature is turned on or off on a specific DB instance.
 #'
 #' @usage
 #' pi_get_resource_metadata(ServiceType, Identifier)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns
-#' metrics.
-#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon
-#' Web Services Region. Performance Insights gathers metrics from this data
-#' source. To use a DB instance as a data source, specify its
-#' `DbiResourceId` value. For example, specify
-#' `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns metrics.
+#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use a DB instance as a data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -663,55 +564,31 @@ pi_get_resource_metadata <- function(ServiceType, Identifier) {
 #' time period
 #'
 #' @description
-#' Retrieve Performance Insights metrics for a set of data sources over a
-#' time period. You can provide specific dimension groups and dimensions,
-#' and provide filtering criteria for each group. You must specify an
-#' aggregate function for each metric.
+#' Retrieve Performance Insights metrics for a set of data sources over a time period. You can provide specific dimension groups and dimensions, and provide filtering criteria for each group. You must specify an aggregate function for each metric.
 #' 
-#' Each response element returns a maximum of 500 bytes. For larger
-#' elements, such as SQL statements, only the first 500 bytes are returned.
+#' Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first 500 bytes are returned.
 #'
 #' @usage
 #' pi_get_resource_metrics(ServiceType, Identifier, MetricQueries,
 #'   StartTime, EndTime, PeriodInSeconds, MaxResults, NextToken,
 #'   PeriodAlignment)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns
-#' metrics. Valid values are as follows:
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns metrics. Valid values are as follows:
 #' 
 #' -   `RDS`
 #' 
 #' -   `DOCDB`
-#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon
-#' Web Services Region. Performance Insights gathers metrics from this data
-#' source. In the console, the identifier is shown as *ResourceID*. When
-#' you call `DescribeDBInstances`, the identifier is returned as
-#' `DbiResourceId`.
+#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as *ResourceID*. When you call `DescribeDBInstances`, the identifier is returned as `DbiResourceId`.
 #' 
-#' To use a DB instance as a data source, specify its `DbiResourceId`
-#' value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
-#' @param MetricQueries &#91;required&#93; An array of one or more queries to perform. Each query must specify a
-#' Performance Insights metric and specify an aggregate function, and you
-#' can provide filtering criteria. You must append the aggregate function
-#' to the metric. For example, to find the average for the metric `db.load`
-#' you must use `db.load.avg`. Valid values for aggregate functions include
-#' `.avg`, `.min`, `.max`, and `.sum`.
-#' @param StartTime &#91;required&#93; The date and time specifying the beginning of the requested time series
-#' query range. You can't specify a `StartTime` that is earlier than 7 days
-#' ago. By default, Performance Insights has 7 days of retention, but you
-#' can extend this range up to 2 years. The value specified is *inclusive*.
-#' Thus, the command returns data points equal to or greater than
-#' `StartTime`.
+#' To use a DB instance as a data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
+#' @param MetricQueries &#91;required&#93; An array of one or more queries to perform. Each query must specify a Performance Insights metric and specify an aggregate function, and you can provide filtering criteria. You must append the aggregate function to the metric. For example, to find the average for the metric `db.load` you must use `db.load.avg`. Valid values for aggregate functions include `.avg`, `.min`, `.max`, and `.sum`.
+#' @param StartTime &#91;required&#93; The date and time specifying the beginning of the requested time series query range. You can't specify a `StartTime` that is earlier than 7 days ago. By default, Performance Insights has 7 days of retention, but you can extend this range up to 2 years. The value specified is *inclusive*. Thus, the command returns data points equal to or greater than `StartTime`.
 #' 
 #' The value for `StartTime` must be earlier than the value for `EndTime`.
-#' @param EndTime &#91;required&#93; The date and time specifying the end of the requested time series query
-#' range. The value specified is *exclusive*. Thus, the command returns
-#' data points less than (but not equal to) `EndTime`.
+#' @param EndTime &#91;required&#93; The date and time specifying the end of the requested time series query range. The value specified is *exclusive*. Thus, the command returns data points less than (but not equal to) `EndTime`.
 #' 
 #' The value for `EndTime` must be later than the value for `StartTime`.
-#' @param PeriodInSeconds The granularity, in seconds, of the data points returned from
-#' Performance Insights. A period can be as short as one second, or as long
-#' as one day (86400 seconds). Valid values are:
+#' @param PeriodInSeconds The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:
 #' 
 #' -   `1` (one second)
 #' 
@@ -723,15 +600,10 @@ pi_get_resource_metadata <- function(ServiceType, Identifier) {
 #' 
 #' -   `86400` (twenty-four hours)
 #' 
-#' If you don't specify `PeriodInSeconds`, then Performance Insights will
-#' choose a value for you, with a goal of returning roughly 100-200 data
-#' points in the response.
+#' If you don't specify `PeriodInSeconds`, then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.
 #' @param MaxResults The maximum number of items to return in the response.
-#' @param NextToken An optional pagination token provided by a previous request. If this
-#' parameter is specified, the response includes only records beyond the
-#' token, up to the value specified by `MaxRecords`.
-#' @param PeriodAlignment The returned timestamp which is the start or end time of the time
-#' periods. The default value is `END_TIME`.
+#' @param NextToken An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by `MaxRecords`.
+#' @param PeriodAlignment The returned timestamp which is the start or end time of the time periods. The default value is `END_TIME`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -827,35 +699,20 @@ pi_get_resource_metrics <- function(ServiceType, Identifier, MetricQueries, Star
 #' type on a specified DB instance
 #'
 #' @description
-#' Retrieve the dimensions that can be queried for each specified metric
-#' type on a specified DB instance.
+#' Retrieve the dimensions that can be queried for each specified metric type on a specified DB instance.
 #'
 #' @usage
 #' pi_list_available_resource_dimensions(ServiceType, Identifier, Metrics,
 #'   MaxResults, NextToken, AuthorizedActions)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns
-#' metrics.
-#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique within an
-#' Amazon Web Services Region. Performance Insights gathers metrics from
-#' this data source. To use an Amazon RDS DB instance as a data source,
-#' specify its `DbiResourceId` value. For example, specify
-#' `db-ABCDEFGHIJKLMNOPQRSTU1VWZ`.
-#' @param Metrics &#91;required&#93; The types of metrics for which to retrieve dimensions. Valid values
-#' include `db.load`.
-#' @param MaxResults The maximum number of items to return in the response. If more items
-#' exist than the specified `MaxRecords` value, a pagination token is
-#' included in the response so that the remaining results can be retrieved.
-#' @param NextToken An optional pagination token provided by a previous request. If this
-#' parameter is specified, the response includes only records beyond the
-#' token, up to the value specified by `MaxRecords`.
-#' @param AuthorizedActions The actions to discover the dimensions you are authorized to access. If
-#' you specify multiple actions, then the response will contain the
-#' dimensions common for all the actions.
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns metrics.
+#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VWZ`.
+#' @param Metrics &#91;required&#93; The types of metrics for which to retrieve dimensions. Valid values include `db.load`.
+#' @param MaxResults The maximum number of items to return in the response. If more items exist than the specified `MaxRecords` value, a pagination token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by `MaxRecords`.
+#' @param AuthorizedActions The actions to discover the dimensions you are authorized to access. If you specify multiple actions, then the response will contain the dimensions common for all the actions.
 #' 
-#' When you don't specify this request parameter or provide an empty list,
-#' the response contains all the available dimensions for the target
-#' database engine whether or not you are authorized to access them.
+#' When you don't specify this request parameter or provide an empty list, the response contains all the available dimensions for the target database engine whether or not you are authorized to access them.
 #'
 #' @return
 #' A list with the following syntax:
@@ -924,38 +781,25 @@ pi_list_available_resource_dimensions <- function(ServiceType, Identifier, Metri
 #' specified DB instance
 #'
 #' @description
-#' Retrieve metrics of the specified types that can be queried for a
-#' specified DB instance.
+#' Retrieve metrics of the specified types that can be queried for a specified DB instance.
 #'
 #' @usage
 #' pi_list_available_resource_metrics(ServiceType, Identifier, MetricTypes,
 #'   NextToken, MaxResults)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns
-#' metrics.
-#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique within an
-#' Amazon Web Services Region. Performance Insights gathers metrics from
-#' this data source. To use an Amazon RDS DB instance as a data source,
-#' specify its `DbiResourceId` value. For example, specify
-#' `db-ABCDEFGHIJKLMNOPQRSTU1VWZ`.
-#' @param MetricTypes &#91;required&#93; The types of metrics to return in the response. Valid values in the
-#' array include the following:
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns metrics.
+#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique within an Amazon Web Services Region. Performance Insights gathers metrics from this data source. To use an Amazon RDS DB instance as a data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VWZ`.
+#' @param MetricTypes &#91;required&#93; The types of metrics to return in the response. Valid values in the array include the following:
 #' 
 #' -   `os` (OS counter metrics) - All engines
 #' 
 #' -   `db` (DB load metrics) - All engines except for Amazon DocumentDB
 #' 
-#' -   `db.sql.stats` (per-SQL metrics) - All engines except for Amazon
-#'     DocumentDB
+#' -   `db.sql.stats` (per-SQL metrics) - All engines except for Amazon DocumentDB
 #' 
-#' -   `db.sql_tokenized.stats` (per-SQL digest metrics) - All engines
-#'     except for Amazon DocumentDB
-#' @param NextToken An optional pagination token provided by a previous request. If this
-#' parameter is specified, the response includes only records beyond the
-#' token, up to the value specified by `MaxRecords`.
-#' @param MaxResults The maximum number of items to return. If the `MaxRecords` value is less
-#' than the number of existing items, the response includes a pagination
-#' token.
+#' -   `db.sql_tokenized.stats` (per-SQL digest metrics) - All engines except for Amazon DocumentDB
+#' @param NextToken An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by `MaxRecords`.
+#' @param MaxResults The maximum number of items to return. If the `MaxRecords` value is less than the number of existing items, the response includes a pagination token.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1009,32 +853,92 @@ pi_list_available_resource_metrics <- function(ServiceType, Identifier, MetricTy
 }
 .pi$operations$list_available_resource_metrics <- pi_list_available_resource_metrics
 
+#' Retrieves recommendations for a performance analysis report
+#'
+#' @description
+#' Retrieves recommendations for a performance analysis report.
+#'
+#' @usage
+#' pi_list_performance_analysis_report_recommendations(ServiceType,
+#'   Identifier, AnalysisReportId, RecommendationIds, MaxResults, NextToken)
+#'
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns metrics. Valid value is `RDS`.
+#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as *ResourceID*. When you call `DescribeDBInstances`, the identifier is returned as `DbiResourceId`.
+#' 
+#' To use a DB instance as a data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
+#' @param AnalysisReportId &#91;required&#93; A unique identifier of the created analysis report. For example, `report-12345678901234567`
+#' @param RecommendationIds A list of recommendation identifiers to filter the results.
+#' @param MaxResults The maximum number of items to return in the response. If more items exist than the specified `MaxResults` value, a pagination token is included in the response so that the remaining results can be retrieved.
+#' @param NextToken An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by `MaxResults`.
+#'
+#' @return
+#' A list with the following syntax:
+#' ```
+#' list(
+#'   Recommendations = list(
+#'     list(
+#'       RecommendationId = "string",
+#'       RecommendationDescription = "string",
+#'       RecommendationDetails = "string"
+#'     )
+#'   ),
+#'   NextToken = "string"
+#' )
+#' ```
+#'
+#' @section Request syntax:
+#' ```
+#' svc$list_performance_analysis_report_recommendations(
+#'   ServiceType = "RDS"|"DOCDB",
+#'   Identifier = "string",
+#'   AnalysisReportId = "string",
+#'   RecommendationIds = list(
+#'     "string"
+#'   ),
+#'   MaxResults = 123,
+#'   NextToken = "string"
+#' )
+#' ```
+#'
+#' @keywords internal
+#'
+#' @rdname pi_list_performance_analysis_report_recommendations
+#'
+#' @aliases pi_list_performance_analysis_report_recommendations
+pi_list_performance_analysis_report_recommendations <- function(ServiceType, Identifier, AnalysisReportId, RecommendationIds = NULL, MaxResults = NULL, NextToken = NULL) {
+  op <- new_operation(
+    name = "ListPerformanceAnalysisReportRecommendations",
+    http_method = "POST",
+    http_path = "/",
+    host_prefix = "",
+    paginator = list(input_token = "NextToken", output_token = "NextToken", limit_key = "MaxResults", result_key = "Recommendations"),
+    stream_api = FALSE
+  )
+  input <- .pi$list_performance_analysis_report_recommendations_input(ServiceType = ServiceType, Identifier = Identifier, AnalysisReportId = AnalysisReportId, RecommendationIds = RecommendationIds, MaxResults = MaxResults, NextToken = NextToken)
+  output <- .pi$list_performance_analysis_report_recommendations_output()
+  config <- get_config()
+  svc <- .pi$service(config, op)
+  request <- new_request(svc, op, input, output)
+  response <- send_request(request)
+  return(response)
+}
+.pi$operations$list_performance_analysis_report_recommendations <- pi_list_performance_analysis_report_recommendations
+
 #' Lists all the analysis reports created for the DB instance
 #'
 #' @description
-#' Lists all the analysis reports created for the DB instance. The reports
-#' are sorted based on the start time of each report.
+#' Lists all the analysis reports created for the DB instance. The reports are sorted based on the start time of each report.
 #'
 #' @usage
 #' pi_list_performance_analysis_reports(ServiceType, Identifier, NextToken,
 #'   MaxResults, ListTags)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns
-#' metrics. Valid value is `RDS`.
-#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon
-#' Web Services Region. Performance Insights gathers metrics from this data
-#' source. In the console, the identifier is shown as *ResourceID*. When
-#' you call `DescribeDBInstances`, the identifier is returned as
-#' `DbiResourceId`.
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns metrics. Valid value is `RDS`.
+#' @param Identifier &#91;required&#93; An immutable identifier for a data source that is unique for an Amazon Web Services Region. Performance Insights gathers metrics from this data source. In the console, the identifier is shown as *ResourceID*. When you call `DescribeDBInstances`, the identifier is returned as `DbiResourceId`.
 #' 
-#' To use a DB instance as a data source, specify its `DbiResourceId`
-#' value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
-#' @param NextToken An optional pagination token provided by a previous request. If this
-#' parameter is specified, the response includes only records beyond the
-#' token, up to the value specified by `MaxResults`.
-#' @param MaxResults The maximum number of items to return in the response. If more items
-#' exist than the specified `MaxResults` value, a pagination token is
-#' included in the response so that the remaining results can be retrieved.
+#' To use a DB instance as a data source, specify its `DbiResourceId` value. For example, specify `db-ABCDEFGHIJKLMNOPQRSTU1VW2X`.
+#' @param NextToken An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by `MaxResults`.
+#' @param MaxResults The maximum number of items to return in the response. If more items exist than the specified `MaxResults` value, a pagination token is included in the response so that the remaining results can be retrieved.
 #' @param ListTags Specifies whether or not to include the list of tags in the response.
 #'
 #' @return
@@ -1105,18 +1009,13 @@ pi_list_performance_analysis_reports <- function(ServiceType, Identifier, NextTo
 #' Insights resource
 #'
 #' @description
-#' Retrieves all the metadata tags associated with Amazon RDS Performance
-#' Insights resource.
+#' Retrieves all the metadata tags associated with Amazon RDS Performance Insights resource.
 #'
 #' @usage
 #' pi_list_tags_for_resource(ServiceType, ResourceARN)
 #'
-#' @param ServiceType &#91;required&#93; List the tags for the Amazon Web Services service for which Performance
-#' Insights returns metrics. Valid value is `RDS`.
-#' @param ResourceARN &#91;required&#93; Lists all the tags for the Amazon RDS Performance Insights resource.
-#' This value is an Amazon Resource Name (ARN). For information about
-#' creating an ARN, see [Constructing an RDS Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing).
+#' @param ServiceType &#91;required&#93; List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid value is `RDS`.
+#' @param ResourceARN &#91;required&#93; Lists all the tags for the Amazon RDS Performance Insights resource. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see [Constructing an RDS Amazon Resource Name (ARN)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing).
 #'
 #' @return
 #' A list with the following syntax:
@@ -1171,14 +1070,9 @@ pi_list_tags_for_resource <- function(ServiceType, ResourceARN) {
 #' @usage
 #' pi_tag_resource(ServiceType, ResourceARN, Tags)
 #'
-#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns
-#' metrics. Valid value is `RDS`.
-#' @param ResourceARN &#91;required&#93; The Amazon RDS Performance Insights resource that the tags are added to.
-#' This value is an Amazon Resource Name (ARN). For information about
-#' creating an ARN, see [Constructing an RDS Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing).
-#' @param Tags &#91;required&#93; The metadata assigned to an Amazon RDS resource consisting of a
-#' key-value pair.
+#' @param ServiceType &#91;required&#93; The Amazon Web Services service for which Performance Insights returns metrics. Valid value is `RDS`.
+#' @param ResourceARN &#91;required&#93; The Amazon RDS Performance Insights resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see [Constructing an RDS Amazon Resource Name (ARN)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing).
+#' @param Tags &#91;required&#93; The metadata assigned to an Amazon RDS resource consisting of a key-value pair.
 #'
 #' @return
 #' An empty list.
@@ -1225,20 +1119,14 @@ pi_tag_resource <- function(ServiceType, ResourceARN, Tags) {
 #' resource
 #'
 #' @description
-#' Deletes the metadata tags from the Amazon RDS Performance Insights
-#' resource.
+#' Deletes the metadata tags from the Amazon RDS Performance Insights resource.
 #'
 #' @usage
 #' pi_untag_resource(ServiceType, ResourceARN, TagKeys)
 #'
-#' @param ServiceType &#91;required&#93; List the tags for the Amazon Web Services service for which Performance
-#' Insights returns metrics. Valid value is `RDS`.
-#' @param ResourceARN &#91;required&#93; The Amazon RDS Performance Insights resource that the tags are added to.
-#' This value is an Amazon Resource Name (ARN). For information about
-#' creating an ARN, see [Constructing an RDS Amazon Resource Name
-#' (ARN)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing).
-#' @param TagKeys &#91;required&#93; The metadata assigned to an Amazon RDS Performance Insights resource
-#' consisting of a key-value pair.
+#' @param ServiceType &#91;required&#93; List the tags for the Amazon Web Services service for which Performance Insights returns metrics. Valid value is `RDS`.
+#' @param ResourceARN &#91;required&#93; The Amazon RDS Performance Insights resource that the tags are added to. This value is an Amazon Resource Name (ARN). For information about creating an ARN, see [Constructing an RDS Amazon Resource Name (ARN)](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.ARN.html#USER_Tagging.ARN.Constructing).
+#' @param TagKeys &#91;required&#93; The metadata assigned to an Amazon RDS Performance Insights resource consisting of a key-value pair.
 #'
 #' @return
 #' An empty list.

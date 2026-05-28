@@ -17,26 +17,19 @@ paymentcryptographydataplane_re_encrypt_data(
 \arguments{
 \item{IncomingKeyIdentifier}{[required] The \code{keyARN} of the encryption key of incoming ciphertext data.
 
-When a WrappedKeyBlock is provided, this value will be the identifier to
-the key wrapping key. Otherwise, it is the key identifier used to
-perform the operation.}
+When a WrappedKeyBlock is provided, this value will be the identifier to the key wrapping key. Otherwise, it is the key identifier used to perform the operation.}
 
-\item{OutgoingKeyIdentifier}{[required] The \code{keyARN} of the encryption key of outgoing ciphertext data after
-encryption by Amazon Web Services Payment Cryptography.}
+\item{OutgoingKeyIdentifier}{[required] The \code{keyARN} of the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.}
 
-\item{CipherText}{[required] Ciphertext to be encrypted. The minimum allowed length is 16 bytes and
-maximum allowed length is 4096 bytes.}
+\item{CipherText}{[required] Ciphertext to be encrypted. The minimum allowed length is 16 bytes and maximum allowed length is 4096 bytes.}
 
 \item{IncomingEncryptionAttributes}{[required] The attributes and values for incoming ciphertext.}
 
-\item{OutgoingEncryptionAttributes}{[required] The attributes and values for outgoing ciphertext data after encryption
-by Amazon Web Services Payment Cryptography.}
+\item{OutgoingEncryptionAttributes}{[required] The attributes and values for outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.}
 
-\item{IncomingWrappedKey}{The WrappedKeyBlock containing the encryption key of incoming ciphertext
-data.}
+\item{IncomingWrappedKey}{The WrappedKeyBlock containing the encryption key of incoming ciphertext data.}
 
-\item{OutgoingWrappedKey}{The WrappedKeyBlock containing the encryption key of outgoing ciphertext
-data after encryption by Amazon Web Services Payment Cryptography.}
+\item{OutgoingWrappedKey}{The WrappedKeyBlock containing the encryption key of outgoing ciphertext data after encryption by Amazon Web Services Payment Cryptography.}
 }
 \description{
 Re-encrypt ciphertext using DUKPT or Symmetric data encryption keys.

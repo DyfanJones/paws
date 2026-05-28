@@ -16,32 +16,21 @@ lexmodelsv2_search_associated_transcripts(
 )
 }
 \arguments{
-\item{botId}{[required] The unique identifier of the bot associated with the transcripts that
-you are searching.}
+\item{botId}{[required] The unique identifier of the bot associated with the transcripts that you are searching.}
 
-\item{botVersion}{[required] The version of the bot containing the transcripts that you are
-searching.}
+\item{botVersion}{[required] The version of the bot containing the transcripts that you are searching.}
 
-\item{localeId}{[required] The identifier of the language and locale of the transcripts to search.
-The string must match one of the supported locales. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}}
+\item{localeId}{[required] The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported languages}}
 
-\item{botRecommendationId}{[required] The unique identifier of the bot recommendation associated with the
-transcripts to search.}
+\item{botRecommendationId}{[required] The unique identifier of the bot recommendation associated with the transcripts to search.}
 
-\item{searchOrder}{How SearchResults are ordered. Valid values are Ascending or Descending.
-The default is Descending.}
+\item{searchOrder}{How SearchResults are ordered. Valid values are Ascending or Descending. The default is Descending.}
 
 \item{filters}{[required] A list of filter objects.}
 
-\item{maxResults}{The maximum number of bot recommendations to return in each page of
-results. If there are fewer results than the max page size, only the
-actual number of results are returned.}
+\item{maxResults}{The maximum number of bot recommendations to return in each page of results. If there are fewer results than the max page size, only the actual number of results are returned.}
 
-\item{nextIndex}{If the response from the SearchAssociatedTranscriptsRequest operation
-contains more results than specified in the maxResults parameter, an
-index is returned in the response. Use that index in the nextIndex
-parameter to return the next page of results.}
+\item{nextIndex}{If the response from the SearchAssociatedTranscriptsRequest operation contains more results than specified in the maxResults parameter, an index is returned in the response. Use that index in the nextIndex parameter to return the next page of results.}
 }
 \description{
 Search for associated transcripts that meet the specified criteria.

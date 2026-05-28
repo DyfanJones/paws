@@ -12,17 +12,11 @@ servicequotas_get_quota_utilization_report(
 )
 }
 \arguments{
-\item{ReportId}{[required] The unique identifier for the quota utilization report. This identifier
-is returned by the
-\code{\link[=servicequotas_start_quota_utilization_report]{start_quota_utilization_report}}
-operation.}
+\item{ReportId}{[required] The unique identifier for the quota utilization report. This identifier is returned by the \code{\link[=servicequotas_start_quota_utilization_report]{start_quota_utilization_report}} operation.}
 
-\item{NextToken}{A token that indicates the next page of results to retrieve. This token
-is returned in the response when there are more results available. Omit
-this parameter for the first request.}
+\item{NextToken}{A token that indicates the next page of results to retrieve. This token is returned in the response when there are more results available. Omit this parameter for the first request.}
 
-\item{MaxResults}{The maximum number of results to return per page. The default value is
-1,000 and the maximum allowed value is 1,000.}
+\item{MaxResults}{The maximum number of results to return per page. The default value is 1,000 and the maximum allowed value is 1,000.}
 }
 \description{
 Retrieves the quota utilization report for your Amazon Web Services account. This operation returns paginated results showing your quota usage across all Amazon Web Services services, sorted by utilization percentage in descending order (highest utilization first).

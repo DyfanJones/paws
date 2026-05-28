@@ -8,11 +8,7 @@ resource, and code artifact identifier for the uploaded resource}
 codegurusecurity_create_upload_url(scanName)
 }
 \arguments{
-\item{scanName}{[required] The name of the scan that will use the uploaded resource. CodeGuru
-Security uses the unique scan name to track revisions across multiple
-scans of the same resource. Use this \code{scanName} when you call
-\code{\link[=codegurusecurity_create_scan]{create_scan}} on the code resource you
-upload to this URL.}
+\item{scanName}{[required] The name of the scan that will use the uploaded resource. CodeGuru Security uses the unique scan name to track revisions across multiple scans of the same resource. Use this \code{scanName} when you call \code{\link[=codegurusecurity_create_scan]{create_scan}} on the code resource you upload to this URL.}
 }
 \description{
 Generates a pre-signed URL, request headers used to upload a code resource, and code artifact identifier for the uploaded resource.

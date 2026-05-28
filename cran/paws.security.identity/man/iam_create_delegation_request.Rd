@@ -17,13 +17,9 @@ iam_create_delegation_request(
 )
 }
 \arguments{
-\item{OwnerAccountId}{The Amazon Web Services account ID this delegation request is targeted
-to.
+\item{OwnerAccountId}{The Amazon Web Services account ID this delegation request is targeted to.
 
-If the account ID is not known, this parameter can be omitted, resulting
-in a request that can be associated by any account. If the account ID
-passed, then the created delegation request can only be associated with
-an identity of that target account.}
+If the account ID is not known, this parameter can be omitted, resulting in a request that can be associated by any account. If the account ID passed, then the created delegation request can only be associated with an identity of that target account.}
 
 \item{Description}{[required] A description of the delegation request.}
 
@@ -31,49 +27,31 @@ an identity of that target account.}
 
 \item{RequestMessage}{A message explaining the reason for the delegation request.
 
-Requesters can utilize this field to add a custom note to the delegation
-request. This field is different from the description such that this is
-to be utilized for a custom messaging on a case-by-case basis.
+Requesters can utilize this field to add a custom note to the delegation request. This field is different from the description such that this is to be utilized for a custom messaging on a case-by-case basis.
 
-For example, if the current delegation request is in response to a
-previous request being rejected, this explanation can be added to the
-request via this field.}
+For example, if the current delegation request is in response to a previous request being rejected, this explanation can be added to the request via this field.}
 
 \item{RequestorWorkflowId}{[required] The workflow ID associated with the requestor.
 
-This is the unique identifier on the partner side that can be used to
-track the progress of the request.
+This is the unique identifier on the partner side that can be used to track the progress of the request.
 
-IAM maintains a uniqueness check on this workflow id for each request -
-if a workflow id for an existing request is passed, this API call will
-fail.}
+IAM maintains a uniqueness check on this workflow id for each request - if a workflow id for an existing request is passed, this API call will fail.}
 
 \item{RedirectUrl}{The URL to redirect to after the delegation request is processed.
 
-This URL is used by the IAM console to show a link to the customer to
-re-load the partner workflow.}
+This URL is used by the IAM console to show a link to the customer to re-load the partner workflow.}
 
 \item{NotificationChannel}{[required] The notification channel for updates about the delegation request.
 
-At this time,only SNS topic ARNs are accepted for notification. This
-topic ARN must have a resource policy granting \code{SNS:Publish} permission
-to the IAM service principal (\code{iam.amazonaws.com}). See \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation-partner-guide.html}{partner onboarding documentation}
-for more details.}
+At this time,only SNS topic ARNs are accepted for notification. This topic ARN must have a resource policy granting \code{SNS:Publish} permission to the IAM service principal (\code{iam.amazonaws.com}). See \href{https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies-temporary-delegation-partner-guide.html}{partner onboarding documentation} for more details.}
 
-\item{SessionDuration}{[required] The duration for which the delegated session should remain active, in
-seconds.
+\item{SessionDuration}{[required] The duration for which the delegated session should remain active, in seconds.
 
-The active time window for the session starts when the customer calls
-the \code{\link[=iam_send_delegation_token]{send_delegation_token}} API.}
+The active time window for the session starts when the customer calls the \code{\link[=iam_send_delegation_token]{send_delegation_token}} API.}
 
 \item{OnlySendByOwner}{Specifies whether the delegation token should only be sent by the owner.
 
-This flag prevents any party other than the owner from calling
-\code{\link[=iam_send_delegation_token]{send_delegation_token}} API for this
-delegation request. This behavior becomes useful when the delegation
-request owner needs to be present for subsequent partner interactions,
-but the delegation request was sent to a more privileged user for
-approval due to the owner lacking sufficient delegation permissions.}
+This flag prevents any party other than the owner from calling \code{\link[=iam_send_delegation_token]{send_delegation_token}} API for this delegation request. This behavior becomes useful when the delegation request owner needs to be present for subsequent partner interactions, but the delegation request was sent to a more privileged user for approval due to the owner lacking sufficient delegation permissions.}
 }
 \description{
 Creates an IAM delegation request for temporary access delegation.

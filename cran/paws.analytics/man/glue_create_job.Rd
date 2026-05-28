@@ -33,66 +33,46 @@ glue_create_job(
 )
 }
 \arguments{
-\item{Name}{[required] The name you assign to this job definition. It must be unique in your
-account.}
+\item{Name}{[required] The name you assign to this job definition. It must be unique in your account.}
 
 \item{JobMode}{A mode that describes how a job was created. Valid values are:
 \itemize{
 \item \code{SCRIPT} - The job was created using the Glue Studio script editor.
 \item \code{VISUAL} - The job was created using the Glue Studio visual editor.
-\item \code{NOTEBOOK} - The job was created using an interactive sessions
-notebook.
+\item \code{NOTEBOOK} - The job was created using an interactive sessions notebook.
 }
 
-When the \code{JobMode} field is missing or null, \code{SCRIPT} is assigned as the
-default value.}
+When the \code{JobMode} field is missing or null, \code{SCRIPT} is assigned as the default value.}
 
-\item{JobRunQueuingEnabled}{Specifies whether job run queuing is enabled for the job runs for this
-job.
+\item{JobRunQueuingEnabled}{Specifies whether job run queuing is enabled for the job runs for this job.
 
-A value of true means job run queuing is enabled for the job runs. If
-false or not populated, the job runs will not be considered for
-queueing.
+A value of true means job run queuing is enabled for the job runs. If false or not populated, the job runs will not be considered for queueing.
 
-If this field does not match the value set in the job run, then the
-value from the job run field will be used.}
+If this field does not match the value set in the job run, then the value from the job run field will be used.}
 
 \item{Description}{Description of the job being defined.}
 
 \item{LogUri}{This field is reserved for future use.}
 
-\item{Role}{[required] The name or Amazon Resource Name (ARN) of the IAM role associated with
-this job.}
+\item{Role}{[required] The name or Amazon Resource Name (ARN) of the IAM role associated with this job.}
 
-\item{ExecutionProperty}{An \code{ExecutionProperty} specifying the maximum number of concurrent runs
-allowed for this job.}
+\item{ExecutionProperty}{An \code{ExecutionProperty} specifying the maximum number of concurrent runs allowed for this job.}
 
 \item{Command}{[required] The \code{JobCommand} that runs this job.}
 
-\item{DefaultArguments}{The default arguments for every run of this job, specified as name-value
-pairs.
+\item{DefaultArguments}{The default arguments for every run of this job, specified as name-value pairs.
 
-You can specify arguments here that your own job-execution script
-consumes, as well as arguments that Glue itself consumes.
+You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.
 
-Job arguments may be logged. Do not pass plaintext secrets as arguments.
-Retrieve secrets from a Glue Connection, Secrets Manager or other secret
-management mechanism if you intend to keep them within the Job.
+Job arguments may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from a Glue Connection, Secrets Manager or other secret management mechanism if you intend to keep them within the Job.
 
-For information about how to specify and consume your own Job arguments,
-see the \href{https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html}{Calling Glue APIs in Python}
-topic in the developer guide.
+For information about how to specify and consume your own Job arguments, see the \href{https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html}{Calling Glue APIs in Python} topic in the developer guide.
 
-For information about the arguments you can provide to this field when
-configuring Spark jobs, see the \href{https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html}{Special Parameters Used by Glue}
-topic in the developer guide.
+For information about the arguments you can provide to this field when configuring Spark jobs, see the \href{https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html}{Special Parameters Used by Glue} topic in the developer guide.
 
-For information about the arguments you can provide to this field when
-configuring Ray jobs, see \href{https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html}{Using job parameters in Ray jobs}
-in the developer guide.}
+For information about the arguments you can provide to this field when configuring Ray jobs, see \href{https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html}{Using job parameters in Ray jobs} in the developer guide.}
 
-\item{NonOverridableArguments}{Arguments for this job that are not overridden when providing job
-arguments in a job run, specified as name-value pairs.}
+\item{NonOverridableArguments}{Arguments for this job that are not overridden when providing job arguments in a job run, specified as name-value pairs.}
 
 \item{Connections}{The connections used for this job.}
 
@@ -100,146 +80,69 @@ arguments in a job run, specified as name-value pairs.}
 
 \item{AllocatedCapacity}{This parameter is deprecated. Use \code{MaxCapacity} instead.
 
-The number of Glue data processing units (DPUs) to allocate to this Job.
-You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a
-relative measure of processing power that consists of 4 vCPUs of compute
-capacity and 16 GB of memory. For more information, see the \href{https://aws.amazon.com/glue/pricing/}{Glue pricing page}.}
+The number of Glue data processing units (DPUs) to allocate to this Job. You can allocate a minimum of 2 DPUs; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the \href{https://aws.amazon.com/glue/pricing/}{Glue pricing page}.}
 
-\item{Timeout}{The job timeout in minutes. This is the maximum time that a job run can
-consume resources before it is terminated and enters \code{TIMEOUT} status.
+\item{Timeout}{The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters \code{TIMEOUT} status.
 
-Jobs must have timeout values less than 7 days or 10080 minutes.
-Otherwise, the jobs will throw an exception.
+Jobs must have timeout values less than 7 days or 10080 minutes. Otherwise, the jobs will throw an exception.
 
-When the value is left blank, the timeout is defaulted to 2880 minutes.
+When the value is left blank, the timeout is defaulted to 2,880 minutes for Glue version 4.0 and earlier, or 480 minutes for Glue version 5.0 and later.
 
-Any existing Glue jobs that had a timeout value greater than 7 days will
-be defaulted to 7 days. For instance if you have specified a timeout of
-20 days for a batch job, it will be stopped on the 7th day.
+Any existing Glue jobs that had a timeout value greater than 7 days will be defaulted to 7 days. For instance if you have specified a timeout of 20 days for a batch job, it will be stopped on the 7th day.
 
-For streaming jobs, if you have set up a maintenance window, it will be
-restarted during the maintenance window after 7 days.}
+For streaming jobs, if you have set up a maintenance window, it will be restarted during the maintenance window after 7 days.}
 
-\item{MaxCapacity}{For Glue version 1.0 or earlier jobs, using the standard worker type,
-the number of Glue data processing units (DPUs) that can be allocated
-when this job runs. A DPU is a relative measure of processing power that
-consists of 4 vCPUs of compute capacity and 16 GB of memory. For more
-information, see the \href{https://aws.amazon.com/glue/pricing/}{Glue pricing page}.
+\item{MaxCapacity}{For Glue version 1.0 or earlier jobs, using the standard worker type, the number of Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the \href{https://aws.amazon.com/glue/pricing/}{Glue pricing page}.
 
-For Glue version 2.0+ jobs, you cannot specify a \verb{Maximum capacity}.
-Instead, you should specify a \verb{Worker type} and the \verb{Number of workers}.
+For Glue version 2.0+ jobs, you cannot specify a \verb{Maximum capacity}. Instead, you should specify a \verb{Worker type} and the \verb{Number of workers}.
 
 Do not set \code{MaxCapacity} if using \code{WorkerType} and \code{NumberOfWorkers}.
 
-The value that can be allocated for \code{MaxCapacity} depends on whether you
-are running a Python shell job, an Apache Spark ETL job, or an Apache
-Spark streaming ETL job:
+The value that can be allocated for \code{MaxCapacity} depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:
 \itemize{
-\item When you specify a Python shell job
-(\code{JobCommand.Name}="pythonshell"), you can allocate either 0.0625 or
-1 DPU. The default is 0.0625 DPU.
-\item When you specify an Apache Spark ETL job
-(\code{JobCommand.Name}="glueetl") or Apache Spark streaming ETL job
-(\code{JobCommand.Name}="gluestreaming"), you can allocate from 2 to 100
-DPUs. The default is 10 DPUs. This job type cannot have a fractional
-DPU allocation.
+\item When you specify a Python shell job (\code{JobCommand.Name}="pythonshell"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.
+\item When you specify an Apache Spark ETL job (\code{JobCommand.Name}="glueetl") or Apache Spark streaming ETL job (\code{JobCommand.Name}="gluestreaming"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.
 }}
 
-\item{SecurityConfiguration}{The name of the \code{SecurityConfiguration} structure to be used with this
-job.}
+\item{SecurityConfiguration}{The name of the \code{SecurityConfiguration} structure to be used with this job.}
 
-\item{Tags}{The tags to use with this job. You may use tags to limit access to the
-job. For more information about tags in Glue, see \href{https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html}{Amazon Web Services Tags in Glue} in
-the developer guide.}
+\item{Tags}{The tags to use with this job. You may use tags to limit access to the job. For more information about tags in Glue, see \href{https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html}{Amazon Web Services Tags in Glue} in the developer guide.}
 
 \item{NotificationProperty}{Specifies configuration properties of a job notification.}
 
-\item{GlueVersion}{In Spark jobs, \code{GlueVersion} determines the versions of Apache Spark and
-Python that Glue available in a job. The Python version indicates the
-version supported for jobs of type Spark.
+\item{GlueVersion}{In Spark jobs, \code{GlueVersion} determines the versions of Apache Spark and Python that Glue available in a job. The Python version indicates the version supported for jobs of type Spark.
 
-Ray jobs should set \code{GlueVersion} to \code{4.0} or greater. However, the
-versions of Ray, Python and additional libraries available in your Ray
-job are determined by the \code{Runtime} parameter of the Job command.
+Ray jobs should set \code{GlueVersion} to \code{4.0} or greater. However, the versions of Ray, Python and additional libraries available in your Ray job are determined by the \code{Runtime} parameter of the Job command.
 
-For more information about the available Glue versions and corresponding
-Spark and Python versions, see \href{https://docs.aws.amazon.com/glue/latest/dg/add-job.html}{Glue version} in the
-developer guide.
+For more information about the available Glue versions and corresponding Spark and Python versions, see \href{https://docs.aws.amazon.com/glue/latest/dg/add-job.html}{Glue version} in the developer guide.
 
-Jobs that are created without specifying a Glue version default to Glue
-5.1.}
+Jobs that are created without specifying a Glue version default to Glue 5.1.}
 
-\item{NumberOfWorkers}{The number of workers of a defined \code{workerType} that are allocated when
-a job runs.}
+\item{NumberOfWorkers}{The number of workers of a defined \code{workerType} that are allocated when a job runs.}
 
-\item{WorkerType}{The type of predefined worker that is allocated when a job runs. Accepts
-a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the
-value Z.2X for Ray jobs.
+\item{WorkerType}{The type of predefined worker that is allocated when a job runs. Accepts a value of G.1X, G.2X, G.4X, G.8X or G.025X for Spark jobs. Accepts the value Z.2X for Ray jobs.
 \itemize{
-\item For the \code{G.1X} worker type, each worker maps to 1 DPU (4 vCPUs, 16
-GB of memory) with 94GB disk, and provides 1 executor per worker. We
-recommend this worker type for workloads such as data transforms,
-joins, and queries, to offers a scalable and cost effective way to
-run most jobs.
-\item For the \code{G.2X} worker type, each worker maps to 2 DPU (8 vCPUs, 32
-GB of memory) with 138GB disk, and provides 1 executor per worker.
-We recommend this worker type for workloads such as data transforms,
-joins, and queries, to offers a scalable and cost effective way to
-run most jobs.
-\item For the \code{G.4X} worker type, each worker maps to 4 DPU (16 vCPUs, 64
-GB of memory) with 256GB disk, and provides 1 executor per worker.
-We recommend this worker type for jobs whose workloads contain your
-most demanding transforms, aggregations, joins, and queries. This
-worker type is available only for Glue version 3.0 or later Spark
-ETL jobs in the following Amazon Web Services Regions: US East
-(Ohio), US East (N. Virginia), US West (N. California), US West
-(Oregon), Asia Pacific (Mumbai), Asia Pacific (Seoul), Asia Pacific
-(Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada
-(Central), Europe (Frankfurt), Europe (Ireland), Europe (London),
-Europe (Spain), Europe (Stockholm), and South America (São Paulo).
-\item For the \code{G.8X} worker type, each worker maps to 8 DPU (32 vCPUs, 128
-GB of memory) with 512GB disk, and provides 1 executor per worker.
-We recommend this worker type for jobs whose workloads contain your
-most demanding transforms, aggregations, joins, and queries. This
-worker type is available only for Glue version 3.0 or later Spark
-ETL jobs, in the same Amazon Web Services Regions as supported for
-the \code{G.4X} worker type.
-\item For the \code{G.025X} worker type, each worker maps to 0.25 DPU (2 vCPUs,
-4 GB of memory) with 84GB disk, and provides 1 executor per worker.
-We recommend this worker type for low volume streaming jobs. This
-worker type is only available for Glue version 3.0 or later
-streaming jobs.
-\item For the \code{Z.2X} worker type, each worker maps to 2 M-DPU (8vCPUs, 64
-GB of memory) with 128 GB disk, and provides up to 8 Ray workers
-based on the autoscaler.
+\item For the \code{G.1X} worker type, each worker maps to 1 DPU (4 vCPUs, 16 GB of memory) with 94GB disk, and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
+\item For the \code{G.2X} worker type, each worker maps to 2 DPU (8 vCPUs, 32 GB of memory) with 138GB disk, and provides 1 executor per worker. We recommend this worker type for workloads such as data transforms, joins, and queries, to offers a scalable and cost effective way to run most jobs.
+\item For the \code{G.4X} worker type, each worker maps to 4 DPU (16 vCPUs, 64 GB of memory) with 256GB disk, and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs in the following Amazon Web Services Regions: US East (Ohio), US East (N. Virginia), US West (N. California), US West (Oregon), Asia Pacific (Mumbai), Asia Pacific (Seoul), Asia Pacific (Singapore), Asia Pacific (Sydney), Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Spain), Europe (Stockholm), and South America (São Paulo).
+\item For the \code{G.8X} worker type, each worker maps to 8 DPU (32 vCPUs, 128 GB of memory) with 512GB disk, and provides 1 executor per worker. We recommend this worker type for jobs whose workloads contain your most demanding transforms, aggregations, joins, and queries. This worker type is available only for Glue version 3.0 or later Spark ETL jobs, in the same Amazon Web Services Regions as supported for the \code{G.4X} worker type.
+\item For the \code{G.025X} worker type, each worker maps to 0.25 DPU (2 vCPUs, 4 GB of memory) with 84GB disk, and provides 1 executor per worker. We recommend this worker type for low volume streaming jobs. This worker type is only available for Glue version 3.0 or later streaming jobs.
+\item For the \code{Z.2X} worker type, each worker maps to 2 M-DPU (8vCPUs, 64 GB of memory) with 128 GB disk, and provides up to 8 Ray workers based on the autoscaler.
 }}
 
-\item{CodeGenConfigurationNodes}{The representation of a directed acyclic graph on which both the Glue
-Studio visual component and Glue Studio code generation is based.}
+\item{CodeGenConfigurationNodes}{The representation of a directed acyclic graph on which both the Glue Studio visual component and Glue Studio code generation is based.}
 
-\item{ExecutionClass}{Indicates whether the job is run with a standard or flexible execution
-class. The standard execution-class is ideal for time-sensitive
-workloads that require fast job startup and dedicated resources.
+\item{ExecutionClass}{Indicates whether the job is run with a standard or flexible execution class. The standard execution-class is ideal for time-sensitive workloads that require fast job startup and dedicated resources.
 
-The flexible execution class is appropriate for time-insensitive jobs
-whose start and completion times may vary.
+The flexible execution class is appropriate for time-insensitive jobs whose start and completion times may vary.
 
-Only jobs with Glue version 3.0 and above and command type \code{glueetl}
-will be allowed to set \code{ExecutionClass} to \code{FLEX}. The flexible
-execution class is available for Spark jobs.}
+Only jobs with Glue version 3.0 and above and command type \code{glueetl} will be allowed to set \code{ExecutionClass} to \code{FLEX}. The flexible execution class is available for Spark jobs.}
 
-\item{SourceControlDetails}{The details for a source control configuration for a job, allowing
-synchronization of job artifacts to or from a remote repository.}
+\item{SourceControlDetails}{The details for a source control configuration for a job, allowing synchronization of job artifacts to or from a remote repository.}
 
-\item{MaintenanceWindow}{This field specifies a day of the week and hour for a maintenance window
-for streaming jobs. Glue periodically performs maintenance activities.
-During these maintenance windows, Glue will need to restart your
-streaming jobs.
+\item{MaintenanceWindow}{This field specifies a day of the week and hour for a maintenance window for streaming jobs. Glue periodically performs maintenance activities. During these maintenance windows, Glue will need to restart your streaming jobs.
 
-Glue will restart the job within 3 hours of the specified maintenance
-window. For instance, if you set up the maintenance window for Monday at
-10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM
-GMT.}
+Glue will restart the job within 3 hours of the specified maintenance window. For instance, if you set up the maintenance window for Monday at 10:00AM GMT, your jobs will be restarted between 10:00AM GMT to 1:00PM GMT.}
 }
 \description{
 Creates a new job definition.

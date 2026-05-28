@@ -7,8 +7,7 @@
 docdb_remove_tags_from_resource(ResourceName, TagKeys)
 }
 \arguments{
-\item{ResourceName}{[required] The Amazon DocumentDB resource that the tags are removed from. This
-value is an Amazon Resource Name (ARN).}
+\item{ResourceName}{[required] The Amazon DocumentDB resource that the tags are removed from. This value is an Amazon Resource Name (ARN).}
 
 \item{TagKeys}{[required] The tag key (name) of the tag to be removed.}
 }

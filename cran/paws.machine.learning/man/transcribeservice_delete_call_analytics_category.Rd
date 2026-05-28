@@ -7,8 +7,7 @@
 transcribeservice_delete_call_analytics_category(CategoryName)
 }
 \arguments{
-\item{CategoryName}{[required] The name of the Call Analytics category you want to delete. Category
-names are case sensitive.}
+\item{CategoryName}{[required] The name of the Call Analytics category you want to delete. Category names are case sensitive.}
 }
 \description{
 Deletes a Call Analytics category. To use this operation, specify the name of the category you want to delete using \code{CategoryName}. Category names are case sensitive.

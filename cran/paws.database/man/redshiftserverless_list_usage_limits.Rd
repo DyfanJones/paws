@@ -12,18 +12,11 @@ redshiftserverless_list_usage_limits(
 )
 }
 \arguments{
-\item{maxResults}{An optional parameter that specifies the maximum number of results to
-return. You can use \code{nextToken} to get the next page of results. The
-default is 100.}
+\item{maxResults}{An optional parameter that specifies the maximum number of results to return. You can use \code{nextToken} to get the next page of results. The default is 100.}
 
-\item{nextToken}{If your initial
-\code{\link[=redshiftserverless_list_usage_limits]{list_usage_limits}} operation
-returns a \code{nextToken}, you can include the returned \code{nextToken} in
-following \code{\link[=redshiftserverless_list_usage_limits]{list_usage_limits}}
-operations, which returns results in the next page.}
+\item{nextToken}{If your initial \code{\link[=redshiftserverless_list_usage_limits]{list_usage_limits}} operation returns a \code{nextToken}, you can include the returned \code{nextToken} in following \code{\link[=redshiftserverless_list_usage_limits]{list_usage_limits}} operations, which returns results in the next page.}
 
-\item{resourceArn}{The Amazon Resource Name (ARN) associated with the resource whose usage
-limits you want to list.}
+\item{resourceArn}{The Amazon Resource Name (ARN) associated with the resource whose usage limits you want to list.}
 
 \item{usageType}{The Amazon Redshift Serverless feature whose limits you want to see.}
 }

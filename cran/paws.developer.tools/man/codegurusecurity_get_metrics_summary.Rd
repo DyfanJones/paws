@@ -10,8 +10,7 @@ findings}
 codegurusecurity_get_metrics_summary(date)
 }
 \arguments{
-\item{date}{[required] The date you want to retrieve summary metrics from, rounded to the
-nearest day. The date must be within the past two years.}
+\item{date}{[required] The date you want to retrieve summary metrics from, rounded to the nearest day. The date must be within the past two years.}
 }
 \description{
 Returns a summary of metrics for an account from a specified date, including number of open findings, the categories with most findings, the scans with most open findings, and scans with most open critical findings.

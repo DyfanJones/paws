@@ -53,8 +53,7 @@ to the client. The available operations are listed in the
 Operations section.
 }
 \description{
-Amazon Personalize is a machine learning service that makes it easy to
-add individualized recommendations to customers.
+Amazon Personalize is a machine learning service that makes it easy to add individualized recommendations to customers.
 }
 \section{Service syntax}{
 

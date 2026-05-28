@@ -17,29 +17,15 @@ neptune_modify_db_cluster_snapshot_attribute(
 
 \item{AttributeName}{[required] The name of the DB cluster snapshot attribute to modify.
 
-To manage authorization for other Amazon accounts to copy or restore a
-manual DB cluster snapshot, set this value to \code{restore}.}
+To manage authorization for other Amazon accounts to copy or restore a manual DB cluster snapshot, set this value to \code{restore}.}
 
-\item{ValuesToAdd}{A list of DB cluster snapshot attributes to add to the attribute
-specified by \code{AttributeName}.
+\item{ValuesToAdd}{A list of DB cluster snapshot attributes to add to the attribute specified by \code{AttributeName}.
 
-To authorize other Amazon accounts to copy or restore a manual DB
-cluster snapshot, set this list to include one or more Amazon account
-IDs, or \code{all} to make the manual DB cluster snapshot restorable by any
-Amazon account. Do not add the \code{all} value for any manual DB cluster
-snapshots that contain private information that you don't want available
-to all Amazon accounts.}
+To authorize other Amazon accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon account IDs, or \code{all} to make the manual DB cluster snapshot restorable by any Amazon account. Do not add the \code{all} value for any manual DB cluster snapshots that contain private information that you don't want available to all Amazon accounts.}
 
-\item{ValuesToRemove}{A list of DB cluster snapshot attributes to remove from the attribute
-specified by \code{AttributeName}.
+\item{ValuesToRemove}{A list of DB cluster snapshot attributes to remove from the attribute specified by \code{AttributeName}.
 
-To remove authorization for other Amazon accounts to copy or restore a
-manual DB cluster snapshot, set this list to include one or more Amazon
-account identifiers, or \code{all} to remove authorization for any Amazon
-account to copy or restore the DB cluster snapshot. If you specify
-\code{all}, an Amazon account whose account ID is explicitly added to the
-\code{restore} attribute can still copy or restore a manual DB cluster
-snapshot.}
+To remove authorization for other Amazon accounts to copy or restore a manual DB cluster snapshot, set this list to include one or more Amazon account identifiers, or \code{all} to remove authorization for any Amazon account to copy or restore the DB cluster snapshot. If you specify \code{all}, an Amazon account whose account ID is explicitly added to the \code{restore} attribute can still copy or restore a manual DB cluster snapshot.}
 }
 \description{
 Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.

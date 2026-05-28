@@ -17,24 +17,19 @@ lambda_list_durable_executions_by_function(
 )
 }
 \arguments{
-\item{FunctionName}{[required] The name or ARN of the Lambda function. You can specify a function name,
-a partial ARN, or a full ARN.}
+\item{FunctionName}{[required] The name or ARN of the Lambda function. You can specify a function name, a partial ARN, or a full ARN.}
 
-\item{Qualifier}{The function version or alias. If not specified, lists executions for
-the $LATEST version.}
+\item{Qualifier}{The function version or alias. If not specified, lists executions for the $LATEST version.}
 
-\item{DurableExecutionName}{Filter executions by name. Only executions with names that matches this
-string are returned.}
+\item{DurableExecutionName}{Filter executions by name. Only executions with names that matches this string are returned.}
 
-\item{Statuses}{Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED,
-TIMED_OUT, STOPPED.}
+\item{Statuses}{Filter executions by status. Valid values: RUNNING, SUCCEEDED, FAILED, TIMED_OUT, STOPPED.}
 
 \item{StartedAfter}{Filter executions that started after this timestamp (ISO 8601 format).}
 
 \item{StartedBefore}{Filter executions that started before this timestamp (ISO 8601 format).}
 
-\item{ReverseOrder}{Set to true to return results in reverse chronological order (newest
-first). Default is false.}
+\item{ReverseOrder}{Set to true to return results in reverse chronological order (newest first). Default is false.}
 
 \item{Marker}{Pagination token from a previous request to continue retrieving results.}
 

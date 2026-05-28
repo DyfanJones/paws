@@ -7,11 +7,7 @@ NULL
 #' response with no body if the operation is successful
 #'
 #' @description
-#' Stops a multipart read set upload into a sequence store and returns a
-#' response with no body if the operation is successful. To confirm that a
-#' multipart read set upload has been stopped, use the
-#' [`list_multipart_read_set_uploads`][omics_list_multipart_read_set_uploads]
-#' API operation to view all active multipart read set uploads.
+#' Stops a multipart read set upload into a sequence store and returns a response with no body if the operation is successful. To confirm that a multipart read set upload has been stopped, use the [`list_multipart_read_set_uploads`][omics_list_multipart_read_set_uploads] API operation to view all active multipart read set uploads.
 #'
 #' @usage
 #' omics_abort_multipart_read_set_upload(sequenceStoreId, uploadId)
@@ -106,13 +102,7 @@ omics_accept_share <- function(shareId) {
 #' Deletes one or more read sets
 #'
 #' @description
-#' Deletes one or more read sets. If the operation is successful, it
-#' returns a response with no body. If there is an error with deleting one
-#' of the read sets, the operation returns an error list. If the operation
-#' successfully deletes only a subset of files, it will return an error
-#' list for the remaining files that fail to be deleted. There is a limit
-#' of 100 read sets that can be deleted in each
-#' [`batch_delete_read_set`][omics_batch_delete_read_set] API call.
+#' Deletes one or more read sets. If the operation is successful, it returns a response with no body. If there is an error with deleting one of the read sets, the operation returns an error list. If the operation successfully deletes only a subset of files, it will return an error list for the remaining files that fail to be deleted. There is a limit of 100 read sets that can be deleted in each [`batch_delete_read_set`][omics_batch_delete_read_set] API call.
 #'
 #' @usage
 #' omics_batch_delete_read_set(ids, sequenceStoreId)
@@ -172,11 +162,7 @@ omics_batch_delete_read_set <- function(ids, sequenceStoreId) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Cancels an annotation import job.
 #'
@@ -223,10 +209,7 @@ omics_cancel_annotation_import_job <- function(jobId) {
 #' operation is successful
 #'
 #' @description
-#' Cancels a run using its ID and returns a response with no body if the
-#' operation is successful. To confirm that the run has been cancelled, use
-#' the [`list_runs`][omics_list_runs] API operation to check that it is no
-#' longer listed.
+#' Cancels a run using its ID and returns a response with no body if the operation is successful. To confirm that the run has been cancelled, use the [`list_runs`][omics_list_runs] API operation to check that it is no longer listed.
 #'
 #' @usage
 #' omics_cancel_run(id)
@@ -270,17 +253,9 @@ omics_cancel_run <- function(id) {
 #' Cancels all runs within a specified batch
 #'
 #' @description
-#' Cancels all runs within a specified batch. This operation prevents
-#' not-yet-submitted runs from starting and submits
-#' [`cancel_run`][omics_cancel_run] requests for runs that have already
-#' started.
+#' Cancels all runs within a specified batch. This operation prevents not-yet-submitted runs from starting and submits [`cancel_run`][omics_cancel_run] requests for runs that have already started.
 #' 
-#' Cancel is only allowed on batches in `PENDING`, `SUBMITTING`, or
-#' `INPROGRESS` state. Cancel operations are non-atomic and may be
-#' partially successful. Use [`get_batch`][omics_get_batch] to review
-#' `successfulCancelSubmissionCount` and `failedCancelSubmissionCount` in
-#' the `submissionSummary`. Only one cancel or delete operation per batch
-#' is allowed at a time.
+#' Cancel is only allowed on batches in `PENDING`, `SUBMITTING`, or `INPROGRESS` state. Cancel operations are non-atomic and may be partially successful. Use [`get_batch`][omics_get_batch] to review `successfulCancelSubmissionCount` and `failedCancelSubmissionCount` in the `submissionSummary`. Only one cancel or delete operation per batch is allowed at a time.
 #'
 #' @usage
 #' omics_cancel_run_batch(batchId)
@@ -325,11 +300,7 @@ omics_cancel_run_batch <- function(batchId) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Cancels a variant import job.
 #'
@@ -377,17 +348,9 @@ omics_cancel_variant_import_job <- function(jobId) {
 #' uploaded all read set parts using UploadReadSetPart
 #'
 #' @description
-#' Completes a multipart read set upload into a sequence store after you
-#' have initiated the upload process with
-#' [`create_multipart_read_set_upload`][omics_create_multipart_read_set_upload]
-#' and uploaded all read set parts using
-#' [`upload_read_set_part`][omics_upload_read_set_part]. You must specify
-#' the parts you uploaded using the parts parameter. If the operation is
-#' successful, it returns the read set ID(s) of the uploaded read set(s).
+#' Completes a multipart read set upload into a sequence store after you have initiated the upload process with [`create_multipart_read_set_upload`][omics_create_multipart_read_set_upload] and uploaded all read set parts using [`upload_read_set_part`][omics_upload_read_set_part]. You must specify the parts you uploaded using the parts parameter. If the operation is successful, it returns the read set ID(s) of the uploaded read set(s).
 #' 
-#' For more information, see [Direct upload to a sequence
-#' store](https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Direct upload to a sequence store](https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_complete_multipart_read_set_upload(sequenceStoreId, uploadId,
@@ -448,11 +411,7 @@ omics_complete_multipart_read_set_upload <- function(sequenceStoreId, uploadId, 
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Creates an annotation store.
 #'
@@ -464,8 +423,7 @@ omics_complete_multipart_read_set_upload <- function(sequenceStoreId, uploadId, 
 #' @param name A name for the store.
 #' @param description A description for the store.
 #' @param tags Tags for the store.
-#' @param versionName The name given to an annotation store version to distinguish it from
-#' other versions.
+#' @param versionName The name given to an annotation store version to distinguish it from other versions.
 #' @param sseConfig Server-side encryption (SSE) settings for the store.
 #' @param storeFormat &#91;required&#93; The annotation file format of the store.
 #' @param storeOptions File parsing options for the annotation store.
@@ -567,10 +525,8 @@ omics_create_annotation_store <- function(reference = NULL, name = NULL, descrip
 #' omics_create_annotation_store_version(name, versionName, description,
 #'   versionOptions, tags)
 #'
-#' @param name &#91;required&#93; The name of an annotation store version from which versions are being
-#' created.
-#' @param versionName &#91;required&#93; The name given to an annotation store version to distinguish it from
-#' other versions.
+#' @param name &#91;required&#93; The name of an annotation store version from which versions are being created.
+#' @param versionName &#91;required&#93; The name given to an annotation store version to distinguish it from other versions.
 #' @param description The description of an annotation store version.
 #' @param versionOptions The options for an annotation store version.
 #' @param tags Any tags added to annotation store version.
@@ -665,9 +621,7 @@ omics_create_annotation_store_version <- function(name, versionName, description
 #' @param description Optional description for the configuration.
 #' @param runConfigurations &#91;required&#93; Required run-specific configurations.
 #' @param tags Optional tags for the configuration.
-#' @param requestId &#91;required&#93; Optional request idempotency token. If not specified, a universally
-#' unique identifier (UUID) will be automatically generated for the
-#' request.
+#' @param requestId &#91;required&#93; Optional request idempotency token. If not specified, a universally unique identifier (UUID) will be automatically generated for the request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -748,43 +702,25 @@ omics_create_configuration <- function(name, description = NULL, runConfiguratio
 #' files into a sequence store
 #'
 #' @description
-#' Initiates a multipart read set upload for uploading partitioned source
-#' files into a sequence store. You can directly import source files from
-#' an EC2 instance and other local compute, or from an S3 bucket. To
-#' separate these source files into parts, use the `split` operation. Each
-#' part cannot be larger than 100 MB. If the operation is successful, it
-#' provides an `uploadId` which is required by the
-#' [`upload_read_set_part`][omics_upload_read_set_part] API operation to
-#' upload parts into a sequence store.
+#' Initiates a multipart read set upload for uploading partitioned source files into a sequence store. You can directly import source files from an EC2 instance and other local compute, or from an S3 bucket. To separate these source files into parts, use the `split` operation. Each part cannot be larger than 100 MB. If the operation is successful, it provides an `uploadId` which is required by the [`upload_read_set_part`][omics_upload_read_set_part] API operation to upload parts into a sequence store.
 #' 
-#' To continue uploading a multipart read set into your sequence store, you
-#' must use the [`upload_read_set_part`][omics_upload_read_set_part] API
-#' operation to upload each part individually following the steps below:
+#' To continue uploading a multipart read set into your sequence store, you must use the [`upload_read_set_part`][omics_upload_read_set_part] API operation to upload each part individually following the steps below:
 #' 
-#' -   Specify the `uploadId` obtained from the previous call to
-#'     [`create_multipart_read_set_upload`][omics_create_multipart_read_set_upload].
+#' -   Specify the `uploadId` obtained from the previous call to [`create_multipart_read_set_upload`][omics_create_multipart_read_set_upload].
 #' 
 #' -   Upload parts for that `uploadId`.
 #' 
-#' When you have finished uploading parts, use the
-#' [`complete_multipart_read_set_upload`][omics_complete_multipart_read_set_upload]
-#' API to complete the multipart read set upload and to retrieve the final
-#' read set IDs in the response.
+#' When you have finished uploading parts, use the [`complete_multipart_read_set_upload`][omics_complete_multipart_read_set_upload] API to complete the multipart read set upload and to retrieve the final read set IDs in the response.
 #' 
-#' To learn more about creating parts and the `split` operation, see
-#' [Direct upload to a sequence
-#' store](https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' To learn more about creating parts and the `split` operation, see [Direct upload to a sequence store](https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_create_multipart_read_set_upload(sequenceStoreId, clientToken,
 #'   sourceFileType, subjectId, sampleId, generatedFrom, referenceArn, name,
 #'   description, tags)
 #'
-#' @param sequenceStoreId &#91;required&#93; The sequence store ID for the store that is the destination of the
-#' multipart uploads.
-#' @param clientToken An idempotency token that can be used to avoid triggering multiple
-#' multipart uploads.
+#' @param sequenceStoreId &#91;required&#93; The sequence store ID for the store that is the destination of the multipart uploads.
+#' @param clientToken An idempotency token that can be used to avoid triggering multiple multipart uploads.
 #' @param sourceFileType &#91;required&#93; The type of file being uploaded.
 #' @param subjectId &#91;required&#93; The source's subject ID.
 #' @param sampleId &#91;required&#93; The source's sample ID.
@@ -861,16 +797,9 @@ omics_create_multipart_read_set_upload <- function(sequenceStoreId, clientToken 
 #' Creates a reference store and returns metadata in JSON format
 #'
 #' @description
-#' Creates a reference store and returns metadata in JSON format. Reference
-#' stores are used to store reference genomes in FASTA format. A reference
-#' store is created when the first reference genome is imported. To import
-#' additional reference genomes from an Amazon S3 bucket, use the
-#' [`start_reference_import_job`][omics_start_reference_import_job] API
-#' operation.
+#' Creates a reference store and returns metadata in JSON format. Reference stores are used to store reference genomes in FASTA format. A reference store is created when the first reference genome is imported. To import additional reference genomes from an Amazon S3 bucket, use the [`start_reference_import_job`][omics_start_reference_import_job] API operation.
 #' 
-#' For more information, see [Creating a HealthOmics reference
-#' store](https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Creating a HealthOmics reference store](https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_create_reference_store(name, description, sseConfig, tags,
@@ -880,8 +809,7 @@ omics_create_multipart_read_set_upload <- function(sequenceStoreId, clientToken 
 #' @param description A description for the store.
 #' @param sseConfig Server-side encryption (SSE) settings for the store.
 #' @param tags Tags for the store.
-#' @param clientToken To ensure that requests don't run multiple times, specify a unique token
-#' for each request.
+#' @param clientToken To ensure that requests don't run multiple times, specify a unique token for each request.
 #'
 #' @return
 #' A list with the following syntax:
@@ -945,54 +873,29 @@ omics_create_reference_store <- function(name, description = NULL, sseConfig = N
 #' private runs
 #'
 #' @description
-#' Creates a run cache to store and reference task outputs from completed
-#' private runs. Specify an Amazon S3 location where Amazon Web Services
-#' HealthOmics saves the cached data. This data must be immediately
-#' accessible and not in an archived state. You can save intermediate task
-#' files to a run cache if they are declared as task outputs in the
-#' workflow definition file.
+#' Creates a run cache to store and reference task outputs from completed private runs. Specify an Amazon S3 location where Amazon Web Services HealthOmics saves the cached data. This data must be immediately accessible and not in an archived state. You can save intermediate task files to a run cache if they are declared as task outputs in the workflow definition file.
 #' 
-#' For more information, see [Call
-#' caching](https://docs.aws.amazon.com/omics/latest/dev/workflows-call-caching.html)
-#' and [Creating a run
-#' cache](https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Call caching](https://docs.aws.amazon.com/omics/latest/dev/workflows-call-caching.html) and [Creating a run cache](https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-create.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_create_run_cache(cacheBehavior, cacheS3Location, description,
 #'   name, requestId, tags, cacheBucketOwnerId)
 #'
-#' @param cacheBehavior Default cache behavior for runs that use this cache. Supported values
-#' are:
+#' @param cacheBehavior Default cache behavior for runs that use this cache. Supported values are:
 #' 
-#' `CACHE_ON_FAILURE`: Caches task outputs from completed tasks for runs
-#' that fail. This setting is useful if you're debugging a workflow that
-#' fails after several tasks completed successfully. The subsequent run
-#' uses the cache outputs for previously-completed tasks if the task
-#' definition, inputs, and container in ECR are identical to the prior run.
+#' `CACHE_ON_FAILURE`: Caches task outputs from completed tasks for runs that fail. This setting is useful if you're debugging a workflow that fails after several tasks completed successfully. The subsequent run uses the cache outputs for previously-completed tasks if the task definition, inputs, and container in ECR are identical to the prior run.
 #' 
-#' `CACHE_ALWAYS`: Caches task outputs from completed tasks for all runs.
-#' This setting is useful in development mode, but do not use it in a
-#' production setting.
+#' `CACHE_ALWAYS`: Caches task outputs from completed tasks for all runs. This setting is useful in development mode, but do not use it in a production setting.
 #' 
-#' If you don't specify a value, the default behavior is CACHE_ON_FAILURE.
-#' When you start a run that uses this cache, you can override the default
-#' cache behavior.
+#' If you don't specify a value, the default behavior is CACHE_ON_FAILURE. When you start a run that uses this cache, you can override the default cache behavior.
 #' 
-#' For more information, see [Run cache
-#' behavior](https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param cacheS3Location &#91;required&#93; Specify the S3 location for storing the cached task outputs. This data
-#' must be immediately accessible (not in an archived state).
+#' For more information, see [Run cache behavior](https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param cacheS3Location &#91;required&#93; Specify the S3 location for storing the cached task outputs. This data must be immediately accessible (not in an archived state).
 #' @param description Enter a description of the run cache.
 #' @param name Enter a user-friendly name for the run cache.
-#' @param requestId &#91;required&#93; A unique request token, to ensure idempotency. If you don't specify a
-#' token, Amazon Web Services HealthOmics automatically generates a
-#' universally unique identifier (UUID) for the request.
+#' @param requestId &#91;required&#93; A unique request token, to ensure idempotency. If you don't specify a token, Amazon Web Services HealthOmics automatically generates a universally unique identifier (UUID) for the request.
 #' @param tags Specify one or more tags to associate with this run cache.
-#' @param cacheBucketOwnerId The Amazon Web Services account ID of the expected owner of the S3
-#' bucket for the run cache. If not provided, your account ID is set as the
-#' owner of the bucket.
+#' @param cacheBucketOwnerId The Amazon Web Services account ID of the expected owner of the S3 bucket for the run cache. If not provided, your account ID is set as the owner of the bucket.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1050,24 +953,19 @@ omics_create_run_cache <- function(cacheBehavior = NULL, cacheS3Location, descri
 #' added to the group
 #'
 #' @description
-#' Creates a run group to limit the compute resources for the runs that are
-#' added to the group. Returns an ARN, ID, and tags for the run group.
+#' Creates a run group to limit the compute resources for the runs that are added to the group. Returns an ARN, ID, and tags for the run group.
 #'
 #' @usage
 #' omics_create_run_group(name, maxCpus, maxRuns, maxDuration, tags,
 #'   requestId, maxGpus)
 #'
 #' @param name A name for the group.
-#' @param maxCpus The maximum number of CPUs that can run concurrently across all active
-#' runs in the run group.
+#' @param maxCpus The maximum number of CPUs that can run concurrently across all active runs in the run group.
 #' @param maxRuns The maximum number of runs that can be running at the same time.
-#' @param maxDuration The maximum time for each run (in minutes). If a run exceeds the maximum
-#' run time, the run fails automatically.
+#' @param maxDuration The maximum time for each run (in minutes). If a run exceeds the maximum run time, the run fails automatically.
 #' @param tags Tags for the group.
-#' @param requestId &#91;required&#93; To ensure that requests don't run multiple times, specify a unique ID
-#' for each request.
-#' @param maxGpus The maximum number of GPUs that can run concurrently across all active
-#' runs in the run group.
+#' @param requestId &#91;required&#93; To ensure that requests don't run multiple times, specify a unique ID for each request.
+#' @param maxGpus The maximum number of GPUs that can run concurrently across all active runs in the run group.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1123,33 +1021,21 @@ omics_create_run_group <- function(name = NULL, maxCpus = NULL, maxRuns = NULL, 
 #' Creates a sequence store and returns its metadata
 #'
 #' @description
-#' Creates a sequence store and returns its metadata. Sequence stores are
-#' used to store sequence data files called read sets that are saved in
-#' FASTQ, BAM, uBAM, or CRAM formats. For aligned formats (BAM and CRAM), a
-#' sequence store can only use one reference genome. For unaligned formats
-#' (FASTQ and uBAM), a reference genome is not required. You can create
-#' multiple sequence stores per region per account.
+#' Creates a sequence store and returns its metadata. Sequence stores are used to store sequence data files called read sets that are saved in FASTQ, BAM, uBAM, or CRAM formats. For aligned formats (BAM and CRAM), a sequence store can only use one reference genome. For unaligned formats (FASTQ and uBAM), a reference genome is not required. You can create multiple sequence stores per region per account.
 #' 
-#' The following are optional parameters you can specify for your sequence
-#' store:
+#' The following are optional parameters you can specify for your sequence store:
 #' 
-#' -   Use `s3AccessConfig` to configure your sequence store with S3 access
-#'     logs (recommended).
+#' -   Use `s3AccessConfig` to configure your sequence store with S3 access logs (recommended).
 #' 
 #' -   Use `sseConfig` to define your own KMS key for encryption.
 #' 
-#' -   Use `eTagAlgorithmFamily` to define which algorithm to use for the
-#'     HealthOmics eTag on objects.
+#' -   Use `eTagAlgorithmFamily` to define which algorithm to use for the HealthOmics eTag on objects.
 #' 
-#' -   Use `fallbackLocation` to define a backup location for storing files
-#'     that have failed a direct upload.
+#' -   Use `fallbackLocation` to define a backup location for storing files that have failed a direct upload.
 #' 
-#' -   Use `propagatedSetLevelTags` to configure tags that propagate to all
-#'     objects in your store.
+#' -   Use `propagatedSetLevelTags` to configure tags that propagate to all objects in your store.
 #' 
-#' For more information, see [Creating a HealthOmics sequence
-#' store](https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Creating a HealthOmics sequence store](https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_create_sequence_store(name, description, sseConfig, tags,
@@ -1160,22 +1046,11 @@ omics_create_run_group <- function(name = NULL, maxCpus = NULL, maxRuns = NULL, 
 #' @param description A description for the store.
 #' @param sseConfig Server-side encryption (SSE) settings for the store.
 #' @param tags Tags for the store. You can configure up to 50 tags.
-#' @param clientToken An idempotency token used to dedupe retry requests so that duplicate
-#' runs are not created.
-#' @param fallbackLocation An S3 location that is used to store files that have failed a direct
-#' upload. You can add or change the `fallbackLocation` after creating a
-#' sequence store. This is not required if you are uploading files from a
-#' different S3 bucket.
-#' @param eTagAlgorithmFamily The ETag algorithm family to use for ingested read sets. The default
-#' value is MD5up. For more information on ETags, see [ETags and data
-#' provenance](https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param propagatedSetLevelTags The tags keys to propagate to the S3 objects associated with read sets
-#' in the sequence store. These tags can be used as input to add metadata
-#' to your read sets.
-#' @param s3AccessConfig S3 access configuration parameters. This specifies the parameters needed
-#' to access logs stored in S3 buckets. The S3 bucket must be in the same
-#' region and account as the sequence store.
+#' @param clientToken An idempotency token used to dedupe retry requests so that duplicate runs are not created.
+#' @param fallbackLocation An S3 location that is used to store files that have failed a direct upload. You can add or change the `fallbackLocation` after creating a sequence store. This is not required if you are uploading files from a different S3 bucket.
+#' @param eTagAlgorithmFamily The ETag algorithm family to use for ingested read sets. The default value is MD5up. For more information on ETags, see [ETags and data provenance](https://docs.aws.amazon.com/omics/latest/dev/etags-and-provenance.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param propagatedSetLevelTags The tags keys to propagate to the S3 objects associated with read sets in the sequence store. These tags can be used as input to add metadata to your read sets.
+#' @param s3AccessConfig S3 access configuration parameters. This specifies the parameters needed to access logs stored in S3 buckets. The S3 bucket must be in the same region and account as the sequence store.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1258,9 +1133,7 @@ omics_create_sequence_store <- function(name, description = NULL, sseConfig = NU
 #' Creates a cross-account shared resource
 #'
 #' @description
-#' Creates a cross-account shared resource. The resource owner makes an
-#' offer to share the resource with the principal subscriber (an AWS user
-#' with a different account than the resource owner).
+#' Creates a cross-account shared resource. The resource owner makes an offer to share the resource with the principal subscriber (an AWS user with a different account than the resource owner).
 #' 
 #' The following resources support cross-account sharing:
 #' 
@@ -1274,8 +1147,7 @@ omics_create_sequence_store <- function(name, description = NULL, sseConfig = NU
 #' omics_create_share(resourceArn, principalSubscriber, shareName)
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource to be shared.
-#' @param principalSubscriber &#91;required&#93; The principal subscriber is the account being offered shared access to
-#' the resource.
+#' @param principalSubscriber &#91;required&#93; The principal subscriber is the account being offered shared access to the resource.
 #' @param shareName A name that the owner defines for the share.
 #'
 #' @return
@@ -1325,11 +1197,7 @@ omics_create_share <- function(resourceArn, principalSubscriber, shareName = NUL
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Creates a variant store.
 #'
@@ -1404,45 +1272,19 @@ omics_create_variant_store <- function(reference, name = NULL, description = NUL
 #' Creates a private workflow
 #'
 #' @description
-#' Creates a private workflow. Before you create a private workflow, you
-#' must create and configure these required resources:
+#' Creates a private workflow. Before you create a private workflow, you must create and configure these required resources:
 #' 
-#' -   *Workflow definition file:* A workflow definition file written in
-#'     WDL, Nextflow, or CWL. The workflow definition specifies the inputs
-#'     and outputs for runs that use the workflow. It also includes
-#'     specifications for the runs and run tasks for your workflow,
-#'     including compute and memory requirements. The workflow definition
-#'     file must be in `.zip` format. For more information, see [Workflow
-#'     definition
-#'     files](https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-files.html)
-#'     in Amazon Web Services HealthOmics.
+#' -   *Workflow definition file:* A workflow definition file written in WDL, Nextflow, or CWL. The workflow definition specifies the inputs and outputs for runs that use the workflow. It also includes specifications for the runs and run tasks for your workflow, including compute and memory requirements. The workflow definition file must be in `.zip` format. For more information, see [Workflow definition files](https://docs.aws.amazon.com/omics/latest/dev/workflow-definition-files.html) in Amazon Web Services HealthOmics.
 #' 
-#'     -   You can use Amazon Q CLI to build and validate your workflow
-#'         definition files in WDL, Nextflow, and CWL. For more
-#'         information, see [Example prompts for Amazon Q
-#'         CLI](https://docs.aws.amazon.com/omics/latest/dev/getting-started.html#omics-q-prompts)
-#'         and the [Amazon Web Services HealthOmics Agentic generative AI
-#'         tutorial](https://github.com/aws-samples/aws-healthomics-tutorials/tree/main/generative-ai)
-#'         on GitHub.
+#'     -   You can use Amazon Q CLI to build and validate your workflow definition files in WDL, Nextflow, and CWL. For more information, see [Example prompts for Amazon Q CLI](https://docs.aws.amazon.com/omics/latest/dev/getting-started.html#omics-q-prompts) and the [Amazon Web Services HealthOmics Agentic generative AI tutorial](https://github.com/aws-samples/aws-healthomics-tutorials/tree/main/generative-ai) on GitHub.
 #' 
-#' -   *(Optional) Parameter template file:* A parameter template file
-#'     written in JSON. Create the file to define the run parameters, or
-#'     Amazon Web Services HealthOmics generates the parameter template for
-#'     you. For more information, see [Parameter template files for
-#'     HealthOmics
-#'     workflows](https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html).
+#' -   *(Optional) Parameter template file:* A parameter template file written in JSON. Create the file to define the run parameters, or Amazon Web Services HealthOmics generates the parameter template for you. For more information, see [Parameter template files for HealthOmics workflows](https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html).
 #' 
-#' -   *ECR container images:* Create container images for the workflow in
-#'     a private ECR repository, or synchronize images from a supported
-#'     upstream registry with your Amazon ECR private repository.
+#' -   *ECR container images:* Create container images for the workflow in a private ECR repository, or synchronize images from a supported upstream registry with your Amazon ECR private repository.
 #' 
-#' -   *(Optional) Sentieon licenses:* Request a Sentieon license to use
-#'     the Sentieon software in private workflows.
+#' -   *(Optional) Sentieon licenses:* Request a Sentieon license to use the Sentieon software in private workflows.
 #' 
-#' For more information, see [Creating or updating a private workflow in
-#' Amazon Web Services
-#' HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Creating or updating a private workflow in Amazon Web Services HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/creating-private-workflows.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_create_workflow(name, description, engine, definitionZip,
@@ -1451,82 +1293,28 @@ omics_create_variant_store <- function(reference, name = NULL, description = NUL
 #'   containerRegistryMapUri, readmeMarkdown, parameterTemplatePath,
 #'   readmePath, definitionRepository, workflowBucketOwnerId, readmeUri)
 #'
-#' @param name Name (optional but highly recommended) for the workflow to locate
-#' relevant information in the CloudWatch logs and Amazon Web Services
-#' HealthOmics console.
+#' @param name Name (optional but highly recommended) for the workflow to locate relevant information in the CloudWatch logs and Amazon Web Services HealthOmics console.
 #' @param description A description for the workflow.
-#' @param engine The workflow engine for the workflow. By default, Amazon Web Services
-#' HealthOmics detects the engine automatically from your workflow
-#' definition. Provide a value if you have workflow definition files from
-#' more than one engine in your zip file, or to use WDL lenient.
+#' @param engine The workflow engine for the workflow. By default, Amazon Web Services HealthOmics detects the engine automatically from your workflow definition. Provide a value if you have workflow definition files from more than one engine in your zip file, or to use WDL lenient.
 #' 
-#' WDL lenient is designed to handle workflows migrated from Cromwell. It
-#' supports customer Cromwell directives and some non-conformant logic. For
-#' details, see [Implicit type conversion in WDL
-#' lenient](https://docs.aws.amazon.com/omics/latest/dev/) in the *Amazon
-#' Web Services HealthOmics User Guide*.
-#' @param definitionZip A ZIP archive containing the main workflow definition file and
-#' dependencies that it imports for the workflow. You can use a file with a
-#' ://fileb prefix instead of the Base64 string. For more information, see
-#' [Workflow definition
-#' requirements](https://docs.aws.amazon.com/omics/latest/dev/workflow-defn-requirements.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param definitionUri The S3 URI of a definition for the workflow. The S3 bucket must be in
-#' the same region as the workflow.
-#' @param main The path of the main definition file for the workflow. This parameter is
-#' not required if the ZIP archive contains only one workflow definition
-#' file, or if the main definition file is named “main”. An example path
-#' is: `workflow-definition/main-file.wdl`.
-#' @param parameterTemplate A parameter template for the workflow. If this field is blank, Amazon
-#' Web Services HealthOmics will automatically parse the parameter template
-#' values from your workflow definition file. To override these service
-#' generated default values, provide a parameter template. To view an
-#' example of a parameter template, see [Parameter template
-#' files](https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param storageCapacity The default static storage capacity (in gibibytes) for runs that use
-#' this workflow or workflow version. The `storageCapacity` can be
-#' overwritten at run time. The storage capacity is not required for runs
-#' with a `DYNAMIC` storage type.
-#' @param tags Tags for the workflow. You can define up to 50 tags for the workflow.
-#' For more information, see [Adding a
-#' tag](https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html) in the
-#' *Amazon Web Services HealthOmics User Guide*.
-#' @param requestId &#91;required&#93; An idempotency token to ensure that duplicate workflows are not created
-#' when Amazon Web Services HealthOmics submits retry requests.
+#' WDL lenient is designed to handle workflows migrated from Cromwell. It supports customer Cromwell directives and some non-conformant logic. For details, see [Implicit type conversion in WDL lenient](https://docs.aws.amazon.com/omics/latest/dev/) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param definitionZip A ZIP archive containing the main workflow definition file and dependencies that it imports for the workflow. You can use a file with a ://fileb prefix instead of the Base64 string. For more information, see [Workflow definition requirements](https://docs.aws.amazon.com/omics/latest/dev/workflow-defn-requirements.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param definitionUri The S3 URI of a definition for the workflow. The S3 bucket must be in the same region as the workflow.
+#' @param main The path of the main definition file for the workflow. This parameter is not required if the ZIP archive contains only one workflow definition file, or if the main definition file is named “main”. An example path is: `workflow-definition/main-file.wdl`.
+#' @param parameterTemplate A parameter template for the workflow. If this field is blank, Amazon Web Services HealthOmics will automatically parse the parameter template values from your workflow definition file. To override these service generated default values, provide a parameter template. To view an example of a parameter template, see [Parameter template files](https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param storageCapacity The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version. The `storageCapacity` can be overwritten at run time. The storage capacity is not required for runs with a `DYNAMIC` storage type.
+#' @param tags Tags for the workflow. You can define up to 50 tags for the workflow. For more information, see [Adding a tag](https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param requestId &#91;required&#93; An idempotency token to ensure that duplicate workflows are not created when Amazon Web Services HealthOmics submits retry requests.
 #' @param accelerators The computational accelerator specified to run the workflow.
-#' @param storageType The default storage type for runs that use this workflow. The
-#' `storageType` can be overridden at run time. `DYNAMIC` storage
-#' dynamically scales the storage up or down, based on file system
-#' utilization. `STATIC` storage allocates a fixed amount of storage. For
-#' more information about dynamic and static storage types, see [Run
-#' storage
-#' types](https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param containerRegistryMap (Optional) Use a container registry map to specify mappings between the
-#' ECR private repository and one or more upstream registries. For more
-#' information, see [Container
-#' images](https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' @param storageType The default storage type for runs that use this workflow. The `storageType` can be overridden at run time. `DYNAMIC` storage dynamically scales the storage up or down, based on file system utilization. `STATIC` storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see [Run storage types](https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param containerRegistryMap (Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see [Container images](https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html) in the *Amazon Web Services HealthOmics User Guide*.
 #' @param containerRegistryMapUri (Optional) URI of the S3 location for the registry mapping file.
-#' @param readmeMarkdown The markdown content for the workflow's README file. This provides
-#' documentation and usage information for users of the workflow.
-#' @param parameterTemplatePath The path to the workflow parameter template JSON file within the
-#' repository. This file defines the input parameters for runs that use
-#' this workflow. If not specified, the workflow will be created without a
-#' parameter template.
-#' @param readmePath The path to the workflow README markdown file within the repository.
-#' This file provides documentation and usage information for the workflow.
-#' If not specified, the `README.md` file from the root directory of the
-#' repository will be used.
-#' @param definitionRepository The repository information for the workflow definition. This allows you
-#' to source your workflow definition directly from a code repository.
-#' @param workflowBucketOwnerId The Amazon Web Services account ID of the expected owner of the S3
-#' bucket that contains the workflow definition. If not specified, the
-#' service skips the validation.
-#' @param readmeUri The S3 URI of the README file for the workflow. This file provides
-#' documentation and usage information for the workflow. Requirements
-#' include:
+#' @param readmeMarkdown The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.
+#' @param parameterTemplatePath The path to the workflow parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow. If not specified, the workflow will be created without a parameter template.
+#' @param readmePath The path to the workflow README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the `README.md` file from the root directory of the repository will be used.
+#' @param definitionRepository The repository information for the workflow definition. This allows you to source your workflow definition directly from a code repository.
+#' @param workflowBucketOwnerId The Amazon Web Services account ID of the expected owner of the S3 bucket that contains the workflow definition. If not specified, the service skips the validation.
+#' @param readmeUri The S3 URI of the README file for the workflow. This file provides documentation and usage information for the workflow. Requirements include:
 #' 
 #' -   The S3 URI must begin with `s3://USER-OWNED-BUCKET/`
 #' 
@@ -1634,22 +1422,15 @@ omics_create_workflow <- function(name = NULL, description = NULL, engine = NULL
 #' the workflowId parameter
 #'
 #' @description
-#' Creates a new workflow version for the workflow that you specify with
-#' the `workflowId` parameter.
+#' Creates a new workflow version for the workflow that you specify with the `workflowId` parameter.
 #' 
-#' When you create a new version of a workflow, you need to specify the
-#' configuration for the new version. It doesn't inherit any configuration
-#' values from the workflow.
+#' When you create a new version of a workflow, you need to specify the configuration for the new version. It doesn't inherit any configuration values from the workflow.
 #' 
-#' Provide a version name that is unique for this workflow. You cannot
-#' change the name after HealthOmics creates the version.
+#' Provide a version name that is unique for this workflow. You cannot change the name after HealthOmics creates the version.
 #' 
-#' Don't include any personally identifiable information (PII) in the
-#' version name. Version names appear in the workflow version ARN.
+#' Don't include any personally identifiable information (PII) in the version name. Version names appear in the workflow version ARN.
 #' 
-#' For more information, see [Workflow versioning in Amazon Web Services
-#' HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Workflow versioning in Amazon Web Services HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_create_workflow_version(workflowId, versionName, definitionZip,
@@ -1659,86 +1440,29 @@ omics_create_workflow <- function(name = NULL, description = NULL, engine = NULL
 #'   readmeMarkdown, parameterTemplatePath, readmePath, definitionRepository,
 #'   readmeUri)
 #'
-#' @param workflowId &#91;required&#93; The ID of the workflow where you are creating the new version. The
-#' `workflowId` is not the UUID.
-#' @param versionName &#91;required&#93; A name for the workflow version. Provide a version name that is unique
-#' for this workflow. You cannot change the name after HealthOmics creates
-#' the version.
+#' @param workflowId &#91;required&#93; The ID of the workflow where you are creating the new version. The `workflowId` is not the UUID.
+#' @param versionName &#91;required&#93; A name for the workflow version. Provide a version name that is unique for this workflow. You cannot change the name after HealthOmics creates the version.
 #' 
-#' The version name must start with a letter or number and it can include
-#' upper-case and lower-case letters, numbers, hyphens, periods and
-#' underscores. The maximum length is 64 characters. You can use a simple
-#' naming scheme, such as version1, version2, version3. You can also match
-#' your workflow versions with your own internal versioning conventions,
-#' such as 2.7.0, 2.7.1, 2.7.2.
-#' @param definitionZip A ZIP archive containing the main workflow definition file and
-#' dependencies that it imports for this workflow version. You can use a
-#' file with a ://fileb prefix instead of the Base64 string. For more
-#' information, see Workflow definition requirements in the *Amazon Web
-#' Services HealthOmics User Guide*.
-#' @param definitionUri The S3 URI of a definition for this workflow version. The S3 bucket must
-#' be in the same region as this workflow version.
+#' The version name must start with a letter or number and it can include upper-case and lower-case letters, numbers, hyphens, periods and underscores. The maximum length is 64 characters. You can use a simple naming scheme, such as version1, version2, version3. You can also match your workflow versions with your own internal versioning conventions, such as 2.7.0, 2.7.1, 2.7.2.
+#' @param definitionZip A ZIP archive containing the main workflow definition file and dependencies that it imports for this workflow version. You can use a file with a ://fileb prefix instead of the Base64 string. For more information, see Workflow definition requirements in the *Amazon Web Services HealthOmics User Guide*.
+#' @param definitionUri The S3 URI of a definition for this workflow version. The S3 bucket must be in the same region as this workflow version.
 #' @param accelerators The computational accelerator for this workflow version.
 #' @param description A description for this workflow version.
-#' @param engine The workflow engine for this workflow version. This is only required if
-#' you have workflow definition files from more than one engine in your zip
-#' file. Otherwise, the service can detect the engine automatically from
-#' your workflow definition.
-#' @param main The path of the main definition file for this workflow version. This
-#' parameter is not required if the ZIP archive contains only one workflow
-#' definition file, or if the main definition file is named “main”. An
-#' example path is: `workflow-definition/main-file.wdl`.
-#' @param parameterTemplate A parameter template for this workflow version. If this field is blank,
-#' Amazon Web Services HealthOmics will automatically parse the parameter
-#' template values from your workflow definition file. To override these
-#' service generated default values, provide a parameter template. To view
-#' an example of a parameter template, see [Parameter template
-#' files](https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param requestId &#91;required&#93; An idempotency token to ensure that duplicate workflows are not created
-#' when Amazon Web Services HealthOmics submits retry requests.
-#' @param storageType The default storage type for runs that use this workflow version. The
-#' `storageType` can be overridden at run time. `DYNAMIC` storage
-#' dynamically scales the storage up or down, based on file system
-#' utilization. STATIC storage allocates a fixed amount of storage. For
-#' more information about dynamic and static storage types, see [Run
-#' storage
-#' types](https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param storageCapacity The default static storage capacity (in gibibytes) for runs that use
-#' this workflow version. The `storageCapacity` can be overwritten at run
-#' time. The storage capacity is not required for runs with a `DYNAMIC`
-#' storage type.
-#' @param tags Tags for this workflow version. You can define up to 50 tags for the
-#' workflow. For more information, see [Adding a
-#' tag](https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html) in the
-#' *Amazon Web Services HealthOmics User Guide*.
-#' @param workflowBucketOwnerId Amazon Web Services Id of the owner of the S3 bucket that contains the
-#' workflow definition. You need to specify this parameter if your account
-#' is not the bucket owner.
-#' @param containerRegistryMap (Optional) Use a container registry map to specify mappings between the
-#' ECR private repository and one or more upstream registries. For more
-#' information, see [Container
-#' images](https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' @param engine The workflow engine for this workflow version. This is only required if you have workflow definition files from more than one engine in your zip file. Otherwise, the service can detect the engine automatically from your workflow definition.
+#' @param main The path of the main definition file for this workflow version. This parameter is not required if the ZIP archive contains only one workflow definition file, or if the main definition file is named “main”. An example path is: `workflow-definition/main-file.wdl`.
+#' @param parameterTemplate A parameter template for this workflow version. If this field is blank, Amazon Web Services HealthOmics will automatically parse the parameter template values from your workflow definition file. To override these service generated default values, provide a parameter template. To view an example of a parameter template, see [Parameter template files](https://docs.aws.amazon.com/omics/latest/dev/parameter-templates.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param requestId &#91;required&#93; An idempotency token to ensure that duplicate workflows are not created when Amazon Web Services HealthOmics submits retry requests.
+#' @param storageType The default storage type for runs that use this workflow version. The `storageType` can be overridden at run time. `DYNAMIC` storage dynamically scales the storage up or down, based on file system utilization. STATIC storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see [Run storage types](https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param storageCapacity The default static storage capacity (in gibibytes) for runs that use this workflow version. The `storageCapacity` can be overwritten at run time. The storage capacity is not required for runs with a `DYNAMIC` storage type.
+#' @param tags Tags for this workflow version. You can define up to 50 tags for the workflow. For more information, see [Adding a tag](https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param workflowBucketOwnerId Amazon Web Services Id of the owner of the S3 bucket that contains the workflow definition. You need to specify this parameter if your account is not the bucket owner.
+#' @param containerRegistryMap (Optional) Use a container registry map to specify mappings between the ECR private repository and one or more upstream registries. For more information, see [Container images](https://docs.aws.amazon.com/omics/latest/dev/workflows-ecr.html) in the *Amazon Web Services HealthOmics User Guide*.
 #' @param containerRegistryMapUri (Optional) URI of the S3 location for the registry mapping file.
-#' @param readmeMarkdown The markdown content for the workflow version's README file. This
-#' provides documentation and usage information for users of this specific
-#' workflow version.
-#' @param parameterTemplatePath The path to the workflow version parameter template JSON file within the
-#' repository. This file defines the input parameters for runs that use
-#' this workflow version. If not specified, the workflow version will be
-#' created without a parameter template.
-#' @param readmePath The path to the workflow version README markdown file within the
-#' repository. This file provides documentation and usage information for
-#' the workflow. If not specified, the `README.md` file from the root
-#' directory of the repository will be used.
-#' @param definitionRepository The repository information for the workflow version definition. This
-#' allows you to source your workflow version definition directly from a
-#' code repository.
-#' @param readmeUri The S3 URI of the README file for the workflow version. This file
-#' provides documentation and usage information for the workflow version.
-#' Requirements include:
+#' @param readmeMarkdown The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.
+#' @param parameterTemplatePath The path to the workflow version parameter template JSON file within the repository. This file defines the input parameters for runs that use this workflow version. If not specified, the workflow version will be created without a parameter template.
+#' @param readmePath The path to the workflow version README markdown file within the repository. This file provides documentation and usage information for the workflow. If not specified, the `README.md` file from the root directory of the repository will be used.
+#' @param definitionRepository The repository information for the workflow version definition. This allows you to source your workflow version definition directly from a code repository.
+#' @param readmeUri The S3 URI of the README file for the workflow version. This file provides documentation and usage information for the workflow version. Requirements include:
 #' 
 #' -   The S3 URI must begin with `s3://USER-OWNED-BUCKET/`
 #' 
@@ -1848,11 +1572,7 @@ omics_create_workflow_version <- function(workflowId, versionName, definitionZip
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Deletes an annotation store.
 #'
@@ -1912,8 +1632,7 @@ omics_delete_annotation_store <- function(name, force = NULL) {
 #'
 #' @param name &#91;required&#93; The name of the annotation store from which versions are being deleted.
 #' @param versions &#91;required&#93; The versions of an annotation store to be deleted.
-#' @param force Forces the deletion of an annotation store version when imports are
-#' in-progress..
+#' @param force Forces the deletion of an annotation store version when imports are in-progress..
 #'
 #' @return
 #' A list with the following syntax:
@@ -1966,18 +1685,9 @@ omics_delete_annotation_store_versions <- function(name, versions, force = NULL)
 #' Deletes a run batch resource and its associated metadata
 #'
 #' @description
-#' Deletes a run batch resource and its associated metadata. This operation
-#' does not delete the individual workflow runs. To delete the runs, call
-#' [`delete_run_batch`][omics_delete_run_batch] before calling
-#' [`delete_batch`][omics_delete_batch].
+#' Deletes a run batch resource and its associated metadata. This operation does not delete the individual workflow runs. To delete the runs, call [`delete_run_batch`][omics_delete_run_batch] before calling [`delete_batch`][omics_delete_batch].
 #' 
-#' [`delete_batch`][omics_delete_batch] requires the batch to be in a
-#' terminal state: `PROCESSED`, `FAILED`, `CANCELLED`, or `RUNS_DELETED`.
-#' After [`delete_batch`][omics_delete_batch] completes, the batch metadata
-#' is no longer accessible. You cannot call [`get_batch`][omics_get_batch],
-#' [`list_runs_in_batch`][omics_list_runs_in_batch],
-#' [`delete_run_batch`][omics_delete_run_batch], or
-#' [`cancel_run_batch`][omics_cancel_run_batch] on a deleted batch.
+#' [`delete_batch`][omics_delete_batch] requires the batch to be in a terminal state: `PROCESSED`, `FAILED`, `CANCELLED`, or `RUNS_DELETED`. After [`delete_batch`][omics_delete_batch] completes, the batch metadata is no longer accessible. You cannot call [`get_batch`][omics_get_batch], [`list_runs_in_batch`][omics_list_runs_in_batch], [`delete_run_batch`][omics_delete_run_batch], or [`cancel_run_batch`][omics_cancel_run_batch] on a deleted batch.
 #'
 #' @usage
 #' omics_delete_batch(batchId)
@@ -2066,16 +1776,9 @@ omics_delete_configuration <- function(name) {
 #' operation is successful
 #'
 #' @description
-#' Deletes a reference genome and returns a response with no body if the
-#' operation is successful. The read set associated with the reference
-#' genome must first be deleted before deleting the reference genome. After
-#' the reference genome is deleted, you can delete the reference store
-#' using the [`delete_reference_store`][omics_delete_reference_store] API
-#' operation.
+#' Deletes a reference genome and returns a response with no body if the operation is successful. The read set associated with the reference genome must first be deleted before deleting the reference genome. After the reference genome is deleted, you can delete the reference store using the [`delete_reference_store`][omics_delete_reference_store] API operation.
 #' 
-#' For more information, see [Deleting HealthOmics reference and sequence
-#' stores](https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Deleting HealthOmics reference and sequence stores](https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_delete_reference(id, referenceStoreId)
@@ -2122,15 +1825,9 @@ omics_delete_reference <- function(id, referenceStoreId) {
 #' operation is successful
 #'
 #' @description
-#' Deletes a reference store and returns a response with no body if the
-#' operation is successful. You can only delete a reference store when it
-#' does not contain any reference genomes. To empty a reference store, use
-#' [`delete_reference`][omics_delete_reference].
+#' Deletes a reference store and returns a response with no body if the operation is successful. You can only delete a reference store when it does not contain any reference genomes. To empty a reference store, use [`delete_reference`][omics_delete_reference].
 #' 
-#' For more information about your workflow status, see [Deleting
-#' HealthOmics reference and sequence
-#' stores](https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information about your workflow status, see [Deleting HealthOmics reference and sequence stores](https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_delete_reference_store(id)
@@ -2175,20 +1872,13 @@ omics_delete_reference_store <- function(id) {
 #' successful
 #'
 #' @description
-#' Deletes a run and returns a response with no body if the operation is
-#' successful. You can only delete a run that has reached a `COMPLETED`,
-#' `FAILED`, or `CANCELLED` stage. A completed run has delivered an output,
-#' or was cancelled and resulted in no output. When you delete a run, only
-#' the metadata associated with the run is deleted. The run outputs remain
-#' in Amazon S3 and logs remain in CloudWatch.
+#' Deletes a run and returns a response with no body if the operation is successful. You can only delete a run that has reached a `COMPLETED`, `FAILED`, or `CANCELLED` stage. A completed run has delivered an output, or was cancelled and resulted in no output. When you delete a run, only the metadata associated with the run is deleted. The run outputs remain in Amazon S3 and logs remain in CloudWatch.
 #' 
 #' To verify that the workflow is deleted:
 #' 
-#' -   Use [`list_runs`][omics_list_runs] to confirm the workflow no longer
-#'     appears in the list.
+#' -   Use [`list_runs`][omics_list_runs] to confirm the workflow no longer appears in the list.
 #' 
-#' -   Use [`get_run`][omics_get_run] to verify the workflow cannot be
-#'     found.
+#' -   Use [`get_run`][omics_get_run] to verify the workflow cannot be found.
 #'
 #' @usage
 #' omics_delete_run(id)
@@ -2232,16 +1922,9 @@ omics_delete_run <- function(id) {
 #' Deletes the individual workflow runs within a batch
 #'
 #' @description
-#' Deletes the individual workflow runs within a batch. This operation is
-#' separate from [`delete_batch`][omics_delete_batch], which removes the
-#' batch metadata.
+#' Deletes the individual workflow runs within a batch. This operation is separate from [`delete_batch`][omics_delete_batch], which removes the batch metadata.
 #' 
-#' Delete is only allowed on batches in `PROCESSED` or `CANCELLED` state.
-#' Delete operations are non-atomic and may be partially successful. Use
-#' [`get_batch`][omics_get_batch] to review
-#' `successfulDeleteSubmissionCount` and `failedDeleteSubmissionCount` in
-#' the `submissionSummary`. Only one cancel or delete operation per batch
-#' is allowed at a time.
+#' Delete is only allowed on batches in `PROCESSED` or `CANCELLED` state. Delete operations are non-atomic and may be partially successful. Use [`get_batch`][omics_get_batch] to review `successfulDeleteSubmissionCount` and `failedDeleteSubmissionCount` in the `submissionSummary`. Only one cancel or delete operation per batch is allowed at a time.
 #'
 #' @usage
 #' omics_delete_run_batch(batchId)
@@ -2286,16 +1969,9 @@ omics_delete_run_batch <- function(batchId) {
 #' is successful
 #'
 #' @description
-#' Deletes a run cache and returns a response with no body if the operation
-#' is successful. This action removes the cache metadata stored in the
-#' service account, but does not delete the data in Amazon S3. You can
-#' access the cache data in Amazon S3, for inspection or to troubleshoot
-#' issues. You can remove old cache data using standard S3 `Delete`
-#' operations.
+#' Deletes a run cache and returns a response with no body if the operation is successful. This action removes the cache metadata stored in the service account, but does not delete the data in Amazon S3. You can access the cache data in Amazon S3, for inspection or to troubleshoot issues. You can remove old cache data using standard S3 `Delete` operations.
 #' 
-#' For more information, see [Deleting a run
-#' cache](https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-delete.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Deleting a run cache](https://docs.aws.amazon.com/omics/latest/dev/workflow-cache-delete.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_delete_run_cache(id)
@@ -2340,16 +2016,13 @@ omics_delete_run_cache <- function(id) {
 #' is successful
 #'
 #' @description
-#' Deletes a run group and returns a response with no body if the operation
-#' is successful.
+#' Deletes a run group and returns a response with no body if the operation is successful.
 #' 
 #' To verify that the run group is deleted:
 #' 
-#' -   Use [`list_run_groups`][omics_list_run_groups] to confirm the
-#'     workflow no longer appears in the list.
+#' -   Use [`list_run_groups`][omics_list_run_groups] to confirm the workflow no longer appears in the list.
 #' 
-#' -   Use [`get_run_group`][omics_get_run_group] to verify the workflow
-#'     cannot be found.
+#' -   Use [`get_run_group`][omics_get_run_group] to verify the workflow cannot be found.
 #'
 #' @usage
 #' omics_delete_run_group(id)
@@ -2438,18 +2111,11 @@ omics_delete_s3_access_policy <- function(s3AccessPointArn) {
 #' operation is successful
 #'
 #' @description
-#' Deletes a sequence store and returns a response with no body if the
-#' operation is successful. You can only delete a sequence store when it
-#' does not contain any read sets.
+#' Deletes a sequence store and returns a response with no body if the operation is successful. You can only delete a sequence store when it does not contain any read sets.
 #' 
-#' Use the [`batch_delete_read_set`][omics_batch_delete_read_set] API
-#' operation to ensure that all read sets in the sequence store are
-#' deleted. When a sequence store is deleted, all tags associated with the
-#' store are also deleted.
+#' Use the [`batch_delete_read_set`][omics_batch_delete_read_set] API operation to ensure that all read sets in the sequence store are deleted. When a sequence store is deleted, all tags associated with the store are also deleted.
 #' 
-#' For more information, see [Deleting HealthOmics reference and sequence
-#' stores](https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Deleting HealthOmics reference and sequence stores](https://docs.aws.amazon.com/omics/latest/dev/deleting-reference-and-sequence-stores.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_delete_sequence_store(id)
@@ -2493,9 +2159,7 @@ omics_delete_sequence_store <- function(id) {
 #' Deletes a resource share
 #'
 #' @description
-#' Deletes a resource share. If you are the resource owner, the subscriber
-#' will no longer have access to the shared resource. If you are the
-#' subscriber, this operation deletes your access to the share.
+#' Deletes a resource share. If you are the resource owner, the subscriber will no longer have access to the shared resource. If you are the subscriber, this operation deletes your access to the share.
 #'
 #' @usage
 #' omics_delete_share(shareId)
@@ -2545,11 +2209,7 @@ omics_delete_share <- function(shareId) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Deletes a variant store.
 #'
@@ -2602,16 +2262,13 @@ omics_delete_variant_store <- function(name, force = NULL) {
 #' Deletes a workflow by specifying its ID
 #'
 #' @description
-#' Deletes a workflow by specifying its ID. This operation returns a
-#' response with no body if the deletion is successful.
+#' Deletes a workflow by specifying its ID. This operation returns a response with no body if the deletion is successful.
 #' 
 #' To verify that the workflow is deleted:
 #' 
-#' -   Use [`list_workflows`][omics_list_workflows] to confirm the workflow
-#'     no longer appears in the list.
+#' -   Use [`list_workflows`][omics_list_workflows] to confirm the workflow no longer appears in the list.
 #' 
-#' -   Use [`get_workflow`][omics_get_workflow] to verify the workflow
-#'     cannot be found.
+#' -   Use [`get_workflow`][omics_get_workflow] to verify the workflow cannot be found.
 #'
 #' @usage
 #' omics_delete_workflow(id)
@@ -2655,12 +2312,9 @@ omics_delete_workflow <- function(id) {
 #' Deletes a workflow version
 #'
 #' @description
-#' Deletes a workflow version. Deleting a workflow version doesn't affect
-#' any ongoing runs that are using the workflow version.
+#' Deletes a workflow version. Deleting a workflow version doesn't affect any ongoing runs that are using the workflow version.
 #' 
-#' For more information, see [Workflow versioning in Amazon Web Services
-#' HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Workflow versioning in Amazon Web Services HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_delete_workflow_version(workflowId, versionName)
@@ -2707,11 +2361,7 @@ omics_delete_workflow_version <- function(workflowId, versionName) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Gets information about an annotation import job.
 #'
@@ -2806,11 +2456,7 @@ omics_get_annotation_import_job <- function(jobId) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Gets information about an annotation store.
 #'
@@ -2903,10 +2549,8 @@ omics_get_annotation_store <- function(name) {
 #' @usage
 #' omics_get_annotation_store_version(name, versionName)
 #'
-#' @param name &#91;required&#93; The name given to an annotation store version to distinguish it from
-#' others.
-#' @param versionName &#91;required&#93; The name given to an annotation store version to distinguish it from
-#' others.
+#' @param name &#91;required&#93; The name given to an annotation store version to distinguish it from others.
+#' @param versionName &#91;required&#93; The name given to an annotation store version to distinguish it from others.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2982,8 +2626,7 @@ omics_get_annotation_store_version <- function(name, versionName) {
 #' submission progress and run execution counts
 #'
 #' @description
-#' Retrieves details and current status for a specific run batch, including
-#' submission progress and run execution counts.
+#' Retrieves details and current status for a specific run batch, including submission progress and run execution counts.
 #'
 #' @usage
 #' omics_get_batch(batchId)
@@ -3167,9 +2810,7 @@ omics_get_configuration <- function(name) {
 #' read set in the same format that it was uploaded
 #'
 #' @description
-#' Retrieves detailed information from parts of a read set and returns the
-#' read set in the same format that it was uploaded. You must have read
-#' sets uploaded to your sequence store in order to run this operation.
+#' Retrieves detailed information from parts of a read set and returns the read set in the same format that it was uploaded. You must have read sets uploaded to your sequence store in order to run this operation.
 #'
 #' @usage
 #' omics_get_read_set(id, sequenceStoreId, file, partNumber)
@@ -3225,8 +2866,7 @@ omics_get_read_set <- function(id, sequenceStoreId, file = NULL, partNumber) {
 #' job in JSON format
 #'
 #' @description
-#' Returns detailed information about the status of a read set activation
-#' job in JSON format.
+#' Returns detailed information about the status of a read set activation job in JSON format.
 #'
 #' @usage
 #' omics_get_read_set_activation_job(id, sequenceStoreId)
@@ -3294,9 +2934,7 @@ omics_get_read_set_activation_job <- function(id, sequenceStoreId) {
 #' data in JSON format
 #'
 #' @description
-#' Retrieves status information about a read set export job and returns the
-#' data in JSON format. Use this operation to actively monitor the progress
-#' of an export job.
+#' Retrieves status information about a read set export job and returns the data in JSON format. Use this operation to actively monitor the progress of an export job.
 #'
 #' @usage
 #' omics_get_read_set_export_job(sequenceStoreId, id)
@@ -3365,8 +3003,7 @@ omics_get_read_set_export_job <- function(sequenceStoreId, id) {
 #' returns the data in JSON format
 #'
 #' @description
-#' Gets detailed and status information about a read set import job and
-#' returns the data in JSON format.
+#' Gets detailed and status information about a read set import job and returns the data in JSON format.
 #'
 #' @usage
 #' omics_get_read_set_import_job(id, sequenceStoreId)
@@ -3449,10 +3086,7 @@ omics_get_read_set_import_job <- function(id, sequenceStoreId) {
 #' format
 #'
 #' @description
-#' Retrieves the metadata for a read set from a sequence store in JSON
-#' format. This operation does not return tags. To retrieve the list of
-#' tags for a read set, use the
-#' [`list_tags_for_resource`][omics_list_tags_for_resource] API operation.
+#' Retrieves the metadata for a read set from a sequence store in JSON format. This operation does not return tags. To retrieve the list of tags for a read set, use the [`list_tags_for_resource`][omics_list_tags_for_resource] API operation.
 #'
 #' @usage
 #' omics_get_read_set_metadata(id, sequenceStoreId)
@@ -3556,12 +3190,9 @@ omics_get_read_set_metadata <- function(id, sequenceStoreId) {
 #' reference file in the same format that it was uploaded
 #'
 #' @description
-#' Downloads parts of data from a reference genome and returns the
-#' reference file in the same format that it was uploaded.
+#' Downloads parts of data from a reference genome and returns the reference file in the same format that it was uploaded.
 #' 
-#' For more information, see [Creating a HealthOmics reference
-#' store](https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Creating a HealthOmics reference store](https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_get_reference(id, referenceStoreId, range, partNumber, file)
@@ -3618,10 +3249,7 @@ omics_get_reference <- function(id, referenceStoreId, range = NULL, partNumber, 
 #' Monitors the status of a reference import job
 #'
 #' @description
-#' Monitors the status of a reference import job. This operation can be
-#' called after calling the
-#' [`start_reference_import_job`][omics_start_reference_import_job]
-#' operation.
+#' Monitors the status of a reference import job. This operation can be called after calling the [`start_reference_import_job`][omics_start_reference_import_job] operation.
 #'
 #' @usage
 #' omics_get_reference_import_job(id, referenceStoreId)
@@ -3695,11 +3323,7 @@ omics_get_reference_import_job <- function(id, referenceStoreId) {
 #' Retrieves metadata for a reference genome
 #'
 #' @description
-#' Retrieves metadata for a reference genome. This operation returns the
-#' number of parts, part size, and MD5 of an entire file. This operation
-#' does not return tags. To retrieve the list of tags for a read set, use
-#' the [`list_tags_for_resource`][omics_list_tags_for_resource] API
-#' operation.
+#' Retrieves metadata for a reference genome. This operation returns the number of parts, part size, and MD5 of an entire file. This operation does not return tags. To retrieve the list of tags for a read set, use the [`list_tags_for_resource`][omics_list_tags_for_resource] API operation.
 #'
 #' @usage
 #' omics_get_reference_metadata(id, referenceStoreId)
@@ -3843,13 +3467,7 @@ omics_get_reference_store <- function(id) {
 #' @description
 #' Gets detailed information about a specific run using its ID.
 #' 
-#' Amazon Web Services HealthOmics stores a configurable number of runs, as
-#' determined by service limits, that are available to the console and API.
-#' If [`get_run`][omics_get_run] does not return the requested run, you can
-#' find all run logs in the CloudWatch logs. For more information about
-#' viewing the run logs, see [CloudWatch
-#' logs](https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' Amazon Web Services HealthOmics stores a configurable number of runs, as determined by service limits, that are available to the console and API. If [`get_run`][omics_get_run] does not return the requested run, you can find all run logs in the CloudWatch logs. For more information about viewing the run logs, see [CloudWatch logs](https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_get_run(id, export)
@@ -3967,13 +3585,9 @@ omics_get_run <- function(id, export = NULL) {
 #' ID
 #'
 #' @description
-#' Retrieves detailed information about the specified run cache using its
-#' ID.
+#' Retrieves detailed information about the specified run cache using its ID.
 #' 
-#' For more information, see [Call caching for Amazon Web Services
-#' HealthOmics
-#' runs](https://docs.aws.amazon.com/omics/latest/dev/workflows-call-caching.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Call caching for Amazon Web Services HealthOmics runs](https://docs.aws.amazon.com/omics/latest/dev/workflows-call-caching.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_get_run_cache(id)
@@ -4228,8 +3842,7 @@ omics_get_s3_access_policy <- function(s3AccessPointArn) {
 #' JSON format
 #'
 #' @description
-#' Retrieves metadata for a sequence store using its ID and returns it in
-#' JSON format.
+#' Retrieves metadata for a sequence store using its ID and returns it in JSON format.
 #'
 #' @usage
 #' omics_get_sequence_store(id)
@@ -4368,11 +3981,7 @@ omics_get_share <- function(shareId) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Gets information about a variant import job.
 #'
@@ -4448,11 +4057,7 @@ omics_get_variant_import_job <- function(jobId) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Gets information about a variant store.
 #'
@@ -4529,10 +4134,7 @@ omics_get_variant_store <- function(name) {
 #' 
 #' If a workflow is shared with you, you cannot export the workflow.
 #' 
-#' For more information about your workflow status, see [Verify the
-#' workflow
-#' status](https://docs.aws.amazon.com/omics/latest/dev/using-get-workflow.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information about your workflow status, see [Verify the workflow status](https://docs.aws.amazon.com/omics/latest/dev/using-get-workflow.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_get_workflow(id, type, export, workflowOwnerId)
@@ -4646,10 +4248,7 @@ omics_get_workflow <- function(id, type = NULL, export = NULL, workflowOwnerId =
 #' Gets information about a workflow version
 #'
 #' @description
-#' Gets information about a workflow version. For more information, see
-#' [Workflow versioning in Amazon Web Services
-#' HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' Gets information about a workflow version. For more information, see [Workflow versioning in Amazon Web Services HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_get_workflow_version(workflowId, versionName, type, export,
@@ -4659,9 +4258,7 @@ omics_get_workflow <- function(id, type = NULL, export = NULL, workflowOwnerId =
 #' @param versionName &#91;required&#93; The workflow version name.
 #' @param type The workflow's type.
 #' @param export The export format for the workflow.
-#' @param workflowOwnerId The 12-digit account ID of the workflow owner. The workflow owner ID can
-#' be retrieved using the [`get_share`][omics_get_share] API operation. If
-#' you are the workflow owner, you do not need to include this ID.
+#' @param workflowOwnerId The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved using the [`get_share`][omics_get_share] API operation. If you are the workflow owner, you do not need to include this ID.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4770,11 +4367,7 @@ omics_get_workflow_version <- function(workflowId, versionName, type = NULL, exp
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Retrieves a list of annotation import jobs.
 #'
@@ -4783,8 +4376,7 @@ omics_get_workflow_version <- function(workflowId, versionName, type = NULL, exp
 #'
 #' @param maxResults The maximum number of jobs to return in one page of results.
 #' @param ids IDs of annotation import jobs to retrieve.
-#' @param nextToken Specifies the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specifies the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -4866,10 +4458,8 @@ omics_list_annotation_import_jobs <- function(maxResults = NULL, ids = NULL, nex
 #'   filter)
 #'
 #' @param name &#91;required&#93; The name of an annotation store.
-#' @param maxResults The maximum number of annotation store versions to return in one page of
-#' results.
-#' @param nextToken Specifies the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param maxResults The maximum number of annotation store versions to return in one page of results.
+#' @param nextToken Specifies the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list of annotation store versions.
 #'
 #' @return
@@ -4939,11 +4529,7 @@ omics_list_annotation_store_versions <- function(name, maxResults = NULL, nextTo
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Retrieves a list of annotation stores.
 #'
@@ -4952,8 +4538,7 @@ omics_list_annotation_store_versions <- function(name, maxResults = NULL, nextTo
 #'
 #' @param ids IDs of stores to list.
 #' @param maxResults The maximum number of stores to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -5031,17 +4616,13 @@ omics_list_annotation_stores <- function(ids = NULL, maxResults = NULL, nextToke
 #' by status, name, or run group
 #'
 #' @description
-#' Returns a list of run batches in your account, with optional filtering
-#' by status, name, or run group. Results are paginated. Only one filter
-#' per call is supported.
+#' Returns a list of run batches in your account, with optional filtering by status, name, or run group. Results are paginated. Only one filter per call is supported.
 #'
 #' @usage
 #' omics_list_batch(maxItems, startingToken, status, name, runGroupId)
 #'
-#' @param maxItems The maximum number of batches to return. If not specified, defaults to
-#' 100.
-#' @param startingToken A pagination token returned from a prior
-#' [`list_batch`][omics_list_batch] call.
+#' @param maxItems The maximum number of batches to return. If not specified, defaults to 100.
+#' @param startingToken A pagination token returned from a prior [`list_batch`][omics_list_batch] call.
 #' @param status Filter batches by status.
 #' @param name Filter batches by name.
 #' @param runGroupId Filter batches by run group ID.
@@ -5167,10 +4748,7 @@ omics_list_configurations <- function(maxResults = NULL, startingToken = NULL) {
 #' returns it in a JSON formatted output
 #'
 #' @description
-#' Lists in-progress multipart read set uploads for a sequence store and
-#' returns it in a JSON formatted output. Multipart read set uploads are
-#' initiated by the `CreateMultipartReadSetUploads` API operation. This
-#' operation returns a response with no body when the upload is complete.
+#' Lists in-progress multipart read set uploads for a sequence store and returns it in a JSON formatted output. Multipart read set uploads are initiated by the `CreateMultipartReadSetUploads` API operation. This operation returns a response with no body when the upload is complete.
 #'
 #' @usage
 #' omics_list_multipart_read_set_uploads(sequenceStoreId, maxResults,
@@ -5178,8 +4756,7 @@ omics_list_configurations <- function(maxResults = NULL, startingToken = NULL) {
 #'
 #' @param sequenceStoreId &#91;required&#93; The Sequence Store ID used for the multipart uploads.
 #' @param maxResults The maximum number of multipart uploads returned in a page.
-#' @param nextToken Next token returned in the response of a previous
-#' ListMultipartReadSetUploads call. Used to get the next page of results.
+#' @param nextToken Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5245,21 +4822,15 @@ omics_list_multipart_read_set_uploads <- function(sequenceStoreId, maxResults = 
 #' a JSON formatted output
 #'
 #' @description
-#' Retrieves a list of read set activation jobs and returns the metadata in
-#' a JSON formatted output. To extract metadata from a read set activation
-#' job, use the
-#' [`get_read_set_activation_job`][omics_get_read_set_activation_job] API
-#' operation.
+#' Retrieves a list of read set activation jobs and returns the metadata in a JSON formatted output. To extract metadata from a read set activation job, use the [`get_read_set_activation_job`][omics_get_read_set_activation_job] API operation.
 #'
 #' @usage
 #' omics_list_read_set_activation_jobs(sequenceStoreId, maxResults,
 #'   nextToken, filter)
 #'
 #' @param sequenceStoreId &#91;required&#93; The read set's sequence store ID.
-#' @param maxResults The maximum number of read set activation jobs to return in one page of
-#' results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param maxResults The maximum number of read set activation jobs to return in one page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -5328,11 +4899,7 @@ omics_list_read_set_activation_jobs <- function(sequenceStoreId, maxResults = NU
 #' Retrieves a list of read set export jobs in a JSON formatted response
 #'
 #' @description
-#' Retrieves a list of read set export jobs in a JSON formatted response.
-#' This API operation is used to check the status of a read set export job
-#' initiated by the
-#' [`start_read_set_export_job`][omics_start_read_set_export_job] API
-#' operation.
+#' Retrieves a list of read set export jobs in a JSON formatted response. This API operation is used to check the status of a read set export job initiated by the [`start_read_set_export_job`][omics_start_read_set_export_job] API operation.
 #'
 #' @usage
 #' omics_list_read_set_export_jobs(sequenceStoreId, maxResults, nextToken,
@@ -5340,8 +4907,7 @@ omics_list_read_set_activation_jobs <- function(sequenceStoreId, maxResults = NU
 #'
 #' @param sequenceStoreId &#91;required&#93; The jobs' sequence store ID.
 #' @param maxResults The maximum number of jobs to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -5412,16 +4978,14 @@ omics_list_read_set_export_jobs <- function(sequenceStoreId, maxResults = NULL, 
 #' format
 #'
 #' @description
-#' Retrieves a list of read set import jobs and returns the data in JSON
-#' format.
+#' Retrieves a list of read set import jobs and returns the data in JSON format.
 #'
 #' @usage
 #' omics_list_read_set_import_jobs(maxResults, nextToken, sequenceStoreId,
 #'   filter)
 #'
 #' @param maxResults The maximum number of jobs to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param sequenceStoreId &#91;required&#93; The jobs' sequence store ID.
 #' @param filter A filter to apply to the list.
 #'
@@ -5493,8 +5057,7 @@ omics_list_read_set_import_jobs <- function(maxResults = NULL, nextToken = NULL,
 #' returns the metadata in a JSON formatted output
 #'
 #' @description
-#' Lists all parts in a multipart read set upload for a sequence store and
-#' returns the metadata in a JSON formatted output.
+#' Lists all parts in a multipart read set upload for a sequence store and returns the metadata in a JSON formatted output.
 #'
 #' @usage
 #' omics_list_read_set_upload_parts(sequenceStoreId, uploadId, partSource,
@@ -5504,11 +5067,8 @@ omics_list_read_set_import_jobs <- function(maxResults = NULL, nextToken = NULL,
 #' @param uploadId &#91;required&#93; The ID for the initiated multipart upload.
 #' @param partSource &#91;required&#93; The source file for the upload part.
 #' @param maxResults The maximum number of read set upload parts returned in a page.
-#' @param nextToken Next token returned in the response of a previous
-#' ListReadSetUploadPartsRequest call. Used to get the next page of
-#' results.
-#' @param filter Attributes used to filter for a specific subset of read set part
-#' uploads.
+#' @param nextToken Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.
+#' @param filter Attributes used to filter for a specific subset of read set part uploads.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5579,16 +5139,14 @@ omics_list_read_set_upload_parts <- function(sequenceStoreId, uploadId, partSour
 #' metadata in JSON format
 #'
 #' @description
-#' Retrieves a list of read sets from a sequence store ID and returns the
-#' metadata in JSON format.
+#' Retrieves a list of read sets from a sequence store ID and returns the metadata in JSON format.
 #'
 #' @usage
 #' omics_list_read_sets(sequenceStoreId, maxResults, nextToken, filter)
 #'
 #' @param sequenceStoreId &#91;required&#93; The jobs' sequence store ID.
 #' @param maxResults The maximum number of read sets to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -5681,16 +5239,14 @@ omics_list_read_sets <- function(sequenceStoreId, maxResults = NULL, nextToken =
 #' reference store
 #'
 #' @description
-#' Retrieves the metadata of one or more reference import jobs for a
-#' reference store.
+#' Retrieves the metadata of one or more reference import jobs for a reference store.
 #'
 #' @usage
 #' omics_list_reference_import_jobs(maxResults, nextToken,
 #'   referenceStoreId, filter)
 #'
 #' @param maxResults The maximum number of jobs to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param referenceStoreId &#91;required&#93; The job's reference store ID.
 #' @param filter A filter to apply to the list.
 #'
@@ -5762,19 +5318,15 @@ omics_list_reference_import_jobs <- function(maxResults = NULL, nextToken = NULL
 #' their metadata in JSON format
 #'
 #' @description
-#' Retrieves a list of reference stores linked to your account and returns
-#' their metadata in JSON format.
+#' Retrieves a list of reference stores linked to your account and returns their metadata in JSON format.
 #' 
-#' For more information, see [Creating a reference
-#' store](https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Creating a reference store](https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_list_reference_stores(maxResults, nextToken, filter)
 #'
 #' @param maxResults The maximum number of stores to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -5845,20 +5397,16 @@ omics_list_reference_stores <- function(maxResults = NULL, nextToken = NULL, fil
 #' store
 #'
 #' @description
-#' Retrieves the metadata of one or more reference genomes in a reference
-#' store.
+#' Retrieves the metadata of one or more reference genomes in a reference store.
 #' 
-#' For more information, see [Creating a reference
-#' store](https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Creating a reference store](https://docs.aws.amazon.com/omics/latest/dev/create-reference-store.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_list_references(referenceStoreId, maxResults, nextToken, filter)
 #'
 #' @param referenceStoreId &#91;required&#93; The references' reference store ID.
 #' @param maxResults The maximum number of references to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -5938,8 +5486,7 @@ omics_list_references <- function(referenceStoreId, maxResults = NULL, nextToken
 #' omics_list_run_caches(maxResults, startingToken)
 #'
 #' @param maxResults The maximum number of results to return.
-#' @param startingToken Optional pagination token returned from a prior call to the
-#' [`list_run_caches`][omics_list_run_caches] API operation.
+#' @param startingToken Optional pagination token returned from a prior call to the [`list_run_caches`][omics_list_run_caches] API operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5998,15 +5545,13 @@ omics_list_run_caches <- function(maxResults = NULL, startingToken = NULL) {
 #' group
 #'
 #' @description
-#' Retrieves a list of all run groups and returns the metadata for each run
-#' group.
+#' Retrieves a list of all run groups and returns the metadata for each run group.
 #'
 #' @usage
 #' omics_list_run_groups(name, startingToken, maxResults)
 #'
 #' @param name The run groups' name.
-#' @param startingToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param startingToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of run groups to return in one page of results.
 #'
 #' @return
@@ -6068,17 +5613,14 @@ omics_list_run_groups <- function(name = NULL, startingToken = NULL, maxResults 
 #' run
 #'
 #' @description
-#' Returns a list of tasks and status information within their specified
-#' run. Use this operation to monitor runs and to identify which specific
-#' tasks have failed.
+#' Returns a list of tasks and status information within their specified run. Use this operation to monitor runs and to identify which specific tasks have failed.
 #'
 #' @usage
 #' omics_list_run_tasks(id, status, startingToken, maxResults)
 #'
 #' @param id &#91;required&#93; The run's ID.
 #' @param status Filter the list by status.
-#' @param startingToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param startingToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of run tasks to return in one page of results.
 #'
 #' @return
@@ -6150,13 +5692,7 @@ omics_list_run_tasks <- function(id, status = NULL, startingToken = NULL, maxRes
 #' @description
 #' Retrieves a list of runs and returns each run's metadata and status.
 #' 
-#' Amazon Web Services HealthOmics stores a configurable number of runs, as
-#' determined by service limits, that are available to the console and API.
-#' If the [`list_runs`][omics_list_runs] response doesn't include specific
-#' runs that you expected, you can find all run logs in the CloudWatch
-#' logs. For more information about viewing the run logs, see [CloudWatch
-#' logs](https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' Amazon Web Services HealthOmics stores a configurable number of runs, as determined by service limits, that are available to the console and API. If the [`list_runs`][omics_list_runs] response doesn't include specific runs that you expected, you can find all run logs in the CloudWatch logs. For more information about viewing the run logs, see [CloudWatch logs](https://docs.aws.amazon.com/omics/latest/dev/monitoring-cloudwatch-logs.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_list_runs(name, runGroupId, batchId, startingToken, maxResults,
@@ -6165,8 +5701,7 @@ omics_list_run_tasks <- function(id, status = NULL, startingToken = NULL, maxRes
 #' @param name Filter the list by run name.
 #' @param runGroupId Filter the list by run group ID.
 #' @param batchId Filter by batch ID.
-#' @param startingToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param startingToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of runs to return in one page of results.
 #' @param status The status of a run.
 #'
@@ -6241,10 +5776,7 @@ omics_list_runs <- function(name = NULL, runGroupId = NULL, batchId = NULL, star
 #' batch
 #'
 #' @description
-#' Returns a paginated list of individual workflow runs within a specific
-#' batch. Use this operation to map each `runSettingId` to its
-#' HealthOmics-generated `runId`, and to check the submission status of
-#' each run. Only one filter per call is supported.
+#' Returns a paginated list of individual workflow runs within a specific batch. Use this operation to map each `runSettingId` to its HealthOmics-generated `runId`, and to check the submission status of each run. Only one filter per call is supported.
 #'
 #' @usage
 #' omics_list_runs_in_batch(batchId, maxItems, startingToken,
@@ -6252,8 +5784,7 @@ omics_list_runs <- function(name = NULL, runGroupId = NULL, batchId = NULL, star
 #'
 #' @param batchId &#91;required&#93; The identifier portion of the run batch ARN.
 #' @param maxItems The maximum number of runs to return.
-#' @param startingToken A pagination token returned from a prior
-#' [`list_runs_in_batch`][omics_list_runs_in_batch] call.
+#' @param startingToken A pagination token returned from a prior [`list_runs_in_batch`][omics_list_runs_in_batch] call.
 #' @param submissionStatus Filter runs by submission status.
 #' @param runSettingId Filter runs by the customer-provided run setting ID.
 #' @param runId Filter runs by the HealthOmics-generated run ID.
@@ -6317,19 +5848,15 @@ omics_list_runs_in_batch <- function(batchId, maxItems = NULL, startingToken = N
 #' metadata
 #'
 #' @description
-#' Retrieves a list of sequence stores and returns each sequence store's
-#' metadata.
+#' Retrieves a list of sequence stores and returns each sequence store's metadata.
 #' 
-#' For more information, see [Creating a HealthOmics sequence
-#' store](https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Creating a HealthOmics sequence store](https://docs.aws.amazon.com/omics/latest/dev/create-sequence-store.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_list_sequence_stores(maxResults, nextToken, filter)
 #'
 #' @param maxResults The maximum number of stores to return in one page of results.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -6413,18 +5940,14 @@ omics_list_sequence_stores <- function(maxResults = NULL, nextToken = NULL, filt
 #' Retrieves the resource shares associated with an account
 #'
 #' @description
-#' Retrieves the resource shares associated with an account. Use the filter
-#' parameter to retrieve a specific subset of the shares.
+#' Retrieves the resource shares associated with an account. Use the filter parameter to retrieve a specific subset of the shares.
 #'
 #' @usage
 #' omics_list_shares(resourceOwner, filter, nextToken, maxResults)
 #'
 #' @param resourceOwner &#91;required&#93; The account that owns the resource shares.
-#' @param filter Attributes that you use to filter for a specific subset of resource
-#' shares.
-#' @param nextToken Next token returned in the response of a previous
-#' ListReadSetUploadPartsRequest call. Used to get the next page of
-#' results.
+#' @param filter Attributes that you use to filter for a specific subset of resource shares.
+#' @param nextToken Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results.
 #' @param maxResults The maximum number of shares to return in one page of results.
 #'
 #' @return
@@ -6552,11 +6075,7 @@ omics_list_tags_for_resource <- function(resourceArn) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Retrieves a list of variant import jobs.
 #'
@@ -6565,8 +6084,7 @@ omics_list_tags_for_resource <- function(resourceArn) {
 #'
 #' @param maxResults The maximum number of import jobs to return in one page of results.
 #' @param ids A list of job IDs.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -6641,11 +6159,7 @@ omics_list_variant_import_jobs <- function(maxResults = NULL, ids = NULL, nextTo
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Retrieves a list of variant stores.
 #'
@@ -6654,8 +6168,7 @@ omics_list_variant_import_jobs <- function(maxResults = NULL, ids = NULL, nextTo
 #'
 #' @param maxResults The maximum number of stores to return in one page of results.
 #' @param ids A list of store IDs.
-#' @param nextToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param nextToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param filter A filter to apply to the list.
 #'
 #' @return
@@ -6731,10 +6244,7 @@ omics_list_variant_stores <- function(maxResults = NULL, ids = NULL, nextToken =
 #' Lists the workflow versions for the specified workflow
 #'
 #' @description
-#' Lists the workflow versions for the specified workflow. For more
-#' information, see [Workflow versioning in Amazon Web Services
-#' HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' Lists the workflow versions for the specified workflow. For more information, see [Workflow versioning in Amazon Web Services HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_list_workflow_versions(workflowId, type, workflowOwnerId,
@@ -6742,11 +6252,8 @@ omics_list_variant_stores <- function(maxResults = NULL, ids = NULL, nextToken =
 #'
 #' @param workflowId &#91;required&#93; The workflow's ID. The `workflowId` is not the UUID.
 #' @param type The workflow type.
-#' @param workflowOwnerId The 12-digit account ID of the workflow owner. The workflow owner ID can
-#' be retrieved using the [`get_share`][omics_get_share] API operation. If
-#' you are the workflow owner, you do not need to include this ID.
-#' @param startingToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param workflowOwnerId The 12-digit account ID of the workflow owner. The workflow owner ID can be retrieved using the [`get_share`][omics_get_share] API operation. If you are the workflow owner, you do not need to include this ID.
+#' @param startingToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of workflows to return in one page of results.
 #'
 #' @return
@@ -6812,19 +6319,14 @@ omics_list_workflow_versions <- function(workflowId, type = NULL, workflowOwnerI
 #' Retrieves a list of existing workflows
 #'
 #' @description
-#' Retrieves a list of existing workflows. You can filter for specific
-#' workflows by their name and type. Using the type parameter, specify
-#' `PRIVATE` to retrieve a list of private workflows or specify `READY2RUN`
-#' for a list of all Ready2Run workflows. If you do not specify the type of
-#' workflow, this operation returns a list of existing workflows.
+#' Retrieves a list of existing workflows. You can filter for specific workflows by their name and type. Using the type parameter, specify `PRIVATE` to retrieve a list of private workflows or specify `READY2RUN` for a list of all Ready2Run workflows. If you do not specify the type of workflow, this operation returns a list of existing workflows.
 #'
 #' @usage
 #' omics_list_workflows(type, name, startingToken, maxResults)
 #'
 #' @param type Filter the list by workflow type.
 #' @param name Filter the list by workflow name.
-#' @param startingToken Specify the pagination token from a previous request to retrieve the
-#' next page of results.
+#' @param startingToken Specify the pagination token from a previous request to retrieve the next page of results.
 #' @param maxResults The maximum number of workflows to return in one page of results.
 #'
 #' @return
@@ -6942,11 +6444,7 @@ omics_put_s3_access_policy <- function(s3AccessPointArn, s3AccessPolicy) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Starts an annotation import job.
 #'
@@ -7035,24 +6533,16 @@ omics_start_annotation_import_job <- function(destinationName, roleArn, items, v
 #' formatted output
 #'
 #' @description
-#' Activates an archived read set and returns its metadata in a JSON
-#' formatted output. AWS HealthOmics automatically archives unused read
-#' sets after 30 days. To monitor the status of your read set activation
-#' job, use the
-#' [`get_read_set_activation_job`][omics_get_read_set_activation_job]
-#' operation.
+#' Activates an archived read set and returns its metadata in a JSON formatted output. AWS HealthOmics automatically archives unused read sets after 30 days. To monitor the status of your read set activation job, use the [`get_read_set_activation_job`][omics_get_read_set_activation_job] operation.
 #' 
-#' To learn more, see [Activating read
-#' sets](https://docs.aws.amazon.com/omics/latest/dev/activating-read-sets.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' To learn more, see [Activating read sets](https://docs.aws.amazon.com/omics/latest/dev/activating-read-sets.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_start_read_set_activation_job(sequenceStoreId, clientToken,
 #'   sources)
 #'
 #' @param sequenceStoreId &#91;required&#93; The read set's sequence store ID.
-#' @param clientToken To ensure that jobs don't run multiple times, specify a unique token for
-#' each job.
+#' @param clientToken To ensure that jobs don't run multiple times, specify a unique token for each job.
 #' @param sources &#91;required&#93; The job's source files.
 #'
 #' @return
@@ -7108,14 +6598,9 @@ omics_start_read_set_activation_job <- function(sequenceStoreId, clientToken = N
 #' Starts a read set export job
 #'
 #' @description
-#' Starts a read set export job. When the export job is finished, the read
-#' set is exported to an Amazon S3 bucket which can be retrieved using the
-#' [`get_read_set_export_job`][omics_get_read_set_export_job] API
-#' operation.
+#' Starts a read set export job. When the export job is finished, the read set is exported to an Amazon S3 bucket which can be retrieved using the [`get_read_set_export_job`][omics_get_read_set_export_job] API operation.
 #' 
-#' To monitor the status of the export job, use the
-#' [`list_read_set_export_jobs`][omics_list_read_set_export_jobs] API
-#' operation.
+#' To monitor the status of the export job, use the [`list_read_set_export_jobs`][omics_list_read_set_export_jobs] API operation.
 #'
 #' @usage
 #' omics_start_read_set_export_job(sequenceStoreId, destination, roleArn,
@@ -7124,8 +6609,7 @@ omics_start_read_set_activation_job <- function(sequenceStoreId, clientToken = N
 #' @param sequenceStoreId &#91;required&#93; The read set's sequence store ID.
 #' @param destination &#91;required&#93; A location for exported files in Amazon S3.
 #' @param roleArn &#91;required&#93; A service role for the job.
-#' @param clientToken To ensure that jobs don't run multiple times, specify a unique token for
-#' each job.
+#' @param clientToken To ensure that jobs don't run multiple times, specify a unique token for each job.
 #' @param sources &#91;required&#93; The job's source files.
 #'
 #' @return
@@ -7184,11 +6668,7 @@ omics_start_read_set_export_job <- function(sequenceStoreId, destination, roleAr
 #' Imports a read set from the sequence store
 #'
 #' @description
-#' Imports a read set from the sequence store. Read set import jobs support
-#' a maximum of 100 read sets of different types. Monitor the progress of
-#' your read set import job by calling the
-#' [`get_read_set_import_job`][omics_get_read_set_import_job] API
-#' operation.
+#' Imports a read set from the sequence store. Read set import jobs support a maximum of 100 read sets of different types. Monitor the progress of your read set import job by calling the [`get_read_set_import_job`][omics_get_read_set_import_job] API operation.
 #'
 #' @usage
 #' omics_start_read_set_import_job(sequenceStoreId, roleArn, clientToken,
@@ -7196,8 +6676,7 @@ omics_start_read_set_export_job <- function(sequenceStoreId, destination, roleAr
 #'
 #' @param sequenceStoreId &#91;required&#93; The read set's sequence store ID.
 #' @param roleArn &#91;required&#93; A service role for the job.
-#' @param clientToken To ensure that jobs don't run multiple times, specify a unique token for
-#' each job.
+#' @param clientToken To ensure that jobs don't run multiple times, specify a unique token for each job.
 #' @param sources &#91;required&#93; The job's source files.
 #'
 #' @return
@@ -7269,12 +6748,7 @@ omics_start_read_set_import_job <- function(sequenceStoreId, roleArn, clientToke
 #' store
 #'
 #' @description
-#' Imports a reference genome from Amazon S3 into a specified reference
-#' store. You can have multiple reference genomes in a reference store. You
-#' can only import reference genomes one at a time into each reference
-#' store. Monitor the status of your reference import job by using the
-#' [`get_reference_import_job`][omics_get_reference_import_job] API
-#' operation.
+#' Imports a reference genome from Amazon S3 into a specified reference store. You can have multiple reference genomes in a reference store. You can only import reference genomes one at a time into each reference store. Monitor the status of your reference import job by using the [`get_reference_import_job`][omics_get_reference_import_job] API operation.
 #'
 #' @usage
 #' omics_start_reference_import_job(referenceStoreId, roleArn, clientToken,
@@ -7282,8 +6756,7 @@ omics_start_read_set_import_job <- function(sequenceStoreId, roleArn, clientToke
 #'
 #' @param referenceStoreId &#91;required&#93; The job's reference store ID.
 #' @param roleArn &#91;required&#93; A service role for the job.
-#' @param clientToken To ensure that jobs don't run multiple times, specify a unique token for
-#' each job.
+#' @param clientToken To ensure that jobs don't run multiple times, specify a unique token for each job.
 #' @param sources &#91;required&#93; The job's source files.
 #'
 #' @return
@@ -7347,11 +6820,7 @@ omics_start_reference_import_job <- function(referenceStoreId, roleArn, clientTo
 #' existing run
 #'
 #' @description
-#' Starts a new run and returns details about the run, or duplicates an
-#' existing run. A run is a single invocation of a workflow. If you provide
-#' request IDs, Amazon Web Services HealthOmics identifies duplicate
-#' requests and starts the run only once. Monitor the progress of the run
-#' by calling the [`get_run`][omics_get_run] API operation.
+#' Starts a new run and returns details about the run, or duplicates an existing run. A run is a single invocation of a workflow. If you provide request IDs, Amazon Web Services HealthOmics identifies duplicate requests and starts the run only once. Monitor the progress of the run by calling the [`get_run`][omics_get_run] API operation.
 #' 
 #' To start a new run, the following inputs are required:
 #' 
@@ -7359,58 +6828,31 @@ omics_start_reference_import_job <- function(referenceStoreId, roleArn, clientTo
 #' 
 #' -   The run's workflow ID (`workflowId`, not the `uuid` or `runId`).
 #' 
-#' -   An Amazon S3 location (`outputUri`) where the run outputs will be
-#'     saved.
+#' -   An Amazon S3 location (`outputUri`) where the run outputs will be saved.
 #' 
-#' -   All required workflow parameters (`parameter`), which can include
-#'     optional parameters from the parameter template. The run cannot
-#'     include any parameters that are not defined in the parameter
-#'     template. To see all possible parameters, use the
-#'     [`get_run`][omics_get_run] API operation.
+#' -   All required workflow parameters (`parameter`), which can include optional parameters from the parameter template. The run cannot include any parameters that are not defined in the parameter template. To see all possible parameters, use the [`get_run`][omics_get_run] API operation.
 #' 
-#' -   For runs with a `STATIC` (default) storage type, specify the
-#'     required storage capacity (in gibibytes). A storage capacity value
-#'     is not required for runs that use `DYNAMIC` storage.
+#' -   For runs with a `STATIC` (default) storage type, specify the required storage capacity (in gibibytes). A storage capacity value is not required for runs that use `DYNAMIC` storage.
 #' 
-#' [`start_run`][omics_start_run] can also duplicate an existing run using
-#' the run's default values. You can modify these default values and/or add
-#' other optional inputs. To duplicate a run, the following inputs are
-#' required:
+#' [`start_run`][omics_start_run] can also duplicate an existing run using the run's default values. You can modify these default values and/or add other optional inputs. To duplicate a run, the following inputs are required:
 #' 
 #' -   A service role ARN (`roleArn`).
 #' 
 #' -   The ID of the run to duplicate (`runId`).
 #' 
-#' -   An Amazon S3 location where the run outputs will be saved
-#'     (`outputUri`).
+#' -   An Amazon S3 location where the run outputs will be saved (`outputUri`).
 #' 
-#' To learn more about the optional parameters for
-#' [`start_run`][omics_start_run], see [Starting a
-#' run](https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' To learn more about the optional parameters for [`start_run`][omics_start_run], see [Starting a run](https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html) in the *Amazon Web Services HealthOmics User Guide*.
 #' 
-#' Use the `retentionMode` input to control how long the metadata for each
-#' run is stored in CloudWatch. There are two retention modes:
+#' Use the `retentionMode` input to control how long the metadata for each run is stored in CloudWatch. There are two retention modes:
 #' 
-#' -   Specify `REMOVE` to automatically remove the oldest runs when you
-#'     reach the maximum service retention limit for runs. It is
-#'     recommended that you use the `REMOVE` mode to initiate major run
-#'     requests so that your runs do not fail when you reach the limit.
+#' -   Specify `REMOVE` to automatically remove the oldest runs when you reach the maximum service retention limit for runs. It is recommended that you use the `REMOVE` mode to initiate major run requests so that your runs do not fail when you reach the limit.
 #' 
-#' -   The `retentionMode` is set to the `RETAIN` mode by default, which
-#'     allows you to manually remove runs after reaching the maximum
-#'     service retention limit. Under this setting, you cannot create
-#'     additional runs until you remove the excess runs.
+#' -   The `retentionMode` is set to the `RETAIN` mode by default, which allows you to manually remove runs after reaching the maximum service retention limit. Under this setting, you cannot create additional runs until you remove the excess runs.
 #' 
-#' To learn more about the retention modes, see [Run retention
-#' mode](https://docs.aws.amazon.com/omics/latest/dev/run-retention.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' To learn more about the retention modes, see [Run retention mode](https://docs.aws.amazon.com/omics/latest/dev/run-retention.html) in the *Amazon Web Services HealthOmics User Guide*.
 #' 
-#' You can use Amazon Q CLI to analyze run logs and make performance
-#' optimization recommendations. To get started, see the [Amazon Web
-#' Services HealthOmics MCP
-#' server](https://github.com/awslabs/mcp/tree/main/src/aws-healthomics-mcp-server)
-#' on GitHub.
+#' You can use Amazon Q CLI to analyze run logs and make performance optimization recommendations. To get started, see the [Amazon Web Services HealthOmics MCP server](https://github.com/awslabs/mcp/tree/main/src/aws-healthomics-mcp-server) on GitHub.
 #'
 #' @usage
 #' omics_start_run(workflowId, workflowType, runId, roleArn, name, cacheId,
@@ -7419,89 +6861,29 @@ omics_start_reference_import_job <- function(referenceStoreId, roleArn, clientTo
 #'   workflowOwnerId, workflowVersionName, networkingMode, configurationName)
 #'
 #' @param workflowId The run's workflow ID. The `workflowId` is not the UUID.
-#' @param workflowType The run's workflow type. The `workflowType` must be specified if you are
-#' running a `READY2RUN` workflow. If you are running a `PRIVATE` workflow
-#' (default), you do not need to include the workflow type.
+#' @param workflowType The run's workflow type. The `workflowType` must be specified if you are running a `READY2RUN` workflow. If you are running a `PRIVATE` workflow (default), you do not need to include the workflow type.
 #' @param runId The ID of a run to duplicate.
-#' @param roleArn &#91;required&#93; A service role for the run. The `roleArn` requires access to Amazon Web
-#' Services HealthOmics, S3, Cloudwatch logs, and EC2. An example `roleArn`
-#' is
-#' `arn:aws:iam::123456789012:role/omics-service-role-serviceRole-W8O1XMPL7QZ`.
-#' In this example, the AWS account ID is `123456789012` and the role name
-#' is `omics-service-role-serviceRole-W8O1XMPL7QZ`.
-#' @param name A name for the run. This is recommended to view and organize runs in the
-#' Amazon Web Services HealthOmics console and CloudWatch logs.
-#' @param cacheId Identifier of the cache associated with this run. If you don't specify a
-#' cache ID, no task outputs are cached for this run.
-#' @param cacheBehavior The cache behavior for the run. You specify this value if you want to
-#' override the default behavior for the cache. You had set the default
-#' value when you created the cache. For more information, see [Run cache
-#' behavior](https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param runGroupId The run's group ID. Use a run group to cap the compute resources (and
-#' number of concurrent runs) for the runs that you add to the run group.
-#' @param priority Use the run priority (highest: 1) to establish the order of runs in a
-#' run group when you start a run. If multiple runs share the same
-#' priority, the run that was initiated first will have the higher
-#' priority. Runs that do not belong to a run group can be assigned a
-#' priority. The priorities of these runs are ranked among other runs that
-#' are not in a run group. For more information, see [Run
-#' priority](https://docs.aws.amazon.com/omics/latest/dev/creating-run-groups.html#run-priority)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param parameters Parameters for the run. The run needs all required parameters and can
-#' include optional parameters. The run cannot include any parameters that
-#' are not defined in the parameter template. To retrieve parameters from
-#' the run, use the GetRun API operation.
-#' @param storageCapacity The `STATIC` storage capacity (in gibibytes, GiB) for this run. The
-#' default run storage capacity is 1200 GiB. If your requested storage
-#' capacity is unavailable, the system rounds up the value to the nearest
-#' 1200 GiB multiple. If the requested storage capacity is still
-#' unavailable, the system rounds up the value to the nearest 2400 GiB
-#' multiple. This field is not required if the storage type is `DYNAMIC`
-#' (the system ignores any value that you enter).
-#' @param outputUri &#91;required&#93; An output S3 URI for the run. The S3 bucket must be in the same region
-#' as the workflow. The role ARN must have permission to write to this S3
-#' bucket.
+#' @param roleArn &#91;required&#93; A service role for the run. The `roleArn` requires access to Amazon Web Services HealthOmics, S3, Cloudwatch logs, and EC2. An example `roleArn` is `arn:aws:iam::123456789012:role/omics-service-role-serviceRole-W8O1XMPL7QZ`. In this example, the AWS account ID is `123456789012` and the role name is `omics-service-role-serviceRole-W8O1XMPL7QZ`.
+#' @param name A name for the run. This is recommended to view and organize runs in the Amazon Web Services HealthOmics console and CloudWatch logs.
+#' @param cacheId Identifier of the cache associated with this run. If you don't specify a cache ID, no task outputs are cached for this run.
+#' @param cacheBehavior The cache behavior for the run. You specify this value if you want to override the default behavior for the cache. You had set the default value when you created the cache. For more information, see [Run cache behavior](https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html#run-cache-behavior) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param runGroupId The run's group ID. Use a run group to cap the compute resources (and number of concurrent runs) for the runs that you add to the run group.
+#' @param priority Use the run priority (highest: 1) to establish the order of runs in a run group when you start a run. If multiple runs share the same priority, the run that was initiated first will have the higher priority. Runs that do not belong to a run group can be assigned a priority. The priorities of these runs are ranked among other runs that are not in a run group. For more information, see [Run priority](https://docs.aws.amazon.com/omics/latest/dev/creating-run-groups.html#run-priority) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param parameters Parameters for the run. The run needs all required parameters and can include optional parameters. The run cannot include any parameters that are not defined in the parameter template. To retrieve parameters from the run, use the GetRun API operation.
+#' @param storageCapacity The `STATIC` storage capacity (in gibibytes, GiB) for this run. The default run storage capacity is 1200 GiB. If your requested storage capacity is unavailable, the system rounds up the value to the nearest 1200 GiB multiple. If the requested storage capacity is still unavailable, the system rounds up the value to the nearest 2400 GiB multiple. This field is not required if the storage type is `DYNAMIC` (the system ignores any value that you enter).
+#' @param outputUri &#91;required&#93; An output S3 URI for the run. The S3 bucket must be in the same region as the workflow. The role ARN must have permission to write to this S3 bucket.
 #' @param logLevel A log level for the run.
-#' @param tags Tags for the run. You can add up to 50 tags per run. For more
-#' information, see [Adding a
-#' tag](https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html) in the
-#' *Amazon Web Services HealthOmics User Guide*.
-#' @param requestId &#91;required&#93; An idempotency token used to dedupe retry requests so that duplicate
-#' runs are not created.
+#' @param tags Tags for the run. You can add up to 50 tags per run. For more information, see [Adding a tag](https://docs.aws.amazon.com/omics/latest/dev/add-a-tag.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param requestId &#91;required&#93; An idempotency token used to dedupe retry requests so that duplicate runs are not created.
 #' @param retentionMode The retention mode for the run. The default value is `RETAIN`.
 #' 
-#' Amazon Web Services HealthOmics stores a fixed number of runs that are
-#' available to the console and API. In the default mode (`RETAIN`), you
-#' need to remove runs manually when the number of run exceeds the maximum.
-#' If you set the retention mode to `REMOVE`, Amazon Web Services
-#' HealthOmics automatically removes runs (that have mode set to `REMOVE`)
-#' when the number of run exceeds the maximum. All run logs are available
-#' in CloudWatch logs, if you need information about a run that is no
-#' longer available to the API.
+#' Amazon Web Services HealthOmics stores a fixed number of runs that are available to the console and API. In the default mode (`RETAIN`), you need to remove runs manually when the number of run exceeds the maximum. If you set the retention mode to `REMOVE`, Amazon Web Services HealthOmics automatically removes runs (that have mode set to `REMOVE`) when the number of run exceeds the maximum. All run logs are available in CloudWatch logs, if you need information about a run that is no longer available to the API.
 #' 
-#' For more information about retention mode, see [Specifying run retention
-#' mode](https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param storageType The storage type for the run. If you set the storage type to `DYNAMIC`,
-#' Amazon Web Services HealthOmics dynamically scales the storage up or
-#' down, based on file system utilization. By default, the run uses
-#' `STATIC` storage type, which allocates a fixed amount of storage. For
-#' more information about `DYNAMIC` and `STATIC` storage, see [Run storage
-#' types](https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param workflowOwnerId The 12-digit account ID of the workflow owner that is used for running a
-#' shared workflow. The workflow owner ID can be retrieved using the
-#' [`get_share`][omics_get_share] API operation. If you are the workflow
-#' owner, you do not need to include this ID.
-#' @param workflowVersionName The name of the workflow version. Use workflow versions to track and
-#' organize changes to the workflow. If your workflow has multiple
-#' versions, the run uses the default version unless you specify a version
-#' name. To learn more, see [Workflow
-#' versioning](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
-#' @param networkingMode Optional configuration for run networking behavior. If not specified,
-#' this will default to RESTRICTED.
+#' For more information about retention mode, see [Specifying run retention mode](https://docs.aws.amazon.com/omics/latest/dev/starting-a-run.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param storageType The storage type for the run. If you set the storage type to `DYNAMIC`, Amazon Web Services HealthOmics dynamically scales the storage up or down, based on file system utilization. By default, the run uses `STATIC` storage type, which allocates a fixed amount of storage. For more information about `DYNAMIC` and `STATIC` storage, see [Run storage types](https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param workflowOwnerId The 12-digit account ID of the workflow owner that is used for running a shared workflow. The workflow owner ID can be retrieved using the [`get_share`][omics_get_share] API operation. If you are the workflow owner, you do not need to include this ID.
+#' @param workflowVersionName The name of the workflow version. Use workflow versions to track and organize changes to the workflow. If your workflow has multiple versions, the run uses the default version unless you specify a version name. To learn more, see [Workflow versioning](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param networkingMode Optional configuration for run networking behavior. If not specified, this will default to RESTRICTED.
 #' @param configurationName Optional configuration name to use for the workflow run.
 #'
 #' @return
@@ -7581,32 +6963,19 @@ omics_start_run <- function(workflowId = NULL, workflowType = NULL, runId = NULL
 #' Starts a batch of workflow runs
 #'
 #' @description
-#' Starts a batch of workflow runs. You can group up to 100,000 runs into a
-#' single batch that share a common configuration defined in
-#' `defaultRunSetting`. Per-run overrides can be provided either inline via
-#' `inlineSettings` (up to 100 runs) or via a JSON file stored in Amazon S3
-#' via `s3UriSettings` (up to 100,000 runs).
+#' Starts a batch of workflow runs. You can group up to 100,000 runs into a single batch that share a common configuration defined in `defaultRunSetting`. Per-run overrides can be provided either inline via `inlineSettings` (up to 100 runs) or via a JSON file stored in Amazon S3 via `s3UriSettings` (up to 100,000 runs).
 #' 
-#' [`start_run_batch`][omics_start_run_batch] validates common fields
-#' synchronously and returns immediately with a batch ID and status
-#' `CREATING`. The batch transitions to `PENDING` once initial setup
-#' completes. Runs are then submitted gradually and asynchronously at a
-#' rate governed by your [`start_run`][omics_start_run] throughput quota.
+#' [`start_run_batch`][omics_start_run_batch] validates common fields synchronously and returns immediately with a batch ID and status `CREATING`. The batch transitions to `PENDING` once initial setup completes. Runs are then submitted gradually and asynchronously at a rate governed by your [`start_run`][omics_start_run] throughput quota.
 #'
 #' @usage
 #' omics_start_run_batch(batchName, requestId, tags, defaultRunSetting,
 #'   batchRunSettings)
 #'
 #' @param batchName An optional user-friendly name for the run batch.
-#' @param requestId &#91;required&#93; A client token used to deduplicate retry requests and prevent duplicate
-#' batches from being created.
-#' @param tags AWS tags to associate with the batch resource. These tags are not
-#' inherited by individual runs. To tag individual runs, use
-#' `defaultRunSetting.runTags`.
-#' @param defaultRunSetting &#91;required&#93; Shared configuration applied to all runs in the batch. See
-#' `DefaultRunSetting`.
-#' @param batchRunSettings &#91;required&#93; The individual run configurations. Specify exactly one of
-#' `inlineSettings` or `s3UriSettings`. See `BatchRunSettings`.
+#' @param requestId &#91;required&#93; A client token used to deduplicate retry requests and prevent duplicate batches from being created.
+#' @param tags AWS tags to associate with the batch resource. These tags are not inherited by individual runs. To tag individual runs, use `defaultRunSetting.runTags`.
+#' @param defaultRunSetting &#91;required&#93; Shared configuration applied to all runs in the batch. See `DefaultRunSetting`.
+#' @param batchRunSettings &#91;required&#93; The individual run configurations. Specify exactly one of `inlineSettings` or `s3UriSettings`. See `BatchRunSettings`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7701,11 +7070,7 @@ omics_start_run_batch <- function(batchName = NULL, requestId, tags = NULL, defa
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Starts a variant import job.
 #'
@@ -7868,11 +7233,7 @@ omics_untag_resource <- function(resourceArn, tagKeys) {
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Updates an annotation store.
 #'
@@ -8016,16 +7377,9 @@ omics_update_annotation_store_version <- function(name, versionName, description
 #' the operation is successful
 #'
 #' @description
-#' Updates a run cache using its ID and returns a response with no body if
-#' the operation is successful. You can update the run cache description,
-#' name, or the default run cache behavior with `CACHE_ON_FAILURE` or
-#' `CACHE_ALWAYS`. To confirm that your run cache settings have been
-#' properly updated, use the [`get_run_cache`][omics_get_run_cache] API
-#' operation.
+#' Updates a run cache using its ID and returns a response with no body if the operation is successful. You can update the run cache description, name, or the default run cache behavior with `CACHE_ON_FAILURE` or `CACHE_ALWAYS`. To confirm that your run cache settings have been properly updated, use the [`get_run_cache`][omics_get_run_cache] API operation.
 #' 
-#' For more information, see [How call caching
-#' works](https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [How call caching works](https://docs.aws.amazon.com/omics/latest/dev/how-run-cache.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_update_run_cache(cacheBehavior, description, id, name)
@@ -8076,11 +7430,9 @@ omics_update_run_cache <- function(cacheBehavior = NULL, description = NULL, id,
 #' if the operation is successful
 #'
 #' @description
-#' Updates the settings of a run group and returns a response with no body
-#' if the operation is successful.
+#' Updates the settings of a run group and returns a response with no body if the operation is successful.
 #' 
-#' You can update the following settings with
-#' [`update_run_group`][omics_update_run_group]:
+#' You can update the following settings with [`update_run_group`][omics_update_run_group]:
 #' 
 #' -   Maximum number of CPUs
 #' 
@@ -8092,10 +7444,7 @@ omics_update_run_cache <- function(cacheBehavior = NULL, description = NULL, id,
 #' 
 #' -   Group name
 #' 
-#' To confirm that the settings have been successfully updated, use the
-#' [`list_run_groups`][omics_list_run_groups] or
-#' [`get_run_group`][omics_get_run_group] API operations to verify that the
-#' desired changes have been made.
+#' To confirm that the settings have been successfully updated, use the [`list_run_groups`][omics_list_run_groups] or [`get_run_group`][omics_get_run_group] API operations to verify that the desired changes have been made.
 #'
 #' @usage
 #' omics_update_run_group(id, name, maxCpus, maxRuns, maxDuration, maxGpus)
@@ -8158,12 +7507,9 @@ omics_update_run_group <- function(id, name = NULL, maxCpus = NULL, maxRuns = NU
 #' @param id &#91;required&#93; The ID of the sequence store.
 #' @param name A name for the sequence store.
 #' @param description A description for the sequence store.
-#' @param clientToken To ensure that requests don't run multiple times, specify a unique token
-#' for each request.
-#' @param fallbackLocation The S3 URI of a bucket and folder to store Read Sets that fail to
-#' upload.
-#' @param propagatedSetLevelTags The tags keys to propagate to the S3 objects associated with read sets
-#' in the sequence store.
+#' @param clientToken To ensure that requests don't run multiple times, specify a unique token for each request.
+#' @param fallbackLocation The S3 URI of a bucket and folder to store Read Sets that fail to upload.
+#' @param propagatedSetLevelTags The tags keys to propagate to the S3 objects associated with read sets in the sequence store.
 #' @param s3AccessConfig S3 access configuration parameters.
 #'
 #' @return
@@ -8244,11 +7590,7 @@ omics_update_sequence_store <- function(id, name = NULL, description = NULL, cli
 #' no longer open to new customers
 #'
 #' @description
-#' Amazon Web Services HealthOmics variant stores and annotation stores are
-#' no longer open to new customers. Existing customers can continue to use
-#' the service as normal. For more information, see [Amazon Web Services
-#' HealthOmics variant store and annotation store availability
-#' change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
+#' Amazon Web Services HealthOmics variant stores and annotation stores are no longer open to new customers. Existing customers can continue to use the service as normal. For more information, see [Amazon Web Services HealthOmics variant store and annotation store availability change](https://docs.aws.amazon.com/omics/latest/dev/variant-store-availability-change.html).
 #' 
 #' Updates a variant store.
 #'
@@ -8325,13 +7667,9 @@ omics_update_variant_store <- function(name, description = NULL) {
 #' 
 #' -   Default storage capacity (with workflow ID)
 #' 
-#' This operation returns a response with no body if the operation is
-#' successful. You can check the workflow updates by calling the
-#' [`get_workflow`][omics_get_workflow] API operation.
+#' This operation returns a response with no body if the operation is successful. You can check the workflow updates by calling the [`get_workflow`][omics_get_workflow] API operation.
 #' 
-#' For more information, see [Update a private
-#' workflow](https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Update a private workflow](https://docs.aws.amazon.com/omics/latest/dev/update-private-workflow.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_update_workflow(id, name, description, storageType,
@@ -8340,16 +7678,9 @@ omics_update_variant_store <- function(name, description = NULL) {
 #' @param id &#91;required&#93; The workflow's ID.
 #' @param name A name for the workflow.
 #' @param description A description for the workflow.
-#' @param storageType The default storage type for runs that use this workflow. STATIC storage
-#' allocates a fixed amount of storage. DYNAMIC storage dynamically scales
-#' the storage up or down, based on file system utilization. For more
-#' information about static and dynamic storage, see [Running
-#' workflows](https://docs.aws.amazon.com/omics/latest/dev/) in the *Amazon
-#' Web Services HealthOmics User Guide*.
-#' @param storageCapacity The default static storage capacity (in gibibytes) for runs that use
-#' this workflow or workflow version.
-#' @param readmeMarkdown The markdown content for the workflow's README file. This provides
-#' documentation and usage information for users of the workflow.
+#' @param storageType The default storage type for runs that use this workflow. STATIC storage allocates a fixed amount of storage. DYNAMIC storage dynamically scales the storage up or down, based on file system utilization. For more information about static and dynamic storage, see [Running workflows](https://docs.aws.amazon.com/omics/latest/dev/) in the *Amazon Web Services HealthOmics User Guide*.
+#' @param storageCapacity The default static storage capacity (in gibibytes) for runs that use this workflow or workflow version.
+#' @param readmeMarkdown The markdown content for the workflow's README file. This provides documentation and usage information for users of the workflow.
 #'
 #' @return
 #' An empty list.
@@ -8393,10 +7724,7 @@ omics_update_workflow <- function(id, name = NULL, description = NULL, storageTy
 #' Updates information about the workflow version
 #'
 #' @description
-#' Updates information about the workflow version. For more information,
-#' see [Workflow versioning in Amazon Web Services
-#' HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' Updates information about the workflow version. For more information, see [Workflow versioning in Amazon Web Services HealthOmics](https://docs.aws.amazon.com/omics/latest/dev/workflow-versions.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_update_workflow_version(workflowId, versionName, description,
@@ -8405,21 +7733,9 @@ omics_update_workflow <- function(id, name = NULL, description = NULL, storageTy
 #' @param workflowId &#91;required&#93; The workflow's ID. The `workflowId` is not the UUID.
 #' @param versionName &#91;required&#93; The name of the workflow version.
 #' @param description Description of the workflow version.
-#' @param storageType The default storage type for runs that use this workflow version. The
-#' `storageType` can be overridden at run time. `DYNAMIC` storage
-#' dynamically scales the storage up or down, based on file system
-#' utilization. STATIC storage allocates a fixed amount of storage. For
-#' more information about dynamic and static storage types, see [Run
-#' storage
-#' types](https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html)
-#' in the *in the Amazon Web Services HealthOmics User Guide* .
-#' @param storageCapacity The default static storage capacity (in gibibytes) for runs that use
-#' this workflow version. The `storageCapacity` can be overwritten at run
-#' time. The storage capacity is not required for runs with a `DYNAMIC`
-#' storage type.
-#' @param readmeMarkdown The markdown content for the workflow version's README file. This
-#' provides documentation and usage information for users of this specific
-#' workflow version.
+#' @param storageType The default storage type for runs that use this workflow version. The `storageType` can be overridden at run time. `DYNAMIC` storage dynamically scales the storage up or down, based on file system utilization. STATIC storage allocates a fixed amount of storage. For more information about dynamic and static storage types, see [Run storage types](https://docs.aws.amazon.com/omics/latest/dev/workflows-run-types.html) in the *in the Amazon Web Services HealthOmics User Guide* .
+#' @param storageCapacity The default static storage capacity (in gibibytes) for runs that use this workflow version. The `storageCapacity` can be overwritten at run time. The storage capacity is not required for runs with a `DYNAMIC` storage type.
+#' @param readmeMarkdown The markdown content for the workflow version's README file. This provides documentation and usage information for users of this specific workflow version.
 #'
 #' @return
 #' An empty list.
@@ -8463,15 +7779,9 @@ omics_update_workflow_version <- function(workflowId, versionName, description =
 #' Uploads a specific part of a read set into a sequence store
 #'
 #' @description
-#' Uploads a specific part of a read set into a sequence store. When you a
-#' upload a read set part with a part number that already exists, the new
-#' part replaces the existing one. This operation returns a JSON formatted
-#' response containing a string identifier that is used to confirm that
-#' parts are being added to the intended upload.
+#' Uploads a specific part of a read set into a sequence store. When you a upload a read set part with a part number that already exists, the new part replaces the existing one. This operation returns a JSON formatted response containing a string identifier that is used to confirm that parts are being added to the intended upload.
 #' 
-#' For more information, see [Direct upload to a sequence
-#' store](https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html)
-#' in the *Amazon Web Services HealthOmics User Guide*.
+#' For more information, see [Direct upload to a sequence store](https://docs.aws.amazon.com/omics/latest/dev/synchronous-uploads.html) in the *Amazon Web Services HealthOmics User Guide*.
 #'
 #' @usage
 #' omics_upload_read_set_part(sequenceStoreId, uploadId, partSource,

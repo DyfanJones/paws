@@ -10,21 +10,16 @@ xray_create_sampling_rule(SamplingRule, Tags = NULL)
 \arguments{
 \item{SamplingRule}{[required] The rule definition.}
 
-\item{Tags}{A map that contains one or more tag keys and tag values to attach to an
-X-Ray sampling rule. For more information about ways to use tags, see
-\href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources}
-in the \emph{Amazon Web Services General Reference}.
+\item{Tags}{A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information about ways to use tags, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services resources} in the \emph{Amazon Web Services General Reference}.
 
 The following restrictions apply to tags:
 \itemize{
 \item Maximum number of user-applied tags per resource: 50
 \item Maximum tag key length: 128 Unicode characters
 \item Maximum tag value length: 256 Unicode characters
-\item Valid values for key and value: a-z, A-Z, 0-9, space, and the
-following characters: _ . : / = + - and @
+\item Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
 \item Tag keys and values are case sensitive.
-\item Don't use \verb{aws:} as a prefix for keys; it's reserved for Amazon Web
-Services use.
+\item Don't use \verb{aws:} as a prefix for keys; it's reserved for Amazon Web Services use.
 }}
 }
 \description{

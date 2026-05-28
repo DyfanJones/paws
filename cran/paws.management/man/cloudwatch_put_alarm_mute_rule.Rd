@@ -15,28 +15,19 @@ cloudwatch_put_alarm_mute_rule(
 )
 }
 \arguments{
-\item{Name}{[required] The name of the alarm mute rule. This name must be unique within your
-Amazon Web Services account and region.}
+\item{Name}{[required] The name of the alarm mute rule. This name must be unique within your Amazon Web Services account and region.}
 
-\item{Description}{A description of the alarm mute rule that helps you identify its
-purpose.}
+\item{Description}{A description of the alarm mute rule that helps you identify its purpose.}
 
 \item{Rule}{[required] The configuration that defines when and how long alarms should be muted.}
 
 \item{MuteTargets}{Specifies which alarms this rule applies to.}
 
-\item{Tags}{A list of key-value pairs to associate with the alarm mute rule. You can
-use tags to categorize and manage your mute rules.}
+\item{Tags}{A list of key-value pairs to associate with the alarm mute rule. You can use tags to categorize and manage your mute rules.}
 
-\item{StartDate}{The date and time after which the mute rule takes effect, specified as a
-timestamp in ISO 8601 format (for example, \verb{2026-04-15T08:00:00Z}). If
-not specified, the mute rule takes effect immediately upon creation and
-the mutes are applied as per the schedule expression.}
+\item{StartDate}{The date and time after which the mute rule takes effect, specified as a timestamp in ISO 8601 format (for example, \verb{2026-04-15T08:00:00Z}). If not specified, the mute rule takes effect immediately upon creation and the mutes are applied as per the schedule expression.}
 
-\item{ExpireDate}{The date and time when the mute rule expires and is no longer evaluated,
-specified as a timestamp in ISO 8601 format (for example,
-\verb{2026-12-31T23:59:59Z}). After this time, the rule status becomes
-EXPIRED and will no longer mute the targeted alarms.}
+\item{ExpireDate}{The date and time when the mute rule expires and is no longer evaluated, specified as a timestamp in ISO 8601 format (for example, \verb{2026-12-31T23:59:59Z}). After this time, the rule status becomes EXPIRED and will no longer mute the targeted alarms.}
 }
 \description{
 Creates or updates an alarm mute rule.

@@ -21,8 +21,7 @@ datazone_add_entity_owner(
 
 \item{owner}{[required] The owner that you want to add to the entity.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Adds the owner of an entity (a domain unit).

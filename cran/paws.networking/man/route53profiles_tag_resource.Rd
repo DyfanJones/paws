@@ -7,8 +7,7 @@
 route53profiles_tag_resource(ResourceArn, Tags)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) for the resource that you want to add
-tags to.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) for the resource that you want to add tags to.}
 
 \item{Tags}{[required] The tags that you want to add to the specified resource.}
 }

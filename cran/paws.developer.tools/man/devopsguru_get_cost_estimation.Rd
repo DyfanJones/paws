@@ -8,8 +8,7 @@ Amazon Web Services resources}
 devopsguru_get_cost_estimation(NextToken = NULL)
 }
 \arguments{
-\item{NextToken}{The pagination token to use to retrieve the next page of results for
-this operation. If this value is null, it retrieves the first page.}
+\item{NextToken}{The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.}
 }
 \description{
 Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web Services resources. For more information, see \href{https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html}{Estimate your Amazon DevOps Guru costs} and \href{https://aws.amazon.com/devops-guru/pricing/}{Amazon DevOps Guru pricing}.

@@ -12,19 +12,13 @@ route53resolver_import_firewall_domains(
 )
 }
 \arguments{
-\item{FirewallDomainListId}{[required] The ID of the domain list that you want to modify with the import
-operation.}
+\item{FirewallDomainListId}{[required] The ID of the domain list that you want to modify with the import operation.}
 
-\item{Operation}{[required] What you want DNS Firewall to do with the domains that are listed in the
-file. This must be set to \code{REPLACE}, which updates the domain list to
-exactly match the list in the file.}
+\item{Operation}{[required] What you want DNS Firewall to do with the domains that are listed in the file. This must be set to \code{REPLACE}, which updates the domain list to exactly match the list in the file.}
 
-\item{DomainFileUrl}{[required] The fully qualified URL or URI of the file stored in Amazon Simple
-Storage Service (Amazon S3) that contains the list of domains to import.
+\item{DomainFileUrl}{[required] The fully qualified URL or URI of the file stored in Amazon Simple Storage Service (Amazon S3) that contains the list of domains to import.
 
-The file must be in an S3 bucket that's in the same Region as your DNS
-Firewall. The file must be a text file and must contain a single domain
-per line.}
+The file must be in an S3 bucket that's in the same Region as your DNS Firewall. The file must be a text file and must contain a single domain per line.}
 }
 \description{
 Imports domain names from a file into a domain list, for use in a DNS firewall rule group.

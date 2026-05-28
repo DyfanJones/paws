@@ -12,16 +12,11 @@ cloudwatchapplicationsignals_list_grouping_attribute_definitions(
 )
 }
 \arguments{
-\item{NextToken}{Include this value, if it was returned by the previous operation, to get
-the next set of grouping attribute definitions.}
+\item{NextToken}{Include this value, if it was returned by the previous operation, to get the next set of grouping attribute definitions.}
 
-\item{AwsAccountId}{The Amazon Web Services account ID to retrieve grouping attribute
-definitions for. Use this when accessing grouping configurations from a
-different account in cross-account monitoring scenarios.}
+\item{AwsAccountId}{The Amazon Web Services account ID to retrieve grouping attribute definitions for. Use this when accessing grouping configurations from a different account in cross-account monitoring scenarios.}
 
-\item{IncludeLinkedAccounts}{If you are using this operation in a monitoring account, specify \code{true}
-to include grouping attributes from source accounts in the returned
-data.}
+\item{IncludeLinkedAccounts}{If you are using this operation in a monitoring account, specify \code{true} to include grouping attributes from source accounts in the returned data.}
 }
 \description{
 Returns the current grouping configuration for this account, including all custom grouping attribute definitions that have been configured. These definitions determine how services are logically grouped based on telemetry attributes, Amazon Web Services tags, or predefined mappings.

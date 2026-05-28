@@ -18,15 +18,11 @@ rds_create_global_cluster(
 )
 }
 \arguments{
-\item{GlobalClusterIdentifier}{[required] The cluster identifier for this global database cluster. This parameter
-is stored as a lowercase string.}
+\item{GlobalClusterIdentifier}{[required] The cluster identifier for this global database cluster. This parameter is stored as a lowercase string.}
 
-\item{SourceDBClusterIdentifier}{The Amazon Resource Name (ARN) to use as the primary cluster of the
-global database.
+\item{SourceDBClusterIdentifier}{The Amazon Resource Name (ARN) to use as the primary cluster of the global database.
 
-If you provide a value for this parameter, don't specify values for the
-following settings because Amazon Aurora uses the values from the
-specified source DB cluster:
+If you provide a value for this parameter, don't specify values for the following settings because Amazon Aurora uses the values from the specified source DB cluster:
 \itemize{
 \item \code{DatabaseName}
 \item \code{Engine}
@@ -40,64 +36,42 @@ Valid Values: \code{aurora-mysql | aurora-postgresql}
 
 Constraints:
 \itemize{
-\item Can't be specified if \code{SourceDBClusterIdentifier} is specified. In
-this case, Amazon Aurora uses the engine of the source DB cluster.
+\item Can't be specified if \code{SourceDBClusterIdentifier} is specified. In this case, Amazon Aurora uses the engine of the source DB cluster.
 }}
 
 \item{EngineVersion}{The engine version to use for this global database cluster.
 
 Constraints:
 \itemize{
-\item Can't be specified if \code{SourceDBClusterIdentifier} is specified. In
-this case, Amazon Aurora uses the engine version of the source DB
-cluster.
+\item Can't be specified if \code{SourceDBClusterIdentifier} is specified. In this case, Amazon Aurora uses the engine version of the source DB cluster.
 }}
 
 \item{EngineLifecycleSupport}{The life cycle type for this global database cluster.
 
-By default, this value is set to \code{open-source-rds-extended-support},
-which enrolls your global cluster into Amazon RDS Extended Support. At
-the end of standard support, you can avoid charges for Extended Support
-by setting the value to \code{open-source-rds-extended-support-disabled}. In
-this case, creating the global cluster will fail if the DB major version
-is past its end of standard support date.
+By default, this value is set to \code{open-source-rds-extended-support}, which enrolls your global cluster into Amazon RDS Extended Support. At the end of standard support, you can avoid charges for Extended Support by setting the value to \code{open-source-rds-extended-support-disabled}. In this case, creating the global cluster will fail if the DB major version is past its end of standard support date.
 
 This setting only applies to Aurora PostgreSQL-based global databases.
 
-You can use this setting to enroll your global cluster into Amazon RDS
-Extended Support. With RDS Extended Support, you can run the selected
-major engine version on your global cluster past the end of standard
-support for that engine version. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html}{Amazon RDS Extended Support with Amazon Aurora}
-in the \emph{Amazon Aurora User Guide}.
+You can use this setting to enroll your global cluster into Amazon RDS Extended Support. With RDS Extended Support, you can run the selected major engine version on your global cluster past the end of standard support for that engine version. For more information, see \href{https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/extended-support.html}{Amazon RDS Extended Support with Amazon Aurora} in the \emph{Amazon Aurora User Guide}.
 
-Valid Values:
-\code{open-source-rds-extended-support | open-source-rds-extended-support-disabled}
+Valid Values: \code{open-source-rds-extended-support | open-source-rds-extended-support-disabled}
 
 Default: \code{open-source-rds-extended-support}}
 
-\item{DeletionProtection}{Specifies whether to enable deletion protection for the new global
-database cluster. The global database can't be deleted when deletion
-protection is enabled.}
+\item{DeletionProtection}{Specifies whether to enable deletion protection for the new global database cluster. The global database can't be deleted when deletion protection is enabled.}
 
-\item{DatabaseName}{The name for your database of up to 64 alphanumeric characters. If you
-don't specify a name, Amazon Aurora doesn't create a database in the
-global database cluster.
+\item{DatabaseName}{The name for your database of up to 64 alphanumeric characters. If you don't specify a name, Amazon Aurora doesn't create a database in the global database cluster.
 
 Constraints:
 \itemize{
-\item Can't be specified if \code{SourceDBClusterIdentifier} is specified. In
-this case, Amazon Aurora uses the database name from the source DB
-cluster.
+\item Can't be specified if \code{SourceDBClusterIdentifier} is specified. In this case, Amazon Aurora uses the database name from the source DB cluster.
 }}
 
-\item{StorageEncrypted}{Specifies whether to enable storage encryption for the new global
-database cluster.
+\item{StorageEncrypted}{Specifies whether to enable storage encryption for the new global database cluster.
 
 Constraints:
 \itemize{
-\item Can't be specified if \code{SourceDBClusterIdentifier} is specified. In
-this case, Amazon Aurora uses the setting from the source DB
-cluster.
+\item Can't be specified if \code{SourceDBClusterIdentifier} is specified. In this case, Amazon Aurora uses the setting from the source DB cluster.
 }}
 
 \item{Tags}{Tags to assign to the global cluster.}

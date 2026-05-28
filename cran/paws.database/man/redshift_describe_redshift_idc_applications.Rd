@@ -11,21 +11,11 @@ redshift_describe_redshift_idc_applications(
 )
 }
 \arguments{
-\item{RedshiftIdcApplicationArn}{The ARN for the Redshift application that integrates with IAM Identity
-Center.}
+\item{RedshiftIdcApplicationArn}{The ARN for the Redshift application that integrates with IAM Identity Center.}
 
-\item{MaxRecords}{The maximum number of response records to return in each call. If the
-number of remaining response records exceeds the specified MaxRecords
-value, a value is returned in a marker field of the response. You can
-retrieve the next set of records by retrying the command with the
-returned marker value.}
+\item{MaxRecords}{The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in a marker field of the response. You can retrieve the next set of records by retrying the command with the returned marker value.}
 
-\item{Marker}{A value that indicates the starting point for the next set of response
-records in a subsequent request. If a value is returned in a response,
-you can retrieve the next set of records by providing this returned
-marker value in the Marker parameter and retrying the command. If the
-Marker field is empty, all response records have been retrieved for the
-request.}
+\item{Marker}{A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned marker value in the Marker parameter and retrying the command. If the Marker field is empty, all response records have been retrieved for the request.}
 }
 \description{
 Lists the Amazon Redshift IAM Identity Center applications.

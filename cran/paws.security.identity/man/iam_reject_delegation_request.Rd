@@ -9,8 +9,7 @@ iam_reject_delegation_request(DelegationRequestId, Notes = NULL)
 \arguments{
 \item{DelegationRequestId}{[required] The unique identifier of the delegation request to reject.}
 
-\item{Notes}{Optional notes explaining the reason for rejecting the delegation
-request.}
+\item{Notes}{Optional notes explaining the reason for rejecting the delegation request.}
 }
 \description{
 Rejects a delegation request, denying the requested temporary access.

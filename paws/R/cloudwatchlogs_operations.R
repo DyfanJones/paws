@@ -8,65 +8,29 @@ NULL
 #' the account
 #'
 #' @description
-#' Associates the specified KMS key with either one log group in the
-#' account, or with all stored CloudWatch Logs query insights results in
-#' the account.
+#' Associates the specified KMS key with either one log group in the account, or with all stored CloudWatch Logs query insights results in the account.
 #' 
-#' When you use [`associate_kms_key`][cloudwatchlogs_associate_kms_key],
-#' you specify either the `logGroupName` parameter or the
-#' `resourceIdentifier` parameter. You can't specify both of those
-#' parameters in the same operation.
+#' When you use [`associate_kms_key`][cloudwatchlogs_associate_kms_key], you specify either the `logGroupName` parameter or the `resourceIdentifier` parameter. You can't specify both of those parameters in the same operation.
 #' 
-#' -   Specify the `logGroupName` parameter to cause log events ingested
-#'     into that log group to be encrypted with that key. Only the log
-#'     events ingested after the key is associated are encrypted with that
-#'     key.
+#' -   Specify the `logGroupName` parameter to cause log events ingested into that log group to be encrypted with that key. Only the log events ingested after the key is associated are encrypted with that key.
 #' 
-#'     Associating a KMS key with a log group overrides any existing
-#'     associations between the log group and a KMS key. After a KMS key is
-#'     associated with a log group, all newly ingested data for the log
-#'     group is encrypted using the KMS key. This association is stored as
-#'     long as the data encrypted with the KMS key is still within
-#'     CloudWatch Logs. This enables CloudWatch Logs to decrypt this data
-#'     whenever it is requested.
+#'     Associating a KMS key with a log group overrides any existing associations between the log group and a KMS key. After a KMS key is associated with a log group, all newly ingested data for the log group is encrypted using the KMS key. This association is stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.
 #' 
-#'     Associating a key with a log group does not cause the results of
-#'     queries of that log group to be encrypted with that key. To have
-#'     query results encrypted with a KMS key, you must use an
-#'     [`associate_kms_key`][cloudwatchlogs_associate_kms_key] operation
-#'     with the `resourceIdentifier` parameter that specifies a
-#'     `query-result` resource.
+#'     Associating a key with a log group does not cause the results of queries of that log group to be encrypted with that key. To have query results encrypted with a KMS key, you must use an [`associate_kms_key`][cloudwatchlogs_associate_kms_key] operation with the `resourceIdentifier` parameter that specifies a `query-result` resource.
 #' 
-#' -   Specify the `resourceIdentifier` parameter with a `query-result`
-#'     resource, to use that key to encrypt the stored results of all
-#'     future [`start_query`][cloudwatchlogs_start_query] operations in the
-#'     account. The response from a
-#'     [`get_query_results`][cloudwatchlogs_get_query_results] operation
-#'     will still return the query results in plain text.
+#' -   Specify the `resourceIdentifier` parameter with a `query-result` resource, to use that key to encrypt the stored results of all future [`start_query`][cloudwatchlogs_start_query] operations in the account. The response from a [`get_query_results`][cloudwatchlogs_get_query_results] operation will still return the query results in plain text.
 #' 
-#'     Even if you have not associated a key with your query results, the
-#'     query results are encrypted when stored, using the default
-#'     CloudWatch Logs method.
+#'     Even if you have not associated a key with your query results, the query results are encrypted when stored, using the default CloudWatch Logs method.
 #' 
-#'     If you run a query from a monitoring account that queries logs in a
-#'     source account, the query results key from the monitoring account,
-#'     if any, is used.
+#'     If you run a query from a monitoring account that queries logs in a source account, the query results key from the monitoring account, if any, is used.
 #' 
-#' If you delete the key that is used to encrypt log events or log group
-#' query results, then all the associated stored log events or query
-#' results that were encrypted with that key will be unencryptable and
-#' unusable.
+#' If you delete the key that is used to encrypt log events or log group query results, then all the associated stored log events or query results that were encrypted with that key will be unencryptable and unusable.
 #' 
-#' CloudWatch Logs supports only symmetric KMS keys. Do not associate an
-#' asymmetric KMS key with your log group or query results. For more
-#' information, see [Using Symmetric and Asymmetric
-#' Keys](https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html).
+#' CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS key with your log group or query results. For more information, see [Using Symmetric and Asymmetric Keys](https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html).
 #' 
 #' It can take up to 5 minutes for this operation to take effect.
 #' 
-#' If you attempt to associate a KMS key with a log group but the KMS key
-#' does not exist or the KMS key is disabled, you receive an
-#' `InvalidParameterException` error.
+#' If you attempt to associate a KMS key with a log group but the KMS key does not exist or the KMS key is disabled, you receive an `InvalidParameterException` error.
 #'
 #' @usage
 #' cloudwatchlogs_associate_kms_key(logGroupName, kmsKeyId,
@@ -74,35 +38,19 @@ NULL
 #'
 #' @param logGroupName The name of the log group.
 #' 
-#' In your [`associate_kms_key`][cloudwatchlogs_associate_kms_key]
-#' operation, you must specify either the `resourceIdentifier` parameter or
-#' the `logGroup` parameter, but you can't specify both.
-#' @param kmsKeyId &#91;required&#93; The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
-#' data. This must be a symmetric KMS key. For more information, see
-#' [Amazon Resource
-#' Names](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#arn-syntax-kms)
-#' and [Using Symmetric and Asymmetric
-#' Keys](https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html).
-#' @param resourceIdentifier Specifies the target for this operation. You must specify one of the
-#' following:
+#' In your [`associate_kms_key`][cloudwatchlogs_associate_kms_key] operation, you must specify either the `resourceIdentifier` parameter or the `logGroup` parameter, but you can't specify both.
+#' @param kmsKeyId &#91;required&#93; The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. This must be a symmetric KMS key. For more information, see [Amazon Resource Names](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#arn-syntax-kms) and [Using Symmetric and Asymmetric Keys](https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html).
+#' @param resourceIdentifier Specifies the target for this operation. You must specify one of the following:
 #' 
-#' -   Specify the following ARN to have future
-#'     [`get_query_results`][cloudwatchlogs_get_query_results] operations
-#'     in this account encrypt the results with the specified KMS key.
-#'     Replace *REGION* and *ACCOUNT_ID* with your Region and account ID.
+#' -   Specify the following ARN to have future [`get_query_results`][cloudwatchlogs_get_query_results] operations in this account encrypt the results with the specified KMS key. Replace *REGION* and *ACCOUNT_ID* with your Region and account ID.
 #' 
 #'     `arn:aws:logs:REGION:ACCOUNT_ID:query-result:*`
 #' 
-#' -   Specify the ARN of a log group to have CloudWatch Logs use the KMS
-#'     key to encrypt log events that are ingested and stored by that log
-#'     group. The log group ARN must be in the following format. Replace
-#'     *REGION* and *ACCOUNT_ID* with your Region and account ID.
+#' -   Specify the ARN of a log group to have CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. The log group ARN must be in the following format. Replace *REGION* and *ACCOUNT_ID* with your Region and account ID.
 #' 
 #'     `arn:aws:logs:REGION:ACCOUNT_ID:log-group:LOG_GROUP_NAME `
 #' 
-#' In your [`associate_kms_key`][cloudwatchlogs_associate_kms_key]
-#' operation, you must specify either the `resourceIdentifier` parameter or
-#' the `logGroup` parameter, but you can't specify both.
+#' In your [`associate_kms_key`][cloudwatchlogs_associate_kms_key] operation, you must specify either the `resourceIdentifier` parameter or the `logGroup` parameter, but you can't specify both.
 #'
 #' @return
 #' An empty list.
@@ -144,19 +92,14 @@ cloudwatchlogs_associate_kms_key <- function(logGroupName = NULL, kmsKeyId, reso
 #' in the 'logs' namespace
 #'
 #' @description
-#' Associates a data source with an S3 Table Integration for query access
-#' in the 'logs' namespace. This enables querying log data using analytics
-#' engines that support Iceberg such as Amazon Athena, Amazon Redshift, and
-#' Apache Spark.
+#' Associates a data source with an S3 Table Integration for query access in the 'logs' namespace. This enables querying log data using analytics engines that support Iceberg such as Amazon Athena, Amazon Redshift, and Apache Spark.
 #'
 #' @usage
 #' cloudwatchlogs_associate_source_to_s3_table_integration(integrationArn,
 #'   dataSource)
 #'
-#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the S3 Table Integration to associate
-#' the data source with.
-#' @param dataSource &#91;required&#93; The data source to associate with the S3 Table Integration. Contains the
-#' name and type of the data source.
+#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the S3 Table Integration to associate the data source with.
+#' @param dataSource &#91;required&#93; The data source to associate with the S3 Table Integration. Contains the name and type of the data source.
 #'
 #' @return
 #' A list with the following syntax:
@@ -251,8 +194,7 @@ cloudwatchlogs_cancel_export_task <- function(taskId) {
 #' CloudTrail Lake Event Data Store
 #'
 #' @description
-#' Cancels an active import task and stops importing data from the
-#' CloudTrail Lake Event Data Store.
+#' Cancels an active import task and stops importing data from the CloudTrail Lake Event Data Store.
 #'
 #' @usage
 #' cloudwatchlogs_cancel_import_task(importId)
@@ -307,48 +249,25 @@ cloudwatchlogs_cancel_import_task <- function(importId) {
 #' Creates a delivery
 #'
 #' @description
-#' Creates a *delivery*. A delivery is a connection between a logical
-#' *delivery source* and a logical *delivery destination* that you have
-#' already created.
+#' Creates a *delivery*. A delivery is a connection between a logical *delivery source* and a logical *delivery destination* that you have already created.
 #' 
-#' Only some Amazon Web Services services support being configured as a
-#' delivery source using this operation. These services are listed as
-#' **Supported \[V2 Permissions\]** in the table at [Enabling logging from
-#' Amazon Web Services
-#' services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
+#' Only some Amazon Web Services services support being configured as a delivery source using this operation. These services are listed as **Supported \[V2 Permissions\]** in the table at [Enabling logging from Amazon Web Services services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
 #' 
-#' A delivery destination can represent a log group in CloudWatch Logs, an
-#' Amazon S3 bucket, a delivery stream in Firehose, or X-Ray.
+#' A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3 bucket, a delivery stream in Firehose, or X-Ray.
 #' 
-#' To configure logs delivery between a supported Amazon Web Services
-#' service and a destination, you must do the following:
+#' To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the following:
 #' 
-#' -   Create a delivery source, which is a logical object that represents
-#'     the resource that is actually sending the logs. For more
-#'     information, see
-#'     [`put_delivery_source`][cloudwatchlogs_put_delivery_source].
+#' -   Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see [`put_delivery_source`][cloudwatchlogs_put_delivery_source].
 #' 
-#' -   Create a *delivery destination*, which is a logical object that
-#'     represents the actual delivery destination. For more information,
-#'     see
-#'     [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination].
+#' -   Create a *delivery destination*, which is a logical object that represents the actual delivery destination. For more information, see [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination].
 #' 
-#' -   If you are delivering logs cross-account, you must use
-#'     [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy]
-#'     in the destination account to assign an IAM policy to the
-#'     destination. This policy allows delivery to that destination.
+#' -   If you are delivering logs cross-account, you must use [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy] in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.
 #' 
-#' -   Use [`create_delivery`][cloudwatchlogs_create_delivery] to create a
-#'     *delivery* by pairing exactly one delivery source and one delivery
-#'     destination.
+#' -   Use [`create_delivery`][cloudwatchlogs_create_delivery] to create a *delivery* by pairing exactly one delivery source and one delivery destination.
 #' 
-#' You can configure a single delivery source to send logs to multiple
-#' destinations by creating multiple deliveries. You can also create
-#' multiple deliveries to configure multiple delivery sources to send logs
-#' to the same delivery destination.
+#' You can configure a single delivery source to send logs to multiple destinations by creating multiple deliveries. You can also create multiple deliveries to configure multiple delivery sources to send logs to the same delivery destination.
 #' 
-#' To update an existing delivery configuration, use
-#' [`update_delivery_configuration`][cloudwatchlogs_update_delivery_configuration].
+#' To update an existing delivery configuration, use [`update_delivery_configuration`][cloudwatchlogs_update_delivery_configuration].
 #'
 #' @usage
 #' cloudwatchlogs_create_delivery(deliverySourceName,
@@ -357,17 +276,12 @@ cloudwatchlogs_cancel_import_task <- function(importId) {
 #'
 #' @param deliverySourceName &#91;required&#93; The name of the delivery source to use for this delivery.
 #' @param deliveryDestinationArn &#91;required&#93; The ARN of the delivery destination to use for this delivery.
-#' @param recordFields The list of record fields to be delivered to the destination, in order.
-#' If the delivery's log source has mandatory fields, they must be included
-#' in this list.
-#' @param fieldDelimiter The field delimiter to use between record fields when the final output
-#' format of a delivery is in `Plain`, `W3C`, or `Raw` format.
-#' @param s3DeliveryConfiguration This structure contains parameters that are valid only when the
-#' delivery's delivery destination is an S3 bucket.
+#' @param recordFields The list of record fields to be delivered to the destination, in order. If the delivery's log source has mandatory fields, they must be included in this list.
+#' @param fieldDelimiter The field delimiter to use between record fields when the final output format of a delivery is in `Plain`, `W3C`, or `Raw` format.
+#' @param s3DeliveryConfiguration This structure contains parameters that are valid only when the delivery's delivery destination is an S3 bucket.
 #' @param tags An optional list of key-value pairs to associate with the resource.
 #' 
-#' For more information about tagging, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
+#' For more information about tagging, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
 #'
 #' @return
 #' A list with the following syntax:
@@ -441,39 +355,19 @@ cloudwatchlogs_create_delivery <- function(deliverySourceName, deliveryDestinati
 #' log group to an Amazon S3 bucket
 #'
 #' @description
-#' Creates an export task so that you can efficiently export data from a
-#' log group to an Amazon S3 bucket. When you perform a
-#' [`create_export_task`][cloudwatchlogs_create_export_task] operation, you
-#' must use credentials that have permission to write to the S3 bucket that
-#' you specify as the destination.
+#' Creates an export task so that you can efficiently export data from a log group to an Amazon S3 bucket. When you perform a [`create_export_task`][cloudwatchlogs_create_export_task] operation, you must use credentials that have permission to write to the S3 bucket that you specify as the destination.
 #' 
-#' Exporting log data to S3 buckets that are encrypted by KMS is supported.
-#' Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled
-#' with a retention period is also supported.
+#' Exporting log data to S3 buckets that are encrypted by KMS is supported. Exporting log data to Amazon S3 buckets that have S3 Object Lock enabled with a retention period is also supported.
 #' 
 #' Exporting to S3 buckets that are encrypted with AES-256 is supported.
 #' 
-#' This is an asynchronous call. If all the required information is
-#' provided, this operation initiates an export task and responds with the
-#' ID of the task. After the task has started, you can use
-#' [`describe_export_tasks`][cloudwatchlogs_describe_export_tasks] to get
-#' the status of the export task. Each account can only have one active
-#' (`RUNNING` or `PENDING`) export task at a time. To cancel an export
-#' task, use [`cancel_export_task`][cloudwatchlogs_cancel_export_task].
+#' This is an asynchronous call. If all the required information is provided, this operation initiates an export task and responds with the ID of the task. After the task has started, you can use [`describe_export_tasks`][cloudwatchlogs_describe_export_tasks] to get the status of the export task. Each account can only have one active (`RUNNING` or `PENDING`) export task at a time. To cancel an export task, use [`cancel_export_task`][cloudwatchlogs_cancel_export_task].
 #' 
-#' You can export logs from multiple log groups or multiple time ranges to
-#' the same S3 bucket. To separate log data for each export task, specify a
-#' prefix to be used as the Amazon S3 key prefix for all exported objects.
+#' You can export logs from multiple log groups or multiple time ranges to the same S3 bucket. To separate log data for each export task, specify a prefix to be used as the Amazon S3 key prefix for all exported objects.
 #' 
-#' We recommend that you don't regularly export to Amazon S3 as a way to
-#' continuously archive your logs. For that use case, we instead recommend
-#' that you use subscriptions. For more information about subscriptions,
-#' see [Real-time processing of log data with
-#' subscriptions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html).
+#' We recommend that you don't regularly export to Amazon S3 as a way to continuously archive your logs. For that use case, we instead recommend that you use subscriptions. For more information about subscriptions, see [Real-time processing of log data with subscriptions](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html).
 #' 
-#' Time-based sorting on chunks of log data inside an exported file is not
-#' guaranteed. You can sort the exported log field data by using Linux
-#' utilities.
+#' Time-based sorting on chunks of log data inside an exported file is not guaranteed. You can sort the exported log field data by using Linux utilities.
 #'
 #' @usage
 #' cloudwatchlogs_create_export_task(taskName, logGroupName,
@@ -481,25 +375,15 @@ cloudwatchlogs_create_delivery <- function(deliverySourceName, deliveryDestinati
 #'
 #' @param taskName The name of the export task.
 #' @param logGroupName &#91;required&#93; The name of the log group.
-#' @param logStreamNamePrefix Export only log streams that match the provided prefix. If you don't
-#' specify a value, no prefix filter is applied.
-#' @param from &#91;required&#93; The start time of the range for the request, expressed as the number of
-#' milliseconds after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp
-#' earlier than this time are not exported.
-#' @param to &#91;required&#93; The end time of the range for the request, expressed as the number of
-#' milliseconds after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp
-#' later than this time are not exported.
+#' @param logStreamNamePrefix Export only log streams that match the provided prefix. If you don't specify a value, no prefix filter is applied.
+#' @param from &#91;required&#93; The start time of the range for the request, expressed as the number of milliseconds after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp earlier than this time are not exported.
+#' @param to &#91;required&#93; The end time of the range for the request, expressed as the number of milliseconds after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp later than this time are not exported.
 #' 
-#' You must specify a time that is not earlier than when this log group was
-#' created.
-#' @param destination &#91;required&#93; The name of S3 bucket for the exported log data. The bucket must be in
-#' the same Amazon Web Services Region.
-#' @param destinationPrefix The prefix used as the start of the key for every object exported. If
-#' you don't specify a value, the default is `exportedlogs`.
+#' You must specify a time that is not earlier than when this log group was created.
+#' @param destination &#91;required&#93; The name of S3 bucket for the exported log data. The bucket must be in the same Amazon Web Services Region.
+#' @param destinationPrefix The prefix used as the start of the key for every object exported. If you don't specify a value, the default is `exportedlogs`.
 #' 
-#' The length of this parameter must comply with the S3 object key name
-#' length limits. The object key name is a sequence of Unicode characters
-#' with UTF-8 encoding, and can be up to 1,024 bytes.
+#' The length of this parameter must comply with the S3 object key name length limits. The object key name is a sequence of Unicode characters with UTF-8 encoding, and can be up to 1,024 bytes.
 #'
 #' @return
 #' A list with the following syntax:
@@ -550,22 +434,15 @@ cloudwatchlogs_create_export_task <- function(taskName = NULL, logGroupName, log
 #' managed log group as the destination for the imported data
 #'
 #' @description
-#' Starts an import from a data source to CloudWatch Log and creates a
-#' managed log group as the destination for the imported data. Currently,
-#' [CloudTrail Event Data
-#' Store](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html)
-#' is the only supported data source.
+#' Starts an import from a data source to CloudWatch Log and creates a managed log group as the destination for the imported data. Currently, [CloudTrail Event Data Store](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html) is the only supported data source.
 #' 
 #' The import task must satisfy the following constraints:
 #' 
 #' -   The specified source must be in an ACTIVE state.
 #' 
-#' -   The API caller must have permissions to access the data in the
-#'     provided source and to perform iam:PassRole on the provided import
-#'     role which has the same permissions, as described below.
+#' -   The API caller must have permissions to access the data in the provided source and to perform iam:PassRole on the provided import role which has the same permissions, as described below.
 #' 
-#' -   The provided IAM role must trust the "cloudtrail.amazonaws.com"
-#'     principal and have the following permissions:
+#' -   The provided IAM role must trust the "cloudtrail.amazonaws.com" principal and have the following permissions:
 #' 
 #'     -   cloudtrail:GetEventDataStoreData
 #' 
@@ -575,38 +452,29 @@ cloudwatchlogs_create_export_task <- function(taskName = NULL, logGroupName, log
 #' 
 #'     -   logs:PutResourcePolicy
 #' 
-#'     -   (If source has an associated Amazon Web Services KMS Key)
-#'         kms:Decrypt
+#'     -   (If source has an associated Amazon Web Services KMS Key) kms:Decrypt
 #' 
-#'     -   (If source has an associated Amazon Web Services KMS Key)
-#'         kms:GenerateDataKey
+#'     -   (If source has an associated Amazon Web Services KMS Key) kms:GenerateDataKey
 #' 
 #'     Example IAM policy for provided import role:
 #' 
 #'     `[ { "Effect": "Allow", "Action": "iam:PassRole", "Resource": "arn:aws:iam::123456789012:role/apiCallerCredentials", "Condition": { "StringLike": { "iam:AssociatedResourceARN": "arn:aws:logs:us-east-1:123456789012:log-group:aws/cloudtrail/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb:*" } } }, { "Effect": "Allow", "Action": [ "cloudtrail:GetEventDataStoreData" ], "Resource": [ "arn:aws:cloudtrail:us-east-1:123456789012:eventdatastore/f1d45bff-d0e3-4868-b5d9-2eb678aa32fb" ] }, { "Effect": "Allow", "Action": [ "logs:CreateImportTask", "logs:CreateLogGroup", "logs:CreateLogStream", "logs:PutResourcePolicy" ], "Resource": [ "arn:aws:logs:us-east-1:123456789012:log-group:/aws/cloudtrail/*" ] }, { "Effect": "Allow", "Action": [ "kms:Decrypt", "kms:GenerateDataKey" ], "Resource": [ "arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012" ] } ]`
 #' 
-#' -   If the import source has a customer managed key, the
-#'     "cloudtrail.amazonaws.com" principal needs permissions to perform
-#'     kms:Decrypt and kms:GenerateDataKey.
+#' -   If the import source has a customer managed key, the "cloudtrail.amazonaws.com" principal needs permissions to perform kms:Decrypt and kms:GenerateDataKey.
 #' 
-#' -   There can be no more than 3 active imports per account at a given
-#'     time.
+#' -   There can be no more than 3 active imports per account at a given time.
 #' 
 #' -   The startEventTime must be less than or equal to endEventTime.
 #' 
-#' -   The data being imported must be within the specified source's
-#'     retention period.
+#' -   The data being imported must be within the specified source's retention period.
 #'
 #' @usage
 #' cloudwatchlogs_create_import_task(importSourceArn, importRoleArn,
 #'   importFilter)
 #'
 #' @param importSourceArn &#91;required&#93; The ARN of the source to import from.
-#' @param importRoleArn &#91;required&#93; The ARN of the IAM role that grants CloudWatch Logs permission to import
-#' from the CloudTrail Lake Event Data Store.
-#' @param importFilter Optional filters to constrain the import by CloudTrail event time. Times
-#' are specified in Unix timestamp milliseconds. The range of data being
-#' imported must be within the specified source's retention period.
+#' @param importRoleArn &#91;required&#93; The ARN of the IAM role that grants CloudWatch Logs permission to import from the CloudTrail Lake Event Data Store.
+#' @param importFilter Optional filters to constrain the import by CloudTrail event time. Times are specified in Unix timestamp milliseconds. The range of data being imported must be within the specified source's retention period.
 #'
 #' @return
 #' A list with the following syntax:
@@ -658,76 +526,38 @@ cloudwatchlogs_create_import_task <- function(importSourceArn, importRoleArn, im
 #' and look for patterns and anomalies in the logs
 #'
 #' @description
-#' Creates an *anomaly detector* that regularly scans one or more log
-#' groups and look for patterns and anomalies in the logs.
+#' Creates an *anomaly detector* that regularly scans one or more log groups and look for patterns and anomalies in the logs.
 #' 
-#' An anomaly detector can help surface issues by automatically discovering
-#' anomalies in your log event traffic. An anomaly detector uses machine
-#' learning algorithms to scan log events and find *patterns*. A pattern is
-#' a shared text structure that recurs among your log fields. Patterns
-#' provide a useful tool for analyzing large sets of logs because a large
-#' number of log events can often be compressed into a few patterns.
+#' An anomaly detector can help surface issues by automatically discovering anomalies in your log event traffic. An anomaly detector uses machine learning algorithms to scan log events and find *patterns*. A pattern is a shared text structure that recurs among your log fields. Patterns provide a useful tool for analyzing large sets of logs because a large number of log events can often be compressed into a few patterns.
 #' 
-#' The anomaly detector uses pattern recognition to find `anomalies`, which
-#' are unusual log events. It uses the `evaluationFrequency` to compare
-#' current log events and patterns with trained baselines.
+#' The anomaly detector uses pattern recognition to find `anomalies`, which are unusual log events. It uses the `evaluationFrequency` to compare current log events and patterns with trained baselines.
 #' 
-#' Fields within a pattern are called *tokens*. Fields that vary within a
-#' pattern, such as a request ID or timestamp, are referred to as *dynamic
-#' tokens* and represented by `<*>`.
+#' Fields within a pattern are called *tokens*. Fields that vary within a pattern, such as a request ID or timestamp, are referred to as *dynamic tokens* and represented by `<*>`.
 #' 
 #' The following is an example of a pattern:
 #' 
 #' `[INFO] Request time: <*> ms`
 #' 
-#' This pattern represents log events like `[INFO] Request time: 327 ms`
-#' and other similar log events that differ only by the number, in this
-#' csse 327. When the pattern is displayed, the different numbers are
-#' replaced by `<*>`
+#' This pattern represents log events like `[INFO] Request time: 327 ms` and other similar log events that differ only by the number, in this csse 327. When the pattern is displayed, the different numbers are replaced by `<*>`
 #' 
-#' Any parts of log events that are masked as sensitive data are not
-#' scanned for anomalies. For more information about masking sensitive
-#' data, see [Help protect sensitive log data with
-#' masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
+#' Any parts of log events that are masked as sensitive data are not scanned for anomalies. For more information about masking sensitive data, see [Help protect sensitive log data with masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
 #'
 #' @usage
 #' cloudwatchlogs_create_log_anomaly_detector(logGroupArnList,
 #'   detectorName, evaluationFrequency, filterPattern, kmsKeyId,
 #'   anomalyVisibilityTime, tags)
 #'
-#' @param logGroupArnList &#91;required&#93; An array containing the ARN of the log group that this anomaly detector
-#' will watch. You can specify only one log group ARN.
+#' @param logGroupArnList &#91;required&#93; An array containing the ARN of the log group that this anomaly detector will watch. You can specify only one log group ARN.
 #' @param detectorName A name for this anomaly detector.
-#' @param evaluationFrequency Specifies how often the anomaly detector is to run and look for
-#' anomalies. Set this value according to the frequency that the log group
-#' receives new logs. For example, if the log group receives new log events
-#' every 10 minutes, then 15 minutes might be a good setting for
-#' `evaluationFrequency` .
-#' @param filterPattern You can use this parameter to limit the anomaly detection model to
-#' examine only log events that match the pattern you specify here. For
-#' more information, see [Filter and Pattern
-#' Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
-#' @param kmsKeyId Optionally assigns a KMS key to secure this anomaly detector and its
-#' findings. If a key is assigned, the anomalies found and the model used
-#' by this detector are encrypted at rest with the key. If a key is
-#' assigned to an anomaly detector, a user must have permissions for both
-#' this key and for the anomaly detector to retrieve information about the
-#' anomalies that it finds.
+#' @param evaluationFrequency Specifies how often the anomaly detector is to run and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then 15 minutes might be a good setting for `evaluationFrequency` .
+#' @param filterPattern You can use this parameter to limit the anomaly detection model to examine only log events that match the pattern you specify here. For more information, see [Filter and Pattern Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
+#' @param kmsKeyId Optionally assigns a KMS key to secure this anomaly detector and its findings. If a key is assigned, the anomalies found and the model used by this detector are encrypted at rest with the key. If a key is assigned to an anomaly detector, a user must have permissions for both this key and for the anomaly detector to retrieve information about the anomalies that it finds.
 #' 
-#' Make sure the value provided is a valid KMS key ARN. For more
-#' information about using a KMS key and to see the required IAM policy,
-#' see [Use a KMS key with an anomaly
-#' detector](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/LogsAnomalyDetection-KMS.html).
-#' @param anomalyVisibilityTime The number of days to have visibility on an anomaly. After this time
-#' period has elapsed for an anomaly, it will be automatically baselined
-#' and the anomaly detector will treat new occurrences of a similar anomaly
-#' as normal. Therefore, if you do not correct the cause of an anomaly
-#' during the time period specified in `anomalyVisibilityTime`, it will be
-#' considered normal going forward and will not be detected as an anomaly.
+#' Make sure the value provided is a valid KMS key ARN. For more information about using a KMS key and to see the required IAM policy, see [Use a KMS key with an anomaly detector](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/LogsAnomalyDetection-KMS.html).
+#' @param anomalyVisibilityTime The number of days to have visibility on an anomaly. After this time period has elapsed for an anomaly, it will be automatically baselined and the anomaly detector will treat new occurrences of a similar anomaly as normal. Therefore, if you do not correct the cause of an anomaly during the time period specified in `anomalyVisibilityTime`, it will be considered normal going forward and will not be detected as an anomaly.
 #' @param tags An optional list of key-value pairs to associate with the resource.
 #' 
-#' For more information about tagging, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
+#' For more information about tagging, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
 #'
 #' @return
 #' A list with the following syntax:
@@ -781,86 +611,49 @@ cloudwatchlogs_create_log_anomaly_detector <- function(logGroupArnList, detector
 #' Creates a log group with the specified name
 #'
 #' @description
-#' Creates a log group with the specified name. You can create up to
-#' 1,000,000 log groups per Region per account.
+#' Creates a log group with the specified name. You can create up to 1,000,000 log groups per Region per account.
 #' 
 #' You must use the following guidelines when naming a log group:
 #' 
-#' -   Log group names must be unique within a Region for an Amazon Web
-#'     Services account.
+#' -   Log group names must be unique within a Region for an Amazon Web Services account.
 #' 
 #' -   Log group names can be between 1 and 512 characters long.
 #' 
-#' -   Log group names consist of the following characters: a-z, A-Z, 0-9,
-#'     '_' (underscore), '-' (hyphen), '/' (forward slash), '.' (period),
-#'     and '#' (number sign)
+#' -   Log group names consist of the following characters: a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), '.' (period), and '#' (number sign)
 #' 
 #' -   Log group names can't start with the string `aws/`
 #' 
-#' When you create a log group, by default the log events in the log group
-#' do not expire. To set a retention policy so that events expire and are
-#' deleted after a specified time, use
-#' [`put_retention_policy`][cloudwatchlogs_put_retention_policy].
+#' When you create a log group, by default the log events in the log group do not expire. To set a retention policy so that events expire and are deleted after a specified time, use [`put_retention_policy`][cloudwatchlogs_put_retention_policy].
 #' 
-#' If you associate an KMS key with the log group, ingested data is
-#' encrypted using the KMS key. This association is stored as long as the
-#' data encrypted with the KMS key is still within CloudWatch Logs. This
-#' enables CloudWatch Logs to decrypt this data whenever it is requested.
+#' If you associate an KMS key with the log group, ingested data is encrypted using the KMS key. This association is stored as long as the data encrypted with the KMS key is still within CloudWatch Logs. This enables CloudWatch Logs to decrypt this data whenever it is requested.
 #' 
-#' If you attempt to associate a KMS key with the log group but the KMS key
-#' does not exist or the KMS key is disabled, you receive an
-#' `InvalidParameterException` error.
+#' If you attempt to associate a KMS key with the log group but the KMS key does not exist or the KMS key is disabled, you receive an `InvalidParameterException` error.
 #' 
-#' CloudWatch Logs supports only symmetric KMS keys. Do not associate an
-#' asymmetric KMS key with your log group. For more information, see [Using
-#' Symmetric and Asymmetric
-#' Keys](https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html).
+#' CloudWatch Logs supports only symmetric KMS keys. Do not associate an asymmetric KMS key with your log group. For more information, see [Using Symmetric and Asymmetric Keys](https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html).
 #'
 #' @usage
 #' cloudwatchlogs_create_log_group(logGroupName, kmsKeyId, tags,
 #'   logGroupClass, deletionProtectionEnabled)
 #'
 #' @param logGroupName &#91;required&#93; A name for the log group.
-#' @param kmsKeyId The Amazon Resource Name (ARN) of the KMS key to use when encrypting log
-#' data. For more information, see [Amazon Resource
-#' Names](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#arn-syntax-kms).
+#' @param kmsKeyId The Amazon Resource Name (ARN) of the KMS key to use when encrypting log data. For more information, see [Amazon Resource Names](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html#arn-syntax-kms).
 #' @param tags The key-value pairs to use for the tags.
 #' 
-#' You can grant users access to certain log groups while preventing them
-#' from accessing other log groups. To do so, tag your groups and use IAM
-#' policies that refer to those tags. To assign tags when you create a log
-#' group, you must have either the `logs:TagResource` or `logs:TagLogGroup`
-#' permission. For more information about tagging, see [Tagging Amazon Web
-#' Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html).
-#' For more information about using tags to control access, see
-#' [Controlling access to Amazon Web Services resources using
-#' tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
-#' @param logGroupClass Use this parameter to specify the log group class for this log group.
-#' There are three classes:
+#' You can grant users access to certain log groups while preventing them from accessing other log groups. To do so, tag your groups and use IAM policies that refer to those tags. To assign tags when you create a log group, you must have either the `logs:TagResource` or `logs:TagLogGroup` permission. For more information about tagging, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html). For more information about using tags to control access, see [Controlling access to Amazon Web Services resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
+#' @param logGroupClass Use this parameter to specify the log group class for this log group. There are three classes:
 #' 
 #' -   The `Standard` log class supports all CloudWatch Logs features.
 #' 
-#' -   The `Infrequent Access` log class supports a subset of CloudWatch
-#'     Logs features and incurs lower costs.
+#' -   The `Infrequent Access` log class supports a subset of CloudWatch Logs features and incurs lower costs.
 #' 
-#' -   Use the `Delivery` log class only for delivering Lambda logs to
-#'     store in Amazon S3 or Amazon Data Firehose. Log events in log groups
-#'     in the Delivery class are kept in CloudWatch Logs for only one day.
-#'     This log class doesn't offer rich CloudWatch Logs capabilities such
-#'     as CloudWatch Logs Insights queries.
+#' -   Use the `Delivery` log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.
 #' 
 #' If you omit this parameter, the default of `STANDARD` is used.
 #' 
-#' The value of `logGroupClass` can't be changed after a log group is
-#' created.
+#' The value of `logGroupClass` can't be changed after a log group is created.
 #' 
-#' For details about the features supported by each class, see [Log
-#' classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html)
-#' @param deletionProtectionEnabled Use this parameter to enable deletion protection for the new log group.
-#' When enabled on a log group, deletion protection blocks all deletion
-#' operations until it is explicitly disabled. By default log groups are
-#' created without deletion protection enabled.
+#' For details about the features supported by each class, see [Log classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html)
+#' @param deletionProtectionEnabled Use this parameter to enable deletion protection for the new log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled. By default log groups are created without deletion protection enabled.
 #'
 #' @return
 #' An empty list.
@@ -905,14 +698,9 @@ cloudwatchlogs_create_log_group <- function(logGroupName, kmsKeyId = NULL, tags 
 #' Creates a log stream for the specified log group
 #'
 #' @description
-#' Creates a log stream for the specified log group. A log stream is a
-#' sequence of log events that originate from a single source, such as an
-#' application instance or a resource that is being monitored.
+#' Creates a log stream for the specified log group. A log stream is a sequence of log events that originate from a single source, such as an application instance or a resource that is being monitored.
 #' 
-#' There is no limit on the number of log streams that you can create for a
-#' log group. There is a limit of 50 TPS on
-#' [`create_log_stream`][cloudwatchlogs_create_log_stream] operations,
-#' after which transactions are throttled.
+#' There is no limit on the number of log streams that you can create for a log group. There is a limit of 50 TPS on [`create_log_stream`][cloudwatchlogs_create_log_stream] operations, after which transactions are throttled.
 #' 
 #' You must use the following guidelines when naming a log stream:
 #' 
@@ -966,32 +754,19 @@ cloudwatchlogs_create_log_stream <- function(logGroupName, logStreamName) {
 #' Creates a lookup table by uploading CSV data
 #'
 #' @description
-#' Creates a lookup table by uploading CSV data. You can use lookup tables
-#' to enrich log data in CloudWatch Logs Insights queries with reference
-#' data such as user details, application names, or error descriptions.
+#' Creates a lookup table by uploading CSV data. You can use lookup tables to enrich log data in CloudWatch Logs Insights queries with reference data such as user details, application names, or error descriptions.
 #' 
-#' The table name must be unique within your account and Region. The CSV
-#' content must include a header row with column names, use UTF-8 encoding,
-#' and not exceed 10 MB.
+#' The table name must be unique within your account and Region. The CSV content must include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.
 #'
 #' @usage
 #' cloudwatchlogs_create_lookup_table(lookupTableName, description,
 #'   tableBody, kmsKeyId, tags)
 #'
-#' @param lookupTableName &#91;required&#93; The name of the lookup table. The name must be unique within your
-#' account and Region. The name can contain only alphanumeric characters
-#' and underscores, and can be up to 256 characters long.
-#' @param description A description of the lookup table. The description can be up to 1024
-#' characters long.
-#' @param tableBody &#91;required&#93; The CSV content of the lookup table. The first row must be a header row
-#' with column names. The content must use UTF-8 encoding and not exceed 10
-#' MB.
-#' @param kmsKeyId The ARN of the KMS key to use to encrypt the lookup table data. If you
-#' don't specify a key, the data is encrypted with an Amazon Web
-#' Services-owned key.
-#' @param tags A list of key-value pairs to associate with the lookup table. You can
-#' associate as many as 50 tags with a lookup table. Tags can help you
-#' organize and categorize your resources.
+#' @param lookupTableName &#91;required&#93; The name of the lookup table. The name must be unique within your account and Region. The name can contain only alphanumeric characters and underscores, and can be up to 256 characters long.
+#' @param description A description of the lookup table. The description can be up to 1024 characters long.
+#' @param tableBody &#91;required&#93; The CSV content of the lookup table. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.
+#' @param kmsKeyId The ARN of the KMS key to use to encrypt the lookup table data. If you don't specify a key, the data is encrypted with an Amazon Web Services-owned key.
+#' @param tags A list of key-value pairs to associate with the lookup table. You can associate as many as 50 tags with a lookup table. Tags can help you organize and categorize your resources.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1043,11 +818,7 @@ cloudwatchlogs_create_lookup_table <- function(lookupTableName, description = NU
 #' regular intervals
 #'
 #' @description
-#' Creates a scheduled query that runs CloudWatch Logs Insights queries at
-#' regular intervals. Scheduled queries enable proactive monitoring by
-#' automatically executing queries to detect patterns and anomalies in your
-#' log data. Query results can be delivered to Amazon S3 for analysis or
-#' further processing.
+#' Creates a scheduled query that runs CloudWatch Logs Insights queries at regular intervals. Scheduled queries enable proactive monitoring by automatically executing queries to detect patterns and anomalies in your log data. Query results can be delivered to Amazon S3 for analysis or further processing.
 #'
 #' @usage
 #' cloudwatchlogs_create_scheduled_query(name, description, queryLanguage,
@@ -1055,40 +826,20 @@ cloudwatchlogs_create_lookup_table <- function(lookupTableName, description = NU
 #'   startTimeOffset, destinationConfiguration, scheduleStartTime,
 #'   scheduleEndTime, executionRoleArn, state, tags)
 #'
-#' @param name &#91;required&#93; The name of the scheduled query. The name must be unique within your
-#' account and region. Valid characters are alphanumeric characters,
-#' hyphens, underscores, and periods. Length must be between 1 and 255
-#' characters.
-#' @param description An optional description for the scheduled query to help identify its
-#' purpose and functionality.
-#' @param queryLanguage &#91;required&#93; The query language to use for the scheduled query. Valid values are
-#' `CWLI`, `PPL`, and `SQL`.
-#' @param queryString &#91;required&#93; The query string to execute. This is the same query syntax used in
-#' CloudWatch Logs Insights. Maximum length is 10,000 characters.
-#' @param logGroupIdentifiers An array of log group names or ARNs to query. You can specify between 1
-#' and 50 log groups. Log groups can be identified by name or full ARN.
-#' @param scheduleExpression &#91;required&#93; A cron expression that defines when the scheduled query runs. The
-#' expression uses standard cron syntax and supports minute-level
-#' precision. Maximum length is 256 characters.
-#' @param timezone The timezone for evaluating the schedule expression. This determines
-#' when the scheduled query executes relative to the specified timezone.
-#' @param startTimeOffset The time offset in seconds that defines the lookback period for the
-#' query. This determines how far back in time the query searches from the
-#' execution time.
-#' @param destinationConfiguration Configuration for where to deliver query results. Currently supports
-#' Amazon S3 destinations for storing query output.
-#' @param scheduleStartTime The start time for the scheduled query in Unix epoch format. The query
-#' will not execute before this time.
-#' @param scheduleEndTime The end time for the scheduled query in Unix epoch format. The query
-#' will stop executing after this time.
-#' @param executionRoleArn &#91;required&#93; The ARN of the IAM role that grants permissions to execute the query and
-#' deliver results to the specified destination. The role must have
-#' permissions to read from the specified log groups and write to the
-#' destination.
-#' @param state The initial state of the scheduled query. Valid values are `ENABLED` and
-#' `DISABLED`. Default is `ENABLED`.
-#' @param tags Key-value pairs to associate with the scheduled query for resource
-#' management and cost allocation.
+#' @param name &#91;required&#93; The name of the scheduled query. The name must be unique within your account and region. Valid characters are alphanumeric characters, hyphens, underscores, and periods. Length must be between 1 and 255 characters.
+#' @param description An optional description for the scheduled query to help identify its purpose and functionality.
+#' @param queryLanguage &#91;required&#93; The query language to use for the scheduled query. Valid values are `CWLI`, `PPL`, and `SQL`.
+#' @param queryString &#91;required&#93; The query string to execute. This is the same query syntax used in CloudWatch Logs Insights. Maximum length is 10,000 characters.
+#' @param logGroupIdentifiers An array of log group names or ARNs to query. You can specify between 1 and 50 log groups. Log groups can be identified by name or full ARN.
+#' @param scheduleExpression &#91;required&#93; A cron expression that defines when the scheduled query runs. The expression uses standard cron syntax and supports minute-level precision. Maximum length is 256 characters.
+#' @param timezone The timezone for evaluating the schedule expression. This determines when the scheduled query executes relative to the specified timezone.
+#' @param startTimeOffset The time offset in seconds that defines the lookback period for the query. This determines how far back in time the query searches from the execution time.
+#' @param destinationConfiguration Configuration for where to deliver query results. Currently supports Amazon S3 destinations for storing query output.
+#' @param scheduleStartTime The start time for the scheduled query in Unix epoch format. The query will not execute before this time.
+#' @param scheduleEndTime The end time for the scheduled query in Unix epoch format. The query will stop executing after this time.
+#' @param executionRoleArn &#91;required&#93; The ARN of the IAM role that grants permissions to execute the query and deliver results to the specified destination. The role must have permissions to read from the specified log groups and write to the destination.
+#' @param state The initial state of the scheduled query. Valid values are `ENABLED` and `DISABLED`. Default is `ENABLED`.
+#' @param tags Key-value pairs to associate with the scheduled query for resource management and cost allocation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1157,38 +908,21 @@ cloudwatchlogs_create_scheduled_query <- function(name, description = NULL, quer
 #' Deletes a CloudWatch Logs account policy
 #'
 #' @description
-#' Deletes a CloudWatch Logs account policy. This stops the account-wide
-#' policy from applying to log groups or data sources in the account. If
-#' you delete a data protection policy or subscription filter policy, any
-#' log-group level policies of those types remain in effect. This operation
-#' supports deletion of data source-based field index policies, including
-#' facet configurations, in addition to log group-based policies.
+#' Deletes a CloudWatch Logs account policy. This stops the account-wide policy from applying to log groups or data sources in the account. If you delete a data protection policy or subscription filter policy, any log-group level policies of those types remain in effect. This operation supports deletion of data source-based field index policies, including facet configurations, in addition to log group-based policies.
 #' 
-#' To use this operation, you must be signed on with the correct
-#' permissions depending on the type of policy that you are deleting.
+#' To use this operation, you must be signed on with the correct permissions depending on the type of policy that you are deleting.
 #' 
-#' -   To delete a data protection policy, you must have the
-#'     `logs:DeleteDataProtectionPolicy` and `logs:DeleteAccountPolicy`
-#'     permissions.
+#' -   To delete a data protection policy, you must have the `logs:DeleteDataProtectionPolicy` and `logs:DeleteAccountPolicy` permissions.
 #' 
-#' -   To delete a subscription filter policy, you must have the
-#'     `logs:DeleteSubscriptionFilter` and `logs:DeleteAccountPolicy`
-#'     permissions.
+#' -   To delete a subscription filter policy, you must have the `logs:DeleteSubscriptionFilter` and `logs:DeleteAccountPolicy` permissions.
 #' 
-#' -   To delete a transformer policy, you must have the
-#'     `logs:DeleteTransformer` and `logs:DeleteAccountPolicy` permissions.
+#' -   To delete a transformer policy, you must have the `logs:DeleteTransformer` and `logs:DeleteAccountPolicy` permissions.
 #' 
-#' -   To delete a field index policy, you must have the
-#'     `logs:DeleteIndexPolicy` and `logs:DeleteAccountPolicy` permissions.
+#' -   To delete a field index policy, you must have the `logs:DeleteIndexPolicy` and `logs:DeleteAccountPolicy` permissions.
 #' 
-#'     If you delete a field index policy that included facet
-#'     configurations, those facets will no longer be available for
-#'     interactive exploration in the CloudWatch Logs Insights console.
-#'     However, facet data is retained for up to 30 days.
+#'     If you delete a field index policy that included facet configurations, those facets will no longer be available for interactive exploration in the CloudWatch Logs Insights console. However, facet data is retained for up to 30 days.
 #' 
-#' If you delete a field index policy, the indexing of the log events that
-#' happened before you deleted the policy will still be used for up to 30
-#' days to improve CloudWatch Logs Insights queries.
+#' If you delete a field index policy, the indexing of the log events that happened before you deleted the policy will still be used for up to 30 days to improve CloudWatch Logs Insights queries.
 #'
 #' @usage
 #' cloudwatchlogs_delete_account_policy(policyName, policyType)
@@ -1236,14 +970,12 @@ cloudwatchlogs_delete_account_policy <- function(policyName, policyType) {
 #' @description
 #' Deletes the data protection policy from the specified log group.
 #' 
-#' For more information about data protection policies, see
-#' [`put_data_protection_policy`][cloudwatchlogs_put_data_protection_policy].
+#' For more information about data protection policies, see [`put_data_protection_policy`][cloudwatchlogs_put_data_protection_policy].
 #'
 #' @usage
 #' cloudwatchlogs_delete_data_protection_policy(logGroupIdentifier)
 #'
-#' @param logGroupIdentifier &#91;required&#93; The name or ARN of the log group that you want to delete the data
-#' protection policy for.
+#' @param logGroupIdentifier &#91;required&#93; The name or ARN of the log group that you want to delete the data protection policy for.
 #'
 #' @return
 #' An empty list.
@@ -1282,18 +1014,12 @@ cloudwatchlogs_delete_data_protection_policy <- function(logGroupIdentifier) {
 #' Deletes a delivery
 #'
 #' @description
-#' Deletes a *delivery*. A delivery is a connection between a logical
-#' *delivery source* and a logical *delivery destination*. Deleting a
-#' delivery only deletes the connection between the delivery source and
-#' delivery destination. It does not delete the delivery destination or the
-#' delivery source.
+#' Deletes a *delivery*. A delivery is a connection between a logical *delivery source* and a logical *delivery destination*. Deleting a delivery only deletes the connection between the delivery source and delivery destination. It does not delete the delivery destination or the delivery source.
 #'
 #' @usage
 #' cloudwatchlogs_delete_delivery(id)
 #'
-#' @param id &#91;required&#93; The unique ID of the delivery to delete. You can find the ID of a
-#' delivery with the
-#' [`describe_deliveries`][cloudwatchlogs_describe_deliveries] operation.
+#' @param id &#91;required&#93; The unique ID of the delivery to delete. You can find the ID of a delivery with the [`describe_deliveries`][cloudwatchlogs_describe_deliveries] operation.
 #'
 #' @return
 #' An empty list.
@@ -1332,22 +1058,14 @@ cloudwatchlogs_delete_delivery <- function(id) {
 #' Deletes a delivery destination
 #'
 #' @description
-#' Deletes a *delivery destination*. A delivery is a connection between a
-#' logical *delivery source* and a logical *delivery destination*.
+#' Deletes a *delivery destination*. A delivery is a connection between a logical *delivery source* and a logical *delivery destination*.
 #' 
-#' You can't delete a delivery destination if any current deliveries are
-#' associated with it. To find whether any deliveries are associated with
-#' this delivery destination, use the
-#' [`describe_deliveries`][cloudwatchlogs_describe_deliveries] operation
-#' and check the `deliveryDestinationArn` field in the results.
+#' You can't delete a delivery destination if any current deliveries are associated with it. To find whether any deliveries are associated with this delivery destination, use the [`describe_deliveries`][cloudwatchlogs_describe_deliveries] operation and check the `deliveryDestinationArn` field in the results.
 #'
 #' @usage
 #' cloudwatchlogs_delete_delivery_destination(name)
 #'
-#' @param name &#91;required&#93; The name of the delivery destination that you want to delete. You can
-#' find a list of delivery destination names by using the
-#' [`describe_delivery_destinations`][cloudwatchlogs_describe_delivery_destinations]
-#' operation.
+#' @param name &#91;required&#93; The name of the delivery destination that you want to delete. You can find a list of delivery destination names by using the [`describe_delivery_destinations`][cloudwatchlogs_describe_delivery_destinations] operation.
 #'
 #' @return
 #' An empty list.
@@ -1386,16 +1104,13 @@ cloudwatchlogs_delete_delivery_destination <- function(name) {
 #' Deletes a delivery destination policy
 #'
 #' @description
-#' Deletes a delivery destination policy. For more information about these
-#' policies, see
-#' [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy].
+#' Deletes a delivery destination policy. For more information about these policies, see [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy].
 #'
 #' @usage
 #' cloudwatchlogs_delete_delivery_destination_policy(
 #'   deliveryDestinationName)
 #'
-#' @param deliveryDestinationName &#91;required&#93; The name of the delivery destination that you want to delete the policy
-#' for.
+#' @param deliveryDestinationName &#91;required&#93; The name of the delivery destination that you want to delete the policy for.
 #'
 #' @return
 #' An empty list.
@@ -1434,14 +1149,9 @@ cloudwatchlogs_delete_delivery_destination_policy <- function(deliveryDestinatio
 #' Deletes a delivery source
 #'
 #' @description
-#' Deletes a *delivery source*. A delivery is a connection between a
-#' logical *delivery source* and a logical *delivery destination*.
+#' Deletes a *delivery source*. A delivery is a connection between a logical *delivery source* and a logical *delivery destination*.
 #' 
-#' You can't delete a delivery source if any current deliveries are
-#' associated with it. To find whether any deliveries are associated with
-#' this delivery source, use the
-#' [`describe_deliveries`][cloudwatchlogs_describe_deliveries] operation
-#' and check the `deliverySourceName` field in the results.
+#' You can't delete a delivery source if any current deliveries are associated with it. To find whether any deliveries are associated with this delivery source, use the [`describe_deliveries`][cloudwatchlogs_describe_deliveries] operation and check the `deliverySourceName` field in the results.
 #'
 #' @usage
 #' cloudwatchlogs_delete_delivery_source(name)
@@ -1486,9 +1196,7 @@ cloudwatchlogs_delete_delivery_source <- function(name) {
 #' subscription filters that publish to it
 #'
 #' @description
-#' Deletes the specified destination, and eventually disables all the
-#' subscription filters that publish to it. This operation does not delete
-#' the physical resource encapsulated by the destination.
+#' Deletes the specified destination, and eventually disables all the subscription filters that publish to it. This operation does not delete the physical resource encapsulated by the destination.
 #'
 #' @usage
 #' cloudwatchlogs_delete_destination(destinationName)
@@ -1533,32 +1241,18 @@ cloudwatchlogs_delete_destination <- function(destinationName) {
 #' single log group
 #'
 #' @description
-#' Deletes a log-group level field index policy that was applied to a
-#' single log group. The indexing of the log events that happened before
-#' you delete the policy will still be used for as many as 30 days to
-#' improve CloudWatch Logs Insights queries.
+#' Deletes a log-group level field index policy that was applied to a single log group. The indexing of the log events that happened before you delete the policy will still be used for as many as 30 days to improve CloudWatch Logs Insights queries.
 #' 
-#' If the deleted policy included facet configurations, those facets will
-#' no longer be available for interactive exploration in the CloudWatch
-#' Logs Insights console for this log group. However, facet data is
-#' retained for up to 30 days.
+#' If the deleted policy included facet configurations, those facets will no longer be available for interactive exploration in the CloudWatch Logs Insights console for this log group. However, facet data is retained for up to 30 days.
 #' 
-#' You can't use this operation to delete an account-level index policy.
-#' Instead, use
-#' [`delete_account_policy`][cloudwatchlogs_delete_account_policy].
+#' You can't use this operation to delete an account-level index policy. Instead, use [`delete_account_policy`][cloudwatchlogs_delete_account_policy].
 #' 
-#' If you delete a log-group level field index policy and there is an
-#' account-level field index policy, in a few minutes the log group begins
-#' using that account-wide policy to index new incoming log events. This
-#' operation only affects log group-level policies, including any facet
-#' configurations, and preserves any data source-based account policies
-#' that may apply to the log group.
+#' If you delete a log-group level field index policy and there is an account-level field index policy, in a few minutes the log group begins using that account-wide policy to index new incoming log events. This operation only affects log group-level policies, including any facet configurations, and preserves any data source-based account policies that may apply to the log group.
 #'
 #' @usage
 #' cloudwatchlogs_delete_index_policy(logGroupIdentifier)
 #'
-#' @param logGroupIdentifier &#91;required&#93; The log group to delete the index policy for. You can specify either the
-#' name or the ARN of the log group.
+#' @param logGroupIdentifier &#91;required&#93; The log group to delete the index policy for. You can specify either the name or the ARN of the log group.
 #'
 #' @return
 #' An empty list.
@@ -1597,21 +1291,13 @@ cloudwatchlogs_delete_index_policy <- function(logGroupIdentifier) {
 #' Deletes the integration between CloudWatch Logs and OpenSearch Service
 #'
 #' @description
-#' Deletes the integration between CloudWatch Logs and OpenSearch Service.
-#' If your integration has active vended logs dashboards, you must specify
-#' `true` for the `force` parameter, otherwise the operation will fail. If
-#' you delete the integration by setting `force` to `true`, all your vended
-#' logs dashboards powered by OpenSearch Service will be deleted and the
-#' data that was on them will no longer be accessible.
+#' Deletes the integration between CloudWatch Logs and OpenSearch Service. If your integration has active vended logs dashboards, you must specify `true` for the `force` parameter, otherwise the operation will fail. If you delete the integration by setting `force` to `true`, all your vended logs dashboards powered by OpenSearch Service will be deleted and the data that was on them will no longer be accessible.
 #'
 #' @usage
 #' cloudwatchlogs_delete_integration(integrationName, force)
 #'
-#' @param integrationName &#91;required&#93; The name of the integration to delete. To find the name of your
-#' integration, use
-#' [`list_integrations`][cloudwatchlogs_list_integrations].
-#' @param force Specify `true` to force the deletion of the integration even if vended
-#' logs dashboards currently exist.
+#' @param integrationName &#91;required&#93; The name of the integration to delete. To find the name of your integration, use [`list_integrations`][cloudwatchlogs_list_integrations].
+#' @param force Specify `true` to force the deletion of the integration even if vended logs dashboards currently exist.
 #' 
 #' The default is `false`.
 #'
@@ -1658,10 +1344,7 @@ cloudwatchlogs_delete_integration <- function(integrationName, force = NULL) {
 #' @usage
 #' cloudwatchlogs_delete_log_anomaly_detector(anomalyDetectorArn)
 #'
-#' @param anomalyDetectorArn &#91;required&#93; The ARN of the anomaly detector to delete. You can find the ARNs of log
-#' anomaly detectors in your account by using the
-#' [`list_log_anomaly_detectors`][cloudwatchlogs_list_log_anomaly_detectors]
-#' operation.
+#' @param anomalyDetectorArn &#91;required&#93; The ARN of the anomaly detector to delete. You can find the ARNs of log anomaly detectors in your account by using the [`list_log_anomaly_detectors`][cloudwatchlogs_list_log_anomaly_detectors] operation.
 #'
 #' @return
 #' An empty list.
@@ -1701,8 +1384,7 @@ cloudwatchlogs_delete_log_anomaly_detector <- function(anomalyDetectorArn) {
 #' log events associated with the log group
 #'
 #' @description
-#' Deletes the specified log group and permanently deletes all the archived
-#' log events associated with the log group.
+#' Deletes the specified log group and permanently deletes all the archived log events associated with the log group.
 #'
 #' @usage
 #' cloudwatchlogs_delete_log_group(logGroupName)
@@ -1747,8 +1429,7 @@ cloudwatchlogs_delete_log_group <- function(logGroupName) {
 #' archived log events associated with the log stream
 #'
 #' @description
-#' Deletes the specified log stream and permanently deletes all the
-#' archived log events associated with the log stream.
+#' Deletes the specified log stream and permanently deletes all the archived log events associated with the log stream.
 #'
 #' @usage
 #' cloudwatchlogs_delete_log_stream(logGroupName, logStreamName)
@@ -1796,9 +1477,7 @@ cloudwatchlogs_delete_log_stream <- function(logGroupName, logStreamName) {
 #' @description
 #' Deletes a lookup table permanently. This operation cannot be undone.
 #' 
-#' Queries that reference a deleted table will return an error. Before
-#' deleting a lookup table, review any saved queries or dashboards that may
-#' reference it.
+#' Queries that reference a deleted table will return an error. Before deleting a lookup table, review any saved queries or dashboards that may reference it.
 #'
 #' @usage
 #' cloudwatchlogs_delete_lookup_table(lookupTableArn)
@@ -1888,22 +1567,16 @@ cloudwatchlogs_delete_metric_filter <- function(logGroupName, filterName) {
 #' Deletes a saved CloudWatch Logs Insights query definition
 #'
 #' @description
-#' Deletes a saved CloudWatch Logs Insights query definition. A query
-#' definition contains details about a saved CloudWatch Logs Insights
-#' query.
+#' Deletes a saved CloudWatch Logs Insights query definition. A query definition contains details about a saved CloudWatch Logs Insights query.
 #' 
-#' Each [`delete_query_definition`][cloudwatchlogs_delete_query_definition]
-#' operation can delete one query definition.
+#' Each [`delete_query_definition`][cloudwatchlogs_delete_query_definition] operation can delete one query definition.
 #' 
-#' You must have the `logs:DeleteQueryDefinition` permission to be able to
-#' perform this operation.
+#' You must have the `logs:DeleteQueryDefinition` permission to be able to perform this operation.
 #'
 #' @usage
 #' cloudwatchlogs_delete_query_definition(queryDefinitionId)
 #'
-#' @param queryDefinitionId &#91;required&#93; The ID of the query definition that you want to delete. You can use
-#' [`describe_query_definitions`][cloudwatchlogs_describe_query_definitions]
-#' to retrieve the IDs of your saved query definitions.
+#' @param queryDefinitionId &#91;required&#93; The ID of the query definition that you want to delete. You can use [`describe_query_definitions`][cloudwatchlogs_describe_query_definitions] to retrieve the IDs of your saved query definitions.
 #'
 #' @return
 #' A list with the following syntax:
@@ -1947,18 +1620,15 @@ cloudwatchlogs_delete_query_definition <- function(queryDefinitionId) {
 #' Deletes a resource policy from this account
 #'
 #' @description
-#' Deletes a resource policy from this account. This revokes the access of
-#' the identities in that policy to put log events to this account.
+#' Deletes a resource policy from this account. This revokes the access of the identities in that policy to put log events to this account.
 #'
 #' @usage
 #' cloudwatchlogs_delete_resource_policy(policyName, resourceArn,
 #'   expectedRevisionId)
 #'
 #' @param policyName The name of the policy to be revoked. This parameter is required.
-#' @param resourceArn The ARN of the CloudWatch Logs resource for which the resource policy
-#' needs to be deleted
-#' @param expectedRevisionId The expected revision ID of the resource policy. Required when deleting
-#' a resource-scoped policy to prevent concurrent modifications.
+#' @param resourceArn The ARN of the CloudWatch Logs resource for which the resource policy needs to be deleted
+#' @param expectedRevisionId The expected revision ID of the resource policy. Required when deleting a resource-scoped policy to prevent concurrent modifications.
 #'
 #' @return
 #' An empty list.
@@ -2001,8 +1671,7 @@ cloudwatchlogs_delete_resource_policy <- function(policyName = NULL, resourceArn
 #' @description
 #' Deletes the specified retention policy.
 #' 
-#' Log events do not expire if they belong to log groups without a
-#' retention policy.
+#' Log events do not expire if they belong to log groups without a retention policy.
 #'
 #' @usage
 #' cloudwatchlogs_delete_retention_policy(logGroupName)
@@ -2046,8 +1715,7 @@ cloudwatchlogs_delete_retention_policy <- function(logGroupName) {
 #' Deletes a scheduled query and stops all future executions
 #'
 #' @description
-#' Deletes a scheduled query and stops all future executions. This
-#' operation also removes any configured actions and associated resources.
+#' Deletes a scheduled query and stops all future executions. This operation also removes any configured actions and associated resources.
 #'
 #' @usage
 #' cloudwatchlogs_delete_scheduled_query(identifier)
@@ -2137,22 +1805,14 @@ cloudwatchlogs_delete_subscription_filter <- function(logGroupName, filterName) 
 #' Deletes the log transformer for the specified log group
 #'
 #' @description
-#' Deletes the log transformer for the specified log group. As soon as you
-#' do this, the transformation of incoming log events according to that
-#' transformer stops. If this account has an account-level transformer that
-#' applies to this log group, the log group begins using that account-level
-#' transformer when this log-group level transformer is deleted.
+#' Deletes the log transformer for the specified log group. As soon as you do this, the transformation of incoming log events according to that transformer stops. If this account has an account-level transformer that applies to this log group, the log group begins using that account-level transformer when this log-group level transformer is deleted.
 #' 
-#' After you delete a transformer, be sure to edit any metric filters or
-#' subscription filters that relied on the transformed versions of the log
-#' events.
+#' After you delete a transformer, be sure to edit any metric filters or subscription filters that relied on the transformed versions of the log events.
 #'
 #' @usage
 #' cloudwatchlogs_delete_transformer(logGroupIdentifier)
 #'
-#' @param logGroupIdentifier &#91;required&#93; Specify either the name or ARN of the log group to delete the
-#' transformer for. If the log group is in a source account and you are
-#' using a monitoring account, you must use the log group ARN.
+#' @param logGroupIdentifier &#91;required&#93; Specify either the name or ARN of the log group to delete the transformer for. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.
 #'
 #' @return
 #' An empty list.
@@ -2193,43 +1853,26 @@ cloudwatchlogs_delete_transformer <- function(logGroupIdentifier) {
 #' @description
 #' Returns a list of all CloudWatch Logs account policies in the account.
 #' 
-#' To use this operation, you must be signed on with the correct
-#' permissions depending on the type of policy that you are retrieving
-#' information for.
+#' To use this operation, you must be signed on with the correct permissions depending on the type of policy that you are retrieving information for.
 #' 
-#' -   To see data protection policies, you must have the
-#'     `logs:GetDataProtectionPolicy` and `logs:DescribeAccountPolicies`
-#'     permissions.
+#' -   To see data protection policies, you must have the `logs:GetDataProtectionPolicy` and `logs:DescribeAccountPolicies` permissions.
 #' 
-#' -   To see subscription filter policies, you must have the
-#'     `logs:DescribeSubscriptionFilters` and
-#'     `logs:DescribeAccountPolicies` permissions.
+#' -   To see subscription filter policies, you must have the `logs:DescribeSubscriptionFilters` and `logs:DescribeAccountPolicies` permissions.
 #' 
-#' -   To see transformer policies, you must have the `logs:GetTransformer`
-#'     and `logs:DescribeAccountPolicies` permissions.
+#' -   To see transformer policies, you must have the `logs:GetTransformer` and `logs:DescribeAccountPolicies` permissions.
 #' 
-#' -   To see field index policies, you must have the
-#'     `logs:DescribeIndexPolicies` and `logs:DescribeAccountPolicies`
-#'     permissions.
+#' -   To see field index policies, you must have the `logs:DescribeIndexPolicies` and `logs:DescribeAccountPolicies` permissions.
 #'
 #' @usage
 #' cloudwatchlogs_describe_account_policies(policyType, policyName,
 #'   accountIdentifiers, nextToken)
 #'
-#' @param policyType &#91;required&#93; Use this parameter to limit the returned policies to only the policies
-#' that match the policy type that you specify.
-#' @param policyName Use this parameter to limit the returned policies to only the policy
-#' with the name that you specify.
-#' @param accountIdentifiers If you are using an account that is set up as a monitoring account for
-#' CloudWatch unified cross-account observability, you can use this to
-#' specify the account ID of a source account. If you do, the operation
-#' returns the account policy for the specified account. Currently, you can
-#' specify only one account ID in this parameter.
+#' @param policyType &#91;required&#93; Use this parameter to limit the returned policies to only the policies that match the policy type that you specify.
+#' @param policyName Use this parameter to limit the returned policies to only the policy with the name that you specify.
+#' @param accountIdentifiers If you are using an account that is set up as a monitoring account for CloudWatch unified cross-account observability, you can use this to specify the account ID of a source account. If you do, the operation returns the account policy for the specified account. Currently, you can specify only one account ID in this parameter.
 #' 
-#' If you omit this parameter, only the policy in the current account is
-#' returned.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
+#' If you omit this parameter, only the policy in the current account is returned.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
 #'
 #' @return
 #' A list with the following syntax:
@@ -2290,30 +1933,18 @@ cloudwatchlogs_describe_account_policies <- function(policyType, policyName = NU
 #' when creating delivery sources, delivery destinations, and deliveries
 #'
 #' @description
-#' Use this operation to return the valid and default values that are used
-#' when creating delivery sources, delivery destinations, and deliveries.
-#' For more information about deliveries, see
-#' [`create_delivery`][cloudwatchlogs_create_delivery].
+#' Use this operation to return the valid and default values that are used when creating delivery sources, delivery destinations, and deliveries. For more information about deliveries, see [`create_delivery`][cloudwatchlogs_create_delivery].
 #'
 #' @usage
 #' cloudwatchlogs_describe_configuration_templates(service, logTypes,
 #'   resourceTypes, deliveryDestinationTypes, nextToken, limit)
 #'
-#' @param service Use this parameter to filter the response to include only the
-#' configuration templates that apply to the Amazon Web Services service
-#' that you specify here.
-#' @param logTypes Use this parameter to filter the response to include only the
-#' configuration templates that apply to the log types that you specify
-#' here.
-#' @param resourceTypes Use this parameter to filter the response to include only the
-#' configuration templates that apply to the resource types that you
-#' specify here.
-#' @param deliveryDestinationTypes Use this parameter to filter the response to include only the
-#' configuration templates that apply to the delivery destination types
-#' that you specify here.
-#' @param nextToken 
-#' @param limit Use this parameter to limit the number of configuration templates that
-#' are returned in the response.
+#' @param service Use this parameter to filter the response to include only the configuration templates that apply to the Amazon Web Services service that you specify here.
+#' @param logTypes Use this parameter to filter the response to include only the configuration templates that apply to the log types that you specify here.
+#' @param resourceTypes Use this parameter to filter the response to include only the configuration templates that apply to the resource types that you specify here.
+#' @param deliveryDestinationTypes Use this parameter to filter the response to include only the configuration templates that apply to the delivery destination types that you specify here.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param limit Use this parameter to limit the number of configuration templates that are returned in the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2418,28 +2049,17 @@ cloudwatchlogs_describe_configuration_templates <- function(service = NULL, logT
 #' Retrieves a list of the deliveries that have been created in the account
 #'
 #' @description
-#' Retrieves a list of the deliveries that have been created in the
-#' account.
+#' Retrieves a list of the deliveries that have been created in the account.
 #' 
-#' A *delivery* is a connection between a [*delivery
-#' source*](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html)
-#' and a [*delivery
-#' destination*](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html)
-#' .
+#' A *delivery* is a connection between a [*delivery source*](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html) and a [*delivery destination*](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html) .
 #' 
-#' A delivery source represents an Amazon Web Services resource that sends
-#' logs to an logs delivery destination. The destination can be CloudWatch
-#' Logs, Amazon S3, Firehose or X-Ray. Only some Amazon Web Services
-#' services support being configured as a delivery source. These services
-#' are listed in [Enable logging from Amazon Web Services
-#' services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
+#' A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, Firehose or X-Ray. Only some Amazon Web Services services support being configured as a delivery source. These services are listed in [Enable logging from Amazon Web Services services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
 #'
 #' @usage
 #' cloudwatchlogs_describe_deliveries(nextToken, limit)
 #'
-#' @param nextToken 
-#' @param limit Optionally specify the maximum number of deliveries to return in the
-#' response.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param limit Optionally specify the maximum number of deliveries to return in the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2505,15 +2125,13 @@ cloudwatchlogs_describe_deliveries <- function(nextToken = NULL, limit = NULL) {
 #' the account
 #'
 #' @description
-#' Retrieves a list of the delivery destinations that have been created in
-#' the account.
+#' Retrieves a list of the delivery destinations that have been created in the account.
 #'
 #' @usage
 #' cloudwatchlogs_describe_delivery_destinations(nextToken, limit)
 #'
-#' @param nextToken 
-#' @param limit Optionally specify the maximum number of delivery destinations to return
-#' in the response.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param limit Optionally specify the maximum number of delivery destinations to return in the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2573,15 +2191,13 @@ cloudwatchlogs_describe_delivery_destinations <- function(nextToken = NULL, limi
 #' account
 #'
 #' @description
-#' Retrieves a list of the delivery sources that have been created in the
-#' account.
+#' Retrieves a list of the delivery sources that have been created in the account.
 #'
 #' @usage
 #' cloudwatchlogs_describe_delivery_sources(nextToken, limit)
 #'
-#' @param nextToken 
-#' @param limit Optionally specify the maximum number of delivery sources to return in
-#' the response.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param limit Optionally specify the maximum number of delivery sources to return in the response.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2645,19 +2261,15 @@ cloudwatchlogs_describe_delivery_sources <- function(nextToken = NULL, limit = N
 #' Lists all your destinations
 #'
 #' @description
-#' Lists all your destinations. The results are ASCII-sorted by destination
-#' name.
+#' Lists all your destinations. The results are ASCII-sorted by destination name.
 #'
 #' @usage
 #' cloudwatchlogs_describe_destinations(DestinationNamePrefix, nextToken,
 #'   limit)
 #'
-#' @param DestinationNamePrefix The prefix to match. If you don't specify a value, no prefix filter is
-#' applied.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
-#' @param limit The maximum number of items returned. If you don't specify a value, the
-#' default maximum value of 50 items is used.
+#' @param DestinationNamePrefix The prefix to match. If you don't specify a value, no prefix filter is applied.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
+#' @param limit The maximum number of items returned. If you don't specify a value, the default maximum value of 50 items is used.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2713,21 +2325,16 @@ cloudwatchlogs_describe_destinations <- function(DestinationNamePrefix = NULL, n
 #' Lists the specified export tasks
 #'
 #' @description
-#' Lists the specified export tasks. You can list all your export tasks or
-#' filter the results based on task ID or task status.
+#' Lists the specified export tasks. You can list all your export tasks or filter the results based on task ID or task status.
 #'
 #' @usage
 #' cloudwatchlogs_describe_export_tasks(taskId, statusCode, nextToken,
 #'   limit)
 #'
-#' @param taskId The ID of the export task. Specifying a task ID filters the results to
-#' one or zero export tasks.
-#' @param statusCode The status code of the export task. Specifying a status code filters the
-#' results to zero or more export tasks.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
-#' @param limit The maximum number of items returned. If you don't specify a value, the
-#' default is up to 50 items.
+#' @param taskId The ID of the export task. Specifying a task ID filters the results to one or zero export tasks.
+#' @param statusCode The status code of the export task. Specifying a status code filters the results to zero or more export tasks.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
+#' @param limit The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2794,16 +2401,13 @@ cloudwatchlogs_describe_export_tasks <- function(taskId = NULL, statusCode = NUL
 #' in log data
 #'
 #' @description
-#' Returns a list of custom and default field indexes which are discovered
-#' in log data. For more information about field index policies, see
-#' [`put_index_policy`][cloudwatchlogs_put_index_policy].
+#' Returns a list of custom and default field indexes which are discovered in log data. For more information about field index policies, see [`put_index_policy`][cloudwatchlogs_put_index_policy].
 #'
 #' @usage
 #' cloudwatchlogs_describe_field_indexes(logGroupIdentifiers, nextToken)
 #'
-#' @param logGroupIdentifiers &#91;required&#93; An array containing the names or ARNs of the log groups that you want to
-#' retrieve field indexes for.
-#' @param nextToken 
+#' @param logGroupIdentifiers &#91;required&#93; An array containing the names or ARNs of the log groups that you want to retrieve field indexes for.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -2861,20 +2465,15 @@ cloudwatchlogs_describe_field_indexes <- function(logGroupIdentifiers, nextToken
 #' task, including their status and any error messages
 #'
 #' @description
-#' Gets detailed information about the individual batches within an import
-#' task, including their status and any error messages. For CloudTrail
-#' Event Data Store sources, a batch refers to a subset of stored events
-#' grouped by their eventTime.
+#' Gets detailed information about the individual batches within an import task, including their status and any error messages. For CloudTrail Event Data Store sources, a batch refers to a subset of stored events grouped by their eventTime.
 #'
 #' @usage
 #' cloudwatchlogs_describe_import_task_batches(importId, batchImportStatus,
 #'   limit, nextToken)
 #'
 #' @param importId &#91;required&#93; The ID of the import task to get batch information for.
-#' @param batchImportStatus Optional filter to list import batches by their status. Accepts multiple
-#' status values: IN_PROGRESS, CANCELLED, COMPLETED and FAILED.
-#' @param limit The maximum number of import batches to return in the response. Default:
-#' 10
+#' @param batchImportStatus Optional filter to list import batches by their status. Accepts multiple status values: IN_PROGRESS, CANCELLED, COMPLETED and FAILED.
+#' @param limit The maximum number of import batches to return in the response. Default: 10
 #' @param nextToken The pagination token for the next set of results.
 #'
 #' @return
@@ -2934,19 +2533,16 @@ cloudwatchlogs_describe_import_task_batches <- function(importId, batchImportSta
 #' status and source ARN
 #'
 #' @description
-#' Lists and describes import tasks, with optional filtering by import
-#' status and source ARN.
+#' Lists and describes import tasks, with optional filtering by import status and source ARN.
 #'
 #' @usage
 #' cloudwatchlogs_describe_import_tasks(importId, importStatus,
 #'   importSourceArn, limit, nextToken)
 #'
 #' @param importId Optional filter to describe a specific import task by its ID.
-#' @param importStatus Optional filter to list imports by their status. Valid values are
-#' IN_PROGRESS, CANCELLED, COMPLETED and FAILED.
+#' @param importStatus Optional filter to list imports by their status. Valid values are IN_PROGRESS, CANCELLED, COMPLETED and FAILED.
 #' @param importSourceArn Optional filter to list imports from a specific source
-#' @param limit The maximum number of import tasks to return in the response. Default:
-#' 50
+#' @param limit The maximum number of import tasks to return in the response. Default: 50
 #' @param nextToken The pagination token for the next set of results.
 #'
 #' @return
@@ -3013,27 +2609,19 @@ cloudwatchlogs_describe_import_tasks <- function(importId = NULL, importStatus =
 #' Returns the field index policies of the specified log group
 #'
 #' @description
-#' Returns the field index policies of the specified log group. For more
-#' information about field index policies, see
-#' [`put_index_policy`][cloudwatchlogs_put_index_policy].
+#' Returns the field index policies of the specified log group. For more information about field index policies, see [`put_index_policy`][cloudwatchlogs_put_index_policy].
 #' 
-#' If a specified log group has a log-group level index policy, that policy
-#' is returned by this operation.
+#' If a specified log group has a log-group level index policy, that policy is returned by this operation.
 #' 
-#' If a specified log group doesn't have a log-group level index policy,
-#' but an account-wide index policy applies to it, that account-wide policy
-#' is returned by this operation.
+#' If a specified log group doesn't have a log-group level index policy, but an account-wide index policy applies to it, that account-wide policy is returned by this operation.
 #' 
-#' To find information about only account-level policies, use
-#' [`describe_account_policies`][cloudwatchlogs_describe_account_policies]
-#' instead.
+#' To find information about only account-level policies, use [`describe_account_policies`][cloudwatchlogs_describe_account_policies] instead.
 #'
 #' @usage
 #' cloudwatchlogs_describe_index_policies(logGroupIdentifiers, nextToken)
 #'
-#' @param logGroupIdentifiers &#91;required&#93; An array containing the name or ARN of the log group that you want to
-#' retrieve field index policies for.
-#' @param nextToken 
+#' @param logGroupIdentifiers &#91;required&#93; An array containing the name or ARN of the log group that you want to retrieve field index policies for.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3090,90 +2678,47 @@ cloudwatchlogs_describe_index_policies <- function(logGroupIdentifiers, nextToke
 #' into each log group
 #'
 #' @description
-#' Returns information about log groups, including data sources that ingest
-#' into each log group. You can return all your log groups or filter the
-#' results by prefix. The results are ASCII-sorted by log group name.
+#' Returns information about log groups, including data sources that ingest into each log group. You can return all your log groups or filter the results by prefix. The results are ASCII-sorted by log group name.
 #' 
-#' CloudWatch Logs doesn't support IAM policies that control access to the
-#' [`describe_log_groups`][cloudwatchlogs_describe_log_groups] action by
-#' using the `aws:ResourceTag/key-name ` condition key. Other CloudWatch
-#' Logs actions do support the use of the `aws:ResourceTag/key-name `
-#' condition key to control access. For more information about using tags
-#' to control access, see [Controlling access to Amazon Web Services
-#' resources using
-#' tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
+#' CloudWatch Logs doesn't support IAM policies that control access to the [`describe_log_groups`][cloudwatchlogs_describe_log_groups] action by using the `aws:ResourceTag/key-name ` condition key. Other CloudWatch Logs actions do support the use of the `aws:ResourceTag/key-name ` condition key to control access. For more information about using tags to control access, see [Controlling access to Amazon Web Services resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
 #' 
-#' If you are using CloudWatch cross-account observability, you can use
-#' this operation in a monitoring account and view data from the linked
-#' source accounts. For more information, see [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #'
 #' @usage
 #' cloudwatchlogs_describe_log_groups(accountIdentifiers,
 #'   logGroupNamePrefix, logGroupNamePattern, nextToken, limit,
 #'   includeLinkedAccounts, logGroupClass, logGroupIdentifiers)
 #'
-#' @param accountIdentifiers When `includeLinkedAccounts` is set to `true`, use this parameter to
-#' specify the list of accounts to search. You can specify as many as 20
-#' account IDs in the array.
+#' @param accountIdentifiers When `includeLinkedAccounts` is set to `true`, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array.
 #' @param logGroupNamePrefix The prefix to match.
 #' 
-#' `logGroupNamePrefix` and `logGroupNamePattern` are mutually exclusive.
-#' Only one of these parameters can be passed.
-#' @param logGroupNamePattern If you specify a string for this parameter, the operation returns only
-#' log groups that have names that match the string based on a
-#' case-sensitive substring search. For example, if you specify `DataLogs`,
-#' log groups named `DataLogs`, `aws/DataLogs`, and `GroupDataLogs` would
-#' match, but `datalogs`, `Data/log/s` and `Groupdata` would not match.
+#' `logGroupNamePrefix` and `logGroupNamePattern` are mutually exclusive. Only one of these parameters can be passed.
+#' @param logGroupNamePattern If you specify a string for this parameter, the operation returns only log groups that have names that match the string based on a case-sensitive substring search. For example, if you specify `DataLogs`, log groups named `DataLogs`, `aws/DataLogs`, and `GroupDataLogs` would match, but `datalogs`, `Data/log/s` and `Groupdata` would not match.
 #' 
-#' If you specify `logGroupNamePattern` in your request, then only `arn`,
-#' `creationTime`, and `logGroupName` are included in the response.
+#' If you specify `logGroupNamePattern` in your request, then only `arn`, `creationTime`, and `logGroupName` are included in the response.
 #' 
-#' `logGroupNamePattern` and `logGroupNamePrefix` are mutually exclusive.
-#' Only one of these parameters can be passed.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
-#' @param limit The maximum number of items returned. If you don't specify a value, the
-#' default is up to 50 items.
-#' @param includeLinkedAccounts If you are using a monitoring account, set this to `true` to have the
-#' operation return log groups in the accounts listed in
-#' `accountIdentifiers`.
+#' `logGroupNamePattern` and `logGroupNamePrefix` are mutually exclusive. Only one of these parameters can be passed.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
+#' @param limit The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+#' @param includeLinkedAccounts If you are using a monitoring account, set this to `true` to have the operation return log groups in the accounts listed in `accountIdentifiers`.
 #' 
-#' If this parameter is set to `true` and `accountIdentifiers` contains a
-#' null value, the operation returns all log groups in the monitoring
-#' account and all log groups in all source accounts that are linked to the
-#' monitoring account.
+#' If this parameter is set to `true` and `accountIdentifiers` contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account.
 #' 
 #' The default for this parameter is `false`.
-#' @param logGroupClass Use this parameter to limit the results to only those log groups in the
-#' specified log group class. If you omit this parameter, log groups of all
-#' classes can be returned.
+#' @param logGroupClass Use this parameter to limit the results to only those log groups in the specified log group class. If you omit this parameter, log groups of all classes can be returned.
 #' 
-#' Specifies the log group class for this log group. There are three
-#' classes:
+#' Specifies the log group class for this log group. There are three classes:
 #' 
 #' -   The `Standard` log class supports all CloudWatch Logs features.
 #' 
-#' -   The `Infrequent Access` log class supports a subset of CloudWatch
-#'     Logs features and incurs lower costs.
+#' -   The `Infrequent Access` log class supports a subset of CloudWatch Logs features and incurs lower costs.
 #' 
-#' -   Use the `Delivery` log class only for delivering Lambda logs to
-#'     store in Amazon S3 or Amazon Data Firehose. Log events in log groups
-#'     in the Delivery class are kept in CloudWatch Logs for only one day.
-#'     This log class doesn't offer rich CloudWatch Logs capabilities such
-#'     as CloudWatch Logs Insights queries.
+#' -   Use the `Delivery` log class only for delivering Lambda logs to store in Amazon S3 or Amazon Data Firehose. Log events in log groups in the Delivery class are kept in CloudWatch Logs for only one day. This log class doesn't offer rich CloudWatch Logs capabilities such as CloudWatch Logs Insights queries.
 #' 
-#' For details about the features supported by each class, see [Log
-#' classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html)
-#' @param logGroupIdentifiers Use this array to filter the list of log groups returned. If you specify
-#' this parameter, the only other filter that you can choose to specify is
-#' `includeLinkedAccounts`.
+#' For details about the features supported by each class, see [Log classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html)
+#' @param logGroupIdentifiers Use this array to filter the list of log groups returned. If you specify this parameter, the only other filter that you can choose to specify is `includeLinkedAccounts`.
 #' 
-#' If you are using this operation in a monitoring account, you can specify
-#' the ARNs of log groups in source accounts and in the monitoring account
-#' itself. If you are using this operation in an account that is not a
-#' cross-account monitoring account, you can specify only log group names
-#' in the same account as the operation.
+#' If you are using this operation in a monitoring account, you can specify the ARNs of log groups in source accounts and in the monitoring account itself. If you are using this operation in an account that is not a cross-account monitoring account, you can specify only log group names in the same account as the operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3247,21 +2792,13 @@ cloudwatchlogs_describe_log_groups <- function(accountIdentifiers = NULL, logGro
 #' Lists the log streams for the specified log group
 #'
 #' @description
-#' Lists the log streams for the specified log group. You can list all the
-#' log streams or filter the results by prefix. You can also control how
-#' the results are ordered.
+#' Lists the log streams for the specified log group. You can list all the log streams or filter the results by prefix. You can also control how the results are ordered.
 #' 
-#' You can specify the log group to search by using either
-#' `logGroupIdentifier` or `logGroupName`. You must include one of these
-#' two parameters, but you can't include both.
+#' You can specify the log group to search by using either `logGroupIdentifier` or `logGroupName`. You must include one of these two parameters, but you can't include both.
 #' 
-#' This operation has a limit of 25 transactions per second, after which
-#' transactions are throttled.
+#' This operation has a limit of 25 transactions per second, after which transactions are throttled.
 #' 
-#' If you are using CloudWatch cross-account observability, you can use
-#' this operation in a monitoring account and view data from the linked
-#' source accounts. For more information, see [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #'
 #' @usage
 #' cloudwatchlogs_describe_log_streams(logGroupName, logGroupIdentifier,
@@ -3269,37 +2806,21 @@ cloudwatchlogs_describe_log_groups <- function(accountIdentifiers = NULL, logGro
 #'
 #' @param logGroupName The name of the log group.
 #' 
-#' You must include either `logGroupIdentifier` or `logGroupName`, but not
-#' both.
-#' @param logGroupIdentifier Specify either the name or ARN of the log group to view. If the log
-#' group is in a source account and you are using a monitoring account, you
-#' must use the log group ARN.
+#' You must include either `logGroupIdentifier` or `logGroupName`, but not both.
+#' @param logGroupIdentifier Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.
 #' 
-#' You must include either `logGroupIdentifier` or `logGroupName`, but not
-#' both.
+#' You must include either `logGroupIdentifier` or `logGroupName`, but not both.
 #' @param logStreamNamePrefix The prefix to match.
 #' 
 #' If `orderBy` is `LastEventTime`, you cannot specify this parameter.
-#' @param orderBy If the value is `LogStreamName`, the results are ordered by log stream
-#' name. If the value is `LastEventTime`, the results are ordered by the
-#' event time. The default value is `LogStreamName`.
+#' @param orderBy If the value is `LogStreamName`, the results are ordered by log stream name. If the value is `LastEventTime`, the results are ordered by the event time. The default value is `LogStreamName`.
 #' 
-#' If you order the results by event time, you cannot specify the
-#' `logStreamNamePrefix` parameter.
+#' If you order the results by event time, you cannot specify the `logStreamNamePrefix` parameter.
 #' 
-#' `lastEventTimestamp` represents the time of the most recent log event in
-#' the log stream in CloudWatch Logs. This number is expressed as the
-#' number of milliseconds after `Jan 1, 1970 00:00:00 UTC`.
-#' `lastEventTimestamp` updates on an eventual consistency basis. It
-#' typically updates in less than an hour from ingestion, but in rare
-#' situations might take longer.
-#' @param descending If the value is true, results are returned in descending order. If the
-#' value is to false, results are returned in ascending order. The default
-#' value is false.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
-#' @param limit The maximum number of items returned. If you don't specify a value, the
-#' default is up to 50 items.
+#' `lastEventTimestamp` represents the time of the most recent log event in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds after `Jan 1, 1970 00:00:00 UTC`. `lastEventTimestamp` updates on an eventual consistency basis. It typically updates in less than an hour from ingestion, but in rare situations might take longer.
+#' @param descending If the value is true, results are returned in descending order. If the value is to false, results are returned in ascending order. The default value is false.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
+#' @param limit The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3361,21 +2882,15 @@ cloudwatchlogs_describe_log_streams <- function(logGroupName = NULL, logGroupIde
 #' Retrieves metadata about lookup tables in your account
 #'
 #' @description
-#' Retrieves metadata about lookup tables in your account. You can
-#' optionally filter the results by table name prefix. Results are sorted
-#' by table name in ascending order.
+#' Retrieves metadata about lookup tables in your account. You can optionally filter the results by table name prefix. Results are sorted by table name in ascending order.
 #'
 #' @usage
 #' cloudwatchlogs_describe_lookup_tables(lookupTableNamePrefix, maxResults,
 #'   nextToken)
 #'
-#' @param lookupTableNamePrefix A prefix to filter lookup tables by name. Only tables whose names start
-#' with this prefix are returned. If you don't specify a prefix, all tables
-#' in the account and Region are returned.
-#' @param maxResults The maximum number of lookup tables to return in the response. The
-#' default value is 50 and the maximum value is 100.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
+#' @param lookupTableNamePrefix A prefix to filter lookup tables by name. Only tables whose names start with this prefix are returned. If you don't specify a prefix, all tables in the account and Region are returned.
+#' @param maxResults The maximum number of lookup tables to return in the response. The default value is 50 and the maximum value is 100.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
 #'
 #' @return
 #' A list with the following syntax:
@@ -3435,27 +2950,18 @@ cloudwatchlogs_describe_lookup_tables <- function(lookupTableNamePrefix = NULL, 
 #' Lists the specified metric filters
 #'
 #' @description
-#' Lists the specified metric filters. You can list all of the metric
-#' filters or filter the results by log name, prefix, metric name, or
-#' metric namespace. The results are ASCII-sorted by filter name.
+#' Lists the specified metric filters. You can list all of the metric filters or filter the results by log name, prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.
 #'
 #' @usage
 #' cloudwatchlogs_describe_metric_filters(logGroupName, filterNamePrefix,
 #'   nextToken, limit, metricName, metricNamespace)
 #'
 #' @param logGroupName The name of the log group.
-#' @param filterNamePrefix The prefix to match. CloudWatch Logs uses the value that you set here
-#' only if you also include the `logGroupName` parameter in your request.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
-#' @param limit The maximum number of items returned. If you don't specify a value, the
-#' default is up to 50 items.
-#' @param metricName Filters results to include only those with the specified metric name. If
-#' you include this parameter in your request, you must also include the
-#' `metricNamespace` parameter.
-#' @param metricNamespace Filters results to include only those in the specified namespace. If you
-#' include this parameter in your request, you must also include the
-#' `metricName` parameter.
+#' @param filterNamePrefix The prefix to match. CloudWatch Logs uses the value that you set here only if you also include the `logGroupName` parameter in your request.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
+#' @param limit The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
+#' @param metricName Filters results to include only those with the specified metric name. If you include this parameter in your request, you must also include the `metricNamespace` parameter.
+#' @param metricNamespace Filters results to include only those in the specified namespace. If you include this parameter in your request, you must also include the `metricName` parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3530,29 +3036,19 @@ cloudwatchlogs_describe_metric_filters <- function(logGroupName = NULL, filterNa
 #' running, or have been run recently in this account
 #'
 #' @description
-#' Returns a list of CloudWatch Logs Insights queries that are scheduled,
-#' running, or have been run recently in this account. You can request all
-#' queries or limit it to queries of a specific log group or queries with a
-#' certain status.
+#' Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this account. You can request all queries or limit it to queries of a specific log group or queries with a certain status.
 #' 
-#' This operation includes both interactive queries started directly by
-#' users and automated queries executed by scheduled query configurations.
-#' Scheduled query executions appear in the results alongside manually
-#' initiated queries, providing visibility into all query activity in your
-#' account.
+#' This operation includes both interactive queries started directly by users and automated queries executed by scheduled query configurations. Scheduled query executions appear in the results alongside manually initiated queries, providing visibility into all query activity in your account.
 #'
 #' @usage
 #' cloudwatchlogs_describe_queries(logGroupName, status, maxResults,
 #'   nextToken, queryLanguage)
 #'
 #' @param logGroupName Limits the returned queries to only those for the specified log group.
-#' @param status Limits the returned queries to only those that have the specified
-#' status. Valid values are `Cancelled`, `Complete`, `Failed`, `Running`,
-#' and `Scheduled`.
+#' @param status Limits the returned queries to only those that have the specified status. Valid values are `Cancelled`, `Complete`, `Failed`, `Running`, and `Scheduled`.
 #' @param maxResults Limits the number of returned queries to the specified number.
-#' @param nextToken 
-#' @param queryLanguage Limits the returned queries to only the queries that use the specified
-#' query language.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param queryLanguage Limits the returned queries to only the queries that use the specified query language.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3614,26 +3110,18 @@ cloudwatchlogs_describe_queries <- function(logGroupName = NULL, status = NULL, 
 #' Insights query definitions
 #'
 #' @description
-#' This operation returns a paginated list of your saved CloudWatch Logs
-#' Insights query definitions. You can retrieve query definitions from the
-#' current account or from a source account that is linked to the current
-#' account.
+#' This operation returns a paginated list of your saved CloudWatch Logs Insights query definitions. You can retrieve query definitions from the current account or from a source account that is linked to the current account.
 #' 
-#' You can use the `queryDefinitionNamePrefix` parameter to limit the
-#' results to only the query definitions that have names that start with a
-#' certain string.
+#' You can use the `queryDefinitionNamePrefix` parameter to limit the results to only the query definitions that have names that start with a certain string.
 #'
 #' @usage
 #' cloudwatchlogs_describe_query_definitions(queryLanguage,
 #'   queryDefinitionNamePrefix, maxResults, nextToken)
 #'
-#' @param queryLanguage The query language used for this query. For more information about the
-#' query languages that CloudWatch Logs supports, see [Supported query
-#' languages](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html).
-#' @param queryDefinitionNamePrefix Use this parameter to filter your results to only the query definitions
-#' that have names that start with the prefix you specify.
+#' @param queryLanguage The query language used for this query. For more information about the query languages that CloudWatch Logs supports, see [Supported query languages](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html).
+#' @param queryDefinitionNamePrefix Use this parameter to filter your results to only the query definitions that have names that start with the prefix you specify.
 #' @param maxResults Limits the number of returned query definitions to the specified number.
-#' @param nextToken 
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3705,13 +3193,10 @@ cloudwatchlogs_describe_query_definitions <- function(queryLanguage = NULL, quer
 #' cloudwatchlogs_describe_resource_policies(nextToken, limit, resourceArn,
 #'   policyScope)
 #'
-#' @param nextToken 
-#' @param limit The maximum number of resource policies to be displayed with one call of
-#' this API.
-#' @param resourceArn The ARN of the CloudWatch Logs resource for which to query the resource
-#' policy.
-#' @param policyScope Specifies the scope of the resource policy. Valid values are `ACCOUNT`
-#' or `RESOURCE`. When not specified, defaults to `ACCOUNT`.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param limit The maximum number of resource policies to be displayed with one call of this API.
+#' @param resourceArn The ARN of the CloudWatch Logs resource for which to query the resource policy.
+#' @param policyScope Specifies the scope of the resource policy. Valid values are `ACCOUNT` or `RESOURCE`. When not specified, defaults to `ACCOUNT`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3768,21 +3253,16 @@ cloudwatchlogs_describe_resource_policies <- function(nextToken = NULL, limit = 
 #' Lists the subscription filters for the specified log group
 #'
 #' @description
-#' Lists the subscription filters for the specified log group. You can list
-#' all the subscription filters or filter the results by prefix. The
-#' results are ASCII-sorted by filter name.
+#' Lists the subscription filters for the specified log group. You can list all the subscription filters or filter the results by prefix. The results are ASCII-sorted by filter name.
 #'
 #' @usage
 #' cloudwatchlogs_describe_subscription_filters(logGroupName,
 #'   filterNamePrefix, nextToken, limit)
 #'
 #' @param logGroupName &#91;required&#93; The name of the log group.
-#' @param filterNamePrefix The prefix to match. If you don't specify a value, no prefix filter is
-#' applied.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
-#' @param limit The maximum number of items returned. If you don't specify a value, the
-#' default is up to 50 items.
+#' @param filterNamePrefix The prefix to match. If you don't specify a value, no prefix filter is applied.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
+#' @param limit The maximum number of items returned. If you don't specify a value, the default is up to 50 items.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3846,31 +3326,13 @@ cloudwatchlogs_describe_subscription_filters <- function(logGroupName, filterNam
 #' all CloudWatch Logs Insights query results in the account
 #'
 #' @description
-#' Disassociates the specified KMS key from the specified log group or from
-#' all CloudWatch Logs Insights query results in the account.
+#' Disassociates the specified KMS key from the specified log group or from all CloudWatch Logs Insights query results in the account.
 #' 
-#' When you use
-#' [`disassociate_kms_key`][cloudwatchlogs_disassociate_kms_key], you
-#' specify either the `logGroupName` parameter or the `resourceIdentifier`
-#' parameter. You can't specify both of those parameters in the same
-#' operation.
+#' When you use [`disassociate_kms_key`][cloudwatchlogs_disassociate_kms_key], you specify either the `logGroupName` parameter or the `resourceIdentifier` parameter. You can't specify both of those parameters in the same operation.
 #' 
-#' -   Specify the `logGroupName` parameter to stop using the KMS key to
-#'     encrypt future log events ingested and stored in the log group.
-#'     Instead, they will be encrypted with the default CloudWatch Logs
-#'     method. The log events that were ingested while the key was
-#'     associated with the log group are still encrypted with that key.
-#'     Therefore, CloudWatch Logs will need permissions for the key
-#'     whenever that data is accessed.
+#' -   Specify the `logGroupName` parameter to stop using the KMS key to encrypt future log events ingested and stored in the log group. Instead, they will be encrypted with the default CloudWatch Logs method. The log events that were ingested while the key was associated with the log group are still encrypted with that key. Therefore, CloudWatch Logs will need permissions for the key whenever that data is accessed.
 #' 
-#' -   Specify the `resourceIdentifier` parameter with the `query-result`
-#'     resource to stop using the KMS key to encrypt the results of all
-#'     future [`start_query`][cloudwatchlogs_start_query] operations in the
-#'     account. They will instead be encrypted with the default CloudWatch
-#'     Logs method. The results from queries that ran while the key was
-#'     associated with the account are still encrypted with that key.
-#'     Therefore, CloudWatch Logs will need permissions for the key
-#'     whenever that data is accessed.
+#' -   Specify the `resourceIdentifier` parameter with the `query-result` resource to stop using the KMS key to encrypt the results of all future [`start_query`][cloudwatchlogs_start_query] operations in the account. They will instead be encrypted with the default CloudWatch Logs method. The results from queries that ran while the key was associated with the account are still encrypted with that key. Therefore, CloudWatch Logs will need permissions for the key whenever that data is accessed.
 #' 
 #' It can take up to 5 minutes for this operation to take effect.
 #'
@@ -3879,31 +3341,18 @@ cloudwatchlogs_describe_subscription_filters <- function(logGroupName, filterNam
 #'
 #' @param logGroupName The name of the log group.
 #' 
-#' In your [`disassociate_kms_key`][cloudwatchlogs_disassociate_kms_key]
-#' operation, you must specify either the `resourceIdentifier` parameter or
-#' the `logGroup` parameter, but you can't specify both.
-#' @param resourceIdentifier Specifies the target for this operation. You must specify one of the
-#' following:
+#' In your [`disassociate_kms_key`][cloudwatchlogs_disassociate_kms_key] operation, you must specify either the `resourceIdentifier` parameter or the `logGroup` parameter, but you can't specify both.
+#' @param resourceIdentifier Specifies the target for this operation. You must specify one of the following:
 #' 
-#' -   Specify the ARN of a log group to stop having CloudWatch Logs use
-#'     the KMS key to encrypt log events that are ingested and stored by
-#'     that log group. After you run this operation, CloudWatch Logs
-#'     encrypts ingested log events with the default CloudWatch Logs
-#'     method. The log group ARN must be in the following format. Replace
-#'     *REGION* and *ACCOUNT_ID* with your Region and account ID.
+#' -   Specify the ARN of a log group to stop having CloudWatch Logs use the KMS key to encrypt log events that are ingested and stored by that log group. After you run this operation, CloudWatch Logs encrypts ingested log events with the default CloudWatch Logs method. The log group ARN must be in the following format. Replace *REGION* and *ACCOUNT_ID* with your Region and account ID.
 #' 
 #'     `arn:aws:logs:REGION:ACCOUNT_ID:log-group:LOG_GROUP_NAME `
 #' 
-#' -   Specify the following ARN to stop using this key to encrypt the
-#'     results of future [`start_query`][cloudwatchlogs_start_query]
-#'     operations in this account. Replace *REGION* and *ACCOUNT_ID* with
-#'     your Region and account ID.
+#' -   Specify the following ARN to stop using this key to encrypt the results of future [`start_query`][cloudwatchlogs_start_query] operations in this account. Replace *REGION* and *ACCOUNT_ID* with your Region and account ID.
 #' 
 #'     `arn:aws:logs:REGION:ACCOUNT_ID:query-result:*`
 #' 
-#' In your `DisssociateKmsKey` operation, you must specify either the
-#' `resourceIdentifier` parameter or the `logGroup` parameter, but you
-#' can't specify both.
+#' In your `DisssociateKmsKey` operation, you must specify either the `resourceIdentifier` parameter or the `logGroup` parameter, but you can't specify both.
 #'
 #' @return
 #' An empty list.
@@ -3944,14 +3393,12 @@ cloudwatchlogs_disassociate_kms_key <- function(logGroupName = NULL, resourceIde
 #' access and deleting all associated data from the integration
 #'
 #' @description
-#' Disassociates a data source from an S3 Table Integration, removing query
-#' access and deleting all associated data from the integration.
+#' Disassociates a data source from an S3 Table Integration, removing query access and deleting all associated data from the integration.
 #'
 #' @usage
 #' cloudwatchlogs_disassociate_source_from_s3_table_integration(identifier)
 #'
-#' @param identifier &#91;required&#93; The unique identifier of the association to remove between the data
-#' source and S3 Table Integration.
+#' @param identifier &#91;required&#93; The unique identifier of the association to remove between the data source and S3 Table Integration.
 #'
 #' @return
 #' A list with the following syntax:
@@ -3995,57 +3442,29 @@ cloudwatchlogs_disassociate_source_from_s3_table_integration <- function(identif
 #' Lists log events from the specified log group
 #'
 #' @description
-#' Lists log events from the specified log group. You can list all the log
-#' events or filter the results using one or more of the following:
+#' Lists log events from the specified log group. You can list all the log events or filter the results using one or more of the following:
 #' 
 #' -   A filter pattern
 #' 
 #' -   A time range
 #' 
-#' -   The log stream name, or a log stream name prefix that matches
-#'     multiple log streams
+#' -   The log stream name, or a log stream name prefix that matches multiple log streams
 #' 
-#' You must have the `logs:FilterLogEvents` permission to perform this
-#' operation.
+#' You must have the `logs:FilterLogEvents` permission to perform this operation.
 #' 
-#' You can specify the log group to search by using either
-#' `logGroupIdentifier` or `logGroupName`. You must include one of these
-#' two parameters, but you can't include both.
+#' You can specify the log group to search by using either `logGroupIdentifier` or `logGroupName`. You must include one of these two parameters, but you can't include both.
 #' 
-#' [`filter_log_events`][cloudwatchlogs_filter_log_events] is a paginated
-#' operation. Each page returned can contain up to 1 MB of log events or up
-#' to 10,000 log events. A returned page might only be partially full, or
-#' even empty. For example, if the result of a query would return 15,000
-#' log events, the first page isn't guaranteed to have 10,000 log events
-#' even if they all fit into 1 MB.
+#' [`filter_log_events`][cloudwatchlogs_filter_log_events] is a paginated operation. Each page returned can contain up to 1 MB of log events or up to 10,000 log events. A returned page might only be partially full, or even empty. For example, if the result of a query would return 15,000 log events, the first page isn't guaranteed to have 10,000 log events even if they all fit into 1 MB.
 #' 
-#' Partially full or empty pages don't necessarily mean that pagination is
-#' finished. If the results include a `nextToken`, there might be more log
-#' events available. You can return these additional log events by
-#' providing the nextToken in a subsequent
-#' [`filter_log_events`][cloudwatchlogs_filter_log_events] operation. If
-#' the results don't include a `nextToken`, then pagination is finished.
+#' Partially full or empty pages don't necessarily mean that pagination is finished. If the results include a `nextToken`, there might be more log events available. You can return these additional log events by providing the nextToken in a subsequent [`filter_log_events`][cloudwatchlogs_filter_log_events] operation. If the results don't include a `nextToken`, then pagination is finished.
 #' 
-#' Specifying the `limit` parameter only guarantees that a single page
-#' doesn't return more log events than the specified limit, but it might
-#' return fewer events than the limit. This is the expected API behavior.
+#' Specifying the `limit` parameter only guarantees that a single page doesn't return more log events than the specified limit, but it might return fewer events than the limit. This is the expected API behavior.
 #' 
-#' The returned log events are sorted by event timestamp, the timestamp
-#' when the event was ingested by CloudWatch Logs, and the ID of the
-#' [`put_log_events`][cloudwatchlogs_put_log_events] request.
+#' The returned log events are sorted by event timestamp, the timestamp when the event was ingested by CloudWatch Logs, and the ID of the [`put_log_events`][cloudwatchlogs_put_log_events] request.
 #' 
-#' If you are using CloudWatch cross-account observability, you can use
-#' this operation in a monitoring account and view data from the linked
-#' source accounts. For more information, see [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #' 
-#' If you are using [log
-#' transformation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html),
-#' the [`filter_log_events`][cloudwatchlogs_filter_log_events] operation
-#' returns only the original versions of log events, before they were
-#' transformed. To view the transformed versions, you must use a
-#' [CloudWatch Logs
-#' query.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html)
+#' If you are using [log transformation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html), the [`filter_log_events`][cloudwatchlogs_filter_log_events] operation returns only the original versions of log events, before they were transformed. To view the transformed versions, you must use a [CloudWatch Logs query.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html)
 #'
 #' @usage
 #' cloudwatchlogs_filter_log_events(logGroupName, logGroupIdentifier,
@@ -4054,52 +3473,29 @@ cloudwatchlogs_disassociate_source_from_s3_table_integration <- function(identif
 #'
 #' @param logGroupName The name of the log group to search.
 #' 
-#' You must include either `logGroupIdentifier` or `logGroupName`, but not
-#' both.
-#' @param logGroupIdentifier Specify either the name or ARN of the log group to view log events from.
-#' If the log group is in a source account and you are using a monitoring
-#' account, you must use the log group ARN.
+#' You must include either `logGroupIdentifier` or `logGroupName`, but not both.
+#' @param logGroupIdentifier Specify either the name or ARN of the log group to view log events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.
 #' 
-#' You must include either `logGroupIdentifier` or `logGroupName`, but not
-#' both.
+#' You must include either `logGroupIdentifier` or `logGroupName`, but not both.
 #' @param logStreamNames Filters the results to only logs from the log streams in this list.
 #' 
-#' If you specify a value for both `logStreamNames` and
-#' `logStreamNamePrefix`, the action returns an `InvalidParameterException`
-#' error.
-#' @param logStreamNamePrefix Filters the results to include only events from log streams that have
-#' names starting with this prefix.
+#' If you specify a value for both `logStreamNames` and `logStreamNamePrefix`, the action returns an `InvalidParameterException` error.
+#' @param logStreamNamePrefix Filters the results to include only events from log streams that have names starting with this prefix.
 #' 
-#' If you specify a value for both `logStreamNamePrefix` and
-#' `logStreamNames`, the action returns an `InvalidParameterException`
-#' error.
-#' @param startTime The start of the time range, expressed as the number of milliseconds
-#' after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp before this
-#' time are not returned.
-#' @param endTime The end of the time range, expressed as the number of milliseconds after
-#' `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp later than this time
-#' are not returned.
-#' @param filterPattern The filter pattern to use. For more information, see [Filter and Pattern
-#' Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
+#' If you specify a value for both `logStreamNamePrefix` and `logStreamNames`, the action returns an `InvalidParameterException` error.
+#' @param startTime The start of the time range, expressed as the number of milliseconds after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp before this time are not returned.
+#' @param endTime The end of the time range, expressed as the number of milliseconds after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp later than this time are not returned.
+#' @param filterPattern The filter pattern to use. For more information, see [Filter and Pattern Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
 #' 
 #' If not provided, all the events are matched.
-#' @param nextToken The token for the next set of events to return. (You received this token
-#' from a previous call.)
+#' @param nextToken The token for the next set of events to return. (You received this token from a previous call.)
 #' @param limit The maximum number of events to return. The default is 10,000 events.
-#' @param interleaved If the value is true, the operation attempts to provide responses that
-#' contain events from multiple log streams within the log group,
-#' interleaved in a single response. If the value is false, all the matched
-#' log events in the first log stream are searched first, then those in the
-#' next log stream, and so on.
+#' @param interleaved If the value is true, the operation attempts to provide responses that contain events from multiple log streams within the log group, interleaved in a single response. If the value is false, all the matched log events in the first log stream are searched first, then those in the next log stream, and so on.
 #' 
-#' **Important** As of June 17, 2019, this parameter is ignored and the
-#' value is assumed to be true. The response from this operation always
-#' interleaves events from multiple log streams within a log group.
-#' @param unmask Specify `true` to display the log event fields with all sensitive data
-#' unmasked and visible. The default is `false`.
+#' **Important** As of June 17, 2019, this parameter is ignored and the value is assumed to be true. The response from this operation always interleaves events from multiple log streams within a log group.
+#' @param unmask Specify `true` to display the log event fields with all sensitive data unmasked and visible. The default is `false`.
 #' 
-#' To use this operation with this parameter, you must be signed into an
-#' account with the `logs:Unmask` permission.
+#' To use this operation with this parameter, you must be signed into an account with the `logs:Unmask` permission.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4175,8 +3571,7 @@ cloudwatchlogs_filter_log_events <- function(logGroupName = NULL, logGroupIdenti
 #' @usage
 #' cloudwatchlogs_get_data_protection_policy(logGroupIdentifier)
 #'
-#' @param logGroupIdentifier &#91;required&#93; The name or ARN of the log group that contains the data protection
-#' policy that you want to see.
+#' @param logGroupIdentifier &#91;required&#93; The name or ARN of the log group that contains the data protection policy that you want to see.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4222,23 +3617,11 @@ cloudwatchlogs_get_data_protection_policy <- function(logGroupIdentifier) {
 #' Returns complete information about one logical delivery
 #'
 #' @description
-#' Returns complete information about one logical *delivery*. A delivery is
-#' a connection between a [*delivery
-#' source*](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html)
-#' and a [*delivery
-#' destination*](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html)
-#' .
+#' Returns complete information about one logical *delivery*. A delivery is a connection between a [*delivery source*](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliverySource.html) and a [*delivery destination*](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html) .
 #' 
-#' A delivery source represents an Amazon Web Services resource that sends
-#' logs to an logs delivery destination. The destination can be CloudWatch
-#' Logs, Amazon S3, or Firehose. Only some Amazon Web Services services
-#' support being configured as a delivery source. These services are listed
-#' in [Enable logging from Amazon Web Services
-#' services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
+#' A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose. Only some Amazon Web Services services support being configured as a delivery source. These services are listed in [Enable logging from Amazon Web Services services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
 #' 
-#' You need to specify the delivery `id` in this operation. You can find
-#' the IDs of the deliveries in your account with the
-#' [`describe_deliveries`][cloudwatchlogs_describe_deliveries] operation.
+#' You need to specify the delivery `id` in this operation. You can find the IDs of the deliveries in your account with the [`describe_deliveries`][cloudwatchlogs_describe_deliveries] operation.
 #'
 #' @usage
 #' cloudwatchlogs_get_delivery(id)
@@ -4365,16 +3748,12 @@ cloudwatchlogs_get_delivery_destination <- function(name) {
 #' destination that you specify
 #'
 #' @description
-#' Retrieves the delivery destination policy assigned to the delivery
-#' destination that you specify. For more information about delivery
-#' destinations and their policies, see
-#' [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy].
+#' Retrieves the delivery destination policy assigned to the delivery destination that you specify. For more information about delivery destinations and their policies, see [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy].
 #'
 #' @usage
 #' cloudwatchlogs_get_delivery_destination_policy(deliveryDestinationName)
 #'
-#' @param deliveryDestinationName &#91;required&#93; The name of the delivery destination that you want to retrieve the
-#' policy of.
+#' @param deliveryDestinationName &#91;required&#93; The name of the delivery destination that you want to retrieve the policy of.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4486,15 +3865,12 @@ cloudwatchlogs_get_delivery_source <- function(name) {
 #' OpenSearch Service
 #'
 #' @description
-#' Returns information about one integration between CloudWatch Logs and
-#' OpenSearch Service.
+#' Returns information about one integration between CloudWatch Logs and OpenSearch Service.
 #'
 #' @usage
 #' cloudwatchlogs_get_integration(integrationName)
 #'
-#' @param integrationName &#91;required&#93; The name of the integration that you want to find information about. To
-#' find the name of your integration, use
-#' [`list_integrations`][cloudwatchlogs_list_integrations]
+#' @param integrationName &#91;required&#93; The name of the integration that you want to find information about. To find the name of your integration, use [`list_integrations`][cloudwatchlogs_list_integrations]
 #'
 #' @return
 #' A list with the following syntax:
@@ -4603,16 +3979,12 @@ cloudwatchlogs_get_integration <- function(integrationName) {
 #' Retrieves information about the log anomaly detector that you specify
 #'
 #' @description
-#' Retrieves information about the log anomaly detector that you specify.
-#' The KMS key ARN detected is valid.
+#' Retrieves information about the log anomaly detector that you specify. The KMS key ARN detected is valid.
 #'
 #' @usage
 #' cloudwatchlogs_get_log_anomaly_detector(anomalyDetectorArn)
 #'
-#' @param anomalyDetectorArn &#91;required&#93; The ARN of the anomaly detector to retrieve information about. You can
-#' find the ARNs of log anomaly detectors in your account by using the
-#' [`list_log_anomaly_detectors`][cloudwatchlogs_list_log_anomaly_detectors]
-#' operation.
+#' @param anomalyDetectorArn &#91;required&#93; The ARN of the anomaly detector to retrieve information about. You can find the ARNs of log anomaly detectors in your account by using the [`list_log_anomaly_detectors`][cloudwatchlogs_list_log_anomaly_detectors] operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4666,46 +4038,19 @@ cloudwatchlogs_get_log_anomaly_detector <- function(anomalyDetectorArn) {
 #' Lists log events from the specified log stream
 #'
 #' @description
-#' Lists log events from the specified log stream. You can list all of the
-#' log events or filter using a time range.
+#' Lists log events from the specified log stream. You can list all of the log events or filter using a time range.
 #' 
-#' [`get_log_events`][cloudwatchlogs_get_log_events] is a paginated
-#' operation. Each page returned can contain up to 1 MB of log events or up
-#' to 10,000 log events. A returned page might only be partially full, or
-#' even empty. For example, if the result of a query would return 15,000
-#' log events, the first page isn't guaranteed to have 10,000 log events
-#' even if they all fit into 1 MB.
+#' [`get_log_events`][cloudwatchlogs_get_log_events] is a paginated operation. Each page returned can contain up to 1 MB of log events or up to 10,000 log events. A returned page might only be partially full, or even empty. For example, if the result of a query would return 15,000 log events, the first page isn't guaranteed to have 10,000 log events even if they all fit into 1 MB.
 #' 
-#' Partially full or empty pages don't necessarily mean that pagination is
-#' finished. As long as the `nextBackwardToken` or `nextForwardToken`
-#' returned is NOT equal to the `nextToken` that you passed into the API
-#' call, there might be more log events available. The token that you use
-#' depends on the direction you want to move in along the log stream. The
-#' returned tokens are never null.
+#' Partially full or empty pages don't necessarily mean that pagination is finished. As long as the `nextBackwardToken` or `nextForwardToken` returned is NOT equal to the `nextToken` that you passed into the API call, there might be more log events available. The token that you use depends on the direction you want to move in along the log stream. The returned tokens are never null.
 #' 
-#' If you set `startFromHead` to `true` and you don’t include `endTime` in
-#' your request, you can end up in a situation where the pagination doesn't
-#' terminate. This can happen when the new log events are being added to
-#' the target log streams faster than they are being read. This situation
-#' is a good use case for the CloudWatch Logs [Live
-#' Tail](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html)
-#' feature.
+#' If you set `startFromHead` to `true` and you don’t include `endTime` in your request, you can end up in a situation where the pagination doesn't terminate. This can happen when the new log events are being added to the target log streams faster than they are being read. This situation is a good use case for the CloudWatch Logs [Live Tail](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html) feature.
 #' 
-#' If you are using CloudWatch cross-account observability, you can use
-#' this operation in a monitoring account and view data from the linked
-#' source accounts. For more information, see [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #' 
-#' You can specify the log group to search by using either
-#' `logGroupIdentifier` or `logGroupName`. You must include one of these
-#' two parameters, but you can't include both.
+#' You can specify the log group to search by using either `logGroupIdentifier` or `logGroupName`. You must include one of these two parameters, but you can't include both.
 #' 
-#' If you are using [log
-#' transformation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html),
-#' the [`get_log_events`][cloudwatchlogs_get_log_events] operation returns
-#' only the original versions of log events, before they were transformed.
-#' To view the transformed versions, you must use a [CloudWatch Logs
-#' query.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html)
+#' If you are using [log transformation](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html), the [`get_log_events`][cloudwatchlogs_get_log_events] operation returns only the original versions of log events, before they were transformed. To view the transformed versions, you must use a [CloudWatch Logs query.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html)
 #'
 #' @usage
 #' cloudwatchlogs_get_log_events(logGroupName, logGroupIdentifier,
@@ -4714,38 +4059,21 @@ cloudwatchlogs_get_log_anomaly_detector <- function(anomalyDetectorArn) {
 #'
 #' @param logGroupName The name of the log group.
 #' 
-#' You must include either `logGroupIdentifier` or `logGroupName`, but not
-#' both.
-#' @param logGroupIdentifier Specify either the name or ARN of the log group to view events from. If
-#' the log group is in a source account and you are using a monitoring
-#' account, you must use the log group ARN.
+#' You must include either `logGroupIdentifier` or `logGroupName`, but not both.
+#' @param logGroupIdentifier Specify either the name or ARN of the log group to view events from. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.
 #' 
-#' You must include either `logGroupIdentifier` or `logGroupName`, but not
-#' both.
+#' You must include either `logGroupIdentifier` or `logGroupName`, but not both.
 #' @param logStreamName &#91;required&#93; The name of the log stream.
-#' @param startTime The start of the time range, expressed as the number of milliseconds
-#' after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp equal to this
-#' time or later than this time are included. Events with a timestamp
-#' earlier than this time are not included.
-#' @param endTime The end of the time range, expressed as the number of milliseconds after
-#' `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp equal to or later
-#' than this time are not included.
-#' @param nextToken The token for the next set of items to return. (You received this token
-#' from a previous call.)
-#' @param limit The maximum number of log events returned. If you don't specify a limit,
-#' the default is as many log events as can fit in a response size of 1 MB
-#' (up to 10,000 log events).
-#' @param startFromHead If the value is true, the earliest log events are returned first. If the
-#' value is false, the latest log events are returned first. The default
-#' value is false.
+#' @param startTime The start of the time range, expressed as the number of milliseconds after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp equal to this time or later than this time are included. Events with a timestamp earlier than this time are not included.
+#' @param endTime The end of the time range, expressed as the number of milliseconds after `Jan 1, 1970 00:00:00 UTC`. Events with a timestamp equal to or later than this time are not included.
+#' @param nextToken The token for the next set of items to return. (You received this token from a previous call.)
+#' @param limit The maximum number of log events returned. If you don't specify a limit, the default is as many log events as can fit in a response size of 1 MB (up to 10,000 log events).
+#' @param startFromHead If the value is true, the earliest log events are returned first. If the value is false, the latest log events are returned first. The default value is false.
 #' 
-#' If you are using a previous `nextForwardToken` value as the `nextToken`
-#' in this operation, you must specify `true` for `startFromHead`.
-#' @param unmask Specify `true` to display the log event fields with all sensitive data
-#' unmasked and visible. The default is `false`.
+#' If you are using a previous `nextForwardToken` value as the `nextToken` in this operation, you must specify `true` for `startFromHead`.
+#' @param unmask Specify `true` to display the log event fields with all sensitive data unmasked and visible. The default is `false`.
 #' 
-#' To use this operation with this parameter, you must be signed into an
-#' account with the `logs:Unmask` permission.
+#' To use this operation with this parameter, you must be signed into an account with the `logs:Unmask` permission.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4805,9 +4133,7 @@ cloudwatchlogs_get_log_events <- function(logGroupName = NULL, logGroupIdentifie
 #' Discovers available fields for a specific data source and type
 #'
 #' @description
-#' Discovers available fields for a specific data source and type. The
-#' response includes any field modifications introduced through pipelines,
-#' such as new fields or changed field types.
+#' Discovers available fields for a specific data source and type. The response includes any field modifications introduced through pipelines, such as new fields or changed field types.
 #'
 #' @usage
 #' cloudwatchlogs_get_log_fields(dataSourceName, dataSourceType)
@@ -4868,31 +4194,17 @@ cloudwatchlogs_get_log_fields <- function(dataSourceName, dataSourceType) {
 #' specified log group
 #'
 #' @description
-#' Returns a list of the fields that are included in log events in the
-#' specified log group. Includes the percentage of log events that contain
-#' each field. The search is limited to a time period that you specify.
+#' Returns a list of the fields that are included in log events in the specified log group. Includes the percentage of log events that contain each field. The search is limited to a time period that you specify.
 #' 
-#' This operation is used for discovering fields within log group events.
-#' For discovering fields across data sources, use the GetLogFields
-#' operation.
+#' This operation is used for discovering fields within log group events. For discovering fields across data sources, use the GetLogFields operation.
 #' 
-#' You can specify the log group to search by using either
-#' `logGroupIdentifier` or `logGroupName`. You must specify one of these
-#' parameters, but you can't specify both.
+#' You can specify the log group to search by using either `logGroupIdentifier` or `logGroupName`. You must specify one of these parameters, but you can't specify both.
 #' 
-#' In the results, fields that start with `@@` are fields generated by
-#' CloudWatch Logs. For example, `@@timestamp` is the timestamp of each log
-#' event. For more information about the fields that are generated by
-#' CloudWatch logs, see [Supported Logs and Discovered
-#' Fields](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html).
+#' In the results, fields that start with `@@` are fields generated by CloudWatch Logs. For example, `@@timestamp` is the timestamp of each log event. For more information about the fields that are generated by CloudWatch logs, see [Supported Logs and Discovered Fields](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html).
 #' 
-#' The response results are sorted by the frequency percentage, starting
-#' with the highest percentage.
+#' The response results are sorted by the frequency percentage, starting with the highest percentage.
 #' 
-#' If you are using CloudWatch cross-account observability, you can use
-#' this operation in a monitoring account and view data from the linked
-#' source accounts. For more information, see [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account and view data from the linked source accounts. For more information, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #'
 #' @usage
 #' cloudwatchlogs_get_log_group_fields(logGroupName, time,
@@ -4900,20 +4212,13 @@ cloudwatchlogs_get_log_fields <- function(dataSourceName, dataSourceType) {
 #'
 #' @param logGroupName The name of the log group to search.
 #' 
-#' You must include either `logGroupIdentifier` or `logGroupName`, but not
-#' both.
-#' @param time The time to set as the center of the query. If you specify `time`, the 8
-#' minutes before and 8 minutes after this time are searched. If you omit
-#' `time`, the most recent 15 minutes up to the current time are searched.
+#' You must include either `logGroupIdentifier` or `logGroupName`, but not both.
+#' @param time The time to set as the center of the query. If you specify `time`, the 8 minutes before and 8 minutes after this time are searched. If you omit `time`, the most recent 15 minutes up to the current time are searched.
 #' 
-#' The `time` value is specified as epoch time, which is the number of
-#' seconds since `January 1, 1970, 00:00:00 UTC`.
-#' @param logGroupIdentifier Specify either the name or ARN of the log group to view. If the log
-#' group is in a source account and you are using a monitoring account, you
-#' must specify the ARN.
+#' The `time` value is specified as epoch time, which is the number of seconds since `January 1, 1970, 00:00:00 UTC`.
+#' @param logGroupIdentifier Specify either the name or ARN of the log group to view. If the log group is in a source account and you are using a monitoring account, you must specify the ARN.
 #' 
-#' You must include either `logGroupIdentifier` or `logGroupName`, but not
-#' both.
+#' You must include either `logGroupIdentifier` or `logGroupName`, but not both.
 #'
 #' @return
 #' A list with the following syntax:
@@ -4964,40 +4269,15 @@ cloudwatchlogs_get_log_group_fields <- function(logGroupName = NULL, time = NULL
 #' Retrieves a large logging object (LLO) and streams it back
 #'
 #' @description
-#' Retrieves a large logging object (LLO) and streams it back. This API is
-#' used to fetch the content of large portions of log events that have been
-#' ingested through the PutOpenTelemetryLogs API. When log events contain
-#' fields that would cause the total event size to exceed 1MB, CloudWatch
-#' Logs automatically processes up to 10 fields, starting with the largest
-#' fields. Each field is truncated as needed to keep the total event size
-#' as close to 1MB as possible. The excess portions are stored as Large Log
-#' Objects (LLOs) and these fields are processed separately and LLO
-#' reference system fields (in the format `@@ptr.$[path.to.field]`) are
-#' added. The path in the reference field reflects the original JSON
-#' structure where the large field was located. For example, this could be
-#' `@@ptr.$['input']['message']`, `@@ptr.$['AAA']['BBB']['CCC']['DDD']`,
-#' `@@ptr.$['AAA']`, or any other path matching your log structure.
+#' Retrieves a large logging object (LLO) and streams it back. This API is used to fetch the content of large portions of log events that have been ingested through the PutOpenTelemetryLogs API. When log events contain fields that would cause the total event size to exceed 1MB, CloudWatch Logs automatically processes up to 10 fields, starting with the largest fields. Each field is truncated as needed to keep the total event size as close to 1MB as possible. The excess portions are stored as Large Log Objects (LLOs) and these fields are processed separately and LLO reference system fields (in the format `@@ptr.$[path.to.field]`) are added. The path in the reference field reflects the original JSON structure where the large field was located. For example, this could be `@@ptr.$['input']['message']`, `@@ptr.$['AAA']['BBB']['CCC']['DDD']`, `@@ptr.$['AAA']`, or any other path matching your log structure.
 #' 
-#' The [`get_log_object`][cloudwatchlogs_get_log_object] API routes
-#' requests using SDK host prefix injection. SDK versions released before
-#' April 1, 2026 route to `streaming-logs.Region.amazonaws.com`, which does
-#' not support VPC endpoints. SDK versions released on or after April 1,
-#' 2026 route to `stream-logs.Region.amazonaws.com`, which supports VPC
-#' endpoints. To set up a VPC endpoint for this API, see [Creating a VPC
-#' endpoint for CloudWatch
-#' Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs)
-#' .
+#' The [`get_log_object`][cloudwatchlogs_get_log_object] API routes requests using SDK host prefix injection. SDK versions released before April 1, 2026 route to `streaming-logs.Region.amazonaws.com`, which does not support VPC endpoints. SDK versions released on or after April 1, 2026 route to `stream-logs.Region.amazonaws.com`, which supports VPC endpoints. To set up a VPC endpoint for this API, see [Creating a VPC endpoint for CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs) .
 #'
 #' @usage
 #' cloudwatchlogs_get_log_object(unmask, logObjectPointer)
 #'
-#' @param unmask A boolean flag that indicates whether to unmask sensitive log data. When
-#' set to true, any masked or redacted data in the log object will be
-#' displayed in its original form. Default is false.
-#' @param logObjectPointer &#91;required&#93; A pointer to the specific log object to retrieve. This is a required
-#' parameter that uniquely identifies the log object within CloudWatch
-#' Logs. The pointer is typically obtained from a previous query or filter
-#' operation.
+#' @param unmask A boolean flag that indicates whether to unmask sensitive log data. When set to true, any masked or redacted data in the log object will be displayed in its original form. Default is false.
+#' @param logObjectPointer &#91;required&#93; A pointer to the specific log object to retrieve. This is a required parameter that uniquely identifies the log object within CloudWatch Logs. The pointer is typically obtained from a previous query or filter operation.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5049,27 +4329,17 @@ cloudwatchlogs_get_log_object <- function(unmask = NULL, logObjectPointer) {
 #' Retrieves all of the fields and values of a single log event
 #'
 #' @description
-#' Retrieves all of the fields and values of a single log event. All fields
-#' are retrieved, even if the original query that produced the
-#' `logRecordPointer` retrieved only a subset of fields. Fields are
-#' returned as field name/field value pairs.
+#' Retrieves all of the fields and values of a single log event. All fields are retrieved, even if the original query that produced the `logRecordPointer` retrieved only a subset of fields. Fields are returned as field name/field value pairs.
 #' 
 #' The full unparsed log event is returned within `@@message`.
 #'
 #' @usage
 #' cloudwatchlogs_get_log_record(logRecordPointer, unmask)
 #'
-#' @param logRecordPointer &#91;required&#93; The pointer corresponding to the log event record you want to retrieve.
-#' You get this from the response of a
-#' [`get_query_results`][cloudwatchlogs_get_query_results] operation. In
-#' that response, the value of the `@@ptr` field for a log event is the
-#' value to use as `logRecordPointer` to retrieve that complete log event
-#' record.
-#' @param unmask Specify `true` to display the log event fields with all sensitive data
-#' unmasked and visible. The default is `false`.
+#' @param logRecordPointer &#91;required&#93; The pointer corresponding to the log event record you want to retrieve. You get this from the response of a [`get_query_results`][cloudwatchlogs_get_query_results] operation. In that response, the value of the `@@ptr` field for a log event is the value to use as `logRecordPointer` to retrieve that complete log event record.
+#' @param unmask Specify `true` to display the log event fields with all sensitive data unmasked and visible. The default is `false`.
 #' 
-#' To use this operation with this parameter, you must be signed into an
-#' account with the `logs:Unmask` permission.
+#' To use this operation with this parameter, you must be signed into an account with the `logs:Unmask` permission.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5173,41 +4443,24 @@ cloudwatchlogs_get_lookup_table <- function(lookupTableArn) {
 #' @description
 #' Returns the results from the specified query.
 #' 
-#' Only the fields requested in the query are returned, along with a `@@ptr`
-#' field, which is the identifier for the log record. You can use the value
-#' of `@@ptr` in a [`get_log_record`][cloudwatchlogs_get_log_record]
-#' operation to get the full log record.
+#' Only the fields requested in the query are returned, along with a `@@ptr` field, which is the identifier for the log record. You can use the value of `@@ptr` in a [`get_log_record`][cloudwatchlogs_get_log_record] operation to get the full log record.
 #' 
-#' [`get_query_results`][cloudwatchlogs_get_query_results] does not start
-#' running a query. To run a query, use
-#' [`start_query`][cloudwatchlogs_start_query]. For more information about
-#' how long results of previous queries are available, see [CloudWatch Logs
-#' quotas](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch_limits_cwl.html).
+#' [`get_query_results`][cloudwatchlogs_get_query_results] does not start running a query. To run a query, use [`start_query`][cloudwatchlogs_start_query]. For more information about how long results of previous queries are available, see [CloudWatch Logs quotas](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch_limits_cwl.html).
 #' 
-#' If the value of the `Status` field in the output is `Running`, this
-#' operation returns only partial results. If you see a value of
-#' `Scheduled` or `Running` for the status, you can retry the operation
-#' later to see the final results.
+#' If the value of the `Status` field in the output is `Running`, this operation returns only partial results. If you see a value of `Scheduled` or `Running` for the status, you can retry the operation later to see the final results.
 #' 
-#' This operation is used both for retrieving results from interactive
-#' queries and from automated scheduled query executions. Scheduled queries
-#' use [`get_query_results`][cloudwatchlogs_get_query_results] internally
-#' to retrieve query results for processing and delivery to configured
-#' destinations.
+#' This operation is used both for retrieving results from interactive queries and from automated scheduled query executions. Scheduled queries use [`get_query_results`][cloudwatchlogs_get_query_results] internally to retrieve query results for processing and delivery to configured destinations.
 #' 
-#' If you are using CloudWatch cross-account observability, you can use
-#' this operation in a monitoring account to start queries in linked source
-#' accounts. For more information, see [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' You can retrieve up to 100,000 log event results from a query, if available, by using pagination. Use the `nextToken` returned in the response to request additional pages of results, with each page returning up to 10,000 log events.
+#' 
+#' If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to start queries in linked source accounts. For more information, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #'
 #' @usage
 #' cloudwatchlogs_get_query_results(queryId, nextToken, maxItems)
 #'
 #' @param queryId &#91;required&#93; The ID number of the query.
-#' @param nextToken The token for the next set of items to return. The token expires after 1
-#' hour.
-#' @param maxItems The maximum number of log events to return in the response. The maximum
-#' is 10,000 log events.
+#' @param nextToken The token for the next set of items to return. The token expires after 1 hour.
+#' @param maxItems The maximum number of log events to return in the response. The maximum is 10,000 log events per request. You can retrieve up to 100,000 log event results from a query by paginating with the `nextToken`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5273,8 +4526,7 @@ cloudwatchlogs_get_query_results <- function(queryId, nextToken = NULL, maxItems
 #' configuration, execution status, and metadata
 #'
 #' @description
-#' Retrieves details about a specific scheduled query, including its
-#' configuration, execution status, and metadata.
+#' Retrieves details about a specific scheduled query, including its configuration, execution status, and metadata.
 #'
 #' @usage
 #' cloudwatchlogs_get_scheduled_query(identifier)
@@ -5350,8 +4602,7 @@ cloudwatchlogs_get_scheduled_query <- function(identifier) {
 #' time range, including query results and destination processing status
 #'
 #' @description
-#' Retrieves the execution history of a scheduled query within a specified
-#' time range, including query results and destination processing status.
+#' Retrieves the execution history of a scheduled query within a specified time range, including query results and destination processing status.
 #'
 #' @usage
 #' cloudwatchlogs_get_scheduled_query_history(identifier, startTime,
@@ -5360,11 +4611,9 @@ cloudwatchlogs_get_scheduled_query <- function(identifier) {
 #' @param identifier &#91;required&#93; The ARN or name of the scheduled query to retrieve history for.
 #' @param startTime &#91;required&#93; The start time for the history query in Unix epoch format.
 #' @param endTime &#91;required&#93; The end time for the history query in Unix epoch format.
-#' @param executionStatuses An array of execution statuses to filter the history results. Only
-#' executions with the specified statuses are returned.
-#' @param maxResults The maximum number of history records to return. Valid range is 1 to
-#' 1000.
-#' @param nextToken 
+#' @param executionStatuses An array of execution statuses to filter the history results. Only executions with the specified statuses are returned.
+#' @param maxResults The maximum number of history records to return. Valid range is 1 to 1000.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5435,19 +4684,14 @@ cloudwatchlogs_get_scheduled_query_history <- function(identifier, startTime, en
 #' log group
 #'
 #' @description
-#' Returns the information about the log transformer associated with this
-#' log group.
+#' Returns the information about the log transformer associated with this log group.
 #' 
-#' This operation returns data only for transformers created at the log
-#' group level. To get information for an account-level transformer, use
-#' [`describe_account_policies`][cloudwatchlogs_describe_account_policies].
+#' This operation returns data only for transformers created at the log group level. To get information for an account-level transformer, use [`describe_account_policies`][cloudwatchlogs_describe_account_policies].
 #'
 #' @usage
 #' cloudwatchlogs_get_transformer(logGroupIdentifier)
 #'
-#' @param logGroupIdentifier &#91;required&#93; Specify either the name or ARN of the log group to return transformer
-#' information for. If the log group is in a source account and you are
-#' using a monitoring account, you must use the log group ARN.
+#' @param logGroupIdentifier &#91;required&#93; Specify either the name or ARN of the log group to return transformer information for. If the log group is in a source account and you are using a monitoring account, you must use the log group ARN.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5645,65 +4889,35 @@ cloudwatchlogs_get_transformer <- function(logGroupIdentifier) {
 #' specified data source characteristics
 #'
 #' @description
-#' Returns an aggregate summary of all log groups in the Region grouped by
-#' specified data source characteristics. Supports optional filtering by
-#' log group class, name patterns, and data sources. If you perform this
-#' action in a monitoring account, you can also return aggregated summaries
-#' of log groups from source accounts that are linked to the monitoring
-#' account. For more information about using cross-account observability to
-#' set up monitoring accounts and source accounts, see [CloudWatch
-#' cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' Returns an aggregate summary of all log groups in the Region grouped by specified data source characteristics. Supports optional filtering by log group class, name patterns, and data sources. If you perform this action in a monitoring account, you can also return aggregated summaries of log groups from source accounts that are linked to the monitoring account. For more information about using cross-account observability to set up monitoring accounts and source accounts, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #' 
-#' The operation aggregates log groups by data source name and type and
-#' optionally format, providing counts of log groups that share these
-#' characteristics. The operation paginates results. By default, it returns
-#' up to 50 results and includes a token to retrieve more results.
+#' The operation aggregates log groups by data source name and type and optionally format, providing counts of log groups that share these characteristics. The operation paginates results. By default, it returns up to 50 results and includes a token to retrieve more results.
 #'
 #' @usage
 #' cloudwatchlogs_list_aggregate_log_group_summaries(accountIdentifiers,
 #'   includeLinkedAccounts, logGroupClass, logGroupNamePattern, dataSources,
 #'   groupBy, nextToken, limit)
 #'
-#' @param accountIdentifiers When `includeLinkedAccounts` is set to `true`, use this parameter to
-#' specify the list of accounts to search. You can specify as many as 20
-#' account IDs in the array.
-#' @param includeLinkedAccounts If you are using a monitoring account, set this to `true` to have the
-#' operation return log groups in the accounts listed in
-#' `accountIdentifiers`.
+#' @param accountIdentifiers When `includeLinkedAccounts` is set to `true`, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array.
+#' @param includeLinkedAccounts If you are using a monitoring account, set this to `true` to have the operation return log groups in the accounts listed in `accountIdentifiers`.
 #' 
-#' If this parameter is set to `true` and `accountIdentifiers` contains a
-#' null value, the operation returns all log groups in the monitoring
-#' account and all log groups in all source accounts that are linked to the
-#' monitoring account.
+#' If this parameter is set to `true` and `accountIdentifiers` contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account.
 #' 
 #' The default for this parameter is `false`.
-#' @param logGroupClass Filters the results by log group class to include only log groups of the
-#' specified class.
-#' @param logGroupNamePattern Use this parameter to limit the returned log groups to only those with
-#' names that match the pattern that you specify. This parameter is a
-#' regular expression that can match prefixes and substrings, and supports
-#' wildcard matching and matching multiple patterns, as in the following
-#' examples.
+#' @param logGroupClass Filters the results by log group class to include only log groups of the specified class.
+#' @param logGroupNamePattern Use this parameter to limit the returned log groups to only those with names that match the pattern that you specify. This parameter is a regular expression that can match prefixes and substrings, and supports wildcard matching and matching multiple patterns, as in the following examples.
 #' 
 #' -   Use `^` to match log group names by prefix.
 #' 
-#' -   For a substring match, specify the string to match. All matches are
-#'     case sensitive
+#' -   For a substring match, specify the string to match. All matches are case sensitive
 #' 
-#' -   To match multiple patterns, separate them with a `|` as in the
-#'     example `^/aws/lambda|discovery`
+#' -   To match multiple patterns, separate them with a `|` as in the example `^/aws/lambda|discovery`
 #' 
-#' You can specify as many as five different regular expression patterns in
-#' this field, each of which must be between 3 and 24 characters. You can
-#' include the `^` symbol as many as five times, and include the `|` symbol
-#' as many as four times.
-#' @param dataSources Filters the results by data source characteristics to include only log
-#' groups associated with the specified data sources.
+#' You can specify as many as five different regular expression patterns in this field, each of which must be between 3 and 24 characters. You can include the `^` symbol as many as five times, and include the `|` symbol as many as four times.
+#' @param dataSources Filters the results by data source characteristics to include only log groups associated with the specified data sources.
 #' @param groupBy &#91;required&#93; Specifies how to group the log groups in the summary.
-#' @param nextToken 
-#' @param limit The maximum number of aggregated summaries to return. If you omit this
-#' parameter, the default is up to 50 aggregated summaries.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param limit The maximum number of aggregated summaries to return. If you omit this parameter, the default is up to 50 aggregated summaries.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5772,21 +4986,16 @@ cloudwatchlogs_list_aggregate_log_group_summaries <- function(accountIdentifiers
 #' Returns a list of anomalies that log anomaly detectors have found
 #'
 #' @description
-#' Returns a list of anomalies that log anomaly detectors have found. For
-#' details about the structure format of each anomaly object that is
-#' returned, see the example in this section.
+#' Returns a list of anomalies that log anomaly detectors have found. For details about the structure format of each anomaly object that is returned, see the example in this section.
 #'
 #' @usage
 #' cloudwatchlogs_list_anomalies(anomalyDetectorArn, suppressionState,
 #'   limit, nextToken)
 #'
-#' @param anomalyDetectorArn Use this to optionally limit the results to only the anomalies found by
-#' a certain anomaly detector.
-#' @param suppressionState You can specify this parameter if you want to the operation to return
-#' only anomalies that are currently either suppressed or unsuppressed.
-#' @param limit The maximum number of items to return. If you don't specify a value, the
-#' default maximum value of 50 items is used.
-#' @param nextToken 
+#' @param anomalyDetectorArn Use this to optionally limit the results to only the anomalies found by a certain anomaly detector.
+#' @param suppressionState You can specify this parameter if you want to the operation to return only anomalies that are currently either suppressed or unsuppressed.
+#' @param limit The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5876,20 +5085,15 @@ cloudwatchlogs_list_anomalies <- function(anomalyDetectorArn = NULL, suppression
 #' services in this account
 #'
 #' @description
-#' Returns a list of integrations between CloudWatch Logs and other
-#' services in this account. Currently, only one integration can be created
-#' in an account, and this integration must be with OpenSearch Service.
+#' Returns a list of integrations between CloudWatch Logs and other services in this account. Currently, only one integration can be created in an account, and this integration must be with OpenSearch Service.
 #'
 #' @usage
 #' cloudwatchlogs_list_integrations(integrationNamePrefix, integrationType,
 #'   integrationStatus)
 #'
-#' @param integrationNamePrefix To limit the results to integrations that start with a certain name
-#' prefix, specify that name prefix here.
-#' @param integrationType To limit the results to integrations of a certain type, specify that
-#' type here.
-#' @param integrationStatus To limit the results to integrations with a certain status, specify that
-#' status here.
+#' @param integrationNamePrefix To limit the results to integrations that start with a certain name prefix, specify that name prefix here.
+#' @param integrationType To limit the results to integrations of a certain type, specify that type here.
+#' @param integrationStatus To limit the results to integrations with a certain status, specify that status here.
 #'
 #' @return
 #' A list with the following syntax:
@@ -5947,11 +5151,9 @@ cloudwatchlogs_list_integrations <- function(integrationNamePrefix = NULL, integ
 #' cloudwatchlogs_list_log_anomaly_detectors(filterLogGroupArn, limit,
 #'   nextToken)
 #'
-#' @param filterLogGroupArn Use this to optionally filter the results to only include anomaly
-#' detectors that are associated with the specified log group.
-#' @param limit The maximum number of items to return. If you don't specify a value, the
-#' default maximum value of 50 items is used.
-#' @param nextToken 
+#' @param filterLogGroupArn Use this to optionally filter the results to only include anomaly detectors that are associated with the specified log group.
+#' @param limit The maximum number of items to return. If you don't specify a value, the default maximum value of 50 items is used.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6013,75 +5215,38 @@ cloudwatchlogs_list_log_anomaly_detectors <- function(filterLogGroupArn = NULL, 
 #' Returns a list of log groups in the Region in your account
 #'
 #' @description
-#' Returns a list of log groups in the Region in your account. If you are
-#' performing this action in a monitoring account, you can choose to also
-#' return log groups from source accounts that are linked to the monitoring
-#' account. For more information about using cross-account observability to
-#' set up monitoring accounts and source accounts, see [CloudWatch
-#' cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
+#' Returns a list of log groups in the Region in your account. If you are performing this action in a monitoring account, you can choose to also return log groups from source accounts that are linked to the monitoring account. For more information about using cross-account observability to set up monitoring accounts and source accounts, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
 #' 
-#' You can optionally filter the results by log group class, log group name
-#' pattern, field indexes, data sources, field index names, or log group
-#' tags. If you specify more than one filter type, the results include log
-#' groups that satisfy all filters.
+#' You can optionally filter the results by log group class, log group name pattern, field indexes, data sources, field index names, or log group tags. If you specify more than one filter type, the results include log groups that satisfy all filters.
 #' 
-#' This operation is paginated. By default, your first use of this
-#' operation returns 50 results, and includes a token to use in a
-#' subsequent operation to return more results.
+#' This operation is paginated. By default, your first use of this operation returns 50 results, and includes a token to use in a subsequent operation to return more results.
 #'
 #' @usage
 #' cloudwatchlogs_list_log_groups(logGroupNamePattern, logGroupClass,
 #'   includeLinkedAccounts, accountIdentifiers, nextToken, limit,
 #'   dataSources, fieldIndexNames, logGroupTags)
 #'
-#' @param logGroupNamePattern Use this parameter to limit the returned log groups to only those with
-#' names that match the pattern that you specify. This parameter is a
-#' regular expression that can match prefixes and substrings, and supports
-#' wildcard matching and matching multiple patterns, as in the following
-#' examples.
+#' @param logGroupNamePattern Use this parameter to limit the returned log groups to only those with names that match the pattern that you specify. This parameter is a regular expression that can match prefixes and substrings, and supports wildcard matching and matching multiple patterns, as in the following examples.
 #' 
 #' -   Use `^` to match log group names by prefix.
 #' 
-#' -   For a substring match, specify the string to match. All matches are
-#'     case sensitive
+#' -   For a substring match, specify the string to match. All matches are case sensitive
 #' 
-#' -   To match multiple patterns, separate them with a `|` as in the
-#'     example `^/aws/lambda|discovery`
+#' -   To match multiple patterns, separate them with a `|` as in the example `^/aws/lambda|discovery`
 #' 
-#' You can specify as many as five different regular expression patterns in
-#' this field, each of which must be between 3 and 24 characters. You can
-#' include the `^` symbol as many as five times, and include the `|` symbol
-#' as many as four times.
-#' @param logGroupClass Use this parameter to limit the results to only those log groups in the
-#' specified log group class. If you omit this parameter, log groups of all
-#' classes can be returned.
-#' @param includeLinkedAccounts If you are using a monitoring account, set this to `true` to have the
-#' operation return log groups in the accounts listed in
-#' `accountIdentifiers`.
+#' You can specify as many as five different regular expression patterns in this field, each of which must be between 3 and 24 characters. You can include the `^` symbol as many as five times, and include the `|` symbol as many as four times.
+#' @param logGroupClass Use this parameter to limit the results to only those log groups in the specified log group class. If you omit this parameter, log groups of all classes can be returned.
+#' @param includeLinkedAccounts If you are using a monitoring account, set this to `true` to have the operation return log groups in the accounts listed in `accountIdentifiers`.
 #' 
-#' If this parameter is set to `true` and `accountIdentifiers` contains a
-#' null value, the operation returns all log groups in the monitoring
-#' account and all log groups in all source accounts that are linked to the
-#' monitoring account.
+#' If this parameter is set to `true` and `accountIdentifiers` contains a null value, the operation returns all log groups in the monitoring account and all log groups in all source accounts that are linked to the monitoring account.
 #' 
 #' The default for this parameter is `false`.
-#' @param accountIdentifiers When `includeLinkedAccounts` is set to `true`, use this parameter to
-#' specify the list of accounts to search. You can specify as many as 20
-#' account IDs in the array.
-#' @param nextToken 
-#' @param limit The maximum number of log groups to return. If you omit this parameter,
-#' the default is up to 50 log groups.
-#' @param dataSources An array of data source filters to filter log groups by their associated
-#' data sources. You can filter by data source name, type, or both.
-#' Multiple filters within the same dimension are combined with OR logic,
-#' while filters across different dimensions are combined with AND logic.
-#' @param fieldIndexNames An array of field index names to filter log groups that have specific
-#' field indexes. Only log groups containing all specified field indexes
-#' are returned. You can specify 1 to 20 field index names, each with 1 to
-#' 512 characters.
-#' @param logGroupTags An array of tag filters to return only log groups that have specific
-#' tags. Multiple filters are combined with AND logic.
+#' @param accountIdentifiers When `includeLinkedAccounts` is set to `true`, use this parameter to specify the list of accounts to search. You can specify as many as 20 account IDs in the array.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param limit The maximum number of log groups to return. If you omit this parameter, the default is up to 50 log groups.
+#' @param dataSources An array of data source filters to filter log groups by their associated data sources. You can filter by data source name, type, or both. Multiple filters within the same dimension are combined with OR logic, while filters across different dimensions are combined with AND logic.
+#' @param fieldIndexNames An array of field index names to filter log groups that have specific field indexes. Only log groups containing all specified field indexes are returned. You can specify 1 to 20 field index names, each with 1 to 512 characters.
+#' @param logGroupTags An array of tag filters to return only log groups that have specific tags. Multiple filters are combined with AND logic.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6157,21 +5322,15 @@ cloudwatchlogs_list_log_groups <- function(logGroupNamePattern = NULL, logGroupC
 #' CloudWatch Logs Insights query
 #'
 #' @description
-#' Returns a list of the log groups that were analyzed during a single
-#' CloudWatch Logs Insights query. This can be useful for queries that use
-#' log group name prefixes or the `filterIndex` command, because the log
-#' groups are dynamically selected in these cases.
+#' Returns a list of the log groups that were analyzed during a single CloudWatch Logs Insights query. This can be useful for queries that use log group name prefixes or the `filterIndex` command, because the log groups are dynamically selected in these cases.
 #' 
-#' For more information about field indexes, see [Create field indexes to
-#' improve query performance and reduce
-#' costs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html).
+#' For more information about field indexes, see [Create field indexes to improve query performance and reduce costs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html).
 #'
 #' @usage
 #' cloudwatchlogs_list_log_groups_for_query(queryId, nextToken, maxResults)
 #'
-#' @param queryId &#91;required&#93; The ID of the query to use. This query ID is from the response to your
-#' [`start_query`][cloudwatchlogs_start_query] operation.
-#' @param nextToken 
+#' @param queryId &#91;required&#93; The ID of the query to use. This query ID is from the response to your [`start_query`][cloudwatchlogs_start_query] operation.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
 #' @param maxResults Limits the number of returned log groups to the specified number.
 #'
 #' @return
@@ -6221,17 +5380,14 @@ cloudwatchlogs_list_log_groups_for_query <- function(queryId, nextToken = NULL, 
 #' Lists all scheduled queries in your account and region
 #'
 #' @description
-#' Lists all scheduled queries in your account and region. You can filter
-#' results by state to show only enabled or disabled queries.
+#' Lists all scheduled queries in your account and region. You can filter results by state to show only enabled or disabled queries.
 #'
 #' @usage
 #' cloudwatchlogs_list_scheduled_queries(maxResults, nextToken, state)
 #'
-#' @param maxResults The maximum number of scheduled queries to return. Valid range is 1 to
-#' 1000.
-#' @param nextToken 
-#' @param state Filter scheduled queries by state. Valid values are `ENABLED` and
-#' `DISABLED`. If not specified, all scheduled queries are returned.
+#' @param maxResults The maximum number of scheduled queries to return. Valid range is 1 to 1000.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
+#' @param state Filter scheduled queries by state. Valid values are `ENABLED` and `DISABLED`. If not specified, all scheduled queries are returned.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6300,19 +5456,15 @@ cloudwatchlogs_list_scheduled_queries <- function(maxResults = NULL, nextToken =
 #' query access
 #'
 #' @description
-#' Returns a list of data source associations for a specified S3 Table
-#' Integration, showing which data sources are currently associated for
-#' query access.
+#' Returns a list of data source associations for a specified S3 Table Integration, showing which data sources are currently associated for query access.
 #'
 #' @usage
 #' cloudwatchlogs_list_sources_for_s3_table_integration(integrationArn,
 #'   maxResults, nextToken)
 #'
-#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the S3 Table Integration to list
-#' associations for.
-#' @param maxResults The maximum number of associations to return in a single call. Valid
-#' range is 1 to 100.
-#' @param nextToken 
+#' @param integrationArn &#91;required&#93; The Amazon Resource Name (ARN) of the S3 Table Integration to list associations for.
+#' @param maxResults The maximum number of associations to return in a single call. Valid range is 1 to 100.
+#' @param nextToken The token for the next set of items to return. The token expires after 24 hours.
 #'
 #' @return
 #' A list with the following syntax:
@@ -6371,23 +5523,18 @@ cloudwatchlogs_list_sources_for_s3_table_integration <- function(integrationArn,
 #' Displays the tags associated with a CloudWatch Logs resource
 #'
 #' @description
-#' Displays the tags associated with a CloudWatch Logs resource. Currently,
-#' log groups and destinations support tagging.
+#' Displays the tags associated with a CloudWatch Logs resource. Currently, log groups and destinations support tagging.
 #'
 #' @usage
 #' cloudwatchlogs_list_tags_for_resource(resourceArn)
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource that you want to view tags for.
 #' 
-#' The ARN format of a log group is
-#' `arn:aws:logs:Region:account-id:log-group:log-group-name `
+#' The ARN format of a log group is `arn:aws:logs:Region:account-id:log-group:log-group-name `
 #' 
-#' The ARN format of a destination is
-#' `arn:aws:logs:Region:account-id:destination:destination-name `
+#' The ARN format of a destination is `arn:aws:logs:Region:account-id:destination:destination-name `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -6433,10 +5580,7 @@ cloudwatchlogs_list_tags_for_resource <- function(resourceArn) {
 #' The ListTagsLogGroup operation is on the path to deprecation
 #'
 #' @description
-#' The ListTagsLogGroup operation is on the path to deprecation. We
-#' recommend that you use
-#' [`list_tags_for_resource`][cloudwatchlogs_list_tags_for_resource]
-#' instead.
+#' The ListTagsLogGroup operation is on the path to deprecation. We recommend that you use [`list_tags_for_resource`][cloudwatchlogs_list_tags_for_resource] instead.
 #' 
 #' Lists the tags for the specified log group.
 #'
@@ -6492,224 +5636,87 @@ cloudwatchlogs_list_tags_log_group <- function(logGroupName) {
 #' source name and type combination in the account
 #'
 #' @description
-#' Creates an account-level data protection policy, subscription filter
-#' policy, field index policy, transformer policy, or metric extraction
-#' policy that applies to all log groups, a subset of log groups, or a data
-#' source name and type combination in the account.
+#' Creates an account-level data protection policy, subscription filter policy, field index policy, transformer policy, or metric extraction policy that applies to all log groups, a subset of log groups, or a data source name and type combination in the account.
 #' 
-#' For field index policies, you can configure indexed fields as *facets*
-#' to enable interactive exploration of your logs. Facets provide value
-#' distributions and counts for indexed fields in the CloudWatch Logs
-#' Insights console without requiring query execution. For more
-#' information, see [Use facets to group and explore
-#' logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html).
+#' For field index policies, you can configure indexed fields as *facets* to enable interactive exploration of your logs. Facets provide value distributions and counts for indexed fields in the CloudWatch Logs Insights console without requiring query execution. For more information, see [Use facets to group and explore logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html).
 #' 
-#' To use this operation, you must be signed on with the correct
-#' permissions depending on the type of policy that you are creating.
+#' To use this operation, you must be signed on with the correct permissions depending on the type of policy that you are creating.
 #' 
-#' -   To create a data protection policy, you must have the
-#'     `logs:PutDataProtectionPolicy` and `logs:PutAccountPolicy`
-#'     permissions.
+#' -   To create a data protection policy, you must have the `logs:PutDataProtectionPolicy` and `logs:PutAccountPolicy` permissions.
 #' 
-#' -   To create a subscription filter policy, you must have the
-#'     `logs:PutSubscriptionFilter` and `logs:PutAccountPolicy`
-#'     permissions.
+#' -   To create a subscription filter policy, you must have the `logs:PutSubscriptionFilter` and `logs:PutAccountPolicy` permissions.
 #' 
-#' -   To create a transformer policy, you must have the
-#'     `logs:PutTransformer` and `logs:PutAccountPolicy` permissions.
+#' -   To create a transformer policy, you must have the `logs:PutTransformer` and `logs:PutAccountPolicy` permissions.
 #' 
-#' -   To create a field index policy, you must have the
-#'     `logs:PutIndexPolicy` and `logs:PutAccountPolicy` permissions.
+#' -   To create a field index policy, you must have the `logs:PutIndexPolicy` and `logs:PutAccountPolicy` permissions.
 #' 
-#' -   To configure facets for field index policies, you must have the
-#'     `logs:PutIndexPolicy` and `logs:PutAccountPolicy` permissions.
+#' -   To configure facets for field index policies, you must have the `logs:PutIndexPolicy` and `logs:PutAccountPolicy` permissions.
 #' 
-#' -   To create a metric extraction policy, you must have the
-#'     `logs:PutMetricExtractionPolicy` and `logs:PutAccountPolicy`
-#'     permissions.
+#' -   To create a metric extraction policy, you must have the `logs:PutMetricExtractionPolicy` and `logs:PutAccountPolicy` permissions.
 #' 
 #' **Data protection policy**
 #' 
-#' A data protection policy can help safeguard sensitive data that's
-#' ingested by your log groups by auditing and masking the sensitive log
-#' data. Each account can have only one account-level data protection
-#' policy.
+#' A data protection policy can help safeguard sensitive data that's ingested by your log groups by auditing and masking the sensitive log data. Each account can have only one account-level data protection policy.
 #' 
-#' Sensitive data is detected and masked when it is ingested into a log
-#' group. When you set a data protection policy, log events ingested into
-#' the log groups before that time are not masked.
+#' Sensitive data is detected and masked when it is ingested into a log group. When you set a data protection policy, log events ingested into the log groups before that time are not masked.
 #' 
-#' If you use [`put_account_policy`][cloudwatchlogs_put_account_policy] to
-#' create a data protection policy for your whole account, it applies to
-#' both existing log groups and all log groups that are created later in
-#' this account. The account-level policy is applied to existing log groups
-#' with eventual consistency. It might take up to 5 minutes before
-#' sensitive data in existing log groups begins to be masked.
+#' If you use [`put_account_policy`][cloudwatchlogs_put_account_policy] to create a data protection policy for your whole account, it applies to both existing log groups and all log groups that are created later in this account. The account-level policy is applied to existing log groups with eventual consistency. It might take up to 5 minutes before sensitive data in existing log groups begins to be masked.
 #' 
-#' By default, when a user views a log event that includes masked data, the
-#' sensitive data is replaced by asterisks. A user who has the
-#' `logs:Unmask` permission can use a
-#' [`get_log_events`][cloudwatchlogs_get_log_events] or
-#' [`filter_log_events`][cloudwatchlogs_filter_log_events] operation with
-#' the `unmask` parameter set to `true` to view the unmasked log events.
-#' Users with the `logs:Unmask` can also view unmasked data in the
-#' CloudWatch Logs console by running a CloudWatch Logs Insights query with
-#' the `unmask` query command.
+#' By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks. A user who has the `logs:Unmask` permission can use a [`get_log_events`][cloudwatchlogs_get_log_events] or [`filter_log_events`][cloudwatchlogs_filter_log_events] operation with the `unmask` parameter set to `true` to view the unmasked log events. Users with the `logs:Unmask` can also view unmasked data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with the `unmask` query command.
 #' 
-#' For more information, including a list of types of data that can be
-#' audited and masked, see [Protect sensitive log data with
-#' masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
+#' For more information, including a list of types of data that can be audited and masked, see [Protect sensitive log data with masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
 #' 
-#' To use the [`put_account_policy`][cloudwatchlogs_put_account_policy]
-#' operation for a data protection policy, you must be signed on with the
-#' `logs:PutDataProtectionPolicy` and `logs:PutAccountPolicy` permissions.
+#' To use the [`put_account_policy`][cloudwatchlogs_put_account_policy] operation for a data protection policy, you must be signed on with the `logs:PutDataProtectionPolicy` and `logs:PutAccountPolicy` permissions.
 #' 
-#' The [`put_account_policy`][cloudwatchlogs_put_account_policy] operation
-#' applies to all log groups in the account. You can use
-#' [`put_data_protection_policy`][cloudwatchlogs_put_data_protection_policy]
-#' to create a data protection policy that applies to just one log group.
-#' If a log group has its own data protection policy and the account also
-#' has an account-level data protection policy, then the two policies are
-#' cumulative. Any sensitive term specified in either policy is masked.
+#' The [`put_account_policy`][cloudwatchlogs_put_account_policy] operation applies to all log groups in the account. You can use [`put_data_protection_policy`][cloudwatchlogs_put_data_protection_policy] to create a data protection policy that applies to just one log group. If a log group has its own data protection policy and the account also has an account-level data protection policy, then the two policies are cumulative. Any sensitive term specified in either policy is masked.
 #' 
 #' **Subscription filter policy**
 #' 
-#' A subscription filter policy sets up a real-time feed of log events from
-#' CloudWatch Logs to other Amazon Web Services services. Account-level
-#' subscription filter policies apply to both existing log groups and log
-#' groups that are created later in this account. Supported destinations
-#' are Kinesis Data Streams, Firehose, and Lambda. When log events are sent
-#' to the receiving service, they are Base64 encoded and compressed with
-#' the GZIP format.
+#' A subscription filter policy sets up a real-time feed of log events from CloudWatch Logs to other Amazon Web Services services. Account-level subscription filter policies apply to both existing log groups and log groups that are created later in this account. Supported destinations are Kinesis Data Streams, Firehose, and Lambda. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.
 #' 
 #' The following destinations are supported for subscription filters:
 #' 
-#' -   An Kinesis Data Streams data stream in the same account as the
-#'     subscription policy, for same-account delivery.
+#' -   An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.
 #' 
-#' -   An Firehose data stream in the same account as the subscription
-#'     policy, for same-account delivery.
+#' -   An Firehose data stream in the same account as the subscription policy, for same-account delivery.
 #' 
-#' -   A Lambda function in the same account as the subscription policy,
-#'     for same-account delivery.
+#' -   A Lambda function in the same account as the subscription policy, for same-account delivery.
 #' 
-#' -   A logical destination in a different account created with
-#'     [`put_destination`][cloudwatchlogs_put_destination], for
-#'     cross-account delivery. Kinesis Data Streams and Firehose are
-#'     supported as logical destinations.
+#' -   A logical destination in a different account created with [`put_destination`][cloudwatchlogs_put_destination], for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical destinations.
 #' 
-#' Each account can have one account-level subscription filter policy per
-#' Region. If you are updating an existing filter, you must specify the
-#' correct name in `PolicyName`. To perform a
-#' [`put_account_policy`][cloudwatchlogs_put_account_policy] subscription
-#' filter operation for any destination except a Lambda function, you must
-#' also have the `iam:PassRole` permission.
+#' Each account can have one account-level subscription filter policy per Region. If you are updating an existing filter, you must specify the correct name in `PolicyName`. To perform a [`put_account_policy`][cloudwatchlogs_put_account_policy] subscription filter operation for any destination except a Lambda function, you must also have the `iam:PassRole` permission.
 #' 
 #' **Transformer policy**
 #' 
-#' Creates or updates a *log transformer policy* for your account. You use
-#' log transformers to transform log events into a different format, making
-#' them easier for you to process and analyze. You can also transform logs
-#' from different sources into standardized formats that contain relevant,
-#' source-specific information. After you have created a transformer,
-#' CloudWatch Logs performs this transformation at the time of log
-#' ingestion. You can then refer to the transformed versions of the logs
-#' during operations such as querying with CloudWatch Logs Insights or
-#' creating metric filters or subscription filters.
+#' Creates or updates a *log transformer policy* for your account. You use log transformers to transform log events into a different format, making them easier for you to process and analyze. You can also transform logs from different sources into standardized formats that contain relevant, source-specific information. After you have created a transformer, CloudWatch Logs performs this transformation at the time of log ingestion. You can then refer to the transformed versions of the logs during operations such as querying with CloudWatch Logs Insights or creating metric filters or subscription filters.
 #' 
-#' You can also use a transformer to copy metadata from metadata keys into
-#' the log events themselves. This metadata can include log group name, log
-#' stream name, account ID and Region.
+#' You can also use a transformer to copy metadata from metadata keys into the log events themselves. This metadata can include log group name, log stream name, account ID and Region.
 #' 
-#' A transformer for a log group is a series of processors, where each
-#' processor applies one type of transformation to the log events ingested
-#' into this log group. For more information about the available processors
-#' to use in a transformer, see [Processors that you can
-#' use](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors).
+#' A transformer for a log group is a series of processors, where each processor applies one type of transformation to the log events ingested into this log group. For more information about the available processors to use in a transformer, see [Processors that you can use](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors).
 #' 
-#' Having log events in standardized format enables visibility across your
-#' applications for your log analysis, reporting, and alarming needs.
-#' CloudWatch Logs provides transformation for common log types with
-#' out-of-the-box transformation templates for major Amazon Web Services
-#' log sources such as VPC flow logs, Lambda, and Amazon RDS. You can use
-#' pre-built transformation templates or create custom transformation
-#' policies.
+#' Having log events in standardized format enables visibility across your applications for your log analysis, reporting, and alarming needs. CloudWatch Logs provides transformation for common log types with out-of-the-box transformation templates for major Amazon Web Services log sources such as VPC flow logs, Lambda, and Amazon RDS. You can use pre-built transformation templates or create custom transformation policies.
 #' 
-#' You can create transformers only for the log groups in the Standard log
-#' class.
+#' You can create transformers only for the log groups in the Standard log class.
 #' 
-#' You can have one account-level transformer policy that applies to all
-#' log groups in the account. Or you can create as many as 20 account-level
-#' transformer policies that are each scoped to a subset of log groups with
-#' the `selectionCriteria` parameter. If you have multiple account-level
-#' transformer policies with selection criteria, no two of them can use the
-#' same or overlapping log group name prefixes. For example, if you have
-#' one policy filtered to log groups that start with `my-log`, you can't
-#' have another transformer policy filtered to `my-logpprod` or
-#' `my-logging`.
+#' You can have one account-level transformer policy that applies to all log groups in the account. Or you can create as many as 20 account-level transformer policies that are each scoped to a subset of log groups with the `selectionCriteria` parameter. If you have multiple account-level transformer policies with selection criteria, no two of them can use the same or overlapping log group name prefixes. For example, if you have one policy filtered to log groups that start with `my-log`, you can't have another transformer policy filtered to `my-logpprod` or `my-logging`.
 #' 
-#' You can also set up a transformer at the log-group level. For more
-#' information, see [`put_transformer`][cloudwatchlogs_put_transformer]. If
-#' there is both a log-group level transformer created with
-#' [`put_transformer`][cloudwatchlogs_put_transformer] and an account-level
-#' transformer that could apply to the same log group, the log group uses
-#' only the log-group level transformer. It ignores the account-level
-#' transformer.
+#' You can also set up a transformer at the log-group level. For more information, see [`put_transformer`][cloudwatchlogs_put_transformer]. If there is both a log-group level transformer created with [`put_transformer`][cloudwatchlogs_put_transformer] and an account-level transformer that could apply to the same log group, the log group uses only the log-group level transformer. It ignores the account-level transformer.
 #' 
 #' **Field index policy**
 #' 
-#' You can use field index policies to create indexes on fields found in
-#' log events for a log group or data source name and type combination.
-#' Creating field indexes can help lower the scan volume for CloudWatch
-#' Logs Insights queries that reference those fields, because these queries
-#' attempt to skip the processing of log events that are known to not match
-#' the indexed field. Good fields to index are fields that you often need
-#' to query for and fields or values that match only a small fraction of
-#' the total log events. Common examples of indexes include request ID,
-#' session ID, user IDs, or instance IDs. For more information, see [Create
-#' field indexes to improve query performance and reduce
-#' costs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html)
+#' You can use field index policies to create indexes on fields found in log events for a log group or data source name and type combination. Creating field indexes can help lower the scan volume for CloudWatch Logs Insights queries that reference those fields, because these queries attempt to skip the processing of log events that are known to not match the indexed field. Good fields to index are fields that you often need to query for and fields or values that match only a small fraction of the total log events. Common examples of indexes include request ID, session ID, user IDs, or instance IDs. For more information, see [Create field indexes to improve query performance and reduce costs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html)
 #' 
-#' To find the fields that are in your log group events, use the
-#' [`get_log_group_fields`][cloudwatchlogs_get_log_group_fields] operation.
-#' To find the fields for a data source use the
-#' [`get_log_fields`][cloudwatchlogs_get_log_fields] operation.
+#' To find the fields that are in your log group events, use the [`get_log_group_fields`][cloudwatchlogs_get_log_group_fields] operation. To find the fields for a data source use the [`get_log_fields`][cloudwatchlogs_get_log_fields] operation.
 #' 
-#' For example, suppose you have created a field index for `requestId`.
-#' Then, any CloudWatch Logs Insights query on that log group that includes
-#' `requestId = value ` or `requestId in [value, value, ...]` will attempt
-#' to process only the log events where the indexed field matches the
-#' specified value.
+#' For example, suppose you have created a field index for `requestId`. Then, any CloudWatch Logs Insights query on that log group that includes `requestId = value ` or `requestId in [value, value, ...]` will attempt to process only the log events where the indexed field matches the specified value.
 #' 
-#' Matches of log events to the names of indexed fields are case-sensitive.
-#' For example, an indexed field of `RequestId` won't match a log event
-#' containing `requestId`.
+#' Matches of log events to the names of indexed fields are case-sensitive. For example, an indexed field of `RequestId` won't match a log event containing `requestId`.
 #' 
-#' You can have one account-level field index policy that applies to all
-#' log groups in the account. Or you can create as many as 20 account-level
-#' field index policies that are each scoped to a subset of log groups
-#' using `LogGroupNamePrefix` with the `selectionCriteria` parameter. You
-#' can have another 20 account-level field index policies using
-#' `DataSourceName` and `DataSourceType` for the `selectionCriteria`
-#' parameter. If you have multiple account-level index policies with
-#' `LogGroupNamePrefix` selection criteria, no two of them can use the same
-#' or overlapping log group name prefixes. For example, if you have one
-#' policy filtered to log groups that start with *my-log*, you can't have
-#' another field index policy filtered to *my-logpprod* or *my-logging*.
-#' Similarly, if you have multiple account-level index policies with
-#' `DataSourceName` and `DataSourceType` selection criteria, no two of them
-#' can use the same data source name and type combination. For example, if
-#' you have one policy filtered to the data source name `amazon_vpc` and
-#' data source type `flow` you cannot create another policy with this
-#' combination.
+#' You can have one account-level field index policy that applies to all log groups in the account. Or you can create as many as 20 account-level field index policies that are each scoped to a subset of log groups using `LogGroupNamePrefix` with the `selectionCriteria` parameter. You can have another 20 account-level field index policies using `DataSourceName` and `DataSourceType` for the `selectionCriteria` parameter. If you have multiple account-level index policies with `LogGroupNamePrefix` selection criteria, no two of them can use the same or overlapping log group name prefixes. For example, if you have one policy filtered to log groups that start with *my-log*, you can't have another field index policy filtered to *my-logpprod* or *my-logging*. Similarly, if you have multiple account-level index policies with `DataSourceName` and `DataSourceType` selection criteria, no two of them can use the same data source name and type combination. For example, if you have one policy filtered to the data source name `amazon_vpc` and data source type `flow` you cannot create another policy with this combination.
 #' 
-#' If you create an account-level field index policy in a monitoring
-#' account in cross-account observability, the policy is applied only to
-#' the monitoring account and not to any source accounts.
+#' If you create an account-level field index policy in a monitoring account in cross-account observability, the policy is applied only to the monitoring account and not to any source accounts.
 #' 
-#' CloudWatch Logs provides default field indexes for all log groups in the
-#' Standard log class. Default field indexes are automatically available
-#' for the following fields:
+#' CloudWatch Logs provides default field indexes for all log groups in the Standard log class. Default field indexes are automatically available for the following fields:
 #' 
 #' -   `@@logStream`
 #' 
@@ -6731,10 +5738,7 @@ cloudwatchlogs_list_tags_log_group <- function(logGroupName) {
 #' 
 #' -   `attributes.session.id`
 #' 
-#' CloudWatch Logs provides default field indexes for certain data source
-#' name and type combinations as well. Default field indexes are
-#' automatically available for the following data source name and type
-#' combinations as identified in the following list:
+#' CloudWatch Logs provides default field indexes for certain data source name and type combinations as well. Default field indexes are automatically available for the following data source name and type combinations as identified in the following list:
 #' 
 #' `amazon_vpc.flow`
 #' 
@@ -6782,45 +5786,19 @@ cloudwatchlogs_list_tags_log_group <- function(logGroupName) {
 #' 
 #' -   `requestId`
 #' 
-#' Default field indexes are in addition to any custom field indexes you
-#' define within your policy. Default field indexes are not counted towards
-#' your [field index
-#' quota](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html).
+#' Default field indexes are in addition to any custom field indexes you define within your policy. Default field indexes are not counted towards your [field index quota](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html).
 #' 
-#' If you want to create a field index policy for a single log group, you
-#' can use [`put_index_policy`][cloudwatchlogs_put_index_policy] instead of
-#' [`put_account_policy`][cloudwatchlogs_put_account_policy]. If you do so,
-#' that log group will use that log-group level policy and any
-#' account-level policies that match at the data source level; any
-#' account-level policy that matches at the log group level (for example,
-#' no selection criteria or log group name prefix selection criteria) will
-#' be ignored.
+#' If you want to create a field index policy for a single log group, you can use [`put_index_policy`][cloudwatchlogs_put_index_policy] instead of [`put_account_policy`][cloudwatchlogs_put_account_policy]. If you do so, that log group will use that log-group level policy and any account-level policies that match at the data source level; any account-level policy that matches at the log group level (for example, no selection criteria or log group name prefix selection criteria) will be ignored.
 #' 
 #' **Metric extraction policy**
 #' 
-#' A metric extraction policy controls whether CloudWatch Metrics can be
-#' created through the Embedded Metrics Format (EMF) for log groups in your
-#' account. By default, EMF metric creation is enabled for all log groups.
-#' You can use metric extraction policies to disable EMF metric creation
-#' for your entire account or specific log groups.
+#' A metric extraction policy controls whether CloudWatch Metrics can be created through the Embedded Metrics Format (EMF) for log groups in your account. By default, EMF metric creation is enabled for all log groups. You can use metric extraction policies to disable EMF metric creation for your entire account or specific log groups.
 #' 
-#' When a policy disables EMF metric creation for a log group, log events
-#' in the EMF format are still ingested, but no CloudWatch Metrics are
-#' created from them.
+#' When a policy disables EMF metric creation for a log group, log events in the EMF format are still ingested, but no CloudWatch Metrics are created from them.
 #' 
-#' Creating a policy disables metrics for Amazon Web Services features that
-#' use EMF to create metrics, such as CloudWatch Container Insights and
-#' CloudWatch Application Signals. To prevent turning off those features by
-#' accident, we recommend that you exclude the underlying log-groups
-#' through a selection-criteria such as
-#' `LogGroupNamePrefix NOT IN ["/aws/containerinsights", "/aws/ecs/containerinsights", "/aws/application-signals/data"]`.
+#' Creating a policy disables metrics for Amazon Web Services features that use EMF to create metrics, such as CloudWatch Container Insights and CloudWatch Application Signals. To prevent turning off those features by accident, we recommend that you exclude the underlying log-groups through a selection-criteria such as `LogGroupNamePrefix NOT IN ["/aws/containerinsights", "/aws/ecs/containerinsights", "/aws/application-signals/data"]`.
 #' 
-#' Each account can have either one account-level metric extraction policy
-#' that applies to all log groups, or up to 5 policies that are each scoped
-#' to a subset of log groups with the `selectionCriteria` parameter. The
-#' selection criteria supports filtering by `LogGroupName` and
-#' `LogGroupNamePrefix` using the operators `IN` and `NOT IN`. You can
-#' specify up to 50 values in each `IN` or `NOT IN` list.
+#' Each account can have either one account-level metric extraction policy that applies to all log groups, or up to 5 policies that are each scoped to a subset of log groups with the `selectionCriteria` parameter. The selection criteria supports filtering by `LogGroupName` and `LogGroupNamePrefix` using the operators `IN` and `NOT IN`. You can specify up to 50 values in each `IN` or `NOT IN` list.
 #' 
 #' The selection criteria can be specified in these formats:
 #' 
@@ -6828,183 +5806,103 @@ cloudwatchlogs_list_tags_log_group <- function(logGroupName) {
 #' 
 #' `LogGroupNamePrefix NOT IN ["/aws/prefix1", "/aws/prefix2"]`
 #' 
-#' If you have multiple account-level metric extraction policies with
-#' selection criteria, no two of them can have overlapping criteria. For
-#' example, if you have one policy with selection criteria
-#' `LogGroupNamePrefix IN ["my-log"]`, you can't have another metric
-#' extraction policy with selection criteria
-#' `LogGroupNamePrefix IN ["/my-log-prod"]` or
-#' `LogGroupNamePrefix IN ["/my-logging"]`, as the set of log groups
-#' matching these prefixes would be a subset of the log groups matching the
-#' first policy's prefix, creating an overlap.
+#' If you have multiple account-level metric extraction policies with selection criteria, no two of them can have overlapping criteria. For example, if you have one policy with selection criteria `LogGroupNamePrefix IN ["my-log"]`, you can't have another metric extraction policy with selection criteria `LogGroupNamePrefix IN ["/my-log-prod"]` or `LogGroupNamePrefix IN ["/my-logging"]`, as the set of log groups matching these prefixes would be a subset of the log groups matching the first policy's prefix, creating an overlap.
 #' 
-#' When using `NOT IN`, only one policy with this operator is allowed per
-#' account.
+#' When using `NOT IN`, only one policy with this operator is allowed per account.
 #' 
-#' When combining policies with `IN` and `NOT IN` operators, the overlap
-#' check ensures that policies don't have conflicting effects. Two policies
-#' with `IN` and `NOT IN` operators do not overlap if and only if every
-#' value in the `IN `policy is completely contained within some value in
-#' the `NOT IN` policy. For example:
+#' When combining policies with `IN` and `NOT IN` operators, the overlap check ensures that policies don't have conflicting effects. Two policies with `IN` and `NOT IN` operators do not overlap if and only if every value in the `IN `policy is completely contained within some value in the `NOT IN` policy. For example:
 #' 
-#' -   If you have a `NOT IN` policy for prefix `"/aws/lambda"`, you can
-#'     create an `IN` policy for the exact log group name
-#'     `"/aws/lambda/function1"` because the set of log groups matching
-#'     `"/aws/lambda/function1"` is a subset of the log groups matching
-#'     `"/aws/lambda"`.
+#' -   If you have a `NOT IN` policy for prefix `"/aws/lambda"`, you can create an `IN` policy for the exact log group name `"/aws/lambda/function1"` because the set of log groups matching `"/aws/lambda/function1"` is a subset of the log groups matching `"/aws/lambda"`.
 #' 
-#' -   If you have a `NOT IN` policy for prefix `"/aws/lambda"`, you cannot
-#'     create an `IN` policy for prefix `"/aws"` because the set of log
-#'     groups matching `"/aws"` is not a subset of the log groups matching
-#'     `"/aws/lambda"`.
+#' -   If you have a `NOT IN` policy for prefix `"/aws/lambda"`, you cannot create an `IN` policy for prefix `"/aws"` because the set of log groups matching `"/aws"` is not a subset of the log groups matching `"/aws/lambda"`.
 #'
 #' @usage
 #' cloudwatchlogs_put_account_policy(policyName, policyDocument,
 #'   policyType, scope, selectionCriteria)
 #'
-#' @param policyName &#91;required&#93; A name for the policy. This must be unique within the account and cannot
-#' start with `aws/`.
+#' @param policyName &#91;required&#93; A name for the policy. This must be unique within the account and cannot start with `aws/`.
 #' @param policyDocument &#91;required&#93; Specify the policy, in JSON.
 #' 
 #' **Data protection policy**
 #' 
 #' A data protection policy must include two JSON blocks:
 #' 
-#' -   The first block must include both a `DataIdentifer` array and an
-#'     `Operation` property with an `Audit` action. The `DataIdentifer`
-#'     array lists the types of sensitive data that you want to mask. For
-#'     more information about the available options, see [Types of data
-#'     that you can
-#'     mask](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/).
+#' -   The first block must include both a `DataIdentifer` array and an `Operation` property with an `Audit` action. The `DataIdentifer` array lists the types of sensitive data that you want to mask. For more information about the available options, see [Types of data that you can mask](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/).
 #' 
-#'     The `Operation` property with an `Audit` action is required to find
-#'     the sensitive data terms. This `Audit` action must contain a
-#'     `FindingsDestination` object. You can optionally use that
-#'     `FindingsDestination` object to list one or more destinations to
-#'     send audit findings to. If you specify destinations such as log
-#'     groups, Firehose streams, and S3 buckets, they must already exist.
+#'     The `Operation` property with an `Audit` action is required to find the sensitive data terms. This `Audit` action must contain a `FindingsDestination` object. You can optionally use that `FindingsDestination` object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
 #' 
-#' -   The second block must include both a `DataIdentifer` array and an
-#'     `Operation` property with an `Deidentify` action. The
-#'     `DataIdentifer` array must exactly match the `DataIdentifer` array
-#'     in the first block of the policy.
+#' -   The second block must include both a `DataIdentifer` array and an `Operation` property with an `Deidentify` action. The `DataIdentifer` array must exactly match the `DataIdentifer` array in the first block of the policy.
 #' 
-#'     The `Operation` property with the `Deidentify` action is what
-#'     actually masks the data, and it must contain the ` "MaskConfig": {}`
-#'     object. The ` "MaskConfig": {}` object must be empty.
+#'     The `Operation` property with the `Deidentify` action is what actually masks the data, and it must contain the ` "MaskConfig": {}` object. The ` "MaskConfig": {}` object must be empty.
 #' 
-#' For an example data protection policy, see the **Examples** section on
-#' this page.
+#' For an example data protection policy, see the **Examples** section on this page.
 #' 
 #' The contents of the two `DataIdentifer` arrays must match exactly.
 #' 
-#' In addition to the two JSON blocks, the `policyDocument` can also
-#' include `Name`, `Description`, and `Version` fields. The `Name` is
-#' different than the operation's `policyName` parameter, and is used as a
-#' dimension when CloudWatch Logs reports audit findings metrics to
-#' CloudWatch.
+#' In addition to the two JSON blocks, the `policyDocument` can also include `Name`, `Description`, and `Version` fields. The `Name` is different than the operation's `policyName` parameter, and is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.
 #' 
-#' The JSON specified in `policyDocument` can be up to 30,720 characters
-#' long.
+#' The JSON specified in `policyDocument` can be up to 30,720 characters long.
 #' 
 #' **Subscription filter policy**
 #' 
-#' A subscription filter policy can include the following attributes in a
-#' JSON block:
+#' A subscription filter policy can include the following attributes in a JSON block:
 #' 
-#' -   **DestinationArn** The ARN of the destination to deliver log events
-#'     to. Supported destinations are:
+#' -   **DestinationArn** The ARN of the destination to deliver log events to. Supported destinations are:
 #' 
-#'     -   An Kinesis Data Streams data stream in the same account as the
-#'         subscription policy, for same-account delivery.
+#'     -   An Kinesis Data Streams data stream in the same account as the subscription policy, for same-account delivery.
 #' 
-#'     -   An Firehose data stream in the same account as the subscription
-#'         policy, for same-account delivery.
+#'     -   An Firehose data stream in the same account as the subscription policy, for same-account delivery.
 #' 
-#'     -   A Lambda function in the same account as the subscription
-#'         policy, for same-account delivery.
+#'     -   A Lambda function in the same account as the subscription policy, for same-account delivery.
 #' 
-#'     -   A logical destination in a different account created with
-#'         [`put_destination`][cloudwatchlogs_put_destination], for
-#'         cross-account delivery. Kinesis Data Streams and Firehose are
-#'         supported as logical destinations.
+#'     -   A logical destination in a different account created with [`put_destination`][cloudwatchlogs_put_destination], for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical destinations.
 #' 
-#' -   **RoleArn** The ARN of an IAM role that grants CloudWatch Logs
-#'     permissions to deliver ingested log events to the destination
-#'     stream. You don't need to provide the ARN when you are working with
-#'     a logical destination for cross-account delivery.
+#' -   **RoleArn** The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.
 #' 
-#' -   **FilterPattern** A filter pattern for subscribing to a filtered
-#'     stream of log events.
+#' -   **FilterPattern** A filter pattern for subscribing to a filtered stream of log events.
 #' 
-#' -   **Distribution** The method used to distribute log data to the
-#'     destination. By default, log data is grouped by log stream, but the
-#'     grouping can be set to `Random` for a more even distribution. This
-#'     property is only applicable when the destination is an Kinesis Data
-#'     Streams data stream.
+#' -   **Distribution** The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to `Random` for a more even distribution. This property is only applicable when the destination is an Kinesis Data Streams data stream.
 #' 
 #' **Transformer policy**
 #' 
-#' A transformer policy must include one JSON block with the array of
-#' processors and their configurations. For more information about
-#' available processors, see [Processors that you can
-#' use](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors).
+#' A transformer policy must include one JSON block with the array of processors and their configurations. For more information about available processors, see [Processors that you can use](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors).
 #' 
 #' **Field index policy**
 #' 
-#' A field index filter policy can include the following attribute in a
-#' JSON block:
+#' A field index filter policy can include the following attribute in a JSON block:
 #' 
 #' -   **Fields** The array of field indexes to create.
 #' 
-#' -   **FieldsV2** The object of field indexes to create along with it's
-#'     type.
+#' -   **FieldsV2** The object of field indexes to create along with it's type.
 #' 
 #' It must contain at least one field index.
 #' 
-#' The following is an example of an index policy document that creates
-#' indexes with different types.
+#' The following is an example of an index policy document that creates indexes with different types.
 #' 
 #' `"policyDocument": "{ \"Fields\": [ \"TransactionId\" ], \"FieldsV2\": {\"RequestId\": {\"type\": \"FIELD_INDEX\"}, \"APIName\": {\"type\": \"FACET\"}, \"StatusCode\": {\"type\": \"FACET\"}}}"`
 #' 
-#' You can use `FieldsV2` to specify the type for each field. Supported
-#' types are `FIELD_INDEX` and `FACET`. Field names within `Fields` and
-#' `FieldsV2` must be mutually exclusive.
+#' You can use `FieldsV2` to specify the type for each field. Supported types are `FIELD_INDEX` and `FACET`. Field names within `Fields` and `FieldsV2` must be mutually exclusive.
 #' @param policyType &#91;required&#93; The type of policy that you're creating or updating.
-#' @param scope Currently the only valid value for this parameter is `ALL`, which
-#' specifies that the data protection policy applies to all log groups in
-#' the account. If you omit this parameter, the default of `ALL` is used.
-#' @param selectionCriteria Use this parameter to apply the new policy to a subset of log groups in
-#' the account or a data source name and type combination.
+#' @param scope Currently the only valid value for this parameter is `ALL`, which specifies that the data protection policy applies to all log groups in the account. If you omit this parameter, the default of `ALL` is used.
+#' @param selectionCriteria Use this parameter to apply the new policy to a subset of log groups in the account or a data source name and type combination.
 #' 
-#' Specifying `selectionCriteria` is valid only when you specify
-#' `SUBSCRIPTION_FILTER_POLICY`, `FIELD_INDEX_POLICY` or
-#' `TRANSFORMER_POLICY`for `policyType`.
+#' Specifying `selectionCriteria` is valid only when you specify `SUBSCRIPTION_FILTER_POLICY`, `FIELD_INDEX_POLICY` or `TRANSFORMER_POLICY`for `policyType`.
 #' 
-#' -   If `policyType` is `SUBSCRIPTION_FILTER_POLICY`, the only supported
-#'     `selectionCriteria` filter is `LogGroupName NOT IN []`
+#' -   If `policyType` is `SUBSCRIPTION_FILTER_POLICY`, the only supported `selectionCriteria` filter is `LogGroupName NOT IN []`
 #' 
-#' -   If `policyType` is `TRANSFORMER_POLICY`, the only supported
-#'     `selectionCriteria` filter is `LogGroupNamePrefix`
+#' -   If `policyType` is `TRANSFORMER_POLICY`, the only supported `selectionCriteria` filter is `LogGroupNamePrefix`
 #' 
-#' -   If `policyType` is `FIELD_INDEX_POLICY`, the supported
-#'     `selectionCriteria` filters are:
+#' -   If `policyType` is `FIELD_INDEX_POLICY`, the supported `selectionCriteria` filters are:
 #' 
 #'     -   `LogGroupNamePrefix`
 #' 
 #'     -   `DataSourceName` AND `DataSourceType`
 #' 
-#'     When you specify `selectionCriteria` for a field index policy you
-#'     can use either `LogGroupNamePrefix` by itself or `DataSourceName`
-#'     and `DataSourceType` together.
+#'     When you specify `selectionCriteria` for a field index policy you can use either `LogGroupNamePrefix` by itself or `DataSourceName` and `DataSourceType` together.
 #' 
-#' The `selectionCriteria` string can be up to 25KB in length. The length
-#' is determined by using its UTF-8 bytes.
+#' The `selectionCriteria` string can be up to 25KB in length. The length is determined by using its UTF-8 bytes.
 #' 
-#' Using the `selectionCriteria` parameter with
-#' `SUBSCRIPTION_FILTER_POLICY` is useful to help prevent infinite loops.
-#' For more information, see [Log recursion
-#' prevention](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html).
+#' Using the `selectionCriteria` parameter with `SUBSCRIPTION_FILTER_POLICY` is useful to help prevent infinite loops. For more information, see [Log recursion prevention](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions-recursion-prevention.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7061,13 +5959,9 @@ cloudwatchlogs_put_account_policy <- function(policyName, policyDocument, policy
 #' group
 #'
 #' @description
-#' Enables or disables bearer token authentication for the specified log
-#' group. When enabled on a log group, bearer token authentication is
-#' enabled on operations until it is explicitly disabled.
+#' Enables or disables bearer token authentication for the specified log group. When enabled on a log group, bearer token authentication is enabled on operations until it is explicitly disabled.
 #' 
-#' For information about the parameters that are common to all actions, see
-#' [Common
-#' Parameters](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html).
+#' For information about the parameters that are common to all actions, see [Common Parameters](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html).
 #'
 #' @usage
 #' cloudwatchlogs_put_bearer_token_authentication(logGroupIdentifier,
@@ -7126,38 +6020,15 @@ cloudwatchlogs_put_bearer_token_authentication <- function(logGroupIdentifier, b
 #' Creates a data protection policy for the specified log group
 #'
 #' @description
-#' Creates a data protection policy for the specified log group. A data
-#' protection policy can help safeguard sensitive data that's ingested by
-#' the log group by auditing and masking the sensitive log data.
+#' Creates a data protection policy for the specified log group. A data protection policy can help safeguard sensitive data that's ingested by the log group by auditing and masking the sensitive log data.
 #' 
-#' Sensitive data is detected and masked when it is ingested into the log
-#' group. When you set a data protection policy, log events ingested into
-#' the log group before that time are not masked.
+#' Sensitive data is detected and masked when it is ingested into the log group. When you set a data protection policy, log events ingested into the log group before that time are not masked.
 #' 
-#' By default, when a user views a log event that includes masked data, the
-#' sensitive data is replaced by asterisks. A user who has the
-#' `logs:Unmask` permission can use a
-#' [`get_log_events`][cloudwatchlogs_get_log_events] or
-#' [`filter_log_events`][cloudwatchlogs_filter_log_events] operation with
-#' the `unmask` parameter set to `true` to view the unmasked log events.
-#' Users with the `logs:Unmask` can also view unmasked data in the
-#' CloudWatch Logs console by running a CloudWatch Logs Insights query with
-#' the `unmask` query command.
+#' By default, when a user views a log event that includes masked data, the sensitive data is replaced by asterisks. A user who has the `logs:Unmask` permission can use a [`get_log_events`][cloudwatchlogs_get_log_events] or [`filter_log_events`][cloudwatchlogs_filter_log_events] operation with the `unmask` parameter set to `true` to view the unmasked log events. Users with the `logs:Unmask` can also view unmasked data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with the `unmask` query command.
 #' 
-#' For more information, including a list of types of data that can be
-#' audited and masked, see [Protect sensitive log data with
-#' masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
+#' For more information, including a list of types of data that can be audited and masked, see [Protect sensitive log data with masking](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html).
 #' 
-#' The
-#' [`put_data_protection_policy`][cloudwatchlogs_put_data_protection_policy]
-#' operation applies to only the specified log group. You can also use
-#' [`put_account_policy`][cloudwatchlogs_put_account_policy] to create an
-#' account-level data protection policy that applies to all log groups in
-#' the account, including both existing log groups and log groups that are
-#' created level. If a log group has its own data protection policy and the
-#' account also has an account-level data protection policy, then the two
-#' policies are cumulative. Any sensitive term specified in either policy
-#' is masked.
+#' The [`put_data_protection_policy`][cloudwatchlogs_put_data_protection_policy] operation applies to only the specified log group. You can also use [`put_account_policy`][cloudwatchlogs_put_account_policy] to create an account-level data protection policy that applies to all log groups in the account, including both existing log groups and log groups that are created level. If a log group has its own data protection policy and the account also has an account-level data protection policy, then the two policies are cumulative. Any sensitive term specified in either policy is masked.
 #'
 #' @usage
 #' cloudwatchlogs_put_data_protection_policy(logGroupIdentifier,
@@ -7168,38 +6039,19 @@ cloudwatchlogs_put_bearer_token_authentication <- function(logGroupIdentifier, b
 #' 
 #' This policy must include two JSON blocks:
 #' 
-#' -   The first block must include both a `DataIdentifer` array and an
-#'     `Operation` property with an `Audit` action. The `DataIdentifer`
-#'     array lists the types of sensitive data that you want to mask. For
-#'     more information about the available options, see [Types of data
-#'     that you can
-#'     mask](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/).
+#' -   The first block must include both a `DataIdentifer` array and an `Operation` property with an `Audit` action. The `DataIdentifer` array lists the types of sensitive data that you want to mask. For more information about the available options, see [Types of data that you can mask](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/).
 #' 
-#'     The `Operation` property with an `Audit` action is required to find
-#'     the sensitive data terms. This `Audit` action must contain a
-#'     `FindingsDestination` object. You can optionally use that
-#'     `FindingsDestination` object to list one or more destinations to
-#'     send audit findings to. If you specify destinations such as log
-#'     groups, Firehose streams, and S3 buckets, they must already exist.
+#'     The `Operation` property with an `Audit` action is required to find the sensitive data terms. This `Audit` action must contain a `FindingsDestination` object. You can optionally use that `FindingsDestination` object to list one or more destinations to send audit findings to. If you specify destinations such as log groups, Firehose streams, and S3 buckets, they must already exist.
 #' 
-#' -   The second block must include both a `DataIdentifer` array and an
-#'     `Operation` property with an `Deidentify` action. The
-#'     `DataIdentifer` array must exactly match the `DataIdentifer` array
-#'     in the first block of the policy.
+#' -   The second block must include both a `DataIdentifer` array and an `Operation` property with an `Deidentify` action. The `DataIdentifer` array must exactly match the `DataIdentifer` array in the first block of the policy.
 #' 
-#'     The `Operation` property with the `Deidentify` action is what
-#'     actually masks the data, and it must contain the ` "MaskConfig": {}`
-#'     object. The ` "MaskConfig": {}` object must be empty.
+#'     The `Operation` property with the `Deidentify` action is what actually masks the data, and it must contain the ` "MaskConfig": {}` object. The ` "MaskConfig": {}` object must be empty.
 #' 
-#' For an example data protection policy, see the **Examples** section on
-#' this page.
+#' For an example data protection policy, see the **Examples** section on this page.
 #' 
 #' The contents of the two `DataIdentifer` arrays must match exactly.
 #' 
-#' In addition to the two JSON blocks, the `policyDocument` can also
-#' include `Name`, `Description`, and `Version` fields. The `Name` is used
-#' as a dimension when CloudWatch Logs reports audit findings metrics to
-#' CloudWatch.
+#' In addition to the two JSON blocks, the `policyDocument` can also include `Name`, `Description`, and `Version` fields. The `Name` is used as a dimension when CloudWatch Logs reports audit findings metrics to CloudWatch.
 #' 
 #' The JSON specified in `policyDocument` can be up to 30,720 characters.
 #'
@@ -7248,68 +6100,34 @@ cloudwatchlogs_put_data_protection_policy <- function(logGroupIdentifier, policy
 #' Creates or updates a logical delivery destination
 #'
 #' @description
-#' Creates or updates a logical *delivery destination*. A delivery
-#' destination is an Amazon Web Services resource that represents an Amazon
-#' Web Services service that logs can be sent to. CloudWatch Logs, Amazon
-#' S3, and Firehose are supported as logs delivery destinations and X-Ray
-#' as the trace delivery destination.
+#' Creates or updates a logical *delivery destination*. A delivery destination is an Amazon Web Services resource that represents an Amazon Web Services service that logs can be sent to. CloudWatch Logs, Amazon S3, and Firehose are supported as logs delivery destinations and X-Ray as the trace delivery destination.
 #' 
-#' To configure logs delivery between a supported Amazon Web Services
-#' service and a destination, you must do the following:
+#' To configure logs delivery between a supported Amazon Web Services service and a destination, you must do the following:
 #' 
-#' -   Create a delivery source, which is a logical object that represents
-#'     the resource that is actually sending the logs. For more
-#'     information, see
-#'     [`put_delivery_source`][cloudwatchlogs_put_delivery_source].
+#' -   Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see [`put_delivery_source`][cloudwatchlogs_put_delivery_source].
 #' 
-#' -   Use
-#'     [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination]
-#'     to create a *delivery destination* in the same account of the actual
-#'     delivery destination. The delivery destination that you create is a
-#'     logical object that represents the actual delivery destination.
+#' -   Use [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination] to create a *delivery destination* in the same account of the actual delivery destination. The delivery destination that you create is a logical object that represents the actual delivery destination.
 #' 
-#' -   If you are delivering logs cross-account, you must use
-#'     [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy]
-#'     in the destination account to assign an IAM policy to the
-#'     destination. This policy allows delivery to that destination.
+#' -   If you are delivering logs cross-account, you must use [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy] in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.
 #' 
-#' -   Use [`create_delivery`][cloudwatchlogs_create_delivery] to create a
-#'     *delivery* by pairing exactly one delivery source and one delivery
-#'     destination. For more information, see
-#'     [`create_delivery`][cloudwatchlogs_create_delivery].
+#' -   Use [`create_delivery`][cloudwatchlogs_create_delivery] to create a *delivery* by pairing exactly one delivery source and one delivery destination. For more information, see [`create_delivery`][cloudwatchlogs_create_delivery].
 #' 
-#' You can configure a single delivery source to send logs to multiple
-#' destinations by creating multiple deliveries. You can also create
-#' multiple deliveries to configure multiple delivery sources to send logs
-#' to the same delivery destination.
+#' You can configure a single delivery source to send logs to multiple destinations by creating multiple deliveries. You can also create multiple deliveries to configure multiple delivery sources to send logs to the same delivery destination.
 #' 
-#' Only some Amazon Web Services services support being configured as a
-#' delivery source. These services are listed as **Supported \[V2
-#' Permissions\]** in the table at [Enabling logging from Amazon Web
-#' Services
-#' services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
+#' Only some Amazon Web Services services support being configured as a delivery source. These services are listed as **Supported \[V2 Permissions\]** in the table at [Enabling logging from Amazon Web Services services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
 #' 
-#' If you use this operation to update an existing delivery destination,
-#' all the current delivery destination parameters are overwritten with the
-#' new parameter values that you specify.
+#' If you use this operation to update an existing delivery destination, all the current delivery destination parameters are overwritten with the new parameter values that you specify.
 #'
 #' @usage
 #' cloudwatchlogs_put_delivery_destination(name, outputFormat,
 #'   deliveryDestinationConfiguration, deliveryDestinationType, tags)
 #'
-#' @param name &#91;required&#93; A name for this delivery destination. This name must be unique for all
-#' delivery destinations in your account.
+#' @param name &#91;required&#93; A name for this delivery destination. This name must be unique for all delivery destinations in your account.
 #' @param outputFormat The format for the logs that this delivery destination will receive.
-#' @param deliveryDestinationConfiguration A structure that contains the ARN of the Amazon Web Services resource
-#' that will receive the logs.
+#' @param deliveryDestinationConfiguration A structure that contains the ARN of the Amazon Web Services resource that will receive the logs.
 #' 
-#' `deliveryDestinationConfiguration` is required for CloudWatch Logs,
-#' Amazon S3, Firehose log delivery destinations and not required for X-Ray
-#' trace delivery destinations. `deliveryDestinationType` is needed for
-#' X-Ray trace delivery destinations but not required for other logs
-#' delivery destinations.
-#' @param deliveryDestinationType The type of delivery destination. This parameter specifies the target
-#' service where log data will be delivered. Valid values include:
+#' `deliveryDestinationConfiguration` is required for CloudWatch Logs, Amazon S3, Firehose log delivery destinations and not required for X-Ray trace delivery destinations. `deliveryDestinationType` is needed for X-Ray trace delivery destinations but not required for other logs delivery destinations.
+#' @param deliveryDestinationType The type of delivery destination. This parameter specifies the target service where log data will be delivered. Valid values include:
 #' 
 #' -   `S3` - Amazon S3 for long-term storage and analytics
 #' 
@@ -7317,15 +6135,12 @@ cloudwatchlogs_put_data_protection_policy <- function(logGroupIdentifier, policy
 #' 
 #' -   `FH` - Amazon Kinesis Data Firehose for real-time data streaming
 #' 
-#' -   `XRAY` - Amazon Web Services X-Ray for distributed tracing and
-#'     application monitoring
+#' -   `XRAY` - Amazon Web Services X-Ray for distributed tracing and application monitoring
 #' 
-#' The delivery destination type determines the format and configuration
-#' options available for log delivery.
+#' The delivery destination type determines the format and configuration options available for log delivery.
 #' @param tags An optional list of key-value pairs to associate with the resource.
 #' 
-#' For more information about tagging, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
+#' For more information about tagging, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
 #'
 #' @return
 #' A list with the following syntax:
@@ -7390,39 +6205,19 @@ cloudwatchlogs_put_delivery_destination <- function(name, outputFormat = NULL, d
 #' account
 #'
 #' @description
-#' Creates and assigns an IAM policy that grants permissions to CloudWatch
-#' Logs to deliver logs cross-account to a specified destination in this
-#' account. To configure the delivery of logs from an Amazon Web Services
-#' service in another account to a logs delivery destination in the current
-#' account, you must do the following:
+#' Creates and assigns an IAM policy that grants permissions to CloudWatch Logs to deliver logs cross-account to a specified destination in this account. To configure the delivery of logs from an Amazon Web Services service in another account to a logs delivery destination in the current account, you must do the following:
 #' 
-#' -   Create a delivery source, which is a logical object that represents
-#'     the resource that is actually sending the logs. For more
-#'     information, see
-#'     [`put_delivery_source`][cloudwatchlogs_put_delivery_source].
+#' -   Create a delivery source, which is a logical object that represents the resource that is actually sending the logs. For more information, see [`put_delivery_source`][cloudwatchlogs_put_delivery_source].
 #' 
-#' -   Create a *delivery destination*, which is a logical object that
-#'     represents the actual delivery destination. For more information,
-#'     see
-#'     [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination].
+#' -   Create a *delivery destination*, which is a logical object that represents the actual delivery destination. For more information, see [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination].
 #' 
-#' -   Use this operation in the destination account to assign an IAM
-#'     policy to the destination. This policy allows delivery to that
-#'     destination.
+#' -   Use this operation in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.
 #' 
-#' -   Create a *delivery* by pairing exactly one delivery source and one
-#'     delivery destination. For more information, see
-#'     [`create_delivery`][cloudwatchlogs_create_delivery].
+#' -   Create a *delivery* by pairing exactly one delivery source and one delivery destination. For more information, see [`create_delivery`][cloudwatchlogs_create_delivery].
 #' 
-#' Only some Amazon Web Services services support being configured as a
-#' delivery source. These services are listed as **Supported \[V2
-#' Permissions\]** in the table at [Enabling logging from Amazon Web
-#' Services
-#' services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
+#' Only some Amazon Web Services services support being configured as a delivery source. These services are listed as **Supported \[V2 Permissions\]** in the table at [Enabling logging from Amazon Web Services services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
 #' 
-#' The contents of the policy must include two statements. One statement
-#' enables general logs delivery, and the other allows delivery to the
-#' chosen destination. See the examples for the needed policies.
+#' The contents of the policy must include two statements. One statement enables general logs delivery, and the other allows delivery to the chosen destination. See the examples for the needed policies.
 #'
 #' @usage
 #' cloudwatchlogs_put_delivery_destination_policy(deliveryDestinationName,
@@ -7476,88 +6271,47 @@ cloudwatchlogs_put_delivery_destination_policy <- function(deliveryDestinationNa
 #' Creates or updates a logical delivery source
 #'
 #' @description
-#' Creates or updates a logical *delivery source*. A delivery source
-#' represents an Amazon Web Services resource that sends logs to an logs
-#' delivery destination. The destination can be CloudWatch Logs, Amazon S3,
-#' Firehose or X-Ray for sending traces.
+#' Creates or updates a logical *delivery source*. A delivery source represents an Amazon Web Services resource that sends logs to an logs delivery destination. The destination can be CloudWatch Logs, Amazon S3, Firehose or X-Ray for sending traces.
 #' 
-#' To configure logs delivery between a delivery destination and an Amazon
-#' Web Services service that is supported as a delivery source, you must do
-#' the following:
+#' To configure logs delivery between a delivery destination and an Amazon Web Services service that is supported as a delivery source, you must do the following:
 #' 
-#' -   Use [`put_delivery_source`][cloudwatchlogs_put_delivery_source] to
-#'     create a delivery source, which is a logical object that represents
-#'     the resource that is actually sending the logs.
+#' -   Use [`put_delivery_source`][cloudwatchlogs_put_delivery_source] to create a delivery source, which is a logical object that represents the resource that is actually sending the logs.
 #' 
-#' -   Use
-#'     [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination]
-#'     to create a *delivery destination*, which is a logical object that
-#'     represents the actual delivery destination. For more information,
-#'     see
-#'     [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination].
+#' -   Use [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination] to create a *delivery destination*, which is a logical object that represents the actual delivery destination. For more information, see [`put_delivery_destination`][cloudwatchlogs_put_delivery_destination].
 #' 
-#' -   If you are delivering logs cross-account, you must use
-#'     [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy]
-#'     in the destination account to assign an IAM policy to the
-#'     destination. This policy allows delivery to that destination.
+#' -   If you are delivering logs cross-account, you must use [`put_delivery_destination_policy`][cloudwatchlogs_put_delivery_destination_policy] in the destination account to assign an IAM policy to the destination. This policy allows delivery to that destination.
 #' 
-#' -   Use [`create_delivery`][cloudwatchlogs_create_delivery] to create a
-#'     *delivery* by pairing exactly one delivery source and one delivery
-#'     destination. For more information, see
-#'     [`create_delivery`][cloudwatchlogs_create_delivery].
+#' -   Use [`create_delivery`][cloudwatchlogs_create_delivery] to create a *delivery* by pairing exactly one delivery source and one delivery destination. For more information, see [`create_delivery`][cloudwatchlogs_create_delivery].
 #' 
-#' You can configure a single delivery source to send logs to multiple
-#' destinations by creating multiple deliveries. You can also create
-#' multiple deliveries to configure multiple delivery sources to send logs
-#' to the same delivery destination.
+#' You can configure a single delivery source to send logs to multiple destinations by creating multiple deliveries. You can also create multiple deliveries to configure multiple delivery sources to send logs to the same delivery destination.
 #' 
-#' Only some Amazon Web Services services support being configured as a
-#' delivery source. These services are listed as **Supported \[V2
-#' Permissions\]** in the table at [Enabling logging from Amazon Web
-#' Services
-#' services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
+#' Only some Amazon Web Services services support being configured as a delivery source. These services are listed as **Supported \[V2 Permissions\]** in the table at [Enabling logging from Amazon Web Services services.](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html)
 #' 
-#' If you use this operation to update an existing delivery source, all the
-#' current delivery source parameters are overwritten with the new
-#' parameter values that you specify.
+#' If you use this operation to update an existing delivery source, all the current delivery source parameters are overwritten with the new parameter values that you specify.
 #'
 #' @usage
 #' cloudwatchlogs_put_delivery_source(name, resourceArn, logType, tags,
 #'   deliverySourceConfiguration)
 #'
-#' @param name &#91;required&#93; A name for this delivery source. This name must be unique for all
-#' delivery sources in your account.
-#' @param resourceArn &#91;required&#93; The ARN of the Amazon Web Services resource that is generating and
-#' sending logs. For example,
-#' `arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234`
+#' @param name &#91;required&#93; A name for this delivery source. This name must be unique for all delivery sources in your account.
+#' @param resourceArn &#91;required&#93; The ARN of the Amazon Web Services resource that is generating and sending logs. For example, `arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234`
 #' 
-#' For the `SECURITY_FINDING_LOGS` logType, use a wildcard ARN for the hub
-#' resource. For Amazon Web Services Security Hub CSPM, use
-#' `arn:aws:securityhub:us-east-1:111122223333:hub/*` and for Amazon Web
-#' Services Security Hub, use
-#' `arn:aws:securityhub:us-east-1:111122223333:hubv2/*`
+#' For the `SECURITY_FINDING_LOGS` logType, use a wildcard ARN for the hub resource. For Amazon Web Services Security Hub CSPM, use `arn:aws:securityhub:us-east-1:111122223333:hub/*` and for Amazon Web Services Security Hub, use `arn:aws:securityhub:us-east-1:111122223333:hubv2/*`
 #' @param logType &#91;required&#93; Defines the type of log that the source is sending.
 #' 
-#' -   For Amazon Bedrock Agents, the valid values are `APPLICATION_LOGS`
-#'     and `EVENT_LOGS`.
+#' -   For Amazon Bedrock Agents, the valid values are `APPLICATION_LOGS` and `EVENT_LOGS`.
 #' 
-#' -   For Amazon Bedrock Knowledge Bases, the valid value is
-#'     `APPLICATION_LOGS`.
+#' -   For Amazon Bedrock Knowledge Bases, the valid value is `APPLICATION_LOGS`.
 #' 
-#' -   For Amazon Bedrock AgentCore Runtime, the valid values are
-#'     `APPLICATION_LOGS`, `USAGE_LOGS` and `TRACES`.
+#' -   For Amazon Bedrock AgentCore Runtime, the valid values are `APPLICATION_LOGS`, `USAGE_LOGS` and `TRACES`.
 #' 
-#' -   For Amazon Bedrock AgentCore Tools, the valid values are
-#'     `APPLICATION_LOGS`, `USAGE_LOGS` and `TRACES`.
+#' -   For Amazon Bedrock AgentCore Tools, the valid values are `APPLICATION_LOGS`, `USAGE_LOGS` and `TRACES`.
 #' 
-#' -   For Amazon Bedrock AgentCore Identity, the valid values are
-#'     `APPLICATION_LOGS` and `TRACES`.
+#' -   For Amazon Bedrock AgentCore Identity, the valid values are `APPLICATION_LOGS` and `TRACES`.
 #' 
-#' -   For Amazon Bedrock AgentCore Memory, the valid values are
-#'     `APPLICATION_LOGS` and `TRACES`.
+#' -   For Amazon Bedrock AgentCore Memory, the valid values are `APPLICATION_LOGS` and `TRACES`.
 #' 
-#' -   For Amazon Bedrock AgentCore Gateway, the valid values are
-#'     `APPLICATION_LOGS` and `TRACES`.
+#' -   For Amazon Bedrock AgentCore Gateway, the valid values are `APPLICATION_LOGS` and `TRACES`.
 #' 
 #' -   For CloudFront, the valid value is `ACCESS_LOGS`.
 #' 
@@ -7565,58 +6319,41 @@ cloudwatchlogs_put_delivery_destination_policy <- function(deliveryDestinationNa
 #' 
 #' -   For Amazon CodeWhisperer, the valid value is `EVENT_LOGS`.
 #' 
-#' -   For Elemental MediaPackage, the valid values are
-#'     `EGRESS_ACCESS_LOGS` and `INGRESS_ACCESS_LOGS`.
+#' -   For Elemental MediaPackage, the valid values are `EGRESS_ACCESS_LOGS` and `INGRESS_ACCESS_LOGS`.
 #' 
-#' -   For Elemental MediaTailor, the valid values are
-#'     `AD_DECISION_SERVER_LOGS`, `MANIFEST_SERVICE_LOGS`, and
-#'     `TRANSCODE_LOGS`.
+#' -   For Elemental MediaTailor, the valid values are `AD_DECISION_SERVER_LOGS`, `MANIFEST_SERVICE_LOGS`, and `TRANSCODE_LOGS`.
 #' 
-#' -   For Amazon EKS Auto Mode, the valid values are
-#'     `AUTO_MODE_BLOCK_STORAGE_LOGS`, `AUTO_MODE_COMPUTE_LOGS`,
-#'     `AUTO_MODE_IPAM_LOGS`, and `AUTO_MODE_LOAD_BALANCING_LOGS`.
+#' -   For Amazon EKS Auto Mode, the valid values are `AUTO_MODE_BLOCK_STORAGE_LOGS`, `AUTO_MODE_COMPUTE_LOGS`, `AUTO_MODE_IPAM_LOGS`, and `AUTO_MODE_LOAD_BALANCING_LOGS`.
 #' 
 #' -   For Entity Resolution, the valid value is `WORKFLOW_LOGS`.
 #' 
 #' -   For IAM Identity Center, the valid value is `ERROR_LOGS`.
 #' 
-#' -   For Network Firewall Proxy, the valid values are `ALERT_LOGS`,
-#'     `ALLOW_LOGS`, and `DENY_LOGS`.
+#' -   For Network Firewall Proxy, the valid values are `ALERT_LOGS`, `ALLOW_LOGS`, and `DENY_LOGS`.
 #' 
 #' -   For Network Load Balancer, the valid value is `NLB_ACCESS_LOGS`.
 #' 
-#' -   For PCS, the valid values are `PCS_SCHEDULER_LOGS`,
-#'     `PCS_JOBCOMP_LOGS`, and `PCS_SCHEDULER_AUDIT_LOGS`.
+#' -   For PCS, the valid values are `PCS_SCHEDULER_LOGS`, `PCS_JOBCOMP_LOGS`, and `PCS_SCHEDULER_AUDIT_LOGS`.
 #' 
 #' -   For Quick, the valid values are `CHAT_LOGS` and `FEEDBACK_LOGS`.
 #' 
-#' -   For Amazon Web Services RTB Fabric, the valid values is
-#'     `APPLICATION_LOGS`.
+#' -   For Amazon Web Services RTB Fabric, the valid values is `APPLICATION_LOGS`.
 #' 
 #' -   For Amazon Q, the valid values are `EVENT_LOGS` and `SYNC_JOB_LOGS`.
 #' 
-#' -   For Amazon Web Services Security Hub CSPM, the valid value is
-#'     `SECURITY_FINDING_LOGS`.
+#' -   For Amazon Web Services Security Hub CSPM, the valid value is `SECURITY_FINDING_LOGS`.
 #' 
-#' -   For Amazon Web Services Security Hub, the valid value is
-#'     `SECURITY_FINDING_LOGS`.
+#' -   For Amazon Web Services Security Hub, the valid value is `SECURITY_FINDING_LOGS`.
 #' 
-#' -   For Amazon SES mail manager, the valid values are `APPLICATION_LOGS`
-#'     and `TRAFFIC_POLICY_DEBUG_LOGS`.
+#' -   For Amazon SES mail manager, the valid values are `APPLICATION_LOGS` and `TRAFFIC_POLICY_DEBUG_LOGS`.
 #' 
-#' -   For Amazon WorkMail, the valid values are `ACCESS_CONTROL_LOGS`,
-#'     `AUTHENTICATION_LOGS`, `WORKMAIL_AVAILABILITY_PROVIDER_LOGS`,
-#'     `WORKMAIL_MAILBOX_ACCESS_LOGS`, and
-#'     `WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS`.
+#' -   For Amazon WorkMail, the valid values are `ACCESS_CONTROL_LOGS`, `AUTHENTICATION_LOGS`, `WORKMAIL_AVAILABILITY_PROVIDER_LOGS`, `WORKMAIL_MAILBOX_ACCESS_LOGS`, and `WORKMAIL_PERSONAL_ACCESS_TOKEN_LOGS`.
 #' 
 #' -   For Amazon VPC Route Server, the valid value is `EVENT_LOGS`.
 #' @param tags An optional list of key-value pairs to associate with the resource.
 #' 
-#' For more information about tagging, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
-#' @param deliverySourceConfiguration A map of key-value pairs to configure the delivery source. Both keys and
-#' values must be between 1 and 255 characters in length. For example,
-#' `{"samplingRate": "50"}`.
+#' For more information about tagging, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
+#' @param deliverySourceConfiguration A map of key-value pairs to configure the delivery source. Both keys and values must be between 1 and 255 characters in length. For example, `{"samplingRate": "50"}`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -7684,39 +6421,24 @@ cloudwatchlogs_put_delivery_source <- function(name, resourceArn, logType, tags 
 #' Creates or updates a destination
 #'
 #' @description
-#' Creates or updates a destination. This operation is used only to create
-#' destinations for cross-account subscriptions.
+#' Creates or updates a destination. This operation is used only to create destinations for cross-account subscriptions.
 #' 
-#' A destination encapsulates a physical resource (such as an Amazon
-#' Kinesis stream). With a destination, you can subscribe to a real-time
-#' stream of log events for a different account, ingested using
-#' [`put_log_events`][cloudwatchlogs_put_log_events].
+#' A destination encapsulates a physical resource (such as an Amazon Kinesis stream). With a destination, you can subscribe to a real-time stream of log events for a different account, ingested using [`put_log_events`][cloudwatchlogs_put_log_events].
 #' 
-#' Through an access policy, a destination controls what is written to it.
-#' By default, [`put_destination`][cloudwatchlogs_put_destination] does not
-#' set any access policy with the destination, which means a cross-account
-#' user cannot call
-#' [`put_subscription_filter`][cloudwatchlogs_put_subscription_filter]
-#' against this destination. To enable this, the destination owner must
-#' call [`put_destination_policy`][cloudwatchlogs_put_destination_policy]
-#' after [`put_destination`][cloudwatchlogs_put_destination].
+#' Through an access policy, a destination controls what is written to it. By default, [`put_destination`][cloudwatchlogs_put_destination] does not set any access policy with the destination, which means a cross-account user cannot call [`put_subscription_filter`][cloudwatchlogs_put_subscription_filter] against this destination. To enable this, the destination owner must call [`put_destination_policy`][cloudwatchlogs_put_destination_policy] after [`put_destination`][cloudwatchlogs_put_destination].
 #' 
-#' To perform a [`put_destination`][cloudwatchlogs_put_destination]
-#' operation, you must also have the `iam:PassRole` permission.
+#' To perform a [`put_destination`][cloudwatchlogs_put_destination] operation, you must also have the `iam:PassRole` permission.
 #'
 #' @usage
 #' cloudwatchlogs_put_destination(destinationName, targetArn, roleArn,
 #'   tags)
 #'
 #' @param destinationName &#91;required&#93; A name for the destination.
-#' @param targetArn &#91;required&#93; The ARN of an Amazon Kinesis stream to which to deliver matching log
-#' events.
-#' @param roleArn &#91;required&#93; The ARN of an IAM role that grants CloudWatch Logs permissions to call
-#' the Amazon Kinesis `PutRecord` operation on the destination stream.
+#' @param targetArn &#91;required&#93; The ARN of an Amazon Kinesis stream to which to deliver matching log events.
+#' @param roleArn &#91;required&#93; The ARN of an IAM role that grants CloudWatch Logs permissions to call the Amazon Kinesis `PutRecord` operation on the destination stream.
 #' @param tags An optional list of key-value pairs to associate with the resource.
 #' 
-#' For more information about tagging, see [Tagging Amazon Web Services
-#' resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
+#' For more information about tagging, see [Tagging Amazon Web Services resources](https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html)
 #'
 #' @return
 #' A list with the following syntax:
@@ -7773,30 +6495,15 @@ cloudwatchlogs_put_destination <- function(destinationName, targetArn, roleArn, 
 #' destination
 #'
 #' @description
-#' Creates or updates an access policy associated with an existing
-#' destination. An access policy is an [IAM policy
-#' document](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html)
-#' that is used to authorize claims to register a subscription filter
-#' against a given destination.
+#' Creates or updates an access policy associated with an existing destination. An access policy is an [IAM policy document](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) that is used to authorize claims to register a subscription filter against a given destination.
 #'
 #' @usage
 #' cloudwatchlogs_put_destination_policy(destinationName, accessPolicy,
 #'   forceUpdate)
 #'
 #' @param destinationName &#91;required&#93; A name for an existing destination.
-#' @param accessPolicy &#91;required&#93; An IAM policy document that authorizes cross-account users to deliver
-#' their log events to the associated destination. This can be up to 5120
-#' bytes.
-#' @param forceUpdate Specify true if you are updating an existing destination policy to grant
-#' permission to an organization ID instead of granting permission to
-#' individual Amazon Web Services accounts. Before you update a destination
-#' policy this way, you must first update the subscription filters in the
-#' accounts that send logs to this destination. If you do not, the
-#' subscription filters might stop working. By specifying `true` for
-#' `forceUpdate`, you are affirming that you have already updated the
-#' subscription filters. For more information, see [Updating an existing
-#' cross-account
-#' subscription](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html)
+#' @param accessPolicy &#91;required&#93; An IAM policy document that authorizes cross-account users to deliver their log events to the associated destination. This can be up to 5120 bytes.
+#' @param forceUpdate Specify true if you are updating an existing destination policy to grant permission to an organization ID instead of granting permission to individual Amazon Web Services accounts. Before you update a destination policy this way, you must first update the subscription filters in the accounts that send logs to this destination. If you do not, the subscription filters might stop working. By specifying `true` for `forceUpdate`, you are affirming that you have already updated the subscription filters. For more information, see [Updating an existing cross-account subscription](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Cross-Account-Log_Subscription-Update.html)
 #' 
 #' If you omit this parameter, the default of `false` is used.
 #'
@@ -7839,42 +6546,17 @@ cloudwatchlogs_put_destination_policy <- function(destinationName, accessPolicy,
 #' Creates or updates a field index policy for the specified log group
 #'
 #' @description
-#' Creates or updates a *field index policy* for the specified log group.
-#' Only log groups in the Standard log class support field index policies.
-#' For more information about log classes, see [Log
-#' classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html).
+#' Creates or updates a *field index policy* for the specified log group. Only log groups in the Standard log class support field index policies. For more information about log classes, see [Log classes](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html).
 #' 
-#' You can use field index policies to create *field indexes* on fields
-#' found in log events in the log group. Creating field indexes speeds up
-#' and lowers the costs for CloudWatch Logs Insights queries that reference
-#' those field indexes, because these queries attempt to skip the
-#' processing of log events that are known to not match the indexed field.
-#' Good fields to index are fields that you often need to query for and
-#' fields or values that match only a small fraction of the total log
-#' events. Common examples of indexes include request ID, session ID,
-#' userID, and instance IDs. For more information, see [Create field
-#' indexes to improve query performance and reduce
-#' costs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html).
+#' You can use field index policies to create *field indexes* on fields found in log events in the log group. Creating field indexes speeds up and lowers the costs for CloudWatch Logs Insights queries that reference those field indexes, because these queries attempt to skip the processing of log events that are known to not match the indexed field. Good fields to index are fields that you often need to query for and fields or values that match only a small fraction of the total log events. Common examples of indexes include request ID, session ID, userID, and instance IDs. For more information, see [Create field indexes to improve query performance and reduce costs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing.html).
 #' 
-#' You can configure indexed fields as *facets* to enable interactive
-#' exploration and filtering of your logs in the CloudWatch Logs Insights
-#' console. Facets allow you to view value distributions and counts for
-#' indexed fields without running queries. When you create a field index,
-#' you can optionally set it as a facet to enable this interactive analysis
-#' capability. For more information, see [Use facets to group and explore
-#' logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html).
+#' You can configure indexed fields as *facets* to enable interactive exploration and filtering of your logs in the CloudWatch Logs Insights console. Facets allow you to view value distributions and counts for indexed fields without running queries. When you create a field index, you can optionally set it as a facet to enable this interactive analysis capability. For more information, see [Use facets to group and explore logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Facets.html).
 #' 
-#' To find the fields that are in your log group events, use the
-#' [`get_log_group_fields`][cloudwatchlogs_get_log_group_fields] operation.
+#' To find the fields that are in your log group events, use the [`get_log_group_fields`][cloudwatchlogs_get_log_group_fields] operation.
 #' 
-#' For example, suppose you have created a field index for `requestId`.
-#' Then, any CloudWatch Logs Insights query on that log group that includes
-#' `requestId = value ` or `requestId IN [value, value, ...]` will process
-#' fewer log events to reduce costs, and have improved performance.
+#' For example, suppose you have created a field index for `requestId`. Then, any CloudWatch Logs Insights query on that log group that includes `requestId = value ` or `requestId IN [value, value, ...]` will process fewer log events to reduce costs, and have improved performance.
 #' 
-#' CloudWatch Logs provides default field indexes for all log groups in the
-#' Standard log class. Default field indexes are automatically available
-#' for the following fields:
+#' CloudWatch Logs provides default field indexes for all log groups in the Standard log class. Default field indexes are automatically available for the following fields:
 #' 
 #' -   `@@logStream`
 #' 
@@ -7886,9 +6568,7 @@ cloudwatchlogs_put_destination_policy <- function(destinationName, accessPolicy,
 #' 
 #' -   `traceId`
 #' 
-#' Default field indexes are in addition to any custom field indexes you
-#' define within your policy. Default field indexes are not counted towards
-#' your field index quota.
+#' Default field indexes are in addition to any custom field indexes you define within your policy. Default field indexes are not counted towards your field index quota.
 #' 
 #' Each index policy has the following quotas and restrictions:
 #' 
@@ -7896,41 +6576,21 @@ cloudwatchlogs_put_destination_policy <- function(destinationName, accessPolicy,
 #' 
 #' -   Each field name can include as many as 100 characters.
 #' 
-#' Matches of log events to the names of indexed fields are case-sensitive.
-#' For example, a field index of `RequestId` won't match a log event
-#' containing `requestId`.
+#' Matches of log events to the names of indexed fields are case-sensitive. For example, a field index of `RequestId` won't match a log event containing `requestId`.
 #' 
-#' Log group-level field index policies created with
-#' [`put_index_policy`][cloudwatchlogs_put_index_policy] override
-#' account-level field index policies created with
-#' [`put_account_policy`][cloudwatchlogs_put_account_policy] that apply to
-#' log groups. If you use
-#' [`put_index_policy`][cloudwatchlogs_put_index_policy] to create a field
-#' index policy for a log group, that log group uses only that policy for
-#' log group-level indexing, including any facet configurations. The log
-#' group ignores any account-wide field index policy that applies to log
-#' groups, but data source-based account policies may still apply.
+#' Log group-level field index policies created with [`put_index_policy`][cloudwatchlogs_put_index_policy] override account-level field index policies created with [`put_account_policy`][cloudwatchlogs_put_account_policy] that apply to log groups. If you use [`put_index_policy`][cloudwatchlogs_put_index_policy] to create a field index policy for a log group, that log group uses only that policy for log group-level indexing, including any facet configurations. The log group ignores any account-wide field index policy that applies to log groups, but data source-based account policies may still apply.
 #'
 #' @usage
 #' cloudwatchlogs_put_index_policy(logGroupIdentifier, policyDocument)
 #'
-#' @param logGroupIdentifier &#91;required&#93; Specify either the log group name or log group ARN to apply this field
-#' index policy to. If you specify an ARN, use the format
-#' arn:aws:logs:*region*:*account-id*:log-group:*log_group_name* Don't
-#' include an * at the end.
-#' @param policyDocument &#91;required&#93; The index policy document, in JSON format. The following is an example
-#' of an index policy document that creates indexes with different types.
+#' @param logGroupIdentifier &#91;required&#93; Specify either the log group name or log group ARN to apply this field index policy to. If you specify an ARN, use the format arn:aws:logs:*region*:*account-id*:log-group:*log_group_name* Don't include an * at the end.
+#' @param policyDocument &#91;required&#93; The index policy document, in JSON format. The following is an example of an index policy document that creates indexes with different types.
 #' 
 #' `"policyDocument": "{"Fields": [ "TransactionId" ], "FieldsV2": {"RequestId": {"type": "FIELD_INDEX"}, "APIName": {"type": "FACET"}, "StatusCode": {"type": "FACET"}}}"`
 #' 
-#' You can use `FieldsV2` to specify the type for each field. Supported
-#' types are `FIELD_INDEX` and `FACET`. Field names within `Fields` and
-#' `FieldsV2` must be mutually exclusive.
+#' You can use `FieldsV2` to specify the type for each field. Supported types are `FIELD_INDEX` and `FACET`. Field names within `Fields` and `FieldsV2` must be mutually exclusive.
 #' 
-#' The policy document must include at least one field index. For more
-#' information about the fields that can be included and other
-#' restrictions, see [Field index syntax and
-#' quotas](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html).
+#' The policy document must include at least one field index. For more information about the fields that can be included and other restrictions, see [Field index syntax and quotas](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Syntax.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -7982,29 +6642,19 @@ cloudwatchlogs_put_index_policy <- function(logGroupIdentifier, policyDocument) 
 #' this account
 #'
 #' @description
-#' Creates an integration between CloudWatch Logs and another service in
-#' this account. Currently, only integrations with OpenSearch Service are
-#' supported, and currently you can have only one integration in your
-#' account.
+#' Creates an integration between CloudWatch Logs and another service in this account. Currently, only integrations with OpenSearch Service are supported, and currently you can have only one integration in your account.
 #' 
-#' Integrating with OpenSearch Service makes it possible for you to create
-#' curated vended logs dashboards, powered by OpenSearch Service analytics.
-#' For more information, see [Vended log dashboards powered by Amazon
-#' OpenSearch
-#' Service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-OpenSearch-Dashboards.html).
+#' Integrating with OpenSearch Service makes it possible for you to create curated vended logs dashboards, powered by OpenSearch Service analytics. For more information, see [Vended log dashboards powered by Amazon OpenSearch Service](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-OpenSearch-Dashboards.html).
 #' 
-#' You can use this operation only to create a new integration. You can't
-#' modify an existing integration.
+#' You can use this operation only to create a new integration. You can't modify an existing integration.
 #'
 #' @usage
 #' cloudwatchlogs_put_integration(integrationName, resourceConfig,
 #'   integrationType)
 #'
 #' @param integrationName &#91;required&#93; A name for the integration.
-#' @param resourceConfig &#91;required&#93; A structure that contains configuration information for the integration
-#' that you are creating.
-#' @param integrationType &#91;required&#93; The type of integration. Currently, the only supported type is
-#' `OPENSEARCH`.
+#' @param resourceConfig &#91;required&#93; A structure that contains configuration information for the integration that you are creating.
+#' @param integrationType &#91;required&#93; The type of integration. Currently, the only supported type is `OPENSEARCH`.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8063,54 +6713,29 @@ cloudwatchlogs_put_integration <- function(integrationName, resourceConfig, inte
 #' @description
 #' Uploads a batch of log events to the specified log stream.
 #' 
-#' The sequence token is now ignored in
-#' [`put_log_events`][cloudwatchlogs_put_log_events] actions.
-#' [`put_log_events`][cloudwatchlogs_put_log_events] actions are always
-#' accepted and never return `InvalidSequenceTokenException` or
-#' `DataAlreadyAcceptedException` even if the sequence token is not valid.
-#' You can use parallel [`put_log_events`][cloudwatchlogs_put_log_events]
-#' actions on the same log stream.
+#' The sequence token is now ignored in [`put_log_events`][cloudwatchlogs_put_log_events] actions. [`put_log_events`][cloudwatchlogs_put_log_events] actions are always accepted and never return `InvalidSequenceTokenException` or `DataAlreadyAcceptedException` even if the sequence token is not valid. You can use parallel [`put_log_events`][cloudwatchlogs_put_log_events] actions on the same log stream.
 #' 
 #' The batch of events must satisfy the following constraints:
 #' 
-#' -   The maximum batch size is 1,048,576 bytes. This size is calculated
-#'     as the sum of all event messages in UTF-8, plus 26 bytes for each
-#'     log event.
+#' -   The maximum batch size is 1,048,576 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.
 #' 
-#' -   Events more than 2 hours in the future are rejected while processing
-#'     remaining valid events.
+#' -   Events more than 2 hours in the future are rejected while processing remaining valid events.
 #' 
-#' -   Events older than 14 days or preceding the log group's retention
-#'     period are rejected while processing remaining valid events.
+#' -   Events older than 14 days or preceding the log group's retention period are rejected while processing remaining valid events.
 #' 
-#' -   The log events in the batch must be in chronological order by their
-#'     timestamp. The timestamp is the time that the event occurred,
-#'     expressed as the number of milliseconds after
-#'     `Jan 1, 1970 00:00:00 UTC`. (In Amazon Web Services Tools for
-#'     PowerShell and the Amazon Web Services SDK for .NET, the timestamp
-#'     is specified in .NET format: `yyyy-mm-ddThh:mm:ss`. For example,
-#'     `2017-09-15T13:45:30`.)
+#' -   The log events in the batch must be in chronological order by their timestamp. The timestamp is the time that the event occurred, expressed as the number of milliseconds after `Jan 1, 1970 00:00:00 UTC`. (In Amazon Web Services Tools for PowerShell and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format: `yyyy-mm-ddThh:mm:ss`. For example, `2017-09-15T13:45:30`.)
 #' 
-#' -   A batch of log events in a single request must be in a chronological
-#'     order. Otherwise, the operation fails.
+#' -   A batch of log events in a single request must be in a chronological order. Otherwise, the operation fails.
 #' 
 #' -   Each log event can be no larger than 1 MB.
 #' 
 #' -   The maximum number of log events in a batch is 10,000.
 #' 
-#' -   For valid events (within 14 days in the past to 2 hours in future),
-#'     the time span in a single batch cannot exceed 24 hours. Otherwise,
-#'     the operation fails.
+#' -   For valid events (within 14 days in the past to 2 hours in future), the time span in a single batch cannot exceed 24 hours. Otherwise, the operation fails.
 #' 
-#' The quota of five requests per second per log stream has been removed.
-#' Instead, [`put_log_events`][cloudwatchlogs_put_log_events] actions are
-#' throttled based on a per-second per-account quota. You can request an
-#' increase to the per-second throttling quota by using the Service Quotas
-#' service.
+#' The quota of five requests per second per log stream has been removed. Instead, [`put_log_events`][cloudwatchlogs_put_log_events] actions are throttled based on a per-second per-account quota. You can request an increase to the per-second throttling quota by using the Service Quotas service.
 #' 
-#' If a call to [`put_log_events`][cloudwatchlogs_put_log_events] returns
-#' "UnrecognizedClientException" the most likely cause is a non-valid
-#' Amazon Web Services access key ID or secret key.
+#' If a call to [`put_log_events`][cloudwatchlogs_put_log_events] returns "UnrecognizedClientException" the most likely cause is a non-valid Amazon Web Services access key ID or secret key.
 #'
 #' @usage
 #' cloudwatchlogs_put_log_events(logGroupName, logStreamName, logEvents,
@@ -8119,14 +6744,9 @@ cloudwatchlogs_put_integration <- function(integrationName, resourceConfig, inte
 #' @param logGroupName &#91;required&#93; The name of the log group.
 #' @param logStreamName &#91;required&#93; The name of the log stream.
 #' @param logEvents &#91;required&#93; The log events.
-#' @param sequenceToken The sequence token obtained from the response of the previous
-#' [`put_log_events`][cloudwatchlogs_put_log_events] call.
+#' @param sequenceToken The sequence token obtained from the response of the previous [`put_log_events`][cloudwatchlogs_put_log_events] call.
 #' 
-#' The `sequenceToken` parameter is now ignored in
-#' [`put_log_events`][cloudwatchlogs_put_log_events] actions.
-#' [`put_log_events`][cloudwatchlogs_put_log_events] actions are now
-#' accepted and never return `InvalidSequenceTokenException` or
-#' `DataAlreadyAcceptedException` even if the sequence token is not valid.
+#' The `sequenceToken` parameter is now ignored in [`put_log_events`][cloudwatchlogs_put_log_events] actions. [`put_log_events`][cloudwatchlogs_put_log_events] actions are now accepted and never return `InvalidSequenceTokenException` or `DataAlreadyAcceptedException` even if the sequence token is not valid.
 #' @param entity The entity associated with the log events.
 #'
 #' @return
@@ -8195,13 +6815,9 @@ cloudwatchlogs_put_log_events <- function(logGroupName, logStreamName, logEvents
 #' Enables or disables deletion protection for the specified log group
 #'
 #' @description
-#' Enables or disables deletion protection for the specified log group.
-#' When enabled on a log group, deletion protection blocks all deletion
-#' operations until it is explicitly disabled.
+#' Enables or disables deletion protection for the specified log group. When enabled on a log group, deletion protection blocks all deletion operations until it is explicitly disabled.
 #' 
-#' For information about the parameters that are common to all actions, see
-#' [Common
-#' Parameters](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html).
+#' For information about the parameters that are common to all actions, see [Common Parameters](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/CommonParameters.html).
 #'
 #' @usage
 #' cloudwatchlogs_put_log_group_deletion_protection(logGroupIdentifier,
@@ -8261,39 +6877,19 @@ cloudwatchlogs_put_log_group_deletion_protection <- function(logGroupIdentifier,
 #' log group
 #'
 #' @description
-#' Creates or updates a metric filter and associates it with the specified
-#' log group. With metric filters, you can configure rules to extract
-#' metric data from log events ingested through
-#' [`put_log_events`][cloudwatchlogs_put_log_events].
+#' Creates or updates a metric filter and associates it with the specified log group. With metric filters, you can configure rules to extract metric data from log events ingested through [`put_log_events`][cloudwatchlogs_put_log_events].
 #' 
-#' The maximum number of metric filters that can be associated with a log
-#' group is 100.
+#' The maximum number of metric filters that can be associated with a log group is 100.
 #' 
-#' Using regular expressions in filter patterns is supported. For these
-#' filters, there is a quota of two regular expression patterns within a
-#' single filter pattern. There is also a quota of five regular expression
-#' patterns per log group. For more information about using regular
-#' expressions in filter patterns, see [Filter pattern syntax for metric
-#' filters, subscription filters, filter log events, and Live
-#' Tail](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
+#' Using regular expressions in filter patterns is supported. For these filters, there is a quota of two regular expression patterns within a single filter pattern. There is also a quota of five regular expression patterns per log group. For more information about using regular expressions in filter patterns, see [Filter pattern syntax for metric filters, subscription filters, filter log events, and Live Tail](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
 #' 
-#' When you create a metric filter, you can also optionally assign a unit
-#' and dimensions to the metric that is created.
+#' When you create a metric filter, you can also optionally assign a unit and dimensions to the metric that is created.
 #' 
-#' Metrics extracted from log events are charged as custom metrics. To
-#' prevent unexpected high charges, do not specify high-cardinality fields
-#' such as `IPAddress` or `requestID` as dimensions. Each different value
-#' found for a dimension is treated as a separate metric and accrues
-#' charges as a separate custom metric.
+#' Metrics extracted from log events are charged as custom metrics. To prevent unexpected high charges, do not specify high-cardinality fields such as `IPAddress` or `requestID` as dimensions. Each different value found for a dimension is treated as a separate metric and accrues charges as a separate custom metric.
 #' 
-#' CloudWatch Logs might disable a metric filter if it generates 1,000
-#' different name/value pairs for your specified dimensions within one
-#' hour.
+#' CloudWatch Logs might disable a metric filter if it generates 1,000 different name/value pairs for your specified dimensions within one hour.
 #' 
-#' You can also set up a billing alarm to alert you if your charges are
-#' higher than expected. For more information, see [Creating a Billing
-#' Alarm to Monitor Your Estimated Amazon Web Services
-#' Charges](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html).
+#' You can also set up a billing alarm to alert you if your charges are higher than expected. For more information, see [Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html).
 #'
 #' @usage
 #' cloudwatchlogs_put_metric_filter(logGroupName, filterName,
@@ -8304,24 +6900,11 @@ cloudwatchlogs_put_log_group_deletion_protection <- function(logGroupIdentifier,
 #' @param filterName &#91;required&#93; A name for the metric filter.
 #' @param filterPattern &#91;required&#93; A filter pattern for extracting metric data out of ingested log events.
 #' @param metricTransformations &#91;required&#93; A collection of information that defines how metric data gets emitted.
-#' @param applyOnTransformedLogs This parameter is valid only for log groups that have an active log
-#' transformer. For more information about log transformers, see
-#' [`put_transformer`][cloudwatchlogs_put_transformer].
+#' @param applyOnTransformedLogs This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see [`put_transformer`][cloudwatchlogs_put_transformer].
 #' 
-#' If the log group uses either a log-group level or account-level
-#' transformer, and you specify `true`, the metric filter will be applied
-#' on the transformed version of the log events instead of the original
-#' ingested log events.
-#' @param fieldSelectionCriteria A filter expression that specifies which log events should be processed
-#' by this metric filter based on system fields such as source account and
-#' source region. Uses selection criteria syntax with operators like `=`,
-#' `!=`, `AND`, `OR`, `IN`, `NOT IN`. Example: `@@aws.region = "us-east-1"`
-#' or `@@aws.account IN ["123456789012", "987654321098"]`. Maximum length:
-#' 2000 characters.
-#' @param emitSystemFieldDimensions A list of system fields to emit as additional dimensions in the
-#' generated metrics. Valid values are `@@aws.account` and `@@aws.region`.
-#' These dimensions help identify the source of centralized log data and
-#' count toward the total dimension limit for metric filters.
+#' If the log group uses either a log-group level or account-level transformer, and you specify `true`, the metric filter will be applied on the transformed version of the log events instead of the original ingested log events.
+#' @param fieldSelectionCriteria A filter expression that specifies which log events should be processed by this metric filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like `=`, `!=`, `AND`, `OR`, `IN`, `NOT IN`. Example: `@@aws.region = "us-east-1"` or `@@aws.account IN ["123456789012", "987654321098"]`. Maximum length: 2000 characters.
+#' @param emitSystemFieldDimensions A list of system fields to emit as additional dimensions in the generated metrics. Valid values are `@@aws.account` and `@@aws.region`. These dimensions help identify the source of centralized log data and count toward the total dimension limit for metric filters.
 #'
 #' @return
 #' An empty list.
@@ -8379,62 +6962,27 @@ cloudwatchlogs_put_metric_filter <- function(logGroupName, filterName, filterPat
 #' Creates or updates a query definition for CloudWatch Logs Insights
 #'
 #' @description
-#' Creates or updates a query definition for CloudWatch Logs Insights. For
-#' more information, see [Analyzing Log Data with CloudWatch Logs
-#' Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html).
+#' Creates or updates a query definition for CloudWatch Logs Insights. For more information, see [Analyzing Log Data with CloudWatch Logs Insights](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html).
 #' 
-#' To update a query definition, specify its `queryDefinitionId` in your
-#' request. The values of `name`, `queryString`, and `logGroupNames` are
-#' changed to the values that you specify in your update operation. No
-#' current values are retained from the current query definition. For
-#' example, imagine updating a current query definition that includes log
-#' groups. If you don't specify the `logGroupNames` parameter in your
-#' update operation, the query definition changes to contain no log groups.
+#' To update a query definition, specify its `queryDefinitionId` in your request. The values of `name`, `queryString`, and `logGroupNames` are changed to the values that you specify in your update operation. No current values are retained from the current query definition. For example, imagine updating a current query definition that includes log groups. If you don't specify the `logGroupNames` parameter in your update operation, the query definition changes to contain no log groups.
 #' 
-#' You must have the `logs:PutQueryDefinition` permission to be able to
-#' perform this operation.
+#' You must have the `logs:PutQueryDefinition` permission to be able to perform this operation.
 #'
 #' @usage
 #' cloudwatchlogs_put_query_definition(queryLanguage, name,
 #'   queryDefinitionId, logGroupNames, queryString, clientToken, parameters)
 #'
-#' @param queryLanguage Specify the query language to use for this query. The options are Logs
-#' Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information
-#' about the query languages that CloudWatch Logs supports, see [Supported
-#' query
-#' languages](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html).
-#' @param name &#91;required&#93; A name for the query definition. If you are saving numerous query
-#' definitions, we recommend that you name them. This way, you can find the
-#' ones you want by using the first part of the name as a filter in the
-#' `queryDefinitionNamePrefix` parameter of
-#' [`describe_query_definitions`][cloudwatchlogs_describe_query_definitions].
-#' @param queryDefinitionId If you are updating a query definition, use this parameter to specify
-#' the ID of the query definition that you want to update. You can use
-#' [`describe_query_definitions`][cloudwatchlogs_describe_query_definitions]
-#' to retrieve the IDs of your saved query definitions.
+#' @param queryLanguage Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see [Supported query languages](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html).
+#' @param name &#91;required&#93; A name for the query definition. If you are saving numerous query definitions, we recommend that you name them. This way, you can find the ones you want by using the first part of the name as a filter in the `queryDefinitionNamePrefix` parameter of [`describe_query_definitions`][cloudwatchlogs_describe_query_definitions].
+#' @param queryDefinitionId If you are updating a query definition, use this parameter to specify the ID of the query definition that you want to update. You can use [`describe_query_definitions`][cloudwatchlogs_describe_query_definitions] to retrieve the IDs of your saved query definitions.
 #' 
-#' If you are creating a query definition, do not specify this parameter.
-#' CloudWatch generates a unique ID for the new query definition and
-#' include it in the response to this operation.
-#' @param logGroupNames Use this parameter to include specific log groups as part of your query
-#' definition. If your query uses the OpenSearch Service query language,
-#' you specify the log group names inside the `querystring` instead of
-#' here.
+#' If you are creating a query definition, do not specify this parameter. CloudWatch generates a unique ID for the new query definition and include it in the response to this operation.
+#' @param logGroupNames Use this parameter to include specific log groups as part of your query definition. If your query uses the OpenSearch Service query language, you specify the log group names inside the `querystring` instead of here.
 #' 
-#' If you are updating an existing query definition for the Logs Insights
-#' QL or OpenSearch Service PPL and you omit this parameter, then the
-#' updated definition will contain no log groups.
-#' @param queryString &#91;required&#93; The query string to use for this definition. For more information, see
-#' [CloudWatch Logs Insights Query
-#' Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
-#' @param clientToken Used as an idempotency token, to avoid returning an exception if the
-#' service receives the same request twice because of a network error.
-#' @param parameters Use this parameter to include specific query parameters as part of your
-#' query definition. Query parameters are supported only for Logs Insights
-#' QL queries. Query parameters allow you to use placeholder variables in
-#' your query string that are substituted with values at execution time.
-#' Use the `{{parameterName}}` syntax in your query string to reference a
-#' parameter.
+#' If you are updating an existing query definition for the Logs Insights QL or OpenSearch Service PPL and you omit this parameter, then the updated definition will contain no log groups.
+#' @param queryString &#91;required&#93; The query string to use for this definition. For more information, see [CloudWatch Logs Insights Query Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
+#' @param clientToken Used as an idempotency token, to avoid returning an exception if the service receives the same request twice because of a network error.
+#' @param parameters Use this parameter to include specific query parameters as part of your query definition. Query parameters are supported only for Logs Insights QL queries. Query parameters allow you to use placeholder variables in your query string that are substituted with values at execution time. Use the `{{parameterName}}` syntax in your query string to reference a parameter.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8493,56 +7041,32 @@ cloudwatchlogs_put_query_definition <- function(queryLanguage = NULL, name, quer
 #' services to put log events to this account, such as Amazon Route 53
 #'
 #' @description
-#' Creates or updates a resource policy allowing other Amazon Web Services
-#' services to put log events to this account, such as Amazon Route 53.
-#' This API has the following restrictions:
+#' Creates or updates a resource policy allowing other Amazon Web Services services to put log events to this account, such as Amazon Route 53. This API has the following restrictions:
 #' 
-#' -   **Supported actions** - Policy only supports `logs:PutLogEvents` and
-#'     `logs:CreateLogStream ` actions
+#' -   **Supported actions** - Policy only supports `logs:PutLogEvents` and `logs:CreateLogStream ` actions
 #' 
-#' -   **Supported principals** - Policy only applies when operations are
-#'     invoked by Amazon Web Services service principals (not IAM users,
-#'     roles, or cross-account principals
+#' -   **Supported principals** - Policy only applies when operations are invoked by Amazon Web Services service principals (not IAM users, roles, or cross-account principals
 #' 
-#' -   **Policy limits** - An account can have a maximum of 10 policies
-#'     without resourceARN and one per LogGroup resourceARN
+#' -   **Policy limits** - An account can have a maximum of 10 policies without resourceARN and one per LogGroup resourceARN
 #' 
-#' Resource policies with actions invoked by non-Amazon Web Services
-#' service principals (such as IAM users, roles, or other Amazon Web
-#' Services accounts) will not be enforced. For access control involving
-#' these principals, use the IAM policies.
+#' Resource policies with actions invoked by non-Amazon Web Services service principals (such as IAM users, roles, or other Amazon Web Services accounts) will not be enforced. For access control involving these principals, use the IAM policies.
 #'
 #' @usage
 #' cloudwatchlogs_put_resource_policy(policyName, policyDocument,
 #'   resourceArn, expectedRevisionId)
 #'
 #' @param policyName Name of the new policy. This parameter is required.
-#' @param policyDocument Details of the new policy, including the identity of the principal that
-#' is enabled to put logs to this account. This is formatted as a JSON
-#' string. This parameter is required.
+#' @param policyDocument Details of the new policy, including the identity of the principal that is enabled to put logs to this account. This is formatted as a JSON string. This parameter is required.
 #' 
-#' The following example creates a resource policy enabling the Route 53
-#' service to put DNS query logs in to the specified log group. Replace
-#' `"logArn"` with the ARN of your CloudWatch Logs resource, such as a log
-#' group or log stream.
+#' The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the specified log group. Replace `"logArn"` with the ARN of your CloudWatch Logs resource, such as a log group or log stream.
 #' 
-#' CloudWatch Logs also supports
-#' [aws:SourceArn](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn)
-#' and
-#' [aws:SourceAccount](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount)
-#' condition context keys.
+#' CloudWatch Logs also supports [aws:SourceArn](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourcearn) and [aws:SourceAccount](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-sourceaccount) condition context keys.
 #' 
-#' In the example resource policy, you would replace the value of
-#' `SourceArn` with the resource making the call from Route 53 to
-#' CloudWatch Logs. You would also replace the value of `SourceAccount`
-#' with the Amazon Web Services account ID making that call.
+#' In the example resource policy, you would replace the value of `SourceArn` with the resource making the call from Route 53 to CloudWatch Logs. You would also replace the value of `SourceAccount` with the Amazon Web Services account ID making that call.
 #' 
 #' `{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action": "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn": "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId" } } } ] }`
-#' @param resourceArn The ARN of the CloudWatch Logs resource to which the resource policy
-#' needs to be added or attached. Currently only supports LogGroup ARN.
-#' @param expectedRevisionId The expected revision ID of the resource policy. Required when
-#' `resourceArn` is provided to prevent concurrent modifications. Use
-#' `null` when creating a resource policy for the first time.
+#' @param resourceArn The ARN of the CloudWatch Logs resource to which the resource policy needs to be added or attached. Currently only supports LogGroup ARN.
+#' @param expectedRevisionId The expected revision ID of the resource policy. Required when `resourceArn` is provided to prevent concurrent modifications. Use `null` when creating a resource policy for the first time.
 #'
 #' @return
 #' A list with the following syntax:
@@ -8597,35 +7121,21 @@ cloudwatchlogs_put_resource_policy <- function(policyName = NULL, policyDocument
 #' Sets the retention of the specified log group
 #'
 #' @description
-#' Sets the retention of the specified log group. With a retention policy,
-#' you can configure the number of days for which to retain log events in
-#' the specified log group.
+#' Sets the retention of the specified log group. With a retention policy, you can configure the number of days for which to retain log events in the specified log group.
 #' 
-#' CloudWatch Logs doesn't immediately delete log events when they reach
-#' their retention setting. It typically takes up to 72 hours after that
-#' before log events are deleted, but in rare situations might take longer.
+#' CloudWatch Logs doesn't immediately delete log events when they reach their retention setting. It typically takes up to 72 hours after that before log events are deleted, but in rare situations might take longer.
 #' 
-#' To illustrate, imagine that you change a log group to have a longer
-#' retention setting when it contains log events that are past the
-#' expiration date, but haven't been deleted. Those log events will take up
-#' to 72 hours to be deleted after the new retention date is reached. To
-#' make sure that log data is deleted permanently, keep a log group at its
-#' lower retention setting until 72 hours after the previous retention
-#' period ends. Alternatively, wait to change the retention setting until
-#' you confirm that the earlier log events are deleted.
+#' To illustrate, imagine that you change a log group to have a longer retention setting when it contains log events that are past the expiration date, but haven't been deleted. Those log events will take up to 72 hours to be deleted after the new retention date is reached. To make sure that log data is deleted permanently, keep a log group at its lower retention setting until 72 hours after the previous retention period ends. Alternatively, wait to change the retention setting until you confirm that the earlier log events are deleted.
 #' 
-#' When log events reach their retention setting they are marked for
-#' deletion. After they are marked for deletion, they do not add to your
-#' archival storage costs anymore, even if they are not actually deleted
-#' until later. These log events marked for deletion are also not included
-#' when you use an API to retrieve the `storedBytes` value to see how many
-#' bytes a log group is storing.
+#' When log events reach their retention setting they are marked for deletion. After they are marked for deletion, they do not add to your archival storage costs anymore, even if they are not actually deleted until later. These log events marked for deletion are also not included when you use an API to retrieve the `storedBytes` value to see how many bytes a log group is storing.
 #'
 #' @usage
 #' cloudwatchlogs_put_retention_policy(logGroupName, retentionInDays)
 #'
 #' @param logGroupName &#91;required&#93; The name of the log group.
-#' @param retentionInDays &#91;required&#93; 
+#' @param retentionInDays &#91;required&#93; The number of days to retain the log events in the specified log group. Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1096, 1827, 2192, 2557, 2922, 3288, and 3653.
+#' 
+#' To set a log group so that its log events do not expire, use [`delete_retention_policy`][cloudwatchlogs_delete_retention_policy].
 #'
 #' @return
 #' An empty list.
@@ -8666,46 +7176,23 @@ cloudwatchlogs_put_retention_policy <- function(logGroupName, retentionInDays) {
 #' specified log group
 #'
 #' @description
-#' Creates or updates a subscription filter and associates it with the
-#' specified log group. With subscription filters, you can subscribe to a
-#' real-time stream of log events ingested through
-#' [`put_log_events`][cloudwatchlogs_put_log_events] and have them
-#' delivered to a specific destination. When log events are sent to the
-#' receiving service, they are Base64 encoded and compressed with the GZIP
-#' format.
+#' Creates or updates a subscription filter and associates it with the specified log group. With subscription filters, you can subscribe to a real-time stream of log events ingested through [`put_log_events`][cloudwatchlogs_put_log_events] and have them delivered to a specific destination. When log events are sent to the receiving service, they are Base64 encoded and compressed with the GZIP format.
 #' 
 #' The following destinations are supported for subscription filters:
 #' 
-#' -   An Amazon Kinesis data stream belonging to the same account as the
-#'     subscription filter, for same-account delivery.
+#' -   An Amazon Kinesis data stream belonging to the same account as the subscription filter, for same-account delivery.
 #' 
-#' -   A logical destination created with
-#'     [`put_destination`][cloudwatchlogs_put_destination] that belongs to
-#'     a different account, for cross-account delivery. We currently
-#'     support Kinesis Data Streams and Firehose as logical destinations.
+#' -   A logical destination created with [`put_destination`][cloudwatchlogs_put_destination] that belongs to a different account, for cross-account delivery. We currently support Kinesis Data Streams and Firehose as logical destinations.
 #' 
-#' -   An Amazon Kinesis Data Firehose delivery stream that belongs to the
-#'     same account as the subscription filter, for same-account delivery.
+#' -   An Amazon Kinesis Data Firehose delivery stream that belongs to the same account as the subscription filter, for same-account delivery.
 #' 
-#' -   An Lambda function that belongs to the same account as the
-#'     subscription filter, for same-account delivery.
+#' -   An Lambda function that belongs to the same account as the subscription filter, for same-account delivery.
 #' 
-#' Each log group can have up to two subscription filters associated with
-#' it. If you are updating an existing filter, you must specify the correct
-#' name in `filterName`.
+#' Each log group can have up to two subscription filters associated with it. If you are updating an existing filter, you must specify the correct name in `filterName`.
 #' 
-#' Using regular expressions in filter patterns is supported. For these
-#' filters, there is a quotas of quota of two regular expression patterns
-#' within a single filter pattern. There is also a quota of five regular
-#' expression patterns per log group. For more information about using
-#' regular expressions in filter patterns, see [Filter pattern syntax for
-#' metric filters, subscription filters, filter log events, and Live
-#' Tail](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
+#' Using regular expressions in filter patterns is supported. For these filters, there is a quotas of quota of two regular expression patterns within a single filter pattern. There is also a quota of five regular expression patterns per log group. For more information about using regular expressions in filter patterns, see [Filter pattern syntax for metric filters, subscription filters, filter log events, and Live Tail](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
 #' 
-#' To perform a
-#' [`put_subscription_filter`][cloudwatchlogs_put_subscription_filter]
-#' operation for any destination except a Lambda function, you must also
-#' have the `iam:PassRole` permission.
+#' To perform a [`put_subscription_filter`][cloudwatchlogs_put_subscription_filter] operation for any destination except a Lambda function, you must also have the `iam:PassRole` permission.
 #'
 #' @usage
 #' cloudwatchlogs_put_subscription_filter(logGroupName, filterName,
@@ -8713,58 +7200,26 @@ cloudwatchlogs_put_retention_policy <- function(logGroupName, retentionInDays) {
 #'   applyOnTransformedLogs, fieldSelectionCriteria, emitSystemFields)
 #'
 #' @param logGroupName &#91;required&#93; The name of the log group.
-#' @param filterName &#91;required&#93; A name for the subscription filter. If you are updating an existing
-#' filter, you must specify the correct name in `filterName`. To find the
-#' name of the filter currently associated with a log group, use
-#' [`describe_subscription_filters`][cloudwatchlogs_describe_subscription_filters].
+#' @param filterName &#91;required&#93; A name for the subscription filter. If you are updating an existing filter, you must specify the correct name in `filterName`. To find the name of the filter currently associated with a log group, use [`describe_subscription_filters`][cloudwatchlogs_describe_subscription_filters].
 #' @param filterPattern &#91;required&#93; A filter pattern for subscribing to a filtered stream of log events.
-#' @param destinationArn &#91;required&#93; The ARN of the destination to deliver matching log events to. Currently,
-#' the supported destinations are:
+#' @param destinationArn &#91;required&#93; The ARN of the destination to deliver matching log events to. Currently, the supported destinations are:
 #' 
-#' -   An Amazon Kinesis stream belonging to the same account as the
-#'     subscription filter, for same-account delivery.
+#' -   An Amazon Kinesis stream belonging to the same account as the subscription filter, for same-account delivery.
 #' 
-#' -   A logical destination (specified using an ARN) belonging to a
-#'     different account, for cross-account delivery.
+#' -   A logical destination (specified using an ARN) belonging to a different account, for cross-account delivery.
 #' 
-#'     If you're setting up a cross-account subscription, the destination
-#'     must have an IAM policy associated with it. The IAM policy must
-#'     allow the sender to send logs to the destination. For more
-#'     information, see
-#'     [`put_destination_policy`][cloudwatchlogs_put_destination_policy].
+#'     If you're setting up a cross-account subscription, the destination must have an IAM policy associated with it. The IAM policy must allow the sender to send logs to the destination. For more information, see [`put_destination_policy`][cloudwatchlogs_put_destination_policy].
 #' 
-#' -   A Kinesis Data Firehose delivery stream belonging to the same
-#'     account as the subscription filter, for same-account delivery.
+#' -   A Kinesis Data Firehose delivery stream belonging to the same account as the subscription filter, for same-account delivery.
 #' 
-#' -   A Lambda function belonging to the same account as the subscription
-#'     filter, for same-account delivery.
-#' @param roleArn The ARN of an IAM role that grants CloudWatch Logs permissions to
-#' deliver ingested log events to the destination stream. You don't need to
-#' provide the ARN when you are working with a logical destination for
-#' cross-account delivery.
-#' @param distribution The method used to distribute log data to the destination. By default,
-#' log data is grouped by log stream, but the grouping can be set to random
-#' for a more even distribution. This property is only applicable when the
-#' destination is an Amazon Kinesis data stream.
-#' @param applyOnTransformedLogs This parameter is valid only for log groups that have an active log
-#' transformer. For more information about log transformers, see
-#' [`put_transformer`][cloudwatchlogs_put_transformer].
+#' -   A Lambda function belonging to the same account as the subscription filter, for same-account delivery.
+#' @param roleArn The ARN of an IAM role that grants CloudWatch Logs permissions to deliver ingested log events to the destination stream. You don't need to provide the ARN when you are working with a logical destination for cross-account delivery.
+#' @param distribution The method used to distribute log data to the destination. By default, log data is grouped by log stream, but the grouping can be set to random for a more even distribution. This property is only applicable when the destination is an Amazon Kinesis data stream.
+#' @param applyOnTransformedLogs This parameter is valid only for log groups that have an active log transformer. For more information about log transformers, see [`put_transformer`][cloudwatchlogs_put_transformer].
 #' 
-#' If the log group uses either a log-group level or account-level
-#' transformer, and you specify `true`, the subscription filter will be
-#' applied on the transformed version of the log events instead of the
-#' original ingested log events.
-#' @param fieldSelectionCriteria A filter expression that specifies which log events should be processed
-#' by this subscription filter based on system fields such as source
-#' account and source region. Uses selection criteria syntax with operators
-#' like `=`, `!=`, `AND`, `OR`, `IN`, `NOT IN`. Example:
-#' `@@aws.region NOT IN ["cn-north-1"]` or
-#' `@@aws.account = "123456789012" AND @@aws.region = "us-east-1"`. Maximum
-#' length: 2000 characters.
-#' @param emitSystemFields A list of system fields to include in the log events sent to the
-#' subscription destination. Valid values are `@@aws.account` and
-#' `@@aws.region`. These fields provide source information for centralized
-#' log data in the forwarded payload.
+#' If the log group uses either a log-group level or account-level transformer, and you specify `true`, the subscription filter will be applied on the transformed version of the log events instead of the original ingested log events.
+#' @param fieldSelectionCriteria A filter expression that specifies which log events should be processed by this subscription filter based on system fields such as source account and source region. Uses selection criteria syntax with operators like `=`, `!=`, `AND`, `OR`, `IN`, `NOT IN`. Example: `@@aws.region NOT IN ["cn-north-1"]` or `@@aws.account = "123456789012" AND @@aws.region = "us-east-1"`. Maximum length: 2000 characters.
+#' @param emitSystemFields A list of system fields to include in the log events sent to the subscription destination. Valid values are `@@aws.account` and `@@aws.region`. These fields provide source information for centralized log data in the forwarded payload.
 #'
 #' @return
 #' An empty list.
@@ -8813,58 +7268,25 @@ cloudwatchlogs_put_subscription_filter <- function(logGroupName, filterName, fil
 #' Creates or updates a log transformer for a single log group
 #'
 #' @description
-#' Creates or updates a *log transformer* for a single log group. You use
-#' log transformers to transform log events into a different format, making
-#' them easier for you to process and analyze. You can also transform logs
-#' from different sources into standardized formats that contains relevant,
-#' source-specific information.
+#' Creates or updates a *log transformer* for a single log group. You use log transformers to transform log events into a different format, making them easier for you to process and analyze. You can also transform logs from different sources into standardized formats that contains relevant, source-specific information.
 #' 
-#' After you have created a transformer, CloudWatch Logs performs the
-#' transformations at the time of log ingestion. You can then refer to the
-#' transformed versions of the logs during operations such as querying with
-#' CloudWatch Logs Insights or creating metric filters or subscription
-#' filers.
+#' After you have created a transformer, CloudWatch Logs performs the transformations at the time of log ingestion. You can then refer to the transformed versions of the logs during operations such as querying with CloudWatch Logs Insights or creating metric filters or subscription filers.
 #' 
-#' You can also use a transformer to copy metadata from metadata keys into
-#' the log events themselves. This metadata can include log group name, log
-#' stream name, account ID and Region.
+#' You can also use a transformer to copy metadata from metadata keys into the log events themselves. This metadata can include log group name, log stream name, account ID and Region.
 #' 
-#' A transformer for a log group is a series of processors, where each
-#' processor applies one type of transformation to the log events ingested
-#' into this log group. The processors work one after another, in the order
-#' that you list them, like a pipeline. For more information about the
-#' available processors to use in a transformer, see [Processors that you
-#' can
-#' use](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors).
+#' A transformer for a log group is a series of processors, where each processor applies one type of transformation to the log events ingested into this log group. The processors work one after another, in the order that you list them, like a pipeline. For more information about the available processors to use in a transformer, see [Processors that you can use](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch-Logs-Transformation.html#CloudWatch-Logs-Transformation-Processors).
 #' 
-#' Having log events in standardized format enables visibility across your
-#' applications for your log analysis, reporting, and alarming needs.
-#' CloudWatch Logs provides transformation for common log types with
-#' out-of-the-box transformation templates for major Amazon Web Services
-#' log sources such as VPC flow logs, Lambda, and Amazon RDS. You can use
-#' pre-built transformation templates or create custom transformation
-#' policies.
+#' Having log events in standardized format enables visibility across your applications for your log analysis, reporting, and alarming needs. CloudWatch Logs provides transformation for common log types with out-of-the-box transformation templates for major Amazon Web Services log sources such as VPC flow logs, Lambda, and Amazon RDS. You can use pre-built transformation templates or create custom transformation policies.
 #' 
-#' You can create transformers only for the log groups in the Standard log
-#' class.
+#' You can create transformers only for the log groups in the Standard log class.
 #' 
-#' You can also set up a transformer at the account level. For more
-#' information, see
-#' [`put_account_policy`][cloudwatchlogs_put_account_policy]. If there is
-#' both a log-group level transformer created with
-#' [`put_transformer`][cloudwatchlogs_put_transformer] and an account-level
-#' transformer that could apply to the same log group, the log group uses
-#' only the log-group level transformer. It ignores the account-level
-#' transformer.
+#' You can also set up a transformer at the account level. For more information, see [`put_account_policy`][cloudwatchlogs_put_account_policy]. If there is both a log-group level transformer created with [`put_transformer`][cloudwatchlogs_put_transformer] and an account-level transformer that could apply to the same log group, the log group uses only the log-group level transformer. It ignores the account-level transformer.
 #'
 #' @usage
 #' cloudwatchlogs_put_transformer(logGroupIdentifier, transformerConfig)
 #'
-#' @param logGroupIdentifier &#91;required&#93; Specify either the name or ARN of the log group to create the
-#' transformer for.
-#' @param transformerConfig &#91;required&#93; This structure contains the configuration of this log transformer. A log
-#' transformer is an array of processors, where each processor applies one
-#' type of transformation to the log events that are ingested.
+#' @param logGroupIdentifier &#91;required&#93; Specify either the name or ARN of the log group to create the transformer for.
+#' @param transformerConfig &#91;required&#93; This structure contains the configuration of this log transformer. A log transformer is an array of processors, where each processor applies one type of transformation to the log events that are ingested.
 #'
 #' @return
 #' An empty list.
@@ -9054,107 +7476,58 @@ cloudwatchlogs_put_transformer <- function(logGroupIdentifier, transformerConfig
 #' Starts a Live Tail streaming session for one or more log groups
 #'
 #' @description
-#' Starts a Live Tail streaming session for one or more log groups. A Live
-#' Tail session returns a stream of log events that have been recently
-#' ingested in the log groups. For more information, see [Use Live Tail to
-#' view logs in near real
-#' time](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html).
+#' Starts a Live Tail streaming session for one or more log groups. A Live Tail session returns a stream of log events that have been recently ingested in the log groups. For more information, see [Use Live Tail to view logs in near real time](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs_LiveTail.html).
 #' 
-#' The response to this operation is a response stream, over which the
-#' server sends live log events and the client receives them.
+#' The response to this operation is a response stream, over which the server sends live log events and the client receives them.
 #' 
 #' The following objects are sent over the stream:
 #' 
-#' -   A single
-#'     [LiveTailSessionStart](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LiveTailSessionStart.html)
-#'     object is sent at the start of the session.
+#' -   A single [LiveTailSessionStart](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LiveTailSessionStart.html) object is sent at the start of the session.
 #' 
-#' -   Every second, a
-#'     [LiveTailSessionUpdate](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LiveTailSessionUpdate.html)
-#'     object is sent. Each of these objects contains an array of the
-#'     actual log events.
+#' -   Every second, a [LiveTailSessionUpdate](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_LiveTailSessionUpdate.html) object is sent. Each of these objects contains an array of the actual log events.
 #' 
-#'     If no new log events were ingested in the past second, the
-#'     `LiveTailSessionUpdate` object will contain an empty array.
+#'     If no new log events were ingested in the past second, the `LiveTailSessionUpdate` object will contain an empty array.
 #' 
-#'     The array of log events contained in a `LiveTailSessionUpdate` can
-#'     include as many as 500 log events. If the number of log events
-#'     matching the request exceeds 500 per second, the log events are
-#'     sampled down to 500 log events to be included in each
-#'     `LiveTailSessionUpdate` object.
+#'     The array of log events contained in a `LiveTailSessionUpdate` can include as many as 500 log events. If the number of log events matching the request exceeds 500 per second, the log events are sampled down to 500 log events to be included in each `LiveTailSessionUpdate` object.
 #' 
-#'     If your client consumes the log events slower than the server
-#'     produces them, CloudWatch Logs buffers up to 10
-#'     `LiveTailSessionUpdate` events or 5000 log events, after which it
-#'     starts dropping the oldest events.
+#'     If your client consumes the log events slower than the server produces them, CloudWatch Logs buffers up to 10 `LiveTailSessionUpdate` events or 5000 log events, after which it starts dropping the oldest events.
 #' 
-#' -   A
-#'     [SessionStreamingException](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionStreamingException)
-#'     object is returned if an unknown error occurs on the server side.
+#' -   A [SessionStreamingException](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionStreamingException) object is returned if an unknown error occurs on the server side.
 #' 
-#' -   A
-#'     [SessionTimeoutException](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException)
-#'     object is returned when the session times out, after it has been
-#'     kept open for three hours.
+#' -   A [SessionTimeoutException](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartLiveTailResponseStream.html#CWL-Type-StartLiveTailResponseStream-SessionTimeoutException) object is returned when the session times out, after it has been kept open for three hours.
 #' 
-#' The [`start_live_tail`][cloudwatchlogs_start_live_tail] API routes
-#' requests using SDK host prefix injection. SDK versions released before
-#' April 1, 2026 route to `streaming-logs.Region.amazonaws.com`, which does
-#' not support VPC endpoints. SDK versions released on or after April 1,
-#' 2026 route to `stream-logs.Region.amazonaws.com`, which supports VPC
-#' endpoints. To set up a VPC endpoint for this API, see [Creating a VPC
-#' endpoint for CloudWatch
-#' Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs)
-#' .
+#' The [`start_live_tail`][cloudwatchlogs_start_live_tail] API routes requests using SDK host prefix injection. SDK versions released before April 1, 2026 route to `streaming-logs.Region.amazonaws.com`, which does not support VPC endpoints. SDK versions released on or after April 1, 2026 route to `stream-logs.Region.amazonaws.com`, which supports VPC endpoints. To set up a VPC endpoint for this API, see [Creating a VPC endpoint for CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch-logs-and-interface-VPC.html#create-VPC-endpoint-for-CloudWatchLogs) .
 #' 
-#' You can end a session before it times out by closing the session stream
-#' or by closing the client that is receiving the stream. The session also
-#' ends if the established connection between the client and the server
-#' breaks.
+#' You can end a session before it times out by closing the session stream or by closing the client that is receiving the stream. The session also ends if the established connection between the client and the server breaks.
 #' 
-#' For examples of using an SDK to start a Live Tail session, see [Start a
-#' Live Tail session using an Amazon Web Services
-#' SDK](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/example_cloudwatch-logs_StartLiveTail_section.html).
+#' For examples of using an SDK to start a Live Tail session, see [Start a Live Tail session using an Amazon Web Services SDK](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/example_cloudwatch-logs_StartLiveTail_section.html).
 #'
 #' @usage
 #' cloudwatchlogs_start_live_tail(logGroupIdentifiers, logStreamNames,
 #'   logStreamNamePrefixes, logEventFilterPattern)
 #'
-#' @param logGroupIdentifiers &#91;required&#93; An array where each item in the array is a log group to include in the
-#' Live Tail session.
+#' @param logGroupIdentifiers &#91;required&#93; An array where each item in the array is a log group to include in the Live Tail session.
 #' 
 #' Specify each log group by its ARN.
 #' 
 #' If you specify an ARN, the ARN can't end with an asterisk (*).
 #' 
 #' You can include up to 10 log groups.
-#' @param logStreamNames If you specify this parameter, then only log events in the log streams
-#' that you specify here are included in the Live Tail session.
+#' @param logStreamNames If you specify this parameter, then only log events in the log streams that you specify here are included in the Live Tail session.
 #' 
-#' If you specify this field, you can't also specify the
-#' `logStreamNamePrefixes` field.
+#' If you specify this field, you can't also specify the `logStreamNamePrefixes` field.
 #' 
-#' You can specify this parameter only if you specify only one log group in
-#' `logGroupIdentifiers`.
-#' @param logStreamNamePrefixes If you specify this parameter, then only log events in the log streams
-#' that have names that start with the prefixes that you specify here are
-#' included in the Live Tail session.
+#' You can specify this parameter only if you specify only one log group in `logGroupIdentifiers`.
+#' @param logStreamNamePrefixes If you specify this parameter, then only log events in the log streams that have names that start with the prefixes that you specify here are included in the Live Tail session.
 #' 
-#' If you specify this field, you can't also specify the `logStreamNames`
-#' field.
+#' If you specify this field, you can't also specify the `logStreamNames` field.
 #' 
-#' You can specify this parameter only if you specify only one log group in
-#' `logGroupIdentifiers`.
-#' @param logEventFilterPattern An optional pattern to use to filter the results to include only log
-#' events that match the pattern. For example, a filter pattern of
-#' `error 404` causes only log events that include both `error` and `404`
-#' to be included in the Live Tail stream.
+#' You can specify this parameter only if you specify only one log group in `logGroupIdentifiers`.
+#' @param logEventFilterPattern An optional pattern to use to filter the results to include only log events that match the pattern. For example, a filter pattern of `error 404` causes only log events that include both `error` and `404` to be included in the Live Tail stream.
 #' 
 #' Regular expression filter patterns are supported.
 #' 
-#' For more information about filter pattern syntax, see [Filter and
-#' Pattern
-#' Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
+#' For more information about filter pattern syntax, see [Filter and Pattern Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html).
 #'
 #' @return
 #' A list with the following syntax:
@@ -9243,117 +7616,54 @@ cloudwatchlogs_start_live_tail <- function(logGroupIdentifiers, logStreamNames =
 #' CloudWatch Logs Insights
 #'
 #' @description
-#' Starts a query of one or more log groups or data sources using
-#' CloudWatch Logs Insights. You specify the log groups or data sources and
-#' time range to query and the query string to use. You can query up to 10
-#' data sources in a single query.
+#' Starts a query of one or more log groups or data sources using CloudWatch Logs Insights. You specify the log groups or data sources and time range to query and the query string to use. You can query up to 10 data sources in a single query.
 #' 
-#' For more information, see [CloudWatch Logs Insights Query
-#' Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
+#' For more information, see [CloudWatch Logs Insights Query Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
 #' 
-#' After you run a query using [`start_query`][cloudwatchlogs_start_query],
-#' the query results are stored by CloudWatch Logs. You can use
-#' [`get_query_results`][cloudwatchlogs_get_query_results] to retrieve the
-#' results of a query, using the `queryId` that
-#' [`start_query`][cloudwatchlogs_start_query] returns.
+#' After you run a query using [`start_query`][cloudwatchlogs_start_query], the query results are stored by CloudWatch Logs. You can use [`get_query_results`][cloudwatchlogs_get_query_results] to retrieve the results of a query, using the `queryId` that [`start_query`][cloudwatchlogs_start_query] returns.
 #' 
-#' Interactive queries started with
-#' [`start_query`][cloudwatchlogs_start_query] share concurrency limits
-#' with automated scheduled query executions. Both types of queries count
-#' toward the same regional concurrent query quota, so high scheduled query
-#' activity may affect the availability of concurrent slots for interactive
-#' queries.
+#' Interactive queries started with [`start_query`][cloudwatchlogs_start_query] share concurrency limits with automated scheduled query executions. Both types of queries count toward the same regional concurrent query quota, so high scheduled query activity may affect the availability of concurrent slots for interactive queries.
 #' 
-#' To specify the log groups to query, a
-#' [`start_query`][cloudwatchlogs_start_query] operation must include one
-#' of the following:
+#' To specify the log groups to query, a [`start_query`][cloudwatchlogs_start_query] operation must include one of the following:
 #' 
-#' -   Either exactly one of the following parameters: `logGroupName`,
-#'     `logGroupNames`, or `logGroupIdentifiers`
+#' -   Either exactly one of the following parameters: `logGroupName`, `logGroupNames`, or `logGroupIdentifiers`
 #' 
-#' -   Or the `queryString` must include a `SOURCE` command to select log
-#'     groups for the query. The `SOURCE` command can select log groups
-#'     based on log group name prefix, account ID, and log class, or select
-#'     data sources using dataSource syntax in LogsQL, PPL, and SQL. In
-#'     LogsQL, the `SOURCE` command also supports filtering by log group
-#'     tags.
+#' -   Or the `queryString` must include a `SOURCE` command to select log groups for the query. The `SOURCE` command can select log groups based on log group name prefix, account ID, and log class, or select data sources using dataSource syntax in LogsQL, PPL, and SQL. In LogsQL, the `SOURCE` command also supports filtering by log group tags.
 #' 
-#'     For more information about the `SOURCE` command, see
-#'     [SOURCE](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Source.html).
+#'     For more information about the `SOURCE` command, see [SOURCE](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax-Source.html).
 #' 
-#' If you have associated a KMS key with the query results in this account,
-#' then [`start_query`][cloudwatchlogs_start_query] uses that key to
-#' encrypt the results when it stores them. If no key is associated with
-#' query results, the query results are encrypted with the default
-#' CloudWatch Logs encryption method.
+#' If you have associated a KMS key with the query results in this account, then [`start_query`][cloudwatchlogs_start_query] uses that key to encrypt the results when it stores them. If no key is associated with query results, the query results are encrypted with the default CloudWatch Logs encryption method.
 #' 
-#' Queries time out after 60 minutes of runtime. If your queries are timing
-#' out, reduce the time range being searched or partition your query into a
-#' number of queries.
+#' Queries time out after 60 minutes of runtime. If your queries are timing out, reduce the time range being searched or partition your query into a number of queries.
 #' 
-#' If you are using CloudWatch cross-account observability, you can use
-#' this operation in a monitoring account to start a query in a linked
-#' source account. For more information, see [CloudWatch cross-account
-#' observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html).
-#' For a cross-account [`start_query`][cloudwatchlogs_start_query]
-#' operation, the query definition must be defined in the monitoring
-#' account.
+#' If you are using CloudWatch cross-account observability, you can use this operation in a monitoring account to start a query in a linked source account. For more information, see [CloudWatch cross-account observability](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html). For a cross-account [`start_query`][cloudwatchlogs_start_query] operation, the query definition must be defined in the monitoring account.
 #' 
-#' You can have up to 100 concurrent CloudWatch Logs insights queries,
-#' including queries that have been added to dashboards.
+#' You can have up to 100 concurrent CloudWatch Logs insights queries, including queries that have been added to dashboards.
 #'
 #' @usage
 #' cloudwatchlogs_start_query(queryLanguage, logGroupName, logGroupNames,
 #'   logGroupIdentifiers, startTime, endTime, queryString, limit)
 #'
-#' @param queryLanguage Specify the query language to use for this query. The options are Logs
-#' Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information
-#' about the query languages that CloudWatch Logs supports, see [Supported
-#' query
-#' languages](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html).
+#' @param queryLanguage Specify the query language to use for this query. The options are Logs Insights QL, OpenSearch PPL, and OpenSearch SQL. For more information about the query languages that CloudWatch Logs supports, see [Supported query languages](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData_Languages.html).
 #' @param logGroupName The log group on which to perform the query.
 #' 
-#' A [`start_query`][cloudwatchlogs_start_query] operation must include
-#' exactly one of the following parameters: `logGroupName`,
-#' `logGroupNames`, or `logGroupIdentifiers`. The exception is queries
-#' using the OpenSearch Service SQL query language, where you specify the
-#' log group names inside the `querystring` instead of here.
-#' @param logGroupNames The list of log groups to be queried. You can include up to 50 log
-#' groups.
+#' A [`start_query`][cloudwatchlogs_start_query] operation must include exactly one of the following parameters: `logGroupName`, `logGroupNames`, or `logGroupIdentifiers`. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the `querystring` instead of here.
+#' @param logGroupNames The list of log groups to be queried. You can include up to 50 log groups.
 #' 
-#' A [`start_query`][cloudwatchlogs_start_query] operation must include
-#' exactly one of the following parameters: `logGroupName`,
-#' `logGroupNames`, or `logGroupIdentifiers`. The exception is queries
-#' using the OpenSearch Service SQL query language, where you specify the
-#' log group names inside the `querystring` instead of here.
+#' A [`start_query`][cloudwatchlogs_start_query] operation must include exactly one of the following parameters: `logGroupName`, `logGroupNames`, or `logGroupIdentifiers`. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the `querystring` instead of here.
 #' @param logGroupIdentifiers The list of log groups to query. You can include up to 50 log groups.
 #' 
-#' You can specify them by the log group name or ARN. If a log group that
-#' you're querying is in a source account and you're using a monitoring
-#' account, you must specify the ARN of the log group here. The query
-#' definition must also be defined in the monitoring account.
+#' You can specify them by the log group name or ARN. If a log group that you're querying is in a source account and you're using a monitoring account, you must specify the ARN of the log group here. The query definition must also be defined in the monitoring account.
 #' 
-#' If you specify an ARN, use the format
-#' arn:aws:logs:*region*:*account-id*:log-group:*log_group_name* Don't
-#' include an * at the end.
+#' If you specify an ARN, use the format arn:aws:logs:*region*:*account-id*:log-group:*log_group_name* Don't include an * at the end.
 #' 
-#' A [`start_query`][cloudwatchlogs_start_query] operation must include
-#' exactly one of the following parameters: `logGroupName`,
-#' `logGroupNames`, or `logGroupIdentifiers`. The exception is queries
-#' using the OpenSearch Service SQL query language, where you specify the
-#' log group names inside the `querystring` instead of here.
-#' @param startTime &#91;required&#93; The beginning of the time range to query. The range is inclusive, so the
-#' specified start time is included in the query. Specified as epoch time,
-#' the number of seconds since `January 1, 1970, 00:00:00 UTC`.
-#' @param endTime &#91;required&#93; The end of the time range to query. The range is inclusive, so the
-#' specified end time is included in the query. Specified as epoch time,
-#' the number of seconds since `January 1, 1970, 00:00:00 UTC`.
-#' @param queryString &#91;required&#93; The query string to use. For more information, see [CloudWatch Logs
-#' Insights Query
-#' Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
-#' @param limit The maximum number of log events to return in the query. If the query
-#' string uses the `fields` command, only the specified fields and their
-#' values are returned. The default is 10,000.
+#' A [`start_query`][cloudwatchlogs_start_query] operation must include exactly one of the following parameters: `logGroupName`, `logGroupNames`, or `logGroupIdentifiers`. The exception is queries using the OpenSearch Service SQL query language, where you specify the log group names inside the `querystring` instead of here.
+#' @param startTime &#91;required&#93; The beginning of the time range to query. The range is inclusive, so the specified start time is included in the query. Specified as epoch time, the number of seconds since `January 1, 1970, 00:00:00 UTC`.
+#' @param endTime &#91;required&#93; The end of the time range to query. The range is inclusive, so the specified end time is included in the query. Specified as epoch time, the number of seconds since `January 1, 1970, 00:00:00 UTC`.
+#' @param queryString &#91;required&#93; The query string to use. For more information, see [CloudWatch Logs Insights Query Syntax](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html).
+#' @param limit The maximum number of log events to return in the query. If the query string uses the `fields` command, only the specified fields and their values are returned. The default is 10,000.
+#' 
+#' The maximum value is 100,000.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9408,21 +7718,14 @@ cloudwatchlogs_start_query <- function(queryLanguage = NULL, logGroupName = NULL
 #' Stops a CloudWatch Logs Insights query that is in progress
 #'
 #' @description
-#' Stops a CloudWatch Logs Insights query that is in progress. If the query
-#' has already ended, the operation returns an error indicating that the
-#' specified query is not running.
+#' Stops a CloudWatch Logs Insights query that is in progress. If the query has already ended, the operation returns an error indicating that the specified query is not running.
 #' 
-#' This operation can be used to cancel both interactive queries and
-#' individual scheduled query executions. When used with scheduled queries,
-#' [`stop_query`][cloudwatchlogs_stop_query] cancels only the specific
-#' execution identified by the query ID, not the scheduled query
-#' configuration itself.
+#' This operation can be used to cancel both interactive queries and individual scheduled query executions. When used with scheduled queries, [`stop_query`][cloudwatchlogs_stop_query] cancels only the specific execution identified by the query ID, not the scheduled query configuration itself.
 #'
 #' @usage
 #' cloudwatchlogs_stop_query(queryId)
 #'
-#' @param queryId &#91;required&#93; The ID number of the query to stop. To find this ID number, use
-#' [`describe_queries`][cloudwatchlogs_describe_queries].
+#' @param queryId &#91;required&#93; The ID number of the query to stop. To find this ID number, use [`describe_queries`][cloudwatchlogs_describe_queries].
 #'
 #' @return
 #' A list with the following syntax:
@@ -9466,26 +7769,15 @@ cloudwatchlogs_stop_query <- function(queryId) {
 #' The TagLogGroup operation is on the path to deprecation
 #'
 #' @description
-#' The TagLogGroup operation is on the path to deprecation. We recommend
-#' that you use [`tag_resource`][cloudwatchlogs_tag_resource] instead.
+#' The TagLogGroup operation is on the path to deprecation. We recommend that you use [`tag_resource`][cloudwatchlogs_tag_resource] instead.
 #' 
 #' Adds or updates the specified tags for the specified log group.
 #' 
-#' To list the tags for a log group, use
-#' [`list_tags_for_resource`][cloudwatchlogs_list_tags_for_resource]. To
-#' remove tags, use [`untag_resource`][cloudwatchlogs_untag_resource].
+#' To list the tags for a log group, use [`list_tags_for_resource`][cloudwatchlogs_list_tags_for_resource]. To remove tags, use [`untag_resource`][cloudwatchlogs_untag_resource].
 #' 
-#' For more information about tags, see [Tag Log Groups in Amazon
-#' CloudWatch
-#' Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging)
-#' in the *Amazon CloudWatch Logs User Guide*.
+#' For more information about tags, see [Tag Log Groups in Amazon CloudWatch Logs](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html#log-group-tagging) in the *Amazon CloudWatch Logs User Guide*.
 #' 
-#' CloudWatch Logs doesn't support IAM policies that prevent users from
-#' assigning specified tags to log groups using the
-#' `aws:Resource/key-name ` or `aws:TagKeys` condition keys. For more
-#' information about using tags to control access, see [Controlling access
-#' to Amazon Web Services resources using
-#' tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
+#' CloudWatch Logs doesn't support IAM policies that prevent users from assigning specified tags to log groups using the `aws:Resource/key-name ` or `aws:TagKeys` condition keys. For more information about using tags to control access, see [Controlling access to Amazon Web Services resources using tags](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html).
 #'
 #' @usage
 #' cloudwatchlogs_tag_log_group(logGroupName, tags)
@@ -9534,23 +7826,13 @@ cloudwatchlogs_tag_log_group <- function(logGroupName, tags) {
 #' Logs resource
 #'
 #' @description
-#' Assigns one or more tags (key-value pairs) to the specified CloudWatch
-#' Logs resource. Currently, the only CloudWatch Logs resources that can be
-#' tagged are log groups and destinations.
+#' Assigns one or more tags (key-value pairs) to the specified CloudWatch Logs resource. Currently, the only CloudWatch Logs resources that can be tagged are log groups and destinations.
 #' 
-#' Tags can help you organize and categorize your resources. You can also
-#' use them to scope user permissions by granting a user permission to
-#' access or change only resources with certain tag values.
+#' Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.
 #' 
-#' Tags don't have any semantic meaning to Amazon Web Services and are
-#' interpreted strictly as strings of characters.
+#' Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.
 #' 
-#' You can use the [`tag_resource`][cloudwatchlogs_tag_resource] action
-#' with a resource that already has tags. If you specify a new tag key for
-#' the alarm, this tag is appended to the list of tags associated with the
-#' alarm. If you specify a tag key that is already associated with the
-#' alarm, the new tag value that you specify replaces the previous value
-#' for that tag.
+#' You can use the [`tag_resource`][cloudwatchlogs_tag_resource] action with a resource that already has tags. If you specify a new tag key for the alarm, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the alarm, the new tag value that you specify replaces the previous value for that tag.
 #' 
 #' You can associate as many as 50 tags with a CloudWatch Logs resource.
 #'
@@ -9559,15 +7841,11 @@ cloudwatchlogs_tag_log_group <- function(logGroupName, tags) {
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the resource that you're adding tags to.
 #' 
-#' The ARN format of a log group is
-#' `arn:aws:logs:Region:account-id:log-group:log-group-name `
+#' The ARN format of a log group is `arn:aws:logs:Region:account-id:log-group:log-group-name `
 #' 
-#' The ARN format of a destination is
-#' `arn:aws:logs:Region:account-id:destination:destination-name `
+#' The ARN format of a destination is `arn:aws:logs:Region:account-id:destination:destination-name `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #' @param tags &#91;required&#93; The list of key-value pairs to associate with the resource.
 #'
 #' @return
@@ -9611,14 +7889,12 @@ cloudwatchlogs_tag_resource <- function(resourceArn, tags) {
 #' event messages
 #'
 #' @description
-#' Tests the filter pattern of a metric filter against a sample of log
-#' event messages. You can use this operation to validate the correctness
-#' of a metric filter pattern.
+#' Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern.
 #'
 #' @usage
 #' cloudwatchlogs_test_metric_filter(filterPattern, logEventMessages)
 #'
-#' @param filterPattern &#91;required&#93; 
+#' @param filterPattern &#91;required&#93; A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
 #' @param logEventMessages &#91;required&#93; The log event messages to test.
 #'
 #' @return
@@ -9674,20 +7950,13 @@ cloudwatchlogs_test_metric_filter <- function(filterPattern, logEventMessages) {
 #' Use this operation to test a log transformer
 #'
 #' @description
-#' Use this operation to test a log transformer. You enter the transformer
-#' configuration and a set of log events to test with. The operation
-#' responds with an array that includes the original log events and the
-#' transformed versions.
+#' Use this operation to test a log transformer. You enter the transformer configuration and a set of log events to test with. The operation responds with an array that includes the original log events and the transformed versions.
 #'
 #' @usage
 #' cloudwatchlogs_test_transformer(transformerConfig, logEventMessages)
 #'
-#' @param transformerConfig &#91;required&#93; This structure contains the configuration of this log transformer that
-#' you want to test. A log transformer is an array of processors, where
-#' each processor applies one type of transformation to the log events that
-#' are ingested.
-#' @param logEventMessages &#91;required&#93; An array of the raw log events that you want to use to test this
-#' transformer.
+#' @param transformerConfig &#91;required&#93; This structure contains the configuration of this log transformer that you want to test. A log transformer is an array of processors, where each processor applies one type of transformation to the log events that are ingested.
+#' @param logEventMessages &#91;required&#93; An array of the raw log events that you want to use to test this transformer.
 #'
 #' @return
 #' A list with the following syntax:
@@ -9890,18 +8159,13 @@ cloudwatchlogs_test_transformer <- function(transformerConfig, logEventMessages)
 #' The UntagLogGroup operation is on the path to deprecation
 #'
 #' @description
-#' The UntagLogGroup operation is on the path to deprecation. We recommend
-#' that you use [`untag_resource`][cloudwatchlogs_untag_resource] instead.
+#' The UntagLogGroup operation is on the path to deprecation. We recommend that you use [`untag_resource`][cloudwatchlogs_untag_resource] instead.
 #' 
 #' Removes the specified tags from the specified log group.
 #' 
-#' To list the tags for a log group, use
-#' [`list_tags_for_resource`][cloudwatchlogs_list_tags_for_resource]. To
-#' add tags, use [`tag_resource`][cloudwatchlogs_tag_resource].
+#' To list the tags for a log group, use [`list_tags_for_resource`][cloudwatchlogs_list_tags_for_resource]. To add tags, use [`tag_resource`][cloudwatchlogs_tag_resource].
 #' 
-#' When using IAM policies to control tag management for CloudWatch Logs
-#' log groups, the condition keys `aws:Resource/key-name` and `aws:TagKeys`
-#' cannot be used to restrict which tags users can assign.
+#' When using IAM policies to control tag management for CloudWatch Logs log groups, the condition keys `aws:Resource/key-name` and `aws:TagKeys` cannot be used to restrict which tags users can assign.
 #'
 #' @usage
 #' cloudwatchlogs_untag_log_group(logGroupName, tags)
@@ -9956,15 +8220,11 @@ cloudwatchlogs_untag_log_group <- function(logGroupName, tags) {
 #'
 #' @param resourceArn &#91;required&#93; The ARN of the CloudWatch Logs resource that you're removing tags from.
 #' 
-#' The ARN format of a log group is
-#' `arn:aws:logs:Region:account-id:log-group:log-group-name `
+#' The ARN format of a log group is `arn:aws:logs:Region:account-id:log-group:log-group-name `
 #' 
-#' The ARN format of a destination is
-#' `arn:aws:logs:Region:account-id:destination:destination-name `
+#' The ARN format of a destination is `arn:aws:logs:Region:account-id:destination:destination-name `
 #' 
-#' For more information about ARN format, see [CloudWatch Logs resources
-#' and
-#' operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
+#' For more information about ARN format, see [CloudWatch Logs resources and operations](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/iam-access-control-overview-cwl.html).
 #' @param tagKeys &#91;required&#93; The list of tag keys to remove from the resource.
 #'
 #' @return
@@ -10008,42 +8268,22 @@ cloudwatchlogs_untag_resource <- function(resourceArn, tagKeys) {
 #' or pattern
 #'
 #' @description
-#' Use this operation to *suppress* anomaly detection for a specified
-#' anomaly or pattern. If you suppress an anomaly, CloudWatch Logs won't
-#' report new occurrences of that anomaly and won't update that anomaly
-#' with new data. If you suppress a pattern, CloudWatch Logs won't report
-#' any anomalies related to that pattern.
+#' Use this operation to *suppress* anomaly detection for a specified anomaly or pattern. If you suppress an anomaly, CloudWatch Logs won't report new occurrences of that anomaly and won't update that anomaly with new data. If you suppress a pattern, CloudWatch Logs won't report any anomalies related to that pattern.
 #' 
-#' You must specify either `anomalyId` or `patternId`, but you can't
-#' specify both parameters in the same operation.
+#' You must specify either `anomalyId` or `patternId`, but you can't specify both parameters in the same operation.
 #' 
-#' If you have previously used this operation to suppress detection of a
-#' pattern or anomaly, you can use it again to cause CloudWatch Logs to end
-#' the suppression. To do this, use this operation and specify the anomaly
-#' or pattern to stop suppressing, and omit the `suppressionType` and
-#' `suppressionPeriod` parameters.
+#' If you have previously used this operation to suppress detection of a pattern or anomaly, you can use it again to cause CloudWatch Logs to end the suppression. To do this, use this operation and specify the anomaly or pattern to stop suppressing, and omit the `suppressionType` and `suppressionPeriod` parameters.
 #'
 #' @usage
 #' cloudwatchlogs_update_anomaly(anomalyId, patternId, anomalyDetectorArn,
 #'   suppressionType, suppressionPeriod, baseline)
 #'
-#' @param anomalyId If you are suppressing or unsuppressing an anomaly, specify its unique
-#' ID here. You can find anomaly IDs by using the
-#' [`list_anomalies`][cloudwatchlogs_list_anomalies] operation.
-#' @param patternId If you are suppressing or unsuppressing an pattern, specify its unique
-#' ID here. You can find pattern IDs by using the
-#' [`list_anomalies`][cloudwatchlogs_list_anomalies] operation.
+#' @param anomalyId If you are suppressing or unsuppressing an anomaly, specify its unique ID here. You can find anomaly IDs by using the [`list_anomalies`][cloudwatchlogs_list_anomalies] operation.
+#' @param patternId If you are suppressing or unsuppressing an pattern, specify its unique ID here. You can find pattern IDs by using the [`list_anomalies`][cloudwatchlogs_list_anomalies] operation.
 #' @param anomalyDetectorArn &#91;required&#93; The ARN of the anomaly detector that this operation is to act on.
-#' @param suppressionType Use this to specify whether the suppression to be temporary or infinite.
-#' If you specify `LIMITED`, you must also specify a `suppressionPeriod`.
-#' If you specify `INFINITE`, any value for `suppressionPeriod` is ignored.
-#' @param suppressionPeriod If you are temporarily suppressing an anomaly or pattern, use this
-#' structure to specify how long the suppression is to last.
-#' @param baseline Set this to `true` to prevent CloudWatch Logs from displaying this
-#' behavior as an anomaly in the future. The behavior is then treated as
-#' baseline behavior. However, if similar but more severe occurrences of
-#' this behavior occur in the future, those will still be reported as
-#' anomalies.
+#' @param suppressionType Use this to specify whether the suppression to be temporary or infinite. If you specify `LIMITED`, you must also specify a `suppressionPeriod`. If you specify `INFINITE`, any value for `suppressionPeriod` is ignored.
+#' @param suppressionPeriod If you are temporarily suppressing an anomaly or pattern, use this structure to specify how long the suppression is to last.
+#' @param baseline Set this to `true` to prevent CloudWatch Logs from displaying this behavior as an anomaly in the future. The behavior is then treated as baseline behavior. However, if similar but more severe occurrences of this behavior occur in the future, those will still be reported as anomalies.
 #' 
 #' The default is `false`
 #'
@@ -10093,24 +8333,16 @@ cloudwatchlogs_update_anomaly <- function(anomalyId = NULL, patternId = NULL, an
 #' either the S3 path pattern or the format of the delivered logs
 #'
 #' @description
-#' Use this operation to update the configuration of a
-#' [delivery](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html)
-#' to change either the S3 path pattern or the format of the delivered
-#' logs. You can't use this operation to change the source or destination
-#' of the delivery.
+#' Use this operation to update the configuration of a [delivery](https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_Delivery.html) to change either the S3 path pattern or the format of the delivered logs. You can't use this operation to change the source or destination of the delivery.
 #'
 #' @usage
 #' cloudwatchlogs_update_delivery_configuration(id, recordFields,
 #'   fieldDelimiter, s3DeliveryConfiguration)
 #'
 #' @param id &#91;required&#93; The ID of the delivery to be updated by this request.
-#' @param recordFields The list of record fields to be delivered to the destination, in order.
-#' If the delivery's log source has mandatory fields, they must be included
-#' in this list.
-#' @param fieldDelimiter The field delimiter to use between record fields when the final output
-#' format of a delivery is in `Plain`, `W3C`, or `Raw` format.
-#' @param s3DeliveryConfiguration This structure contains parameters that are valid only when the
-#' delivery's delivery destination is an S3 bucket.
+#' @param recordFields The list of record fields to be delivered to the destination, in order. If the delivery's log source has mandatory fields, they must be included in this list.
+#' @param fieldDelimiter The field delimiter to use between record fields when the final output format of a delivery is in `Plain`, `W3C`, or `Raw` format.
+#' @param s3DeliveryConfiguration This structure contains parameters that are valid only when the delivery's delivery destination is an S3 bucket.
 #'
 #' @return
 #' An empty list.
@@ -10164,17 +8396,9 @@ cloudwatchlogs_update_delivery_configuration <- function(id, recordFields = NULL
 #'   evaluationFrequency, filterPattern, anomalyVisibilityTime, enabled)
 #'
 #' @param anomalyDetectorArn &#91;required&#93; The ARN of the anomaly detector that you want to update.
-#' @param evaluationFrequency Specifies how often the anomaly detector runs and look for anomalies.
-#' Set this value according to the frequency that the log group receives
-#' new logs. For example, if the log group receives new log events every 10
-#' minutes, then setting `evaluationFrequency` to `FIFTEEN_MIN` might be
-#' appropriate.
-#' @param filterPattern 
-#' @param anomalyVisibilityTime The number of days to use as the life cycle of anomalies. After this
-#' time, anomalies are automatically baselined and the anomaly detector
-#' model will treat new occurrences of similar event as normal. Therefore,
-#' if you do not correct the cause of an anomaly during this time, it will
-#' be considered normal going forward and will not be detected.
+#' @param evaluationFrequency Specifies how often the anomaly detector runs and look for anomalies. Set this value according to the frequency that the log group receives new logs. For example, if the log group receives new log events every 10 minutes, then setting `evaluationFrequency` to `FIFTEEN_MIN` might be appropriate.
+#' @param filterPattern A symbolic description of how CloudWatch Logs should interpret the data in each log event. For example, a log event can contain timestamps, IP addresses, strings, and so on. You use the filter pattern to specify what to look for in the log event message.
+#' @param anomalyVisibilityTime The number of days to use as the life cycle of anomalies. After this time, anomalies are automatically baselined and the anomaly detector model will treat new occurrences of similar event as normal. Therefore, if you do not correct the cause of an anomaly during this time, it will be considered normal going forward and will not be detected.
 #' @param enabled &#91;required&#93; Use this parameter to pause or restart the anomaly detector.
 #'
 #' @return
@@ -10218,12 +8442,9 @@ cloudwatchlogs_update_log_anomaly_detector <- function(anomalyDetectorArn, evalu
 #' Updates an existing lookup table by replacing all of its CSV content
 #'
 #' @description
-#' Updates an existing lookup table by replacing all of its CSV content.
-#' After the update completes, queries that use this table will use the new
-#' data.
+#' Updates an existing lookup table by replacing all of its CSV content. After the update completes, queries that use this table will use the new data.
 #' 
-#' This is a full replacement operation. All existing content is replaced
-#' with the new CSV data.
+#' This is a full replacement operation. All existing content is replaced with the new CSV data.
 #'
 #' @usage
 #' cloudwatchlogs_update_lookup_table(lookupTableArn, description,
@@ -10231,13 +8452,8 @@ cloudwatchlogs_update_log_anomaly_detector <- function(anomalyDetectorArn, evalu
 #'
 #' @param lookupTableArn &#91;required&#93; The ARN of the lookup table to update.
 #' @param description An updated description of the lookup table.
-#' @param tableBody &#91;required&#93; The new CSV content to replace the existing data. The first row must be
-#' a header row with column names. The content must use UTF-8 encoding and
-#' not exceed 10 MB.
-#' @param kmsKeyId The ARN of the KMS key to use to encrypt the lookup table data. You can
-#' use this parameter to add, update, or remove the KMS key. To remove the
-#' KMS key and use an Amazon Web Services-owned key instead, specify an
-#' empty string.
+#' @param tableBody &#91;required&#93; The new CSV content to replace the existing data. The first row must be a header row with column names. The content must use UTF-8 encoding and not exceed 10 MB.
+#' @param kmsKeyId The ARN of the KMS key to use to encrypt the lookup table data. You can use this parameter to add, update, or remove the KMS key. To remove the KMS key and use an Amazon Web Services-owned key instead, specify an empty string.
 #'
 #' @return
 #' A list with the following syntax:
@@ -10285,9 +8501,7 @@ cloudwatchlogs_update_lookup_table <- function(lookupTableArn, description = NUL
 #' Updates an existing scheduled query with new configuration
 #'
 #' @description
-#' Updates an existing scheduled query with new configuration. This
-#' operation uses PUT semantics, allowing modification of query parameters,
-#' schedule, and destinations.
+#' Updates an existing scheduled query with new configuration. This operation uses PUT semantics, allowing modification of query parameters, schedule, and destinations.
 #'
 #' @usage
 #' cloudwatchlogs_update_scheduled_query(identifier, description,
@@ -10302,13 +8516,11 @@ cloudwatchlogs_update_lookup_table <- function(lookupTableArn, description = NUL
 #' @param logGroupIdentifiers The updated array of log group names or ARNs to query.
 #' @param scheduleExpression &#91;required&#93; The updated cron expression that defines when the scheduled query runs.
 #' @param timezone The updated timezone for evaluating the schedule expression.
-#' @param startTimeOffset The updated time offset in seconds that defines the lookback period for
-#' the query.
+#' @param startTimeOffset The updated time offset in seconds that defines the lookback period for the query.
 #' @param destinationConfiguration The updated configuration for where to deliver query results.
 #' @param scheduleStartTime The updated start time for the scheduled query in Unix epoch format.
 #' @param scheduleEndTime The updated end time for the scheduled query in Unix epoch format.
-#' @param executionRoleArn &#91;required&#93; The updated ARN of the IAM role that grants permissions to execute the
-#' query and deliver results.
+#' @param executionRoleArn &#91;required&#93; The updated ARN of the IAM role that grants permissions to execute the query and deliver results.
 #' @param state The updated state of the scheduled query.
 #'
 #' @return

@@ -15,18 +15,13 @@ connect_list_data_table_attributes(
 \arguments{
 \item{InstanceId}{[required] The unique identifier for the Amazon Connect instance.}
 
-\item{DataTableId}{[required] The unique identifier for the data table whose attributes should be
-listed.}
+\item{DataTableId}{[required] The unique identifier for the data table whose attributes should be listed.}
 
-\item{AttributeIds}{Optional list of specific attribute IDs to retrieve. Used for
-CloudFormation to effectively describe attributes by ID. If NextToken is
-provided, this parameter is ignored.}
+\item{AttributeIds}{Optional list of specific attribute IDs to retrieve. Used for CloudFormation to effectively describe attributes by ID. If NextToken is provided, this parameter is ignored.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
-\item{MaxResults}{The maximum number of data table attributes to return in one page of
-results.}
+\item{MaxResults}{The maximum number of data table attributes to return in one page of results.}
 }
 \description{
 Returns all attributes for a specified data table. A maximum of 100 attributes per data table is allowed. Customers can request an increase by using Amazon Web Services Service Quotas. The response can be filtered by specific attribute IDs for CloudFormation integration.

@@ -13,27 +13,20 @@ glue_get_databases(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog from which to retrieve \code{Databases}. If none
-is provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog from which to retrieve \code{Databases}. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{NextToken}{A continuation token, if this is a continuation call.}
 
 \item{MaxResults}{The maximum number of databases to return in one response.}
 
-\item{ResourceShareType}{Allows you to specify that you want to list the databases shared with
-your account. The allowable values are \code{FEDERATED}, \code{FOREIGN} or \code{ALL}.
+\item{ResourceShareType}{Allows you to specify that you want to list the databases shared with your account. The allowable values are \code{FEDERATED}, \code{FOREIGN} or \code{ALL}.
 \itemize{
-\item If set to \code{FEDERATED}, will list the federated databases
-(referencing an external entity) shared with your account.
-\item If set to \code{FOREIGN}, will list the databases shared with your
-account.
-\item If set to \code{ALL}, will list the databases shared with your account,
-as well as the databases in yor local account.
+\item If set to \code{FEDERATED}, will list the federated databases (referencing an external entity) shared with your account.
+\item If set to \code{FOREIGN}, will list the databases shared with your account.
+\item If set to \code{ALL}, will list the databases shared with your account, as well as the databases in yor local account.
 }}
 
-\item{AttributesToGet}{Specifies the database fields returned by the
-\code{\link[=glue_get_databases]{get_databases}} call. This parameter doesn’t
-accept an empty list. The request must include the \code{NAME}.}
+\item{AttributesToGet}{Specifies the database fields returned by the \code{\link[=glue_get_databases]{get_databases}} call. This parameter doesn’t accept an empty list. The request must include the \code{NAME}.}
 }
 \description{
 Retrieves all databases defined in a given Data Catalog.

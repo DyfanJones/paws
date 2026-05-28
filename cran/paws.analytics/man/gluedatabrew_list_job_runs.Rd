@@ -11,8 +11,7 @@ gluedatabrew_list_job_runs(Name, MaxResults = NULL, NextToken = NULL)
 
 \item{MaxResults}{The maximum number of results to return in this request.}
 
-\item{NextToken}{The token returned by a previous call to retrieve the next set of
-results.}
+\item{NextToken}{The token returned by a previous call to retrieve the next set of results.}
 }
 \description{
 Lists all of the previous runs of a particular DataBrew job.

@@ -7,8 +7,7 @@
 glue_get_registry(RegistryId)
 }
 \arguments{
-\item{RegistryId}{[required] This is a wrapper structure that may contain the registry name and
-Amazon Resource Name (ARN).}
+\item{RegistryId}{[required] This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).}
 }
 \description{
 Describes the specified registry in detail.

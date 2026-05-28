@@ -11,11 +11,8 @@ NULL
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_accept_qualification_request/](https://www.paws-r-sdk.com/docs/mturk_accept_qualification_request/) for full documentation.
 #'
-#' @param QualificationRequestId &#91;required&#93; The ID of the Qualification request, as returned by the
-#' `GetQualificationRequests` operation.
-#' @param IntegerValue The value of the Qualification. You can omit this value if you are using
-#' the presence or absence of the Qualification as the basis for a HIT
-#' requirement.
+#' @param QualificationRequestId &#91;required&#93; The ID of the Qualification request, as returned by the `GetQualificationRequests` operation.
+#' @param IntegerValue The value of the Qualification. You can omit this value if you are using the presence or absence of the Qualification as the basis for a HIT requirement.
 #'
 #' @keywords internal
 #'
@@ -47,12 +44,9 @@ mturk_accept_qualification_request <- function(QualificationRequestId, IntegerVa
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_approve_assignment/](https://www.paws-r-sdk.com/docs/mturk_approve_assignment/) for full documentation.
 #'
-#' @param AssignmentId &#91;required&#93; The ID of the assignment. The assignment must correspond to a HIT
-#' created by the Requester.
-#' @param RequesterFeedback A message for the Worker, which the Worker can see in the Status section
-#' of the web site.
-#' @param OverrideRejection A flag indicating that an assignment should be approved even if it was
-#' previously rejected. Defaults to `False`.
+#' @param AssignmentId &#91;required&#93; The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
+#' @param RequesterFeedback A message for the Worker, which the Worker can see in the Status section of the web site.
+#' @param OverrideRejection A flag indicating that an assignment should be approved even if it was previously rejected. Defaults to `False`.
 #'
 #' @keywords internal
 #'
@@ -85,13 +79,9 @@ mturk_approve_assignment <- function(AssignmentId, RequesterFeedback = NULL, Ove
 #' See [https://www.paws-r-sdk.com/docs/mturk_associate_qualification_with_worker/](https://www.paws-r-sdk.com/docs/mturk_associate_qualification_with_worker/) for full documentation.
 #'
 #' @param QualificationTypeId &#91;required&#93; The ID of the Qualification type to use for the assigned Qualification.
-#' @param WorkerId &#91;required&#93; The ID of the Worker to whom the Qualification is being assigned. Worker
-#' IDs are included with submitted HIT assignments and Qualification
-#' requests.
+#' @param WorkerId &#91;required&#93; The ID of the Worker to whom the Qualification is being assigned. Worker IDs are included with submitted HIT assignments and Qualification requests.
 #' @param IntegerValue The value of the Qualification to assign.
-#' @param SendNotification Specifies whether to send a notification email message to the Worker
-#' saying that the qualification was assigned to the Worker. Note: this is
-#' true by default.
+#' @param SendNotification Specifies whether to send a notification email message to the Worker saying that the qualification was assigned to the Worker. Note: this is true by default.
 #'
 #' @keywords internal
 #'
@@ -125,13 +115,7 @@ mturk_associate_qualification_with_worker <- function(QualificationTypeId, Worke
 #'
 #' @param HITId &#91;required&#93; The ID of the HIT to extend.
 #' @param NumberOfAdditionalAssignments &#91;required&#93; The number of additional assignments to request for this HIT.
-#' @param UniqueRequestToken A unique identifier for this request, which allows you to retry the call
-#' on error without extending the HIT multiple times. This is useful in
-#' cases such as network timeouts where it is unclear whether or not the
-#' call succeeded on the server. If the extend HIT already exists in the
-#' system from a previous call using the same `UniqueRequestToken`,
-#' subsequent calls will return an error with a message containing the
-#' request ID.
+#' @param UniqueRequestToken A unique identifier for this request, which allows you to retry the call on error without extending the HIT multiple times. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the extend HIT already exists in the system from a previous call using the same `UniqueRequestToken`, subsequent calls will return an error with a message containing the request ID.
 #'
 #' @keywords internal
 #'
@@ -162,84 +146,34 @@ mturk_create_additional_assignments_for_hit <- function(HITId, NumberOfAdditiona
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_create_hit/](https://www.paws-r-sdk.com/docs/mturk_create_hit/) for full documentation.
 #'
-#' @param MaxAssignments The number of times the HIT can be accepted and completed before the HIT
-#' becomes unavailable.
-#' @param AutoApprovalDelayInSeconds The number of seconds after an assignment for the HIT has been
-#' submitted, after which the assignment is considered Approved
-#' automatically unless the Requester explicitly rejects it.
-#' @param LifetimeInSeconds &#91;required&#93; An amount of time, in seconds, after which the HIT is no longer
-#' available for users to accept. After the lifetime of the HIT elapses,
-#' the HIT no longer appears in HIT searches, even if not all of the
-#' assignments for the HIT have been accepted.
-#' @param AssignmentDurationInSeconds &#91;required&#93; The amount of time, in seconds, that a Worker has to complete the HIT
-#' after accepting it. If a Worker does not complete the assignment within
-#' the specified duration, the assignment is considered abandoned. If the
-#' HIT is still active (that is, its lifetime has not elapsed), the
-#' assignment becomes available for other users to find and accept.
-#' @param Reward &#91;required&#93; The amount of money the Requester will pay a Worker for successfully
-#' completing the HIT.
-#' @param Title &#91;required&#93; The title of the HIT. A title should be short and descriptive about the
-#' kind of task the HIT contains. On the Amazon Mechanical Turk web site,
-#' the HIT title appears in search results, and everywhere the HIT is
-#' mentioned.
-#' @param Keywords One or more words or phrases that describe the HIT, separated by commas.
-#' These words are used in searches to find HITs.
-#' @param Description &#91;required&#93; A general description of the HIT. A description includes detailed
-#' information about the kind of task the HIT contains. On the Amazon
-#' Mechanical Turk web site, the HIT description appears in the expanded
-#' view of search results, and in the HIT and assignment screens. A good
-#' description gives the user enough information to evaluate the HIT before
-#' accepting it.
+#' @param MaxAssignments The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
+#' @param AutoApprovalDelayInSeconds The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it.
+#' @param LifetimeInSeconds &#91;required&#93; An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted.
+#' @param AssignmentDurationInSeconds &#91;required&#93; The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept.
+#' @param Reward &#91;required&#93; The amount of money the Requester will pay a Worker for successfully completing the HIT.
+#' @param Title &#91;required&#93; The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned.
+#' @param Keywords One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs.
+#' @param Description &#91;required&#93; A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it.
 #' @param Question The data the person completing the HIT uses to produce the results.
 #' 
-#' Constraints: Must be a QuestionForm data structure, an ExternalQuestion
-#' data structure, or an HTMLQuestion data structure. The XML question data
-#' must not be larger than 64 kilobytes (65,535 bytes) in size, including
-#' whitespace.
+#' Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace.
 #' 
 #' Either a Question parameter or a HITLayoutId parameter must be provided.
-#' @param RequesterAnnotation An arbitrary data field. The RequesterAnnotation parameter lets your
-#' application attach arbitrary data to the HIT for tracking purposes. For
-#' example, this parameter could be an identifier internal to the
-#' Requester's application that corresponds with the HIT.
+#' @param RequesterAnnotation An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT.
 #' 
-#' The RequesterAnnotation parameter for a HIT is only visible to the
-#' Requester who created the HIT. It is not shown to the Worker, or any
-#' other Requester.
+#' The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester.
 #' 
-#' The RequesterAnnotation parameter may be different for each HIT you
-#' submit. It does not affect how your HITs are grouped.
-#' @param QualificationRequirements Conditions that a Worker's Qualifications must meet in order to accept
-#' the HIT. A HIT can have between zero and ten Qualification requirements.
-#' All requirements must be met in order for a Worker to accept the HIT.
-#' Additionally, other actions can be restricted using the `ActionsGuarded`
-#' field on each `QualificationRequirement` structure.
-#' @param UniqueRequestToken A unique identifier for this request which allows you to retry the call
-#' on error without creating duplicate HITs. This is useful in cases such
-#' as network timeouts where it is unclear whether or not the call
-#' succeeded on the server. If the HIT already exists in the system from a
-#' previous call using the same UniqueRequestToken, subsequent calls will
-#' return a AWS.MechanicalTurk.HitAlreadyExists error with a message
-#' containing the HITId.
+#' The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped.
+#' @param QualificationRequirements Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the `ActionsGuarded` field on each `QualificationRequirement` structure.
+#' @param UniqueRequestToken A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
 #' 
-#' Note: It is your responsibility to ensure uniqueness of the token. The
-#' unique token expires after 24 hours. Subsequent calls using the same
-#' UniqueRequestToken made after the 24 hour limit could create duplicate
-#' HITs.
-#' @param AssignmentReviewPolicy The Assignment-level Review Policy applies to the assignments under the
-#' HIT. You can specify for Mechanical Turk to take various actions based
-#' on the policy.
-#' @param HITReviewPolicy The HIT-level Review Policy applies to the HIT. You can specify for
-#' Mechanical Turk to take various actions based on the policy.
-#' @param HITLayoutId The HITLayoutId allows you to use a pre-existing HIT design with
-#' placeholder values and create an additional HIT by providing those
-#' values as HITLayoutParameters.
+#' Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
+#' @param AssignmentReviewPolicy The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy.
+#' @param HITReviewPolicy The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy.
+#' @param HITLayoutId The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters.
 #' 
-#' Constraints: Either a Question parameter or a HITLayoutId parameter must
-#' be provided.
-#' @param HITLayoutParameters If the HITLayoutId is provided, any placeholder values must be filled in
-#' with values using the HITLayoutParameter structure. For more
-#' information, see HITLayout.
+#' Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
+#' @param HITLayoutParameters If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout.
 #'
 #' @keywords internal
 #'
@@ -270,33 +204,13 @@ mturk_create_hit <- function(MaxAssignments = NULL, AutoApprovalDelayInSeconds =
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_create_hit_type/](https://www.paws-r-sdk.com/docs/mturk_create_hit_type/) for full documentation.
 #'
-#' @param AutoApprovalDelayInSeconds The number of seconds after an assignment for the HIT has been
-#' submitted, after which the assignment is considered Approved
-#' automatically unless the Requester explicitly rejects it.
-#' @param AssignmentDurationInSeconds &#91;required&#93; The amount of time, in seconds, that a Worker has to complete the HIT
-#' after accepting it. If a Worker does not complete the assignment within
-#' the specified duration, the assignment is considered abandoned. If the
-#' HIT is still active (that is, its lifetime has not elapsed), the
-#' assignment becomes available for other users to find and accept.
-#' @param Reward &#91;required&#93; The amount of money the Requester will pay a Worker for successfully
-#' completing the HIT.
-#' @param Title &#91;required&#93; The title of the HIT. A title should be short and descriptive about the
-#' kind of task the HIT contains. On the Amazon Mechanical Turk web site,
-#' the HIT title appears in search results, and everywhere the HIT is
-#' mentioned.
-#' @param Keywords One or more words or phrases that describe the HIT, separated by commas.
-#' These words are used in searches to find HITs.
-#' @param Description &#91;required&#93; A general description of the HIT. A description includes detailed
-#' information about the kind of task the HIT contains. On the Amazon
-#' Mechanical Turk web site, the HIT description appears in the expanded
-#' view of search results, and in the HIT and assignment screens. A good
-#' description gives the user enough information to evaluate the HIT before
-#' accepting it.
-#' @param QualificationRequirements Conditions that a Worker's Qualifications must meet in order to accept
-#' the HIT. A HIT can have between zero and ten Qualification requirements.
-#' All requirements must be met in order for a Worker to accept the HIT.
-#' Additionally, other actions can be restricted using the `ActionsGuarded`
-#' field on each `QualificationRequirement` structure.
+#' @param AutoApprovalDelayInSeconds The number of seconds after an assignment for the HIT has been submitted, after which the assignment is considered Approved automatically unless the Requester explicitly rejects it.
+#' @param AssignmentDurationInSeconds &#91;required&#93; The amount of time, in seconds, that a Worker has to complete the HIT after accepting it. If a Worker does not complete the assignment within the specified duration, the assignment is considered abandoned. If the HIT is still active (that is, its lifetime has not elapsed), the assignment becomes available for other users to find and accept.
+#' @param Reward &#91;required&#93; The amount of money the Requester will pay a Worker for successfully completing the HIT.
+#' @param Title &#91;required&#93; The title of the HIT. A title should be short and descriptive about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title appears in search results, and everywhere the HIT is mentioned.
+#' @param Keywords One or more words or phrases that describe the HIT, separated by commas. These words are used in searches to find HITs.
+#' @param Description &#91;required&#93; A general description of the HIT. A description includes detailed information about the kind of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT description appears in the expanded view of search results, and in the HIT and assignment screens. A good description gives the user enough information to evaluate the HIT before accepting it.
+#' @param QualificationRequirements Conditions that a Worker's Qualifications must meet in order to accept the HIT. A HIT can have between zero and ten Qualification requirements. All requirements must be met in order for a Worker to accept the HIT. Additionally, other actions can be restricted using the `ActionsGuarded` field on each `QualificationRequirement` structure.
 #'
 #' @keywords internal
 #'
@@ -330,57 +244,27 @@ mturk_create_hit_type <- function(AutoApprovalDelayInSeconds = NULL, AssignmentD
 #' See [https://www.paws-r-sdk.com/docs/mturk_create_hit_with_hit_type/](https://www.paws-r-sdk.com/docs/mturk_create_hit_with_hit_type/) for full documentation.
 #'
 #' @param HITTypeId &#91;required&#93; The HIT type ID you want to create this HIT with.
-#' @param MaxAssignments The number of times the HIT can be accepted and completed before the HIT
-#' becomes unavailable.
-#' @param LifetimeInSeconds &#91;required&#93; An amount of time, in seconds, after which the HIT is no longer
-#' available for users to accept. After the lifetime of the HIT elapses,
-#' the HIT no longer appears in HIT searches, even if not all of the
-#' assignments for the HIT have been accepted.
+#' @param MaxAssignments The number of times the HIT can be accepted and completed before the HIT becomes unavailable.
+#' @param LifetimeInSeconds &#91;required&#93; An amount of time, in seconds, after which the HIT is no longer available for users to accept. After the lifetime of the HIT elapses, the HIT no longer appears in HIT searches, even if not all of the assignments for the HIT have been accepted.
 #' @param Question The data the person completing the HIT uses to produce the results.
 #' 
-#' Constraints: Must be a QuestionForm data structure, an ExternalQuestion
-#' data structure, or an HTMLQuestion data structure. The XML question data
-#' must not be larger than 64 kilobytes (65,535 bytes) in size, including
-#' whitespace.
+#' Constraints: Must be a QuestionForm data structure, an ExternalQuestion data structure, or an HTMLQuestion data structure. The XML question data must not be larger than 64 kilobytes (65,535 bytes) in size, including whitespace.
 #' 
 #' Either a Question parameter or a HITLayoutId parameter must be provided.
-#' @param RequesterAnnotation An arbitrary data field. The RequesterAnnotation parameter lets your
-#' application attach arbitrary data to the HIT for tracking purposes. For
-#' example, this parameter could be an identifier internal to the
-#' Requester's application that corresponds with the HIT.
+#' @param RequesterAnnotation An arbitrary data field. The RequesterAnnotation parameter lets your application attach arbitrary data to the HIT for tracking purposes. For example, this parameter could be an identifier internal to the Requester's application that corresponds with the HIT.
 #' 
-#' The RequesterAnnotation parameter for a HIT is only visible to the
-#' Requester who created the HIT. It is not shown to the Worker, or any
-#' other Requester.
+#' The RequesterAnnotation parameter for a HIT is only visible to the Requester who created the HIT. It is not shown to the Worker, or any other Requester.
 #' 
-#' The RequesterAnnotation parameter may be different for each HIT you
-#' submit. It does not affect how your HITs are grouped.
-#' @param UniqueRequestToken A unique identifier for this request which allows you to retry the call
-#' on error without creating duplicate HITs. This is useful in cases such
-#' as network timeouts where it is unclear whether or not the call
-#' succeeded on the server. If the HIT already exists in the system from a
-#' previous call using the same UniqueRequestToken, subsequent calls will
-#' return a AWS.MechanicalTurk.HitAlreadyExists error with a message
-#' containing the HITId.
+#' The RequesterAnnotation parameter may be different for each HIT you submit. It does not affect how your HITs are grouped.
+#' @param UniqueRequestToken A unique identifier for this request which allows you to retry the call on error without creating duplicate HITs. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the HIT already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return a AWS.MechanicalTurk.HitAlreadyExists error with a message containing the HITId.
 #' 
-#' Note: It is your responsibility to ensure uniqueness of the token. The
-#' unique token expires after 24 hours. Subsequent calls using the same
-#' UniqueRequestToken made after the 24 hour limit could create duplicate
-#' HITs.
-#' @param AssignmentReviewPolicy The Assignment-level Review Policy applies to the assignments under the
-#' HIT. You can specify for Mechanical Turk to take various actions based
-#' on the policy.
-#' @param HITReviewPolicy The HIT-level Review Policy applies to the HIT. You can specify for
-#' Mechanical Turk to take various actions based on the policy.
-#' @param HITLayoutId The HITLayoutId allows you to use a pre-existing HIT design with
-#' placeholder values and create an additional HIT by providing those
-#' values as HITLayoutParameters.
+#' Note: It is your responsibility to ensure uniqueness of the token. The unique token expires after 24 hours. Subsequent calls using the same UniqueRequestToken made after the 24 hour limit could create duplicate HITs.
+#' @param AssignmentReviewPolicy The Assignment-level Review Policy applies to the assignments under the HIT. You can specify for Mechanical Turk to take various actions based on the policy.
+#' @param HITReviewPolicy The HIT-level Review Policy applies to the HIT. You can specify for Mechanical Turk to take various actions based on the policy.
+#' @param HITLayoutId The HITLayoutId allows you to use a pre-existing HIT design with placeholder values and create an additional HIT by providing those values as HITLayoutParameters.
 #' 
-#' Constraints: Either a Question parameter or a HITLayoutId parameter must
-#' be provided.
-#' @param HITLayoutParameters If the HITLayoutId is provided, any placeholder values must be filled in
-#' with values using the HITLayoutParameter structure. For more
-#' information, see HITLayout.
+#' Constraints: Either a Question parameter or a HITLayoutId parameter must be provided.
+#' @param HITLayoutParameters If the HITLayoutId is provided, any placeholder values must be filled in with values using the HITLayoutParameter structure. For more information, see HITLayout.
 #'
 #' @keywords internal
 #'
@@ -412,56 +296,30 @@ mturk_create_hit_with_hit_type <- function(HITTypeId, MaxAssignments = NULL, Lif
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_create_qualification_type/](https://www.paws-r-sdk.com/docs/mturk_create_qualification_type/) for full documentation.
 #'
-#' @param Name &#91;required&#93; The name you give to the Qualification type. The type name is used to
-#' represent the Qualification to Workers, and to find the type using a
-#' Qualification type search. It must be unique across all of your
-#' Qualification types.
-#' @param Keywords One or more words or phrases that describe the Qualification type,
-#' separated by commas. The keywords of a type make the type easier to find
-#' during a search.
-#' @param Description &#91;required&#93; A long description for the Qualification type. On the Amazon Mechanical
-#' Turk website, the long description is displayed when a Worker examines a
-#' Qualification type.
+#' @param Name &#91;required&#93; The name you give to the Qualification type. The type name is used to represent the Qualification to Workers, and to find the type using a Qualification type search. It must be unique across all of your Qualification types.
+#' @param Keywords One or more words or phrases that describe the Qualification type, separated by commas. The keywords of a type make the type easier to find during a search.
+#' @param Description &#91;required&#93; A long description for the Qualification type. On the Amazon Mechanical Turk website, the long description is displayed when a Worker examines a Qualification type.
 #' @param QualificationTypeStatus &#91;required&#93; The initial status of the Qualification type.
 #' 
 #' Constraints: Valid values are: Active | Inactive
-#' @param RetryDelayInSeconds The number of seconds that a Worker must wait after requesting a
-#' Qualification of the Qualification type before the worker can retry the
-#' Qualification request.
+#' @param RetryDelayInSeconds The number of seconds that a Worker must wait after requesting a Qualification of the Qualification type before the worker can retry the Qualification request.
 #' 
-#' Constraints: None. If not specified, retries are disabled and Workers
-#' can request a Qualification of this type only once, even if the Worker
-#' has not been granted the Qualification. It is not possible to disable
-#' retries for a Qualification type after it has been created with retries
-#' enabled. If you want to disable retries, you must delete existing
-#' retry-enabled Qualification type and then create a new Qualification
-#' type with retries disabled.
-#' @param Test The questions for the Qualification test a Worker must answer correctly
-#' to obtain a Qualification of this type. If this parameter is specified,
-#' `TestDurationInSeconds` must also be specified.
+#' Constraints: None. If not specified, retries are disabled and Workers can request a Qualification of this type only once, even if the Worker has not been granted the Qualification. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must delete existing retry-enabled Qualification type and then create a new Qualification type with retries disabled.
+#' @param Test The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, `TestDurationInSeconds` must also be specified.
 #' 
-#' Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm
-#' data structure. This parameter cannot be specified if AutoGranted is
-#' true.
+#' Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.
 #' 
-#' Constraints: None. If not specified, the Worker may request the
-#' Qualification without answering any questions.
-#' @param AnswerKey The answers to the Qualification test specified in the Test parameter,
-#' in the form of an AnswerKey data structure.
+#' Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.
+#' @param AnswerKey The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.
 #' 
 #' Constraints: Must not be longer than 65535 bytes.
 #' 
-#' Constraints: None. If not specified, you must process Qualification
-#' requests manually.
-#' @param TestDurationInSeconds The number of seconds the Worker has to complete the Qualification test,
-#' starting from the time the Worker requests the Qualification.
-#' @param AutoGranted Specifies whether requests for the Qualification type are granted
-#' immediately, without prompting the Worker with a Qualification test.
+#' Constraints: None. If not specified, you must process Qualification requests manually.
+#' @param TestDurationInSeconds The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.
+#' @param AutoGranted Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.
 #' 
-#' Constraints: If the Test parameter is specified, this parameter cannot
-#' be true.
-#' @param AutoGrantedValue The Qualification value to use for automatically granted Qualifications.
-#' This parameter is used only if the AutoGranted parameter is true.
+#' Constraints: If the Test parameter is specified, this parameter cannot be true.
+#' @param AutoGrantedValue The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.
 #'
 #' @keywords internal
 #'
@@ -494,9 +352,7 @@ mturk_create_qualification_type <- function(Name, Keywords = NULL, Description, 
 #' See [https://www.paws-r-sdk.com/docs/mturk_create_worker_block/](https://www.paws-r-sdk.com/docs/mturk_create_worker_block/) for full documentation.
 #'
 #' @param WorkerId &#91;required&#93; The ID of the Worker to block.
-#' @param Reason &#91;required&#93; A message explaining the reason for blocking the Worker. This parameter
-#' enables you to keep track of your Workers. The Worker does not see this
-#' message.
+#' @param Reason &#91;required&#93; A message explaining the reason for blocking the Worker. This parameter enables you to keep track of your Workers. The Worker does not see this message.
 #'
 #' @keywords internal
 #'
@@ -592,8 +448,7 @@ mturk_delete_qualification_type <- function(QualificationTypeId) {
 #' See [https://www.paws-r-sdk.com/docs/mturk_delete_worker_block/](https://www.paws-r-sdk.com/docs/mturk_delete_worker_block/) for full documentation.
 #'
 #' @param WorkerId &#91;required&#93; The ID of the Worker to unblock.
-#' @param Reason A message that explains the reason for unblocking the Worker. The Worker
-#' does not see this message.
+#' @param Reason A message that explains the reason for unblocking the Worker. The Worker does not see this message.
 #'
 #' @keywords internal
 #'
@@ -627,8 +482,7 @@ mturk_delete_worker_block <- function(WorkerId, Reason = NULL) {
 #'
 #' @param WorkerId &#91;required&#93; The ID of the Worker who possesses the Qualification to be revoked.
 #' @param QualificationTypeId &#91;required&#93; The ID of the Qualification type of the Qualification to be revoked.
-#' @param Reason A text message that explains why the Qualification was revoked. The user
-#' who had the Qualification sees this message.
+#' @param Reason A text message that explains why the Qualification was revoked. The user who had the Qualification sees this message.
 #'
 #' @keywords internal
 #'
@@ -723,10 +577,8 @@ mturk_get_assignment <- function(AssignmentId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_get_file_upload_url/](https://www.paws-r-sdk.com/docs/mturk_get_file_upload_url/) for full documentation.
 #'
-#' @param AssignmentId &#91;required&#93; The ID of the assignment that contains the question with a
-#' FileUploadAnswer.
-#' @param QuestionIdentifier &#91;required&#93; The identifier of the question with a FileUploadAnswer, as specified in
-#' the QuestionForm of the HIT.
+#' @param AssignmentId &#91;required&#93; The ID of the assignment that contains the question with a FileUploadAnswer.
+#' @param QuestionIdentifier &#91;required&#93; The identifier of the question with a FileUploadAnswer, as specified in the QuestionForm of the HIT.
 #'
 #' @keywords internal
 #'
@@ -889,14 +741,8 @@ mturk_list_assignments_for_hit <- function(HITId, NextToken = NULL, MaxResults =
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_list_bonus_payments/](https://www.paws-r-sdk.com/docs/mturk_list_bonus_payments/) for full documentation.
 #'
-#' @param HITId The ID of the HIT associated with the bonus payments to retrieve. If not
-#' specified, all bonus payments for all assignments for the given HIT are
-#' returned. Either the HITId parameter or the AssignmentId parameter must
-#' be specified
-#' @param AssignmentId The ID of the assignment associated with the bonus payments to retrieve.
-#' If specified, only bonus payments for the given assignment are returned.
-#' Either the HITId parameter or the AssignmentId parameter must be
-#' specified
+#' @param HITId The ID of the HIT associated with the bonus payments to retrieve. If not specified, all bonus payments for all assignments for the given HIT are returned. Either the HITId parameter or the AssignmentId parameter must be specified
+#' @param AssignmentId The ID of the assignment associated with the bonus payments to retrieve. If specified, only bonus payments for the given assignment are returned. Either the HITId parameter or the AssignmentId parameter must be specified
 #' @param NextToken Pagination token
 #' @param MaxResults 
 #'
@@ -997,7 +843,7 @@ mturk_list_hi_ts_for_qualification_type <- function(QualificationTypeId, NextTok
 #' See [https://www.paws-r-sdk.com/docs/mturk_list_qualification_requests/](https://www.paws-r-sdk.com/docs/mturk_list_qualification_requests/) for full documentation.
 #'
 #' @param QualificationTypeId The ID of the QualificationType.
-#' @param NextToken 
+#' @param NextToken If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -1030,17 +876,10 @@ mturk_list_qualification_requests <- function(QualificationTypeId = NULL, NextTo
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_list_qualification_types/](https://www.paws-r-sdk.com/docs/mturk_list_qualification_types/) for full documentation.
 #'
-#' @param Query A text query against all of the searchable attributes of Qualification
-#' types.
-#' @param MustBeRequestable &#91;required&#93; Specifies that only Qualification types that a user can request through
-#' the Amazon Mechanical Turk web site, such as by taking a Qualification
-#' test, are returned as results of the search. Some Qualification types,
-#' such as those assigned automatically by the system, cannot be requested
-#' directly by users. If false, all Qualification types, including those
-#' managed by the system, are considered. Valid values are True | False.
-#' @param MustBeOwnedByCaller Specifies that only Qualification types that the Requester created are
-#' returned. If false, the operation returns all Qualification types.
-#' @param NextToken 
+#' @param Query A text query against all of the searchable attributes of Qualification types.
+#' @param MustBeRequestable &#91;required&#93; Specifies that only Qualification types that a user can request through the Amazon Mechanical Turk web site, such as by taking a Qualification test, are returned as results of the search. Some Qualification types, such as those assigned automatically by the system, cannot be requested directly by users. If false, all Qualification types, including those managed by the system, are considered. Valid values are True | False.
+#' @param MustBeOwnedByCaller Specifies that only Qualification types that the Requester created are returned. If false, the operation returns all Qualification types.
+#' @param NextToken If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
 #' @param MaxResults The maximum number of results to return in a single call.
 #'
 #' @keywords internal
@@ -1075,13 +914,9 @@ mturk_list_qualification_types <- function(Query = NULL, MustBeRequestable, Must
 #' See [https://www.paws-r-sdk.com/docs/mturk_list_review_policy_results_for_hit/](https://www.paws-r-sdk.com/docs/mturk_list_review_policy_results_for_hit/) for full documentation.
 #'
 #' @param HITId &#91;required&#93; The unique identifier of the HIT to retrieve review results for.
-#' @param PolicyLevels The Policy Level(s) to retrieve review results for - HIT or Assignment.
-#' If omitted, the default behavior is to retrieve all data for both policy
-#' levels. For a list of all the described policies, see Review Policies.
-#' @param RetrieveActions Specify if the operation should retrieve a list of the actions taken
-#' executing the Review Policies and their outcomes.
-#' @param RetrieveResults Specify if the operation should retrieve a list of the results computed
-#' by the Review Policies.
+#' @param PolicyLevels The Policy Level(s) to retrieve review results for - HIT or Assignment. If omitted, the default behavior is to retrieve all data for both policy levels. For a list of all the described policies, see Review Policies.
+#' @param RetrieveActions Specify if the operation should retrieve a list of the actions taken executing the Review Policies and their outcomes.
+#' @param RetrieveResults Specify if the operation should retrieve a list of the results computed by the Review Policies.
 #' @param NextToken Pagination token
 #' @param MaxResults Limit the number of results returned.
 #'
@@ -1116,10 +951,8 @@ mturk_list_review_policy_results_for_hit <- function(HITId, PolicyLevels = NULL,
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_list_reviewable_hi_ts/](https://www.paws-r-sdk.com/docs/mturk_list_reviewable_hi_ts/) for full documentation.
 #'
-#' @param HITTypeId The ID of the HIT type of the HITs to consider for the query. If not
-#' specified, all HITs for the Reviewer are considered
-#' @param Status Can be either `Reviewable` or `Reviewing`. Reviewable is the default
-#' value.
+#' @param HITTypeId The ID of the HIT type of the HITs to consider for the query. If not specified, all HITs for the Reviewer are considered
+#' @param Status Can be either `Reviewable` or `Reviewing`. Reviewable is the default value.
 #' @param NextToken Pagination Token
 #' @param MaxResults Limit the number of results returned.
 #'
@@ -1221,12 +1054,9 @@ mturk_list_workers_with_qualification_type <- function(QualificationTypeId, Stat
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_notify_workers/](https://www.paws-r-sdk.com/docs/mturk_notify_workers/) for full documentation.
 #'
-#' @param Subject &#91;required&#93; The subject line of the email message to send. Can include up to 200
-#' characters.
-#' @param MessageText &#91;required&#93; The text of the email message to send. Can include up to 4,096
-#' characters
-#' @param WorkerIds &#91;required&#93; A list of Worker IDs you wish to notify. You can notify upto 100 Workers
-#' at a time.
+#' @param Subject &#91;required&#93; The subject line of the email message to send. Can include up to 200 characters.
+#' @param MessageText &#91;required&#93; The text of the email message to send. Can include up to 4,096 characters
+#' @param WorkerIds &#91;required&#93; A list of Worker IDs you wish to notify. You can notify upto 100 Workers at a time.
 #'
 #' @keywords internal
 #'
@@ -1258,10 +1088,8 @@ mturk_notify_workers <- function(Subject, MessageText, WorkerIds) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_reject_assignment/](https://www.paws-r-sdk.com/docs/mturk_reject_assignment/) for full documentation.
 #'
-#' @param AssignmentId &#91;required&#93; The ID of the assignment. The assignment must correspond to a HIT
-#' created by the Requester.
-#' @param RequesterFeedback &#91;required&#93; A message for the Worker, which the Worker can see in the Status section
-#' of the web site.
+#' @param AssignmentId &#91;required&#93; The ID of the assignment. The assignment must correspond to a HIT created by the Requester.
+#' @param RequesterFeedback &#91;required&#93; A message for the Worker, which the Worker can see in the Status section of the web site.
 #'
 #' @keywords internal
 #'
@@ -1293,11 +1121,8 @@ mturk_reject_assignment <- function(AssignmentId, RequesterFeedback) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_reject_qualification_request/](https://www.paws-r-sdk.com/docs/mturk_reject_qualification_request/) for full documentation.
 #'
-#' @param QualificationRequestId &#91;required&#93; The ID of the Qualification request, as returned by the
-#' [`list_qualification_requests`][mturk_list_qualification_requests]
-#' operation.
-#' @param Reason A text message explaining why the request was rejected, to be shown to
-#' the Worker who made the request.
+#' @param QualificationRequestId &#91;required&#93; The ID of the Qualification request, as returned by the [`list_qualification_requests`][mturk_list_qualification_requests] operation.
+#' @param Reason A text message explaining why the request was rejected, to be shown to the Worker who made the request.
 #'
 #' @keywords internal
 #'
@@ -1330,18 +1155,10 @@ mturk_reject_qualification_request <- function(QualificationRequestId, Reason = 
 #' See [https://www.paws-r-sdk.com/docs/mturk_send_bonus/](https://www.paws-r-sdk.com/docs/mturk_send_bonus/) for full documentation.
 #'
 #' @param WorkerId &#91;required&#93; The ID of the Worker being paid the bonus.
-#' @param BonusAmount &#91;required&#93; The Bonus amount is a US Dollar amount specified using a string (for
-#' example, "5" represents $5.00 USD and "101.42" represents $101.42 USD).
-#' Do not include currency symbols or currency codes.
+#' @param BonusAmount &#91;required&#93; The Bonus amount is a US Dollar amount specified using a string (for example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not include currency symbols or currency codes.
 #' @param AssignmentId &#91;required&#93; The ID of the assignment for which this bonus is paid.
-#' @param Reason &#91;required&#93; A message that explains the reason for the bonus payment. The Worker
-#' receiving the bonus can see this message.
-#' @param UniqueRequestToken A unique identifier for this request, which allows you to retry the call
-#' on error without granting multiple bonuses. This is useful in cases such
-#' as network timeouts where it is unclear whether or not the call
-#' succeeded on the server. If the bonus already exists in the system from
-#' a previous call using the same UniqueRequestToken, subsequent calls will
-#' return an error with a message containing the request ID.
+#' @param Reason &#91;required&#93; A message that explains the reason for the bonus payment. The Worker receiving the bonus can see this message.
+#' @param UniqueRequestToken A unique identifier for this request, which allows you to retry the call on error without granting multiple bonuses. This is useful in cases such as network timeouts where it is unclear whether or not the call succeeded on the server. If the bonus already exists in the system from a previous call using the same UniqueRequestToken, subsequent calls will return an error with a message containing the request ID.
 #'
 #' @keywords internal
 #'
@@ -1374,13 +1191,8 @@ mturk_send_bonus <- function(WorkerId, BonusAmount, AssignmentId, Reason, Unique
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_send_test_event_notification/](https://www.paws-r-sdk.com/docs/mturk_send_test_event_notification/) for full documentation.
 #'
-#' @param Notification &#91;required&#93; The notification specification to test. This value is identical to the
-#' value you would provide to the UpdateNotificationSettings operation when
-#' you establish the notification specification for a HIT type.
-#' @param TestEventType &#91;required&#93; The event to simulate to test the notification specification. This event
-#' is included in the test message even if the notification specification
-#' does not include the event type. The notification specification does not
-#' filter out the test event.
+#' @param Notification &#91;required&#93; The notification specification to test. This value is identical to the value you would provide to the UpdateNotificationSettings operation when you establish the notification specification for a HIT type.
+#' @param TestEventType &#91;required&#93; The event to simulate to test the notification specification. This event is included in the test message even if the notification specification does not include the event type. The notification specification does not filter out the test event.
 #'
 #' @keywords internal
 #'
@@ -1447,11 +1259,9 @@ mturk_update_expiration_for_hit <- function(HITId, ExpireAt) {
 #' @param HITId &#91;required&#93; The ID of the HIT to update.
 #' @param Revert Specifies how to update the HIT status. Default is `False`.
 #' 
-#' -   Setting this to false will only transition a HIT from `Reviewable`
-#'     to `Reviewing`
+#' -   Setting this to false will only transition a HIT from `Reviewable` to `Reviewing`
 #' 
-#' -   Setting this to true will only transition a HIT from `Reviewing` to
-#'     `Reviewable`
+#' -   Setting this to true will only transition a HIT from `Reviewing` to `Reviewable`
 #'
 #' @keywords internal
 #'
@@ -1516,13 +1326,9 @@ mturk_update_hit_type_of_hit <- function(HITId, HITTypeId) {
 #'
 #' See [https://www.paws-r-sdk.com/docs/mturk_update_notification_settings/](https://www.paws-r-sdk.com/docs/mturk_update_notification_settings/) for full documentation.
 #'
-#' @param HITTypeId &#91;required&#93; The ID of the HIT type whose notification specification is being
-#' updated.
+#' @param HITTypeId &#91;required&#93; The ID of the HIT type whose notification specification is being updated.
 #' @param Notification The notification specification for the HIT type.
-#' @param Active Specifies whether notifications are sent for HITs of this HIT type,
-#' according to the notification specification. You must specify either the
-#' Notification parameter or the Active parameter for the call to
-#' UpdateNotificationSettings to succeed.
+#' @param Active Specifies whether notifications are sent for HITs of this HIT type, according to the notification specification. You must specify either the Notification parameter or the Active parameter for the call to UpdateNotificationSettings to succeed.
 #'
 #' @keywords internal
 #'
@@ -1558,35 +1364,18 @@ mturk_update_notification_settings <- function(HITTypeId, Notification = NULL, A
 #' @param QualificationTypeId &#91;required&#93; The ID of the Qualification type to update.
 #' @param Description The new description of the Qualification type.
 #' @param QualificationTypeStatus The new status of the Qualification type - Active | Inactive
-#' @param Test The questions for the Qualification test a Worker must answer correctly
-#' to obtain a Qualification of this type. If this parameter is specified,
-#' `TestDurationInSeconds` must also be specified.
+#' @param Test The questions for the Qualification test a Worker must answer correctly to obtain a Qualification of this type. If this parameter is specified, `TestDurationInSeconds` must also be specified.
 #' 
-#' Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm
-#' data structure. This parameter cannot be specified if AutoGranted is
-#' true.
+#' Constraints: Must not be longer than 65535 bytes. Must be a QuestionForm data structure. This parameter cannot be specified if AutoGranted is true.
 #' 
-#' Constraints: None. If not specified, the Worker may request the
-#' Qualification without answering any questions.
-#' @param AnswerKey The answers to the Qualification test specified in the Test parameter,
-#' in the form of an AnswerKey data structure.
-#' @param TestDurationInSeconds The number of seconds the Worker has to complete the Qualification test,
-#' starting from the time the Worker requests the Qualification.
-#' @param RetryDelayInSeconds The amount of time, in seconds, that Workers must wait after requesting
-#' a Qualification of the specified Qualification type before they can
-#' retry the Qualification request. It is not possible to disable retries
-#' for a Qualification type after it has been created with retries enabled.
-#' If you want to disable retries, you must dispose of the existing
-#' retry-enabled Qualification type using DisposeQualificationType and then
-#' create a new Qualification type with retries disabled using
-#' CreateQualificationType.
-#' @param AutoGranted Specifies whether requests for the Qualification type are granted
-#' immediately, without prompting the Worker with a Qualification test.
+#' Constraints: None. If not specified, the Worker may request the Qualification without answering any questions.
+#' @param AnswerKey The answers to the Qualification test specified in the Test parameter, in the form of an AnswerKey data structure.
+#' @param TestDurationInSeconds The number of seconds the Worker has to complete the Qualification test, starting from the time the Worker requests the Qualification.
+#' @param RetryDelayInSeconds The amount of time, in seconds, that Workers must wait after requesting a Qualification of the specified Qualification type before they can retry the Qualification request. It is not possible to disable retries for a Qualification type after it has been created with retries enabled. If you want to disable retries, you must dispose of the existing retry-enabled Qualification type using DisposeQualificationType and then create a new Qualification type with retries disabled using CreateQualificationType.
+#' @param AutoGranted Specifies whether requests for the Qualification type are granted immediately, without prompting the Worker with a Qualification test.
 #' 
-#' Constraints: If the Test parameter is specified, this parameter cannot
-#' be true.
-#' @param AutoGrantedValue The Qualification value to use for automatically granted Qualifications.
-#' This parameter is used only if the AutoGranted parameter is true.
+#' Constraints: If the Test parameter is specified, this parameter cannot be true.
+#' @param AutoGrantedValue The Qualification value to use for automatically granted Qualifications. This parameter is used only if the AutoGranted parameter is true.
 #'
 #' @keywords internal
 #'

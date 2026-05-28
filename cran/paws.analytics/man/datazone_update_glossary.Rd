@@ -14,22 +14,17 @@ datazone_update_glossary(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a business
-glossary is to be updated.}
+\item{domainIdentifier}{[required] The identifier of the Amazon DataZone domain in which a business glossary is to be updated.}
 
 \item{identifier}{[required] The identifier of the business glossary to be updated.}
 
-\item{name}{The name to be updated as part of the
-\code{\link[=datazone_update_glossary]{update_glossary}} action.}
+\item{name}{The name to be updated as part of the \code{\link[=datazone_update_glossary]{update_glossary}} action.}
 
-\item{description}{The description to be updated as part of the
-\code{\link[=datazone_update_glossary]{update_glossary}} action.}
+\item{description}{The description to be updated as part of the \code{\link[=datazone_update_glossary]{update_glossary}} action.}
 
-\item{status}{The status to be updated as part of the
-\code{\link[=datazone_update_glossary]{update_glossary}} action.}
+\item{status}{The status to be updated as part of the \code{\link[=datazone_update_glossary]{update_glossary}} action.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Updates the business glossary in Amazon DataZone.

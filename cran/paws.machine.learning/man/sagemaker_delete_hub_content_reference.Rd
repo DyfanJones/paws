@@ -10,8 +10,7 @@ sagemaker_delete_hub_content_reference(HubName, HubContentType, HubContentName)
 \arguments{
 \item{HubName}{[required] The name of the hub to delete the hub content reference from.}
 
-\item{HubContentType}{[required] The type of hub content reference to delete. The only supported type of
-hub content reference to delete is \code{ModelReference}.}
+\item{HubContentType}{[required] The type of hub content reference to delete. The only supported type of hub content reference to delete is \code{ModelReference}.}
 
 \item{HubContentName}{[required] The name of the hub content to delete.}
 }

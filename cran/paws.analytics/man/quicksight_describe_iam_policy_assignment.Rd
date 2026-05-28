@@ -12,8 +12,7 @@ quicksight_describe_iam_policy_assignment(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the assignment
-that you want to describe.}
+\item{AwsAccountId}{[required] The ID of the Amazon Web Services account that contains the assignment that you want to describe.}
 
 \item{AssignmentName}{[required] The name of the assignment, also called a rule.}
 

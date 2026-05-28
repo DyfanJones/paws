@@ -13,27 +13,19 @@ cloudformation_list_hook_results(
 )
 }
 \arguments{
-\item{TargetType}{Filters results by target type. Currently, only \code{CHANGE_SET} and
-\code{CLOUD_CONTROL} are supported filter options.
+\item{TargetType}{Filters results by target type. Currently, only \code{CHANGE_SET} and \code{CLOUD_CONTROL} are supported filter options.
 
 Required when \code{TargetId} is specified and cannot be used otherwise.}
 
-\item{TargetId}{Filters results by the unique identifier of the target the Hook was
-invoked against.
+\item{TargetId}{Filters results by the unique identifier of the target the Hook was invoked against.
 
-For change sets, this is the change set ARN. When the target is a Cloud
-Control API operation, this value must be the \code{HookRequestToken}
-returned by the Cloud Control API request. For more information on the
-\code{HookRequestToken}, see
-\href{https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html}{ProgressEvent}.
+For change sets, this is the change set ARN. When the target is a Cloud Control API operation, this value must be the \code{HookRequestToken} returned by the Cloud Control API request. For more information on the \code{HookRequestToken}, see \href{https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html}{ProgressEvent}.
 
 Required when \code{TargetType} is specified and cannot be used otherwise.}
 
-\item{TypeArn}{Filters results by the ARN of the Hook. Can be used alone or in
-combination with \code{Status}.}
+\item{TypeArn}{Filters results by the ARN of the Hook. Can be used alone or in combination with \code{Status}.}
 
-\item{Status}{Filters results by the status of Hook invocations. Can only be used in
-combination with \code{TypeArn}. Valid values are:
+\item{Status}{Filters results by the status of Hook invocations. Can only be used in combination with \code{TypeArn}. Valid values are:
 \itemize{
 \item \code{HOOK_IN_PROGRESS}: The Hook is currently running.
 \item \code{HOOK_COMPLETE_SUCCEEDED}: The Hook completed successfully.
@@ -41,8 +33,7 @@ combination with \code{TypeArn}. Valid values are:
 \item \code{HOOK_FAILED}: The Hook encountered an error during execution.
 }}
 
-\item{NextToken}{The token for the next set of items to return. (You received this token
-from a previous call.)}
+\item{NextToken}{The token for the next set of items to return. (You received this token from a previous call.)}
 }
 \description{
 Returns summaries of invoked Hooks. For more information, see \href{https://docs.aws.amazon.com/cloudformation-cli/latest/hooks-userguide/hooks-view-invocations.html}{View invocation summaries for CloudFormation Hooks} in the \emph{CloudFormation Hooks User Guide}.

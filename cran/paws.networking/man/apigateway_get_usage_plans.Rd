@@ -11,8 +11,7 @@ apigateway_get_usage_plans(position = NULL, keyId = NULL, limit = NULL)
 
 \item{keyId}{The identifier of the API key associated with the usage plans.}
 
-\item{limit}{The maximum number of returned results per page. The default value is 25
-and the maximum value is 500.}
+\item{limit}{The maximum number of returned results per page. The default value is 25 and the maximum value is 500.}
 }
 \description{
 Gets all the usage plans of the caller's account.

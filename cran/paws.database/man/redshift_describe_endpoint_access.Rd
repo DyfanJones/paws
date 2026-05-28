@@ -22,16 +22,9 @@ redshift_describe_endpoint_access(
 
 \item{VpcId}{The virtual private cloud (VPC) identifier with access to the cluster.}
 
-\item{MaxRecords}{The maximum number of records to include in the response. If more
-records exist than the specified \code{MaxRecords} value, a pagination token
-called a \code{Marker} is included in the response so that the remaining
-results can be retrieved.}
+\item{MaxRecords}{The maximum number of records to include in the response. If more records exist than the specified \code{MaxRecords} value, a pagination token called a \code{Marker} is included in the response so that the remaining results can be retrieved.}
 
-\item{Marker}{An optional pagination token provided by a previous
-\code{\link[=redshift_describe_endpoint_access]{describe_endpoint_access}} request.
-If this parameter is specified, the response includes only records
-beyond the marker, up to the value specified by the \code{MaxRecords}
-parameter.}
+\item{Marker}{An optional pagination token provided by a previous \code{\link[=redshift_describe_endpoint_access]{describe_endpoint_access}} request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the \code{MaxRecords} parameter.}
 }
 \description{
 Describes a Redshift-managed VPC endpoint.

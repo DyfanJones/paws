@@ -19,12 +19,11 @@ healthlake_start_fhir_import_job(
 
 \item{InputDataConfig}{[required] The input properties for the import job request.}
 
-\item{JobOutputDataConfig}{[required]}
+\item{JobOutputDataConfig}{[required] The output data configuration supplied when the export job was created.}
 
 \item{DatastoreId}{[required] The data store identifier.}
 
-\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) that grants access permission to AWS
-HealthLake.}
+\item{DataAccessRoleArn}{[required] The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.}
 
 \item{ClientToken}{The optional user-provided token used for ensuring API idempotency.}
 

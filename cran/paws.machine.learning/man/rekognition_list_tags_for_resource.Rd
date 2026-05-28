@@ -8,8 +8,7 @@ processor, or Custom Labels model}
 rekognition_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] Amazon Resource Name (ARN) of the model, collection, or stream processor
-that contains the tags that you want a list of.}
+\item{ResourceArn}{[required] Amazon Resource Name (ARN) of the model, collection, or stream processor that contains the tags that you want a list of.}
 }
 \description{
 Returns a list of tags in an Amazon Rekognition collection, stream processor, or Custom Labels model.

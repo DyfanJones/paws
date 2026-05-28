@@ -7,8 +7,7 @@
 bedrockagentcorecontrol_get_resource_policy(resourceArn)
 }
 \arguments{
-\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which to retrieve the
-resource policy.}
+\item{resourceArn}{[required] The Amazon Resource Name (ARN) of the resource for which to retrieve the resource policy.}
 }
 \description{
 Retrieves the resource-based policy for a specified resource.

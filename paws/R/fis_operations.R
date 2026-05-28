@@ -10,35 +10,25 @@ NULL
 #' 
 #' An experiment template includes the following components:
 #' 
-#' -   **Targets**: A target can be a specific resource in your Amazon Web
-#'     Services environment, or one or more resources that match criteria
-#'     that you specify, for example, resources that have specific tags.
+#' -   **Targets**: A target can be a specific resource in your Amazon Web Services environment, or one or more resources that match criteria that you specify, for example, resources that have specific tags.
 #' 
-#' -   **Actions**: The actions to carry out on the target. You can specify
-#'     multiple actions, the duration of each action, and when to start
-#'     each action during an experiment.
+#' -   **Actions**: The actions to carry out on the target. You can specify multiple actions, the duration of each action, and when to start each action during an experiment.
 #' 
-#' -   **Stop conditions**: If a stop condition is triggered while an
-#'     experiment is running, the experiment is automatically stopped. You
-#'     can define a stop condition as a CloudWatch alarm.
+#' -   **Stop conditions**: If a stop condition is triggered while an experiment is running, the experiment is automatically stopped. You can define a stop condition as a CloudWatch alarm.
 #' 
-#' For more information, see [experiment
-#' templates](https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html)
-#' in the *Fault Injection Service User Guide*.
+#' For more information, see [experiment templates](https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html) in the *Fault Injection Service User Guide*.
 #'
 #' @usage
 #' fis_create_experiment_template(clientToken, description, stopConditions,
 #'   targets, actions, roleArn, tags, logConfiguration, experimentOptions,
 #'   experimentReportConfiguration)
 #'
-#' @param clientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param description &#91;required&#93; A description for the experiment template.
 #' @param stopConditions &#91;required&#93; The stop conditions.
 #' @param targets The targets for the experiment.
 #' @param actions &#91;required&#93; The actions for the experiment.
-#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that grants the FIS
-#' service permission to perform service actions on your behalf.
+#' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.
 #' @param tags The tags to apply to the experiment template.
 #' @param logConfiguration The configuration for experiment logging.
 #' @param experimentOptions The experiment options for the experiment template.
@@ -256,19 +246,13 @@ fis_create_experiment_template <- function(clientToken, description, stopConditi
 #' Creates a target account configuration for the experiment template
 #'
 #' @description
-#' Creates a target account configuration for the experiment template. A
-#' target account configuration is required when `accountTargeting` of
-#' `experimentOptions` is set to `multi-account`. For more information, see
-#' [experiment
-#' options](https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html)
-#' in the *Fault Injection Service User Guide*.
+#' Creates a target account configuration for the experiment template. A target account configuration is required when `accountTargeting` of `experimentOptions` is set to `multi-account`. For more information, see [experiment options](https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html) in the *Fault Injection Service User Guide*.
 #'
 #' @usage
 #' fis_create_target_account_configuration(clientToken,
 #'   experimentTemplateId, accountId, roleArn, description)
 #'
-#' @param clientToken Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param experimentTemplateId &#91;required&#93; The experiment template ID.
 #' @param accountId &#91;required&#93; The Amazon Web Services account ID of the target account.
 #' @param roleArn &#91;required&#93; The Amazon Resource Name (ARN) of an IAM role for the target account.
@@ -464,8 +448,7 @@ fis_delete_experiment_template <- function(id) {
 #' template
 #'
 #' @description
-#' Deletes the specified target account configuration of the experiment
-#' template.
+#' Deletes the specified target account configuration of the experiment template.
 #'
 #' @usage
 #' fis_delete_target_account_configuration(experimentTemplateId, accountId)
@@ -765,8 +748,7 @@ fis_get_experiment <- function(id) {
 #' experiment
 #'
 #' @description
-#' Gets information about the specified target account configuration of the
-#' experiment.
+#' Gets information about the specified target account configuration of the experiment.
 #'
 #' @usage
 #' fis_get_experiment_target_account_configuration(experimentId, accountId)
@@ -1017,8 +999,7 @@ fis_get_safety_lever <- function(id) {
 #' experiment template
 #'
 #' @description
-#' Gets information about the specified target account configuration of the
-#' experiment template.
+#' Gets information about the specified target account configuration of the experiment template.
 #'
 #' @usage
 #' fis_get_target_account_configuration(experimentTemplateId, accountId)
@@ -1136,9 +1117,7 @@ fis_get_target_resource_type <- function(resourceType) {
 #' @usage
 #' fis_list_actions(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param nextToken The token for the next page of results.
 #'
 #' @return
@@ -1206,9 +1185,7 @@ fis_list_actions <- function(maxResults = NULL, nextToken = NULL) {
 #'   nextToken, targetName)
 #'
 #' @param experimentId &#91;required&#93; The ID of the experiment.
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param nextToken The token for the next page of results.
 #' @param targetName The name of the target.
 #'
@@ -1330,9 +1307,7 @@ fis_list_experiment_target_account_configurations <- function(experimentId, next
 #' @usage
 #' fis_list_experiment_templates(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param nextToken The token for the next page of results.
 #'
 #' @return
@@ -1399,9 +1374,7 @@ fis_list_experiment_templates <- function(maxResults = NULL, nextToken = NULL) {
 #' @usage
 #' fis_list_experiments(maxResults, nextToken, experimentTemplateId)
 #'
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param nextToken The token for the next page of results.
 #' @param experimentTemplateId The ID of the experiment template.
 #'
@@ -1528,17 +1501,14 @@ fis_list_tags_for_resource <- function(resourceArn) {
 #' template
 #'
 #' @description
-#' Lists the target account configurations of the specified experiment
-#' template.
+#' Lists the target account configurations of the specified experiment template.
 #'
 #' @usage
 #' fis_list_target_account_configurations(experimentTemplateId, maxResults,
 #'   nextToken)
 #'
 #' @param experimentTemplateId &#91;required&#93; The ID of the experiment template.
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned nextToken
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned nextToken value.
 #' @param nextToken The token for the next page of results.
 #'
 #' @return
@@ -1597,9 +1567,7 @@ fis_list_target_account_configurations <- function(experimentTemplateId, maxResu
 #' @usage
 #' fis_list_target_resource_types(maxResults, nextToken)
 #'
-#' @param maxResults The maximum number of results to return with a single call. To retrieve
-#' the remaining results, make another call with the returned `nextToken`
-#' value.
+#' @param maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned `nextToken` value.
 #' @param nextToken The token for the next page of results.
 #'
 #' @return
@@ -1657,8 +1625,7 @@ fis_list_target_resource_types <- function(maxResults = NULL, nextToken = NULL) 
 #' fis_start_experiment(clientToken, experimentTemplateId,
 #'   experimentOptions, tags)
 #'
-#' @param clientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the
-#' idempotency of the request.
+#' @param clientToken &#91;required&#93; Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 #' @param experimentTemplateId &#91;required&#93; The ID of the experiment template.
 #' @param experimentOptions The experiment options for running the experiment.
 #' @param tags The tags to apply to the experiment.
@@ -2125,8 +2092,7 @@ fis_untag_resource <- function(resourceArn, tagKeys = NULL) {
 #' @param stopConditions The stop conditions for the experiment.
 #' @param targets The targets for the experiment.
 #' @param actions The actions for the experiment.
-#' @param roleArn The Amazon Resource Name (ARN) of an IAM role that grants the FIS
-#' service permission to perform service actions on your behalf.
+#' @param roleArn The Amazon Resource Name (ARN) of an IAM role that grants the FIS service permission to perform service actions on your behalf.
 #' @param logConfiguration The configuration for experiment logging.
 #' @param experimentOptions The experiment options for the experiment template.
 #' @param experimentReportConfiguration The experiment report configuration for the experiment template.
@@ -2401,8 +2367,7 @@ fis_update_safety_lever_state <- function(id, state) {
 #' template
 #'
 #' @description
-#' Updates the target account configuration for the specified experiment
-#' template.
+#' Updates the target account configuration for the specified experiment template.
 #'
 #' @usage
 #' fis_update_target_account_configuration(experimentTemplateId, accountId,

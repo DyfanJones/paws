@@ -8,8 +8,7 @@ Recovery Controller}
 arczonalshift_cancel_practice_run(zonalShiftId)
 }
 \arguments{
-\item{zonalShiftId}{[required] The identifier of a practice run zonal shift in Amazon Application
-Recovery Controller that you want to cancel.}
+\item{zonalShiftId}{[required] The identifier of a practice run zonal shift in Amazon Application Recovery Controller that you want to cancel.}
 }
 \description{
 Cancel an in-progress practice run zonal shift in Amazon Application Recovery Controller.

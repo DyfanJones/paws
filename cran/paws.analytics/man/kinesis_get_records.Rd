@@ -12,14 +12,9 @@ kinesis_get_records(
 )
 }
 \arguments{
-\item{ShardIterator}{[required] The position in the shard from which you want to start sequentially
-reading data records. A shard iterator specifies this position using the
-sequence number of a data record in the shard.}
+\item{ShardIterator}{[required] The position in the shard from which you want to start sequentially reading data records. A shard iterator specifies this position using the sequence number of a data record in the shard.}
 
-\item{Limit}{The maximum number of records to return. Specify a value of up to
-10,000. If you specify a value that is greater than 10,000,
-\code{\link[=kinesis_get_records]{get_records}} throws \code{InvalidArgumentException}.
-The default value is 10,000.}
+\item{Limit}{The maximum number of records to return. Specify a value of up to 10,000. If you specify a value that is greater than 10,000, \code{\link[=kinesis_get_records]{get_records}} throws \code{InvalidArgumentException}. The default value is 10,000.}
 
 \item{StreamARN}{The ARN of the stream.}
 

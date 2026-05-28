@@ -21,21 +21,13 @@ bedrockagent_create_prompt(
 
 \item{customerEncryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key to encrypt the prompt.}
 
-\item{defaultVariant}{The name of the default variant for the prompt. This value must match
-the \code{name} field in the relevant
-\href{https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptVariant.html}{PromptVariant}
-object.}
+\item{defaultVariant}{The name of the default variant for the prompt. This value must match the \code{name} field in the relevant \href{https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptVariant.html}{PromptVariant} object.}
 
-\item{variants}{A list of objects, each containing details about a variant of the
-prompt.}
+\item{variants}{A list of objects, each containing details about a variant of the prompt.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, Amazon Bedrock ignores the request, but does not return an
-error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, Amazon Bedrock ignores the request, but does not return an error. For more information, see \href{https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html}{Ensuring idempotency}.}
 
-\item{tags}{Any tags that you want to attach to the prompt. For more information,
-see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html}{Tagging resources in Amazon Bedrock}.}
+\item{tags}{Any tags that you want to attach to the prompt. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html}{Tagging resources in Amazon Bedrock}.}
 }
 \description{
 Creates a prompt in your prompt library that you can add to a flow. For more information, see \href{https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html}{Prompt management in Amazon Bedrock}, \href{https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management-create.html}{Create a prompt using Prompt management} and \href{https://docs.aws.amazon.com/bedrock/latest/userguide/flows.html}{Prompt flows in Amazon Bedrock} in the Amazon Bedrock User Guide.

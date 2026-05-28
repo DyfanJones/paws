@@ -15,63 +15,29 @@ rekognition_index_faces(
 )
 }
 \arguments{
-\item{CollectionId}{[required] The ID of an existing collection to which you want to add the faces that
-are detected in the input images.}
+\item{CollectionId}{[required] The ID of an existing collection to which you want to add the faces that are detected in the input images.}
 
-\item{Image}{[required] The input image as base64-encoded bytes or an S3 object. If you use the
-AWS CLI to call Amazon Rekognition operations, passing base64-encoded
-image bytes isn't supported.
+\item{Image}{[required] The input image as base64-encoded bytes or an S3 object. If you use the AWS CLI to call Amazon Rekognition operations, passing base64-encoded image bytes isn't supported.
 
-If you are using an AWS SDK to call Amazon Rekognition, you might not
-need to base64-encode image bytes passed using the \code{Bytes} field. For
-more information, see Images in the Amazon Rekognition developer guide.}
+If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode image bytes passed using the \code{Bytes} field. For more information, see Images in the Amazon Rekognition developer guide.}
 
 \item{ExternalImageId}{The ID you want to assign to all the faces detected in the image.}
 
-\item{DetectionAttributes}{An array of facial attributes you want to be returned. A \code{DEFAULT}
-subset of facial attributes - \code{BoundingBox}, \code{Confidence}, \code{Pose},
-\code{Quality}, and \code{Landmarks} - will always be returned. You can request
-for specific facial attributes (in addition to the default list) - by
-using \verb{["DEFAULT", "FACE_OCCLUDED"]} or just \verb{["FACE_OCCLUDED"]}. You
-can request for all facial attributes by using \verb{["ALL"]}. Requesting
-more attributes may increase response time.
+\item{DetectionAttributes}{An array of facial attributes you want to be returned. A \code{DEFAULT} subset of facial attributes - \code{BoundingBox}, \code{Confidence}, \code{Pose}, \code{Quality}, and \code{Landmarks} - will always be returned. You can request for specific facial attributes (in addition to the default list) - by using \verb{["DEFAULT", "FACE_OCCLUDED"]} or just \verb{["FACE_OCCLUDED"]}. You can request for all facial attributes by using \verb{["ALL"]}. Requesting more attributes may increase response time.
 
-If you provide both, \verb{["ALL", "DEFAULT"]}, the service uses a logical
-AND operator to determine which attributes to return (in this case, all
-attributes).}
+If you provide both, \verb{["ALL", "DEFAULT"]}, the service uses a logical AND operator to determine which attributes to return (in this case, all attributes).}
 
-\item{MaxFaces}{The maximum number of faces to index. The value of \code{MaxFaces} must be
-greater than or equal to 1. \code{\link[=rekognition_index_faces]{index_faces}}
-returns no more than 100 detected faces in an image, even if you specify
-a larger value for \code{MaxFaces}.
+\item{MaxFaces}{The maximum number of faces to index. The value of \code{MaxFaces} must be greater than or equal to 1. \code{\link[=rekognition_index_faces]{index_faces}} returns no more than 100 detected faces in an image, even if you specify a larger value for \code{MaxFaces}.
 
-If \code{\link[=rekognition_index_faces]{index_faces}} detects more faces than the
-value of \code{MaxFaces}, the faces with the lowest quality are filtered out
-first. If there are still more faces than the value of \code{MaxFaces}, the
-faces with the smallest bounding boxes are filtered out (up to the
-number that's needed to satisfy the value of \code{MaxFaces}). Information
-about the unindexed faces is available in the \code{UnindexedFaces} array.
+If \code{\link[=rekognition_index_faces]{index_faces}} detects more faces than the value of \code{MaxFaces}, the faces with the lowest quality are filtered out first. If there are still more faces than the value of \code{MaxFaces}, the faces with the smallest bounding boxes are filtered out (up to the number that's needed to satisfy the value of \code{MaxFaces}). Information about the unindexed faces is available in the \code{UnindexedFaces} array.
 
-The faces that are returned by \code{\link[=rekognition_index_faces]{index_faces}}
-are sorted by the largest face bounding box size to the smallest size,
-in descending order.
+The faces that are returned by \code{\link[=rekognition_index_faces]{index_faces}} are sorted by the largest face bounding box size to the smallest size, in descending order.
 
-\code{MaxFaces} can be used with a collection associated with any version of
-the face model.}
+\code{MaxFaces} can be used with a collection associated with any version of the face model.}
 
-\item{QualityFilter}{A filter that specifies a quality bar for how much filtering is done to
-identify faces. Filtered faces aren't indexed. If you specify \code{AUTO},
-Amazon Rekognition chooses the quality bar. If you specify \code{LOW},
-\code{MEDIUM}, or \code{HIGH}, filtering removes all faces that don’t meet the
-chosen quality bar. The default value is \code{AUTO}. The quality bar is
-based on a variety of common use cases. Low-quality detections can occur
-for a number of reasons. Some examples are an object that's
-misidentified as a face, a face that's too blurry, or a face with a pose
-that's too extreme to use. If you specify \code{NONE}, no filtering is
-performed.
+\item{QualityFilter}{A filter that specifies a quality bar for how much filtering is done to identify faces. Filtered faces aren't indexed. If you specify \code{AUTO}, Amazon Rekognition chooses the quality bar. If you specify \code{LOW}, \code{MEDIUM}, or \code{HIGH}, filtering removes all faces that don’t meet the chosen quality bar. The default value is \code{AUTO}. The quality bar is based on a variety of common use cases. Low-quality detections can occur for a number of reasons. Some examples are an object that's misidentified as a face, a face that's too blurry, or a face with a pose that's too extreme to use. If you specify \code{NONE}, no filtering is performed.
 
-To use quality filtering, the collection you are using must be
-associated with version 3 of the face model or higher.}
+To use quality filtering, the collection you are using must be associated with version 3 of the face model or higher.}
 }
 \description{
 Detects faces in the input image and adds them to the specified collection.

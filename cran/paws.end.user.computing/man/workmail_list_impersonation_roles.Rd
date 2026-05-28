@@ -11,11 +11,9 @@ workmail_list_impersonation_roles(
 )
 }
 \arguments{
-\item{OrganizationId}{[required] The WorkMail organization to which the listed impersonation roles
-belong.}
+\item{OrganizationId}{[required] The WorkMail organization to which the listed impersonation roles belong.}
 
-\item{NextToken}{The token used to retrieve the next page of results. The first call
-doesn't require a token.}
+\item{NextToken}{The token used to retrieve the next page of results. The first call doesn't require a token.}
 
 \item{MaxResults}{The maximum number of results returned in a single call.}
 }

@@ -14,11 +14,9 @@ glue_get_partition_indexes(
 \arguments{
 \item{CatalogId}{The catalog ID where the table resides.}
 
-\item{DatabaseName}{[required] Specifies the name of a database from which you want to retrieve
-partition indexes.}
+\item{DatabaseName}{[required] Specifies the name of a database from which you want to retrieve partition indexes.}
 
-\item{TableName}{[required] Specifies the name of a table for which you want to retrieve the
-partition indexes.}
+\item{TableName}{[required] Specifies the name of a table for which you want to retrieve the partition indexes.}
 
 \item{NextToken}{A continuation token, included if this is a continuation call.}
 }

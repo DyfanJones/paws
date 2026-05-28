@@ -7,14 +7,11 @@
 braket_search_quantum_tasks(nextToken = NULL, maxResults = NULL, filters)
 }
 \arguments{
-\item{nextToken}{A token used for pagination of results returned in the response. Use the
-token returned from the previous request to continue search where the
-previous request ended.}
+\item{nextToken}{A token used for pagination of results returned in the response. Use the token returned from the previous request to continue search where the previous request ended.}
 
 \item{maxResults}{Maximum number of results to return in the response.}
 
-\item{filters}{[required] Array of \code{SearchQuantumTasksFilter} objects to use when searching for
-quantum tasks.}
+\item{filters}{[required] Array of \code{SearchQuantumTasksFilter} objects to use when searching for quantum tasks.}
 }
 \description{
 Searches for tasks that match the specified filter values.

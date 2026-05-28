@@ -25,8 +25,7 @@ bedrockagentcorecontrol_update_agent_runtime(
 
 \item{agentRuntimeArtifact}{[required] The updated artifact of the AgentCore Runtime.}
 
-\item{roleArn}{[required] The updated IAM role ARN that provides permissions for the AgentCore
-Runtime.}
+\item{roleArn}{[required] The updated IAM role ARN that provides permissions for the AgentCore Runtime.}
 
 \item{networkConfiguration}{[required] The updated network configuration for the AgentCore Runtime.}
 
@@ -34,22 +33,19 @@ Runtime.}
 
 \item{authorizerConfiguration}{The updated authorizer configuration for the AgentCore Runtime.}
 
-\item{requestHeaderConfiguration}{The updated configuration for HTTP request headers that will be passed
-through to the runtime.}
+\item{requestHeaderConfiguration}{The updated configuration for HTTP request headers that will be passed through to the runtime.}
+
+\item{protocolConfiguration}{The protocol configuration for an agent runtime. This structure defines how the agent runtime communicates with clients.}
 
 \item{lifecycleConfiguration}{The updated life cycle configuration for the AgentCore Runtime.}
 
-\item{metadataConfiguration}{The updated configuration for microVM Metadata Service (MMDS) settings
-for the AgentCore Runtime.}
+\item{metadataConfiguration}{The updated configuration for microVM Metadata Service (MMDS) settings for the AgentCore Runtime.}
 
-\item{environmentVariables}{Updated environment variables to set in the AgentCore Runtime
-environment.}
+\item{environmentVariables}{Updated environment variables to set in the AgentCore Runtime environment.}
 
-\item{filesystemConfigurations}{The updated filesystem configurations to mount into the AgentCore
-Runtime.}
+\item{filesystemConfigurations}{The updated filesystem configurations to mount into the AgentCore Runtime.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure idempotency of the request.}
 }
 \description{
 Updates an existing Amazon Secure Agent.

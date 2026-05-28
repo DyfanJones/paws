@@ -11,8 +11,7 @@ quicksight_update_account_customization(
 )
 }
 \arguments{
-\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to update Quick
-Sight customizations for.}
+\item{AwsAccountId}{[required] The ID for the Amazon Web Services account that you want to update Quick Sight customizations for.}
 
 \item{Namespace}{The namespace that you want to update Quick Sight customizations for.}
 

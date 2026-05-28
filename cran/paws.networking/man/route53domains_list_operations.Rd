@@ -17,17 +17,9 @@ route53domains_list_operations(
 )
 }
 \arguments{
-\item{SubmittedSince}{An optional parameter that lets you get information about all the
-operations that you submitted after a specified date and time. Specify
-the date and time in Unix time format and Coordinated Universal time
-(UTC).}
+\item{SubmittedSince}{An optional parameter that lets you get information about all the operations that you submitted after a specified date and time. Specify the date and time in Unix time format and Coordinated Universal time (UTC).}
 
-\item{Marker}{For an initial request for a list of operations, omit this element. If
-the number of operations that are not yet complete is greater than the
-value that you specified for \code{MaxItems}, you can use \code{Marker} to return
-additional operations. Get the value of \code{NextPageMarker} from the
-previous response, and submit another request that includes the value of
-\code{NextPageMarker} in the \code{Marker} element.}
+\item{Marker}{For an initial request for a list of operations, omit this element. If the number of operations that are not yet complete is greater than the value that you specified for \code{MaxItems}, you can use \code{Marker} to return additional operations. Get the value of \code{NextPageMarker} from the previous response, and submit another request that includes the value of \code{NextPageMarker} in the \code{Marker} element.}
 
 \item{MaxItems}{Number of domains to be returned.
 

@@ -24,7 +24,7 @@ bedrockagentcore_get_payment_instrument(
 \item{paymentInstrumentId}{[required] The ID of the payment instrument to retrieve.}
 }
 \description{
-Get a payment instrument by ID
+Get a payment instrument by ID.
 
 See \url{https://www.paws-r-sdk.com/docs/bedrockagentcore_get_payment_instrument/} for full documentation.
 }

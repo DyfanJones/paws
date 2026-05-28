@@ -11,11 +11,9 @@ bedrock_get_automated_reasoning_policy_next_scenario(
 )
 }
 \arguments{
-\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy for
-which you want to get the next test scenario.}
+\item{policyArn}{[required] The Amazon Resource Name (ARN) of the Automated Reasoning policy for which you want to get the next test scenario.}
 
-\item{buildWorkflowId}{[required] The unique identifier of the build workflow associated with the test
-scenarios.}
+\item{buildWorkflowId}{[required] The unique identifier of the build workflow associated with the test scenarios.}
 }
 \description{
 Retrieves the next test scenario for validating an Automated Reasoning policy. This is used during the interactive policy refinement process to test policy behavior.

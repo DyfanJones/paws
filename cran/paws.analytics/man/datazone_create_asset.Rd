@@ -25,8 +25,7 @@ datazone_create_asset(
 
 \item{externalIdentifier}{The external identifier of the asset.
 
-If the value for the \code{externalIdentifier} parameter is specified, it
-must be a unique value.}
+If the value for the \code{externalIdentifier} parameter is specified, it must be a unique value.}
 
 \item{typeIdentifier}{[required] The unique identifier of this asset's type.}
 
@@ -40,11 +39,9 @@ must be a unique value.}
 
 \item{owningProjectIdentifier}{[required] The unique identifier of the project that owns this asset.}
 
-\item{predictionConfiguration}{The configuration of the automatically generated business-friendly
-metadata for the asset.}
+\item{predictionConfiguration}{The configuration of the automatically generated business-friendly metadata for the asset.}
 
-\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the
-idempotency of the request.}
+\item{clientToken}{A unique, case-sensitive identifier that is provided to ensure the idempotency of the request.}
 }
 \description{
 Creates an asset in Amazon DataZone catalog.

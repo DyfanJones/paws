@@ -16,26 +16,13 @@ rds_revoke_db_security_group_ingress(
 \arguments{
 \item{DBSecurityGroupName}{[required] The name of the DB security group to revoke ingress from.}
 
-\item{CIDRIP}{The IP range to revoke access from. Must be a valid CIDR range. If
-\code{CIDRIP} is specified, \code{EC2SecurityGroupName}, \code{EC2SecurityGroupId} and
-\code{EC2SecurityGroupOwnerId} can't be provided.}
+\item{CIDRIP}{The IP range to revoke access from. Must be a valid CIDR range. If \code{CIDRIP} is specified, \code{EC2SecurityGroupName}, \code{EC2SecurityGroupId} and \code{EC2SecurityGroupOwnerId} can't be provided.}
 
-\item{EC2SecurityGroupName}{The name of the EC2 security group to revoke access from. For VPC DB
-security groups, \code{EC2SecurityGroupId} must be provided. Otherwise,
-EC2SecurityGroupOwnerId and either \code{EC2SecurityGroupName} or
-\code{EC2SecurityGroupId} must be provided.}
+\item{EC2SecurityGroupName}{The name of the EC2 security group to revoke access from. For VPC DB security groups, \code{EC2SecurityGroupId} must be provided. Otherwise, EC2SecurityGroupOwnerId and either \code{EC2SecurityGroupName} or \code{EC2SecurityGroupId} must be provided.}
 
-\item{EC2SecurityGroupId}{The id of the EC2 security group to revoke access from. For VPC DB
-security groups, \code{EC2SecurityGroupId} must be provided. Otherwise,
-EC2SecurityGroupOwnerId and either \code{EC2SecurityGroupName} or
-\code{EC2SecurityGroupId} must be provided.}
+\item{EC2SecurityGroupId}{The id of the EC2 security group to revoke access from. For VPC DB security groups, \code{EC2SecurityGroupId} must be provided. Otherwise, EC2SecurityGroupOwnerId and either \code{EC2SecurityGroupName} or \code{EC2SecurityGroupId} must be provided.}
 
-\item{EC2SecurityGroupOwnerId}{The Amazon Web Services account number of the owner of the EC2 security
-group specified in the \code{EC2SecurityGroupName} parameter. The Amazon Web
-Services access key ID isn't an acceptable value. For VPC DB security
-groups, \code{EC2SecurityGroupId} must be provided. Otherwise,
-EC2SecurityGroupOwnerId and either \code{EC2SecurityGroupName} or
-\code{EC2SecurityGroupId} must be provided.}
+\item{EC2SecurityGroupOwnerId}{The Amazon Web Services account number of the owner of the EC2 security group specified in the \code{EC2SecurityGroupName} parameter. The Amazon Web Services access key ID isn't an acceptable value. For VPC DB security groups, \code{EC2SecurityGroupId} must be provided. Otherwise, EC2SecurityGroupOwnerId and either \code{EC2SecurityGroupName} or \code{EC2SecurityGroupId} must be provided.}
 }
 \description{
 Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC security groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).

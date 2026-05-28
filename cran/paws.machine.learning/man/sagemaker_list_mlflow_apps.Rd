@@ -18,15 +18,9 @@ sagemaker_list_mlflow_apps(
 )
 }
 \arguments{
-\item{CreatedAfter}{Use the \code{CreatedAfter} filter to only list MLflow Apps created after a
-specific date and time. Listed MLflow Apps are shown with a date and
-time such as \code{"2024-03-16T01:46:56+00:00"}. The \code{CreatedAfter} parameter
-takes in a Unix timestamp.}
+\item{CreatedAfter}{Use the \code{CreatedAfter} filter to only list MLflow Apps created after a specific date and time. Listed MLflow Apps are shown with a date and time such as \code{"2024-03-16T01:46:56+00:00"}. The \code{CreatedAfter} parameter takes in a Unix timestamp.}
 
-\item{CreatedBefore}{Use the \code{CreatedBefore} filter to only list MLflow Apps created before a
-specific date and time. Listed MLflow Apps are shown with a date and
-time such as \code{"2024-03-16T01:46:56+00:00"}. The \code{CreatedAfter} parameter
-takes in a Unix timestamp.}
+\item{CreatedBefore}{Use the \code{CreatedBefore} filter to only list MLflow Apps created before a specific date and time. Listed MLflow Apps are shown with a date and time such as \code{"2024-03-16T01:46:56+00:00"}. The \code{CreatedAfter} parameter takes in a Unix timestamp.}
 
 \item{Status}{Filter for Mlflow apps with a specific creation status.}
 
@@ -36,15 +30,11 @@ takes in a Unix timestamp.}
 
 \item{AccountDefaultStatus}{Filter for MLflow Apps with the specified \code{AccountDefaultStatus}.}
 
-\item{SortBy}{Filter for MLflow Apps sorting by name, creation time, or creation
-status.}
+\item{SortBy}{Filter for MLflow Apps sorting by name, creation time, or creation status.}
 
-\item{SortOrder}{Change the order of the listed MLflow Apps. By default, MLflow Apps are
-listed in \code{Descending} order by creation time. To change the list order,
-specify \code{SortOrder} to be \code{Ascending}.}
+\item{SortOrder}{Change the order of the listed MLflow Apps. By default, MLflow Apps are listed in \code{Descending} order by creation time. To change the list order, specify \code{SortOrder} to be \code{Ascending}.}
 
-\item{NextToken}{If the previous response was truncated, use this token in your next
-request to receive the next set of results.}
+\item{NextToken}{If the previous response was truncated, use this token in your next request to receive the next set of results.}
 
 \item{MaxResults}{The maximum number of MLflow Apps to list.}
 }

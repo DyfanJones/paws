@@ -10,9 +10,7 @@ route53_activate_key_signing_key(HostedZoneId, Name)
 \arguments{
 \item{HostedZoneId}{[required] A unique string used to identify a hosted zone.}
 
-\item{Name}{[required] A string used to identify a key-signing key (KSK). \code{Name} can include
-numbers, letters, and underscores (_). \code{Name} must be unique for each
-key-signing key in the same hosted zone.}
+\item{Name}{[required] A string used to identify a key-signing key (KSK). \code{Name} can include numbers, letters, and underscores (_). \code{Name} must be unique for each key-signing key in the same hosted zone.}
 }
 \description{
 Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK status to \code{ACTIVE}.

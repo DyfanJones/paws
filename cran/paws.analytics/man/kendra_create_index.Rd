@@ -20,72 +20,41 @@ kendra_create_index(
 \arguments{
 \item{Name}{[required] A name for the index.}
 
-\item{Edition}{The Amazon Kendra edition to use for the index. Choose
-\code{DEVELOPER_EDITION} for indexes intended for development, testing, or
-proof of concept. Use \code{ENTERPRISE_EDITION} for production. Use
-\code{GEN_AI_ENTERPRISE_EDITION} for creating generative AI applications.
-Once you set the edition for an index, it can't be changed.
+\item{Edition}{The Amazon Kendra edition to use for the index. Choose \code{DEVELOPER_EDITION} for indexes intended for development, testing, or proof of concept. Use \code{ENTERPRISE_EDITION} for production. Use \code{GEN_AI_ENTERPRISE_EDITION} for creating generative AI applications. Once you set the edition for an index, it can't be changed.
 
-The \code{Edition} parameter is optional. If you don't supply a value, the
-default is \code{ENTERPRISE_EDITION}.
+The \code{Edition} parameter is optional. If you don't supply a value, the default is \code{ENTERPRISE_EDITION}.
 
-For more information on quota limits for Gen AI Enterprise Edition,
-Enterprise Edition, and Developer Edition indices, see
-\href{https://docs.aws.amazon.com/kendra/latest/dg/quotas.html}{Quotas}.}
+For more information on quota limits for Gen AI Enterprise Edition, Enterprise Edition, and Developer Edition indices, see \href{https://docs.aws.amazon.com/kendra/latest/dg/quotas.html}{Quotas}.}
 
-\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role with permission to access
-your Amazon CloudWatch logs and metrics. For more information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM access roles for Amazon Kendra}.}
+\item{RoleArn}{[required] The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon CloudWatch logs and metrics. For more information, see \href{https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html}{IAM access roles for Amazon Kendra}.}
 
-\item{ServerSideEncryptionConfiguration}{The identifier of the KMS customer managed key (CMK) that's used to
-encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support
-asymmetric CMKs.}
+\item{ServerSideEncryptionConfiguration}{The identifier of the KMS customer managed key (CMK) that's used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support asymmetric CMKs.}
 
 \item{Description}{A description for the index.}
 
-\item{ClientToken}{A token that you provide to identify the request to create an index.
-Multiple calls to the \code{\link[=kendra_create_index]{create_index}} API with the
-same client token will create only one index.}
+\item{ClientToken}{A token that you provide to identify the request to create an index. Multiple calls to the \code{\link[=kendra_create_index]{create_index}} API with the same client token will create only one index.}
 
-\item{Tags}{A list of key-value pairs that identify or categorize the index. You can
-also use tags to help control access to the index. Tag keys and values
-can consist of Unicode letters, digits, white space, and any of the
-following symbols: _ . : / = + - @.}
+\item{Tags}{A list of key-value pairs that identify or categorize the index. You can also use tags to help control access to the index. Tag keys and values can consist of Unicode letters, digits, white space, and any of the following symbols: _ . : / = + - @.}
 
 \item{UserTokenConfigurations}{The user token configuration.
 
-If you're using an Amazon Kendra Gen AI Enterprise Edition index and you
-try to use \code{UserTokenConfigurations} to configure user context policy,
-Amazon Kendra returns a \code{ValidationException} error.}
+If you're using an Amazon Kendra Gen AI Enterprise Edition index and you try to use \code{UserTokenConfigurations} to configure user context policy, Amazon Kendra returns a \code{ValidationException} error.}
 
 \item{UserContextPolicy}{The user context policy.
 
-If you're using an Amazon Kendra Gen AI Enterprise Edition index, you
-can only use \code{ATTRIBUTE_FILTER} to filter search results by user
-context. If you're using an Amazon Kendra Gen AI Enterprise Edition
-index and you try to use \code{USER_TOKEN} to configure user context policy,
-Amazon Kendra returns a \code{ValidationException} error.
+If you're using an Amazon Kendra Gen AI Enterprise Edition index, you can only use \code{ATTRIBUTE_FILTER} to filter search results by user context. If you're using an Amazon Kendra Gen AI Enterprise Edition index and you try to use \code{USER_TOKEN} to configure user context policy, Amazon Kendra returns a \code{ValidationException} error.
 
 \strong{ATTRIBUTE_FILTER}
 
-All indexed content is searchable and displayable for all users. If you
-want to filter search results on user context, you can use the attribute
-filters of \verb{_user_id} and \verb{_group_ids} or you can provide user and group
-information in \code{UserContext}.
+All indexed content is searchable and displayable for all users. If you want to filter search results on user context, you can use the attribute filters of \verb{_user_id} and \verb{_group_ids} or you can provide user and group information in \code{UserContext}.
 
 \strong{USER_TOKEN}
 
-Enables token-based user access control to filter search results on user
-context. All documents with no access control and all documents
-accessible to the user will be searchable and displayable.}
+Enables token-based user access control to filter search results on user context. All documents with no access control and all documents accessible to the user will be searchable and displayable.}
 
-\item{UserGroupResolutionConfiguration}{Gets users and groups from IAM Identity Center identity source. To
-configure this, see
-\href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_UserGroupResolutionConfiguration.html}{UserGroupResolutionConfiguration}.
-This is useful for user context filtering, where search results are
-filtered based on the user or their group access to documents.
+\item{UserGroupResolutionConfiguration}{Gets users and groups from IAM Identity Center identity source. To configure this, see \href{https://docs.aws.amazon.com/kendra/latest/APIReference/API_UserGroupResolutionConfiguration.html}{UserGroupResolutionConfiguration}. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.
 
-If you're using an Amazon Kendra Gen AI Enterprise Edition index,
-\code{UserGroupResolutionConfiguration} isn't supported.}
+If you're using an Amazon Kendra Gen AI Enterprise Edition index, \code{UserGroupResolutionConfiguration} isn't supported.}
 }
 \description{
 Creates an Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has completed, check the \code{Status} field returned from a call to \code{\link[=kendra_describe_index]{describe_index}}. The \code{Status} field is set to \code{ACTIVE} when the index is ready to use.

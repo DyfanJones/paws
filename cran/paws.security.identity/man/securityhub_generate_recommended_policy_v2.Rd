@@ -8,8 +8,7 @@ finding}
 securityhub_generate_recommended_policy_v2(MetadataUid)
 }
 \arguments{
-\item{MetadataUid}{[required] The unique identifier (ID) of Security Hub OCSF findings found under the
-\code{metadata.uid} field of the finding.}
+\item{MetadataUid}{[required] The unique identifier (ID) of Security Hub OCSF findings found under the \code{metadata.uid} field of the finding.}
 }
 \description{
 Begins the recommended policy generation to remediate a Security Hub finding. \code{\link[=securityhub_generate_recommended_policy_v2]{generate_recommended_policy_v2}} only supports findings for unused permissions.

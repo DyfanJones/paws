@@ -11,8 +11,7 @@ lexmodelsv2_describe_custom_vocabulary_metadata(botId, botVersion, localeId)
 
 \item{botVersion}{[required] The bot version of the bot to return metadata for.}
 
-\item{localeId}{[required] The locale to return the custom vocabulary information for. The locale
-must be \code{en_GB}.}
+\item{localeId}{[required] The locale to return the custom vocabulary information for. The locale must be \code{en_GB}.}
 }
 \description{
 Provides metadata information about a custom vocabulary.

@@ -13,12 +13,9 @@ neptunedata_cancel_ml_data_processing_job(
 \arguments{
 \item{id}{[required] The unique identifier of the data-processing job.}
 
-\item{neptuneIamRoleArn}{The ARN of an IAM role that provides Neptune access to SageMaker and
-Amazon S3 resources. This must be listed in your DB cluster parameter
-group or an error will occur.}
+\item{neptuneIamRoleArn}{The ARN of an IAM role that provides Neptune access to SageMaker and Amazon S3 resources. This must be listed in your DB cluster parameter group or an error will occur.}
 
-\item{clean}{If set to \code{TRUE}, this flag specifies that all Neptune ML S3 artifacts
-should be deleted when the job is stopped. The default is \code{FALSE}.}
+\item{clean}{If set to \code{TRUE}, this flag specifies that all Neptune ML S3 artifacts should be deleted when the job is stopped. The default is \code{FALSE}.}
 }
 \description{
 Cancels a Neptune ML data processing job. See \href{https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html}{The \code{dataprocessing} command}.

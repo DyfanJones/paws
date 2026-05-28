@@ -14,8 +14,7 @@ datazone_create_environment_action(
 )
 }
 \arguments{
-\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the environment action is
-created.}
+\item{domainIdentifier}{[required] The ID of the Amazon DataZone domain in which the environment action is created.}
 
 \item{environmentIdentifier}{[required] The ID of the environment in which the environment action is created.}
 
@@ -23,8 +22,7 @@ created.}
 
 \item{parameters}{[required] The parameters of the environment action.}
 
-\item{description}{The description of the environment action that is being created in the
-environment.}
+\item{description}{The description of the environment action that is being created in the environment.}
 }
 \description{
 Creates an action for the environment, for example, creates a console link for an analytics tool that is available in this environment.

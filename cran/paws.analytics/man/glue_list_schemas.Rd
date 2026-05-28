@@ -7,11 +7,9 @@
 glue_list_schemas(RegistryId = NULL, MaxResults = NULL, NextToken = NULL)
 }
 \arguments{
-\item{RegistryId}{A wrapper structure that may contain the registry name and Amazon
-Resource Name (ARN).}
+\item{RegistryId}{A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).}
 
-\item{MaxResults}{Maximum number of results required per page. If the value is not
-supplied, this will be defaulted to 25 per page.}
+\item{MaxResults}{Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.}
 
 \item{NextToken}{A continuation token, if this is a continuation call.}
 }

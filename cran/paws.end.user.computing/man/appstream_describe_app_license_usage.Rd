@@ -13,8 +13,7 @@ appstream_describe_app_license_usage(
 \arguments{
 \item{BillingPeriod}{[required] Billing period for the usage record.
 
-Specify the value in \emph{yyyy-mm} format. For example, for August 2025, use
-\emph{2025-08}.}
+Specify the value in \emph{yyyy-mm} format. For example, for August 2025, use \emph{2025-08}.}
 
 \item{MaxResults}{The maximum number of results to return.}
 

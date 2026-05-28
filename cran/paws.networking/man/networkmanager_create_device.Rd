@@ -20,8 +20,7 @@ networkmanager_create_device(
 \arguments{
 \item{GlobalNetworkId}{[required] The ID of the global network.}
 
-\item{AWSLocation}{The Amazon Web Services location of the device, if applicable. For an
-on-premises device, you can omit this parameter.}
+\item{AWSLocation}{The Amazon Web Services location of the device, if applicable. For an on-premises device, you can omit this parameter.}
 
 \item{Description}{A description of the device.
 

@@ -15,9 +15,7 @@ memorydb_delete_cluster(
 
 \item{MultiRegionClusterName}{The name of the multi-Region cluster to be deleted.}
 
-\item{FinalSnapshotName}{The user-supplied name of a final cluster snapshot. This is the unique
-name that identifies the snapshot. MemoryDB creates the snapshot, and
-then deletes the cluster immediately afterward.}
+\item{FinalSnapshotName}{The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.}
 }
 \description{
 Deletes a cluster. It also deletes all associated nodes and node endpoints.

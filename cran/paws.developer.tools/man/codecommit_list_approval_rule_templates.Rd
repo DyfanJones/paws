@@ -8,11 +8,9 @@ Region in your Amazon Web Services account}
 codecommit_list_approval_rule_templates(nextToken = NULL, maxResults = NULL)
 }
 \arguments{
-\item{nextToken}{An enumeration token that, when provided in a request, returns the next
-batch of the results.}
+\item{nextToken}{An enumeration token that, when provided in a request, returns the next batch of the results.}
 
-\item{maxResults}{A non-zero, non-negative integer used to limit the number of returned
-results.}
+\item{maxResults}{A non-zero, non-negative integer used to limit the number of returned results.}
 }
 \description{
 Lists all approval rule templates in the specified Amazon Web Services Region in your Amazon Web Services account. If an Amazon Web Services Region is not specified, the Amazon Web Services Region where you are signed in is used.

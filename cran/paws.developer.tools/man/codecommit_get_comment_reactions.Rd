@@ -14,14 +14,11 @@ codecommit_get_comment_reactions(
 \arguments{
 \item{commentId}{[required] The ID of the comment for which you want to get reactions information.}
 
-\item{reactionUserArn}{Optional. The Amazon Resource Name (ARN) of the user or identity for
-which you want to get reaction information.}
+\item{reactionUserArn}{Optional. The Amazon Resource Name (ARN) of the user or identity for which you want to get reaction information.}
 
-\item{nextToken}{An enumeration token that, when provided in a request, returns the next
-batch of the results.}
+\item{nextToken}{An enumeration token that, when provided in a request, returns the next batch of the results.}
 
-\item{maxResults}{A non-zero, non-negative integer used to limit the number of returned
-results. The default is the same as the allowed maximum, 1,000.}
+\item{maxResults}{A non-zero, non-negative integer used to limit the number of returned results. The default is the same as the allowed maximum, 1,000.}
 }
 \description{
 Returns information about reactions to a specified comment ID. Reactions from users who have been deleted will not be included in the count.

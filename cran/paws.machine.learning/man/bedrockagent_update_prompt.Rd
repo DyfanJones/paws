@@ -20,13 +20,9 @@ bedrockagent_update_prompt(
 
 \item{customerEncryptionKeyArn}{The Amazon Resource Name (ARN) of the KMS key to encrypt the prompt.}
 
-\item{defaultVariant}{The name of the default variant for the prompt. This value must match
-the \code{name} field in the relevant
-\href{https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptVariant.html}{PromptVariant}
-object.}
+\item{defaultVariant}{The name of the default variant for the prompt. This value must match the \code{name} field in the relevant \href{https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptVariant.html}{PromptVariant} object.}
 
-\item{variants}{A list of objects, each containing details about a variant of the
-prompt.}
+\item{variants}{A list of objects, each containing details about a variant of the prompt.}
 
 \item{promptIdentifier}{[required] The unique identifier of the prompt.}
 }

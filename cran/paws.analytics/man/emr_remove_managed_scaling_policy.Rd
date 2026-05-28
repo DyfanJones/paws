@@ -7,8 +7,7 @@
 emr_remove_managed_scaling_policy(ClusterId)
 }
 \arguments{
-\item{ClusterId}{[required] Specifies the ID of the cluster from which the managed scaling policy
-will be removed.}
+\item{ClusterId}{[required] Specifies the ID of the cluster from which the managed scaling policy will be removed.}
 }
 \description{
 Removes a managed scaling policy from a specified Amazon EMR cluster.

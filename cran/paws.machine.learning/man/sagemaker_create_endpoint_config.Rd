@@ -21,75 +21,45 @@ sagemaker_create_endpoint_config(
 )
 }
 \arguments{
-\item{EndpointConfigName}{[required] The name of the endpoint configuration. You specify this name in a
-\code{\link[=sagemaker_create_endpoint]{create_endpoint}} request.}
+\item{EndpointConfigName}{[required] The name of the endpoint configuration. You specify this name in a \code{\link[=sagemaker_create_endpoint]{create_endpoint}} request.}
 
-\item{ProductionVariants}{[required] An array of \code{ProductionVariant} objects, one for each model that you
-want to host at this endpoint.}
+\item{ProductionVariants}{[required] An array of \code{ProductionVariant} objects, one for each model that you want to host at this endpoint.}
 
-\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon
-Web Services resources in different ways, for example, by purpose,
-owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.}
+\item{DataCaptureConfig}{Configuration to control how SageMaker AI captures inference data.}
 
-\item{KmsKeyId}{The Amazon Resource Name (ARN) of a Amazon Web Services Key Management
-Service key that SageMaker uses to encrypt data on the storage volume
-attached to the ML compute instance that hosts the endpoint.
+\item{Tags}{An array of key-value pairs. You can use tags to categorize your Amazon Web Services resources in different ways, for example, by purpose, owner, or environment. For more information, see \href{https://docs.aws.amazon.com/tag-editor/latest/userguide/tagging.html}{Tagging Amazon Web Services Resources}.}
+
+\item{KmsKeyId}{The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service key that SageMaker uses to encrypt data on the storage volume attached to the ML compute instance that hosts the endpoint.
 
 The KmsKeyId can be any of the following formats:
 \itemize{
 \item Key ID: \verb{1234abcd-12ab-34cd-56ef-1234567890ab}
-\item Key ARN:
-\verb{arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}
+\item Key ARN: \verb{arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab}
 \item Alias name: \code{alias/ExampleAlias}
-\item Alias name ARN:
-\code{arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias}
+\item Alias name ARN: \code{arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias}
 }
 
-The KMS key policy must grant permission to the IAM role that you
-specify in your \code{\link[=sagemaker_create_endpoint]{create_endpoint}},
-\code{\link[=sagemaker_update_endpoint]{update_endpoint}} requests. For more
-information, refer to the Amazon Web Services Key Management Service
-section \href{https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html}{Using Key Policies in Amazon Web Services KMS}
+The KMS key policy must grant permission to the IAM role that you specify in your \code{\link[=sagemaker_create_endpoint]{create_endpoint}}, \code{\link[=sagemaker_update_endpoint]{update_endpoint}} requests. For more information, refer to the Amazon Web Services Key Management Service section \href{https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html}{Using Key Policies in Amazon Web Services KMS}
 
-Certain Nitro-based instances include local storage, dependent on the
-instance type. Local storage volumes are encrypted using a hardware
-module on the instance. You can't request a \code{KmsKeyId} when using an
-instance type with local storage. If any of the models that you specify
-in the \code{ProductionVariants} parameter use nitro-based instances with
-local storage, do not specify a value for the \code{KmsKeyId} parameter. If
-you specify a value for \code{KmsKeyId} when using any nitro-based instances
-with local storage, the call to
-\code{\link[=sagemaker_create_endpoint_config]{create_endpoint_config}} fails.
+Certain Nitro-based instances include local storage, dependent on the instance type. Local storage volumes are encrypted using a hardware module on the instance. You can't request a \code{KmsKeyId} when using an instance type with local storage. If any of the models that you specify in the \code{ProductionVariants} parameter use nitro-based instances with local storage, do not specify a value for the \code{KmsKeyId} parameter. If you specify a value for \code{KmsKeyId} when using any nitro-based instances with local storage, the call to \code{\link[=sagemaker_create_endpoint_config]{create_endpoint_config}} fails.
 
-For a list of instance types that support local instance storage, see
-\href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes}{Instance Store Volumes}.
+For a list of instance types that support local instance storage, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html#instance-store-volumes}{Instance Store Volumes}.
 
 For more information about local instance storage encryption, see \href{https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ssd-instance-store.html}{SSD Instance Store Volumes}.}
 
-\item{AsyncInferenceConfig}{Specifies configuration for how an endpoint performs asynchronous
-inference. This is a required field in order for your Endpoint to be
-invoked using
-\href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html}{InvokeEndpointAsync}.}
+\item{AsyncInferenceConfig}{Specifies configuration for how an endpoint performs asynchronous inference. This is a required field in order for your Endpoint to be invoked using \href{https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpointAsync.html}{InvokeEndpointAsync}.}
 
-\item{ExplainerConfig}{A member of \code{\link[=sagemaker_create_endpoint_config]{create_endpoint_config}}
-that enables explainers.}
+\item{ExplainerConfig}{A member of \code{\link[=sagemaker_create_endpoint_config]{create_endpoint_config}} that enables explainers.}
 
-\item{ShadowProductionVariants}{An array of \code{ProductionVariant} objects, one for each model that you
-want to host at this endpoint in shadow mode with production traffic
-replicated from the model specified on \code{ProductionVariants}. If you use
-this field, you can only specify one variant for \code{ProductionVariants}
-and one variant for \code{ShadowProductionVariants}.}
+\item{ShadowProductionVariants}{An array of \code{ProductionVariant} objects, one for each model that you want to host at this endpoint in shadow mode with production traffic replicated from the model specified on \code{ProductionVariants}. If you use this field, you can only specify one variant for \code{ProductionVariants} and one variant for \code{ShadowProductionVariants}.}
 
-\item{ExecutionRoleArn}{The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI
-can assume to perform actions on your behalf. For more information, see
-\href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html}{SageMaker AI Roles}.
+\item{ExecutionRoleArn}{The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker AI can assume to perform actions on your behalf. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html}{SageMaker AI Roles}.
 
-To be able to pass this role to Amazon SageMaker AI, the caller of this
-action must have the \code{iam:PassRole} permission.}
+To be able to pass this role to Amazon SageMaker AI, the caller of this action must have the \code{iam:PassRole} permission.}
 
-\item{EnableNetworkIsolation}{Sets whether all model containers deployed to the endpoint are isolated.
-If they are, no inbound or outbound network calls can be made to or from
-the model containers.}
+\item{VpcConfig}{Specifies an Amazon Virtual Private Cloud (VPC) that your SageMaker jobs, hosted models, and compute resources have access to. You can control access to and from your resources by configuring a VPC. For more information, see \href{https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html}{Give SageMaker Access to Resources in your Amazon VPC}.}
+
+\item{EnableNetworkIsolation}{Sets whether all model containers deployed to the endpoint are isolated. If they are, no inbound or outbound network calls can be made to or from the model containers.}
 
 \item{MetricsConfig}{The configuration parameters for utilization metrics.}
 }

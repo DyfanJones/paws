@@ -14,23 +14,16 @@ docdbelastic_list_cluster_snapshots(
 \arguments{
 \item{clusterArn}{The ARN identifier of the elastic cluster.}
 
-\item{maxResults}{The maximum number of elastic cluster snapshot results to receive in the
-response.}
+\item{maxResults}{The maximum number of elastic cluster snapshot results to receive in the response.}
 
-\item{nextToken}{A pagination token provided by a previous request. If this parameter is
-specified, the response includes only records beyond this token, up to
-the value specified by \code{max-results}.
+\item{nextToken}{A pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond this token, up to the value specified by \code{max-results}.
 
-If there is no more data in the responce, the \code{nextToken} will not be
-returned.}
+If there is no more data in the responce, the \code{nextToken} will not be returned.}
 
-\item{snapshotType}{The type of cluster snapshots to be returned. You can specify one of the
-following values:
+\item{snapshotType}{The type of cluster snapshots to be returned. You can specify one of the following values:
 \itemize{
-\item \code{automated} - Return all cluster snapshots that Amazon DocumentDB
-has automatically created for your Amazon Web Services account.
-\item \code{manual} - Return all cluster snapshots that you have manually
-created for your Amazon Web Services account.
+\item \code{automated} - Return all cluster snapshots that Amazon DocumentDB has automatically created for your Amazon Web Services account.
+\item \code{manual} - Return all cluster snapshots that you have manually created for your Amazon Web Services account.
 }}
 }
 \description{

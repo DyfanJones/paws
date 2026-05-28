@@ -8,8 +8,7 @@ Service domain}
 opensearchservice_cancel_service_software_update(DomainName)
 }
 \arguments{
-\item{DomainName}{[required] Name of the OpenSearch Service domain that you want to cancel the
-service software update on.}
+\item{DomainName}{[required] Name of the OpenSearch Service domain that you want to cancel the service software update on.}
 }
 \description{
 Cancels a scheduled service software update for an Amazon OpenSearch Service domain. You can only perform this operation before the \code{AutomatedUpdateDate} and when the domain's \code{UpdateStatus} is \code{PENDING_UPDATE}. For more information, see \href{https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html}{Service software updates in Amazon OpenSearch Service}.

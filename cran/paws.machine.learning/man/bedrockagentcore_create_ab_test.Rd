@@ -21,28 +21,19 @@ bedrockagentcore_create_ab_test(
 
 \item{description}{The description of the A/B test.}
 
-\item{gatewayArn}{[required] The Amazon Resource Name (ARN) of the gateway to use for traffic
-splitting.}
+\item{gatewayArn}{[required] The Amazon Resource Name (ARN) of the gateway to use for traffic splitting.}
 
-\item{variants}{[required] The list of variants for the A/B test. Must contain exactly two
-variants: a control (C) and a treatment (T1), each with a configuration
-bundle or target reference and a traffic weight.}
+\item{variants}{[required] The list of variants for the A/B test. Must contain exactly two variants: a control (C) and a treatment (T1), each with a configuration bundle or target reference and a traffic weight.}
 
-\item{gatewayFilter}{Optional filter to restrict which gateway target paths are included in
-the A/B test.}
+\item{gatewayFilter}{Optional filter to restrict which gateway target paths are included in the A/B test.}
 
-\item{evaluationConfig}{[required] The evaluation configuration specifying which online evaluation
-configurations to use for measuring variant performance.}
+\item{evaluationConfig}{[required] The evaluation configuration specifying which online evaluation configurations to use for measuring variant performance.}
 
-\item{roleArn}{[required] The IAM role ARN that grants permissions for the A/B test to access
-gateway and evaluation resources.}
+\item{roleArn}{[required] The IAM role ARN that grants permissions for the A/B test to access gateway and evaluation resources.}
 
-\item{enableOnCreate}{Whether to enable the A/B test immediately upon creation. If true,
-traffic splitting begins automatically.}
+\item{enableOnCreate}{Whether to enable the A/B test immediately upon creation. If true, traffic splitting begins automatically.}
 
-\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request
-completes no more than one time. If this token matches a previous
-request, the service ignores the request, but does not return an error.}
+\item{clientToken}{A unique, case-sensitive identifier to ensure that the API request completes no more than one time. If this token matches a previous request, the service ignores the request, but does not return an error.}
 }
 \description{
 Creates an A/B test for comparing agent configurations. A/B tests split traffic between a control variant and a treatment variant through a gateway, then evaluate performance using online evaluation configurations to determine which variant performs better.

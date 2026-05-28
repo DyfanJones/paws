@@ -19,15 +19,11 @@ Constraints:
 \item Must match the name of an existing DBParameterGroup.
 }}
 
-\item{ResetAllParameters}{Specifies whether (\code{true}) or not (\code{false}) to reset all parameters in
-the DB parameter group to default values.
+\item{ResetAllParameters}{Specifies whether (\code{true}) or not (\code{false}) to reset all parameters in the DB parameter group to default values.
 
 Default: \code{true}}
 
-\item{Parameters}{To reset the entire DB parameter group, specify the \code{DBParameterGroup}
-name and \code{ResetAllParameters} parameters. To reset specific parameters,
-provide a list of the following: \code{ParameterName} and \code{ApplyMethod}. A
-maximum of 20 parameters can be modified in a single request.
+\item{Parameters}{To reset the entire DB parameter group, specify the \code{DBParameterGroup} name and \code{ResetAllParameters} parameters. To reset specific parameters, provide a list of the following: \code{ParameterName} and \code{ApplyMethod}. A maximum of 20 parameters can be modified in a single request.
 
 Valid Values (for Apply method): \code{pending-reboot}}
 }

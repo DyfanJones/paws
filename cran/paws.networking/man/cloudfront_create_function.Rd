@@ -9,12 +9,11 @@ cloudfront_create_function(Name, FunctionConfig, FunctionCode, Tags = NULL)
 \arguments{
 \item{Name}{[required] A name to identify the function.}
 
-\item{FunctionConfig}{[required] Configuration information about the function, including an optional
-comment and the function's runtime.}
+\item{FunctionConfig}{[required] Configuration information about the function, including an optional comment and the function's runtime.}
 
-\item{FunctionCode}{[required] The function code. For more information about writing a CloudFront
-function, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html}{Writing function code for CloudFront Functions}
-in the \emph{Amazon CloudFront Developer Guide}.}
+\item{FunctionCode}{[required] The function code. For more information about writing a CloudFront function, see \href{https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/writing-function-code.html}{Writing function code for CloudFront Functions} in the \emph{Amazon CloudFront Developer Guide}.}
+
+\item{Tags}{A complex type that contains zero or more \code{Tag} elements.}
 }
 \description{
 Creates a CloudFront function.

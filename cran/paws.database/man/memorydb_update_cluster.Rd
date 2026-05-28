@@ -30,10 +30,7 @@ memorydb_update_cluster(
 
 \item{SecurityGroupIds}{The SecurityGroupIds to update.}
 
-\item{MaintenanceWindow}{Specifies the weekly time range during which maintenance on the cluster
-is performed. It is specified as a range in the format
-ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window
-is a 60 minute period.
+\item{MaintenanceWindow}{Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period.
 
 Valid values for \code{ddd} are:
 \itemize{
@@ -50,28 +47,19 @@ Example: \code{sun:23:00-mon:01:30}}
 
 \item{SnsTopicArn}{The SNS topic ARN to update.}
 
-\item{SnsTopicStatus}{The status of the Amazon SNS notification topic. Notifications are sent
-only if the status is active.}
+\item{SnsTopicStatus}{The status of the Amazon SNS notification topic. Notifications are sent only if the status is active.}
 
 \item{ParameterGroupName}{The name of the parameter group to update.}
 
-\item{SnapshotWindow}{The daily time range (in UTC) during which MemoryDB begins taking a
-daily snapshot of your cluster.}
+\item{SnapshotWindow}{The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your cluster.}
 
-\item{SnapshotRetentionLimit}{The number of days for which MemoryDB retains automatic cluster
-snapshots before deleting them. For example, if you set
-SnapshotRetentionLimit to 5, a snapshot that was taken today is retained
-for 5 days before being deleted.}
+\item{SnapshotRetentionLimit}{The number of days for which MemoryDB retains automatic cluster snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.}
 
 \item{NodeType}{A valid node type that you want to scale this cluster up or down to.}
 
 \item{Engine}{The name of the engine to be used for the cluster.}
 
-\item{EngineVersion}{The upgraded version of the engine to be run on the nodes. You can
-upgrade to a newer engine version, but you cannot downgrade to an
-earlier engine version. If you want to use an earlier engine version,
-you must delete the existing cluster and create it anew with the earlier
-engine version.}
+\item{EngineVersion}{The upgraded version of the engine to be run on the nodes. You can upgrade to a newer engine version, but you cannot downgrade to an earlier engine version. If you want to use an earlier engine version, you must delete the existing cluster and create it anew with the earlier engine version.}
 
 \item{ReplicaConfiguration}{The number of replicas that will reside in each shard.}
 
@@ -79,13 +67,7 @@ engine version.}
 
 \item{ACLName}{The Access Control List that is associated with the cluster.}
 
-\item{IpDiscovery}{The mechanism for discovering IP addresses for the cluster discovery
-protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster
-discovery functions such as cluster slots, cluster shards, and cluster
-nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6',
-the cluster discovery functions return IPv6 addresses for cluster nodes.
-The value must be compatible with the NetworkType parameter. If not
-specified, the default is 'ipv4'.}
+\item{IpDiscovery}{The mechanism for discovering IP addresses for the cluster discovery protocol. Valid values are 'ipv4' or 'ipv6'. When set to 'ipv4', cluster discovery functions such as cluster slots, cluster shards, and cluster nodes will return IPv4 addresses for cluster nodes. When set to 'ipv6', the cluster discovery functions return IPv6 addresses for cluster nodes. The value must be compatible with the NetworkType parameter. If not specified, the default is 'ipv4'.}
 }
 \description{
 Modifies the settings for a cluster. You can use this operation to change one or more cluster configuration settings by specifying the settings and the new values.

@@ -22,26 +22,19 @@ codecommit_create_commit(
 
 \item{branchName}{[required] The name of the branch where you create the commit.}
 
-\item{parentCommitId}{The ID of the commit that is the parent of the commit you create. Not
-required if this is an empty repository.}
+\item{parentCommitId}{The ID of the commit that is the parent of the commit you create. Not required if this is an empty repository.}
 
-\item{authorName}{The name of the author who created the commit. This information is used
-as both the author and committer for the commit.}
+\item{authorName}{The name of the author who created the commit. This information is used as both the author and committer for the commit.}
 
 \item{email}{The email address of the person who created the commit.}
 
-\item{commitMessage}{The commit message you want to include in the commit. Commit messages
-are limited to 256 KB. If no message is specified, a default message is
-used.}
+\item{commitMessage}{The commit message you want to include in the commit. Commit messages are limited to 256 KB. If no message is specified, a default message is used.}
 
-\item{keepEmptyFolders}{If the commit contains deletions, whether to keep a folder or folder
-structure if the changes leave the folders empty. If true, a ..gitkeep
-file is created for empty folders. The default is false.}
+\item{keepEmptyFolders}{If the commit contains deletions, whether to keep a folder or folder structure if the changes leave the folders empty. If true, a ..gitkeep file is created for empty folders. The default is false.}
 
 \item{putFiles}{The files to add or update in this commit.}
 
-\item{deleteFiles}{The files to delete in this commit. These files still exist in earlier
-commits.}
+\item{deleteFiles}{The files to delete in this commit. These files still exist in earlier commits.}
 
 \item{setFileModes}{The file modes to update for files in this commit.}
 }

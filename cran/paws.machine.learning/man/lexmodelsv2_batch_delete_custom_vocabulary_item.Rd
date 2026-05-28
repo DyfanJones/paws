@@ -15,16 +15,11 @@ lexmodelsv2_batch_delete_custom_vocabulary_item(
 \arguments{
 \item{botId}{[required] The identifier of the bot associated with this custom vocabulary.}
 
-\item{botVersion}{[required] The identifier of the version of the bot associated with this custom
-vocabulary.}
+\item{botVersion}{[required] The identifier of the version of the bot associated with this custom vocabulary.}
 
-\item{localeId}{[required] The identifier of the language and locale where this custom vocabulary
-is used. The string must match one of the supported locales. For more
-information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported Languages}
-.}
+\item{localeId}{[required] The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see \href{https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html}{Supported Languages} .}
 
-\item{customVocabularyItemList}{[required] A list of custom vocabulary items requested to be deleted. Each entry
-must contain the unique custom vocabulary entry identifier.}
+\item{customVocabularyItemList}{[required] A list of custom vocabulary items requested to be deleted. Each entry must contain the unique custom vocabulary entry identifier.}
 }
 \description{
 Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.

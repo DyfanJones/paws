@@ -12,8 +12,7 @@ lexmodelsv2_delete_custom_vocabulary(botId, botVersion, localeId)
 
 \item{botVersion}{[required] The version of the bot to remove the custom vocabulary from.}
 
-\item{localeId}{[required] The locale identifier for the locale that contains the custom vocabulary
-to remove.}
+\item{localeId}{[required] The locale identifier for the locale that contains the custom vocabulary to remove.}
 }
 \description{
 Removes a custom vocabulary from the specified locale in the specified bot.

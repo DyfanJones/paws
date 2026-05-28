@@ -13,23 +13,13 @@ polly_describe_voices(
 )
 }
 \arguments{
-\item{Engine}{Specifies the engine (\code{standard}, \code{neural}, \code{long-form} or \code{generative})
-used by Amazon Polly when processing input text for speech synthesis.}
+\item{Engine}{Specifies the engine (\code{standard}, \code{neural}, \code{long-form} or \code{generative}) used by Amazon Polly when processing input text for speech synthesis.}
 
-\item{LanguageCode}{The language identification tag (ISO 639 code for the language name-ISO
-3166 country code) for filtering the list of voices returned. If you
-don't specify this optional parameter, all available voices are
-returned.}
+\item{LanguageCode}{The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned.}
 
-\item{IncludeAdditionalLanguageCodes}{Boolean value indicating whether to return any bilingual voices that use
-the specified language as an additional language. For instance, if you
-request all languages that use US English (es-US), and there is an
-Italian voice that speaks both Italian (it-IT) and US English, that
-voice will be included if you specify \code{yes} but not if you specify \code{no}.}
+\item{IncludeAdditionalLanguageCodes}{Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify \code{yes} but not if you specify \code{no}.}
 
-\item{NextToken}{An opaque pagination token returned from the previous
-\code{\link[=polly_describe_voices]{describe_voices}} operation. If present, this
-indicates where to continue the listing.}
+\item{NextToken}{An opaque pagination token returned from the previous \code{\link[=polly_describe_voices]{describe_voices}} operation. If present, this indicates where to continue the listing.}
 }
 \description{
 Returns the list of voices that are available for use when requesting speech synthesis. Each voice speaks a specified language, is either male or female, and is identified by an ID, which is the ASCII version of the voice name.

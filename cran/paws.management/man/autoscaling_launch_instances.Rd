@@ -17,31 +17,17 @@ autoscaling_launch_instances(
 \arguments{
 \item{AutoScalingGroupName}{[required] The name of the Auto Scaling group to launch instances into.}
 
-\item{RequestedCapacity}{[required] The number of instances to launch. Although this value can exceed 100
-for instance weights, the actual instance count is limited to 100
-instances per launch.}
+\item{RequestedCapacity}{[required] The number of instances to launch. Although this value can exceed 100 for instance weights, the actual instance count is limited to 100 instances per launch.}
 
-\item{ClientToken}{[required] A unique, case-sensitive identifier to ensure idempotency of the
-request.}
+\item{ClientToken}{[required] A unique, case-sensitive identifier to ensure idempotency of the request.}
 
-\item{AvailabilityZones}{The Availability Zones for the instance launch. Must match or be
-included in the Auto Scaling group's Availability Zone configuration.
-Either \code{AvailabilityZones} or \code{SubnetIds} must be specified for groups
-with multiple Availability Zone configurations.}
+\item{AvailabilityZones}{The Availability Zones for the instance launch. Must match or be included in the Auto Scaling group's Availability Zone configuration. Either \code{AvailabilityZones} or \code{SubnetIds} must be specified for groups with multiple Availability Zone configurations.}
 
-\item{AvailabilityZoneIds}{A list of Availability Zone IDs where instances should be launched. Must
-match or be included in the group's AZ configuration. You cannot specify
-both AvailabilityZones and AvailabilityZoneIds. Required for multi-AZ
-groups, optional for single-AZ groups.}
+\item{AvailabilityZoneIds}{A list of Availability Zone IDs where instances should be launched. Must match or be included in the group's AZ configuration. You cannot specify both AvailabilityZones and AvailabilityZoneIds. Required for multi-AZ groups, optional for single-AZ groups.}
 
-\item{SubnetIds}{The subnet IDs for the instance launch. Either \code{AvailabilityZones} or
-\code{SubnetIds} must be specified. If both are specified, the subnets must
-reside in the specified Availability Zones.}
+\item{SubnetIds}{The subnet IDs for the instance launch. Either \code{AvailabilityZones} or \code{SubnetIds} must be specified. If both are specified, the subnets must reside in the specified Availability Zones.}
 
-\item{RetryStrategy}{Specifies whether to retry asynchronously if the synchronous launch
-fails. Valid values are NONE (default, no async retry) and
-RETRY_WITH_GROUP_CONFIGURATION (increase desired capacity and retry with
-group configuration).}
+\item{RetryStrategy}{Specifies whether to retry asynchronously if the synchronous launch fails. Valid values are NONE (default, no async retry) and RETRY_WITH_GROUP_CONFIGURATION (increase desired capacity and retry with group configuration).}
 }
 \description{
 Launches a specified number of instances in an Auto Scaling group. Returns instance IDs and other details if launch is successful or error details if launch is unsuccessful.

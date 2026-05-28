@@ -8,8 +8,7 @@ reasons}
 neptune_reboot_db_instance(DBInstanceIdentifier, ForceFailover = NULL)
 }
 \arguments{
-\item{DBInstanceIdentifier}{[required] The DB instance identifier. This parameter is stored as a lowercase
-string.
+\item{DBInstanceIdentifier}{[required] The DB instance identifier. This parameter is stored as a lowercase string.
 
 Constraints:
 \itemize{
@@ -18,8 +17,7 @@ Constraints:
 
 \item{ForceFailover}{When \code{true}, the reboot is conducted through a MultiAZ failover.
 
-Constraint: You can't specify \code{true} if the instance is not configured
-for MultiAZ.}
+Constraint: You can't specify \code{true} if the instance is not configured for MultiAZ.}
 }
 \description{
 You might need to reboot your DB instance, usually for maintenance reasons. For example, if you make certain modifications, or if you change the DB parameter group associated with the DB instance, you must reboot the instance for the changes to take effect.

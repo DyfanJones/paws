@@ -11,13 +11,11 @@ glue_create_user_defined_function(
 )
 }
 \arguments{
-\item{CatalogId}{The ID of the Data Catalog in which to create the function. If none is
-provided, the Amazon Web Services account ID is used by default.}
+\item{CatalogId}{The ID of the Data Catalog in which to create the function. If none is provided, the Amazon Web Services account ID is used by default.}
 
 \item{DatabaseName}{[required] The name of the catalog database in which to create the function.}
 
-\item{FunctionInput}{[required] A \code{FunctionInput} object that defines the function to create in the Data
-Catalog.}
+\item{FunctionInput}{[required] A \code{FunctionInput} object that defines the function to create in the Data Catalog.}
 }
 \description{
 Creates a new function definition in the Data Catalog.

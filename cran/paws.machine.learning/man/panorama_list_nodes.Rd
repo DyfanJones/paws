@@ -19,8 +19,7 @@ panorama_list_nodes(
 
 \item{MaxResults}{The maximum number of nodes to return in one page of results.}
 
-\item{NextToken}{Specify the pagination token from a previous request to retrieve the
-next page of results.}
+\item{NextToken}{Specify the pagination token from a previous request to retrieve the next page of results.}
 
 \item{OwnerAccount}{Search for nodes by the account ID of the nodes' owner.}
 

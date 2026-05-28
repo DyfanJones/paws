@@ -32,12 +32,9 @@ connect_create_test_case(
 
 \item{InitializationData}{Defines the initial custom attributes for your test.}
 
-\item{Status}{Indicates the test status as either SAVED or PUBLISHED. The PUBLISHED
-status will initiate validation on the content. The SAVED status does
-not initiate validation of the content.}
+\item{Status}{Indicates the test status as either SAVED or PUBLISHED. The PUBLISHED status will initiate validation on the content. The SAVED status does not initiate validation of the content.}
 
-\item{TestCaseId}{Id of the test case if you want to create it in a replica region using
-Amazon Connect Global Resiliency}
+\item{TestCaseId}{Id of the test case if you want to create it in a replica region using Amazon Connect Global Resiliency}
 
 \item{Tags}{The tags used to organize, track, or control access for this resource.}
 

@@ -7,8 +7,7 @@
 elasticsearchservice_start_elasticsearch_service_software_update(DomainName)
 }
 \arguments{
-\item{DomainName}{[required] The name of the domain that you want to update to the latest service
-software.}
+\item{DomainName}{[required] The name of the domain that you want to update to the latest service software.}
 }
 \description{
 Schedules a service software update for an Amazon ES domain.

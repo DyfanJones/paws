@@ -12,16 +12,11 @@ cloudfront_list_distributions_by_key_group(
 )
 }
 \arguments{
-\item{Marker}{Use this field when paginating results to indicate where to begin in
-your list of distribution IDs. The response includes distribution IDs in
-the list that occur after the marker. To get the next page of the list,
-set this field's value to the value of \code{NextMarker} from the current
-page's response.}
+\item{Marker}{Use this field when paginating results to indicate where to begin in your list of distribution IDs. The response includes distribution IDs in the list that occur after the marker. To get the next page of the list, set this field's value to the value of \code{NextMarker} from the current page's response.}
 
 \item{MaxItems}{The maximum number of distribution IDs that you want in the response.}
 
-\item{KeyGroupId}{[required] The ID of the key group whose associated distribution IDs you are
-listing.}
+\item{KeyGroupId}{[required] The ID of the key group whose associated distribution IDs you are listing.}
 }
 \description{
 Gets a list of distribution IDs for distributions that have a cache behavior that references the specified key group.

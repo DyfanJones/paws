@@ -7,8 +7,7 @@
 quicksight_list_tags_for_resource(ResourceArn)
 }
 \arguments{
-\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want a list of
-tags for.}
+\item{ResourceArn}{[required] The Amazon Resource Name (ARN) of the resource that you want a list of tags for.}
 }
 \description{
 Lists the tags assigned to a resource.

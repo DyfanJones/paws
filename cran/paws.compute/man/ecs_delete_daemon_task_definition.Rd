@@ -7,8 +7,7 @@
 ecs_delete_daemon_task_definition(daemonTaskDefinition)
 }
 \arguments{
-\item{daemonTaskDefinition}{[required] The \code{family} and \code{revision} (\code{family:revision}) or full Amazon Resource
-Name (ARN) of the daemon task definition to delete.}
+\item{daemonTaskDefinition}{[required] The \code{family} and \code{revision} (\code{family:revision}) or full Amazon Resource Name (ARN) of the daemon task definition to delete.}
 }
 \description{
 Deletes the specified daemon task definition. After a daemon task definition is deleted, no new daemons can be created using this definition. Existing daemons that reference the deleted daemon task definition continue to run.

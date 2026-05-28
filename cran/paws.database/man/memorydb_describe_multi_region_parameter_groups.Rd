@@ -13,14 +13,9 @@ memorydb_describe_multi_region_parameter_groups(
 \arguments{
 \item{MultiRegionParameterGroupName}{The request for information on a specific multi-region parameter group.}
 
-\item{MaxResults}{The maximum number of records to include in the response. If more
-records exist than the specified MaxResults value, a token is included
-in the response so that the remaining results can be retrieved.}
+\item{MaxResults}{The maximum number of records to include in the response. If more records exist than the specified MaxResults value, a token is included in the response so that the remaining results can be retrieved.}
 
-\item{NextToken}{An optional token returned from a prior request. Use this token for
-pagination of results from this action. If this parameter is specified,
-the response includes only results beyond the token, up to the value
-specified by MaxResults.}
+\item{NextToken}{An optional token returned from a prior request. Use this token for pagination of results from this action. If this parameter is specified, the response includes only results beyond the token, up to the value specified by MaxResults.}
 }
 \description{
 Returns a list of multi-region parameter groups.

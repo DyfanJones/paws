@@ -11,15 +11,11 @@ bedrockagentcorecontrol_create_api_key_credential_provider(
 )
 }
 \arguments{
-\item{name}{[required] The name of the API key credential provider. The name must be unique
-within your account.}
+\item{name}{[required] The name of the API key credential provider. The name must be unique within your account.}
 
-\item{apiKey}{[required] The API key to use for authentication. This value is encrypted and
-stored securely.}
+\item{apiKey}{[required] The API key to use for authentication. This value is encrypted and stored securely.}
 
-\item{tags}{A map of tag keys and values to assign to the API key credential
-provider. Tags enable you to categorize your resources in different
-ways, for example, by purpose, owner, or environment.}
+\item{tags}{A map of tag keys and values to assign to the API key credential provider. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.}
 }
 \description{
 Creates a new API key credential provider.

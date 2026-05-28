@@ -17,8 +17,7 @@ drs_create_launch_configuration_template(
 )
 }
 \arguments{
-\item{tags}{Request to associate tags during creation of a Launch Configuration
-Template.}
+\item{tags}{Request to associate tags during creation of a Launch Configuration Template.}
 
 \item{launchDisposition}{Launch disposition.}
 
@@ -34,9 +33,7 @@ Template.}
 
 \item{postLaunchEnabled}{Whether we want to activate post-launch actions.}
 
-\item{launchIntoSourceInstance}{DRS will set the 'launch into instance ID' of any source server when
-performing a drill, recovery or failback to the previous region or
-availability zone, using the instance ID of the source instance.}
+\item{launchIntoSourceInstance}{DRS will set the 'launch into instance ID' of any source server when performing a drill, recovery or failback to the previous region or availability zone, using the instance ID of the source instance.}
 }
 \description{
 Creates a new Launch Configuration Template.

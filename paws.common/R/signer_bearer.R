@@ -20,10 +20,11 @@ get_bearer_auth_supported_services <- function() {
 # This is much simpler than V4 signing - it just sets the Authorization header.
 bearer_sign_request_handler <- function(request) {
   creds <- request$config$credentials$creds
+  signing_name = request$client_info$signing_name
 
   # Ensure credentials are available
   if (!is_credentials_provided(request$config$credentials$creds)) {
-    credentials <- get_credentials(request$config$credentials)
+    credentials <- get_credentials(request$config$credentials, signing_name = signing_name)
     creds <- credentials$creds
   }
 
@@ -37,7 +38,7 @@ bearer_sign_request_handler <- function(request) {
   # Check token expiration
   if (check_if_cred_needs_refresh(creds)) {
     # Attempt to refresh credentials
-    credentials <- get_credentials(request$config$credentials)
+    credentials <- get_credentials(request$config$credentials, signing_name = signing_name)
     creds <- credentials$creds
 
     # Check again after refresh

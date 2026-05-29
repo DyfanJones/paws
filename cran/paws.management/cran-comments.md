@@ -7,10 +7,6 @@
 ## R CMD check results
 
 There were no ERRORs, or WARNINGs.
-Notes:
-checking Rd files ... NOTE
-checkRd: (-1) ssm_send_command.Rd:47: Escaped LaTeX specials: \$
-checkRd: (-1) ssm_send_command.Rd:49: Escaped LaTeX specials: \$
 
 Maintainer Notes: tarball package size:   1.04M
 

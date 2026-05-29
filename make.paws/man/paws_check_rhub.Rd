@@ -13,24 +13,24 @@
 paws_check_rhub(
   in_dir = "../cran",
   pkg_list = list(),
-  platforms = c("linux", "macos", "macos-arm64", "windows")
+  platforms = c("linux", "m1-san", "macos-arm64", "windows")
 )
 
 paws_check_rhub_cat(
   in_dir = "../cran",
   pkg_list = list(),
-  platforms = c("linux", "macos", "macos-arm64", "windows")
+  platforms = c("linux", "m1-san", "macos-arm64", "windows")
 )
 
 paws_check_rhub_sub_cat(
   in_dir = "../cran",
   pkg_list = list(),
-  platforms = c("linux", "macos", "macos-arm64", "windows")
+  platforms = c("linux", "m1-san", "macos-arm64", "windows")
 )
 
 paws_rhub_action_check(
   packages = "paws",
-  platforms = c("linux", "macos", "macos-arm64", "windows")
+  platforms = c("linux", "m1-san", "macos-arm64", "windows")
 )
 
 paws_check_win_devel(in_dir = "../cran", pkg_list = list(), email = NULL)

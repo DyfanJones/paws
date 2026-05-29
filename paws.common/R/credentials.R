@@ -23,10 +23,10 @@ Credentials <- struct(
 # Get credentials using the first set of credentials found by the AWS
 # credential provider chain. If no credentials are found, return the
 # original credentials object.
-get_credentials <- function(credentials) {
+get_credentials <- function(credentials, signing_name = NULL) {
   for (provider in credentials$provider) {
     # Use `call_with_args` to call providers with only the arguments they use.
-    creds <- call_with_args(provider, credentials)
+    creds <- call_with_args(provider, c(as.list(credentials), list(signing_name=signing_name)))
     if (!is.null(creds)) {
       credentials$creds <- creds
       break
@@ -38,6 +38,7 @@ get_credentials <- function(credentials) {
 #' @title Locate AWS credentials
 #' @param profile The name of a profile to use. If not given, then the default profile is used.
 #' @param anonymous Set anonymous credentials.
+#' @param signing_name lowercase identifier for an AWS service used to locate any aws service bearer tokens i.e. bedrock
 #' @return list containing AWS credentials
 #' \itemize{
 #'   \item access_key_id - (character) AWS access key ID
@@ -48,9 +49,9 @@ get_credentials <- function(credentials) {
 #'   \item region - (character) The AWS Region used in instantiating the client.
 #' }
 #' @export
-locate_credentials <- function(profile = "", anonymous = FALSE) {
+locate_credentials <- function(profile = "", anonymous = FALSE, signing_name = NULL) {
   credentials <- Credentials(profile = profile, anonymous = anonymous)
-  result <- as.list(get_credentials(credentials)$creds)
+  result <- as.list(get_credentials(credentials, signing_name)$creds)
   result$region <- get_region(profile)
   return(result[names(result) != "provider_name"])
 }

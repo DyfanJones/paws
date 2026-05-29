@@ -33,7 +33,7 @@ To get the key ID and key ARN for a KMS key, use \code{\link[=kms_list_keys]{lis
 
 If you provide a message digest, use the \code{DIGEST} value of \code{MessageType} to prevent the digest from being hashed again while signing.}
 
-\item{MessageType}{Tells KMS whether the value of the \code{Message} parameter should be hashed as part of the signing algorithm. Use \code{RAW} for unhashed messages; use \code{DIGEST} for message digests, which are already hashed; use \code{EXTERNAL_MU} for 64-byte representative μ used in ML-DSA signing as defined in NIST FIPS 204 Section 6.2.
+\item{MessageType}{Tells KMS whether the value of the \code{Message} parameter should be hashed as part of the signing algorithm. Use \code{RAW} for unhashed messages; use \code{DIGEST} for message digests, which are already hashed; use \code{EXTERNAL_MU} for 64-byte representative \code{u} used in ML-DSA signing as defined in NIST FIPS 204 Section 6.2.
 
 When the value of \code{MessageType} is \code{RAW}, KMS uses the standard signing algorithm, which begins with a hash function. When the value is \code{DIGEST}, KMS skips the hashing step in the signing algorithm. When the value is \code{EXTERNAL_MU} KMS skips the concatenated hashing of the public key hash and the message done in the ML-DSA signing algorithm.
 

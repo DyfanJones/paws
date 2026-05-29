@@ -54,8 +54,6 @@ To learn about the permissions required to call an Amazon Braket API action, see
 
 \strong{In this guide:}
 \itemize{
-\item 
-\item 
 \item CommonParameters
 \item CommonErrors
 }

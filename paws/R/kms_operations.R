@@ -5711,7 +5711,7 @@ kms_schedule_key_deletion <- function(KeyId, PendingWindowInDays = NULL) {
 #' @param Message &#91;required&#93; Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a larger message, provide a message digest.
 #' 
 #' If you provide a message digest, use the `DIGEST` value of `MessageType` to prevent the digest from being hashed again while signing.
-#' @param MessageType Tells KMS whether the value of the `Message` parameter should be hashed as part of the signing algorithm. Use `RAW` for unhashed messages; use `DIGEST` for message digests, which are already hashed; use `EXTERNAL_MU` for 64-byte representative μ used in ML-DSA signing as defined in NIST FIPS 204 Section 6.2.
+#' @param MessageType Tells KMS whether the value of the `Message` parameter should be hashed as part of the signing algorithm. Use `RAW` for unhashed messages; use `DIGEST` for message digests, which are already hashed; use `EXTERNAL_MU` for 64-byte representative \code{u} used in ML-DSA signing as defined in NIST FIPS 204 Section 6.2.
 #' 
 #' When the value of `MessageType` is `RAW`, KMS uses the standard signing algorithm, which begins with a hash function. When the value is `DIGEST`, KMS skips the hashing step in the signing algorithm. When the value is `EXTERNAL_MU` KMS skips the concatenated hashing of the public key hash and the message done in the ML-DSA signing algorithm.
 #' 
@@ -6514,7 +6514,7 @@ kms_update_primary_region <- function(KeyId, PrimaryRegion) {
 #' @param Message &#91;required&#93; Specifies the message that was signed. You can submit a raw message of up to 4096 bytes, or a hash digest of the message. If you submit a digest, use the `MessageType` parameter with a value of `DIGEST`.
 #' 
 #' If the message specified here is different from the message that was signed, the signature verification fails. A message and its hash digest are considered to be the same message.
-#' @param MessageType Tells KMS whether the value of the `Message` parameter should be hashed as part of the signing algorithm. Use `RAW` for unhashed messages; use `DIGEST` for message digests, which are already hashed; use `EXTERNAL_MU` for 64-byte representative μ used in ML-DSA signing as defined in NIST FIPS 204 Section 6.2.
+#' @param MessageType Tells KMS whether the value of the `Message` parameter should be hashed as part of the signing algorithm. Use `RAW` for unhashed messages; use `DIGEST` for message digests, which are already hashed; use `EXTERNAL_MU` for 64-byte representative \code{u} used in ML-DSA signing as defined in NIST FIPS 204 Section 6.2.
 #' 
 #' When the value of `MessageType` is `RAW`, KMS uses the standard signing algorithm, which begins with a hash function. When the value is `DIGEST`, KMS skips the hashing step in the signing algorithm. When the value is `EXTERNAL_MU` KMS skips the concatenated hashing of the public key hash and the message done in the ML-DSA signing algorithm.
 #' 

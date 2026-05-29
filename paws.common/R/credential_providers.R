@@ -40,6 +40,13 @@ bearer_token_env_provider <- function() {
       expiration = expiration,
       provider_name = "BearerTokenEnvProvider"
     ))
+  } else {
+    # Look for service bearer token
+    for (service in get_bearer_auth_supported_services()) {
+      if (!is.null(creds <- get_bearer_token_for_service(service))){
+        return(creds)
+      }
+    }
   }
   return(NULL)
 }

@@ -99,7 +99,7 @@ paws_check_url <- function(in_dir = "../cran", path, pkg_list = list()) {
 paws_check_rhub <- function(
   in_dir = "../cran",
   pkg_list = list(),
-  platforms = c("linux", "macos", "macos-arm64", "windows")
+  platforms = c("linux", "m1-san", "macos-arm64", "windows")
 ) {
   paws_check_rhub_sub_cat(in_dir, pkg_list, platforms)
   paws_check_rhub_cat(in_dir, pkg_list, platforms)
@@ -111,7 +111,7 @@ paws_check_rhub <- function(
 paws_check_rhub_cat <- function(
   in_dir = "../cran",
   pkg_list = list(),
-  platforms = c("linux", "macos", "macos-arm64", "windows")
+  platforms = c("linux", "m1-san", "macos-arm64", "windows")
 ) {
   pkgs <- list_paws_pkgs(in_dir, pkg_list)
   pkgs <- list_cat_pkgs(pkgs)
@@ -123,7 +123,7 @@ paws_check_rhub_cat <- function(
 paws_check_rhub_sub_cat <- function(
   in_dir = "../cran",
   pkg_list = list(),
-  platforms = c("linux", "macos", "macos-arm64", "windows")
+  platforms = c("linux", "m1-san", "macos-arm64", "windows")
 ) {
   pkgs <- list_paws_pkgs(in_dir, pkg_list)
   pkgs <- list_sub_cat_pkgs(pkgs)
@@ -138,7 +138,7 @@ paws_check_rhub_sub_cat <- function(
 #' @export
 paws_rhub_action_check <- function(
   packages = "paws",
-  platforms = c("linux", "macos", "macos-arm64", "windows")
+  platforms = c("linux", "m1-san", "macos-arm64", "windows")
 ) {
   url <- "https://api.github.com/repos/paws-r/paws-rhub/actions/workflows/rhub.yaml/dispatches"
   pat <- gitcreds::gitcreds_get(url = "https://github.com/paws-r/paws-rhub")$password

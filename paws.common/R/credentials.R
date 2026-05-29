@@ -26,7 +26,7 @@ Credentials <- struct(
 get_credentials <- function(credentials, signing_name = NULL) {
   for (provider in credentials$provider) {
     # Use `call_with_args` to call providers with only the arguments they use.
-    creds <- call_with_args(provider, c(credentials, list(signing_name=signing_name)))
+    creds <- call_with_args(provider, c(as.list(credentials), list(signing_name=signing_name)))
     if (!is.null(creds)) {
       credentials$creds <- creds
       break

@@ -49,7 +49,7 @@ test_that("bearer_token_env_provider", {
 
 test_that("bearer_service_token_env_provider", {
   Sys.setenv("AWS_BEARER_TOKEN_BEDROCK" = "test-token-abc")
-  creds <- bearer_token_env_provider()
+  creds <- bearer_token_env_provider("bedrock")
   expect_equal(creds$access_token, "test-token-abc")
   expect_equal(creds$expiration, Inf)
   expect_equal(creds$provider_name, "BearerTokenServiceProvider")

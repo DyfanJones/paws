@@ -155,7 +155,7 @@ sign_with_body_query <- function(
 
   credentials <- signer$credentials
   if (!is_credentials_provided(signer$credentials$creds)) {
-    credentials <- get_credentials(signer$credentials)
+    credentials <- get_credentials(signer$credentials, service)
   }
   ctx$cred_values <- credentials$creds
 

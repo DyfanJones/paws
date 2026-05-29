@@ -54,6 +54,7 @@ test_that("bearer_service_token_env_provider", {
   expect_equal(creds$expiration, Inf)
   expect_equal(creds$provider_name, "BearerTokenServiceProvider")
   Sys.unsetenv(c("AWS_BEARER_TOKEN_BEDROCK"))
+  paws_reset_cache() # Clear cache after unsetting env var
 })
 
 test_that("get_bearer_token_for_service", {

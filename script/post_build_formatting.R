@@ -20,7 +20,8 @@ before <- c(
   "#' \\*arn:aws:iam:::role/pathA/pathB/ResourceName_1\\*",
   "#' \\*arn:aws:iam:::role/pathA/ResourceName_1\\*",
   "\u2028",
-  "http://docs.pythonboto.org"
+  "http://docs.pythonboto.org",
+  "\\*\\\\href\\{([^}]*)\\}\\{([^}]*)\\}(\\.?)\\*"
 )
 
 after <- c(
@@ -37,7 +38,8 @@ after <- c(
   "#' \\\\emph\\{arn:aws:iam:::role/pathA/pathB/ResourceName_1\\}",
   "#' \\\\emph\\{arn:aws:iam:::role/pathA/ResourceName_1\\}",
   "",
-  "https://docs.pythonboto.org"
+  "https://docs.pythonboto.org",
+  "\\\\emph{\\\\href{\\1}{\\2}}\\3"
 )
 
 # Format R + Rb files in cran + paws directory
